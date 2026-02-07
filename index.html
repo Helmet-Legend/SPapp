@@ -3,76 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.10">
+    <meta name="version" content="1.9">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
+    <meta name="copyright" content="© 2025 DECIOPS. Tous droits réservés.">
+    <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
+    
     <meta name="theme-color" content="#c41e3a">
-    <title>DECIOPS v1.10</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="DECIOPS">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <link rel="manifest" href="manifest.json">
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    
+    <title>DECIOPS v1.9</title>
     
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="manifest" href="manifest.json">
-</head>
-<body class="theme-day">
     
-    <!-- STRUCTURE HTML AJOUTÉE -->
-    <header>
-        <h1>🚒 DECIOPS v1.10</h1>
-        <p>Générateur de scénarios tactiques</p>
-    </header>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <main class="container">
-        <section class="form-section">
-            <h2>Configuration du scénario</h2>
-            
-            <div class="field-group">
-                <label>Type de manœuvre :</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="type" value="incendie"> Incendie</label>
-                    <label><input type="checkbox" name="type" value="sauvetage"> Sauvetage</label>
-                    <label><input type="checkbox" name="type" value="secours-routier"> Secours routier</label>
-                    <label><input type="checkbox" name="type" value="risque-chimique"> Risque chimique</label>
+    <style>
+        /* Styles spécifiques pour le générateur IA */
+        .ia-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #c41e3a;
+        }
+        
+        .ia-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #c41e3a;
+        }
+        
+        .ia-header i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .ia-header h2 {
+            margin: 0;
+            font-size: 1.4em;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #eee;
+        }
+
+        .checkbox-item:hover {
+            background: #e9ecef;
+        }
+
+        .checkbox-item input {
+            margin-right: 10px;
+        }
+
+        .checkbox-item span {
+            font-size: 0.85em;
+        }
+
+        .input-text, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+
+        #btn-generer {
+            width: 100%;
+            padding: 15px;
+            background: #c41e3a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        #btn-generer:hover {
+            background: #a01830;
+        }
+
+        #btn-generer:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        #resultat-ia {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f7ff;
+            border-radius: 8px;
+            border-left: 5px solid #007bff;
+            display: none;
+            white-space: pre-line;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-container">
+                <i class="fas fa-fire-extinguisher"></i>
+                <div class="logo-text">
+                    <h1>DECIOPS</h1>
+                    <span>Aide à la Décision Opérationnelle</span>
                 </div>
             </div>
+            <div class="version-tag">v1.9</div>
+        </header>
 
-            <div class="field-group">
-                <label>Véhicules disponibles :</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="vehicule" value="VSAV"> VSAV</label>
-                    <label><input type="checkbox" name="vehicule" value="FPT"> FPT</label>
-                    <label><input type="checkbox" name="vehicule" value="EPA"> EPA</label>
-                    <label><input type="checkbox" name="vehicule" value="FMOGP"> FMOGP</label>
+        <main>
+            <section id="ia-manoeuvre" class="ia-container">
+                <div class="ia-header">
+                    <i class="fas fa-robot"></i>
+                    <h2>Générateur de Manœuvre IA</h2>
                 </div>
-            </div>
 
-            <div class="field-group">
-                <label>Lieu d'intervention :</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="lieu" value="habitation"> Habitation</label>
-                    <label><input type="checkbox" name="lieu" value="erp"> ERP</label>
-                    <label><input type="checkbox" name="lieu" value="voie-publique"> Voie publique</label>
-                    <label><input type="checkbox" name="lieu" value="industriel"> Site industriel</label>
+                <div class="form-group">
+                    <label>Type de manœuvre :</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="checkbox" name="type" value="Incendie Structure"><span>🔥 Incendie</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="type" value="Secours Routier"><span>🚗 Secours Routier</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="type" value="Lutte contre les feux de forêt"><span>🌲 Feu de Forêt</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="type" value="Risque Technologique / NRBC"><span>☢️ NRBC</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="type" value="Secours à Personne (SAP)"><span>🚑 SAP</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="type" value="Opération Diverses / Épuisement"><span>🌊 Op. Diverses</span></label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="field-group">
-                <label for="nb-personnel">Nombre de personnel :</label>
-                <input type="number" id="nb-personnel" min="1" max="50" value="10">
-            </div>
+                <div class="form-group">
+                    <label>Engins engagés :</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="checkbox" name="vehicule" value="FPT / FPTSR"><span>🚒 FPT/FPTSR</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="vehicule" value="VSAV"><span>🚑 VSAV</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="vehicule" value="EPA / EPS"><span>🪜 EPA</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="vehicule" value="CCF"><span>🚒 CCF</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="vehicule" value="VLC / VLHR"><span>🚗 VL</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="vehicule" value="VSR / FSR"><span>🛠️ VSR</span></label>
+                    </div>
+                </div>
 
-            <div class="field-group">
-                <label for="consignes-particulieres">Consignes particulières :</label>
-                <textarea id="consignes-particulieres" rows="4" placeholder="Ajoutez des contraintes ou objectifs spécifiques..."></textarea>
-            </div>
+                <div class="form-group">
+                    <label>Environnement :</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="checkbox" name="lieu" value="Urbain dense"><span>🏙️ Urbain</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="lieu" value="Rural / Isolé"><span>🏡 Rural</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="lieu" value="Zone Industrielle"><span>🏭 Industriel</span></label>
+                        <label class="checkbox-item"><input type="checkbox" name="lieu" value="Autoroute / VRU"><span>🛣️ Autoroute</span></label>
+                    </div>
+                </div>
 
-            <button id="btn-generer" onclick="genererManoeuvre()">
-                <span>🤖</span> GÉNÉRER LE SCÉNARIO
-            </button>
-        </section>
+                <div class="form-group">
+                    <label for="nb-personnel">Effectif disponible (SP) :</label>
+                    <input type="number" id="nb-personnel" value="8" min="2" max="30">
+                </div>
 
-        <section id="resultat-ia" style="display: none;">
-            <h2>📋 Scénario généré</h2>
-            <div id="scenario-contenu" class="scenario-box"></div>
-        </section>
-    </main>
+                <div class="form-group">
+                    <label for="consignes-particulieres">Consignes spécifiques / scénario particulier :</label>
+                    <textarea id="consignes-particulieres" placeholder="Ex: Victime au 2ème étage, propagation toiture, présence de bouteilles de gaz..."></textarea>
+                </div>
+
+                <button id="btn-generer" onclick="genererManoeuvre()">
+                    <i class="fas fa-magic"></i> GÉNÉRER LE SCÉNARIO
+                </button>
+
+                <div id="resultat-ia">
+                    <div id="scenario-contenu"></div>
+                </div>
+            </section>
+
+            </main>
+    </div>
 
     <script>
     async function genererManoeuvre() {
@@ -80,66 +239,94 @@
         const resultatDiv = document.getElementById('resultat-ia');
         const contenuDiv = document.getElementById('scenario-contenu');
 
-        // Collecte des données
+        // Récupération des valeurs
+        const getCheckedValues = (name) => {
+            return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(cb => cb.value);
+        };
+
         const types = getCheckedValues('type');
+        const vehicules = getCheckedValues('vehicule');
+        const lieux = getCheckedValues('lieu');
+        const nbSP = document.getElementById('nb-personnel').value;
+        const consignes = document.getElementById('consignes-particulieres').value;
+
         if (types.length === 0) {
             alert('⚠️ Veuillez sélectionner au moins un type de manœuvre');
             return;
         }
 
-        const promptData = {
-            type: types.join(', '),
-            vehicules: getCheckedValues('vehicule').join(', '),
-            lieu: getCheckedValues('lieu').join(', '),
-            nbSP: document.getElementById('nb-personnel').value,
-            consignes: document.getElementById('consignes-particulieres').value
-        };
+        // Préparation du prompt pour l'IA
+        const promptText = `Génère un scénario détaillé de manœuvre sapeur-pompier. 
+        TYPE: ${types.join(', ')}
+        VÉHICULES: ${vehicules.join(', ')}
+        LIEU: ${lieux.join(', ')}
+        EFFECTIF: ${nbSP} sapeurs-pompiers
+        CONSIGNES SPÉCIFIQUES: ${consignes}
+        
+        Format du résultat attendu : 
+        1. Situation initiale (S)
+        2. Objectif de la manœuvre (O)
+        3. Idée de manœuvre / Ordre Initial (I)
+        4. Exécution / Missions par binôme (E)
+        5. Sécurité (S)`;
 
-        // UI Loading
+        // UI Loading state
         btn.disabled = true;
-        btn.innerHTML = '<span>⏳</span> Analyse tactique en cours...';
+        btn.innerHTML = '<div class="loading-spinner"></div> Analyse tactique en cours...';
         resultatDiv.style.display = 'none';
 
         try {
-            // APPEL SÉCURISÉ VERS VERCEL API (Pas de clé ici !)
+            // APPEL VERS L'API VERCEL (Secured)
             const response = await fetch('/api/gemini', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ prompt: JSON.stringify(promptData) })
+                body: JSON.stringify({ prompt: promptText })
             });
 
-            if (!response.ok) {
-                throw new Error(`Erreur HTTP: ${response.status}`);
-            }
+            if (!response.ok) throw new Error('Erreur réseau ou serveur');
 
             const data = await response.json();
             
             if (data.error) throw new Error(data.error);
 
-            contenuDiv.innerHTML = formatScenario(data.text);
+            // Affichage du résultat
+            contenuDiv.innerHTML = formatIAOutput(data.text);
             resultatDiv.style.display = 'block';
             resultatDiv.scrollIntoView({ behavior: 'smooth' });
 
         } catch (error) {
             console.error('Erreur:', error);
-            alert('❌ Erreur de connexion au serveur tactique. Vérifiez votre déploiement Vercel.');
+            alert('❌ Erreur de connexion au serveur tactique. Vérifiez votre configuration Vercel.');
         } finally {
             btn.disabled = false;
-            btn.innerHTML = '<span>🤖</span> GÉNÉRER LE SCÉNARIO';
+            btn.innerHTML = '<i class="fas fa-magic"></i> GÉNÉRER LE SCÉNARIO';
         }
     }
 
-    // Fonctions utilitaires (formatage, etc.)
-    function getCheckedValues(name) {
-        return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(cb => cb.value);
-    }
-
-    function formatScenario(texte) {
-        return texte.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                    .replace(/\n/g, '<br>');
+    function formatIAOutput(text) {
+        // Remplacement simple pour mettre en gras les titres et gérer les sauts de ligne
+        return text
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\n/g, '<br>');
     }
     </script>
 
+    <script src="js/data-loader.js"></script>
+    <script src="js/modules/sal.js"></script>
     <script src="js/app.js"></script>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('🚒 DECIOPS: Service Worker enregistré avec succès');
+                    })
+                    .catch(error => {
+                        console.log('🚒 DECIOPS: Erreur Service Worker:', error);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
