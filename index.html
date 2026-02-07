@@ -12,6 +12,68 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <body class="theme-day">
+    
+    <!-- STRUCTURE HTML AJOUTÉE -->
+    <header>
+        <h1>🚒 DECIOPS v1.10</h1>
+        <p>Générateur de scénarios tactiques</p>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2>Configuration du scénario</h2>
+            
+            <div class="field-group">
+                <label>Type de manœuvre :</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="type" value="incendie"> Incendie</label>
+                    <label><input type="checkbox" name="type" value="sauvetage"> Sauvetage</label>
+                    <label><input type="checkbox" name="type" value="secours-routier"> Secours routier</label>
+                    <label><input type="checkbox" name="type" value="risque-chimique"> Risque chimique</label>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label>Véhicules disponibles :</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="vehicule" value="VSAV"> VSAV</label>
+                    <label><input type="checkbox" name="vehicule" value="FPT"> FPT</label>
+                    <label><input type="checkbox" name="vehicule" value="EPA"> EPA</label>
+                    <label><input type="checkbox" name="vehicule" value="FMOGP"> FMOGP</label>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label>Lieu d'intervention :</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="lieu" value="habitation"> Habitation</label>
+                    <label><input type="checkbox" name="lieu" value="erp"> ERP</label>
+                    <label><input type="checkbox" name="lieu" value="voie-publique"> Voie publique</label>
+                    <label><input type="checkbox" name="lieu" value="industriel"> Site industriel</label>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label for="nb-personnel">Nombre de personnel :</label>
+                <input type="number" id="nb-personnel" min="1" max="50" value="10">
+            </div>
+
+            <div class="field-group">
+                <label for="consignes-particulieres">Consignes particulières :</label>
+                <textarea id="consignes-particulieres" rows="4" placeholder="Ajoutez des contraintes ou objectifs spécifiques..."></textarea>
+            </div>
+
+            <button id="btn-generer" onclick="genererManoeuvre()">
+                <span>🤖</span> GÉNÉRER LE SCÉNARIO
+            </button>
+        </section>
+
+        <section id="resultat-ia" style="display: none;">
+            <h2>📋 Scénario généré</h2>
+            <div id="scenario-contenu" class="scenario-box"></div>
+        </section>
+    </main>
+
     <script>
     async function genererManoeuvre() {
         const btn = document.getElementById('btn-generer');
@@ -45,6 +107,10 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ prompt: JSON.stringify(promptData) })
             });
+
+            if (!response.ok) {
+                throw new Error(`Erreur HTTP: ${response.status}`);
+            }
 
             const data = await response.json();
             
