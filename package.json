@@ -1,0 +1,18 @@
+{
+  "name": "deciops",
+  "version": "1.9.0",
+  "description": "Outil d'aide à la décision opérationnelle pour sapeurs-pompiers",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "pompiers",
+    "secours",
+    "manoeuvre",
+    "GDO"
+  ],
+  "author": "RESCUEAPP - LP ACADEMY",
+  "license": "PROPRIETARY"
+}
