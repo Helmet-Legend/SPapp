@@ -1,0 +1,217 @@
+[
+  {
+    "nom": "Eau",
+    "densite": 1000.0,
+    "categorie": "Référence"
+  },
+  {
+    "nom": "Air (niveau mer)",
+    "densite": 1.2,
+    "categorie": "Référence"
+  },
+  {
+    "nom": "Essence",
+    "densite": 730.0,
+    "categorie": "Hydrocarbure"
+  },
+  {
+    "nom": "Diesel / Gazole",
+    "densite": 830.0,
+    "categorie": "Hydrocarbure"
+  },
+  {
+    "nom": "Fuel domestique",
+    "densite": 920.0,
+    "categorie": "Hydrocarbure"
+  },
+  {
+    "nom": "Kérosène",
+    "densite": 800.0,
+    "categorie": "Hydrocarbure"
+  },
+  {
+    "nom": "Huile moteur",
+    "densite": 920.0,
+    "categorie": "Hydrocarbure"
+  },
+  {
+    "nom": "Éthanol",
+    "densite": 790.0,
+    "categorie": "Alcool"
+  },
+  {
+    "nom": "Méthanol",
+    "densite": 790.0,
+    "categorie": "Alcool"
+  },
+  {
+    "nom": "Huile végétale",
+    "densite": 920.0,
+    "categorie": "Huile"
+  },
+  {
+    "nom": "Acide sulfurique",
+    "densite": 1840.0,
+    "categorie": "Acide"
+  },
+  {
+    "nom": "Acide chlorhydrique",
+    "densite": 1180.0,
+    "categorie": "Acide"
+  },
+  {
+    "nom": "Béton",
+    "densite": 2400.0,
+    "categorie": "Construction"
+  },
+  {
+    "nom": "Béton armé",
+    "densite": 2500.0,
+    "categorie": "Construction"
+  },
+  {
+    "nom": "Parpaing creux",
+    "densite": 1300.0,
+    "categorie": "Construction"
+  },
+  {
+    "nom": "Brique pleine",
+    "densite": 1800.0,
+    "categorie": "Construction"
+  },
+  {
+    "nom": "Plâtre",
+    "densite": 1200.0,
+    "categorie": "Construction"
+  },
+  {
+    "nom": "Mortier",
+    "densite": 2200.0,
+    "categorie": "Construction"
+  },
+  {
+    "nom": "Sable sec",
+    "densite": 1600.0,
+    "categorie": "Granulat"
+  },
+  {
+    "nom": "Sable humide",
+    "densite": 1900.0,
+    "categorie": "Granulat"
+  },
+  {
+    "nom": "Gravier",
+    "densite": 1700.0,
+    "categorie": "Granulat"
+  },
+  {
+    "nom": "Terre végétale sèche",
+    "densite": 1250.0,
+    "categorie": "Granulat"
+  },
+  {
+    "nom": "Terre végétale humide",
+    "densite": 1600.0,
+    "categorie": "Granulat"
+  },
+  {
+    "nom": "Argile",
+    "densite": 1800.0,
+    "categorie": "Granulat"
+  },
+  {
+    "nom": "Pin (bois tendre)",
+    "densite": 500.0,
+    "categorie": "Bois"
+  },
+  {
+    "nom": "Sapin",
+    "densite": 450.0,
+    "categorie": "Bois"
+  },
+  {
+    "nom": "Chêne (bois dur)",
+    "densite": 750.0,
+    "categorie": "Bois"
+  },
+  {
+    "nom": "Hêtre",
+    "densite": 720.0,
+    "categorie": "Bois"
+  },
+  {
+    "nom": "Contreplaqué",
+    "densite": 600.0,
+    "categorie": "Bois"
+  },
+  {
+    "nom": "Panneau aggloméré",
+    "densite": 700.0,
+    "categorie": "Bois"
+  },
+  {
+    "nom": "Aluminium",
+    "densite": 2700.0,
+    "categorie": "Métal"
+  },
+  {
+    "nom": "Acier",
+    "densite": 7850.0,
+    "categorie": "Métal"
+  },
+  {
+    "nom": "Fer",
+    "densite": 7870.0,
+    "categorie": "Métal"
+  },
+  {
+    "nom": "Cuivre",
+    "densite": 8960.0,
+    "categorie": "Métal"
+  },
+  {
+    "nom": "Plomb",
+    "densite": 11340.0,
+    "categorie": "Métal"
+  },
+  {
+    "nom": "Zinc",
+    "densite": 7140.0,
+    "categorie": "Métal"
+  },
+  {
+    "nom": "Verre",
+    "densite": 2500.0,
+    "categorie": "Autre"
+  },
+  {
+    "nom": "Plastique PVC",
+    "densite": 1400.0,
+    "categorie": "Plastique"
+  },
+  {
+    "nom": "Polystyrène expansé",
+    "densite": 25.0,
+    "categorie": "Isolant"
+  },
+  {
+    "nom": "Laine de verre",
+    "densite": 40.0,
+    "categorie": "Isolant"
+  },
+  {
+    "nom": "Neige fraîche",
+    "densite": 100.0,
+    "categorie": "Autre"
+  },
+  {
+    "nom": "Neige tassée",
+    "densite": 300.0,
+    "categorie": "Autre"
+  },
+  {
+    "nom": "Glace",
+    "densite": 920.0,
+    "categorie": "Autre"
+  }
+]

@@ -1,0 +1,126 @@
+{
+  "blanc": {
+    "nom": "Oxygène médical",
+    "formule": "O₂",
+    "danger": "Comburant",
+    "usages": [
+      "Médical",
+      "Soudage",
+      "Industrie"
+    ],
+    "pression": "200 bar",
+    "precautions": [
+      "Pas de corps gras",
+      "Ventiler",
+      "Éloigner des flammes"
+    ]
+  },
+  "bleu": {
+    "nom": "Protoxyde d'azote",
+    "formule": "N₂O",
+    "danger": "Comburant + Anesthésiant",
+    "usages": [
+      "Médical (anesthésie)",
+      "Alimentaire"
+    ],
+    "pression": "50 bar liquéfié",
+    "precautions": [
+      "Ventilation",
+      "Risque d'asphyxie",
+      "Effet euphorisant"
+    ]
+  },
+  "gris": {
+    "nom": "Dioxyde de carbone",
+    "formule": "CO₂",
+    "danger": "Asphyxiant",
+    "usages": [
+      "Extinction",
+      "Alimentaire",
+      "Soudage"
+    ],
+    "pression": "57 bar liquéfié",
+    "precautions": [
+      "Ventiler",
+      "Risque gel (-78°C)",
+      "Asphyxie en milieu confiné"
+    ]
+  },
+  "jaune": {
+    "nom": "Chlore / Toxiques",
+    "formule": "Cl₂",
+    "danger": "Toxique + Corrosif",
+    "usages": [
+      "Traitement eau",
+      "Industrie chimique"
+    ],
+    "pression": "Variable",
+    "precautions": [
+      "ARI obligatoire",
+      "Périmètre sécurité",
+      "Évacuation"
+    ]
+  },
+  "marron": {
+    "nom": "Hélium",
+    "formule": "He",
+    "danger": "Asphyxiant",
+    "usages": [
+      "Ballons",
+      "Plongée",
+      "Cryogénie"
+    ],
+    "pression": "200 bar",
+    "precautions": [
+      "Ventiler",
+      "Risque asphyxie",
+      "Non toxique"
+    ]
+  },
+  "noir": {
+    "nom": "Azote",
+    "formule": "N₂",
+    "danger": "Asphyxiant",
+    "usages": [
+      "Inertage",
+      "Cryogénie",
+      "Alimentaire"
+    ],
+    "pression": "200 bar",
+    "precautions": [
+      "Ventiler",
+      "Risque asphyxie en espace clos"
+    ]
+  },
+  "rouge": {
+    "nom": "Gaz inflammables",
+    "formule": "H₂, C₂H₂...",
+    "danger": "Inflammable + Explosif",
+    "usages": [
+      "Soudage",
+      "Découpe",
+      "Industrie"
+    ],
+    "pression": "200 bar (H₂) / 15 bar (C₂H₂)",
+    "precautions": [
+      "Pas de flamme",
+      "Ventiler",
+      "Détection fuites"
+    ]
+  },
+  "vert": {
+    "nom": "Argon / Gaz inertes",
+    "formule": "Ar",
+    "danger": "Asphyxiant",
+    "usages": [
+      "Soudage TIG/MIG",
+      "Conservation",
+      "Laboratoire"
+    ],
+    "pression": "200 bar",
+    "precautions": [
+      "Ventiler",
+      "Espace confiné dangereux"
+    ]
+  }
+}

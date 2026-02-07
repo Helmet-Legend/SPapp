@@ -1,0 +1,27 @@
+{
+  "version": "1.9",
+  "appName": "DECIOPS",
+  "author": "RESCUEAPP - LP ACADEMY",
+  "copyright": "© 2025 DECIOPS. Tous droits réservés.",
+  "description": "Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO",
+  "apiKey": "AIzaSyDQDbxBzdGZpxbrK2UdSXfDCT9NYCoullA",
+  "firePowers": {
+    "fenetre": 2,
+    "porte": 4,
+    "baie": 8.4,
+    "garage": 11,
+    "entrepot": 36
+  },
+  "gazCategories": {
+    "Gaz courants": ["butane", "methane", "propane", "gnv", "acetylene"],
+    "GPL": ["isobutane", "gpl", "gpl_auto"],
+    "GNR et GNL": ["gnr", "gnl"],
+    "Carburants": ["essence", "diesel", "kerosene", "pentane", "hexane", "heptane", "octane", "nonane", "decane", "dodecane"],
+    "Aromatiques": ["benzene", "toluene", "xylene", "styrene"],
+    "Alcènes/Alcynes": ["ethylene", "propylene", "butene", "butadiene", "isoprene"],
+    "Alcools": ["methanol", "ethanol", "propanol", "butanol"],
+    "Éthers/Cétones": ["ether", "mtbe", "acetone", "mek", "ethyl_acetate", "propane_oxy"],
+    "Gaz industriels": ["hydrogene", "monoxyde", "sulfure", "ammoniac"],
+    "Autres": ["ethane"]
+  }
+}

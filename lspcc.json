@@ -1,0 +1,687 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "source": "RDLSPCC SDIS 34 - Version 1 - Novembre 2025",
+    "lastUpdate": "2025-11"
+  },
+  "materiels": {
+    "lot_engin": {
+      "couleur": "Jaune citron",
+      "corde_longueur": 30,
+      "sac_diametre": 30,
+      "composition": {
+        "sac": {
+          "hauteur_max": 60,
+          "bretelles": 2,
+          "poignee": 1
+        },
+        "bas_sac": ["1 Corde lovée", "1 Protection"],
+        "rabat_interieur": ["1 Brin de la corde"],
+        "rabat_exterieur": ["1 Outil de traçabilité"],
+        "milieu_sac": [
+          "2 Sangles rouges + 2 Connecteurs à vis",
+          "2 Sangles bleues + 2 Connecteurs à vis",
+          "1 Sangle bleue + 1 Connecteur à vis + 1 Poulie",
+          "1 Sangle rouge + 1 Connecteur à vis + 1 Descendeur",
+          "2 Cordelettes"
+        ],
+        "haut_sac": [
+          "1 Triangle + 1 Connecteur automatique",
+          "2 Harnais + 2 Demi-lunes"
+        ]
+      }
+    },
+    "lot_echelle": {
+      "couleur": "Bleu ciel",
+      "corde_longueur": 60,
+      "sac_diametre": 40,
+      "composition": {
+        "sac": {
+          "hauteur_max": 60,
+          "bretelles": 2,
+          "poignee": 1
+        },
+        "bas_sac": ["1 Corde lovée", "1 Protection"],
+        "rabat_interieur": ["1 Brin de la corde", "1 Antichute mobile"],
+        "rabat_exterieur": ["1 Outil de traçabilité"],
+        "milieu_sac": [
+          "2 Sangles rouges + 2 Connecteurs à vis",
+          "5 Sangles bleues + 5 Connecteurs à vis",
+          "1 Sangle bleue + 1 Connecteur à vis + 1 Poulie",
+          "1 Sangle rouge + 1 Connecteur à vis + 1 Descendeur",
+          "2 Cordelettes"
+        ],
+        "haut_sac": ["1 Triangle + 1 Connecteur automatique"]
+      }
+    },
+    "lot_epi_mea": {
+      "longe_maintien": {
+        "longueur": 1,
+        "diametre": 10,
+        "resistance": 2200
+      },
+      "longe_antichute": {
+        "charge_max": 140,
+        "longueur": 1.75,
+        "largeur": 2.5,
+        "resistance": 1500,
+        "norme": "NF EN 795"
+      }
+    },
+    "equipements": {
+      "corde": {
+        "type": "Statique",
+        "allongement_max": 5,
+        "diametre_min": 12,
+        "diametre_max": 13,
+        "resistance": 3000,
+        "resistance_thermique": 200
+      },
+      "harnais": {
+        "charge_max": 140,
+        "resistance": 1500,
+        "resistance_thermique": 200,
+        "composants": [
+          "1 Connecteur demi-lune automatique",
+          "2 Bretelles rouges en polyester",
+          "2 Cuissardes bleus en polyester",
+          "1 Attache sternale en polyester",
+          "1 Attache dorsale en acier"
+        ]
+      },
+      "triangle": {
+        "charge_max": 150,
+        "resistance": 1500,
+        "resistance_thermique": 200,
+        "composants": [
+          "2 Bretelles en polyester",
+          "3 Attaches sternales en polyester",
+          "1 Attache dorsale en polyester"
+        ]
+      },
+      "sangle": {
+        "largeur_min": 18,
+        "largeur_max": 25,
+        "resistance": 2000,
+        "resistance_thermique": 200,
+        "types": {
+          "bleue": 80,
+          "rouge": 150
+        }
+      },
+      "connecteur": {
+        "types": ["À vis", "Automatique"],
+        "resistance_grand_axe": 2000,
+        "resistance_petit_axe": 750
+      },
+      "descendeur": {
+        "type": "Type 8",
+        "resistance": 2000
+      },
+      "poulie": {
+        "gorge_max": 15,
+        "resistance": 2000,
+        "composants": ["Deux joues fixes", "Un réa (roue intérieure)", "Une entretoise"]
+      },
+      "antichute_mobile": {
+        "charge_max": 140,
+        "diametre": 12,
+        "resistance": 1500,
+        "resistance_thermique": 230
+      },
+      "cordelette": {
+        "longueur": 40,
+        "diametre": 7,
+        "resistance": 1800,
+        "resistance_thermique": 230
+      },
+      "protection": {
+        "matiere": "Cuir",
+        "longueur": 45
+      }
+    }
+  },
+  "emploi": {
+    "principes": {
+      "composants_systeme": [
+        "Point d'ancrage",
+        "L'amarrage",
+        "Frein de charge",
+        "Dispositif",
+        "Charge"
+      ],
+      "brins": {
+        "tirant": "Brin allant vers la charge",
+        "garant": "Brin tenu par le régulateur",
+        "dormant": "Brin de renvoi sur mouflage"
+      },
+      "regles": [
+        "Connecteur automatique obligatoire entre corde et charge",
+        "Surveiller et évaluer en permanence",
+        "Contrôler le système tout au long de l'opération",
+        "Placer le sac du côté du garant",
+        "Commande emportée systématiquement"
+      ]
+    },
+    "champ_missionnel": [
+      {
+        "technique": "Le sauvetage ou la mise en sécurité par l'extérieur",
+        "dispositif": "Descente"
+      },
+      {
+        "technique": "L'abordage d'une victime en situation de péril",
+        "dispositif": "Descente"
+      },
+      {
+        "technique": "Le sauvetage ou la mise en sécurité en excavation",
+        "dispositif": "Descente et Remontée"
+      },
+      {
+        "technique": "La reconnaissance d'appartement",
+        "dispositif": "Descente ou Horizontal"
+      },
+      {
+        "technique": "L'évolution avec risque de chute",
+        "dispositif": "Protection contre les chutes"
+      }
+    ],
+    "limites_utilisation": [
+      "Résistance des points d'ancrage",
+      "Matériel insuffisant",
+      "Longueur utile de la corde",
+      "État d'une victime nécessitant une prise en charge spécifique"
+    ],
+    "ancrage": {
+      "types": [
+        {
+          "type": "Naturel",
+          "exemples": ["Arbre", "Rocher"]
+        },
+        {
+          "type": "Structurel",
+          "exemples": ["Colonne sèche", "Rambarde d'escalier", "Balcon", "Pilier", "Poutre"]
+        },
+        {
+          "type": "Artificiel",
+          "exemples": ["Véhicule", "Échelle portable", "MEA"]
+        }
+      ],
+      "point_fixe_humain": {
+        "conditions": "Utilisé dans l'urgence quand aucun point naturel ou structurel n'est possible",
+        "position": "Allongé les jambes à 90° contre le mur",
+        "hauteur_min_descendeur": 20
+      },
+      "vehicule": {
+        "conditions": [
+          "Moteur arrêté et frein à main ou de parc serré",
+          "Véhicule calé sur les roues arrières",
+          "Vitesse engagée, clé retirée et véhicule verrouillé"
+        ],
+        "points_ancrage": ["Manille", "Jante (pas enjoliveur)", "Essieu arrière"]
+      },
+      "echelle_coulisse_2plans": {
+        "usage": "Placer sangles autour des 4 montants"
+      },
+      "echelle_crochets_2plans": {
+        "usage": "Uniquement sauvetage, position reployée"
+      }
+    },
+    "amarrage": {
+      "principal": {
+        "description": "Amarrage doté de sangle(s), connecteur(s) et descendeur",
+        "types": ["Simple", "Double", "Surdimensionné"],
+        "angle_max": 90,
+        "resistance_double": 4000
+      },
+      "intermediaire": {
+        "description": "Amarrage doté de sangle(s) et d'un connecteur ou poulie",
+        "usages": ["Déviation", "Prolongement", "Sécurisation", "Mouflage"],
+        "materiel_max": {
+          "sangles": 5,
+          "connecteurs": 5
+        }
+      },
+      "regles": [
+        "Minimum une sangle et un connecteur à vis",
+        "Têtes d'alouette proscrites",
+        "Répartition identique si deux points d'ancrage"
+      ]
+    },
+    "notions_chute": {
+      "syndrome_suspension": {
+        "description": "Situation clinique engageant le pronostic vital à très court terme",
+        "symptomes": ["Perte de connaissance", "Défaillance multi viscérale"],
+        "risque": "Arrêt cardio respiratoire"
+      },
+      "facteur_chute": {
+        "formule": "Hauteur de chute / Longueur de corde",
+        "seuil_lesions": 600,
+        "facteur_0_3": {
+          "position": "En-dessous de l'amarrage",
+          "status": "Recherché en permanence"
+        },
+        "facteur_1": {
+          "position": "Au niveau de l'amarrage",
+          "status": "À éviter"
+        },
+        "facteur_2": {
+          "position": "Au-dessus de l'amarrage",
+          "status": "Interdit"
+        }
+      },
+      "tirant_air": {
+        "description": "Hauteur minimale pour que l'utilisateur ne heurte pas d'obstacle",
+        "marge_securite_min": 1,
+        "facteurs_supplementaires": [
+          "Temps de réaction du régulateur",
+          "Mise en tension du dispositif",
+          "Allongement de la corde"
+        ]
+      },
+      "effet_pendulaire": {
+        "description": "Risque de ballant si pas exactement sous le point d'ancrage",
+        "risque": "Lésions par collision"
+      }
+    },
+    "protection_individuelle": {
+      "minimum": "TSI (Tenue de Service et d'Intervention)",
+      "casque": ["Type A (F2)", "Type B (F1)"],
+      "gants": {
+        "type_B": "Protection - sur appréciation du chef d'agrès",
+        "type_C": "Attaque - obligatoire sur ambiance thermique et pour le sauveteur"
+      },
+      "optionnel": "ARI-CO au besoin"
+    },
+    "ordres": [
+      {
+        "ordre": "Laissez filer !",
+        "description": "Le régulateur laisse filer la corde dans le descendeur"
+      },
+      {
+        "ordre": "Du mou !",
+        "description": "Le régulateur donne du mou à la corde"
+      },
+      {
+        "ordre": "Sec !",
+        "description": "Le régulateur retient fermement la corde et absorbe le mou"
+      },
+      {
+        "ordre": "Protégez le dispositif !",
+        "description": "Placer des protections pour préserver la corde"
+      },
+      {
+        "ordre": "Sécurisez le dispositif !",
+        "description": "Le régulateur effectue une clé d'arrêt"
+      },
+      {
+        "ordre": "À bras - Ferme !",
+        "description": "Rythme de synchronisation pour dispositif de remontée"
+      },
+      {
+        "ordre": "Contact !",
+        "description": "Le sauveteur ou la victime se situe au point à atteindre"
+      },
+      {
+        "ordre": "Victime en sécurité !",
+        "description": "La victime est prise en charge à la suite du dispositif"
+      }
+    ],
+    "reglages_triangle": {
+      "petite_corpulence": "Attaches les plus serrées",
+      "moyenne_corpulence": "Attaches moyennes",
+      "large_corpulence": "Attaches les plus larges"
+    }
+  },
+  "techniques_generales": {
+    "abordage_victime_peril": {
+      "description": "Accéder à une victime afin d'établir un contact physique",
+      "dispositif": "Descente",
+      "procedure": {
+        "chef_equipe": [
+          "Se munir du LSPCC et de la commande",
+          "S'assurer de la faisabilité du dispositif",
+          "Choisir 1 ou 2 points d'ancrage",
+          "Installer l'amarrage principal avec descendeur et corde",
+          "Vérifier et tester le dispositif"
+        ],
+        "equipier": [
+          "S'équiper avec le harnais",
+          "Attacher la corde avec connecteur automatique sur demi-lune",
+          "Réguler la descente"
+        ],
+        "chef_agres": ["Contrôler la descente"]
+      },
+      "variante_point_fixe_humain": {
+        "hauteur_min_descendeur": 20,
+        "position": "Allongé jambes à 90° contre le mur"
+      }
+    },
+    "sauvetage_exterieur": {
+      "description": "Dégager une victime consciente, inconsciente ou invalide",
+      "dispositif": "Descente",
+      "procedure": {
+        "chef_equipe": [
+          "Se munir du LSPCC et de la commande",
+          "S'assurer de la faisabilité du dispositif",
+          "Choisir 1 ou 2 points d'ancrage",
+          "Approcher la victime jusqu'au point de dégagement",
+          "Installer amarrage principal avec corde",
+          "Contrôler la descente"
+        ],
+        "equipier": [
+          "Équiper la victime avec le triangle",
+          "Attacher corde et commande sur le triangle",
+          "Engager la victime au vide",
+          "Réguler la descente"
+        ]
+      },
+      "passage_vide_inconscient": {
+        "etapes": [
+          "Attacher la corde sur le connecteur automatique",
+          "Installer victime sur le ventre, pieds face à l'ouvrant",
+          "Un sauveteur de chaque côté maintient bretelles dorsales et genoux",
+          "Lever simultanément sans lâcher le garant"
+        ]
+      }
+    },
+    "reconnaissance_appartement": {
+      "description": "Accéder à un appartement depuis l'extérieur afin de le reconnaître",
+      "conditions": "En fonction de l'urgence, si façade non accessible aux échelles",
+      "dispositif": "Descente ou Horizontal",
+      "equipement_obligatoire": "Deux harnais (régulateur + sauveteur)",
+      "detachement": {
+        "conditions": "Sol stable et aucun risque ne subsiste",
+        "equipement_reconnaissance": [
+          "Émetteur récepteur radio",
+          "Outil de force et déblai",
+          "Appareil de détection",
+          "Gilet pare lame"
+        ],
+        "annonce": "Nous sommes les sapeurs-pompiers"
+      },
+      "itineraires": {
+        "repli": "Longueur utile de corde atteignant RDC ou niveau intermédiaire",
+        "secours": "Échelle à crochets appuyée au plus proche du point à atteindre"
+      }
+    },
+    "sauvetage_excavation": {
+      "description": "Dégager une victime en excavation",
+      "dispositif": "Descente et Remontée",
+      "equipement": {
+        "bin1": "LSPCC avec dispositif de descente",
+        "bin2": "Triangle, commande, cordelettes pour remontée"
+      },
+      "ancrages": {
+        "dormant": "Pour la déviation/mouflage",
+        "tirant": "Pour la descente contrôlée"
+      },
+      "configurations": [
+        "1 LSPCC avec 1 ou 2 points d'ancrage",
+        "2 LSPCC avec 2 points d'ancrage",
+        "2 LSPCC avec 1 point d'ancrage dormant"
+      ],
+      "attention": "Protection de la corde au dormant contre cisaillement"
+    },
+    "evolution_risque_chute": {
+      "description": "Évoluer depuis un point d'ancrage",
+      "dispositif": "Protection contre les chutes",
+      "procedure": {
+        "chef_equipe": [
+          "S'assurer de la faisabilité",
+          "Choisir 1 ou 2 points d'ancrage",
+          "Installer amarrage principal avec corde"
+        ],
+        "equipier": [
+          "S'équiper avec le harnais",
+          "Attacher corde avec connecteur automatique",
+          "Réguler l'évolution"
+        ],
+        "bin2": "Mettre en œuvre échelle à coulisse au besoin"
+      },
+      "amarrages_intermediaires": {
+        "objectif": "Maintenir facteur de chute aussi faible que possible",
+        "vigilance": "Aux abords des rives"
+      },
+      "technique_opposition": "Commande projetée par-dessus la toiture",
+      "evaluation_charpente": "Inspection depuis l'intérieur ou retrait tuiles sur 1m²",
+      "mea_panier": {
+        "conditions": [
+          "Ne pas être à capacité maximale du MEA",
+          "Réaliser éléments de sécurité (arrêt urgence, coupure moteur)",
+          "Amarrage sur montants supérieurs structure extensible (pas crochets panier)"
+        ]
+      }
+    }
+  },
+  "techniques_particulieres": {
+    "securisation_echelle_crochets": {
+      "etapes": [
+        "Placer amarrage intermédiaire au sommet (sangle de part et d'autre de l'échelon)",
+        "Passer sangle sur entretoise proche des montants",
+        "Placer amarrage principal à la base",
+        "S'équiper du harnais et attacher connecteur automatique",
+        "Un intervenant sécurise la progression au niveau du garant"
+      ]
+    },
+    "securisation_echelle_coulisse": {
+      "etapes": [
+        "Placer amarrage intermédiaire au sommet (sangle de part et d'autre du 2ème plan)",
+        "Passer sangle à l'échelon proche du sommet",
+        "Dresser, développer et appuyer l'échelle",
+        "Placer amarrage principal à la base (sangle de part et d'autre du 1er plan)",
+        "S'équiper du harnais et attacher connecteur automatique",
+        "Un intervenant sécurise la progression"
+      ]
+    },
+    "securisation_mea": {
+      "etapes": [
+        "Placer amarrage intermédiaire au sommet (sangle sur premier plan)",
+        "Passer la corde sur la structure extensible",
+        "Dresser et développer",
+        "Placer amarrage principal à la base (sangle sur le plan)",
+        "Tendre la corde au milieu de l'échelle et réaliser clé d'arrêt",
+        "Mettre antichute mobile sur corde et attacher à demi-lune du harnais"
+      ],
+      "verrouillage": "Par vis et par loquet"
+    }
+  },
+  "annexes": {
+    "noeud_8_double": {
+      "description": "Nœud utilisé aux extrémités de la corde",
+      "longueur_boucle": 60,
+      "longueur_courant_min": 5,
+      "longueur_courant_max": 7,
+      "longueur_reserve": 10,
+      "perte_resistance": 30,
+      "gaine_thermo": true
+    },
+    "noeud_francais": {
+      "description": "Permet traction ou sécurisation d'une charge",
+      "nombre_tours": 3,
+      "conseil": "Serrer convenablement pour faciliter le glissement"
+    },
+    "cle_arret": {
+      "description": "Sécurisation du descendeur quand garant ne peut être maintenu",
+      "etapes": [
+        "Demi-clé d'arrêt",
+        "Tour complet autour du descendeur",
+        "Blocage final"
+      ],
+      "regles": [
+        "Pas de clé d'arrêt lors du passage au vide en sauvetage",
+        "Régulateur doit maintenir le garant pendant tout le dispositif"
+      ]
+    },
+    "dispositif_repartition": {
+      "description": "Répartir l'effort sur deux points d'ancrage différents",
+      "methode": "Répartiteur de charge de plein poing",
+      "etapes": [
+        "Chaque ancrage muni d'un dispositif d'amarrage",
+        "Insérer chaque brin d'une sangle rouge sur chaque connecteur",
+        "Diriger sangle rouge répartitrice vers la charge",
+        "Effectuer nœud de plein poing",
+        "Ajuster jusqu'à répartition"
+      ],
+      "perte_resistance": 15
+    },
+    "securisation_charge": {
+      "description": "Sécuriser charge en cas de lâcher du garant",
+      "methode": "Nœud Français sur le tirant + amarrage intermédiaire",
+      "restriction": "Non réalisé sur descente sauvetage ou remontée"
+    },
+    "sangle_rouge_harnais": {
+      "description": "Transformation en situation d'extrême urgence avec ARI-CO",
+      "etapes": [
+        "Passer haut de sangle sous châssis ARI-CO, bas au niveau des fesses",
+        "Attacher les deux brins avec connecteur à vis",
+        "Solidariser le brin sous les fesses",
+        "Installer descendeur avec corde",
+        "Se positionner au sol jambes à 90°"
+      ]
+    },
+    "entretien": {
+      "textiles": {
+        "lavage": "Eau ≤30°C à la main",
+        "sechage": "À plat, local tempéré ≤30°C, ventilé, à l'abri des UV",
+        "interdit": "Nettoyeur sous pression"
+      },
+      "metalliques": {
+        "lavage": "Eau exclusivement ≤40°C",
+        "sechage": "Naturellement loin des sources de chaleur",
+        "controle": "Mécanisme de fermeture"
+      },
+      "duree_vie_max": 10,
+      "causes_reforme": [
+        "Marquage absent ou illisible",
+        "Exposition/trace produit corrosif, chimique, solvant, carburant",
+        "Partie décolorée, brûlée ou fondue",
+        "Corde avec variation longueur, diamètre ou souplesse",
+        "Textiles avec fils tirés, coupés, abrasés ou déchirés",
+        "Métalliques avec trace de choc, déformation, usure, fissure, visserie défectueuse"
+      ]
+    },
+    "code_itn_couleurs": {
+      "description": "Année de fabrication d'une corde",
+      "codes": {
+        "000": "Rouge",
+        "001": "Orange",
+        "002": "Jaune",
+        "003": "Vert clair",
+        "004": "Vert foncé",
+        "005": "Bleu clair",
+        "006": "Bleu foncé",
+        "007": "Violet",
+        "008": "Rose",
+        "009": "Gris"
+      }
+    }
+  },
+  "normes_references": [
+    {"norme": "NF EN 358", "objet": "Ceintures et longes de maintien au travail ou de retenue"},
+    {"norme": "NF EN 1891", "objet": "Cordes"},
+    {"norme": "NF EN 795", "objet": "Dispositifs d'ancrage"},
+    {"norme": "NF EN 12278", "objet": "Poulies"},
+    {"norme": "NF EN 341", "objet": "Descendeurs"},
+    {"norme": "NF EN 566", "objet": "Sangles"},
+    {"norme": "NF EN 362", "objet": "Connecteurs"},
+    {"norme": "NF EN 1497", "objet": "Harnais"}
+  ],
+  "alertes_securite": [
+    "En cas de doute sur l'ancrage, en choisir un autre ou demander équipe SMPM",
+    "Hauteur descendeur-appui ≥20cm pour point fixe humain",
+    "Facteurs >1 interdits",
+    "Mannequin obligatoire pour actions de formation",
+    "Contrôle préalable atmosphère viciée avec détecteur multigaz",
+    "Renseigner cahier de suivi après chaque utilisation",
+    "KIMOCE obligatoire si chute constatée ou doute sur agrès"
+  ],
+  "fmo": {
+    "description": "Fiches Matériel Opérationnel - SDIS 34",
+    "version": "11/2025",
+    "fiches": {
+      "epi_n3_antichute_mobile": {
+        "reference": "F.M.O EPI N°3",
+        "nom": "Antichute Mobile",
+        "affectation": "Sac de transport du lot échelle",
+        "description": "Antichute mobile",
+        "caracteristiques": {
+          "diametre_mm": 12,
+          "resistance_mecanique_kg": 1500,
+          "resistance_thermique_celsius": 230,
+          "charge_max_utilisation_kg": 140,
+          "matiere": "Acier",
+          "prix_euros": 108
+        },
+        "interet_operationnel": "Sécuriser la progression sur la structure extensible lors d'une action de formation. En opération, peut ne pas être utilisé selon l'urgence.",
+        "securite": [
+          "Vérifier bon verrouillage (loquet et vis) avant progression",
+          "Respecter sens de fonctionnement (flèche vers le haut)",
+          "Faire coulisser sur corde en légère tension via amarrage initial et intermédiaire"
+        ],
+        "entretien": {
+          "controle": "G.T.L annuellement ou après chute opérateur",
+          "nettoyage": "Chiffon humide sans détergent",
+          "sechage": "Air libre ou chiffon doux"
+        },
+        "mise_en_oeuvre": "Voir R.D.L.S.P.C.C."
+      },
+      "epi_n2_longe_antichute": {
+        "reference": "F.M.O EPI N°2",
+        "nom": "Longe Antichute",
+        "affectation": "Deux par lot E.P.I - M.E.A (MEA avec panier de secours 400 kg)",
+        "description": "Longe antichute à rappel automatique avec absorbeur d'énergie",
+        "caracteristiques": {
+          "longueur_m": 1.75,
+          "largeur_cm": 2.5,
+          "resistance_mecanique_kg": 1500,
+          "charge_max_utilisation_kg": 140,
+          "matiere": "Textile",
+          "prix_euros": 103
+        },
+        "interet_operationnel": [
+          "Sécuriser les opérateurs en panier de secours",
+          "Protection lors des passages au vide depuis le panier de secours"
+        ],
+        "securite": [
+          "Contrôle G.T.L annuellement ou après chute opérateur",
+          "Utilisation uniquement sur paniers 400 kg avec crochet NF EN 795",
+          "Un seul opérateur par crochet",
+          "Ne jamais atteindre capacité maximale du M.E.A"
+        ],
+        "mise_en_oeuvre": {
+          "etape_1": "Vérifier attachement longe à demi-lune du harnais via connecteur automatique noir",
+          "etape_2": "Attacher connecteur automatique argenté sur crochet NF EN 795 du panier",
+          "etape_3": "Effectuer passage au vide sans se détacher de la longe",
+          "etape_4": "Une fois sécurisé, se détacher et attacher longe sur panier pour autonomie MEA"
+        },
+        "entretien": {
+          "nettoyage": "Chiffon humide sans détergent",
+          "sechage": "Air libre ou chiffon doux"
+        }
+      },
+      "ep_n2_porte_outils": {
+        "reference": "F.M.O EP N°2",
+        "nom": "Porte Outils L.S.P.C.C",
+        "plus_value": "Organisation simple et standardisée des agrès textiles et métalliques. Mise en œuvre rapide et efficace lors des interventions.",
+        "conception": {
+          "responsable": "Centres d'incendies et de secours",
+          "materiau": "Tuyau de Ø70 mm hors d'usage (recyclage)",
+          "but": "Solution fonctionnelle adaptée aux besoins opérationnels"
+        },
+        "dimensions": {
+          "lot_engin": {
+            "longueur_porte_outils_m": 1.1,
+            "longueur_coupe_poche_cm": 10,
+            "espace_entre_poches_cm": 3
+          },
+          "lot_echelle": {
+            "longueur_porte_outils_m": 1.5,
+            "longueur_coupe_poche_cm": 10,
+            "espace_entre_poches_cm": 3
+          }
+        },
+        "rangement": "Insérer agrès dans les poches, partie textile vers le bas ou horizontalement"
+      }
+    }
+  }
+}

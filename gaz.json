@@ -1,0 +1,212 @@
+{
+  "methane": {
+    "nom": "Méthane",
+    "formule": "CH₄",
+    "lie": 5.0
+  },
+  "ethane": {
+    "nom": "Éthane",
+    "formule": "C₂H₆",
+    "lie": 3.0
+  },
+  "propane": {
+    "nom": "Propane",
+    "formule": "C₃H₈",
+    "lie": 2.1
+  },
+  "butane": {
+    "nom": "Butane",
+    "formule": "C₄H₁₀",
+    "lie": 1.8
+  },
+  "isobutane": {
+    "nom": "Isobutane",
+    "formule": "C₄H₁₀",
+    "lie": 1.8
+  },
+  "pentane": {
+    "nom": "Pentane",
+    "formule": "C₅H₁₂",
+    "lie": 1.4
+  },
+  "hexane": {
+    "nom": "Hexane",
+    "formule": "C₆H₁₄",
+    "lie": 1.2
+  },
+  "heptane": {
+    "nom": "Heptane",
+    "formule": "C₇H₁₆",
+    "lie": 1.05
+  },
+  "octane": {
+    "nom": "Octane",
+    "formule": "C₈H₁₈",
+    "lie": 1.0
+  },
+  "nonane": {
+    "nom": "Nonane",
+    "formule": "C₉H₂₀",
+    "lie": 0.85
+  },
+  "decane": {
+    "nom": "Décane",
+    "formule": "C₁₀H₂₂",
+    "lie": 0.75
+  },
+  "dodecane": {
+    "nom": "Dodécane",
+    "formule": "C₁₂H₂₆",
+    "lie": 0.6
+  },
+  "ethylene": {
+    "nom": "Éthylène",
+    "formule": "C₂H₄",
+    "lie": 2.7
+  },
+  "propylene": {
+    "nom": "Propylène",
+    "formule": "C₃H₆",
+    "lie": 2.0
+  },
+  "butene": {
+    "nom": "Butène",
+    "formule": "C₄H₈",
+    "lie": 1.6
+  },
+  "benzene": {
+    "nom": "Benzène",
+    "formule": "C₆H₆",
+    "lie": 1.2
+  },
+  "toluene": {
+    "nom": "Toluène",
+    "formule": "C₇H₈",
+    "lie": 1.1
+  },
+  "xylene": {
+    "nom": "Xylène",
+    "formule": "C₈H₁₀",
+    "lie": 1.0
+  },
+  "styrene": {
+    "nom": "Styrène",
+    "formule": "C₈H₈",
+    "lie": 1.1
+  },
+  "acetylene": {
+    "nom": "Acétylène",
+    "formule": "C₂H₂",
+    "lie": 2.5
+  },
+  "essence": {
+    "nom": "Essence (mélange)",
+    "formule": "C₄-C₁₂",
+    "lie": 1.4
+  },
+  "diesel": {
+    "nom": "Diesel/Gazole",
+    "formule": "C₁₀-C₂₂",
+    "lie": 0.6
+  },
+  "kerosene": {
+    "nom": "Kérosène",
+    "formule": "C₉-C₁₆",
+    "lie": 0.7
+  },
+  "gpl": {
+    "nom": "GPL (Butane/Propane)",
+    "formule": "C₃-C₄",
+    "lie": 1.8
+  },
+  "gnr": {
+    "nom": "GNR (Gaz Naturel)",
+    "formule": "CH₄ + C₂H₆",
+    "lie": 4.5
+  },
+  "gnl": {
+    "nom": "GNL (Gaz Naturel Liquéfié)",
+    "formule": "CH₄",
+    "lie": 5.0
+  },
+  "gnv": {
+    "nom": "GNV (Gaz Naturel Véhicule)",
+    "formule": "CH₄",
+    "lie": 5.0
+  },
+  "gpl_auto": {
+    "nom": "GPL Auto",
+    "formule": "C₃H₈/C₄H₁₀",
+    "lie": 1.9
+  },
+  "methanol": {
+    "nom": "Méthanol",
+    "formule": "CH₃OH",
+    "lie": 6.7
+  },
+  "ethanol": {
+    "nom": "Éthanol",
+    "formule": "C₂H₅OH",
+    "lie": 3.3
+  },
+  "propanol": {
+    "nom": "Propanol",
+    "formule": "C₃H₇OH",
+    "lie": 2.1
+  },
+  "butanol": {
+    "nom": "Butanol",
+    "formule": "C₄H₉OH",
+    "lie": 1.4
+  },
+  "ether": {
+    "nom": "Éther diéthylique",
+    "formule": "C₄H₁₀O",
+    "lie": 1.9
+  },
+  "mtbe": {
+    "nom": "MTBE (additif essence)",
+    "formule": "C₅H₁₂O",
+    "lie": 1.5
+  },
+  "acetone": {
+    "nom": "Acétone",
+    "formule": "C₃H₆O",
+    "lie": 2.5
+  },
+  "mek": {
+    "nom": "MEK (Butanone)",
+    "formule": "C₄H₈O",
+    "lie": 1.8
+  },
+  "hydrogene": {
+    "nom": "Hydrogène",
+    "formule": "H₂",
+    "lie": 4.0
+  },
+  "monoxyde": {
+    "nom": "Monoxyde de carbone",
+    "formule": "CO",
+    "lie": 12.5
+  },
+  "ammoniac": {
+    "nom": "Ammoniac",
+    "formule": "NH₃",
+    "lie": 15.0
+  },
+  "propane_oxy": {
+    "nom": "Oxyde de propylène",
+    "formule": "C₃H₆O",
+    "lie": 2.3
+  },
+  "butadiene": {
+    "nom": "Butadiène",
+    "formule": "C₄H₆",
+    "lie": 2.0
+  },
+  "isoprene": {
+    "nom": "Isoprène",
+    "formule": "C₅H₈",
+    "lie": 1.5
+  }
+}
