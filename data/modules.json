@@ -1,0 +1,616 @@
+[
+  {
+    "id": "fire",
+    "name": "Puissance Feu/Extinction",
+    "keywords": [
+      "feu",
+      "puissance",
+      "fenêtre",
+      "porte",
+      "incendie",
+      "débit",
+      "extinction"
+    ]
+  },
+  {
+    "id": "pertes",
+    "name": "Pertes de Charge",
+    "keywords": [
+      "pertes",
+      "charge",
+      "pression",
+      "tuyau",
+      "débit"
+    ]
+  },
+  {
+    "id": "tmd",
+    "name": "TMD",
+    "keywords": [
+      "tmd",
+      "matières dangereuses",
+      "onu",
+      "transport",
+      "chimique"
+    ]
+  },
+  {
+    "id": "ari",
+    "name": "Calcul ARI",
+    "keywords": [
+      "ari",
+      "appareil respiratoire",
+      "autonomie",
+      "calcul",
+      "temps",
+      "bouteille",
+      "pression",
+      "consommation"
+    ]
+  },
+  {
+    "id": "distances",
+    "name": "Distances Sécurité",
+    "keywords": [
+      "distance",
+      "sécurité",
+      "gaz",
+      "électrique",
+      "bleve",
+      "périmètre"
+    ]
+  },
+  {
+    "id": "rdmi-menu",
+    "name": "RDMI - Référentiel Manœuvres",
+    "keywords": [
+      "rdmi",
+      "référentiel",
+      "manœuvres",
+      "incendie",
+      "habitation",
+      "famille",
+      "pei",
+      "binôme",
+      "smes",
+      "établissement",
+      "mgo",
+      "hydraulique",
+      "colonne",
+      "sèche"
+    ]
+  },
+  {
+    "id": "rdmi-habitations",
+    "name": "RDMI - Familles Habitation",
+    "keywords": [
+      "famille",
+      "habitation",
+      "igh",
+      "immeuble",
+      "colonne",
+      "sèche",
+      "1ère",
+      "2ème",
+      "3ème",
+      "4ème"
+    ]
+  },
+  {
+    "id": "rdmi-hydraulique",
+    "name": "RDMI - Hydraulique",
+    "keywords": [
+      "hydraulique",
+      "pertes",
+      "charge",
+      "pression",
+      "dénivelé",
+      "tuyau"
+    ]
+  },
+  {
+    "id": "rdmi-binomes",
+    "name": "RDMI - Binômes & Armement",
+    "keywords": [
+      "binôme",
+      "armement",
+      "epi",
+      "conducteur",
+      "chef",
+      "équipe",
+      "protection"
+    ]
+  },
+  {
+    "id": "rdmi-smes",
+    "name": "RDMI - SMES",
+    "keywords": [
+      "smes",
+      "situation",
+      "mission",
+      "exécution",
+      "sécurité",
+      "tactique",
+      "raisonnement"
+    ]
+  },
+  {
+    "id": "rdmi-etablissements",
+    "name": "RDMI - Établissements",
+    "keywords": [
+      "établissement",
+      "etb",
+      "ldv",
+      "ldt",
+      "lance",
+      "tuyau",
+      "alimentation"
+    ]
+  },
+  {
+    "id": "rdmi-mgo",
+    "name": "RDMI - MGO",
+    "keywords": [
+      "mgo",
+      "marche",
+      "générale",
+      "opérations",
+      "sauvetage",
+      "reconnaissance",
+      "attaque"
+    ]
+  },
+  {
+    "id": "rdmi-zones",
+    "name": "RDMI - Zones",
+    "keywords": [
+      "zone",
+      "exclusion",
+      "contrôlée",
+      "soutien",
+      "façade",
+      "pca"
+    ]
+  },
+  {
+    "id": "suap-menu",
+    "name": "RT SUAP - Référentiel Secours",
+    "keywords": [
+      "suap",
+      "secours",
+      "personne",
+      "victime",
+      "bilan",
+      "rcp",
+      "brûlure",
+      "hémorragie",
+      "trauma"
+    ]
+  },
+  {
+    "id": "suap-ages",
+    "name": "SUAP - Âges & Définitions",
+    "keywords": [
+      "age",
+      "juste-né",
+      "nouveau-né",
+      "nourrisson",
+      "enfant",
+      "adulte",
+      "définition"
+    ]
+  },
+  {
+    "id": "suap-rcp",
+    "name": "SUAP - RCP",
+    "keywords": [
+      "rcp",
+      "réanimation",
+      "massage",
+      "cardiaque",
+      "insufflation",
+      "dsa",
+      "acr",
+      "pouls"
+    ]
+  },
+  {
+    "id": "suap-hemorragies",
+    "name": "SUAP - Hémorragies",
+    "keywords": [
+      "hémorragie",
+      "garrot",
+      "pcu",
+      "pansement",
+      "compression",
+      "saignement"
+    ]
+  },
+  {
+    "id": "suap-brulures",
+    "name": "SUAP - Brûlures",
+    "keywords": [
+      "brûlure",
+      "wallace",
+      "refroidissement",
+      "thermique",
+      "chimique",
+      "grave"
+    ]
+  },
+  {
+    "id": "suap-bilan",
+    "name": "SUAP - Bilan",
+    "keywords": [
+      "bilan",
+      "evda",
+      "douleur",
+      "evs",
+      "vigilance",
+      "surveillance"
+    ]
+  },
+  {
+    "id": "suap-oxygene",
+    "name": "SUAP - Oxygène",
+    "keywords": [
+      "oxygène",
+      "o2",
+      "débit",
+      "mhc",
+      "lunettes",
+      "inhalation",
+      "bavu"
+    ]
+  },
+  {
+    "id": "suap-trauma",
+    "name": "SUAP - Traumatismes",
+    "keywords": [
+      "trauma",
+      "bassin",
+      "pelvienne",
+      "contention",
+      "pouls",
+      "pédieux",
+      "membre"
+    ]
+  },
+  {
+    "id": "suap-accouchement",
+    "name": "SUAP - Accouchement",
+    "keywords": [
+      "accouchement",
+      "juste-né",
+      "transport",
+      "enceinte",
+      "naissance"
+    ]
+  },
+  {
+    "id": "sal-menu",
+    "name": "SAL/SAV - Milieu Aquatique",
+    "keywords": [
+      "sal",
+      "sav",
+      "plongée",
+      "aquatique",
+      "hyperbare",
+      "scaphandrier",
+      "nautique"
+    ]
+  },
+  {
+    "id": "sal-niveaux",
+    "name": "SAL - Niveaux & Emplois",
+    "keywords": [
+      "sal1",
+      "sal2",
+      "sal3",
+      "niveau",
+      "emploi",
+      "chef unité",
+      "conseiller technique"
+    ]
+  },
+  {
+    "id": "sal-profondeurs",
+    "name": "SAL - Profondeurs",
+    "keywords": [
+      "profondeur",
+      "habilitation",
+      "qualification",
+      "classe",
+      "30m",
+      "50m",
+      "60m"
+    ]
+  },
+  {
+    "id": "sal-missions",
+    "name": "SAL - Missions",
+    "keywords": [
+      "mission",
+      "sauvetage",
+      "prompt secours",
+      "recherche",
+      "noyade",
+      "travaux"
+    ]
+  },
+  {
+    "id": "sal-organisation",
+    "name": "SAL - Organisation",
+    "keywords": [
+      "organisation",
+      "binôme",
+      "équipe",
+      "directeur plongée",
+      "unité"
+    ]
+  },
+  {
+    "id": "sal-methodes",
+    "name": "SAL - Méthodes",
+    "keywords": [
+      "méthode",
+      "air",
+      "nitrox",
+      "trimix",
+      "narguilé",
+      "surface non libre"
+    ]
+  },
+  {
+    "id": "sal-tables",
+    "name": "SAL - Tables MT2012",
+    "keywords": [
+      "table",
+      "mt2012",
+      "palier",
+      "décompression",
+      "vitesse",
+      "remontée"
+    ]
+  },
+  {
+    "id": "sal-securite",
+    "name": "SAL - Sécurité",
+    "keywords": [
+      "sécurité",
+      "durée",
+      "température",
+      "refus",
+      "nuisance"
+    ]
+  },
+  {
+    "id": "sal-accidents",
+    "name": "SAL - Accidents",
+    "keywords": [
+      "accident",
+      "add",
+      "barotraumatisme",
+      "narcose",
+      "décompression",
+      "hyperoxie"
+    ]
+  },
+  {
+    "id": "sal-calculateur",
+    "name": "SAL - Calculateur Paliers",
+    "keywords": [
+      "calculateur",
+      "palier",
+      "table",
+      "mt2012",
+      "décompression",
+      "dtr",
+      "gps"
+    ]
+  },
+  {
+    "id": "ia-manoeuvre",
+    "name": "Générateur IA Manœuvre",
+    "keywords": [
+      "ia",
+      "intelligence",
+      "artificielle",
+      "manoeuvre",
+      "scenario",
+      "entrainement",
+      "générateur"
+    ]
+  },
+  {
+    "id": "secours",
+    "name": "Secours Routier",
+    "keywords": [
+      "secours",
+      "routier",
+      "désincarcération",
+      "accident",
+      "véhicule"
+    ]
+  },
+  {
+    "id": "epuisement",
+    "name": "Épuisement",
+    "keywords": [
+      "épuisement",
+      "pompage",
+      "eau",
+      "débit",
+      "volume",
+      "temps"
+    ]
+  },
+  {
+    "id": "electrique",
+    "name": "Lignes Électriques",
+    "keywords": [
+      "électrique",
+      "ligne",
+      "haute tension",
+      "BT",
+      "HTA"
+    ]
+  },
+  {
+    "id": "risques-gaz-menu",
+    "name": "Risques GAZ",
+    "keywords": [
+      "gaz",
+      "explosimètre",
+      "bouteille",
+      "explosif",
+      "atmosphère",
+      "ogive",
+      "risque"
+    ]
+  },
+  {
+    "id": "explosimetrie",
+    "name": "Explosimétrie",
+    "keywords": [
+      "explosimètre",
+      "LII",
+      "gaz",
+      "explosif",
+      "atmosphère"
+    ]
+  },
+  {
+    "id": "bouteilles",
+    "name": "Bouteilles de Gaz",
+    "keywords": [
+      "bouteille",
+      "gaz",
+      "ogive",
+      "couleur",
+      "refroidissement"
+    ]
+  },
+  {
+    "id": "extincteurs",
+    "name": "Extincteurs",
+    "keywords": [
+      "extincteur",
+      "surface",
+      "protection"
+    ]
+  },
+  {
+    "id": "distance-calc",
+    "name": "Calcul Distances",
+    "keywords": [
+      "distance",
+      "calcul",
+      "périmètre",
+      "surface",
+      "pythagore"
+    ]
+  },
+  {
+    "id": "impm-menu",
+    "name": "IMPM - Milieu Périlleux",
+    "keywords": [
+      "impm",
+      "smpm",
+      "milieu périlleux",
+      "montagne",
+      "canyon",
+      "souterrain",
+      "spéléo",
+      "hauteur",
+      "vertical",
+      "corde",
+      "secours montagne"
+    ]
+  },
+  {
+    "id": "impm-milieux",
+    "name": "IMPM - Les 4 Milieux",
+    "keywords": [
+      "milieux",
+      "souterrain",
+      "canyon",
+      "montagne",
+      "périlleux"
+    ]
+  },
+  {
+    "id": "impm-souterrain",
+    "name": "IMPM - Milieu Souterrain",
+    "keywords": [
+      "souterrain",
+      "grotte",
+      "spéléo",
+      "cavité",
+      "mine"
+    ]
+  },
+  {
+    "id": "impm-canyon",
+    "name": "IMPM - Milieu Canyon",
+    "keywords": [
+      "canyon",
+      "canyoning",
+      "eau vive",
+      "gorge"
+    ]
+  },
+  {
+    "id": "impm-montagne",
+    "name": "IMPM - Milieu Montagne",
+    "keywords": [
+      "montagne",
+      "haute montagne",
+      "alpinisme",
+      "glacier"
+    ]
+  },
+  {
+    "id": "impm-risques",
+    "name": "IMPM - Risques & Sécurité",
+    "keywords": [
+      "risques",
+      "sécurité",
+      "epi",
+      "protection"
+    ]
+  },
+  {
+    "id": "impm-acteurs",
+    "name": "IMPM - Acteurs & Partenaires",
+    "keywords": [
+      "acteurs",
+      "partenaires",
+      "pghm",
+      "ssf",
+      "spéléo secours"
+    ]
+  },
+  {
+    "id": "impm-organisation",
+    "name": "IMPM - Organisation Opérationnelle",
+    "keywords": [
+      "organisation",
+      "équipe",
+      "équipier",
+      "chef unité",
+      "cos"
+    ]
+  },
+  {
+    "id": "impm-conduite",
+    "name": "IMPM - Conduite Opérations",
+    "keywords": [
+      "conduite",
+      "opération",
+      "zonage",
+      "mgo",
+      "reconnaissance"
+    ]
+  }
+]
