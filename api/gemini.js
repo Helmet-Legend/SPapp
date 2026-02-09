@@ -1,4 +1,4 @@
-// api/gemini.js - Fonction serverless Vercel
+// api/gemini.js - Fonction serverless Vercel (Corrigée)
 export default async function handler(req, res) {
     // CORS headers
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -22,16 +22,16 @@ export default async function handler(req, res) {
             return res.status(400).json({ error: 'Le prompt est requis' });
         }
 
-        // Clé API Gemini stockée dans les variables d'environnement Vercel
+        // Clé API Gemini récupérée depuis les variables d'environnement Vercel
         const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
         if (!GEMINI_API_KEY) {
             return res.status(500).json({ error: 'Clé API non configurée sur le serveur' });
         }
 
-        // Appel à l'API Gemini
+        // CORRECTION : Passage en v1beta et utilisation de gemini-2.0-flash
         const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
             {
                 method: 'POST',
                 headers: {
