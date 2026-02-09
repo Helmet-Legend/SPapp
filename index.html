@@ -5867,6 +5867,12 @@
                 <div style="font-size: 1.1em; font-weight: 700;">Accouchement</div>
                 <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Juste-né, Transport</div>
             </button>
+            
+            <button onclick="showModule('suap-ecg')" style="background: linear-gradient(135deg, #00695C 0%, #00897B 100%); border: 3px solid #00897B; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
+                <div style="font-size: 2.8em; margin-bottom: 8px;">📈</div>
+                <div style="font-size: 1.1em; font-weight: 700;">Électrocardiogramme</div>
+                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">ECG 12D - Touch 7</div>
+            </button>
         </div>
         
         <div class="warning-box" style="margin-top: 25px; background: rgba(0, 137, 123, 0.1); border: 2px solid #00897B;">
@@ -6491,6 +6497,281 @@
             </div>
         </div>
     </div>
+<!-- Module SUAP - Électrocardiogramme -->
+<div id="suap-ecg" class="module">
+    <button class="back-btn" onclick="showModule('suap-menu')">← Retour SUAP</button>
+    <h2 style="color: #00897B; border-bottom: 3px solid #00897B;">📈 Électrocardiogramme (ECG)</h2>
+    <p style="text-align: center; margin-bottom: 25px; color: var(--text-secondary); font-weight: 600;">
+        SSUAP-FTO-48 - Fiche Technique Opérationnelle
+    </p>
+
+    <!-- BLOC MATÉRIEL ET ÉQUIPIERS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 25px;">
+        <div style="background: linear-gradient(135deg, #E1F5FE 0%, #B3E5FC 100%); padding: 20px; border-radius: 12px; border-left: 5px solid #0288D1;">
+            <h3 style="color: #01579B; margin-bottom: 12px;">👤 Nombre d'équipiers</h3>
+            <p style="font-size: 2em; font-weight: 700; color: #0277BD; margin: 0;">1 Équipier</p>
+        </div>
+        
+        <div style="background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); padding: 20px; border-radius: 12px; border-left: 5px solid #F57C00;">
+            <h3 style="color: #E65100; margin-bottom: 12px;">🔧 Matériel</h3>
+            <p style="font-weight: 700; color: #E65100;">Appareil multiparamétrique</p>
+            <p style="font-size: 1.1em; color: #BF360C;">Defigard Touch 7</p>
+        </div>
+    </div>
+
+    <!-- INDICATIONS -->
+    <div style="background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #388E3C;">
+        <h3 style="color: #1B5E20; margin-bottom: 15px;">ℹ️ Indications</h3>
+        <p style="line-height: 1.8; color: #2E7D32;">
+            À la demande du <strong>médecin régulateur</strong> ou du <strong>médecin sur place</strong> en fonction du bilan télétransmis par le CDA.
+        </p>
+    </div>
+
+    <!-- JUSTIFICATION -->
+    <div style="background: linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #F9A825;">
+        <h3 style="color: #F57F17; margin-bottom: 15px;">❓ Justification</h3>
+        <p style="line-height: 1.8; color: #E65100;">
+            L'électrocardiogramme permet la <strong>levée de doute</strong> concernant un problème cardiaque. 
+            Il permet au médecin régulateur de prendre sa décision sur l'envoi ou non d'une équipe SMUR 
+            et d'<strong>orienter la victime sur le bon plateau technique</strong>.
+        </p>
+    </div>
+
+    <!-- RÉALISATION -->
+    <div style="background: linear-gradient(135deg, #E8EAF6 0%, #C5CAE9 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #3F51B5;">
+        <h3 style="color: #1A237E; margin-bottom: 15px;">⚙️ Réalisation</h3>
+        
+        <div style="background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+            <p style="font-weight: 700; color: #C62828; margin-bottom: 10px;">
+                ⚠️ La réalisation de l'ECG se fera <strong>UNIQUEMENT</strong> à la demande du médecin régulateur ou du médecin sur place,
+                ce qui impose un bilan clinique et circonstanciel complet.
+            </p>
+        </div>
+
+        <h4 style="color: #3F51B5; margin: 20px 0 10px 0;">📋 Procédure :</h4>
+        <ul style="line-height: 2; color: #1A237E;">
+            <li>✅ Installer confortablement la victime <strong>sur le dos</strong></li>
+            <li>✅ Écarter tout appareil électronique (montre, portable...) ou objet métallique pouvant entrer en contact avec la victime (barrière du brancard par exemple)</li>
+            <li>✅ S'assurer que les câbles de connexion entre l'appareil et les électrodes sont correctement connectés</li>
+            <li>✅ Demander à la victime de <strong>dénuder sa poitrine</strong></li>
+            <li>✅ Positionner les électrodes et les brancher aux câbles correspondants</li>
+            <li>✅ Demander à la victime de ne pas parler, de ne pas bouger et de respirer calmement, ou mieux <strong>en apnée</strong> si la victime le peut, lors de l'acquisition</li>
+        </ul>
+
+        <h4 style="color: #3F51B5; margin: 20px 0 10px 0;">🔧 Étapes détaillées :</h4>
+        <ol style="line-height: 2; color: #1A237E;">
+            <li><strong>Raser</strong> les poils de la zone où seront collées les électrodes si nécessaire</li>
+            <li><strong>Positionner</strong> les électrodes des extrémités (dérivations périphériques)</li>
+            <li><strong>Placer</strong> les électrodes précordiales aux endroits indiqués</li>
+            <li><strong>Brancher</strong> les câbles sur les électrodes correspondantes</li>
+            <li><strong>Réaliser</strong> l'ECG</li>
+        </ol>
+    </div>
+
+    <!-- POSITIONNEMENT DES ÉLECTRODES -->
+    <div style="background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #C2185B;">
+        <h3 style="color: #880E4F; margin-bottom: 15px;">📍 Positionnement des Électrodes</h3>
+        
+        <h4 style="color: #AD1457; margin: 20px 0 15px 0;">🔴 DÉRIVATIONS PÉRIPHÉRIQUES (Fig. 1) :</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px;">
+            <div style="background: #fff; padding: 15px; border-radius: 8px; border: 2px solid #F44336;">
+                <div style="font-size: 1.5em; margin-bottom: 8px;">🔴 ROUGE</div>
+                <p style="font-weight: 700; color: #D32F2F;">Membre supérieur droit</p>
+                <p style="color: #666;">Face antérieure de l'articulation du poignet</p>
+            </div>
+            <div style="background: #fff; padding: 15px; border-radius: 8px; border: 2px solid #424242;">
+                <div style="font-size: 1.5em; margin-bottom: 8px;">⚫ NOIR</div>
+                <p style="font-weight: 700; color: #212121;">Membre inférieur droit</p>
+                <p style="color: #666;">Face interne de l'articulation de la cheville</p>
+            </div>
+            <div style="background: #fff; padding: 15px; border-radius: 8px; border: 2px solid #FFEB3B;">
+                <div style="font-size: 1.5em; margin-bottom: 8px;">🟡 JAUNE</div>
+                <p style="font-weight: 700; color: #F57F17;">Membre supérieur gauche</p>
+                <p style="color: #666;">Face postérieure de l'articulation du poignet</p>
+            </div>
+            <div style="background: #fff; padding: 15px; border-radius: 8px; border: 2px solid #4CAF50;">
+                <div style="font-size: 1.5em; margin-bottom: 8px;">🟢 VERT</div>
+                <p style="font-weight: 700; color: #2E7D32;">Membre inférieur gauche</p>
+                <p style="color: #666;">Face interne de l'articulation de la cheville</p>
+            </div>
+        </div>
+
+        <h4 style="color: #AD1457; margin: 20px 0 15px 0;">💓 DÉRIVATIONS PRÉCORDIALES (Fig. 2) :</h4>
+        <div style="display: grid; gap: 10px;">
+            <div style="background: #fff; padding: 12px; border-radius: 8px; border-left: 4px solid #F44336;">
+                <strong style="color: #D32F2F;">C1 - ROUGE :</strong> Quatrième espace intercostal droit, au bord droit du sternum
+            </div>
+            <div style="background: #fff; padding: 12px; border-radius: 8px; border-left: 4px solid #FFEB3B;">
+                <strong style="color: #F57F17;">C2 - JAUNE :</strong> Quatrième espace intercostal gauche, au bord gauche du sternum
+            </div>
+            <div style="background: #fff; padding: 12px; border-radius: 8px; border-left: 4px solid #8D6E63;">
+                <strong style="color: #5D4037;">C4 - BRUN :</strong> Cinquième espace intercostal gauche sur la ligne médioclaviculaire
+            </div>
+            <div style="background: #fff; padding: 12px; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                <strong style="color: #2E7D32;">C3 - VERT :</strong> Milieu de la ligne entre C2 et C4
+            </div>
+            <div style="background: #fff; padding: 12px; border-radius: 8px; border-left: 4px solid #9C27B0;">
+                <strong style="color: #6A1B9A;">C6 - VIOLET :</strong> Cinquième espace intercostal gauche sur la ligne médioaxillaire (même niveau que la C4)
+            </div>
+            <div style="background: #fff; padding: 12px; border-radius: 8px; border-left: 4px solid #212121;">
+                <strong style="color: #000;">C5 - NOIR :</strong> Milieu de la ligne entre C6 et C4
+            </div>
+        </div>
+    </div>
+
+    <!-- POINTS CLÉS -->
+    <div style="background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #D32F2F;">
+        <h3 style="color: #B71C1C; margin-bottom: 15px;">🔑 Points Clés</h3>
+        
+        <div style="background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #EF5350;">
+            <h4 style="color: #C62828; margin-bottom: 10px;">⚠️ Tracé parasité :</h4>
+            <p style="line-height: 1.8; color: #333;">
+                Devant toutes difficultés d'enregistrement de l'ECG (tracé parasité), vérifier que :
+            </p>
+            <ul style="line-height: 1.8; color: #333; margin-top: 10px;">
+                <li>Les câbles soient correctement connectés</li>
+                <li>Les électrodes adhèrent à la peau de la victime</li>
+            </ul>
+        </div>
+
+        <div style="background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #FF9800;">
+            <h4 style="color: #E65100; margin-bottom: 10px;">🦾 Amputation / Cas particuliers :</h4>
+            <p style="line-height: 1.8; color: #333;">
+                Certaines situations empêchent la mise en place des électrodes au niveau des extrémités (poignet et chevilles).
+                Placer alors les électrodes périphériques à la <strong>racine des membres</strong> :
+            </p>
+            <ul style="line-height: 1.8; color: #333; margin-top: 10px;">
+                <li>Au niveau de l'<strong>épaule</strong> pour le membre supérieur</li>
+                <li>Au niveau de la <strong>crête iliaque</strong> pour le membre inférieur</li>
+                <li>⚠️ <strong>Informer le médecin</strong> de la modification du positionnement</li>
+            </ul>
+        </div>
+
+        <div style="background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #2196F3;">
+            <h4 style="color: #1565C0; margin-bottom: 10px;">🥶 Tremblements :</h4>
+            <p style="line-height: 1.8; color: #333;">
+                Les tremblements de la victime parasitent l'enregistrement de l'ECG. Ces tremblements peuvent être dus à :
+            </p>
+            <ul style="line-height: 1.8; color: #333; margin-top: 10px;">
+                <li>L'angoisse de la victime → <strong>Rassurer la victime</strong></li>
+                <li>Le froid → <strong>Réchauffer la victime</strong> (couverture, chauffage)</li>
+                <li>Certaines maladies (Parkinson)</li>
+                <li>En cas de tremblements persistants → Placer les électrodes périphériques à la racine des membres</li>
+            </ul>
+        </div>
+
+        <div style="background: #fff; padding: 15px; border-radius: 8px; border: 2px solid #9C27B0;">
+            <h4 style="color: #6A1B9A; margin-bottom: 10px;">⚡ Interférences électriques :</h4>
+            <p style="line-height: 1.8; color: #333;">
+                D'autres interférences peuvent parasiter l'enregistrement. S'assurer que :
+            </p>
+            <ul style="line-height: 1.8; color: #333; margin-top: 10px;">
+                <li>✅ La victime reste immobile</li>
+                <li>✅ Le moteur du véhicule est arrêté</li>
+                <li>✅ La victime n'est pas en contact avec des éléments métalliques (brancard, montant d'un lit)</li>
+                <li>✅ La victime n'est pas sur un lit électrique → le débrancher</li>
+            </ul>
+        </div>
+
+        <div style="background: #FFF3E0; padding: 15px; border-radius: 8px; margin-top: 15px; border: 2px solid #FF9800;">
+            <p style="line-height: 1.8; color: #E65100;">
+                💡 <strong>Astuce :</strong> En cas de poitrine volumineuse, relever le sein avec le dos de la main pour placer les électrodes sous le sein.
+            </p>
+        </div>
+    </div>
+
+    <!-- TRANSMISSION -->
+    <div style="background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #1976D2;">
+        <h3 style="color: #0D47A1; margin-bottom: 15px;">📤 Transmission (Touch 7)</h3>
+        
+        <ol style="line-height: 2; color: #01579B; font-size: 1.05em;">
+            <li>Depuis l'écran d'accueil du Touch 7, sélectionner <strong style="background: #1976D2; color: #fff; padding: 2px 8px; border-radius: 4px;">ECG 12D</strong></li>
+            <li>Vérifier qu'il n'y ait pas de défaut électrode sur l'affichage<br>
+                <span style="color: #D32F2F;">(⭕ Un cercle rouge apparaît à l'écran autour de l'électrode concernée si elle est déconnectée)</span>
+            </li>
+            <li>Appuyer sur <strong style="background: #4CAF50; color: #fff; padding: 2px 8px; border-radius: 4px;">Suivant</strong> pour débuter l'enregistrement</li>
+            <li>Saisir les informations (nom/prénom/âge) du patient</li>
+            <li>Appuyer sur <strong style="background: #4CAF50; color: #fff; padding: 2px 8px; border-radius: 4px;">Suivant</strong></li>
+            <li>Renseigner <strong>"ECG 12D"</strong> dans la zone ID patient</li>
+            <li>L'enregistrement de l'ECG se lance (échelle de progression)</li>
+            <li>Une fois terminé, une fenêtre apparaît puis l'écran revient automatiquement sur la surveillance</li>
+        </ol>
+    </div>
+
+    <!-- VISUALISATION -->
+    <div style="background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #7B1FA2;">
+        <h3 style="color: #4A148C; margin-bottom: 15px;">👁️ Visualisation sur Touch 7</h3>
+        
+        <ol style="line-height: 2; color: #6A1B9A; font-size: 1.05em;">
+            <li>Depuis l'écran d'accueil, aller dans <strong style="background: #7B1FA2; color: #fff; padding: 2px 8px; border-radius: 4px;">Menu</strong></li>
+            <li>Choisir <strong>"ECG 12D"</strong></li>
+            <li>La liste des ECG réalisés apparaît (horodatée)</li>
+            <li>Pour visualiser l'ECG sur l'écran, appuyer sur la date-heure<br>
+                <span style="color: #C62828;">(⚠️ Ne pas cocher la case)</span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- INTÉGRATION DANS URGSAP -->
+    <div style="background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #388E3C;">
+        <h3 style="color: #1B5E20; margin-bottom: 15px;">💾 Intégration dans le Bilan URGSAP</h3>
+        
+        <p style="font-weight: 700; color: #2E7D32; margin-bottom: 15px;">
+            📱 Intégrer l'ECG réalisé avec le Touch 7 dans le bilan URGSAP de la tablette :
+        </p>
+        
+        <ol style="line-height: 2; color: #1B5E20; font-size: 1.05em;">
+            <li>✅ S'assurer de l'<strong>appairage tablette/Touch 7</strong></li>
+            <li>✅ Sélectionner l'<strong>onglet C</strong> du bilan (bilan cardiaque)</li>
+            <li>✅ Cliquer sur l'icône <strong>"ECG DT7"</strong></li>
+            <li>✅ Un lien hypertexte horodaté apparaît sous l'icône<br>
+                <span style="font-style: italic; color: #666;">(exemple : ECG réalisé le 15 septembre 2022 à 11h21min 22 sec)</span>
+            </li>
+            <li>✅ En sélectionnant le lien, cela ouvre une nouvelle fenêtre avec l'ECG en format PDF</li>
+        </ol>
+    </div>
+
+    <!-- TRACÉS NORMAUX VS PARASITÉS -->
+    <div style="background: linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #F9A825;">
+        <h3 style="color: #F57F17; margin-bottom: 15px;">📊 Comparaison Tracés</h3>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <div style="background: #fff; padding: 20px; border-radius: 8px; border: 3px solid #4CAF50;">
+                <h4 style="color: #2E7D32; text-align: center; margin-bottom: 10px;">✅ Tracé Normal</h4>
+                <p style="text-align: center; color: #666; line-height: 1.6;">
+                    Courbes régulières et nettes<br>
+                    Complexes QRS bien définis<br>
+                    Ligne isoélectrique stable
+                </p>
+            </div>
+            
+            <div style="background: #fff; padding: 20px; border-radius: 8px; border: 3px solid #F44336;">
+                <h4 style="color: #C62828; text-align: center; margin-bottom: 10px;">❌ Tracé Parasité</h4>
+                <p style="text-align: center; color: #666; line-height: 1.6;">
+                    Ligne de base tremblante<br>
+                    Artefacts et interférences<br>
+                    Complexes mal définis
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AVERTISSEMENT FINAL -->
+    <div class="warning-box" style="background: rgba(255, 152, 0, 0.1); border: 2px solid #FF9800; margin-top: 25px;">
+        <strong style="color: #E65100;">⚠️ Important :</strong><br>
+        <span style="font-size: 0.95em; line-height: 1.6;">
+            L'ECG ne doit être réalisé que sur prescription médicale. L'interprétation de l'ECG 
+            est strictement réservée au personnel médical qualifié. Le sapeur-pompier se limite 
+            à la réalisation technique et à la transmission de l'enregistrement.
+        </span>
+    </div>
+
+    <div class="warning-box" style="margin-top: 15px; background: rgba(0, 137, 123, 0.1); border: 2px solid #00897B;">
+        <strong style="color: #00897B;">🩺 Source :</strong> SSUAP-FTO-48 - Électrocardiogramme<br>
+        <span style="font-size: 0.9em;">SDIS 34 - SSSM - Référentiel technique SSUAP - Février 2025</span>
+    </div>
+</div>
+
 
 
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
@@ -8445,7 +8726,7 @@ Utilise un langage professionnel sapeur-pompier avec les termes techniques appro
         document.getElementById('resultat-ia').style.display = 'none';
 
         try {
-            // ✅ APPEL À L'API VERCEL (compatible Groq/Claude/Gemini)
+            // ✅ APPEL À L'API VERCEL AVEC STREAMING
             const response = await fetch('https://s-papp.vercel.app/api/gemini', {
                 method: 'POST',
                 headers: {
@@ -8457,27 +8738,69 @@ Utilise un langage professionnel sapeur-pompier avec les termes techniques appro
             });
 
             if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || 'Erreur serveur');
+                throw new Error('Erreur serveur');
             }
 
-            const data = await response.json();
+            // ✅ STREAMING : Afficher le résultat progressivement
+            const scenarioDiv = document.getElementById('scenario-contenu');
+            const resultatDiv = document.getElementById('resultat-ia');
             
-            if (data.error) {
-                throw new Error(data.error);
-            }
+            // Préparer l'affichage
+            scenarioDiv.innerHTML = '';
+            resultatDiv.style.display = 'block';
+            resultatDiv.scrollIntoView({ behavior: 'smooth' });
+            
+            let texteComplet = '';
+            
+            // Lire le stream
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
 
-            // ✅ Récupération du texte (format standard)
-            const texte = data.text;
+            while (true) {
+                const { done, value } = await reader.read();
+                
+                if (done) break;
+
+                // Décoder le chunk
+                const chunk = decoder.decode(value, { stream: true });
+                const lines = chunk.split('\n');
+
+                for (const line of lines) {
+                    if (line.startsWith('data: ')) {
+                        const data = line.slice(6);
+                        
+                        if (data === '[DONE]') {
+                            continue;
+                        }
+
+                        try {
+                            const parsed = JSON.parse(data);
+                            
+                            if (parsed.error) {
+                                throw new Error(parsed.error);
+                            }
+                            
+                            if (parsed.text) {
+                                // Ajouter le nouveau texte
+                                texteComplet += parsed.text;
+                                
+                                // ✅ Affichage progressif formaté
+                                scenarioDiv.innerHTML = formatScenario(texteComplet);
+                            }
+                        } catch (e) {
+                            // Ignorer les erreurs de parsing mineures
+                            if (e.message && e.message !== 'Unexpected end of JSON input') {
+                                console.error('Erreur parsing:', e);
+                            }
+                        }
+                    }
+                }
+            }
             
-            if (!texte || texte === 'Aucune réponse générée') {
+            // Vérifier qu'on a bien du contenu
+            if (!texteComplet || texteComplet.trim().length === 0) {
                 throw new Error('Aucune réponse générée par l\'IA');
             }
-            
-            // Afficher le résultat
-            document.getElementById('scenario-contenu').innerHTML = formatScenario(texte);
-            document.getElementById('resultat-ia').style.display = 'block';
-            document.getElementById('resultat-ia').scrollIntoView({ behavior: 'smooth' });
 
         } catch (error) {
             console.error('Erreur:', error);
