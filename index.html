@@ -28,10 +28,232 @@
     
     <!-- CSS externe -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Variables CSS pour Mode Sombre -->
+    <style>
+        /* ========== VARIABLES CSS MODE CLAIR / SOMBRE ========== */
+        :root {
+            /* Mode Clair (par défaut) */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --bg-elevated: #fafafa;
+            --bg-card: #ffffff;
+            --bg-main: #f5f5f5;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+            --text-light: #000000;
+            --border-color: #e0e0e0;
+            --border-medium: #cccccc;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --input-bg: #ffffff;
+            --input-text: #000000;
+        }
+        
+        /* Mode Sombre */
+        body.dark-mode {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --bg-elevated: #2a2a2a;
+            --bg-card: #1e1e1e;
+            --bg-main: #1e1e1e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-light: #ffffff;
+            --border-color: #404040;
+            --border-medium: #505050;
+            --shadow: rgba(0, 0, 0, 0.5);
+            --input-bg: #2a2a2a;
+            --input-text: #ffffff;
+        }
+        
+        /* Application des variables au body */
+        body {
+            background-color: var(--bg-primary) !important;
+            color: var(--text-primary) !important;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        /* Modules et cartes */
+        .module {
+            background-color: var(--bg-primary) !important;
+            color: var(--text-primary) !important;
+        }
+        
+        .result-box {
+            background-color: var(--bg-card) !important;
+            color: var(--text-primary) !important;
+        }
+        
+        /* Navigation et sections */
+        .home-section {
+            background-color: var(--bg-primary) !important;
+        }
+        
+        .section-content {
+            background-color: var(--bg-primary) !important;
+        }
+        
+        /* Inputs et formulaires */
+        input:not([type="checkbox"]):not([type="radio"]), 
+        select, 
+        textarea {
+            background-color: var(--input-bg) !important;
+            color: var(--input-text) !important;
+            border-color: var(--border-color) !important;
+        }
+        
+        /* Placeholder en mode sombre */
+        body.dark-mode input::placeholder {
+            color: #888888;
+            opacity: 1;
+        }
+        
+        /* Tableaux */
+        body.dark-mode table {
+            background-color: var(--bg-card) !important;
+            color: var(--text-primary) !important;
+        }
+        
+        body.dark-mode th {
+            background-color: var(--bg-elevated) !important;
+            color: var(--text-primary) !important;
+        }
+        
+        body.dark-mode td {
+            border-color: var(--border-color) !important;
+            color: var(--text-primary) !important;
+        }
+        
+        body.dark-mode tr {
+            background-color: var(--bg-card) !important;
+        }
+        
+        /* Warning boxes et alertes */
+        body.dark-mode .warning-box {
+            background-color: rgba(255, 152, 0, 0.15) !important;
+            border-color: #FF9800 !important;
+            color: #FFB74D !important;
+        }
+        
+        /* Titres */
+        body.dark-mode h1,
+        body.dark-mode h2,
+        body.dark-mode h3,
+        body.dark-mode h4,
+        body.dark-mode h5 {
+            color: var(--text-primary) !important;
+        }
+        
+        /* Paragraphes */
+        body.dark-mode p {
+            color: var(--text-secondary) !important;
+        }
+        
+        /* Listes */
+        body.dark-mode ul,
+        body.dark-mode ol,
+        body.dark-mode li {
+            color: var(--text-primary) !important;
+        }
+        
+        /* Divs avec background blanc */
+        body.dark-mode div[style*="background: #fff"],
+        body.dark-mode div[style*="background:#fff"],
+        body.dark-mode div[style*="background: white"],
+        body.dark-mode div[style*="background-color: #fff"],
+        body.dark-mode div[style*="background-color:#fff"] {
+            background-color: var(--bg-card) !important;
+        }
+        
+        /* Divs avec texte noir */
+        body.dark-mode div[style*="color: #000"],
+        body.dark-mode div[style*="color:#000"],
+        body.dark-mode div[style*="color: black"] {
+            color: var(--text-primary) !important;
+        }
+        
+        /* Bouton Mode Sombre */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: linear-gradient(135deg, #6A1B9A 0%, #8E24AA 100%);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 6px 20px rgba(106, 27, 154, 0.6);
+        }
+        
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+        
+        /* Animation du bouton */
+        @keyframes themeSwitch {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .theme-toggle.switching {
+            animation: themeSwitch 0.5s ease;
+        }
+        
+        /* Amélioration des ombres en mode sombre */
+        body.dark-mode .fire-icon,
+        body.dark-mode .nav-btn {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+        
+        /* Back button en mode sombre */
+        body.dark-mode .back-btn {
+            background-color: var(--bg-elevated) !important;
+            color: var(--text-primary) !important;
+            border-color: var(--border-color) !important;
+        }
+        
+        /* Convertisseur et autres outils */
+        body.dark-mode #conversionZone,
+        body.dark-mode #scenario-contenu,
+        body.dark-mode #resultat-ia {
+            background-color: var(--bg-card) !important;
+            color: var(--text-primary) !important;
+        }
+        
+        /* Responsive - Plus petit sur mobile */
+        @media (max-width: 768px) {
+            .theme-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5em;
+                top: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+    
     <!-- Bibliothèque jsPDF pour export PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body class="theme-day">
+    <!-- Bouton Mode Sombre/Clair -->
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Basculer mode sombre/clair">
+        🌙
+    </button>
+    
     <!-- Bouton flottant d'enregistrement -->
     <button class="save-float-btn" id="saveFloatBtn" onclick="openSaveModal()" title="Enregistrer le calcul">
         💾
@@ -416,6 +638,10 @@
                         <div>🫧</div>
                         <span class="nav-label">MOUSSES</span>
                     </div>
+                    <div class="nav-btn" data-color="lspcc" onclick="showModule('lspcc-menu')">
+                        <div>🪢</div>
+                        <span class="nav-label">LSPCC</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -495,10 +721,6 @@
                     <div class="nav-btn" data-color="sal" onclick="showModule('sal-menu')">
                         <div>🤿</div>
                         <span class="nav-label">SAL/SAV</span>
-                    </div>
-                    <div class="nav-btn" data-color="lspcc" onclick="showModule('lspcc-menu')">
-                        <div>🪢</div>
-                        <span class="nav-label">LSPCC</span>
                     </div>
                     <div class="nav-btn" data-color="eld" onclick="showModule('eld-menu')">
                         <div>🔦</div>
@@ -4063,6 +4285,241 @@
             </div>
         </div>
     </div>
+
+    <script>
+    // ========== CONVERTISSEUR D'UNITÉS - JAVASCRIPT COMPLET ==========
+    
+    let currentConversionType = '';
+    
+    // Définitions des unités pour chaque type de conversion
+    const conversions = {
+        pression: {
+            units: ['bar', 'psi', 'Pa', 'kPa', 'MPa'],
+            quickValues: [1, 2, 5, 10, 15, 20, 50, 100],
+            toBase: { // Conversion vers bar
+                'bar': (v) => v,
+                'psi': (v) => v * 0.0689476,
+                'Pa': (v) => v * 0.00001,
+                'kPa': (v) => v * 0.01,
+                'MPa': (v) => v * 10
+            },
+            fromBase: { // Conversion depuis bar
+                'bar': (v) => v,
+                'psi': (v) => v / 0.0689476,
+                'Pa': (v) => v / 0.00001,
+                'kPa': (v) => v / 0.01,
+                'MPa': (v) => v / 10
+            }
+        },
+        debit: {
+            units: ['L/min', 'L/s', 'm³/h', 'gpm'],
+            quickValues: [100, 250, 500, 1000, 2000, 3000, 5000, 10000],
+            toBase: { // Conversion vers L/min
+                'L/min': (v) => v,
+                'L/s': (v) => v * 60,
+                'm³/h': (v) => v * 16.6667,
+                'gpm': (v) => v * 3.78541
+            },
+            fromBase: { // Conversion depuis L/min
+                'L/min': (v) => v,
+                'L/s': (v) => v / 60,
+                'm³/h': (v) => v / 16.6667,
+                'gpm': (v) => v / 3.78541
+            }
+        },
+        volume: {
+            units: ['L', 'm³', 'gal', 'mL'],
+            quickValues: [1, 10, 100, 500, 1000, 5000, 10000, 50000],
+            toBase: { // Conversion vers L
+                'L': (v) => v,
+                'm³': (v) => v * 1000,
+                'gal': (v) => v * 3.78541,
+                'mL': (v) => v * 0.001
+            },
+            fromBase: { // Conversion depuis L
+                'L': (v) => v,
+                'm³': (v) => v / 1000,
+                'gal': (v) => v / 3.78541,
+                'mL': (v) => v / 0.001
+            }
+        },
+        distance: {
+            units: ['m', 'km', 'cm', 'mm', 'ft', 'mi'],
+            quickValues: [1, 10, 50, 100, 500, 1000, 5000, 10000],
+            toBase: { // Conversion vers m
+                'm': (v) => v,
+                'km': (v) => v * 1000,
+                'cm': (v) => v * 0.01,
+                'mm': (v) => v * 0.001,
+                'ft': (v) => v * 0.3048,
+                'mi': (v) => v * 1609.34
+            },
+            fromBase: { // Conversion depuis m
+                'm': (v) => v,
+                'km': (v) => v / 1000,
+                'cm': (v) => v / 0.01,
+                'mm': (v) => v / 0.001,
+                'ft': (v) => v / 0.3048,
+                'mi': (v) => v / 1609.34
+            }
+        },
+        vitesse: {
+            units: ['km/h', 'm/s', 'mph', 'kn'],
+            quickValues: [10, 30, 50, 90, 110, 130, 200, 300],
+            toBase: { // Conversion vers km/h
+                'km/h': (v) => v,
+                'm/s': (v) => v * 3.6,
+                'mph': (v) => v * 1.60934,
+                'kn': (v) => v * 1.852
+            },
+            fromBase: { // Conversion depuis km/h
+                'km/h': (v) => v,
+                'm/s': (v) => v / 3.6,
+                'mph': (v) => v / 1.60934,
+                'kn': (v) => v / 1.852
+            }
+        },
+        temperature: {
+            units: ['°C', '°F', 'K'],
+            quickValues: [0, 20, 37, 50, 100, 200, 500, 1000],
+            toBase: { // Conversion vers °C
+                '°C': (v) => v,
+                '°F': (v) => (v - 32) * 5/9,
+                'K': (v) => v - 273.15
+            },
+            fromBase: { // Conversion depuis °C
+                '°C': (v) => v,
+                '°F': (v) => (v * 9/5) + 32,
+                'K': (v) => v + 273.15
+            }
+        }
+    };
+    
+    // Fonction pour sélectionner un type de conversion
+    function selectQuickConvert(type) {
+        currentConversionType = type;
+        const config = conversions[type];
+        
+        // Mettre à jour le titre
+        const titles = {
+            'pression': '🔧 PRESSION',
+            'debit': '💧 DÉBIT',
+            'volume': '🪣 VOLUME',
+            'distance': '📏 DISTANCE',
+            'vitesse': '🚒 VITESSE',
+            'temperature': '🌡️ TEMPÉRATURE'
+        };
+        document.getElementById('conversionTitle').innerHTML = titles[type] || '🔄 Conversion';
+        
+        // Remplir les unités
+        const unit1 = document.getElementById('unit1');
+        const unit2 = document.getElementById('unit2');
+        unit1.innerHTML = '';
+        unit2.innerHTML = '';
+        
+        config.units.forEach((unit, index) => {
+            const option1 = document.createElement('option');
+            option1.value = unit;
+            option1.textContent = unit;
+            unit1.appendChild(option1);
+            
+            const option2 = document.createElement('option');
+            option2.value = unit;
+            option2.textContent = unit;
+            unit2.appendChild(option2);
+        });
+        
+        // Sélectionner les 2 premières unités par défaut
+        if (config.units.length >= 2) {
+            unit1.value = config.units[0];
+            unit2.value = config.units[1];
+        }
+        
+        // Remplir les boutons de valeurs rapides
+        const buttonsContainer = document.getElementById('quickValuesButtons');
+        buttonsContainer.innerHTML = '';
+        config.quickValues.forEach(val => {
+            const btn = document.createElement('button');
+            btn.textContent = val;
+            btn.onclick = () => {
+                document.getElementById('value1').value = val;
+                convertValue();
+            };
+            btn.style.cssText = 'padding: 10px 20px; background: var(--primary-red); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 1.1em; font-weight: bold; transition: all 0.2s;';
+            btn.onmouseover = function() { this.style.background = 'var(--primary-red-dark)'; };
+            btn.onmouseout = function() { this.style.background = 'var(--primary-red)'; };
+            buttonsContainer.appendChild(btn);
+        });
+        
+        // Réinitialiser les valeurs
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').innerHTML = '--';
+        
+        // Afficher la zone de conversion
+        document.getElementById('conversionZone').style.display = 'block';
+        
+        // Scroll vers le convertisseur
+        document.getElementById('conversionZone').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // Fonction de conversion
+    function convertValue() {
+        const value1 = parseFloat(document.getElementById('value1').value);
+        const unit1 = document.getElementById('unit1').value;
+        const unit2 = document.getElementById('unit2').value;
+        const value2Div = document.getElementById('value2');
+        
+        if (isNaN(value1) || value1 === '') {
+            value2Div.innerHTML = '--';
+            return;
+        }
+        
+        const config = conversions[currentConversionType];
+        
+        // Convertir vers l'unité de base puis vers l'unité cible
+        const baseValue = config.toBase[unit1](value1);
+        const result = config.fromBase[unit2](baseValue);
+        
+        // Formater le résultat
+        let formattedResult;
+        if (Math.abs(result) >= 1000000) {
+            formattedResult = result.toExponential(4);
+        } else if (Math.abs(result) < 0.01 && result !== 0) {
+            formattedResult = result.toExponential(4);
+        } else {
+            formattedResult = result.toFixed(4).replace(/\.?0+$/, '');
+        }
+        
+        value2Div.innerHTML = formattedResult;
+    }
+    
+    // Fonction pour inverser les unités
+    function swapUnits() {
+        const unit1 = document.getElementById('unit1');
+        const unit2 = document.getElementById('unit2');
+        const value1 = document.getElementById('value1');
+        const value2Div = document.getElementById('value2');
+        
+        // Échanger les unités
+        const tempUnit = unit1.value;
+        unit1.value = unit2.value;
+        unit2.value = tempUnit;
+        
+        // Échanger les valeurs
+        const tempValue = value1.value;
+        value1.value = value2Div.innerHTML !== '--' ? value2Div.innerHTML : '';
+        
+        // Reconvertir
+        convertValue();
+    }
+    
+    // Fonction pour fermer le convertisseur
+    function closeConverter() {
+        document.getElementById('conversionZone').style.display = 'none';
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').innerHTML = '--';
+    }
+    </script>
 
 
     <!-- ========== MODULES COMMANDEMENT ========== -->
@@ -13026,6 +13483,49 @@ Utilise un langage professionnel sapeur-pompier avec les termes techniques appro
             deferredPrompt = e;
             // Afficher un bouton d'installation si souhaité
             console.log('🚒 DECIOPS: Application installable');
+        });
+        
+        // ========== GESTION MODE SOMBRE / CLAIR ==========
+        
+        // Fonction pour basculer le thème
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            
+            // Animation du bouton
+            themeToggle.classList.add('switching');
+            setTimeout(() => {
+                themeToggle.classList.remove('switching');
+            }, 500);
+            
+            // Basculer la classe
+            body.classList.toggle('dark-mode');
+            
+            // Mettre à jour l'icône et sauvegarder
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️'; // Soleil en mode sombre
+                localStorage.setItem('theme', 'dark');
+                console.log('🌙 Mode sombre activé');
+            } else {
+                themeToggle.textContent = '🌙'; // Lune en mode clair
+                localStorage.setItem('theme', 'light');
+                console.log('☀️ Mode clair activé');
+            }
+        }
+        
+        // Charger le thème sauvegardé au démarrage
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggle.textContent = '☀️';
+                console.log('🌙 Mode sombre: activé (sauvegardé)');
+            } else {
+                themeToggle.textContent = '🌙';
+                console.log('☀️ Mode clair: activé (par défaut)');
+            }
         });
     </script>
 </body>
