@@ -1033,86 +1033,67 @@ function resetPertes() {
     if (resultatDiv) resultatDiv.style.display = 'none';
 }
 
-// ========== MODULE TMD ==========
+// ========== MODULE TMD & GMU (VERSION SÉCURISÉE) ==========
 function searchTMD() {
     const onuInput = document.getElementById('searchONU').value.trim().toLowerCase();
     const nameInput = document.getElementById('searchName').value.trim().toLowerCase();
     const classeFilter = document.getElementById('filterClasse').value;
     
     let results = tmdDatabase.filter(item => {
-        const matchONU = !onuInput || item.onu.includes(onuInput);
-        const matchName = !nameInput || item.nom.toLowerCase().includes(nameInput);
-        const matchClasse = !classeFilter || item.classe.toString() === classeFilter;
+        const matchONU = !onuInput || item.onu.toString().includes(onuInput);
+        const matchName = !nameInput || (item.nom && item.nom.toLowerCase().includes(nameInput));
+        const matchClasse = !classeFilter || (item.classe && item.classe.toString() === classeFilter);
         return matchONU && matchName && matchClasse;
     });
     
     document.getElementById('tmdTotal').textContent = tmdDatabase.length;
     document.getElementById('tmdFound').textContent = results.length;
     
+    const resultsContainer = document.getElementById('tmdResults');
+    if (!resultsContainer) return;
+
     if (results.length === 0) {
-        document.getElementById('tmdResults').innerHTML = '<div class="alert-box">Aucun résultat trouvé</div>';
+        resultsContainer.innerHTML = '<div class="alert-box">Aucun résultat trouvé</div>';
         return;
     }
     
-    if (results.length > 30) {
-        results = results.slice(0, 30);
-    }
+    if (results.length > 30) results = results.slice(0, 30);
     
-    document.getElementById('tmdResults').innerHTML = results.map(item => {
+    resultsContainer.innerHTML = results.map(item => {
         let borderColor = '#FF9800';
-        if (item.classe === 1) borderColor = '#FF9800';
-        else if (item.classe === 2) borderColor = '#00aaff';
-        else if (item.classe === 3) borderColor = '#ff0000';
-        else if (item.classe >= 4 && item.classe < 5) borderColor = '#ff6600';
-        else if (item.classe >= 5 && item.classe < 6) borderColor = '#00ccff';
-        else if (item.classe === 6.1) borderColor = '#cc00ff';
-        else if (item.classe === 7) borderColor = '#ffaa00';
-        else if (item.classe === 8) borderColor = '#ffff00';
+        if (item.classe == 2) borderColor = '#00aaff';
+        else if (item.classe == 3) borderColor = '#ff0000';
+        else if (item.classe == 8) borderColor = '#ffffff';
         
-        // Affichage du code danger (vide pour classe 1 - explosifs)
-        const dangerDisplay = item.classe === 1 ? 
+        const dangerDisplay = item.classe == 1 ? 
             '<div style="font-size: 1.2em; color: #888; font-style: italic;">Pas de code</div>' :
             `<div style="font-size: 1.5em;">${item.danger || '--'}</div>`;
         
-        
-  return `
-            <div class="result-box" style="border-left-color: ${borderColor};">
+        return `
+            <div class="result-box" style="border-left: 8px solid ${borderColor}; margin-bottom: 15px; padding: 15px; background: var(--bg-card); border-radius: 10px;">
                 <div style="display: flex; gap: 20px; align-items: start;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 3em;">${item.picto}</div>
+                    <div style="text-align: center; min-width: 100px;">
+                        <div style="font-size: 3em;">${item.picto || '⚠️'}</div>
                         <div style="background: #FF9800; color: #000; padding: 8px; border-radius: 5px; font-weight: bold; margin-top: 10px;">
                             ${dangerDisplay}
                             <div style="font-size: 2em; border-top: 2px solid #000; margin-top: 5px; padding-top: 5px;">${item.onu}</div>
                         </div>
                     </div>
                     <div style="flex: 1;">
-                        <h3 style="color: var(--warning);">${item.nom}</h3>
+                        <h3 style="color: var(--warning); margin-top: 0;">${item.nom}</h3>
                         <div class="result-item">
-                            <span>Classe :</span>
+                            <span><strong>Classe :</strong></span>
                             <span>${item.classe}</span>
                         </div>
                         <div class="danger-box" style="margin-top: 10px;">
-                            <strong>⚠️ Risques :</strong> ${item.risques}
+                            <strong>⚠️ Risques :</strong> ${item.risques || 'Non renseignés'}
                         </div>
                         
-                        <!-- 🔥 BOUTON GMU ICI -->
-                        <button onclick="afficherFicheTMD('${item.onu}', '${item.nom.replace(/'/g, "\\'")}', ${item.classe}, '${(item.risques || '').replace(/'/g, "\\'")}', '${item.picto}', '${item.danger || ''}')" 
-                                style="
-                                    margin-top: 15px;
-                                    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%);
-                                    border: none;
-                                    padding: 12px 25px;
-                                    border-radius: 10px;
-                                    color: white;
-                                    font-weight: bold;
-                                    font-size: 1.1em;
-                                    cursor: pointer;
-                                    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
-                                    transition: all 0.3s;
-                                "
-                                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(255, 107, 0, 0.6)';"
-                                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(255, 107, 0, 0.4)';">
-                            📖 Fiche GMU
+                        <button onclick="preparerFicheGMU('${item.onu}')" 
+                                style="margin-top: 15px; background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%); 
+                                       border: none; padding: 12px 25px; border-radius: 10px; color: white; 
+                                       font-weight: bold; font-size: 1.1em; cursor: pointer; width: 100%;">
+                            📖 Consulter la Fiche GMU
                         </button>
                     </div>
                 </div>
@@ -1120,21 +1101,20 @@ function searchTMD() {
         `;
     }).join('');
 }
-// 🔥 FONCTION POUR AFFICHER LA FICHE GMU
-function afficherFicheTMD(onu, nom, classe, risques, picto, danger) {
-    const matiere = {
-        onu: onu,
-        nom: nom,
-        classe: classe,
-        risques: risques,
-        picto: picto,
-        danger: danger || '00'
-    };
+
+// Fonction passerelle indispensable pour charger la fiche
+function preparerFicheGMU(onu) {
+    const matiere = tmdDatabase.find(p => p.onu.toString() === onu.toString());
     
+    if (!matiere) {
+        alert("⚠️ Erreur : Impossible de retrouver les données pour l'ONU " + onu);
+        return;
+    }
+
     if (typeof afficherFicheGMU === 'function') {
         afficherFicheGMU(matiere);
     } else {
-        alert('⚠️ Le module GMU n\'est pas chargé. Vérifiez que guides-gmu.js et affichage-gmu.js sont présents.');
+        alert('❌ Erreur : Le module d\'affichage (affichage-gmu.js) n\'est pas chargé.');
     }
 }
 
