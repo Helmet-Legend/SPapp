@@ -1,8 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * DÉCIOPS v1.9 - Outil d'aide à la décision opérationnelle
- * ═══════════════════════════════════════════════════════════════════════
- * Copyright (c) 2025 - RESCUEAPP
+ * DÉCIOPS v1.9.1 - Correction d'affichage forcée
  * ═══════════════════════════════════════════════════════════════════════
  */
 
@@ -13,7 +11,6 @@ let tronconsPerte = [];
 let currentConversionType = null;
 let gazSelectionne = null;
 
-// Données chargées depuis JSON
 let tmdDatabase = [];
 let densityData = [];
 let gazDatabase = {};
@@ -32,11 +29,9 @@ async function initApp() {
         gazDatabase = data.gaz || {};
         modulesData = data.modules || [];
         conversionData = data.conversions || {};
-        gazBouteillesData = data.gaz_bouteilles || {};
         appConfig = data.config || {};
         
         if (appConfig.firePowers) firePowers = appConfig.firePowers;
-        
         initializeApp();
     } catch (error) {
         console.error('❌ Erreur initialisation:', error);
@@ -48,31 +43,17 @@ function initializeApp() {
     try {
         const savedMode = localStorage.getItem('darkMode');
         if (savedMode === 'enabled') document.body.classList.add('dark-mode');
-    } catch (e) { console.log("Mode sombre : Mémoire non disponible"); }
+    } catch (e) { console.log("Mémoire non disponible"); }
     
     setTimeout(updateDarkModeIcon, 100);
-    setTimeout(() => { if (typeof restoreSectionsState === "function") restoreSectionsState(); }, 100);
-    
     setupEventListeners();
     showModule('home');
     console.log('🚒 DECIOPS prêt!');
 }
 
 function setupEventListeners() {
-    const gazEtalonSelect = document.getElementById('gazEtalon');
-    if (gazEtalonSelect) {
-        gazEtalonSelect.addEventListener('change', () => {
-            updateTableauCorrections();
-            if (gazSelectionne) calculerCorrectionGaz();
-        });
-    }
-    const valeurExploInput = document.getElementById('valeurExplo');
-    if (valeurExploInput) {
-        valeurExploInput.addEventListener('input', () => { if (gazSelectionne) calculerCorrectionGaz(); });
-    }
     if (document.getElementById('gazPresentsGrid')) initExplosimetrie();
     if (document.getElementById('listeVehiculesEquipages')) afficherVehiculesEquipages();
-    if (document.getElementById('diametreTroncon')) setDiametreTroncon(parseInt(document.getElementById('diametreTroncon')?.value || 70));
 }
 
 // ========== NAVIGATION ==========
@@ -82,9 +63,6 @@ function showModule(moduleName) {
     if (module) {
         module.classList.add('active');
         window.scrollTo(0, 0);
-        if (moduleName === 'distance-calc') calculateDistanceCalc();
-        if (moduleName === 'abaque') calculateAbaqueAll();
-        if (moduleName === 'ari') calculerAutonomieARI();
     }
     const homeButton = document.getElementById('homeButton');
     const globalSearch = document.getElementById('globalSearch');
@@ -97,7 +75,7 @@ function showModule(moduleName) {
     }
 }
 
-// ========== MODULE TMD & GMU (CORRIGÉ ET TESTÉ) ==========
+// ========== MODULE TMD & GMU (ACTION CORRECTIVE FORCÉE) ==========
 function searchTMD() {
     const onuInput = document.getElementById('searchONU').value.trim().toLowerCase();
     const nameInput = document.getElementById('searchName').value.trim().toLowerCase();
@@ -121,28 +99,33 @@ function searchTMD() {
         return;
     }
     
-    resultsContainer.innerHTML = results.slice(0, 30).map(item => {
+    resultsContainer.innerHTML = results.slice(0, 25).map(item => {
         let borderColor = (item.classe == 3) ? '#ff0000' : '#FF9800';
-        const dangerDisplay = item.classe == 1 ? '<div style="font-size:1.2em;color:#888;">Pas de code</div>' : `<div style="font-size:1.5em;">${item.danger || '--'}</div>`;
+        const dangerDisplay = item.classe == 1 ? 'Pas de code' : (item.danger || '--');
         
         return `
-            <div class="result-box" style="border-left: 8px solid ${borderColor}; margin-bottom: 15px; padding: 15px; background: white; border-radius: 10px; color: black;">
-                <div style="display: flex; gap: 20px; align-items: start;">
-                    <div style="text-align: center; min-width: 100px;">
-                        <div style="font-size: 3em;">${item.picto || '⚠️'}</div>
-                        <div style="background: #FF9800; color: #000; padding: 8px; border-radius: 5px; font-weight: bold; margin-top: 10px;">
-                            ${dangerDisplay}
-                            <div style="font-size: 2em; border-top: 2px solid #000; margin-top: 5px; padding-top: 5px;">${item.onu}</div>
+            <div class="result-box" style="border-left: 10px solid ${borderColor} !important; margin-bottom: 20px; padding: 20px; background: #ffffff !important; color: #000000 !important; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <div style="display: flex; gap: 20px; align-items: flex-start;">
+                    <div style="text-align: center; min-width: 90px;">
+                        <div style="font-size: 3.5em; margin-bottom: 5px;">${item.picto || '⚠️'}</div>
+                        <div style="background: #FF9800; color: black; padding: 10px; border-radius: 5px; font-weight: 900; border: 2px solid black;">
+                            <div style="font-size: 1.2em; border-bottom: 2px solid black; margin-bottom: 5px;">${dangerDisplay}</div>
+                            <div style="font-size: 2.2em;">${item.onu}</div>
                         </div>
                     </div>
-                    <div style="flex: 1;">
-                        <h3 style="color: #FF9800; margin: 0;">${item.nom}</h3>
-                        <div style="margin: 10px 0;"><strong>Classe :</strong> ${item.classe}</div>
-                        <div style="margin: 10px 0;"><strong>⚠️ Risques :</strong> ${item.risques || 'Non renseignés'}</div>
-                        <button onclick="preparerFicheGMU('${item.onu}')" 
-                                style="margin-top: 15px; background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%); border: none; padding: 12px 25px; border-radius: 10px; color: white; font-weight: bold; font-size: 1.1em; cursor: pointer; width: 100%; display: block !important;">
-                            📖 Consulter la Fiche GMU
-                        </button>
+                    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 150px;">
+                        <div>
+                            <h3 style="color: #FF9800; margin: 0 0 10px 0; font-size: 1.6em; text-transform: uppercase;">${item.nom}</h3>
+                            <div style="font-size: 1.1em; margin-bottom: 5px;"><strong>Classe :</strong> ${item.classe}</div>
+                            <div style="font-size: 1.1em; margin-bottom: 15px;"><strong>⚠️ Risques :</strong> ${item.risques || 'Non renseignés'}</div>
+                        </div>
+                        
+                        <div style="padding: 5px; background: #f0f0f0; border-radius: 8px; border: 1px dashed #ccc;">
+                            <button onclick="preparerFicheGMU('${item.onu}')" 
+                                    style="width: 100% !important; background: #FF6B00 !important; color: white !important; border: 3px solid #e65100 !important; padding: 15px !important; border-radius: 10px !important; font-weight: bold !important; font-size: 1.2em !important; cursor: pointer !important; display: block !important; visibility: visible !important;">
+                                📖 VOIR LA FICHE GMU
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -158,15 +141,22 @@ function preparerFicheGMU(onu) {
         const htmlFiche = afficherFicheGMU(matiere.onu, matiere.nom, matiere.classe);
         const container = document.getElementById('tmdResults');
         if (container) {
-            container.innerHTML = `<button onclick="searchTMD()" style="margin-bottom:20px; padding:10px 20px; cursor:pointer;">← Retour</button>${htmlFiche}`;
+            container.innerHTML = `
+                <div style="margin-bottom:20px;">
+                    <button onclick="searchTMD()" style="background:#444; color:white; border:none; padding:12px 25px; border-radius:8px; font-weight:bold; cursor:pointer;">
+                        ← Retour à la recherche
+                    </button>
+                </div>
+                ${htmlFiche}
+            `;
             container.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     } else {
-        alert("Erreur : Le fichier affichage-gmu.js n'est pas chargé.");
+        alert("ERREUR : Le fichier 'affichage-gmu.js' n'est pas détecté par le navigateur.");
     }
 }
 
-// ========== MODULES DE CALCUL (ARI, FEU, PERTES) ==========
+// ========== AUTRES MODULES (ARI, FEU, ETC) ==========
 function selectFireSource(type) {
     fireSelection[type]++;
     document.getElementById(type + '-count').textContent = fireSelection[type];
@@ -185,27 +175,10 @@ function calculerAutonomieARI() {
     const p = parseFloat(document.getElementById('pressionARI')?.value || 300);
     const v = parseFloat(document.getElementById('volumeARI')?.value || 9);
     const c = parseFloat(document.getElementById('consoARI')?.value || 100);
-    const s = 55;
     const autonomie = (p * v) / c;
-    const sifflet = ((p - s) * v) / c;
+    const sifflet = ((p - 55) * v) / c;
     if (document.getElementById('autonomieTotale')) document.getElementById('autonomieTotale').textContent = Math.floor(autonomie) + ' min';
     if (document.getElementById('tempsSifflet')) document.getElementById('tempsSifflet').textContent = Math.floor(sifflet) + ' min';
-}
-
-function setDiametreTroncon(value) {
-    const input = document.getElementById('diametreTroncon');
-    if (input) input.value = value;
-}
-
-// ========== RECHERCHE & UTILS ==========
-function searchModules(query) {
-    const res = document.getElementById('searchResults');
-    if (!query || query.length < 2) { if(res) res.style.display = 'none'; return; }
-    const filtered = searchIndex.filter(m => m.name.toLowerCase().includes(query.toLowerCase()));
-    if (res) {
-        res.innerHTML = filtered.map(m => `<div onclick="showModule('${m.id}')" style="padding:15px; background:var(--bg-card); margin:5px 0; cursor:pointer; border-left:4px solid red;"><strong>${m.name}</strong></div>`).join('');
-        res.style.display = 'block';
-    }
 }
 
 function toggleDarkMode() {
@@ -217,11 +190,6 @@ function toggleDarkMode() {
 function updateDarkModeIcon() {
     const icon = document.getElementById('dark-mode-icon');
     if (icon) icon.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-}
-
-function toggleSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) section.classList.toggle('collapsed');
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
