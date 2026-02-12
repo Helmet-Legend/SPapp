@@ -28,6 +28,8 @@
     
     <!-- CSS externe -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Bibliothèque jsPDF pour export PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body class="theme-day">
     <!-- Bouton flottant d'enregistrement -->
@@ -8587,7 +8589,14 @@
                     <h3 style="color: #6A1B9A; margin: 0; display: flex; align-items: center; gap: 10px;">
                         <span style="font-size: 1.3em;">📋</span> Scénario Généré
                     </h3>
-                    <button onclick="copierScenario()" style="padding: 8px 15px; background: #6A1B9A; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9em;">📋 Copier</button>
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="copierScenario()" style="padding: 8px 15px; background: #6A1B9A; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
+                            📋 Copier
+                        </button>
+                        <button onclick="telechargerPDF()" style="padding: 8px 15px; background: #D32F2F; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
+                            📥 PDF
+                        </button>
+                    </div>
                 </div>
                 <div id="scenario-contenu" style="background: #fff; padding: 20px; border-radius: 10px; line-height: 1.7; white-space: pre-wrap;"></div>
             </div>
@@ -8832,6 +8841,131 @@ Utilise un langage professionnel sapeur-pompier avec les termes techniques appro
         }).catch(err => {
             console.error('Erreur copie:', err);
         });
+    }
+
+    // Télécharger le scénario en PDF
+    function telechargerPDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        // Récupérer le contenu brut (sans HTML)
+        const contenuHTML = document.getElementById('scenario-contenu');
+        const contenuTexte = contenuHTML.innerText;
+        
+        // Collecter les paramètres du scénario
+        const types = getCheckedValues('type');
+        const vehicules = getCheckedValues('vehicule');
+        const duree = document.getElementById('duree-manoeuvre').value;
+        const niveau = document.getElementById('niveau-manoeuvre').value;
+        
+        // Configuration PDF
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+        const margin = 20;
+        const maxWidth = pageWidth - (margin * 2);
+        let yPosition = margin;
+        
+        // En-tête avec logo et titre
+        doc.setFillColor(106, 27, 154); // Violet DECIOPS
+        doc.rect(0, 0, pageWidth, 35, 'F');
+        
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(20);
+        doc.setFont('helvetica', 'bold');
+        doc.text('🚒 DECIOPS', margin, 15);
+        
+        doc.setFontSize(12);
+        doc.setFont('helvetica', 'normal');
+        doc.text('Générateur de Scénarios d\'Entraînement', margin, 25);
+        
+        yPosition = 45;
+        doc.setTextColor(0, 0, 0);
+        
+        // Informations du scénario
+        doc.setFillColor(243, 229, 245);
+        doc.rect(margin, yPosition, maxWidth, 25, 'F');
+        
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'bold');
+        yPosition += 8;
+        doc.text(`Type: ${types.join(', ')}`, margin + 5, yPosition);
+        yPosition += 6;
+        doc.setFont('helvetica', 'normal');
+        doc.text(`Véhicules: ${vehicules.length > 0 ? vehicules.join(', ') : 'Non spécifié'}`, margin + 5, yPosition);
+        yPosition += 6;
+        doc.text(`Durée: ${duree} | Niveau: ${niveau}`, margin + 5, yPosition);
+        
+        yPosition += 15;
+        
+        // Ligne de séparation
+        doc.setDrawColor(142, 36, 170);
+        doc.setLineWidth(0.5);
+        doc.line(margin, yPosition, pageWidth - margin, yPosition);
+        yPosition += 10;
+        
+        // Contenu du scénario
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+        
+        // Découper le texte en lignes qui tiennent dans la page
+        const lignes = doc.splitTextToSize(contenuTexte, maxWidth);
+        
+        for (let i = 0; i < lignes.length; i++) {
+            // Vérifier si on doit ajouter une nouvelle page
+            if (yPosition > pageHeight - margin) {
+                doc.addPage();
+                yPosition = margin;
+            }
+            
+            const ligne = lignes[i];
+            
+            // Détecter les titres (lignes en majuscules ou avec emojis)
+            if (ligne.match(/^[📋🎯📖👥⏱️🔄✅⚠️📦]/)) {
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(11);
+                doc.setTextColor(106, 27, 154);
+                yPosition += 3;
+            } else if (ligne === ligne.toUpperCase() && ligne.length < 50 && ligne.trim().length > 0) {
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(10);
+                doc.setTextColor(74, 20, 140);
+            } else {
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                doc.setTextColor(0, 0, 0);
+            }
+            
+            doc.text(ligne, margin, yPosition);
+            yPosition += 5;
+        }
+        
+        // Pied de page sur toutes les pages
+        const totalPages = doc.internal.getNumberOfPages();
+        for (let i = 1; i <= totalPages; i++) {
+            doc.setPage(i);
+            doc.setFontSize(8);
+            doc.setTextColor(128, 128, 128);
+            doc.setFont('helvetica', 'italic');
+            doc.text(
+                `DECIOPS v1.9 - Scénario généré le ${new Date().toLocaleDateString('fr-FR')} - Page ${i}/${totalPages}`,
+                pageWidth / 2,
+                pageHeight - 10,
+                { align: 'center' }
+            );
+        }
+        
+        // Générer le nom du fichier
+        const dateStr = new Date().toISOString().split('T')[0];
+        const typeStr = types[0] ? types[0].replace(/\s+/g, '_') : 'Scenario';
+        const filename = `Scenario_${typeStr}_${dateStr}.pdf`;
+        
+        // Télécharger le PDF
+        doc.save(filename);
+        
+        // Confirmation
+        setTimeout(() => {
+            alert(`✅ PDF téléchargé : ${filename}`);
+        }, 100);
     }
     </script>
 
