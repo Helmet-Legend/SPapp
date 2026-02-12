@@ -13637,22 +13637,43 @@ Utilise un langage professionnel sapeur-pompier avec les termes techniques appro
             }
         }
         
-        // Charger le thème sauvegardé au démarrage
+        // Gestion du bouton de bascule (Toggle)
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            
+            themeToggle.classList.add('switching');
+            setTimeout(() => themeToggle.classList.remove('switching'), 500);
+            
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        
+        // Synchronisation de l'icône au chargement du DOM
         document.addEventListener('DOMContentLoaded', function() {
             const savedTheme = localStorage.getItem('theme');
             const themeToggle = document.getElementById('themeToggle');
             
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-mode');
-                themeToggle.textContent = '☀️';
-                console.log('🌙 Mode sombre: activé (sauvegardé)');
-            } else {
-                themeToggle.textContent = '🌙';
-                console.log('☀️ Mode clair: activé (par défaut)');
+            if (themeToggle) {
+                if (savedTheme === 'dark') {
+                    themeToggle.textContent = '☀️';
+                    console.log('🌙 Mode sombre : icône synchronisée');
+                } else {
+                    themeToggle.textContent = '🌙';
+                    console.log('☀️ Mode clair : icône synchronisée');
+                }
             }
         });
     </script>
-<script src="guides-gmu.js"></script>
+
+    <script src="guides-gmu.js"></script>
     <script src="affichage-gmu.js"></script>
 
 </body>
