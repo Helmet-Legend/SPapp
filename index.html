@@ -4287,6 +4287,7 @@
     </div>
 
     <script>
+    /* SCRIPT DÉPLACÉ VERS convertisseur.js
     // ========== CONVERTISSEUR D'UNITÉS - JAVASCRIPT COMPLET ==========
     
     let currentConversionType = '';
@@ -4519,6 +4520,7 @@
         document.getElementById('value1').value = '';
         document.getElementById('value2').innerHTML = '--';
     }
+    FIN DU SCRIPT DÉPLACÉ */
     </script>
 
 
@@ -5190,6 +5192,123 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+    /* SCRIPT DÉPLACÉ VERS calculateurs.js
+    // ========== CALCULATEUR ABAQUE CHARGES - JAVASCRIPT ==========
+    
+    // Densités des matériaux (kg/m³)
+    const materiaux = {
+        'Béton armé': 2500,
+        'Béton': 2300,
+        'Brique creuse': 900,
+        'Brique pleine': 1800,
+        'Parpaing': 1300,
+        'Bois (moyenne)': 600,
+        'Acier': 7850,
+        'Aluminium': 2700,
+        'Verre': 2500,
+        'Eau': 1000,
+        'Terre': 1700,
+        'Sable': 1600,
+        'Graviers': 1500,
+        'Plâtre': 1200,
+        'Polystyrène': 30,
+        'Laine de verre': 25
+    };
+    
+    function calculateAbaqueAll() {
+        const longueur = parseFloat(document.getElementById('abaque-longueur').value) || 0;
+        const largeur = parseFloat(document.getElementById('abaque-largeur').value) || 0;
+        const hauteur = parseFloat(document.getElementById('abaque-hauteur').value) || 0;
+        
+        const volume = longueur * largeur * hauteur;
+        
+        // Afficher le volume
+        document.getElementById('abaque-volume-display').textContent = `${volume.toFixed(2)} m³`;
+        document.getElementById('abaque-volume-litres').textContent = `${(volume * 1000).toFixed(0)} litres`;
+        
+        // Générer les résultats pour chaque matériau
+        let html = '<div style="display: grid; gap: 15px;">';
+        
+        for (const [nom, densite] of Object.entries(materiaux)) {
+            const poids = volume * densite;
+            const tonnes = poids / 1000;
+            
+            // Choisir la couleur selon le poids
+            let couleur = '#4CAF50'; // Vert pour léger
+            if (tonnes > 10) couleur = '#FF9800'; // Orange pour moyen
+            if (tonnes > 50) couleur = '#F44336'; // Rouge pour lourd
+            
+            html += `
+                <div style="display: grid; grid-template-columns: 1fr auto; gap: 15px; padding: 15px; background: var(--bg-card); border-radius: 10px; border-left: 5px solid ${couleur}; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <div>
+                        <div style="font-size: 1.2em; font-weight: bold; color: var(--text-primary);">${nom}</div>
+                        <div style="font-size: 0.9em; color: var(--text-secondary);">Densité: ${densite} kg/m³</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 1.8em; font-weight: bold; color: ${couleur};">${tonnes.toFixed(2)} t</div>
+                        <div style="font-size: 0.9em; color: var(--text-secondary);">${poids.toFixed(0)} kg</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        html += '</div>';
+        document.getElementById('abaque-results').innerHTML = html;
+    }
+    
+    // Initialiser l'abaque
+    calculateAbaqueAll();
+    
+    // ========== CALCULATEUR TEMPS DE TRAJET - JAVASCRIPT ==========
+    
+    let currentVitesse = 50; // Par défaut
+    
+    function selectVitesse(vitesse) {
+        currentVitesse = vitesse;
+        
+        // Mettre à jour l'apparence des boutons
+        document.querySelectorAll('.vitesse-btn').forEach(btn => {
+            if (parseInt(btn.getAttribute('data-vitesse')) === vitesse) {
+                btn.style.transform = 'scale(1.1)';
+                btn.style.boxShadow = '0 8px 20px rgba(0,0,0,0.3)';
+            } else {
+                btn.style.transform = 'scale(1)';
+                btn.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+            }
+        });
+        
+        calculateTrajet();
+    }
+    
+    function calculateTrajet() {
+        const distance = parseFloat(document.getElementById('trajet-distance').value) || 0;
+        
+        // Calcul du temps en heures
+        const tempsHeures = distance / currentVitesse;
+        const heures = Math.floor(tempsHeures);
+        const minutes = Math.round((tempsHeures - heures) * 60);
+        
+        // Formater l'affichage
+        let affichage = '';
+        if (heures > 0) {
+            affichage = `${heures}h ${minutes}min`;
+        } else {
+            affichage = `${minutes}min`;
+        }
+        
+        // Afficher les résultats
+        document.getElementById('trajet-temps').textContent = affichage;
+        document.getElementById('trajet-dist-display').textContent = `${distance.toFixed(1)} km`;
+        document.getElementById('trajet-vitesse-display').textContent = `${currentVitesse} km/h`;
+    }
+    
+    // Initialiser le calcul de trajet
+    calculateTrajet();
+    FIN DU SCRIPT DÉPLACÉ */
+    </script>
 
 
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
@@ -13461,6 +13580,11 @@ Utilise un langage professionnel sapeur-pompier avec les termes techniques appro
     <script src="js/data-loader.js"></script>
     <script src="js/modules/sal.js"></script>
     <script src="js/app.js"></script>
+    
+    <!-- Scripts DECIOPS -->
+    <script src="calculateurs.js"></script>
+    <script src="convertisseur.js"></script>
+    <script src="theme.js"></script>
     
     <!-- Service Worker Registration -->
     <script>
