@@ -1074,7 +1074,8 @@ function searchTMD() {
             '<div style="font-size: 1.2em; color: #888; font-style: italic;">Pas de code</div>' :
             `<div style="font-size: 1.5em;">${item.danger || '--'}</div>`;
         
-        return `
+        
+  return `
             <div class="result-box" style="border-left-color: ${borderColor};">
                 <div style="display: flex; gap: 20px; align-items: start;">
                     <div style="text-align: center;">
@@ -1093,11 +1094,48 @@ function searchTMD() {
                         <div class="danger-box" style="margin-top: 10px;">
                             <strong>⚠️ Risques :</strong> ${item.risques}
                         </div>
+                        
+                        <!-- 🔥 BOUTON GMU ICI -->
+                        <button onclick="afficherFicheTMD('${item.onu}', '${item.nom.replace(/'/g, "\\'")}', ${item.classe}, '${(item.risques || '').replace(/'/g, "\\'")}', '${item.picto}', '${item.danger || ''}')" 
+                                style="
+                                    margin-top: 15px;
+                                    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%);
+                                    border: none;
+                                    padding: 12px 25px;
+                                    border-radius: 10px;
+                                    color: white;
+                                    font-weight: bold;
+                                    font-size: 1.1em;
+                                    cursor: pointer;
+                                    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+                                    transition: all 0.3s;
+                                "
+                                onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(255, 107, 0, 0.6)';"
+                                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(255, 107, 0, 0.4)';">
+                            📖 Fiche GMU
+                        </button>
                     </div>
                 </div>
             </div>
         `;
     }).join('');
+}
+// 🔥 FONCTION POUR AFFICHER LA FICHE GMU
+function afficherFicheTMD(onu, nom, classe, risques, picto, danger) {
+    const matiere = {
+        onu: onu,
+        nom: nom,
+        classe: classe,
+        risques: risques,
+        picto: picto,
+        danger: danger || '00'
+    };
+    
+    if (typeof afficherFicheGMU === 'function') {
+        afficherFicheGMU(matiere);
+    } else {
+        alert('⚠️ Le module GMU n\'est pas chargé. Vérifiez que guides-gmu.js et affichage-gmu.js sont présents.');
+    }
 }
 
 // ========== MODULE TABLEAU ARI ==========
