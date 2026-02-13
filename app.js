@@ -60,7 +60,8 @@ function initializeApp() {
         console.log("Mode sombre : localStorage non disponible");
     }
     
-    updateDarkModeIcon();
+    // Mise à jour de l'icône (avec protection)
+    setTimeout(updateDarkModeIcon, 100);
     
     // Restaurer sections
     setTimeout(function() {
@@ -77,6 +78,7 @@ function initializeApp() {
     showModule('home');
     
     console.log('🚒 DECIOPS prêt!');
+    console.log('✅ Version: 1.9.4');
 }
 
 function setupEventListeners() {
@@ -500,9 +502,11 @@ function toggleDarkMode() {
 
 function updateDarkModeIcon() {
     const icon = document.getElementById('dark-mode-icon');
-    if (icon) {
-        icon.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    if (!icon) {
+        console.log('⚠️ Élément dark-mode-icon non trouvé dans le HTML');
+        return;
     }
+    icon.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
 }
 
 // ==================== UI - SECTIONS PLIABLES ====================
