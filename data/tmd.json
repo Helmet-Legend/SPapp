@@ -985,7 +985,8 @@
     "classe": 2,
     "risques": "Gaz inflammable instable",
     "picto": "🔥",
-    "danger": "239"
+    "danger": "239",
+    "tempAutoInflammation": "305°C"
   },
   {
     "onu": "1002",
@@ -1001,7 +1002,8 @@
     "classe": 2,
     "risques": "Gaz comburant réfrigéré",
     "picto": "🔵",
-    "danger": "225"
+    "danger": "225",
+    "tempEbullition": "-194°C"
   },
   {
     "onu": "1005",
@@ -1009,7 +1011,10 @@
     "classe": 2,
     "risques": "Gaz toxique corrosif",
     "picto": "☠️",
-    "danger": "268"
+    "danger": "268",
+    "seuilOlfactif": "5-50 ppm",
+    "vle": "50 ppm",
+    "tempEbullition": "-33°C"
   },
   {
     "onu": "1006",
@@ -1049,7 +1054,11 @@
     "classe": 2,
     "risques": "Gaz inflammable",
     "picto": "🔥",
-    "danger": "23"
+    "danger": "23",
+    "lii": "1.8%",
+    "lsi": "8.4%",
+    "tempAutoInflammation": "365°C",
+    "densiteVapeur": "2.0"
   },
   {
     "onu": "1012",
@@ -1065,23 +1074,8 @@
     "classe": 2,
     "risques": "Gaz asphyxiant",
     "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1014",
-    "nom": "Mélange oxygène-dioxyde de carbone",
-    "classe": 2,
-    "risques": "Gaz comburant",
-    "picto": "🔵",
-    "danger": "225"
-  },
-  {
-    "onu": "1015",
-    "nom": "Dioxyde de carbone et oxyde d'éthylène",
-    "classe": 2,
-    "risques": "Gaz inflammable toxique",
-    "picto": "🔥",
-    "danger": "268"
+    "danger": "20",
+    "vle": "5000 ppm"
   },
   {
     "onu": "1016",
@@ -1089,7 +1083,10 @@
     "classe": 2,
     "risques": "Gaz très toxique inflammable",
     "picto": "☠️",
-    "danger": "263"
+    "danger": "263",
+    "lii": "12.5%",
+    "lsi": "74%",
+    "vle": "50 ppm"
   },
   {
     "onu": "1017",
@@ -1097,35 +1094,15 @@
     "classe": 2,
     "risques": "Gaz toxique corrosif",
     "picto": "☠️",
-    "danger": "268"
+    "danger": "268",
+    "seuilOlfactif": "0.5 ppm",
+    "vle": "0.5 ppm",
+    "idlh": "10 ppm",
+    "densiteVapeur": "2.5"
   },
   {
     "onu": "1018",
     "nom": "Chlorodifluorométhane",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1020",
-    "nom": "Chloropentafluoroéthane",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1021",
-    "nom": "1-Chloro-1,2,2,2-tétrafluoroéthane",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1022",
-    "nom": "Chlorotrifluorométhane",
     "classe": 2,
     "risques": "Gaz réfrigérant",
     "picto": "⚠️",
@@ -1156,38 +1133,6 @@
     "danger": "23"
   },
   {
-    "onu": "1028",
-    "nom": "Dichlorodifluorométhane",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1029",
-    "nom": "Dichlorofluorométhane",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1030",
-    "nom": "1,1-Difluoréthane",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1032",
-    "nom": "Diméthylamine",
-    "classe": 2,
-    "risques": "Gaz inflammable corrosif",
-    "picto": "🔥",
-    "danger": "238"
-  },
-  {
     "onu": "1033",
     "nom": "Éther diméthylique",
     "classe": 2,
@@ -1201,35 +1146,13 @@
     "classe": 2,
     "risques": "Gaz inflammable",
     "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1036",
-    "nom": "Éthylamine",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1037",
-    "nom": "Chlorure d'éthyle",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
+    "danger": "23",
+    "lii": "3%",
+    "lsi": "12.4%"
   },
   {
     "onu": "1038",
     "nom": "Éthylène liquéfié",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1039",
-    "nom": "Éther méthyléthylique",
     "classe": 2,
     "risques": "Gaz inflammable",
     "picto": "🔥",
@@ -1241,31 +1164,9 @@
     "classe": 2,
     "risques": "Gaz inflammable toxique",
     "picto": "🔥",
-    "danger": "263"
-  },
-  {
-    "onu": "1041",
-    "nom": "Mélange oxyde éthylène-CO2",
-    "classe": 2,
-    "risques": "Gaz sous pression",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1043",
-    "nom": "Engrais ammoniacal solution",
-    "classe": 2,
-    "risques": "Gaz comburant",
-    "picto": "🔵",
-    "danger": "22"
-  },
-  {
-    "onu": "1044",
-    "nom": "Extincteurs",
-    "classe": 2,
-    "risques": "Gaz sous pression",
-    "picto": "⚠️",
-    "danger": "20"
+    "danger": "263",
+    "lii": "3%",
+    "lsi": "100%"
   },
   {
     "onu": "1045",
@@ -1284,20 +1185,16 @@
     "danger": "20"
   },
   {
-    "onu": "1048",
-    "nom": "Bromure d'hydrogène",
-    "classe": 2,
-    "risques": "Gaz toxique corrosif",
-    "picto": "☠️",
-    "danger": "268"
-  },
-  {
     "onu": "1049",
     "nom": "Hydrogène",
     "classe": 2,
     "risques": "Gaz très inflammable",
     "picto": "🔥",
-    "danger": "23"
+    "danger": "23",
+    "lii": "4%",
+    "lsi": "75%",
+    "tempAutoInflammation": "500°C",
+    "densiteVapeur": "0.07"
   },
   {
     "onu": "1050",
@@ -1305,7 +1202,8 @@
     "classe": 2,
     "risques": "Gaz toxique corrosif",
     "picto": "☠️",
-    "danger": "268"
+    "danger": "268",
+    "vle": "5 ppm"
   },
   {
     "onu": "1051",
@@ -1313,15 +1211,8 @@
     "classe": 2,
     "risques": "Gaz très toxique",
     "picto": "☠️",
-    "danger": "663"
-  },
-  {
-    "onu": "1052",
-    "nom": "Fluorure d'hydrogène",
-    "classe": 2,
-    "risques": "Gaz très corrosif",
-    "picto": "☠️",
-    "danger": "886"
+    "danger": "663",
+    "idlh": "50 ppm"
   },
   {
     "onu": "1053",
@@ -1329,79 +1220,12 @@
     "classe": 2,
     "risques": "Gaz très toxique inflammable",
     "picto": "☠️",
-    "danger": "263"
-  },
-  {
-    "onu": "1055",
-    "nom": "Isobutylène",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1056",
-    "nom": "Krypton",
-    "classe": 2,
-    "risques": "Gaz asphyxiant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1057",
-    "nom": "Briquets",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1058",
-    "nom": "Gaz liquéfiés ininflammables",
-    "classe": 2,
-    "risques": "Gaz sous pression",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1060",
-    "nom": "Méthylacétylène mélange",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "239"
-  },
-  {
-    "onu": "1061",
-    "nom": "Méthylamine",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1062",
-    "nom": "Bromure de méthyle",
-    "classe": 2,
-    "risques": "Gaz toxique",
-    "picto": "☠️",
-    "danger": "26"
-  },
-  {
-    "onu": "1063",
-    "nom": "Chlorure de méthyle",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1064",
-    "nom": "Mercaptan méthylique",
-    "classe": 2,
-    "risques": "Gaz inflammable toxique",
-    "picto": "🔥",
-    "danger": "263"
+    "danger": "263",
+    "seuilOlfactif": "0.02 ppm",
+    "vle": "10 ppm",
+    "idlh": "100 ppm",
+    "lii": "4%",
+    "lsi": "44%"
   },
   {
     "onu": "1065",
@@ -1420,22 +1244,6 @@
     "danger": "20"
   },
   {
-    "onu": "1067",
-    "nom": "Tétroxyde de diazote",
-    "classe": 2,
-    "risques": "Gaz toxique comburant",
-    "picto": "☠️",
-    "danger": "265"
-  },
-  {
-    "onu": "1069",
-    "nom": "Chlorure de nitrosyle",
-    "classe": 2,
-    "risques": "Gaz toxique corrosif",
-    "picto": "☠️",
-    "danger": "268"
-  },
-  {
     "onu": "1070",
     "nom": "Protoxyde d'azote",
     "classe": 2,
@@ -1449,7 +1257,10 @@
     "classe": 2,
     "risques": "Gaz inflammable",
     "picto": "🔥",
-    "danger": "23"
+    "danger": "23",
+    "lii": "1.8%",
+    "lsi": "9.5%",
+    "densiteVapeur": "1.5-2.0"
   },
   {
     "onu": "1072",
@@ -1465,7 +1276,8 @@
     "classe": 2,
     "risques": "Gaz comburant réfrigéré",
     "picto": "🔵",
-    "danger": "225"
+    "danger": "225",
+    "tempEbullition": "-183°C"
   },
   {
     "onu": "1075",
@@ -1473,7 +1285,9 @@
     "classe": 2,
     "risques": "Gaz inflammable",
     "picto": "🔥",
-    "danger": "23"
+    "danger": "23",
+    "lii": "1.8%",
+    "lsi": "9.5%"
   },
   {
     "onu": "1076",
@@ -1481,7 +1295,9 @@
     "classe": 2,
     "risques": "Gaz toxique corrosif",
     "picto": "☠️",
-    "danger": "268"
+    "danger": "268",
+    "idlh": "2 ppm",
+    "vle": "0.1 ppm"
   },
   {
     "onu": "1077",
@@ -1489,15 +1305,9 @@
     "classe": 2,
     "risques": "Gaz inflammable",
     "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1078",
-    "nom": "Gaz frigorifique",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
+    "danger": "23",
+    "lii": "2%",
+    "lsi": "11.1%"
   },
   {
     "onu": "1079",
@@ -1505,119 +1315,10 @@
     "classe": 2,
     "risques": "Gaz toxique corrosif",
     "picto": "☠️",
-    "danger": "268"
-  },
-  {
-    "onu": "1080",
-    "nom": "Hexafluorure de soufre",
-    "classe": 2,
-    "risques": "Gaz asphyxiant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1081",
-    "nom": "Tétrafluoroéthylène",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "239"
-  },
-  {
-    "onu": "1082",
-    "nom": "Trifluorochloroéthylène",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "239"
-  },
-  {
-    "onu": "1083",
-    "nom": "Triméthylamine",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1085",
-    "nom": "Bromure de vinyle",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1086",
-    "nom": "Chlorure de vinyle",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1087",
-    "nom": "Éther méthylvinylique",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1581",
-    "nom": "Chloropicrine et bromure de méthyle",
-    "classe": 2,
-    "risques": "Gaz toxique",
-    "picto": "☠️",
-    "danger": "26"
-  },
-  {
-    "onu": "1582",
-    "nom": "Chloropicrine et chlorure de méthyle",
-    "classe": 2,
-    "risques": "Gaz toxique",
-    "picto": "☠️",
-    "danger": "26"
-  },
-  {
-    "onu": "1745",
-    "nom": "Pentafluorure de brome",
-    "classe": 2,
-    "risques": "Gaz toxique corrosif",
-    "picto": "☠️",
-    "danger": "568"
-  },
-  {
-    "onu": "1746",
-    "nom": "Trifluorure de brome",
-    "classe": 2,
-    "risques": "Gaz toxique corrosif",
-    "picto": "☠️",
-    "danger": "568"
-  },
-  {
-    "onu": "1749",
-    "nom": "Trifluorure de chlore",
-    "classe": 2,
-    "risques": "Gaz toxique comburant",
-    "picto": "☠️",
-    "danger": "265"
-  },
-  {
-    "onu": "1911",
-    "nom": "Diborane",
-    "classe": 2,
-    "risques": "Gaz très toxique inflammable",
-    "picto": "☠️",
-    "danger": "263"
-  },
-  {
-    "onu": "1912",
-    "nom": "Chlorure de méthyle et chlorure de méthylène",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
+    "danger": "268",
+    "seuilOlfactif": "0.5 ppm",
+    "vle": "2 ppm",
+    "idlh": "100 ppm"
   },
   {
     "onu": "1950",
@@ -1628,148 +1329,13 @@
     "danger": "20"
   },
   {
-    "onu": "1951",
-    "nom": "Argon liquide réfrigéré",
-    "classe": 2,
-    "risques": "Gaz réfrigéré",
-    "picto": "🔵",
-    "danger": "22"
-  },
-  {
-    "onu": "1952",
-    "nom": "Mélange oxyde éthylène-CO2",
-    "classe": 2,
-    "risques": "Gaz sous pression",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1953",
-    "nom": "Gaz comprimé toxique inflammable",
-    "classe": 2,
-    "risques": "Gaz toxique inflammable",
-    "picto": "☠️",
-    "danger": "263"
-  },
-  {
-    "onu": "1954",
-    "nom": "Gaz comprimé inflammable",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1955",
-    "nom": "Gaz comprimé toxique",
-    "classe": 2,
-    "risques": "Gaz toxique",
-    "picto": "☠️",
-    "danger": "26"
-  },
-  {
-    "onu": "1956",
-    "nom": "Gaz comprimé",
-    "classe": 2,
-    "risques": "Gaz sous pression",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1957",
-    "nom": "Deutérium comprimé",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1958",
-    "nom": "1,2-Dichloro-1,1,2,2-tétrafluoroéthane",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1959",
-    "nom": "1,1-Difluoroéthylène",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1962",
-    "nom": "Éthylène",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1963",
-    "nom": "Hélium liquide réfrigéré",
-    "classe": 2,
-    "risques": "Gaz réfrigéré",
-    "picto": "🔵",
-    "danger": "22"
-  },
-  {
-    "onu": "1964",
-    "nom": "Hydrocarbures gazeux mélange",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1965",
-    "nom": "Hydrocarbures gazeux liquéfiés",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1966",
-    "nom": "Hydrogène liquide réfrigéré",
-    "classe": 2,
-    "risques": "Gaz inflammable réfrigéré",
-    "picto": "🔥",
-    "danger": "223"
-  },
-  {
-    "onu": "1967",
-    "nom": "Gaz insecticide toxique",
-    "classe": 2,
-    "risques": "Gaz toxique",
-    "picto": "☠️",
-    "danger": "26"
-  },
-  {
     "onu": "1968",
     "nom": "Azote liquide réfrigéré",
     "classe": 2,
     "risques": "Gaz réfrigéré",
     "picto": "🔵",
-    "danger": "22"
-  },
-  {
-    "onu": "1969",
-    "nom": "Isobutane",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1970",
-    "nom": "Krypton liquide réfrigéré",
-    "classe": 2,
-    "risques": "Gaz réfrigéré",
-    "picto": "🔵",
-    "danger": "22"
+    "danger": "22",
+    "tempEbullition": "-196°C"
   },
   {
     "onu": "1971",
@@ -1777,55 +1343,11 @@
     "classe": 2,
     "risques": "Gaz inflammable",
     "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "1972",
-    "nom": "Méthane liquide réfrigéré",
-    "classe": 2,
-    "risques": "Gaz inflammable réfrigéré",
-    "picto": "🔥",
-    "danger": "223"
-  },
-  {
-    "onu": "1973",
-    "nom": "Chlorodifluorométhane et chloropentafluoroéthane",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1974",
-    "nom": "Chlorodifluorobromomé thane",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1975",
-    "nom": "Oxyde nitrique et tétroxyde de diazote",
-    "classe": 2,
-    "risques": "Gaz toxique comburant",
-    "picto": "☠️",
-    "danger": "265"
-  },
-  {
-    "onu": "1976",
-    "nom": "Octafluorocyclobutane",
-    "classe": 2,
-    "risques": "Gaz sous pression",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "1977",
-    "nom": "Azote liquéfié réfrigéré",
-    "classe": 2,
-    "risques": "Gaz réfrigéré",
-    "picto": "🔵",
-    "danger": "22"
+    "danger": "23",
+    "lii": "5%",
+    "lsi": "15%",
+    "tempAutoInflammation": "537°C",
+    "densiteVapeur": "0.55"
   },
   {
     "onu": "1978",
@@ -1833,343 +1355,11 @@
     "classe": 2,
     "risques": "Gaz inflammable",
     "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "2187",
-    "nom": "Dioxyde de carbone liquéfié réfrigéré",
-    "classe": 2,
-    "risques": "Gaz réfrigéré",
-    "picto": "🔵",
-    "danger": "22"
-  },
-  {
-    "onu": "2188",
-    "nom": "Arsine",
-    "classe": 2,
-    "risques": "Gaz très toxique inflammable",
-    "picto": "☠️",
-    "danger": "263"
-  },
-  {
-    "onu": "2189",
-    "nom": "Dichlorosilane",
-    "classe": 2,
-    "risques": "Gaz toxique inflammable",
-    "picto": "🔥",
-    "danger": "263"
-  },
-  {
-    "onu": "2190",
-    "nom": "Difluorure d'oxygène",
-    "classe": 2,
-    "risques": "Gaz toxique comburant",
-    "picto": "☠️",
-    "danger": "265"
-  },
-  {
-    "onu": "2191",
-    "nom": "Fluorure de sulfuryle",
-    "classe": 2,
-    "risques": "Gaz toxique",
-    "picto": "☠️",
-    "danger": "26"
-  },
-  {
-    "onu": "2192",
-    "nom": "Germane",
-    "classe": 2,
-    "risques": "Gaz très toxique inflammable",
-    "picto": "☠️",
-    "danger": "263"
-  },
-  {
-    "onu": "2193",
-    "nom": "Hexafluoroéthane",
-    "classe": 2,
-    "risques": "Gaz sous pression",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "2198",
-    "nom": "Tétrafluorure de silicium",
-    "classe": 2,
-    "risques": "Gaz toxique corrosif",
-    "picto": "☠️",
-    "danger": "268"
-  },
-  {
-    "onu": "2199",
-    "nom": "Phosphine",
-    "classe": 2,
-    "risques": "Gaz très toxique inflammable",
-    "picto": "☠️",
-    "danger": "263"
-  },
-  {
-    "onu": "2200",
-    "nom": "Propadiène stabilisé",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "2201",
-    "nom": "Protoxyde d'azote liquide réfrigéré",
-    "classe": 2,
-    "risques": "Gaz comburant réfrigéré",
-    "picto": "🔵",
-    "danger": "225"
-  },
-  {
-    "onu": "2202",
-    "nom": "Séléniure d'hydrogène",
-    "classe": 2,
-    "risques": "Gaz très toxique inflammable",
-    "picto": "☠️",
-    "danger": "263"
-  },
-  {
-    "onu": "2203",
-    "nom": "Silane",
-    "classe": 2,
-    "risques": "Gaz spontanément inflammable",
-    "picto": "🔥",
-    "danger": "236"
-  },
-  {
-    "onu": "2204",
-    "nom": "Sulfure de carbonyle",
-    "classe": 2,
-    "risques": "Gaz toxique inflammable",
-    "picto": "🔥",
-    "danger": "263"
-  },
-  {
-    "onu": "2417",
-    "nom": "Hexafluorure de tungstène",
-    "classe": 2,
-    "risques": "Gaz toxique corrosif",
-    "picto": "☠️",
-    "danger": "268"
-  },
-  {
-    "onu": "2418",
-    "nom": "Tétrafluorure de soufre",
-    "classe": 2,
-    "risques": "Gaz toxique corrosif",
-    "picto": "☠️",
-    "danger": "268"
-  },
-  {
-    "onu": "2419",
-    "nom": "Bromotrifluoroéthylène",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "2420",
-    "nom": "Hexafluoracétone",
-    "classe": 2,
-    "risques": "Gaz toxique corrosif",
-    "picto": "☠️",
-    "danger": "268"
-  },
-  {
-    "onu": "2421",
-    "nom": "Trioxyde d'azote",
-    "classe": 2,
-    "risques": "Gaz toxique comburant",
-    "picto": "☠️",
-    "danger": "265"
-  },
-  {
-    "onu": "2451",
-    "nom": "Trifluorure d'azote",
-    "classe": 2,
-    "risques": "Gaz comburant",
-    "picto": "🔵",
-    "danger": "225"
-  },
-  {
-    "onu": "2452",
-    "nom": "Éthylacétylène stabilisé",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "239"
-  },
-  {
-    "onu": "2453",
-    "nom": "Fluorure d'éthyle",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "2454",
-    "nom": "Fluorure de méthyle",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "2517",
-    "nom": "1-Chloro-1,1-difluoroéthane",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "2600",
-    "nom": "Monoxyde de carbone et hydrogène",
-    "classe": 2,
-    "risques": "Gaz toxique inflammable",
-    "picto": "☠️",
-    "danger": "263"
-  },
-  {
-    "onu": "3153",
-    "nom": "Éther perfluoro(éthylvinylique)",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "3154",
-    "nom": "Éther perfluoro(méthylvinylique)",
-    "classe": 2,
-    "risques": "Gaz inflammable",
-    "picto": "🔥",
-    "danger": "23"
-  },
-  {
-    "onu": "3220",
-    "nom": "Pentafluoroéthane",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "3296",
-    "nom": "Heptafluoropropane",
-    "classe": 2,
-    "risques": "Gaz réfrigérant",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "3297",
-    "nom": "Oxyde d'éthylène et chlorotétrafluoroéthane",
-    "classe": 2,
-    "risques": "Gaz sous pression",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "3298",
-    "nom": "Oxyde d'éthylène et pentafluoroéthane",
-    "classe": 2,
-    "risques": "Gaz sous pression",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "3299",
-    "nom": "Oxyde d'éthylène et tétrafluoroéthane",
-    "classe": 2,
-    "risques": "Gaz sous pression",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "3300",
-    "nom": "Oxyde d'éthylène et dioxyde de carbone",
-    "classe": 2,
-    "risques": "Gaz sous pression",
-    "picto": "⚠️",
-    "danger": "20"
-  },
-  {
-    "onu": "3303",
-    "nom": "Gaz comprimé toxique comburant",
-    "classe": 2,
-    "risques": "Gaz toxique comburant",
-    "picto": "☠️",
-    "danger": "265"
-  },
-  {
-    "onu": "3304",
-    "nom": "Gaz comprimé toxique corrosif",
-    "classe": 2,
-    "risques": "Gaz toxique corrosif",
-    "picto": "☠️",
-    "danger": "268"
-  },
-  {
-    "onu": "3305",
-    "nom": "Gaz comprimé toxique inflammable corrosif",
-    "classe": 2,
-    "risques": "Gaz inflammable toxique corrosif",
-    "picto": "☠️",
-    "danger": "268"
-  },
-  {
-    "onu": "3306",
-    "nom": "Gaz comprimé toxique comburant corrosif",
-    "classe": 2,
-    "risques": "Gaz toxique comburant corrosif",
-    "picto": "☠️",
-    "danger": "265"
-  },
-  {
-    "onu": "3307",
-    "nom": "Gaz liquéfié toxique comburant",
-    "classe": 2,
-    "risques": "Gaz toxique comburant",
-    "picto": "☠️",
-    "danger": "265"
-  },
-  {
-    "onu": "3308",
-    "nom": "Gaz liquéfié toxique corrosif",
-    "classe": 2,
-    "risques": "Gaz toxique corrosif",
-    "picto": "☠️",
-    "danger": "268"
-  },
-  {
-    "onu": "3309",
-    "nom": "Gaz liquéfié toxique inflammable corrosif",
-    "classe": 2,
-    "risques": "Gaz inflammable toxique corrosif",
-    "picto": "☠️",
-    "danger": "268"
-  },
-  {
-    "onu": "3310",
-    "nom": "Gaz liquéfié toxique comburant corrosif",
-    "classe": 2,
-    "risques": "Gaz toxique comburant corrosif",
-    "picto": "☠️",
-    "danger": "265"
-  },
-  {
-    "onu": "3318",
-    "nom": "Ammoniac solution 50%",
-    "classe": 2,
-    "risques": "Gaz toxique corrosif",
-    "picto": "☠️",
-    "danger": "268"
+    "danger": "23",
+    "lii": "2.1%",
+    "lsi": "9.5%",
+    "tempAutoInflammation": "470°C",
+    "densiteVapeur": "1.5"
   },
   {
     "onu": "1090",
@@ -2177,7 +1367,13 @@
     "classe": 3,
     "risques": "Liquide très inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "-20°C",
+    "tempAutoInflammation": "465°C",
+    "lii": "2.5%",
+    "lsi": "12.8%",
+    "densiteVapeur": "2.0",
+    "solubiliteEau": "Miscible"
   },
   {
     "onu": "1091",
@@ -2185,15 +1381,18 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "-9°C"
   },
   {
     "onu": "1092",
-    "nom": "Acroline stabilisée",
+    "nom": "Acroléine stabilisée",
     "classe": 3,
     "risques": "Liquide très toxique inflammable",
     "picto": "☠️",
-    "danger": "663"
+    "danger": "663",
+    "pointEclair": "-26°C",
+    "vle": "0.1 ppm"
   },
   {
     "onu": "1093",
@@ -2201,7 +1400,10 @@
     "classe": 3,
     "risques": "Liquide inflammable toxique",
     "picto": "🔥",
-    "danger": "336"
+    "danger": "336",
+    "pointEclair": "0°C",
+    "lii": "3%",
+    "lsi": "17%"
   },
   {
     "onu": "1098",
@@ -2209,23 +1411,8 @@
     "classe": 3,
     "risques": "Liquide inflammable toxique",
     "picto": "🔥",
-    "danger": "336"
-  },
-  {
-    "onu": "1099",
-    "nom": "Bromure d'allyle",
-    "classe": 3,
-    "risques": "Liquide inflammable toxique",
-    "picto": "🔥",
-    "danger": "336"
-  },
-  {
-    "onu": "1100",
-    "nom": "Chlorure d'allyle",
-    "classe": 3,
-    "risques": "Liquide inflammable toxique",
-    "picto": "🔥",
-    "danger": "336"
+    "danger": "336",
+    "pointEclair": "21°C"
   },
   {
     "onu": "1104",
@@ -2233,7 +1420,8 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "25°C"
   },
   {
     "onu": "1105",
@@ -2241,79 +1429,23 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1106",
-    "nom": "Amylamine",
-    "classe": 3,
-    "risques": "Liquide inflammable corrosif",
-    "picto": "🔥",
-    "danger": "338"
-  },
-  {
-    "onu": "1107",
-    "nom": "Chlorure d'amyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1108",
-    "nom": "n-Pentène",
-    "classe": 3,
-    "risques": "Liquide très inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1109",
-    "nom": "Formiates d'amyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1110",
-    "nom": "n-Amylméthylcétone",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1111",
-    "nom": "Mercaptan d'amyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1112",
-    "nom": "Nitrate d'amyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "30"
-  },
-  {
-    "onu": "1113",
-    "nom": "Nitrites d'amyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "33°C"
   },
   {
     "onu": "1114",
     "nom": "Benzène",
     "classe": 3,
-    "risques": "Liquide très inflammable toxique",
+    "risques": "Liquide très inflammable toxique cancérogène",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "-11°C",
+    "tempAutoInflammation": "498°C",
+    "lii": "1.2%",
+    "lsi": "7.8%",
+    "densiteVapeur": "2.8",
+    "vle": "1 ppm",
+    "solubiliteEau": "Faible"
   },
   {
     "onu": "1120",
@@ -2321,7 +1453,10 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "29-35°C",
+    "lii": "1.4%",
+    "lsi": "11.2%"
   },
   {
     "onu": "1123",
@@ -2329,7 +1464,10 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "22°C",
+    "lii": "1.7%",
+    "lsi": "7.6%"
   },
   {
     "onu": "1125",
@@ -2337,47 +1475,8 @@
     "classe": 3,
     "risques": "Liquide inflammable corrosif",
     "picto": "🔥",
-    "danger": "338"
-  },
-  {
-    "onu": "1126",
-    "nom": "1-Bromobutane",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1127",
-    "nom": "Chlorobutanes",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1128",
-    "nom": "Formiate de butyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1129",
-    "nom": "Butyraldéhyde",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1130",
-    "nom": "Huile de camphre",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "338",
+    "pointEclair": "-12°C"
   },
   {
     "onu": "1131",
@@ -2385,15 +1484,12 @@
     "classe": 3,
     "risques": "Liquide très inflammable toxique",
     "picto": "🔥",
-    "danger": "336"
-  },
-  {
-    "onu": "1133",
-    "nom": "Adhésifs",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "336",
+    "pointEclair": "-30°C",
+    "tempAutoInflammation": "90°C",
+    "lii": "1.3%",
+    "lsi": "50%",
+    "vle": "10 ppm"
   },
   {
     "onu": "1134",
@@ -2401,47 +1497,8 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "30"
-  },
-  {
-    "onu": "1135",
-    "nom": "Éthylène chlorhydrine",
-    "classe": 3,
-    "risques": "Liquide très toxique inflammable",
-    "picto": "☠️",
-    "danger": "663"
-  },
-  {
-    "onu": "1136",
-    "nom": "Distillats de goudron de houille",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "30"
-  },
-  {
-    "onu": "1139",
-    "nom": "Solution d'enrobage",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1143",
-    "nom": "Crotonaldéhyde stabilisé",
-    "classe": 3,
-    "risques": "Liquide inflammable toxique",
-    "picto": "🔥",
-    "danger": "336"
-  },
-  {
-    "onu": "1144",
-    "nom": "Crotonylène",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "30",
+    "pointEclair": "28°C"
   },
   {
     "onu": "1145",
@@ -2449,7 +1506,12 @@
     "classe": 3,
     "risques": "Liquide très inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "-20°C",
+    "tempAutoInflammation": "245°C",
+    "lii": "1.3%",
+    "lsi": "8%",
+    "densiteVapeur": "2.9"
   },
   {
     "onu": "1146",
@@ -2457,63 +1519,8 @@
     "classe": 3,
     "risques": "Liquide très inflammable",
     "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1147",
-    "nom": "Décahydronaphtalène",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "30"
-  },
-  {
-    "onu": "1148",
-    "nom": "Diacétone-alcool",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1149",
-    "nom": "Éthers dibutyliques",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1150",
-    "nom": "1,2-Dichloroéthylène",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1152",
-    "nom": "Dichloropentanes",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "30"
-  },
-  {
-    "onu": "1153",
-    "nom": "Éther diéthylique éthylène glycol",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1154",
-    "nom": "Diéthylamine",
-    "classe": 3,
-    "risques": "Liquide inflammable corrosif",
-    "picto": "🔥",
-    "danger": "338"
+    "danger": "33",
+    "pointEclair": "-37°C"
   },
   {
     "onu": "1155",
@@ -2521,111 +1528,12 @@
     "classe": 3,
     "risques": "Liquide très inflammable",
     "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1156",
-    "nom": "Diéthylcétone",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1157",
-    "nom": "Diisobutylcétone",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "30"
-  },
-  {
-    "onu": "1158",
-    "nom": "Diisopropylamine",
-    "classe": 3,
-    "risques": "Liquide inflammable corrosif",
-    "picto": "🔥",
-    "danger": "338"
-  },
-  {
-    "onu": "1159",
-    "nom": "Éther diisopropylique",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1160",
-    "nom": "Diméthylamine solution",
-    "classe": 3,
-    "risques": "Liquide inflammable corrosif",
-    "picto": "🔥",
-    "danger": "338"
-  },
-  {
-    "onu": "1161",
-    "nom": "Carbonate de diméthyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1162",
-    "nom": "Diméthyldichorosilane",
-    "classe": 3,
-    "risques": "Liquide inflammable corrosif hydroréactif",
-    "picto": "🔥",
-    "danger": "X338"
-  },
-  {
-    "onu": "1163",
-    "nom": "1,1-Diméthylhydrazine",
-    "classe": 3,
-    "risques": "Liquide très toxique inflammable",
-    "picto": "☠️",
-    "danger": "668"
-  },
-  {
-    "onu": "1164",
-    "nom": "Sulfure de diméthyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1165",
-    "nom": "Dioxanne",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1166",
-    "nom": "Dioxolanne",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1167",
-    "nom": "Éther divinylique stabilisé",
-    "classe": 3,
-    "risques": "Liquide très inflammable",
-    "picto": "🔥",
-    "danger": "339"
-  },
-  {
-    "onu": "1169",
-    "nom": "Extraits aromatiques",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "-45°C",
+    "tempAutoInflammation": "160°C",
+    "lii": "1.9%",
+    "lsi": "36%",
+    "densiteVapeur": "2.6"
   },
   {
     "onu": "1170",
@@ -2633,23 +1541,13 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1171",
-    "nom": "Éther diéthylique éthylène glycol",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1172",
-    "nom": "Éther monoéthylique éthylène glycol",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "13°C",
+    "tempAutoInflammation": "363°C",
+    "lii": "3.3%",
+    "lsi": "19%",
+    "densiteVapeur": "1.6",
+    "solubiliteEau": "Miscible"
   },
   {
     "onu": "1173",
@@ -2657,7 +1555,12 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "-4°C",
+    "tempAutoInflammation": "426°C",
+    "lii": "2.2%",
+    "lsi": "11%",
+    "densiteVapeur": "3.0"
   },
   {
     "onu": "1175",
@@ -2665,159 +1568,37 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1176",
-    "nom": "Borate d'éthyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1177",
-    "nom": "Acétate d'éthylamyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1178",
-    "nom": "2-Éthylbutyraldéhyde",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1179",
-    "nom": "Éther butoxyéthylique",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1180",
-    "nom": "Butyrate d'éthyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1184",
-    "nom": "Dichlorure d'éthylène",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1188",
-    "nom": "Éthylèneglycol monométhyléther",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1189",
-    "nom": "Acétate d'éthylèneglycol monométhyléther",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1190",
-    "nom": "Formiate d'éthyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1191",
-    "nom": "Aldéhydes octyliques",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1192",
-    "nom": "Lactate d'éthyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "15°C",
+    "lii": "1%",
+    "lsi": "6.7%"
   },
   {
     "onu": "1193",
-    "nom": "Méthyléthylcétone",
+    "nom": "Méthyléthylcétone (MEK)",
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1194",
-    "nom": "Nitrite d'éthyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1195",
-    "nom": "Propionate d'éthyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1197",
-    "nom": "Extraits aromatiques liquides",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1198",
-    "nom": "Formaldéhyde",
-    "classe": 3,
-    "risques": "Liquide inflammable corrosif",
-    "picto": "🔥",
-    "danger": "38"
-  },
-  {
-    "onu": "1199",
-    "nom": "Furfural",
-    "classe": 3,
-    "risques": "Liquide inflammable toxique",
-    "picto": "🔥",
-    "danger": "336"
-  },
-  {
-    "onu": "1201",
-    "nom": "Huile de fusel",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "-6°C",
+    "tempAutoInflammation": "404°C",
+    "lii": "1.8%",
+    "lsi": "10%",
+    "vle": "200 ppm"
   },
   {
     "onu": "1202",
-    "nom": "Gazole",
+    "nom": "Gazole / Diesel",
     "classe": 3,
-    "risques": "Liquide inflammable",
+    "risques": "Liquide combustible",
     "picto": "🔥",
-    "danger": "30"
+    "danger": "30",
+    "pointEclair": "55-65°C",
+    "tempAutoInflammation": "225°C",
+    "lii": "0.6%",
+    "lsi": "7.5%",
+    "densiteVapeur": "4.5",
+    "solubiliteEau": "Négligeable"
   },
   {
     "onu": "1203",
@@ -2825,7 +1606,13 @@
     "classe": 3,
     "risques": "Liquide très inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "-40°C",
+    "tempAutoInflammation": "280°C",
+    "lii": "1.4%",
+    "lsi": "7.6%",
+    "densiteVapeur": "3-4",
+    "solubiliteEau": "Négligeable"
   },
   {
     "onu": "1206",
@@ -2833,15 +1620,12 @@
     "classe": 3,
     "risques": "Liquide très inflammable",
     "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1207",
-    "nom": "Hexaldéhyde",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "-4°C",
+    "tempAutoInflammation": "204°C",
+    "lii": "1.1%",
+    "lsi": "6.7%",
+    "densiteVapeur": "3.5"
   },
   {
     "onu": "1208",
@@ -2849,55 +1633,13 @@
     "classe": 3,
     "risques": "Liquide très inflammable",
     "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1210",
-    "nom": "Encres d'imprimerie",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1212",
-    "nom": "Isobutanol",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1213",
-    "nom": "Acétate d'isobutyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1214",
-    "nom": "Isobutylamine",
-    "classe": 3,
-    "risques": "Liquide inflammable corrosif",
-    "picto": "🔥",
-    "danger": "338"
-  },
-  {
-    "onu": "1216",
-    "nom": "Isooctanes",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1218",
-    "nom": "Isoprène stabilisé",
-    "classe": 3,
-    "risques": "Liquide très inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "-22°C",
+    "tempAutoInflammation": "225°C",
+    "lii": "1.1%",
+    "lsi": "7.5%",
+    "densiteVapeur": "3.0",
+    "vle": "50 ppm"
   },
   {
     "onu": "1219",
@@ -2905,23 +1647,13 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1220",
-    "nom": "Acétate d'isopropyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1221",
-    "nom": "Isopropylamine",
-    "classe": 3,
-    "risques": "Liquide inflammable corrosif",
-    "picto": "🔥",
-    "danger": "338"
+    "danger": "33",
+    "pointEclair": "12°C",
+    "tempAutoInflammation": "399°C",
+    "lii": "2%",
+    "lsi": "12.7%",
+    "densiteVapeur": "2.1",
+    "solubiliteEau": "Miscible"
   },
   {
     "onu": "1223",
@@ -2929,23 +1661,12 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "30"
-  },
-  {
-    "onu": "1224",
-    "nom": "Cétones liquides",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1228",
-    "nom": "Mercaptans liquides",
-    "classe": 3,
-    "risques": "Liquide inflammable toxique",
-    "picto": "🔥",
-    "danger": "336"
+    "danger": "30",
+    "pointEclair": "38-65°C",
+    "tempAutoInflammation": "210°C",
+    "lii": "0.7%",
+    "lsi": "5%",
+    "densiteVapeur": "4.5"
   },
   {
     "onu": "1230",
@@ -2953,15 +1674,14 @@
     "classe": 3,
     "risques": "Liquide inflammable toxique",
     "picto": "🔥",
-    "danger": "336"
-  },
-  {
-    "onu": "1231",
-    "nom": "Acétate de méthyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "336",
+    "pointEclair": "11°C",
+    "tempAutoInflammation": "385°C",
+    "lii": "6%",
+    "lsi": "36%",
+    "densiteVapeur": "1.1",
+    "vle": "200 ppm",
+    "solubiliteEau": "Miscible"
   },
   {
     "onu": "1262",
@@ -2969,7 +1689,10 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "13°C",
+    "lii": "1%",
+    "lsi": "6.5%"
   },
   {
     "onu": "1263",
@@ -2977,15 +1700,8 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1266",
-    "nom": "Produits de parfumerie",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "Variable"
   },
   {
     "onu": "1267",
@@ -2993,7 +1709,10 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "-7 à 32°C",
+    "lii": "1%",
+    "lsi": "10%"
   },
   {
     "onu": "1268",
@@ -3001,7 +1720,8 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "Variable"
   },
   {
     "onu": "1274",
@@ -3009,31 +1729,10 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1275",
-    "nom": "Aldéhyde propionique",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1276",
-    "nom": "Acétate de n-propyle",
-    "classe": 3,
-    "risques": "Liquide inflammable",
-    "picto": "🔥",
-    "danger": "33"
-  },
-  {
-    "onu": "1277",
-    "nom": "Propylamine",
-    "classe": 3,
-    "risques": "Liquide inflammable corrosif",
-    "picto": "🔥",
-    "danger": "338"
+    "danger": "33",
+    "pointEclair": "15°C",
+    "lii": "2.2%",
+    "lsi": "13.7%"
   },
   {
     "onu": "1294",
@@ -3041,7 +1740,14 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "4°C",
+    "tempAutoInflammation": "480°C",
+    "lii": "1.2%",
+    "lsi": "7.1%",
+    "densiteVapeur": "3.2",
+    "vle": "100 ppm",
+    "solubiliteEau": "Faible"
   },
   {
     "onu": "1307",
@@ -3049,7 +1755,23 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "25-32°C",
+    "tempAutoInflammation": "464°C",
+    "lii": "1%",
+    "lsi": "7%",
+    "densiteVapeur": "3.7",
+    "vle": "100 ppm"
+  },
+  {
+    "onu": "1547",
+    "nom": "Aniline",
+    "classe": 6,
+    "risques": "Liquide toxique",
+    "picto": "☠️",
+    "danger": "60",
+    "pointEclair": "70°C",
+    "vle": "2 ppm"
   },
   {
     "onu": "1648",
@@ -3057,7 +1779,109 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "2°C",
+    "lii": "4.4%",
+    "lsi": "16%",
+    "vle": "40 ppm"
+  },
+  {
+    "onu": "1710",
+    "nom": "Trichloréthylène",
+    "classe": 6,
+    "risques": "Liquide toxique",
+    "picto": "☠️",
+    "danger": "60",
+    "vle": "75 ppm"
+  },
+  {
+    "onu": "1715",
+    "nom": "Anhydride acétique",
+    "classe": 8,
+    "risques": "Corrosif inflammable",
+    "picto": "☣️",
+    "danger": "83",
+    "pointEclair": "49°C"
+  },
+  {
+    "onu": "1789",
+    "nom": "Acide chlorhydrique",
+    "classe": 8,
+    "risques": "Corrosif",
+    "picto": "☣️",
+    "danger": "80",
+    "vle": "5 ppm"
+  },
+  {
+    "onu": "1790",
+    "nom": "Acide fluorhydrique",
+    "classe": 8,
+    "risques": "Corrosif très toxique",
+    "picto": "☣️",
+    "danger": "886",
+    "vle": "3 ppm",
+    "idlh": "30 ppm"
+  },
+  {
+    "onu": "1805",
+    "nom": "Acide phosphorique",
+    "classe": 8,
+    "risques": "Corrosif",
+    "picto": "☣️",
+    "danger": "80"
+  },
+  {
+    "onu": "1814",
+    "nom": "Hydroxyde de potassium",
+    "classe": 8,
+    "risques": "Corrosif",
+    "picto": "☣️",
+    "danger": "80"
+  },
+  {
+    "onu": "1823",
+    "nom": "Hydroxyde de sodium solide",
+    "classe": 8,
+    "risques": "Corrosif",
+    "picto": "☣️",
+    "danger": "80"
+  },
+  {
+    "onu": "1824",
+    "nom": "Hydroxyde de sodium solution",
+    "classe": 8,
+    "risques": "Corrosif",
+    "picto": "☣️",
+    "danger": "80"
+  },
+  {
+    "onu": "1830",
+    "nom": "Acide sulfurique",
+    "classe": 8,
+    "risques": "Corrosif",
+    "picto": "☣️",
+    "danger": "80",
+    "vle": "1 mg/m³"
+  },
+  {
+    "onu": "1831",
+    "nom": "Oléum (acide sulfurique fumant)",
+    "classe": 8,
+    "risques": "Corrosif hydroréactif",
+    "picto": "☣️",
+    "danger": "X886"
+  },
+  {
+    "onu": "1863",
+    "nom": "Carburéacteur (Jet A1)",
+    "classe": 3,
+    "risques": "Liquide inflammable",
+    "picto": "🔥",
+    "danger": "30",
+    "pointEclair": "38°C",
+    "tempAutoInflammation": "210°C",
+    "lii": "0.7%",
+    "lsi": "5%"
   },
   {
     "onu": "1866",
@@ -3065,15 +1889,70 @@
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "Variable"
+  },
+  {
+    "onu": "1888",
+    "nom": "Chloroforme",
+    "classe": 6,
+    "risques": "Liquide toxique",
+    "picto": "☠️",
+    "danger": "60",
+    "vle": "10 ppm"
   },
   {
     "onu": "1993",
-    "nom": "Liquide inflammable",
+    "nom": "Liquide inflammable n.s.a.",
     "classe": 3,
     "risques": "Liquide inflammable",
     "picto": "🔥",
-    "danger": "33"
+    "danger": "33",
+    "pointEclair": "< 23°C"
+  },
+  {
+    "onu": "2031",
+    "nom": "Acide nitrique > 70%",
+    "classe": 8,
+    "risques": "Corrosif comburant",
+    "picto": "☣️",
+    "danger": "856"
+  },
+  {
+    "onu": "2312",
+    "nom": "Phénol fondu",
+    "classe": 6,
+    "risques": "Liquide toxique",
+    "picto": "☠️",
+    "danger": "60",
+    "pointEclair": "79°C",
+    "vle": "5 ppm"
+  },
+  {
+    "onu": "2789",
+    "nom": "Acide acétique glacial",
+    "classe": 8,
+    "risques": "Corrosif inflammable",
+    "picto": "☣️",
+    "danger": "83",
+    "pointEclair": "39°C",
+    "vle": "10 ppm"
+  },
+  {
+    "onu": "2796",
+    "nom": "Électrolyte acide de batterie",
+    "classe": 8,
+    "risques": "Corrosif",
+    "picto": "☣️",
+    "danger": "80"
+  },
+  {
+    "onu": "2797",
+    "nom": "Électrolyte alcalin de batterie",
+    "classe": 8,
+    "risques": "Corrosif",
+    "picto": "☣️",
+    "danger": "80"
   },
   {
     "onu": "2908",
@@ -3108,572 +1987,12 @@
     "danger": "70"
   },
   {
-    "onu": "2912",
-    "nom": "Matière radioactive colis type B(M)",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "2913",
-    "nom": "Matière radioactive colis type C",
-    "classe": 7,
-    "risques": "Radioactif forte activité",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "2915",
-    "nom": "Matière radioactive colis industriel type 1",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "2916",
-    "nom": "Matière radioactive colis industriel type 2",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "2917",
-    "nom": "Matière radioactive colis industriel type 3",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "2919",
-    "nom": "Matière radioactive transportée sous arrangement spécial",
-    "classe": 7,
-    "risques": "Radioactif arrangement spécial",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "2974",
-    "nom": "Matière radioactive forme spéciale",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "2975",
-    "nom": "Thorium métal pyrophorique",
-    "classe": 7,
-    "risques": "Radioactif spontanément inflammable",
-    "picto": "☢️",
-    "danger": "74"
-  },
-  {
-    "onu": "2976",
-    "nom": "Thorium nitrate solide",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
     "onu": "2977",
     "nom": "Uranium hexafluorure matière fissile",
     "classe": 7,
     "risques": "Radioactif corrosif",
     "picto": "☢️",
     "danger": "768"
-  },
-  {
-    "onu": "2978",
-    "nom": "Uranium hexafluorure",
-    "classe": 7,
-    "risques": "Radioactif corrosif",
-    "picto": "☢️",
-    "danger": "768"
-  },
-  {
-    "onu": "2979",
-    "nom": "Uranium métal pyrophorique",
-    "classe": 7,
-    "risques": "Radioactif spontanément inflammable",
-    "picto": "☢️",
-    "danger": "74"
-  },
-  {
-    "onu": "2980",
-    "nom": "Uranium nitrate hexahydraté solution",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "2981",
-    "nom": "Uranium nitrate solide",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "2982",
-    "nom": "Matière radioactive n.s.a. faible activité",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "2983",
-    "nom": "Oxyde d'éthylène et oxyde de propylène mélange",
-    "classe": 7,
-    "risques": "Radioactif inflammable",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3321",
-    "nom": "Matière radioactive à faible dispersion",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3322",
-    "nom": "Matière radioactive autre que matière fissile",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3323",
-    "nom": "Matière radioactive Type A colis spécial",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3324",
-    "nom": "Matière radioactive faible activité liquide",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3325",
-    "nom": "Matière radioactive faible activité solide",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3326",
-    "nom": "Matière radioactive objet contaminé superficiellement",
-    "classe": 7,
-    "risques": "Radioactif contamination surface",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3327",
-    "nom": "Matière radioactive Type A colis fissile",
-    "classe": 7,
-    "risques": "Radioactif fissile",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3328",
-    "nom": "Matière radioactive Type B(U) colis fissile",
-    "classe": 7,
-    "risques": "Radioactif fissile",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3329",
-    "nom": "Matière radioactive Type B(M) colis fissile",
-    "classe": 7,
-    "risques": "Radioactif fissile",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3330",
-    "nom": "Matière radioactive Type C colis fissile",
-    "classe": 7,
-    "risques": "Radioactif fissile forte activité",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3331",
-    "nom": "Matière radioactive transportée sous arrangement spécial fissile",
-    "classe": 7,
-    "risques": "Radioactif fissile arrangement spécial",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3332",
-    "nom": "Matière radioactive Type A colis spécial fissile",
-    "classe": 7,
-    "risques": "Radioactif fissile",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "3333",
-    "nom": "Matière radioactive Type A colis instruments",
-    "classe": 7,
-    "risques": "Radioactif",
-    "picto": "☢️",
-    "danger": "70"
-  },
-  {
-    "onu": "1715",
-    "nom": "Anhydride acétique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1717",
-    "nom": "Chlorure d'acétyle",
-    "classe": 8,
-    "risques": "Corrosif hydroréactif inflammable",
-    "picto": "☣️",
-    "danger": "X338"
-  },
-  {
-    "onu": "1718",
-    "nom": "Phosphate acide butyle",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1719",
-    "nom": "Liquide alcalin caustique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1722",
-    "nom": "Chloroformiate d'allyle",
-    "classe": 8,
-    "risques": "Corrosif inflammable",
-    "picto": "☣️",
-    "danger": "883"
-  },
-  {
-    "onu": "1727",
-    "nom": "Bifluorure d'ammonium",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1760",
-    "nom": "Liquide corrosif",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1764",
-    "nom": "Acide dichloracétique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1778",
-    "nom": "Acide fluorosilicique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1779",
-    "nom": "Acide formique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1783",
-    "nom": "Hexaméthylènediamine solution",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1784",
-    "nom": "Hexyltrichlorosilane",
-    "classe": 8,
-    "risques": "Corrosif hydroréactif inflammable",
-    "picto": "☣️",
-    "danger": "X338"
-  },
-  {
-    "onu": "1787",
-    "nom": "Acide iodhydrique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1788",
-    "nom": "Acide bromhydrique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1789",
-    "nom": "Acide chlorhydrique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1790",
-    "nom": "Acide fluorhydrique",
-    "classe": 8,
-    "risques": "Corrosif très toxique",
-    "picto": "☣️",
-    "danger": "886"
-  },
-  {
-    "onu": "1791",
-    "nom": "Hypochlorite solution",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1792",
-    "nom": "Monochlorure d'iode",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1793",
-    "nom": "Acide phosphoreux",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1796",
-    "nom": "Acide sulfochromique",
-    "classe": 8,
-    "risques": "Corrosif comburant",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1805",
-    "nom": "Acide phosphorique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1814",
-    "nom": "Hydroxyde de potassium",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1824",
-    "nom": "Hydroxyde de sodium solution",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1826",
-    "nom": "Acide nitrant",
-    "classe": 8,
-    "risques": "Corrosif comburant",
-    "picto": "☣️",
-    "danger": "885"
-  },
-  {
-    "onu": "1830",
-    "nom": "Acide sulfurique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1831",
-    "nom": "Acide oléum",
-    "classe": 8,
-    "risques": "Corrosif hydroréactif",
-    "picto": "☣️",
-    "danger": "X886"
-  },
-  {
-    "onu": "1832",
-    "nom": "Acide sulfurique usé",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1834",
-    "nom": "Chlorosulfonique acide",
-    "classe": 8,
-    "risques": "Corrosif hydroréactif",
-    "picto": "☣️",
-    "danger": "X886"
-  },
-  {
-    "onu": "1902",
-    "nom": "Phosphate acide diisopropyle",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "1906",
-    "nom": "Boues acides",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "2031",
-    "nom": "Acide nitrique >70%",
-    "classe": 8,
-    "risques": "Corrosif comburant",
-    "picto": "☣️",
-    "danger": "856"
-  },
-  {
-    "onu": "2214",
-    "nom": "Anhydride phtalique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "2796",
-    "nom": "Électrolyte acide de batterie",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "2797",
-    "nom": "Électrolyte alcalin de batterie",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "2798",
-    "nom": "Dichlorophényltrichlorosilane",
-    "classe": 8,
-    "risques": "Corrosif hydroréactif",
-    "picto": "☣️",
-    "danger": "X80"
-  },
-  {
-    "onu": "2799",
-    "nom": "Difluorophosphate acide phénylique",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "2800",
-    "nom": "Tétrachlorure d'étain anhydre",
-    "classe": 8,
-    "risques": "Corrosif hydroréactif",
-    "picto": "☣️",
-    "danger": "X80"
-  },
-  {
-    "onu": "2801",
-    "nom": "Colorant liquide corrosif",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "2802",
-    "nom": "Cuivre chlorure",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "2803",
-    "nom": "Gallium",
-    "classe": 8,
-    "risques": "Corrosif",
-    "picto": "☣️",
-    "danger": "80"
-  },
-  {
-    "onu": "2315",
-    "nom": "Diphényles polychlorés",
-    "classe": 9,
-    "risques": "Polluant environnement",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "2990",
-    "nom": "Engins de sauvetage autogonflables",
-    "classe": 9,
-    "risques": "Matière dangereuse diverse",
-    "picto": "⚠️",
-    "danger": "90"
   },
   {
     "onu": "3077",
@@ -3708,114 +2027,10 @@
     "danger": "90"
   },
   {
-    "onu": "3245",
-    "nom": "Microorganismes génétiquement modifiés",
-    "classe": 9,
-    "risques": "OGM",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3257",
-    "nom": "Liquide élevé température >100°C",
-    "classe": 9,
-    "risques": "Matière chaude",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3258",
-    "nom": "Solide élevé température >240°C",
-    "classe": 9,
-    "risques": "Matière chaude",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3268",
-    "nom": "Dispositifs de sécurité",
-    "classe": 9,
-    "risques": "Matière dangereuse diverse",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3316",
-    "nom": "Trousse de premiers secours",
-    "classe": 9,
-    "risques": "Matière dangereuse diverse",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3334",
-    "nom": "Liquide régulé pour l'aviation",
-    "classe": 9,
-    "risques": "Matière dangereuse diverse",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3335",
-    "nom": "Solide régulé pour l'aviation",
-    "classe": 9,
-    "risques": "Matière dangereuse diverse",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3363",
-    "nom": "Marchandises dangereuses en engin réfrigéré",
-    "classe": 9,
-    "risques": "Matière dangereuse diverse",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3509",
-    "nom": "Emballages au rebut vides",
-    "classe": 9,
-    "risques": "Matière dangereuse diverse",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3535",
-    "nom": "Matière solide toxique inflammable",
-    "classe": 9,
-    "risques": "Matière dangereuse diverse",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
     "onu": "3536",
     "nom": "Batteries lithium ion",
     "classe": 9,
     "risques": "Batteries lithium",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3537",
-    "nom": "Articles contenant matière inflammable gaz",
-    "classe": 9,
-    "risques": "Matière dangereuse diverse",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3548",
-    "nom": "Produits chimiques sous fumigation",
-    "classe": 9,
-    "risques": "Matière dangereuse diverse",
-    "picto": "⚠️",
-    "danger": "90"
-  },
-  {
-    "onu": "3549",
-    "nom": "Déchets médicaux réglementés",
-    "classe": 9,
-    "risques": "Déchets biomédicaux",
     "picto": "⚠️",
     "danger": "90"
   }
