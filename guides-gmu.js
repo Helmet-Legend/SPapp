@@ -139,7 +139,6 @@ const guidesGMU = {
 
 "127": {
     titre: "Liquides inflammables (miscibles à l'eau / polaires)",
-    pointEclair: "Variable selon produit",
     risques: {
         incendie: ["INFLAMMABLE", "Vapeurs peuvent former mélanges explosifs", "Retour de flamme possible", "Contenants peuvent exploser"],
         sante: ["Inhalation ou contact peut irriter", "Un feu peut produire des gaz toxiques", "Vapeurs peuvent causer étourdissements"]
@@ -156,7 +155,6 @@ const guidesGMU = {
 
 "128": {
     titre: "Liquides inflammables (non-miscibles à l'eau)",
-    pointEclair: "< -20°C (très bas)",
     risques: {
         incendie: ["EXTRÊMEMENT INFLAMMABLE", "Vapeurs peuvent former mélanges explosifs", "Retour de flamme possible", "Vapeurs plus lourdes que l'air, s'accumulent dans dépressions", "Risque explosif dans égouts", "Contenants peuvent exploser", "Plusieurs liquides flottent sur l'eau"],
         sante: ["Inhalation ou contact peut irriter", "Un feu peut produire des gaz toxiques", "Vapeurs peuvent causer étourdissements ou asphyxie"]
