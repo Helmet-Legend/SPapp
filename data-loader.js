@@ -2,7 +2,6 @@
  * DECIOPS - Data Loader
  * Chargement asynchrone des données JSON
  */
-
 const DataLoader = {
     basePath: 'data/',
     cache: {},
