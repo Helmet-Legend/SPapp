@@ -9,7 +9,6 @@ console.log('🔧 Module GMU Integration chargé');
 
 // ==================== INJECTION DES BOUTONS GMU ====================
 
-// Fonction qui surveille les résultats TMD et ajoute les boutons
 function injecterBoutonsGMU() {
     const resultsContainer = document.getElementById('tmdResults');
     
@@ -18,42 +17,26 @@ function injecterBoutonsGMU() {
         return;
     }
     
-    // Chercher toutes les cartes de résultats qui n'ont pas déjà un bouton GMU
     const resultCards = resultsContainer.querySelectorAll('.result-box');
     
     resultCards.forEach(card => {
-        // Vérifier si le bouton existe déjà
         if (card.querySelector('.btn-gmu')) {
-            return; // Déjà ajouté
+            return;
         }
         
-        // Chercher le numéro ONU dans la carte
         const onuElement = card.querySelector('[style*="font-size: 2em"]');
         if (!onuElement) return;
         
         const onu = onuElement.textContent.trim();
-        
-        // Chercher les autres infos
         const nomElement = card.querySelector('h3');
-        const classeElement = card.querySelector('.result-item span:last-child');
-        const risquesElement = card.querySelector('.danger-box');
-        
         if (!nomElement) return;
         
         const nom = nomElement.textContent.trim();
-        const classe = classeElement ? classeElement.textContent.trim() : '';
-        const risques = risquesElement ? risquesElement.textContent.replace('⚠️ Risques :', '').trim() : '';
         
-        // Chercher le picto
-        const pictoElement = card.querySelector('[style*="font-size: 3"]');
-        const picto = pictoElement ? pictoElement.textContent.trim() : '⚠️';
+        // Récupérer la classe depuis le texte
+        const classeText = card.textContent.match(/Classe\s*:\s*(\d+\.?\d*)/);
+        const classe = classeText ? classeText[1] : '0';
         
-        // Chercher le code danger
-        const dangerElement = card.querySelector('[style*="font-size: 1.2em"]') || 
-                              card.querySelector('[style*="font-size: 1.5em"]');
-        const danger = dangerElement ? dangerElement.textContent.trim() : '';
-        
-        // Créer le bouton GMU
         const gmuButton = document.createElement('button');
         gmuButton.className = 'btn-gmu';
         gmuButton.textContent = '📖 Voir la Fiche GMU';
@@ -72,7 +55,6 @@ function injecterBoutonsGMU() {
             margin-top: 15px;
         `;
         
-        // Effets hover
         gmuButton.onmouseover = function() {
             this.style.transform = 'scale(1.05)';
             this.style.boxShadow = '0 6px 20px rgba(255, 107, 0, 0.6)';
@@ -82,12 +64,10 @@ function injecterBoutonsGMU() {
             this.style.boxShadow = '0 4px 15px rgba(255, 107, 0, 0.4)';
         };
         
-        // Event click
         gmuButton.onclick = function() {
-            afficherFicheGMUDepuisInjection(onu, nom, classe, risques, picto, danger);
+            afficherFicheGMUDepuisInjection(onu, nom, classe);
         };
         
-        // Trouver où insérer le bouton
         const dangerBox = card.querySelector('.danger-box');
         if (dangerBox && dangerBox.parentElement) {
             dangerBox.parentElement.appendChild(gmuButton);
@@ -98,54 +78,50 @@ function injecterBoutonsGMU() {
 
 // ==================== FONCTION D'AFFICHAGE GMU ====================
 
-function afficherFicheGMUDepuisInjection(onu, nom, classe, risques, picto, danger) {
+function afficherFicheGMUDepuisInjection(onu, nom, classe) {
     console.log(`🔍 Affichage fiche GMU pour ONU ${onu}`);
     
-    // Créer l'objet matière
-    const matiere = {
-        onu: onu,
-        nom: nom,
-        classe: parseFloat(classe) || 0,
-        risques: risques || '',
-        picto: picto || '⚠️',
-        danger: danger || '00'
-    };
-    
-    // Vérifier que la fonction GMU existe
     if (typeof afficherFicheGMU === 'function') {
         console.log('✅ Fonction afficherFicheGMU disponible');
-        afficherFicheGMU(matiere);
+        
+        // ✅ CORRECTION: Récupérer le HTML et l'injecter dans la page
+        const ficheHTML = afficherFicheGMU(onu, nom, classe);
+        const container = document.getElementById('tmdResults');
+        
+        if (container && ficheHTML) {
+            container.innerHTML = `
+                <button onclick="searchTMD()" style="margin-bottom:20px; padding:12px; background:#444; color:white; border:none; border-radius:8px; cursor:pointer;">← Retour aux résultats</button>
+                ${ficheHTML}
+            `;
+            window.scrollTo(0, 0);
+            console.log('✅ Fiche GMU affichée');
+        } else {
+            console.error('❌ Container non trouvé ou HTML vide');
+        }
     } else {
         console.error('❌ Fonction afficherFicheGMU non disponible');
-        alert('⚠️ Le module GMU n\'est pas chargé.\n\nVérifiez que guides-gmu.js et affichage-gmu.js sont bien chargés.');
+        alert('⚠️ Le module GMU n\'est pas chargé.');
     }
 }
 
 // ==================== SURVEILLANCE DES RÉSULTATS ====================
 
-// Observer quand les résultats TMD changent
 const observerConfig = { childList: true, subtree: true };
 
 const observer = new MutationObserver(function(mutations) {
-    // Attendre un peu que le DOM se stabilise
     setTimeout(injecterBoutonsGMU, 100);
 });
 
-// Démarrer l'observation quand le DOM est prêt
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚒 GMU Integration: DOM Ready');
     
-    // Injecter immédiatement si des résultats existent déjà
     setTimeout(injecterBoutonsGMU, 500);
     
-    // Observer les changements futurs
     const resultsContainer = document.getElementById('tmdResults');
     if (resultsContainer) {
         observer.observe(resultsContainer, observerConfig);
         console.log('✅ Observation des résultats TMD activée');
     } else {
-        console.log('⚠️ Container tmdResults non trouvé au chargement');
-        // Réessayer après 2 secondes
         setTimeout(function() {
             const container = document.getElementById('tmdResults');
             if (container) {
@@ -156,8 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Fonction manuelle pour forcer l'injection (pour debug)
 window.forceInjectGMU = injecterBoutonsGMU;
 
 console.log('✅ Module GMU Integration prêt');
-console.log('💡 Pour forcer l\'injection manuellement, tapez: forceInjectGMU()');
