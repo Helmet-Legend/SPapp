@@ -1649,3 +1649,205 @@ function showFamilleHab(famille) {
 // FIN DU FICHIER - DECIOPS v1.9.8 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 DECIOPS v1.9.8 - Tous les modules chargés avec succès');
+
+// ═══════════════════════════════════════════════════════════════════════
+// MODULE EXTINCTEURS - CLASSES DE FEU
+// ═══════════════════════════════════════════════════════════════════════
+
+function selectionnerClasseFeu(classe) {
+    var infos = {
+        'A': {
+            titre: 'Classe A - Feux secs',
+            emoji: '🪵',
+            description: 'Feux de matériaux solides (bois, papier, tissu, carton, plastique)',
+            extincteurs: ['Eau', 'Eau + additif', 'Mousse', 'Poudre ABC'],
+            couleur: '#8B4513',
+            conseils: [
+                'Refroidir les braises',
+                'Arroser abondamment',
+                'Surveiller les reprises de feu'
+            ]
+        },
+        'B': {
+            titre: 'Classe B - Feux gras',
+            emoji: '🛢️',
+            description: 'Feux de liquides ou solides liquéfiables (essence, huile, alcool, solvants)',
+            extincteurs: ['Mousse', 'Poudre ABC/BC', 'CO2'],
+            couleur: '#FF4500',
+            conseils: [
+                'NE PAS utiliser d\'eau (risque de projection)',
+                'Étouffer le feu',
+                'Couper l\'alimentation si possible'
+            ]
+        },
+        'C': {
+            titre: 'Classe C - Feux de gaz',
+            emoji: '💨',
+            description: 'Feux de gaz (butane, propane, méthane, GPL)',
+            extincteurs: ['Poudre BC/ABC', 'CO2'],
+            couleur: '#1E90FF',
+            conseils: [
+                'Couper l\'arrivée de gaz EN PRIORITÉ',
+                'Ne pas éteindre sans couper la source',
+                'Risque d\'explosion si le gaz continue'
+            ]
+        },
+        'D': {
+            titre: 'Classe D - Feux de métaux',
+            emoji: '⚙️',
+            description: 'Feux de métaux (magnésium, sodium, aluminium en poudre, titane)',
+            extincteurs: ['Poudre spéciale D', 'Sable sec', 'Ciment'],
+            couleur: '#808080',
+            conseils: [
+                'NE JAMAIS utiliser d\'eau (réaction explosive)',
+                'Étouffer avec sable ou poudre spéciale',
+                'Intervention spécialisée requise'
+            ]
+        },
+        'F': {
+            titre: 'Classe F - Feux d\'huiles de cuisson',
+            emoji: '🍳',
+            description: 'Feux d\'auxiliaires de cuisson (huiles et graisses végétales ou animales)',
+            extincteurs: ['Extincteur spécial F', 'Couverture anti-feu'],
+            couleur: '#FF8C00',
+            conseils: [
+                'NE JAMAIS utiliser d\'eau (projection violente)',
+                'Couvrir avec un couvercle ou couverture',
+                'Couper la source de chaleur'
+            ]
+        },
+        'elect': {
+            titre: 'Feux d\'origine électrique',
+            emoji: '⚡',
+            description: 'Équipements électriques sous tension',
+            extincteurs: ['CO2', 'Poudre ABC (distance min 1m)'],
+            couleur: '#FFD700',
+            conseils: [
+                'COUPER LE COURANT en priorité',
+                'NE PAS utiliser d\'eau sur équipement sous tension',
+                'Distance de sécurité avec poudre',
+                'CO2 = extincteur privilégié'
+            ]
+        }
+    };
+    
+    var info = infos[classe];
+    if (!info) {
+        console.error('Classe de feu non trouvée:', classe);
+        return;
+    }
+    
+    // Créer ou trouver le conteneur de résultat
+    var resultContainer = document.getElementById('extincteur-result');
+    if (!resultContainer) {
+        // Créer le conteneur s'il n'existe pas
+        var module = document.getElementById('extincteurs');
+        if (module) {
+            resultContainer = document.createElement('div');
+            resultContainer.id = 'extincteur-result';
+            resultContainer.style.marginTop = '20px';
+            module.appendChild(resultContainer);
+        }
+    }
+    
+    if (resultContainer) {
+        resultContainer.innerHTML = 
+            '<div class="result-box" style="border-left: 5px solid ' + info.couleur + '; animation: slideIn 0.3s ease;">' +
+            '<h3 style="color: ' + info.couleur + '; margin-bottom: 15px;">' + info.emoji + ' ' + info.titre + '</h3>' +
+            '<p style="margin-bottom: 20px; opacity: 0.9;">' + info.description + '</p>' +
+            
+            '<div class="info-card" style="margin-bottom: 15px; border-color: ' + info.couleur + ';">' +
+            '<div class="label">✅ Extincteurs adaptés</div>' +
+            '<div style="margin-top: 10px;">' + 
+            info.extincteurs.map(function(e) { 
+                return '<span style="display: inline-block; background: ' + info.couleur + '33; padding: 8px 15px; border-radius: 20px; margin: 5px; font-weight: 600;">' + e + '</span>'; 
+            }).join('') +
+            '</div></div>' +
+            
+            '<div class="alert-box" style="background: ' + info.couleur + '22; border-color: ' + info.couleur + ';">' +
+            '<strong>📋 Conseils d\'intervention :</strong>' +
+            '<ul style="margin: 10px 0 0 20px;">' +
+            info.conseils.map(function(c) { return '<li style="margin: 8px 0;">' + c + '</li>'; }).join('') +
+            '</ul></div>' +
+            
+            '</div>';
+        
+        // Scroll vers le résultat
+        resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    
+    // Mettre en surbrillance la carte sélectionnée
+    document.querySelectorAll('.fire-class-card').forEach(function(card) {
+        card.style.transform = 'scale(1)';
+        card.style.boxShadow = '';
+    });
+    
+    if (event && event.currentTarget) {
+        event.currentTarget.style.transform = 'scale(1.05)';
+        event.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.4)';
+    }
+}
+
+console.log('✅ Module Extincteurs (selectionnerClasseFeu) chargé');
+
+// ═══════════════════════════════════════════════════════════════════════
+// MODULE SECOURS ROUTIER - NAVIGATION SECTIONS
+// ═══════════════════════════════════════════════════════════════════════
+
+function showSRSection(section) {
+    console.log('showSRSection appelé avec:', section);
+    
+    // Masquer toutes les sections
+    document.querySelectorAll('.sr-section').forEach(function(el) {
+        el.style.display = 'none';
+    });
+    
+    // Réinitialiser tous les boutons
+    var allBtns = ['btnMGO', 'btnAirbag', 'btnCharte'];
+    allBtns.forEach(function(btnId) {
+        var btn = document.getElementById(btnId);
+        if (btn) {
+            btn.style.transform = 'scale(1)';
+            btn.style.boxShadow = '';
+        }
+    });
+    
+    // Mapping des sections (HTML IDs)
+    var sectionMapping = {
+        'mgo': 'sectionMGO',
+        'airbag': 'sectionAirbag',
+        'charte': 'sectionCharte'
+    };
+    
+    var btnMapping = {
+        'mgo': 'btnMGO',
+        'airbag': 'btnAirbag',
+        'charte': 'btnCharte'
+    };
+    
+    var sectionId = sectionMapping[section];
+    var sectionElement = document.getElementById(sectionId);
+    
+    if (sectionElement) {
+        sectionElement.style.display = 'block';
+        console.log('✅ Section affichée:', sectionId);
+    } else {
+        console.error('❌ Section non trouvée:', sectionId);
+    }
+    
+    // Activer le bouton correspondant
+    var btnId = btnMapping[section];
+    var btn = document.getElementById(btnId);
+    
+    if (btn) {
+        btn.style.transform = 'scale(1.05)';
+        btn.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
+    }
+    
+    // Scroll vers le haut de la section
+    if (sectionElement) {
+        sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+console.log('✅ Module Secours Routier (showSRSection) chargé');
