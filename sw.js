@@ -1,5 +1,5 @@
-// DECIOPS Service Worker v1.9
-const CACHE_NAME = 'deciops-v1.9';
+// DECIOPS Service Worker v1.9.1
+const CACHE_NAME = 'deciops-v1.9.1';
 const urlsToCache = [
   './',
   './index.html',
@@ -7,6 +7,17 @@ const urlsToCache = [
   './js/app.js',
   './js/data-loader.js',
   './js/modules/sal.js',
+  './js/modules/ia-manoeuvre.js',
+  './js/modules/gaz.js',
+  './js/modules/bouteilles.js',
+  './js/modules/commandement.js',
+  './js/modules/trajet.js',
+  './js/modules/sauvegarde.js',
+  './js/modules/lspcc.js',
+  './js/pwa-theme.js',
+  './guides-gmu.js',
+  './affichage-gmu.js',
+  './gmu-integration.js',
   './data/config.json',
   './data/conversions.json',
   './data/densites.json',
@@ -49,6 +60,12 @@ self.addEventListener('activate', event => {
 
 // Stratégie de cache: Network First, puis Cache
 self.addEventListener('fetch', event => {
+  // Ne jamais intercepter les appels API (POST, flux IA) ni les requêtes externes
+  const url = new URL(event.request.url);
+  if (event.request.method !== 'GET' || url.origin !== self.location.origin || url.pathname.startsWith('/api/')) {
+    return;
+  }
+
   event.respondWith(
     fetch(event.request)
       .then(response => {
