@@ -210,6 +210,40 @@ const Navigation = (function() {
         rendreAccueil(onglet === 'chercher');
         rendreOnglets();
         window.scrollTo(0, 0);
+        memoriserDansHistorique();
+    }
+
+    // ---------- Historique du navigateur (geste « retour » mobile) ----------
+    // Comme dans Helmet Legends : chaque écran (et chaque onglet de l'accueil)
+    // devient une entrée d'historique. Le balayage retour d'Android, le bouton
+    // retour du téléphone ou du navigateur reviennent ainsi à l'écran précédent
+    // au lieu de fermer l'application.
+    let restaurationEnCours = false;
+
+    function etatCourant() {
+        const actif = document.querySelector('.module.active');
+        return { module: actif ? actif.id : 'home', onglet: ongletActif };
+    }
+
+    function memoriserDansHistorique() {
+        if (restaurationEnCours) return;
+        const etat = etatCourant();
+        const precedent = history.state;
+        if (precedent && precedent.module === etat.module && (etat.module !== 'home' || precedent.onglet === etat.onglet)) return;
+        history.pushState(etat, '');
+    }
+
+    function surRetourHistorique(event) {
+        const etat = event.state || { module: 'home', onglet: 'accueil' };
+        restaurationEnCours = true;
+        try {
+            // L'onglet d'origine est restauré aussi pour une fiche (onglet en surbrillance)
+            ongletOrigine = etat.onglet || 'accueil';
+            ongletActif = ongletOrigine;
+            showModule(document.getElementById(etat.module) ? etat.module : 'home');
+        } finally {
+            restaurationEnCours = false;
+        }
     }
 
     function chercherTMD(q) {
@@ -277,6 +311,7 @@ const Navigation = (function() {
                 noterRecent(nom);
             }
             rendreOnglets();
+            memoriserDansHistorique();
         };
     }
 
@@ -307,6 +342,8 @@ const Navigation = (function() {
         });
         document.addEventListener('click', surClicGlobal);
         brancherShowModule();
+        history.replaceState({ module: 'home', onglet: 'accueil' }, '');
+        window.addEventListener('popstate', surRetourHistorique);
         rendreAccueil();
         rendreOnglets();
     }
