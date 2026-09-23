@@ -37,8 +37,8 @@ DECIOPS/
     └── tables_mt2012.json  # Tables de décompression plongée
 ```
 
-> Les copies à la racine (`app.js`, `styles.css`, `tmd.json`…) ne sont **pas** chargées par le site :
-> seules comptent celles de `js/`, `css/` et `data/`.
+> Modifier les fichiers dans `js/`, `css/`, `data/` et `icons/`. À la racine, seuls
+> `index.html`, `sw.js`, `manifest.json` et les trois fichiers GMU sont utilisés.
 >
 > Version : modifier `APP_VERSION` dans `js/app.js`, `CACHE_NAME` dans `sw.js` et `version` dans `package.json`.
 >
