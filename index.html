@@ -40,60 +40,6 @@
         🌙
     </button>
     
-    <!-- Bouton flottant d'enregistrement -->
-    <button class="save-float-btn" id="saveFloatBtn" onclick="openSaveModal()" title="Enregistrer le calcul">
-        💾
-    </button>
-
-    <!-- Modal d'enregistrement -->
-    <div id="saveModal" class="save-modal">
-        <div class="save-modal-content">
-            <span class="modal-close" onclick="closeSaveModal()">&times;</span>
-            <h2 style="color: #4CAF50; margin-bottom: 20px;">💾 Enregistrer le calcul</h2>
-            
-            <p style="margin-bottom: 20px; color: var(--text-secondary);">
-                Choisissez le format d'export de vos résultats :
-            </p>
-
-            <button class="save-option-btn" onclick="saveAsPDF()">
-                <div>
-                    <div style="font-size: 1.3em; margin-bottom: 5px;">📄 PDF</div>
-                    <div style="font-size: 0.85em; opacity: 0.8;">Document imprimable avec résultats</div>
-                </div>
-                <div style="font-size: 1.5em;">→</div>
-            </button>
-
-            <button class="save-option-btn" onclick="saveAsText()">
-                <div>
-                    <div style="font-size: 1.3em; margin-bottom: 5px;">📝 Texte</div>
-                    <div style="font-size: 0.85em; opacity: 0.8;">Fichier .txt simple et léger</div>
-                </div>
-                <div style="font-size: 1.5em;">→</div>
-            </button>
-
-            <button class="save-option-btn" onclick="saveAsImage()">
-                <div>
-                    <div style="font-size: 1.3em; margin-bottom: 5px;">📸 Image</div>
-                    <div style="font-size: 0.85em; opacity: 0.8;">Capture d'écran PNG</div>
-                </div>
-                <div style="font-size: 1.5em;">→</div>
-            </button>
-
-            <button class="save-option-btn" onclick="copyToClipboard()">
-                <div>
-                    <div style="font-size: 1.3em; margin-bottom: 5px;">📋 Copier</div>
-                    <div style="font-size: 0.85em; opacity: 0.8;">Copier dans le presse-papier</div>
-                </div>
-                <div style="font-size: 1.5em;">→</div>
-            </button>
-
-            <div style="text-align: center; margin-top: 20px;">
-                <button onclick="closeSaveModal()" style="background: #666; color: white; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-size: 1em;">
-                    Annuler
-                </button>
-            </div>
-        </div>
-    </div>
 
     <div class="header">
         <h1>🚒 DECIOPS</h1>
@@ -12200,7 +12146,6 @@
     <script src="js/modules/bouteilles.js"></script>
     <script src="js/modules/commandement.js"></script>
     <script src="js/modules/trajet.js"></script>
-    <script src="js/modules/sauvegarde.js"></script>
     <script src="js/navigation.js"></script>
     
 
