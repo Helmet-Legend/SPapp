@@ -1,5 +1,5 @@
-// DECIOPS Service Worker v1.9.1
-const CACHE_NAME = 'deciops-v1.9.1';
+// DECIOPS Service Worker v1.10.0
+const CACHE_NAME = 'deciops-v1.10.0';
 const urlsToCache = [
   './',
   './index.html',
@@ -15,6 +15,8 @@ const urlsToCache = [
   './js/modules/sauvegarde.js',
   './js/modules/lspcc.js',
   './js/pwa-theme.js',
+  './js/navigation.js',
+  './data/navigation.json',
   './guides-gmu.js',
   './affichage-gmu.js',
   './gmu-integration.js',

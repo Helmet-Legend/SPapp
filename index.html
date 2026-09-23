@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.9.1">
+    <meta name="version" content="1.10.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - DECIOPS. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -110,7 +110,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 DECIOPS v<span class="app-version">1.9.1</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 DECIOPS v<span class="app-version">1.10.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -215,7 +215,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        DECIOPS v<span class="app-version">1.9.1</span><br>
+                        DECIOPS v<span class="app-version">1.10.0</span><br>
                         © 2025 RESCUEAPP - DECIOPS - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -225,232 +225,9 @@
         </div>
     </div>
 
-    <!-- Barre de recherche globale -->
-    <div id="globalSearch" style="
-        max-width: 600px;
-        margin: -10px auto 20px auto;
-        display: block;
-    ">
-        <div style="position: relative;">
-            <input type="text" id="searchInput" placeholder="🔍 Rechercher un outil..." style="
-                width: 100%;
-                padding: 15px 50px 15px 20px;
-                font-size: 1.1em;
-                border: 2px solid var(--primary-red);
-                border-radius: 15px;
-                background: var(--bg-card);
-                color: var(--text-light);
-                box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
-            " oninput="searchModules(this.value)">
-            <div style="
-                position: absolute;
-                right: 15px;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 1.5em;
-                pointer-events: none;
-            ">🔍</div>
-        </div>
-        <div id="searchResults" style="
-            margin-top: 10px;
-            display: none;
-        "></div>
-    </div>
-
+    <!-- Accueil : généré par js/navigation.js à partir de data/navigation.json -->
     <div id="home" class="module active">
-        
-        <!-- Section Favoris / Accès Rapide -->
-        <div class="home-section" style="margin-bottom: 25px;">
-            <div class="section-header" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                <span style="font-size: 1.4em;">⭐</span>
-                <h3 style="margin: 0; color: var(--primary-red); font-size: 1.1em;">ACCÈS RAPIDE</h3>
-            </div>
-            <div class="nav-buttons" style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <div class="nav-btn nav-btn-small" data-color="rdmi" onclick="showModule('rdmi-menu')">
-                    <div>📕</div>
-                    <span class="nav-label">RDMI</span>
-                </div>
-                <div class="nav-btn nav-btn-small" data-color="suap" onclick="showModule('suap-menu')">
-                    <div>🩺</div>
-                    <span class="nav-label">RT SUAP</span>
-                </div>
-                <div class="nav-btn nav-btn-small" data-color="fire" onclick="showModule('fire')">
-                    <div>🔥</div>
-                    <span class="nav-label">Puissance Feu</span>
-                </div>
-                <div class="nav-btn nav-btn-small" data-color="ia" onclick="showModule('ia-manoeuvre')">
-                    <div>🤖</div>
-                    <span class="nav-label">Générateur IA</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Opérationnel -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-operationnel')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #E53935 0%, #C62828 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">🔥</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">OPÉRATIONNEL / INCENDIE</h3>
-                <span class="section-arrow" id="arrow-section-operationnel">▼</span>
-            </div>
-            <div id="section-operationnel" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="fire" onclick="showModule('fire')">
-                        <div>🔥</div>
-                        <span class="nav-label">Puissance Feu/Extinction</span>
-                    </div>
-                    <div class="nav-btn" data-color="emulseur" onclick="showModule('emulseur')">
-                        <div>🫧</div>
-                        <span class="nav-label">Taux d'application additif</span>
-                    </div>
-                    <div class="nav-btn" data-color="pertes" onclick="showModule('pertes')">
-                        <div>🔧</div>
-                        <span class="nav-label">Pertes Charge</span>
-                    </div>
-                    <div class="nav-btn" data-color="ari" onclick="showModule('ari')">
-                        <div>🫁</div>
-                        <span class="nav-label">ARI</span>
-                    </div>
-                    <div class="nav-btn" data-color="extincteurs" onclick="showModule('extincteurs')">
-                        🧯
-                        <span class="nav-label">Extincteurs</span>
-                    </div>
-                    <div class="nav-btn" data-color="foret" onclick="showModule('feu-foret')">
-                        <div>🌲</div>
-                        <span class="nav-label">Feux Forêt</span>
-                    </div>
-                    <div class="nav-btn" data-color="commandement" onclick="showModule('commandement-menu')">
-                        <div>📋</div>
-                        <span class="nav-label">Commandement</span>
-                    </div>
-                    <div class="nav-btn" data-color="rdmi" onclick="showModule('rdmi-menu')">
-                        <div>📕</div>
-                        <span class="nav-label">RDMI</span>
-                    </div>
-                    <div class="nav-btn" data-color="echelles" onclick="showModule('echelles-menu')">
-                        <div>🪜</div>
-                        <span class="nav-label">ÉCHELLES</span>
-                    </div>
-                    <div class="nav-btn" data-color="mousses" onclick="showModule('mousses-menu')">
-                        <div>🫧</div>
-                        <span class="nav-label">MOUSSES</span>
-                    </div>
-                    <div class="nav-btn" data-color="lspcc" onclick="showModule('lspcc-menu')">
-                        <div>🪢</div>
-                        <span class="nav-label">LSPCC</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Risques Particuliers -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-risques')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">⚠️</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">RISQUES PARTICULIERS</h3>
-                <span class="section-arrow" id="arrow-section-risques">▼</span>
-            </div>
-            <div id="section-risques" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="tmd" onclick="showModule('tmd')">
-                        <div>☣️</div>
-                        <span class="nav-label">TMD</span>
-                    </div>
-                    <div class="nav-btn" data-color="distances" onclick="showModule('distances')">
-                        <div>📏</div>
-                        <span class="nav-label">Distances Sécu</span>
-                    </div>
-                    <div class="nav-btn" data-color="electrique" onclick="showModule('electrique')">
-                        <div>⚡</div>
-                        <span class="nav-label">Lignes Élec</span>
-                    </div>
-                    <div class="nav-btn" data-color="gaz" onclick="showModule('risques-gaz-menu')">
-                        <div>💥</div>
-                        <span class="nav-label">Risques GAZ</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Secours Routier -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-routier')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">🚗</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">SECOURS ROUTIER</h3>
-                <span class="section-arrow" id="arrow-section-routier">▼</span>
-            </div>
-            <div id="section-routier" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="secours" onclick="showModule('secours')">
-                        <div>🚗</div>
-                        <span class="nav-label">Secours Routier</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Secours à Personnes -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-sap')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #00897B 0%, #00695C 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">🩺</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">SECOURS À PERSONNES</h3>
-                <span class="section-arrow" id="arrow-section-sap">▼</span>
-            </div>
-            <div id="section-sap" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="suap" onclick="showModule('suap-menu')">
-                        <div>🩺</div>
-                        <span class="nav-label">RT SUAP</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Spécialités -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-spe')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">🎖️</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">SPÉCIALITÉS</h3>
-                <span class="section-arrow" id="arrow-section-spe">▼</span>
-            </div>
-            <div id="section-spe" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="sal" onclick="showModule('sal-menu')">
-                        <div>🤿</div>
-                        <span class="nav-label">SAL/SAV</span>
-                    </div>
-                    <div class="nav-btn" data-color="eld" onclick="showModule('eld-menu')">
-                        <div>🔦</div>
-                        <span class="nav-label">ELD</span>
-                    </div>
-                    <div class="nav-btn" data-color="impm" onclick="showModule('impm-menu')">
-                        <div>⛰️</div>
-                        <span class="nav-label">IMPM</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Outils -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-outils')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #6A1B9A 0%, #8E24AA 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">🛠️</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">OUTILS & CALCULATEURS</h3>
-                <span class="section-arrow" id="arrow-section-outils">▼</span>
-            </div>
-            <div id="section-outils" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="calculs" onclick="showModule('aide-calculs-menu')">
-                        <div>🔢</div>
-                        <span class="nav-label">Aide Calculs Opérationnels</span>
-                    </div>
-                    <div class="nav-btn" data-color="ia" onclick="showModule('ia-manoeuvre')">
-                        <div>🤖</div>
-                        <span class="nav-label">Générateur IA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <div id="navHome" class="nav-home"></div>
     </div>
 
     <!-- Module Menu Aide Calculs Opérationnels -->
@@ -12119,7 +11896,7 @@
 
     <!-- FOOTER -->
     <div style="text-align: center; padding: 30px 20px; margin-top: 40px; border-top: 2px solid var(--primary-red); font-size: 0.9em; opacity: 0.9;">
-        <p style="margin: 8px 0;"><strong>DECIOPS v1.9</strong> - Outil d'aide à la décision opérationnelle</p>
+        <p style="margin: 8px 0;"><strong>DECIOPS v<span class="app-version">1.10.0</span></strong> - Outil d'aide à la décision opérationnelle</p>
         <p style="margin: 8px 0;">Développé par <strong>RESCUEAPP</strong> | Modules RDMI + RT SUAP + SAL/SAV + ELD + Échelles + Mousses + IA</p>
         <p style="margin: 8px 0; font-size: 0.9em;"><strong>RESCUEAPP</strong> - Solutions professionnelles pour sapeurs-pompiers</p>
         <p style="margin: 8px 0; font-size: 0.85em;">© 2025 RESCUEAPP | Conforme GDO | Tous droits réservés</p>
@@ -12409,6 +12186,14 @@
 
     <!-- MODULE PICTOGRAMMES -->
 
+    <!-- Barre d'onglets (navigation) -->
+    <nav id="navTabbar" class="nav-tabbar" aria-label="Navigation principale">
+        <button data-onglet="accueil" aria-current="page"><span aria-hidden="true">⌂</span>Accueil</button>
+        <button data-onglet="calculs"><span aria-hidden="true">∑</span>Calculs</button>
+        <button data-onglet="chercher"><span aria-hidden="true">🔍</span>Chercher</button>
+        <button data-onglet="favoris"><span aria-hidden="true">★</span>Favoris</button>
+    </nav>
+
     <!-- Scripts JavaScript externes -->
     <script src="js/data-loader.js"></script>
     <script src="js/modules/sal.js"></script>
@@ -12418,6 +12203,7 @@
     <script src="js/modules/commandement.js"></script>
     <script src="js/modules/trajet.js"></script>
     <script src="js/modules/sauvegarde.js"></script>
+    <script src="js/navigation.js"></script>
     
 
     <!-- Scripts TMD + Fiches GMU -->

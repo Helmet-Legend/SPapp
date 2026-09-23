@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * DÉCIOPS v1.9.1 - Outil d'aide à la décision opérationnelle
+ * DÉCIOPS v1.10.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025 - RESCUEAPP
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -101,20 +101,10 @@ function showModule(moduleName) {
         if (moduleName === 'abaque') calculateAbaqueAll();
         if (moduleName === 'ari') calculerAutonomieARI();
     }
-    
-    var homeBtn = document.getElementById('homeButton');
-    var searchBar = document.getElementById('globalSearch');
-    if (moduleName === 'home') {
-        if (homeBtn) homeBtn.style.display = 'none';
-        if (searchBar) searchBar.style.display = 'block';
-    } else {
-        if (homeBtn) homeBtn.style.display = 'block';
-        if (searchBar) searchBar.style.display = 'none';
-    }
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.9.1';
+var APP_VERSION = '1.10.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -132,43 +122,16 @@ function closeAboutIfOutside(event) {
     if (event.target && event.target.id === 'aboutModal') toggleAbout();
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.app-version').forEach(function(el) { el.textContent = APP_VERSION; });
+});
+
 document.addEventListener('keydown', function(event) {
     var modal = document.getElementById('aboutModal');
     if (event.key === 'Escape' && modal && modal.classList.contains('active')) toggleAbout();
 });
 
-// ==================== RECHERCHE GLOBALE ====================
-function searchModules(query) {
-    var searchResults = document.getElementById('searchResults');
-    if (!query || query.length < 2) {
-        if (searchResults) searchResults.style.display = 'none';
-        return;
-    }
-    
-    var searchIndex = [
-        {id: 'fire', name: 'Puissance Feu/Extinction', keywords: ['feu', 'puissance', 'fenêtre', 'incendie']},
-        {id: 'emulseur', name: 'Taux application additif', keywords: ['émulseur', 'mousse', 'additif']},
-        {id: 'pertes', name: 'Pertes de Charge', keywords: ['pertes', 'charge', 'pression', 'tuyau']},
-        {id: 'tmd', name: 'TMD', keywords: ['tmd', 'matières', 'dangereuses', 'onu']},
-        {id: 'ari', name: 'Calcul ARI', keywords: ['ari', 'respiratoire', 'autonomie', 'bouteille']},
-        {id: 'distances', name: 'Distances Sécurité', keywords: ['distance', 'sécurité', 'gaz', 'électrique']}
-    ];
-    
-    query = query.toLowerCase();
-    var results = searchIndex.filter(function(m) {
-        return m.name.toLowerCase().includes(query) || m.keywords.some(function(k) { return k.includes(query); });
-    });
-    
-    if (results.length === 0) {
-        searchResults.innerHTML = '<div class="alert-box">Aucun outil trouvé</div>';
-    } else {
-        searchResults.innerHTML = results.map(function(m) {
-            return '<div onclick="showModule(\'' + m.id + '\')" style="background:var(--bg-card);padding:15px;margin:5px 0;border-radius:10px;border-left:4px solid var(--primary-red);cursor:pointer;">' +
-                '<strong style="color:var(--primary-red);">' + m.name + '</strong></div>';
-        }).join('');
-    }
-    searchResults.style.display = 'block';
-}
+// Recherche globale : voir js/navigation.js (onglet « Chercher »)
 
 // ═══════════════════════════════════════════════════════════════════════
 // MODULE TMD ENRICHI - CARACTÉRISTIQUES TECHNIQUES
@@ -1549,7 +1512,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - DECIOPS v1.9.1 COMPLET
+// FIN DU FICHIER - DECIOPS v1.10.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 DECIOPS v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
