@@ -1,0 +1,1230 @@
+{
+ "version": 1,
+ "domaines": [
+  {
+   "id": "incendie",
+   "titre": "Incendie",
+   "icone": "🔥",
+   "couleur": "#D7263D",
+   "themes": [
+    "Calculs incendie",
+    "Mousses",
+    "RDMI – Manœuvres incendie",
+    "Protection & matériels",
+    "Échelles à mains"
+   ]
+  },
+  {
+   "id": "risques",
+   "titre": "Risques particuliers",
+   "icone": "☢️",
+   "couleur": "#E07A00",
+   "themes": [
+    "Matières dangereuses",
+    "Gaz",
+    "Électricité",
+    "Périmètres"
+   ]
+  },
+  {
+   "id": "sap",
+   "titre": "Secours à personne",
+   "icone": "🩺",
+   "couleur": "#0B8A7A",
+   "themes": [
+    "RT SUAP 2025"
+   ]
+  },
+  {
+   "id": "routier",
+   "titre": "Secours routier",
+   "icone": "🚗",
+   "couleur": "#3D5A80",
+   "themes": [
+    "Désincarcération"
+   ]
+  },
+  {
+   "id": "specialites",
+   "titre": "Spécialités & sauvetage",
+   "icone": "🧗",
+   "couleur": "#1F5FAD",
+   "themes": [
+    "SAL / SAV – Plongée",
+    "ELD – Exploration longue durée",
+    "IMPM – Milieu périlleux",
+    "LSPCC – Lot de sauvetage"
+   ]
+  },
+  {
+   "id": "commandement",
+   "titre": "Commandement",
+   "icone": "📋",
+   "couleur": "#6B2FA0",
+   "themes": [
+    "Avant l'intervention",
+    "Pendant l'intervention"
+   ]
+  },
+  {
+   "id": "outils",
+   "titre": "Outils",
+   "icone": "🧮",
+   "couleur": "#4A4F57",
+   "themes": [
+    "Calculs pratiques",
+    "Préparation"
+   ]
+  }
+ ],
+ "pages": [
+  {
+   "id": "fire",
+   "titre": "Calcul de Puissance du Feu / Extinction",
+   "domaine": "incendie",
+   "theme": "Calculs incendie",
+   "type": "calculateur",
+   "motsCles": [
+    "feu",
+    "puissance",
+    "fenêtre",
+    "porte",
+    "incendie",
+    "débit",
+    "extinction"
+   ]
+  },
+  {
+   "id": "pertes",
+   "titre": "Calcul des Pertes de Charge",
+   "domaine": "incendie",
+   "theme": "Calculs incendie",
+   "type": "calculateur",
+   "motsCles": [
+    "pertes",
+    "charge",
+    "pression",
+    "tuyau",
+    "débit"
+   ]
+  },
+  {
+   "id": "emulseur",
+   "titre": "Taux d'application additif",
+   "domaine": "incendie",
+   "theme": "Calculs incendie",
+   "type": "calculateur",
+   "motsCles": []
+  },
+  {
+   "id": "feu-foret",
+   "titre": "Feux de Forêt - Règle des 3%",
+   "domaine": "incendie",
+   "theme": "Calculs incendie",
+   "type": "calculateur",
+   "motsCles": []
+  },
+  {
+   "id": "mousses-menu",
+   "titre": "Présentation",
+   "domaine": "incendie",
+   "theme": "Mousses",
+   "type": "presentation",
+   "motsCles": []
+  },
+  {
+   "id": "mousses-definition",
+   "titre": "Définition & Types de Mousses",
+   "domaine": "incendie",
+   "theme": "Mousses",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "mousses-action",
+   "titre": "Modes d'Action des Mousses",
+   "domaine": "incendie",
+   "theme": "Mousses",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "mousses-emulseurs",
+   "titre": "Les Émulseurs",
+   "domaine": "incendie",
+   "theme": "Mousses",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "mousses-taux",
+   "titre": "Taux & Calculs",
+   "domaine": "incendie",
+   "theme": "Mousses",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "mousses-materiel",
+   "titre": "Matériel & Lances",
+   "domaine": "incendie",
+   "theme": "Mousses",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "mousses-schema",
+   "titre": "Schéma de Synthèse",
+   "domaine": "incendie",
+   "theme": "Mousses",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "rdmi-menu",
+   "titre": "Présentation",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "presentation",
+   "motsCles": [
+    "rdmi",
+    "référentiel",
+    "manœuvres",
+    "incendie",
+    "habitation",
+    "famille",
+    "pei",
+    "binôme",
+    "smes",
+    "établissement",
+    "mgo",
+    "hydraulique",
+    "colonne",
+    "sèche"
+   ]
+  },
+  {
+   "id": "rdmi-habitations",
+   "titre": "Familles d'Habitation",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "famille",
+    "habitation",
+    "igh",
+    "immeuble",
+    "colonne",
+    "sèche",
+    "1ère",
+    "2ème",
+    "3ème",
+    "4ème"
+   ]
+  },
+  {
+   "id": "rdmi-pei",
+   "titre": "Points d'Eau Incendie (PEI)",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "rdmi-hydraulique",
+   "titre": "Hydraulique - Pertes de Charge",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "hydraulique",
+    "pertes",
+    "charge",
+    "pression",
+    "dénivelé",
+    "tuyau"
+   ]
+  },
+  {
+   "id": "rdmi-binomes",
+   "titre": "Binômes & Armement",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "binôme",
+    "armement",
+    "epi",
+    "conducteur",
+    "chef",
+    "équipe",
+    "protection"
+   ]
+  },
+  {
+   "id": "rdmi-smes",
+   "titre": "SMES - Raisonnement Tactique",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "smes",
+    "situation",
+    "mission",
+    "exécution",
+    "sécurité",
+    "tactique",
+    "raisonnement"
+   ]
+  },
+  {
+   "id": "rdmi-etablissements",
+   "titre": "Établissements (ETB)",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "établissement",
+    "etb",
+    "ldv",
+    "ldt",
+    "lance",
+    "tuyau",
+    "alimentation"
+   ]
+  },
+  {
+   "id": "rdmi-mgo",
+   "titre": "MGO - Marche Générale des Opérations",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "mgo",
+    "marche",
+    "générale",
+    "opérations",
+    "sauvetage",
+    "reconnaissance",
+    "attaque"
+   ]
+  },
+  {
+   "id": "rdmi-zones",
+   "titre": "Zonage Opérationnel",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "zone",
+    "exclusion",
+    "contrôlée",
+    "soutien",
+    "façade",
+    "pca"
+   ]
+  },
+  {
+   "id": "ari",
+   "titre": "Calcul Autonomie ARI",
+   "domaine": "incendie",
+   "theme": "Protection & matériels",
+   "type": "calculateur",
+   "motsCles": [
+    "ari",
+    "appareil respiratoire",
+    "autonomie",
+    "calcul",
+    "temps",
+    "bouteille",
+    "pression",
+    "consommation"
+   ]
+  },
+  {
+   "id": "extincteurs",
+   "titre": "Extincteurs",
+   "domaine": "incendie",
+   "theme": "Protection & matériels",
+   "type": "fiche",
+   "motsCles": [
+    "extincteur",
+    "surface",
+    "protection"
+   ]
+  },
+  {
+   "id": "echelles-menu",
+   "titre": "Présentation",
+   "domaine": "incendie",
+   "theme": "Échelles à mains",
+   "type": "presentation",
+   "motsCles": []
+  },
+  {
+   "id": "echelles-coulisses",
+   "titre": "Échelle à Coulisses",
+   "domaine": "incendie",
+   "theme": "Échelles à mains",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "echelles-crochets",
+   "titre": "Échelle à Crochets",
+   "domaine": "incendie",
+   "theme": "Échelles à mains",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "echelles-telescopique",
+   "titre": "Échelle Téléscopique",
+   "domaine": "incendie",
+   "theme": "Échelles à mains",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "echelles-comparatif",
+   "titre": "Tableau Comparatif des Échelles",
+   "domaine": "incendie",
+   "theme": "Échelles à mains",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "tmd",
+   "titre": "Transport de Matières Dangereuses",
+   "domaine": "risques",
+   "theme": "Matières dangereuses",
+   "type": "fiche",
+   "motsCles": [
+    "tmd",
+    "matières dangereuses",
+    "onu",
+    "transport",
+    "chimique"
+   ]
+  },
+  {
+   "id": "risques-gaz-menu",
+   "titre": "Présentation",
+   "domaine": "risques",
+   "theme": "Gaz",
+   "type": "presentation",
+   "motsCles": [
+    "gaz",
+    "explosimètre",
+    "bouteille",
+    "explosif",
+    "atmosphère",
+    "ogive",
+    "risque"
+   ]
+  },
+  {
+   "id": "explosimetrie",
+   "titre": "Explosimétrie - Correction des Valeurs",
+   "domaine": "risques",
+   "theme": "Gaz",
+   "type": "calculateur",
+   "motsCles": [
+    "explosimètre",
+    "LII",
+    "gaz",
+    "explosif",
+    "atmosphère"
+   ]
+  },
+  {
+   "id": "bouteilles",
+   "titre": "Bouteilles de Gaz",
+   "domaine": "risques",
+   "theme": "Gaz",
+   "type": "fiche",
+   "motsCles": [
+    "bouteille",
+    "gaz",
+    "ogive",
+    "couleur",
+    "refroidissement"
+   ]
+  },
+  {
+   "id": "electrique",
+   "titre": "Identification Lignes Électriques",
+   "domaine": "risques",
+   "theme": "Électricité",
+   "type": "fiche",
+   "motsCles": [
+    "électrique",
+    "ligne",
+    "haute tension",
+    "BT",
+    "HTA"
+   ]
+  },
+  {
+   "id": "distances",
+   "titre": "Distances de Sécurité",
+   "domaine": "risques",
+   "theme": "Périmètres",
+   "type": "fiche",
+   "motsCles": [
+    "distance",
+    "sécurité",
+    "gaz",
+    "électrique",
+    "bleve",
+    "périmètre"
+   ]
+  },
+  {
+   "id": "suap-menu",
+   "titre": "Présentation",
+   "domaine": "sap",
+   "theme": "RT SUAP 2025",
+   "type": "presentation",
+   "motsCles": [
+    "suap",
+    "secours",
+    "personne",
+    "victime",
+    "bilan",
+    "rcp",
+    "brûlure",
+    "hémorragie",
+    "trauma"
+   ]
+  },
+  {
+   "id": "suap-bilan",
+   "titre": "Bilan",
+   "domaine": "sap",
+   "theme": "RT SUAP 2025",
+   "type": "fiche",
+   "motsCles": [
+    "bilan",
+    "evda",
+    "douleur",
+    "evs",
+    "vigilance",
+    "surveillance"
+   ]
+  },
+  {
+   "id": "suap-ages",
+   "titre": "Âges & Définitions",
+   "domaine": "sap",
+   "theme": "RT SUAP 2025",
+   "type": "fiche",
+   "motsCles": [
+    "age",
+    "juste-né",
+    "nouveau-né",
+    "nourrisson",
+    "enfant",
+    "adulte",
+    "définition"
+   ]
+  },
+  {
+   "id": "suap-rcp",
+   "titre": "RCP selon l'Âge",
+   "domaine": "sap",
+   "theme": "RT SUAP 2025",
+   "type": "fiche",
+   "motsCles": [
+    "rcp",
+    "réanimation",
+    "massage",
+    "cardiaque",
+    "insufflation",
+    "dsa",
+    "acr",
+    "pouls"
+   ]
+  },
+  {
+   "id": "suap-hemorragies",
+   "titre": "Hémorragies",
+   "domaine": "sap",
+   "theme": "RT SUAP 2025",
+   "type": "fiche",
+   "motsCles": [
+    "hémorragie",
+    "garrot",
+    "pcu",
+    "pansement",
+    "compression",
+    "saignement"
+   ]
+  },
+  {
+   "id": "suap-brulures",
+   "titre": "Brûlures",
+   "domaine": "sap",
+   "theme": "RT SUAP 2025",
+   "type": "fiche",
+   "motsCles": [
+    "brûlure",
+    "wallace",
+    "refroidissement",
+    "thermique",
+    "chimique",
+    "grave"
+   ]
+  },
+  {
+   "id": "suap-trauma",
+   "titre": "Traumatismes",
+   "domaine": "sap",
+   "theme": "RT SUAP 2025",
+   "type": "fiche",
+   "motsCles": [
+    "trauma",
+    "bassin",
+    "pelvienne",
+    "contention",
+    "pouls",
+    "pédieux",
+    "membre"
+   ]
+  },
+  {
+   "id": "suap-oxygene",
+   "titre": "Débits d'Oxygène",
+   "domaine": "sap",
+   "theme": "RT SUAP 2025",
+   "type": "fiche",
+   "motsCles": [
+    "oxygène",
+    "o2",
+    "débit",
+    "mhc",
+    "lunettes",
+    "inhalation",
+    "bavu"
+   ]
+  },
+  {
+   "id": "suap-accouchement",
+   "titre": "Accouchement Inopiné",
+   "domaine": "sap",
+   "theme": "RT SUAP 2025",
+   "type": "fiche",
+   "motsCles": [
+    "accouchement",
+    "juste-né",
+    "transport",
+    "enceinte",
+    "naissance"
+   ]
+  },
+  {
+   "id": "suap-ecg",
+   "titre": "Électrocardiogramme (ECG)",
+   "domaine": "sap",
+   "theme": "RT SUAP 2025",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "secours",
+   "titre": "Secours Routier - MGO & Charte graphique",
+   "domaine": "routier",
+   "theme": "Désincarcération",
+   "type": "fiche",
+   "motsCles": [
+    "secours",
+    "routier",
+    "désincarcération",
+    "accident",
+    "véhicule"
+   ]
+  },
+  {
+   "id": "sal-menu",
+   "titre": "Présentation",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "presentation",
+   "motsCles": [
+    "sal",
+    "sav",
+    "plongée",
+    "aquatique",
+    "hyperbare",
+    "scaphandrier",
+    "nautique"
+   ]
+  },
+  {
+   "id": "sal-niveaux",
+   "titre": "Niveaux & Emplois",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": [
+    "sal1",
+    "sal2",
+    "sal3",
+    "niveau",
+    "emploi",
+    "chef unité",
+    "conseiller technique"
+   ]
+  },
+  {
+   "id": "sal-competences",
+   "titre": "Compétences Détaillées",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "sal-formations",
+   "titre": "Formations Complémentaires",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "sal-profondeurs",
+   "titre": "Profondeurs & Habilitations",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": [
+    "profondeur",
+    "habilitation",
+    "qualification",
+    "classe",
+    "30m",
+    "50m",
+    "60m"
+   ]
+  },
+  {
+   "id": "sal-missions",
+   "titre": "Missions",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": [
+    "mission",
+    "sauvetage",
+    "prompt secours",
+    "recherche",
+    "noyade",
+    "travaux"
+   ]
+  },
+  {
+   "id": "sal-missions-detaillees",
+   "titre": "Missions Détaillées",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "sal-organisation",
+   "titre": "Organisation des Plongées",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": [
+    "organisation",
+    "binôme",
+    "équipe",
+    "directeur plongée",
+    "unité"
+   ]
+  },
+  {
+   "id": "sal-fma",
+   "titre": "Formation Maintien Acquis & Aptitudes",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "sal-methodes",
+   "titre": "Méthodes de Plongée",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": [
+    "méthode",
+    "air",
+    "nitrox",
+    "trimix",
+    "narguilé",
+    "surface non libre"
+   ]
+  },
+  {
+   "id": "sal-tables",
+   "titre": "Tables MT2012",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": [
+    "table",
+    "mt2012",
+    "palier",
+    "décompression",
+    "vitesse",
+    "remontée"
+   ]
+  },
+  {
+   "id": "sal-securite",
+   "titre": "Sécurité",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": [
+    "sécurité",
+    "durée",
+    "température",
+    "refus",
+    "nuisance"
+   ]
+  },
+  {
+   "id": "sal-accidents",
+   "titre": "Accidents de Plongée",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "fiche",
+   "motsCles": [
+    "accident",
+    "add",
+    "barotraumatisme",
+    "narcose",
+    "décompression",
+    "hyperoxie"
+   ]
+  },
+  {
+   "id": "sal-calculateur",
+   "titre": "Calculateur de Paliers MT2012",
+   "domaine": "specialites",
+   "theme": "SAL / SAV – Plongée",
+   "type": "calculateur",
+   "motsCles": [
+    "calculateur",
+    "palier",
+    "table",
+    "mt2012",
+    "décompression",
+    "dtr",
+    "gps"
+   ]
+  },
+  {
+   "id": "eld-menu",
+   "titre": "Présentation",
+   "domaine": "specialites",
+   "theme": "ELD – Exploration longue durée",
+   "type": "presentation",
+   "motsCles": []
+  },
+  {
+   "id": "eld-materiels",
+   "titre": "Matériels et Équipements ELD",
+   "domaine": "specialites",
+   "theme": "ELD – Exploration longue durée",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "eld-generalites",
+   "titre": "Généralités Opérationnelles ELD",
+   "domaine": "specialites",
+   "theme": "ELD – Exploration longue durée",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "eld-milieux",
+   "titre": "Milieux d'Intervention",
+   "domaine": "specialites",
+   "theme": "ELD – Exploration longue durée",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "eld-arbre",
+   "titre": "Arbre Décisionnel ELD",
+   "domaine": "specialites",
+   "theme": "ELD – Exploration longue durée",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "eld-psc",
+   "titre": "Parc de Stationnement",
+   "domaine": "specialites",
+   "theme": "ELD – Exploration longue durée",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "eld-complexe",
+   "titre": "Milieu Complexe",
+   "domaine": "specialites",
+   "theme": "ELD – Exploration longue durée",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "eld-distance",
+   "titre": "Grande Distance",
+   "domaine": "specialites",
+   "theme": "ELD – Exploration longue durée",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "impm-menu",
+   "titre": "Présentation",
+   "domaine": "specialites",
+   "theme": "IMPM – Milieu périlleux",
+   "type": "presentation",
+   "motsCles": [
+    "impm",
+    "smpm",
+    "milieu périlleux",
+    "montagne",
+    "canyon",
+    "souterrain",
+    "spéléo",
+    "hauteur",
+    "vertical",
+    "corde",
+    "secours montagne"
+   ]
+  },
+  {
+   "id": "impm-milieux",
+   "titre": "Les 4 Milieux Périlleux",
+   "domaine": "specialites",
+   "theme": "IMPM – Milieu périlleux",
+   "type": "fiche",
+   "motsCles": [
+    "milieux",
+    "souterrain",
+    "canyon",
+    "montagne",
+    "périlleux"
+   ]
+  },
+  {
+   "id": "impm-souterrain",
+   "titre": "Milieu Souterrain",
+   "domaine": "specialites",
+   "theme": "IMPM – Milieu périlleux",
+   "type": "fiche",
+   "motsCles": [
+    "souterrain",
+    "grotte",
+    "spéléo",
+    "cavité",
+    "mine"
+   ]
+  },
+  {
+   "id": "impm-canyon",
+   "titre": "Milieu Canyon",
+   "domaine": "specialites",
+   "theme": "IMPM – Milieu périlleux",
+   "type": "fiche",
+   "motsCles": [
+    "canyon",
+    "canyoning",
+    "eau vive",
+    "gorge"
+   ]
+  },
+  {
+   "id": "impm-montagne",
+   "titre": "Milieu Montagne",
+   "domaine": "specialites",
+   "theme": "IMPM – Milieu périlleux",
+   "type": "fiche",
+   "motsCles": [
+    "montagne",
+    "haute montagne",
+    "alpinisme",
+    "glacier"
+   ]
+  },
+  {
+   "id": "impm-risques",
+   "titre": "Risques & Sécurité",
+   "domaine": "specialites",
+   "theme": "IMPM – Milieu périlleux",
+   "type": "fiche",
+   "motsCles": [
+    "risques",
+    "sécurité",
+    "epi",
+    "protection"
+   ]
+  },
+  {
+   "id": "impm-acteurs",
+   "titre": "Acteurs & Partenaires",
+   "domaine": "specialites",
+   "theme": "IMPM – Milieu périlleux",
+   "type": "fiche",
+   "motsCles": [
+    "acteurs",
+    "partenaires",
+    "pghm",
+    "ssf",
+    "spéléo secours"
+   ]
+  },
+  {
+   "id": "impm-organisation",
+   "titre": "Organisation Opérationnelle",
+   "domaine": "specialites",
+   "theme": "IMPM – Milieu périlleux",
+   "type": "fiche",
+   "motsCles": [
+    "organisation",
+    "équipe",
+    "équipier",
+    "chef unité",
+    "cos"
+   ]
+  },
+  {
+   "id": "impm-conduite",
+   "titre": "Conduite des Opérations",
+   "domaine": "specialites",
+   "theme": "IMPM – Milieu périlleux",
+   "type": "fiche",
+   "motsCles": [
+    "conduite",
+    "opération",
+    "zonage",
+    "mgo",
+    "reconnaissance"
+   ]
+  },
+  {
+   "id": "lspcc-menu",
+   "titre": "Présentation",
+   "domaine": "specialites",
+   "theme": "LSPCC – Lot de sauvetage",
+   "type": "presentation",
+   "motsCles": []
+  },
+  {
+   "id": "lspcc-materiels",
+   "titre": "Matériels & Équipements",
+   "domaine": "specialites",
+   "theme": "LSPCC – Lot de sauvetage",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "lspcc-emploi",
+   "titre": "Emploi du LSPCC",
+   "domaine": "specialites",
+   "theme": "LSPCC – Lot de sauvetage",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "lspcc-techniques",
+   "titre": "Techniques Générales",
+   "domaine": "specialites",
+   "theme": "LSPCC – Lot de sauvetage",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "lspcc-securisation",
+   "titre": "Sécurisation Échelles & MEA",
+   "domaine": "specialites",
+   "theme": "LSPCC – Lot de sauvetage",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "lspcc-noeuds",
+   "titre": "Nœuds & Annexes",
+   "domaine": "specialites",
+   "theme": "LSPCC – Lot de sauvetage",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "lspcc-calculateur",
+   "titre": "Calculateur Facteur de Chute",
+   "domaine": "specialites",
+   "theme": "LSPCC – Lot de sauvetage",
+   "type": "calculateur",
+   "motsCles": []
+  },
+  {
+   "id": "lspcc-fmo",
+   "titre": "F.M.O - Fiches Matériel",
+   "domaine": "specialites",
+   "theme": "LSPCC – Lot de sauvetage",
+   "type": "fiche",
+   "motsCles": []
+  },
+  {
+   "id": "patrac-dr",
+   "titre": "PATRAC DR - Ordre Préparatoire",
+   "domaine": "commandement",
+   "theme": "Avant l'intervention",
+   "type": "ordre",
+   "motsCles": []
+  },
+  {
+   "id": "dpif",
+   "titre": "DPIF - Ordre de Mouvement",
+   "domaine": "commandement",
+   "theme": "Avant l'intervention",
+   "type": "ordre",
+   "motsCles": []
+  },
+  {
+   "id": "smes",
+   "titre": "SMES - Chef d'agrès / Chef d'équipe",
+   "domaine": "commandement",
+   "theme": "Pendant l'intervention",
+   "type": "ordre",
+   "motsCles": []
+  },
+  {
+   "id": "soiec",
+   "titre": "SOIEC - Chef de Groupe",
+   "domaine": "commandement",
+   "theme": "Pendant l'intervention",
+   "type": "ordre",
+   "motsCles": []
+  },
+  {
+   "id": "saoiecl",
+   "titre": "SAOIECL - Chef de Colonne / Chef de Site",
+   "domaine": "commandement",
+   "theme": "Pendant l'intervention",
+   "type": "ordre",
+   "motsCles": []
+  },
+  {
+   "id": "convertisseur",
+   "titre": "Convertisseur d'Unités",
+   "domaine": "outils",
+   "theme": "Calculs pratiques",
+   "type": "calculateur",
+   "motsCles": []
+  },
+  {
+   "id": "abaque",
+   "titre": "Abaque - Calcul de Charges",
+   "domaine": "outils",
+   "theme": "Calculs pratiques",
+   "type": "calculateur",
+   "motsCles": []
+  },
+  {
+   "id": "distance-calc",
+   "titre": "Calcul Temps de Trajet",
+   "domaine": "outils",
+   "theme": "Calculs pratiques",
+   "type": "calculateur",
+   "motsCles": [
+    "distance",
+    "calcul",
+    "périmètre",
+    "surface",
+    "pythagore"
+   ]
+  },
+  {
+   "id": "epuisement",
+   "titre": "Calcul Épuisement de Volume",
+   "domaine": "outils",
+   "theme": "Calculs pratiques",
+   "type": "calculateur",
+   "motsCles": [
+    "épuisement",
+    "pompage",
+    "eau",
+    "débit",
+    "volume",
+    "temps"
+   ]
+  },
+  {
+   "id": "ia-manoeuvre",
+   "titre": "Générateur de Manœuvre IA",
+   "domaine": "outils",
+   "theme": "Préparation",
+   "type": "calculateur",
+   "motsCles": [
+    "ia",
+    "intelligence",
+    "artificielle",
+    "manoeuvre",
+    "scenario",
+    "entrainement",
+    "générateur"
+   ]
+  },
+  {
+   "id": "commandement-menu",
+   "titre": "Commandement Opérationnel",
+   "domaine": "commandement",
+   "theme": null,
+   "type": "menu",
+   "motsCles": []
+  },
+  {
+   "id": "avant-intervention-menu",
+   "titre": "Ordres Préparatoires - Avant Intervention",
+   "domaine": "commandement",
+   "theme": "Avant l'intervention",
+   "type": "menu",
+   "motsCles": []
+  },
+  {
+   "id": "pendant-intervention-menu",
+   "titre": "Ordres Opérationnels - Pendant Intervention",
+   "domaine": "commandement",
+   "theme": "Pendant l'intervention",
+   "type": "menu",
+   "motsCles": []
+  },
+  {
+   "id": "aide-calculs-menu",
+   "titre": "Aide Calculs Opérationnels",
+   "domaine": "outils",
+   "theme": "Calculs pratiques",
+   "type": "menu",
+   "motsCles": []
+  },
+  {
+   "id": "bouteilles-gaz-menu",
+   "titre": "Bouteilles de Gaz",
+   "domaine": "risques",
+   "theme": "Gaz",
+   "type": "menu",
+   "motsCles": []
+  }
+ ]
+}

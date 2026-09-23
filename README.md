@@ -1,27 +1,79 @@
-# DECIOPS v1.9 - Architecture Modulaire
+# DECIOPS v1.10.0 - Architecture Modulaire
 
 ## 📁 Structure du projet
 
 ```
 DECIOPS/
-├── index.html              # Page principale (HTML uniquement)
+├── index.html              # Page principale (HTML uniquement, aucun script ni style en ligne)
+├── api/
+│   └── gemini.js           # Fonction Vercel du générateur IA (API Claude, protégée)
 ├── css/
-│   └── styles.css          # Tous les styles (54 Ko)
+│   └── styles.css          # Tous les styles
 ├── js/
 │   ├── data-loader.js      # Chargeur de données JSON
-│   ├── app.js              # Logique principale (231 Ko)
+│   ├── app.js              # Logique principale (navigation, calculateurs, À propos, APP_VERSION)
+│   ├── pwa-theme.js        # Service worker, installation PWA, thème clair/sombre
+│   ├── navigation.js       # Accueil, onglets, recherche, favoris, fil d'Ariane
 │   └── modules/
-│       └── sal.js          # Module SAL (plongée/décompression)
+│       ├── sal.js          # SAL (plongée/décompression)
+│       ├── gaz.js          # Explosimétrie
+│       ├── bouteilles.js   # Bouteilles de gaz (identification, refroidissement)
+│       ├── commandement.js # PATRAC DR, DPIF, SMES, SOIEC, SAOIECL
+│       ├── trajet.js       # Temps de trajet
+│       ├── sauvegarde.js   # Fenêtre « Enregistrer le calcul »
+│       ├── lspcc.js        # Facteur de chute LSPCC
+│       └── ia-manoeuvre.js # Générateur de manœuvre IA (côté navigateur)
+├── guides-gmu.js, affichage-gmu.js, gmu-integration.js  # Fiches GMU (TMD)
 └── data/
     ├── config.json         # Configuration de l'application
-    ├── tmd.json            # Base TMD - 495 produits (74 Ko)
+    ├── tmd.json            # Base TMD
     ├── gaz.json            # Base des gaz pour explosimétrie
     ├── densites.json       # Densités des matériaux
     ├── conversions.json    # Facteurs de conversion
-    ├── modules.json        # Index des modules (recherche)
+    ├── navigation.json     # Registre de navigation : domaines, thèmes, fiches, mots-clés
+    ├── modules.json        # Mots-clés d'origine (repris dans navigation.json)
     ├── gaz_bouteilles.json # Couleurs des bouteilles de gaz
+    ├── lspcc.json          # Lot de sauvetage LSPCC
     └── tables_mt2012.json  # Tables de décompression plongée
 ```
+
+> Les copies à la racine (`app.js`, `styles.css`, `tmd.json`…) ne sont **pas** chargées par le site :
+> seules comptent celles de `js/`, `css/` et `data/`.
+>
+> Version : modifier `APP_VERSION` dans `js/app.js`, `CACHE_NAME` dans `sw.js` et `version` dans `package.json`.
+>
+> Générateur IA : variables Vercel `ANTHROPIC_API_KEY` (obligatoire), `ALLOWED_ORIGINS`,
+> `RATE_LIMIT_MAX` (5 par défaut) et `RATE_LIMIT_WINDOW_MS` (10 min par défaut) en option.
+
+## 🧭 Navigation
+
+Tout le menu est généré à partir de `data/navigation.json` :
+
+- **Accueil** : un menu déroulant par domaine, un sous-menu par thème ;
+- **Onglets** en bas de l'écran : Accueil, Calculs, Chercher, Favoris ;
+- **Fil d'Ariane** et bouton ☆ favori en haut de chaque écran ;
+- favoris et fiches récentes gardés sur l'appareil.
+
+### Ajouter une fiche
+
+1. Créer l'écran dans `index.html` : `<div id="mon-id" class="module">…</div>` ;
+2. Ajouter une entrée dans `pages` de `data/navigation.json` :
+
+```json
+{
+  "id": "mon-id",
+  "titre": "Titre affiché",
+  "domaine": "incendie",
+  "theme": "Calculs incendie",
+  "type": "fiche",
+  "motsCles": ["mot", "autre mot"]
+}
+```
+
+- `domaine` : `incendie`, `risques`, `sap`, `routier`, `specialites`, `commandement` ou `outils` ;
+- `theme` : un des thèmes listés pour ce domaine dans `domaines` (en ajouter un si besoin) ;
+- `type` : `calculateur` (apparaît aussi dans l'onglet Calculs), `fiche`, `ordre`,
+  `presentation` (page d'introduction d'un thème) ou `menu` (page de boutons, absente des menus).
 
 ## 🚀 Utilisation
 

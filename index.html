@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.9">
+    <meta name="version" content="1.10.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
-    <meta name="copyright" content="© 2025 DECIOPS. Tous droits réservés.">
+    <meta name="copyright" content="© 2025 RESCUEAPP - DECIOPS. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
     
     <!-- PWA Meta Tags -->
@@ -24,226 +24,12 @@
     <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192.png">
     
-    <title>DECIOPS v1.9</title>
+    <title>DECIOPS</title>
     
     <!-- CSS externe -->
     <link rel="stylesheet" href="css/styles.css">
     
     <!-- Variables CSS pour Mode Sombre -->
-    <style>
-        /* ========== VARIABLES CSS MODE CLAIR / SOMBRE ========== */
-        :root {
-            /* Mode Clair (par défaut) */
-            --bg-primary: #ffffff;
-            --bg-secondary: #f5f5f5;
-            --bg-elevated: #fafafa;
-            --bg-card: #ffffff;
-            --bg-main: #f5f5f5;
-            --text-primary: #000000;
-            --text-secondary: #666666;
-            --text-light: #000000;
-            --border-color: #e0e0e0;
-            --border-medium: #cccccc;
-            --shadow: rgba(0, 0, 0, 0.1);
-            --input-bg: #ffffff;
-            --input-text: #000000;
-        }
-        
-        /* Mode Sombre */
-        body.dark-mode {
-            --bg-primary: #121212;
-            --bg-secondary: #1e1e1e;
-            --bg-elevated: #2a2a2a;
-            --bg-card: #1e1e1e;
-            --bg-main: #1e1e1e;
-            --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
-            --text-light: #ffffff;
-            --border-color: #404040;
-            --border-medium: #505050;
-            --shadow: rgba(0, 0, 0, 0.5);
-            --input-bg: #2a2a2a;
-            --input-text: #ffffff;
-        }
-        
-        /* Application des variables au body */
-        body {
-            background-color: var(--bg-primary) !important;
-            color: var(--text-primary) !important;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        
-        /* Modules et cartes */
-        .module {
-            background-color: var(--bg-primary) !important;
-            color: var(--text-primary) !important;
-        }
-        
-        .result-box {
-            background-color: var(--bg-card) !important;
-            color: var(--text-primary) !important;
-        }
-        
-        /* Navigation et sections */
-        .home-section {
-            background-color: var(--bg-primary) !important;
-        }
-        
-        .section-content {
-            background-color: var(--bg-primary) !important;
-        }
-        
-        /* Inputs et formulaires */
-        input:not([type="checkbox"]):not([type="radio"]), 
-        select, 
-        textarea {
-            background-color: var(--input-bg) !important;
-            color: var(--input-text) !important;
-            border-color: var(--border-color) !important;
-        }
-        
-        /* Placeholder en mode sombre */
-        body.dark-mode input::placeholder {
-            color: #888888;
-            opacity: 1;
-        }
-        
-        /* Tableaux */
-        body.dark-mode table {
-            background-color: var(--bg-card) !important;
-            color: var(--text-primary) !important;
-        }
-        
-        body.dark-mode th {
-            background-color: var(--bg-elevated) !important;
-            color: var(--text-primary) !important;
-        }
-        
-        body.dark-mode td {
-            border-color: var(--border-color) !important;
-            color: var(--text-primary) !important;
-        }
-        
-        body.dark-mode tr {
-            background-color: var(--bg-card) !important;
-        }
-        
-        /* Warning boxes et alertes */
-        body.dark-mode .warning-box {
-            background-color: rgba(255, 152, 0, 0.15) !important;
-            border-color: #FF9800 !important;
-            color: #FFB74D !important;
-        }
-        
-        /* Titres */
-        body.dark-mode h1,
-        body.dark-mode h2,
-        body.dark-mode h3,
-        body.dark-mode h4,
-        body.dark-mode h5 {
-            color: var(--text-primary) !important;
-        }
-        
-        /* Paragraphes */
-        body.dark-mode p {
-            color: var(--text-secondary) !important;
-        }
-        
-        /* Listes */
-        body.dark-mode ul,
-        body.dark-mode ol,
-        body.dark-mode li {
-            color: var(--text-primary) !important;
-        }
-        
-        /* Divs avec background blanc */
-        body.dark-mode div[style*="background: #fff"],
-        body.dark-mode div[style*="background:#fff"],
-        body.dark-mode div[style*="background: white"],
-        body.dark-mode div[style*="background-color: #fff"],
-        body.dark-mode div[style*="background-color:#fff"] {
-            background-color: var(--bg-card) !important;
-        }
-        
-        /* Divs avec texte noir */
-        body.dark-mode div[style*="color: #000"],
-        body.dark-mode div[style*="color:#000"],
-        body.dark-mode div[style*="color: black"] {
-            color: var(--text-primary) !important;
-        }
-        
-        /* Bouton Mode Sombre */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-            background: linear-gradient(135deg, #6A1B9A 0%, #8E24AA 100%);
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 1.8em;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .theme-toggle:hover {
-            transform: scale(1.1) rotate(15deg);
-            box-shadow: 0 6px 20px rgba(106, 27, 154, 0.6);
-        }
-        
-        .theme-toggle:active {
-            transform: scale(0.95);
-        }
-        
-        /* Animation du bouton */
-        @keyframes themeSwitch {
-            0% { transform: rotate(0deg); }
-            50% { transform: rotate(180deg) scale(1.2); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .theme-toggle.switching {
-            animation: themeSwitch 0.5s ease;
-        }
-        
-        /* Amélioration des ombres en mode sombre */
-        body.dark-mode .fire-icon,
-        body.dark-mode .nav-btn {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-        }
-        
-        /* Back button en mode sombre */
-        body.dark-mode .back-btn {
-            background-color: var(--bg-elevated) !important;
-            color: var(--text-primary) !important;
-            border-color: var(--border-color) !important;
-        }
-        
-        /* Convertisseur et autres outils */
-        body.dark-mode #conversionZone,
-        body.dark-mode #scenario-contenu,
-        body.dark-mode #resultat-ia {
-            background-color: var(--bg-card) !important;
-            color: var(--text-primary) !important;
-        }
-        
-        /* Responsive - Plus petit sur mobile */
-        @media (max-width: 768px) {
-            .theme-toggle {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5em;
-                top: 15px;
-                right: 15px;
-            }
-        }
-    </style>
     
     <!-- Bibliothèque jsPDF pour export PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -309,97 +95,6 @@
         </div>
     </div>
 
-    <!-- Modal Informations -->
-    <div id="infoModal" class="modal" style="display: none !important;">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeInfoModal()">&times;</span>
-            <h2>ℹ️ À propos de DECIOPS</h2>
-            
-            <h3>📱 Description</h3>
-            <p>
-                <strong>DECIOPS</strong> est une application web d'aide à la décision opérationnelle destinée aux sapeurs-pompiers.
-                Elle regroupe des outils de calcul et d'aide à la doctrine pour faciliter les interventions sur le terrain.
-            </p>
-
-            <p style="background: rgba(229, 57, 53, 0.1); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary-red); margin-top: 20px; color: #000000;">
-                Cette application est née de la multitude de connaissances à maîtriser dans le métier de pompier. 
-                Face à l'absence d'outils réels d'aide à la décision et suite à une constatation flagrante lors des interventions 
-                (pertes de temps et réflexions trop importantes), DECIOPS a été développé pour apporter des réponses rapides 
-                et fiables sur le terrain.
-            </p>
-
-            <h3>🎯 Fonctionnalités</h3>
-            <ul>
-                <li><strong>Puissance Feu :</strong> Calcul des débits nécessaires selon la puissance du feu</li>
-                <li><strong>Émulseur :</strong> Calcul des besoins en émulseur pour feux d'hydrocarbures</li>
-                <li><strong>Pertes de Charge :</strong> Calcul des pertes dans les tuyaux</li>
-                <li><strong>TMD :</strong> Identification des matières dangereuses</li>
-                <li><strong>ARI :</strong> Calcul de l'autonomie des appareils respiratoires</li>
-                <li><strong>Distances de Sécurité :</strong> Périmètres selon les risques</li>
-                <li><strong>Secours Routier :</strong> Techniques de désincarcération</li>
-                <li><strong>Extincteurs :</strong> Choix selon le type de feu</li>
-                <li><strong>Lignes Électriques :</strong> Identification et distances de sécurité</li>
-                <li><strong>Bouteilles de Gaz :</strong> Identification et procédures</li>
-            </ul>
-
-            <h3>👨‍🚒 Concepteur & Réalisateur</h3>
-            <div style="background: rgba(229, 57, 53, 0.05); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary-red); margin: 15px 0;">
-                <p style="font-size: 1.1em; margin-bottom: 15px; color: #000000;">
-                    <strong style="color: var(--primary-red); font-size: 1.2em;">RESCUEAPP</strong><br>
-                    <em style="color: #000000;">Solution professionnelle développée par des sapeurs-pompiers</em>
-                </p>
-                <p style="line-height: 1.8; color: #000000;">
-                    Développé par des professionnels du terrain issus des services d'incendie et de secours français.<br><br>
-                    
-                    Passionné par la <strong style="color: #000000;">formation et la transmission du savoir</strong>, notre équipe s'est spécialisée depuis 
-                    de nombreuses années dans le domaine de la <strong style="color: #000000;">pédagogie appliquée aux risques incendie</strong>.<br><br>
-                    
-                    L'expérience opérationnelle et la volonté d'optimiser les interventions nous ont conduit à développer 
-                    DECIOPS, un outil pensé par des pompiers, pour des pompiers.
-                </p>
-            </div>
-
-            <h3>⚖️ Mentions Légales</h3>
-            <p><strong>Éditeur :</strong> RESCUEAPP</p>
-            <p><strong>Application :</strong> DECIOPS - Outil d'aide à la décision opérationnelle</p>
-            <p><strong>Hébergement :</strong> Application web autonome</p>
-
-            <h3>📄 Droits d'Auteur</h3>
-            <p>
-                © 2025 RESCUEAPP - DECIOPS. Tous droits réservés.<br>
-                Application conçue et réalisée par <strong>RESCUEAPP</strong>.<br>
-                Cette application est mise à disposition des services de secours.
-            </p>
-
-            <h3>⚠️ Avertissement</h3>
-            <p>
-                Cette application est un <strong>outil d'aide à la décision</strong>. Les calculs et informations fournis 
-                sont indicatifs et doivent être adaptés selon le contexte opérationnel réel.<br><br>
-                L'utilisateur reste responsable de ses décisions et actions. Cette application ne remplace pas 
-                la formation, l'expérience et le jugement professionnel des sapeurs-pompiers.
-            </p>
-
-            <h3>🔒 Confidentialité</h3>
-            <p>
-                Cette application ne collecte aucune donnée personnelle. Les préférences de thème sont stockées 
-                localement sur votre appareil uniquement.
-            </p>
-
-            <h3>📋 Version</h3>
-            <p>
-                Version 1.2 - Janvier 2025<br>
-                Application complète avec 15+ modules opérationnels<br>
-                Développé avec passion pour améliorer l'efficacité opérationnelle des sapeurs-pompiers
-            </p>
-
-            <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #E0E0E0;">
-                <button onclick="closeInfoModal()" style="background: var(--primary-red); color: #212121; border: none; padding: 14px 40px; border-radius: 12px; cursor: pointer; font-size: 1.1em; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                    Fermer
-                </button>
-            </div>
-        </div>
-    </div>
-
     <div class="header">
         <h1>🚒 DECIOPS</h1>
         <p>Outils Opérationnels d'Aide à la Décision</p>
@@ -415,7 +110,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 DECIOPS v1.2</h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 DECIOPS v<span class="app-version">1.10.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -460,14 +155,14 @@
                 <ul style="padding-left: 20px;">
                     <li>✅ <strong>100% hors-ligne</strong> - Fonctionne sans connexion Internet</li>
                     <li>📱 <strong>Optimisé tablette tactique</strong> - Utilisable avec des gants</li>
-                    <li>📋 <strong>631 matières dangereuses</strong> référencées</li>
+                    <li>📋 <strong><span id="aboutTmdCount">Base de</span> matières dangereuses</strong> référencées</li>
                     <li>⚡ <strong>Calculs instantanés</strong> - Hydraulique, ARI, distances</li>
                     <li>🔒 <strong>Conforme GDO</strong> - Doctrine française</li>
                 </ul>
                 
                 <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📋 Modules disponibles</h3>
                 <p style="font-size: 0.95em; color: var(--text-secondary);">
-                    Feu • Émulseur • Pertes de charge • TMD • ARI • Distances • Secours routier • Électrique • Gaz • Extincteurs • Feu de forêt • Calculs • Commandement
+                    Feu • Émulseur • Pertes de charge • TMD • ARI • Distances • Secours routier • Électrique • Gaz • Extincteurs • Feu de forêt • Calculs • Commandement • RDMI • RT SUAP • SAL/SAV • ELD • IMPM • Mousses • Échelles • LSPCC • Générateur IA
                 </p>
                 
                 <!-- SECTION LÉGALE -->
@@ -520,8 +215,9 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        © 2025 RESCUEAPP - Tous droits réservés<br>
-                        Développé par <strong>RESCUEAPP</strong><br>
+                        DECIOPS v<span class="app-version">1.10.0</span><br>
+                        © 2025 RESCUEAPP - DECIOPS - Tous droits réservés<br>
+                        Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
                     </p>
                 </div>
@@ -529,315 +225,9 @@
         </div>
     </div>
 
-    <!-- Barre de recherche globale -->
-    <div id="globalSearch" style="
-        max-width: 600px;
-        margin: -10px auto 20px auto;
-        display: block;
-    ">
-        <div style="position: relative;">
-            <input type="text" id="searchInput" placeholder="🔍 Rechercher un outil..." style="
-                width: 100%;
-                padding: 15px 50px 15px 20px;
-                font-size: 1.1em;
-                border: 2px solid var(--primary-red);
-                border-radius: 15px;
-                background: var(--bg-card);
-                color: var(--text-light);
-                box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
-            " oninput="searchModules(this.value)">
-            <div style="
-                position: absolute;
-                right: 15px;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 1.5em;
-                pointer-events: none;
-            ">🔍</div>
-        </div>
-        <div id="searchResults" style="
-            margin-top: 10px;
-            display: none;
-        "></div>
-    </div>
-
+    <!-- Accueil : généré par js/navigation.js à partir de data/navigation.json -->
     <div id="home" class="module active">
-        
-        <!-- Section Favoris / Accès Rapide -->
-        <div class="home-section" style="margin-bottom: 25px;">
-            <div class="section-header" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                <span style="font-size: 1.4em;">⭐</span>
-                <h3 style="margin: 0; color: var(--primary-red); font-size: 1.1em;">ACCÈS RAPIDE</h3>
-            </div>
-            <div class="nav-buttons" style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <div class="nav-btn nav-btn-small" data-color="rdmi" onclick="showModule('rdmi-menu')">
-                    <div>📕</div>
-                    <span class="nav-label">RDMI</span>
-                </div>
-                <div class="nav-btn nav-btn-small" data-color="suap" onclick="showModule('suap-menu')">
-                    <div>🩺</div>
-                    <span class="nav-label">RT SUAP</span>
-                </div>
-                <div class="nav-btn nav-btn-small" data-color="fire" onclick="showModule('fire')">
-                    <div>🔥</div>
-                    <span class="nav-label">Puissance Feu</span>
-                </div>
-                <div class="nav-btn nav-btn-small" data-color="ia" onclick="showModule('ia-manoeuvre')">
-                    <div>🤖</div>
-                    <span class="nav-label">Générateur IA</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Opérationnel -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-operationnel')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #E53935 0%, #C62828 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">🔥</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">OPÉRATIONNEL / INCENDIE</h3>
-                <span class="section-arrow" id="arrow-section-operationnel">▼</span>
-            </div>
-            <div id="section-operationnel" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="fire" onclick="showModule('fire')">
-                        <div>🔥</div>
-                        <span class="nav-label">Puissance Feu/Extinction</span>
-                    </div>
-                    <div class="nav-btn" data-color="emulseur" onclick="showModule('emulseur')">
-                        <div>🫧</div>
-                        <span class="nav-label">Taux d'application additif</span>
-                    </div>
-                    <div class="nav-btn" data-color="pertes" onclick="showModule('pertes')">
-                        <div>🔧</div>
-                        <span class="nav-label">Pertes Charge</span>
-                    </div>
-                    <div class="nav-btn" data-color="ari" onclick="showModule('ari')">
-                        <div>🫁</div>
-                        <span class="nav-label">ARI</span>
-                    </div>
-                    <div class="nav-btn" data-color="extincteurs" onclick="showModule('extincteurs')">
-                        🧯
-                        <span class="nav-label">Extincteurs</span>
-                    </div>
-                    <div class="nav-btn" data-color="foret" onclick="showModule('feu-foret')">
-                        <div>🌲</div>
-                        <span class="nav-label">Feux Forêt</span>
-                    </div>
-                    <div class="nav-btn" data-color="commandement" onclick="showModule('commandement-menu')">
-                        <div>📋</div>
-                        <span class="nav-label">Commandement</span>
-                    </div>
-                    <div class="nav-btn" data-color="rdmi" onclick="showModule('rdmi-menu')">
-                        <div>📕</div>
-                        <span class="nav-label">RDMI</span>
-                    </div>
-                    <div class="nav-btn" data-color="echelles" onclick="showModule('echelles-menu')">
-                        <div>🪜</div>
-                        <span class="nav-label">ÉCHELLES</span>
-                    </div>
-                    <div class="nav-btn" data-color="mousses" onclick="showModule('mousses-menu')">
-                        <div>🫧</div>
-                        <span class="nav-label">MOUSSES</span>
-                    </div>
-                    <div class="nav-btn" data-color="lspcc" onclick="showModule('lspcc-menu')">
-                        <div>🪢</div>
-                        <span class="nav-label">LSPCC</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Risques Particuliers -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-risques')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">⚠️</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">RISQUES PARTICULIERS</h3>
-                <span class="section-arrow" id="arrow-section-risques">▼</span>
-            </div>
-            <div id="section-risques" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="tmd" onclick="showModule('tmd')">
-                        <div>☣️</div>
-                        <span class="nav-label">TMD</span>
-                    </div>
-                    <div class="nav-btn" data-color="distances" onclick="showModule('distances')">
-                        <div>📏</div>
-                        <span class="nav-label">Distances Sécu</span>
-                    </div>
-                    <div class="nav-btn" data-color="electrique" onclick="showModule('electrique')">
-                        <div>⚡</div>
-                        <span class="nav-label">Lignes Élec</span>
-                    </div>
-                    <div class="nav-btn" data-color="gaz" onclick="showModule('risques-gaz-menu')">
-                        <div>💥</div>
-                        <span class="nav-label">Risques GAZ</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Secours Routier -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-routier')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">🚗</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">SECOURS ROUTIER</h3>
-                <span class="section-arrow" id="arrow-section-routier">▼</span>
-            </div>
-            <div id="section-routier" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="secours" onclick="showModule('secours')">
-                        <div>🚗</div>
-                        <span class="nav-label">Secours Routier</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Secours à Personnes -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-sap')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #00897B 0%, #00695C 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">🩺</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">SECOURS À PERSONNES</h3>
-                <span class="section-arrow" id="arrow-section-sap">▼</span>
-            </div>
-            <div id="section-sap" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="suap" onclick="showModule('suap-menu')">
-                        <div>🩺</div>
-                        <span class="nav-label">RT SUAP</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Spécialités -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-spe')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">🎖️</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">SPÉCIALITÉS</h3>
-                <span class="section-arrow" id="arrow-section-spe">▼</span>
-            </div>
-            <div id="section-spe" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="sal" onclick="showModule('sal-menu')">
-                        <div>🤿</div>
-                        <span class="nav-label">SAL/SAV</span>
-                    </div>
-                    <div class="nav-btn" data-color="eld" onclick="showModule('eld-menu')">
-                        <div>🔦</div>
-                        <span class="nav-label">ELD</span>
-                    </div>
-                    <div class="nav-btn" data-color="impm" onclick="showModule('impm-menu')">
-                        <div>⛰️</div>
-                        <span class="nav-label">IMPM</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section Outils -->
-        <div class="home-section">
-            <div class="section-header" onclick="toggleSection('section-outils')" style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; cursor: pointer; padding: 12px; background: linear-gradient(135deg, #6A1B9A 0%, #8E24AA 100%); border-radius: 10px; color: #fff;">
-                <span style="font-size: 1.4em;">🛠️</span>
-                <h3 style="margin: 0; flex: 1; font-size: 1.1em;">OUTILS & CALCULATEURS</h3>
-                <span class="section-arrow" id="arrow-section-outils">▼</span>
-            </div>
-            <div id="section-outils" class="section-content">
-                <div class="nav-buttons">
-                    <div class="nav-btn" data-color="calculs" onclick="showModule('aide-calculs-menu')">
-                        <div>🔢</div>
-                        <span class="nav-label">Aide Calculs Opérationnels</span>
-                    </div>
-                    <div class="nav-btn" data-color="ia" onclick="showModule('ia-manoeuvre')">
-                        <div>🤖</div>
-                        <span class="nav-label">Générateur IA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Module À Propos -->
-    <div id="a-propos" class="module" style="background: #FFFFFF !important; background-color: rgb(255, 255, 255) !important; opacity: 1 !important; color: #000000 !important;">
-        <div style="background: #FFFFFF !important; background-color: rgb(255, 255, 255) !important; padding: 0; margin: 0; width: 100%; min-height: 100%;">
-        <button class="back-btn" onclick="showModule('home')" style="background: #F5F5F5 !important; color: #000000 !important;">← Retour</button>
-        <h2 style="color: #E53935 !important; border-bottom-color: #E53935 !important; opacity: 1 !important;">ℹ️ À Propos de DéciOps</h2>
-        
-        <h3 style="color: #2196F3 !important; margin-top: 25px; margin-bottom: 15px; font-size: 1.5em; opacity: 1 !important;">📱 Qu'est-ce que DéciOps ?</h3>
-        <p style="color: #000000 !important; line-height: 1.8; font-size: 1.05em; opacity: 1 !important;">
-            <strong style="color: #000000 !important;">DéciOps</strong> est une application professionnelle d'aide à la décision opérationnelle conçue spécifiquement pour les sapeurs-pompiers. 
-            Elle regroupe l'ensemble des outils de calcul et des référentiels techniques nécessaires lors des interventions sur le terrain.
-        </p>
-
-        <h3 style="color: #4CAF50 !important; margin-top: 25px; margin-bottom: 15px; font-size: 1.5em; opacity: 1 !important;">🎯 Objectifs</h3>
-        <p style="color: #000000 !important; line-height: 1.8; font-size: 1.05em; opacity: 1 !important;">
-            Cette application a été développée pour répondre au manque d'outils d'aide à la décision réellement adaptés aux opérations de secours. 
-            Elle permet de gagner un temps précieux sur le terrain en fournissant des réponses rapides et fiables, conformes à la doctrine opérationnelle.
-        </p>
-
-        <h3 style="color: #FF9800 !important; margin-top: 25px; margin-bottom: 15px; font-size: 1.5em; opacity: 1 !important;">💡 Fonctionnalités principales</h3>
-        <ul style="color: #000000 !important; line-height: 1.8; font-size: 1.05em; padding-left: 25px; opacity: 1 !important;">
-            <li style="color: #000000 !important; opacity: 1 !important;">Calculs hydrauliques incendie (débits, pertes de charge)</li>
-            <li style="color: #000000 !important; opacity: 1 !important;">Gestion émulseur et LAS</li>
-            <li style="color: #000000 !important; opacity: 1 !important;">Base de données TMD (Transport de Matières Dangereuses)</li>
-            <li style="color: #000000 !important; opacity: 1 !important;">Gestion ARI (autonomie, binômes)</li>
-            <li style="color: #000000 !important; opacity: 1 !important;">Distances de sécurité</li>
-            <li style="color: #000000 !important; opacity: 1 !important;">Explosimétrie avancée avec correction des valeurs LIE</li>
-            <li style="color: #000000 !important; opacity: 1 !important;">Identification des bouteilles de gaz</li>
-            <li style="color: #000000 !important; opacity: 1 !important;">Outils de commandement (PATRAC DR, SAOIECL)</li>
-            <li style="color: #000000 !important; opacity: 1 !important;">Convertisseurs et abaques</li>
-            <li style="color: #000000 !important; opacity: 1 !important;">Fonctionnement 100% hors ligne</li>
-        </ul>
-
-        <h3 style="color: #9C27B0 !important; margin-top: 25px; margin-bottom: 15px; font-size: 1.5em; opacity: 1 !important;">✅ Conformité</h3>
-        <p style="color: #000000 !important; line-height: 1.8; font-size: 1.05em; opacity: 1 !important;">
-            Tous les calculs et procédures intégrés dans DéciOps sont conformes au <strong style="color: #000000 !important;">GDO (Guide de Doctrine Opérationnelle)</strong> 
-            et aux normes en vigueur dans les services d'incendie et de secours français.
-        </p>
-
-        <h3 style="color: #E91E63 !important; margin-top: 25px; margin-bottom: 15px; font-size: 1.5em; opacity: 1 !important;">👨‍🚒 Développement</h3>
-        <p style="color: #000000 !important; line-height: 1.8; font-size: 1.05em; opacity: 1 !important;">
-            DéciOps a été entièrement développé par <strong style="color: #000000 !important; font-weight: 700 !important;">RESCUEAPP</strong>, solution créée par des professionnels des services d'incendie et de secours, 
-            spécialisés en pédagogie des risques incendie et formation opérationnelle.
-        </p>
-        <p style="color: #000000 !important; line-height: 1.8; font-size: 1.05em; opacity: 1 !important; background: rgba(33, 150, 243, 0.1); padding: 15px; border-radius: 8px; border-left: 4px solid #2196F3; margin-top: 15px;">
-            Développé par <strong style="color: #2196F3 !important; font-weight: 700 !important;">RESCUEAPP</strong>
-        </p>
-        <p style="color: #000000 !important; line-height: 1.8; font-size: 1.05em; opacity: 1 !important;">
-            Cette application est le fruit d'une expérience terrain et d'une volonté de fournir aux équipes opérationnelles 
-            un outil tactique vraiment adapté aux besoins du terrain.
-        </p>
-
-        <h3 style="color: #00BCD4 !important; margin-top: 25px; margin-bottom: 15px; font-size: 1.5em; opacity: 1 !important;">📋 Informations légales</h3>
-        <p style="color: #000000 !important; line-height: 1.8; font-size: 1.05em; opacity: 1 !important;">
-            <strong style="color: #000000 !important;">Version :</strong> 1.2<br>
-            <strong style="color: #000000 !important;">Copyright :</strong> © 2025 DECIOPS. Tous droits réservés.<br>
-            <strong style="color: #000000 !important;">Développé par :</strong> Un sapeur-pompier professionnel<br>
-            <strong style="color: #000000 !important;">Pour :</strong> Les services d'incendie et de secours
-        </p>
-
-        <h3 style="color: #FF5722 !important; margin-top: 25px; margin-bottom: 15px; font-size: 1.5em; opacity: 1 !important;">🚒 Par les pompiers, pour les pompiers</h3>
-        <p style="color: #000000 !important; line-height: 1.8; font-size: 1.05em; opacity: 1 !important;">
-            DéciOps est conçu par des professionnels du terrain pour des professionnels du terrain. 
-            Chaque module a été pensé pour répondre à des situations réelles d'intervention et optimiser la prise de décision opérationnelle.
-        </p>
-
-        <div style="background: linear-gradient(135deg, #E53935 0%, #C62828 100%) !important; 
-                    color: white !important; 
-                    padding: 25px; 
-                    border-radius: 12px; 
-                    text-align: center; 
-                    margin-top: 30px;
-                    box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
-                    opacity: 1 !important;">
-            <p style="color: #FFFFFF !important; font-size: 1.2em; font-weight: 600; margin: 0; opacity: 1 !important;">
-                🚨 Outil tactique d'aide à la décision opérationnelle 🚨
-            </p>
-            <p style="color: #FFFFFF !important; font-size: 0.95em; margin-top: 10px; opacity: 1 !important;">
-                Optimisez vos interventions avec des calculs précis et conformes au GDO
-            </p>
-        </div>
-        </div>
+        <div id="navHome" class="nav-home"></div>
     </div>
 
     <!-- Module Menu Aide Calculs Opérationnels -->
@@ -3711,22 +3101,6 @@
             </div>
         </div>
 
-        <style>
-            .fire-class-card:hover {
-                transform: translateY(-8px) scale(1.05);
-                box-shadow: 0 8px 25px rgba(196, 30, 58, 0.7) !important;
-            }
-            
-            .fire-class-card:active {
-                transform: translateY(-4px) scale(1.02);
-            }
-
-            .fire-class-card.selected {
-                border-color: #4CAF50 !important;
-                box-shadow: 0 8px 30px rgba(0, 255, 0, 0.6) !important;
-                transform: translateY(-5px) scale(1.03);
-            }
-        </style>
 
         <div id="extincteurResult"></div>
     </div>
@@ -3844,16 +3218,6 @@
 
             <div id="resultatIdentificationBouteille"></div>
             
-            <style>
-                .color-card:hover {
-                    transform: translateY(-8px) scale(1.05);
-                    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.6) !important;
-                }
-                
-                .color-card:active {
-                    transform: translateY(-4px) scale(1.02);
-                }
-            </style>
         </div>
 
         <!-- Section Refroidissement -->
@@ -4286,242 +3650,6 @@
         </div>
     </div>
 
-    <script>
-    /* SCRIPT DÉPLACÉ VERS convertisseur.js
-    // ========== CONVERTISSEUR D'UNITÉS - JAVASCRIPT COMPLET ==========
-    
-    let currentConversionType = '';
-    
-    // Définitions des unités pour chaque type de conversion
-    const conversions = {
-        pression: {
-            units: ['bar', 'psi', 'Pa', 'kPa', 'MPa'],
-            quickValues: [1, 2, 5, 10, 15, 20, 50, 100],
-            toBase: { // Conversion vers bar
-                'bar': (v) => v,
-                'psi': (v) => v * 0.0689476,
-                'Pa': (v) => v * 0.00001,
-                'kPa': (v) => v * 0.01,
-                'MPa': (v) => v * 10
-            },
-            fromBase: { // Conversion depuis bar
-                'bar': (v) => v,
-                'psi': (v) => v / 0.0689476,
-                'Pa': (v) => v / 0.00001,
-                'kPa': (v) => v / 0.01,
-                'MPa': (v) => v / 10
-            }
-        },
-        debit: {
-            units: ['L/min', 'L/s', 'm³/h', 'gpm'],
-            quickValues: [100, 250, 500, 1000, 2000, 3000, 5000, 10000],
-            toBase: { // Conversion vers L/min
-                'L/min': (v) => v,
-                'L/s': (v) => v * 60,
-                'm³/h': (v) => v * 16.6667,
-                'gpm': (v) => v * 3.78541
-            },
-            fromBase: { // Conversion depuis L/min
-                'L/min': (v) => v,
-                'L/s': (v) => v / 60,
-                'm³/h': (v) => v / 16.6667,
-                'gpm': (v) => v / 3.78541
-            }
-        },
-        volume: {
-            units: ['L', 'm³', 'gal', 'mL'],
-            quickValues: [1, 10, 100, 500, 1000, 5000, 10000, 50000],
-            toBase: { // Conversion vers L
-                'L': (v) => v,
-                'm³': (v) => v * 1000,
-                'gal': (v) => v * 3.78541,
-                'mL': (v) => v * 0.001
-            },
-            fromBase: { // Conversion depuis L
-                'L': (v) => v,
-                'm³': (v) => v / 1000,
-                'gal': (v) => v / 3.78541,
-                'mL': (v) => v / 0.001
-            }
-        },
-        distance: {
-            units: ['m', 'km', 'cm', 'mm', 'ft', 'mi'],
-            quickValues: [1, 10, 50, 100, 500, 1000, 5000, 10000],
-            toBase: { // Conversion vers m
-                'm': (v) => v,
-                'km': (v) => v * 1000,
-                'cm': (v) => v * 0.01,
-                'mm': (v) => v * 0.001,
-                'ft': (v) => v * 0.3048,
-                'mi': (v) => v * 1609.34
-            },
-            fromBase: { // Conversion depuis m
-                'm': (v) => v,
-                'km': (v) => v / 1000,
-                'cm': (v) => v / 0.01,
-                'mm': (v) => v / 0.001,
-                'ft': (v) => v / 0.3048,
-                'mi': (v) => v / 1609.34
-            }
-        },
-        vitesse: {
-            units: ['km/h', 'm/s', 'mph', 'kn'],
-            quickValues: [10, 30, 50, 90, 110, 130, 200, 300],
-            toBase: { // Conversion vers km/h
-                'km/h': (v) => v,
-                'm/s': (v) => v * 3.6,
-                'mph': (v) => v * 1.60934,
-                'kn': (v) => v * 1.852
-            },
-            fromBase: { // Conversion depuis km/h
-                'km/h': (v) => v,
-                'm/s': (v) => v / 3.6,
-                'mph': (v) => v / 1.60934,
-                'kn': (v) => v / 1.852
-            }
-        },
-        temperature: {
-            units: ['°C', '°F', 'K'],
-            quickValues: [0, 20, 37, 50, 100, 200, 500, 1000],
-            toBase: { // Conversion vers °C
-                '°C': (v) => v,
-                '°F': (v) => (v - 32) * 5/9,
-                'K': (v) => v - 273.15
-            },
-            fromBase: { // Conversion depuis °C
-                '°C': (v) => v,
-                '°F': (v) => (v * 9/5) + 32,
-                'K': (v) => v + 273.15
-            }
-        }
-    };
-    
-    // Fonction pour sélectionner un type de conversion
-    function selectQuickConvert(type) {
-        currentConversionType = type;
-        const config = conversions[type];
-        
-        // Mettre à jour le titre
-        const titles = {
-            'pression': '🔧 PRESSION',
-            'debit': '💧 DÉBIT',
-            'volume': '🪣 VOLUME',
-            'distance': '📏 DISTANCE',
-            'vitesse': '🚒 VITESSE',
-            'temperature': '🌡️ TEMPÉRATURE'
-        };
-        document.getElementById('conversionTitle').innerHTML = titles[type] || '🔄 Conversion';
-        
-        // Remplir les unités
-        const unit1 = document.getElementById('unit1');
-        const unit2 = document.getElementById('unit2');
-        unit1.innerHTML = '';
-        unit2.innerHTML = '';
-        
-        config.units.forEach((unit, index) => {
-            const option1 = document.createElement('option');
-            option1.value = unit;
-            option1.textContent = unit;
-            unit1.appendChild(option1);
-            
-            const option2 = document.createElement('option');
-            option2.value = unit;
-            option2.textContent = unit;
-            unit2.appendChild(option2);
-        });
-        
-        // Sélectionner les 2 premières unités par défaut
-        if (config.units.length >= 2) {
-            unit1.value = config.units[0];
-            unit2.value = config.units[1];
-        }
-        
-        // Remplir les boutons de valeurs rapides
-        const buttonsContainer = document.getElementById('quickValuesButtons');
-        buttonsContainer.innerHTML = '';
-        config.quickValues.forEach(val => {
-            const btn = document.createElement('button');
-            btn.textContent = val;
-            btn.onclick = () => {
-                document.getElementById('value1').value = val;
-                convertValue();
-            };
-            btn.style.cssText = 'padding: 10px 20px; background: var(--primary-red); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 1.1em; font-weight: bold; transition: all 0.2s;';
-            btn.onmouseover = function() { this.style.background = 'var(--primary-red-dark)'; };
-            btn.onmouseout = function() { this.style.background = 'var(--primary-red)'; };
-            buttonsContainer.appendChild(btn);
-        });
-        
-        // Réinitialiser les valeurs
-        document.getElementById('value1').value = '';
-        document.getElementById('value2').innerHTML = '--';
-        
-        // Afficher la zone de conversion
-        document.getElementById('conversionZone').style.display = 'block';
-        
-        // Scroll vers le convertisseur
-        document.getElementById('conversionZone').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    
-    // Fonction de conversion
-    function convertValue() {
-        const value1 = parseFloat(document.getElementById('value1').value);
-        const unit1 = document.getElementById('unit1').value;
-        const unit2 = document.getElementById('unit2').value;
-        const value2Div = document.getElementById('value2');
-        
-        if (isNaN(value1) || value1 === '') {
-            value2Div.innerHTML = '--';
-            return;
-        }
-        
-        const config = conversions[currentConversionType];
-        
-        // Convertir vers l'unité de base puis vers l'unité cible
-        const baseValue = config.toBase[unit1](value1);
-        const result = config.fromBase[unit2](baseValue);
-        
-        // Formater le résultat
-        let formattedResult;
-        if (Math.abs(result) >= 1000000) {
-            formattedResult = result.toExponential(4);
-        } else if (Math.abs(result) < 0.01 && result !== 0) {
-            formattedResult = result.toExponential(4);
-        } else {
-            formattedResult = result.toFixed(4).replace(/\.?0+$/, '');
-        }
-        
-        value2Div.innerHTML = formattedResult;
-    }
-    
-    // Fonction pour inverser les unités
-    function swapUnits() {
-        const unit1 = document.getElementById('unit1');
-        const unit2 = document.getElementById('unit2');
-        const value1 = document.getElementById('value1');
-        const value2Div = document.getElementById('value2');
-        
-        // Échanger les unités
-        const tempUnit = unit1.value;
-        unit1.value = unit2.value;
-        unit2.value = tempUnit;
-        
-        // Échanger les valeurs
-        const tempValue = value1.value;
-        value1.value = value2Div.innerHTML !== '--' ? value2Div.innerHTML : '';
-        
-        // Reconvertir
-        convertValue();
-    }
-    
-    // Fonction pour fermer le convertisseur
-    function closeConverter() {
-        document.getElementById('conversionZone').style.display = 'none';
-        document.getElementById('value1').value = '';
-        document.getElementById('value2').innerHTML = '--';
-    }
-    FIN DU SCRIPT DÉPLACÉ */
-    </script>
 
 
     <!-- ========== MODULES COMMANDEMENT ========== -->
@@ -5194,121 +4322,6 @@
     </div>
 
 
-    <script>
-    /* SCRIPT DÉPLACÉ VERS calculateurs.js
-    // ========== CALCULATEUR ABAQUE CHARGES - JAVASCRIPT ==========
-    
-    // Densités des matériaux (kg/m³)
-    const materiaux = {
-        'Béton armé': 2500,
-        'Béton': 2300,
-        'Brique creuse': 900,
-        'Brique pleine': 1800,
-        'Parpaing': 1300,
-        'Bois (moyenne)': 600,
-        'Acier': 7850,
-        'Aluminium': 2700,
-        'Verre': 2500,
-        'Eau': 1000,
-        'Terre': 1700,
-        'Sable': 1600,
-        'Graviers': 1500,
-        'Plâtre': 1200,
-        'Polystyrène': 30,
-        'Laine de verre': 25
-    };
-    
-    function calculateAbaqueAll() {
-        const longueur = parseFloat(document.getElementById('abaque-longueur').value) || 0;
-        const largeur = parseFloat(document.getElementById('abaque-largeur').value) || 0;
-        const hauteur = parseFloat(document.getElementById('abaque-hauteur').value) || 0;
-        
-        const volume = longueur * largeur * hauteur;
-        
-        // Afficher le volume
-        document.getElementById('abaque-volume-display').textContent = `${volume.toFixed(2)} m³`;
-        document.getElementById('abaque-volume-litres').textContent = `${(volume * 1000).toFixed(0)} litres`;
-        
-        // Générer les résultats pour chaque matériau
-        let html = '<div style="display: grid; gap: 15px;">';
-        
-        for (const [nom, densite] of Object.entries(materiaux)) {
-            const poids = volume * densite;
-            const tonnes = poids / 1000;
-            
-            // Choisir la couleur selon le poids
-            let couleur = '#4CAF50'; // Vert pour léger
-            if (tonnes > 10) couleur = '#FF9800'; // Orange pour moyen
-            if (tonnes > 50) couleur = '#F44336'; // Rouge pour lourd
-            
-            html += `
-                <div style="display: grid; grid-template-columns: 1fr auto; gap: 15px; padding: 15px; background: var(--bg-card); border-radius: 10px; border-left: 5px solid ${couleur}; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                    <div>
-                        <div style="font-size: 1.2em; font-weight: bold; color: var(--text-primary);">${nom}</div>
-                        <div style="font-size: 0.9em; color: var(--text-secondary);">Densité: ${densite} kg/m³</div>
-                    </div>
-                    <div style="text-align: right;">
-                        <div style="font-size: 1.8em; font-weight: bold; color: ${couleur};">${tonnes.toFixed(2)} t</div>
-                        <div style="font-size: 0.9em; color: var(--text-secondary);">${poids.toFixed(0)} kg</div>
-                    </div>
-                </div>
-            `;
-        }
-        
-        html += '</div>';
-        document.getElementById('abaque-results').innerHTML = html;
-    }
-    
-    // Initialiser l'abaque
-    calculateAbaqueAll();
-    
-    // ========== CALCULATEUR TEMPS DE TRAJET - JAVASCRIPT ==========
-    
-    let currentVitesse = 50; // Par défaut
-    
-    function selectVitesse(vitesse) {
-        currentVitesse = vitesse;
-        
-        // Mettre à jour l'apparence des boutons
-        document.querySelectorAll('.vitesse-btn').forEach(btn => {
-            if (parseInt(btn.getAttribute('data-vitesse')) === vitesse) {
-                btn.style.transform = 'scale(1.1)';
-                btn.style.boxShadow = '0 8px 20px rgba(0,0,0,0.3)';
-            } else {
-                btn.style.transform = 'scale(1)';
-                btn.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
-            }
-        });
-        
-        calculateTrajet();
-    }
-    
-    function calculateTrajet() {
-        const distance = parseFloat(document.getElementById('trajet-distance').value) || 0;
-        
-        // Calcul du temps en heures
-        const tempsHeures = distance / currentVitesse;
-        const heures = Math.floor(tempsHeures);
-        const minutes = Math.round((tempsHeures - heures) * 60);
-        
-        // Formater l'affichage
-        let affichage = '';
-        if (heures > 0) {
-            affichage = `${heures}h ${minutes}min`;
-        } else {
-            affichage = `${minutes}min`;
-        }
-        
-        // Afficher les résultats
-        document.getElementById('trajet-temps').textContent = affichage;
-        document.getElementById('trajet-dist-display').textContent = `${distance.toFixed(1)} km`;
-        document.getElementById('trajet-vitesse-display').textContent = `${currentVitesse} km/h`;
-    }
-    
-    // Initialiser le calcul de trajet
-    calculateTrajet();
-    FIN DU SCRIPT DÉPLACÉ */
-    </script>
 
 
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
@@ -8985,7 +7998,7 @@
         <div class="result-box" style="background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border: 2px solid #4CAF50; margin-bottom: 20px;">
             <div style="display: flex; align-items: center; gap: 10px;">
                 <span style="font-size: 1.5em;">✅</span>
-                <strong style="color: #2E7D32;">API Google Gemini configurée et opérationnelle</strong>
+                <strong style="color: #2E7D32;">Générateur IA opérationnel</strong>
             </div>
             <p style="margin-top: 8px; font-size: 0.9em; color: #1B5E20;">Le générateur IA est prêt à l'emploi.</p>
         </div>
@@ -9183,367 +8196,8 @@
         </div>
     </div>
 
-    <style>
-    .ia-checkbox {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 15px;
-        background: #f5f5f5;
-        border: 2px solid #ddd;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.2s;
-        font-size: 0.95em;
-    }
-    .ia-checkbox:hover {
-        border-color: #8E24AA;
-        background: #CE93D8; color: #000;
-    }
-    .ia-checkbox input[type="checkbox"] {
-        width: 18px;
-        height: 18px;
-        cursor: pointer;
-    }
-    .ia-checkbox:has(input:checked) {
-        background: #BA68C8; color: #fff;
-        border-color: #8E24AA;
-        font-weight: 600;
-    }
-    #btn-generer:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(106, 27, 154, 0.4);
-    }
-    #btn-generer:disabled {
-        background: #ccc;
-        cursor: not-allowed;
-        transform: none;
-        box-shadow: none;
-    }
-    @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.5; }
-    }
-    .loading {
-        animation: pulse 1.5s infinite;
-    }
-    </style>
 
-    <script>
-    // Clé API Google Gemini intégrée
-
-
-    // Collecter les valeurs cochées
-    function getCheckedValues(name) {
-        const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
-        return Array.from(checkboxes).map(cb => cb.value);
-    }
-
-    // Générer le scénario
-    async function genererManoeuvre() {
-        // Collecter toutes les données
-        const types = getCheckedValues('type');
-        const vehicules = getCheckedValues('vehicule');
-        const lieux = getCheckedValues('lieu');
-        const materiels = getCheckedValues('materiel');
-        const grades = getCheckedValues('grade');
-        const medical = getCheckedValues('medical');
-        const nbPersonnel = document.getElementById('nb-personnel').value;
-        const duree = document.getElementById('duree-manoeuvre').value;
-        const niveau = document.getElementById('niveau-manoeuvre').value;
-        const consignes = document.getElementById('consignes-particulieres').value;
-
-        // Validation minimale
-        if (types.length === 0) {
-            alert('⚠️ Veuillez sélectionner au moins un type de manœuvre');
-            return;
-        }
-
-        // Construire le prompt
-        const prompt = `Tu es un formateur sapeur-pompier expérimenté. Génère un scénario de manœuvre d'entraînement COMPLET et RÉALISTE avec les paramètres suivants :
-
-**TYPE DE MANŒUVRE :** ${types.join(', ')}
-**VÉHICULES DISPONIBLES :** ${vehicules.length > 0 ? vehicules.join(', ') : 'Non spécifié'}
-**LIEU :** ${lieux.length > 0 ? lieux.join(', ') : 'Non spécifié'}
-**MATÉRIEL DE SIMULATION :** ${materiels.length > 0 ? materiels.join(', ') : 'Basique'}
-**EFFECTIF :** ${nbPersonnel} sapeurs-pompiers
-**GRADES :** ${grades.join(', ')}
-**PERSONNEL MÉDICAL :** ${medical.length > 0 ? medical.join(', ') : 'Aucun'}
-**DURÉE :** ${duree}
-**NIVEAU :** ${niveau}
-${consignes ? `**CONSIGNES PARTICULIÈRES :** ${consignes}` : ''}
-
-Génère un scénario structuré avec :
-
-📋 **TITRE DE LA MANŒUVRE**
-(Titre accrocheur et descriptif)
-
-🎯 **OBJECTIFS PÉDAGOGIQUES**
-(3-5 objectifs clairs et mesurables)
-
-📖 **CONTEXTE / MISE EN SITUATION**
-(Scénario réaliste avec lieu, heure, circonstances, appel initial type message CTA)
-
-👥 **RÉPARTITION DES RÔLES**
-(Attribution des rôles selon l'effectif et les grades disponibles)
-
-⏱️ **DÉROULEMENT CHRONOLOGIQUE**
-(Étapes détaillées avec timing indicatif)
-
-🔄 **ÉVOLUTIONS POSSIBLES / ALÉAS**
-(2-3 rebondissements réalistes à introduire pendant la manœuvre)
-
-✅ **CRITÈRES D'ÉVALUATION**
-(Points clés à observer pour l'évaluation)
-
-⚠️ **POINTS DE VIGILANCE SÉCURITÉ**
-(Mesures de sécurité pour la manœuvre)
-
-📦 **MATÉRIEL À PRÉPARER**
-(Liste du matériel nécessaire)
-
-Utilise un langage professionnel sapeur-pompier avec les termes techniques appropriés (MGO, COS, CA, etc.). Le scénario doit être directement utilisable.`;
-
-        // UI loading
-        const btn = document.getElementById('btn-generer');
-        btn.disabled = true;
-        btn.innerHTML = '<span class="loading">🔄</span> Génération en cours...';
-        document.getElementById('resultat-ia').style.display = 'none';
-
-        try {
-            // ✅ APPEL À L'API VERCEL AVEC STREAMING
-            const response = await fetch('https://s-papp.vercel.app/api/gemini', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    prompt: prompt
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error('Erreur serveur');
-            }
-
-            // ✅ STREAMING : Afficher le résultat progressivement
-            const scenarioDiv = document.getElementById('scenario-contenu');
-            const resultatDiv = document.getElementById('resultat-ia');
-            
-            // Préparer l'affichage
-            scenarioDiv.innerHTML = '';
-            resultatDiv.style.display = 'block';
-            resultatDiv.scrollIntoView({ behavior: 'smooth' });
-            
-            let texteComplet = '';
-            
-            // Lire le stream
-            const reader = response.body.getReader();
-            const decoder = new TextDecoder();
-
-            while (true) {
-                const { done, value } = await reader.read();
-                
-                if (done) break;
-
-                // Décoder le chunk
-                const chunk = decoder.decode(value, { stream: true });
-                const lines = chunk.split('\n');
-
-                for (const line of lines) {
-                    if (line.startsWith('data: ')) {
-                        const data = line.slice(6);
-                        
-                        if (data === '[DONE]') {
-                            continue;
-                        }
-
-                        try {
-                            const parsed = JSON.parse(data);
-                            
-                            if (parsed.error) {
-                                throw new Error(parsed.error);
-                            }
-                            
-                            if (parsed.text) {
-                                // Ajouter le nouveau texte
-                                texteComplet += parsed.text;
-                                
-                                // ✅ Affichage progressif formaté
-                                scenarioDiv.innerHTML = formatScenario(texteComplet);
-                            }
-                        } catch (e) {
-                            // Ignorer les erreurs de parsing mineures
-                            if (e.message && e.message !== 'Unexpected end of JSON input') {
-                                console.error('Erreur parsing:', e);
-                            }
-                        }
-                    }
-                }
-            }
-            
-            // Vérifier qu'on a bien du contenu
-            if (!texteComplet || texteComplet.trim().length === 0) {
-                throw new Error('Aucune réponse générée par l\'IA');
-            }
-
-        } catch (error) {
-            console.error('Erreur:', error);
-            alert('❌ Erreur lors de la génération : ' + error.message + '\n\nVérifiez votre configuration API.');
-        } finally {
-            btn.disabled = false;
-            btn.innerHTML = '<span>🤖</span> GÉNÉRER LE SCÉNARIO';
-        }
-    }
-
-    // Formater le scénario avec mise en forme
-    function formatScenario(texte) {
-        return texte
-            .replace(/\*\*(.*?)\*\*/g, '<strong style="color: #6A1B9A;">$1</strong>')
-            .replace(/^### (.*$)/gm, '<h4 style="color: #8E24AA; margin-top: 20px;">$1</h4>')
-            .replace(/^## (.*$)/gm, '<h3 style="color: #6A1B9A; margin-top: 25px; border-bottom: 2px solid #E1BEE7; padding-bottom: 5px;">$1</h3>')
-            .replace(/^# (.*$)/gm, '<h2 style="color: #4A148C; margin-top: 25px;">$1</h2>')
-            .replace(/^- (.*$)/gm, '<li style="margin-left: 20px;">$1</li>')
-            .replace(/^(\d+)\. (.*$)/gm, '<li style="margin-left: 20px;"><strong>$1.</strong> $2</li>')
-            .replace(/\n\n/g, '</p><p style="margin-top: 10px;">')
-            .replace(/📋|🎯|📖|👥|⏱️|🔄|✅|⚠️|📦/g, '<span style="font-size: 1.2em;">$&</span>');
-    }
-
-    // Copier le scénario
-    function copierScenario() {
-        const contenu = document.getElementById('scenario-contenu').innerText;
-        navigator.clipboard.writeText(contenu).then(() => {
-            alert('✅ Scénario copié dans le presse-papier !');
-        }).catch(err => {
-            console.error('Erreur copie:', err);
-        });
-    }
-
-    // Télécharger le scénario en PDF
-    function telechargerPDF() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        
-        // Récupérer le contenu brut (sans HTML)
-        const contenuHTML = document.getElementById('scenario-contenu');
-        const contenuTexte = contenuHTML.innerText;
-        
-        // Collecter les paramètres du scénario
-        const types = getCheckedValues('type');
-        const vehicules = getCheckedValues('vehicule');
-        const duree = document.getElementById('duree-manoeuvre').value;
-        const niveau = document.getElementById('niveau-manoeuvre').value;
-        
-        // Configuration PDF
-        const pageWidth = doc.internal.pageSize.getWidth();
-        const pageHeight = doc.internal.pageSize.getHeight();
-        const margin = 20;
-        const maxWidth = pageWidth - (margin * 2);
-        let yPosition = margin;
-        
-        // En-tête avec logo et titre
-        doc.setFillColor(106, 27, 154); // Violet DECIOPS
-        doc.rect(0, 0, pageWidth, 35, 'F');
-        
-        doc.setTextColor(255, 255, 255);
-        doc.setFontSize(20);
-        doc.setFont('helvetica', 'bold');
-        doc.text('🚒 DECIOPS', margin, 15);
-        
-        doc.setFontSize(12);
-        doc.setFont('helvetica', 'normal');
-        doc.text('Générateur de Scénarios d\'Entraînement', margin, 25);
-        
-        yPosition = 45;
-        doc.setTextColor(0, 0, 0);
-        
-        // Informations du scénario
-        doc.setFillColor(243, 229, 245);
-        doc.rect(margin, yPosition, maxWidth, 25, 'F');
-        
-        doc.setFontSize(10);
-        doc.setFont('helvetica', 'bold');
-        yPosition += 8;
-        doc.text(`Type: ${types.join(', ')}`, margin + 5, yPosition);
-        yPosition += 6;
-        doc.setFont('helvetica', 'normal');
-        doc.text(`Véhicules: ${vehicules.length > 0 ? vehicules.join(', ') : 'Non spécifié'}`, margin + 5, yPosition);
-        yPosition += 6;
-        doc.text(`Durée: ${duree} | Niveau: ${niveau}`, margin + 5, yPosition);
-        
-        yPosition += 15;
-        
-        // Ligne de séparation
-        doc.setDrawColor(142, 36, 170);
-        doc.setLineWidth(0.5);
-        doc.line(margin, yPosition, pageWidth - margin, yPosition);
-        yPosition += 10;
-        
-        // Contenu du scénario
-        doc.setFontSize(10);
-        doc.setFont('helvetica', 'normal');
-        
-        // Découper le texte en lignes qui tiennent dans la page
-        const lignes = doc.splitTextToSize(contenuTexte, maxWidth);
-        
-        for (let i = 0; i < lignes.length; i++) {
-            // Vérifier si on doit ajouter une nouvelle page
-            if (yPosition > pageHeight - margin) {
-                doc.addPage();
-                yPosition = margin;
-            }
-            
-            const ligne = lignes[i];
-            
-            // Détecter les titres (lignes en majuscules ou avec emojis)
-            if (ligne.match(/^[📋🎯📖👥⏱️🔄✅⚠️📦]/)) {
-                doc.setFont('helvetica', 'bold');
-                doc.setFontSize(11);
-                doc.setTextColor(106, 27, 154);
-                yPosition += 3;
-            } else if (ligne === ligne.toUpperCase() && ligne.length < 50 && ligne.trim().length > 0) {
-                doc.setFont('helvetica', 'bold');
-                doc.setFontSize(10);
-                doc.setTextColor(74, 20, 140);
-            } else {
-                doc.setFont('helvetica', 'normal');
-                doc.setFontSize(10);
-                doc.setTextColor(0, 0, 0);
-            }
-            
-            doc.text(ligne, margin, yPosition);
-            yPosition += 5;
-        }
-        
-        // Pied de page sur toutes les pages
-        const totalPages = doc.internal.getNumberOfPages();
-        for (let i = 1; i <= totalPages; i++) {
-            doc.setPage(i);
-            doc.setFontSize(8);
-            doc.setTextColor(128, 128, 128);
-            doc.setFont('helvetica', 'italic');
-            doc.text(
-                `DECIOPS v1.9 - Scénario généré le ${new Date().toLocaleDateString('fr-FR')} - Page ${i}/${totalPages}`,
-                pageWidth / 2,
-                pageHeight - 10,
-                { align: 'center' }
-            );
-        }
-        
-        // Générer le nom du fichier
-        const dateStr = new Date().toISOString().split('T')[0];
-        const typeStr = types[0] ? types[0].replace(/\s+/g, '_') : 'Scenario';
-        const filename = `Scenario_${typeStr}_${dateStr}.pdf`;
-        
-        // Télécharger le PDF
-        doc.save(filename);
-        
-        // Confirmation
-        setTimeout(() => {
-            alert(`✅ PDF téléchargé : ${filename}`);
-        }, 100);
-    }
-    </script>
+    <script src="js/modules/ia-manoeuvre.js"></script>
 
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <!-- MODULE ELD - EXPLORATION LONGUE DURÉE - SDIS 34 -->
@@ -13242,7 +11896,7 @@ Utilise un langage professionnel sapeur-pompier avec les termes techniques appro
 
     <!-- FOOTER -->
     <div style="text-align: center; padding: 30px 20px; margin-top: 40px; border-top: 2px solid var(--primary-red); font-size: 0.9em; opacity: 0.9;">
-        <p style="margin: 8px 0;"><strong>DECIOPS v1.9</strong> - Outil d'aide à la décision opérationnelle</p>
+        <p style="margin: 8px 0;"><strong>DECIOPS v<span class="app-version">1.10.0</span></strong> - Outil d'aide à la décision opérationnelle</p>
         <p style="margin: 8px 0;">Développé par <strong>RESCUEAPP</strong> | Modules RDMI + RT SUAP + SAL/SAV + ELD + Échelles + Mousses + IA</p>
         <p style="margin: 8px 0; font-size: 0.9em;"><strong>RESCUEAPP</strong> - Solutions professionnelles pour sapeurs-pompiers</p>
         <p style="margin: 8px 0; font-size: 0.85em;">© 2025 RESCUEAPP | Conforme GDO | Tous droits réservés</p>
@@ -13528,139 +12182,43 @@ Utilise un langage professionnel sapeur-pompier avec les termes techniques appro
         </div>
     </div>
 
-    <script>
-    // Fonction calculateur facteur de chute LSPCC
-    function calculerFacteurChute() {
-        const hauteur = parseFloat(document.getElementById('lspcc-hauteur').value);
-        const corde = parseFloat(document.getElementById('lspcc-corde').value);
-        const resultat = document.getElementById('lspcc-resultat');
-        
-        if (!hauteur || !corde || corde <= 0) {
-            resultat.innerHTML = '<p style="color: #9E9E9E; font-style: italic;">Entrez les valeurs pour calculer le facteur de chute</p>';
-            return;
-        }
-        
-        const facteur = hauteur / corde;
-        let status, color, bgColor, icon, message;
-        
-        if (facteur <= 0.3) {
-            status = 'FACTEUR OPTIMAL';
-            color = '#2E7D32';
-            bgColor = '#C8E6C9';
-            icon = '✅';
-            message = 'Progression sécurisée';
-        } else if (facteur <= 1) {
-            status = 'FACTEUR À ÉVITER';
-            color = '#E65100';
-            bgColor = '#FFE0B2';
-            icon = '⚠️';
-            message = 'Risque modéré';
-        } else {
-            status = 'FACTEUR INTERDIT';
-            color = '#C62828';
-            bgColor = '#FFCDD2';
-            icon = '⛔';
-            message = 'DANGER ! Repositionner l\'amarrage';
-        }
-        
-        resultat.innerHTML = `
-            <div style="background: ${bgColor}; padding: 25px; border-radius: 12px;">
-                <div style="font-size: 3em;">${icon}</div>
-                <div style="font-size: 2.5em; font-weight: 700; color: ${color};">${facteur.toFixed(2)}</div>
-                <div style="font-size: 1.3em; font-weight: 700; color: ${color};">${status}</div>
-                <div style="margin-top: 10px;">${message}</div>
-            </div>
-        `;
-    }
-    </script>
+    <script src="js/modules/lspcc.js"></script>
 
     <!-- MODULE PICTOGRAMMES -->
+
+    <!-- Barre d'onglets (navigation) -->
+    <nav id="navTabbar" class="nav-tabbar" aria-label="Navigation principale">
+        <button data-onglet="accueil" aria-current="page"><span aria-hidden="true">⌂</span>Accueil</button>
+        <button data-onglet="calculs"><span aria-hidden="true">∑</span>Calculs</button>
+        <button data-onglet="chercher"><span aria-hidden="true">🔍</span>Chercher</button>
+        <button data-onglet="favoris"><span aria-hidden="true">★</span>Favoris</button>
+    </nav>
 
     <!-- Scripts JavaScript externes -->
     <script src="js/data-loader.js"></script>
     <script src="js/modules/sal.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/modules/gaz.js"></script>
+    <script src="js/modules/bouteilles.js"></script>
+    <script src="js/modules/commandement.js"></script>
+    <script src="js/modules/trajet.js"></script>
+    <script src="js/modules/sauvegarde.js"></script>
+    <script src="js/navigation.js"></script>
     
 
     <!-- Scripts TMD + Fiches GMU -->
     <script src="guides-gmu.js"></script>
     <script src="affichage-gmu.js"></script>
+    <script src="gmu-integration.js"></script>
     
     
     <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(registration => {
-                        console.log('🚒 DECIOPS: Service Worker enregistré avec succès');
-                    })
-                    .catch(error => {
-                        console.log('🚒 DECIOPS: Erreur Service Worker:', error);
-                    });
-            });
-        }
-        
-        // Gestion de l'installation PWA
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            // Afficher un bouton d'installation si souhaité
-            console.log('🚒 DECIOPS: Application installable');
-        });
-        
-        // ========== GESTION MODE SOMBRE / CLAIR ==========
-        
-        // Fonction pour basculer le thème
-        function toggleTheme() {
-            const body = document.body;
-            const themeToggle = document.getElementById('themeToggle');
-            
-            // Animation du bouton
-            themeToggle.classList.add('switching');
-            setTimeout(() => {
-                themeToggle.classList.remove('switching');
-            }, 500);
-            
-            // Basculer la classe
-            body.classList.toggle('dark-mode');
-            
-            // Mettre à jour l'icône et sauvegarder
-            if (body.classList.contains('dark-mode')) {
-                themeToggle.textContent = '☀️'; // Soleil en mode sombre
-                localStorage.setItem('theme', 'dark');
-                console.log('🌙 Mode sombre activé');
-            } else {
-                themeToggle.textContent = '🌙'; // Lune en mode clair
-                localStorage.setItem('theme', 'light');
-                console.log('☀️ Mode clair activé');
-            }
-        }
-        
-        // Charger le thème sauvegardé au démarrage
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme');
-            const themeToggle = document.getElementById('themeToggle');
-            
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-mode');
-                themeToggle.textContent = '☀️';
-                console.log('🌙 Mode sombre: activé (sauvegardé)');
-            } else {
-                themeToggle.textContent = '🌙';
-                console.log('☀️ Mode clair: activé (par défaut)');
-            }
-        });
-    </script>
+    <script src="js/pwa-theme.js"></script>
 
 
 
 
 
-<script src="guides-gmu.js"></script>
-<script src="affichage-gmu.js"></script>
-<script src="gmu-integration.js"></script>
 
 </body>
 

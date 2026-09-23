@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * DÉCIOPS v1.9.8 - Outil d'aide à la décision opérationnelle
+ * DÉCIOPS v1.10.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025 - RESCUEAPP
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -28,7 +28,7 @@ let appConfig = {};
 
 // ==================== INITIALISATION ====================
 async function initApp() {
-    console.log('🚒 DECIOPS v1.9.8 - Initialisation...');
+    console.log('🚒 DECIOPS v' + APP_VERSION + ' - Initialisation...');
     try {
         const data = await DataLoader.loadAll();
         tmdDatabase = data.tmd || [];
@@ -62,7 +62,7 @@ function initializeApp() {
     
     setupEventListeners();
     initConversionData();
-    console.log('✅ DECIOPS v1.9.8 prêt !');
+    console.log('✅ DECIOPS v' + APP_VERSION + ' prêt !');
 }
 
 function setupEventListeners() {
@@ -101,50 +101,37 @@ function showModule(moduleName) {
         if (moduleName === 'abaque') calculateAbaqueAll();
         if (moduleName === 'ari') calculerAutonomieARI();
     }
-    
-    var homeBtn = document.getElementById('homeButton');
-    var searchBar = document.getElementById('globalSearch');
-    if (moduleName === 'home') {
-        if (homeBtn) homeBtn.style.display = 'none';
-        if (searchBar) searchBar.style.display = 'block';
-    } else {
-        if (homeBtn) homeBtn.style.display = 'block';
-        if (searchBar) searchBar.style.display = 'none';
-    }
 }
 
-// ==================== RECHERCHE GLOBALE ====================
-function searchModules(query) {
-    var searchResults = document.getElementById('searchResults');
-    if (!query || query.length < 2) {
-        if (searchResults) searchResults.style.display = 'none';
-        return;
+// ==================== À PROPOS ====================
+var APP_VERSION = '1.10.0';
+
+function toggleAbout() {
+    var modal = document.getElementById('aboutModal');
+    if (!modal) return;
+    var ouvrir = !modal.classList.contains('active');
+    if (ouvrir) {
+        document.querySelectorAll('.app-version').forEach(function(el) { el.textContent = APP_VERSION; });
+        var tmdCount = document.getElementById('aboutTmdCount');
+        if (tmdCount && tmdDatabase.length) tmdCount.textContent = tmdDatabase.length;
     }
-    
-    var searchIndex = [
-        {id: 'fire', name: 'Puissance Feu/Extinction', keywords: ['feu', 'puissance', 'fenêtre', 'incendie']},
-        {id: 'emulseur', name: 'Taux application additif', keywords: ['émulseur', 'mousse', 'additif']},
-        {id: 'pertes', name: 'Pertes de Charge', keywords: ['pertes', 'charge', 'pression', 'tuyau']},
-        {id: 'tmd', name: 'TMD', keywords: ['tmd', 'matières', 'dangereuses', 'onu']},
-        {id: 'ari', name: 'Calcul ARI', keywords: ['ari', 'respiratoire', 'autonomie', 'bouteille']},
-        {id: 'distances', name: 'Distances Sécurité', keywords: ['distance', 'sécurité', 'gaz', 'électrique']}
-    ];
-    
-    query = query.toLowerCase();
-    var results = searchIndex.filter(function(m) {
-        return m.name.toLowerCase().includes(query) || m.keywords.some(function(k) { return k.includes(query); });
-    });
-    
-    if (results.length === 0) {
-        searchResults.innerHTML = '<div class="alert-box">Aucun outil trouvé</div>';
-    } else {
-        searchResults.innerHTML = results.map(function(m) {
-            return '<div onclick="showModule(\'' + m.id + '\')" style="background:var(--bg-card);padding:15px;margin:5px 0;border-radius:10px;border-left:4px solid var(--primary-red);cursor:pointer;">' +
-                '<strong style="color:var(--primary-red);">' + m.name + '</strong></div>';
-        }).join('');
-    }
-    searchResults.style.display = 'block';
+    modal.classList.toggle('active', ouvrir);
 }
+
+function closeAboutIfOutside(event) {
+    if (event.target && event.target.id === 'aboutModal') toggleAbout();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.app-version').forEach(function(el) { el.textContent = APP_VERSION; });
+});
+
+document.addEventListener('keydown', function(event) {
+    var modal = document.getElementById('aboutModal');
+    if (event.key === 'Escape' && modal && modal.classList.contains('active')) toggleAbout();
+});
+
+// Recherche globale : voir js/navigation.js (onglet « Chercher »)
 
 // ═══════════════════════════════════════════════════════════════════════
 // MODULE TMD ENRICHI - CARACTÉRISTIQUES TECHNIQUES
@@ -1154,92 +1141,7 @@ function calculateFeuForet() { calculateFeuForetRegle3pct(); }
 // MODULE EXPLOSIMÉTRIE
 // ═══════════════════════════════════════════════════════════════════════
 
-function initExplosimetrie() {
-    if (Object.keys(gazDatabase).length === 0) return;
-    
-    var gazEtalon = document.getElementById('gazEtalon');
-    if (gazEtalon && gazEtalon.options.length <= 1) {
-        ['Méthane', 'Propane', 'Pentane'].forEach(function(nom) {
-            if (gazDatabase[nom]) {
-                var option = document.createElement('option');
-                option.value = nom; option.textContent = nom;
-                gazEtalon.appendChild(option);
-            }
-        });
-    }
-    afficherGazPresents();
-    updateTableauCorrections();
-}
-
-function afficherGazPresents() {
-    var grid = document.getElementById('gazPresentsGrid');
-    if (!grid) return;
-    
-    var gazPresents = Object.keys(gazDatabase).filter(function(nom) {
-        return gazDatabase[nom] && gazDatabase[nom].lii !== undefined;
-    });
-    
-    grid.innerHTML = gazPresents.map(function(nom) {
-        var gaz = gazDatabase[nom];
-        var cardId = 'gaz-card-' + nom.replace(/[^a-zA-Z0-9]/g, '_');
-        return '<div class="gaz-card" onclick="selectionnerGaz(\'' + nom + '\')" id="' + cardId + '">' +
-            '<div class="gaz-nom">' + nom + '</div><div class="gaz-lii">LII: ' + gaz.lii + '%</div></div>';
-    }).join('');
-}
-
-function selectionnerGaz(nom) {
-    gazSelectionne = nom;
-    document.querySelectorAll('.gaz-card').forEach(function(card) { card.classList.remove('selected'); });
-    var cardId = 'gaz-card-' + nom.replace(/[^a-zA-Z0-9]/g, '_');
-    var card = document.getElementById(cardId);
-    if (card) card.classList.add('selected');
-    calculerCorrectionGaz();
-}
-
-function calculerCorrectionGaz() {
-    if (!gazSelectionne) return;
-    var valeurLue = parseFloat(document.getElementById('valeurExplo')?.value || 0);
-    var gazEtalonNom = document.getElementById('gazEtalon')?.value;
-    if (!gazEtalonNom || !gazDatabase[gazEtalonNom] || !gazDatabase[gazSelectionne]) return;
-    
-    var gazEtalon = gazDatabase[gazEtalonNom];
-    var gazCible = gazDatabase[gazSelectionne];
-    var coeffCorrection = gazEtalon.lii / gazCible.lii;
-    var valeurCorrigee = valeurLue * coeffCorrection;
-    
-    var resultDiv = document.getElementById('resultatExplo');
-    if (resultDiv) {
-        var alerteMessage = valeurCorrigee >= 100 ? '<div class="danger-box" style="margin-top:15px;">⚠️ DANGER - Zone explosive!</div>' :
-            valeurCorrigee >= 60 ? '<div class="alert-box" style="margin-top:15px;">⚠️ ATTENTION - Approche LII</div>' : '';
-        
-        resultDiv.innerHTML = '<div class="result-box"><h3>Résultat correction</h3>' +
-            '<div class="result-item"><span>Gaz étalon :</span><span class="result-value">' + gazEtalonNom + ' (LII: ' + gazEtalon.lii + '%)</span></div>' +
-            '<div class="result-item"><span>Gaz détecté :</span><span class="result-value">' + gazSelectionne + ' (LII: ' + gazCible.lii + '%)</span></div>' +
-            '<div class="result-item"><span>Coefficient :</span><span class="result-value">' + coeffCorrection.toFixed(3) + '</span></div>' +
-            '<div class="info-card" style="margin-top:15px;"><div class="label">Valeur corrigée</div>' +
-            '<div class="value" style="font-size:2.5em;color:' + (valeurCorrigee >= 60 ? '#ff0000' : '#4CAF50') + ';">' + valeurCorrigee.toFixed(1) + '% LII</div></div>' +
-            alerteMessage + '</div>';
-    }
-}
-
-function updateTableauCorrections() {
-    var gazEtalonNom = document.getElementById('gazEtalon')?.value;
-    var tableBody = document.getElementById('tableCorrections');
-    if (!tableBody || !gazEtalonNom || !gazDatabase[gazEtalonNom]) return;
-    
-    var gazEtalon = gazDatabase[gazEtalonNom];
-    var gazList = Object.keys(gazDatabase).filter(function(nom) { return gazDatabase[nom] && gazDatabase[nom].lii !== undefined; });
-    
-    tableBody.innerHTML = gazList.map(function(nom) {
-        var gaz = gazDatabase[nom];
-        var coeff = gazEtalon.lii / gaz.lii;
-        var isEtalon = nom === gazEtalonNom;
-        return '<tr style="' + (isEtalon ? 'background:rgba(76,175,80,0.2);' : '') + '">' +
-            '<td style="font-weight:' + (isEtalon ? 'bold' : 'normal') + ';">' + nom + '</td>' +
-            '<td>' + gaz.lii + '%</td>' +
-            '<td style="font-weight:bold;color:' + (coeff > 1 ? '#ff9900' : coeff < 1 ? '#4CAF50' : '#fff') + ';">' + coeff.toFixed(3) + '</td></tr>';
-    }).join('');
-}
+// Voir js/modules/gaz.js
 
 // ═══════════════════════════════════════════════════════════════════════
 // MODULE CALCUL DISTANCES
@@ -1346,43 +1248,7 @@ function calculatePaliers() {
     }
 }
 
-// ═══════════════════════════════════════════════════════════════════════
-// MODULE PATRAC
-// ═══════════════════════════════════════════════════════════════════════
-
-var vehiculesEquipages = [
-    { nom: "VSAV", personnels: ["1 conducteur", "1 chef d'agrès", "1 équipier"] },
-    { nom: "FPT/FPTSR", personnels: ["1 conducteur", "1 chef d'agrès", "4 équipiers"] },
-    { nom: "CCGC", personnels: ["1 conducteur", "1 chef d'agrès", "2 équipiers"] },
-    { nom: "CCF", personnels: ["1 conducteur", "1 chef d'agrès", "2 équipiers"] }
-];
-
-var conseillersTechniques = [
-    { sigle: "CA", titre: "Conseiller Animalier" },
-    { sigle: "COB", titre: "Conseiller Opérationnel Bateau" },
-    { sigle: "COSAL", titre: "Conseiller Opérationnel SAL" },
-    { sigle: "CRNRBC", titre: "Conseiller Risques NRBC" }
-];
-
-function afficherVehiculesEquipages() {
-    var container = document.getElementById('listeVehiculesEquipages');
-    if (!container) return;
-    container.innerHTML = vehiculesEquipages.map(function(v) {
-        return '<div style="background:var(--bg-card);padding:15px;border-radius:12px;border-left:4px solid var(--primary-red);margin-bottom:10px;">' +
-            '<div style="font-weight:bold;font-size:1.2em;color:var(--primary-red);margin-bottom:8px;">🚒 ' + v.nom + '</div>' +
-            '<ul style="margin:0;padding-left:20px;">' + v.personnels.map(function(p) { return '<li style="margin:5px 0;">' + p + '</li>'; }).join('') + '</ul></div>';
-    }).join('');
-}
-
-function afficherCA() {
-    var container = document.getElementById('listeCA');
-    if (!container) return;
-    container.innerHTML = conseillersTechniques.map(function(ca) {
-        return '<div style="background:var(--bg-card);padding:15px;border-radius:12px;border-left:4px solid #FF9800;margin-bottom:10px;">' +
-            '<span style="font-weight:bold;font-size:1.3em;color:#FF9800;">' + ca.sigle + '</span>' +
-            '<div style="font-weight:600;margin-top:5px;">' + ca.titre + '</div></div>';
-    }).join('');
-}
+// Module PATRAC : voir js/modules/commandement.js
 
 // ═══════════════════════════════════════════════════════════════════════
 // UTILITAIRES & MODE SOMBRE
@@ -1646,9 +1512,9 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - DECIOPS v1.9.8 COMPLET
+// FIN DU FICHIER - DECIOPS v1.10.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
-console.log('🚒 DECIOPS v1.9.8 - Tous les modules chargés avec succès');
+console.log('🚒 DECIOPS v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
 // ═══════════════════════════════════════════════════════════════════════
 // MODULE EXTINCTEURS - CLASSES DE FEU
