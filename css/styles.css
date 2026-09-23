@@ -1767,105 +1767,6 @@
             color: #1a1a1a;
         }
 
-        /* Bouton d'enregistrement flottant */
-        .save-float-btn {
-            position: fixed;
-            bottom: 16px;
-            right: 16px;
-            background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
-            color: white;
-            border: none;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            font-size: 1.6em;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0, 204, 0, 0.5);
-            z-index: 9999;
-            transition: all 0.3s ease;
-            display: none;
-        }
-
-        .save-float-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(0, 204, 0, 0.7);
-        }
-
-        .save-float-btn:active {
-            transform: scale(0.95);
-        }
-
-        .save-float-btn.visible {
-            display: block;
-            animation: bounceIn 0.5s ease;
-        }
-
-        @keyframes bounceIn {
-            0% { transform: scale(0); opacity: 0; }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        /* Modal d'enregistrement */
-        .save-modal {
-            display: none;
-            position: fixed;
-            z-index: 20000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            overflow-y: auto;
-        }
-
-        .save-modal-content {
-            background: var(--bg-card);
-            margin: 10% auto;
-            padding: 24px;
-            border: 2px solid #4CAF50;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 600px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-        }
-
-        .save-option-btn {
-            background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-main) 100%);
-            border: 2px solid #4CAF50;
-            color: white;
-            padding: 20px;
-            margin: 10px 0;
-            border-radius: 12px;
-            cursor: pointer;
-            font-size: 1.1em;
-            width: 100%;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .save-option-btn:hover {
-            background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 204, 0, 0.4);
-        }
-
-        body.theme-day .save-modal-content {
-            background: #ffffff;
-            border-color: #4CAF50;
-        }
-
-        body.theme-day .save-option-btn {
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-            color: #1a1a1a;
-        }
-
-        body.theme-day .save-option-btn:hover {
-            background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
-            color: #212121;
-        }
 
 
 
@@ -2424,7 +2325,6 @@ body.dark-mode .nav-type.info { border-color: #64B5F6; color: #64B5F6; }
 .nav-tabbar button span { font-size: 1.45em; line-height: 1.1; }
 .nav-tabbar button[aria-current="page"] { color: var(--primary-red); }
 body { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
-.save-float-btn { bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
 
 /* Pied de page compact, sous le dernier écran */
 .app-footer {
@@ -2437,3 +2337,6 @@ body { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
     color: var(--text-secondary);
 }
 .app-footer p { margin: 2px 0; }
+
+/* Un élément ramené à l'écran (clavier, lien, recherche) ne doit pas finir sous la barre d'onglets */
+html { scroll-padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }

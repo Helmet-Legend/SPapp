@@ -20,7 +20,6 @@ DECIOPS/
 │       ├── bouteilles.js   # Bouteilles de gaz (identification, refroidissement)
 │       ├── commandement.js # PATRAC DR, DPIF, SMES, SOIEC, SAOIECL
 │       ├── trajet.js       # Temps de trajet
-│       ├── sauvegarde.js   # Fenêtre « Enregistrer le calcul »
 │       ├── lspcc.js        # Facteur de chute LSPCC
 │       └── ia-manoeuvre.js # Générateur de manœuvre IA (côté navigateur)
 ├── guides-gmu.js, affichage-gmu.js, gmu-integration.js  # Fiches GMU (TMD)
@@ -74,6 +73,25 @@ Tout le menu est généré à partir de `data/navigation.json` :
 - `theme` : un des thèmes listés pour ce domaine dans `domaines` (en ajouter un si besoin) ;
 - `type` : `calculateur` (apparaît aussi dans l'onglet Calculs), `fiche`, `ordre`,
   `presentation` (page d'introduction d'un thème) ou `menu` (page de boutons, absente des menus).
+
+## ✅ Tests automatiques
+
+À chaque modification de `main` (y compris depuis l'interface GitHub) et à chaque pull request,
+GitHub lance 34 tests dans un navigateur mobile (onglet **Actions** du dépôt). Une croix rouge
+sur le commit signale un problème, avec le détail dans le rapport.
+
+Les tests vérifient notamment :
+
+- aucun bouton n'appelle une fonction qui n'existe pas, aucune erreur JavaScript ;
+- les 99 écrans s'ouvrent, et chacun est accessible depuis les menus ;
+- `data/navigation.json` : domaines, thèmes et types valides, aucun écran oublié ;
+- les fichiers du mode hors-ligne (`sw.js`) existent tous ;
+- la version est la même dans `package.json`, `js/app.js`, `sw.js` et `index.html` ;
+- navigation, recherche, favoris, geste retour, À propos, mode sombre ;
+- calculateurs sur des valeurs connues (trajet, explosimètre, PATRAC, bouteilles, TMD) ;
+- générateur IA : réponse affichée sans exécuter de HTML, protections de `api/gemini.js`.
+
+Pour les lancer sur un ordinateur : `npm install`, `npx playwright install chromium`, puis `npm test`.
 
 ## 🚀 Utilisation
 

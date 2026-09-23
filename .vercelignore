@@ -1,0 +1,6 @@
+# Fichiers de développement non publiés sur le site
+tests/
+test-results/
+playwright-report/
+playwright.config.js
+.github/

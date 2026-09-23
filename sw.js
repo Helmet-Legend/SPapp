@@ -12,7 +12,6 @@ const urlsToCache = [
   './js/modules/bouteilles.js',
   './js/modules/commandement.js',
   './js/modules/trajet.js',
-  './js/modules/sauvegarde.js',
   './js/modules/lspcc.js',
   './js/pwa-theme.js',
   './js/navigation.js',
