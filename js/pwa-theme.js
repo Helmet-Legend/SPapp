@@ -13,13 +13,28 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-// Gestion de l'installation PWA
+// Installation PWA : bouton « Installer Vulcain » sur l'accueil.
+// Une vraie installation évite le simple raccourci Chrome (petit logo Chrome sur l'icône).
 let deferredPrompt;
+function afficherBanniereInstall(visible) {
+    const banniere = document.getElementById('installBanniere');
+    if (banniere) banniere.hidden = !visible;
+}
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    // Afficher un bouton d'installation si souhaité
-    console.log('🚒 Vulcain: Application installable');
+    afficherBanniereInstall(true);
 });
+window.addEventListener('appinstalled', () => {
+    deferredPrompt = null;
+    afficherBanniereInstall(false);
+});
+async function installerVulcain() {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    afficherBanniereInstall(false);
+}
 
 // Thème clair / sombre : voir js/theme.js (Réglages)
