@@ -12,6 +12,7 @@
     "Mousses",
     "RDMI – Manœuvres incendie",
     "RDSMES – Sauvetages & sauvegarde",
+    "RDEB – Engagement des binômes",
     "Protection & matériels",
     "Échelles portables"
    ]
@@ -541,6 +542,264 @@
    ]
   },
   {
+   "id": "rdeb-menu",
+   "titre": "Présentation",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "presentation",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "engagement des binômes",
+    "ari-co",
+    "reconnaissance"
+   ]
+  },
+  {
+   "id": "rdeb-ari",
+   "titre": "L'ARI-CO",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "fiche",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "masque",
+    "sad",
+    "soupape",
+    "dossard",
+    "bouteille",
+    "flexible",
+    "espace mort",
+    "demi-masque",
+    "conditionnement"
+   ]
+  },
+  {
+   "id": "rdeb-preparation",
+   "titre": "Contraintes & préparation",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "fiche",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "contraintes physiologiques",
+    "hydratation",
+    "habillage",
+    "capelage",
+    "coiffage",
+    "griffe",
+    "filet"
+   ]
+  },
+  {
+   "id": "rdeb-ligne-vie",
+   "titre": "Ligne de vie & TTH 900",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "fiche",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "ligne de vie",
+    "ldv",
+    "ligne guide",
+    "liaison personnelle",
+    "tth 900",
+    "établissement"
+   ]
+  },
+  {
+   "id": "rdeb-controle",
+   "titre": "Contrôle croisé & codes",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "fiche",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "contrôle croisé",
+    "codes de communication",
+    "gestes",
+    "signaux",
+    "check"
+   ]
+  },
+  {
+   "id": "rdeb-autonomie",
+   "titre": "Autonomie, enregistrement & contrôle",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "fiche",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "autonomie",
+    "abaque",
+    "contrôleur",
+    "tableau de gestion",
+    "binôme de sécurité",
+    "heure de sortie",
+    "sifflet",
+    "avertisseur",
+    "réserve 50 bars"
+   ]
+  },
+  {
+   "id": "rdeb-lecture",
+   "titre": "Zonage, lecture du feu & radio",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "fiche",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "zonage",
+    "lecture du feu",
+    "façades",
+    "radio",
+    "message",
+    "fumées"
+   ]
+  },
+  {
+   "id": "rdeb-engagement",
+   "titre": "Engagement",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "fiche",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "progression",
+    "porte",
+    "ouverture de porte",
+    "ligne guide",
+    "croisement",
+    "amarrage"
+   ]
+  },
+  {
+   "id": "rdeb-recherche",
+   "titre": "Recherche & retour d'engagement",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "fiche",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "recherche",
+    "exploration",
+    "linéaire",
+    "latérale",
+    "circulaire",
+    "brassée",
+    "marquage",
+    "retour"
+   ]
+  },
+  {
+   "id": "rdeb-reengagement",
+   "titre": "Réengagement & récupération",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "fiche",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "réengagement",
+    "récupération",
+    "changement de bouteille",
+    "eas",
+    "espace d'attente sécurisé"
+   ]
+  },
+  {
+   "id": "rdeb-apres",
+   "titre": "Après l'engagement",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "fiche",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "décontamination",
+    "déshabillage",
+    "nettoyage",
+    "reconditionnement",
+    "fumées toxiques"
+   ]
+  },
+  {
+   "id": "rdeb-annexes",
+   "titre": "Annexes : parkings, CO, H₂S, ascenseurs",
+   "domaine": "incendie",
+   "theme": "RDEB – Engagement des binômes",
+   "type": "fiche",
+   "motsCles": [
+    "rdeb",
+    "sdis 34",
+    "hérault",
+    "binôme",
+    "ari",
+    "appareil respiratoire",
+    "parking",
+    "co",
+    "monoxyde",
+    "h2s",
+    "sulfure d'hydrogène",
+    "ascenseur",
+    "voies de pénétration",
+    "symboles",
+    "schéma opérationnel"
+   ]
+  },
+  {
    "id": "ari",
    "titre": "Calcul Autonomie ARI",
    "domaine": "incendie",
@@ -794,6 +1053,24 @@
     "onu",
     "transport",
     "chimique"
+   ]
+  },
+  {
+   "id": "etiquettes-danger",
+   "titre": "Étiquettes de danger (CLP & ADR)",
+   "domaine": "risques",
+   "theme": "Matières dangereuses",
+   "type": "fiche",
+   "motsCles": [
+    "clp",
+    "adr",
+    "pictogrammes",
+    "étiquettes",
+    "danger",
+    "matières dangereuses",
+    "sgh",
+    "plaque orange",
+    "rdeb"
    ]
   },
   {
