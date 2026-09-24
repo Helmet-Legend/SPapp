@@ -56,6 +56,8 @@ test('bouteilles de gaz : identification par couleur et protocole de refroidisse
 });
 
 test('base TMD : recherche par nom', async ({ app }) => {
+    // La base est chargée en arrière-plan après l'affichage
+    await expect.poll(() => app.evaluate(() => tmdDatabase.length)).toBeGreaterThan(100);
     await app.evaluate(() => showModule('tmd'));
     await app.fill('#searchName', 'essence');
     await expect(app.locator('#tmdResults .result-box').first()).toBeVisible();

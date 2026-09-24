@@ -1,9 +1,19 @@
-// DECIOPS Service Worker v1.10.0
-const CACHE_NAME = 'deciops-v1.10.0';
+// DECIOPS Service Worker v1.11.0
+const CACHE_NAME = 'deciops-v1.11.0';
 const urlsToCache = [
   './',
   './index.html',
   './css/styles.css',
+  './css/theme.css',
+  './fonts/barlow-condensed-latin-600-normal.woff2',
+  './fonts/barlow-condensed-latin-700-normal.woff2',
+  './fonts/barlow-latin-400-normal.woff2',
+  './fonts/barlow-latin-500-normal.woff2',
+  './fonts/barlow-latin-600-normal.woff2',
+  './fonts/manrope-latin-500-normal.woff2',
+  './fonts/manrope-latin-600-normal.woff2',
+  './fonts/manrope-latin-700-normal.woff2',
+  './fonts/manrope-latin-800-normal.woff2',
   './js/app.js',
   './js/data-loader.js',
   './js/modules/sal.js',
@@ -14,6 +24,7 @@ const urlsToCache = [
   './js/modules/trajet.js',
   './js/modules/lspcc.js',
   './js/pwa-theme.js',
+  './js/theme.js',
   './js/navigation.js',
   './data/navigation.json',
   './guides-gmu.js',

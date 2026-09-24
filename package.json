@@ -1,6 +1,6 @@
 {
   "name": "deciops",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "Outil d'aide à la décision opérationnelle pour sapeurs-pompiers",
   "main": "index.html",
   "scripts": {

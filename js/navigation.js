@@ -49,6 +49,12 @@ const Navigation = (function() {
         return String(texte).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
     }
     function domaine(id) { return registre.domaines.find(d => d.id === id); }
+    function icone(nom, classe) {
+        return `<svg class="ico${classe ? ' ' + classe : ''}" aria-hidden="true"><use href="#i-${nom}"/></svg>`;
+    }
+    function pictoDomaine(d) {
+        return `<span class="nav-picto" style="--c:${d.couleur}">${icone(d.picto || 'info')}</span>`;
+    }
     function pagesDuTheme(d, theme) {
         return registre.pages.filter(p => p.domaine === d.id && p.theme === theme && p.type !== 'menu');
     }
@@ -59,11 +65,11 @@ const Navigation = (function() {
     function ligne(page, surligner) {
         const d = domaine(page.domaine);
         const titre = page.type === 'presentation' ? `Présentation : ${page.theme}` : page.titre;
-        return `<button class="nav-row" data-page="${page.id}">
-            <span class="nav-row-bar" style="background:${d.couleur}"></span>
+        return `<button class="nav-row" data-page="${page.id}" style="--c:${d.couleur}">
+            ${pictoDomaine(d)}
             <span class="nav-row-text"><b>${surligner ? surligne(titre, surligner) : esc(titre)}</b>
             <small>${esc(d.titre)}${page.theme ? ' › ' + esc(page.theme) : ''}</small></span>
-            <span class="nav-chev" aria-hidden="true">›</span></button>`;
+            ${icone('chev', 'nav-chev')}</button>`;
     }
     function surligne(texte, q) {
         const i = normaliser(texte).indexOf(normaliser(q.trim()));
@@ -77,12 +83,12 @@ const Navigation = (function() {
         return registre.domaines.map(d => {
             const ouvert = !!ouverts[d.id];
             const nb = registre.pages.filter(p => p.domaine === d.id && p.type !== 'menu' && p.type !== 'presentation').length;
-            let html = `<div class="nav-acc">
+            let html = `<div class="nav-acc" style="--c:${d.couleur}">
                 <button class="nav-acc-head" data-domaine="${d.id}" aria-expanded="${ouvert}">
-                    <span class="nav-acc-icon" style="background:${d.couleur}">${d.icone}</span>
+                    ${pictoDomaine(d)}
                     <span class="nav-acc-title">${esc(d.titre)}</span>
                     <span class="nav-count">${nb}</span>
-                    <span class="nav-chev" aria-hidden="true">${ouvert ? '▾' : '▸'}</span>
+                    ${icone('chev', 'nav-chev')}
                 </button>`;
             if (ouvert) {
                 html += '<div class="nav-acc-body">' + d.themes.map(theme => {
@@ -91,12 +97,12 @@ const Navigation = (function() {
                     const themeOuvert = d.themes.length === 1 || !!ouverts[cle];
                     let sous = `<div class="nav-sub">
                         <button class="nav-sub-head" data-theme="${esc(cle)}" aria-expanded="${themeOuvert}">
-                            <span>${esc(theme)}</span><span class="nav-count">${pages.filter(p => p.type !== 'presentation').length}</span>
-                            <span class="nav-chev" aria-hidden="true">${themeOuvert ? '▾' : '▸'}</span>
+                            <span class="nav-sub-title">${esc(theme)}</span><span class="nav-count">${pages.filter(p => p.type !== 'presentation').length}</span>
+                            ${icone('chev', 'nav-chev')}
                         </button>`;
                     if (themeOuvert) {
                         sous += '<div class="nav-leaves">' + pages.map(p =>
-                            `<button class="nav-leaf" data-page="${p.id}">${badge(p.type)}<span>${esc(p.titre)}</span></button>`
+                            `<button class="nav-leaf" data-page="${p.id}">${badge(p.type)}<span class="nav-leaf-title">${esc(p.titre)}</span></button>`
                         ).join('') + '</div>';
                     }
                     return sous + '</div>';
@@ -130,7 +136,7 @@ const Navigation = (function() {
     }
 
     function vueChercher() {
-        return `<label class="nav-search" for="navSearchInput"><span aria-hidden="true">🔍</span>
+        return `<label class="nav-search" for="navSearchInput">${icone('search')}
             <input id="navSearchInput" type="search" value="${esc(recherche)}" placeholder="Fiche, matériel, produit, n° ONU…" autocomplete="off" enterkeyhint="search"></label>
             <div id="navSearchResults">${resultatsChercher()}</div>`;
     }
@@ -144,8 +150,10 @@ const Navigation = (function() {
                 : '<div class="nav-empty">Tapez au moins deux lettres : nom de fiche, matériel, produit ou numéro ONU.</div>';
         }
         const res = resultats(q);
-        let html = `<button class="nav-row nav-row-tmd" data-tmd="${esc(q)}"><span class="nav-row-bar" style="background:${domaine('risques').couleur}"></span>
-            <span class="nav-row-text"><b>Chercher « ${esc(q)} » dans la base TMD</b><small>Matières dangereuses : nom ou numéro ONU</small></span><span class="nav-chev" aria-hidden="true">›</span></button>`;
+        const risques = domaine('risques');
+        let html = `<button class="nav-row nav-row-tmd" data-tmd="${esc(q)}" style="--c:${risques.couleur}">
+            <span class="nav-picto" style="--c:${risques.couleur}">${icone('search')}</span>
+            <span class="nav-row-text"><b>Chercher « ${esc(q)} » dans la base TMD</b><small>Matières dangereuses : nom ou numéro ONU</small></span>${icone('chev', 'nav-chev')}</button>`;
         html += res.length ? res.map(p => ligne(p, q)).join('') : `<div class="nav-empty">Aucune fiche ne correspond à « ${esc(q)} ».</div>`;
         return html;
     }
@@ -192,7 +200,7 @@ const Navigation = (function() {
         barre.innerHTML = `<nav aria-label="Vous êtes ici"><button data-onglet-retour="accueil" data-domaine-ouvrir="${d.id}">Accueil</button>
             <span aria-hidden="true">›</span><button data-onglet-retour="accueil" data-domaine-ouvrir="${d.id}">${esc(d.titre)}</button>
             ${page.theme ? `<span aria-hidden="true">›</span><span>${esc(page.theme)}</span>` : ''}</nav>
-            ${favorisable ? `<button class="nav-fav" data-favori="${id}" aria-pressed="${estFavori}" title="${estFavori ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${estFavori ? '★' : '☆'}</button>` : ''}`;
+            ${favorisable ? `<button class="nav-fav" data-favori="${id}" aria-pressed="${estFavori}" title="${estFavori ? 'Retirer des favoris' : 'Ajouter aux favoris'}" aria-label="${estFavori ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${icone('star')}</button>` : ''}`;
         const retour = module.querySelector(':scope > .back-btn');
         if (retour) retour.after(barre); else module.prepend(barre);
     }
