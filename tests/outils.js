@@ -1,8 +1,8 @@
-// Outils communs aux tests DECIOPS
+// Outils communs aux tests Vulcain
 const { test: base, expect } = require('@playwright/test');
 
 const test = base.extend({
-    // Page DECIOPS chargée, navigation prête, erreurs JavaScript collectées dans page.erreurs
+    // Page Vulcain chargée, navigation prête, erreurs JavaScript collectées dans page.erreurs
     app: async ({ page }, use) => {
         page.erreurs = [];
         page.on('pageerror', e => page.erreurs.push(e.message));

@@ -1,5 +1,5 @@
 /**
- * DECIOPS - Générateur de manœuvre IA
+ * Vulcain - Générateur de manœuvre IA
  *
  * Le navigateur n'envoie que les paramètres du formulaire : le prompt est
  * construit côté serveur (api/gemini.js), ce qui empêche d'utiliser
@@ -170,13 +170,13 @@ function telechargerPDF() {
     let yPosition = margin;
     
     // En-tête avec logo et titre
-    doc.setFillColor(106, 27, 154); // Violet DECIOPS
+    doc.setFillColor(106, 27, 154); // Violet Vulcain
     doc.rect(0, 0, pageWidth, 35, 'F');
     
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(20);
     doc.setFont('helvetica', 'bold');
-    doc.text('🚒 DECIOPS', margin, 15);
+    doc.text('🚒 Vulcain', margin, 15);
     
     doc.setFontSize(12);
     doc.setFont('helvetica', 'normal');
@@ -251,7 +251,7 @@ function telechargerPDF() {
         doc.setTextColor(128, 128, 128);
         doc.setFont('helvetica', 'italic');
         doc.text(
-            `DECIOPS v1.9 - Scénario généré le ${new Date().toLocaleDateString('fr-FR')} - Page ${i}/${totalPages}`,
+            `Vulcain v${APP_VERSION} - Scénario généré le ${new Date().toLocaleDateString('fr-FR')} - Page ${i}/${totalPages}`,
             pageWidth / 2,
             pageHeight - 10,
             { align: 'center' }

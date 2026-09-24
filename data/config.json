@@ -1,8 +1,8 @@
 {
   "version": "1.9",
-  "appName": "DECIOPS",
+  "appName": "Vulcain",
   "author": "RESCUEAPP - LP ACADEMY",
-  "copyright": "© 2025 DECIOPS. Tous droits réservés.",
+  "copyright": "© 2025 Vulcain. Tous droits réservés.",
   "description": "Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO",
   "apiKey": "AIzaSyDQDbxBzdGZpxbrK2UdSXfDCT9NYCoullA",
   "firePowers": {

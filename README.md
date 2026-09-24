@@ -1,9 +1,9 @@
-# DECIOPS v1.11.0 - Architecture Modulaire
+# Vulcain v1.13.0 - Architecture Modulaire
 
 ## 📁 Structure du projet
 
 ```
-DECIOPS/
+Vulcain/
 ├── index.html              # Page principale (HTML uniquement, aucun script ni style en ligne)
 ├── api/
 │   └── gemini.js           # Fonction Vercel du générateur IA (API Claude, protégée)
@@ -167,4 +167,4 @@ Les données sont stockées dans des variables globales pour compatibilité :
 ## 👨‍🚒 Crédits
 
 **RESCUEAPP** - Solution professionnelle pour sapeurs-pompiers
-© 2025 DECIOPS - Tous droits réservés
+© 2025 Vulcain - Tous droits réservés

@@ -1,7 +1,7 @@
 // api/gemini.js - Fonction serverless Vercel : générateur de manœuvre (API Claude, streaming)
 //
 // Protections :
-//  - seules les origines DECIOPS connues sont acceptées (ALLOWED_ORIGINS pour en ajouter) ;
+//  - seules les origines Vulcain connues sont acceptées (ALLOWED_ORIGINS pour en ajouter) ;
 //  - limite de requêtes par adresse IP ;
 //  - le prompt est construit ICI à partir des paramètres du formulaire, avec des
 //    tailles plafonnées : l'endpoint ne peut pas servir d'accès libre à l'IA.

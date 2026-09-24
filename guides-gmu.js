@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * DÉCIOPS - GUIDES GMU COMPLETS + ASSOCIATIONS ONU
+ * Vulcain - GUIDES GMU COMPLETS + ASSOCIATIONS ONU
  * Fiches d'intervention d'urgence - Matières dangereuses
  * Version corrigée pour la France (18, ARI)
  * ═══════════════════════════════════════════════════════════════════════

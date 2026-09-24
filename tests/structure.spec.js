@@ -93,6 +93,6 @@ test('les données sont chargées', async ({ app }) => {
 test('le numéro de version est le même partout', async ({ app }) => {
     const version = JSON.parse(lire('package.json')).version;
     expect(await app.evaluate(() => APP_VERSION)).toBe(version);
-    expect(lire('sw.js')).toContain(`deciops-v${version}'`);
+    expect(lire('sw.js')).toContain(`vulcain-v${version}'`);
     expect(lire('index.html')).toContain(`<meta name="version" content="${version}">`);
 });

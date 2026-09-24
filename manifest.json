@@ -1,6 +1,6 @@
 {
-  "name": "DECIOPS - Outils Opérationnels Sapeurs-Pompiers",
-  "short_name": "DECIOPS",
+  "name": "Vulcain - Outils Opérationnels Sapeurs-Pompiers",
+  "short_name": "Vulcain",
   "description": "Outils Opérationnels d'Aide à la Décision pour Sapeurs-Pompiers",
   "start_url": "./index.html",
   "display": "standalone",

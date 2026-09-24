@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * DÉCIOPS - Intégration GMU
+ * Vulcain - Intégration GMU
  * Fichier ADDITIONNEL qui ajoute les boutons GMU sans modifier app.js
  * ═══════════════════════════════════════════════════════════════════════
  */

@@ -1,5 +1,5 @@
 /**
- * DECIOPS - Navigation (design A : onglets + menus déroulants)
+ * Vulcain - Navigation (design A : onglets + menus déroulants)
  *
  * Tout est généré à partir de data/navigation.json :
  *  - accueil : un menu déroulant par domaine, un sous-menu par thème ;
@@ -16,6 +16,7 @@ const Navigation = (function() {
         presentation: { court: 'INFO', classe: 'info' },
         menu: { court: 'MENU', classe: '' }
     };
+    // Clés gardées de l'ancien nom (DECIOPS) : favoris et historique restent après le renommage
     const CLE_FAVORIS = 'deciops.favoris';
     const CLE_RECENTS = 'deciops.recents';
     const CLE_OUVERTS = 'deciops.menusOuverts';
