@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.17.0">
+    <meta name="version" content="1.17.1">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -98,7 +98,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.17.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.17.1</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -203,7 +203,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.17.0</span><br>
+                        Vulcain v<span class="app-version">1.17.1</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -5465,27 +5465,33 @@
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
             <h3 style="color: light-dark(#c22727, #e57e7e); margin-bottom: 20px; border-bottom: 2px solid #E53935; padding-bottom: 10px;">🏢 Désignation des Façades</h3>
             
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 400px; margin: 0 auto;">
-                <div style="background: linear-gradient(135deg, #e51b0d 0%, #D32F2F 100%); padding: 30px; border-radius: 12px; text-align: center; color: #fff;">
-                    <div style="font-size: 2em; font-weight: 700;">A</div>
-                    <div style="font-size: 0.9em;">Façade d'attaque</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #0b76cc 0%, #1976D2 100%); padding: 30px; border-radius: 12px; text-align: center; color: #fff;">
-                    <div style="font-size: 2em; font-weight: 700;">B</div>
-                    <div style="font-size: 0.9em;">Côté droit</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #39843c 0%, #358739 100%); padding: 30px; border-radius: 12px; text-align: center; color: #fff;">
-                    <div style="font-size: 2em; font-weight: 700;">D</div>
-                    <div style="font-size: 0.9em;">Côté gauche</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #a86400 0%, #b85d00 100%); padding: 30px; border-radius: 12px; text-align: center; color: #fff;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 400px; margin: 0 auto; align-items: stretch;">
+                <div></div>
+                <div style="background: linear-gradient(135deg, #a86400 0%, #b85d00 100%); padding: 14px 6px; border-radius: 12px; text-align: center; color: #fff;">
                     <div style="font-size: 2em; font-weight: 700;">C</div>
-                    <div style="font-size: 0.9em;">Façade opposée</div>
+                    <div style="font-size: 0.85em;">Façade arrière (opposée à A)</div>
                 </div>
+                <div></div>
+                <div style="background: linear-gradient(135deg, #0b76cc 0%, #1976D2 100%); padding: 14px 6px; border-radius: 12px; text-align: center; color: #fff;">
+                    <div style="font-size: 2em; font-weight: 700;">B</div>
+                    <div style="font-size: 0.85em;">Côté gauche</div>
+                </div>
+                <div style="border: 3px dashed var(--t-line, #999); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8em;" aria-hidden="true">🏢</div>
+                <div style="background: linear-gradient(135deg, #39843c 0%, #358739 100%); padding: 14px 6px; border-radius: 12px; text-align: center; color: #fff;">
+                    <div style="font-size: 2em; font-weight: 700;">D</div>
+                    <div style="font-size: 0.85em;">Côté droit</div>
+                </div>
+                <div></div>
+                <div style="background: linear-gradient(135deg, #e51b0d 0%, #D32F2F 100%); padding: 14px 6px; border-radius: 12px; text-align: center; color: #fff;">
+                    <div style="font-size: 2em; font-weight: 700;">A</div>
+                    <div style="font-size: 0.85em;">Façade d'attaque</div>
+                </div>
+                <div></div>
             </div>
+            <p style="text-align: center; margin: 8px 0 0; font-weight: 700;">▲ Vue depuis la rue, face à la façade A</p>
             
             <p style="text-align: center; margin-top: 15px; color: var(--text-secondary);">
-                <strong>A</strong> = Façade d'accès principal (attaque) • Les autres façades sont désignées dans le sens horaire
+                <strong>A</strong> = façade d'accès principal (attaque) • Face à A : <strong>B à gauche</strong>, <strong>C à l'arrière</strong>, <strong>D à droite</strong> (sens horaire vu du dessus, RDEB SDIS 34)
             </p>
         </div>
         <div class="rd-section">
@@ -14550,7 +14556,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.17.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.17.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
