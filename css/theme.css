@@ -717,3 +717,4 @@ html[data-theme] .rd-champ { display: grid; gap: 4px; margin: 10px 0; }
 html[data-theme] .rd-champ label { font-weight: 700; }
 html[data-theme] .rd-choix-technique button { padding: 10px 8px; border-radius: 12px; border: 2px solid var(--t-line); background: var(--t-s1); color: var(--t-ink); font-weight: 700; cursor: pointer; line-height: 1.3; }
 html[data-theme] .rd-choix-technique button[aria-pressed="true"] { border-color: var(--t-accent); background: var(--t-accent); color: #FFFFFF; }
+#installBanniere[hidden] { display: none !important; }

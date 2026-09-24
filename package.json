@@ -1,6 +1,6 @@
 {
   "name": "vulcain",
-  "version": "1.18.1",
+  "version": "1.18.2",
   "description": "Outil d'aide à la décision opérationnelle pour sapeurs-pompiers",
   "main": "index.html",
   "scripts": {
