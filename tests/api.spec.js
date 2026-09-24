@@ -97,11 +97,32 @@ test('retransmet le flux même quand une ligne est coupée', async () => {
     expect(res.corps.trim().endsWith('data: [DONE]')).toBe(true);
 });
 
-test('limite le nombre de générations par appareil', async () => {
+test('limite à 2 générations par 24 h et par appareil', async () => {
     const handler = await chargerHandler();
     simulerClaude({});
-    for (let i = 0; i < 5; i++) expect((await appeler(handler, { ip: '10.0.0.5' })).code).toBe(200);
+    for (let i = 0; i < 2; i++) expect((await appeler(handler, { ip: '10.0.0.5' })).code).toBe(200);
     const bloque = await appeler(handler, { ip: '10.0.0.5' });
     expect(bloque.code).toBe(429);
+    expect(bloque.corps).toContain('2 générations par 24 h');
+    expect(Number(bloque.entetes['Retry-After'])).toBeGreaterThan(23 * 3600);
     expect((await appeler(handler, { ip: '10.0.0.6' })).code).toBe(200);
+});
+
+test('une génération en échec n\'est pas décomptée', async () => {
+    const handler = await chargerHandler();
+    global.fetch = async () => ({ ok: false, status: 529, text: async () => 'surchargé' });
+    for (let i = 0; i < 3; i++) expect((await appeler(handler, { ip: '10.0.0.8' })).code).toBe(502);
+    simulerClaude({});
+    expect((await appeler(handler, { ip: '10.0.0.8' })).code).toBe(200);
+});
+
+test('plafond global de générations par jour', async () => {
+    process.env.DAILY_GLOBAL_MAX = '3';
+    const handler = await chargerHandler();
+    delete process.env.DAILY_GLOBAL_MAX;
+    simulerClaude({});
+    for (let i = 0; i < 3; i++) expect((await appeler(handler, { ip: `10.1.0.${i}` })).code).toBe(200);
+    const bloque = await appeler(handler, { ip: '10.1.0.9' });
+    expect(bloque.code).toBe(429);
+    expect(bloque.corps).toContain('aujourd');
 });
