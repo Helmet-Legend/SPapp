@@ -22,6 +22,10 @@ const LIMITE_REQUETES = Number(process.env.RATE_LIMIT_MAX || 5);
 const FENETRE_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 10 * 60 * 1000);
 const compteurs = new Map();
 
+// Modèle Claude utilisé. Claude Sonnet 4 a été retiré par Anthropic (erreur 404) :
+// en cas de nouveau retrait, définir CLAUDE_MODEL dans les variables Vercel.
+const MODELE_CLAUDE = process.env.CLAUDE_MODEL || 'claude-sonnet-5';
+
 const MAX_ELEMENTS = 20;
 const MAX_LONGUEUR_ELEMENT = 100;
 const MAX_LONGUEUR_CONSIGNES = 1000;
@@ -160,15 +164,19 @@ export default async function handler(req, res) {
                 'anthropic-version': '2023-06-01'
             },
             body: JSON.stringify({
-                model: 'claude-sonnet-4-20250514',
-                max_tokens: 4096,
+                model: MODELE_CLAUDE,
+                // Le tokenizer de Claude Sonnet 5 compte ~30 % de tokens de plus :
+                // marge pour ne pas couper un scénario complet.
+                max_tokens: 8000,
+                // Pas de réflexion préalable : le texte s'affiche dès le début, comme avant.
+                thinking: { type: 'disabled' },
                 stream: true,
                 messages: [{ role: 'user', content: prompt }]
             })
         });
 
         if (!response.ok) {
-            console.error('Erreur Claude API:', response.status, await response.text());
+            console.error('Erreur Claude API:', MODELE_CLAUDE, response.status, await response.text());
             return res.status(502).json({ error: 'Le service IA est indisponible, réessayez plus tard.' });
         }
 

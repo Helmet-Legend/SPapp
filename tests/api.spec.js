@@ -75,6 +75,19 @@ test('construit le prompt côté serveur avec des tailles plafonnées', async ()
     expect(prompt).not.toContain('c'.repeat(1001));
 });
 
+test('utilise un modèle Claude actuel, sans réflexion préalable', async () => {
+    const handler = await chargerHandler();
+    const capture = {};
+    simulerClaude(capture);
+    await appeler(handler, { ip: '10.0.0.7' });
+    // claude-sonnet-4-20250514 a été retiré (404) : ne jamais y revenir
+    expect(capture.corps.model).not.toMatch(/sonnet-4-2025/);
+    expect(capture.corps.model).toBe(process.env.CLAUDE_MODEL || 'claude-sonnet-5');
+    expect(capture.corps.thinking).toEqual({ type: 'disabled' });
+    expect(capture.corps.stream).toBe(true);
+    expect(capture.corps.temperature).toBeUndefined();
+});
+
 test('retransmet le flux même quand une ligne est coupée', async () => {
     const handler = await chargerHandler();
     simulerClaude({});

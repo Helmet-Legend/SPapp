@@ -41,7 +41,8 @@ DECIOPS/
 >
 > Version : modifier `APP_VERSION` dans `js/app.js`, `CACHE_NAME` dans `sw.js` et `version` dans `package.json`.
 >
-> Générateur IA : variables Vercel `ANTHROPIC_API_KEY` (obligatoire), `ALLOWED_ORIGINS`,
+> Générateur IA (Claude Sonnet 5) : variables Vercel `ANTHROPIC_API_KEY` (obligatoire), `CLAUDE_MODEL`
+> (pour changer de modèle sans toucher au code), `ALLOWED_ORIGINS`,
 > `RATE_LIMIT_MAX` (5 par défaut) et `RATE_LIMIT_WINDOW_MS` (10 min par défaut) en option.
 
 ## 🧭 Navigation
