@@ -1,4 +1,4 @@
-# Vulcain v1.15.0 - Architecture Modulaire
+# Vulcain v1.16.0 - Architecture Modulaire
 
 ## 📁 Structure du projet
 

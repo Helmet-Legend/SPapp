@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.15.0">
+    <meta name="version" content="1.16.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -98,7 +98,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.15.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.16.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -203,7 +203,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.15.0</span><br>
+                        Vulcain v<span class="app-version">1.16.0</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -9203,7 +9203,7 @@
                 <li>GTO « Sauvegarde opérationnelle » – février 2024</li>
                 <li>GTO « Sauvetages et mises en sécurité » – février 2024</li>
             </ul>
-            <p>Référentiels départementaux associés : RDLSPCC (lots de sauvetage), <button onclick="showModule('echelles-menu')">RDEP (échelles portables)</button>, RDEB (binômes).</p>
+            <p>Référentiels départementaux associés : <button onclick="showModule('lspcc-menu')">RDLSPCC (lots de sauvetage)</button>, <button onclick="showModule('echelles-menu')">RDEP (échelles portables)</button>, RDEB (binômes).</p>
         </div>
 
         <p class="rd-source">📚 Source : <strong>RDSMES – SDIS 34 (Hérault) – Version 2 – avril 2026</strong>, GCO – Service opération. Reproduit avec l'autorisation du SDIS de l'Hérault. Doctrine départementale : vérifiez celle de votre SDIS.</p>
@@ -9307,7 +9307,7 @@
 
         <div class="rd-section">
             <h3>3.2 – Techniques liées aux LSPCC</h3>
-            <p>Se conformer au <strong>RDLSPCC</strong> (voir aussi la rubrique LSPCC de l'application).</p>
+            <p>Se conformer au <strong>RDLSPCC</strong> : <button onclick="showModule('lspcc-techniques')">🪢 LSPCC – techniques générales</button></p>
         </div>
 
         <div class="rd-section">
@@ -9393,7 +9393,7 @@
 
             <h4>L'environnement</h4>
             <p>Dangers accidentogènes : <strong>heurt du panier</strong> sur un obstacle, <strong>électrisation / électrocution</strong>. La reconnaissance vérifie avant l'emplacement définitif : balcons et surplombs, câbles électriques, vent, foudre, brouillard.</p>
-            <p><strong>Sécurisation des opérateurs MEA</strong> : se conformer au RDLSPCC et à la FMO EPI n° 3.</p>
+            <p><strong>Sécurisation des opérateurs MEA</strong> : se conformer au RDLSPCC et à la FMO EPI n° 3. <button onclick="showModule('lspcc-securisation')">🪢 LSPCC – sécurisation MEA</button></p>
 
             <h4>Les détecteurs de tension <small>(dispositif optionnel)</small></h4>
             <p>Électro-alerte à l'approche d'un réseau HTA / HTB en courant alternatif :</p>
@@ -12807,234 +12807,687 @@ Je demande : ….</p>
     <!-- MODULES LSPCC -->
     <!-- ============================================ -->
 
-    <!-- MENU PRINCIPAL LSPCC -->
+    <!-- MENU PRINCIPAL LSPCC (RDLSPCC SDIS 34 – v1, novembre 2025) -->
     <div id="lspcc-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
-        <h2 style="color: light-dark(#a84900, #ff7205); border-bottom: 3px solid #FF6F00;">🪢 LSPCC - Lot de Sauvetage</h2>
-        <p style="text-align: center; margin-bottom: 25px; color: var(--text-secondary);">Lot de Sauvetage et de Protection Contre les Chutes - RDLSPCC SDIS 34</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-top: 20px;">
-            <button onclick="showModule('lspcc-materiels')" style="background: linear-gradient(135deg, #cc4800 0%, #c25400 100%); border: 3px solid #FF6F00; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🎒</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Matériels</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Lots & Équipements</div>
-            </button>
-            
-            <button onclick="showModule('lspcc-emploi')" style="background: linear-gradient(135deg, #b85d00 0%, #a86400 100%); border: 3px solid #FF9800; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">📋</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Emploi</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Principes & Règles</div>
-            </button>
-            
-            <button onclick="showModule('lspcc-techniques')" style="background: linear-gradient(135deg, #c15700 0%, #ae6100 100%); border: 3px solid #FB8C00; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🧗</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Techniques</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Générales</div>
-            </button>
-            
-            <button onclick="showModule('lspcc-securisation')" style="background: linear-gradient(135deg, #df3500 0%, #dc3500 100%); border: 3px solid #FF7043; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🪜</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Sécurisation</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Échelles & MEA</div>
-            </button>
-            
-            <button onclick="showModule('lspcc-noeuds')" style="background: linear-gradient(135deg, #BF360C 0%, #d34215 100%); border: 3px solid #D84315; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🔗</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Nœuds & Annexes</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Techniques</div>
-            </button>
-            
-            <button onclick="showModule('lspcc-calculateur')" style="background: linear-gradient(135deg, #C62828 0%, #e32c27 100%); border: 3px solid #E53935; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🔢</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Calculateur</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Facteur de Chute</div>
-            </button>
-            
-            <button onclick="showModule('lspcc-fmo')" style="background: linear-gradient(135deg, #5D4037 0%, #795548 100%); border: 3px solid #795548; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">📋</div>
-                <div style="font-size: 1.1em; font-weight: 700;">F.M.O</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Fiches Matériel</div>
-            </button>
+        <h2>🪢 LSPCC – Lot de sauvetage et de protection contre les chutes</h2>
+        <p style="text-align: center;">Référentiel départemental <strong>RDLSPCC</strong> – emploi du lot de sauvetage et de protection contre les chutes</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('lspcc-materiels')"><b>1 · Matériels & équipements</b><span>Lots engin, échelle, EPI MEA, conditionnement</span></button>
+            <button onclick="showModule('lspcc-emploi')"><b>2.1-2.7 · Emploi du LSPCC</b><span>Système, ancrage, amarrage, chute, EPI, ordres</span></button>
+            <button onclick="showModule('lspcc-triangle')"><b>2.8-2.15 · Triangle & harnais</b><span>Réglage, mise en place, passage au vide, habillage</span></button>
+            <button onclick="showModule('lspcc-techniques')"><b>3 · Techniques générales</b><span>Abordage, sauvetage extérieur, reconnaissance, excavation, toiture</span></button>
+            <button onclick="showModule('lspcc-securisation')"><b>4 · Sécurisation échelles & MEA</b><span>Formation et opérations diverses</span></button>
+            <button onclick="showModule('lspcc-noeuds')"><b>5.1-5.6 · Nœuds & dispositifs</b><span>8 double, Français, clé d'arrêt, répartition, sangle-harnais</span></button>
+            <button onclick="showModule('lspcc-entretien')"><b>5.7 · Entretien & réforme</b><span>Lavage, causes de réforme, code ITN</span></button>
+            <button onclick="showModule('lspcc-calculateur')"><b>🔢 Calculateur facteur de chute</b><span>Hauteur de chute ÷ longueur de corde</span></button>
+            <button onclick="showModule('lspcc-fmo')"><b>📋 F.M.O – Fiches matériel</b><span>Antichute mobile, longe, porte-outils</span></button>
         </div>
-        
-        <!-- Alertes sécurité -->
-        <div style="background: linear-gradient(135deg, var(--t-s2, #FFEBEE) 0%, light-dark(#FFCDD2, #40393c) 100%); padding: 20px; border-radius: 12px; margin-top: 25px; border-left: 5px solid #C62828;">
-            <h4 style="color: light-dark(#c22727, #e57e7e); margin: 0 0 15px 0; font-size: 1.1em;">⚠️ ALERTES SÉCURITÉ</h4>
-            <ul style="margin: 0; padding-left: 20px; color: light-dark(#b71c1c, #eb7c7c); line-height: 1.8;">
-                <li>En cas de doute sur l'ancrage → choisir un autre ou demander équipe <strong>SMPM</strong></li>
-                <li>Hauteur descendeur-appui ≥ <strong>20 cm</strong> pour point fixe humain</li>
-                <li>Facteurs de chute <strong>>1 INTERDITS</strong></li>
-                <li><strong>Mannequin obligatoire</strong> pour actions de formation</li>
-                <li>Renseigner <strong>cahier de suivi</strong> après chaque utilisation</li>
+
+        <div class="rd-section">
+            <h3>⚠️ Alertes sécurité</h3>
+            <ul>
+                <li>En cas de doute sur l'ancrage → en choisir un autre ou demander une équipe <strong>SMPM</strong>.</li>
+                <li>Point fixe humain : hauteur axe du descendeur – appui de la corde <strong>≥ 20 cm</strong>.</li>
+                <li>Facteur de chute 0,3 recherché, 1 à éviter, <strong>&gt; 1 interdit</strong>.</li>
+                <li><strong>Connecteur automatique</strong> obligatoire entre la corde et la charge.</li>
+                <li>Mannequin obligatoire pour simuler la victime en formation.</li>
+                <li>Renseigner le cahier de suivi après chaque utilisation (formation comprise).</li>
             </ul>
         </div>
+
+        <div class="rd-section">
+            <h3>Préface</h3>
+            <p>Document opérationnel départemental constitué d'éléments de doctrine choisis dans les GDO et GTO de la DGSCGC. <strong>Une directive nationale imposant l'emploi ou l'interdiction d'une technique ou d'un matériel s'impose au guide départemental.</strong> Le chef d'agrès fait le choix du matériel et des techniques pour réaliser sa mission.</p>
+            <div class="rd-alerte">En formation, les procédures qui impliquent un risque de chute doivent être pratiquées avec le LSPCC, le port des EPI, un mannequin de sauvetage et un tapis de sol au besoin.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>📚 Références</h3>
+            <ul>
+                <li>Fiches pratiques INRS « ED 6110 »</li>
+                <li>NIT 271.1 « Équipement lot de sauvetage » et NIT 271.2 « Équipement lot échelle » – septembre 1994</li>
+                <li>GTO « Sauvetage et mise en sécurité » – février 2024</li>
+                <li>Notices constructeurs COURANT – PETZL</li>
+                <li>Normes : NF EN 358 (maintien au travail), 1891 (cordes), 795 (ancrages), 12278 (poulies), 341 (descendeurs), 566 (sangles), 362 (connecteurs), 1497 (harnais)</li>
+            </ul>
+            <p>Voir aussi : <button onclick="showModule('rdsmes-menu')">🛟 RDSMES – Sauvetages & sauvegarde</button> <button onclick="showModule('echelles-menu')">🪜 Échelles portables (RDEP)</button></p>
+        </div>
+
+        <p class="rd-source">📚 Source : <strong>RDLSPCC – SDIS 34 (Hérault) – Version 1 – novembre 2025</strong>, GCO – Service opération. Reproduit avec l'autorisation du SDIS de l'Hérault. Doctrine départementale : vérifiez celle de votre SDIS.</p>
     </div>
 
     <!-- MODULE MATÉRIELS & ÉQUIPEMENTS LSPCC -->
     <div id="lspcc-materiels" class="module">
-        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour</button>
-        <h2 style="color: light-dark(#b33f00, #ff7124); border-bottom: 3px solid #E65100;">🎒 Matériels & Équipements</h2>
-        
-        <!-- Lot Engin -->
-        <div style="background: linear-gradient(135deg, light-dark(#FFF8E1, #40403f) 0%, light-dark(#FFECB3, #403e36) 100%); padding: 20px; border-radius: 12px; margin-bottom: 20px;">
-            <h3 style="color: light-dark(#9f4e07, #f57f17); margin: 0 0 15px 0; display: flex; align-items: center; gap: 10px;">
-                <span style="background: #a46705; color: #fff; padding: 5px 12px; border-radius: 20px; font-size: 0.9em;">LOT ENGIN</span>
-                Sac Jaune Citron
-            </h3>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px;">
-                    <div style="font-weight: 700; color: light-dark(#b33f00, #ff7124); margin-bottom: 10px;">📐 Caractéristiques</div>
-                    <div style="font-size: 0.95em; line-height: 1.6;">
-                        • Corde : <strong>30 m</strong><br>
-                        • Diamètre sac : <strong>≤30 cm</strong><br>
-                        • Hauteur : <strong>≤60 cm</strong>
-                    </div>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px;">
-                    <div style="font-weight: 700; color: light-dark(#b33f00, #ff7124); margin-bottom: 10px;">📦 Haut du sac</div>
-                    <div style="font-size: 0.95em; line-height: 1.6;">
-                        • 1 Triangle + 1 Connecteur auto<br>
-                        • <strong>2 Harnais + 2 Demi-lunes</strong>
-                    </div>
-                </div>
+        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <h2>🎒 Matériels & équipements</h2>
+
+        <div class="rd-section">
+            <p>Le LSPCC est un <strong>équipement de protection individuelle de catégorie III</strong> : il protège le porteur contre les risques graves à effets irréversibles ou mortels.</p>
+            <div class="rd-astuce">Les lots sont soumis aux <strong>vérifications générales périodiques annuelles</strong> par le GTL.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.1 – Lot « engin » et lot « échelle »</h3>
+            <h4>Le sac de transport</h4>
+            <table class="rd-table">
+                <tr><th></th><th>Lot « engin »</th><th>Lot « échelle »</th></tr>
+                <tr><th>Couleur</th><td>Jaune citron</td><td>Bleu ciel</td></tr>
+                <tr><th>Diamètre</th><td>≤ 30 cm</td><td>≤ 40 cm</td></tr>
+                <tr><th>Corde</th><td>30 m</td><td>60 m</td></tr>
+            </table>
+            <p>Hauteur ≤ 60 cm · 2 bretelles · 1 poignée.</p>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/sac.jpg" alt="Sacs lot engin jaune et lot échelle bleu" loading="lazy"></figure>
+
+            <h4>La corde</h4>
+            <p>Descendre ou remonter une charge. <strong>Statique</strong> (allongement ≤ 5 %) · Ø 12 à 13 mm · résistance mécanique ≥ 3000 kg · résistance thermique ≈ 200 °C · extrémités avec gaine thermorétractable.</p>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/corde.jpg" alt="Corde avec gaines thermorétractables" loading="lazy"></figure>
+
+            <h4>Le harnais</h4>
+            <p>Sécuriser les intervenants. CMU <strong>140 kg</strong> · résistance ≥ 1500 kg · ≈ 200 °C · connecteur demi-lune automatique indissociable · 2 bretelles rouges et 2 cuissardes bleues (polyester) · attache sternale (polyester) · attache dorsale (acier).</p>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/harnais.jpg" alt="Harnais avec demi-lune indissociable" loading="lazy"></figure>
+
+            <h4>Le triangle d'évacuation</h4>
+            <p>Dégager une victime. CMU <strong>150 kg</strong> · résistance ≥ 1500 kg · ≈ 200 °C · 2 bretelles · 3 attaches sternales · 1 attache dorsale (polyester).</p>
+            <figure class="rd-fig" style="max-width: 200px; margin-left: auto; margin-right: auto;"><img src="images/rdlspcc/triangle.jpg" alt="Triangle d'évacuation" loading="lazy"></figure>
+
+            <h4>Les anneaux de sangle</h4>
+            <p>Amarrage principal ou intermédiaire. Largeur 18 à 25 mm · résistance ≥ 2000 kg · ≈ 200 °C · <strong>sangle bleue 80 cm</strong>, <strong>sangle rouge 1,5 m</strong>.</p>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/anneaux.jpg" alt="Sangles bleue et rouge" loading="lazy"></figure>
+
+            <h4>Les connecteurs</h4>
+            <p><strong>À vis</strong> : liaison entre les matériels. <strong>Automatique</strong> : attacher la charge. Forme symétrique ; résistance selon l'axe : petit axe ≥ 750 kg, <strong>grand axe ≥ 2000 kg</strong>.</p>
+            <figure class="rd-fig"><img src="images/rdlspcc/connecteurs.jpg" alt="Connecteurs automatique et à vis, virole, doigt, axes" loading="lazy"></figure>
+            <div class="rd-alerte">Travailler sur le <strong>grand axe</strong>, système de verrouillage <strong>fermé</strong>.</div>
+
+            <h4>Le descendeur, la poulie</h4>
+            <p><strong>Descendeur</strong> (type 8) : réguler et sécuriser une charge ; ≥ 2000 kg. <strong>Poulie</strong> : mouflage ou déviation ; deux joues fixes, gorge ≤ 15 mm, un réa, une entretoise ; ≥ 2000 kg.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <figure class="rd-fig"><img src="images/rdlspcc/descendeur.jpg" alt="Descendeur en 8" loading="lazy"></figure>
+                <figure class="rd-fig"><img src="images/rdlspcc/poulie.jpg" alt="Poulie" loading="lazy"></figure>
+            </div>
+
+            <h4>L'antichute mobile</h4>
+            <p>Sécuriser un intervenant en progression verticale sur échelle (FMO EPI n° 3). CMU 140 kg · Ø 12 mm · ≥ 1500 kg · 230 °C · mousqueton automatique.</p>
+            <figure class="rd-fig" style="max-width: 200px; margin-left: auto; margin-right: auto;"><img src="images/rdlspcc/antichute.jpg" alt="Antichute mobile" loading="lazy"></figure>
+
+            <h4>L'anneau de cordelette, la protection</h4>
+            <p><strong>Cordelette</strong> : traction ou sécurisation d'une charge avec un nœud « Français » ; 40 cm, Ø 7 mm, 1800 kg, &gt; 230 °C. <strong>Protection</strong> (cuir, 45 cm) : protéger la corde des frottements, notamment le <strong>cisaillement du brin dormant</strong>.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <figure class="rd-fig"><img src="images/rdlspcc/cordelette.jpg" alt="Anneau de cordelette" loading="lazy"></figure>
+                <figure class="rd-fig"><img src="images/rdlspcc/protection.jpg" alt="Protection de corde en cuir" loading="lazy"></figure>
             </div>
         </div>
-        
-        <!-- Lot Échelle -->
-        <div style="background: linear-gradient(135deg, light-dark(#E3F2FD, #3b3f44) 0%, light-dark(#BBDEFB, #343c43) 100%); padding: 20px; border-radius: 12px; margin-bottom: 20px;">
-            <h3 style="color: light-dark(#1565c0, #5da1ed); margin: 0 0 15px 0; display: flex; align-items: center; gap: 10px;">
-                <span style="background: #1976D2; color: #fff; padding: 5px 12px; border-radius: 20px; font-size: 0.9em;">LOT ÉCHELLE</span>
-                Sac Bleu Ciel
-            </h3>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px;">
-                    <div style="font-weight: 700; color: light-dark(#1565c0, #5da1ed); margin-bottom: 10px;">📐 Caractéristiques</div>
-                    <div style="font-size: 0.95em; line-height: 1.6;">
-                        • Corde : <strong>60 m</strong><br>
-                        • Diamètre sac : <strong>≤40 cm</strong><br>
-                        • <strong>+ Antichute mobile</strong>
-                    </div>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px;">
-                    <div style="font-weight: 700; color: light-dark(#1565c0, #5da1ed); margin-bottom: 10px;">📦 Haut du sac</div>
-                    <div style="font-size: 0.95em; line-height: 1.6;">
-                        • 1 Triangle + 1 Connecteur auto<br>
-                        <em style="color: var(--t-muted, #666);">(Pas de harnais)</em>
-                    </div>
-                </div>
-            </div>
+
+        <div class="rd-section">
+            <h3>1.2 – Lot « EPI MEA »</h3>
+            <p><strong>Longe de maintien</strong> : sécuriser les opérateurs MEA dans le panier ou se maintenir sur la structure extensible ; 1 m, Ø ≤ 10 mm, 2200 kg.</p>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/longe-maintien.jpg" alt="Longe de maintien" loading="lazy"></figure>
+            <p><strong>Longe antichute</strong> : sécuriser les opérateurs MEA dans le panier et effectuer un passage au vide depuis celui-ci (FMO EPI n° 2), pour MEA avec ancrage NF EN 795 ; CMU 140 kg, 1,75 m, largeur 2,5 cm, 1500 kg.</p>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/longe-antichute.jpg" alt="Longe antichute" loading="lazy"></figure>
+            <p><strong>Harnais</strong> : mêmes modèles que ceux des lots « engin ».</p>
         </div>
+
+        <div class="rd-section">
+            <h3>1.3 – Conditionnement des lots</h3>
+            <table class="rd-table">
+                <tr><th></th><th>Lot « échelle » (bleu)</th><th>Lot « engin » (jaune)</th></tr>
+                <tr><th>Bas du sac</th><td colspan="2">1 corde lovée (insérée au fur et à mesure dans le sac) + 1 protection</td></tr>
+                <tr><th>Rabat intérieur</th><td>1 brin de la corde + 1 antichute mobile</td><td>1 brin de la corde</td></tr>
+                <tr><th>Rabat extérieur</th><td colspan="2">1 outil de traçabilité</td></tr>
+                <tr><th>Milieu (porte-outils, solidaire du sac par la ligature)</th><td>2 sangles rouges + 2 connecteurs à vis<br>5 sangles bleues + 5 connecteurs à vis<br>1 sangle bleue + 1 connecteur à vis + 1 poulie<br>1 sangle rouge + 1 connecteur à vis + 1 descendeur<br>2 cordelettes</td><td>2 sangles rouges + 2 connecteurs à vis<br>2 sangles bleues + 2 connecteurs à vis<br>1 sangle bleue + 1 connecteur à vis + 1 poulie<br>1 sangle rouge + 1 connecteur à vis + 1 descendeur<br>2 cordelettes</td></tr>
+                <tr><th>Haut du sac</th><td>1 triangle + 1 connecteur automatique</td><td>1 triangle + 1 connecteur automatique<br>2 harnais + 2 demi-lunes</td></tr>
+            </table>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/conditionnement.jpg" alt="Conditionnement des lots échelle et engin" loading="lazy"></figure>
+            <p>Porte-outils (tuyau Ø 70 mm) : voir <button onclick="showModule('lspcc-fmo')">F.M.O</button></p>
+        </div>
+
+        <p class="rd-source">📚 RDLSPCC SDIS 34 – v1 – novembre 2025 – § 1</p>
     </div>
 
     <!-- MODULE EMPLOI LSPCC -->
     <div id="lspcc-emploi" class="module">
-        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour</button>
-        <h2 style="color: light-dark(#9e5000, #f57c00); border-bottom: 3px solid #F57C00;">📋 Emploi du LSPCC</h2>
-        
-        <!-- Facteur de chute -->
-        <div style="background: linear-gradient(135deg, var(--t-s2, #FFEBEE) 0%, light-dark(#FFCDD2, #40393c) 100%); padding: 20px; border-radius: 12px; margin-bottom: 20px;">
-            <h3 style="color: light-dark(#c22727, #e57e7e); margin: 0 0 15px 0;">📉 Facteur de Chute</h3>
-            <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 15px;">
-                <div style="font-size: 1.2em; font-weight: 700;">Facteur = Hauteur de chute ÷ Longueur de corde</div>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
-                <div style="background: #81C784; color: #000; padding: 15px; border-radius: 10px; text-align: center;">
-                    <div style="font-size: 2em; font-weight: 700; color: #1e5020;">0.3</div>
-                    <div style="font-weight: 700; color: #1e5020;">RECHERCHÉ</div>
-                </div>
-                <div style="background: light-dark(#FFB74D, #403524); color: var(--t-ink, #000); padding: 15px; border-radius: 10px; text-align: center;">
-                    <div style="font-size: 2em; font-weight: 700; color: light-dark(#b33f00, #ff7124);">1</div>
-                    <div style="font-weight: 700; color: light-dark(#b33f00, #ff7124);">À ÉVITER</div>
-                </div>
-                <div style="background: #E57373; color: #000; padding: 15px; border-radius: 10px; text-align: center;">
-                    <div style="font-size: 2em; font-weight: 700; color: #5c1313;">>1</div>
-                    <div style="font-weight: 700; color: #5c1313;">INTERDIT</div>
-                </div>
-            </div>
+        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <h2>📋 Emploi du LSPCC</h2>
+
+        <div class="rd-section">
+            <h3>2.1 – Principes de mise en œuvre</h3>
+            <p>Un système se compose de : <strong>point d'ancrage → amarrage → frein de charge</strong> (descendeur : garant, tirant) <strong>→ dispositif → charge</strong>.</p>
+            <figure class="rd-fig"><img src="images/rdlspcc/systeme.jpg" alt="Composition d'un système : point d'ancrage, amarrage, frein de charge, dispositif, charge" loading="lazy"></figure>
+            <div class="rd-astuce">La <strong>commande</strong> est emportée systématiquement : détection, test d'une hauteur, schématisation d'un dispositif ou écartement d'une victime d'une structure.</div>
+            <div class="rd-alerte">Pour tout dispositif, le <strong>connecteur automatique entre la corde et la charge</strong> est obligatoire (évite une ouverture au passage au vide). Chacun surveille en permanence, évalue et rend compte des situations dangereuses ; contrôler le système tout au long de l'opération ; <strong>sac du côté du « garant »</strong>.</div>
         </div>
-        
-        <!-- Ordres -->
-        <div style="background: linear-gradient(135deg, var(--t-s2, #E0F2F1) 0%, light-dark(#B2DFDB, #323c3e) 100%); padding: 20px; border-radius: 12px;">
-            <h3 style="color: light-dark(#00695c, #00b09b); margin: 0 0 15px 0;">📢 Ordres de Mise en Œuvre</h3>
-            <div style="display: grid; gap: 10px;">
-                <div style="background: var(--t-s1, #fff); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 15px;">
-                    <span style="background: #00695C; color: #fff; padding: 5px 12px; border-radius: 5px; font-weight: 700;">« Laissez filer ! »</span>
-                    <span>Le régulateur laisse filer la corde</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 15px;">
-                    <span style="background: #C62828; color: #fff; padding: 5px 12px; border-radius: 5px; font-weight: 700;">« Sec ! »</span>
-                    <span>Le régulateur retient fermement</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px 15px; border-radius: 8px; display: flex; align-items: center; gap: 15px;">
-                    <span style="background: #39843c; color: #fff; padding: 5px 12px; border-radius: 5px; font-weight: 700;">« Contact ! »</span>
-                    <span>Arrivée au point à atteindre</span>
-                </div>
-            </div>
+
+        <div class="rd-section">
+            <h3>2.2 – Le champ missionnel</h3>
+            <table class="rd-table">
+                <tr><th>Technique</th><th>Dispositif</th></tr>
+                <tr><td>Sauvetage ou mise en sécurité par l'extérieur</td><td>Descente</td></tr>
+                <tr><td>Abordage d'une victime en situation de péril</td><td>Descente</td></tr>
+                <tr><td>Sauvetage ou mise en sécurité en excavation</td><td>Descente et remontée</td></tr>
+                <tr><td>Reconnaissance d'appartement</td><td>Descente ou horizontal</td></tr>
+                <tr><td>Évolution avec risque de chute</td><td>Protection contre les chutes</td></tr>
+            </table>
+            <p><strong>Limites en opération</strong> : résistance des points d'ancrage · matériel insuffisant · longueur utile de la corde (entre l'ancrage et le point le plus bas) · état d'une victime nécessitant une prise en charge spécifique (hors sauvetage).</p>
+            <div class="rd-alerte">La <strong>reconnaissance d'appartement</strong> est réalisée selon l'urgence, lorsque la façade n'est pas accessible aux échelles portables ni aux MEA.</div>
         </div>
+
+        <div class="rd-section">
+            <h3>2.3 – L'ancrage</h3>
+            <p>Point d'ancrage (point fixe) : support résistant à l'effort demandé. <strong>Naturel</strong> (arbre, rocher…), <strong>structurel</strong> (colonne sèche, rambarde, balcon, pilier, poutre…) ou <strong>artificiel</strong> (véhicule, échelle portable…).</p>
+            <div class="rd-alerte">En cas de <strong>doute</strong>, en choisir un autre. À défaut, demander obligatoirement une équipe spécialisée <strong>SMPM</strong>.</div>
+            <h4>Point fixe humain (sur un sauveteur)</h4>
+            <p>Dans l'urgence, quand aucun ancrage naturel ou structurel n'est possible et qu'une échelle portable ou un MEA n'est pas réalisable.</p>
+            <div class="rd-alerte">L'intervenant, en harnais, est <strong>allongé, jambes à 90° contre le mur</strong>. Hauteur entre l'axe du descendeur et l'appui de la corde <strong>≥ 20 cm</strong>.</div>
+            <h4>Véhicule</h4>
+            <p>Considéré comme ancrage si : moteur arrêté et frein à main / de parc serré · calé sur les roues arrière · si possible vitesse engagée, clé retirée, véhicule verrouillé. Ancrer sur une <strong>manille</strong>, une <strong>jante</strong> (sans chaleur, pas sur un enjoliveur) ou l'<strong>essieu arrière</strong>.</p>
+            <figure class="rd-fig"><img src="images/rdlspcc/ancrage-vehicule.jpg" alt="Ancrage sur manille, jante, essieu arrière" loading="lazy"></figure>
+            <h4>Échelle à coulisse 2 plans ou à crochets 2 plans</h4>
+            <p>En l'absence d'ancrage naturel ou structurel : sangle(s) autour des <strong>quatre montants</strong>, échelle plaquée contre la structure. L'échelle à crochets 2 plans n'est utilisée <strong>que pour un sauvetage, reployée</strong>. Détails et photos : <button onclick="showModule('echelles-coulisses')">Coulisse – point d'ancrage</button> <button onclick="showModule('echelles-crochets')">Crochets – point d'ancrage</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.4 – L'amarrage</h3>
+            <p>Connexion entre le(s) point(s) d'ancrage et un dispositif : <strong>au minimum une sangle et un connecteur à vis</strong>.</p>
+            <div class="rd-alerte">Pour la sécurité, les <strong>têtes d'alouette sont proscrites</strong>.</div>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/amarrage-double.jpg" alt="Sangle en double et en double avec tour mort (≈4000 kg)" loading="lazy"><figcaption>En double (≈ 4000 kg) · en double avec tour mort (≈ 4000 kg)</figcaption></figure>
+            <p>Plusieurs points d'ancrage répartissent la contrainte et fiabilisent le système.</p>
+            <figure class="rd-fig"><img src="images/rdlspcc/amarrage-angle.jpg" alt="Angle entre deux sangles : 90° maximum" loading="lazy"></figure>
+            <div class="rd-astuce">Deux ancrages : répartir les amarrages identiquement (tours morts sur les sangles, ou dispositif de répartition – annexe 5.4).</div>
+            <div class="rd-alerte">L'angle entre deux sangles augmente la sollicitation des ancrages : <strong>90° maximum</strong>, pour que le connecteur à vis travaille sur le grand axe.</div>
+            <h4>Amarrage principal</h4>
+            <p>Sangle(s), connecteur(s) et <strong>descendeur</strong> : simple, double ou surdimensionné.</p>
+            <figure class="rd-fig"><img src="images/rdlspcc/amarrage-principal.jpg" alt="Amarrage principal simple, double, surdimensionné" loading="lazy"></figure>
+            <div class="rd-alerte">Amarrage surdimensionné : le connecteur à vis ne doit pas travailler dans une position affaiblissant sa résistance.</div>
+            <h4>Amarrage intermédiaire</h4>
+            <p>Sangle(s) et un connecteur ou une poulie : déviation, prolongement, sécurisation, mouflage.</p>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/amarrage-intermediaire.jpg" alt="Amarrage intermédiaire : déviation-prolongement-sécurisation, déviation-mouflage" loading="lazy"></figure>
+            <div class="rd-astuce">Évolution avec risque de chute : le chef d'équipe dispose de <strong>jusqu'à 5 sangles et 5 connecteurs à vis</strong> pour les amarrages de prolongement. Pour ne pas augmenter le facteur de chute, on ne récupère pas les amarrages déjà en place.</div>
+            <div class="rd-alerte">Dispositif de descente et de remontée nécessitant <strong>plusieurs amarrages intermédiaires</strong> (déviation, mouflage) : demander obligatoirement une <strong>équipe spécialisée</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.5 – Les notions de chute</h3>
+            <h4>Syndrome de suspension (syndrome du harnais)</h4>
+            <p>Urgence vitale à très court terme : une suspension inerte et prolongée diminue fortement, voire supprime, le retour veineux → perte de connaissance, défaillance multiviscérale, puis <strong>arrêt cardio-respiratoire</strong> sans prise en charge.</p>
+            <div class="rd-astuce">Une chute peut se produire lors de l'utilisation du LSPCC ; les dommages peuvent être sévères ou irréversibles.</div>
+            <div class="rd-alerte">En formation, un <strong>mannequin</strong> doit obligatoirement simuler la victime.</div>
+            <h4>Facteur de chute</h4>
+            <p><strong>Fc = hauteur de chute ÷ longueur de corde</strong> qui amortit la chute. Seuil européen d'occurrence des lésions : <strong>≤ 600 kg</strong>.</p>
+            <figure class="rd-fig"><img src="images/rdlspcc/facteur-chute.jpg" alt="Facteur 0,3 en dessous de l'amarrage, 1 au niveau, 2 au-dessus" loading="lazy"><figcaption>0,3 : en dessous de l'amarrage · 1 : au niveau · 2 : au-dessus</figcaption></figure>
+            <div class="rd-alerte">Progression à <strong>facteur 0,3</strong> recherchée en permanence ; facteur 1 à éviter ; <strong>supérieur à 1 interdit</strong>. <button onclick="showModule('lspcc-calculateur')">🔢 Calculer</button></div>
+            <h4>Tirant d'air théorique</h4>
+            <p>Hauteur minimale pour que l'utilisateur ne heurte pas d'obstacle à l'arrêt de sa chute. Exemple : longueur 2 m, tirant d'air 5 m, hauteur 6 m, marge ≥ 1 m.</p>
+            <figure class="rd-fig"><img src="images/rdlspcc/tirant-air.jpg" alt="Tirant d'air théorique" loading="lazy"></figure>
+            <div class="rd-alerte">Marge de sécurité normative : <strong>1 m</strong>, à augmenter selon la configuration : temps de réaction du régulateur, mise en tension du dispositif, allongement de la corde.</div>
+            <h4>Effet pendulaire</h4>
+            <p>Si l'intervenant ou la victime n'est pas exactement sous le point d'ancrage : effet ballant à la mise au vide ou en cas de chute, avec des lésions par collision parfois graves.</p>
+            <figure class="rd-fig"><img src="images/rdlspcc/pendulaire.jpg" alt="Effet pendulaire" loading="lazy"></figure>
+            <div class="rd-alerte">Protéger la corde contre le <strong>cisaillement</strong> ; en tension sur la corde, le sauveteur ne se balance pas (usure prématurée).</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.6 – Protection individuelle</h3>
+            <ul>
+                <li>Minimum : <strong>TSI</strong>.</li>
+                <li><strong>Casque type A (F2) ou B (F1)</strong> pour tous.</li>
+                <li>Gants type B (protection) ou C (attaque) sur appréciation du chef d'agrès ; <strong>obligatoires en ambiance thermique et pour le sauveteur</strong>.</li>
+                <li>TSI renforcée possible sur ordre du chef d'agrès ; ARI-CO au besoin ; écran oculaire à l'appréciation de chacun.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.7 – Ordres de mise en œuvre</h3>
+            <table class="rd-table">
+                <tr><th>« Laissez filer ! »</th><td>Dispositif de descente : le régulateur laisse filer la corde dans le descendeur</td></tr>
+                <tr><th>« Du mou ! »</th><td>Le régulateur donne du mou à la demande d'un intervenant</td></tr>
+                <tr><th>« Sec ! »</th><td>Le régulateur retient fermement la corde et absorbe tout le mou</td></tr>
+                <tr><th>« Protégez le dispositif ! »</th><td>Placer des protections pour préserver la corde</td></tr>
+                <tr><th>« Sécurisez le dispositif ! »</th><td>Le régulateur effectue une clé d'arrêt</td></tr>
+                <tr><th>« À bras – Ferme ! »</th><td>Rythme de synchronisation du dispositif de remontée</td></tr>
+                <tr><th>« Contact ! »</th><td>Le sauveteur ou la victime est au point à atteindre</td></tr>
+                <tr><th>« Victime en sécurité ! »</th><td>La victime est prise en charge à la suite du dispositif</td></tr>
+            </table>
+        </div>
+
+        <p class="rd-source">📚 RDLSPCC SDIS 34 – v1 – novembre 2025 – § 2.1 à 2.7</p>
+    </div>
+
+    <!-- MODULE TRIANGLE & HARNAIS LSPCC -->
+    <div id="lspcc-triangle" class="module">
+        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <h2>🦺 Triangle & harnais</h2>
+
+        <div class="rd-section">
+            <h3>2.8 – Réglage des attaches du triangle</h3>
+            <figure class="rd-fig"><img src="images/rdlspcc/triangle-reglages.jpg" alt="Réglages petite, moyenne et large corpulence" loading="lazy"><figcaption>Petite · moyenne · large corpulence</figcaption></figure>
+            <div class="rd-astuce">Selon le gabarit, utiliser de préférence ces réglages ; d'autres combinaisons sont possibles si nécessaire.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.9 – Triangle sur victime inconsciente ou invalide</h3>
+            <ol>
+                <li>Placer la victime sur le côté, poser le triangle sur son dos et insérer le bras opposé au sol dans la bretelle.</li>
+                <li>Positionner la victime à plat dos sur le triangle, insérer l'autre bras, remonter la base contre les aisselles.</li>
+                <li>Attacher le triangle par les <strong>attaches sternales avec le connecteur automatique</strong> et serrer les bretelles selon la morphologie.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdlspcc/triangle-inconscient.jpg" alt="Mise en place du triangle sur victime inconsciente" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.10 – Triangle sur victime consciente et valide</h3>
+            <ol>
+                <li>Placer le triangle sur le dos de la victime, insérer chaque bras dans les bretelles, remonter la base contre les aisselles.</li>
+                <li>Attacher par les attaches sternales avec le connecteur automatique et serrer les bretelles.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdlspcc/triangle-conscient.jpg" alt="Mise en place du triangle sur victime consciente" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.11 – Passage au vide d'une victime inconsciente</h3>
+            <ol>
+                <li>Attacher la corde sur le connecteur automatique.</li>
+                <li>Installer la victime <strong>sur le ventre, pieds face à l'ouvrant</strong>.</li>
+                <li>Un sauveteur de chaque côté maintient les bretelles dorsales et les genoux.</li>
+                <li>Lever simultanément la victime <strong>sans lâcher le « garant »</strong>, la placer sur le rebord et effectuer le dégagement.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdlspcc/passage-vide.jpg" alt="Passage au vide d'une victime inconsciente en 4 étapes" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.12 – Habillage du harnais (conventionnel)</h3>
+            <ol>
+                <li>Harnais au sol, insérer les jambes dans chaque bretelle inférieure, placer le harnais sur le dos.</li>
+                <li>Attacher la demi-lune sur les attaches sternales, ajuster les réglages latéraux, serrer les bretelles inférieures puis supérieures.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdlspcc/harnais-habillage.jpg" alt="Habillage du harnais" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.13 – Sangles pour une évolution avec risque de chute</h3>
+            <ol>
+                <li>Préparer les sangles bleues en simple et les sangles rouges dédoublées.</li>
+                <li>Les positionner au niveau des deux bretelles supérieures et attacher la corde par-dessus.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdlspcc/sangles-evolution.jpg" alt="Positionnement des sangles sur le harnais" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.14 – Habillage d'un harnais au MEA (optionnel)</h3>
+            <ol>
+                <li>Harnais au sol, jambes dans les bretelles inférieures, harnais sur le dos.</li>
+                <li>Demi-lune sur les attaches sternales, réglages latéraux, serrer bretelles inférieures puis supérieures.</li>
+                <li><strong>Verrouiller la veste jusqu'à la demi-lune</strong> et fermer le rabat.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdlspcc/harnais-mea.jpg" alt="Habillage du harnais au MEA" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.15 – Reconditionnement du triangle</h3>
+            <figure class="rd-fig"><img src="images/rdlspcc/triangle-recond.jpg" alt="Reconditionnement du triangle en 4 étapes avec le connecteur automatique" loading="lazy"><figcaption>Étapes 1 à 4 – connecteur automatique</figcaption></figure>
+        </div>
+
+        <p class="rd-source">📚 RDLSPCC SDIS 34 – v1 – novembre 2025 – § 2.8 à 2.15</p>
     </div>
 
     <!-- MODULE TECHNIQUES LSPCC -->
     <div id="lspcc-techniques" class="module">
-        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour</button>
-        <h2 style="color: light-dark(#a24900, #fe7300); border-bottom: 3px solid #EF6C00;">🧗 Techniques Générales</h2>
-        <p style="text-align: center; color: var(--text-secondary);">Abordage, sauvetage extérieur, excavation, reconnaissance</p>
-        
-        <div style="background: light-dark(#FFCC80, #40382d); color: var(--t-ink, #000); padding: 20px; border-radius: 12px; margin-top: 20px;">
-            <h3 style="color: light-dark(#b33f00, #ff7124);">🆘 Techniques principales</h3>
-            <ul style="line-height: 2;">
-                <li><strong>Abordage victime</strong> - Accéder à une victime en situation de péril</li>
-                <li><strong>Sauvetage extérieur</strong> - Dégager une victime par l'extérieur</li>
-                <li><strong>Excavation</strong> - Descente ET Remontée</li>
-                <li><strong>Reconnaissance appartement</strong> - Accès depuis l'extérieur</li>
-                <li><strong>Évolution risque chute</strong> - Protection en toiture/structure</li>
-            </ul>
+        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <h2>🧗 Techniques générales</h2>
+        <p><small>Tableaux reproduits tels que dans le référentiel : une action placée dans une seule colonne revient à ce rôle.</small></p>
+
+        <div class="rd-section">
+            <h3>3.1 – Abordage d'une victime en situation de péril</h3>
+            <p>Accéder à une victime pour établir un contact physique.</p>
+            <table class="rd-table">
+                <tr><th>Chef d'équipe</th><th>Équipier</th></tr>
+                <tr><td colspan="2">Se munir du LSPCC et de la commande, puis se rendre au point désigné.</td></tr>
+                <tr><td>S'assurer de la faisabilité du dispositif.</td><td></td></tr>
+                <tr><td>Choisir 1 ou 2 points d'ancrage.</td><td></td></tr>
+                <tr><td colspan="2">S'équiper avec le harnais.</td></tr>
+                <tr><td colspan="2">Installer l'amarrage principal et le descendeur avec la corde insérée, puis maintenir le garant et le sécuriser au besoin (annexe 5.5).</td></tr>
+                <tr><td colspan="2">Attacher la corde avec le connecteur automatique sur la demi-lune du harnais.</td></tr>
+                <tr><td colspan="2">Vérifier et tester le dispositif.</td></tr>
+                <tr><td colspan="2">Réguler la descente.</td></tr>
+                <tr><th colspan="2">Chef d'agrès</th></tr>
+                <tr><td colspan="2">Contrôler la descente.</td></tr>
+            </table>
         </div>
+
+        <div class="rd-section">
+            <h3>3.2 – Abordage avec un point fixe humain</h3>
+            <table class="rd-table">
+                <tr><th>Chef d'équipe</th><th>Équipier</th></tr>
+                <tr><td colspan="2">Se munir du LSPCC et de la commande, puis se rendre au point désigné.</td></tr>
+                <tr><td>S'assurer de la faisabilité du dispositif.</td><td></td></tr>
+                <tr><td colspan="2">S'équiper avec le harnais.</td></tr>
+                <tr><td colspan="2">Se positionner avec le harnais en point fixe et connecter le descendeur sur la demi-lune avec la corde insérée, puis maintenir le garant et le sécuriser au besoin (annexe 5.5).</td></tr>
+                <tr><td colspan="2">Attacher la corde avec le connecteur automatique sur la demi-lune du harnais.</td></tr>
+                <tr><td colspan="2">Vérifier et tester le dispositif.</td></tr>
+                <tr><td colspan="2">Réguler la descente.</td></tr>
+                <tr><th colspan="2">Chef d'agrès</th></tr>
+                <tr><td colspan="2">Contrôler la descente.</td></tr>
+            </table>
+            <figure class="rd-fig"><img src="images/rdlspcc/abordage-schemas.jpg" alt="Schémas : ancrage structurel et point fixe humain ≥ 20 cm" loading="lazy"></figure>
+            <div class="rd-astuce">Longueur adaptée à une coulisse 2 plans ou à un MEA : utiliser ces agrès. Sol stable et sans risque : le sauveteur peut se détacher pour aborder la victime ; la remontée se fait avec un deuxième LSPCC ou une équipe spécialisée.</div>
+            <div class="rd-alerte">Atmosphère viciée redoutée : le sauveteur s'engage sous <strong>ARI-CO</strong> ; contrôle préalable <strong>obligatoire</strong> avec un détecteur multigaz et une commande.</div>
+            <h4>Ancrage artificiel avec un VSR</h4>
+            <figure class="rd-fig"><img src="images/rdlspcc/abordage-vsr.jpg" alt="Point d'ancrage artificiel avec un VSR, progression sur sol rampant" loading="lazy"></figure>
+            <div class="rd-alerte">Sur <strong>sol rampant</strong>, les autres intervenants peuvent se sécuriser sur la corde (en la tenant, ou par un nœud « Français » en tenant la ganse). <strong>Seul le personnel</strong> se sécurise sur le dispositif ; le matériel est acheminé à la commande ou au cordage. Protéger la corde du cisaillement.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.3 – Sauvetage ou mise en sécurité par l'extérieur</h3>
+            <p>Dégager une victime consciente, inconsciente ou invalide.</p>
+            <table class="rd-table">
+                <tr><th>Chef d'équipe</th><th>Équipier</th></tr>
+                <tr><td colspan="2">Se munir du LSPCC et de la commande, puis se rendre au point désigné.</td></tr>
+                <tr><td>S'assurer de la faisabilité du dispositif.</td><td></td></tr>
+                <tr><td>Choisir 1 ou 2 points d'ancrage.</td><td></td></tr>
+                <tr><td colspan="2">Approcher la victime jusqu'au point de dégagement.</td></tr>
+                <tr><td colspan="2">Équiper la victime avec le triangle.</td></tr>
+                <tr><td colspan="2">Installer un amarrage principal avec la corde insérée, puis maintenir le garant.</td></tr>
+                <tr><td colspan="2">Attacher la corde sur les attaches sternales du triangle avec le connecteur automatique, puis la commande sur l'attache dorsale si nécessaire.</td></tr>
+                <tr><td colspan="2">Envoyer l'autre brin de la commande vers l'extérieur.</td></tr>
+                <tr><td colspan="2">Vérifier et tester le dispositif, puis engager la victime au vide.</td></tr>
+                <tr><td>Contrôler la descente.</td><td>Réguler la descente.</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.4 – Sauvetage par l'extérieur avec un point fixe humain</h3>
+            <table class="rd-table">
+                <tr><th>Chef d'équipe</th><th>Équipier</th></tr>
+                <tr><td colspan="2">Se munir du LSPCC et de la commande, puis se rendre au point désigné.</td></tr>
+                <tr><td>S'assurer de la faisabilité du dispositif.</td><td></td></tr>
+                <tr><td colspan="2">Équiper la victime avec le triangle.</td></tr>
+                <tr><td colspan="2">Approcher la victime jusqu'au point de dégagement.</td></tr>
+                <tr><td colspan="2">Se positionner avec le harnais en point fixe et connecter le descendeur sur la demi-lune avec la corde insérée (sous ARI-CO, voir annexe 5.6), puis maintenir le garant.</td></tr>
+                <tr><td colspan="2">Attacher la corde sur les attaches sternales du triangle avec le connecteur automatique, puis la commande sur l'attache dorsale si nécessaire.</td></tr>
+                <tr><td colspan="2">Envoyer l'autre brin de la commande vers l'extérieur.</td></tr>
+                <tr><td colspan="2">Vérifier et tester le dispositif, puis engager la victime au vide.</td></tr>
+                <tr><td>Contrôler la descente.</td><td>Réguler la descente.</td></tr>
+            </table>
+            <figure class="rd-fig"><img src="images/rdlspcc/exterieur-schemas.jpg" alt="Schémas du sauvetage par l'extérieur" loading="lazy"></figure>
+            <div class="rd-astuce">Sans intervenant pour écarter la victime, il n'est pas nécessaire d'attacher la commande au niveau dorsal.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.5 – Reconnaissance d'appartement</h3>
+            <p>Accéder à un appartement depuis l'extérieur pour le reconnaître.</p>
+            <table class="rd-table">
+                <tr><th>Chef d'équipe</th><th>Équipier</th></tr>
+                <tr><td colspan="2">Se munir du LSPCC et de la commande, puis se rendre au point désigné.</td></tr>
+                <tr><td>S'assurer de la faisabilité du dispositif.</td><td></td></tr>
+                <tr><td>Choisir 1 ou 2 points d'ancrage.</td><td></td></tr>
+                <tr><td colspan="2">S'équiper avec le harnais.</td></tr>
+                <tr><td colspan="2">Installer l'amarrage principal et le descendeur avec la corde insérée, puis maintenir le garant et le sécuriser au besoin (annexe 5.5).</td></tr>
+                <tr><td colspan="2">Attacher la corde avec le connecteur automatique sur la demi-lune du harnais.</td></tr>
+                <tr><td colspan="2">Vérifier et tester le dispositif.</td></tr>
+                <tr><td colspan="2">Réguler la descente.</td></tr>
+                <tr><th colspan="2">Chef d'agrès</th></tr>
+                <tr><td colspan="2">Contrôler la descente.</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.6 – Reconnaissance avec un point fixe humain</h3>
+            <table class="rd-table">
+                <tr><th>Chef d'équipe</th><th>Équipier</th></tr>
+                <tr><td colspan="2">Se munir du LSPCC et de la commande, puis se rendre au point désigné.</td></tr>
+                <tr><td>S'assurer de la faisabilité du dispositif.</td><td></td></tr>
+                <tr><td colspan="2">S'équiper avec le harnais.</td></tr>
+                <tr><td colspan="2">Se positionner avec le harnais en point fixe et connecter le descendeur sur la demi-lune avec la corde insérée, puis maintenir le garant et le sécuriser au besoin (annexe 5.5).</td></tr>
+                <tr><td colspan="2">Attacher la corde avec le connecteur automatique sur la demi-lune du harnais.</td></tr>
+                <tr><td colspan="2">Vérifier et tester le dispositif.</td></tr>
+                <tr><td colspan="2">Réguler la descente.</td></tr>
+                <tr><th colspan="2">Chef d'agrès</th></tr>
+                <tr><td colspan="2">Contrôler la descente.</td></tr>
+            </table>
+            <h4>Conditions techniques</h4>
+            <figure class="rd-fig"><img src="images/rdlspcc/reco-conditions.jpg" alt="Point fixe humain et point d'ancrage structurel" loading="lazy"></figure>
+            <div class="rd-alerte"><strong>Deux harnais obligatoires</strong> : un pour le régulateur (point fixe), un pour le sauveteur qui reconnaît.</div>
+            <h4>Détachement lors de la reconnaissance</h4>
+            <ul>
+                <li>Avant de pénétrer, le sauveteur s'identifie à haute voix et à plusieurs reprises : <strong>« nous sommes les sapeurs-pompiers »</strong>.</li>
+                <li>Sol stable et sans risque : il se détache <strong>après avoir informé le chef d'agrès</strong> et poursuit muni d'un émetteur-récepteur radio, d'un outil de force et déblai, d'un appareil de détection et d'un gilet pare-lame.</li>
+            </ul>
+            <div class="rd-astuce">Atmosphère viciée redoutée : engagement sous ARI-CO ; contrôle préalable obligatoire avec un appareil de détection et une commande.</div>
+            <h4>Itinéraires de repli et de secours</h4>
+            <figure class="rd-fig"><img src="images/rdlspcc/reco-itineraires.jpg" alt="Itinéraire de secours avec échelle à crochets appuyée près du point à atteindre" loading="lazy"></figure>
+            <div class="rd-astuce">S'assurer d'un itinéraire de repli avec une <strong>longueur utile de corde</strong> atteignant le rez-de-chaussée ou un niveau intermédiaire.</div>
+            <div class="rd-alerte">Itinéraire de secours : placer au plus près du point à atteindre une <strong>échelle à crochets appuyée sur les crochets</strong>. En cas de doute, accéder plutôt <strong>par la porte d'entrée</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.7 – Sauvetage ou mise en sécurité en excavation</h3>
+            <table class="rd-table">
+                <tr><th>Chef d'équipe BIN 1</th><th>Équipier BIN 1</th></tr>
+                <tr><td colspan="2">Se munir du LSPCC et de la commande, puis se rendre au point désigné.</td></tr>
+                <tr><td>S'assurer de la faisabilité du dispositif.</td><td></td></tr>
+                <tr><td>Choisir 1 ou 2 points d'ancrage « dormant ».</td><td></td></tr>
+                <tr><td>Choisir 1 ou 2 points d'ancrage « tirant ».</td><td></td></tr>
+                <tr><td colspan="2">Installer l'amarrage intermédiaire (dormant).</td></tr>
+                <tr><td colspan="2">Installer un amarrage principal (tirant) avec la corde insérée, puis sécuriser le garant et le sécuriser au besoin (annexe 5.5).</td></tr>
+                <tr><td colspan="2">Le sauveteur s'équipe avec le harnais.</td></tr>
+                <tr><td colspan="2">Attacher la corde avec le connecteur automatique muni de la poulie sur la demi-lune du harnais.</td></tr>
+                <tr><td colspan="2">Vérifier et tester le dispositif.</td></tr>
+                <tr><td colspan="2">Réguler la descente.</td></tr>
+                <tr><td colspan="2">Équiper la victime avec le triangle.</td></tr>
+                <tr><td colspan="2">Attacher le triangle sur les attaches sternales avec le connecteur automatique, puis la commande sur l'attache dorsale si nécessaire.</td></tr>
+                <tr><td colspan="2">Écarter la victime.</td></tr>
+                <tr><th colspan="2">Chef d'agrès</th></tr>
+                <tr><td colspan="2">Contrôler la descente.</td></tr>
+                <tr><th>Chef d'équipe BIN 2</th><th>Équipier BIN 2</th></tr>
+                <tr><td colspan="2">Préparer deux cordelettes, le triangle et la commande.</td></tr>
+                <tr><td colspan="2">Attacher la commande au triangle.</td></tr>
+                <tr><td colspan="2">Faire acheminer le triangle au niveau du sauveteur.</td></tr>
+                <tr><td colspan="2">Effectuer la remontée de la victime et du sauveteur au moyen des cordelettes.</td></tr>
+            </table>
+            <h4>Un seul LSPCC, un ou deux points d'ancrage</h4>
+            <figure class="rd-fig"><img src="images/rdlspcc/excavation-1.jpg" alt="Excavation avec un seul LSPCC" loading="lazy"></figure>
+            <h4>Deux LSPCC, deux points d'ancrage</h4>
+            <figure class="rd-fig"><img src="images/rdlspcc/excavation-2.jpg" alt="Excavation avec deux LSPCC et deux points d'ancrage" loading="lazy"></figure>
+            <h4>Deux LSPCC, un point d'ancrage « dormant »</h4>
+            <figure class="rd-fig"><img src="images/rdlspcc/excavation-3.jpg" alt="Excavation avec deux LSPCC et un seul ancrage dormant" loading="lazy"></figure>
+            <div class="rd-astuce">Longueur adaptée à une échelle portable ou un MEA : utiliser ces agrès. Sol stable et sans risque : le sauveteur peut se détacher. Un seul ancrage au « dormant » : les deux LSPCC peuvent le partager, mais les <strong>remontées ne sont pas simultanées</strong>.</div>
+            <div class="rd-alerte">Atmosphère viciée redoutée : ARI-CO, contrôle préalable obligatoire (détection + commande). Protéger la corde au <strong>« dormant »</strong> contre le cisaillement.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.8 – Évolution avec risque de chute</h3>
+            <p>Évoluer depuis un point d'ancrage :</p>
+            <table class="rd-table">
+                <tr><th>Chef d'équipe BIN 1</th><th>Équipier BIN 1</th></tr>
+                <tr><td colspan="2">Se munir du LSPCC et de la commande, puis se rendre au point désigné.</td></tr>
+                <tr><td>S'assurer de la faisabilité du dispositif.</td><td></td></tr>
+                <tr><td>Choisir 1 ou 2 points d'ancrage.</td><td></td></tr>
+                <tr><td colspan="2">S'équiper avec le harnais.</td></tr>
+                <tr><td colspan="2">Installer un amarrage principal avec la corde insérée, puis maintenir le garant et le sécuriser au besoin (annexe 5.5).</td></tr>
+                <tr><td colspan="2">Attacher la corde avec le connecteur automatique sur la demi-lune du harnais.</td></tr>
+                <tr><td colspan="2">Vérifier et tester le dispositif.</td></tr>
+                <tr><td colspan="2">Réguler l'évolution.</td></tr>
+                <tr><th colspan="2">Chef d'agrès</th></tr>
+                <tr><td colspan="2">Contrôler l'évolution.</td></tr>
+                <tr><th>Chef d'équipe BIN 2</th><th>Équipier BIN 2</th></tr>
+                <tr><td colspan="2">Mettre en œuvre une échelle à coulisse au besoin.</td></tr>
+            </table>
+            <div class="rd-astuce">Charpente : l'inspecter depuis l'intérieur ou, à défaut, depuis l'extérieur en retirant les tuiles sur <strong>1 m²</strong>. Si distance et hauteur le permettent, projeter une commande par-dessus la toiture pour un dispositif <strong>en opposition</strong> à l'évolution.</div>
+            <figure class="rd-fig"><img src="images/rdlspcc/toiture.jpg" alt="Commande par-dessus la toiture, ancrage depuis le niveau de référence, amarrages intermédiaires sur charpente" loading="lazy"></figure>
+            <div class="rd-alerte">Installer des <strong>amarrages intermédiaires</strong> (entre le descendeur et le harnais) au fil de l'évolution pour garder un facteur de chute aussi faible que possible : 0,3 recherché, 1 à éviter, &gt; 1 interdit. Vigilance aux abords des <strong>rives</strong>.</div>
+            <h4>Depuis un MEA avec panier de secours</h4>
+            <table class="rd-table">
+                <tr><th>Chef d'agrès</th><th>Équipier</th></tr>
+                <tr><td colspan="2">Se munir du LSPCC et de la commande, puis se rendre au point désigné.</td></tr>
+                <tr><td>S'assurer de la faisabilité du dispositif.</td><td></td></tr>
+                <tr><td>Choisir 1 ou 2 points d'ancrage au plus près du panier de secours et depuis les montants supérieurs de la structure extensible.</td><td></td></tr>
+                <tr><td>Installer un amarrage principal avec la corde insérée, puis maintenir le garant et le sécuriser au besoin (annexe 5.5).</td><td>S'équiper avec le harnais.</td></tr>
+                <tr><td></td><td>Attacher la corde avec le connecteur automatique sur la demi-lune du harnais.</td></tr>
+                <tr><td colspan="2">Vérifier et tester le dispositif.</td></tr>
+                <tr><td>Contrôler et réguler l'évolution.</td><td></td></tr>
+            </table>
+            <figure class="rd-fig"><img src="images/rdlspcc/evolution-mea.jpg" alt="Évolution depuis un MEA avec panier de secours" loading="lazy"></figure>
+            <div class="rd-alerte">Structure extensible utilisée comme ancrage : ne pas être à la <strong>capacité maximale du MEA</strong> ; réaliser les sécurités propres au modèle (arrêt d'urgence, coupure moteur…) ; amarrage principal sur les <strong>montants supérieurs</strong> de la structure (<strong>crochets du panier proscrits</strong>).</div>
+        </div>
+
+        <p class="rd-source">📚 RDLSPCC SDIS 34 – v1 – novembre 2025 – § 3</p>
     </div>
 
     <!-- MODULE SÉCURISATION LSPCC -->
     <div id="lspcc-securisation" class="module">
-        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour</button>
-        <h2 style="color: light-dark(#c02e00, #ff6e41); border-bottom: 3px solid #FF5722;">🪜 Sécurisation Échelles & MEA</h2>
-        
-        <div style="background: light-dark(#FFCC80, #40382d); color: var(--t-ink, #000); padding: 15px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid #FF9800;">
-            <strong style="color: light-dark(#b33f00, #ff7124);">ℹ️</strong> La sécurisation est conseillée en formation. En opération, adaptable selon l'urgence.
+        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <h2>🪜 Sécurisation échelles & MEA</h2>
+        <div class="rd-alerte">Après analyse préalable des risques, la sécurisation est <strong>conseillée en formation</strong>. En opération, elle peut ne pas être utilisée selon l'urgence.</div>
+
+        <div class="rd-section">
+            <h3>4.1 – Échelle à crochets</h3>
+            <ol>
+                <li>Amarrage intermédiaire au sommet (ou sur un ancrage en surplomb), sangle de part et d'autre de l'échelon.</li>
+                <li>Passer la sangle sur l'entretoise la plus proche des montants.</li>
+                <li>Amarrage principal à la base (ou sur un ancrage), sangle de part et d'autre de l'échelon.</li>
+                <li>S'équiper d'un harnais, attacher le connecteur automatique à la demi-lune.</li>
+                <li>Un intervenant sécurise la progression au niveau du « garant ».</li>
+            </ol>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/secu-crochets.jpg" alt="Sécurisation d'une échelle à crochets, côté sommet et côté base" loading="lazy"></figure>
         </div>
-        
-        <div style="display: grid; gap: 15px;">
-            <div style="background: linear-gradient(135deg, var(--t-s2, #E8F5E9) 0%, light-dark(#C8E6C9, #363d3a) 100%); padding: 20px; border-radius: 12px;">
-                <h3 style="color: light-dark(#2a722e, #41b147);">🪝 Échelle à Crochets</h3>
-                <p>Amarrage intermédiaire au sommet + amarrage principal à la base</p>
-            </div>
-            <div style="background: linear-gradient(135deg, light-dark(#E3F2FD, #3b3f44) 0%, light-dark(#BBDEFB, #343c43) 100%); padding: 20px; border-radius: 12px;">
-                <h3 style="color: light-dark(#1565c0, #5da1ed);">📏 Échelle à Coulisse</h3>
-                <p>Amarrage sur 2ème plan au sommet + 1er plan à la base</p>
-            </div>
-            <div style="background: linear-gradient(135deg, var(--t-s2, #F3E5F5) 0%, light-dark(#E1BEE7, #3b3640) 100%); padding: 20px; border-radius: 12px;">
-                <h3 style="color: light-dark(#7b1fa2, #c77ee6);">🚒 MEA</h3>
-                <p>Antichute mobile sur corde tendue + clé d'arrêt</p>
-            </div>
+
+        <div class="rd-section">
+            <h3>4.2 – Échelle à coulisse</h3>
+            <ol>
+                <li>Amarrage intermédiaire au sommet (ou ancrage en surplomb), sangle de part et d'autre du <strong>deuxième plan</strong>.</li>
+                <li>Passer la sangle au niveau de l'échelon le plus proche du sommet.</li>
+                <li>Dresser, développer et appuyer l'échelle.</li>
+                <li>Amarrage principal à la base (ou ancrage en amont), sangle de part et d'autre du <strong>premier plan</strong>.</li>
+                <li>S'équiper d'un harnais, connecteur automatique à la demi-lune.</li>
+                <li>Un intervenant sécurise la progression au niveau du « garant ».</li>
+            </ol>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/secu-coulisse.jpg" alt="Sécurisation d'une échelle à coulisse, côté sommet et côté base" loading="lazy"></figure>
         </div>
+
+        <div class="rd-section">
+            <h3>4.3 – MEA</h3>
+            <ol>
+                <li>Amarrage intermédiaire au sommet de la structure extensible, sangle sur le premier plan.</li>
+                <li>Passer la corde sur la structure extensible.</li>
+                <li>Dresser et développer.</li>
+                <li>Amarrage principal à la base de la structure, sangle sur le plan.</li>
+                <li>Tendre la corde au milieu de l'échelle et réaliser une <strong>clé d'arrêt</strong>.</li>
+                <li>Mettre l'<strong>antichute mobile</strong> sur la corde et l'attacher à la demi-lune du harnais.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdlspcc/secu-mea.jpg" alt="Sécurisation sur MEA : côté panier, côté poste de commande, verrouillage par vis et par loquet" loading="lazy"><figcaption>Côté panier · côté poste de commande · verrouillage par vis et par loquet</figcaption></figure>
+        </div>
+
+        <p>Sécurisation des échelles sans LSPCC (SIM, maintien, piétage) : <button onclick="showModule('echelles-securite')">🪜 Échelles – sécurité & mise en œuvre</button></p>
+        <p class="rd-source">📚 RDLSPCC SDIS 34 – v1 – novembre 2025 – § 4</p>
     </div>
 
     <!-- MODULE NOEUDS LSPCC -->
     <div id="lspcc-noeuds" class="module">
-        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour</button>
-        <h2 style="color: light-dark(#ba350c, #f47851); border-bottom: 3px solid #BF360C;">🔗 Nœuds & Annexes</h2>
-        
-        <div style="display: grid; gap: 15px; margin-top: 20px;">
-            <div style="background: linear-gradient(135deg, light-dark(#E3F2FD, #3b3f44) 0%, light-dark(#BBDEFB, #343c43) 100%); padding: 20px; border-radius: 12px;">
-                <h3 style="color: light-dark(#1565c0, #5da1ed);">8️⃣ Nœud de 8 Double</h3>
-                <p>Boucle ≈60 cm | Courant 5-7 cm | Perte résistance -30%</p>
-            </div>
-            <div style="background: linear-gradient(135deg, var(--t-s2, #E8F5E9) 0%, light-dark(#C8E6C9, #363d3a) 100%); padding: 20px; border-radius: 12px;">
-                <h3 style="color: light-dark(#2a722e, #41b147);">🇫🇷 Nœud Français</h3>
-                <p>3 tours - Traction ou sécurisation d'une charge</p>
-            </div>
-            <div style="background: linear-gradient(135deg, light-dark(#FFF3E0, #403f3e) 0%, light-dark(#FFE0B2, #403c36) 100%); padding: 20px; border-radius: 12px;">
-                <h3 style="color: light-dark(#b33f00, #ff7124);">🔐 Clé d'Arrêt</h3>
-                <p>Demi-clé + Tour complet + Blocage final</p>
-            </div>
+        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <h2>🔗 Nœuds & dispositifs</h2>
+
+        <div class="rd-section">
+            <h3>5.1 – Nœud de 8 double</h3>
+            <p>Boucle ≈ 60 cm · courant 5 à 7 cm · queue ≥ 10 cm · <strong>perte de résistance −30 %</strong>.</p>
+            <figure class="rd-fig"><img src="images/rdlspcc/noeud-8.jpg" alt="Nœud de 8 double en 5 étapes, huit avec gaine thermorétractable" loading="lazy"></figure>
+            <div class="rd-astuce">Le SDIS 34 ne commande que des cordes avec un nœud de 8 double sous gaine thermorétractable à chaque extrémité ; les autres sont modifiées à la vérification annuelle. En attendant, réaliser impérativement le nœud et s'assurer qu'il est bien serré.</div>
         </div>
+
+        <div class="rd-section">
+            <h3>5.2 – Nœud Français</h3>
+            <figure class="rd-fig"><img src="images/rdlspcc/noeud-francais.jpg" alt="Nœud Français en 8 étapes" loading="lazy"></figure>
+            <div class="rd-astuce">Pour un fonctionnement optimal et un bon glissement sur la corde : <strong>3 tours</strong> et un serrage convenable.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.3 – Clé d'arrêt sur descendeur</h3>
+            <figure class="rd-fig"><img src="images/rdlspcc/cle-arret.jpg" alt="Clé d'arrêt sur descendeur en 6 étapes (demi-clé d'arrêt à l'étape 2)" loading="lazy"><figcaption>Demi-clé d'arrêt, tour complet, blocage final</figcaption></figure>
+            <div class="rd-astuce">Dispositif en place : la clé d'arrêt est réalisée dès qu'un intervenant ne peut pas maintenir le garant.</div>
+            <div class="rd-alerte">En <strong>sauvetage</strong>, le passage au vide se fait <strong>sans clé d'arrêt</strong> : le régulateur maintient le garant pendant la mise au vide et tout le temps du dispositif.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.4 – Dispositif de répartition</h3>
+            <p>Répartir l'effort sur deux ancrages (répartiteur de plein poing) :</p>
+            <ol>
+                <li>Chaque ancrage est muni d'un dispositif d'amarrage.</li>
+                <li>Insérer chaque brin d'une <strong>sangle rouge</strong> sur chaque connecteur.</li>
+                <li>Diriger la sangle « répartitrice » vers la charge.</li>
+                <li>Faire un <strong>nœud de plein poing</strong> sur la sangle répartitrice.</li>
+                <li>Ajuster jusqu'à ce que l'amarrage soit réparti.</li>
+            </ol>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/repartition.jpg" alt="Sangle répartitrice avec nœud de plein poing, −15 % de résistance" loading="lazy"><figcaption>Nœud de plein poing : −15 % de résistance</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.5 – Sécurisation d'une charge</h3>
+            <p>En complément du maintien du garant par le régulateur, pour le cas où il serait lâché par inadvertance ou défaillance :</p>
+            <ol>
+                <li>Installer un amarrage principal.</li>
+                <li>Placer un amarrage complémentaire avec une sangle identique.</li>
+                <li>Faire un <strong>nœud « Français »</strong> bien serré sur le « tirant », au plus près du descendeur.</li>
+                <li>Attacher le brin de la cordelette sur l'amarrage intermédiaire et maintenir le « garant ».</li>
+            </ol>
+            <figure class="rd-fig etroite"><img src="images/rdlspcc/securisation-charge.jpg" alt="Sécurisation d'une charge par nœud Français" loading="lazy"></figure>
+            <div class="rd-alerte">Pas de sécurisation de la charge sur un <strong>dispositif de descente lors d'un sauvetage</strong> ni sur un <strong>dispositif de remontée</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.6 – Transformation d'une sangle rouge en harnais</h3>
+            <ol>
+                <li>Passer le haut de la sangle rouge sous le châssis de l'ARI-CO et le bas au niveau des fesses ; un brin de chaque côté.</li>
+                <li>Attacher les deux brins avec un connecteur à vis et solidariser le brin situé sous les fesses.</li>
+                <li>Installer le descendeur dans le connecteur à vis, corde insérée.</li>
+                <li>Se positionner au sol, jambes à 90°, sangle calée entre les hanches et les fesses.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdlspcc/sangle-harnais.jpg" alt="Sangle rouge transformée en harnais sous ARI-CO" loading="lazy"></figure>
+            <div class="rd-alerte">Uniquement en <strong>extrême urgence</strong> : sauvetage lorsque le sauveteur porte un ARI-CO qu'il ne peut retirer sans compromettre sa sécurité.</div>
+        </div>
+
+        <p class="rd-source">📚 RDLSPCC SDIS 34 – v1 – novembre 2025 – § 5.1 à 5.6</p>
+    </div>
+
+    <!-- MODULE ENTRETIEN LSPCC -->
+    <div id="lspcc-entretien" class="module">
+        <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <h2>🧼 Entretien & réforme des agrès</h2>
+
+        <div class="rd-section">
+            <h3>Agrès textiles</h3>
+            <ul>
+                <li>Laver à l'eau (≤ 30 °C) à la main.</li>
+                <li>Sécher à plat dans un local tempéré (≤ 30 °C), ventilé, à l'abri des UV.</li>
+            </ul>
+            <div class="rd-alerte"><strong>Nettoyeur sous pression interdit.</strong></div>
+            <h3>Agrès métalliques</h3>
+            <ul>
+                <li>Laver exclusivement à l'eau (≤ 40 °C).</li>
+                <li>Sécher naturellement loin des sources de chaleur directes.</li>
+                <li>Contrôler le mécanisme de fermeture.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Causes de réforme</h3>
+            <ul>
+                <li>Marquage absent ou illisible.</li>
+                <li>Exposition ou trace de produit corrosif, chimique, solvant, carburant, marquages divers.</li>
+                <li>Partie décolorée, brûlée ou fondue.</li>
+                <li>Corde avec variation de longueur, de diamètre ou de souplesse.</li>
+                <li>Textiles avec fils tirés, coupés, abrasés ou déchirés.</li>
+                <li>Métalliques avec trace de choc, déformation, usure, fissure, visserie défectueuse.</li>
+            </ul>
+            <div class="rd-astuce">Durée de vie potentielle des agrès textiles, en bonnes conditions de stockage : <strong>10 ans maximum</strong> à partir de la mise en service.</div>
+            <div class="rd-alerte">Renseigner <strong>obligatoirement le cahier de suivi</strong> après chaque utilisation (formation comprise). Faire un <strong>KIMOCE</strong> au service étude planification maintenance après une chute ou en cas de doute sur un agrès.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Année de fabrication d'une corde (code ITN = fil de couleur)</h3>
+            <figure class="rd-fig"><img src="images/rdlspcc/code-itn.jpg" alt="Code couleur ITN des années 000 à 009" loading="lazy"></figure>
+        </div>
+
+        <p class="rd-source">📚 RDLSPCC SDIS 34 – v1 – novembre 2025 – § 5.7</p>
     </div>
 
     <!-- MODULE CALCULATEUR LSPCC -->
@@ -13088,7 +13541,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.15.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.16.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

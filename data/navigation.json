@@ -1416,15 +1416,41 @@
    "domaine": "specialites",
    "theme": "LSPCC – Lot de sauvetage",
    "type": "presentation",
-   "motsCles": []
+   "motsCles": [
+    "lspcc",
+    "rdlspcc",
+    "lot de sauvetage",
+    "sdis 34",
+    "protection contre les chutes",
+    "alertes"
+   ]
   },
   {
    "id": "lspcc-materiels",
-   "titre": "Matériels & Équipements",
+   "titre": "Matériels & équipements",
    "domaine": "specialites",
    "theme": "LSPCC – Lot de sauvetage",
    "type": "fiche",
-   "motsCles": []
+   "motsCles": [
+    "lspcc",
+    "rdlspcc",
+    "lot de sauvetage",
+    "sdis 34",
+    "sac",
+    "corde",
+    "harnais",
+    "triangle",
+    "sangle",
+    "connecteur",
+    "descendeur",
+    "poulie",
+    "antichute",
+    "cordelette",
+    "longe",
+    "conditionnement",
+    "lot engin",
+    "lot échelle"
+   ]
   },
   {
    "id": "lspcc-emploi",
@@ -1432,31 +1458,123 @@
    "domaine": "specialites",
    "theme": "LSPCC – Lot de sauvetage",
    "type": "fiche",
-   "motsCles": []
+   "motsCles": [
+    "lspcc",
+    "rdlspcc",
+    "lot de sauvetage",
+    "sdis 34",
+    "système",
+    "ancrage",
+    "amarrage",
+    "point fixe humain",
+    "véhicule",
+    "facteur de chute",
+    "tirant d'air",
+    "effet pendulaire",
+    "syndrome du harnais",
+    "suspension",
+    "ordres",
+    "laissez filer",
+    "sec"
+   ]
+  },
+  {
+   "id": "lspcc-triangle",
+   "titre": "Triangle & harnais",
+   "domaine": "specialites",
+   "theme": "LSPCC – Lot de sauvetage",
+   "type": "fiche",
+   "motsCles": [
+    "lspcc",
+    "rdlspcc",
+    "lot de sauvetage",
+    "sdis 34",
+    "triangle",
+    "harnais",
+    "passage au vide",
+    "victime inconsciente",
+    "habillage",
+    "reconditionnement"
+   ]
   },
   {
    "id": "lspcc-techniques",
-   "titre": "Techniques Générales",
+   "titre": "Techniques générales",
    "domaine": "specialites",
    "theme": "LSPCC – Lot de sauvetage",
    "type": "fiche",
-   "motsCles": []
+   "motsCles": [
+    "lspcc",
+    "rdlspcc",
+    "lot de sauvetage",
+    "sdis 34",
+    "abordage",
+    "sauvetage par l'extérieur",
+    "reconnaissance d'appartement",
+    "excavation",
+    "évolution",
+    "toiture",
+    "risque de chute",
+    "vsr"
+   ]
   },
   {
    "id": "lspcc-securisation",
-   "titre": "Sécurisation Échelles & MEA",
+   "titre": "Sécurisation échelles & MEA",
    "domaine": "specialites",
    "theme": "LSPCC – Lot de sauvetage",
    "type": "fiche",
-   "motsCles": []
+   "motsCles": [
+    "lspcc",
+    "rdlspcc",
+    "lot de sauvetage",
+    "sdis 34",
+    "sécurisation",
+    "échelle à crochets",
+    "échelle à coulisse",
+    "mea",
+    "antichute mobile"
+   ]
   },
   {
    "id": "lspcc-noeuds",
-   "titre": "Nœuds & Annexes",
+   "titre": "Nœuds & dispositifs",
    "domaine": "specialites",
    "theme": "LSPCC – Lot de sauvetage",
    "type": "fiche",
-   "motsCles": []
+   "motsCles": [
+    "lspcc",
+    "rdlspcc",
+    "lot de sauvetage",
+    "sdis 34",
+    "nœud de 8",
+    "nœud français",
+    "clé d'arrêt",
+    "répartition",
+    "plein poing",
+    "sécurisation d'une charge",
+    "sangle rouge harnais"
+   ]
+  },
+  {
+   "id": "lspcc-entretien",
+   "titre": "Entretien & réforme",
+   "domaine": "specialites",
+   "theme": "LSPCC – Lot de sauvetage",
+   "type": "fiche",
+   "motsCles": [
+    "lspcc",
+    "rdlspcc",
+    "lot de sauvetage",
+    "sdis 34",
+    "entretien",
+    "réforme",
+    "lavage",
+    "code itn",
+    "durée de vie",
+    "cahier de suivi",
+    "kimoce"
+   ]
   },
   {
    "id": "lspcc-calculateur",
