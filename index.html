@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.17.2">
+    <meta name="version" content="1.18.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -98,7 +98,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.17.2</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.18.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -203,7 +203,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.17.2</span><br>
+                        Vulcain v<span class="app-version">1.18.0</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -237,6 +237,14 @@
                 <div class="label" style="font-size: 1.3em; margin-bottom: 10px;">Abaque Charges</div>
                 <div style="font-size: 0.95em; color: var(--text-secondary); padding: 0 15px;">
                     Calcul de poids, volume et densité des matériaux
+                </div>
+            </div>
+            
+            <div class="fire-icon" onclick="showModule('pertes')" style="min-height: 200px; display: flex; flex-direction: column; justify-content: center; cursor: pointer;">
+                <div class="emoji" style="font-size: 4em;">💧</div>
+                <div class="label" style="font-size: 1.3em; margin-bottom: 10px;">Pertes de Charge</div>
+                <div style="font-size: 0.95em; color: var(--text-secondary); padding: 0 15px;">
+                    Perte dans les tuyaux et pression à la pompe
                 </div>
             </div>
             
@@ -587,6 +595,52 @@
     <div id="pertes" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2>🔧 Calcul des Pertes de Charge</h2>
+
+        <div class="result-box" id="pdcRapide">
+            <h3>⚡ Calcul rapide – un établissement</h3>
+            <p style="margin: 0 0 10px;">Valeurs du tableau « Hydraulique – Pertes de charge » (RDMI) : la perte varie avec le carré du débit et la longueur.</p>
+            <div class="form-group">
+                <label>Diamètre :</label>
+                <div class="rd-choix-technique" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+                    <button type="button" data-pdc-diam="25" onclick="pdcDiametre(25)">Ø25</button>
+                    <button type="button" data-pdc-diam="45" onclick="pdcDiametre(45)">Ø45</button>
+                    <button type="button" data-pdc-diam="70" onclick="pdcDiametre(70)">Ø70</button>
+                    <button type="button" data-pdc-diam="110" onclick="pdcDiametre(110)">Ø110</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pdcDebit">Débit (L/min) :</label>
+                <div id="pdcDebitsTypes" class="rd-choix-technique" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;"></div>
+                <input type="number" id="pdcDebit" value="500" min="0" step="50" inputmode="numeric" oninput="pdcCalculer()">
+            </div>
+            <div class="rd-champ" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div class="form-group" style="margin: 0;">
+                    <label for="pdcTuyaux">Tuyaux de 20 m :</label>
+                    <input type="number" id="pdcTuyaux" value="2" min="0" max="100" inputmode="numeric" oninput="pdcCalculer()">
+                </div>
+                <div class="form-group" style="margin: 0;">
+                    <label for="pdcDenivele">Dénivelé (m) :</label>
+                    <input type="number" id="pdcDenivele" value="0" min="-100" max="100" inputmode="numeric" oninput="pdcCalculer()">
+                </div>
+                <div class="form-group" style="margin: 0;">
+                    <label for="pdcPression">Pression à la lance (bar) :</label>
+                    <input type="number" id="pdcPression" value="6" min="0" max="40" step="0.5" inputmode="decimal" oninput="pdcCalculer()">
+                </div>
+                <div class="form-group" style="margin: 0;">
+                    <label for="pdcJonctions">Pièces de jonction :</label>
+                    <input type="number" id="pdcJonctions" value="0" min="0" max="20" inputmode="numeric" oninput="pdcCalculer()">
+                </div>
+            </div>
+            <div class="info-card" style="margin: 15px 0 0; padding: 16px 18px; text-align: center;">
+                <div class="label">Pression à afficher à la pompe</div>
+                <div class="value" id="pdcPompe" style="font-size: 2em; margin: 6px 0;">–</div>
+                <div class="label" id="pdcDetail"></div>
+            </div>
+            <p id="pdcAlerte" class="rd-alerte" style="display: none; margin-top: 12px;"></p>
+            <button type="button" onclick="showModule('rdmi-hydraulique')" style="margin-top: 12px;">📘 Tableau des pertes de charge (RDMI)</button>
+        </div>
+
+        <h3 style="margin-top: 25px;">🧮 Calcul complet – plusieurs établissements</h3>
 
         <!-- ALERTE MÉTHODOLOGIE -->
         <div class="alert-box" style="background: rgba(33, 150, 243, 0.15); border-left: 5px solid #2196F3; margin-bottom: 20px;">
@@ -14556,7 +14610,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.17.2</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.18.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
@@ -14578,6 +14632,7 @@ Je demande : ….</p>
     <script src="js/modules/trajet.js"></script>
     <script src="js/modules/rdsmes.js"></script>
     <script src="js/modules/rdeb.js"></script>
+    <script src="js/modules/pertes-rapide.js"></script>
     <script src="js/navigation.js"></script>
     
 

@@ -114,7 +114,14 @@
     "charge",
     "pression",
     "tuyau",
-    "débit"
+    "débit",
+    "perte de charge",
+    "pression pompe",
+    "ldv",
+    "établissement",
+    "dénivelé",
+    "jonction",
+    "calcul rapide"
    ]
   },
   {
