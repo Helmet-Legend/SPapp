@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.13.0">
+    <meta name="version" content="1.14.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -98,7 +98,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.13.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.14.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -203,7 +203,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.13.0</span><br>
+                        Vulcain v<span class="app-version">1.14.0</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -9164,8 +9164,678 @@
 
 
     <!-- ========== MODULE IMPM ========== -->
-    <!-- Interventions en Milieu Périlleux et Montagne -->
 
+    <!-- ============ RDSMES – SDIS 34 (v2, avril 2026) ============ -->
+    <div id="rdsmes-menu" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🛟 RDSMES – Sauvetages & sauvegarde</h2>
+        <p style="text-align: center;">Référentiel départemental <strong>Sauvetages, Mises En Sécurité, mesures de Sauvegarde</strong> – incendie en milieu urbain</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('rdsmes-principes')"><b>1-2 · Principes & environnement</b><span>Sauvetage, mise en sécurité, minimums, façades</span></button>
+            <button onclick="showModule('rdsmes-sauvetage')"><b>3 · Sauvetage & mise en sécurité</b><span>Porters, échelles, passage au vide, CO</span></button>
+            <button onclick="showModule('rdsmes-mea')"><b>3.5-3.6 · Moyens élévateurs aériens</b><span>Évacuation, stabilisation, détecteurs</span></button>
+            <button onclick="showModule('rdsmes-securite')"><b>4 · Sécurité des intervenants</b><span>Repli, secours, évacuation générale</span></button>
+            <button onclick="showModule('rdsmes-autosauvetage')"><b>5.1-5.6 · Auto-sauvetage</b><span>Imprévu, air, assistance, passages étroits</span></button>
+            <button onclick="showModule('rdsmes-detresse')"><b>5.7-5.9 · Message & appel de détresse</b><span>URGENT ×3, NELAR, TPH 900</span></button>
+            <button onclick="showModule('rdsmes-evacuation-urgence')"><b>5.10 · Évacuation d'urgence</b><span>Fenêtre, tuyau</span></button>
+            <button onclick="showModule('rdsmes-sauveteur')"><b>6 · Sauvetage de sauveteur</b><span>Abordage, traction, SIM, déshabillage</span></button>
+            <button onclick="showModule('rdsmes-derniers-recours')"><b>7 · Derniers recours</b><span>Techniques à la commande</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>Préface</h3>
+            <p>Document opérationnel départemental constitué d'éléments de doctrine synthétisés et choisis dans les GDO et GTO de la DGSCGC. <strong>Une directive nationale imposant l'emploi ou l'interdiction d'une technique ou d'un matériel s'impose au guide départemental.</strong></p>
+            <p>Les procédures sont des techniques de base, destinées à acquérir des automatismes et des gestes réflexes rapides et précis. Les gestes sont donnés à titre indicatif et laissent une souplesse d'adaptation.</p>
+            <p>Certaines procédures sont des <strong>actions ultimes et de dernier recours</strong> : elles impliquent une analyse rapide et la maîtrise de techniques particulières, pour dégager une victime d'une mort certaine en contexte très défavorisé.</p>
+            <div class="rd-alerte">En formation, les procédures qui impliquent un risque de chute doivent être pratiquées avec le LSPCC, le port des EPI, un mannequin de sauvetage et un tapis de sol au besoin.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>📚 Références du référentiel</h3>
+            <ul>
+                <li>Livre « Matériels et techniques de sauvetage » – décembre 1991</li>
+                <li>Rapport mission Pourny « Sécurité des sapeurs-pompiers en intervention » – décembre 2003</li>
+                <li>Circulaire « Manipulateurs de moyens élévateurs articulés » – décembre 2007</li>
+                <li>GDO « Interventions sur les incendies de structure » – avril 2018</li>
+                <li>Cahier technique « Auto-sauvetage et sauvetage de sauveteur » – juin 2018</li>
+                <li>GDO « Exercice du commandement et conduite des opérations » – septembre 2020</li>
+                <li>GTO « Sauvegarde opérationnelle » – février 2024</li>
+                <li>GTO « Sauvetages et mises en sécurité » – février 2024</li>
+            </ul>
+            <p>Référentiels départementaux associés : RDLSPCC (lots de sauvetage), RDEP (échelles portables), RDEB (binômes).</p>
+        </div>
+
+        <p class="rd-source">📚 Source : <strong>RDSMES – SDIS 34 (Hérault) – Version 2 – avril 2026</strong>, GCO – Service opération. Reproduit avec l'autorisation du SDIS de l'Hérault. Doctrine départementale : vérifiez celle de votre SDIS.</p>
+    </div>
+
+    <div id="rdsmes-principes" class="module">
+        <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <h2>🧭 Grands principes & environnement opérationnel</h2>
+
+        <div class="rd-section">
+            <h3>1.1 – Le sauvetage</h3>
+            <p>Extraire une personne soumise à un <strong>danger vital et imminent</strong>, alors qu'elle ne peut s'y soustraire par ses propres moyens. Le sauvetage justifie et exige parfois une plus grande exposition au risque : c'est la <strong>balance bénéfice/risque</strong> qui guide le choix du COS.</p>
+            <ul>
+                <li><strong>Sauvetage à vue</strong> : victimes visibles depuis l'extérieur. Emploi le plus souvent d'échelles portables ou de MEA, parfois de lots de sauvetage.</li>
+                <li><strong>Sauvetage en exploration</strong> : accès aux victimes par l'intérieur, par un itinéraire hostile. Risques prépondérants : fumées, chaleur, effondrement. Les sauveteurs disposent d'un <strong>moyen hydraulique adapté</strong> (notamment dans les locaux siège du foyer et ceux touchés par la convection) et d'une <strong>ligne de vie</strong> (moyen hydraulique, ligne guide…).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.2 – La mise en sécurité</h3>
+            <p>Éloigner du danger des personnes <strong>non menacées immédiatement</strong>, dans les meilleures conditions de sécurité, avec la tactique la plus adaptée :</p>
+            <ul>
+                <li><strong>Confinement</strong> : laisser les personnes là où elles sont, à l'abri des effets du sinistre.</li>
+                <li><strong>Évacuation</strong> : déplacer les personnes en les accompagnant pour qu'elles ne soient plus exposées.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.3 – La sauvegarde opérationnelle</h3>
+            <p>Connaissances, comportements et techniques destinés à éviter de se mettre en danger, à s'extraire d'une situation de péril imminent ou à faciliter sa localisation dans l'attente des secours. Elle regroupe <strong>l'auto-sauvetage</strong> et le <strong>sauvetage de sauveteur</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.1 – La victime</h3>
+            <p>La prise en charge varie selon :</p>
+            <ul>
+                <li>son <strong>comportement</strong> : passive, stressée, paniquée, calme… ;</li>
+                <li>son <strong>état physique</strong> : valide, invalide, consciente, inconsciente…</li>
+            </ul>
+            <div class="rd-alerte">La mise en place d'un lien de confiance et de réconfort avec la victime est importante lors de sa prise en charge.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.2 – Les moyens disponibles</h3>
+            <p>Le COS analyse les moyens et le temps disponibles et nécessaires. Il peut agir :</p>
+            <ul>
+                <li><strong>sur la source</strong> : organe de coupure gaz, attaque offensive… ;</li>
+                <li><strong>sur le flux</strong> : désenfumage, moyen hydraulique, ventilation opérationnelle ;</li>
+                <li><strong>sur la cible</strong> : sauvetage, mise en sécurité par évacuation ou par confinement.</li>
+            </ul>
+            <figure class="rd-fig"><img src="images/rdsmes/moyens.jpg" alt="Moyens d'accès : communications existantes, LSPCC, MEA 18-24-30 m, échelles à coulisse 2 et 3 plans, échelle à crochets" loading="lazy"><figcaption>Moyens d'accès et d'évacuation</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.3 – La règle des minimums</h3>
+            <ul>
+                <li><strong>Minimum de personnels</strong> : selon le contexte, un minimum d'intervenants en zone d'exclusion, avec un <strong>binôme de sécurité</strong> mis en place dès que possible (RDEB).</li>
+                <li><strong>Minimum de temps</strong> : la durée d'engagement dépend de l'air disponible et de la consommation du porteur.</li>
+                <li><strong>Minimum de risque</strong> : le risque doit être clairement identifié et mesuré avant l'engagement, pour adapter techniques et matériels.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.4 – L'articulation de la zone d'intervention</h3>
+            <p>Le COS s'assure de la mise en place des dispositifs augmentant le niveau de sécurité, notamment :</p>
+            <ul>
+                <li>zonages de l'intervention et EPI adaptés aux risques ;</li>
+                <li>compréhension générale de la situation et des zones d'intervention ;</li>
+                <li>communications tactiques et codes de communication ;</li>
+                <li><strong>TGP et contrôle des points d'engagement</strong> ;</li>
+                <li>parc matériel de proximité ;</li>
+                <li>éclairage de nuit des façades et des zones de travail ;</li>
+                <li>zone de réhabilitation des intervenants.</li>
+            </ul>
+            <div class="rd-astuce">La spécialité <strong>IBNB – ELD</strong> est pleinement opérationnelle dans le département. Si elle n'a pas été déclenchée dès l'appel, le COS peut demander son engagement : engagement de longue durée (ligne guide jusqu'à <strong>420 m</strong>), cheminement complexe, parcs de stationnement couverts et tunnels. Priorité : la sécurisation active ou passive de l'opération.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.5 – La désignation des façades</h3>
+            <p>Un sapeur-pompier en difficulté doit pouvoir indiquer sa position : la dénomination des façades doit être connue de tous.</p>
+            <ul>
+                <li>Système <strong>alphabétique</strong> préconisé.</li>
+                <li><strong>Façade A</strong> : accès principal par défaut, ou définie par le premier COS.</li>
+                <li>Puis <strong>B, C, D</strong> dans le sens des aiguilles d'une montre.</li>
+            </ul>
+            <figure class="rd-fig etroite"><img src="images/rdsmes/facades.jpg" alt="Façade A accès principal, puis B, C, D dans le sens horaire" loading="lazy"><figcaption>Façades A → B → C → D (sens horaire)</figcaption></figure>
+        </div>
+
+        <p class="rd-source">📚 RDSMES SDIS 34 – v2 – avril 2026 – § 1 et 2</p>
+    </div>
+
+    <div id="rdsmes-sauvetage" class="module">
+        <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <h2>🪜 Sauvetage & mise en sécurité</h2>
+
+        <div class="rd-section">
+            <h3>3.1 – Techniques d'aide à la victime <small>(liste non exhaustive)</small></h3>
+            <p>Porter par accompagnement · Porter à dos · Porter dans les bras · Porter pompier · Porter en chaise.</p>
+            <figure class="rd-fig"><img src="images/rdsmes/porter.jpg" alt="Les cinq porters" loading="lazy"><figcaption>Les porters</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.2 – Techniques liées aux LSPCC</h3>
+            <p>Se conformer au <strong>RDLSPCC</strong> (voir aussi la rubrique LSPCC de l'application).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.3 – Au moyen des échelles portables <small>(victime consciente et valide)</small></h3>
+            <h4>Échelle à crochets</h4>
+            <figure class="rd-fig"><img src="images/rdsmes/echelle-crochets.jpg" alt="Sauvetage d'une victime consciente à l'échelle à crochets" loading="lazy"></figure>
+            <h4>Échelle à coulisse</h4>
+            <figure class="rd-fig"><img src="images/rdsmes/echelle-coulisse.jpg" alt="Sur échelle à coulisse, et avec prolongement par l'échelle à crochets" loading="lazy"><figcaption>Sur échelle à coulisse · avec prolongement par l'échelle à crochets</figcaption></figure>
+            <div class="rd-alerte">Sécurisation, piétage et mise en appui des échelles : voir le <strong>RDEP</strong>. Vigilance particulière au <strong>passage au vide</strong> : anticiper au maximum les réactions de la victime en l'assistant et en l'accompagnant.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.4 – Passage au vide d'une victime inconsciente ou invalide (échelle à coulisse)</h3>
+            <ol>
+                <li>Positionner les montants de l'échelle <strong>au ras de la structure</strong>.</li>
+                <li>Dans la mesure du possible, un intervenant attend au plus près de la victime et un <strong>binôme réalise le passage au vide</strong>.</li>
+                <li>Placer les <strong>jambes de la victime sur les épaules</strong> du sauveteur en attente sur l'échelle.</li>
+                <li>Caler les <strong>aisselles</strong> de la victime au niveau des bras du sauveteur et effectuer le dégagement.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdsmes/passage-vide-coulisse.jpg" alt="Passage au vide d'une victime inconsciente sur échelle à coulisse" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.7 – L'assistance respiratoire d'une victime</h3>
+            <p>Évacuer <strong>prioritairement par les communications existantes</strong>. Si elles sont impraticables, privilégier les <strong>MEA et échelles à coulisse</strong>.</p>
+            <table class="rd-table">
+                <tr><th>Monoxyde de carbone (fumées)</th><th>Évacuation</th></tr>
+                <tr><td>De <strong>20 à 100 ppm</strong> et durée ≤ 15 min</td><td>Sans protection respiratoire</td></tr>
+                <tr><td>Au-delà de 15 min <strong>ou</strong> au-delà de <strong>100 ppm</strong></td><td><strong>Sous protection respiratoire</strong></td></tr>
+            </table>
+            <div class="rd-astuce">Cette technique n'est pas conseillée lorsque la sortie est à vue (itinéraire visible et rapide).</div>
+            <div class="rd-alerte">Lors de la mise en place de la cagoule d'évacuation, un <strong>délai sans air</strong> se produit avant le raccordement au sauveteur : rassurer la victime pour diminuer son stress, maintenir sa coopération et assurer sa sécurité.</div>
+            <figure class="rd-fig"><img src="images/rdsmes/assistance-victime.jpg" alt="Assistance avec raccord moyenne pression type I et type Y" loading="lazy"><figcaption>Raccord moyenne pression type I (haut) et type Y (bas) : sauveteur → victime</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.8 – Interventions à caractère bariatrique</h3>
+            <p>L'évacuation d'une personne lourdement médicalisée et/ou de forte corpulence est délicate et nécessite des moyens importants :</p>
+            <ul>
+                <li>techniques spécifiques au <strong>SMPM</strong> ;</li>
+                <li>ou <strong>MEA doté d'un support et d'une civière bariatrique</strong> (FMO SSUAP n° 1).</li>
+            </ul>
+        </div>
+
+        <p class="rd-source">📚 RDSMES SDIS 34 – v2 – avril 2026 – § 3.1 à 3.4, 3.7, 3.8</p>
+    </div>
+
+    <div id="rdsmes-mea" class="module">
+        <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <h2>🚒 Moyens élévateurs aériens (MEA)</h2>
+
+        <div class="rd-section">
+            <h3>3.5 – Techniques d'évacuation liées aux MEA</h3>
+            <ul>
+                <li><strong>Isolé</strong> : dégagement des victimes au moyen du panier de secours, déposées directement sur la voie publique.</li>
+                <li><strong>Multiples</strong> : dégagement des personnes conscientes et valides par la structure extensible servant de voie d'accès, jusqu'à la voie publique.</li>
+                <li><strong>Par transfert</strong> : dégagement au panier de secours, en déposant les victimes à l'abri du sinistre (niveau inférieur ou endroit sûr à proximité).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.6 – Les MEA du SDIS 34</h3>
+            <p>Échelles pivotantes à mouvements <strong>séquentiels (EPS)</strong> et à mouvements <strong>combinés (EPC)</strong>.</p>
+            <h4>Terminologie commune</h4>
+            <figure class="rd-fig"><img src="images/rdsmes/mea-terminologie.jpg" alt="Panier de secours, structure extensible, stabilisateur, poste de commande principal, semelle, hauteur, angle de dressage, portée théorique" loading="lazy"></figure>
+
+            <h4>Le polygone de sustentation</h4>
+            <p>Forme définie par les points d'appui des 4 stabilisateurs (ou roues selon le modèle). La résultante des forces du travail du MEA doit toujours passer à l'intérieur ; les limites de sécurité de l'engin sont réglées pour ne jamais en sortir.</p>
+            <figure class="rd-fig etroite"><img src="images/rdsmes/mea-polygone.jpg" alt="Schéma de principe du polygone de sustentation" loading="lazy"><figcaption>Schéma de principe</figcaption></figure>
+
+            <h4>Les positions de travail</h4>
+            <p>Le chef d'agrès, avec le conducteur, travaille du côté où la <strong>stabilisation est maximale</strong> : de côté, en avant, en arrière, de biais.</p>
+            <figure class="rd-fig"><img src="images/rdsmes/mea-positions.jpg" alt="Travail de côté, en avant, en arrière, de biais" loading="lazy"></figure>
+            <div class="rd-alerte">Le manipulateur MEA répond à l'idée de manœuvre du COS tout en étant son <strong>conseiller technique</strong>. Le choix de l'emplacement relève du chef d'agrès MEA ou du COS, qui s'appuie sur les connaissances du manipulateur.</div>
+
+            <h4>La surface portante</h4>
+            <ul>
+                <li><strong>Sol stable</strong> : praticable par des poids lourds ; toutes les conditions de mise en station.</li>
+                <li><strong>Sol instable</strong> : résistance non garantie ; les <strong>cales de stabilisation</strong> agrandissent la surface portante (trottoir, chemin de terre…).</li>
+                <li><strong>Sol interdit</strong> : stabilisation formellement proscrite (bordure de trottoir, plaque d'égout, dalle &lt; 15 tonnes…).</li>
+            </ul>
+            <figure class="rd-fig etroite"><img src="images/rdsmes/mea-sol.jpg" alt="Mise en station sur dalle et sol" loading="lazy"></figure>
+
+            <h4>L'environnement</h4>
+            <p>Dangers accidentogènes : <strong>heurt du panier</strong> sur un obstacle, <strong>électrisation / électrocution</strong>. La reconnaissance vérifie avant l'emplacement définitif : balcons et surplombs, câbles électriques, vent, foudre, brouillard.</p>
+            <p><strong>Sécurisation des opérateurs MEA</strong> : se conformer au RDLSPCC et à la FMO EPI n° 3.</p>
+
+            <h4>Les détecteurs de tension <small>(dispositif optionnel)</small></h4>
+            <p>Électro-alerte à l'approche d'un réseau HTA / HTB en courant alternatif :</p>
+            <table class="rd-table">
+                <tr><th>Depuis la cabine</th><th>Distance de détection</th></tr>
+                <tr><td>MEA 18</td><td>20 m</td></tr>
+                <tr><td>MEA 24</td><td>30 m</td></tr>
+                <tr><td>MEA 30</td><td>40 m</td></tr>
+            </table>
+            <p><strong>Depuis le panier</strong> : pré-alarme (voyant orange) à l'approche des 10 m, puis alarme (voyant rouge) si la zone de vigilance des 10 m est franchie.</p>
+            <figure class="rd-fig etroite"><img src="images/rdsmes/mea-detecteur.jpg" alt="Zone de vigilance du détecteur de tension" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>Victime consciente et valide</h3>
+            <figure class="rd-fig"><img src="images/rdsmes/mea-victime.jpg" alt="En panier de secours ; en structure extensible" loading="lazy"><figcaption>En panier de secours · en structure extensible</figcaption></figure>
+            <div class="rd-astuce">Croisement sur la structure extensible : l'intervenant qui <strong>monte s'arrête</strong>, se décale latéralement en saisissant un échelon, dos et un pied en appui contre la main courante.</div>
+            <div class="rd-alerte">Vigilance au passage au vide : anticiper les réactions de la victime en l'assistant et en l'accompagnant.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Passage au vide d'une victime inconsciente ou invalide (MEA)</h3>
+            <ol>
+                <li>Positionner le <strong>garde-corps du panier au ras de la structure</strong>.</li>
+                <li>Dans la mesure du possible, l'opérateur MEA attend dans le panier et un <strong>binôme réalise le passage au vide</strong>.</li>
+                <li>Placer les jambes de la victime dans le panier et la déposer à l'intérieur.</li>
+            </ol>
+            <figure class="rd-fig etroite"><img src="images/rdsmes/mea-passage-vide.jpg" alt="Passage au vide dans le panier de secours" loading="lazy"></figure>
+            <div class="rd-astuce">Idéalement, positionner le panier au plus proche et <strong>face à l'ouvrant</strong> pour limiter le passage au vide.</div>
+        </div>
+
+        <p class="rd-source">📚 RDSMES SDIS 34 – v2 – avril 2026 – § 3.5 et 3.6</p>
+    </div>
+
+    <div id="rdsmes-securite" class="module">
+        <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <h2>🛡️ Sécurité des intervenants</h2>
+
+        <div class="rd-section">
+            <h3>4.1 – L'itinéraire de repli</h3>
+            <p>Chemin inverse emprunté lors de la progression, reconnu et <strong>libéré de toute entrave</strong> pour un dégagement rapide. À utiliser <strong>en priorité</strong> ; permet le repli avec les moyens hydrauliques au besoin.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.2 – L'itinéraire de secours</h3>
+            <p>Utilisé lorsque l'itinéraire de repli est impraticable, trop complexe ou trop éloigné de la sortie au regard de l'urgence. À défaut de repli ou de secours, le binôme cherche une <strong>zone de mise à l'abri</strong> des effets du sinistre.</p>
+            <p>Il est déterminé par les binômes en difficulté ou par le chef d'agrès, qui précise aux intervenants le <strong>niveau</strong>, la <strong>façade</strong> et les particularités éventuelles.</p>
+            <table class="rd-table">
+                <tr><th>Étage maximum</th><th>Moyen</th></tr>
+                <tr><td>2<sup>e</sup></td><td>Échelle à coulisse 2 plans</td></tr>
+                <tr><td>4<sup>e</sup></td><td>Échelle à coulisse 3 plans</td></tr>
+                <tr><td>6<sup>e</sup></td><td>Élévateur aérien de 18 m</td></tr>
+                <tr><td>8<sup>e</sup></td><td>Élévateur aérien de 24 m</td></tr>
+                <tr><td>10<sup>e</sup></td><td>Élévateur aérien de 30 m</td></tr>
+            </table>
+            <div class="result-box">
+                <h4 style="margin-top: 0;">🔎 Quel moyen pour cet étage ?</h4>
+                <div class="rd-champ">
+                    <label for="rdEtage">Étage (0 = rez-de-chaussée)</label>
+                    <input type="number" id="rdEtage" min="0" max="60" inputmode="numeric" placeholder="ex. 5" oninput="calculerItineraireSecours()">
+                </div>
+                <div id="rdEtageResultat" aria-live="polite"></div>
+            </div>
+            <div class="rd-astuce">S'il est impossible de définir à l'avance un itinéraire de secours, il est conseillé de <strong>préparer au sol</strong> les échelles à coulisse deux plans et les échelles à crochets.</div>
+            <div class="rd-alerte">Une échelle à coulisse utilisée comme itinéraire de repli ou de secours ne peut être réemployée <strong>que pour une action d'extrême urgence</strong> (sauvetage, mise en sécurité). Le binôme engagé doit en être <strong>immédiatement informé</strong> et l'échelle remise en place dès que possible. Il est donc préférable de <strong>ne pas l'amarrer</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.3 – L'évacuation générale</h3>
+            <p>Menace imminente pour la sécurité des intervenants :</p>
+            <p class="rd-message" style="text-align: center; font-weight: 800;">ÉVACUATION, ÉVACUATION, ÉVACUATION</p>
+            <ul>
+                <li>Peut être émis par <strong>tout intervenant</strong>, en priorité par radio, complété au besoin (mégaphone, public address…).</li>
+                <li>Les intervenants sortent de la zone d'exclusion au plus vite et rejoignent le <strong>point de regroupement</strong> défini, ou à défaut leur engin.</li>
+                <li>Les <strong>contrôleurs font le point des binômes</strong> présents et rendent compte au COS.</li>
+            </ul>
+        </div>
+
+        <p class="rd-source">📚 RDSMES SDIS 34 – v2 – avril 2026 – § 4</p>
+    </div>
+
+    <div id="rdsmes-autosauvetage" class="module">
+        <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <h2>🧯 Auto-sauvetage</h2>
+
+        <div class="rd-section">
+            <h3>5.1 – L'analyse de l'imprévu</h3>
+            <p>Lors d'un événement imprévu, le binôme fait un point rapide :</p>
+            <ul>
+                <li>Quel est le ou les problèmes ?</li>
+                <li>Sommes-nous blessés ?</li>
+                <li>L'environnement est-il stable ou peut-il se dégrader ?</li>
+                <li>Quelle est notre autonomie restante ?</li>
+                <li>La lance est-elle à proximité ?</li>
+                <li>Sommes-nous toujours en contact avec la ligne de vie ?</li>
+                <li>Sommes-nous désorientés ?</li>
+                <li>Avons-nous besoin d'assistance ?</li>
+                <li>L'émetteur-récepteur portatif fonctionne-t-il ?</li>
+            </ul>
+            <p>À partir de cette analyse : <strong>se mettre en condition pour attendre les secours</strong>, ou <strong>tenter une évacuation</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.2 – L'attente des secours</h3>
+            <table class="rd-table">
+                <tr><th>Signalement</th><td>Balayer l'environnement proche pour retrouver le tuyau ou un ouvrant. Passer un <strong>message de détresse</strong>. Se manifester avec la lampe portative ; déclencher la balise ou l'indicateur de sécurité et de détresse à la demande du contrôleur ou en l'absence de radio.</td></tr>
+                <tr><th>Positionnement</th><td>Se placer <strong>au plus près du sol</strong>, à proximité d'une paroi. Taper au sol ou sur un mur avec n'importe quel dispositif.</td></tr>
+                <tr><th>Air</th><td>Reprendre une respiration normale au plus vite. S'assister en air si possible. Effectuer la technique de respiration. Bouteille vide : <strong>retirer la SAD et remonter le bas de la cagoule sur le groin du masque</strong>.</td></tr>
+            </table>
+            <figure class="rd-fig"><img src="images/rdsmes/positions-attente.jpg" alt="Position assise et position allongée d'attente" loading="lazy"><figcaption>Position assise · position allongée</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.3 – La gestion de l'air</h3>
+            <p>Réduire sa consommation pour prolonger l'autonomie. Parmi les 4 techniques de respiration, le <strong>« saut d'inspiration »</strong> paraît la plus simple et efficace : <strong>Inspirer → Retenir sa respiration → Expirer</strong>.</p>
+            <p>En mode « économie d'air » (<strong>10 l/min</strong>) :</p>
+            <div style="overflow-x: auto;">
+            <table class="rd-table">
+                <tr><th>Volume</th><th>50 b</th><th>100 b</th><th>150 b</th><th>200 b</th><th>250 b</th><th>300 b</th></tr>
+                <tr><th>6 l</th><td>30 min</td><td>1 h</td><td>1 h 30</td><td>2 h</td><td>2 h 30</td><td>3 h</td></tr>
+                <tr><th>7,2 l</th><td>36 min</td><td>1 h 12</td><td>1 h 48</td><td>2 h 24</td><td>3 h</td><td>3 h 36</td></tr>
+                <tr><th>9 l</th><td>45 min</td><td>1 h 30</td><td>2 h 15</td><td>3 h</td><td>3 h 45</td><td>4 h 30</td></tr>
+            </table>
+            </div>
+            <div class="rd-alerte">L'<strong>avertisseur consomme 5 l/min</strong> : il est possible de réduire cet impact en l'obturant avec son doigt.</div>
+            <div class="result-box">
+                <h4 style="margin-top: 0;">⏱️ Mon autonomie en économie d'air</h4>
+                <div class="rd-champ">
+                    <label for="rdAirVolume">Bouteille</label>
+                    <select id="rdAirVolume" onchange="calculerAirSurvie()">
+                        <option value="6">6 l</option>
+                        <option value="6.8">6,8 l</option>
+                        <option value="7.2">7,2 l</option>
+                        <option value="9">9 l</option>
+                    </select>
+                </div>
+                <div class="rd-champ">
+                    <label for="rdAirPression">Pression restante (bar)</label>
+                    <input type="number" id="rdAirPression" min="0" max="350" inputmode="numeric" placeholder="ex. 120" oninput="calculerAirSurvie()">
+                </div>
+                <label style="display: flex; gap: 8px; align-items: center; margin: 8px 0;"><input type="checkbox" id="rdAirAvertisseur" onchange="calculerAirSurvie()"> Avertisseur en marche (+5 l/min)</label>
+                <div id="rdAirResultat" aria-live="polite"></div>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.4 – L'assistance respiratoire d'un intervenant</h3>
+            <p>Techniques possibles : raccord moyenne pression <strong>type Y ou I</strong> · <strong>cagoule d'évacuation</strong> · lot d'assistance en air respirable (ARI-CO du conducteur…).</p>
+            <table class="rd-table">
+                <tr><th>Problème</th><th>Technique</th></tr>
+                <tr><td>Masque défectueux<br>Dysfonctionnement de la SAD</td><td>Cagoule d'évacuation, mise en place de manière isolée ou par un sauveteur</td></tr>
+                <tr><td>Anomalie sur la ligne d'air</td><td>Cagoule d'évacuation mise en place par un sauveteur</td></tr>
+                <tr><td>Rupture en air (bouteille vide)</td><td><strong>Raccord type I</strong> : cagoule d'évacuation par un sauveteur<br><strong>Raccords type Y</strong> : raccordement entre le sauveteur et l'intervenant en difficulté</td></tr>
+            </table>
+            <figure class="rd-fig"><img src="images/rdsmes/assistance-intervenant.jpg" alt="Raccordements type I et type Y entre sauveteur, intervenant en difficulté et victime" loading="lazy"><figcaption>Type I · type Y (connexion possible par les 2 prises, y compris avec une victime)</figcaption></figure>
+            <div class="rd-astuce">Les raccords moyenne pression <strong>type Y</strong> sont en cours de déploiement au SDIS 34. En attendant, les raccords <strong>type I</strong> ne peuvent être utilisés que pour raccorder une <strong>cagoule d'évacuation</strong>.</div>
+            <div class="rd-alerte">L'air est prélevé sur la bouteille du sauveteur : il doit <strong>intégrer cette consommation supplémentaire</strong> dans son calcul d'autonomie.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.5 – Le passage dans des fils ou des câbles</h3>
+            <p>Effondrement de plafond ou de cloison avec gaines ou fils électriques :</p>
+            <ul>
+                <li>être le plus <strong>ergonomique</strong> possible pour éviter l'accroche ;</li>
+                <li>passer <strong>dessous, au plus près du sol</strong>, bouteille dans l'angle mur/sol ;</li>
+                <li>s'aider de ses bras et/ou d'une <strong>pince coupante</strong> (FMO INC n° 6).</li>
+            </ul>
+            <figure class="rd-fig"><img src="images/rdsmes/fils-cables.jpg" alt="Passage sous des fils et câbles" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.6 – Le franchissement d'un passage étroit</h3>
+            <div class="rd-alerte">Techniques d'<strong>évacuation en situation imprévue</strong> : elles ne doivent <strong>en aucun cas</strong> être utilisées en phase d'engagement.</div>
+            <h4>Passage en avant</h4>
+            <figure class="rd-fig"><img src="images/rdsmes/passage-avant.jpg" alt="Passage en avant" loading="lazy"></figure>
+            <h4>Passage de dos</h4>
+            <figure class="rd-fig"><img src="images/rdsmes/passage-dos.jpg" alt="Passage de dos" loading="lazy"></figure>
+            <h4>Profil réduit</h4>
+            <figure class="rd-fig"><img src="images/rdsmes/profil-reduit.jpg" alt="Profil réduit" loading="lazy"></figure>
+            <h4>Retrait de l'ARI-CO</h4>
+            <figure class="rd-fig etroite"><img src="images/rdsmes/retrait-ari.jpg" alt="Retrait de l'ARI-CO pour franchir un passage étroit" loading="lazy"></figure>
+            <div class="rd-alerte"><strong>Dernier recours</strong>, lorsque le passage ne peut être franchi par aucune autre méthode. Pour éviter toute fermeture intempestive de la bouteille, <strong>le robinet reste du côté du porteur</strong>.</div>
+        </div>
+
+        <p class="rd-source">📚 RDSMES SDIS 34 – v2 – avril 2026 – § 5.1 à 5.6</p>
+    </div>
+
+    <div id="rdsmes-detresse" class="module">
+        <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <h2>📻 Message & appel de détresse</h2>
+
+        <div class="rd-section">
+            <h3>5.7 – Le message de détresse</h3>
+            <p>Après environ <strong>30 secondes de difficulté</strong>, message radio selon le mnémotechnique <strong>NELAR</strong>, lorsque :</p>
+            <ul>
+                <li>le binôme est dans une situation mettant en jeu sa sécurité, ou dont il ne peut s'extraire seul ;</li>
+                <li>le binôme éprouve des difficultés à extraire une victime.</li>
+            </ul>
+            <p>Celui qui réceptionne la détresse <strong>confirme la demande de secours</strong>, pour apaiser le stress et poursuivre l'échange.</p>
+            <div class="rd-alerte">Le message débute par <strong>« URGENT, URGENT, URGENT »</strong> pour prioriser la communication et que tous veillent la fréquence.</div>
+            <table class="rd-table">
+                <tr><th>NELAR</th><th>Trame</th><th>Contenu</th></tr>
+                <tr><td><strong>N</strong>om · <strong>E</strong>ngin · <strong>L</strong>ocalisation</td><td>Je suis</td><td>S'identifier et donner sa localisation précise</td></tr>
+                <tr><td><strong>A</strong>ir</td><td>Je vois</td><td>Préciser la détresse et la pression du porteur le plus défavorisé du binôme</td></tr>
+                <tr><td rowspan="2"><strong>R</strong>enfort</td><td>Je fais</td><td>Informer de la procédure en cours</td></tr>
+                <tr><td>Je demande</td><td>Quantifier les moyens nécessaires</td></tr>
+            </table>
+            <p><strong>Exemple :</strong></p>
+            <p class="rd-message">URGENT, URGENT, URGENT.
+Je suis : binôme Y du FPT Z, à l'entrée de l'appartement du RDC.
+Je vois : plafond effondré, équipier coincé, pression 80 bars.
+Je fais : position d'attente et survie.
+Je demande : assistance respiratoire.</p>
+        </div>
+
+        <div class="result-box">
+            <h3 style="margin-top: 0;">🗣️ Préparer mon message</h3>
+            <div class="rd-champ"><label for="rdSuis">Je suis (nom, engin, localisation)</label><input type="text" id="rdSuis" placeholder="binôme 1 du FPT Clapiers, 2e étage façade C" oninput="construireMessageDetresse()"></div>
+            <div class="rd-champ"><label for="rdVois">Je vois (la détresse)</label><input type="text" id="rdVois" placeholder="désorientés, fumées denses" oninput="construireMessageDetresse()"></div>
+            <div class="rd-champ"><label for="rdPression">Pression la plus défavorisée (bar)</label><input type="number" id="rdPression" inputmode="numeric" placeholder="ex. 80" oninput="construireMessageDetresse()"></div>
+            <div class="rd-champ"><label for="rdFais">Je fais</label><input type="text" id="rdFais" placeholder="position d'attente, économie d'air" oninput="construireMessageDetresse()"></div>
+            <div class="rd-champ"><label for="rdDemande">Je demande</label><input type="text" id="rdDemande" placeholder="binôme de sécurité, assistance respiratoire" oninput="construireMessageDetresse()"></div>
+            <p id="rdMessage" class="rd-message" aria-live="polite">URGENT, URGENT, URGENT.
+Je suis : ….
+Je vois : ….
+Je fais : ….
+Je demande : ….</p>
+            <button onclick="copierMessageDetresse()">📋 Copier le message</button>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.8 – L'appel de détresse</h3>
+            <p>Si le message de détresse reste <strong>à trois reprises sans réponse</strong>, l'intervenant déclenche un <strong>appel de détresse</strong> : communication directe, <strong>sans géolocalisation</strong>. Même trame que le message de détresse.</p>
+            <div class="rd-alerte">Le <strong>mode direct</strong> est une détresse émise hors couverture réseau : elle est reçue par tous les postes à portée radioélectrique (SDIS, SAMU, PN, GN…).</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.9 – Émission et réception d'un appel de détresse</h3>
+            <h4>Émission</h4>
+            <ol>
+                <li>Appuyer <strong>au moins 3 secondes</strong> sur le <strong>bouton jaune</strong> du portatif ou sur le <strong>bouton rouge ⚠</strong> du micro déporté, jusqu'à la tonalité.</li>
+                <li>Pendant l'acheminement : tonalité de <strong>20 secondes</strong> et message <strong>« SOS DIR »</strong> sur tous les terminaux.</li>
+                <li>Pour prendre en compte la détresse : appuyer sur le <strong>bouton vert (combiné)</strong> du portatif ou sur la pédale d'alternat.</li>
+                <li>Tonalité désactivée : les terminaux ayant reçu la communication entrent en <strong>conférence</strong> avec l'émetteur.</li>
+                <li>Le récepteur se présente : <strong>« ICI ENGIN Y du SDIS 34, IDENTIFIEZ-VOUS, et PARLEZ »</strong>.</li>
+                <li>Si l'émetteur appartient au SDIS 34, il s'identifie avec la trame du message de détresse.</li>
+                <li>Prendre en compte la détresse ; si l'émetteur ne peut pas parler, <strong>noter les numéros RFGI</strong> affichés lors de son appui sur l'alternat.</li>
+                <li>Le récepteur prévient ou fait prévenir <strong>immédiatement le COS</strong>.</li>
+                <li>Le chef d'agrès ou le COS informe le <strong>CODIS 34</strong> au plus vite.</li>
+            </ol>
+            <div class="rd-astuce">En milieu urbain, la verticalité et l'immobilité ont été retirées des portatifs <strong>TTH 900</strong>. Seuls les <strong>TPH 900 et les BER</strong> peuvent recevoir des appels de détresse.</div>
+            <div class="rd-astuce">Sur ordre du COS, il est possible de récupérer la communication de détresse en activant la <strong>DIR 1</strong>.</div>
+            <div class="rd-alerte">Si au bout de <strong>20 secondes</strong> aucun terminal n'acquitte, la tonalité s'arrête : l'émetteur <strong>recommence la procédure</strong>.</div>
+            <h4>Fin de communication</h4>
+            <p>Déverrouiller l'appareil et appuyer au moins 3 secondes sur le <strong>bouton rouge (combiné)</strong> du portatif, sur chaque terminal ayant participé.</p>
+            <div class="rd-alerte">La communication de détresse n'est raccrochée <strong>que si l'assistance aux intervenants en difficulté a été apportée</strong>.</div>
+        </div>
+
+        <p class="rd-source">📚 RDSMES SDIS 34 – v2 – avril 2026 – § 5.7 à 5.9</p>
+    </div>
+
+    <div id="rdsmes-evacuation-urgence" class="module">
+        <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <h2>🪟 Évacuation d'urgence d'un intervenant</h2>
+
+        <div class="rd-section">
+            <h3>5.10 – Objectifs</h3>
+            <ul>
+                <li>Faciliter l'évacuation d'un volume embrasé.</li>
+                <li>Limiter l'exposition de l'intervenant au flux thermique.</li>
+                <li>Réduire le temps d'évacuation.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Évacuation d'un volume par une fenêtre</h3>
+            <figure class="rd-fig"><img src="images/rdsmes/evacuation-fenetre.jpg" alt="Position du sauveteur en attente d'une échelle ou d'un MEA ; évacuation par échelle à coulisse" loading="lazy"><figcaption>En attente d'une échelle à coulisse ou d'un MEA · évacuation par l'échelle à coulisse</figcaption></figure>
+            <div class="rd-astuce">Échelles à coulisse utilisées en itinéraire de repli et/ou de secours : sécurisation, piétage et mise en appui décrits dans le <strong>RDEP</strong>.</div>
+            <div class="rd-alerte">La technique du <strong>« bail-out » n'a pas été retenue</strong> (sécurité, praticité). L'intervenant s'évacue de préférence <strong>en s'enroulant sur la structure bâtimentaire</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Évacuation par l'extérieur au moyen d'un tuyau</h3>
+            <p>Engagement avec un moyen hydraulique et danger imminent : s'extraire par l'extérieur grâce au tuyau en respectant :</p>
+            <ul>
+                <li>l'<strong>amarrage du tuyau sur une partie résistante</strong> ;</li>
+                <li>un <strong>nœud simple en amont</strong> lorsque le tuyau est à sec ;</li>
+                <li>le <strong>croisement des mains et des pieds</strong> lors de la descente.</li>
+            </ul>
+            <figure class="rd-fig etroite"><img src="images/rdsmes/evacuation-tuyau.jpg" alt="Descente le long du tuyau, mains et pieds croisés" loading="lazy"></figure>
+        </div>
+
+        <p class="rd-source">📚 RDSMES SDIS 34 – v2 – avril 2026 – § 5.10</p>
+    </div>
+
+    <div id="rdsmes-sauveteur" class="module">
+        <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <h2>🤝 Sauvetage de sauveteur</h2>
+
+        <div class="rd-section">
+            <h3>Paramètres spécifiques</h3>
+            <p><strong>L'anticipation</strong> – dès que possible, lors d'engagements dans une structure, prévoir : itinéraires de repli et/ou de secours, un <strong>binôme de sécurité</strong>, un parc matériel adapté.</p>
+            <p><strong>Le sapeur-pompier, une « victime particulière »</strong> – son équipement, sa localisation, sa prise en charge et son extraction nécessitent des techniques et procédures spécifiques.</p>
+            <p><strong>L'affect et la continuité de la mission</strong> – situation très difficile (stress, empathie) pouvant aller jusqu'à la <strong>sidération ou l'auto-engagement</strong>. Le COS en tient compte et peut faire relever tout ou partie des personnels engagés.</p>
+            <p><strong>Le renfort secours</strong> – il faut à la fois poursuivre la mission et prendre en charge l'intervenant : l'engagement immédiat d'un <strong>« renfort secours »</strong> par le CODIS peut être adapté.</p>
+            <h4>Le binôme en charge du sauvetage</h4>
+            <ul>
+                <li>En possession de toutes ses capacités physiques et mentales, maîtrisant les techniques.</li>
+                <li>Le chef d'agrès s'assure qu'il peut réaliser la mission sans se mettre en danger.</li>
+                <li>Emport d'outils : <strong>SIM, caméra thermique, pince coupante</strong>…</li>
+                <li>Pression d'engagement <strong>≥ 270 bars</strong> (effort à fournir, assistance en air possible).</li>
+            </ul>
+            <div class="rd-alerte">Mission <strong>exclusive et prioritaire</strong> : elle ne peut en aucun cas être couplée à une mission de reconnaissance ou d'attaque.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.1 – L'abordage d'un intervenant en difficulté</h3>
+            <ol>
+                <li>Identifier l'origine du problème et le risque de suraccident.</li>
+                <li>Évaluer la conscience et la respiration.</li>
+                <li>Vérifier l'<strong>ouverture de la bouteille</strong> et faire un <strong>appui bref sur le bipasse</strong>.</li>
+                <li>Effectuer un message de compte rendu si besoin.</li>
+                <li>Assister en air si besoin et préparer l'extraction.</li>
+                <li>Détacher le porteur de la ligne de vie s'il est inconscient.</li>
+            </ol>
+            <div class="rd-astuce">Le <strong>« packaging »</strong> se limite à <strong>serrer fermement les bretelles de l'ARI-CO</strong> (la sangle ventrale ne peut pas être transformée en harnais selon certaines morphologies).</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.2 – Le retrait de l'ARI-CO</h3>
+            <p>Allège l'ensemble ; envisageable pour : remonter au moyen d'un tuyau sous pression, passer des passages étroits, extraire par une fenêtre, s'évacuer en urgence avec une technique de dernier recours.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.3 – La traction au sol sans matériel</h3>
+            <p>Après le packaging, tracter la victime vers la sortie par la <strong>poignée de sauvetage de l'ARI-CO</strong>.</p>
+            <figure class="rd-fig"><img src="images/rdsmes/traction-sol.jpg" alt="Traction à 1 sauveteur, à 2 sauveteurs, à 2 sauveteurs avec passage étroit" loading="lazy"><figcaption>À 1 sauveteur · à 2 sauveteurs · à 2 avec passage étroit</figcaption></figure>
+            <div class="rd-astuce">Les ARI-CO ont une <strong>protection de robinet</strong> qui limite toute fermeture involontaire : le positionnement de la victime n'a pas d'incidence.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.4 – La traction au sol avec la SIM</h3>
+            <p>La SIM offre une sangle de sauvetage pour une meilleure préhension ; tenue par deux sauveteurs, elle peut accélérer le sauvetage (description : FMO EP n° 1).</p>
+            <figure class="rd-fig"><img src="images/rdsmes/traction-sim.jpg" alt="Traction d'un intervenant sous ARI-CO ; d'une victime ou d'un intervenant sans ARI-CO" loading="lazy"><figcaption>Intervenant sous ARI-CO · victime ou intervenant sans ARI-CO</figcaption></figure>
+            <div class="rd-alerte">La SIM n'est pas systématique : elle dépend du degré d'urgence et de la possibilité de soustraire rapidement la victime.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.5 – La traction dans un escalier</h3>
+            <ol>
+                <li>Saisir la SIM de chaque côté et la tendre au-dessus de la tête.</li>
+                <li>Caler la SIM entre le dos du sauveteur et la bouteille de l'ARI-CO.</li>
+                <li>Placer la SIM sous les aisselles.</li>
+                <li>Faire un <strong>nœud de plein poing</strong> au plus près du sternum du sauveteur.</li>
+                <li>Connecter la SIM sur la <strong>poignée de sauvetage</strong> de l'intervenant en difficulté.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdsmes/traction-escalier.jpg" alt="Mise en place de la SIM pour la traction dans un escalier" loading="lazy"></figure>
+            <div class="rd-astuce">À deux sauveteurs, le second se place <strong>sous les genoux</strong> de l'intervenant pour faciliter l'extraction.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.6 – Le sauvetage d'urgence d'un intervenant</h3>
+            <div class="rd-alerte">En formation : supervision par du personnel expérimenté et dispositifs de protection contre les chutes.</div>
+            <h4>Remontée d'un intervenant tombé dans une excavation</h4>
+            <p>Au moyen d'un <strong>tuyau sous pression</strong>, remonter ou sécuriser un intervenant conscient et valide ; la protection hydraulique est maintenue au besoin.</p>
+            <figure class="rd-fig"><img src="images/rdsmes/excavation.jpg" alt="Remontée d'un intervenant tombé dans une excavation avec le tuyau" loading="lazy"></figure>
+            <div class="rd-astuce">Si nécessaire, une SIM permet un nœud « Français » pour une prise en main efficace lors de la traction.</div>
+            <h4>Extraction sur une échelle à coulisse</h4>
+            <p>Technique identique au passage au vide sur échelle à coulisse (§ 3.4, fiche « Sauvetage & mise en sécurité »).</p>
+            <div class="rd-astuce">L'<strong>ARI-CO est retiré</strong> ; casque et masque peuvent être maintenus pour préserver la protection et gagner du temps.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.7 – Le déshabillage d'un intervenant inconscient</h3>
+            <p>Réalisable par un sauveteur seul, en <strong>≈ 30 secondes</strong>, pour débuter rapidement la prise en charge (notamment une RCP).</p>
+            <ol>
+                <li>Placer l'intervenant en position <strong>demi-assise</strong> pour retirer l'ARI-CO.</li>
+                <li>Retirer <strong>casque et masque simultanément</strong>.</li>
+                <li>Ouvrir le rabat et la fermeture de la veste.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdsmes/deshabillage.jpg" alt="Déshabillage d'un intervenant inconscient" loading="lazy"></figure>
+            <div class="rd-astuce">La position antipanique ne doit pas être activée en permanence (ouverture accidentelle). En urgence : tirer d'un coup sec vers le haut sur la tirette antipanique, ou ouvrir la veste normalement.</div>
+        </div>
+
+        <p class="rd-source">📚 RDSMES SDIS 34 – v2 – avril 2026 – § 6</p>
+    </div>
+
+    <div id="rdsmes-derniers-recours" class="module">
+        <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <h2>🪢 Sauvetage ou évacuation de derniers recours</h2>
+
+        <div class="rd-alerte">En formation : supervision par du personnel expérimenté et dispositifs de protection contre les chutes.</div>
+        <div class="rd-alerte">La <strong>commande</strong> est utilisée en cas d'<strong>extrême urgence</strong> et s'il est impossible de mettre en œuvre une technique conventionnelle (moyen déjà utilisé ou délai d'acheminement trop long).</div>
+
+        <div class="rd-section">
+            <h3>L'attache d'une victime</h3>
+            <ol>
+                <li>Positionner la victime <strong>sur le dos</strong>.</li>
+                <li>Passer la commande derrière elle <strong>au niveau des aisselles</strong>.</li>
+                <li>Serrer fermement par un <strong>premier demi-nœud</strong>.</li>
+                <li>Finaliser par un <strong>deuxième demi-nœud</strong>.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdsmes/attache-victime.jpg" alt="Attache d'une victime avec la commande" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sauvetage au moyen d'un point fixe humain</h3>
+            <ol>
+                <li>Transformer la SIM en harnais.</li>
+                <li>Insérer <strong>3 fois la commande</strong> dans le connecteur.</li>
+                <li>Réguler la descente avec le <strong>garant opposé à l'ouverture du connecteur</strong>.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdsmes/point-fixe-humain.jpg" alt="SIM en harnais et commande dans le connecteur" loading="lazy"></figure>
+            <div class="rd-alerte">Les <strong>demi-nœuds sont indispensables</strong> à la tenue de la commande : le mousqueton simplex n'a aucune résistance. Passage au vide : se conformer au RDLSPCC.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sauvetage au moyen d'un point d'ancrage</h3>
+            <ol>
+                <li>Réaliser un dispositif d'amarrage.</li>
+                <li>Insérer 3 fois la commande dans le connecteur.</li>
+                <li>Réguler la descente avec le garant opposé à l'ouverture du connecteur.</li>
+            </ol>
+            <figure class="rd-fig etroite"><img src="images/rdsmes/point-ancrage.jpg" alt="Amarrage sur point d'ancrage avec connecteur" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>Évacuation d'un ou deux intervenants</h3>
+            <ol>
+                <li>Amarrer la commande par les deux brins : <strong>deux tours morts et deux demi-nœuds</strong> sur une partie résistante.</li>
+                <li>Envoyer la commande <strong>en double</strong> dans le vide.</li>
+                <li>Transformer la SIM en harnais.</li>
+                <li>Insérer 3 fois la commande dans le connecteur.</li>
+                <li>Réguler la descente <strong>des 2 mains</strong> avec le garant opposé à l'ouverture du connecteur.</li>
+            </ol>
+            <figure class="rd-fig etroite"><img src="images/rdsmes/evacuation-commande.jpg" alt="Évacuation de deux intervenants sur commande en double" loading="lazy"></figure>
+        </div>
+
+        <p class="rd-source">📚 RDSMES SDIS 34 – v2 – avril 2026 – § 7 (annexes)</p>
+    </div>
+
+    <!-- Interventions en Milieu Périlleux et Montagne -->
     <!-- Menu Principal IMPM -->
     <div id="impm-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -12168,7 +12838,7 @@
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.13.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.14.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
@@ -12188,6 +12858,7 @@
     <script src="js/modules/bouteilles.js"></script>
     <script src="js/modules/commandement.js"></script>
     <script src="js/modules/trajet.js"></script>
+    <script src="js/modules/rdsmes.js"></script>
     <script src="js/navigation.js"></script>
     
 
