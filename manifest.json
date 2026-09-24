@@ -4,7 +4,7 @@
   "description": "Outils Opérationnels d'Aide à la Décision pour Sapeurs-Pompiers",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#1a0c07",
+  "background_color": "#011023",
   "theme_color": "#c41e3a",
   "orientation": "portrait-primary",
   "icons": [
