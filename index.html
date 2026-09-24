@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.14.0">
+    <meta name="version" content="1.15.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -98,7 +98,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.14.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.15.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -203,7 +203,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.14.0</span><br>
+                        Vulcain v<span class="app-version">1.15.0</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -9203,7 +9203,7 @@
                 <li>GTO « Sauvegarde opérationnelle » – février 2024</li>
                 <li>GTO « Sauvetages et mises en sécurité » – février 2024</li>
             </ul>
-            <p>Référentiels départementaux associés : RDLSPCC (lots de sauvetage), RDEP (échelles portables), RDEB (binômes).</p>
+            <p>Référentiels départementaux associés : RDLSPCC (lots de sauvetage), <button onclick="showModule('echelles-menu')">RDEP (échelles portables)</button>, RDEB (binômes).</p>
         </div>
 
         <p class="rd-source">📚 Source : <strong>RDSMES – SDIS 34 (Hérault) – Version 2 – avril 2026</strong>, GCO – Service opération. Reproduit avec l'autorisation du SDIS de l'Hérault. Doctrine départementale : vérifiez celle de votre SDIS.</p>
@@ -9316,7 +9316,7 @@
             <figure class="rd-fig"><img src="images/rdsmes/echelle-crochets.jpg" alt="Sauvetage d'une victime consciente à l'échelle à crochets" loading="lazy"></figure>
             <h4>Échelle à coulisse</h4>
             <figure class="rd-fig"><img src="images/rdsmes/echelle-coulisse.jpg" alt="Sur échelle à coulisse, et avec prolongement par l'échelle à crochets" loading="lazy"><figcaption>Sur échelle à coulisse · avec prolongement par l'échelle à crochets</figcaption></figure>
-            <div class="rd-alerte">Sécurisation, piétage et mise en appui des échelles : voir le <strong>RDEP</strong>. Vigilance particulière au <strong>passage au vide</strong> : anticiper au maximum les réactions de la victime en l'assistant et en l'accompagnant.</div>
+            <div class="rd-alerte">Sécurisation, piétage et mise en appui des échelles : voir le <strong>RDEP</strong> <button onclick="showModule('echelles-securite')">🪜 Échelles – sécurité & mise en œuvre</button> Vigilance particulière au <strong>passage au vide</strong> : anticiper au maximum les réactions de la victime en l'assistant et en l'accompagnant.</div>
         </div>
 
         <div class="rd-section">
@@ -9671,7 +9671,7 @@ Je demande : ….</p>
         <div class="rd-section">
             <h3>Évacuation d'un volume par une fenêtre</h3>
             <figure class="rd-fig"><img src="images/rdsmes/evacuation-fenetre.jpg" alt="Position du sauveteur en attente d'une échelle ou d'un MEA ; évacuation par échelle à coulisse" loading="lazy"><figcaption>En attente d'une échelle à coulisse ou d'un MEA · évacuation par l'échelle à coulisse</figcaption></figure>
-            <div class="rd-astuce">Échelles à coulisse utilisées en itinéraire de repli et/ou de secours : sécurisation, piétage et mise en appui décrits dans le <strong>RDEP</strong>.</div>
+            <div class="rd-astuce">Échelles à coulisse utilisées en itinéraire de repli et/ou de secours : sécurisation, piétage et mise en appui décrits dans le <strong>RDEP</strong> <button onclick="showModule('echelles-securite')">🪜 Voir la fiche</button></div>
             <div class="rd-alerte">La technique du <strong>« bail-out » n'a pas été retenue</strong> (sécurité, praticité). L'intervenant s'évacue de préférence <strong>en s'enroulant sur la structure bâtimentaire</strong>.</div>
         </div>
 
@@ -12047,507 +12047,757 @@ Je demande : ….</p>
 
     <!-- FIN MODULE MOUSSES -->
 
-    <!-- ========== MODULE ÉCHELLES À MAINS ========== -->
-    <!-- Conforme NF EN 1147 et N.I.T. n°331 du 01/10/2003 -->
+    <!-- ========== MODULE ÉCHELLES PORTABLES (RDEP SDIS 34 – v2, avril 2026) ========== -->
+    <!-- Conforme NF EN 1147, NF EN 131-6 et N.I.T. n°331 du 01/10/2003 -->
 
     <!-- Menu Principal Échelles -->
     <div id="echelles-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
-        <h2 style="color: light-dark(#8b4513, #e5833e); border-bottom: 3px solid #8B4513;">🪜 Échelles à Mains</h2>
-        
-        <div style="background: linear-gradient(135deg, rgba(139, 69, 19, 0.1) 0%, rgba(160, 82, 45, 0.1) 100%); padding: 15px; border-radius: 12px; margin-bottom: 20px; border: 2px solid rgba(139, 69, 19, 0.3);">
-            <p style="margin: 0; color: light-dark(#5d4037, #b99488); font-size: 0.95em;">
-                <strong>📋 Normes applicables :</strong> NF EN 1147 et N.I.T. n°331 du 01/10/2003<br>
-                <strong>🚒 Véhicules équipés :</strong> FPTL, FPT, FPTGP, VID
-            </p>
+        <h2>🪜 Échelles portables</h2>
+        <p style="text-align: center;">Référentiel départemental <strong>Échelles Portables (RDEP)</strong> – manipulation des échelles en lutte contre l'incendie urbain et opérations diverses</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('echelles-comparatif')"><b>Champs d'utilisation</b><span>Quelle échelle, pour quoi, jusqu'à quel étage</span></button>
+            <button onclick="showModule('echelles-crochets')"><b>Échelle à crochets</b><span>Caractéristiques, emploi, ancrage</span></button>
+            <button onclick="showModule('echelles-coulisses')"><b>Échelles à coulisse</b><span>2 plans et 3 plans</span></button>
+            <button onclick="showModule('echelles-telescopique')"><b>Échelle télescopique</b><span>Caractéristiques et procédures</span></button>
+            <button onclick="showModule('echelles-securite')"><b>Sécurité & mise en œuvre</b><span>EPI, piétage, appui, électricité, progression</span></button>
+            <button onclick="showModule('echelles-commandement')"><b>Commandement</b><span>Ordres de mise en œuvre et directionnels</span></button>
+            <button onclick="showModule('echelles-proc-coulisse2')"><b>Procédures coulisse 2 plans</b><span>Porter → reconditionner (9.1 à 9.7)</span></button>
+            <button onclick="showModule('echelles-proc-coulisse3')"><b>Procédures coulisse 3 plans</b><span>Porter → reconditionner (9.8 à 9.13)</span></button>
+            <button onclick="showModule('echelles-proc-crochets')"><b>Procédures échelle à crochets</b><span>Porter, dresser, élever, prolonger (9.14 à 9.20)</span></button>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 25px;">
-            <button onclick="showModule('echelles-coulisses')" style="background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%); color: #ffffff; border: 3px solid #8B4513; padding: 20px 15px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 3em; margin-bottom: 8px;">📐</div>
-                <div style="font-size: 1.1em; font-weight: 700; color: #fff; text-align: center;">ÉCHELLE À<br>COULISSES</div>
-                <div style="font-size: 0.75em; color: rgba(255,255,255,0.8); margin-top: 5px;">2 ou 3 plans</div>
-            </button>
-            
-            <button onclick="showModule('echelles-crochets')" style="background: linear-gradient(135deg, #6D4C41 0%, #8D6E63 100%); color: #ffffff; border: 3px solid #6D4C41; padding: 20px 15px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 3em; margin-bottom: 8px;">🪝</div>
-                <div style="font-size: 1.1em; font-weight: 700; color: #fff; text-align: center;">ÉCHELLE À<br>CROCHETS</div>
-                <div style="font-size: 0.75em; color: rgba(255,255,255,0.8); margin-top: 5px;">Progression façade</div>
-            </button>
-            
-            <button onclick="showModule('echelles-telescopique')" style="background: linear-gradient(135deg, #795548 0%, #8c7067 100%); color: #ffffff; border: 3px solid #795548; padding: 20px 15px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 3em; margin-bottom: 8px;">📏</div>
-                <div style="font-size: 1.1em; font-weight: 700; color: #fff; text-align: center;">ÉCHELLE<br>TÉLÉSCOPIQUE</div>
-                <div style="font-size: 0.75em; color: rgba(255,255,255,0.8); margin-top: 5px;">Espaces restreints</div>
-            </button>
-            
-            <button onclick="showModule('echelles-comparatif')" style="background: linear-gradient(135deg, #5D4037 0%, #795548 100%); color: #ffffff; border: 3px solid #5D4037; padding: 20px 15px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 3em; margin-bottom: 8px;">📊</div>
-                <div style="font-size: 1.1em; font-weight: 700; color: #fff; text-align: center;">TABLEAU<br>COMPARATIF</div>
-                <div style="font-size: 0.75em; color: rgba(255,255,255,0.8); margin-top: 5px;">Toutes caractéristiques</div>
-            </button>
+        <div class="rd-section">
+            <h3>Préface</h3>
+            <p>Document opérationnel départemental constitué d'éléments de doctrine choisis dans les GDO et GTO de la DGSCGC. <strong>Une directive nationale imposant l'emploi ou l'interdiction d'une technique ou d'un matériel s'impose au guide départemental.</strong></p>
+            <p>Le <strong>chef d'agrès</strong> commande seul, ou sous l'autorité d'un COS, l'engagement opérationnel d'un agrès. Il fait le choix du matériel et des techniques pour réaliser sa mission.</p>
+            <div class="rd-alerte">En formation, les procédures qui impliquent un risque de chute doivent être pratiquées avec le LSPCC, le port des EPI, un mannequin de sauvetage et un tapis de sol au besoin.</div>
+            <div class="rd-alerte">Les échelles sont du matériel de sauvetage : elles demandent une maîtrise parfaite et un entraînement très régulier.</div>
+            <p>🚒 <strong>Véhicules équipés :</strong> FPTL, FPT, FPTGP, VID (échelles à coulisse et à crochets).</p>
         </div>
 
-        <div class="warning-box" style="margin-top: 25px; border-left: 4px solid #8B4513; border-color: rgba(139, 69, 19, 0.3);">
-            ⚠️ <strong>Rappel :</strong> Les échelles sont du <strong>matériel de sauvetage</strong> et demandent une maîtrise parfaite et un entraînement très régulier.
-        </div>
-    </div>
-
-    <!-- Module Échelle à Coulisses -->
-    <div id="echelles-coulisses" class="module">
-        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
-        <h2 style="color: light-dark(#8b4513, #e5833e); border-bottom: 3px solid #8B4513;">📐 Échelle à Coulisses</h2>
-
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
-            <h3 style="color: light-dark(#8b4513, #e5833e); margin-bottom: 15px; border-bottom: 2px solid #8B4513; padding-bottom: 10px;">🎯 Utilisation</h3>
-            <div style="display: grid; gap: 12px;">
-                <div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(139, 69, 19, 0.08); border-radius: 10px; border-left: 4px solid #8B4513;">
-                    <span style="font-size: 1.5em;">🚨</span>
-                    <div>
-                        <strong style="color: light-dark(#5d4037, #b99488);">Sauvetages et mises en sécurité</strong>
-                        <p style="margin: 5px 0 0 0; font-size: 0.9em; color: var(--t-muted, #666);">Mission principale de l'échelle à coulisses</p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(139, 69, 19, 0.08); border-radius: 10px; border-left: 4px solid #8B4513;">
-                    <span style="font-size: 1.5em;">🔍</span>
-                    <div>
-                        <strong style="color: light-dark(#5d4037, #b99488);">Reconnaissances</strong>
-                        <p style="margin: 5px 0 0 0; font-size: 0.9em; color: var(--t-muted, #666);">Exploration des niveaux accessibles</p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(139, 69, 19, 0.08); border-radius: 10px; border-left: 4px solid #8B4513;">
-                    <span style="font-size: 1.5em;">🔧</span>
-                    <div>
-                        <strong style="color: light-dark(#5d4037, #b99488);">Mise en place d'établissements</strong>
-                        <p style="margin: 5px 0 0 0; font-size: 0.9em; color: var(--t-muted, #666);">Itinéraire de secours / accès principal</p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(76, 175, 80, 0.1); border-radius: 10px; border-left: 4px solid #4CAF50;">
-                    <span style="font-size: 1.5em;">🏢</span>
-                    <div>
-                        <strong style="color: light-dark(#2a722e, #41b147);">Accès 1er et 2ème étage</strong>
-                        <p style="margin: 5px 0 0 0; font-size: 0.9em; color: var(--t-muted, #666);">Limite dans les anciennes structures avec plafonds à 4m. Toitures peu élevées.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px; overflow-x: auto;">
-            <h3 style="color: light-dark(#8b4513, #e5833e); margin-bottom: 15px; border-bottom: 2px solid #8B4513; padding-bottom: 10px;">📊 Caractéristiques</h3>
-            <table style="width: 100%; border-collapse: collapse; font-size: 0.95em;">
-                <thead>
-                    <tr style="background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%); color: #fff;">
-                        <th style="padding: 14px; border: 1px solid #6D4C41; text-align: left;">Caractéristique</th>
-                        <th style="padding: 14px; border: 1px solid #6D4C41; text-align: center;">2 Plans</th>
-                        <th style="padding: 14px; border: 1px solid #6D4C41; text-align: center;">3 Plans</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background: var(--t-s2, #EFEBE9);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">📏 Hauteur déployée</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold; color: light-dark(#8b4513, #e5833e); font-size: 1.1em;">≈ 8,00 m</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold; color: light-dark(#8b4513, #e5833e); font-size: 1.1em;">6,25 m</td>
-                    </tr>
-                    <tr style="background: var(--t-s1, #fff);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">📦 Hauteur repliée</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center;">≈ 4,50 m</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center;">2,75 m</td>
-                    </tr>
-                    <tr style="background: var(--t-s2, #EFEBE9);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">⚖️ Poids</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold;">≈ 30 kg</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold;">26,5 kg</td>
-                    </tr>
-                    <tr style="background: var(--t-s1, #fff);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">↔️ Largeur ext. grand plan</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center;">0,45 m</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center;">0,51 m</td>
-                    </tr>
-                    <tr style="background: var(--t-s2, #EFEBE9);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">↔️ Largeur ext. petit plan</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center;">0,38 m</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center;">—</td>
-                    </tr>
-                    <tr style="background: var(--t-s1, #fff);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">🔢 Échelons par plan</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold;">17</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold;">10</td>
-                    </tr>
-                    <tr style="background: var(--t-s2, #EFEBE9);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">🧵 Cordelette (trait)</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center;" colspan="2">Ø 10 mm</td>
-                    </tr>
-                    <tr style="background: light-dark(#A5D6A7, #303a34); color: var(--t-ink, #000);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">👤 Résistance déployée</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; color: light-dark(#2a722e, #41b147);" colspan="2"><strong>1 personne par plan</strong><br><small>(sauf sauvetage/mise en sécurité)</small></td>
-                    </tr>
-                    <tr style="background: light-dark(#FFCC80, #40382d); color: var(--t-ink, #000);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">👥 Résistance horizontale<br><small>(repliée uniquement)</small></td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; color: light-dark(#b33f00, #ff7124);" colspan="2"><strong>2 personnes</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
-            <h3 style="color: light-dark(#8b4513, #e5833e); margin-bottom: 15px; border-bottom: 2px solid #8B4513; padding-bottom: 10px;">🔩 Composants (aluminium)</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #8B4513;">
-                    <strong style="color: light-dark(#5d4037, #b99488);">2 plans coulissants</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Grand plan + petit plan</p>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #8B4513;">
-                    <strong style="color: light-dark(#5d4037, #b99488);">2 montants par plan</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Structure porteuse</p>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #8B4513;">
-                    <strong style="color: light-dark(#5d4037, #b99488);">Échelons striés</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Antidérapants, surface plane</p>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #8B4513;">
-                    <strong style="color: light-dark(#5d4037, #b99488);">Parachute double</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Alu/inox, enclenchement auto</p>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #8B4513;">
-                    <strong style="color: light-dark(#5d4037, #b99488);">Cordelette (trait)</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Déploiement/repliement</p>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #8B4513;">
-                    <strong style="color: light-dark(#5d4037, #b99488);">Coulisses à patins</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Guidage faible frottement</p>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #8B4513;">
-                    <strong style="color: light-dark(#5d4037, #b99488);">2 sabots caoutchouc</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Antidérapants, interchangeables</p>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #8B4513;">
-                    <strong style="color: light-dark(#5d4037, #b99488);">Poulie</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Partie supérieure du 1er plan</p>
-                </div>
-            </div>
-            
-            <div style="margin-top: 15px; padding: 12px; background: rgba(33, 150, 243, 0.1); border-radius: 8px; border-left: 3px solid #2196F3;">
-                <strong style="color: light-dark(#1565c0, #5da1ed);">💡 Note :</strong> Le plan le plus large est le 1er plan. Les parachutes maintiennent l'échelle déployée en se positionnant sous un échelon du 2ème (ou 3ème) plan.
-            </div>
-        </div>
-    </div>
-
-    <!-- Module Échelle à Crochets -->
-    <div id="echelles-crochets" class="module">
-        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
-        <h2 style="color: light-dark(#6d4c41, #b99589); border-bottom: 3px solid #6D4C41;">🪝 Échelle à Crochets</h2>
-
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
-            <h3 style="color: light-dark(#6d4c41, #b99589); margin-bottom: 15px; border-bottom: 2px solid #6D4C41; padding-bottom: 10px;">🎯 Utilisation</h3>
-            <div style="display: grid; gap: 12px;">
-                <div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(109, 76, 65, 0.08); border-radius: 10px; border-left: 4px solid #6D4C41;">
-                    <span style="font-size: 1.5em;">🔍</span>
-                    <div>
-                        <strong style="color: light-dark(#4e342e, #ba9289);">Reconnaissances</strong>
-                        <p style="margin: 5px 0 0 0; font-size: 0.9em; color: var(--t-muted, #666);">Quand les communications existantes sont impraticables</p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(109, 76, 65, 0.08); border-radius: 10px; border-left: 4px solid #6D4C41;">
-                    <span style="font-size: 1.5em;">🚨</span>
-                    <div>
-                        <strong style="color: light-dark(#4e342e, #ba9289);">Sauvetages</strong>
-                        <p style="margin: 5px 0 0 0; font-size: 0.9em; color: var(--t-muted, #666);">Effondrement d'escaliers, façades inaccessibles aux échelles à coulisses et MEA</p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(76, 175, 80, 0.1); border-radius: 10px; border-left: 4px solid #4CAF50;">
-                    <span style="font-size: 1.5em;">🏢</span>
-                    <div>
-                        <strong style="color: light-dark(#2a722e, #41b147);">Progression en façade</strong>
-                        <p style="margin: 5px 0 0 0; font-size: 0.9em; color: var(--t-muted, #666);">D'étage en étage par l'extérieur pour atteindre le niveau concerné</p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(33, 150, 243, 0.1); border-radius: 10px; border-left: 4px solid #2196F3;">
-                    <span style="font-size: 1.5em;">🔗</span>
-                    <div>
-                        <strong style="color: light-dark(#1565c0, #5da1ed);">Prolongation échelle à coulisses</strong>
-                        <p style="margin: 5px 0 0 0; font-size: 0.9em; color: var(--t-muted, #666);">Pour accéder au-delà du 2ème étage</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px; overflow-x: auto;">
-            <h3 style="color: light-dark(#6d4c41, #b99589); margin-bottom: 15px; border-bottom: 2px solid #6D4C41; padding-bottom: 10px;">📊 Caractéristiques</h3>
-            <table style="width: 100%; border-collapse: collapse; font-size: 0.95em;">
-                <thead>
-                    <tr style="background: linear-gradient(135deg, #6D4C41 0%, #8D6E63 100%); color: #fff;">
-                        <th style="padding: 14px; border: 1px solid #5D4037; text-align: left;">Caractéristique</th>
-                        <th style="padding: 14px; border: 1px solid #5D4037; text-align: center;">Valeur</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background: var(--t-s2, #EFEBE9);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">📏 Longueur</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold; color: light-dark(#6d4c41, #b99589); font-size: 1.2em;">4,2 m</td>
-                    </tr>
-                    <tr style="background: var(--t-s1, #fff);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">↔️ Largeur</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center;">0,226 m</td>
-                    </tr>
-                    <tr style="background: var(--t-s2, #EFEBE9);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">🔢 Nombre d'échelons</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold;">14</td>
-                    </tr>
-                    <tr style="background: var(--t-s1, #fff);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">⚖️ Poids</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold;">≈ 8 kg</td>
-                    </tr>
-                    <tr style="background: #EF9A9A; color: #000;">
-                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: 600;">↔️ Résistance horizontale</td>
-                        <td style="padding: 12px; border: 1px solid #ddd; text-align: center; color: #821a1a; font-weight: bold;">❌ NULLE</td>
-                    </tr>
-                    <tr style="background: light-dark(#A5D6A7, #303a34); color: var(--t-ink, #000);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">👤 Résistance en suspension</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; color: light-dark(#2a722e, #41b147);"><strong>1 personne</strong><br><small>(exceptionnellement 2 en sauvetage)</small></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
-            <h3 style="color: light-dark(#6d4c41, #b99589); margin-bottom: 15px; border-bottom: 2px solid #6D4C41; padding-bottom: 10px;">🔩 Composants (aluminium)</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #6D4C41;">
-                    <strong style="color: light-dark(#4e342e, #ba9289);">2 montants</strong>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #6D4C41;">
-                    <strong style="color: light-dark(#4e342e, #ba9289);">Échelons striés vissés</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Antidérapants</p>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #6D4C41;">
-                    <strong style="color: light-dark(#4e342e, #ba9289);">2 crochets plats</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Avec griffes acier</p>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #6D4C41;">
-                    <strong style="color: light-dark(#4e342e, #ba9289);">Plaques de décollement</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Écartement façade</p>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #6D4C41;">
-                    <strong style="color: light-dark(#4e342e, #ba9289);">2 entretoises</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Poignées + rigidité</p>
-                </div>
-                <div style="padding: 12px; background: var(--t-s2, #EFEBE9); border-radius: 8px; border-left: 3px solid #6D4C41;">
-                    <strong style="color: light-dark(#4e342e, #ba9289);">Patins caoutchouc</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Interchangeables</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="result-box" style="background: linear-gradient(135deg, rgba(255, 152, 0, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%); margin-top: 20px; border: 2px solid rgba(255, 152, 0, 0.3);">
-            <h3 style="color: light-dark(#b33f00, #ff7124); margin-bottom: 15px; border-bottom: 2px solid #FF9800; padding-bottom: 10px;">⚠️ Précautions d'emploi</h3>
-            <div style="display: grid; gap: 10px;">
-                <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: light-dark(rgba(255, 255, 255, 0.7), rgba(22, 24, 27, 0.7)); border-radius: 8px;">
-                    <span style="font-size: 1.3em;">👥</span>
-                    <span>S'utilise en <strong>binôme</strong> mais se <strong>manipule seul</strong></span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: light-dark(rgba(255, 255, 255, 0.7), rgba(22, 24, 27, 0.7)); border-radius: 8px;">
-                    <span style="font-size: 1.3em;">🪝</span>
-                    <span>Utilisation <strong>suspendue par les crochets</strong> ou en appui sur les griffes (cas extrême)</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: light-dark(rgba(255, 255, 255, 0.7), rgba(22, 24, 27, 0.7)); border-radius: 8px;">
-                    <span style="font-size: 1.3em;">✅</span>
-                    <span><strong>Tester le point d'appui</strong> avant engagement</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: light-dark(rgba(255, 255, 255, 0.7), rgba(22, 24, 27, 0.7)); border-radius: 8px;">
-                    <span style="font-size: 1.3em;">🚶</span>
-                    <span>Transport par <strong>1 seul sapeur-pompier</strong></span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: light-dark(rgba(255, 255, 255, 0.7), rgba(22, 24, 27, 0.7)); border-radius: 8px;">
-                    <span style="font-size: 1.3em;">⬇️</span>
-                    <span>Position d'attente : <strong>au sol, reposant sur les crochets</strong></span>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin-top: 20px; padding: 15px; background: rgba(33, 150, 243, 0.1); border-radius: 12px; border: 2px solid rgba(33, 150, 243, 0.3);">
-            <strong style="color: light-dark(#1565c0, #5da1ed);">🔬 Test de résistance :</strong>
-            <p style="margin: 10px 0 0 0; color: var(--t-muted, #555);">Crochets posés sur un appui, suspension de <strong>2 hommes sans saccade</strong>.</p>
-        </div>
-    </div>
-
-    <!-- Module Échelle Téléscopique -->
-    <div id="echelles-telescopique" class="module">
-        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
-        <h2 style="color: light-dark(#795548, #b89588); border-bottom: 3px solid #795548;">📏 Échelle Téléscopique</h2>
-
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
-            <h3 style="color: light-dark(#795548, #b89588); margin-bottom: 15px; border-bottom: 2px solid #795548; padding-bottom: 10px;">🎯 Utilisation</h3>
-            <div style="padding: 15px; background: rgba(121, 85, 72, 0.08); border-radius: 10px; border-left: 4px solid #795548;">
-                <p style="margin: 0; font-size: 1em;">
-                    Permet d'accéder à des hauteurs dans des <strong>volumes restreints</strong> où la mise en œuvre d'échelles à main classique n'est pas possible.
-                </p>
-            </div>
-            <div style="margin-top: 15px; padding: 12px; background: rgba(33, 150, 243, 0.1); border-radius: 8px; border-left: 3px solid #2196F3;">
-                <strong style="color: light-dark(#1565c0, #5da1ed);">🚒 Équipe certaines spécialités :</strong> CMIC, SD, etc.
-            </div>
-        </div>
-
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px; overflow-x: auto;">
-            <h3 style="color: light-dark(#795548, #b89588); margin-bottom: 15px; border-bottom: 2px solid #795548; padding-bottom: 10px;">📊 Caractéristiques (alliage léger 1 plan)</h3>
-            <table style="width: 100%; border-collapse: collapse; font-size: 0.95em;">
-                <thead>
-                    <tr style="background: linear-gradient(135deg, #795548 0%, #8c7067 100%); color: #fff;">
-                        <th style="padding: 14px; border: 1px solid #5D4037; text-align: left;">Caractéristique</th>
-                        <th style="padding: 14px; border: 1px solid #5D4037; text-align: center;">Valeur</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background: var(--t-s2, #EFEBE9);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">📦 Hauteur repliée</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold; color: light-dark(#795548, #b89588); font-size: 1.2em;">0,80 m</td>
-                    </tr>
-                    <tr style="background: var(--t-s1, #fff);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">📏 Hauteur déployée</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold; color: light-dark(#795548, #b89588); font-size: 1.2em;">3,50 m</td>
-                    </tr>
-                    <tr style="background: var(--t-s2, #EFEBE9);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">⚖️ Poids</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold;">8 kg</td>
-                    </tr>
-                    <tr style="background: var(--t-s1, #fff);">
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">↔️ Largeur basse</td>
-                        <td style="padding: 12px; border: 1px solid var(--t-line, #ddd); text-align: center;">0,50 m</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="result-box" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(129, 199, 132, 0.1) 100%); margin-top: 20px; border: 2px solid rgba(76, 175, 80, 0.3);">
-            <h3 style="color: light-dark(#2a722e, #41b147); margin-bottom: 15px;">✅ Avantages</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
-                <div style="padding: 15px; background: light-dark(rgba(255, 255, 255, 0.8), rgba(22, 24, 27, 0.8)); border-radius: 10px; text-align: center; border: 1px solid rgba(76, 175, 80, 0.3);">
-                    <div style="font-size: 2em; margin-bottom: 8px;">📦</div>
-                    <strong style="color: light-dark(#2a722e, #41b147);">Très compact</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Seulement 0,80 m replié</p>
-                </div>
-                <div style="padding: 15px; background: light-dark(rgba(255, 255, 255, 0.8), rgba(22, 24, 27, 0.8)); border-radius: 10px; text-align: center; border: 1px solid rgba(76, 175, 80, 0.3);">
-                    <div style="font-size: 2em; margin-bottom: 8px;">🪶</div>
-                    <strong style="color: light-dark(#2a722e, #41b147);">Léger</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Seulement 8 kg</p>
-                </div>
-                <div style="padding: 15px; background: light-dark(rgba(255, 255, 255, 0.8), rgba(22, 24, 27, 0.8)); border-radius: 10px; text-align: center; border: 1px solid rgba(76, 175, 80, 0.3);">
-                    <div style="font-size: 2em; margin-bottom: 8px;">🚪</div>
-                    <strong style="color: light-dark(#2a722e, #41b147);">Accès restreints</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--t-muted, #666);">Espaces étroits</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Module Tableau Comparatif Échelles -->
-    <div id="echelles-comparatif" class="module">
-        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
-        <h2 style="color: light-dark(#5d4037, #b99488); border-bottom: 3px solid #5D4037;">📊 Tableau Comparatif des Échelles</h2>
-
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px; overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; font-size: 0.85em; min-width: 600px;">
-                <thead>
-                    <tr style="background: linear-gradient(135deg, #5D4037 0%, #795548 100%); color: #fff;">
-                        <th style="padding: 12px 8px; border: 1px solid #4E342E; text-align: left;">Caractéristique</th>
-                        <th style="padding: 12px 8px; border: 1px solid #4E342E; text-align: center; background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%); color: #ffffff;">Coulisses<br>2 plans</th>
-                        <th style="padding: 12px 8px; border: 1px solid #4E342E; text-align: center; background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%); color: #ffffff;">Coulisses<br>3 plans</th>
-                        <th style="padding: 12px 8px; border: 1px solid #4E342E; text-align: center; background: linear-gradient(135deg, #6D4C41 0%, #8D6E63 100%); color: #ffffff;">Crochets</th>
-                        <th style="padding: 12px 8px; border: 1px solid #4E342E; text-align: center; background: linear-gradient(135deg, #795548 0%, #A1887F 100%); color: #ffffff;">Téléscopique</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background: var(--t-s2, #EFEBE9);">
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">Hauteur déployée</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold; color: light-dark(#8b4513, #e5833e);">≈ 8,00 m</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold; color: light-dark(#8b4513, #e5833e);">6,25 m</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold; color: light-dark(#6d4c41, #b99589);">4,20 m</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center; font-weight: bold; color: light-dark(#795548, #b89588);">3,50 m</td>
-                    </tr>
-                    <tr style="background: var(--t-s1, #fff);">
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">Hauteur repliée</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">≈ 4,50 m</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">2,75 m</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">—</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center; color: light-dark(#327334, #4caf50); font-weight: bold;">0,80 m</td>
-                    </tr>
-                    <tr style="background: var(--t-s2, #EFEBE9);">
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">Poids</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">≈ 30 kg</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">26,5 kg</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center; color: light-dark(#327334, #4caf50); font-weight: bold;">≈ 8 kg</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center; color: light-dark(#327334, #4caf50); font-weight: bold;">8 kg</td>
-                    </tr>
-                    <tr style="background: var(--t-s1, #fff);">
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">Largeur</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">0,45 m</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">0,51 m</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">0,226 m</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">0,50 m</td>
-                    </tr>
-                    <tr style="background: var(--t-s2, #EFEBE9);">
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">Nb échelons</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">17/plan</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">10/plan</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">14</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">—</td>
-                    </tr>
-                    <tr style="background: light-dark(#A5D6A7, #303a34); color: var(--t-ink, #000);">
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">Résist. verticale</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;" colspan="2">1 pers./plan</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">1 pers.<br><small>(2 sauvetage)</small></td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">—</td>
-                    </tr>
-                    <tr style="background: light-dark(#FFCC80, #40382d); color: var(--t-ink, #000);">
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">Résist. horizontale</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;" colspan="2">2 pers.<br><small>(repliée)</small></td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center; color: light-dark(#c22727, #e57e7e); font-weight: bold;">NULLE</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">—</td>
-                    </tr>
-                    <tr style="background: light-dark(#90CAF9, #2c3843); color: var(--t-ink, #000);">
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); font-weight: 600;">Véhicules</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;" colspan="2">FPTL, FPT, FPTGP, VID</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">FPTL, FPT, FPTGP, VID</td>
-                        <td style="padding: 10px 8px; border: 1px solid var(--t-line, #ddd); text-align: center;">CMIC, SD...</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
-            <h3 style="color: light-dark(#5d4037, #b99488); margin-bottom: 15px; border-bottom: 2px solid #5D4037; padding-bottom: 10px;">🏢 Accès par niveau</h3>
-            <div style="display: grid; gap: 12px;">
-                <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: linear-gradient(135deg, rgba(139, 69, 19, 0.1) 0%, rgba(160, 82, 45, 0.05) 100%); border-radius: 10px; border-left: 5px solid #8B4513;">
-                    <div style="font-size: 2.5em;">📐</div>
-                    <div>
-                        <strong style="color: light-dark(#8b4513, #e5833e); font-size: 1.1em;">Échelle à coulisses 2 plans (8 m)</strong>
-                        <p style="margin: 5px 0 0 0; color: var(--t-muted, #555);">→ Accès <strong>1er et 2ème étage</strong> (limite plafonds 4m)</p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: linear-gradient(135deg, rgba(109, 76, 65, 0.1) 0%, rgba(141, 110, 99, 0.05) 100%); border-radius: 10px; border-left: 5px solid #6D4C41;">
-                    <div style="font-size: 2.5em;">🪝</div>
-                    <div>
-                        <strong style="color: light-dark(#6d4c41, #b99589); font-size: 1.1em;">Échelle à crochets (4,2 m)</strong>
-                        <p style="margin: 5px 0 0 0; color: var(--t-muted, #555);">→ Progression <strong>étage par étage</strong> (façade)</p>
-                        <p style="margin: 3px 0 0 0; color: var(--t-muted, #555);">→ Prolonge l'échelle à coulisses au-delà du 2ème étage</p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: linear-gradient(135deg, rgba(121, 85, 72, 0.1) 0%, rgba(161, 136, 127, 0.05) 100%); border-radius: 10px; border-left: 5px solid #795548;">
-                    <div style="font-size: 2.5em;">📏</div>
-                    <div>
-                        <strong style="color: light-dark(#795548, #b89588); font-size: 1.1em;">Échelle téléscopique (3,5 m)</strong>
-                        <p style="margin: 5px 0 0 0; color: var(--t-muted, #555);">→ <strong>Espaces restreints</strong> (accès impossible échelles classiques)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin-top: 20px; padding: 15px; background: rgba(33, 150, 243, 0.1); border-radius: 12px; border: 2px solid rgba(33, 150, 243, 0.3);">
-            <strong style="color: light-dark(#1565c0, #5da1ed);">📋 Normes applicables :</strong>
-            <ul style="margin: 10px 0 0 0; padding-left: 20px; color: var(--t-muted, #555);">
-                <li>NF EN 1147 (Échelles portables à l'usage des services d'incendie)</li>
-                <li>N.I.T. n°331 du 01/10/2003 (Note d'Information Technique)</li>
+        <div class="rd-section">
+            <h3>📚 Normes et références</h3>
+            <ul>
+                <li>NF EN 1147 « Échelles portables à l'usage des services d'incendie » – juillet 2010</li>
+                <li>NIT n° 331 « Échelles portables à l'usage des SIS » (DGSCGC) – octobre 2003 : poids et dimensions</li>
+                <li>NF EN 131-6 « Échelles télescopiques » – mars 2019</li>
+                <li>Code du travail, art. R4323-81 à R4323-88 – mars 2008</li>
+                <li>Code général de la fonction publique, art. L811-1 – mars 2022</li>
+                <li>GTO « Sauvetages et mises en sécurité » – février 2024</li>
+                <li>Notices constructeurs ABA, AUDINNOV, TUBESCA, TELESTEPS</li>
             </ul>
         </div>
+
+        <p class="rd-source">📚 Source : <strong>RDEP – SDIS 34 (Hérault) – Version 2 – avril 2026</strong>, GCO – Service opération. Reproduit avec l'autorisation du SDIS de l'Hérault. Doctrine départementale : vérifiez celle de votre SDIS.</p>
+    </div>
+
+    <!-- Champs d'utilisation et comparatif -->
+    <div id="echelles-comparatif" class="module">
+        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <h2>📊 Champs d'utilisation & comparatif</h2>
+
+        <div class="rd-section">
+            <h3>1.1 – Champs d'utilisation des échelles portables</h3>
+            <div style="overflow-x: auto;">
+            <table class="rd-table" style="text-align: center;">
+                <tr><th>Utilisation</th><th>3 plans GM</th><th>3 plans PM</th><th>2 plans GM</th><th>2 plans PM</th><th>Télesc.</th><th>Crochets</th></tr>
+                <tr><th>Accès</th><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
+                <tr><th>Sauvetage</th><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>–</td><td>✔</td></tr>
+                <tr><th>Mise en sécurité</th><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>–</td><td>✔</td></tr>
+                <tr><th>Itinéraire de repli</th><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>–</td><td>✔</td></tr>
+                <tr><th>Itinéraire de secours</th><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>–</td><td>✔</td></tr>
+                <tr><th>Établissement</th><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>–</td><td>–</td></tr>
+                <tr><th>Étage</th><td><strong>R+4</strong></td><td><strong>R+3</strong></td><td><strong>R+2</strong></td><td><strong>R+1</strong></td><td><strong>R+1</strong></td><td><strong>R+…</strong></td></tr>
+            </table>
+            </div>
+            <p><small>GM = grand modèle · PM = petit modèle</small></p>
+            <div class="rd-alerte">Établissements : l'échelle ne sert que d'<strong>accès aux intervenants</strong>. <strong>Aucune extinction ne doit être réalisée depuis un plan.</strong> En cas de force majeure, l'échelle télescopique peut être utilisée pour d'autres utilisations.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.2 – Nombre de personnes autorisées (marquage)</h3>
+            <table class="rd-table">
+                <tr><th>Marquage</th><th>Utilisation</th></tr>
+                <tr><td>🧍</td><td>1 personne autorisée sur l'échelle</td></tr>
+                <tr><td>🧍🧍</td><td>Sauvetage : 2 personnes sur le même plan<br>Accès : 2 personnes espacées d'au moins 2 m</td></tr>
+                <tr><td>🧍🧍🧍</td><td>Sauvetage : 2 personnes sur le même plan<br>Accès : 3 personnes espacées d'au moins 2 m</td></tr>
+                <tr><td>🚫</td><td><strong>Le sauvetage par portage à dos n'est pas autorisé.</strong></td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Comparatif des caractéristiques (NF EN 1147, NIT 331, NF EN 131-6)</h3>
+            <div style="overflow-x: auto;">
+            <table class="rd-table">
+                <tr><th></th><th>Crochets</th><th>Coulisse 2 plans PM</th><th>Coulisse 2 plans GM</th><th>Coulisse 3 plans PM</th><th>Coulisse 3 plans GM</th><th>Télescopique</th></tr>
+                <tr><th>Longueur développée</th><td>≥ 4,20 m</td><td>≥ 5 m</td><td>≥ 8,10 m</td><td>12,5 m</td><td>15 m</td><td>3,5 m</td></tr>
+                <tr><th>Longueur reployée</th><td>≤ 2,4 m (2 plans)</td><td>≤ 3,6 m</td><td>≤ 5 m</td><td>5 m</td><td>6 m</td><td>87 cm</td></tr>
+                <tr><th>Poids</th><td>≤ 15 kg</td><td>≤ 25 kg</td><td>≤ 45 kg</td><td>70 kg</td><td>91 kg</td><td>14,5 kg</td></tr>
+                <tr><th>Manœuvrabilité</th><td>Individuelle</td><td>Individuelle</td><td>Un binôme</td><td colspan="2">Deux binômes</td><td>Individuelle</td></tr>
+                <tr><th>Personnes admissibles</th><td>1</td><td>1 à 2</td><td>2 à 3</td><td colspan="2">2</td><td>1</td></tr>
+                <tr><th>Échelons</th><td>14</td><td>11 à 13 / plan</td><td>17 à 19 / plan</td><td>19 / plan</td><td>23 / plan</td><td>–</td></tr>
+                <tr><th>Résistance des échelons</th><td>300 kg</td><td colspan="2">500 kg</td><td colspan="2">500 kg</td><td>150 kg</td></tr>
+                <tr><th>Étage max.</th><td>R+… (étage par étage)</td><td>R+1</td><td>R+2</td><td>R+3</td><td>R+4</td><td>R+1</td></tr>
+            </table>
+            </div>
+            <p>Détails : <button onclick="showModule('echelles-crochets')">Échelle à crochets</button> <button onclick="showModule('echelles-coulisses')">Échelles à coulisse</button> <button onclick="showModule('echelles-telescopique')">Télescopique</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🏢 Accès par niveau</h3>
+            <ul>
+                <li><strong>Coulisse 2 plans</strong> : jusqu'au R+2 (limite dans les anciennes structures avec plafonds de 4 m).</li>
+                <li><strong>Coulisse 3 plans</strong> : jusqu'au R+3 (petit modèle) ou R+4 (grand modèle).</li>
+                <li><strong>Crochets</strong> : progression étage par étage en façade ; prolonge l'échelle à coulisse ou le MEA.</li>
+                <li><strong>Télescopique</strong> : accès intérieur ou extérieur jusqu'au R+1, espaces restreints.</li>
+            </ul>
+        </div>
+
+        <p class="rd-source">📚 RDEP SDIS 34 – v2 – avril 2026 – § 1 à 5</p>
+    </div>
+
+    <!-- Échelle à Crochets -->
+    <div id="echelles-crochets" class="module">
+        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <h2>🪝 Échelle à crochets</h2>
+
+        <div class="rd-section">
+            <h3>2.1 – Champs missionnels</h3>
+            <p>L'échelle à crochets est utilisée quand :</p>
+            <ul>
+                <li>les communications existantes sont impraticables ;</li>
+                <li>l'emploi d'une échelle à coulisse ou d'un MEA n'est pas possible ;</li>
+                <li>les limites d'emploi d'une échelle à coulisse ou d'un MEA sont atteintes.</li>
+            </ul>
+            <p>Emplois types : reconnaissances, sauvetages (effondrement d'escaliers, façades inaccessibles aux échelles à coulisse et aux MEA), <strong>progression en façade d'étage en étage</strong>, prolongement d'une échelle à coulisse au-delà du 2<sup>e</sup> étage ou d'un MEA.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.2 – Caractéristiques (NF EN 1147 et NIT 331)</h3>
+            <table class="rd-table">
+                <tr><th>Longueur minimum développée</th><td>4,20 m</td></tr>
+                <tr><th>Longueur maximum reployée (2 plans)</th><td>2,4 m</td></tr>
+                <tr><th>Largeur minimum entre les montants</th><td>17 cm</td></tr>
+                <tr><th>Largeur minimum entre les pointes</th><td>26 cm</td></tr>
+                <tr><th>Longueur entre les montants et les pointes</th><td>26 à 60 cm</td></tr>
+                <tr><th>Largeur minimum des échelons</th><td>2,5 cm</td></tr>
+                <tr><th>Hauteur entre les échelons</th><td>28 à 36 cm</td></tr>
+                <tr><th>Nombre d'échelons</th><td>14</td></tr>
+                <tr><th>Poids maximum</th><td>15 kg</td></tr>
+                <tr><th>Manœuvrabilité</th><td>Individuelle</td></tr>
+                <tr><th>Personnes admissibles</th><td>1</td></tr>
+                <tr><th>Résistance des échelons / des crochets</th><td>300 kg / 300 kg</td></tr>
+                <tr><th>Résistance horizontale</th><td><strong>❌ Nulle</strong></td></tr>
+            </table>
+            <div class="rd-astuce">Il existe des échelles à crochets <strong>un plan et deux plans</strong>. Le SDIS 34 commande dans la mesure du possible des échelles à crochets deux plans.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.3 – Nomenclature</h3>
+            <figure class="rd-fig"><img src="images/rdep/crochets-nomenclature.jpg" alt="Sommet, crochet, entretoise, pointe, montant, échelon, dispositifs antidérapant, d'écartement et de verrouillage (2 plans), base" loading="lazy"></figure>
+            <p>Composants (aluminium) : 2 montants · échelons striés vissés antidérapants · 2 crochets plats avec griffes (pointes) acier · plaques de décollement / dispositif d'écartement de la façade · entretoises (poignées et rigidité) · patins caoutchouc interchangeables · dispositif de verrouillage (2 plans).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Précautions et sécurisation (§ 6.3 et 6.10)</h3>
+            <ul>
+                <li>Elle est appuyée généralement <strong>sur les crochets ou sur les pointes</strong>.</li>
+                <li>Avant l'engagement d'une personne, elle est <strong>testée par un intervenant</strong> qui s'appuie (se suspend) dessus.</li>
+                <li>S'utilise en binôme mais se manipule et se transporte par un seul sapeur-pompier.</li>
+                <li><strong>Base</strong> : une fois appuyée, elle est plaquée contre la structure ou maintenue par un intervenant côté base.</li>
+                <li><strong>Sommet</strong> : en formation ou en opération diverse, elle peut être amarrée à une partie résistante au niveau de l'entretoise avec la SIM. Un intervenant à l'étage peut maintenir les crochets si la zone d'appui est glissante.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.12 – Progression sur une échelle à crochets</h3>
+            <ul>
+                <li>Une fois appuyée, l'échelle est plaquée contre la façade, ou maintenue par un intervenant pour éviter un <strong>effet de ballant</strong> côté base.</li>
+                <li>Avant l'engagement, l'échelle est testée par un intervenant en <strong>se suspendant dessus</strong>.</li>
+                <li>L'intervenant qui maintient se place derrière, jambes en appui, bras tendus en saisissant les montants.</li>
+                <li>Progression <strong>sans saccade</strong>, un pied légèrement engagé sur chaque échelon, genoux à l'extérieur, corps au plus près de l'échelle, mains le long des montants ou des échelons.</li>
+                <li><strong>Monter à la force des bras</strong> (technique conventionnelle) : saisir les montants le plus haut possible et s'élever jusqu'à atteindre un échelon avec le pied.</li>
+                <li><strong>Monter avec un dispositif</strong> (technique optionnelle) : s'aider du genou d'un intervenant, d'un mobilier urbain, de la SIM ou d'une échelle télescopique.</li>
+            </ul>
+            <figure class="rd-fig etroite"><img src="images/rdep/crochets-monter.jpg" alt="Monter sur l'échelle à crochets avec l'aide d'un intervenant" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>8.2 – Utilisations particulières</h3>
+            <h4>Point d'ancrage</h4>
+            <p>En l'absence d'ancrage naturel ou structurel : placer <strong>uniquement l'échelle à crochets 2 plans reployée</strong> contre la structure, crochets à l'opposé de la paroi ; placer la ou les sangles sur les deux montants pour plaquer l'échelle ; sécuriser par un intervenant si possible.</p>
+            <figure class="rd-fig etroite"><img src="images/rdep/crochets-ancrage.jpg" alt="Échelle à crochets reployée utilisée en point d'ancrage" loading="lazy"></figure>
+            <h4>Prolongement d'une échelle à coulisse ou d'un MEA</h4>
+            <p>Lorsque les limites d'emploi sont atteintes : voir les procédures 9.18 et 9.19.</p>
+            <div class="rd-alerte">En sauvetage, l'utilisation de l'échelle à crochets depuis le panier de secours est possible à condition de <strong>ne pas provoquer de surcharge</strong> et d'éviter tout appui sur les éléments fonctionnels du panier.</div>
+            <button onclick="showModule('echelles-proc-crochets')">🪝 Procédures échelle à crochets</button>
+        </div>
+
+        <p class="rd-source">📚 RDEP SDIS 34 – v2 – avril 2026 – § 2, 6.3, 6.10, 6.12, 8.2</p>
+    </div>
+
+    <!-- Échelles à Coulisse -->
+    <div id="echelles-coulisses" class="module">
+        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <h2>📐 Échelles à coulisse (2 et 3 plans)</h2>
+
+        <div class="rd-section">
+            <h3>Emplois</h3>
+            <ul>
+                <li><strong>Sauvetages et mises en sécurité</strong> : mission principale.</li>
+                <li><strong>Reconnaissances</strong> : exploration des niveaux accessibles.</li>
+                <li><strong>Établissements</strong> : accès des intervenants (aucune extinction depuis un plan).</li>
+                <li><strong>Itinéraire de repli ou de secours</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 – Échelle à coulisse deux plans</h3>
+            <p>Utilisée lorsque les communications sont impraticables, lorsque l'emploi d'une coulisse petit modèle ou d'un MEA n'est pas possible, et pour les champs d'utilisation jusqu'au <strong>R+2</strong>.</p>
+            <div style="overflow-x: auto;">
+            <table class="rd-table">
+                <tr><th></th><th>Petit modèle</th><th>Grand modèle</th></tr>
+                <tr><th>Longueur maximum reployée</th><td>3,6 m</td><td>5 m</td></tr>
+                <tr><th>Longueur minimum développée</th><td>5 m</td><td>8,10 m</td></tr>
+                <tr><th>Largeur minimum entre les montants</th><td colspan="2">30 cm</td></tr>
+                <tr><th>Échelons par plan</th><td>11 à 13</td><td>17 à 19</td></tr>
+                <tr><th>Poids maximum</th><td>25 kg</td><td>45 kg</td></tr>
+                <tr><th>Manœuvrabilité</th><td>Individuelle</td><td>Un binôme</td></tr>
+                <tr><th>Personnes admissibles</th><td>1 à 2</td><td>2 à 3</td></tr>
+                <tr><th>Diamètre de la corde</th><td colspan="2">Ø 8 mm</td></tr>
+                <tr><th>Force de déploiement</th><td colspan="2">&lt; 26,5 kg</td></tr>
+                <tr><th>Résistance des échelons</th><td colspan="2">500 kg</td></tr>
+                <tr><th>Largeur min. / hauteur entre échelons</th><td colspan="2">2,5 cm / 25 à 30 cm</td></tr>
+                <tr><th>Résistance des parachutes</th><td colspan="2">575 kg</td></tr>
+                <tr><th>Résistance horizontale reployée</th><td colspan="2">2 personnes</td></tr>
+            </table>
+            </div>
+            <figure class="rd-fig"><img src="images/rdep/coulisse2-nomenclature.jpg" alt="Nomenclature coulisse 2 plans : sommet, galet, parachute, montant, corde, échelon, dispositif antidérapant, base" loading="lazy"><figcaption>Sommet · galet · parachute · montant · corde · échelon · dispositif antidérapant · base</figcaption></figure>
+            <p>Composants : 2 plans coulissants (le plus large est le 1<sup>er</sup> plan, ou grand plan) · échelons striés antidérapants · <strong>parachutes</strong> (enclenchement automatique : ils maintiennent l'échelle développée en se positionnant sous un échelon du plan supérieur) · corde (trait) de déploiement · coulisses à patins · galet en partie haute du grand plan · sabots caoutchouc interchangeables.</p>
+            <p>Limite : anciennes structures avec plafonds de 4 m, toitures peu élevées.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 – Échelle à coulisse trois plans (ABA)</h3>
+            <p>Utilisée lorsque les communications sont impraticables, lorsque l'emploi d'une coulisse deux plans ou d'un MEA n'est pas possible, et jusqu'au <strong>R+3 (petit modèle) ou R+4 (grand modèle)</strong>.</p>
+            <div style="overflow-x: auto;">
+            <table class="rd-table">
+                <tr><th></th><th>Petit modèle</th><th>Grand modèle</th></tr>
+                <tr><th>Longueur reployée</th><td>5 m</td><td>6 m</td></tr>
+                <tr><th>Longueur développée</th><td>12,5 m</td><td>15 m</td></tr>
+                <tr><th>Largeur entre les montants</th><td colspan="2">31 à 43 cm</td></tr>
+                <tr><th>Échelons par plan</th><td>19</td><td>23</td></tr>
+                <tr><th>Poids</th><td>70 kg</td><td>91 kg</td></tr>
+                <tr><th>Manœuvrabilité</th><td colspan="2">Deux binômes</td></tr>
+                <tr><th>Personnes admissibles</th><td colspan="2">2</td></tr>
+                <tr><th>Diamètre de la corde</th><td colspan="2">Ø 14 mm</td></tr>
+                <tr><th>Force de déploiement</th><td colspan="2">26,5 à 51 kg</td></tr>
+                <tr><th>Arcs-boutants : résistance / longueur</th><td>370 kg / 4,6 m + 78 cm</td><td>370 kg / 5,6 m + 78 cm</td></tr>
+                <tr><th>Résistance des échelons</th><td colspan="2">500 kg</td></tr>
+                <tr><th>Largeur / hauteur entre échelons</th><td colspan="2">2,5 cm / 21 cm</td></tr>
+                <tr><th>Résistance des parachutes</th><td colspan="2">575 kg</td></tr>
+                <tr><th>Longueur des pieds de dévers</th><td colspan="2">33 cm</td></tr>
+            </table>
+            </div>
+            <figure class="rd-fig"><img src="images/rdep/coulisse3-nomenclature.jpg" alt="Nomenclature coulisse 3 plans : galet, parachute, montant, corde, échelon, dispositif antidérapant, arc-boutant, préhension antidérapante, pied de dévers" loading="lazy"></figure>
+            <h4>6.4 – Précautions particulières</h4>
+            <ul>
+                <li>Les personnels aux arcs-boutants travaillent <strong>en miroir</strong> pour limiter les risques de bascule.</li>
+                <li><strong>Aucune partie du corps dans le prolongement des arcs-boutants.</strong></li>
+                <li>Arcs-boutants au sol : calés contre une structure ; à défaut, maintenus par les intervenants.</li>
+                <li>Le <strong>chef d'agrès est le coordinateur</strong> de la mise en œuvre ; en son absence, le chef d'équipe du 1<sup>er</sup> binôme.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>8.1 – Utilisations particulières de la coulisse deux plans</h3>
+            <h4>Excavation</h4>
+            <p>Victime menacée par un sinistre et/ou dans une excavation : vérifier que la profondeur est compatible avec la longueur ; <strong>attacher la corde pour bloquer les plans</strong> ; engager l'échelle à l'écart de la victime si possible.</p>
+            <figure class="rd-fig etroite"><img src="images/rdep/coulisse-excavation.jpg" alt="Échelle à coulisse dans une excavation" loading="lazy"></figure>
+            <div class="rd-astuce">Au besoin, la SIM peut réaliser une attache supplémentaire au niveau des plans et/ou créer une poignée pour faciliter la descente.</div>
+            <h4>Désolidarisée</h4>
+            <p>Obtenir <strong>deux échelles distinctes</strong> pour un accès vertical (sauvetages ou mises en sécurité multiples à hauteur limitée) : poser l'échelle au sol sur le grand plan, libérer et retirer la corde en passant par le galet, développer jusqu'à désolidarisation.</p>
+            <figure class="rd-fig etroite"><img src="images/rdep/coulisse-desolidarisee.jpg" alt="Échelle désolidarisée" loading="lazy"></figure>
+            <div class="rd-alerte">L'échelle est alors transformée en deux échelles simples : <strong>accès limité à une personne par échelle</strong>.</div>
+            <h4>Point d'ancrage</h4>
+            <p>En l'absence d'ancrage naturel ou structurel : échelle contre la structure, <strong>sur le grand plan et reployée</strong> ; corde attachée pour bloquer les plans ; sangle(s) sur les deux montants ; sécuriser par un intervenant si possible.</p>
+            <figure class="rd-fig etroite"><img src="images/rdep/coulisse-ancrage.jpg" alt="Échelle à coulisse reployée utilisée en point d'ancrage" loading="lazy"></figure>
+            <h4>Horizontale</h4>
+            <p>Un vide sépare une victime <strong>consciente et valide</strong> des intervenants : vérifier que la longueur est compatible avec une <strong>coulisse 2 plans grand modèle reployée</strong> ; au besoin, créer l'accès en retenant l'échelle côté base par un binôme et en l'abaissant avec une commande côté sommet par un second binôme ; échelle sur le grand plan, reployée, corde attachée ; sécuriser par une installation fixe ou un intervenant.</p>
+            <figure class="rd-fig etroite"><img src="images/rdep/coulisse-horizontale.jpg" alt="Échelle à coulisse en position horizontale" loading="lazy"></figure>
+        </div>
+
+        <p>Procédures : <button onclick="showModule('echelles-proc-coulisse2')">Coulisse 2 plans</button> <button onclick="showModule('echelles-proc-coulisse3')">Coulisse 3 plans</button> · <button onclick="showModule('echelles-securite')">Sécurité & mise en œuvre</button></p>
+        <p class="rd-source">📚 RDEP SDIS 34 – v2 – avril 2026 – § 3, 4, 6.4, 8.1</p>
+    </div>
+
+    <!-- Échelle Téléscopique -->
+    <div id="echelles-telescopique" class="module">
+        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <h2>📏 Échelle télescopique</h2>
+
+        <div class="rd-section">
+            <h3>5.1 – Champs missionnels</h3>
+            <ul>
+                <li>Lorsque l'emploi d'une échelle à coulisse ou à crochets n'est pas possible.</li>
+                <li>Réaliser un accès à l'intérieur ou à l'extérieur d'une structure <strong>jusqu'au R+1</strong>, notamment dans des volumes restreints.</li>
+            </ul>
+            <p>🚒 Équipe aussi certaines spécialités (CMIC, SD…).</p>
+            <div class="rd-alerte">En cas de force majeure, l'échelle télescopique peut être utilisée pour réaliser un <strong>sauvetage</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.2 – Caractéristiques TELESTEPS 3,50 m (NF EN 131-6)</h3>
+            <table class="rd-table">
+                <tr><th>Longueur reployée</th><td>87 cm</td></tr>
+                <tr><th>Longueur développée</th><td>3,5 m</td></tr>
+                <tr><th>Largeur des montants</th><td>50 cm</td></tr>
+                <tr><th>Poids</th><td>14,5 kg</td></tr>
+                <tr><th>Manœuvrabilité</th><td>Individuelle</td></tr>
+                <tr><th>Personnes admissibles</th><td>1</td></tr>
+                <tr><th>Résistance des échelons</th><td>150 kg</td></tr>
+            </table>
+            <div class="rd-astuce">Au SDIS 34, les échelles télescopiques sont principalement de marque TELESTEPS. Sinon, se référer aux valeurs du constructeur.</div>
+            <figure class="rd-fig etroite"><img src="images/rdep/telescopique-nomenclature.jpg" alt="Nomenclature : sommet, montant-échelon, barreau supérieur, bouton poussoir, barreau inférieur, dispositif antidérapant, barre stabilisatrice, base" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>8.3 – Accès au sol depuis un panier de secours</h3>
+            <p>Lorsque les limites d'emploi d'un MEA sont atteintes : vérifier que la profondeur est compatible avec la longueur ; développer totalement ou partiellement l'échelle depuis le panier ; l'engager à l'écart de la victime si possible.</p>
+            <figure class="rd-fig etroite"><img src="images/rdep/telescopique-panier.jpg" alt="Échelle télescopique depuis le panier de secours" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.21 – Porter</h3>
+            <ol><li>Se placer d'un côté de l'échelle.</li><li>Saisir le barreau supérieur.</li><li>Porter l'échelle à bout de bras contre le corps.</li></ol>
+            <figure class="rd-fig" style="max-width: 220px; margin-left: auto; margin-right: auto;"><img src="images/rdep/proc-9-21.jpg" alt="Porter l'échelle télescopique" loading="lazy"></figure>
+            <h3>9.22 – Développer totalement</h3>
+            <ol><li>Placer un pied sur le barreau inférieur.</li><li>Développer <strong>échelon par échelon du haut vers le bas</strong>.</li><li><strong>Vérifier le verrouillage</strong> des mécanismes avant toute progression.</li><li>Appuyer l'échelle en la retenant par les montants et réaliser le piétage.</li></ol>
+            <figure class="rd-fig etroite"><img src="images/rdep/proc-9-22.jpg" alt="Développer totalement" loading="lazy"></figure>
+            <h3>9.23 – Développer partiellement</h3>
+            <ol><li>Placer un pied sur le barreau inférieur.</li><li>Selon la hauteur à atteindre, déterminer le premier échelon à développer.</li><li>Développer <strong>échelon par échelon du bas vers le haut</strong>.</li><li>Vérifier le verrouillage des mécanismes avant toute progression.</li><li>Appuyer l'échelle en la retenant par les montants et réaliser le piétage.</li></ol>
+            <figure class="rd-fig etroite"><img src="images/rdep/proc-9-23.jpg" alt="Développer partiellement" loading="lazy"></figure>
+            <h3>9.24 – Reployer</h3>
+            <ol><li>Déverrouiller les boutons poussoirs l'un après l'autre en maintenant un montant.</li><li>Reployer les montants échelon par échelon.</li><li>Vérifier le verrouillage des mécanismes et porter l'échelle.</li></ol>
+            <figure class="rd-fig" style="max-width: 220px; margin-left: auto; margin-right: auto;"><img src="images/rdep/proc-9-24.jpg" alt="Reployer l'échelle télescopique" loading="lazy"></figure>
+        </div>
+
+        <p class="rd-source">📚 RDEP SDIS 34 – v2 – avril 2026 – § 5, 8.3, 9.21 à 9.24</p>
+    </div>
+
+    <!-- Sécurité et mise en œuvre -->
+    <div id="echelles-securite" class="module">
+        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <h2>🛡️ Sécurité & mise en œuvre</h2>
+
+        <div class="rd-section">
+            <h3>6.1 – Protection individuelle</h3>
+            <ul>
+                <li>Protection minimale : la <strong>tenue de service et d'intervention (TSI)</strong>.</li>
+                <li>Pour tous : <strong>casque type A (F2) ou B (F1)</strong> et <strong>gants type B</strong> (protection) <strong>ou C</strong> (attaque).</li>
+                <li>La TSI peut être renforcée sur ordre du chef d'agrès.</li>
+                <li>L'intervenant qui progresse sur une échelle peut disposer d'un ARI-CO au besoin.</li>
+                <li>L'écran oculaire est laissé à l'appréciation de chacun.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.2 – Précautions communes</h3>
+            <ul>
+                <li>Adapter les bons gestes et postures lors des manipulations.</li>
+                <li>Dans la mesure du possible, un intervenant assure la stabilité de l'échelle.</li>
+                <li>Transporter les échelles <strong>le plus bas possible</strong> pour ne blesser personne.</li>
+                <li>Au dressage, attention particulière aux <strong>câbles électriques</strong>.</li>
+                <li>Par vent, attention au déséquilibre lors du développement.</li>
+                <li>Surveiller le <strong>rayonnement thermique</strong> sur l'échelle (point de fusion de l'aluminium ≈ 660 °C).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.5 – Les portés pratiques</h3>
+            <ul>
+                <li><strong>Crochets</strong> : sommet au-devant, pointes en dedans ; l'utilisateur se place au centre de gravité.</li>
+                <li><strong>Coulisse</strong> : base au-devant ; chef d'équipe côté sommet, équipier côté base.</li>
+            </ul>
+            <div class="rd-astuce">Demi-tour dans un endroit exigu où l'échelle ne peut pas pivoter : le sens du port peut être inversé. Sur une longue distance, la coulisse trois plans peut être portée sur l'épaule sur ordre du coordinateur.</div>
+            <div class="rd-alerte">La coulisse deux plans grand modèle se manipule <strong>en binôme</strong> ; en cas de nécessité, individuellement.</div>
+            <figure class="rd-fig"><img src="images/rdep/portes.jpg" alt="Portés : coulisse deux plans, crochets, coulisse deux plans et crochets, coulisse trois plans" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.6 – Le piétage pratique</h3>
+            <p>Distance entre la base et l'aplomb de la structure, pour un angle d'inclinaison <strong>entre 65° et 75°</strong> : on progresse corps à la verticale, bras à 90°.</p>
+            <div class="rd-alerte">En opération, pour ne pas retarder la mise en place, un <strong>piétage pratique</strong> est réalisé : le manipulateur se place devant l'échelle, <strong>pieds contre les montants, bras tendus à l'horizontale, mains à hauteur d'épaule sur les montants</strong>.</div>
+            <figure class="rd-fig"><img src="images/rdep/pietage.jpg" alt="Piétage pratique" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.7 – Distances limites de voisinage simple ⚡</h3>
+            <p>Les échelles portables <strong>ne sont pas isolantes</strong> : l'analyse de l'environnement aérien est indispensable. Distances à ne jamais réduire :</p>
+            <table class="rd-table">
+                <tr><th>3 mètres</th><td>Réseau tramway et réseau ferré</td></tr>
+                <tr><th>5 mètres</th><td>Basse tension (BT), haute tension A (HTA) et B (HTB)</td></tr>
+            </table>
+            <p>Reconnaître le type de ligne : <button onclick="showModule('electrique')">⚡ Identification des lignes électriques</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.8 – La mise en appui d'une échelle à coulisse</h3>
+            <p>Selon la configuration bâtimentaire et les actions à mener.</p>
+            <div class="rd-astuce">Incendie en milieu urbain : la mise en appui <strong>sans dépassement</strong> est préconisée pour faciliter sauvetages et mises en sécurité.</div>
+            <div class="rd-alerte">Appui sur une <strong>partie résistante</strong> et un <strong>sol stable</strong>, angle <strong>65° à 75°</strong>, idéalement les deux montants contre la structure.</div>
+            <h4>Avec dépassement</h4>
+            <p>Petit plan côté façade ; montants côté sommet <strong>dépassant d'1 m</strong> le rebord ; espace latéral laissé pour accéder.</p>
+            <figure class="rd-fig etroite"><img src="images/rdep/appui-depassement.jpg" alt="Mise en appui avec dépassement de 1 m" loading="lazy"></figure>
+            <h4>Sans dépassement</h4>
+            <p>Petit plan côté façade ; montants côté sommet <strong>sous le rebord</strong> ; échelle centrée sur l'ouvrant.</p>
+            <figure class="rd-fig etroite"><img src="images/rdep/appui-sans-depassement.jpg" alt="Mise en appui sans dépassement" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.9 – La sécurisation d'une échelle à coulisse</h3>
+            <p><strong>À la base</strong> : maintenir l'échelle en se plaçant devant, mains contre les montants · les arcs-boutants réduisent la flexion · le pied de dévers corrige l'inclinaison du terrain · corde attachée au milieu d'un échelon si possible (en urgence, vérifier l'engagement des parachutes) · base appuyée contre un élément fixe et solide au sol s'il existe.</p>
+            <p><strong>Au sommet</strong> : en formation ou opération diverse, amarrage à une partie résistante au niveau d'un échelon avec la SIM · un intervenant à l'étage peut maintenir les montants si l'appui est glissant.</p>
+            <p>Sécurisation de l'échelle à crochets : voir <button onclick="showModule('echelles-crochets')">Échelle à crochets</button> · Sécurisation avec le LSPCC : <button onclick="showModule('lspcc-securisation')">LSPCC – échelles & MEA</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.11 – La progression sur une échelle</h3>
+            <p><strong>3 points de contact</strong> en permanence : 2 mains et 1 pied, ou 2 pieds et 1 main.</p>
+            <div class="rd-astuce">Les 2 pieds sur le même échelon sont autorisés ; les mouvements dissymétriques ne sont pas obligatoires. Les mains sont en contact avec les échelons ; selon la technique ou la corpulence de la victime, le maintien par les montants est possible.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.13 – L'attache de la corde d'une échelle à coulisse</h3>
+            <p>Technique simple et rapide pour attacher et libérer la corde, afin de : sécuriser le déplacement de l'échelle développée · bloquer les plans en cas de mauvais verrouillage des parachutes · éviter que la corde ne se bloque pendant le port.</p>
+            <figure class="rd-fig"><img src="images/rdep/attache-corde.jpg" alt="Attache de la corde sur un échelon en trois temps" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.14 – Les techniques d'accès</h3>
+            <p><strong>Enroulement · Enjambement · Accompagnement.</strong></p>
+            <figure class="rd-fig"><img src="images/rdep/techniques-acces.jpg" alt="Enroulement, enjambement, accompagnement" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>6.15 – Échelle à coulisse en itinéraire de repli ou de secours</h3>
+            <p>Règles communes (réemploi uniquement en extrême urgence, ne pas amarrer, étages atteignables, préparation au sol) : <button onclick="showModule('rdsmes-securite')">🛡️ RDSMES – Sécurité des intervenants</button></p>
+            <p>En itinéraire de repli ou de secours, la mise en appui <strong>sans dépassement</strong> est préconisée ; elle permet :</p>
+            <ul>
+                <li>d'accéder plus aisément par une fenêtre avec un ARI-CO ;</li>
+                <li>de réaliser ou faciliter le dégagement d'une victime inconsciente ou invalide ;</li>
+                <li>d'effectuer le <strong>dégagement d'un sauveteur en difficulté</strong>.</li>
+            </ul>
+        </div>
+
+        <p class="rd-source">📚 RDEP SDIS 34 – v2 – avril 2026 – § 6</p>
+    </div>
+
+    <!-- Commandement -->
+    <div id="echelles-commandement" class="module">
+        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <h2>📣 Commandement des échelles</h2>
+
+        <div class="rd-section">
+            <h3>7.1 – Positions</h3>
+            <table class="rd-table">
+                <tr><th></th><th>Position d'attente<br><small>(en attente de mise en œuvre)</small></th><th>Position travail<br><small>(prête à la mise en œuvre)</small></th></tr>
+                <tr><th>Coulisse 2 plans GM</th><td>Petit plan au sol</td><td>Petit plan face à la structure</td></tr>
+                <tr><th>Coulisse 3 plans</th><td>Grand plan au sol</td><td>Petit plan face à la structure</td></tr>
+                <tr><th>Crochets</th><td>Pointes vers le bas</td><td>Pointes vers le haut</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>7.1 – Ordres de mise en œuvre</h3>
+            <table class="rd-table">
+                <tr><th>« Portez ! »</th><td>Position de transport de l'échelle</td></tr>
+                <tr><th>« Posez ! »</th><td>Dépose de l'échelle au sol</td></tr>
+                <tr><th>« Dressez ! »</th><td>Dressage vertical de l'échelle à crochets ou à coulisse</td></tr>
+                <tr><th>« Élevez ! »</th><td>Élever l'échelle à crochets d'étage en étage ou depuis une échelle</td></tr>
+                <tr><th>« Déplacez ! »</th><td>Déplacement sur une courte distance, échelle dressée</td></tr>
+                <tr><th>« Nivelez ! »</th><td>Mise en œuvre du pied de dévers</td></tr>
+                <tr><th>« Pivotez ! »</th><td>Rotation latérale de l'échelle à coulisse</td></tr>
+                <tr><th>« Développez ! »</th><td>Développement du deuxième ou troisième plan</td></tr>
+                <tr><th>« Dégagez ! »</th><td>Dégager l'échelle à crochets lorsqu'elle est appuyée</td></tr>
+                <tr><th>« Tournez ! »</th><td>Rotation latérale de l'échelle à crochets pour l'appuyer sur une partie résistante</td></tr>
+                <tr><th>« Appuyez ! »</th><td>Mettre l'échelle en appui sur une partie résistante</td></tr>
+                <tr><th>« Stabilisez ! »</th><td>Mise en œuvre des arcs-boutants</td></tr>
+                <tr><th>« Attachez ! »</th><td>Attacher la corde de l'échelle sur un échelon</td></tr>
+                <tr><th>« Piétez ! »</th><td>Effectuer le piétage de l'échelle</td></tr>
+                <tr><th>« Testez ! »</th><td>Tester la résistance de la structure en se suspendant à l'échelle à crochets</td></tr>
+                <tr><th>« Maintenez ! »</th><td>Écarter l'échelle à crochets de la façade</td></tr>
+                <tr><th>« Montez ! »</th><td>Progresser sur l'échelle pour accéder au niveau concerné</td></tr>
+                <tr><th>« Descendez ! »</th><td>Progresser vers l'étage inférieur ou le sol</td></tr>
+                <tr><th>« Reployez ! »</th><td>Reploiement du deuxième ou du troisième plan</td></tr>
+                <tr><th>« Abaissez ! »</th><td>Abaissement de l'échelle dressée vers le sol</td></tr>
+                <tr><th>« Reconditionnez ! »</th><td>Reconditionner l'échelle sur le véhicule</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>7.2 – Ordres directionnels</h3>
+            <p><strong>« En avant ! »</strong> · <strong>« En arrière ! »</strong> · <strong>« À gauche ! »</strong> · <strong>« À droite ! »</strong> · <strong>« Halte ! »</strong> (arrêt du déplacement).</p>
+        </div>
+
+        <p class="rd-source">📚 RDEP SDIS 34 – v2 – avril 2026 – § 7</p>
+    </div>
+
+    <!-- Procédures coulisse 2 plans -->
+    <div id="echelles-proc-coulisse2" class="module">
+        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <h2>🧰 Procédures – coulisse 2 plans grand modèle</h2>
+
+        <div class="rd-section">
+            <h3>9.1 – Porter</h3>
+            <p><strong>Depuis un portique (automatique ou manuel)</strong> : chef d'équipe et équipier à l'arrière de l'engin, d'un côté de l'échelle ; l'équipier saisit un montant côté base, le chef d'équipe côté sommet ; porter à bout de bras, montant opposé au sol, <strong>petit plan contre eux</strong>.</p>
+            <p><strong>Depuis le sol</strong> : même placement d'un côté de l'échelle, même porté.</p>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-1.jpg" alt="Porter une coulisse deux plans" loading="lazy"></figure>
+            <div class="rd-astuce">Si le conducteur réalise une autre action, le chef d'équipe monte sur le toit, déverrouille et descend l'échelle. Pour la rapidité, l'échelle n'est pas posée au sol : elle est portée dès la descente de l'engin.</div>
+            <div class="rd-alerte">En cas de nécessité, le porté peut s'effectuer seul (au centre de l'échelle, deux mains). Échelle à crochets acheminée en même temps : plaquée contre la coulisse, <strong>crochets vers l'intérieur</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.2 – Dresser</h3>
+            <ol>
+                <li>Idéalement, poser la base au niveau du piétage théorique approximatif.</li>
+                <li>Côté base, l'équipier pose un montant au sol ; côté sommet, le chef d'équipe maintient les montants et positionne l'échelle <strong>sur le grand plan</strong>.</li>
+                <li>L'équipier, côté base, place <strong>un pied sur chaque montant</strong> pour que l'échelle ne glisse pas.</li>
+                <li>Le chef d'équipe soulève l'échelle et l'élève au-dessus de sa tête.</li>
+                <li>Dresser par à-coups et avancer jusqu'à la verticale.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-2.jpg" alt="Dresser une coulisse deux plans" loading="lazy"></figure>
+            <div class="rd-astuce">Posée sur le grand plan, l'échelle présente directement le petit plan à la structure (pas besoin de la tourner) et bénéficie d'une meilleure adhérence au sol.</div>
+            <div class="rd-alerte">En cas de nécessité, dressage seul : montants côté base appuyés contre une structure.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.3 – Développer</h3>
+            <ol>
+                <li>L'équipier assure la stabilité en maintenant les montants.</li>
+                <li>Le chef d'équipe détache la corde, tire avec une <strong>impulsion vers l'arrière</strong> pour dégager les parachutes, développe jusqu'au niveau à atteindre et <strong>engage les parachutes</strong>.</li>
+                <li>Appuyer l'échelle en la retenant par les montants ; le chef d'équipe réalise le piétage pratique et attache la corde.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-3.jpg" alt="Développer une coulisse deux plans" loading="lazy"></figure>
+            <div class="rd-astuce">L'équipier maintient les montants, <strong>doigts contre les montants du grand plan</strong>.</div>
+            <div class="rd-alerte">Corde attachée sur un échelon dans la mesure du possible. Développement seul possible : une jambe contre les échelons, une main sur un montant, l'autre sur la corde.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.4 – Déplacer</h3>
+            <p><strong>Par traction</strong> : chef d'équipe et équipier de chaque côté ; chacun saisit un échelon (traction) et un montant (équilibre) ; déplacer en <strong>soulevant légèrement</strong> l'échelle et en regardant le sommet.</p>
+            <p><strong>Par rotation</strong> : se placer devant, saisir les montants, déplacer en tournant l'échelle par les montants en regardant le sommet.</p>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-4.jpg" alt="Déplacer une coulisse deux plans" loading="lazy"></figure>
+            <div class="rd-astuce">Décoller légèrement l'échelle évite d'user les dispositifs antidérapants.</div>
+            <div class="rd-alerte">Traction non maîtrisée : reployer l'échelle avant de la déplacer. Déplacement seul possible, face à l'échelle, attention à l'équilibre.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.5 – Reployer</h3>
+            <ol>
+                <li>Chef d'équipe et équipier maintiennent les montants.</li>
+                <li>Dresser l'échelle : par une impulsion, ou en la rapprochant de la façade.</li>
+                <li>Échelle dressée : l'équipier assure la stabilité.</li>
+                <li>Le chef d'équipe détache la corde, la passe par-dessus l'épaule et tire avec une impulsion vers l'arrière pour dégager les parachutes.</li>
+                <li>Il reploie totalement le deuxième plan en laissant glisser la corde dans sa main, engage les parachutes et attache la corde.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-5.jpg" alt="Reployer une coulisse deux plans" loading="lazy"></figure>
+            <div class="rd-alerte"><strong>Engager les parachutes avant d'attacher la corde.</strong> Reploiement seul possible (jambe contre les échelons, une main sur un montant, l'autre sur la corde).</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.6 – Abaisser</h3>
+            <ol>
+                <li>L'équipier place un pied sur chaque montant.</li>
+                <li>Le chef d'équipe maintient les montants et abaisse l'échelle au-dessus de sa tête.</li>
+                <li>Reculer jusqu'à l'extrémité des montants et placer le petit plan contre eux.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-6.jpg" alt="Abaisser une coulisse deux plans" loading="lazy"></figure>
+            <div class="rd-alerte">Abaissement seul possible : montants côté base appuyés contre une structure.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.7 – Reconditionner</h3>
+            <p><strong>Portique manuel</strong> : poser l'échelle sur le grand plan dans le prolongement du portique, base au plus près de l'engin ; dresser et appuyer les montants du petit plan contre les dispositifs de roulement ; le binôme accompagne ; le conducteur sur le toit insère l'échelon voulu dans le dispositif d'arrêt et verrouille.</p>
+            <p><strong>Portique automatique</strong> : même pose ; soulever et appuyer les montants côté sommet contre le portique ; faire glisser jusqu'à ce que l'échelon s'insère dans le dispositif d'arrêt et se verrouille.</p>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-7.jpg" alt="Reconditionner une coulisse deux plans" loading="lazy"></figure>
+            <div class="rd-astuce">Verrouillage par le dispositif prévu : <strong>aucun matériel ou amarrage supplémentaire</strong> ne doit entraver la mise en œuvre. Échelle petit plan contre le portique, sommet au-dessus de la cabine.</div>
+            <div class="rd-alerte">Sur portique manuel, le binôme au sol se place de chaque côté de l'échelle avant de la soulever.</div>
+        </div>
+
+        <p class="rd-source">📚 RDEP SDIS 34 – v2 – avril 2026 – § 9.1 à 9.7</p>
+    </div>
+
+    <!-- Procédures coulisse 3 plans -->
+    <div id="echelles-proc-coulisse3" class="module">
+        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <h2>🧰 Procédures – coulisse 3 plans</h2>
+
+        <div class="rd-section">
+            <h3>9.8 – Porter</h3>
+            <p><strong>Depuis un portique manuel</strong> : les deux binômes à l'arrière de l'engin, le 2<sup>e</sup> au plus près, le 1<sup>er</sup> à environ 3 m ; chefs d'équipe et équipiers de chaque côté des montants ; conducteur et chef d'agrès sur le toit accompagnent l'échelle avec la SIM ; porter à bout de bras au niveau du grand plan ou sur les épaules selon la distance.</p>
+            <p><strong>Depuis le sol</strong> : 1<sup>er</sup> binôme côté base, 2<sup>e</sup> binôme côté sommet ; saisir les montants ; même porté.</p>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-8.jpg" alt="Porter une coulisse trois plans" loading="lazy"></figure>
+            <div class="rd-astuce">Portée dès la descente de l'engin. Vu son poids, elle est portée et <strong>posée sur le grand plan</strong> (pas de retournement avant de la dresser). Descente par le conducteur et le chef d'agrès, au besoin le conducteur seul.</div>
+            <div class="rd-alerte">Le personnel sur le toit utilise la <strong>SIM</strong> contre la chute, accompagne l'échelle jusqu'au 2<sup>e</sup> binôme et évite un désengagement des parachutes.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.9 – Dresser</h3>
+            <ol>
+                <li>Idéalement, base au niveau du piétage théorique approximatif.</li>
+                <li>Côté base, le 1<sup>er</sup> binôme pose l'échelle sur le grand plan ; l'<strong>équipier s'accroupit sur le premier échelon</strong> (contrepoids).</li>
+                <li>Côté sommet, le chef d'équipe 1<sup>er</sup> binôme entre les montants, le 2<sup>e</sup> binôme sur chaque montant.</li>
+                <li>Dresser au-dessus des têtes par à-coups et avancer jusqu'à la verticale.</li>
+                <li>Le 2<sup>e</sup> binôme déverrouille et saisit un arc-boutant chacun, s'écarte latéralement d'<strong>environ 2 m</strong>, entre la base et l'aplomb de la façade.</li>
+                <li>Le chef 1<sup>er</sup> binôme règle le <strong>pied de dévers</strong> au contact du sol et le verrouille.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-9.jpg" alt="Dresser une coulisse trois plans" loading="lazy"></figure>
+            <div class="rd-astuce">Le pied de dévers est recommandé lorsqu'un montant ne touche pas le sol : il compense un dévers de <strong>37° maximum (pente de 110 %)</strong>.</div>
+            <div class="rd-alerte">Terrain en pente : dresser l'échelle dans le sens de la pente et déverrouiller le pied de dévers avant de la pivoter.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.10 – Développer</h3>
+            <ol>
+                <li>Le 2<sup>e</sup> binôme travaille <strong>en miroir</strong> ; aucune partie du corps dans le prolongement des arcs-boutants.</li>
+                <li>Le chef d'équipe 1<sup>er</sup> binôme détache les cordes :
+                    <ul>
+                        <li><strong>corde de droite</strong> par-dessus l'épaule, impulsion vers l'arrière, développer le 2<sup>e</sup> plan de <strong>7 échelons</strong>, engager les parachutes ;</li>
+                        <li><strong>corde de gauche</strong>, développer le 3<sup>e</sup> plan jusqu'au niveau à atteindre, engager les parachutes ;</li>
+                        <li>compléter le 2<sup>e</sup> plan si le niveau n'est pas atteint, engager les parachutes.</li>
+                    </ul>
+                </li>
+                <li>Appuyer l'échelle en la retenant par les montants et les arcs-boutants ; le chef 1<sup>er</sup> binôme réalise le piétage pratique et attache les cordes.</li>
+                <li>Le 2<sup>e</sup> binôme règle et pose l'extrémité des arcs-boutants au sol.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-10.jpg" alt="Développer une coulisse trois plans" loading="lazy"></figure>
+            <div class="rd-astuce">Le développement par intermittence des 2<sup>e</sup> et 3<sup>e</sup> plans répartit le poids. Les arcs-boutants manœuvrent l'échelle, diminuent la flexion et améliorent la stabilité latérale ; leur prolongement de 78 cm compense le dévers.</div>
+            <div class="rd-alerte">Dans la mesure du possible, les cordes sont attachées à chaque extrémité d'un échelon.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.11 – Reployer</h3>
+            <ol>
+                <li>Le 1<sup>er</sup> binôme maintient les montants ; le 2<sup>e</sup> saisit un arc-boutant chacun et se place dans l'axe des montants, entre la base et l'aplomb de la façade.</li>
+                <li>Dresser par une impulsion avec les arcs-boutants, ou en rapprochant l'échelle de la façade.</li>
+                <li>Le chef d'équipe 1<sup>er</sup> binôme : corde de droite → reployer le 2<sup>e</sup> plan jusqu'au <strong>7<sup>e</sup> échelon</strong>, engager les parachutes ; corde de gauche → reployer totalement le 3<sup>e</sup> plan, engager ; reployer totalement le 2<sup>e</sup> plan, engager les parachutes et attacher les cordes.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-11.jpg" alt="Reployer une coulisse trois plans" loading="lazy"></figure>
+            <div class="rd-alerte"><strong>Engager les parachutes avant d'attacher les cordes</strong> à chaque extrémité d'un échelon.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.12 – Abaisser</h3>
+            <ol>
+                <li>Le chef 1<sup>er</sup> binôme reconditionne et verrouille le pied de dévers.</li>
+                <li>Le 2<sup>e</sup> binôme reconditionne et verrouille un arc-boutant chacun.</li>
+                <li>L'équipier 1<sup>er</sup> binôme s'accroupit sur les premiers échelons.</li>
+                <li>Chef 1<sup>er</sup> binôme entre les montants, 2<sup>e</sup> binôme sur chaque montant.</li>
+                <li>Abaisser progressivement au-dessus des têtes et reculer jusqu'à poser l'échelle sur le grand plan.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-12.jpg" alt="Abaisser une coulisse trois plans" loading="lazy"></figure>
+            <div class="rd-alerte">Vu le poids, l'abaissement est réalisé <strong>de façon dynamique et sans arrêt</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.13 – Reconditionner</h3>
+            <ol>
+                <li>Poser l'échelle sur le grand plan dans le prolongement du portique, base au plus près de l'engin.</li>
+                <li>Dresser, pivoter et appuyer les montants du <strong>grand plan</strong> contre les dispositifs de roulement.</li>
+                <li>Un binôme maintient un montant et accompagne l'échelle.</li>
+                <li>Conducteur et chef d'agrès sur le toit, avec la SIM, insèrent l'échelon voulu dans le dispositif d'arrêt et verrouillent.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-13.jpg" alt="Reconditionner une coulisse trois plans" loading="lazy"></figure>
+            <div class="rd-astuce">Aucun matériel ou amarrage supplémentaire. Échelle grand plan contre le portique, sommet au-dessus de la cabine.</div>
+        </div>
+
+        <p class="rd-source">📚 RDEP SDIS 34 – v2 – avril 2026 – § 9.8 à 9.13</p>
+    </div>
+
+    <!-- Procédures échelle à crochets -->
+    <div id="echelles-proc-crochets" class="module">
+        <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <h2>🧰 Procédures – échelle à crochets</h2>
+
+        <div class="rd-section">
+            <h3>9.14 – Porter</h3>
+            <p><strong>Depuis un portique</strong> : à l'arrière de l'engin, d'un côté de l'échelle ; saisir un montant au <strong>centre de gravité</strong> ; porter à bout de bras, montant opposé au sol, <strong>crochets vers l'intérieur</strong>.</p>
+            <p><strong>Depuis le sol</strong> : mettre l'échelle sur le champ, saisir un montant au centre de gravité, même porté.</p>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-14.jpg" alt="Porter une échelle à crochets" loading="lazy"></figure>
+            <div class="rd-astuce">Portée dès la descente de l'engin ; crochets vers l'intérieur pour réduire l'encombrement ; une échelle 2 plans peut être reployée pour progresser dans les communications verticales.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.15 – Dresser</h3>
+            <ol>
+                <li>Poser l'échelle au sol <strong>pointes vers le haut</strong>, se placer côté base.</li>
+                <li>Saisir le montant le plus proche <strong>entre le 3<sup>e</sup> et le 5<sup>e</sup> échelon</strong> côté base, passer l'autre main sous l'échelle et tenir l'autre montant.</li>
+                <li>Réaliser une fente et un mouvement de bascule pour dresser l'échelle pointes vers l'avant.</li>
+                <li>Poser les crochets ou les pointes sur la structure et <strong>tester en se suspendant</strong> avant toute progression.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-15.jpg" alt="Dresser une échelle à crochets" loading="lazy"></figure>
+            <div class="rd-astuce">Pour atteindre le 2<sup>e</sup> étage sans passer par le 1<sup>er</sup> (montants base au sol), l'échelle télescopique peut servir d'accès. Une fois appuyée : plaquée contre la façade ou maintenue (effet de ballant).</div>
+            <div class="rd-alerte">En cas de force majeure, utilisable sur <strong>une seule pointe</strong>. En cas de difficulté : poser l'échelle pointes vers le haut, base contre la structure, et la dresser par les montants comme une échelle à coulisse. <strong>En formation : technique sécurisée.</strong></div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.16 – Élever</h3>
+            <ol>
+                <li>Saisir l'entretoise, soulever l'échelle de la structure et tourner les crochets vers l'extérieur.</li>
+                <li>Élever par les montants jusqu'au niveau à atteindre, tourner l'échelle en croisant les bras et appuyer crochets ou pointes.</li>
+                <li>Tester l'échelle en s'appuyant dessus avant toute progression.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-16.jpg" alt="Élever une échelle à crochets" loading="lazy"></figure>
+            <div class="rd-alerte"><strong>Action de formation = technique sécurisée.</strong></div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.17 – Abaisser</h3>
+            <ol>
+                <li>Placer une main au plus haut d'un montant.</li>
+                <li>En deux mouvements, abaisser et faire pivoter les crochets pour recevoir l'échelle sur l'autre avant-bras.</li>
+                <li>Abaisser en fente avant, montants côté sommet au contact du sol.</li>
+                <li>Positionner l'échelle <strong>pointes vers le bas</strong>.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-17.jpg" alt="Abaisser une échelle à crochets" loading="lazy"></figure>
+            <div class="rd-astuce">Poser doucement les crochets au sol pour éviter l'usure.</div>
+            <div class="rd-alerte">En cas de difficulté : base au sol, abaisser par les montants comme une coulisse. <strong>En formation : technique sécurisée.</strong></div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.18 – Prolonger une échelle à coulisse</h3>
+            <ol>
+                <li>L'échelle à crochets est appuyée par un crochet sur un échelon entre le 1<sup>er</sup> et le 2<sup>e</sup> plan, ou maintenue dressée par un intervenant.</li>
+                <li>Progresser sur l'échelle à coulisse.</li>
+                <li>Placer l'échelle à crochets sur l'épaule, bras entre le 2<sup>e</sup> et le 3<sup>e</sup> échelon côté sommet, <strong>pointes vers l'extérieur</strong>.</li>
+                <li>À hauteur voulue, se sécuriser et dégager l'échelle de l'épaule.</li>
+                <li>Élever jusqu'au niveau à atteindre, appuyer crochets ou pointes, <strong>tester en se suspendant</strong>.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-18.jpg" alt="Prolongement d'une échelle à coulisse avec une échelle à crochets" loading="lazy"></figure>
+            <div class="rd-alerte">Pointes à l'extérieur pendant la progression (blessures). Se sécuriser en passant <strong>un pied entre deux échelons et un bras derrière un montant</strong>. <strong>En formation : technique sécurisée.</strong></div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.19 – Prolonger un MEA</h3>
+            <p><strong>MEA sans panier</strong> : échelle appuyée par un crochet sur un échelon ou maintenue ; progresser, échelle sur l'épaule (bras entre 2<sup>e</sup> et 3<sup>e</sup> échelon, pointes vers l'extérieur) ; à hauteur, se sécuriser, dégager, élever, appuyer, tester en se suspendant.</p>
+            <p><strong>MEA avec panier</strong> : même début ; se placer dans le panier et élever l'échelle jusqu'au niveau à atteindre ; appuyer et tester.</p>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-19.jpg" alt="Prolongement d'un MEA avec une échelle à crochets" loading="lazy"></figure>
+            <div class="rd-astuce">Avec panier : l'échelle à crochets est appuyée sur le garde-corps <strong>avant le dressage</strong> de la structure extensible.</div>
+            <div class="rd-alerte">Pointes à l'extérieur. Se sécuriser en passant un pied entre deux échelons de la structure extensible. Pas de surcharge du panier ni d'appui sur ses éléments fonctionnels. <strong>En formation : technique sécurisée.</strong></div>
+        </div>
+
+        <div class="rd-section">
+            <h3>9.20 – Reconditionner</h3>
+            <p><strong>Portique manuel</strong> : poser l'échelle <strong>crochets vers le bas</strong> dans le prolongement du portique, base au plus près de l'engin ; dresser par le côté base et appuyer les montants ; le conducteur sur le toit insère l'échelon dans le dispositif d'arrêt et verrouille.</p>
+            <p><strong>Portique automatique</strong> : même pose et dressage ; faire glisser jusqu'à insertion de l'échelon dans le dispositif d'arrêt et verrouiller.</p>
+            <figure class="rd-fig"><img src="images/rdep/proc-9-20.jpg" alt="Reconditionner une échelle à crochets" loading="lazy"></figure>
+            <div class="rd-astuce">Aucun matériel ou amarrage supplémentaire. Échelle pointes vers le bas, base au-dessus de la cabine.</div>
+        </div>
+
+        <p class="rd-source">📚 RDEP SDIS 34 – v2 – avril 2026 – § 9.14 à 9.20</p>
     </div>
 
     <!-- FIN MODULE ÉCHELLES -->
@@ -12838,7 +13088,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.14.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.15.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
