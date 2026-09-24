@@ -39,3 +39,25 @@ test('affiche le message d\'erreur du serveur', async ({ app }) => {
     await app.click('#btn-generer');
     await expect.poll(() => messages.join(' ')).toContain('Trop de générations rapprochées.');
 });
+
+test('bloque la 3e génération en 24 h sans appeler le serveur', async ({ app }) => {
+    let appels = 0;
+    const messages = [];
+    app.removeAllListeners('dialog');
+    app.on('dialog', d => { messages.push(d.message()); d.accept(); });
+    await app.route('**/api/gemini', async route => {
+        appels++;
+        await route.fulfill({ status: 200, headers: { 'content-type': 'text/event-stream' }, body: 'data: {"text":"ok"}\n\ndata: [DONE]\n\n' });
+    });
+    await app.evaluate(() => { localStorage.removeItem('vulcain.ia.generations'); showModule('ia-manoeuvre'); iaAfficherQuota(); });
+    await expect(app.locator('#ia-quota')).toContainText('2 générations sur 2');
+    await app.locator('input[name="type"]').first().check();
+    for (let i = 0; i < 2; i++) {
+        await app.click('#btn-generer');
+        await expect(app.locator('#btn-generer')).toBeEnabled();
+    }
+    await expect(app.locator('#ia-quota')).toContainText('Limite atteinte');
+    await app.click('#btn-generer');
+    await expect.poll(() => messages.join(' ')).toContain('Limite atteinte');
+    expect(appels).toBe(2);
+});

@@ -12,6 +12,40 @@ function getCheckedValues(name) {
     return Array.from(checkboxes).map(cb => cb.value);
 }
 
+// Limite : 2 générations par 24 h sur cet appareil (le serveur applique aussi la limite)
+const IA_LIMITE = 2;
+const IA_FENETRE_MS = 24 * 60 * 60 * 1000;
+const IA_CLE = 'vulcain.ia.generations';
+
+function iaGenerationsRecentes() {
+    try {
+        const liste = JSON.parse(localStorage.getItem(IA_CLE) || '[]');
+        return liste.filter(t => Date.now() - t < IA_FENETRE_MS);
+    } catch (e) { return []; }
+}
+
+function iaEnregistrerGeneration() {
+    try { localStorage.setItem(IA_CLE, JSON.stringify([...iaGenerationsRecentes(), Date.now()])); } catch (e) { /* stockage indisponible */ }
+    iaAfficherQuota();
+}
+
+function iaProchaineGeneration() {
+    const liste = iaGenerationsRecentes();
+    if (liste.length < IA_LIMITE) return null;
+    return new Date(Math.min(...liste) + IA_FENETRE_MS);
+}
+
+function iaAfficherQuota() {
+    const zone = document.getElementById('ia-quota');
+    if (!zone) return;
+    const reste = Math.max(0, IA_LIMITE - iaGenerationsRecentes().length);
+    const prochaine = iaProchaineGeneration();
+    zone.textContent = prochaine
+        ? `Limite atteinte (${IA_LIMITE} générations par 24 h). Prochaine génération possible le ${prochaine.toLocaleDateString('fr-FR')} à ${prochaine.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}.`
+        : `Il te reste ${reste} génération${reste > 1 ? 's' : ''} sur ${IA_LIMITE} pour les prochaines 24 h.`;
+}
+document.addEventListener('DOMContentLoaded', iaAfficherQuota);
+
 // Générer le scénario
 async function genererManoeuvre() {
     const parametres = {
@@ -30,6 +64,12 @@ async function genererManoeuvre() {
     // Validation minimale
     if (parametres.types.length === 0) {
         alert('⚠️ Veuillez sélectionner au moins un type de manœuvre');
+        return;
+    }
+
+    if (iaProchaineGeneration()) {
+        iaAfficherQuota();
+        alert('⏳ ' + document.getElementById('ia-quota').textContent);
         return;
     }
 
@@ -104,6 +144,7 @@ async function genererManoeuvre() {
         if (!texteComplet.trim()) {
             throw new Error('Aucune réponse générée par l\'IA');
         }
+        iaEnregistrerGeneration();
 
     } catch (error) {
         console.error('Erreur:', error);

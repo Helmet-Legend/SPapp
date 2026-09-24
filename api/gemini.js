@@ -15,12 +15,17 @@ const ORIGINES_AUTORISEES = [
 const ORIGINE_PREVIEW = /^https:\/\/s-papp-[a-z0-9-]+-helmet-legends-projects\.vercel\.app$/;
 const ORIGINE_LOCALE = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/;
 
-// Limite par IP. La mémoire est propre à chaque instance serverless : c'est un
-// garde-fou, pas une garantie. Pour une limite stricte, ajouter une règle
-// « Rate limit » sur /api/gemini dans le pare-feu Vercel.
-const LIMITE_REQUETES = Number(process.env.RATE_LIMIT_MAX || 5);
-const FENETRE_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 10 * 60 * 1000);
+// Limites : 2 générations par 24 h et par adresse IP, et un plafond global par jour
+// pour protéger le budget de l'API. Si une base Upstash Redis est reliée au projet
+// Vercel (variables KV_REST_API_URL / KV_REST_API_TOKEN ou UPSTASH_REDIS_REST_URL /
+// UPSTASH_REDIS_REST_TOKEN), les compteurs y sont stockés et la limite est fiable.
+// Sinon, ils restent en mémoire de l'instance serverless : c'est alors un garde-fou.
+const LIMITE_REQUETES = Number(process.env.RATE_LIMIT_MAX || 2);
+const FENETRE_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 24 * 60 * 60 * 1000);
+const LIMITE_JOUR = Number(process.env.DAILY_GLOBAL_MAX || 50);
 const compteurs = new Map();
+const REDIS_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
 
 // Modèle Claude utilisé. Claude Sonnet 4 a été retiré par Anthropic (erreur 404) :
 // en cas de nouveau retrait, définir CLAUDE_MODEL dans les variables Vercel.
@@ -35,15 +40,57 @@ function origineAutorisee(origine) {
     return ORIGINES_AUTORISEES.includes(origine) || ORIGINE_PREVIEW.test(origine) || ORIGINE_LOCALE.test(origine);
 }
 
-function depasseLimite(ip) {
+// Compteurs en mémoire : { debut, nombre } par clé
+function incrementerMemoire(cle, dureeMs) {
     const maintenant = Date.now();
-    for (const [cle, entree] of compteurs) {
-        if (maintenant - entree.debut > FENETRE_MS) compteurs.delete(cle);
+    for (const [c, e] of compteurs) {
+        if (maintenant - e.debut > e.duree) compteurs.delete(c);
     }
-    const entree = compteurs.get(ip) || { debut: maintenant, nombre: 0 };
+    const entree = compteurs.get(cle) || { debut: maintenant, nombre: 0, duree: dureeMs };
     entree.nombre += 1;
-    compteurs.set(ip, entree);
-    return entree.nombre > LIMITE_REQUETES;
+    compteurs.set(cle, entree);
+    return { nombre: entree.nombre, resteMs: entree.debut + dureeMs - maintenant };
+}
+
+async function redis(commandes) {
+    const reponse = await fetch(`${REDIS_URL}/pipeline`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${REDIS_TOKEN}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify(commandes)
+    });
+    if (!reponse.ok) throw new Error('Redis ' + reponse.status);
+    return (await reponse.json()).map(r => r.result);
+}
+
+async function incrementer(cle, dureeMs) {
+    if (REDIS_URL && REDIS_TOKEN) {
+        try {
+            const [nombre, , ttl] = await redis([
+                ['INCR', cle],
+                ['PEXPIRE', cle, String(dureeMs), 'NX'],
+                ['PTTL', cle]
+            ]);
+            return { nombre: Number(nombre), resteMs: Number(ttl) > 0 ? Number(ttl) : dureeMs };
+        } catch (e) {
+            console.error('Compteur Redis indisponible, repli en mémoire :', e.message);
+        }
+    }
+    return incrementerMemoire(cle, dureeMs);
+}
+
+async function decrementer(cle) {
+    if (REDIS_URL && REDIS_TOKEN) {
+        try { await redis([['DECR', cle]]); return; } catch (e) { /* repli en mémoire */ }
+    }
+    const entree = compteurs.get(cle);
+    if (entree && entree.nombre > 0) entree.nombre -= 1;
+}
+
+function dureeLisible(ms) {
+    const minutes = Math.max(1, Math.ceil(ms / 60000));
+    if (minutes < 60) return `${minutes} min`;
+    const h = Math.floor(minutes / 60), m = minutes % 60;
+    return m ? `${h} h ${String(m).padStart(2, '0')}` : `${h} h`;
 }
 
 function texte(valeur, max) {
@@ -138,20 +185,35 @@ export default async function handler(req, res) {
         return res.status(403).json({ error: 'Origine non autorisée' });
     }
 
-    const ip = String(req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'inconnue').split(',')[0].trim();
-    if (depasseLimite(ip)) {
-        res.setHeader('Retry-After', Math.ceil(FENETRE_MS / 1000));
-        return res.status(429).json({ error: 'Trop de générations rapprochées. Réessayez dans quelques minutes.' });
-    }
-
     const prompt = construirePrompt(req.body || {});
     if (!prompt) {
         return res.status(400).json({ error: 'Sélectionnez au moins un type de manœuvre' });
     }
 
+    const ip = String(req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'inconnue').split(',')[0].trim();
+    const cleIp = `vulcain:ia:ip:${ip}`;
+    const cleJour = `vulcain:ia:jour:${new Date().toISOString().slice(0, 10)}`;
+    const parIp = await incrementer(cleIp, FENETRE_MS);
+    if (parIp.nombre > LIMITE_REQUETES) {
+        await decrementer(cleIp);
+        res.setHeader('Retry-After', Math.ceil(parIp.resteMs / 1000));
+        return res.status(429).json({
+            error: `Limite atteinte : ${LIMITE_REQUETES} générations par 24 h. Prochaine génération possible dans ${dureeLisible(parIp.resteMs)}.`
+        });
+    }
+    const global = await incrementer(cleJour, 24 * 60 * 60 * 1000);
+    if (global.nombre > LIMITE_JOUR) {
+        await decrementer(cleJour);
+        await decrementer(cleIp);
+        return res.status(429).json({ error: 'Le nombre maximal de générations pour aujourd\'hui est atteint. Réessayez demain.' });
+    }
+    // Une génération qui échoue ne doit pas être décomptée
+    const rendre = async () => { await decrementer(cleIp); await decrementer(cleJour); };
+
     // Clé API Claude stockée dans les variables d'environnement Vercel
     const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
     if (!ANTHROPIC_API_KEY) {
+        await rendre();
         return res.status(500).json({ error: 'Clé API Claude non configurée sur le serveur' });
     }
 
@@ -177,6 +239,7 @@ export default async function handler(req, res) {
 
         if (!response.ok) {
             console.error('Erreur Claude API:', MODELE_CLAUDE, response.status, await response.text());
+            await rendre();
             return res.status(502).json({ error: 'Le service IA est indisponible, réessayez plus tard.' });
         }
 
@@ -224,6 +287,7 @@ export default async function handler(req, res) {
         }
     } catch (error) {
         console.error('Erreur serveur:', error);
+        await rendre();
         if (!res.headersSent) {
             return res.status(500).json({ error: 'Erreur interne du serveur' });
         }
