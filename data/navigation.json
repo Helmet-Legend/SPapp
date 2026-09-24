@@ -11,6 +11,7 @@
     "Calculs incendie",
     "Mousses",
     "RDMI – Manœuvres incendie",
+    "RDSMES – Sauvetages & sauvegarde",
     "Protection & matériels",
     "Échelles à mains"
    ]
@@ -329,6 +330,214 @@
     "soutien",
     "façade",
     "pca"
+   ]
+  },
+  {
+   "id": "rdsmes-menu",
+   "titre": "Présentation",
+   "domaine": "incendie",
+   "theme": "RDSMES – Sauvetages & sauvegarde",
+   "type": "presentation",
+   "motsCles": [
+    "rdsmes",
+    "sdis 34",
+    "hérault",
+    "sauvetage",
+    "mise en sécurité",
+    "sauvegarde opérationnelle",
+    "auto-sauvetage",
+    "sauvetage de sauveteur",
+    "smes"
+   ]
+  },
+  {
+   "id": "rdsmes-principes",
+   "titre": "Principes & environnement opérationnel",
+   "domaine": "incendie",
+   "theme": "RDSMES – Sauvetages & sauvegarde",
+   "type": "fiche",
+   "motsCles": [
+    "rdsmes",
+    "sdis 34",
+    "hérault",
+    "sauvetage à vue",
+    "exploration",
+    "confinement",
+    "évacuation",
+    "règle des minimums",
+    "façades",
+    "façade a",
+    "zonage",
+    "tgp",
+    "eld"
+   ]
+  },
+  {
+   "id": "rdsmes-sauvetage",
+   "titre": "Sauvetage & mise en sécurité",
+   "domaine": "incendie",
+   "theme": "RDSMES – Sauvetages & sauvegarde",
+   "type": "fiche",
+   "motsCles": [
+    "rdsmes",
+    "sdis 34",
+    "hérault",
+    "porter",
+    "échelle à crochets",
+    "échelle à coulisse",
+    "passage au vide",
+    "victime inconsciente",
+    "cagoule d'évacuation",
+    "co",
+    "monoxyde",
+    "ppm",
+    "bariatrique"
+   ]
+  },
+  {
+   "id": "rdsmes-mea",
+   "titre": "Moyens élévateurs aériens (MEA)",
+   "domaine": "incendie",
+   "theme": "RDSMES – Sauvetages & sauvegarde",
+   "type": "fiche",
+   "motsCles": [
+    "rdsmes",
+    "sdis 34",
+    "hérault",
+    "mea",
+    "epa",
+    "eps",
+    "epc",
+    "panier",
+    "polygone de sustentation",
+    "stabilisation",
+    "sol interdit",
+    "détecteur de tension",
+    "structure extensible"
+   ]
+  },
+  {
+   "id": "rdsmes-securite",
+   "titre": "Sécurité des intervenants",
+   "domaine": "incendie",
+   "theme": "RDSMES – Sauvetages & sauvegarde",
+   "type": "fiche",
+   "motsCles": [
+    "rdsmes",
+    "sdis 34",
+    "hérault",
+    "itinéraire de repli",
+    "itinéraire de secours",
+    "évacuation générale",
+    "étage",
+    "point de regroupement"
+   ]
+  },
+  {
+   "id": "rdsmes-autosauvetage",
+   "titre": "Auto-sauvetage",
+   "domaine": "incendie",
+   "theme": "RDSMES – Sauvetages & sauvegarde",
+   "type": "fiche",
+   "motsCles": [
+    "rdsmes",
+    "sdis 34",
+    "hérault",
+    "imprévu",
+    "attente des secours",
+    "économie d'air",
+    "gestion de l'air",
+    "saut d'inspiration",
+    "autonomie",
+    "raccord moyenne pression",
+    "type y",
+    "type i",
+    "passage étroit",
+    "fils",
+    "câbles",
+    "profil réduit",
+    "retrait ari"
+   ]
+  },
+  {
+   "id": "rdsmes-detresse",
+   "titre": "Message & appel de détresse",
+   "domaine": "incendie",
+   "theme": "RDSMES – Sauvetages & sauvegarde",
+   "type": "fiche",
+   "motsCles": [
+    "rdsmes",
+    "sdis 34",
+    "hérault",
+    "urgent",
+    "détresse",
+    "nelar",
+    "je suis",
+    "je vois",
+    "je fais",
+    "je demande",
+    "appel de détresse",
+    "sos dir",
+    "tph 900",
+    "radio",
+    "antares"
+   ]
+  },
+  {
+   "id": "rdsmes-evacuation-urgence",
+   "titre": "Évacuation d'urgence d'un intervenant",
+   "domaine": "incendie",
+   "theme": "RDSMES – Sauvetages & sauvegarde",
+   "type": "fiche",
+   "motsCles": [
+    "rdsmes",
+    "sdis 34",
+    "hérault",
+    "évacuation d'urgence",
+    "fenêtre",
+    "bail-out",
+    "tuyau",
+    "volume embrasé"
+   ]
+  },
+  {
+   "id": "rdsmes-sauveteur",
+   "titre": "Sauvetage de sauveteur",
+   "domaine": "incendie",
+   "theme": "RDSMES – Sauvetages & sauvegarde",
+   "type": "fiche",
+   "motsCles": [
+    "rdsmes",
+    "sdis 34",
+    "hérault",
+    "sauvetage de sauveteur",
+    "abordage",
+    "packaging",
+    "traction",
+    "sim",
+    "escalier",
+    "déshabillage",
+    "renfort secours",
+    "270 bars",
+    "excavation"
+   ]
+  },
+  {
+   "id": "rdsmes-derniers-recours",
+   "titre": "Sauvetage de derniers recours",
+   "domaine": "incendie",
+   "theme": "RDSMES – Sauvetages & sauvegarde",
+   "type": "fiche",
+   "motsCles": [
+    "rdsmes",
+    "sdis 34",
+    "hérault",
+    "commande",
+    "derniers recours",
+    "point fixe humain",
+    "point d'ancrage",
+    "connecteur",
+    "demi-nœud"
    ]
   },
   {

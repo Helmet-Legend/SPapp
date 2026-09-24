@@ -692,3 +692,26 @@ html[data-theme="sombre"] body { --success: #6FCF76; --warning: #F0A04B; --dange
 html[data-theme] td { color: inherit; }
 html[data-theme] .module th small { color: inherit !important; }
 #gazPresentsGrid button[style*="primary-red"], #gazPresentsGrid button[style*="primary-red"] div { color: #fff !important; }
+
+/* ---------- Fiches RDSMES (sauvetages, mises en sécurité, sauvegarde opérationnelle) ---------- */
+html[data-theme] .rd-section { background: var(--t-s2); border: 1px solid var(--t-line); border-radius: var(--t-radius); padding: 16px; margin: 16px 0; }
+html[data-theme] .rd-section > h3:first-child { margin-top: 0; }
+html[data-theme] .rd-alerte, html[data-theme] .rd-astuce { border-radius: 12px; padding: 12px 14px; margin: 12px 0; border-left: 5px solid; }
+html[data-theme] .rd-alerte { background: light-dark(#FDECEC, #3A1D20); border-color: light-dark(#C62828, #FF6B6B); }
+html[data-theme] .rd-astuce { background: light-dark(#EAF6EA, #1B3321); border-color: light-dark(#2E7D32, #6FCF76); }
+html[data-theme] .rd-alerte::before { content: "⚠️ "; }
+html[data-theme] .rd-astuce::before { content: "💡 "; }
+.rd-fig { margin: 12px 0; background: #fff; border-radius: 12px; padding: 8px; border: 1px solid var(--t-line); }
+.rd-fig img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.rd-fig figcaption { color: #3B4150; font-size: .85em; text-align: center; padding-top: 6px; }
+.rd-fig.etroite { max-width: 420px; margin-left: auto; margin-right: auto; }
+html[data-theme] .rd-source { font-size: .85em; color: var(--t-muted); border-top: 1px solid var(--t-line); margin-top: 20px; padding-top: 10px; }
+html[data-theme] .rd-tuiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 16px 0; }
+html[data-theme] .rd-tuiles button { background: var(--t-s1); color: var(--t-ink); border: 1px solid var(--t-line); border-left: 5px solid var(--t-accent); border-radius: 12px; padding: 14px 12px; text-align: left; cursor: pointer; font: inherit; }
+html[data-theme] .rd-tuiles button b { display: block; font-size: 1.02em; }
+html[data-theme] .rd-tuiles button span { display: block; color: var(--t-muted); font-size: .85em; margin-top: 3px; }
+html[data-theme] .rd-table { width: 100%; border-collapse: collapse; margin: 10px 0; background: var(--t-s1); }
+html[data-theme] .rd-table th, html[data-theme] .rd-table td { border: 1px solid var(--t-line); padding: 8px; text-align: left; }
+html[data-theme] .rd-message { font-family: ui-monospace, Menlo, Consolas, monospace; white-space: pre-wrap; background: var(--t-s1); border: 2px solid var(--t-accent); border-radius: 12px; padding: 14px; font-size: 1.05em; line-height: 1.6; }
+html[data-theme] .rd-champ { display: grid; gap: 4px; margin: 10px 0; }
+html[data-theme] .rd-champ label { font-weight: 700; }
