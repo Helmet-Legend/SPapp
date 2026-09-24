@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.16.0">
+    <meta name="version" content="1.17.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -98,7 +98,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.16.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.17.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -203,7 +203,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.16.0</span><br>
+                        Vulcain v<span class="app-version">1.17.0</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -758,6 +758,7 @@
     <div id="tmd" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2>☣️ Transport de Matières Dangereuses</h2>
+        <p style="text-align: center;"><button onclick="showModule('etiquettes-danger')">⚠️ Étiquettes de danger ADR et CLP</button></p>
 
         <!-- Filtres de recherche -->
         <div class="result-box" style="background: var(--bg-card); border: 3px solid #FF9800; margin-bottom: 20px; box-shadow: var(--shadow-md);">
@@ -891,11 +892,29 @@
             </div>
 
             <div class="form-group">
+                <label>Technique (RDEB) :</label>
+                <div class="rd-choix-technique" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 8px;">
+                    <button type="button" data-rdeb-debit="10" onclick="choisirTechniqueRDEB(10)">😮‍💨 Survie<br><small>≈ 10 l/min</small></button>
+                    <button type="button" data-rdeb-debit="50" onclick="choisirTechniqueRDEB(50)">👀 À vue<br><small>≈ 50 l/min</small></button>
+                    <button type="button" data-rdeb-debit="105" onclick="choisirTechniqueRDEB(105)">🧵 Ligne de vie<br><small>≈ 105 l/min</small></button>
+                    <button type="button" data-rdeb-debit="135" onclick="choisirTechniqueRDEB(135)">🚑 Sauvetage<br><small>≈ 135 l/min</small></button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="heureEntreeARI">Heure d'entrée :</label>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                    <input type="time" id="heureEntreeARI" oninput="calculerAutonomieARI()" style="flex: 1; font-size: 1.3em; text-align: center;">
+                    <button type="button" onclick="heureEntreeMaintenant()">Maintenant</button>
+                </div>
+            </div>
+
+            <div class="form-group">
                 <label>Consommation (L/min) :</label>
                 <div style="display: flex; gap: 8px; align-items: center;">
                     <button onclick="adjustConsoARI(-10)" style="padding: 10px 8px; font-size: 0.9em;">−10</button>
                     <button onclick="adjustConsoARI(-5)" style="padding: 10px 8px; font-size: 0.9em;">−5</button>
-                    <input type="number" id="consoARI" value="100" min="40" max="150" step="5" oninput="calculerAutonomieARI()" style="text-align: center; font-size: 1.5em; font-weight: bold; flex: 1; min-width: 80px; color: var(--t-ink, #000000);">
+                    <input type="number" id="consoARI" value="100" min="10" max="150" step="5" oninput="calculerAutonomieARI()" style="text-align: center; font-size: 1.5em; font-weight: bold; flex: 1; min-width: 80px; color: var(--t-ink, #000000);">
                     <button onclick="adjustConsoARI(5)" style="padding: 10px 8px; font-size: 0.9em;">+5</button>
                     <button onclick="adjustConsoARI(10)" style="padding: 10px 8px; font-size: 0.9em;">+10</button>
                 </div>
@@ -915,6 +934,12 @@
         <!-- Résultats juste après les paramètres -->
         <div id="resultatsARI" class="result-box" style="display: none;">
             <h3 style="color: light-dark(#327334, #4caf50); border-bottom: 3px solid #4CAF50; padding-bottom: 10px;">📊 Résultats</h3>
+
+            <div id="rdebAutonomie" class="info-card" style="margin: 15px 0; padding: 16px 18px; text-align: center;">
+                <div class="label">Autonomie d'engagement (RDEB : réserve de 50 bars décomptée)</div>
+                <div class="value" id="rdebAutonomieValeur" style="font-size: 2em; margin: 6px 0;">–</div>
+                <div class="label" id="rdebSortie" style="margin-top: 6px;"></div>
+            </div>
             
             <div style="background: linear-gradient(135deg, #39843c 0%, #358739 100%); color: #ffffff; padding: 30px; border-radius: 15px; text-align: center; margin: 20px 0; border: 4px solid #4CAF50; box-shadow: var(--shadow-xl);">
                 <div style="font-size: 1.1em; color: #FFFFFF; opacity: 0.95; margin-bottom: 10px; font-weight: 600;">AUTONOMIE TOTALE</div>
@@ -954,8 +979,10 @@
             • Pression de sécurité (réserve) : <strong>55 bars</strong> (retour impératif)<br>
             • Mi-temps = Point de non-retour pour la reconnaissance<br>
             • Vérifier les pressions avant chaque engagement<br>
-            • Maintenir un contact radio permanent
+            • Maintenir un contact radio permanent<br>
+            • Dès que l'avertisseur se déclenche, sortie immédiate du binôme (RDEB)
         </div>
+        <p><button onclick="showModule('rdeb-autonomie')">📋 Abaques d'engagement du RDEB</button></p>
     </div>
 
 
@@ -1044,9 +1071,24 @@
                 </div>
             </div>
 
+            <div class="rd-section">
+                <h4 style="margin-top: 0;">Domaines de pression héraultais (RDEB § 5.9)</h4>
+                <div style="overflow-x: auto;">
+                <table class="rd-table">
+                    <tr><th>Exploitant</th><th>Réseau</th><th>Pression</th></tr>
+                    <tr><td rowspan="4">GRDF</td><td>BP – basse pression</td><td>20 mbar &lt; Pn ≤ 50 mbar</td></tr>
+                    <tr><td>MPA – moyenne pression A</td><td>50 mbar &lt; Pn ≤ 0,4 bar</td></tr>
+                    <tr><td>MPB – moyenne pression B</td><td>0,4 bar &lt; Pn ≤ 4 bars</td></tr>
+                    <tr><td>MPC – moyenne pression C</td><td>4 bars &lt; Pn ≤ 16 bars</td></tr>
+                    <tr><td>GRTgaz</td><td>HP – haute pression</td><td>16 bars &lt; Pn ≤ 65 bars</td></tr>
+                </table>
+                </div>
+                <p><small>Zonage réflexe du RDEB identique aux valeurs ci-dessous (distribution MPA-MPB-MPC 50 / 100 m).</small></p>
+            </div>
+
             <!-- FUITE RÉSEAU DE TRANSPORT -->
             <div id="gaz-transport" class="distance-card" style="background: linear-gradient(135deg, rgba(255,107,53,0.08) 0%, rgba(244,67,54,0.08) 100%); border: 3px solid #FF6B35;">
-                <h4 style="color: light-dark(#ba3200, #ff6f3a); text-align: center; font-size: 1.4em; margin-bottom: 20px;">🔴 Fuite Réseau de Transport (&lt; 16 bars)</h4>
+                <h4 style="color: light-dark(#ba3200, #ff6f3a); text-align: center; font-size: 1.4em; margin-bottom: 20px;">🔴 Fuite Réseau de Transport (HP 16 à 65 bars – GRTgaz)</h4>
                 
                 <div class="form-group">
                     <label style="font-size: 1.1em; font-weight: 600; display: block; text-align: center; margin-bottom: 15px;">Diamètre de la conduite (mm)</label>
@@ -1163,7 +1205,8 @@
             <!-- ACÉTYLÈNE -->
             <div id="gaz-acetylene" class="distance-card" style="display:none; background: linear-gradient(135deg, rgba(239,83,80,0.08) 0%, rgba(198,40,40,0.08) 100%); border: 3px solid #EF5350;">
                 <h4 style="color: light-dark(#c71612, #f27875); text-align: center; font-size: 1.4em; margin-bottom: 25px;">💥 Acétylène</h4>
-                
+                <p style="text-align: center;"><strong>Fuite enflammée ou non</strong> : exclusion <strong>50 m</strong> · contrôlée <strong>100 m</strong></p>
+                <p style="text-align: center; font-weight: 700; margin-bottom: 10px;">🔥 Bouteille soumise à l'incendie</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <div style="background: linear-gradient(135deg, rgba(255,0,0,0.2) 0%, rgba(200,0,0,0.3) 100%); padding: 25px; border-radius: 12px; text-align: center; border: 3px solid #ff0000;">
                         <div style="font-size: 1em; margin-bottom: 15px; font-weight: 600; opacity: 0.9;">ZONE D'EXCLUSION</div>
@@ -2513,6 +2556,51 @@
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2>⚡ Identification Lignes Électriques</h2>
 
+        <div class="rd-section">
+            <h3 style="margin-top: 0;">Réseaux héraultais – référence SDIS 34 (RDEB § 5.8)</h3>
+            <div style="overflow-x: auto;">
+            <table class="rd-table">
+                <tr><th>Domaine</th><th>Alternatif (V ac)</th><th>Continu (V dc)</th></tr>
+                <tr><td>TBT – très basse tension</td><td>Un ≤ 50</td><td>Un ≤ 120</td></tr>
+                <tr><td>BT – basse tension</td><td>50 &lt; Un ≤ 1000</td><td>120 &lt; Un ≤ 1500</td></tr>
+                <tr><td>HTA – haute tension A</td><td>1000 &lt; Un ≤ 50 000</td><td>1500 &lt; Un ≤ 75 000</td></tr>
+                <tr><td>HTB – haute tension B</td><td>&gt; 50 000</td><td>&gt; 75 000</td></tr>
+            </table>
+            </div>
+            <div style="overflow-x: auto;">
+            <table class="rd-table" style="text-align: center;">
+                <tr><th>Réseau</th><th colspan="3">Distribution – ERDF</th><th colspan="3">Transport – RTE</th></tr>
+                <tr><th>Domaine</th><td>BT (dc)</td><td>BT (ac)</td><td>HTA</td><td>HTB1</td><td>HTB2</td><td>HTB3</td></tr>
+                <tr><th>Ligne</th><td>PPV</td><td>Basse</td><td>Moyenne</td><td>Haute</td><td colspan="2">Très haute</td></tr>
+                <tr><th>Tension</th><td>60 V par panneau</td><td>230-400 V</td><td>20 000 V</td><td>63 000 V</td><td>225 000 V</td><td>400 000 V</td></tr>
+                <tr><th>Isolateurs par câble</th><td></td><td>0 à 1</td><td>2 à 3</td><td>4 à 9</td><td>12 à 14</td><td>19</td></tr>
+                <tr><th>Hauteur de structure</th><td></td><td>−10 m</td><td colspan="4">+10 m</td></tr>
+                <tr><th>Câbles</th><td></td><td>2 ou 4, espacés de 30 cm ou torsadés</td><td colspan="4">3, espacés d'au moins 1 m</td></tr>
+            </table>
+            </div>
+            <figure class="rd-fig"><img src="images/rdeb/lignes-electriques.jpg" alt="Basse tension, HTA, HTB1, HTB2 et 3" loading="lazy"></figure>
+            <div class="rd-alerte">En basse tension, lignes électriques et téléphoniques peuvent partager la même structure : les <strong>lignes téléphoniques sont toujours en dessous</strong>.</div>
+            <h4>Distances limites de voisinage (DLV)</h4>
+            <table class="rd-table">
+                <tr><th>Hors sol (câble sous tension, nu, ou gainé et endommagé)</th><th>TRAM – RFN</th><th>PPV – BT – HTA – HTB</th></tr>
+                <tr><td>DLV simple (zone d'exclusion)</td><td>3 m</td><td>5 m</td></tr>
+            </table>
+            <table class="rd-table">
+                <tr><th>Au sol (câble sous tension, nu ou gainé)</th><th>PPV – BT – TRAM – RFN</th><th>HTA</th><th>HTB</th></tr>
+                <tr><td>DLV simple (zone d'exclusion)</td><td colspan="2">10 m</td><td>50 m</td></tr>
+                <tr><td>DLV investigation (zone contrôlée)</td><td>20 m</td><td>50 m</td><td>100 m</td></tr>
+            </table>
+            <div class="rd-alerte">La <strong>DLV simple ne peut en aucun cas être réduite</strong> ; on n'y entre que lorsque la ligne est <strong>coupée par l'exploitant et consignée</strong> par le technicien. Un minimum d'intervenants entre dans la DLV investigation lorsqu'une action doit être réalisée.</div>
+            <h4>Compteur Linky et coupures</h4>
+            <figure class="rd-fig"><img src="images/rdeb/linky.jpg" alt="Compteur Linky" loading="lazy"></figure>
+            <div class="rd-astuce">La mise hors tension d'un compteur Linky est faite à distance par l'exploitant ou sur place par le technicien ; un symbole de <strong>« circuit ouvert »</strong> s'affiche quand il est hors tension.</div>
+            <div class="rd-alerte">Habitations individuelles et bâtiments industriels : disjoncteur général ou appareil général de commande et de protection. Habitations collectives : le coffret coupe-circuit principal collectif, qui coupe tout l'immeuble, n'est manœuvrable que par un technicien ERDF.</div>
+            <h4>Vêtements de protection</h4>
+            <figure class="rd-fig"><img src="images/rdeb/epi-electrique.jpg" alt="Casque NF EN 443 visière isolante, veste NF EN 469 et 1149-5 antistatique selon modèle, bottes NF EN 15090 type C antistatique, gants NF EN 443 sans protection" loading="lazy"></figure>
+            <div class="rd-alerte">Vu la protection isolante et antistatique limitée des EPI, respecter les DLV et limiter les matériels non isolants.</div>
+            <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 5.8. Les repères ci-dessous sont des repères généraux ; en cas d'écart, se référer au tableau SDIS 34 ci-dessus.</p>
+        </div>
+
         <!-- LIGNE HTB -->
         <div class="result-box" style="background: linear-gradient(135deg, rgba(255,0,0,0.08) 0%, rgba(255,0,0,0.05) 100%); border: 3px solid #ff0000; margin-top: 20px; box-shadow: 0 4px 15px rgba(255,0,0,0.2);">
             <h3 style="color: light-dark(#cc0000, #ff6b6b); text-align: center; font-size: 1.6em; margin-bottom: 20px;">⚡ HTB - HAUTE TENSION B</h3>
@@ -3205,7 +3293,22 @@
             </div>
 
             <div id="resultatIdentificationBouteille"></div>
-            
+
+            <div class="rd-section">
+                <h4 style="margin-top: 0;">Constitution d'une bouteille (RDEB § 5.5)</h4>
+                <p>Robinet, chapeau, raccord, étiquette, ogive (couleur du risque primaire et secondaire), corps. La couleur de l'ogive informe du risque ou identifie le gaz.</p>
+                <figure class="rd-fig"><img src="images/rdeb/bouteille-schema.jpg" alt="Constitution d'une bouteille de gaz, cas A et cas B" loading="lazy"></figure>
+                <table class="rd-table">
+                    <tr><th>Substance</th><th>T° de manipulation</th><th>T° dangereuse (bouteille pleine)</th></tr>
+                    <tr><td>Sous pression (azote, argon…)</td><td rowspan="3">Ambiante</td><td>≥ 350 °C</td></tr>
+                    <tr><td>Liquéfié (butane, propane…)</td><td>≥ 80 °C</td></tr>
+                    <tr><td>Dissous (acétylène…)</td><td>≥ 65 °C</td></tr>
+                </table>
+                <div class="rd-astuce">Contrairement aux bouteilles GPL « traditionnelles », les bouteilles GPL <strong>« composites » ne peuvent pas éclater</strong>.</div>
+                <div class="rd-alerte">Règle générale : <strong>ne pas manipuler une bouteille de gaz</strong> sauf absolue nécessité. Le refroidissement est efficace si la température relevée est égale à la température ambiante et s'y maintient.</div>
+                <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 5.5</p>
+            </div>
+
         </div>
 
         <!-- Section Refroidissement -->
@@ -5033,7 +5136,7 @@
         </div>
         
         <div class="warning-box" style="margin-top: 20px; background: rgba(244, 67, 54, 0.1); border: 2px solid #F44336;">
-            <strong style="color: light-dark(#c22727, #e57e7e);">⚠️ Binôme de sécurité :</strong> Mis en place par le COS dès que possible lors de l'engagement d'un binôme en <strong>zone d'exclusion</strong>.
+            <strong style="color: light-dark(#c22727, #e57e7e);">⚠️ Binôme de sécurité :</strong> Mis en place par le COS dès que possible lors de l'engagement d'un binôme en <strong>zone d'exclusion</strong>. <button onclick="showModule('rdeb-autonomie')">🫁 Détail RDEB : contrôleur & binôme de sécurité</button>
         </div>
     </div>
 
@@ -5384,6 +5487,19 @@
             <p style="text-align: center; margin-top: 15px; color: var(--text-secondary);">
                 <strong>A</strong> = Façade d'accès principal (attaque) • Les autres façades sont désignées dans le sens horaire
             </p>
+        </div>
+        <div class="rd-section">
+            <h3 style="margin-top: 0;">Précisions RDEB (§ 2.18 à 2.21)</h3>
+            <p>La sécurité des intervenants se prend en compte dès le placement des engins ; le premier COS appréhende la zone d'intervention. Le zonage, clairement indiqué, peut compter un ou plusieurs points d'engagement et évolue avec la reconnaissance, les mesures au détecteur multigaz ou le conseil d'un conseiller technique ou d'un officier sécurité.</p>
+            <figure class="rd-fig"><img src="images/rdeb/zonage-exemple.jpg" alt="Exemple de zonage : exclusion, contrôlée, soutien" loading="lazy"></figure>
+            <ul>
+                <li><strong>Exclusion</strong> : exposition directe aux risques ; accès restreint aux équipes équipées d'EPI et de matériels adaptés ; nombre et missions des engagés connus du COS, des chefs de secteur ou d'agrès ; le COS peut interdire des locaux ou secteurs.</li>
+                <li><strong>Contrôlée</strong> : zone tampon d'où est coordonné l'engagement ; enregistrement et engagement des binômes, binôme de sécurité, parc matériel au besoin.</li>
+                <li><strong>Soutien</strong> : commandement, soutien sanitaire, reconditionnement, services extérieurs, à l'écart de tout danger.</li>
+            </ul>
+            <div class="rd-astuce">À partir du <strong>R+5</strong>, placer au plus près du sinistre un <strong>chef de secteur</strong> en lien avec le COS pour gérer l'engagement des binômes et la ressource en matériels (au minimum un chef d'agrès tout engin ou un chef de groupe).</div>
+            <div class="rd-alerte">Attention aux <strong>chutes de matériaux</strong> aux aplombs des bâtiments.</div>
+            <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 2.18 à 2.21 · <button onclick="showModule('rdeb-menu')">🫁 RDEB</button></p>
         </div>
     </div>
 
@@ -9165,6 +9281,899 @@
 
     <!-- ========== MODULE IMPM ========== -->
 
+    <!-- ============ RDEB – SDIS 34 (v2, avril 2026) : engagement des binômes ============ -->
+    <div id="rdeb-menu" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🫁 RDEB – Engagement des binômes</h2>
+        <p style="text-align: center;">Référentiel départemental <strong>Engagement Des Binômes</strong> – engagement en milieu vicié, lutte contre l'incendie en milieu urbain</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('rdeb-ari')"><b>1.1-1.3 · L'ARI-CO</b><span>Nomenclature, bouteille, conditionnement</span></button>
+            <button onclick="showModule('rdeb-preparation')"><b>1.4-2.8 · Contraintes & préparation</b><span>Contraintes, préparation, habillage, capelage, coiffage</span></button>
+            <button onclick="showModule('rdeb-ligne-vie')"><b>1.9-1.14 · Ligne de vie & TTH 900</b><span>Établissement, ligne guide, liaison personnelle</span></button>
+            <button onclick="showModule('rdeb-controle')"><b>2.9-2.10 · Contrôle croisé & codes</b><span>RAPACE, gestes, radio, BSD / ICS</span></button>
+            <button onclick="showModule('rdeb-autonomie')"><b>2.11-2.17 · Autonomie & contrôle</b><span>Débits, abaques, enregistrement, contrôleur, binôme de sécurité</span></button>
+            <button onclick="showModule('rdeb-lecture')"><b>2.18-2.25 · Zonage, lecture du feu, radio</b><span>Zones, observation, fumées, liaisons</span></button>
+            <button onclick="showModule('rdeb-engagement')"><b>3.1-3.10 · Engagement</b><span>À vue, ligne de vie, explorations, croisement, AIDES</span></button>
+            <button onclick="showModule('rdeb-recherche')"><b>3.11-3.13 · Recherche & retour</b><span>Recherches, EAS, marquage, compte rendu, schéma OPS</span></button>
+            <button onclick="showModule('rdeb-reengagement')"><b>3.14-3.16 · Réengagement</b><span>Récupération, tableau de non-réengagement</span></button>
+            <button onclick="showModule('rdeb-apres')"><b>4 · Après l'engagement</b><span>Exposition, nettoyage, DECOPI, déshabillage</span></button>
+            <button onclick="showModule('rdeb-annexes')"><b>5 · Annexes</b><span>Parkings & caves, CO, H₂S, ascenseurs</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>Préface</h3>
+            <p>Document opérationnel départemental constitué d'éléments de doctrine choisis dans les GDO et GTO de la DGSCGC. <strong>Une directive nationale imposant l'emploi ou l'interdiction d'une technique ou d'un matériel s'impose au guide départemental.</strong> Le chef d'agrès commande l'engagement de l'agrès et fait le choix du matériel et des techniques.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Annexes du RDEB intégrées dans d'autres fiches</h3>
+            <ul>
+                <li>5.5 Bouteilles de gaz → <button onclick="showModule('bouteilles')">💨 Bouteilles de gaz</button></li>
+                <li>5.6-5.7 Étiquettes CLP et ADR → <button onclick="showModule('etiquettes-danger')">⚠️ Étiquettes de danger</button></li>
+                <li>5.8 Réseaux électriques → <button onclick="showModule('electrique')">⚡ Lignes électriques</button></li>
+                <li>5.9 Réseaux gaz → <button onclick="showModule('distances')">📏 Distances de sécurité (Gaz)</button></li>
+                <li>5.11-5.12 Abaques d'engagement → <button onclick="showModule('rdeb-autonomie')">Autonomie</button> et <button onclick="showModule('ari')">🫁 Calcul autonomie ARI</button></li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>📚 Références</h3>
+            <ul>
+                <li>Arrêté fixant la liste des EPI soumis aux vérifications générales périodiques – mars 1993</li>
+                <li>NF EN 136 « Masques complets » – mars 1998 ; NF EN 137 « ARI à circuit ouvert » – janvier 2007</li>
+                <li>Guide pratique « Sécurité incendie dans les parcs de stationnement couvert » – janvier 2018</li>
+                <li>GDO « Prévention des risques liés à la toxicité des fumées » – septembre 2020</li>
+                <li>GDO « Interventions en présence de gaz » – décembre 2021</li>
+                <li>GDO « Opération de secours en présence électrique » – janvier 2024</li>
+                <li>GTO « Engagement en milieu vicié » – février 2024</li>
+                <li>Fiches INRS ED 98, ED 116, ED 911, ED 6134, ED 6345 ; notices MATISEC ; conventions SDIS 34 – ENEDIS, RTE, GRDF, GRTgaz</li>
+            </ul>
+            <p>Voir aussi : <button onclick="showModule('rdsmes-menu')">🛟 RDSMES</button> <button onclick="showModule('echelles-menu')">🪜 RDEP</button> <button onclick="showModule('lspcc-menu')">🪢 RDLSPCC</button> <button onclick="showModule('rdmi-binomes')">👷 RDMI – Binômes & armement</button></p>
+        </div>
+
+        <p class="rd-source">📚 Source : <strong>RDEB – SDIS 34 (Hérault) – Version 2 – avril 2026</strong>, GCO – Service opération. Reproduit avec l'autorisation du SDIS de l'Hérault. Doctrine départementale : vérifiez celle de votre SDIS.</p>
+    </div>
+
+    <div id="rdeb-ari" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <h2>🫁 L'ARI-CO</h2>
+        <div class="rd-section">
+            <p>Un appareil de protection respiratoire est un <strong>EPI de catégorie III</strong> (risques graves à effets irréversibles ou mortels).</p>
+            <div class="rd-astuce">ARI à circuit ouvert et fermé, cartouches anti-gaz : <strong>vérifications générales périodiques annuelles</strong> par le GTL.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.1 – Nomenclature</h3>
+            <h4>Masque</h4>
+            <p>Double jupe avec demi-masque intérieur · protection thermorésistante · résistance inspiratoire ≤ 3,5 mbar, expiratoire ≥ 4,2 et ≤ 10 mbar · membrane phonique · résistance groin et griffes &gt; 150 kg à la traction. Modèles : griffe à ressort, griffe à molette, filet.</p>
+            <figure class="rd-fig etroite"><img src="images/rdeb/masques.jpg" alt="Masques à griffe à ressort, à griffe à molette et à filet" loading="lazy"></figure>
+            <div class="rd-alerte">Chaque utilisateur vérifie l'<strong>étanchéité du masque</strong> (masque plaqué contre le visage, main devant le groin) et le fonctionnement des griffes : il sait ainsi s'il doit utiliser un masque à griffe ou à filet. Les porteurs de masque à filet peuvent le déposer dans l'engin pendant la garde ou, à défaut, utiliser celui du conducteur.</div>
+            <h4>Soupape à la demande (SAD)</h4>
+            <p>Résistance inspiratoire ≤ 5 mbar, expiratoire ≤ 10 mbar · résistance &gt; 250 kg à la traction · dispositif <strong>bipasse &gt; 60 l/min</strong>.</p>
+            <figure class="rd-fig" style="max-width: 280px; margin-left: auto; margin-right: auto;"><img src="images/rdeb/sad.jpg" alt="Soupape à la demande et bipasse" loading="lazy"></figure>
+            <h4>Châssis et harnais</h4>
+            <p>Plaque dorsale composite · réglage articulaire ± 30° · tailles S – M – L – XL · poignée de sauvetage photoluminescente · poignée de portage double · sangle de serrage de la bouteille · protection du robinet. Harnais : ceinture et sangle ventrale, bretelles photoluminescentes, quatre porte-accessoires.</p>
+            <table class="rd-table"><tr><th>Taille</th><td>S</td><td>M</td><td>L</td><td>XL</td></tr><tr><th>Stature</th><td>&lt; 170 cm</td><td>170-175 cm</td><td>175-180 cm</td><td>&gt; 180 cm</td></tr></table>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <figure class="rd-fig"><img src="images/rdeb/chassis.jpg" alt="Châssis" loading="lazy"></figure>
+                <figure class="rd-fig"><img src="images/rdeb/harnais.jpg" alt="Harnais" loading="lazy"></figure>
+            </div>
+            <h4>Bouteille</h4>
+            <p>Air comprimé · couleur noir (azote 78 %) et blanc (oxygène 21 %).</p>
+            <table class="rd-table">
+                <tr><th>Type IV – composite, liner plastique</th><td><strong>7,2 L</strong> à 300 bars = <strong>2160 L</strong></td></tr>
+                <tr><th>Type II – métallique renforcée</th><td><strong>6 L</strong> à 300 bars = <strong>1800 L</strong></td></tr>
+            </table>
+            <figure class="rd-fig" style="max-width: 260px; margin-left: auto; margin-right: auto;"><img src="images/rdeb/bouteilles.jpg" alt="Bouteilles type IV 7,2 L et type II 6 L" loading="lazy"></figure>
+            <h4>Détendeur, indicateur de pression, avertisseur</h4>
+            <ul>
+                <li><strong>Détendeur</strong> : 300 → ≤ 7 bars ; soupape de sûreté 400 l/min à 30 bars.</li>
+                <li><strong>Indicateur de pression</strong> : cadran 0 à 350 bars ; <strong>blanc = travail 55 à 300 bars</strong>, <strong>rouge = sécurité 0 à 55 bars</strong>.</li>
+                <li><strong>Avertisseur</strong> pneumatique activé à <strong>55 bars</strong>, 90 dB, au moins 10 s et entendu jusqu'à 10 bars, débit 5 l/min.</li>
+                <li>Flexible haute pression : détendeur → indicateur.</li>
+            </ul>
+            <figure class="rd-fig"><img src="images/rdeb/ari-composants.jpg" alt="Détendeur, indicateur de pression, avertisseur, flexible haute pression" loading="lazy"></figure>
+            <h4>Flexibles moyenne pression, raccord Y, cagoule, robinet</h4>
+            <ul>
+                <li><strong>Flexibles MP</strong> (≤ 7 bars) : détendeur → SAD, détendeur → raccord moyenne pression.</li>
+                <li><strong>Raccord moyenne pression Y</strong> : flexible omnidirectionnel ≈ 1 m, ≤ 9,5 bars, 2 bouchons, 1 prise mâle et 1 prise femelle auto-obturantes.</li>
+                <li><strong>Cagoule d'évacuation</strong> : flexible ≈ 1 m, 55 l/min, ≤ 7 bars.</li>
+                <li><strong>Robinet</strong> : soupape limiteur de débit &gt; 150 et &lt; 1350 l/min.</li>
+            </ul>
+            <figure class="rd-fig"><img src="images/rdeb/ari-flexibles.jpg" alt="Flexibles moyenne pression, raccord Y, cagoule d'évacuation, robinet" loading="lazy"></figure>
+            <p>Assistance respiratoire (raccords Y / I, cagoule) : <button onclick="showModule('rdsmes-autosauvetage')">🛟 RDSMES – auto-sauvetage</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.2 – Remplacement d'une bouteille</h3>
+            <ol>
+                <li>Fermer le robinet ; purger la ligne d'air avec le bipasse de la SAD.</li>
+                <li>Poser la protection de la bouteille au sol ; déverrouiller la sangle.</li>
+                <li>Pousser le raccord rapide vers le châssis, dégager la bouteille usagée ; insérer la bouteille saine, verrouiller la sangle ; ouvrir et vérifier la pression (<strong>≥ 270 bars</strong>).</li>
+            </ol>
+            <p><strong>Remplacement rapide</strong> : pencher le dos vers l'avant, jambes fléchies, et réaliser les étapes 2 et 3 avec l'aide d'un intervenant.</p>
+            <figure class="rd-fig"><img src="images/rdeb/remplacement-bouteille.jpg" alt="Remplacement d'une bouteille" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.3 – Conditionnement</h3>
+            <table class="rd-table">
+                <tr><th>Côté droit – Engagement & progression</th><th>Côté gauche – Sécurité & sauvetage</th></tr>
+                <tr><td>Soupape à la demande<br>Dispositif bipasse<br>Liaison personnelle (avec CAT si doté)</td><td>BSD (FMO INC n° 16) ou ICS (FMO INC n° 11)<br>Raccord moyenne pression Y ou I<br>Cagoule d'évacuation<br>Indicateur de pression & avertisseur</td></tr>
+            </table>
+            <figure class="rd-fig"><img src="images/rdeb/conditionnement.jpg" alt="Conditionnement de l'ARI-CO" loading="lazy"></figure>
+            <div class="rd-astuce">La liaison personnelle est insérée sur la ceinture ventrale par l'anneau élastique (<strong>elle ne doit pas être vissée</strong>). Position du collier d'attache au tuyau : FMO INC n° 7.</div>
+            <div class="rd-alerte">L'<strong>ARI-CO du conducteur</strong> des engins-pompes urbains sert : de protection respiratoire au conducteur (chef de groupe au besoin), de réserve en cas de dysfonctionnement sur un porteur, et de lot d'assistance en air respirable.</div>
+            <div class="rd-alerte">Sur la bouteille, côté droit : un <strong>outil de force et déblai</strong> pour le chef d'équipe (note opérationnelle 2025/03) et une <strong>commande</strong> pour l'équipier. Le côté droit permet de récupérer l'agrès, isolé, par un demi-décapelage.</div>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 1.1 à 1.3</p>
+    </div>
+
+    <div id="rdeb-preparation" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <h2>💪 Contraintes & préparation</h2>
+
+        <div class="rd-section">
+            <h3>1.4 – Contraintes physiques</h3>
+            <ul><li>Centre de gravité modifié.</li><li>Travail musculaire et dépense énergétique accrus.</li><li>Baisse des performances.</li><li>Déplacements limités dans les passages étroits.</li></ul>
+            <div class="rd-astuce">Le poids de l'ARI-CO ne doit pas excéder <strong>18 kg</strong>.</div>
+            <h3>1.5 – Contraintes physiologiques</h3>
+            <ul>
+                <li><strong>Espace mort augmenté</strong> par le volume du masque : une partie du CO₂ expiré est réinhalée. Le demi-masque intérieur sépare les volumes supérieur et inférieur et limite la buée.</li>
+                <li><strong>Résistances respiratoires</strong> : l'inspiration est facilitée par l'air sous pression ; l'expiration demande un effort pour ouvrir la soupape expiratoire.</li>
+                <li><strong>Fréquence cardiaque</strong> augmentée (travail respiratoire, effort, stress, chaleur) → déshydratation, hypoglycémie, épuisement plus rapide.</li>
+            </ul>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <figure class="rd-fig"><img src="images/rdeb/espace-mort.jpg" alt="Espace mort : expiration et inspiration" loading="lazy"></figure>
+                <figure class="rd-fig"><img src="images/rdeb/demi-masque.jpg" alt="Demi-masque supérieur et inférieur" loading="lazy"></figure>
+            </div>
+            <h3>1.6 à 1.8 – Contraintes psychologiques, d'équipement et de réserve d'air</h3>
+            <ul>
+                <li>Inconfort du masque et de l'effort expiratoire ; un porteur qui perd son calme <strong>accélère sa respiration</strong> et épuise plus vite sa réserve ; difficultés de concentration.</li>
+                <li>Capacités respiratoires, de perception et relationnelles diminuées ; acuité auditive réduite.</li>
+                <li>Temps d'intervention limité par la consommation du porteur et la capacité de la bouteille.</li>
+            </ul>
+            <div class="rd-alerte">L'accoutumance et l'entraînement physique régulier retardent les effets de l'effort sous ARI.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.1 à 2.4 – Préparation</h3>
+            <table class="rd-table">
+                <tr><th>Physique</th><td>Entraînement régulier, exercices cardio-respiratoires, renforcement musculaire, bonne nuit de sommeil avant la garde ou l'astreinte.</td></tr>
+                <tr><th>Physiologique</th><td>Alimentation équilibrée, hydratation régulière, exercices d'aisance au port de l'ARI.</td></tr>
+                <tr><th>Psychologique</th><td>Anticiper les situations stressantes ou dégradées, s'entraîner à garder ses capacités sous stress, étudier les RETEX d'accidents.</td></tr>
+                <tr><th>Opérationnelle</th><td>Maîtrise des EPI et matériels, connaissance des référentiels départementaux, lecture bâtimentaire et du feu, notion d'itinéraire de repli ou de secours.</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.5 – L'habillage</h3>
+            <p>Tout sapeur-pompier engagé en lutte contre l'incendie urbain porte ses EPI ; <strong>bijoux, piercings, montres et autres artifices sont proscrits</strong>.</p>
+            <figure class="rd-fig etroite"><img src="images/rdeb/habillage.jpg" alt="Habillage" loading="lazy"></figure>
+            <table class="rd-table">
+                <tr><th>Capeler</th><td>Porter l'ARI-CO</td></tr>
+                <tr><th>Coiffer</th><td>Placer le masque sur le visage</td></tr>
+                <tr><th>Encliqueter</th><td>Connecter la SAD au masque</td></tr>
+                <tr><th>Binôme porteur d'un ARI-CO</th><td>Porte l'ARI, masque en attente</td></tr>
+                <tr><th>Binôme sous ARI-CO</th><td>Masque coiffé et encliqueté</td></tr>
+            </table>
+            <p>Avec un engin-pompe urbain, <strong>les deux binômes capellent</strong> (sauf ordre contraire) : réglage pendant le transit, contrôle croisé avancé, réactions immédiates dès la sortie de l'engin.</p>
+            <p>Le <strong>chef d'agrès capelle au besoin</strong> : ARI disponible dans l'attente d'un binôme de sécurité, reconnaissances et réactions immédiates en milieu vicié, sécurité en cas de dégradation, contrôle des chefs d'équipe.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.6 – Le capelage</h3>
+            <ol>
+                <li>ARI-CO sur le dos, bras dans les bretelles ; <strong>ouvrir la bouteille jusqu'à la butée</strong>.</li>
+                <li>Clipser et serrer la sangle ventrale.</li>
+                <li>Serrer les bretelles.</li>
+                <li>Encliqueter la SAD, puis vérifier la liaison avec le masque en la faisant pivoter de droite à gauche avec une légère traction.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdeb/capelage.jpg" alt="Capelage en 4 étapes" loading="lazy"></figure>
+            <div class="rd-alerte">La SAD doit être <strong>encliquetée sur le masque en position d'attente</strong> : on vérifie ainsi son fonctionnement (aucune fuite ; si l'air sort en continu, la fourchette interne est défectueuse) et, en cas de force majeure, le porteur isolé peut coiffer et encliqueter seul.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.7 – Coiffage d'un masque à griffe</h3>
+            <ol>
+                <li>Mettre le casque, attacher la jugulaire ; dispositifs de serrage déverrouillés au maximum (à la prise de garde) ; retenir sa respiration et plaquer le masque par-dessus la cagoule.</li>
+                <li>Insérer les griffes dans les fixations du casque, ajuster ; serrer selon la morphologie : pression vers l'arrière (<strong>griffe à ressort</strong>, ancienne dotation) ou en écartant et tournant vers l'arrière (<strong>griffe à molette</strong>, nouvelle dotation).</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdeb/coiffage-griffe.jpg" alt="Coiffage d'un masque à griffe" loading="lazy"></figure>
+            <h3>2.8 – Coiffage d'un masque à filet</h3>
+            <ol>
+                <li>Retirer le casque ; serrages déverrouillés ; retenir sa respiration et plaquer le masque par-dessus la cagoule.</li>
+                <li>Placer le filet au-dessus de la tête et ajuster.</li>
+                <li>Serrer vers l'arrière, puis remettre le casque et attacher la jugulaire.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdeb/coiffage-filet.jpg" alt="Coiffage d'un masque à filet" loading="lazy"></figure>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 1.4 à 1.8, 2.1 à 2.8</p>
+    </div>
+
+    <div id="rdeb-ligne-vie" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <h2>🧵 Ligne de vie & TTH 900</h2>
+
+        <div class="rd-section">
+            <h3>1.9 – La ligne de vie</h3>
+            <p>Lien physique et continu avec le point d'engagement. Selon la lecture du feu, l'analyse bâtimentaire et les risques : <strong>par ligne guide</strong> ou <strong>par l'établissement</strong>.</p>
+            <div class="rd-alerte">Il est <strong>déconseillé</strong> d'engager un binôme simultanément avec une ligne guide et un établissement (complexité, sans plus-value).</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.10 – Par l'établissement</h3>
+            <p>Établissement d'attaque <strong>Ø 45 mm sous pression</strong> + liaison personnelle ou maintien physique. La LDV 40 est mise en œuvre :</p>
+            <ul>
+                <li>foyer non localisé à la caméra thermique depuis les ouvrants et/ou visibilité réduite ou nulle ;</li>
+                <li>incendie généralement localisé à <strong>moins de 60 m</strong> ;</li>
+                <li>reconnaissance <strong>≤ 776 m²</strong> (60 m d'établissement + exploration bilatérale).</li>
+            </ul>
+            <figure class="rd-fig etroite"><img src="images/rdeb/ldv-etablissement.jpg" alt="Établissement + liaison personnelle" loading="lazy"></figure>
+            <div class="rd-astuce">Colliers d'attache au tuyau (CAT) en expérimentation. Sans CAT : la tresse de la liaison personnelle entoure l'établissement avant d'être connectée au point de fixation.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.11 – Par ligne guide</h3>
+            <p>Ligne guide + liaison personnelle, mise en œuvre :</p>
+            <ul>
+                <li>foyer non localisé à la caméra thermique et/ou visibilité réduite ;</li>
+                <li>reconnaissance <strong>≤ 388 m²</strong> (60 m de ligne guide + exploration unilatérale) ;</li>
+                <li>sauvetage avec visibilité réduite ou nulle quand aucun moyen hydraulique ne peut être établi.</li>
+            </ul>
+            <div class="rd-alerte">La <strong>commande</strong> n'est utilisée qu'en extrême urgence, s'il est impossible de mettre une ligne de vie conventionnelle ; la manœuvre est identique à la ligne guide.</div>
+            <div class="rd-alerte">Chaque engin-pompe urbain possède <strong>deux lignes guides</strong> ; prolongements et dérivations relèvent des équipes <strong>IBNB-ELD</strong>. La ligne guide du MEA sert surtout quand il arrive en premier avec une victime avérée.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.12 – La ligne guide</h3>
+            <p>60 m · Ø filaire 6 mm · nodules réfléchissants Ø 12 mm · aramide · 600 kg · 500 °C. Repères tous les <strong>2,5 m</strong> : <strong>3 nodules = vers le sinistre</strong> (IN-CEN-DIE) ; <strong>1 nodule = vers le point d'engagement</strong> (VIE).</p>
+            <figure class="rd-fig"><img src="images/rdeb/ligne-guide.jpg" alt="Ligne guide et codage des nodules" loading="lazy"></figure>
+            <h3>1.13 – La liaison personnelle</h3>
+            <p>Longueur totale <strong>6 m</strong> : liaison courte <strong>1,25 m</strong>, longue <strong>4,75 m</strong> · tresse Ø 3,5 mm · 250 kg.</p>
+            <figure class="rd-fig"><img src="images/rdeb/liaison-perso.jpg" alt="Liaison personnelle" loading="lazy"></figure>
+            <p>Mise en œuvre sur ligne de vie : <button onclick="showModule('rdeb-engagement')">Engagement</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.14 – L'émetteur-récepteur portatif TTH 900</h3>
+            <p>2 W · autonomie 4 h (−20 à +55 °C) · batterie 55 °C maximum · étanche poussière et eau (jet de lance) · chute ≤ 1 m · <strong>DIR N5 : 603 – 643 – 624 – 664</strong> · <strong>non ATEX</strong>.</p>
+            <figure class="rd-fig"><img src="images/rdeb/tth900.jpg" alt="TTH 900 et micro déporté : alternat, détresse, volume, raccrocher" loading="lazy"></figure>
+            <div class="rd-astuce">Répartition : 1 pour le chef d'agrès, 1 pour le conducteur, 1 par chef d'équipe. En charge, les batteries sont retirées et placées dans le chargeur.</div>
+            <div class="rd-alerte">Conducteurs et chefs d'équipe portent le TTH 900 dans la <strong>poche intérieure de la veste</strong> (batterie protégée du flux thermique, autonomie préservée). Le chef d'équipe valide la DIR et verrouille l'appareil ; les fonctions essentielles sont sur le micro déporté au niveau du cou.</div>
+            <p>Appel de détresse : <button onclick="showModule('rdsmes-detresse')">📻 RDSMES – détresse</button></p>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 1.9 à 1.14</p>
+    </div>
+
+    <div id="rdeb-controle" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <h2>✅ Contrôle croisé & codes de communication</h2>
+
+        <div class="rd-section">
+            <h3>2.9 – Le contrôle croisé</h3>
+            <p>Travail en binôme (un chef, un équipier). L'engagement en zone d'exclusion se fait depuis la zone contrôlée, sous la responsabilité du chef d'agrès ou d'un contrôleur.</p>
+            <div class="rd-alerte">Le binôme est <strong>indissociable en zone d'exclusion</strong>. En zone contrôlée, il peut être dissocié si les porteurs sont à vue.</div>
+            <p>Après l'habillage, le contrôle croisé est <strong>obligatoire</strong> ; moyen mnémotechnique <strong>« RAPACE »</strong> :</p>
+            <table class="rd-table">
+                <tr><th>R – Robinet</th><td>Ouverture de la bouteille jusqu'à la butée</td></tr>
+                <tr><th>A – Armement</th><td>Balise de sécurité et de détresse ou instrument de contrôle et de sécurité activé</td></tr>
+                <tr><th>P – Pression</th><td>Engagement initial avec une pression <strong>≥ 270 bars</strong></td></tr>
+                <tr><th>A – Ajustement</th><td>Port correct des EPI</td></tr>
+                <tr><th>C – Code</th><td>Code de communication adapté aux moyens employés</td></tr>
+                <tr><th>E – Étanchéité</th><td>Absence de fuite au masque et à la SAD</td></tr>
+            </table>
+            <div class="rd-alerte">Anomalie au contrôle croisé → <strong>l'engagement n'est pas réalisable</strong>.</div>
+            <div class="rd-alerte">Masque coiffé : aucune fuite (sinon, mauvais réglage casque-cagoule-masque). La SAD se déclenche dès la première inspiration. Dès que l'atmosphère devient viciée, le masque est coiffé, <strong>à l'air frais</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.10 – Les codes de communication</h3>
+            <h4>Langage verbal et non verbal</h4>
+            <figure class="rd-fig"><img src="images/rdeb/gestes.jpg" alt="Gestes : ça va, ça ne va pas, mi-bouteille, on monte, on descend, à droite, à gauche, en réserve, on fait retour, j'ai plus d'air" loading="lazy"><figcaption>Ça va · ça ne va pas · mi-bouteille · on monte · on descend · à droite · à gauche · en réserve · on fait retour · j'ai plus d'air</figcaption></figure>
+            <h4>Le TTH 900</h4>
+            <ul>
+                <li>Chefs d'agrès, chefs d'équipe et conducteurs en sont dotés ; <strong>activé dès le transit aller</strong>.</li>
+                <li>Liaison tactique de niveau 5 (603 – 624 – 643 – 664).</li>
+                <li>Alerte de détresse : message de détresse ou appel de détresse en mode direct ; l'appel est déclenché manuellement quand le <strong>message reste 3 fois sans réponse</strong>.</li>
+            </ul>
+            <h4>Balise de sécurité et de détresse (BSD) et indicateur de contrôle et de sécurité (ICS)</h4>
+            <ul>
+                <li>Sur chaque châssis ; <strong>activés dès la zone de soutien</strong>.</li>
+                <li>Alertent de l'immobilité, d'une température élevée (si sonde) ou d'une détresse, par signaux sonores et lumineux à proximité.</li>
+                <li>Déclenchement manuel : sans moyen radio, si le message ou l'appel de détresse reste sans réponse, ou à la demande du contrôleur.</li>
+                <li><strong>Alarme température</strong> : se diriger vers une zone à l'abri ; des réactions immédiates avérées peuvent être réalisées en <strong>moins de 5 minutes</strong>.</li>
+            </ul>
+            <div class="rd-alerte">Balise déclenchée : le chef d'agrès ou le contrôleur contacte chaque binôme par radio pour identifier celui en difficulté ; à défaut, <strong>tous les binômes regagnent la sortie</strong>. Le message ou l'appel de détresse identifie le binôme sans désengager les autres.</div>
+            <p>Trame de détresse : <button onclick="showModule('rdsmes-detresse')">📻 RDSMES – message & appel de détresse</button></p>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 2.9 et 2.10</p>
+    </div>
+
+    <div id="rdeb-autonomie" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <h2>⏱️ Autonomie, enregistrement & contrôle</h2>
+
+        <div class="rd-section">
+            <h3>2.11 – L'autonomie d'engagement</h3>
+            <p>Trois temps : <strong>ALLER → MISSION → RETOUR</strong>. Chaque porteur tient compte de sa pression d'engagement pour juger de la faisabilité de la mission.</p>
+            <div class="rd-alerte">Ne pas attendre la réserve : <strong>dès que l'avertisseur se déclenche, la sortie du binôme est immédiate</strong>.</div>
+            <table class="rd-table">
+                <tr><th>≈ 10 l/min</th><td>Repos – survie dans l'attente des secours</td></tr>
+                <tr><th>≈ 50 l/min</th><td>Travail intense – généralement engagement à vue</td></tr>
+                <tr><th>≈ 105 l/min</th><td>Travail continu 15 min maximum – généralement engagement avec ligne de vie</td></tr>
+                <tr><th>≈ 135 l/min</th><td>Travail continu moins de 5 min – généralement sauvetage</td></tr>
+            </table>
+            <p><strong>Autonomie = pression × volume ÷ consommation</strong>, avec la pression d'engagement <strong>réserve décomptée (−50 bars)</strong>. Exemple : 250 bars × 7,2 L ÷ 105 l/min = <strong>17 min</strong>.</p>
+            <p><button onclick="showModule('ari')">🫁 Calculer mon autonomie et mon heure de sortie</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.11-5.12 – Abaques d'engagement</h3>
+            <p><small>Engagement : pression − 50 bars de réserve. Survie : pression totale (la réserve de 50 bars représente 30 min en 6 L et 36 min en 7,2 L). Arrondi à la minute, 1 min minimum.</small></p>
+<h4>BARI 6 L</h4><div style="overflow-x:auto"><table class="rd-table rd-abaque"><tr><th>Pression</th><th>Survie <small>≈10 l/min</small></th><th>Engagement à vue <small>≈50 l/min</small></th><th>Engagement avec ligne de vie <small>≈105 l/min</small></th><th>Sauvetage <small>≈135 l/min</small></th></tr>
+<tr><th>300 bars</th><td>3 h 00</td><td>30 min</td><td>14 min</td><td>11 min</td></tr>
+<tr><th>290 bars</th><td>2 h 54</td><td>29 min</td><td>14 min</td><td>11 min</td></tr>
+<tr><th>280 bars</th><td>2 h 48</td><td>28 min</td><td>13 min</td><td>10 min</td></tr>
+<tr><th>270 bars</th><td>2 h 42</td><td>26 min</td><td>13 min</td><td>10 min</td></tr>
+<tr><th>260 bars</th><td>2 h 36</td><td>25 min</td><td>12 min</td><td>9 min</td></tr>
+<tr><th>250 bars</th><td>2 h 30</td><td>24 min</td><td>11 min</td><td>9 min</td></tr>
+<tr><th>240 bars</th><td>2 h 24</td><td>23 min</td><td>11 min</td><td>8 min</td></tr>
+<tr><th>230 bars</th><td>2 h 18</td><td>22 min</td><td>10 min</td><td>8 min</td></tr>
+<tr><th>220 bars</th><td>2 h 12</td><td>20 min</td><td>10 min</td><td>8 min</td></tr>
+<tr><th>210 bars</th><td>2 h 06</td><td>19 min</td><td>9 min</td><td>7 min</td></tr>
+<tr><th>200 bars</th><td>2 h 00</td><td>18 min</td><td>9 min</td><td>7 min</td></tr>
+<tr><th>190 bars</th><td>1 h 54</td><td>17 min</td><td>8 min</td><td>6 min</td></tr>
+<tr><th>180 bars</th><td>1 h 48</td><td>16 min</td><td>7 min</td><td>6 min</td></tr>
+<tr><th>170 bars</th><td>1 h 42</td><td>14 min</td><td>7 min</td><td>5 min</td></tr>
+<tr><th>160 bars</th><td>1 h 36</td><td>13 min</td><td>6 min</td><td>5 min</td></tr>
+<tr><th>150 bars</th><td>1 h 30</td><td>12 min</td><td>6 min</td><td>4 min</td></tr>
+<tr><th>140 bars</th><td>1 h 24</td><td>11 min</td><td>5 min</td><td>4 min</td></tr>
+<tr><th>130 bars</th><td>1 h 18</td><td>10 min</td><td>5 min</td><td>4 min</td></tr>
+<tr><th>120 bars</th><td>1 h 12</td><td>8 min</td><td>4 min</td><td>3 min</td></tr>
+<tr><th>110 bars</th><td>1 h 06</td><td>7 min</td><td>3 min</td><td>3 min</td></tr>
+<tr><th>100 bars</th><td>1 h 00</td><td>6 min</td><td>3 min</td><td>2 min</td></tr>
+<tr><th>90 bars</th><td>54 min</td><td>5 min</td><td>2 min</td><td>2 min</td></tr>
+<tr><th>80 bars</th><td>48 min</td><td>4 min</td><td>2 min</td><td>1 min</td></tr>
+<tr><th>70 bars</th><td>42 min</td><td>2 min</td><td>1 min</td><td>1 min</td></tr>
+<tr><th>60 bars</th><td>36 min</td><td>1 min</td><td>1 min</td><td>1 min</td></tr>
+</table></div>
+<h4>BARI 7,2 L</h4><div style="overflow-x:auto"><table class="rd-table rd-abaque"><tr><th>Pression</th><th>Survie <small>≈10 l/min</small></th><th>Engagement à vue <small>≈50 l/min</small></th><th>Engagement avec ligne de vie <small>≈105 l/min</small></th><th>Sauvetage <small>≈135 l/min</small></th></tr>
+<tr><th>300 bars</th><td>3 h 36</td><td>36 min</td><td>17 min</td><td>13 min</td></tr>
+<tr><th>290 bars</th><td>3 h 29</td><td>35 min</td><td>16 min</td><td>13 min</td></tr>
+<tr><th>280 bars</th><td>3 h 22</td><td>33 min</td><td>16 min</td><td>12 min</td></tr>
+<tr><th>270 bars</th><td>3 h 14</td><td>32 min</td><td>15 min</td><td>12 min</td></tr>
+<tr><th>260 bars</th><td>3 h 07</td><td>30 min</td><td>14 min</td><td>11 min</td></tr>
+<tr><th>250 bars</th><td>3 h 00</td><td>29 min</td><td>14 min</td><td>11 min</td></tr>
+<tr><th>240 bars</th><td>2 h 53</td><td>27 min</td><td>13 min</td><td>10 min</td></tr>
+<tr><th>230 bars</th><td>2 h 46</td><td>26 min</td><td>12 min</td><td>10 min</td></tr>
+<tr><th>220 bars</th><td>2 h 38</td><td>24 min</td><td>12 min</td><td>9 min</td></tr>
+<tr><th>210 bars</th><td>2 h 31</td><td>23 min</td><td>11 min</td><td>9 min</td></tr>
+<tr><th>200 bars</th><td>2 h 24</td><td>22 min</td><td>10 min</td><td>8 min</td></tr>
+<tr><th>190 bars</th><td>2 h 17</td><td>20 min</td><td>10 min</td><td>7 min</td></tr>
+<tr><th>180 bars</th><td>2 h 10</td><td>19 min</td><td>9 min</td><td>7 min</td></tr>
+<tr><th>170 bars</th><td>2 h 02</td><td>17 min</td><td>8 min</td><td>6 min</td></tr>
+<tr><th>160 bars</th><td>1 h 55</td><td>16 min</td><td>8 min</td><td>6 min</td></tr>
+<tr><th>150 bars</th><td>1 h 48</td><td>14 min</td><td>7 min</td><td>5 min</td></tr>
+<tr><th>140 bars</th><td>1 h 41</td><td>13 min</td><td>6 min</td><td>5 min</td></tr>
+<tr><th>130 bars</th><td>1 h 34</td><td>12 min</td><td>5 min</td><td>4 min</td></tr>
+<tr><th>120 bars</th><td>1 h 26</td><td>10 min</td><td>5 min</td><td>4 min</td></tr>
+<tr><th>110 bars</th><td>1 h 19</td><td>9 min</td><td>4 min</td><td>3 min</td></tr>
+<tr><th>100 bars</th><td>1 h 12</td><td>7 min</td><td>3 min</td><td>3 min</td></tr>
+<tr><th>90 bars</th><td>1 h 05</td><td>6 min</td><td>3 min</td><td>2 min</td></tr>
+<tr><th>80 bars</th><td>58 min</td><td>4 min</td><td>2 min</td><td>2 min</td></tr>
+<tr><th>70 bars</th><td>50 min</td><td>3 min</td><td>1 min</td><td>1 min</td></tr>
+<tr><th>60 bars</th><td>43 min</td><td>1 min</td><td>1 min</td><td>1 min</td></tr>
+</table></div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.12 – L'enregistrement</h3>
+            <p>Avant chaque engagement, en zone contrôlée auprès du contrôleur (à défaut par le binôme lui-même, après avoir obligatoirement informé le chef d'agrès), de préférence sur le <strong>tableau de gestion des personnels</strong> :</p>
+            <ul><li>identification des porteurs ;</li><li>pression d'engagement ;</li><li>heure d'entrée ;</li><li>heure de sortie prévisible ;</li><li>mission du binôme.</li></ul>
+            <div class="rd-astuce">Les clés des balises de sécurité et de détresse restent sur les porteurs ; les ICS n'en ont plus.</div>
+            <figure class="rd-fig"><img src="images/rdeb/tableau-gestion.jpg" alt="Exemple de tableau de gestion des personnels" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.13 – Le contrôleur</h3>
+            <ul>
+                <li>Régule <strong>un seul point d'engagement</strong> ; enregistre et sécurise les binômes engagés en zone contrôlée.</li>
+                <li>Désigné si possible dès l'engagement d'un binôme en zone d'exclusion ; à défaut, un chef d'agrès ou une personne titulaire du module incendie.</li>
+                <li>Supervise au maximum <strong>5 binômes (4 + 1 binôme de sécurité)</strong>.</li>
+                <li>Gilet haute visibilité, émetteur-récepteur portatif sur la tactique de niveau 5 des binômes.</li>
+                <li>En lien avec le chef d'agrès et/ou le COS ; en urgence, il <strong>engage le binôme de sécurité</strong> et rend compte.</li>
+            </ul>
+            <div class="rd-astuce">En groupe incendie, la VLCG peut avoir un conducteur titulaire du module incendie qui tiendra le rôle de contrôleur.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.14 – Le binôme de sécurité</h3>
+            <p>Mis en place par le COS <strong>dès que possible</strong> lors de l'engagement d'un binôme en zone d'exclusion ; sous l'autorité du contrôleur, au point d'engagement en zone contrôlée. Rôle principal : <strong>assister et porter secours</strong> aux binômes engagés. Missions secondaires possibles s'il reste mobilisable. À défaut, le chef d'agrès assure cette fonction (contact permanent, ARI).</p>
+            <p>Même niveau de protection que les binômes engagés ; moyen hydraulique à disposition selon l'analyse du risque. Engagé sur ordre du contrôleur dès qu'un binôme rencontre des difficultés.</p>
+            <div class="rd-alerte">Un sauvetage peut justifier l'envoi immédiat d'un binôme sans contrôleur ni binôme de sécurité. L'engagement du binôme de sécurité implique la désignation d'un <strong>nouveau binôme de sécurité</strong> dès que possible.</div>
+            <h4>2.15 – Phase « ATTENTE »</h4>
+            <ul>
+                <li>EPI, bouteille ouverte, balise activée ; masque en attente sauf ordre contraire.</li>
+                <li>À disposition du chef d'agrès ou du contrôleur en zone contrôlée ; contact visuel ou radio avec les binômes engagés.</li>
+                <li>Pérennité de l'itinéraire de repli ; vigilance aux balises en zone d'exclusion ; remontée d'informations au contrôleur.</li>
+                <li>Contrôler l'ouvrant d'engagement ; faciliter la progression et le repli des établissements (ces deux derniers points peuvent lui revenir en attendant la montée en puissance).</li>
+            </ul>
+            <h4>2.16 – Phase « ENGAGEMENT »</h4>
+            <ul><li>Assistance technique ou matérielle du binôme engagé.</li><li>Aide ou réalise le dégagement d'une victime.</li><li>Rend compte au chef d'agrès ou au contrôleur.</li></ul>
+            <h4>2.17 – Exemple de matériel</h4>
+            <p>Ligne de vie · outil de force · assistance en air respirable · caméra thermique · pince coupante · dispositif de premiers secours · système de traction · éclairage · échelle télescopique.</p>
+            <div class="rd-astuce">Le matériel peut être transporté dans la barquette du MEA (si dotée), tractée par un binôme avec des SIM. La <strong>pince coupante</strong> sert surtout à libérer des porteurs emmêlés dans des liaisons personnelles ou une ligne guide.</div>
+            <p>Sauvetage d'un sauveteur : <button onclick="showModule('rdsmes-sauveteur')">🤝 RDSMES – sauvetage de sauveteur</button></p>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 2.11 à 2.17, 5.11, 5.12</p>
+    </div>
+
+    <div id="rdeb-lecture" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <h2>🔎 Zonage, lecture du feu & radio</h2>
+
+        <div class="rd-section">
+            <h3>2.18 à 2.22 – Zonage et façades</h3>
+            <p>Zones d'exclusion, contrôlée et de soutien ; désignation des façades : <button onclick="showModule('rdmi-zones')">🚧 Zonage opérationnel</button> <button onclick="showModule('rdsmes-principes')">Façades A-B-C-D (RDSMES)</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.23 – L'observation sur incendie</h3>
+            <table class="rd-table">
+                <tr><th>Météo</th><td>Peut influencer la propagation, la puissance du feu et les tirages.</td></tr>
+                <tr><th>Bâtiment</th><td>Résistance et réaction au feu, potentiel calorifique, dimensionnement des volumes et des ouvrants.</td></tr>
+                <tr><th>Fumées</th><td>Selon leur vitesse de sortie : pression induite par la chaleur.</td></tr>
+                <tr><th>Flammes</th><td>Selon leur couleur : taux de ventilation et ambiance thermique.</td></tr>
+                <tr><th>Chaleur</th><td>Situe le volume sur la courbe de développement du feu.</td></tr>
+                <tr><th>Ouvrants</th><td>Puissance du feu selon le milieu, le nombre et la taille des ouvrants.</td></tr>
+                <tr><th>Sons</th><td>Puissance du foyer.</td></tr>
+            </table>
+            <h3>2.24 – Le danger des fumées</h3>
+            <table class="rd-table">
+                <tr><th>Chaudes</th><td>Rayonnent sur l'environnement.</td></tr>
+                <tr><th>Opaques</th><td>Occultent partiellement ou totalement la vue.</td></tr>
+                <tr><th>Mobiles</th><td>Se déplacent dans les volumes.</td></tr>
+                <tr><th>Inflammables</th><td>Peuvent s'enflammer.</td></tr>
+                <tr><th>Toxiques</th><td>Issues de la combustion et de décompositions chimiques.</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.25 – Les communications radio</h3>
+            <div class="rd-alerte">Sous ARI, le masque altère la parole : soigner la qualité des messages, <strong>éloigner le micro déporté de la membrane phonique</strong>.</div>
+            <ul>
+                <li><strong>Tactique niveau 3/4</strong> : chef de groupe ↔ chefs d'agrès.</li>
+                <li><strong>Tactique niveau 5</strong> : chefs d'agrès ↔ chefs d'équipe et conducteurs.</li>
+            </ul>
+            <div class="rd-alerte">L'ordre complémentaire de transmission peut être modifié à la demande du CODIS, <strong>station directrice</strong>. En transit, communications sur les tactiques N3/4 ; sur l'OPE, demander l'autorisation au CODIS pour communiquer avec un autre véhicule.</div>
+            <table class="rd-table">
+                <tr><th></th><th>ERP N3/4</th><th>ERP N5</th></tr>
+                <tr><th>CDG</th><td colspan="2">2 ERP (OPE & N3/4) – holster double + housses ou gilet tactique</td></tr>
+                <tr><th>CA</th><td colspan="2">2 ERP (N3/4 & N5) – holster double + housses</td></tr>
+                <tr><th>CE BIN</th><td></td><td>1 ERP (N5) – micro déporté sans housse</td></tr>
+                <tr><th>COD</th><td></td><td>1 ERP (N5) – micro déporté sans housse</td></tr>
+            </table>
+            <p>Message <strong>clair, précis, concis</strong>, débit de parole lent.</p>
+            <div class="rd-astuce">Pour ne pas encombrer les liaisons : message de compte rendu de situation quand une remontée d'information est nécessaire, sinon le terme <strong>« À disposition »</strong>.</div>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 2.18 à 2.25</p>
+    </div>
+
+    <div id="rdeb-engagement" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <h2>🔥 Engagement</h2>
+
+        <div class="rd-section">
+            <h3>3.1 – Types d'engagement</h3>
+            <p>Organisés par le chef d'agrès ou le COS ; le binôme adapte sa technique à la situation.</p>
+            <table class="rd-table">
+                <tr><th></th><th>À vue, air vicié</th><th>Avec ligne de vie</th></tr>
+                <tr><th>Débit</th><td>≈ 50 l/min</td><td>≈ 105 l/min</td></tr>
+                <tr><th>Visibilité</th><td>Suffisante</td><td>Réduite ou nulle</td></tr>
+                <tr><th>Durée (300 bars)</th><td>30 min (6 L) · 36 min (7,2 L)</td><td>14 min (6 L) · 17 min (7,2 L)</td></tr>
+                <tr><th>Potentiel physique</th><td>Faiblement altéré</td><td>Altéré</td></tr>
+            </table>
+            <p><strong>À vue dans un air non vicié</strong> : air respirable, masques en attente, temps d'engagement non limité.</p>
+            <div class="rd-alerte">Sauvetage : débit ≈ <strong>135 l/min</strong>, engagement de <strong>moins de 5 min</strong>, potentiel physique fortement altéré.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.3 – L'engagement avec une ligne de vie</h3>
+            <p>Procédures identiques (ligne guide ou établissement) pour : uniformiser, disposer des 6 m de liaison personnelle chacun, éviter les emmêlements aux retournements, éviter les liaisons croisées entre porteurs, ne pas entraîner le binôme si un porteur chute.</p>
+            <div class="rd-alerte">Chef d'équipe et équipier restent en contact physique, visuel ou verbal ; si un contact doit être rompu, ils s'avertissent. Pour aider l'autre, un porteur peut passer sa liaison en position longue après s'être assuré que la ligne est attachée ou bloquée.</div>
+            <h4>Au moyen d'un établissement</h4>
+            <ul>
+                <li>Le chef d'équipe est garant de la sécurité collective (port et gestion de la lance) ; l'équipier porte la caméra thermique.</li>
+                <li>Chacun progresse individuellement sur l'établissement, en position adaptée.</li>
+            </ul>
+            <div class="rd-astuce">Progression par maintien physique au tuyau si binôme et/ou établissement à vue ; sinon par la liaison personnelle avec le CAT.</div>
+            <div class="rd-alerte">Selon la situation, il n'est pas obligatoire de ramener le moyen hydraulique jusqu'à la sortie au retour, ni de placer le tuyau en O dans le volume (les réserves compliquent les cheminements).</div>
+            <h4>Au moyen d'une ligne guide</h4>
+            <ul>
+                <li>Le chef d'équipe est garant de la sécurité collective (port et gestion de la ligne guide) ; l'équipier porte la caméra thermique.</li>
+                <li>Chacun est attaché individuellement à la ligne guide par sa liaison personnelle.</li>
+            </ul>
+            <div class="rd-astuce">Dès qu'une ligne guide est mise en œuvre, un <strong>moyen hydraulique</strong> est à disposition, à sec ou en attente.</div>
+            <figure class="rd-fig"><img src="images/rdeb/port-ligne-guide.jpg" alt="Port de la ligne guide main droite et main gauche" loading="lazy"><figcaption>Port « main droite » · « main gauche »</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.4 – Les explorations</h3>
+            <p><strong>Linéaire</strong> : le long de l'établissement ou de la ligne guide ; chef d'équipe et équipier en liaison courte.</p>
+            <figure class="rd-fig"><img src="images/rdeb/exploration-lineaire.jpg" alt="Exploration linéaire" loading="lazy"></figure>
+            <p><strong>Latérale</strong> : parallèlement à la ligne ; chef d'équipe en liaison courte, équipier en liaison courte ou longue.</p>
+            <figure class="rd-fig"><img src="images/rdeb/exploration-laterale.jpg" alt="Exploration latérale" loading="lazy"></figure>
+            <div class="rd-alerte">Chaque liaison personnelle est attachée sur la ligne guide ou l'établissement. Sans elles, et seulement depuis un ouvrant, l'équipier s'attache au point de fixation de la liaison du chef d'équipe. En exploration latérale, le chef d'équipe peut tenir le mousqueton de l'équipier pour qu'il ne glisse pas.</div>
+            <p><strong>Circulaire</strong> : autour de la ligne ; chef d'équipe en liaison courte, équipier en courte ou longue.</p>
+            <figure class="rd-fig"><img src="images/rdeb/exploration-circulaire.jpg" alt="Exploration circulaire" loading="lazy"></figure>
+            <h4>3.5 – Exemple de technique d'exploration circulaire</h4>
+            <ol>
+                <li>Le chef d'équipe déroule totalement la liaison personnelle de l'équipier.</li>
+                <li>À partir de la liaison, il fait une <strong>brassée de 1 à 1,5 m</strong> et un tour sur la main.</li>
+                <li>L'équipier garde la tension pour explorer circulairement le volume.</li>
+                <li>Répéter dans la limite des 6 m de liaison : surface explorée <strong>≤ 56 m²</strong>.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdeb/brassee.jpg" alt="Brassée de 1 à 1,5 m" loading="lazy"></figure>
+            <div class="rd-astuce">Pour connaître la surface d'un volume, l'équipier avance de façon linéaire et latérale en liaison longue jusqu'à toucher une paroi ; sinon, le binôme entre avec la ligne de vie et finalise l'exploration.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.6 – Le retournement sur ligne guide</h3>
+            <p><strong>Sac avec point d'ancrage</strong> : le chef d'équipe amarre et dépose la ligne guide en déverrouillant la sangle ventrale de l'ARI-CO ; chacun maintient la ligne et se retourne face à elle.</p>
+            <p><strong>Sac sans point d'ancrage (au sol)</strong> : le chef d'équipe dépose la ligne ; chacun se retourne face à elle ; traction sur la ligne pour faciliter le retour.</p>
+            <figure class="rd-fig"><img src="images/rdeb/retournement.jpg" alt="Retournement sur ligne guide" loading="lazy"></figure>
+            <div class="rd-alerte">Après le retournement, le chef d'équipe se retrouve <strong>derrière l'équipier, en serre-file</strong> : il s'assure que son équipier n'est pas resté au niveau du sinistre.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.7 – L'amarrage d'une ligne guide</h3>
+            <ul>
+                <li><strong>Initial</strong> : premier amarrage depuis le point d'engagement ; vérifier le <strong>bon sens de la ligne guide</strong>.</li>
+                <li><strong>Intermédiaire</strong> : pendant l'engagement, sur les ancrages structurels ou artificiels.</li>
+                <li><strong>Final</strong> : dernier amarrage avant que le binôme regagne la sortie (sac à proximité).</li>
+            </ul>
+            <div class="rd-alerte">Garant de la sécurité collective, le chef d'équipe assure la pérennité de l'itinéraire de repli : il <strong>choisit les ancrages et réalise les amarrages</strong>.</div>
+            <p>Technique simple et rapide : <strong>un tour mort et deux demi-nœuds</strong>.</p>
+            <figure class="rd-fig etroite"><img src="images/rdeb/amarrage-ligne-guide.jpg" alt="Amarrage : un tour mort et deux demi-nœuds" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.8 – Le croisement sur une ligne de vie</h3>
+            <p><strong>Ligne guide</strong> : chacun en liaison courte ; les porteurs du binôme entrant se détachent l'un après l'autre et contournent le binôme sortant en gardant un lien physique ; dès qu'il récupère la ligne, le binôme entrant s'y attache.</p>
+            <p><strong>Établissement</strong> : binômes entrant et sortant de chaque côté du tuyau ; ils maintiennent le tuyau, se détachent et se rattachent l'un après l'autre.</p>
+            <figure class="rd-fig"><img src="images/rdeb/croisement.jpg" alt="Croisement sur ligne guide et sur établissement" loading="lazy"></figure>
+            <h3>3.9 – Collier d'attache au tuyau (CAT)</h3>
+            <p>Mise en place décrite dans la FMO INC n° 7.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.10 – La technique AIDES</h3>
+            <p>Recherche et sauvetage <strong>pièce par pièce depuis l'extérieur</strong>, en ressortant entre chaque exploration ; réservée aux pièces de surface modérée (chambres…) avec normalement une seule porte intérieure. Après la pénétration, isoler rapidement le feu en fermant la porte vers les circulations.</p>
+            <div class="rd-alerte">Depuis l'extérieur, elle est conditionnée par la <strong>lecture du feu au niveau des ouvrants</strong>.</div>
+            <table class="rd-table">
+                <tr><th>Accéder</th><td>Pénétrer dans la pièce par échelle portable, MEA, échelle télescopique ou de plain-pied.</td></tr>
+                <tr><th>Isoler</th><td>Fermer la porte entre le volume et les circulations intérieures : garant de la protection du personnel.</td></tr>
+                <tr><th>Désenfumer</th><td>Laisser ouvert l'ouvrant d'accès pour l'évacuation naturelle des fumées.</td></tr>
+                <tr><th>Explorer</th><td>Reconnaître le volume pour rechercher une victime (caméra thermique).</td></tr>
+                <tr><th>Sauver</th><td>Dégager la victime avec la technique adaptée, puis sortir de la pièce.</td></tr>
+            </table>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 3.1 à 3.10</p>
+    </div>
+
+    <div id="rdeb-recherche" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <h2>🔦 Recherche & retour d'engagement</h2>
+
+        <div class="rd-section">
+            <h3>3.11 – Les recherches</h3>
+            <h4>Recherche primaire</h4>
+            <p>Au plus tôt, selon les informations et la lecture du feu : d'abord les endroits les plus probables, puis le reste du bâtiment. En superstructure :</p>
+            <ol>
+                <li><strong>1<sup>er</sup> temps</strong> : étage du foyer et ascenseurs (ramener l'ascenseur au RDC, porte calée ouverte).</li>
+                <li><strong>2<sup>e</sup> temps</strong> : étage directement au-dessus et dernier étage (communications horizontales et verticales, propagation des fumées).</li>
+                <li><strong>3<sup>e</sup> temps</strong> : étages intermédiaires et inférieurs.</li>
+            </ol>
+            <figure class="rd-fig etroite"><img src="images/rdeb/recherche-temps.jpg" alt="1er temps étage du foyer, 2e temps étages supérieurs" loading="lazy"></figure>
+            <div class="rd-astuce">Incendie avec notion de victimes : le chef d'agrès peut engager <strong>deux binômes simultanément sur la même ligne de vie</strong> (extinction et recherche).</div>
+            <h4>Recherche secondaire</h4>
+            <p>Après la maîtrise du sinistre et la suppression des dangers : recherche approfondie pour s'assurer que toutes les victimes ont été retrouvées.</p>
+            <h4>Règles de déplacement et de progression</h4>
+            <ul>
+                <li>Exploration debout, accroupi ou à quatre pattes selon les conditions ; escalier à risque : descente en marche arrière.</li>
+                <li>Déplacement le long des murs pour une exploration la plus complète possible.</li>
+                <li>Caméra thermique ; en visibilité réduite ou nulle, binôme relié à la ligne de vie.</li>
+                <li>Pièce par pièce, attentif aux signes de présence de victimes ; sens de reconnaissance défini : <strong>« main gauche » ou « main droite »</strong>.</li>
+            </ul>
+            <p>Victime découverte : sauvetage, mise en sécurité par évacuation ou par confinement, selon les techniques du <button onclick="showModule('rdsmes-menu')">🛟 RDSMES</button>.</p>
+            <h4>Espaces d'attente sécurisés (EAS)</h4>
+            <p>Présents dans certains ERP, à l'abri des fumées, des flammes et du rayonnement thermique :</p>
+            <ul>
+                <li>au moins <strong>2 par niveau</strong> accessibles aux fauteuils roulants (1 si un seul escalier est exigé) ;</li>
+                <li>distance maximale depuis un EAS : 40 m jusqu'à un escalier ou une circulation protégés ; 30 m en cul-de-sac ; 30 m jusqu'à un escalier non protégé ;</li>
+                <li>figurent sur les plans schématiques ; un moyen de signaler sa présence (fenêtre repérable…) ; téléphone, interphone ou bouton d'appel si SSIAP.</li>
+            </ul>
+            <figure class="rd-fig"><img src="images/rdeb/eas.jpg" alt="Espace d'attente sécurisé" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.12 – Les règles de marquage</h3>
+            <p>Les pièces reconnues sont marquées pour éviter les répétitions, et les portes refermées. L'absence de marquage signifie que la pièce n'a pas été reconnue (action en cours ou à réaliser, ou porte verrouillée). Inscription à la bombe à craie : <strong>R = Reconnu</strong>.</p>
+            <figure class="rd-fig" style="max-width: 160px; margin-left: auto; margin-right: auto;"><img src="images/rdeb/marquage.jpg" alt="Porte marquée R" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.13 – Le retour d'engagement</h3>
+            <p>Compte rendu au COS (radio, oral ou schéma opérationnel du TGP) précisant si possible : accès actuels et possibles, longueur des circulations, niveaux et volumes concernés, actions réalisées, propositions d'actions, évolution du sinistre et conséquences.</p>
+            <h4>Le schéma opérationnel</h4>
+            <figure class="rd-fig"><img src="images/rdeb/schema-ops.jpg" alt="Exemple de schéma opérationnel FPTL" loading="lazy"></figure>
+            <figure class="rd-fig"><img src="images/rdeb/symboles.jpg" alt="Objets graphiques" loading="lazy"></figure>
+            <figure class="rd-fig"><img src="images/rdeb/couleurs.jpg" alt="Couleurs : noir accès, vert personnes, rouge incendie, bleu eau, orange risques particuliers, violet commandement" loading="lazy"></figure>
+            <h4>Le message de compte rendu de situation</h4>
+            <table class="rd-table">
+                <tr><th>Je suis</th><td>S'identifier et donner sa localisation précise.</td></tr>
+                <tr><th>Je vois</th><td>Estimer l'importance, l'évolution du sinistre et les dangers particuliers.</td></tr>
+                <tr><th>Je fais</th><td>Informer de l'action en cours.</td></tr>
+            </table>
+            <p class="rd-message">Je suis : BINÔME Y du FPT Z, à l'entrée de l'appartement au 1er étage.
+Je vois : un feu de forte intensité avec risque de propagation sur l'appartement du dessus.
+Je fais : extinction.</p>
+            <div class="rd-astuce">Si le sauveteur peut réaliser rapidement un sauvetage ou une mise en sécurité sans aide, il agit d'abord ; le compte rendu est émis <strong>après avoir soustrait la victime</strong> aux effets du sinistre.</div>
+            <div class="rd-alerte">Sur le « je vois », le chef d'agrès ou le COS prend les mesures pour stabiliser la situation ; le chef d'équipe peut proposer une idée de manœuvre.</div>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 3.11 à 3.13</p>
+    </div>
+
+    <div id="rdeb-reengagement" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <h2>🔄 Réengagement & récupération</h2>
+
+        <div class="rd-section">
+            <h3>3.14 – Le réengagement</h3>
+            <p>Nouvelle mission après une phase de récupération, avec deux critères : une <strong>autonomie suffisante</strong> et un <strong>état physique</strong> compatible avec la nouvelle mission.</p>
+            <div class="rd-alerte">Les règles d'engagement restent à respecter. À partir du stade <strong>« maître du feu »</strong> et jusqu'à la fin, la pression minimale de réengagement est laissée à l'appréciation du CA et/ou du COS. Prévoir des relèves pour limiter les réengagements.</div>
+            <p><strong>Sans soutien sanitaire</strong> : l'état physique est apprécié par le chef d'agrès ou le COS avec le tableau ci-dessous ; les bilans sont faits par les conducteurs des engins incendie ou toute personne désignée par le COS.</p>
+            <ul>
+                <li>Critère présent au <strong>1<sup>er</sup> bilan</strong> → mise au repos physique de l'agent.</li>
+                <li>Critère présent au <strong>2<sup>e</sup> bilan</strong> → <strong>pas de réengagement</strong>, hydratation progressive (1,5 L en 15 min), demander un VSAV et/ou un SSO.</li>
+            </ul>
+            <div class="rd-alerte">Dès présence de <strong>suie dans les voies aériennes au mouchage</strong> ou d'un <strong>malaise</strong>, l'intervenant n'est plus réengagé. Le temps de repos entre les deux bilans dépend de l'état physique et de la météo.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.16 – Tableau d'aide à la décision de non-réengagement</h3>
+            <table class="rd-table">
+                <tr><th>Critère</th><th>Sans VSAV / VASAN</th><th>Avec VSAV / VASAN</th></tr>
+                <tr><td><strong>Suie dans les voies aériennes au mouchage</strong></td><td colspan="2">⛔ Non-réengagement dès le 1<sup>er</sup> bilan</td></tr>
+                <tr><td><strong>Malaise</strong></td><td colspan="2">⛔ Non-réengagement dès le 1<sup>er</sup> bilan</td></tr>
+                <tr><td>Pression artérielle &gt; 190 mmHg</td><td>–</td><td>✔</td></tr>
+                <tr><td>Saturation à l'air libre &lt; 94 %</td><td>–</td><td>✔</td></tr>
+                <tr><td>Fréquence circulatoire &gt; 140 bpm</td><td>✔</td><td>✔</td></tr>
+                <tr><td>Fréquence ventilatoire &gt; 25 mpm</td><td>✔</td><td>✔</td></tr>
+                <tr><td>Comportement inhabituel</td><td>✔</td><td>✔</td></tr>
+                <tr><td>Rougeur sur la face et le torse</td><td>✔</td><td>✔</td></tr>
+                <tr><td>Pâleur</td><td>✔</td><td>✔</td></tr>
+                <tr><td>Soif intense</td><td>✔</td><td>✔</td></tr>
+            </table>
+            <p><small>✔ = critère évalué au 1<sup>er</sup> bilan (repos) puis au 2<sup>e</sup> bilan (non-réengagement s'il persiste).</small></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.15 – La récupération du personnel</h3>
+            <ol>
+                <li>Retirer masque, casque, cagoule, puis poser l'ARI-CO.</li>
+                <li>Ouvrir la veste et le surpantalon ; se refroidir les mains, la tête et le cou.</li>
+                <li>Position assise ou à genoux.</li>
+                <li>Se nettoyer les mains, le visage et le cou avec des lingettes corporelles.</li>
+                <li>S'hydrater (<strong>gargouiller et recracher la première gorgée</strong>) et/ou s'alimenter.</li>
+                <li>Au besoin, ventilateur électrique pour refroidir les intervenants.</li>
+            </ol>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 3.14 à 3.16</p>
+    </div>
+
+    <div id="rdeb-apres" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <h2>🧼 Après l'engagement</h2>
+
+        <div class="rd-section">
+            <h3>4.1 – L'exposition des intervenants</h3>
+            <p>Exposition <strong>directe</strong> (le polluant entre par une voie d'absorption) ou <strong>indirecte</strong> (par un vecteur pollué). Absorption (pénétration dans un milieu), adsorption (fixation sur une surface), désorption (relargage immédiat ou différé).</p>
+            <p>Voies de pénétration : <strong>inhalation, ingestion, cutanée, oculaire</strong>.</p>
+            <figure class="rd-fig etroite"><img src="images/rdeb/voies-penetration.jpg" alt="Voies de pénétration" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.2 – Le nettoyage des tenues sur opération</h3>
+            <p>Le COS adapte le nettoyage selon le degré de souillure. Le conducteur de l'engin-pompe urbain est logisticien et prépare une zone de nettoyage : <strong>parc matériels propres</strong> et <strong>parc matériels souillés</strong>.</p>
+            <div style="overflow-x: auto;">
+            <table class="rd-table">
+                <tr><th>Niveau</th><th>Exposition</th><th>Nettoyage sur les lieux</th><th>Stockage au retour</th><th>Reconditionnement au CIS</th></tr>
+                <tr><th>JE SAIS<br>🟢 Néant</th><td>Aucune exposition</td><td>Pas de nettoyage</td><td>EPI dans la cabine ; matériels dans les coffres</td><td>EPI au vestiaire</td></tr>
+                <tr><th>JE SAIS<br>🟡 Superficiel</th><td>Exposition courte à une fumée à l'air libre</td><td>Aération des EPI ; rinçage à l'eau du matériel</td><td>EPI dans la cabine ; matériels dans les coffres</td><td>EPI au vestiaire ; nettoyage du sol de la cabine</td></tr>
+                <tr><th>JE SENS<br>🟠 Moyen</th><td>Exposition courte à une fumée lors d'un déblai, d'une reconnaissance ou d'une attaque</td><td>Brossage à sec et aération des EPI ; brossage à l'eau des matériels, effets chaussants et casques</td><td>EPI dans la cabine ; matériels dans les coffres</td><td>Aération des EPI hors vestiaires ; nettoyage intérieur de l'engin, remisage vitres ouvertes</td></tr>
+                <tr><th>JE VOIS<br>🔴 Important</th><td>Exposition longue lors d'un déblai, d'une reconnaissance ou d'une attaque ; EPI avec traces visibles après brossage</td><td>EPI isolés dans un sac après déshabillage ; brossage à l'eau du matériel, effets chaussants et casques ; matériels isolés dans une bâche si traces après rinçage</td><td>EPI et matériels dans les coffres de l'engin ou dans un véhicule léger</td><td>Retour des EPI au GTL, tenue propre ; nettoyage intérieur et extérieur de l'engin, remisage vitres ouvertes ; nettoyage des matériels</td></tr>
+            </table>
+            </div>
+            <p><strong>Protection pour le déshabillage et le nettoyage</strong> : décontamination incendie → <strong>demi-masque filtre antiaérosols P3</strong> + gants jetables ; avec risque technologique → demi-masque filtre antigaz ou ARI-CO + tenue de type III.</p>
+            <div class="rd-astuce">Nettoyer les véhicules à chaque souillure « important », ou à défaut une fois par mois. Tenue propre fournie par le GTL (réserve de compagnie, chaîne logistique ou VREPI, NO 2025/10).</div>
+            <div class="rd-alerte">De retour au CIS, après le reconditionnement des engins, les intervenants prennent <strong>impérativement une douche</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.3 – Le lot DECOPI</h3>
+            <div style="overflow-x: auto;">
+            <table class="rd-table" style="text-align: center;">
+                <tr><th>Matériel</th><th>FPTGP</th><th>FPT-FPTL</th><th>CCFU</th><th>MEA</th><th>VLCG</th></tr>
+                <tr><th>Seau</th><td colspan="5">2</td></tr>
+                <tr><th>Boîte de lingettes corporelles</th><td colspan="5">1</td></tr>
+                <tr><th>Demi-masque filtre anti-aérosols P3</th><td>8</td><td>6</td><td>6</td><td>3</td><td>2</td></tr>
+                <tr><th>Paire de gants jetables</th><td>8</td><td>6</td><td>6</td><td>3</td><td>2</td></tr>
+                <tr><th>Brosse</th><td colspan="5">2</td></tr>
+                <tr><th>Balai-brosse</th><td colspan="5">1</td></tr>
+                <tr><th>Lavette</th><td colspan="5">4</td></tr>
+                <tr><th>Sac rouge 100 L</th><td>8</td><td>6</td><td>6</td><td>3</td><td>2</td></tr>
+                <tr><th>Solution ARI-CO / solution masque</th><td colspan="5">1 / 1</td></tr>
+            </table>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.4 – Déshabillage avec un masque à griffes</h3>
+            <ol>
+                <li>Déconnecter la SAD, la placer sur son support.</li>
+                <li>Décoiffer, laisser le masque pendant.</li>
+                <li>Retirer casque, masque à griffes et ARI-CO ; les poser au sol.</li>
+                <li>Retirer la cagoule de l'arrière vers l'avant en évitant la face.</li>
+                <li>Retirer les gants type C en limitant le contact direct avec les mains.</li>
+                <li>S'équiper de gants jetables et d'un demi-masque P3.</li>
+                <li>Libérer les passages de main, retirer la veste par l'arrière.</li>
+                <li>Libérer les bretelles, déverrouiller les fermetures, retirer le surpantalon.</li>
+                <li>Vider les effets personnels, placer les EPI souillés dans le sac.</li>
+            </ol>
+            <figure class="rd-fig"><img src="images/rdeb/deshabillage-griffe.jpg" alt="Déshabillage avec masque à griffes en 9 étapes" loading="lazy"></figure>
+            <h3>4.5 – Déshabillage avec un masque à filet</h3>
+            <p>Identique, sauf les étapes 2 et 3 : retirer d'abord le casque et le poser au sol, puis retirer le masque à filet et l'ARI-CO.</p>
+            <figure class="rd-fig"><img src="images/rdeb/deshabillage-filet.jpg" alt="Déshabillage avec masque à filet en 9 étapes" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.6 – Nettoyage manuel d'un ARI-CO ou d'un masque</h3>
+            <p><strong>ARI-CO</strong> : solution savonneuse au chiffon doux ou à la brosse souple ; rincer à l'eau (&lt; 60 °C).</p>
+            <div class="rd-alerte">Nettoyage de l'ARI-CO au <strong>jet d'arrosage ou au nettoyeur sous pression interdit</strong> (risque de blocage par l'eau dans la ligne d'air).</div>
+            <p><strong>Masque</strong> : solution préconisée par le GTL ; rincer (&lt; 50 °C) au chiffon ou au jet ; égoutter et/ou souffler à l'air comprimé ; sécher à l'air libre ou en armoire (&lt; 60 °C), <strong>groin vers le haut</strong>.</p>
+            <div class="rd-astuce">Après chaque utilisation, le masque est nettoyé, rangé dans sa housse après séchage, en veillant à ce que le demi-masque inférieur ne sorte pas de son emplacement.</div>
+            <div class="rd-alerte">Faire un <strong>KIMOCE</strong> au service étude planification maintenance en cas d'anomalie ou de doute, ou si la souillure empêche un nettoyage manuel (passage en machine par le GTL).</div>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 4</p>
+    </div>
+
+    <div id="rdeb-annexes" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <h2>📎 Annexes : parkings, CO, H₂S, ascenseurs</h2>
+
+        <div class="rd-section">
+            <h3>5.1-5.2 – Parkings couverts et caves en sous-sol</h3>
+            <p>Complexité : accès difficiles et cheminements complexes, flux thermique élevé, capacité d'accueil, flux du public, dispositifs de prévention.</p>
+            <ul>
+                <li>S'appuyer sur un SSIAP au PC sécurité, un gardien, un plan ETARE ou un plan d'intervention.</li>
+                <li>Ramener l'ascenseur au RDC, porte calée ouverte.</li>
+                <li>Reconnaître d'abord les <strong>cages d'escaliers</strong> (niveau sinistré, niveaux enfumés) ; vérifier la fermeture des portes palières, ventiler si besoin.</li>
+                <li>Couper les énergies et barrer les fluides.</li>
+                <li>Rechercher le sinistre à la caméra thermique depuis l'ouvrant.</li>
+                <li>Si l'engagement par les escaliers est impossible ou si le véhicule est à vue : accès véhicule.</li>
+                <li>Un ou plusieurs moyens hydrauliques, parc matériel au besoin ; rechercher la présence de <strong>VEA</strong>.</li>
+                <li>Après analyse du COS, activer le désenfumage ; ventilation mécanique de l'infrastructure si nécessaire.</li>
+            </ul>
+            <div class="rd-alerte">La continuité radio peut être assurée par un système passif ou actif. Attention aux <strong>portes coupe-feu asservies</strong> à la détection : elles peuvent se refermer et bloquer les lignes de vie.</div>
+            <p>Engagements longue durée, parcs de stationnement : <button onclick="showModule('eld-psc')">🧭 ELD – parc de stationnement</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.3 – Monoxyde de carbone (CO)</h3>
+            <p>Issu d'une combustion incomplète ; incolore, inodore, insipide. Intoxication <strong>chronique</strong> ≤ 200 ppm sur une longue période ; <strong>aiguë</strong> &gt; 200 ppm en un temps court. Explosivité : LIE 10,9 % (109 000 ppm), LSE 76 % (760 000 ppm).</p>
+            <table class="rd-table">
+                <tr><th>ppm</th><th>Volume</th><th>Symptômes</th></tr>
+                <tr><td>2000</td><td>0,2 %</td><td>Décès en 4 à 5 h</td></tr>
+                <tr><td>1000</td><td>0,1 %</td><td>Coma, convulsions en 1 h</td></tr>
+                <tr><td>500</td><td>0,05 %</td><td>Perte de connaissance, polypnée, tachycardie</td></tr>
+                <tr><td>200</td><td>0,02 %</td><td>Céphalées intenses, vertiges, nausées, vomissements, fatigue</td></tr>
+                <tr><td>100</td><td>0,01 %</td><td>Céphalées, asthénie</td></tr>
+                <tr><td>30</td><td>0,003 %</td><td>Perception lumineuse</td></tr>
+            </table>
+            <div class="rd-alerte">Alarme basse : VLEP <strong>20 ppm sur 8 h</strong>. Alarme haute : valeur limite court terme <strong>100 ppm sur 15 min</strong>. En alarme basse, engagement sans protection respiratoire <strong>≤ 15 min</strong> ; au-delà ou en alarme haute, <strong>ARI-CO obligatoire</strong>. Sauvetage à vue en force majeure : entrer dans la pièce en retenant sa respiration.</div>
+            <p>Évacuation de victimes et CO : <button onclick="showModule('rdsmes-sauvetage')">🛟 RDSMES § 3.7</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.4 – Sulfure d'hydrogène (H₂S)</h3>
+            <p>Issu de la décomposition de la matière ; pénètre surtout par les voies respiratoires ; odeur d'« œuf pourri » à faible concentration. Chronique ≤ 250 ppm ; aiguë &gt; 250 ppm. Explosivité : LIE 4 % (40 000 ppm), LSE 46 % (460 000 ppm).</p>
+            <table class="rd-table">
+                <tr><th>ppm</th><th>Volume</th><th>Symptômes</th></tr>
+                <tr><td>1000 à 2000</td><td>0,1 à 0,2 %</td><td>Troubles du système nerveux, pause ou arrêt respiratoire, coma</td></tr>
+                <tr><td>300 à 500</td><td>0,03 à 0,05 %</td><td>Troubles respiratoires, perte de connaissance</td></tr>
+                <tr><td>250</td><td>0,025 %</td><td>Perte d'odorat, conjonctivite, irritation des voies aériennes</td></tr>
+                <tr><td>10 à 50</td><td>0,001 %</td><td>Irritation oculaire, dyspnée</td></tr>
+                <tr><td>3 à 5</td><td>0,0003 à 0,0005 %</td><td>Odeur forte</td></tr>
+                <tr><td>0,2</td><td>0,00002 %</td><td>Seuil olfactif</td></tr>
+            </table>
+            <div class="rd-alerte">Alarme basse : <strong>5 ppm sur 8 h</strong>. Alarme haute : <strong>10 ppm sur 15 min</strong>. En alarme basse, sans protection respiratoire ≤ 15 min ; au-delà ou en alarme haute, <strong>ARI-CO obligatoire</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>5.10 – Les ascenseurs prioritaires</h3>
+            <p><strong>Appel et commande prioritaires</strong> : cabine ramenée en 60 s maximum, appels annulés, commande depuis le panneau intérieur uniquement, dispositif au niveau d'accès des secours actionné avec la <strong>polycoise</strong>.</p>
+            <p><strong>Prioritaire IGH</strong> : appel et commande prioritaires, non-stop dans les compartiments sinistrés, secours électrique 36 h, gaine désenfumée, portes coupe-feu 2 h à chaque étage, interphones.</p>
+            <figure class="rd-fig etroite"><img src="images/rdeb/ascenseur.jpg" alt="Commande pompiers et polycoise" loading="lazy"></figure>
+            <div class="rd-alerte">Dispositifs rencontrés dans les habitations collectives de 4<sup>e</sup> famille depuis 1986, les ERP de type U et J au-delà du R+4 et les ERP PS au-delà du R−7. <strong>Seuls les IGH</strong> permettent un usage sûr par les sapeurs-pompiers ; ailleurs, les utiliser pour acheminer du matériel en phase secondaire.</div>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – § 5.1 à 5.4, 5.10</p>
+    </div>
+
+    <!-- Étiquettes de danger (RDEB annexes 5.6-5.7) -->
+    <div id="etiquettes-danger" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>⚠️ Étiquettes de danger (CLP & ADR)</h2>
+
+        <div class="rd-section">
+            <h3>Produits chimiques dangereux (CLP)</h3>
+            <p>Règlement relatif à la classification, à l'étiquetage et à l'emballage des substances et des mélanges : informer l'utilisateur du danger.</p>
+            <figure class="rd-fig"><img src="images/rdeb/pictos-clp.jpg" alt="Pictogrammes CLP" loading="lazy"></figure>
+            <p><small>Toxique · altère la santé ou la couche d'ozone · explosif · inflammable · cancérigène-mutagène-toxique · sous pression · dangereux pour l'environnement · comburant · dangereux pour la santé</small></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Étiquettes de transport (ADR)</h3>
+            <p>Accord européen relatif au transport international des marchandises dangereuses par route.</p>
+            <figure class="rd-fig"><img src="images/rdeb/etiquettes-adr.jpg" alt="Étiquettes de danger ADR" loading="lazy"></figure>
+            <div style="overflow-x: auto;">
+            <table class="rd-table">
+                <tr><th rowspan="6">1 – Explosifs</th><td>1.1</td><td>Risque d'explosion en masse</td></tr>
+                <tr><td>1.2</td><td>Risque de projection, sans explosion en masse</td></tr>
+                <tr><td>1.3</td><td>Risque d'incendie, de léger souffle ou de projection, sans explosion en masse</td></tr>
+                <tr><td>1.4</td><td>Sans risque notable hors de l'emballage en cas d'allumage ou d'amorçage</td></tr>
+                <tr><td>1.5</td><td>Très peu sensibles, avec risque d'explosion en masse</td></tr>
+                <tr><td>1.6</td><td>Objets extrêmement peu sensibles, sans explosion en masse</td></tr>
+                <tr><th rowspan="3">2 – Gaz</th><td>2.1</td><td>Inflammables</td></tr>
+                <tr><td>2.2</td><td>Non inflammables, non toxiques</td></tr>
+                <tr><td>2.3</td><td>Toxiques</td></tr>
+                <tr><th>3 – Liquides inflammables</th><td>3</td><td>Liquides inflammables</td></tr>
+                <tr><th rowspan="3">4 – Solides inflammables</th><td>4.1</td><td>Solides inflammables</td></tr>
+                <tr><td>4.2</td><td>Spontanément inflammables</td></tr>
+                <tr><td>4.3</td><td>Dégagent des gaz inflammables au contact de l'eau</td></tr>
+                <tr><th rowspan="2">5 – Comburants</th><td>5.1</td><td>Matières comburantes</td></tr>
+                <tr><td>5.2</td><td>Peroxydes organiques</td></tr>
+                <tr><th rowspan="2">6 – Toxiques</th><td>6.1</td><td>Matières toxiques</td></tr>
+                <tr><td>6.2</td><td>Matières infectieuses</td></tr>
+                <tr><th rowspan="4">7 – Radioactifs</th><td>7A</td><td>IT 0 – débit de dose à 1 m &lt; 5 µSv/h</td></tr>
+                <tr><td>7B</td><td>IT 1 – &gt; 5 µSv/h et &lt; 0,5 mSv/h</td></tr>
+                <tr><td>7C</td><td>IT 10 – &gt; 0,5 mSv/h et &lt; 2 mSv/h</td></tr>
+                <tr><td>7E</td><td>Matières fissiles</td></tr>
+                <tr><th>8 – Corrosifs</th><td>8</td><td>Matières corrosives</td></tr>
+                <tr><th rowspan="2">9 – Divers</th><td>9</td><td>Matières et objets dangereux divers</td></tr>
+                <tr><td>9A</td><td>Piles et batteries au lithium</td></tr>
+            </table>
+            </div>
+            <p>Marques complémentaires : transport à chaud, dangereux pour l'environnement.</p>
+            <p>Rechercher une matière (n° ONU, code danger) : <button onclick="showModule('tmd')">☣️ Transport de matières dangereuses</button></p>
+        </div>
+
+        <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – annexes 5.6 et 5.7</p>
+    </div>
+
     <!-- ============ RDSMES – SDIS 34 (v2, avril 2026) ============ -->
     <div id="rdsmes-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -9203,7 +10212,7 @@
                 <li>GTO « Sauvegarde opérationnelle » – février 2024</li>
                 <li>GTO « Sauvetages et mises en sécurité » – février 2024</li>
             </ul>
-            <p>Référentiels départementaux associés : <button onclick="showModule('lspcc-menu')">RDLSPCC (lots de sauvetage)</button>, <button onclick="showModule('echelles-menu')">RDEP (échelles portables)</button>, RDEB (binômes).</p>
+            <p>Référentiels départementaux associés : <button onclick="showModule('lspcc-menu')">RDLSPCC (lots de sauvetage)</button>, <button onclick="showModule('echelles-menu')">RDEP (échelles portables)</button>, <button onclick="showModule('rdeb-menu')">RDEB (binômes)</button>.</p>
         </div>
 
         <p class="rd-source">📚 Source : <strong>RDSMES – SDIS 34 (Hérault) – Version 2 – avril 2026</strong>, GCO – Service opération. Reproduit avec l'autorisation du SDIS de l'Hérault. Doctrine départementale : vérifiez celle de votre SDIS.</p>
@@ -9260,7 +10269,7 @@
         <div class="rd-section">
             <h3>2.3 – La règle des minimums</h3>
             <ul>
-                <li><strong>Minimum de personnels</strong> : selon le contexte, un minimum d'intervenants en zone d'exclusion, avec un <strong>binôme de sécurité</strong> mis en place dès que possible (RDEB).</li>
+                <li><strong>Minimum de personnels</strong> : selon le contexte, un minimum d'intervenants en zone d'exclusion, avec un <strong>binôme de sécurité</strong> mis en place dès que possible (<button onclick="showModule('rdeb-autonomie')">RDEB</button>).</li>
                 <li><strong>Minimum de temps</strong> : la durée d'engagement dépend de l'air disponible et de la consommation du porteur.</li>
                 <li><strong>Minimum de risque</strong> : le risque doit être clairement identifié et mesuré avant l'engagement, pour adapter techniques et matériels.</li>
             </ul>
@@ -13541,7 +14550,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.16.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.17.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
@@ -13562,6 +14571,7 @@ Je demande : ….</p>
     <script src="js/modules/commandement.js"></script>
     <script src="js/modules/trajet.js"></script>
     <script src="js/modules/rdsmes.js"></script>
+    <script src="js/modules/rdeb.js"></script>
     <script src="js/navigation.js"></script>
     
 
