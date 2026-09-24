@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.14.0 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.15.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025 - RESCUEAPP
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -98,7 +98,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.14.0';
+var APP_VERSION = '1.15.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1495,7 +1495,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.14.0 COMPLET
+// FIN DU FICHIER - Vulcain v1.15.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

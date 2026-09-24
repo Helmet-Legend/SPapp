@@ -13,7 +13,7 @@
     "RDMI – Manœuvres incendie",
     "RDSMES – Sauvetages & sauvegarde",
     "Protection & matériels",
-    "Échelles à mains"
+    "Échelles portables"
    ]
   },
   {
@@ -573,41 +573,214 @@
    "id": "echelles-menu",
    "titre": "Présentation",
    "domaine": "incendie",
-   "theme": "Échelles à mains",
+   "theme": "Échelles portables",
    "type": "presentation",
-   "motsCles": []
-  },
-  {
-   "id": "echelles-coulisses",
-   "titre": "Échelle à Coulisses",
-   "domaine": "incendie",
-   "theme": "Échelles à mains",
-   "type": "fiche",
-   "motsCles": []
-  },
-  {
-   "id": "echelles-crochets",
-   "titre": "Échelle à Crochets",
-   "domaine": "incendie",
-   "theme": "Échelles à mains",
-   "type": "fiche",
-   "motsCles": []
-  },
-  {
-   "id": "echelles-telescopique",
-   "titre": "Échelle Téléscopique",
-   "domaine": "incendie",
-   "theme": "Échelles à mains",
-   "type": "fiche",
-   "motsCles": []
+   "motsCles": [
+    "échelle",
+    "échelles à mains",
+    "échelles portables",
+    "rdep",
+    "sdis 34",
+    "nf en 1147",
+    "nit 331",
+    "fptl",
+    "fpt",
+    "vid"
+   ]
   },
   {
    "id": "echelles-comparatif",
-   "titre": "Tableau Comparatif des Échelles",
+   "titre": "Champs d'utilisation & comparatif",
    "domaine": "incendie",
-   "theme": "Échelles à mains",
+   "theme": "Échelles portables",
    "type": "fiche",
-   "motsCles": []
+   "motsCles": [
+    "échelle",
+    "échelles à mains",
+    "échelles portables",
+    "rdep",
+    "sdis 34",
+    "comparatif",
+    "étage",
+    "r+2",
+    "r+4",
+    "nombre de personnes",
+    "portage à dos",
+    "caractéristiques"
+   ]
+  },
+  {
+   "id": "echelles-crochets",
+   "titre": "Échelle à crochets",
+   "domaine": "incendie",
+   "theme": "Échelles portables",
+   "type": "fiche",
+   "motsCles": [
+    "échelle",
+    "échelles à mains",
+    "échelles portables",
+    "rdep",
+    "sdis 34",
+    "crochets",
+    "façade",
+    "progression",
+    "ancrage",
+    "prolongement",
+    "entretoise"
+   ]
+  },
+  {
+   "id": "echelles-coulisses",
+   "titre": "Échelles à coulisse (2 et 3 plans)",
+   "domaine": "incendie",
+   "theme": "Échelles portables",
+   "type": "fiche",
+   "motsCles": [
+    "échelle",
+    "échelles à mains",
+    "échelles portables",
+    "rdep",
+    "sdis 34",
+    "coulisse",
+    "deux plans",
+    "trois plans",
+    "arc-boutant",
+    "pied de dévers",
+    "parachute",
+    "désolidarisée",
+    "horizontale",
+    "excavation"
+   ]
+  },
+  {
+   "id": "echelles-telescopique",
+   "titre": "Échelle télescopique",
+   "domaine": "incendie",
+   "theme": "Échelles portables",
+   "type": "fiche",
+   "motsCles": [
+    "échelle",
+    "échelles à mains",
+    "échelles portables",
+    "rdep",
+    "sdis 34",
+    "télescopique",
+    "telesteps",
+    "panier"
+   ]
+  },
+  {
+   "id": "echelles-securite",
+   "titre": "Sécurité & mise en œuvre",
+   "domaine": "incendie",
+   "theme": "Échelles portables",
+   "type": "fiche",
+   "motsCles": [
+    "échelle",
+    "échelles à mains",
+    "échelles portables",
+    "rdep",
+    "sdis 34",
+    "piétage",
+    "mise en appui",
+    "dépassement",
+    "sécurisation",
+    "3 points de contact",
+    "distances électriques",
+    "epi",
+    "portés",
+    "attache de la corde",
+    "enroulement",
+    "enjambement"
+   ]
+  },
+  {
+   "id": "echelles-commandement",
+   "titre": "Ordres de commandement",
+   "domaine": "incendie",
+   "theme": "Échelles portables",
+   "type": "fiche",
+   "motsCles": [
+    "échelle",
+    "échelles à mains",
+    "échelles portables",
+    "rdep",
+    "sdis 34",
+    "ordres",
+    "portez",
+    "dressez",
+    "développez",
+    "appuyez",
+    "piétez",
+    "reployez",
+    "abaissez",
+    "position d'attente"
+   ]
+  },
+  {
+   "id": "echelles-proc-coulisse2",
+   "titre": "Procédures – coulisse 2 plans",
+   "domaine": "incendie",
+   "theme": "Échelles portables",
+   "type": "fiche",
+   "motsCles": [
+    "échelle",
+    "échelles à mains",
+    "échelles portables",
+    "rdep",
+    "sdis 34",
+    "porter",
+    "dresser",
+    "développer",
+    "déplacer",
+    "reployer",
+    "abaisser",
+    "reconditionner",
+    "portique"
+   ]
+  },
+  {
+   "id": "echelles-proc-coulisse3",
+   "titre": "Procédures – coulisse 3 plans",
+   "domaine": "incendie",
+   "theme": "Échelles portables",
+   "type": "fiche",
+   "motsCles": [
+    "échelle",
+    "échelles à mains",
+    "échelles portables",
+    "rdep",
+    "sdis 34",
+    "porter",
+    "dresser",
+    "développer",
+    "reployer",
+    "abaisser",
+    "reconditionner",
+    "arcs-boutants",
+    "deux binômes"
+   ]
+  },
+  {
+   "id": "echelles-proc-crochets",
+   "titre": "Procédures – échelle à crochets",
+   "domaine": "incendie",
+   "theme": "Échelles portables",
+   "type": "fiche",
+   "motsCles": [
+    "échelle",
+    "échelles à mains",
+    "échelles portables",
+    "rdep",
+    "sdis 34",
+    "porter",
+    "dresser",
+    "élever",
+    "abaisser",
+    "prolongement",
+    "mea",
+    "reconditionner"
+   ]
   },
   {
    "id": "tmd",
