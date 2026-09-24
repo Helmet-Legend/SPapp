@@ -718,3 +718,21 @@ html[data-theme] .rd-champ label { font-weight: 700; }
 html[data-theme] .rd-choix-technique button { padding: 10px 8px; border-radius: 12px; border: 2px solid var(--t-line); background: var(--t-s1); color: var(--t-ink); font-weight: 700; cursor: pointer; line-height: 1.3; }
 html[data-theme] .rd-choix-technique button[aria-pressed="true"] { border-color: var(--t-accent); background: var(--t-accent); color: #FFFFFF; }
 #installBanniere[hidden] { display: none !important; }
+
+/* Générateur IA : compteur de générations */
+html[data-theme] .ia-compteur { background: var(--t-s1); border: 2px solid #2E7D32; border-radius: var(--t-radius); padding: 16px; margin-bottom: 20px; color: var(--t-ink); }
+html[data-theme] .ia-compteur[data-etat="partiel"] { border-color: #E0A800; }
+html[data-theme] .ia-compteur[data-etat="epuise"] { border-color: var(--t-accent); }
+.ia-compteur-tete { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.ia-compteur-titre { font-weight: 800; font-size: 1.1em; }
+.ia-compteur-total strong { font-size: 1.8em; }
+.ia-jetons { display: grid; gap: 8px; margin: 12px 0; }
+html[data-theme] .ia-jeton { display: flex; gap: 10px; align-items: flex-start; padding: 10px; border-radius: 12px; border: 1px solid var(--t-line); background: var(--t-s2); font-size: 0.9em; line-height: 1.35; }
+.ia-jeton-rond { flex: 0 0 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+.ia-jeton.dispo .ia-jeton-rond { background: #2E7D32; color: #FFFFFF; }
+html[data-theme] .ia-jeton.utilise .ia-jeton-rond { background: var(--t-line); }
+html[data-theme] .ia-jeton.utilise { color: var(--t-muted); }
+.ia-compteur-etat { margin: 0 0 8px; font-weight: 700; }
+.ia-compteur-aide summary { cursor: pointer; font-weight: 600; }
+.ia-compteur-aide ul { margin: 8px 0 0; padding-left: 20px; line-height: 1.5; }
+#btn-generer.ia-epuise { filter: grayscale(0.8); opacity: 0.7; }

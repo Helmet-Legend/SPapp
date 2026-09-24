@@ -35,15 +35,63 @@ function iaProchaineGeneration() {
     return new Date(Math.min(...liste) + IA_FENETRE_MS);
 }
 
-function iaAfficherQuota() {
-    const zone = document.getElementById('ia-quota');
-    if (!zone) return;
-    const reste = Math.max(0, IA_LIMITE - iaGenerationsRecentes().length);
-    const prochaine = iaProchaineGeneration();
-    zone.textContent = prochaine
-        ? `Limite atteinte (${IA_LIMITE} générations par 24 h). Prochaine génération possible le ${prochaine.toLocaleDateString('fr-FR')} à ${prochaine.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}.`
-        : `Il te reste ${reste} génération${reste > 1 ? 's' : ''} sur ${IA_LIMITE} pour les prochaines 24 h.`;
+function iaHeure(date) {
+    return date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
 }
+
+function iaJourEtHeure(date) {
+    const demain = new Date(); demain.setDate(demain.getDate() + 1);
+    const jour = date.toDateString() === new Date().toDateString() ? "aujourd'hui"
+        : date.toDateString() === demain.toDateString() ? 'demain' : 'le ' + date.toLocaleDateString('fr-FR');
+    return `${jour} à ${iaHeure(date)}`;
+}
+
+function iaDelai(ms) {
+    const minutes = Math.max(1, Math.ceil(ms / 60000));
+    const h = Math.floor(minutes / 60), m = minutes % 60;
+    return h ? `${h} h ${String(m).padStart(2, '0')}` : `${m} min`;
+}
+
+function iaAfficherQuota() {
+    const utilisees = iaGenerationsRecentes().sort((a, b) => a - b);
+    const reste = Math.max(0, IA_LIMITE - utilisees.length);
+    const prochaine = iaProchaineGeneration();
+
+    const zone = document.getElementById('ia-quota');
+    if (zone) {
+        zone.textContent = prochaine
+            ? `Limite atteinte (${IA_LIMITE} générations par 24 h). Prochaine génération possible ${iaJourEtHeure(prochaine)}.`
+            : `Il te reste ${reste} génération${reste > 1 ? 's' : ''} sur ${IA_LIMITE} pour les prochaines 24 h.`;
+    }
+
+    const compteur = document.getElementById('ia-compteur');
+    if (!compteur) return;
+    compteur.dataset.etat = reste === 0 ? 'epuise' : reste < IA_LIMITE ? 'partiel' : 'plein';
+    document.getElementById('ia-compteur-reste').textContent = reste;
+
+    const jetons = [];
+    for (let i = 0; i < IA_LIMITE; i++) {
+        const t = utilisees[i];
+        if (t === undefined) {
+            jetons.push(`<div class="ia-jeton dispo"><span class="ia-jeton-rond">✓</span><span><strong>Génération ${i + 1}</strong> · disponible</span></div>`);
+        } else {
+            const retour = new Date(t + IA_FENETRE_MS);
+            jetons.push(`<div class="ia-jeton utilise"><span class="ia-jeton-rond">⏳</span><span><strong>Génération ${i + 1}</strong><br>Utilisée ${iaJourEtHeure(new Date(t))} · revient ${iaJourEtHeure(retour)} (dans ${iaDelai(retour - Date.now())})</span></div>`);
+        }
+    }
+    document.getElementById('ia-jetons').innerHTML = jetons.join('');
+
+    document.getElementById('ia-compteur-etat').textContent = reste === 0
+        ? `Plus de génération disponible pour l'instant. La prochaine revient ${iaJourEtHeure(prochaine)}.`
+        : reste === IA_LIMITE
+            ? 'Tes 2 générations sont disponibles.'
+            : `Il te reste 1 génération. L'autre revient ${iaJourEtHeure(new Date(utilisees[0] + IA_FENETRE_MS))}.`;
+
+    const btn = document.getElementById('btn-generer');
+    if (btn && !btn.dataset.enCours) btn.classList.toggle('ia-epuise', reste === 0);
+}
+// Actualisation chaque minute pour les délais affichés
+setInterval(iaAfficherQuota, 60000);
 document.addEventListener('DOMContentLoaded', iaAfficherQuota);
 
 // Générer le scénario
@@ -76,6 +124,7 @@ async function genererManoeuvre() {
     // UI loading
     const btn = document.getElementById('btn-generer');
     btn.disabled = true;
+    btn.dataset.enCours = '1';
     btn.innerHTML = '<span class="loading">🔄</span> Génération en cours...';
     document.getElementById('resultat-ia').style.display = 'none';
 
@@ -151,6 +200,8 @@ async function genererManoeuvre() {
         alert('❌ Erreur lors de la génération : ' + error.message);
     } finally {
         btn.disabled = false;
+        delete btn.dataset.enCours;
+        iaAfficherQuota();
         btn.innerHTML = '<span>🤖</span> GÉNÉRER LE SCÉNARIO';
     }
 }

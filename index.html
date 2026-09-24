@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.19.0">
+    <meta name="version" content="1.19.1">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -97,7 +97,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.19.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.19.1</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -202,7 +202,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.19.0</span><br>
+                        Vulcain v<span class="app-version">1.19.1</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -8161,13 +8161,24 @@
         <h2 style="color: light-dark(#6a1b9a, #c383e9); border-bottom: 3px solid #8E24AA;">🤖 Générateur de Manœuvre IA</h2>
         <p style="text-align: center; margin-bottom: 20px; color: var(--text-secondary);">Créez des scénarios d'entraînement personnalisés grâce à l'intelligence artificielle</p>
         
-        <!-- API Configurée -->
-        <div class="result-box" style="background: linear-gradient(135deg, var(--t-s2, #E8F5E9) 0%, light-dark(#C8E6C9, #363d3a) 100%); border: 2px solid #4CAF50; margin-bottom: 20px;">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="font-size: 1.5em;">✅</span>
-                <strong style="color: light-dark(#2a722e, #41b147);">Générateur IA opérationnel</strong>
+        <!-- Compteur de générations (2 par 24 h) -->
+        <div id="ia-compteur" class="ia-compteur" aria-live="polite">
+            <div class="ia-compteur-tete">
+                <span class="ia-compteur-titre">🎟️ Tes générations</span>
+                <span class="ia-compteur-total"><strong id="ia-compteur-reste">2</strong> / 2 disponibles</span>
             </div>
-            <p style="margin-top: 8px; font-size: 0.9em; color: light-dark(#1b5e20, #34b53e);">Le générateur IA est prêt à l'emploi.</p>
+            <div id="ia-jetons" class="ia-jetons"></div>
+            <p id="ia-compteur-etat" class="ia-compteur-etat"></p>
+            <details class="ia-compteur-aide">
+                <summary>Comment fonctionne la limite ?</summary>
+                <ul>
+                    <li>Tu disposes de <strong>2 générations par 24 h</strong>.</li>
+                    <li>Chaque génération redevient disponible <strong>24 h après son utilisation</strong> : pas besoin d'attendre minuit.</li>
+                    <li>Une génération qui échoue (erreur, coupure réseau) n'est <strong>pas décomptée</strong>.</li>
+                    <li>Pense à <strong>copier ou télécharger en PDF</strong> ton scénario : il n'est pas conservé.</li>
+                    <li>Pourquoi ? Chaque scénario est rédigé par une IA payante : la limite garde le générateur gratuit pour tous.</li>
+                </ul>
+            </details>
         </div>
         
         <!-- Formulaire de configuration -->
@@ -14614,7 +14625,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.19.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.19.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
