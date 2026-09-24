@@ -93,9 +93,3 @@ test('la fenêtre À propos s\'ouvre et affiche la version', async ({ app }) => 
     await app.keyboard.press('Escape');
     await expect(app.locator('#aboutModal')).not.toHaveClass(/active/);
 });
-
-test('mode sombre : bascule sans erreur', async ({ app }) => {
-    await app.click('#themeToggle');
-    await expect(app.locator('body')).toHaveClass(/dark-mode/);
-    expect(app.erreurs).toEqual([]);
-});

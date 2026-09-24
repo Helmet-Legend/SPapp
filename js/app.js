@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * DÉCIOPS v1.10.0 - Outil d'aide à la décision opérationnelle
+ * DÉCIOPS v1.11.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025 - RESCUEAPP
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -50,12 +50,6 @@ async function initApp() {
 }
 
 function initializeApp() {
-    try {
-        const savedMode = localStorage.getItem('darkMode');
-        if (savedMode === 'enabled') document.body.classList.add('dark-mode');
-    } catch (e) { console.log("Mode sombre indisponible"); }
-    
-    setTimeout(updateDarkModeIcon, 100);
     setTimeout(function() {
         try { if (typeof restoreSectionsState === "function") restoreSectionsState(); } catch(e) {}
     }, 100);
@@ -104,7 +98,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.10.0';
+var APP_VERSION = '1.11.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1254,17 +1248,6 @@ function calculatePaliers() {
 // UTILITAIRES & MODE SOMBRE
 // ═══════════════════════════════════════════════════════════════════════
 
-function toggleDarkMode() {
-    var isDark = document.body.classList.toggle('dark-mode');
-    try { localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled'); } catch(e) {}
-    updateDarkModeIcon();
-}
-
-function updateDarkModeIcon() {
-    var btn = document.getElementById('darkModeToggle');
-    if (btn) btn.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-}
-
 function toggleSection(sectionId) {
     var section = document.getElementById(sectionId);
     var header = section ? section.previousElementSibling : null;
@@ -1512,7 +1495,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - DECIOPS v1.10.0 COMPLET
+// FIN DU FICHIER - DECIOPS v1.11.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 DECIOPS v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

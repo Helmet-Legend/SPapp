@@ -1,4 +1,4 @@
-# DECIOPS v1.10.0 - Architecture Modulaire
+# DECIOPS v1.11.0 - Architecture Modulaire
 
 ## 📁 Structure du projet
 

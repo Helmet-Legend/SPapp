@@ -5,7 +5,8 @@
    "id": "incendie",
    "titre": "Incendie",
    "icone": "🔥",
-   "couleur": "#D7263D",
+   "picto": "flame",
+   "couleur": "#E0313F",
    "themes": [
     "Calculs incendie",
     "Mousses",
@@ -18,7 +19,8 @@
    "id": "risques",
    "titre": "Risques particuliers",
    "icone": "☢️",
-   "couleur": "#E07A00",
+   "picto": "alert",
+   "couleur": "#E27C0C",
    "themes": [
     "Matières dangereuses",
     "Gaz",
@@ -30,7 +32,8 @@
    "id": "sap",
    "titre": "Secours à personne",
    "icone": "🩺",
-   "couleur": "#0B8A7A",
+   "picto": "cross",
+   "couleur": "#0E9A86",
    "themes": [
     "RT SUAP 2025"
    ]
@@ -39,7 +42,8 @@
    "id": "routier",
    "titre": "Secours routier",
    "icone": "🚗",
-   "couleur": "#3D5A80",
+   "picto": "car",
+   "couleur": "#4C6FA3",
    "themes": [
     "Désincarcération"
    ]
@@ -48,7 +52,8 @@
    "id": "specialites",
    "titre": "Spécialités & sauvetage",
    "icone": "🧗",
-   "couleur": "#1F5FAD",
+   "picto": "mountain",
+   "couleur": "#2B6FD1",
    "themes": [
     "SAL / SAV – Plongée",
     "ELD – Exploration longue durée",
@@ -60,7 +65,8 @@
    "id": "commandement",
    "titre": "Commandement",
    "icone": "📋",
-   "couleur": "#6B2FA0",
+   "picto": "clipboard",
+   "couleur": "#8347C2",
    "themes": [
     "Avant l'intervention",
     "Pendant l'intervention"
@@ -70,7 +76,8 @@
    "id": "outils",
    "titre": "Outils",
    "icone": "🧮",
-   "couleur": "#4A4F57",
+   "picto": "calc",
+   "couleur": "#6B7280",
    "themes": [
     "Calculs pratiques",
     "Préparation"
