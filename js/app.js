@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * DÉCIOPS v1.11.0 - Outil d'aide à la décision opérationnelle
+ * DÉCIOPS v1.12.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025 - RESCUEAPP
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -98,7 +98,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.11.0';
+var APP_VERSION = '1.12.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -165,7 +165,7 @@ function searchTMD() {
         else if (item.classe == 8) borderColor = '#ffffff';
         
         var dangerDisplay = item.classe == 1 ? 
-            '<div style="font-size:1.2em;color:#888;font-style:italic;">Pas de code</div>' :
+            '<div style="font-size:1.2em;color:var(--t-muted, #888);font-style:italic;">Pas de code</div>' :
             '<div style="font-size:1.5em;">' + (item.danger || '--') + '</div>';
         
         var caracteristiquesHTML = buildCaracteristiquesHTML(item);
@@ -183,7 +183,7 @@ function searchTMD() {
             '<div class="danger-box" style="margin-top:10px;"><strong>⚠️ Risques :</strong> ' + (item.risques || 'Non renseignés') + '</div>' +
             caracteristiquesHTML +
             '<button onclick="preparerFicheGMU(\'' + item.onu + '\')" ' +
-            'style="margin-top:15px;background:linear-gradient(135deg,#FF6B00 0%,#FF8C00 100%);' +
+            'style="margin-top:15px;background:linear-gradient(135deg,#c25100 0%,#b26200 100%);' +
             'border:none;padding:12px 25px;border-radius:10px;color:white;' +
             'font-weight:bold;font-size:1.1em;cursor:pointer;width:100%;">' +
             '📖 Consulter la Fiche GMU</button></div></div></div>';
@@ -202,80 +202,80 @@ function buildCaracteristiquesHTML(item) {
     if (item.pointEclair) {
         var peColor = getPointEclairColor(item.pointEclair);
         rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:' + peColor.bg + ';border-radius:6px;margin-bottom:4px;">' +
-            '<span style="font-weight:600;color:#333;">🌡️ Point éclair</span>' +
+            '<span style="font-weight:600;color:var(--t-ink, #333);">🌡️ Point éclair</span>' +
             '<span style="font-weight:bold;color:' + peColor.text + ';">' + item.pointEclair + '</span></div>');
     }
     
     if (item.tempAutoInflammation) {
-        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:#fff3e0;border-radius:6px;margin-bottom:4px;">' +
-            '<span style="font-weight:600;color:#333;">🔥 Auto-inflammation</span>' +
-            '<span style="font-weight:bold;color:#e65100;">' + item.tempAutoInflammation + '</span></div>');
+        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:light-dark(#fff3e0, #403f3e);border-radius:6px;margin-bottom:4px;">' +
+            '<span style="font-weight:600;color:var(--t-ink, #333);">🔥 Auto-inflammation</span>' +
+            '<span style="font-weight:bold;color:light-dark(#b33f00, #ff7124);">' + item.tempAutoInflammation + '</span></div>');
     }
     
     if (item.lii || item.lsi) {
         var lii = item.lii || '?';
         var lsi = item.lsi || '?';
-        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:#ffebee;border-radius:6px;margin-bottom:4px;">' +
-            '<span style="font-weight:600;color:#333;">💨 LII / LSI</span>' +
-            '<span style="font-weight:bold;color:#c62828;">' + lii + ' - ' + lsi + '</span></div>');
+        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--t-s2, #ffebee);border-radius:6px;margin-bottom:4px;">' +
+            '<span style="font-weight:600;color:var(--t-ink, #333);">💨 LII / LSI</span>' +
+            '<span style="font-weight:bold;color:light-dark(#c22727, #e57e7e);">' + lii + ' - ' + lsi + '</span></div>');
     }
     
     if (item.densiteVapeur) {
         var densiteVal = parseFloat(item.densiteVapeur);
         var densiteInfo = densiteVal > 1 ? '(+ lourd que air ⬇️)' : '(+ léger que air ⬆️)';
-        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:#e3f2fd;border-radius:6px;margin-bottom:4px;">' +
-            '<span style="font-weight:600;color:#333;">⚖️ Densité vapeur</span>' +
-            '<span style="font-weight:bold;color:#1565c0;">' + item.densiteVapeur + ' ' + densiteInfo + '</span></div>');
+        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:light-dark(#e3f2fd, #3b3f44);border-radius:6px;margin-bottom:4px;">' +
+            '<span style="font-weight:600;color:var(--t-ink, #333);">⚖️ Densité vapeur</span>' +
+            '<span style="font-weight:bold;color:light-dark(#1565c0, #5da1ed);">' + item.densiteVapeur + ' ' + densiteInfo + '</span></div>');
     }
     
     if (item.tempEbullition) {
-        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:#e8f5e9;border-radius:6px;margin-bottom:4px;">' +
-            '<span style="font-weight:600;color:#333;">🧊 Ébullition</span>' +
-            '<span style="font-weight:bold;color:#2e7d32;">' + item.tempEbullition + '</span></div>');
+        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--t-s2, #e8f5e9);border-radius:6px;margin-bottom:4px;">' +
+            '<span style="font-weight:600;color:var(--t-ink, #333);">🧊 Ébullition</span>' +
+            '<span style="font-weight:bold;color:light-dark(#2a722e, #41b147);">' + item.tempEbullition + '</span></div>');
     }
     
     if (item.vle) {
-        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:#f3e5f5;border-radius:6px;margin-bottom:4px;">' +
-            '<span style="font-weight:600;color:#333;">🛡️ VLE</span>' +
-            '<span style="font-weight:bold;color:#7b1fa2;">' + item.vle + '</span></div>');
+        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--t-s2, #f3e5f5);border-radius:6px;margin-bottom:4px;">' +
+            '<span style="font-weight:600;color:var(--t-ink, #333);">🛡️ VLE</span>' +
+            '<span style="font-weight:bold;color:light-dark(#7b1fa2, #c77ee6);">' + item.vle + '</span></div>');
     }
     
     if (item.idlh) {
-        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:#ffcdd2;border-radius:6px;margin-bottom:4px;">' +
-            '<span style="font-weight:600;color:#333;">☠️ IDLH</span>' +
-            '<span style="font-weight:bold;color:#b71c1c;">' + item.idlh + '</span></div>');
+        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:light-dark(#ffcdd2, #40393c);border-radius:6px;margin-bottom:4px;">' +
+            '<span style="font-weight:600;color:var(--t-ink, #333);">☠️ IDLH</span>' +
+            '<span style="font-weight:bold;color:light-dark(#b71c1c, #eb7c7c);">' + item.idlh + '</span></div>');
     }
     
     if (item.solubiliteEau) {
-        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:#e0f7fa;border-radius:6px;margin-bottom:4px;">' +
-            '<span style="font-weight:600;color:#333;">💧 Solubilité eau</span>' +
-            '<span style="font-weight:bold;color:#00838f;">' + item.solubiliteEau + '</span></div>');
+        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:light-dark(#e0f7fa, #3a4043);border-radius:6px;margin-bottom:4px;">' +
+            '<span style="font-weight:600;color:var(--t-ink, #333);">💧 Solubilité eau</span>' +
+            '<span style="font-weight:bold;color:light-dark(#00707b, #00adbd);">' + item.solubiliteEau + '</span></div>');
     }
     
     if (item.seuilOlfactif) {
-        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:#fff8e1;border-radius:6px;margin-bottom:4px;">' +
-            '<span style="font-weight:600;color:#333;">👃 Seuil olfactif</span>' +
-            '<span style="font-weight:bold;color:#ff8f00;">' + item.seuilOlfactif + '</span></div>');
+        rows.push('<div style="display:flex;justify-content:space-between;padding:8px 12px;background:light-dark(#fff8e1, #40403f);border-radius:6px;margin-bottom:4px;">' +
+            '<span style="font-weight:600;color:var(--t-ink, #333);">👃 Seuil olfactif</span>' +
+            '<span style="font-weight:bold;color:light-dark(#945300, #ff8f00);">' + item.seuilOlfactif + '</span></div>');
     }
     
     if (rows.length === 0) return '';
     
-    return '<div style="background:#f5f5f5;border-radius:10px;padding:12px;margin:15px 0;border:1px solid #ddd;">' +
-        '<div style="font-weight:bold;color:#333;margin-bottom:10px;font-size:1.1em;border-bottom:2px solid #FF9800;padding-bottom:5px;">' +
+    return '<div style="background:var(--t-s2, #f5f5f5);border-radius:10px;padding:12px;margin:15px 0;border:1px solid var(--t-line, #ddd);">' +
+        '<div style="font-weight:bold;color:var(--t-ink, #333);margin-bottom:10px;font-size:1.1em;border-bottom:2px solid #FF9800;padding-bottom:5px;">' +
         '📊 CARACTÉRISTIQUES TECHNIQUES</div>' +
         rows.join('') + '</div>';
 }
 
 function getPointEclairColor(pointEclair) {
     var match = pointEclair.match(/-?\d+/);
-    if (!match) return { bg: '#fff3e0', text: '#e65100' };
+    if (!match) return { bg: 'light-dark(#fff3e0, #403f3e)', text: 'light-dark(#b33f00, #ff7124)' };
     
     var temp = parseInt(match[0]);
     
-    if (temp < 0) return { bg: '#ffcdd2', text: '#b71c1c' };
-    else if (temp < 23) return { bg: '#ffe0b2', text: '#e65100' };
-    else if (temp < 60) return { bg: '#fff9c4', text: '#f57f17' };
-    else return { bg: '#e8f5e9', text: '#2e7d32' };
+    if (temp < 0) return { bg: 'light-dark(#ffcdd2, #40393c)', text: 'light-dark(#b71c1c, #eb7c7c)' };
+    else if (temp < 23) return { bg: 'light-dark(#ffe0b2, #403c36)', text: 'light-dark(#b33f00, #ff7124)' };
+    else if (temp < 60) return { bg: 'light-dark(#fff9c4, #404139)', text: 'light-dark(#9f4e07, #f57f17)' };
+    else return { bg: 'light-dark(#e8f5e9, #3c4040)', text: 'light-dark(#2a722e, #41b147)' };
 }
 
 function preparerFicheGMU(onu) {
@@ -488,9 +488,9 @@ function updateEmulseur() {
     
     var quantiteDiv = document.getElementById('emulseurQuantite');
     if (quantiteDiv) {
-        quantiteDiv.innerHTML = '<div class="info-card" style="background:rgba(255,255,255,0.3);border:2px solid #F57C00;">' +
-            '<div class="label" style="color:#000;">Volume émulseur à ' + concentration + '%</div>' +
-            '<div class="value" style="font-size:1.8em;color:#000;font-weight:900;">' + volumeEmulseur.toFixed(0) + ' L</div></div>' +
+        quantiteDiv.innerHTML = '<div class="info-card" style="background:light-dark(rgba(255,255,255,0.3), rgba(22, 24, 27, 0.3));border:2px solid #F57C00;">' +
+            '<div class="label" style="color:var(--t-ink, #000);">Volume émulseur à ' + concentration + '%</div>' +
+            '<div class="value" style="font-size:1.8em;color:var(--t-ink, #000);font-weight:900;">' + volumeEmulseur.toFixed(0) + ' L</div></div>' +
             '<div class="result-item" style="margin-top:10px;"><span>Bidons 20L :</span><span class="result-value">' + bidons20L + ' bidons</span></div>';
     }
 }
@@ -508,9 +508,9 @@ function updateEmulseurInverse() {
     
     var resultsDiv = document.getElementById('emulseurInverseResults');
     if (resultsDiv) {
-        resultsDiv.innerHTML = '<div class="info-card" style="background:rgba(255,255,255,0.3);border:2px solid #F57C00;">' +
-            '<div class="label" style="color:#000;">Surface couverte</div>' +
-            '<div class="value" style="font-size:1.8em;color:#000;font-weight:900;">' + surface.toFixed(1) + ' m²</div></div>';
+        resultsDiv.innerHTML = '<div class="info-card" style="background:light-dark(rgba(255,255,255,0.3), rgba(22, 24, 27, 0.3));border:2px solid #F57C00;">' +
+            '<div class="label" style="color:var(--t-ink, #000);">Surface couverte</div>' +
+            '<div class="value" style="font-size:1.8em;color:var(--t-ink, #000);font-weight:900;">' + surface.toFixed(1) + ' m²</div></div>';
     }
     
     var detailsDiv = document.getElementById('emulseurInverseDetails');
@@ -636,9 +636,9 @@ function afficherTroncons() {
             '<td>' + (t.isAlimentation ? '-' : t.debit) + '</td>' +
             '<td>' + (t.denivele > 0 ? '+' : '') + t.denivele + 'm</td>' +
             '<td>' + (t.isAlimentation ? '-' : t.pressionLance + ' bar') + '</td>' +
-            '<td style="color:#FF9800;font-weight:bold;">' + perteReseau.toFixed(2) + ' bar</td>' +
-            '<td style="font-weight:bold;color:#FFD700;background:rgba(255,215,0,0.15);">' + pressionTotale.toFixed(2) + ' bar</td>' +
-            '<td><button onclick="supprimerTroncon(' + i + ')" style="padding:8px 12px;background:#F44336;border:none;border-radius:8px;color:white;cursor:pointer;">❌</button></td></tr>';
+            '<td style="color:light-dark(#945800, #ff9800);font-weight:bold;">' + perteReseau.toFixed(2) + ' bar</td>' +
+            '<td style="font-weight:bold;color:light-dark(#756300, #ffd700);background:rgba(255,215,0,0.15);">' + pressionTotale.toFixed(2) + ' bar</td>' +
+            '<td><button onclick="supprimerTroncon(' + i + ')" style="padding:8px 12px;background:#e51b0d;border:none;border-radius:8px;color:white;cursor:pointer;">❌</button></td></tr>';
     }).join('');
 }
 
@@ -687,10 +687,10 @@ function calculerPertes() {
     
     var detailCalc = document.getElementById('detailCalculPertes');
     if (detailCalc) {
-        detailCalc.innerHTML = '<div style="background:linear-gradient(135deg,#4CAF50,#388E3C);padding:25px;border-radius:12px;text-align:center;">' +
+        detailCalc.innerHTML = '<div style="background:linear-gradient(135deg,#39843c,#358739); color: #ffffff;padding:25px;border-radius:12px;text-align:center;">' +
             '<div style="color:#FFF;font-size:1.3em;font-weight:bold;">💡 CALCUL</div>' +
             '<div style="color:#FFF;font-size:1.5em;margin-top:10px;background:rgba(0,0,0,0.2);padding:15px;border-radius:8px;">' +
-            pressionAlimentation.toFixed(2) + ' + ' + pressionMaxLance.toFixed(2) + ' + ' + pertJonctions.toFixed(1) + ' = <span style="color:#FFD700;">' + pressionPompe.toFixed(1) + ' bar</span></div></div>';
+            pressionAlimentation.toFixed(2) + ' + ' + pressionMaxLance.toFixed(2) + ' + ' + pertJonctions.toFixed(1) + ' = <span style="color:#050400;">' + pressionPompe.toFixed(1) + ' bar</span></div></div>';
     }
 }
 
@@ -985,7 +985,7 @@ function calculateEpuisement() {
         var detailDiv = document.getElementById('detailMateriel');
         if (detailDiv) {
             detailDiv.innerHTML = '<div style="background:var(--bg-main);padding:15px;border-radius:10px;">' +
-                '<h4 style="color:#FF9800;">Débit total : <span style="color:#4CAF50;">' + debitTotal + ' L/min</span></h4></div>';
+                '<h4 style="color:light-dark(#945800, #ff9800);">Débit total : <span style="color:light-dark(#327334, #4caf50);">' + debitTotal + ' L/min</span></h4></div>';
         }
         
         if (resultatDiv) resultatDiv.style.display = 'block';
@@ -1033,9 +1033,9 @@ function calculateAbaqueAll() {
             html += '<div style="background:var(--bg-main);padding:12px;border-radius:8px;border-left:4px solid ' + color + ';">' +
                 '<div style="font-weight:bold;margin-bottom:6px;">' + item.nom + '</div>' +
                 '<div style="font-size:0.9em;color:var(--text-secondary);">Densité: ' + item.densite + ' kg/m³</div>' +
-                '<div style="background:#FFF;padding:12px;border-radius:8px;text-align:center;margin-top:8px;border:2px solid ' + color + ';">' +
-                '<div style="font-size:2em;font-weight:bold;color:#000;">' + (poids >= 1000 ? tonnes.toFixed(2) : poids.toFixed(0)) + '</div>' +
-                '<div style="font-size:1em;color:#000;font-weight:600;">' + (poids >= 1000 ? 'tonnes' : 'kg') + '</div></div></div>';
+                '<div style="background:var(--t-s1, #FFF);padding:12px;border-radius:8px;text-align:center;margin-top:8px;border:2px solid ' + color + ';">' +
+                '<div style="font-size:2em;font-weight:bold;color:var(--t-ink, #000);">' + (poids >= 1000 ? tonnes.toFixed(2) : poids.toFixed(0)) + '</div>' +
+                '<div style="font-size:1em;color:var(--t-ink, #000);font-weight:600;">' + (poids >= 1000 ? 'tonnes' : 'kg') + '</div></div></div>';
         });
         html += '</div></div>';
     });
@@ -1159,9 +1159,9 @@ function calculateDistanceCalc() {
     
     var result = document.getElementById('dist-result');
     if (result) {
-        result.innerHTML = '<div class="result-box"><h3 style="color:#c41e3a;">Résultat :</h3>' +
+        result.innerHTML = '<div class="result-box"><h3 style="color:light-dark(#c41e3a, #eb7c8e);">Résultat :</h3>' +
             '<div class="info-card"><div class="label">Distance en ligne droite</div>' +
-            '<div class="value" style="font-size:2.2em;color:#FF9800;">' + distance.toFixed(1) + ' m</div></div></div>';
+            '<div class="value" style="font-size:2.2em;color:light-dark(#945800, #ff9800);">' + distance.toFixed(1) + ' m</div></div></div>';
     }
 }
 
@@ -1172,9 +1172,9 @@ function calculatePerimetreCalc() {
     
     var result = document.getElementById('perim-result');
     if (result) {
-        result.innerHTML = '<div class="result-box"><h3 style="color:#c41e3a;">Résultat :</h3>' +
+        result.innerHTML = '<div class="result-box"><h3 style="color:light-dark(#c41e3a, #eb7c8e);">Résultat :</h3>' +
             '<div class="info-card"><div class="label">Périmètre</div>' +
-            '<div class="value" style="font-size:2.2em;color:#FF9800;">' + perimetre.toFixed(2) + ' m</div></div>' +
+            '<div class="value" style="font-size:2.2em;color:light-dark(#945800, #ff9800);">' + perimetre.toFixed(2) + ' m</div></div>' +
             '<div class="result-item"><span>Surface :</span><span class="result-value">' + surface.toFixed(2) + ' m²</span></div></div>';
     }
 }
@@ -1187,9 +1187,9 @@ function calculateSurfaceCalc() {
     
     var result = document.getElementById('surf-result');
     if (result) {
-        result.innerHTML = '<div class="result-box"><h3 style="color:#c41e3a;">Résultat :</h3>' +
+        result.innerHTML = '<div class="result-box"><h3 style="color:light-dark(#c41e3a, #eb7c8e);">Résultat :</h3>' +
             '<div class="info-card"><div class="label">Surface</div>' +
-            '<div class="value" style="font-size:2.2em;color:#FF9800;">' + surface.toFixed(2) + ' m²</div></div>' +
+            '<div class="value" style="font-size:2.2em;color:light-dark(#945800, #ff9800);">' + surface.toFixed(2) + ' m²</div></div>' +
             '<div class="result-item"><span>Diagonale :</span><span class="result-value">' + diagonale.toFixed(2) + ' m</span></div></div>';
     }
 }
@@ -1232,11 +1232,11 @@ function calculatePaliers() {
     var resultDiv = document.getElementById('palierResult');
     if (resultDiv) {
         if (profondeur <= 12 && duree <= 30) {
-            resultDiv.innerHTML = '<div class="info-card" style="background:#4CAF50;"><div class="label">Résultat</div><div class="value">Pas de palier requis</div></div>' +
+            resultDiv.innerHTML = '<div class="info-card" style="background:#4CAF50; color: #101318;"><div class="label">Résultat</div><div class="value">Pas de palier requis</div></div>' +
                 '<div class="alert-box" style="margin-top:15px;">Remontée directe à 15m/min avec palier de sécurité (3 min à 3m)</div>';
         } else {
             var dtr = Math.ceil(profondeur / 15) + Math.max(0, (duree - 20) * 2);
-            resultDiv.innerHTML = '<div class="info-card" style="background:#FF9800;"><div class="label">DTR estimée</div><div class="value">' + dtr + ' min</div></div>' +
+            resultDiv.innerHTML = '<div class="info-card" style="background:#FF9800; color: #101318;"><div class="label">DTR estimée</div><div class="value">' + dtr + ' min</div></div>' +
                 '<div class="alert-box" style="margin-top:15px;">⚠️ Consulter les tables MT2012 pour paliers exacts</div>';
         }
     }
@@ -1495,7 +1495,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - DECIOPS v1.11.0 COMPLET
+// FIN DU FICHIER - DECIOPS v1.12.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 DECIOPS v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

@@ -3,10 +3,16 @@ const { test, expect } = require('./outils');
 
 const theme = page => page.evaluate(() => document.documentElement.dataset.theme);
 
-test('sans préférence enregistrée, le thème est Clair', async ({ app }) => {
-    expect(await theme(app)).toBe('clair');
-    await expect(app.locator('body')).not.toHaveClass(/dark-mode/);
-});
+for (const [systeme, attendu] of [['light', 'clair'], ['dark', 'sombre']]) {
+    test(`sans préférence enregistrée, le thème suit le téléphone (${systeme} → ${attendu})`, async ({ page }) => {
+        await page.emulateMedia({ colorScheme: systeme });
+        await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
+        await page.goto('/index.html');
+        expect(await theme(page)).toBe(attendu);
+        await expect(page.locator('body')).toHaveClass(attendu === 'sombre' ? /dark-mode/ : /^(?!.*dark-mode)/);
+        await expect(page.locator('[data-theme-choix="auto"]')).toHaveAttribute('aria-checked', 'true');
+    });
+}
 
 test('Réglages : choisir Sombre, puis Clair, et le choix est mémorisé', async ({ app }) => {
     await app.click('#reglagesBtn');

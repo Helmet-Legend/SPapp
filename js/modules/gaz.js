@@ -38,7 +38,7 @@ function remplirGazPresents() {
     for (const [categorie, gazList] of Object.entries(categories)) {
         html += `
             <div style="grid-column: 1 / -1; margin-top: 20px; margin-bottom: 10px;">
-                <h4 style="color: #00ccff; font-size: 1.2em; border-bottom: 2px solid #00ccff; padding-bottom: 8px; margin: 0;">${categorie}</h4>
+                <h4 style="color: light-dark(#006e8a, #00ccff); font-size: 1.2em; border-bottom: 2px solid light-dark(#00ccff, #0c6982); padding-bottom: 8px; margin: 0;">${categorie}</h4>
             </div>
         `;
         
@@ -48,7 +48,7 @@ function remplirGazPresents() {
                 html += `
                     <button onclick="selectionnerGaz('${key}')" 
                             id="btnGaz-${key}"
-                            style="background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%); 
+                            style="background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%); color: var(--t-ink); 
                                    border: 3px solid var(--border-medium); 
                                    padding: 20px; 
                                    border-radius: 12px; 
@@ -60,7 +60,7 @@ function remplirGazPresents() {
                                    justify-content: center;
                                    align-items: center;">
                         <div style="font-size: 1.2em; font-weight: bold; color: var(--text-light); margin-bottom: 8px; text-align: center;">${gaz.nom}</div>
-                        <div style="font-size: 1em; color: #FF9800; margin-bottom: 8px;">${gaz.formule}</div>
+                        <div style="font-size: 1em; color: light-dark(#945800, #ff9800); margin-bottom: 8px;">${gaz.formule}</div>
                         <div style="font-size: 0.9em; color: var(--text-secondary);">LIE: ${gaz.lie}%</div>
                     </button>
                 `;
@@ -218,7 +218,7 @@ function updateTableauCorrections() {
         // Ligne de titre de catégorie
         html += `
             <tr style="background: rgba(0,204,255,0.2);">
-                <td colspan="5" style="font-weight: bold; color: #00ccff; padding: 12px; text-align: left; border-top: 2px solid #00ccff;">
+                <td colspan="5" style="font-weight: bold; color: light-dark(#006e8a, #00ccff); padding: 12px; text-align: left; border-top: 2px solid light-dark(#00ccff, #0c6982);">
                     ${categorie}
                 </td>
             </tr>
@@ -233,12 +233,12 @@ function updateTableauCorrections() {
                 
                 html += `
                     <tr style="background: ${isEtalon ? 'rgba(255,204,0,0.3)' : 'transparent'};">
-                        <td style="font-weight: ${isEtalon ? 'bold' : 'normal'}; color: ${isEtalon ? '#FF9800' : 'inherit'};">
+                        <td style="font-weight: ${isEtalon ? 'bold' : 'normal'}; color: ${isEtalon ? 'light-dark(#9e5e00, #ff9800)' : 'inherit'};">
                             ${gaz.nom}${isEtalon ? ' ⭐' : ''}
                         </td>
-                        <td style="color: ${isEtalon ? '#FF9800' : 'inherit'};">${gaz.formule}</td>
-                        <td style="text-align: center; color: #FF9800; font-weight: ${isEtalon ? 'bold' : 'normal'};">${gaz.lie}</td>
-                        <td style="text-align: center; font-weight: bold; color: ${isEtalon ? '#FF9800' : '#4CAF50'};">${facteur.toFixed(3)}</td>
+                        <td style="color: ${isEtalon ? 'light-dark(#9e5e00, #ff9800)' : 'inherit'};">${gaz.formule}</td>
+                        <td style="text-align: center; color: light-dark(#945800, #ff9800); font-weight: ${isEtalon ? 'bold' : 'normal'};">${gaz.lie}</td>
+                        <td style="text-align: center; font-weight: bold; color: ${isEtalon ? 'light-dark(#9e5e00, #ff9800)' : 'light-dark(#2e7d32, #6fcf76)'};">${facteur.toFixed(3)}</td>
                         <td style="font-size: 0.9em; color: var(--text-secondary);">Valeur × ${facteur.toFixed(3)}</td>
                     </tr>
                 `;

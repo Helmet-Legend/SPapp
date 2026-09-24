@@ -8,7 +8,7 @@ function calculerFacteurChute() {
     const resultat = document.getElementById('lspcc-resultat');
 
     if (!hauteur || !corde || corde <= 0) {
-        resultat.innerHTML = '<p style="color: #9E9E9E; font-style: italic;">Entrez les valeurs pour calculer le facteur de chute</p>';
+        resultat.innerHTML = '<p style="color: var(--t-muted, #9E9E9E); font-style: italic;">Entrez les valeurs pour calculer le facteur de chute</p>';
         return;
     }
 

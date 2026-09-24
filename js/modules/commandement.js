@@ -123,7 +123,7 @@ function printPatracDR() {
             </div>
             
             <div class="no-print" style="text-align: center; margin-top: 30px;">
-                <p style="color: #666; font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
+                <p style="color: var(--t-muted, #666); font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
                 <button onclick="window.print()" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">🖨️ Imprimer / Enregistrer PDF</button>
                 <button onclick="window.close()" style="padding: 10px 30px; font-size: 16px; cursor: pointer; margin-left: 10px;">❌ Fermer</button>
             </div>
@@ -208,7 +208,7 @@ function ouvrirModalEquipage(type, armement) {
     const titre = document.getElementById('modalTitre');
     const fields = document.getElementById('modalEquipageFields');
     
-    titre.innerHTML = `🚒 ${type} - Armement ${armement}<br><span style="font-size: 0.7em; color: #FF9800; font-weight: normal;">💡 Le remplissage de l'équipage est optionnel</span>`;
+    titre.innerHTML = `🚒 ${type} - Armement ${armement}<br><span style="font-size: 0.7em; color: light-dark(#945800, #ff9800); font-weight: normal;">💡 Le remplissage de l'équipage est optionnel</span>`;
     
     const config = configVehicules[type];
     let html = '';
@@ -216,7 +216,7 @@ function ouvrirModalEquipage(type, armement) {
     config.postes.forEach((poste, index) => {
         html += `
             <div style="background: var(--bg-main); padding: 15px; border-radius: 10px; margin-bottom: 15px; border: 2px solid var(--border-medium);">
-                <div style="font-weight: bold; color: #00ccff; margin-bottom: 10px; font-size: 1.1em;">${poste}</div>
+                <div style="font-weight: bold; color: light-dark(#006e8a, #00ccff); margin-bottom: 10px; font-size: 1.1em;">${poste}</div>
                 <div style="display: grid; grid-template-columns: 120px 1fr 1fr; gap: 10px;">
                     <div>
                         <label style="display: block; font-size: 0.9em; margin-bottom: 5px; color: var(--text-secondary);">Grade</label>
@@ -244,7 +244,7 @@ function ouvrirModalEquipageLibre(type, nbPersonnes) {
     const titre = document.getElementById('modalTitre');
     const fields = document.getElementById('modalEquipageFields');
     
-    titre.innerHTML = `${type} - ${nbPersonnes} personne(s)<br><span style="font-size: 0.7em; color: #FF9800; font-weight: normal;">💡 Le remplissage de l'équipage est optionnel</span>`;
+    titre.innerHTML = `${type} - ${nbPersonnes} personne(s)<br><span style="font-size: 0.7em; color: light-dark(#945800, #ff9800); font-weight: normal;">💡 Le remplissage de l'équipage est optionnel</span>`;
     document.getElementById('modalNumero').value = vehiculeEnCours.numero;
     
     let html = '';
@@ -252,7 +252,7 @@ function ouvrirModalEquipageLibre(type, nbPersonnes) {
     for (let i = 0; i < nbPersonnes; i++) {
         html += `
             <div style="background: var(--bg-main); padding: 15px; border-radius: 10px; margin-bottom: 15px; border: 2px solid var(--border-medium);">
-                <div style="font-weight: bold; color: #00ccff; margin-bottom: 10px; font-size: 1.1em;">Personne ${i + 1}</div>
+                <div style="font-weight: bold; color: light-dark(#006e8a, #00ccff); margin-bottom: 10px; font-size: 1.1em;">Personne ${i + 1}</div>
                 <div style="display: grid; grid-template-columns: 120px 1fr 1fr; gap: 10px;">
                     <div>
                         <label style="display: block; font-size: 0.9em; margin-bottom: 5px; color: var(--text-secondary);">Grade</label>
@@ -321,7 +321,7 @@ function afficherVehiculesEquipages() {
     if (!liste) return;
     
     if (vehiculesPatrac.length === 0) {
-        liste.innerHTML = '<div style="color: #888; font-style: italic; padding: 10px;">Aucun véhicule ajouté</div>';
+        liste.innerHTML = '<div style="color: var(--t-muted, #888); font-style: italic; padding: 10px;">Aucun véhicule ajouté</div>';
         return;
     }
     
@@ -334,8 +334,8 @@ function afficherVehiculesEquipages() {
             <div style="background: var(--bg-card); padding: 20px; border-radius: 12px; margin-bottom: 15px; border: 3px solid var(--primary-red);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                     <div>
-                        <span style="font-size: 1.5em; font-weight: bold; color: #00ccff;">${v.type} ${v.numero}</span>
-                        <span style="color: #FF9800; margin-left: 15px; font-size: 1.1em;">Armement ${v.armement}</span>
+                        <span style="font-size: 1.5em; font-weight: bold; color: light-dark(#006e8a, #00ccff);">${v.type} ${v.numero}</span>
+                        <span style="color: light-dark(#945800, #ff9800); margin-left: 15px; font-size: 1.1em;">Armement ${v.armement}</span>
                     </div>
                     <button onclick="retirerVehiculeEquipage(${index})" style="background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%); border: none; padding: 10px 20px; border-radius: 8px; color: white; cursor: pointer; font-weight: bold; font-size: 1em;">
                         ✕ Retirer
@@ -344,15 +344,15 @@ function afficherVehiculesEquipages() {
                 
                 ${equipageRenseigne.length > 0 ? `
                     <div style="background: var(--bg-main); padding: 15px; border-radius: 8px;">
-                        <div style="font-weight: bold; color: #FF9800; margin-bottom: 10px;">👥 Équipage :</div>
+                        <div style="font-weight: bold; color: light-dark(#945800, #ff9800); margin-bottom: 10px;">👥 Équipage :</div>
                         ${equipageRenseigne.map(p => `
-                            <div style="padding: 8px; margin-bottom: 5px; border-left: 3px solid #00ccff; padding-left: 12px;">
-                                <span style="color: #00ccff; font-weight: bold; min-width: 150px; display: inline-block;">${p.poste}:</span>
-                                <span style="color: #212121; font-weight: 600;">${p.grade} ${p.nom} ${p.prenom}</span>
+                            <div style="padding: 8px; margin-bottom: 5px; border-left: 3px solid light-dark(#00ccff, #0c6982); padding-left: 12px;">
+                                <span style="color: light-dark(#006e8a, #00ccff); font-weight: bold; min-width: 150px; display: inline-block;">${p.poste}:</span>
+                                <span style="color: var(--t-ink, #212121); font-weight: 600;">${p.grade} ${p.nom} ${p.prenom}</span>
                             </div>
                         `).join('')}
                     </div>
-                ` : '<div style="color: #888; font-style: italic;">Équipage non renseigné</div>'}
+                ` : '<div style="color: var(--t-muted, #888); font-style: italic;">Équipage non renseigné</div>'}
             </div>
         `;
     });
@@ -400,7 +400,7 @@ function afficherCA() {
     if (!liste) return;
     
     if (caPatrac.length === 0) {
-        liste.innerHTML = '<div style="color: #888; font-style: italic; padding: 10px;">Aucun chef d\'agrès ajouté</div>';
+        liste.innerHTML = '<div style="color: var(--t-muted, #888); font-style: italic; padding: 10px;">Aucun chef d\'agrès ajouté</div>';
         return;
     }
     
@@ -547,7 +547,7 @@ function printDPIF() {
             </div>
             
             <div class="no-print" style="text-align: center; margin-top: 30px;">
-                <p style="color: #666; font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
+                <p style="color: var(--t-muted, #666); font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
                 <button onclick="window.print()" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">🖨️ Imprimer / Enregistrer PDF</button>
                 <button onclick="window.close()" style="padding: 10px 30px; font-size: 16px; cursor: pointer; margin-left: 10px;">❌ Fermer</button>
             </div>
@@ -626,7 +626,7 @@ function printSMES() {
             </div>
             
             <div class="no-print" style="text-align: center; margin-top: 30px;">
-                <p style="color: #666; font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
+                <p style="color: var(--t-muted, #666); font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
                 <button onclick="window.print()" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">🖨️ Imprimer / Enregistrer PDF</button>
                 <button onclick="window.close()" style="padding: 10px 30px; font-size: 16px; cursor: pointer; margin-left: 10px;">❌ Fermer</button>
             </div>
@@ -706,7 +706,7 @@ function printSOIEC() {
             </div>
             
             <div class="no-print" style="text-align: center; margin-top: 30px;">
-                <p style="color: #666; font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
+                <p style="color: var(--t-muted, #666); font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
                 <button onclick="window.print()" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">🖨️ Imprimer / Enregistrer PDF</button>
                 <button onclick="window.close()" style="padding: 10px 30px; font-size: 16px; cursor: pointer; margin-left: 10px;">❌ Fermer</button>
             </div>
@@ -799,7 +799,7 @@ function printSAOIECL() {
             </div>
             
             <div class="no-print" style="text-align: center; margin-top: 30px;">
-                <p style="color: #666; font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
+                <p style="color: var(--t-muted, #666); font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
                 <button onclick="window.print()" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">🖨️ Imprimer / Enregistrer PDF</button>
                 <button onclick="window.close()" style="padding: 10px 30px; font-size: 16px; cursor: pointer; margin-left: 10px;">❌ Fermer</button>
             </div>
