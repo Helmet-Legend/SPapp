@@ -1,4 +1,4 @@
-# Tests automatiques DECIOPS : à chaque modification de main et à chaque pull request.
+# Tests automatiques Vulcain : à chaque modification de main et à chaque pull request.
 # Un échec affiche une croix rouge sur le commit et GitHub prévient par e-mail.
 name: Tests
 

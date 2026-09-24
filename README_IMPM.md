@@ -1,8 +1,8 @@
-# DECIOPS - Module IMPM Ajouté
+# Vulcain - Module IMPM Ajouté
 
 ## 📦 Contenu de la Mise à Jour
 
-Le module **IMPM (Interventions en Milieu Périlleux et Montagne)** a été intégré à votre application DECIOPS.
+Le module **IMPM (Interventions en Milieu Périlleux et Montagne)** a été intégré à votre application Vulcain.
 
 ## ✨ Nouveautés
 
@@ -95,9 +95,9 @@ Tous les modules IMPM sont indexés et recherchables via la barre de recherche g
 - Compatible mobile, tablette et desktop
 - Données structurées et complètes
 - Navigation intuitive avec boutons retour
-- Conforme au design existant de DECIOPS
+- Conforme au design existant de Vulcain
 
 ---
 
-**Version** : DECIOPS v1.9 + Module IMPM
+**Version** : Vulcain v1.9 + Module IMPM
 **Date** : Février 2026

@@ -1,4 +1,4 @@
-// Tests automatiques DECIOPS : lancés par `npm test` et sur GitHub à chaque modification.
+// Tests automatiques Vulcain : lancés par `npm test` et sur GitHub à chaque modification.
 const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({

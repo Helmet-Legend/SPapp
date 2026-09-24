@@ -1,5 +1,5 @@
 /**
- * DECIOPS - Commandement : PATRAC DR, DPIF, SMES, SOIEC, SAOIECL
+ * Vulcain - Commandement : PATRAC DR, DPIF, SMES, SOIEC, SAOIECL
  */
 // Restauré depuis js/app.js (version antérieure au commit 4c28be7 du 17/02/2026).
 
@@ -118,7 +118,7 @@ function printPatracDR() {
             </div>
             
             <div class="footer">
-                DECIOPS v${APP_VERSION} - Outil d'aide à la décision opérationnelle<br>
+                Vulcain v${APP_VERSION} - Outil d'aide à la décision opérationnelle<br>
                 Par les pompiers, pour les pompiers 🚒
             </div>
             
@@ -542,7 +542,7 @@ function printDPIF() {
             </div>
             
             <div class="footer">
-                DECIOPS v1.0 - Outil d'aide à la décision opérationnelle<br>
+                Vulcain - Outil d'aide à la décision opérationnelle<br>
                 Par les pompiers, pour les pompiers 🚒
             </div>
             
@@ -621,7 +621,7 @@ function printSMES() {
             </div>
             
             <div class="footer">
-                DECIOPS v1.0 - Outil d'aide à la décision opérationnelle<br>
+                Vulcain - Outil d'aide à la décision opérationnelle<br>
                 Par les pompiers, pour les pompiers 🚒
             </div>
             
@@ -701,7 +701,7 @@ function printSOIEC() {
             </div>
             
             <div class="footer">
-                DECIOPS v1.0 - Outil d'aide à la décision opérationnelle<br>
+                Vulcain - Outil d'aide à la décision opérationnelle<br>
                 Par les pompiers, pour les pompiers 🚒
             </div>
             
@@ -794,7 +794,7 @@ function printSAOIECL() {
             </div>
             
             <div class="footer">
-                DECIOPS v1.0 - Outil d'aide à la décision opérationnelle<br>
+                Vulcain - Outil d'aide à la décision opérationnelle<br>
                 Par les pompiers, pour les pompiers 🚒
             </div>
             

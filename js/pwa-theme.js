@@ -1,14 +1,14 @@
 /**
- * DECIOPS - Service worker et installation PWA
+ * Vulcain - Service worker et installation PWA
  */
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
             .then(registration => {
-                console.log('🚒 DECIOPS: Service Worker enregistré avec succès');
+                console.log('🚒 Vulcain: Service Worker enregistré avec succès');
             })
             .catch(error => {
-                console.log('🚒 DECIOPS: Erreur Service Worker:', error);
+                console.log('🚒 Vulcain: Erreur Service Worker:', error);
             });
     });
 }
@@ -19,7 +19,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
     // Afficher un bouton d'installation si souhaité
-    console.log('🚒 DECIOPS: Application installable');
+    console.log('🚒 Vulcain: Application installable');
 });
 
 // Thème clair / sombre : voir js/theme.js (Réglages)

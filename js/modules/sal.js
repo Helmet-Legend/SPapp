@@ -1,5 +1,5 @@
 /**
- * DECIOPS - Module SAL (Sauvetage Aquatique et Plongée)
+ * Vulcain - Module SAL (Sauvetage Aquatique et Plongée)
  * Tables MT2012 et calculs de décompression
  */
 

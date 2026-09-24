@@ -1,5 +1,5 @@
-// DECIOPS Service Worker v1.12.0
-const CACHE_NAME = 'deciops-v1.12.0';
+// Vulcain Service Worker v1.13.0
+const CACHE_NAME = 'vulcain-v1.13.0';
 const urlsToCache = [
   './',
   './index.html',
@@ -47,7 +47,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('🚒 DECIOPS: Cache ouvert');
+        console.log('🚒 Vulcain: Cache ouvert');
         return cache.addAll(urlsToCache);
       })
       .then(() => self.skipWaiting())
@@ -61,7 +61,7 @@ self.addEventListener('activate', event => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheName !== CACHE_NAME) {
-            console.log('🚒 DECIOPS: Suppression ancien cache:', cacheName);
+            console.log('🚒 Vulcain: Suppression ancien cache:', cacheName);
             return caches.delete(cacheName);
           }
         })

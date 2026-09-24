@@ -1,5 +1,5 @@
 /**
- * DECIOPS - Explosimétrie : correction des valeurs selon le gaz d'étalonnage
+ * Vulcain - Explosimétrie : correction des valeurs selon le gaz d'étalonnage
  * Données : data/gaz.json (chargé par js/app.js dans gazDatabase)
  */
 // Restauré depuis js/app.js (version antérieure au commit 4c28be7 du 17/02/2026),
@@ -69,6 +69,8 @@ function remplirGazPresents() {
     }
     
     grid.innerHTML = html;
+    // Recherche tapée avant la fin du chargement : on l'applique à la liste
+    filterGazButtons();
 }
 
 // Fonction de filtrage des gaz par recherche

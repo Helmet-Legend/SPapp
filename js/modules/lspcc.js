@@ -1,5 +1,5 @@
 /**
- * DECIOPS - Calculateur facteur de chute (LSPCC)
+ * Vulcain - Calculateur facteur de chute (LSPCC)
  */
 // Fonction calculateur facteur de chute LSPCC
 function calculerFacteurChute() {

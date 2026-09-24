@@ -1,5 +1,5 @@
 /**
- * DECIOPS - Bouteilles de gaz : identification et refroidissement
+ * Vulcain - Bouteilles de gaz : identification et refroidissement
  */
 // Restauré depuis js/app.js (version antérieure au commit 4c28be7 du 17/02/2026).
 
