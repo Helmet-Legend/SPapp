@@ -1,5 +1,5 @@
-// DECIOPS Service Worker v1.11.0
-const CACHE_NAME = 'deciops-v1.11.0';
+// DECIOPS Service Worker v1.12.0
+const CACHE_NAME = 'deciops-v1.12.0';
 const urlsToCache = [
   './',
   './index.html',

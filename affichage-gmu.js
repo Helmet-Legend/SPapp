@@ -18,11 +18,11 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     
     // Construire la fiche orange style GMU
     let html = `
-        <div style="background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%); padding: 3px; border-radius: 15px; margin: 20px 0; box-shadow: 0 8px 20px rgba(255,107,0,0.3);">
+        <div style="background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%); color: #101318; padding: 3px; border-radius: 15px; margin: 20px 0; box-shadow: 0 8px 20px rgba(255,107,0,0.3);">
             <div style="background: var(--bg-card); border-radius: 12px; padding: 0; overflow: hidden;">
                 
                 <!-- En-tête orange -->
-                <div style="background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%); padding: 25px; text-align: center; border-bottom: 5px solid #FF6B00;">
+                <div style="background: linear-gradient(135deg, #c25100 0%, #b26200 100%); color: #ffffff; padding: 25px; text-align: center; border-bottom: 5px solid #FF6B00;">
                     <div style="font-size: 2.5em; font-weight: bold; color: white; margin-bottom: 10px;">GUIDE ${numeroGuide}</div>
                     <h3 style="color: white; margin: 0; font-size: 1.5em; font-weight: 600;">${guide.titre}</h3>
                     <div style="margin-top: 15px; padding-top: 15px; border-top: 2px solid rgba(255,255,255,0.3);">
@@ -37,7 +37,7 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     // RISQUES POTENTIELS
     html += `
         <div style="margin-bottom: 30px;">
-            <h3 style="color: #FF6B00; border-bottom: 3px solid #FF6B00; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
+            <h3 style="color: #5c2700; border-bottom: 3px solid #FF6B00; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
                 ⚠️ RISQUES POTENTIELS
             </h3>
     `;
@@ -45,7 +45,7 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     if (guide.risques.incendie) {
         html += `
             <div style="background: rgba(255,0,0,0.1); padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 5px solid #FF0000;">
-                <h4 style="color: #FF0000; margin: 0 0 15px 0; font-size: 1.3em; font-weight: 700;">🔥 INCENDIE OU EXPLOSION</h4>
+                <h4 style="color: #750000; margin: 0 0 15px 0; font-size: 1.3em; font-weight: 700;">🔥 INCENDIE OU EXPLOSION</h4>
                 <ul style="margin: 0; padding-left: 25px; line-height: 1.8; color: var(--text-primary);">
                     ${guide.risques.incendie.map(r => `<li>${r}</li>`).join('')}
                 </ul>
@@ -56,7 +56,7 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     if (guide.risques.sante) {
         html += `
             <div style="background: rgba(255,165,0,0.1); padding: 20px; border-radius: 12px; border-left: 5px solid #FFA500;">
-                <h4 style="color: #FF8C00; margin: 0 0 15px 0; font-size: 1.3em; font-weight: 700;">☠️ SANTÉ</h4>
+                <h4 style="color: #522d00; margin: 0 0 15px 0; font-size: 1.3em; font-weight: 700;">☠️ SANTÉ</h4>
                 <ul style="margin: 0; padding-left: 25px; line-height: 1.8; color: var(--text-primary);">
                     ${guide.risques.sante.map(r => `<li>${r}</li>`).join('')}
                 </ul>
@@ -69,7 +69,7 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     // SÉCURITÉ PUBLIQUE
     html += `
         <div style="margin-bottom: 30px;">
-            <h3 style="color: #0066CC; border-bottom: 3px solid #0066CC; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
+            <h3 style="color: #003870; border-bottom: 3px solid #0066CC; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
                 🚨 SÉCURITÉ PUBLIQUE
             </h3>
             <div style="background: rgba(0,102,204,0.1); padding: 20px; border-radius: 12px; border-left: 5px solid #0066CC;">
@@ -83,7 +83,7 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     // VÊTEMENTS DE PROTECTION (EPI)
     html += `
         <div style="margin-bottom: 30px;">
-            <h3 style="color: #4CAF50; border-bottom: 3px solid #4CAF50; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
+            <h3 style="color: #1b3d1c; border-bottom: 3px solid #4CAF50; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
                 👕 VÊTEMENTS DE PROTECTION (EPI)
             </h3>
             <div style="background: rgba(76,175,80,0.1); padding: 20px; border-radius: 12px; border-left: 5px solid #4CAF50;">
@@ -97,22 +97,22 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     // ÉVACUATION
     html += `
         <div style="margin-bottom: 30px;">
-            <h3 style="color: #9C27B0; border-bottom: 3px solid #9C27B0; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
+            <h3 style="color: #5d1769; border-bottom: 3px solid #9C27B0; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
                 🚁 ÉVACUATION - DISTANCES DE SÉCURITÉ
             </h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
                 <div style="background: rgba(156,39,176,0.1); padding: 20px; border-radius: 12px; border-left: 5px solid #9C27B0; text-align: center;">
-                    <div style="font-size: 0.9em; color: #9C27B0; font-weight: 600; margin-bottom: 10px;">Mesure immédiate</div>
+                    <div style="font-size: 0.9em; color: #5d1769; font-weight: 600; margin-bottom: 10px;">Mesure immédiate</div>
                     <div style="font-size: 2em; font-weight: bold; color: var(--primary-red);">${guide.evacuation.immediat}</div>
                 </div>
                 ${guide.evacuation.deversementMajeur ? `
                 <div style="background: rgba(255,152,0,0.1); padding: 20px; border-radius: 12px; border-left: 5px solid #FF9800; text-align: center;">
-                    <div style="font-size: 0.9em; color: #FF9800; font-weight: 600; margin-bottom: 10px;">Déversement majeur</div>
+                    <div style="font-size: 0.9em; color: #523100; font-weight: 600; margin-bottom: 10px;">Déversement majeur</div>
                     <div style="font-size: 2em; font-weight: bold; color: var(--primary-red);">${guide.evacuation.deversementMajeur}</div>
                 </div>
                 ` : ''}
                 <div style="background: rgba(244,67,54,0.1); padding: 20px; border-radius: 12px; border-left: 5px solid #F44336; text-align: center;">
-                    <div style="font-size: 0.9em; color: #F44336; font-weight: 600; margin-bottom: 10px;">Incendie de citerne</div>
+                    <div style="font-size: 0.9em; color: #710e06; font-weight: 600; margin-bottom: 10px;">Incendie de citerne</div>
                     <div style="font-size: 2em; font-weight: bold; color: var(--primary-red);">${guide.evacuation.incendie}</div>
                 </div>
             </div>
@@ -122,7 +122,7 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     // MESURES D'URGENCE
     html += `
         <div style="margin-bottom: 30px;">
-            <h3 style="color: #FF6B00; border-bottom: 3px solid #FF6B00; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
+            <h3 style="color: #5c2700; border-bottom: 3px solid #FF6B00; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
                 🧯 MESURES D'URGENCE
             </h3>
     `;
@@ -131,13 +131,13 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     if (guide.mesures.incendie) {
         html += `
             <div style="background: rgba(255,0,0,0.1); padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 5px solid #FF0000;">
-                <h4 style="color: #FF0000; margin: 0 0 15px 0; font-size: 1.3em; font-weight: 700;">🔥 INCENDIE</h4>
+                <h4 style="color: #750000; margin: 0 0 15px 0; font-size: 1.3em; font-weight: 700;">🔥 INCENDIE</h4>
         `;
         
         if (guide.mesures.incendie.attention) {
             html += `
                 <div style="background: rgba(255,0,0,0.2); padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #FF0000;">
-                    <strong style="color: #FF0000;">⚠️ ATTENTION :</strong>
+                    <strong style="color: #750000;">⚠️ ATTENTION :</strong>
                     <ul style="margin: 10px 0 0 0; padding-left: 25px;">
                         ${guide.mesures.incendie.attention.map(a => `<li>${a}</li>`).join('')}
                     </ul>
@@ -185,7 +185,7 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     if (guide.mesures.deversement) {
         html += `
             <div style="background: rgba(33,150,243,0.1); padding: 20px; border-radius: 12px; border-left: 5px solid #2196F3;">
-                <h4 style="color: #2196F3; margin: 0 0 15px 0; font-size: 1.3em; font-weight: 700;">💧 DÉVERSEMENT OU FUITE</h4>
+                <h4 style="color: #053961; margin: 0 0 15px 0; font-size: 1.3em; font-weight: 700;">💧 DÉVERSEMENT OU FUITE</h4>
                 <ul style="margin: 0; padding-left: 25px; line-height: 1.8; color: var(--text-primary);">
                     ${guide.mesures.deversement.map(d => `<li>${d}</li>`).join('')}
                 </ul>
@@ -198,7 +198,7 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     // PREMIERS SOINS
     html += `
         <div style="margin-bottom: 20px;">
-            <h3 style="color: #E91E63; border-bottom: 3px solid #E91E63; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
+            <h3 style="color: #720b2e; border-bottom: 3px solid #E91E63; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.6em;">
                 ⚕️ PREMIERS SOINS
             </h3>
             <div style="background: rgba(233,30,99,0.1); padding: 20px; border-radius: 12px; border-left: 5px solid #E91E63;">
@@ -221,7 +221,7 @@ function afficherFicheGMU(numeroONU, nomMatiere, classe) {
     if (guide.attention) {
         html += `
             <div style="background: rgba(255,193,7,0.2); padding: 20px; border-radius: 12px; border: 3px solid #FFC107; margin-top: 20px;">
-                <strong style="color: #F57C00; font-size: 1.2em;">⚠️ ATTENTION :</strong>
+                <strong style="color: #572c00; font-size: 1.2em;">⚠️ ATTENTION :</strong>
                 <p style="margin: 10px 0 0 0; color: var(--text-primary); line-height: 1.6;">${guide.attention}</p>
             </div>
         `;

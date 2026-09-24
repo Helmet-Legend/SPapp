@@ -273,7 +273,9 @@ html[data-theme] :where(input, select, textarea):focus {
 }
 html[data-theme] label { color: var(--t-ink); }
 /* Petits textes d'aide des fiches : suivent le thème (au lieu d'un gris fixe) */
-html[data-theme] .module small:not([style*="color"]) { color: var(--t-muted) !important; }
+html[data-theme] #home small:not([style*="color"]) { color: var(--t-muted) !important; }
+/* Dans les fiches, les petits textes suivent la couleur de leur bloc (lisibles aussi sur les tuiles colorées) */
+html[data-theme] .module:not(#home) small:not([style*="color"]) { color: inherit !important; opacity: .8; }
 
 /* Blocs de résultat */
 html[data-theme] .result-box {
@@ -283,13 +285,14 @@ html[data-theme] .result-box {
     border-radius: var(--t-radius);
     box-shadow: none;
 }
-html[data-theme] .info-card {
+html[data-theme] .info-card:has(.label) {
     background: var(--t-result-bg) !important;
     color: var(--t-result-ink) !important;
     border: 1px solid var(--t-line);
     border-radius: var(--t-radius);
 }
-html[data-theme="sombre"] .info-card { border-color: #5C4B08; }
+html[data-theme="sombre"] .info-card:has(.label) { border-color: #5C4B08; }
+html[data-theme] .info-card:not(:has(.label)) { color: var(--t-ink); padding: 16px; margin: 14px 0; border-radius: var(--t-radius); }
 html[data-theme] .info-card .label { color: var(--t-result-muted) !important; font-weight: 700; }
 html[data-theme] .info-card .value:not([style*="color"]) { color: var(--t-result-ink); }
 html[data-theme] .info-card .value { font-family: var(--t-display); font-weight: var(--t-display-weight); }
@@ -680,3 +683,12 @@ html[data-theme] .app-footer p { color: var(--t-muted) !important; }
     .module.active { animation: none; }
     .nav-chev { transition: none; }
 }
+
+/* ---------- Contenu des fiches (étape 2) ---------- */
+/* Couleurs d'état lisibles sur les surfaces de chaque thème */
+html[data-theme="clair"] body { --success: #2E7D32; --warning: #B25E00; --danger: #C62828; --info: #1565C0; }
+html[data-theme="sombre"] body { --success: #6FCF76; --warning: #F0A04B; --danger: #FF6B6B; --info: #64B5F6; }
+/* Cellules : le texte suit la ligne (l'ancien blanc fixe disparaissait sur les lignes claires) */
+html[data-theme] td { color: inherit; }
+html[data-theme] .module th small { color: inherit !important; }
+#gazPresentsGrid button[style*="primary-red"], #gazPresentsGrid button[style*="primary-red"] div { color: #fff !important; }

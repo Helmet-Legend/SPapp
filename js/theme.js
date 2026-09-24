@@ -3,12 +3,12 @@
  *
  * Deux habillages : « clair » (Clair épuré) et « sombre » (Nuit opérationnelle).
  * Préférence enregistrée sur l'appareil : "auto" (suit le téléphone), "clair" ou "sombre".
- * Sans préférence enregistrée : "clair".
+ * Sans préférence enregistrée : "auto".
  * Chargé dans <head> pour appliquer le thème avant l'affichage (pas de clignotement).
  */
 const Theme = (function() {
     const CLE = 'deciops.theme';
-    const PAR_DEFAUT = 'clair';
+    const PAR_DEFAUT = 'auto';
     const COULEUR_BARRE = { clair: '#F3F4F6', sombre: '#0D0E10' };
     const sombreSysteme = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 
@@ -19,8 +19,6 @@ const Theme = (function() {
             // Reprise des anciens réglages (bouton 🌙 des versions précédentes)
             if (localStorage.getItem('theme') === 'dark' || localStorage.getItem('darkMode') === 'enabled') return 'sombre';
         } catch (e) { /* stockage indisponible */ }
-        // « Clair » par défaut tant que toutes les fiches ne sont pas adaptées au thème sombre
-        // (étape 2 de la refonte) ; « Automatique » reste proposé dans Réglages.
         return PAR_DEFAUT;
     }
 

@@ -248,45 +248,45 @@ function identifierBouteilleParCouleur(couleur) {
     // Affichage du résultat détaillé
     resultDiv.innerHTML = `
         <div class="result-box" style="margin-top: 30px; background: var(--bg-card); border: 3px solid #ff6600; animation: fadeIn 0.5s;">
-            <h3 style="color: #ff6600; font-size: 2em; text-align: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #ff6600;">
+            <h3 style="color: light-dark(#ad4500, #ff7214); font-size: 2em; text-align: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #ff6600;">
                 ${data.picto} ${data.nom}
             </h3>
             
             <div style="display: grid; gap: 15px; margin-bottom: 20px;">
                 <div style="background: rgba(255,102,0,0.1); padding: 15px; border-radius: 8px; border-left: 4px solid #ff6600;">
-                    <strong style="color: #ff6600;">🎨 Couleur d'ogive :</strong>
-                    <span style="color: #212121; font-size: 1.2em; font-weight: bold; margin-left: 10px;">${data.couleur}</span>
+                    <strong style="color: light-dark(#ad4500, #ff7214);">🎨 Couleur d'ogive :</strong>
+                    <span style="color: var(--t-ink, #212121); font-size: 1.2em; font-weight: bold; margin-left: 10px;">${data.couleur}</span>
                 </div>
                 
                 <div style="background: rgba(255,204,0,0.1); padding: 15px; border-radius: 8px; border-left: 4px solid #FF9800;">
-                    <strong style="color: #FF9800;">⚠️ Classification :</strong>
-                    <span style="color: #212121; font-size: 1.1em; font-weight: 600; margin-left: 10px;">${data.classe}</span>
+                    <strong style="color: light-dark(#945800, #ff9800);">⚠️ Classification :</strong>
+                    <span style="color: var(--t-ink, #212121); font-size: 1.1em; font-weight: 600; margin-left: 10px;">${data.classe}</span>
                 </div>
                 
                 <div style="background: rgba(255,0,0,0.2); padding: 15px; border-radius: 8px; border-left: 4px solid #ff0000;">
-                    <strong style="color: #ff0000;">🚨 Risque principal :</strong>
-                    <span style="color: #212121; font-size: 1.2em; font-weight: bold; margin-left: 10px;">${data.risque}</span>
+                    <strong style="color: light-dark(#cc0000, #ff6b6b);">🚨 Risque principal :</strong>
+                    <span style="color: var(--t-ink, #212121); font-size: 1.2em; font-weight: bold; margin-left: 10px;">${data.risque}</span>
                 </div>
             </div>
             
-            <div style="background: rgba(0,204,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #00ccff;">
-                <h4 style="color: #00ccff; margin-bottom: 15px; font-size: 1.3em;">📌 Exemples de gaz</h4>
+            <div style="background: rgba(0,204,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid light-dark(#00ccff, #0c6982);">
+                <h4 style="color: light-dark(#006e8a, #00ccff); margin-bottom: 15px; font-size: 1.3em;">📌 Exemples de gaz</h4>
                 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                    ${data.exemples.map(ex => `<span style="background: rgba(0,204,255,0.2); padding: 8px 15px; border-radius: 20px; color: #212121; font-size: 1em; border: 1px solid #00ccff;">${ex}</span>`).join('')}
+                    ${data.exemples.map(ex => `<span style="background: rgba(0,204,255,0.2); padding: 8px 15px; border-radius: 20px; color: var(--t-ink, #212121); font-size: 1em; border: 1px solid light-dark(#00ccff, #0c6982);">${ex}</span>`).join('')}
                 </div>
             </div>
             
             <div style="background: rgba(255,0,0,0.15); padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid #ff0000;">
-                <h4 style="color: #ff0000; margin-bottom: 15px; font-size: 1.3em;">⚠️ DANGERS SPÉCIFIQUES</h4>
+                <h4 style="color: light-dark(#cc0000, #ff6b6b); margin-bottom: 15px; font-size: 1.3em;">⚠️ DANGERS SPÉCIFIQUES</h4>
                 <ul style="list-style: none; padding: 0;">
-                    ${data.dangers.map(d => `<li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); color: #212121; line-height: 1.6;">▸ ${d}</li>`).join('')}
+                    ${data.dangers.map(d => `<li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--t-ink, #212121); line-height: 1.6;">▸ ${d}</li>`).join('')}
                 </ul>
             </div>
             
             ${couleur === 'marron' ? `
-                <div style="background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%); padding: 20px; border-radius: 10px; margin-top: 20px; border: 3px solid #D2691E; text-align: center;">
+                <div style="background: linear-gradient(135deg, #8B4513 0%, #b75c1a 100%); color: #ffffff; padding: 20px; border-radius: 10px; margin-top: 20px; border: 3px solid #D2691E; text-align: center;">
                     <h4 style="color: #FFFFFF; font-size: 1.4em; margin-bottom: 10px;">⚠️ ATTENTION ACÉTYLÈNE ⚠️</h4>
-                    <p style="color: #FFD700; font-size: 1.2em; font-weight: bold; line-height: 1.8;">
+                    <p style="color: #ffe557; font-size: 1.2em; font-weight: bold; line-height: 1.8;">
                         Consulter le protocole spécifique dans<br>
                         <span style="font-size: 1.3em;">💧 Procédure de Refroidissement</span>
                     </p>
