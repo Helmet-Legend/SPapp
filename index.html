@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.25.0">
+    <meta name="version" content="1.26.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -66,10 +66,13 @@
     </svg>
     
 
+    <!-- Fond photo de l'accueil : nuit en thème sombre, jour en thème clair -->
+    <div class="accueil-fond" aria-hidden="true"></div>
+
     <header class="app-header">
         <div class="app-brand">
             <small>Aide à la décision opérationnelle</small>
-            <h1>VUL<span>CAIN</span></h1>
+            <h1><svg class="ico app-flamme" aria-hidden="true"><use href="#i-flame"/></svg>VUL<span>CAIN</span></h1>
         </div>
         <button class="app-header-btn about-btn" onclick="toggleAbout()" title="À propos" aria-label="À propos"><svg class="ico"><use href="#i-info"/></svg></button>
         <button class="app-header-btn" id="reglagesBtn" onclick="ouvrirReglages()" title="Réglages" aria-label="Réglages"><svg class="ico"><use href="#i-reglages"/></svg></button>
@@ -99,7 +102,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.25.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.26.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -204,7 +207,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.25.0</span><br>
+                        Vulcain v<span class="app-version">1.26.0</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -20276,7 +20279,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.25.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.26.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

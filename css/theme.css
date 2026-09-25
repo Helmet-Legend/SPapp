@@ -795,3 +795,108 @@ html[data-theme] .sal-douteux td { background: light-dark(#FFF3E0, #3a2c1a); col
 html[data-theme] .sal-lien { font: inherit; font-weight: 700; color: var(--t-ink); background: var(--t-s2); border: 1px solid var(--t-line); border-radius: 999px; padding: 2px 10px; cursor: pointer; }
 html[data-theme] .sal-groupe { margin: 22px 0 8px; color: var(--t-ink); font-size: 1.05em; border-bottom: 2px solid var(--jsp, var(--t-line)); padding-bottom: 4px; }
 html[data-theme] .sal-douteux-cel { background: light-dark(#FFF3E0, #3a2c1a); color: var(--t-ink); font-weight: 700; }
+
+/* ---------- Accueil avec photo (v1.26) ----------
+   Photo plein écran derrière l'onglet Accueil : nuit en thème sombre, jour en thème clair.
+   Nette en haut (logo), puis floutée et voilée vers le bas pour garder la liste lisible.
+   Les boutons des domaines deviennent translucides (verre dépoli). */
+.accueil-fond, .app-flamme { display: none; }
+body.accueil-photo .accueil-fond {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: #0B0C0E center / cover no-repeat;
+    background-position: 40% 10%;
+}
+html[data-theme="sombre"] body.accueil-photo .accueil-fond { background-image: url(../images/accueil/accueil-nuit.webp); }
+html[data-theme="clair"] body.accueil-photo .accueil-fond { background-color: #F3F4F6; background-image: url(../images/accueil/accueil-jour.webp); }
+.accueil-fond::before, .accueil-fond::after { content: ''; position: absolute; inset: 0; }
+.accueil-fond::before {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 38%, #000 66%);
+    mask-image: linear-gradient(180deg, transparent 0%, transparent 38%, #000 66%);
+}
+.accueil-fond::after {
+    background:
+        linear-gradient(180deg, var(--voile0) 0%, var(--voile1) 22%, var(--voile2) 44%, var(--voile3) 68%, var(--voile4) 100%),
+        linear-gradient(100deg, rgba(6, 7, 8, .62) 0%, rgba(6, 7, 8, .2) 45%, rgba(6, 7, 8, 0) 75%);
+}
+html[data-theme="sombre"] body {
+    --voile0: rgba(6, 7, 8, .08); --voile1: rgba(6, 7, 8, .2); --voile2: rgba(6, 7, 8, .45); --voile3: rgba(8, 9, 10, .7); --voile4: rgba(10, 11, 13, .88);
+    --verre: linear-gradient(135deg, rgba(12, 13, 15, .34), rgba(12, 13, 15, .2));
+    --verre-ligne: rgba(255, 255, 255, .15);
+    --verre-texte: #E4E7EA;
+}
+html[data-theme="clair"] body {
+    --voile0: rgba(6, 7, 8, .26); --voile1: rgba(6, 7, 8, .34); --voile2: rgba(243, 244, 246, .4); --voile3: rgba(243, 244, 246, .66); --voile4: rgba(243, 244, 246, .85);
+    --verre: linear-gradient(135deg, rgba(255, 255, 255, .6), rgba(255, 255, 255, .46));
+    --verre-ligne: rgba(255, 255, 255, .75);
+    --verre-texte: #3A3F46;
+}
+body.accueil-photo > .app-header,
+body.accueil-photo > #home,
+body.accueil-photo > .app-footer { position: relative; z-index: 1; }
+body.accueil-photo .app-stripe { display: none !important; }
+
+/* En-tête : bandeau avec logo sur la photo */
+body.accueil-photo .app-header { align-items: flex-start; min-height: 196px; padding-top: calc(16px + env(safe-area-inset-top, 0px)); }
+body.accueil-photo .app-brand { align-self: flex-end; min-width: 0; margin-right: -100px; flex-direction: column-reverse; gap: 6px; padding: 0 0 4px 4px; }
+body.accueil-photo .app-brand h1 {
+    display: flex; align-items: center; gap: 0;
+    font-family: 'Barlow Condensed', 'Arial Narrow', system-ui, sans-serif;
+    font-weight: 700; text-transform: uppercase; letter-spacing: .01em;
+    font-size: 46px; line-height: 1; color: #FFFFFF;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, .6);
+}
+body.accueil-photo .app-brand h1 span { color: #FF3B30; }
+body.accueil-photo .app-flamme { display: block; margin-right: 8px; width: 36px; height: 36px; color: #FF3B30; stroke-width: 2.2; filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .5)); }
+body.accueil-photo .app-brand small {
+    color: #EEF0F2; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; white-space: nowrap;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, .8);
+}
+body.accueil-photo .app-header .app-header-btn {
+    color: #FFFFFF;
+    background: rgba(20, 21, 24, .42);
+    border: 1px solid rgba(255, 255, 255, .28);
+    border-radius: 50%;
+    box-shadow: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Boutons des domaines en verre dépoli */
+body.accueil-photo .nav-home > .nav-acc {
+    background: var(--verre);
+    border: 1px solid var(--verre-ligne);
+    border-radius: 16px;
+    box-shadow: inset 3px 0 0 var(--c), 0 4px 16px rgba(0, 0, 0, .14);
+    backdrop-filter: blur(6px) saturate(150%);
+    -webkit-backdrop-filter: blur(6px) saturate(150%);
+}
+body.accueil-photo .nav-home > .nav-acc > .nav-acc-head { box-shadow: none; }
+body.accueil-photo .nav-home > .nav-acc .nav-acc-head .nav-count,
+body.accueil-photo .nav-home > .nav-acc .nav-acc-head .nav-chev { color: var(--verre-texte); }
+body.accueil-photo .nav-home > .nav-acc .nav-acc-head .nav-count { border: 0; padding: 0; }
+html[data-theme="sombre"] body.accueil-photo .nav-home .nav-acc-head .nav-picto {
+    width: 38px; height: 38px; border-radius: 11px;
+    background: color-mix(in srgb, var(--c) 24%, transparent);
+    color: color-mix(in srgb, var(--c) 55%, #FFFFFF);
+}
+html[data-theme="clair"] body.accueil-photo .nav-home .nav-acc-head .nav-picto { background: color-mix(in srgb, var(--c) 14%, #FFFFFF); }
+/* Domaine ouvert : fond plein pour lire les sous-menus sans effort */
+html[data-theme="clair"] body.accueil-photo .nav-home > .nav-acc:has(> .nav-acc-head[aria-expanded="true"]) { background: rgba(255, 255, 255, .95); }
+html[data-theme="sombre"] body.accueil-photo .nav-home > .nav-acc:has(> .nav-acc-head[aria-expanded="true"]) { background: rgba(22, 24, 27, .95); }
+body.accueil-photo .nav-home > .nav-acc:has(> .nav-acc-head[aria-expanded="true"]) {
+    border-color: var(--t-line);
+}
+
+/* Barre d'onglets et pied de page sur la photo */
+html[data-theme="sombre"] body.accueil-photo .nav-tabbar {
+    background: rgba(12, 13, 15, .72);
+    border-top-color: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }

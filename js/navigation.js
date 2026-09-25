@@ -185,7 +185,10 @@ const Navigation = (function() {
     }
 
     function rendreOnglets() {
-        const actif = document.getElementById('home')?.classList.contains('active') ? ongletActif : ongletOrigine;
+        const surAccueil = !!document.getElementById('home')?.classList.contains('active');
+        const actif = surAccueil ? ongletActif : ongletOrigine;
+        // Fond photo seulement sur l'onglet Accueil de l'écran d'accueil
+        document.body.classList.toggle('accueil-photo', surAccueil && ongletActif === 'accueil');
         document.querySelectorAll('#navTabbar button').forEach(b => {
             b.setAttribute('aria-current', b.dataset.onglet === actif ? 'page' : 'false');
         });
