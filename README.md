@@ -1,4 +1,4 @@
-# Vulcain v1.20.1 - Architecture Modulaire
+# Vulcain v1.21.0 - Architecture Modulaire
 
 ## 📁 Structure du projet
 
@@ -56,6 +56,8 @@ Tout le menu est généré à partir de `data/navigation.json` :
 - **Onglets** en bas de l'écran : Accueil, Calculs, Chercher, Favoris ;
 - **Fil d'Ariane** et bouton ☆ favori en haut de chaque écran ;
 - favoris et fiches récentes gardés sur l'appareil.
+- `couleursThemes` (facultatif) dans un domaine : une pastille de couleur par sous-menu
+  (utilisé pour les 4 années JSP : blanc, jaune, orange, vert).
 
 ### Ajouter une fiche
 

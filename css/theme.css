@@ -741,3 +741,25 @@ html[data-theme] .ia-jeton.utilise { color: var(--t-muted); }
 html[data-theme] .rd-pdf { display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--t-accent); color: var(--t-ink); background: var(--t-s1); font-weight: 700; text-decoration: none; }
 html[data-theme] .rd-source .rd-pdf { padding: 4px 10px; border-width: 1px; font-weight: 600; margin-top: 4px; }
 .nav-home .nav-acc-head, .nav-home .nav-sub-head { scroll-margin-top: 12px; }
+
+/* ===== JSP : une couleur par année (blanc, jaune, orange, vert) ===== */
+.jsp-a1 { --jsp: #FFFFFF; }
+.jsp-a2 { --jsp: #FFFF00; }
+.jsp-a3 { --jsp: #F96209; }
+.jsp-a4 { --jsp: #4DB631; }
+html[data-theme] .jsp-bandeau { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; background: var(--jsp); color: #111; border: 2px solid rgba(0, 0, 0, .3); border-radius: 14px; padding: 12px 16px; margin: 12px 0 16px; font-weight: 800; font-size: 1.35em; }
+html[data-theme] .jsp-bandeau small { font-size: .62em; font-weight: 600; color: #222; }
+html[data-theme] .jsp-cours { background: var(--t-s2); border: 1px solid var(--t-line); border-left: 8px solid var(--jsp); border-radius: var(--t-radius); margin: 12px 0; padding: 0 16px; }
+html[data-theme] .jsp-a1 .jsp-cours, html[data-theme] .jsp-annees .jsp-a1 { box-shadow: inset 1px 0 0 #9E9E9E; }
+html[data-theme] .jsp-cours > summary { cursor: pointer; font-weight: 700; padding: 14px 0; min-height: 24px; }
+html[data-theme] .jsp-cours[open] > summary { border-bottom: 1px solid var(--t-line); margin-bottom: 8px; }
+html[data-theme] .jsp-cours[open] { padding-bottom: 6px; }
+html[data-theme] .jsp-cours h4 { margin: 14px 0 6px; }
+html[data-theme] .jsp-objectif { color: var(--t-muted); font-style: italic; }
+html[data-theme] .jsp-tuiles button { border-left: 8px solid var(--jsp); }
+html[data-theme] .jsp-a1 .jsp-tuiles button { box-shadow: inset 1px 0 0 #9E9E9E; }
+html[data-theme] .jsp-annees button { background: var(--jsp); color: #111; border: 2px solid rgba(0, 0, 0, .3); text-align: center; }
+html[data-theme] .jsp-annees button span { color: #222; }
+.nav-sub-pastille { flex: none; width: 16px; height: 16px; border-radius: 50%; background: var(--jsp); border: 1px solid rgba(0, 0, 0, .45); }
+html[data-theme="sombre"] .nav-sub-pastille { border-color: rgba(255, 255, 255, .6); }
+html[data-theme] .jsp-annees { grid-template-columns: repeat(2, 1fr); }

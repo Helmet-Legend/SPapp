@@ -86,6 +86,25 @@
    ]
   },
   {
+   "id": "jsp",
+   "titre": "Jeunes sapeurs-pompiers (JSP)",
+   "icone": "🎓",
+   "picto": "jsp",
+   "couleur": "#C2185B",
+   "themes": [
+    "JSP 1",
+    "JSP 2",
+    "JSP 3",
+    "JSP 4"
+   ],
+   "couleursThemes": {
+    "JSP 1": "#FFFFFF",
+    "JSP 2": "#FFFF00",
+    "JSP 3": "#F96209",
+    "JSP 4": "#4DB631"
+   }
+  },
+  {
    "id": "outils",
    "titre": "Outils",
    "icone": "🧮",
@@ -2441,6 +2460,341 @@
     "scenario",
     "entrainement",
     "générateur"
+   ]
+  },
+  {
+   "id": "jsp1-menu",
+   "titre": "Présentation",
+   "domaine": "jsp",
+   "theme": "JSP 1",
+   "type": "presentation",
+   "motsCles": [
+    "jsp",
+    "jeunes sapeurs-pompiers",
+    "1re année",
+    "blanc"
+   ]
+  },
+  {
+   "id": "jsp1-incendie",
+   "titre": "Incendie",
+   "domaine": "jsp",
+   "theme": "JSP 1",
+   "type": "fiche",
+   "motsCles": [
+    "combustion",
+    "triangle du feu",
+    "propagation",
+    "échelles",
+    "lspcc",
+    "ari",
+    "mgo",
+    "tuyaux",
+    "raccords",
+    "lances",
+    "dévidoirs",
+    "deci",
+    "extincteurs"
+   ]
+  },
+  {
+   "id": "jsp1-transverse",
+   "titre": "Transverse",
+   "domaine": "jsp",
+   "theme": "JSP 1",
+   "type": "fiche",
+   "motsCles": [
+    "epi",
+    "tenues",
+    "grades",
+    "activité physique",
+    "sécurité civile",
+    "dgscgc",
+    "zones de défense"
+   ]
+  },
+  {
+   "id": "jsp1-citoyen",
+   "titre": "Engagement citoyen",
+   "domaine": "jsp",
+   "theme": "JSP 1",
+   "type": "fiche",
+   "motsCles": [
+    "réseau associatif",
+    "fnspf",
+    "odp",
+    "mnsp",
+    "amicale",
+    "engagement",
+    "ipcs",
+    "as.sec",
+    "ppms",
+    "séisme",
+    "évacuation",
+    "cérémonie",
+    "protocole"
+   ]
+  },
+  {
+   "id": "jsp2-menu",
+   "titre": "Présentation",
+   "domaine": "jsp",
+   "theme": "JSP 2",
+   "type": "presentation",
+   "motsCles": [
+    "jsp",
+    "jeunes sapeurs-pompiers",
+    "2e année",
+    "jaune"
+   ]
+  },
+  {
+   "id": "jsp2-incendie",
+   "titre": "Incendie",
+   "domaine": "jsp",
+   "theme": "JSP 2",
+   "type": "fiche",
+   "motsCles": [
+    "réaction au feu",
+    "résistance au feu",
+    "coupe-feu",
+    "ari",
+    "contrôle croisé",
+    "engins",
+    "vsav",
+    "fpt",
+    "ccf",
+    "établissements",
+    "jets",
+    "mousse",
+    "lspcc",
+    "échelles à coulisse",
+    "piétage"
+   ]
+  },
+  {
+   "id": "jsp2-transverse",
+   "titre": "Transverse",
+   "domaine": "jsp",
+   "theme": "JSP 2",
+   "type": "fiche",
+   "motsCles": [
+    "statuts",
+    "spp",
+    "spv",
+    "bspp",
+    "bmpm",
+    "pats"
+   ]
+  },
+  {
+   "id": "jsp2-citoyen",
+   "titre": "Engagement citoyen",
+   "domaine": "jsp",
+   "theme": "JSP 2",
+   "type": "fiche",
+   "motsCles": [
+    "incendie domestique",
+    "daaf",
+    "détecteur de fumée",
+    "plan d'évacuation",
+    "accidents de la vie courante",
+    "piscine",
+    "prévention"
+   ]
+  },
+  {
+   "id": "jsp2-od",
+   "titre": "Opérations diverses",
+   "domaine": "jsp",
+   "theme": "JSP 2",
+   "type": "fiche",
+   "motsCles": [
+    "épuisement",
+    "inondation",
+    "pompe électrique",
+    "éclairage",
+    "groupe électrogène"
+   ]
+  },
+  {
+   "id": "jsp3-menu",
+   "titre": "Présentation",
+   "domaine": "jsp",
+   "theme": "JSP 3",
+   "type": "presentation",
+   "motsCles": [
+    "jsp",
+    "jeunes sapeurs-pompiers",
+    "3e année",
+    "orange"
+   ]
+  },
+  {
+   "id": "jsp3-incendie",
+   "titre": "Incendie",
+   "domaine": "jsp",
+   "theme": "JSP 3",
+   "type": "fiche",
+   "motsCles": [
+    "toxicité des fumées",
+    "hap",
+    "ari",
+    "etare",
+    "colonne sèche",
+    "deci",
+    "pei",
+    "poteau",
+    "agents extincteurs",
+    "classes de feux",
+    "binômes",
+    "porte-lance",
+    "échelle à crochets",
+    "phases du feu",
+    "hydraulique",
+    "pertes de charge",
+    "explosimétrie",
+    "lie",
+    "coupure des fluides",
+    "sauvetage lspcc"
+   ]
+  },
+  {
+   "id": "jsp3-transverse",
+   "titre": "Transverse",
+   "domaine": "jsp",
+   "theme": "JSP 3",
+   "type": "fiche",
+   "motsCles": [
+    "sdis 34",
+    "casdis",
+    "sdacr",
+    "règlement opérationnel",
+    "hygiène de vie",
+    "tabac",
+    "cannabis",
+    "stress",
+    "cump",
+    "radio",
+    "antares",
+    "alphabet",
+    "oaci",
+    "indicatif"
+   ]
+  },
+  {
+   "id": "jsp3-od",
+   "titre": "Opérations diverses",
+   "domaine": "jsp",
+   "theme": "JSP 3",
+   "type": "fiche",
+   "motsCles": [
+    "ascenseurs",
+    "monte-charge",
+    "hydro-éjecteur",
+    "vide-cave",
+    "turbopompe",
+    "motopompe",
+    "épuisement"
+   ]
+  },
+  {
+   "id": "jsp4-menu",
+   "titre": "Présentation",
+   "domaine": "jsp",
+   "theme": "JSP 4",
+   "type": "presentation",
+   "motsCles": [
+    "jsp",
+    "jeunes sapeurs-pompiers",
+    "4e année",
+    "vert"
+   ]
+  },
+  {
+   "id": "jsp4-incendie",
+   "titre": "Incendie",
+   "domaine": "jsp",
+   "theme": "JSP 4",
+   "type": "fiche",
+   "motsCles": [
+    "traces et indices",
+    "pti",
+    "sauvetage",
+    "mise en sécurité",
+    "confinement",
+    "évacuation",
+    "risques",
+    "radiologique",
+    "ferroviaire",
+    "photovoltaïque",
+    "mesures conservatoires",
+    "fumées",
+    "phénomènes thermiques",
+    "ege",
+    "backdraft",
+    "fgi",
+    "techniques d'extinction",
+    "gas cooling",
+    "prévention",
+    "pao",
+    "reconnaissance"
+   ]
+  },
+  {
+   "id": "jsp4-transverse",
+   "titre": "Transverse",
+   "domaine": "jsp",
+   "theme": "JSP 4",
+   "type": "fiche",
+   "motsCles": [
+    "icp",
+    "condition physique",
+    "luc léger",
+    "pompes",
+    "gainage",
+    "risque routier",
+    "accident de trajet",
+    "prise de garde",
+    "fmpa"
+   ]
+  },
+  {
+   "id": "jsp4-citoyen",
+   "titre": "Engagement citoyen",
+   "domaine": "jsp",
+   "theme": "JSP 4",
+   "type": "fiche",
+   "motsCles": [
+    "risques locaux",
+    "feux de forêts",
+    "inondation",
+    "crue",
+    "noyade",
+    "drapeaux de baignade"
+   ]
+  },
+  {
+   "id": "jsp4-od",
+   "titre": "Opérations diverses et animalières",
+   "domaine": "jsp",
+   "theme": "JSP 4",
+   "type": "fiche",
+   "motsCles": [
+    "ascenseur bloqué",
+    "sécurité",
+    "animaux",
+    "capture",
+    "nac",
+    "hyménoptères",
+    "frelon",
+    "guêpe",
+    "calage",
+    "étai",
+    "forcement",
+    "bâchage",
+    "tronçonneuse",
+    "dégagement"
    ]
   },
   {
