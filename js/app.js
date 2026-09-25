@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.24.0 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.25.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025 - RESCUEAPP
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -94,11 +94,13 @@ function showModule(moduleName) {
         if (moduleName === 'distance-calc') calculateDistanceCalc();
         if (moduleName === 'abaque') calculateAbaqueAll();
         if (moduleName === 'ari') calculerAutonomieARI();
+        if (moduleName === 'sal-calculateur' && window.afficherTablesMT2012) afficherTablesMT2012();
+        if (moduleName === 'sal-tables' && window.afficherTablesAnnexes) afficherTablesAnnexes();
     }
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.24.0';
+var APP_VERSION = '1.25.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1249,27 +1251,6 @@ function calculateFacteurChute() {
     }
 }
 
-// ═══════════════════════════════════════════════════════════════════════
-// MODULE SAL - PALIERS
-// ═══════════════════════════════════════════════════════════════════════
-
-function calculatePaliers() {
-    var profondeur = parseInt(document.getElementById('salProfondeur')?.value || 20);
-    var duree = parseInt(document.getElementById('salDuree')?.value || 20);
-    
-    var resultDiv = document.getElementById('palierResult');
-    if (resultDiv) {
-        if (profondeur <= 12 && duree <= 30) {
-            resultDiv.innerHTML = '<div class="info-card" style="background:#4CAF50; color: #101318;"><div class="label">Résultat</div><div class="value">Pas de palier requis</div></div>' +
-                '<div class="alert-box" style="margin-top:15px;">Remontée directe à 15m/min avec palier de sécurité (3 min à 3m)</div>';
-        } else {
-            var dtr = Math.ceil(profondeur / 15) + Math.max(0, (duree - 20) * 2);
-            resultDiv.innerHTML = '<div class="info-card" style="background:#FF9800; color: #101318;"><div class="label">DTR estimée</div><div class="value">' + dtr + ' min</div></div>' +
-                '<div class="alert-box" style="margin-top:15px;">⚠️ Consulter les tables MT2012 pour paliers exacts</div>';
-        }
-    }
-}
-
 // Module PATRAC : voir js/modules/commandement.js
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -1523,7 +1504,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.24.0 COMPLET
+// FIN DU FICHIER - Vulcain v1.25.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

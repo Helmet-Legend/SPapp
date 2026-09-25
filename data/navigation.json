@@ -71,7 +71,8 @@
    "picto": "mountain",
    "couleur": "#2B6FD1",
    "themes": [
-    "SAL / SAV – Plongée",
+    "Plongée – SAL",
+    "Sauvetage aquatique – SAV",
     "ELD – Exploration longue durée",
     "IMPM – Milieu périlleux",
     "LSPCC – Lot de sauvetage"
@@ -1916,184 +1917,325 @@
    "id": "sal-menu",
    "titre": "Présentation",
    "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
+   "theme": "Plongée – SAL",
    "type": "presentation",
    "motsCles": [
     "sal",
-    "sav",
     "plongée",
-    "aquatique",
-    "hyperbare",
     "scaphandrier",
-    "nautique"
+    "hyperbare",
+    "subaquatique",
+    "reac",
+    "plongeur"
    ]
   },
   {
    "id": "sal-niveaux",
-   "titre": "Niveaux & Emplois",
+   "titre": "Emplois et habilitations",
    "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
+   "theme": "Plongée – SAL",
    "type": "fiche",
    "motsCles": [
     "sal1",
     "sal2",
     "sal3",
-    "niveau",
-    "emploi",
-    "chef unité",
-    "conseiller technique"
+    "classe",
+    "habilitation",
+    "qualification",
+    "profondeur",
+    "ctd",
+    "ctz",
+    "référent national"
    ]
   },
   {
    "id": "sal-competences",
-   "titre": "Compétences Détaillées",
+   "titre": "Activités et compétences",
    "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
-   "type": "fiche",
-   "motsCles": []
-  },
-  {
-   "id": "sal-formations",
-   "titre": "Formations Complémentaires",
-   "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
-   "type": "fiche",
-   "motsCles": []
-  },
-  {
-   "id": "sal-profondeurs",
-   "titre": "Profondeurs & Habilitations",
-   "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
+   "theme": "Plongée – SAL",
    "type": "fiche",
    "motsCles": [
-    "profondeur",
-    "habilitation",
-    "qualification",
-    "classe",
-    "30m",
-    "50m",
-    "60m"
+    "compétence",
+    "activité",
+    "savoirs",
+    "hélitreuillage",
+    "écopage",
+    "bombardier",
+    "nitrox",
+    "trimix"
    ]
   },
   {
    "id": "sal-missions",
    "titre": "Missions",
    "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
+   "theme": "Plongée – SAL",
    "type": "fiche",
    "motsCles": [
     "mission",
-    "sauvetage",
     "prompt secours",
-    "recherche",
+    "noyé",
     "noyade",
-    "travaux"
+    "travaux",
+    "réquisition",
+    "recherche",
+    "pollution"
    ]
-  },
-  {
-   "id": "sal-missions-detaillees",
-   "titre": "Missions Détaillées",
-   "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
-   "type": "fiche",
-   "motsCles": []
   },
   {
    "id": "sal-organisation",
-   "titre": "Organisation des Plongées",
+   "titre": "Unité et encadrement",
    "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
+   "theme": "Plongée – SAL",
    "type": "fiche",
    "motsCles": [
-    "organisation",
-    "binôme",
-    "équipe",
-    "directeur plongée",
-    "unité"
+    "directeur de plongée",
+    "surveillant de surface",
+    "guide de palanquée",
+    "chef unité",
+    "unité",
+    "entraînement",
+    "binôme"
    ]
   },
   {
-   "id": "sal-fma",
-   "titre": "Formation Maintien Acquis & Aptitudes",
-   "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
-   "type": "fiche",
-   "motsCles": []
-  },
-  {
    "id": "sal-methodes",
-   "titre": "Méthodes de Plongée",
+   "titre": "Méthodes de plongée",
    "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
+   "theme": "Plongée – SAL",
    "type": "fiche",
    "motsCles": [
     "méthode",
     "air",
+    "oxy",
+    "narguilé",
+    "surface non libre",
     "nitrox",
     "trimix",
+    "gaz",
+    "oxygène"
+   ]
+  },
+  {
+   "id": "sal-preparation",
+   "titre": "Préparer et planifier",
+   "domaine": "specialites",
+   "theme": "Plongée – SAL",
+   "type": "fiche",
+   "motsCles": [
+    "analyse de risque",
+    "planification",
+    "briefing",
+    "fiche de sécurité",
+    "saoiec",
+    "sitac",
+    "environnement",
+    "sous coque"
+   ]
+  },
+  {
+   "id": "sal-deroulement",
+   "titre": "Déroulement d'une plongée",
+   "domaine": "specialites",
+   "theme": "Plongée – SAL",
+   "type": "fiche",
+   "motsCles": [
+    "immersion",
+    "remontée",
+    "yo-yo",
+    "après plongée",
+    "avion",
+    "altitude",
+    "hydratation",
+    "caisson",
+    "hygiène"
+   ]
+  },
+  {
+   "id": "sal-securite",
+   "titre": "Limites et sécurité",
+   "domaine": "specialites",
+   "theme": "Plongée – SAL",
+   "type": "fiche",
+   "motsCles": [
+    "durée",
+    "3 heures",
+    "90 minutes",
+    "nuisance",
+    "température",
+    "vêtement sec",
+    "refus"
+   ]
+  },
+  {
+   "id": "sal-tables",
+   "titre": "Tables MT 2012",
+   "domaine": "specialites",
+   "theme": "Plongée – SAL",
+   "type": "fiche",
+   "motsCles": [
+    "table",
+    "mt2012",
+    "mt 2012",
+    "palier",
+    "successive",
+    "nitrox",
+    "altitude",
+    "niveaux multiples",
+    "sans palier",
+    "ordinateur"
+   ]
+  },
+  {
+   "id": "sal-calculateur",
+   "titre": "Calculateur de paliers MT 2012",
+   "domaine": "specialites",
+   "theme": "Plongée – SAL",
+   "type": "calculateur",
+   "motsCles": [
+    "calculateur",
+    "palier",
+    "décompression",
+    "mt2012",
+    "air oxy",
+    "successive",
+    "nitrox",
+    "altitude"
+   ]
+  },
+  {
+   "id": "sal-rattrapage",
+   "titre": "Plongée non conforme",
+   "domaine": "specialites",
+   "theme": "Plongée – SAL",
+   "type": "fiche",
+   "motsCles": [
+    "rattrapage",
+    "interruption de palier",
+    "remontée rapide",
+    "remontée lente",
+    "panne d'air",
+    "perte",
+    "dérive",
+    "que fait-on si"
+   ]
+  },
+  {
+   "id": "sal-accidents",
+   "titre": "Accident de plongée",
+   "domaine": "specialites",
+   "theme": "Plongée – SAL",
+   "type": "fiche",
+   "motsCles": [
+    "accident",
+    "désaturation",
+    "barotraumatisme",
+    "oxygène",
+    "alerte",
+    "cross",
+    "caisson",
+    "décès",
+    "narcose"
+   ]
+  },
+  {
+   "id": "sal-materiel",
+   "titre": "Matériels et équipements",
+   "domaine": "specialites",
+   "theme": "Plongée – SAL",
+   "type": "fiche",
+   "motsCles": [
+    "matériel",
+    "équipement",
+    "détendeur",
+    "gilet",
+    "lot de secours",
+    "survie",
     "narguilé",
     "surface non libre"
    ]
   },
   {
-   "id": "sal-tables",
-   "titre": "Tables MT2012",
+   "id": "sal-formations",
+   "titre": "Formations",
    "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
+   "theme": "Plongée – SAL",
    "type": "fiche",
    "motsCles": [
-    "table",
-    "mt2012",
-    "palier",
-    "décompression",
-    "vitesse",
-    "remontée"
+    "formation",
+    "préformation",
+    "sal1",
+    "sal2",
+    "sal3",
+    "snl",
+    "nitrox",
+    "trimix",
+    "équivalence",
+    "tests admission"
    ]
   },
   {
-   "id": "sal-securite",
-   "titre": "Sécurité",
+   "id": "sal-fma",
+   "titre": "Aptitude annuelle et documents",
    "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
+   "theme": "Plongée – SAL",
    "type": "fiche",
    "motsCles": [
+    "fmpa",
+    "aptitude",
+    "tests annuels",
+    "liste d'aptitude",
+    "20 plongées",
+    "livret",
+    "carnet de plongée"
+   ]
+  },
+  {
+   "id": "sav-menu",
+   "titre": "Présentation",
+   "domaine": "specialites",
+   "theme": "Sauvetage aquatique – SAV",
+   "type": "presentation",
+   "motsCles": [
+    "sav",
+    "sauvetage aquatique",
+    "nageur sauveteur",
+    "chef de bord",
+    "côtier",
+    "surface",
+    "noyade"
+   ]
+  },
+  {
+   "id": "sav-securite",
+   "titre": "Sécurité et aptitude",
+   "domaine": "specialites",
+   "theme": "Sauvetage aquatique – SAV",
+   "type": "fiche",
+   "motsCles": [
+    "sav",
     "sécurité",
-    "durée",
-    "température",
+    "tests annuels",
+    "hélicoptère",
     "refus",
-    "nuisance"
+    "entraînement"
    ]
   },
   {
-   "id": "sal-accidents",
-   "titre": "Accidents de Plongée",
+   "id": "sav-formation",
+   "titre": "Formations",
    "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
+   "theme": "Sauvetage aquatique – SAV",
    "type": "fiche",
    "motsCles": [
-    "accident",
-    "add",
-    "barotraumatisme",
-    "narcose",
-    "décompression",
-    "hyperoxie"
-   ]
-  },
-  {
-   "id": "sal-calculateur",
-   "titre": "Calculateur de Paliers MT2012",
-   "domaine": "specialites",
-   "theme": "SAL / SAV – Plongée",
-   "type": "calculateur",
-   "motsCles": [
-    "calculateur",
-    "palier",
-    "table",
-    "mt2012",
-    "décompression",
-    "dtr",
-    "gps"
+    "sav1",
+    "sav2",
+    "sav3",
+    "eau vive",
+    "riofe",
+    "formation",
+    "équivalence",
+    "présélection"
    ]
   },
   {

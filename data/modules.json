@@ -314,19 +314,6 @@
     ]
   },
   {
-    "id": "sal-profondeurs",
-    "name": "SAL - Profondeurs",
-    "keywords": [
-      "profondeur",
-      "habilitation",
-      "qualification",
-      "classe",
-      "30m",
-      "50m",
-      "60m"
-    ]
-  },
-  {
     "id": "sal-missions",
     "name": "SAL - Missions",
     "keywords": [

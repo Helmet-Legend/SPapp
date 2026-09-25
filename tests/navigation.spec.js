@@ -11,11 +11,11 @@ test('l\'accueil affiche un menu par domaine', async ({ app }) => {
 
 test('menu › sous-menu › fiche, avec fil d\'Ariane', async ({ app }) => {
     await app.click('[data-domaine="specialites"]');
-    await app.click('[data-theme="specialites|SAL / SAV – Plongée"]');
+    await app.click('[data-theme="specialites|Plongée – SAL"]');
     await app.click('.nav-leaf[data-page="sal-tables"]');
     expect(await ecranActif(app)).toBe('sal-tables');
     await expect(app.locator('#sal-tables .nav-crumbs nav')).toContainText('Spécialités & sauvetage');
-    await expect(app.locator('#sal-tables .nav-crumbs nav')).toContainText('SAL / SAV – Plongée');
+    await expect(app.locator('#sal-tables .nav-crumbs nav')).toContainText('Plongée – SAL');
 });
 
 test('un seul menu ouvert à la fois', async ({ app }) => {
@@ -23,9 +23,9 @@ test('un seul menu ouvert à la fois', async ({ app }) => {
     await app.click('[data-domaine="specialites"]');
     await expect(app.locator('[data-domaine="incendie"]')).toHaveAttribute('aria-expanded', 'false');
     await expect(app.locator('[data-domaine="specialites"]')).toHaveAttribute('aria-expanded', 'true');
-    await app.click('[data-theme="specialites|SAL / SAV – Plongée"]');
+    await app.click('[data-theme="specialites|Plongée – SAL"]');
     await app.click('[data-theme="specialites|ELD – Exploration longue durée"]');
-    await expect(app.locator('[data-theme="specialites|SAL / SAV – Plongée"]')).toHaveAttribute('aria-expanded', 'false');
+    await expect(app.locator('[data-theme="specialites|Plongée – SAL"]')).toHaveAttribute('aria-expanded', 'false');
     await expect(app.locator('[data-theme="specialites|ELD – Exploration longue durée"]')).toHaveAttribute('aria-expanded', 'true');
     await app.click('[data-domaine="specialites"]');
     await expect(app.locator('#navHome .nav-acc-head[aria-expanded="true"]')).toHaveCount(0);
