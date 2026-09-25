@@ -763,3 +763,9 @@ html[data-theme] .jsp-annees button span { color: #222; }
 .nav-sub-pastille { flex: none; width: 16px; height: 16px; border-radius: 50%; background: var(--jsp); border: 1px solid rgba(0, 0, 0, .45); }
 html[data-theme="sombre"] .nav-sub-pastille { border-color: rgba(255, 255, 255, .6); }
 html[data-theme] .jsp-annees { grid-template-columns: repeat(2, 1fr); }
+
+/* GOUV – pages du guide (images) */
+html[data-theme] .gouv-pages { display: grid; gap: 10px; margin: 10px 0; }
+html[data-theme] .gouv-pages a { display: block; }
+html[data-theme] .gouv-page { display: block; width: 100%; height: auto; border: 1px solid var(--t-line); border-radius: 8px; background: #fff; }
+@media (min-width: 900px) { html[data-theme] .gouv-pages { grid-template-columns: 1fr 1fr; } }

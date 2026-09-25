@@ -59,7 +59,8 @@
    "picto": "car",
    "couleur": "#4C6FA3",
    "themes": [
-    "Désincarcération"
+    "Désincarcération",
+    "GOUV – Véhicules à énergies alternatives"
    ]
   },
   {
@@ -2903,6 +2904,93 @@
     "bâchage",
     "tronçonneuse",
     "dégagement"
+   ]
+  },
+  {
+   "id": "gouv-menu",
+   "titre": "GOUV – Guide opérationnel d'urgence véhicules",
+   "domaine": "routier",
+   "theme": "GOUV – Véhicules à énergies alternatives",
+   "type": "presentation",
+   "motsCles": [
+    "gouv",
+    "guide",
+    "véhicule",
+    "ve",
+    "hybride",
+    "électrique",
+    "gpl",
+    "gnv",
+    "énergie alternative"
+   ]
+  },
+  {
+   "id": "gouv-vehicules",
+   "titre": "GOUV – Identifier le véhicule et son énergie",
+   "domaine": "routier",
+   "theme": "GOUV – Véhicules à énergies alternatives",
+   "type": "fiche",
+   "motsCles": [
+    "ve",
+    "hybride",
+    "électrique",
+    "gpl",
+    "gnv",
+    "batterie",
+    "identification",
+    "haute tension",
+    "orange"
+   ]
+  },
+  {
+   "id": "gouv-incendie",
+   "titre": "GOUV – Feu de véhicule à énergie alternative",
+   "domaine": "routier",
+   "theme": "GOUV – Véhicules à énergies alternatives",
+   "type": "fiche",
+   "motsCles": [
+    "feu",
+    "incendie",
+    "batterie",
+    "lithium",
+    "gpl",
+    "gnv",
+    "hf",
+    "eau dopée",
+    "nod 001"
+   ]
+  },
+  {
+   "id": "gouv-sr",
+   "titre": "GOUV – Secours routier véhicules électriques/hybrides",
+   "domaine": "routier",
+   "theme": "GOUV – Véhicules à énergies alternatives",
+   "type": "fiche",
+   "motsCles": [
+    "désincarcération",
+    "service plug",
+    "airbag",
+    "haute tension",
+    "5 d",
+    "nod 002",
+    "secours routier"
+   ]
+  },
+  {
+   "id": "gouv-fiches",
+   "titre": "GOUV – 34 fiches techniques de désincarcération",
+   "domaine": "routier",
+   "theme": "GOUV – Véhicules à énergies alternatives",
+   "type": "fiche",
+   "motsCles": [
+    "calage",
+    "pavillon",
+    "tableau de bord",
+    "vitrage",
+    "charnière",
+    "portière",
+    "ouverture",
+    "fiche"
    ]
   },
   {

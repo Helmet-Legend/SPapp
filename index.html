@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.22.1">
+    <meta name="version" content="1.23.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -99,7 +99,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.22.1</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.23.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -204,7 +204,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.22.1</span><br>
+                        Vulcain v<span class="app-version">1.23.0</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -1833,6 +1833,7 @@
                 <button onclick="showSRSection('charte')" id="btnCharte" class="secondary" style="font-size: 1.1em; padding: 18px; background: linear-gradient(135deg, #0b78d0 0%, #1878cd 100%); border: 2px solid #1E88E5; border-radius: 12px; color: #fff; font-weight: 600; cursor: pointer; transition: all 0.3s;">✏️ Charte graphique</button>
             </div>
         </div>
+        <p class="jsp-liens" style="margin-bottom: 16px;">Véhicules électriques, hybrides, GPL, GNV → <button onclick="showModule('gouv-menu')">⚡ Guide GOUV SDIS 34 (fiches illustrées)</button></p>
 
         <!-- Section MGO -->
         <div id="sectionMGO" class="sr-section" style="display: block;">
@@ -13437,6 +13438,349 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Cours JSP 4 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE), FOD n° 14 Ascenseur (juin 2019) et note opérationnelle 2019/10 sur l'engagement pour ascenseur bloqué.</p>
     </div>
 
+    <!-- ============ GOUV – Guide opérationnel d'urgence sur les véhicules (SDIS 34) ============ -->
+    <div id="gouv-menu" class="module" style="--jsp: #4C6FA3;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🚗 GOUV – Véhicules à énergies alternatives</h2>
+        <p style="text-align: center;">Guide opérationnel d'urgence sur les véhicules du SDIS 34 : énergies embarquées (électrique, hybride, GPL, GNV), feux de véhicules, secours routier et <strong>34 fiches techniques de désincarcération</strong> en photos.</p>
+        <div class="rd-alerte">Guide de <strong>2015</strong>. Les principes restent valables, mais les véhicules ont beaucoup évolué : pour un modèle précis, consultez sa <strong>fiche d'aide à la décision (FAD / rescue sheet)</strong> et le guide du constructeur (ERG).</div>
+        <div class="rd-tuiles">
+            <button onclick="showModule('gouv-vehicules')"><b>🔋 Les véhicules</b><span>Airbags, renforts, vitrages, VE / hybrides, GPL, GNV : équipements et risques</span></button>
+            <button onclick="showModule('gouv-incendie')"><b>🔥 Feu de véhicule</b><span>Énergie alternative : 2 LDV, binômes, réservoir ou batterie, NOD n° 001</span></button>
+            <button onclick="showModule('gouv-sr')"><b>🚑 Secours routier</b><span>MGO SR, les 5 i, service plug, 30-60-90, NOD n° 002</span></button>
+            <button onclick="showModule('gouv-fiches')"><b>🛠️ Fiches techniques SR</b><span>Calage, vitrages, portes, baies, tableau de bord, pavillon, pédales…</span></button>
+        </div>
+        <div class="rd-section">
+            <h3>Voir aussi</h3>
+            <ul>
+                <li>MGO secours routier et charte graphique de découpe → <button onclick="showModule('secours')">Secours routier</button></li>
+                <li>Électricité et distances de sécurité → <button onclick="showModule('electrique')">Lignes électriques</button> <button onclick="showModule('distances')">Distances</button></li>
+                <li>Gaz, BLEVE → <button onclick="showModule('bouteilles')">Bouteilles de gaz</button> <button onclick="showModule('explosimetrie')">Explosimétrie</button></li>
+            </ul>
+            <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/vehicules/GOUV-SDIS34-2015.pdf" target="_blank" rel="noopener">Guide complet (PDF, 25 Mo)</a></p>
+        </div>
+        <p class="rd-source">📚 Source : <strong>Guide opérationnel d'urgence sur les véhicules – SDIS 34</strong> (V1.1.1, mai 2015), réalisé avec le SDIS de la Vienne (86), et notes opérationnelles départementales n° 001 et 002 (12/2014). Reproduit avec l'autorisation du SDIS de l'Hérault. <strong>Document de 2015</strong> : les véhicules récents peuvent différer, consulter la fiche d'aide à la décision (FAD) du modèle.</p>
+    </div>
+    <div id="gouv-vehicules" class="module" style="--jsp: #4C6FA3;">
+        <button class="back-btn" onclick="showModule('gouv-menu')">← Retour GOUV</button>
+        <h2>🔋 Les véhicules : équipements et énergies</h2>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Énergies</strong> : mono-carburation (essence, gazole, GPL, GNV), bi-carburation (essence + GPL ou GNV), hybride (au moins 2 moteurs et 2 stockages différents), électrique, hydrogène. <strong>Neutraliser les énergies de traction si possible</strong> ; ne jamais agir sur les tuyaux ni les <strong>câbles orange</strong> (haute tension).</li>
+                <li><strong>Batteries HT</strong> (200 à 600 V ; lithium-ion, LMP, NiMH) : emballement thermique = extinction <strong>difficile (Li-ion) ou impossible (LMP)</strong>, gaz toxiques (HF, HCN), projections de métal en fusion. Certains modèles ont une trappe thermofusible (« Fireman Access », ex. Renault Zoé). Attention aux parkings souterrains. Le poids de la batterie change l'équilibre du véhicule : en tenir compte au calage.</li>
+                <li><strong>Airbags</strong> (repères SRS, SIPS, HPS, IC, WC…) : ne jamais agir sur leurs emplacements ni sur le boîtier électronique (ECU), rester hors de leur zone de déploiement ; <strong>un airbag déployé n'est pas forcément inerte</strong>. Même règle pour les <strong>prétensionneurs</strong>.</li>
+                <li><strong>Renforts</strong> en aciers à très/ultra haute limite élastique (THLE, UHLE : 7 à 10 fois plus résistants) : la cisaille peut être inefficace. <strong>Avant de couper, savoir ce qu'on coupe.</strong> Une petite voiture n'est pas moins résistante, au contraire.</li>
+                <li><strong>Arceaux pyrotechniques</strong> (ROPS, cabriolets) et <strong>capot actif</strong> : ne pas se placer dans leur zone de déploiement, ne rien poser ni caler sur le capot.</li>
+                <li><strong>Vitrages</strong> : trempé (casse en petits morceaux), feuilleté (ne casse pas, film plastique). Risques de coupure, oculaires et respiratoires : protéger le personnel et les victimes, <strong>masque FFP2</strong> à la découpe.</li>
+                <li><strong>Divers</strong> : vérins de hayon (projection au feu ou à la découpe), alliages (métal en fusion, réaction violente avec l'eau), déconnexion pyrotechnique de la batterie, gaz de climatisation toxiques, supercondensateurs, <strong>éclatement de pneus</strong> (même après l'extinction, surtout PL et bus).</li>
+                <li><strong>Outils d'aide</strong> : <strong>FAD</strong> (fiche d'aide à la décision / rescue sheet, 1 à 2 pages avec les zones à risque) et <strong>ERG</strong> (guide constructeur pour neutraliser l'énergie des VE et hybrides).</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th></th><th>Électrique / hybride</th><th>GPL</th><th>GNV</th></tr>
+                <tr><td>Stockage</td><td>Batterie HT 200 à 600 V, câbles orange</td><td>Réservoir acier 70–80 L à 7,5 bar, rempli à 80 %</td><td>Gaz naturel à 200 bar, réservoir métal ou composite, canalisations jaunes</td></tr>
+                <tr><td>Sécurités</td><td>Coupure automatique (choc, température), service plug (propre à chaque modèle)</td><td>Soupape à 27 bar (torchère), parfois thermofusible à 110 °C</td><td>Vannes, thermofusible à 110 °C (torchère continue), limiteur de débit</td></tr>
+                <tr><td>Dangers</td><td>Électrocution, arc électrique, emballement, gaz toxiques et corrosifs</td><td>VL sur le toit : GPL liquide, pas de refroidissement → <strong>risque de BLEVE</strong> ; rupture d'enveloppe ; fuite en milieu clos</td><td>Torchère, fuite, explosion du réservoir, appauvrissement en oxygène</td></tr>
+            </table>
+        </div>
+        <details class="jsp-cours">
+            <summary>Partie 1 · Généralités : énergies, sécurité embarquée, vitrages, outils d'aide (pages 9 à 16)</summary>
+            <div class="gouv-pages"><a href="images/gouv/p-009.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-009.jpg" alt="GOUV généralités – page 9"></a><a href="images/gouv/p-010.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-010.jpg" alt="GOUV généralités – page 10"></a><a href="images/gouv/p-011.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-011.jpg" alt="GOUV généralités – page 11"></a><a href="images/gouv/p-012.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-012.jpg" alt="GOUV généralités – page 12"></a><a href="images/gouv/p-013.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-013.jpg" alt="GOUV généralités – page 13"></a><a href="images/gouv/p-014.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-014.jpg" alt="GOUV généralités – page 14"></a><a href="images/gouv/p-015.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-015.jpg" alt="GOUV généralités – page 15"></a><a href="images/gouv/p-016.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-016.jpg" alt="GOUV généralités – page 16"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>Partie 2 · Véhicules électriques et hybrides (pages 17 à 19)</summary>
+            <div class="gouv-pages"><a href="images/gouv/p-017.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-017.jpg" alt="GOUV VE VeH – page 17"></a><a href="images/gouv/p-018.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-018.jpg" alt="GOUV VE VeH – page 18"></a><a href="images/gouv/p-019.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-019.jpg" alt="GOUV VE VeH – page 19"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>Partie 3 · Véhicules GPL (pages 21 et 22)</summary>
+            <div class="gouv-pages"><a href="images/gouv/p-021.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-021.jpg" alt="GOUV GPL – page 21"></a><a href="images/gouv/p-022.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-022.jpg" alt="GOUV GPL – page 22"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>Partie 4 · Véhicules GNV (pages 23 et 24)</summary>
+            <div class="gouv-pages"><a href="images/gouv/p-023.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-023.jpg" alt="GOUV GNV – page 23"></a><a href="images/gouv/p-024.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-024.jpg" alt="GOUV GNV – page 24"></a></div>
+        </details>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/vehicules/GOUV-SDIS34-2015.pdf" target="_blank" rel="noopener">Guide complet (PDF, 25 Mo)</a></p>
+        <p class="rd-source">📚 Source : <strong>Guide opérationnel d'urgence sur les véhicules – SDIS 34</strong> (V1.1.1, mai 2015), réalisé avec le SDIS de la Vienne (86), et notes opérationnelles départementales n° 001 et 002 (12/2014). Reproduit avec l'autorisation du SDIS de l'Hérault. <strong>Document de 2015</strong> : les véhicules récents peuvent différer, consulter la fiche d'aide à la décision (FAD) du modèle.</p>
+    </div>
+    <div id="gouv-incendie" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gouv-menu')">← Retour GOUV</button>
+        <h2>🔥 Feu de véhicule à énergie alternative</h2>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>2 LDV en eau dopée</strong>, systématiquement, quelle que soit l'énergie. Une seule LDV seulement si l'on sait que c'est un véhicule <strong>essence ou gazole</strong> (ou un feu naissant).</li>
+                <li><strong>Binôme 1</strong> : stopper le rayonnement près des sources d'énergie et éteindre l'habitacle (de la banquette vers le moteur). <strong>Binôme 2</strong> : <strong>refroidir le réservoir ou la batterie</strong>. Mission terminée quand le refroidissement est complet (plus d'évaporation, caméra thermique).</li>
+                <li>Extinction et déblai <strong>sous ARI capelé et coiffé</strong>, tenue de feu complète.</li>
+                <li><strong>Périmètre de 50 m</strong>. Interdire l'attaque dans les axes avant et arrière et le déplacement du véhicule. Si l'on arrive par l'arrière, ne pas stationner derrière.</li>
+                <li>Établissement : 2 LDV (à défaut 1 LDV + 1 LDT, 80 m) en eau dopée, alimentées par 60 m de 45 depuis la division de l'engin (250 L/min). Préparer hors périmètre, s'abriter derrière un écran.</li>
+                <li>Attaque <strong>par les 3/4 avant</strong> (axe des clignotants), les 2 binômes du même côté ; <strong>jet plein sur les 40 premiers mètres, diffusé d'attaque sur les 10 derniers</strong>.</li>
+                <li><strong>GPL / GNV</strong> : attaque offensive rapide pour éviter la rupture du réservoir (BLEVE) ; fermer la vanne manuelle du GNV si possible ; ne pas souffler la flamme d'un GNV ; attention au lâcher de soupape (torchère violente).</li>
+                <li><strong>Électrique / hybride</strong> : jet plein dans l'évent de batterie s'il existe ; emballement = extinction difficile, privilégier l'environnement ; <strong>batterie LMP : pas d'extinction, protection de l'environnement uniquement</strong>. Mesurer HF, HCN et H₂ (explosimètre), gérer la fuite d'électrolyte, pas de dégarnissage, surveiller la décroissance de température.</li>
+                <li>Véhicule <strong>en charge</strong> : couper l'alimentation de la borne. Aucune action technique sur la source d'énergie ; informer le dépanneur ou les forces de l'ordre du type d'énergie.</li>
+                <li>Sans enjeu : limiter l'engagement du personnel.</li>
+            </ul>
+        </div>
+        <details class="jsp-cours">
+            <summary>Réponse opérationnelle incendie : principes et MGO GPL / GNV / VE (pages 25 à 27)</summary>
+            <div class="gouv-pages"><a href="images/gouv/p-025.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-025.jpg" alt="GOUV incendie – page 25"></a><a href="images/gouv/p-026.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-026.jpg" alt="GOUV incendie – page 26"></a><a href="images/gouv/p-027.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-027.jpg" alt="GOUV incendie – page 27"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>NOD n° 001 · Feu de véhicule à énergie alternative (pages 39 à 48)</summary>
+            <div class="gouv-pages"><a href="images/gouv/p-039.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-039.jpg" alt="NOD 001 feu de VEA – page 39"></a><a href="images/gouv/p-040.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-040.jpg" alt="NOD 001 feu de VEA – page 40"></a><a href="images/gouv/p-041.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-041.jpg" alt="NOD 001 feu de VEA – page 41"></a><a href="images/gouv/p-042.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-042.jpg" alt="NOD 001 feu de VEA – page 42"></a><a href="images/gouv/p-043.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-043.jpg" alt="NOD 001 feu de VEA – page 43"></a><a href="images/gouv/p-044.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-044.jpg" alt="NOD 001 feu de VEA – page 44"></a><a href="images/gouv/p-045.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-045.jpg" alt="NOD 001 feu de VEA – page 45"></a><a href="images/gouv/p-046.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-046.jpg" alt="NOD 001 feu de VEA – page 46"></a><a href="images/gouv/p-047.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-047.jpg" alt="NOD 001 feu de VEA – page 47"></a><a href="images/gouv/p-048.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-048.jpg" alt="NOD 001 feu de VEA – page 48"></a></div>
+        </details>
+        <p class="jsp-liens">Voir aussi → <button onclick="showModule('gdo-ege')">Phénomènes thermiques</button> <button onclick="showModule('mousses-lif')">Liquides inflammables</button></p>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/vehicules/GOUV-SDIS34-2015.pdf" target="_blank" rel="noopener">Guide complet (PDF, 25 Mo)</a></p>
+        <p class="rd-source">📚 Source : <strong>Guide opérationnel d'urgence sur les véhicules – SDIS 34</strong> (V1.1.1, mai 2015), réalisé avec le SDIS de la Vienne (86), et notes opérationnelles départementales n° 001 et 002 (12/2014). Reproduit avec l'autorisation du SDIS de l'Hérault. <strong>Document de 2015</strong> : les véhicules récents peuvent différer, consulter la fiche d'aide à la décision (FAD) du modèle.</p>
+    </div>
+    <div id="gouv-sr" class="module" style="--jsp: #4C6FA3;">
+        <button class="back-btn" onclick="showModule('gouv-menu')">← Retour GOUV</button>
+        <h2>🚑 Secours routier sur véhicule à énergie alternative</h2>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Deux éléments clés</strong> : la sécurité, et le temps (« l'heure en or ») : le médecin indique au chef d'agrès le temps disponible pour extraire la victime, le chef d'agrès adapte sa technique.</li>
+                <li><strong>MGO SR</strong> (pas dans un ordre strict) : <strong>M</strong>ise en sécurité du site (balisage, éclairage, protection incendie avec une LDT, zonage) · <strong>G</strong>arantir la sécurité des personnes · <strong>O</strong>util à la désincarcération · <strong>S</strong>ortie de la victime · <strong>R</strong>etour (débriefing, reconditionnement).</li>
+                <li><strong>Les 5 i</strong> : <strong>Identifier</strong> l'énergie (logo, câbles orange, réservoir, carte grise, propriétaire) · <strong>Inspecter</strong> sans toucher · <strong>Interdire</strong> toute action sur les vecteurs d'énergie · <strong>Immobiliser</strong> (arrêt moteur, frein, calage) · <strong>Isoler</strong> (batterie 12/24 V ; énergie de traction).</li>
+                <li><strong>VE / hybride</strong> : la <strong>consignation électrique est prioritaire</strong>. Sans connaître les consignes du constructeur (ERG) : <strong>ne pas toucher au service plug</strong>. En cas de manipulation : les 2 visières du casque baissées, regard détourné.</li>
+                <li><strong>GNV</strong> : fermer les vannes manuelles en phase réfléchie. <strong>GPL</strong> : pas d'action possible ; attention aux brûlures par le froid (vaporisation à −30 °C).</li>
+                <li><strong>Les 5 D</strong> : <strong>Dégarnir</strong> (repérer airbags, renforts, avec la FAD) · <strong>Dessiner</strong> (charte graphique) · <strong>Distance</strong> : règle des <strong>30-60-90</strong> (cm de dégagement des airbags latéraux, conducteur, passager) · <strong>Découper</strong> · <strong>Dégager</strong>.</li>
+                <li><strong>Masque FFP2</strong> pour les sauveteurs et les victimes lors de la découpe des vitrages.</li>
+                <li>Énergie <strong>basse tension</strong> (12/24 V) : l'utiliser avant de la couper si elle aide (sièges, coffre…) ; ne s'applique pas aux VE/hybrides (voir fiche 9.1).</li>
+            </ul>
+            <p class="jsp-liens">Voir aussi → <button onclick="showModule('secours')">MGO SR & charte graphique</button> <button onclick="showModule('gouv-fiches')">🛠️ Fiches techniques SR</button></p>
+        </div>
+        <details class="jsp-cours">
+            <summary>Réponse opérationnelle secours routier : MGO SR, 5 i, 5 D (pages 28 à 36)</summary>
+            <div class="gouv-pages"><a href="images/gouv/p-028.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-028.jpg" alt="GOUV secours routier – page 28"></a><a href="images/gouv/p-029.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-029.jpg" alt="GOUV secours routier – page 29"></a><a href="images/gouv/p-030.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-030.jpg" alt="GOUV secours routier – page 30"></a><a href="images/gouv/p-031.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-031.jpg" alt="GOUV secours routier – page 31"></a><a href="images/gouv/p-032.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-032.jpg" alt="GOUV secours routier – page 32"></a><a href="images/gouv/p-033.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-033.jpg" alt="GOUV secours routier – page 33"></a><a href="images/gouv/p-034.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-034.jpg" alt="GOUV secours routier – page 34"></a><a href="images/gouv/p-035.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-035.jpg" alt="GOUV secours routier – page 35"></a><a href="images/gouv/p-036.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-036.jpg" alt="GOUV secours routier – page 36"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>NOD n° 002 · Méthodologie en secours routier sur VEA, avec le tableau d'aide (pages 51 à 63)</summary>
+            <div class="gouv-pages"><a href="images/gouv/p-051.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-051.jpg" alt="NOD 002 secours routier VEA – page 51"></a><a href="images/gouv/p-052.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-052.jpg" alt="NOD 002 secours routier VEA – page 52"></a><a href="images/gouv/p-053.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-053.jpg" alt="NOD 002 secours routier VEA – page 53"></a><a href="images/gouv/p-054.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-054.jpg" alt="NOD 002 secours routier VEA – page 54"></a><a href="images/gouv/p-055.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-055.jpg" alt="NOD 002 secours routier VEA – page 55"></a><a href="images/gouv/p-056.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-056.jpg" alt="NOD 002 secours routier VEA – page 56"></a><a href="images/gouv/p-057.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-057.jpg" alt="NOD 002 secours routier VEA – page 57"></a><a href="images/gouv/p-058.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-058.jpg" alt="NOD 002 secours routier VEA – page 58"></a><a href="images/gouv/p-059.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-059.jpg" alt="NOD 002 secours routier VEA – page 59"></a><a href="images/gouv/p-060.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-060.jpg" alt="NOD 002 secours routier VEA – page 60"></a><a href="images/gouv/p-061.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-061.jpg" alt="NOD 002 secours routier VEA – page 61"></a><a href="images/gouv/p-062.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-062.jpg" alt="NOD 002 secours routier VEA – page 62"></a><a href="images/gouv/p-063.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-063.jpg" alt="NOD 002 secours routier VEA – page 63"></a></div>
+        </details>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/vehicules/GOUV-SDIS34-2015.pdf" target="_blank" rel="noopener">Guide complet (PDF, 25 Mo)</a></p>
+        <p class="rd-source">📚 Source : <strong>Guide opérationnel d'urgence sur les véhicules – SDIS 34</strong> (V1.1.1, mai 2015), réalisé avec le SDIS de la Vienne (86), et notes opérationnelles départementales n° 001 et 002 (12/2014). Reproduit avec l'autorisation du SDIS de l'Hérault. <strong>Document de 2015</strong> : les véhicules récents peuvent différer, consulter la fiche d'aide à la décision (FAD) du modèle.</p>
+    </div>
+    <div id="gouv-fiches" class="module" style="--jsp: #F57C00;">
+        <button class="back-btn" onclick="showModule('gouv-menu')">← Retour GOUV</button>
+        <h2>🛠️ Fiches techniques secours routier</h2>
+        <p style="text-align: center;">34 fiches (réalisées avec le SDIS de la Vienne) : objectif, matériel, conditions, critères de réussite, sécurité, puis le déroulement en photos. Touche une image pour l'agrandir.</p>
+        <h3>1 · Calage</h3>
+        <details class="jsp-cours">
+            <summary>1.1 · Caler un véhicule sur ses roues</summary>
+            <p class="jsp-objectif">Savoir caler une VL sur ses roues</p>
+            <p><strong>Matériel</strong> : Cales de différentes tailles et formes : octogonales, rectangulaire (polyéthylène, bois), Cales escaliers, Massette, Ecarteur.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-064.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-064.jpg" alt="Fiche SR 1.1 – page 64"></a><a href="images/gouv/p-065.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-065.jpg" alt="Fiche SR 1.1 déroulement – page 65"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>1.2 · Caler un véhicule sur le côté (2 étais)</summary>
+            <p class="jsp-objectif">Savoir caler un véhicule sur le côté</p>
+            <p><strong>Matériel</strong> : Cales escalier pour le calage primaire, Etais à sangles et outils associés.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-066.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-066.jpg" alt="Fiche SR 1.2 – page 66"></a><a href="images/gouv/p-067.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-067.jpg" alt="Fiche SR 1.2 déroulement – page 67"></a></div>
+        </details>
+        <h3>2 · Vitrages</h3>
+        <details class="jsp-cours">
+            <summary>2.1 · Gestion générale des vitrages</summary>
+            <p class="jsp-objectif">Savoir gérer les différents vitrages et utiliser les outils adaptés en réduisant au maximum les débris et les poussières</p>
+            <p><strong>Matériel</strong> : Ruban adhésif, Pointeau ou sécoise, Coupe pare-brise, Scie sabre, Halligan tool ou outils de forcement.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-068.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-068.jpg" alt="Fiche SR 2.1 – page 68"></a><a href="images/gouv/p-069.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-069.jpg" alt="Fiche SR 2.1 déroulement – page 69"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2.2 · Déposer un vitrage trempé</summary>
+            <p class="jsp-objectif">Savoir déposer un vitrage en toute sécurité en réduisant au maximum les débris et poussières</p>
+            <p><strong>Matériel</strong> : Ruban adhésif, Couteau, Pointeau.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-070.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-070.jpg" alt="Fiche SR 2.2 – page 70"></a><a href="images/gouv/p-071.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-071.jpg" alt="Fiche SR 2.2 déroulement – page 71"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2.3 · Déposer un vitrage jointé</summary>
+            <p class="jsp-objectif">Savoir identifier et déposer un vitrage jointé en toute sécurité en réduisant au maximum les débris et les poussières</p>
+            <p><strong>Matériel</strong> : Couteau, lame de coupe pare-brise.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-072.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-072.jpg" alt="Fiche SR 2.3 – page 72"></a><a href="images/gouv/p-073.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-073.jpg" alt="Fiche SR 2.3 déroulement – page 73"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2.4 · Déposer un pare-brise collé</summary>
+            <p class="jsp-objectif">Savoir identifier et déposer un pareͲbrise collé en toute sécurité en réduisant au maximum les débris et les poussières</p>
+            <p><strong>Matériel</strong> : Masque FFP2, Scie manuelle, pneumatique ou électrique.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-074.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-074.jpg" alt="Fiche SR 2.4 – page 74"></a><a href="images/gouv/p-075.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-075.jpg" alt="Fiche SR 2.4 déroulement – page 75"></a></div>
+        </details>
+        <h3>3 · Ouvertures</h3>
+        <details class="jsp-cours">
+            <summary>3.1 · Ouverture de porte (écrasement de porte)</summary>
+            <p class="jsp-objectif">Savoir réaliser une ouverture de porte</p>
+            <p><strong>Matériel</strong> : Cales en bois ou balle souple (tennis), Ecarteur.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-076.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-076.jpg" alt="Fiche SR 3.1 – page 76"></a><a href="images/gouv/p-077.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-077.jpg" alt="Fiche SR 3.1 déroulement – page 77"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3.2 · Ouverture de porte (écarteur cadre de vitre)</summary>
+            <p class="jsp-objectif">Savoir réaliser une ouverture de porte</p>
+            <p><strong>Matériel</strong> : Cales en bois, balle souple (tennis), Ecarteur.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-078.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-078.jpg" alt="Fiche SR 3.2 – page 78"></a><a href="images/gouv/p-079.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-079.jpg" alt="Fiche SR 3.2 déroulement – page 79"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3.3 · Ouverture de coffre</summary>
+            <p class="jsp-objectif">Savoir ouvrir un coffre</p>
+            <p><strong>Matériel</strong> : Halligan tool, Ecarteur.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-080.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-080.jpg" alt="Fiche SR 3.3 – page 80"></a><a href="images/gouv/p-081.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-081.jpg" alt="Fiche SR 3.3 déroulement – page 81"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3.4 · Ouverture de capot</summary>
+            <p class="jsp-objectif">Savoir ouvrir un capot</p>
+            <p><strong>Matériel</strong> : Cales, Ecarteur, Cisaille, Coupe boulon.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-082.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-082.jpg" alt="Fiche SR 3.4 – page 82"></a><a href="images/gouv/p-083.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-083.jpg" alt="Fiche SR 3.4 déroulement – page 83"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3.5 · Ouverture de porte latérale</summary>
+            <p class="jsp-objectif">Savoir ouvrir une porte latérale</p>
+            <p><strong>Matériel</strong> : Cale, Ecarteur.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-084.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-084.jpg" alt="Fiche SR 3.5 – page 84"></a><a href="images/gouv/p-085.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-085.jpg" alt="Fiche SR 3.5 déroulement – page 85"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3.6 · Ouverture de porte montant A/A’</summary>
+            <p class="jsp-objectif">Savoir réaliser une ouverture de porte</p>
+            <p><strong>Matériel</strong> : Cales en bois, balle souple (tennis), Ecarteur.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-086.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-086.jpg" alt="Fiche SR 3.6 – page 86"></a><a href="images/gouv/p-087.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-087.jpg" alt="Fiche SR 3.6 déroulement – page 87"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3.7 · Ouverture de porte charnière cisaille</summary>
+            <p class="jsp-objectif">Savoir réaliser une ouverture de porte</p>
+            <p><strong>Matériel</strong> : Cales en bois ou balle souple (tennis), Cisaille.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-088.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-088.jpg" alt="Fiche SR 3.7 – page 88"></a><a href="images/gouv/p-089.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-089.jpg" alt="Fiche SR 3.7 déroulement – page 89"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3.8 · Ouverture de porte (vl sur le toit)</summary>
+            <p class="jsp-objectif">Savoir réaliser une ouverture de porte</p>
+            <p><strong>Matériel</strong> : Cales en bois, balle souple (tennis), Ecarteur.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-090.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-090.jpg" alt="Fiche SR 3.8 – page 90"></a><a href="images/gouv/p-091.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-091.jpg" alt="Fiche SR 3.8 déroulement – page 91"></a></div>
+        </details>
+        <h3>4 · Baies latérales</h3>
+        <details class="jsp-cours">
+            <summary>4.1 · Ouvrir une baie sur véhicule 5 portes</summary>
+            <p class="jsp-objectif">Savoir dégager un accès pour envisager une sortie de la victime par le côté du véhicule</p>
+            <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Écarteur, Cisaille, Protections de coupes.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-092.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-092.jpg" alt="Fiche SR 4.1 – page 92"></a><a href="images/gouv/p-093.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-093.jpg" alt="Fiche SR 4.1 déroulement – page 93"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>4.2 · Ouvrir une baie sur véhicule 5 portes – Voie américaine</summary>
+            <p class="jsp-objectif">Savoir dégager un accès pour envisager une sortie de la victime par le côté du véhicule</p>
+            <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Ecarteur, Cisaille, Protections de coupes.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-094.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-094.jpg" alt="Fiche SR 4.2 – page 94"></a><a href="images/gouv/p-095.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-095.jpg" alt="Fiche SR 4.2 déroulement – page 95"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>4.3 · Ouvrir une baie véhicule 3 portes</summary>
+            <p class="jsp-objectif">Savoir dégager un espace pour une extraction de la victime par le côté du véhicule</p>
+            <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Cisaille, Ecarteur, Protections de coupes.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-096.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-096.jpg" alt="Fiche SR 4.3 – page 96"></a><a href="images/gouv/p-097.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-097.jpg" alt="Fiche SR 4.3 déroulement – page 97"></a></div>
+        </details>
+        <h3>5 · Tableau de bord</h3>
+        <details class="jsp-cours">
+            <summary>5.1 · Relevage du tableau de bord</summary>
+            <p class="jsp-objectif">Savoir dégager une victime sous l’emprise de son tableau de bord ou de son volant</p>
+            <p><strong>Matériel</strong> : Crayon carrosserie, Outils de dégarnissage, Cisaille, Ecarteur, Protections de coupes.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-098.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-098.jpg" alt="Fiche SR 5.1 – page 98"></a><a href="images/gouv/p-099.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-099.jpg" alt="Fiche SR 5.1 déroulement – page 99"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>5.2 · Bascule du tableau de bord</summary>
+            <p class="jsp-objectif">Savoir dégager une victime sous l’emprise de son tableau de bord ou de son volant</p>
+            <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Cisailles, Vérin, Écarteur, Protections de coupes.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-100.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-100.jpg" alt="Fiche SR 5.2 – page 100"></a><a href="images/gouv/p-101.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-101.jpg" alt="Fiche SR 5.2 déroulement – page 101"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>5.3 · Astuces de dégagement du tableau de bord</summary>
+            <p class="jsp-objectif">Savoir comment obtenir de l’espace en agissant sur le tableau de bord de manière rapide</p>
+            <p><strong>Matériel</strong> : Vérins, Ecarteur, Mini - cisaille ou cisaille.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-102.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-102.jpg" alt="Fiche SR 5.3 – page 102"></a><a href="images/gouv/p-103.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-103.jpg" alt="Fiche SR 5.3 déroulement – page 103"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>5.4 · Bascule du tableau de bord barre de renfort</summary>
+            <p class="jsp-objectif">Savoir dégager une victime sous l’emprise de son tableau de bord ou de son volant</p>
+            <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Écarteur long bec, Protections de coupes.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-104.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-104.jpg" alt="Fiche SR 5.4 – page 104"></a><a href="images/gouv/p-105.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-105.jpg" alt="Fiche SR 5.4 déroulement – page 105"></a></div>
+        </details>
+        <h3>6 · Pavillon</h3>
+        <details class="jsp-cours">
+            <summary>6.1 · Pavillon complet</summary>
+            <p class="jsp-objectif">Réaliser l’accès d’une victime incarcérée en dégageant le pavillon en vue d’une sortie arrière</p>
+            <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Coupe ceinture, Cisailles, Protections de coupes.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-106.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-106.jpg" alt="Fiche SR 6.1 – page 106"></a><a href="images/gouv/p-107.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-107.jpg" alt="Fiche SR 6.1 déroulement – page 107"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>6.2 · Demi-pavillon avant</summary>
+            <p class="jsp-objectif">Créer l’espace suffisant pour le dégagement d’une victime sans déposer le pavillon</p>
+            <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Cisaille, Protections de coupes.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-108.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-108.jpg" alt="Fiche SR 6.2 – page 108"></a><a href="images/gouv/p-109.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-109.jpg" alt="Fiche SR 6.2 déroulement – page 109"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>6.3 · Demi-pavillon arrière ou accès médical</summary>
+            <p class="jsp-objectif">Créer l’espace suffisant pour le dégagement d’une victime sans dépose totale du pavillon en le basculant vers l’arrière</p>
+            <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Cisaille, Protections de coupes.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-110.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-110.jpg" alt="Fiche SR 6.3 – page 110"></a><a href="images/gouv/p-111.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-111.jpg" alt="Fiche SR 6.3 déroulement – page 111"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>6.4 · Demi-pavillon latéral</summary>
+            <p class="jsp-objectif">Créer l’espace suffisant pour le dégagement d’une victime dans un véhicule sur le côté</p>
+            <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Coupe ceinture, Masque FFP2, Coupe pare-brise, Cisaille, Protections de coupes.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-112.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-112.jpg" alt="Fiche SR 6.4 – page 112"></a><a href="images/gouv/p-113.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-113.jpg" alt="Fiche SR 6.4 déroulement – page 113"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>6.5 · Sortie arrière VL sur le toit écarteur chaine</summary>
+            <p class="jsp-objectif">Savoir dégager un accès pour envisager une sortie arrière de la victime lorsque le véhicule est sur le toit</p>
+            
+            <div class="gouv-pages"><a href="images/gouv/p-114.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-114.jpg" alt="Fiche SR 6.5 – page 114"></a><a href="images/gouv/p-115.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-115.jpg" alt="Fiche SR 6.5 déroulement – page 115"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>6.6 · Demi-pavillon inversé – Pavillon inversé</summary>
+            <p class="jsp-objectif">Savoir dégager un accès pour envisager une sortie arrière de la victime lorsque le véhicule est sur le toit</p>
+            <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Ecarteur, Cisaille, Vérin, Protections de coupes.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-116.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-116.jpg" alt="Fiche SR 6.6 – page 116"></a><a href="images/gouv/p-117.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-117.jpg" alt="Fiche SR 6.6 déroulement – page 117"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>6.7 · Pavillon « jack in the box »</summary>
+            <p class="jsp-objectif">Réaliser l’accès d’une victime incarcérée en dégageant le pavillon en vue d’une sortie latérale</p>
+            <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Coupe ceinture, Cisailles, Protections de coupes, Vérin long.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-118.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-118.jpg" alt="Fiche SR 6.7 – page 118"></a><a href="images/gouv/p-119.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-119.jpg" alt="Fiche SR 6.7 déroulement – page 119"></a></div>
+        </details>
+        <h3>7 · Pédales</h3>
+        <details class="jsp-cours">
+            <summary>7.1 · Baie d’accès aux pédales</summary>
+            <p class="jsp-objectif">Créer l’accès sous le tableau de bord pour césariser les pédales</p>
+            <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Cisaille, Ecarteur, Mini cisaille ou coupe pédales.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-120.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-120.jpg" alt="Fiche SR 7.1 – page 120"></a><a href="images/gouv/p-121.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-121.jpg" alt="Fiche SR 7.1 déroulement – page 121"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>7.2 · Dégagement des pédales (écarteur)</summary>
+            <p class="jsp-objectif">Savoir créer un espace libre pour dégager les pieds de la victime</p>
+            <p><strong>Matériel</strong> : Ecarteur, Anneau cousu.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-122.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-122.jpg" alt="Fiche SR 7.2 – page 122"></a><a href="images/gouv/p-123.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-123.jpg" alt="Fiche SR 7.2 déroulement – page 123"></a></div>
+        </details>
+        <h3>8 · Divers</h3>
+        <details class="jsp-cours">
+            <summary>8.1 · Augmentation de l’espace de survie</summary>
+            <p class="jsp-objectif">Savoir augmenter l’espace de survie en utilisant un vérin</p>
+            <p><strong>Matériel</strong> : Cale en bois, Outil de dégarnissage, Ecarteur, Vérin.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-124.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-124.jpg" alt="Fiche SR 8.1 – page 124"></a><a href="images/gouv/p-125.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-125.jpg" alt="Fiche SR 8.1 déroulement – page 125"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>8.2 · Dégagement d&#x27;un véhicule d’un obstacle</summary>
+            <p class="jsp-objectif">Savoir retirer un véhicule sur ses roues d’un obstacle empêchant le relevage du tableau de bord</p>
+            <p><strong>Matériel</strong> : Treuil du Véhicule SR ou Tirfor, Elingues textiles, Chaîne (éventuel).</p>
+            <div class="gouv-pages"><a href="images/gouv/p-126.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-126.jpg" alt="Fiche SR 8.2 – page 126"></a><a href="images/gouv/p-127.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-127.jpg" alt="Fiche SR 8.2 déroulement – page 127"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>8.3 · Découpe de tôle : véhicule utilitaire</summary>
+            <p class="jsp-objectif">Savoir découper une tôle d’un véhicule utilitaire en vue de pouvoir observer le contenu d’un chargement ou d’accéder à la partie arrière</p>
+            <p><strong>Matériel</strong> : Crayon carrosserie, Halligan tool, Scie sabre ou à défaut cisaille.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-128.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-128.jpg" alt="Fiche SR 8.3 – page 128"></a><a href="images/gouv/p-129.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-129.jpg" alt="Fiche SR 8.3 déroulement – page 129"></a></div>
+        </details>
+        <h3>9 · Énergie</h3>
+        <details class="jsp-cours">
+            <summary>9.1 · Gestion des énergies basse tension</summary>
+            <p class="jsp-objectif">Savoir gérer l’énergie basse tension pour faciliter les actions de désincarcération et d’extraction</p>
+            <p><strong>Matériel</strong> : Clé de 10, Coupe boulon, Pince coupante.</p>
+            <div class="gouv-pages"><a href="images/gouv/p-130.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-130.jpg" alt="Fiche SR 9.1 – page 130"></a><a href="images/gouv/p-131.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-131.jpg" alt="Fiche SR 9.1 déroulement – page 131"></a></div>
+        </details>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/vehicules/GOUV-SDIS34-2015.pdf" target="_blank" rel="noopener">Guide complet (PDF, 25 Mo)</a></p>
+        <p class="rd-source">📚 Source : <strong>Guide opérationnel d'urgence sur les véhicules – SDIS 34</strong> (V1.1.1, mai 2015), réalisé avec le SDIS de la Vienne (86), et notes opérationnelles départementales n° 001 et 002 (12/2014). Reproduit avec l'autorisation du SDIS de l'Hérault. <strong>Document de 2015</strong> : les véhicules récents peuvent différer, consulter la fiche d'aide à la décision (FAD) du modèle.</p>
+    </div>
+
     <!-- ============ RDSMES – SDIS 34 (v2, avril 2026) ============ -->
     <div id="rdsmes-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -17985,7 +18329,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.22.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.23.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
