@@ -736,3 +736,7 @@ html[data-theme] .ia-jeton.utilise { color: var(--t-muted); }
 .ia-compteur-aide summary { cursor: pointer; font-weight: 600; }
 .ia-compteur-aide ul { margin: 8px 0 0; padding-left: 20px; line-height: 1.5; }
 #btn-generer.ia-epuise { filter: grayscale(0.8); opacity: 0.7; }
+
+/* Liens vers les documents PDF (FDF) */
+html[data-theme] .rd-pdf { display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--t-accent); color: var(--t-ink); background: var(--t-s1); font-weight: 700; text-decoration: none; }
+html[data-theme] .rd-source .rd-pdf { padding: 4px 10px; border-width: 1px; font-weight: 600; margin-top: 4px; }

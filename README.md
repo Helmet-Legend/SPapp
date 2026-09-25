@@ -1,4 +1,4 @@
-# Vulcain v1.19.1 - Architecture Modulaire
+# Vulcain v1.20.0 - Architecture Modulaire
 
 ## 📁 Structure du projet
 
@@ -38,12 +38,15 @@ Vulcain/
 
 > Modifier les fichiers dans `js/`, `css/`, `data/` et `icons/`. À la racine, seuls
 > `index.html`, `sw.js`, `manifest.json` et les trois fichiers GMU sont utilisés.
+> Les documents PDF téléchargeables sont dans `docs/` (ex. `docs/fdf/` : GDO et GTO feux de forêts).
 >
 > Version : modifier `APP_VERSION` dans `js/app.js`, `CACHE_NAME` dans `sw.js` et `version` dans `package.json`.
 >
 > Générateur IA (Claude Sonnet 5) : variables Vercel `ANTHROPIC_API_KEY` (obligatoire), `CLAUDE_MODEL`
 > (pour changer de modèle sans toucher au code), `ALLOWED_ORIGINS`,
-> `RATE_LIMIT_MAX` (5 par défaut) et `RATE_LIMIT_WINDOW_MS` (10 min par défaut) en option.
+> `RATE_LIMIT_MAX` (2 par défaut), `RATE_LIMIT_WINDOW_MS` (24 h par défaut) et `DAILY_GLOBAL_MAX`
+> (50 générations par jour, tous utilisateurs) en option. Si une base Upstash Redis est reliée au projet
+> (`KV_REST_API_URL`/`KV_REST_API_TOKEN`), les compteurs de limite y sont conservés.
 
 ## 🧭 Navigation
 
