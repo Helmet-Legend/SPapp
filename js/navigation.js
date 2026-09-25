@@ -286,14 +286,32 @@ const Navigation = (function() {
         if (d.page) { ouvrirPage(d.page); }
         else if (d.tmd) { chercherTMD(d.tmd); }
         else if (d.domaine) {
-            ouverts[d.domaine] = !ouverts[d.domaine];
-            ecrire(CLE_OUVERTS, ouverts);
+            basculer(d.domaine, cle => !cle.includes('|'));
             rendreAccueil();
+            garderVisible(`[data-domaine="${d.domaine}"]`);
         } else if (d.theme) {
-            ouverts[d.theme] = !ouverts[d.theme];
-            ecrire(CLE_OUVERTS, ouverts);
+            const dom = d.theme.split('|')[0] + '|';
+            basculer(d.theme, cle => cle.startsWith(dom));
             rendreAccueil();
+            garderVisible(`[data-theme="${CSS.escape(d.theme)}"]`);
         }
+    }
+
+    // Un seul menu ouvert à la fois : ouvrir une catégorie ferme les autres,
+    // ouvrir un dossier ferme les autres dossiers de la même catégorie.
+    function basculer(cle, memeNiveau) {
+        const ouvrir = !ouverts[cle];
+        if (ouvrir) Object.keys(ouverts).forEach(k => { if (k !== cle && memeNiveau(k)) delete ouverts[k]; });
+        ouverts[cle] = ouvrir;
+        ecrire(CLE_OUVERTS, ouverts);
+    }
+
+    // Les menus fermés au-dessus décalent la page : on ramène le titre ouvert à l'écran
+    function garderVisible(selecteur) {
+        const el = document.querySelector('#navHome ' + selecteur);
+        if (!el) return;
+        const haut = el.getBoundingClientRect().top;
+        if (haut < 70 || haut > window.innerHeight - 140) el.scrollIntoView({ block: 'start', behavior: 'smooth' });
     }
 
     function surClicGlobal(e) {
@@ -302,7 +320,7 @@ const Navigation = (function() {
         if (b.dataset.onglet) { allerOnglet(b.dataset.onglet); }
         else if (b.dataset.favori) { basculerFavori(b.dataset.favori); }
         else if (b.dataset.ongletRetour) {
-            if (b.dataset.domaineOuvrir) { ouverts[b.dataset.domaineOuvrir] = true; ecrire(CLE_OUVERTS, ouverts); }
+            if (b.dataset.domaineOuvrir && !ouverts[b.dataset.domaineOuvrir]) basculer(b.dataset.domaineOuvrir, cle => !cle.includes('|'));
             allerOnglet(b.dataset.ongletRetour);
         }
     }

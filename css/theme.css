@@ -740,3 +740,4 @@ html[data-theme] .ia-jeton.utilise { color: var(--t-muted); }
 /* Liens vers les documents PDF (FDF) */
 html[data-theme] .rd-pdf { display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--t-accent); color: var(--t-ink); background: var(--t-s1); font-weight: 700; text-decoration: none; }
 html[data-theme] .rd-source .rd-pdf { padding: 4px 10px; border-width: 1px; font-weight: 600; margin-top: 4px; }
+.nav-home .nav-acc-head, .nav-home .nav-sub-head { scroll-margin-top: 12px; }
