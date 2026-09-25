@@ -49,7 +49,8 @@
    "couleur": "#0E9A86",
    "themes": [
     "RT SUAP 2025",
-    "Matériel & protocoles SDIS 34"
+    "Matériel & protocoles SDIS 34",
+    "PSE – Références nationales 2026"
    ]
   },
   {
@@ -2991,6 +2992,264 @@
     "portière",
     "ouverture",
     "fiche"
+   ]
+  },
+  {
+   "id": "pse-menu",
+   "titre": "PSE 1 et PSE 2 – Présentation",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "presentation",
+   "motsCles": [
+    "pse",
+    "pse1",
+    "pse2",
+    "référentiel",
+    "références techniques",
+    "dgscgc",
+    "secourisme",
+    "premiers secours"
+   ]
+  },
+  {
+   "id": "pse-1",
+   "titre": "PSE – Attitude et comportement",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "fiche",
+   "motsCles": [
+    "abord relationnel",
+    "enfant",
+    "peluche",
+    "stress",
+    "écoute active",
+    "respiration contrôlée",
+    "psychologique",
+    "citoyen"
+   ]
+  },
+  {
+   "id": "pse-2",
+   "titre": "PSE – Protection et sécurité",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "fiche",
+   "motsCles": [
+    "epi",
+    "dégagement d'urgence",
+    "sécurité",
+    "balisage",
+    "électricité",
+    "monoxyde",
+    "incendie",
+    "matières dangereuses"
+   ]
+  },
+  {
+   "id": "pse-3",
+   "titre": "PSE – Hygiène et asepsie",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "fiche",
+   "motsCles": [
+    "aev",
+    "aes",
+    "risque infectieux",
+    "précautions standards",
+    "dasri",
+    "lavage des mains",
+    "gants",
+    "désinfection",
+    "ffp2"
+   ]
+  },
+  {
+   "id": "pse-4",
+   "titre": "PSE – Bilans",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "fiche",
+   "motsCles": [
+    "bilan",
+    "regard",
+    "retournement",
+    "casque",
+    "lva",
+    "fréquence respiratoire",
+    "spo2",
+    "pouls",
+    "tension",
+    "pression artérielle",
+    "ecg",
+    "glasgow",
+    "evda",
+    "fast",
+    "glycémie",
+    "température",
+    "douleur"
+   ]
+  },
+  {
+   "id": "pse-5",
+   "titre": "PSE – Urgences vitales",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "fiche",
+   "motsCles": [
+    "oxygène",
+    "hémorragie",
+    "garrot",
+    "pansement compressif",
+    "hémostatique",
+    "obstruction",
+    "étouffement",
+    "arrêt cardiaque",
+    "rcp",
+    "massage cardiaque",
+    "dae",
+    "défibrillateur",
+    "pls",
+    "canule",
+    "aspiration",
+    "détresse"
+   ]
+  },
+  {
+   "id": "pse-6",
+   "titre": "PSE – Malaises et affections spécifiques",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "fiche",
+   "motsCles": [
+    "malaise",
+    "position d'attente",
+    "médicament",
+    "auto-injecteur",
+    "naloxone",
+    "douleur thoracique",
+    "avc",
+    "convulsions",
+    "épilepsie",
+    "asthme",
+    "hypoglycémie",
+    "diabète",
+    "allergie",
+    "anaphylaxie"
+   ]
+  },
+  {
+   "id": "pse-7",
+   "titre": "PSE – Traumatismes",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "fiche",
+   "motsCles": [
+    "brûlure",
+    "plaie",
+    "dent",
+    "amputation",
+    "abdomen",
+    "éviscération",
+    "thorax",
+    "face",
+    "fracture",
+    "attelle",
+    "écharpe",
+    "rachis",
+    "collier cervical",
+    "act",
+    "plan dur",
+    "mid",
+    "crâne",
+    "bassin",
+    "ceinture pelvienne"
+   ]
+  },
+  {
+   "id": "pse-8",
+   "titre": "PSE – Situations particulières",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "fiche",
+   "motsCles": [
+    "électrisation",
+    "foudre",
+    "noyade",
+    "plongée",
+    "accouchement",
+    "nouveau-né",
+    "cordon",
+    "chaleur",
+    "coup de chaleur",
+    "hypothermie",
+    "gelures",
+    "intoxication",
+    "opiacés",
+    "piqûre",
+    "morsure",
+    "serpent",
+    "méduse",
+    "tique",
+    "suspension",
+    "pendaison",
+    "blast",
+    "explosion",
+    "crush",
+    "avalanche"
+   ]
+  },
+  {
+   "id": "pse-9",
+   "titre": "PSE – Personnes en situation de crise",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "fiche",
+   "motsCles": [
+    "crise",
+    "agressivité",
+    "violence",
+    "mort inattendue",
+    "annonce décès",
+    "violences conjugales",
+    "suicide",
+    "suicidaire",
+    "panique",
+    "cump"
+   ]
+  },
+  {
+   "id": "pse-10",
+   "titre": "PSE – Relevage et brancardage",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "fiche",
+   "motsCles": [
+    "relevage",
+    "brancardage",
+    "brancard cuillère",
+    "pont néerlandais",
+    "chaise de transport",
+    "alèse portoir",
+    "arrimage"
+   ]
+  },
+  {
+   "id": "pse-11",
+   "titre": "PSE – Nombreuses victimes et alerte",
+   "domaine": "sap",
+   "theme": "PSE – Références nationales 2026",
+   "type": "fiche",
+   "motsCles": [
+    "nombreuses victimes",
+    "triage",
+    "repérage",
+    "acel",
+    "alerte",
+    "112",
+    "114",
+    "sirène",
+    "fr-alert",
+    "confinement"
    ]
   },
   {
