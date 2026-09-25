@@ -48,7 +48,8 @@
    "picto": "cross",
    "couleur": "#0E9A86",
    "themes": [
-    "RT SUAP 2025"
+    "RT SUAP 2025",
+    "Matériel & protocoles SDIS 34"
    ]
   },
   {
@@ -217,6 +218,34 @@
    "theme": "Mousses",
    "type": "fiche",
    "motsCles": []
+  },
+  {
+   "id": "mousses-lif",
+   "titre": "Feux de liquides inflammables (LIF)",
+   "domaine": "incendie",
+   "theme": "Mousses",
+   "type": "fiche",
+   "motsCles": [
+    "lif",
+    "liquides inflammables",
+    "hydrocarbures",
+    "polaires",
+    "alcools",
+    "taux d'application",
+    "débit d'extinction",
+    "temporisation",
+    "additif",
+    "m51",
+    "afff",
+    "ar",
+    "boil-over",
+    "slop-over",
+    "bleve",
+    "uvce",
+    "fmogp",
+    "cemul",
+    "gifli"
+   ]
   },
   {
    "id": "rdmi-menu",
@@ -1787,6 +1816,63 @@
    "theme": "RT SUAP 2025",
    "type": "fiche",
    "motsCles": []
+  },
+  {
+   "id": "suap-dgt7",
+   "titre": "DGT7 – Defigard Touch 7",
+   "domaine": "sap",
+   "theme": "Matériel & protocoles SDIS 34",
+   "type": "fiche",
+   "motsCles": [
+    "dgt7",
+    "defigard",
+    "dsa",
+    "défibrillateur",
+    "multiparamètres",
+    "spo2",
+    "pni",
+    "tension",
+    "saturation",
+    "shocklink"
+   ]
+  },
+  {
+   "id": "suap-infectieux",
+   "titre": "Risque infectieux (FOD 13)",
+   "domaine": "sap",
+   "theme": "Matériel & protocoles SDIS 34",
+   "type": "fiche",
+   "motsCles": [
+    "risque infectieux",
+    "fod 13",
+    "ffp2",
+    "masque",
+    "gants",
+    "surblouse",
+    "dasri",
+    "tuberculose",
+    "méningite",
+    "gale",
+    "aes"
+   ]
+  },
+  {
+   "id": "suap-fat-vsav",
+   "titre": "Armement type VSAV (FAT)",
+   "domaine": "sap",
+   "theme": "Matériel & protocoles SDIS 34",
+   "type": "fiche",
+   "motsCles": [
+    "fat",
+    "armement",
+    "vsav",
+    "inventaire",
+    "prise de garde",
+    "kit",
+    "oxygène",
+    "bavu",
+    "sac premiers secours"
+   ]
   },
   {
    "id": "secours",
