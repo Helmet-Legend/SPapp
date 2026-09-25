@@ -18,6 +18,19 @@ test('menu › sous-menu › fiche, avec fil d\'Ariane', async ({ app }) => {
     await expect(app.locator('#sal-tables .nav-crumbs nav')).toContainText('SAL / SAV – Plongée');
 });
 
+test('un seul menu ouvert à la fois', async ({ app }) => {
+    await app.click('[data-domaine="incendie"]');
+    await app.click('[data-domaine="specialites"]');
+    await expect(app.locator('[data-domaine="incendie"]')).toHaveAttribute('aria-expanded', 'false');
+    await expect(app.locator('[data-domaine="specialites"]')).toHaveAttribute('aria-expanded', 'true');
+    await app.click('[data-theme="specialites|SAL / SAV – Plongée"]');
+    await app.click('[data-theme="specialites|ELD – Exploration longue durée"]');
+    await expect(app.locator('[data-theme="specialites|SAL / SAV – Plongée"]')).toHaveAttribute('aria-expanded', 'false');
+    await expect(app.locator('[data-theme="specialites|ELD – Exploration longue durée"]')).toHaveAttribute('aria-expanded', 'true');
+    await app.click('[data-domaine="specialites"]');
+    await expect(app.locator('#navHome .nav-acc-head[aria-expanded="true"]')).toHaveCount(0);
+});
+
 test('chaque fiche du registre s\'ouvre depuis les menus', async ({ app }) => {
     test.setTimeout(180000);   // parcourt les ~90 fiches une par une
     const pages = registre.pages.filter(p => p.type !== 'menu');
