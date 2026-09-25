@@ -105,3 +105,39 @@ test('paliers MT 2012 : temps hors table et plongée sans palier', async ({ app 
     await expect(app.locator('#calc-resultat')).toContainText('sans palier');
     await expect(app.locator('#table-mt2012 details')).toHaveCount(17);
 });
+
+test('paliers MT 2012 Air/Oxy 6 m : 60 m 10 min = 3 min à 9 m, 7 min O₂ à 6 m', async ({ app }) => {
+    await app.evaluate(() => showModule('sal-calculateur'));
+    await app.selectOption('#calc-methode', 'oxy');
+    await app.fill('#calc-profondeur', '60');
+    await app.fill('#calc-temps', '10');
+    const res = app.locator('#calc-resultat');
+    await expect(res).toContainText('9 m3 min');
+    await expect(res).toContainText('6 m O₂7 min');
+    await expect(res).toContainText('14:15');
+    await expect(app.locator('#table-mt2012-oxy details')).toHaveCount(17);
+});
+
+test('paliers MT 2012 : plongée successive, Nitrox et altitude', async ({ app }) => {
+    await app.evaluate(() => showModule('sal-calculateur'));
+    const res = app.locator('#calc-resultat');
+    // 30 m 20 min après 1 h 15 de surface : + 25 min → ligne 30 m 45 min
+    await app.fill('#calc-profondeur', '30');
+    await app.fill('#calc-temps', '20');
+    await app.selectOption('#calc-intervalle', '3');
+    await expect(res).toContainText('temps équivalent 45 min');
+    await expect(res).toContainText('29:00');
+    // Nitrox 40/60 à 30 m → 21 m
+    await app.selectOption('#calc-intervalle', '');
+    await app.selectOption('#calc-melange', '40/60');
+    await app.fill('#calc-temps', '40');
+    await expect(res).toContainText('profondeur équivalente 21 m');
+    await expect(res).toContainText('4:30');
+    // Altitude 1000-1500 m, 20 m réels → 27 m
+    await app.selectOption('#calc-melange', '');
+    await app.selectOption('#calc-altitude', '2');
+    await app.fill('#calc-profondeur', '20');
+    await app.fill('#calc-temps', '30');
+    await expect(res).toContainText('profondeur équivalente 27 m');
+    await expect(res).toContainText('7:00');
+});
