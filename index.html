@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.26.0">
+    <meta name="version" content="1.27.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -102,7 +102,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.26.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.27.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -207,7 +207,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.26.0</span><br>
+                        Vulcain v<span class="app-version">1.27.0</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -11648,6 +11648,7 @@
             <button onclick="showModule('rdeb-reengagement')"><b>3.14-3.16 · Réengagement</b><span>Récupération, tableau de non-réengagement</span></button>
             <button onclick="showModule('rdeb-apres')"><b>4 · Après l'engagement</b><span>Exposition, nettoyage, DECOPI, déshabillage</span></button>
             <button onclick="showModule('rdeb-annexes')"><b>5 · Annexes</b><span>Parkings & caves, CO, H₂S, ascenseurs</span></button>
+            <button onclick="showModule('gtomv')"><b>GTO national 2024</b><span>Correspondances, appareils filtrants, circuit fermé, consommations</span></button>
         </div>
 
         <div class="rd-section">
@@ -15731,6 +15732,1420 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Source : <strong>Guide opérationnel d'urgence sur les véhicules – SDIS 34</strong> (V1.1.1, mai 2015), réalisé avec le SDIS de la Vienne (86), et notes opérationnelles départementales n° 001 et 002 (12/2014). Reproduit avec l'autorisation du SDIS de l'Hérault. <strong>Document de 2015</strong> : les véhicules récents peuvent différer, consulter la fiche d'aide à la décision (FAD) du modèle.</p>
     </div>
 
+    <!-- ============ GTO Engagement en milieu vicié (DGSCGC, 2e éd. février 2024) : correspondances RDEB + compléments ============ -->
+    <div id="gtomv" class="module">
+        <button class="back-btn" onclick="showModule('rdeb-menu')">← RDEB</button>
+        <h2>😷 GTO Engagement en milieu vicié – 2024</h2>
+        <p style="text-align: center;">Le RDEB SDIS 34 (v2, avril 2026) reprend déjà ce guide national. Cette page renvoie vers les fiches RDEB correspondantes et ajoute <strong>ce que le RDEB ne détaille pas</strong>.</p>
+
+        <div class="rd-section">
+            <h3>🔗 Où trouver chaque chapitre</h3>
+            <table class="rd-table">
+                <thead><tr><th>GTO national</th><th>Fiche Vulcain</th></tr></thead>
+                <tbody>
+                    <tr><td>1.1 ARI à circuit ouvert, bouteilles, masques</td><td><button class="sal-lien" onclick="showModule('rdeb-ari')">L'ARI-CO</button></td></tr>
+                    <tr><td>1.3 Ligne de vie : ligne guide, liaison personnelle, dérivations</td><td><button class="sal-lien" onclick="showModule('rdeb-ligne-vie')">Ligne de vie & TTH 900</button></td></tr>
+                    <tr><td>1.4 Balise, communication, tableau de gestion</td><td><button class="sal-lien" onclick="showModule('rdeb-controle')">Contrôle croisé & codes</button> <button class="sal-lien" onclick="showModule('rdeb-autonomie')">Autonomie & contrôle</button></td></tr>
+                    <tr><td>1.2 Rôles : binôme, contrôleur, binôme de sécurité</td><td><button class="sal-lien" onclick="showModule('rdeb-autonomie')">Autonomie & contrôle</button></td></tr>
+                    <tr><td>1.3 Engagements de longue durée</td><td><button class="sal-lien" onclick="showModule('eld-menu')">ELD – Exploration longue durée</button></td></tr>
+                    <tr><td>1.4 Retour d'opération, reconditionnement</td><td><button class="sal-lien" onclick="showModule('rdeb-apres')">Après l'engagement</button></td></tr>
+                    <tr><td>2.1 Équipement et contrôle croisé</td><td><button class="sal-lien" onclick="showModule('rdeb-preparation')">Contraintes & préparation</button> <button class="sal-lien" onclick="showModule('rdeb-controle')">Contrôle croisé</button></td></tr>
+                    <tr><td>2.2-2.3 Conditions d'engagement, techniques (à vue, ligne de vie, latérale, circulaire, AIDES)</td><td><button class="sal-lien" onclick="showModule('rdeb-engagement')">Engagement</button></td></tr>
+                    <tr><td>2.4-2.6 Retour d'engagement, récupération, réengagement</td><td><button class="sal-lien" onclick="showModule('rdeb-recherche')">Recherche & retour</button> <button class="sal-lien" onclick="showModule('rdeb-reengagement')">Réengagement</button></td></tr>
+                    <tr><td>3 Techniques de recherche, marquage, EAS, découverte de victime</td><td><button class="sal-lien" onclick="showModule('rdeb-recherche')">Recherche & retour</button></td></tr>
+                    <tr><td>Annexe B Contraintes de l'ARI · C Autonomie</td><td><button class="sal-lien" onclick="showModule('rdeb-preparation')">Contraintes</button> <button class="sal-lien" onclick="showModule('ari')">🫁 Calcul autonomie ARI</button></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Port de l'ARI obligatoire</strong>
+            <ul>
+                <li>En présence de produits toxiques ; si la qualité de l'air est <strong>inconnue</strong> ; si l'O₂ est <strong>inférieur à 17 %</strong> ; en présence de produits de combustion (CO) ; dans un milieu susceptible d'évoluer (embrasement, explosion).</li>
+                <li>Par principe, les <strong>ARI autonomes sont prioritaires</strong> partout où l'air est vicié ou peut l'être.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Appareils filtrants : conditions strictes</h3>
+            <p>Ils allègent la contrainte physiologique (ex. reconditionnement du matériel après l'extinction), mais le COS ne peut les autoriser que si <strong>toutes</strong> ces conditions sont réunies :</p>
+            <ol>
+                <li>O₂ <strong>supérieur à 17 %</strong> (air libre ou local largement ventilé) ;</li>
+                <li>polluant <strong>identifié</strong> et concentration <strong>mesurée</strong> ;</li>
+                <li>concentration la plus élevée prévisible <strong>connue</strong> ;</li>
+                <li>filtre adapté au polluant et à sa concentration ;</li>
+                <li>risque d'instabilité de l'atmosphère évalué.</li>
+            </ol>
+            <p><strong>Une seule condition manque : ARI indispensable.</strong> Plus l'air est humide, plus le travail respiratoire augmente avec un filtrant.</p>
+            <table class="rd-table">
+                <thead><tr><th>Filtre anti-aérosols</th><th>Efficacité</th></tr></thead>
+                <tbody>
+                    <tr><td>P1</td><td>80 %</td></tr>
+                    <tr><td>P2</td><td>94 %</td></tr>
+                    <tr><td>P3</td><td>99,95 %</td></tr>
+                </tbody>
+            </table>
+            <p>Marquage R (réutilisable) ou NR (non réutilisable après 8 h). Les filtres <strong>se colmatent</strong>, surtout en ambiance poussiéreuse.</p>
+            <table class="rd-table">
+                <thead><tr><th>Filtre anti-gaz</th><th>Couleur</th><th>Domaine</th></tr></thead>
+                <tbody>
+                    <tr><td>A</td><td>Marron</td><td>Gaz et vapeurs organiques, ébullition &gt; 65 °C</td></tr>
+                    <tr><td>AX</td><td>Marron</td><td>Gaz et vapeurs organiques, ébullition &lt; 65 °C</td></tr>
+                    <tr><td>B</td><td>Gris</td><td>Gaz et vapeurs inorganiques</td></tr>
+                    <tr><td>E</td><td>Jaune</td><td>Dioxyde de soufre et autres gaz acides</td></tr>
+                    <tr><td>K</td><td>Vert</td><td>Ammoniac et dérivés aminés</td></tr>
+                    <tr><td>Hg-P3</td><td>Rouge et blanc</td><td>Vapeurs de mercure</td></tr>
+                    <tr><td>NO-P3</td><td>Bleu et blanc</td><td>Oxydes d'azote</td></tr>
+                    <tr><td>SX</td><td>Violet</td><td>Composés désignés par le fabricant</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>Charbon actif (parfois dopé) qui retient le gaz par <strong>adsorption</strong>, limitée dans le temps : au <strong>temps de claquage</strong> (percée), la concentration dans l'air filtré dépasse le seuil critique.</li>
+                <li>Les temps normés (NF EN 14387) sont mesurés à 20 °C, 70 % d'humidité, <strong>30 L/min</strong> : bien moins que le débit d'un sapeur-pompier. Le claquage arrive plus tôt si la concentration, la température, le débit ou l'<strong>humidité</strong> (pluie, brouillard, vapeur) augmentent. On ne peut pas prédire la durée de vie réelle d'une cartouche.</li>
+                <li>INRS : n'utiliser un filtre que pour une concentration connue <strong>≤ 60 × la VLCT</strong> du toxique (chlore : VLCT 0,5 ppm, soit 30 ppm maximum).</li>
+                <li>Résistance respiratoire qui augmente, contaminant détecté, doute sur la protection : <strong>quitter immédiatement la zone</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Autres appareils</h3>
+            <ul>
+                <li><strong>ARI à circuit fermé</strong> (longues autonomies : ELD, feux de navire) : régénère l'air expiré. Trois familles : oxygène comprimé 200 bar + chaux sodée ; sans réserve, cartouche de dioxyde de potassium (absorbe CO₂ et humidité, produit l'O₂) ; air comprimé 300 bar + dioxyde de potassium. Sac respiratoire, tuyaux, soupapes, gaz réfrigérant, détecteur d'immobilité. Masse maximale <strong>16 kg</strong> (NF EN 145), contre 18 kg pour l'ARICO (NF EN 137).</li>
+                <li><strong>Assistance respiratoire d'une victime</strong> : cagoule d'évacuation sur la 2<sup>e</sup> sortie MP de l'ARI d'un membre du binôme, cagoule ou masque d'un lot d'assistance, ou cagoule autonome à cartouche filtrante.</li>
+                <li>ARI-CO bi-bouteilles, chariot d'air multi-bouteilles.</li>
+                <li>Options de l'ARICO : indicateur de température, enregistrement de données, boîtier ICS (manomètre, autonomie), raccords MP d'entrée ou de sortie (cagoule de sauvetage), by-pass.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Repères chiffrés du GTO</h3>
+            <table class="rd-table">
+                <tbody>
+                    <tr><td>Pression minimale avant engagement</td><td>Pression nominale – 10 % (300 bar → <strong>270 bar</strong>) ; en dessous, missions limitées validées au point de pénétration</td></tr>
+                    <tr><td>Sifflet de fin de charge</td><td>≈ <strong>55 bar</strong> : retour systématique et immédiat</td></tr>
+                    <tr><td>Contrôleur</td><td>Un seul point de pénétration ; <strong>10 porteurs maximum</strong> (4 binômes + le binôme de sécurité)</td></tr>
+                    <tr><td>Ligne guide</td><td>50 à 60 m, Ø 6 à 8 mm ; 1 olive = vers la sortie (« vie »), 3 olives = vers le sinistre (« in-cen-die ») ; jusqu'à <strong>3 dérivations</strong></td></tr>
+                    <tr><td>Liaison personnelle</td><td>6 m, Ø 4 mm ; courte 1,25 m ou longue 6 m ; jamais les deux en version longue en même temps (sauf victime avérée dans la pièce)</td></tr>
+                    <tr><td>Surpression du masque</td><td>Non garantie au-delà de <strong>314 L/min</strong> de débit de pointe</td></tr>
+                    <tr><td>Espace mort</td><td>≈ 150 mL chez l'adulte, augmenté par le masque (ré-inspiration de CO₂, hyperventilation)</td></tr>
+                    <tr><td>GELD</td><td>Au minimum un chef et deux binômes</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Consommation d'air selon l'activité</h3>
+            <table class="rd-table">
+                <thead><tr><th>Débit</th><th>Activité</th></tr></thead>
+                <tbody>
+                    <tr><td>10 L/min</td><td>Repos</td></tr>
+                    <tr><td>20 L/min</td><td>Travail léger assis, marche occasionnelle jusqu'à 2,5 km/h</td></tr>
+                    <tr><td>35 L/min</td><td>Travail soutenu des bras et du tronc, marche 2,5 à 5,5 km/h</td></tr>
+                    <tr><td>50 L/min</td><td>Travail intense : charges lourdes, pelletage, marche 5,5 à 7 km/h</td></tr>
+                    <tr><td>65 L/min</td><td>Très intense : hache, monter escaliers ou échelles, course</td></tr>
+                    <tr><td>85 L/min</td><td>Sécurité et sauvetage avec équipement lourd, 2 h maximum sans pause</td></tr>
+                    <tr><td><strong>105 L/min</strong></td><td>Sauvetage et <strong>lutte contre l'incendie</strong> d'intensité élevée (ramper, dégager, porter une lance), 15 min maximum</td></tr>
+                    <tr><td><strong>135 L/min</strong></td><td>Intensité maximale (escaliers et échelles rapides, transport de victimes), moins de 5 min</td></tr>
+                </tbody>
+            </table>
+            <p><strong>Autonomie théorique</strong> : capacité = P × V ÷ (Z × P<sub>atm</sub>). Bouteille 7 L à 300 bar, Z = 1,1 : 300 × 7 ÷ 1,1 ≈ <strong>1 909 L</strong>. À 100 L/min (incendie) : ≈ <strong>19 min</strong>. Chaque porteur a intérêt à connaître sa consommation personnelle.</p>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('ari')">🫁 Calculer l'autonomie ARI</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Compte rendu de fin d'engagement</h3>
+            <p>Au contrôleur, oral ou avec un schéma : accès actuels et possibles, parcours (longueur, obstacles), niveaux et pièces concernés, actions réalisées, propositions, évolution du sinistre. En résumé :</p>
+            <ul>
+                <li>« <strong>J'ai vu</strong> » (accès, parcours, niveaux et pièces) ;</li>
+                <li>« <strong>J'ai fait</strong> » ;</li>
+                <li>« <strong>Je propose</strong> » ;</li>
+                <li>« <strong>Je redoute</strong> ».</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Préparation et parcours d'accoutumance (annexe D)</summary>
+            <ul>
+                <li><strong>Physique</strong> : entraînement régulier avec mises en situation en ambiance dégradée, cardio-respiratoire, renforcement musculaire, bonne nuit de sommeil avant la garde.</li>
+                <li><strong>Physiologique</strong> : petit déjeuner et repas équilibrés, hydratation régulière et avant de partir au feu, préservation du potentiel physique, exercices d'aisance sous ARI.</li>
+                <li><strong>Psychologique</strong> : anticiper les situations stressantes, s'entraîner à garder ses capacités sous stress. Un porteur qui perd son calme accélère sa respiration et vide sa réserve.</li>
+                <li>Parcours ARICO réalisable avec les agrès de l'engin-pompe ; à compléter par des parcours chaleur et vision réduite.</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Engagement-milieu-vicie-2024.pdf" target="_blank" rel="noopener">GTO complet (PDF, 68 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Engagement en milieu vicié », DGSCGC/DSP/SDDRH/BDFE, 2<sup>e</sup> édition, février 2024 (actualisé en septembre 2023 : le point 7 du chapitre III est passé dans le GTO « Sauvegarde opérationnelle »). Illustrations non reproduites.</p>
+    </div>
+
+    <!-- ============ GDO Interventions sur les incendies de structures (DGSCGC, 16 avril 2018) ============ -->
+    <div id="gdoinc-menu" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🏢 GDO Incendies de structures – 2018</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle DGSCGC du <strong>16 avril 2018</strong> : connaissance du risque, principes généraux de la lutte, actions de lutte et marche générale des opérations.</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gdoinc-systeme-feu')"><b>1 · Le système feu</b><span>Combustion, pyrolyse, puissance, fumées, phases, FLC / FLV, modèle de Thomas</span></button>
+            <button onclick="showModule('gdoinc-phenomenes')"><b>1 · Phénomènes thermiques</b><span>Flashover, backdraft, FGI, feux pilotés par le vent, signes annonciateurs</span></button>
+            <button onclick="showModule('gdoinc-structure')"><b>1 · La structure</b><span>Résistance et réaction au feu, charge calorifique, lecture bâtimentaire</span></button>
+            <button onclick="showModule('gdoinc-analyse')"><b>1 · Maîtrise du feu & analyse de risques</b><span>4 leviers d'action, indicateurs, situations types</span></button>
+            <button onclick="showModule('gdoinc-homme')"><b>1 · L'homme face au feu</b><span>Contraintes, risques, flux thermiques, CO, stress thermique, aptitude</span></button>
+            <button onclick="showModule('gdoinc-eau')"><b>1 · Les effets de l'eau</b><span>Refroidissement, inertage, capacité d'une LDV, 1 L → 1 700 L de vapeur</span></button>
+            <button onclick="showModule('gdoinc-tactique')"><b>2 · Principes généraux & tactiques</b><span>Objectifs, choix du COS, offensif / défensif / transition, préparation</span></button>
+            <button onclick="showModule('gdoinc-securite')"><b>3 · Analyse, arrivée & sécurité</b><span>Qualification du feu, positionnement, zonage, binôme de sécurité, SSO</span></button>
+            <button onclick="showModule('gdoinc-mgo')"><b>3 · Marche générale des opérations</b><span>Les 11 critères, sauvetages, attaques, débits, déblais, surveillance, PTI</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'essentiel</h3>
+            <ul>
+                <li>Objectifs du SIS : <strong>protéger les personnes</strong> (dont les intervenants), <strong>préserver les biens</strong>, <strong>protéger l'environnement</strong>. Étapes : <strong>stabiliser</strong> la situation, <strong>contrôler puis éteindre</strong> l'incendie, <strong>réduire et supprimer</strong> le risque.</li>
+                <li>Un feu de structure meublé devient <strong>limité par la ventilation (FLV)</strong> dès qu'il est développé : <strong>maîtriser les ouvrants et les flux gazeux</strong> est la clé de la lutte.</li>
+                <li>Le choix tactique du COS repose sur 3 critères indissociables : <strong>évolution de la situation</strong>, <strong>sécurité</strong>, <strong>moyens disponibles</strong>.</li>
+                <li>Les actions offensives à l'intérieur d'un volume se font <strong>systématiquement en binôme</strong> ; le COS met en place <strong>dès que possible un binôme de sécurité</strong>.</li>
+                <li>Vocabulaire commun : feu <strong>en développement / stabilisé / en régression</strong> puis <strong>circonscrit → maître du feu → foyers principaux éteints → feu éteint</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Avertissement du guide</strong>
+            <p>Document de doctrine rédigé par un collège d'experts, <strong>sans portée réglementaire</strong>. Il guide l'action à partir des meilleures pratiques ; s'en écarter dans une situation particulière relève du pouvoir d'appréciation du commandement.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Déjà dans Vulcain (non dupliqué ici)</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('vent-menu')">🌬️ Ventilation opérationnelle (GTO 2019)</button>
+                <button class="sal-lien" onclick="showModule('rdeb-menu')">🫁 RDEB – Engagement des binômes</button>
+                <button class="sal-lien" onclick="showModule('rdeb-lecture')">Zonage & lecture du feu</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-menu')">🪜 RDSMES – Sauvetages</button>
+                <button class="sal-lien" onclick="showModule('rdmi-mgo')">MGO (RDMI)</button>
+                <button class="sal-lien" onclick="showModule('rdmi-etablissements')">Établissements</button>
+                <button class="sal-lien" onclick="showModule('fire')">🔥 Calcul puissance du feu</button>
+                <button class="sal-lien" onclick="showModule('extincteurs')">🧯 Extincteurs</button>
+            </p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique du guide</summary>
+            <ul>
+                <li><strong>COS</strong> : commandant des opérations de secours · <strong>DOS</strong> : directeur des opérations de secours</li>
+                <li><strong>EPI</strong> : équipement de protection individuelle · <strong>ERP</strong> : établissement recevant du public · <strong>IGH</strong> : immeuble de grande hauteur</li>
+                <li><strong>ETARE / ER</strong> : établissement répertorié · <strong>ICPE</strong> : installation classée · <strong>INB</strong> : installation nucléaire de base</li>
+                <li><strong>FLV</strong> : feu limité par la ventilation · <strong>FLC</strong> : feu limité par le combustible</li>
+                <li><strong>LSPCC</strong> : lot de sauvetage et de protection contre les chutes · <strong>MEA</strong> : moyen élévateur articulé</li>
+                <li><strong>MGO</strong> : marche générale des opérations · <strong>PAO</strong> : prévention appliquée à l'opération · <strong>PRV</strong> : point de regroupement des victimes</li>
+                <li><strong>RETEX / REX</strong> : retour d'expérience · <strong>PEX</strong> : partage d'expérience · <strong>RCCI</strong> : recherche des causes et circonstances de l'incendie</li>
+                <li><strong>ZE</strong> : zone d'exclusion · <strong>ZC</strong> : zone contrôlée · <strong>ZS</strong> : zone de soutien · <strong>ZI</strong> : zone d'intervention</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>📚 Documents associés</summary>
+            <ul>
+                <li>Annexe A – Fiches scientifiques FSCI-CSF 1 à 13 : compréhension du système feu (intégrées dans les pages « 1 · … »).</li>
+                <li>Annexe B – Fiches scientifiques FSCI-HOM 1 à 3 : l'homme face au feu et aux fumées (page « L'homme face au feu »).</li>
+                <li>Complété par les guides de techniques opérationnelles (GTO) : ventilation opérationnelle, établissements et techniques d'extinction, engagement en milieu vicié…</li>
+                <li>Bibliographie : traité de physique du feu (M. Curtat, CSTB), <em>Enclosure fires</em> (L.-G. Bengtsson), <em>Compréhension du système feu</em> (N. Struski), rapport LNE <em>Effets du feu sur les personnes</em> (E. Guillaume, 2006), rapport Pourny (2003), <em>Le soutien de l'intervenant</em> (2017).</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Incendies-de-structures-2018.pdf" target="_blank" rel="noopener">GDO complet (PDF, 162 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Interventions sur les incendies de structures », DGSCGC/DSP/SDDRH/BDFE, 16 avril 2018. Texte repris et résumé ; schémas et photos non reproduits.</p>
+    </div>
+
+    <div id="gdoinc-systeme-feu" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <h2>🔥 Le système feu</h2>
+
+        <div class="rd-section">
+            <h3>Définitions</h3>
+            <ul>
+                <li><strong>Combustion</strong> : réaction chimique entre un <strong>combustible</strong> et un <strong>comburant</strong>, amorcée par une <strong>énergie d'activation</strong>, qui produit des produits de combustion et de la chaleur (triangle du feu). Un 4<sup>e</sup> côté, les <strong>réactions en chaîne</strong> (radicaux libres), donne le tétraèdre du feu.</li>
+                <li><strong>Feu</strong> (ISO 13943) : combustion auto-entretenue, maîtrisée dans le temps et l'espace. <strong>Incendie</strong> : feu dont le développement n'est pas maîtrisé.</li>
+                <li><strong>Feu couvant (smoldering)</strong> : combustion lente, sans flamme, à basse température (mousses d'ameublement, fourrage). Gaz très incomplets, <strong>toxiques et inflammables</strong>, qui refroidissent vite : risque d'inflammation de fumées « froides ».</li>
+            </ul>
+            <h3>Comment naît une flamme (3 étapes)</h3>
+            <ol>
+                <li><strong>Pyrolyse</strong> : chauffée, la matière se décompose et émet des gaz inflammables.</li>
+                <li><strong>Inflammation</strong> : le mélange gaz / air, dans sa plage d'inflammabilité (LII-LSI), s'enflamme au contact d'une énergie suffisante.</li>
+                <li><strong>Maintien</strong> : la flamme se maintient si les gaz de pyrolyse, l'air et les conditions thermiques restent suffisants.</li>
+            </ol>
+            <p>La plage d'inflammabilité s'<strong>élargit</strong> quand la température ou la pression augmentent. Exemple du méthane : LII 4,4 % – LSI 17 %. Plus le mélange est proche de la stœchiométrie, plus il est réactif. Les flammes d'incendie sont des <strong>flammes de diffusion turbulentes</strong> (combustion incomplète) ; les flammes de <strong>prémélange</strong> (explosions de gaz ou de fumées) sont plus brutales.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Transferts de chaleur</h3>
+            <table class="rd-table">
+                <thead><tr><th>Mode</th><th>Principe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Conduction</strong></td><td>De proche en proche dans le matériau (barre métallique qui traverse deux pièces).</td></tr>
+                    <tr><td><strong>Convection</strong></td><td>Par un fluide en mouvement : fumées et gaz chauds qui envahissent les volumes.</td></tr>
+                    <tr><td><strong>Rayonnement</strong></td><td>Ondes électromagnétiques, sans contact ; croît très vite avec la température (σT⁴). Peut enflammer des cibles éloignées.</td></tr>
+                </tbody>
+            </table>
+            <p>Dans un local de référence, la chaleur se répartit en moyenne : <strong>70 % convection · 25 % rayonnement · 5 % conduction</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Puissance d'un feu</h3>
+            <p>Énergie dégagée par seconde, en watts (1 W = 1 J/s). Elle dépend de la nature, de la quantité, de la position du combustible et de l'apport d'air.</p>
+            <table class="rd-table">
+                <thead><tr><th>Combustible</th><th>Puissance</th></tr></thead>
+                <tbody>
+                    <tr><td>Cigarette</td><td>5 W</td></tr>
+                    <tr><td>Allumette</td><td>50 W</td></tr>
+                    <tr><td>Bougie</td><td>80 W</td></tr>
+                    <tr><td>Corbeille à papiers</td><td>150 kW</td></tr>
+                    <tr><td>Poubelle</td><td>50 à 300 kW</td></tr>
+                    <tr><td>Fauteuil</td><td>2 MW</td></tr>
+                    <tr><td>Sapin de Noël</td><td>1 à 2 MW</td></tr>
+                    <tr><td>Canapé</td><td>1 à 3 MW</td></tr>
+                    <tr><td>Salon ou chambre développé</td><td>3 à 10 MW</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>Régime <strong>FLC</strong> (plein air, bien ventilé) : P = débit de pyrolyse × enthalpie de combustion ; en croissance, P ≈ α·t² (α dépend du combustible et de sa disposition).</li>
+                <li>Régime <strong>FLV</strong> : la puissance dépend de l'air qui entre. <strong>P ≈ 1 500 × A × √H</strong> (kW ; A = surface de l'ouvrant en m², H = hauteur utile de l'ouvrant en m). Toute ouverture supplémentaire (vitre qui casse) <strong>augmente la puissance</strong>.</li>
+            </ul>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('fire')">🔥 Calculer la puissance selon les ouvrants</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les fumées</h3>
+            <p>Particules solides ou liquides en suspension et gaz issus de la combustion ou de la pyrolyse : CO₂, CO, vapeur d'eau, et selon les matériaux HCN, HCl, NOx, SO₂, NH₃, isocyanates, aromatiques… Elles contiennent des <strong>imbrûlés combustibles</strong>. Première cause de décès en incendie ; leur volume se compte en millions de m³.</p>
+            <table class="rd-table">
+                <thead><tr><th>Danger</th><th>Conséquence</th></tr></thead>
+                <tbody>
+                    <tr><td>Opacité</td><td>Progression difficile, perte d'orientation ; sons assourdis, distances mal appréciées.</td></tr>
+                    <tr><td>Toxicité, corrosivité</td><td>CO, HCN, HCl, SO₂, NH₃, NOx…</td></tr>
+                    <tr><td>Inflammabilité, explosivité</td><td>Imbrûlés et gaz de pyrolyse ; même <strong>froides</strong>, les fumées prémélangées peuvent s'enflammer.</td></tr>
+                    <tr><td>Mobilité, envahissement</td><td>Se comportent comme un fluide ; s'insinuent partout (gaines, portes), surtout vers le haut.</td></tr>
+                    <tr><td>Rayonnement, chaleur</td><td>Flux notable dès <strong>200 °C</strong> : brûlures des personnes non protégées, pyrolyse accrue des combustibles.</td></tr>
+                    <tr><td>Particules</td><td>Suies (HAP), contamination des EPI.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Phases de développement</h3>
+            <table class="rd-table">
+                <thead><tr><th>Phase</th><th>Caractéristiques</th><th>Régime</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Feu naissant</strong></td><td>Chaleur modérée, peu de fumée, gaz de pyrolyse en quantité limitée.</td><td>FLC</td></tr>
+                    <tr><td><strong>Croissance</strong></td><td>Puissance, température et fumées augmentent ; les objets voisins s'échauffent et s'enflamment. Dépend de la ventilation, de la nature et de la division des matières, du bâtiment.</td><td>FLC puis FLV</td></tr>
+                    <tr><td><strong>Pleinement développé</strong></td><td>Tous les combustibles de la pièce brûlent (après embrasement généralisé). Puissance et risques de propagation maximaux.</td><td>FLV</td></tr>
+                    <tr><td><strong>Régression</strong></td><td>Fin des combustibles, puissance en baisse ; les risques liés aux fumées demeurent.</td><td>FLC</td></tr>
+                </tbody>
+            </table>
+            <p>Feu sous-ventilé (FLV) : soit le <strong>confinement se maintient</strong> (quasi auto-extinction), soit il est <strong>rompu</strong> et le feu reprend, plus ou moins violemment. <strong>Tout feu développé dans une pièce meublée finit limité par la ventilation.</strong></p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Régimes de feu (FSCI-CSF-6)</summary>
+            <ul>
+                <li><strong>Contrôlé par le combustible</strong> : même courbe de puissance qu'en plein air ; seules comptent la quantité, la nature, la division et la disposition du combustible.</li>
+                <li><strong>Contrôlé par la ventilation</strong> : puissance inférieure au plein air, limitée par l'évacuation des fumées et l'arrivée d'air. Toute modification aéraulique (exutoire, ouvrant, stoppeur, ventilateur) change le régime.</li>
+                <li><strong>Sous-ventilé</strong> : plus aucun échange avec l'extérieur (petit compartiment ou antiventilation poussée). Attention à tout apport d'air non contrôlé.</li>
+                <li><strong>Limitation diffusionnelle</strong> : combustibles pétrochimiques (plastiques, pneus) qui produisent des imbrûlés même en plein air. <strong>La couleur de la fumée n'est donc pas un indicateur fiable du régime</strong> : un feu de pneus en plein air donne une fumée noire sans être limité par la ventilation.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>📖 Modèle de Thomas (FSCI-CSF-7)</summary>
+            <p>Le local en feu est représenté par une <strong>zone haute de fumées</strong> qui sort par le haut des ouvrants et une <strong>zone basse d'air frais</strong> qui entre par le bas.</p>
+            <ul>
+                <li><strong>Bilan de masse</strong> : débit de fumées = débit d'air entrant + débit de pyrolyse.</li>
+                <li><strong>Bilan de chaleur</strong> : P incendie = pertes par convection des fumées + rayonnement par les ouvrants + conduction par les parois.</li>
+                <li>Leviers : <strong>contrôler l'arrivée d'air</strong> (fermer un ouvrant, stoppeur de fumée, réflexe de fermer la porte), <strong>réduire le volume ou la température des fumées</strong> (exutoire en partie haute, eau), <strong>limiter le combustible</strong> (part du feu, mousse, noyage).</li>
+                <li>Flux rayonné : 1 kW/m² = premières brûlures en quelques secondes ; 3 à 5 kW/m² = brûlures du 2<sup>e</sup> degré ; 10 à 30 kW/m² = début de pyrolyse des combustibles courants.</li>
+                <li>Créer un exutoire réduit l'agression thermique et facilite l'accès au foyer, mais l'air qui le remplace peut <strong>augmenter la puissance</strong> : choisir le moment et l'endroit.</li>
+            </ul>
+        </details>
+        <p class="rd-source">GDO Incendies de structures 2018, chap. 1 section I et fiches FSCI-CSF 1 à 7.</p>
+    </div>
+
+    <div id="gdoinc-phenomenes" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <h2>💥 Phénomènes thermiques</h2>
+        <p style="text-align: center;">Progressions rapides du feu : augmentation significative et/ou brutale de la puissance, dans le local en feu ou dans des volumes voisins. Trois familles.</p>
+
+        <div class="rd-section">
+            <h3>1. Flashover – embrasement généralisé éclair (EGE)</h3>
+            <p>Passage brutal d'un feu localisé à l'embrasement de <strong>tous les combustibles</strong> d'un volume <strong>ventilé</strong> ; aboutit toujours à un feu pleinement développé. Toutes les pièces d'un habitat actuel contiennent assez de combustible pour y arriver.</p>
+            <ul>
+                <li>Mécanisme : la couche de fumées sous plafond rayonne, les objets pyrolysent, apparaissent des flammes sporadiques (<strong>« anges danseurs »</strong>, ghosting flames) puis des rouleaux de flammes à l'interface air / fumées (<strong>roll-over</strong>), puis toute la pièce s'embrase en quelques secondes.</li>
+                <li>Délai : <strong>3 à 5 minutes</strong> après l'éclosion dans l'habitat actuel si l'air est suffisant ; retardé de quelques minutes si la ventilation est moindre.</li>
+                <li>Puissance nécessaire (formule de Thomas) : pour une pièce de 3,6 × 2,4 × 2,4 m avec une porte de 0,8 × 2 m, <strong>500 à 1 000 kW</strong>, à comparer aux 1 000 à 2 000 kW d'un canapé : le risque est <strong>omniprésent</strong>.</li>
+                <li><strong>Flashover induit par la ventilation</strong> : un feu devenu FLV avant l'embrasement (fumées très basses) s'embrase quand on lui apporte de l'air (porte ouverte, vitre cassée) ; d'autant plus rapide et violent que le feu était puissant.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>2. Backdraft – explosion de fumées</h3>
+            <p>Feu <strong>sous-ventilé</strong> depuis un certain temps ; fumées chargées d'imbrûlés au-dessus de leur LSI (mélange trop riche). Un <strong>apport d'air soudain</strong> (fenêtre qui se brise, porte ouverte sans précaution, toiture qui cède) crée une zone de prémélange qui s'enflamme sur une source restée présente : l'explosion chasse et enflamme les fumées vers l'extérieur. <strong>Déclencheur : le comburant</strong> (l'énergie est déjà là).</p>
+            <ul>
+                <li>Rare, mais le risque augmente avec les bâtiments <strong>basse consommation</strong> (isolation, vitrages étanches) où les indices de chaleur sont moins visibles.</li>
+                <li>Possible avec des fumées non surchauffées ; souvent suivi d'un feu pleinement développé.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>3. Fire Gas Ignition (FGI) – inflammation de gaz issus d'un incendie</h3>
+            <p>Fumées riches en imbrûlés ou gaz de pyrolyse <strong>accumulées et prémélangées à l'air</strong>, souvent loin du foyer (couloirs, gaines, cages d'escalier, faux plafonds, volumes voisins, <strong>même sous le niveau du feu</strong>), qui s'enflamment au contact d'une <strong>source d'énergie</strong> (le feu, un appareil électrique, une braise déplacée au déblai). <strong>Déclencheur : l'énergie d'activation</strong>, pas la ventilation. Possible avec des fumées <strong>froides</strong>, à toutes les phases de l'intervention.</p>
+            <ul>
+                <li><strong>Flash fire</strong> : mélange éloigné de l'idéal, front de flammes sans onde de pression notable.</li>
+                <li><strong>Smoke explosion</strong> : mélange proche de la stœchiométrie, onde de pression.</li>
+                <li>Aucun signe annonciateur fiable sinon la <strong>fumée elle-même</strong> : fumée stagnante, blanchâtre à jaunâtre (gaz de pyrolyse) ou grise à noire (résidus carbonés). Peut donner de <strong>faux indices sur l'emplacement du foyer</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Tableau de synthèse</h3>
+            <table class="rd-table">
+                <thead><tr><th></th><th>Flashover</th><th>Backdraft</th><th>FGI</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Conditions</strong></td><td>Se produit dans la plupart des bâtiments si l'air est disponible</td><td>Feu confiné + rupture soudaine de l'enveloppe</td><td>Fumées transportées et accumulées hors du volume d'origine</td></tr>
+                    <tr><td><strong>Fumées</strong></td><td>Plus de la moitié de la hauteur, plafond de fumées qui s'épaissit et noircit, forte convection</td><td>Épaisses jusqu'au sol, brun / jaune, dépôts huileux noirs, sortie rapide sous pression, alternance de sorties et d'aspirations (pulsations, parfois audibles)</td><td>Parfois plus claires, à distance de la source, difficiles à percevoir</td></tr>
+                    <tr><td><strong>Air</strong></td><td>Ouverture maintenue ; entrée d'air en partie basse (le feu « respire »)</td><td>Rupture du confinement</td><td>Air présent ou amené, qui crée le prémélange</td></tr>
+                    <tr><td><strong>Chaleur</strong></td><td>Favorise la pyrolyse</td><td>Accumulée dans le local (foyer, fumées, parois)</td><td>Le feu lui-même ou toute autre source d'ignition</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Signes annonciateurs d'un flashover</strong>
+            <ul>
+                <li>Spontané : volume semi-ouvert bien alimenté en air, stratification marquée des fumées avec tirage, foyer vif à flammes claires.</li>
+                <li>Induit par la ventilation : volume insuffisamment alimenté, <strong>abaissement brutal de la couche de fumées</strong>, pulsations, flammes plus sombres.</li>
+                <li>Dans les deux cas : <strong>anges danseurs</strong>, <strong>roll-over</strong>, fumées rayonnantes qui imposent de rester au ras du sol, dégagement de gaz de pyrolyse.</li>
+                <li><strong>Le roll-over signe l'imminence du flashover : adopter immédiatement une attitude défensive et se replier hors du volume.</strong></li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Signes annonciateurs d'un backdraft (à rechercher de l'extérieur, avant toute ouverture)</strong>
+            <ul>
+                <li>Volume clos ou considéré clos, en surpression ou dépression, apport d'air nul ou très faible.</li>
+                <li><strong>Vitres noircies</strong> qui peuvent vibrer.</li>
+                <li>Fumées grasses, de couleur inhabituelle, qui sortent <strong>par bouffées sous pression et sont ré-aspirées</strong>.</li>
+                <li>Quasi-absence de flammes visibles, mais source d'ignition maintenue.</li>
+                <li>Chaleur souvent perceptible de l'extérieur ; sons assourdis, pas de crépitements.</li>
+            </ul>
+            <p>Ces signes ne suffisent pas seuls : ils s'inscrivent dans une analyse globale (lecture bâtimentaire + lecture du feu).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🌬️ Feux pilotés par le vent (Wind driven fire – effet chalumeau)</h3>
+            <p>À un rétrécissement (porte, couloir), l'air accélère (<strong>effet Venturi</strong>). Poussé par le vent, un mélange flammes / fumées traverse l'appartement, les couloirs et les cages d'escalier non encloisonnées jusqu'à une sortie : c'est le <strong>« blow torch effect »</strong>, à l'origine de brûlures graves et de décès de sapeurs-pompiers (étude NIST 2008-2009).</p>
+            <ul>
+                <li>Cas type : chambre en feu au 10<sup>e</sup>, fenêtre ouverte côté vent, porte fermée. En ouvrant la porte d'accès, le binôme placé entre le foyer et l'exutoire reçoit la vague de flammes. Même risque si la fenêtre casse alors que la porte palière est restée ouverte, ou si le feu démarre sur un balcon (RETEX SDIS 78, Trappes).</li>
+                <li>Le vent est difficile à percevoir : balcons qui masquent l'ouvrant, faces non reconnues, <strong>pas de vent au sol ne veut pas dire pas de vent en hauteur</strong>.</li>
+                <li>Indicateurs extérieurs : drapeaux, arbres, poussières, manche à air ; mélange flammes / fumées qui sort <strong>par bouffées</strong> ou de façon asymétrique.</li>
+                <li>Indicateur intérieur : intégrer au protocole d'ouverture de porte un <strong>entrebâillement de quelques millimètres</strong> pour sentir le flux.</li>
+            </ul>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('vent-attaquer')">🌬️ Ventiler pour attaquer (GTO)</button> <button class="sal-lien" onclick="showModule('rdeb-lecture')">Lecture du feu (RDEB)</button></p>
+        </div>
+        <p class="rd-source">GDO Incendies de structures 2018, chap. 1 § 1.7 et fiches FSCI-CSF 2, 10, 11, 12, 13.</p>
+    </div>
+
+    <div id="gdoinc-structure" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <h2>🧱 La structure</h2>
+
+        <div class="rd-section">
+            <h3>Résistance et réaction au feu</h3>
+            <ul>
+                <li><strong>Résistance au feu</strong> : durée pendant laquelle un élément de construction joue son rôle malgré l'incendie (mesurée en conditions normalisées ; tenir compte des altérations : travaux, chocs, explosion).</li>
+                <li><strong>Réaction au feu</strong> : aliment que le matériau apporte au feu ; favorise ou non le développement.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Résistance</th><th>Réaction</th><th>Exemples</th></tr></thead>
+                <tbody>
+                    <tr><td>Bonne</td><td>Faible</td><td>Béton, briques, pierres (incombustibles, stables)</td></tr>
+                    <tr><td>Mauvaise</td><td>Faible</td><td>Bâtiments métalliques (magasins, hangars) : <strong>s'affaissent vite</strong> sous la chaleur</td></tr>
+                    <tr><td>Bonne</td><td>Importante</td><td>Structures composites : certains lamellés-collés, panneaux sandwiches</td></tr>
+                    <tr><td>Mauvaise</td><td>Importante</td><td>Bois non traité, bâtiments précaires (multi-matériaux anarchiques)</td></tr>
+                </tbody>
+            </table>
+            <p>ERP et code du travail : stabilité au feu minimale de <strong>30 minutes</strong> (structure et plancher) en exploitation normale. Vétusté, défaut d'entretien, malfaçons et travaux en cours altèrent la stabilité.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Caractériser le combustible</h3>
+            <ul>
+                <li><strong>Énergie calorifique</strong> : énergie dégagée par la combustion d'un matériau (J ou kcal).</li>
+                <li><strong>Pouvoir calorifique</strong> : énergie par unité de masse (J/kg). Les produits pétrochimiques dégagent plus que les matériaux naturels.</li>
+                <li><strong>Charge calorifique</strong> : somme des énergies de tous les matériaux de la construction ou du local (MJ), rapportée au volume (MJ/m³) ou à la surface au sol (MJ/m²). Elle pèse sur le développement du sinistre et la stabilité du bâti.</li>
+                <li><strong>Potentiel calorifique</strong> : énergie totale par unité de surface (MJ/m²), sans certains éléments de construction (règlement de sécurité).</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Matériau</th><th>Énergie</th></tr></thead>
+                <tbody>
+                    <tr><td>ABS (plastique), 1 kg</td><td>36 MJ</td></tr>
+                    <tr><td>Caoutchouc, 1 kg</td><td>36 MJ</td></tr>
+                    <tr><td>Polycarbonate, 1 kg</td><td>29 MJ</td></tr>
+                    <tr><td>Plexiglas, 1 kg</td><td>24 MJ</td></tr>
+                    <tr><td>Revêtement de sol PVC, 1 kg</td><td>20,5 MJ</td></tr>
+                    <tr><td>Cuir, 1 kg</td><td>18 MJ</td></tr>
+                    <tr><td>Bois, 1 kg</td><td>17 MJ</td></tr>
+                    <tr><td>Bois, 1 dm³</td><td>12,7 MJ</td></tr>
+                    <tr><td>Sol PVC, 1 m² × 1,8 mm</td><td>61,5 MJ</td></tr>
+                    <tr><td>Dossiers, 1 mètre linéaire</td><td>255 à 300 MJ</td></tr>
+                    <tr><td>Armoire électrique, 1 m³</td><td>500 MJ</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Isolation et cloisonnement</h3>
+            <ul>
+                <li>L'<strong>isolation</strong> (thermique, phonique, anti-effraction) garde la chaleur dans l'enveloppe : plus de pyrolyse au début, puis feu <strong>rapidement limité par la ventilation</strong>.</li>
+                <li>Le <strong>cloisonnement</strong> entre volumes varie selon l'usage. Gaines et conduits (VMC, ascenseurs, monte-charges, canalisations gaz, eau, électricité) propagent le feu par convection ou conduction.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔎 Lecture bâtimentaire</h3>
+            <p>Elle permet d'apprécier ce qui favorise ou freine le sinistre, d'évaluer le comportement probable de la structure dans le temps et de guider l'intervention. Clés de lecture :</p>
+            <ul>
+                <li><strong>Âge</strong> du bâtiment (signes de vieillissement, détérioration).</li>
+                <li><strong>Matériaux</strong> : ossature bois, maçonnerie, béton, métal.</li>
+                <li><strong>Charpente</strong> : bois, acier, fermette ou traditionnelle.</li>
+                <li><strong>Rénovations</strong> : pièces ajoutées, bardage ou revêtement extérieur, faux plafonds.</li>
+                <li><strong>Charges permanentes</strong> : équipements lourds sur la charpente.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>L'apparence peut tromper</strong>
+                <ul>
+                    <li>Deux bâtiments de même famille peuvent avoir des mesures constructives différentes : ce sont les règles en vigueur <strong>à la date du permis de construire</strong> qui s'appliquent.</li>
+                    <li>Un crépi peut recouvrir aussi bien de la maçonnerie qu'une <strong>ossature bois</strong> : seule la connaissance préalable ou un dégarnissage le confirme.</li>
+                </ul>
+            </div>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('rdmi-habitations')">🏠 Familles d'habitation</button></p>
+        </div>
+        <p class="rd-source">GDO Incendies de structures 2018, chap. 1 section I § 2 et fiche FSCI-CSF-4.</p>
+    </div>
+
+    <div id="gdoinc-analyse" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <h2>🎯 Maîtrise du feu & analyse de risques</h2>
+
+        <div class="rd-section">
+            <h3>Les 4 leviers pour maîtriser le feu</h3>
+            <table class="rd-table">
+                <thead><tr><th>Levier</th><th>Dispositifs existants</th><th>Actions de lutte</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1. Contrôler l'arrivée d'air</strong> (antiventilation) : très efficace pour stabiliser en attendant les lances</td><td>Pas de dispositif dédié ; l'isolation rend les volumes plus étanches</td><td>Gestion des ouvrants</td></tr>
+                    <tr><td><strong>2a. Évacuer les fumées</strong> : survie des victimes, visibilité, progression des équipes, moins de propagation, moins de combustible</td><td>Désenfumage naturel ou mécanique</td><td>Mettre en œuvre les dispositifs, créer entrants et sortants, ventilateurs</td></tr>
+                    <tr><td><strong>2b. Abaisser la température des fumées</strong> : moins de pyrolyse, moins de rayonnement sur le binôme, moins d'auto-inflammation</td><td>Extinction automatique (IFEA / IEA)</td><td>Eau projetée qui se vaporise ; dilution à l'air (ventilation)</td></tr>
+                    <tr><td><strong>2c. Agir sur leur composition</strong> (inertage)</td><td>Sprinklage (vapeur), gaz inertants (azote, CO₂)</td><td>Eau projetée dans les gaz et sur les surfaces surchauffées</td></tr>
+                    <tr><td><strong>3. Agir sur le combustible</strong> : limiter sa quantité, le refroidir</td><td>Règles de réaction au feu des matériaux</td><td>Application directe d'eau, additivée ou non ; évacuation du combustible</td></tr>
+                    <tr><td><strong>4. Interrompre la réaction en chaîne</strong> (radicaux libres)</td><td>Extinction à gaz (FE 13, FM 200) dans les locaux sensibles</td><td>Extincteurs à poudre, notamment sur feux électriques</td></tr>
+                </tbody>
+            </table>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('gdoinc-eau')">💧 Les effets de l'eau</button> <button class="sal-lien" onclick="showModule('vent-menu')">🌬️ Ventilation opérationnelle</button> <button class="sal-lien" onclick="showModule('extincteurs')">🧯 Extincteurs</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les indicateurs (lecture du feu + lecture bâtimentaire)</h3>
+            <p>Ils permettent le plus souvent de déterminer la <strong>phase</strong> et le <strong>régime</strong> du feu.</p>
+            <ul>
+                <li><strong>Bâtiment et destination</strong> (connus parfois avant : ETARE, prévision) : activité et nombre d'occupants, dimensions et implantation, isolement par rapport aux tiers, accessibilité, mode constructif, matériaux, volumes à risque (combles, appentis, faux plafonds), distribution intérieure, nombre et type d'ouvrants.</li>
+                <li><strong>Fumée</strong> (l'un des indicateurs les plus importants) : débit, couleur, vélocité, sens de tirage ; conditions aérauliques (vent, ouvrants ouverts ou fermés) ; à l'arrivée puis tout au long de l'opération par les comptes rendus des équipes.</li>
+                <li><strong>Flammes</strong> : volume, emplacement, couleur, potentiel fumigène, vélocité.</li>
+                <li><strong>Sons</strong> : crépitement ou sifflement du bois, bouillonnement de liquides ; <strong>sons assourdis dans une atmosphère chaude et sous-ventilée</strong>.</li>
+                <li><strong>Chaleur</strong> (caméra thermique en complément) : vélocité des fumées, déformation des matériaux, pyrolyse, ressenti des équipes.</li>
+            </ul>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('rdeb-lecture')">👁️ Lecture du feu détaillée (RDEB)</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Situations opérationnelles types</h3>
+            <p>Trois critères d'analyse : les <strong>conditions de développement</strong> (bâtiment, aéraulique, feu), la <strong>nature des enjeux</strong> (personnes nombreuses ou vulnérables, biens, patrimoine) et la <strong>facilité à intervenir</strong> (accès, moyens spécifiques). Regroupements : feux naissants ; feux en étage, en sous-sol ; selon l'activité (habitation, ERP, industriel et commercial, parkings couverts, agricole, ICPE, INB).</p>
+            <details class="jsp-cours">
+                <summary>🔥 Feux naissants</summary>
+                <p>Feu de faible ampleur, encore <strong>limité par le combustible et correctement ventilé</strong> : rapidement maîtrisable.</p>
+                <div class="rd-alerte">Un feu qui montre peu de flammes <strong>parce qu'il est sous-ventilé</strong> n'est pas un feu naissant : la rapidité n'est plus un critère, il faut maîtriser le risque de backdraft et de FGI.</div>
+            </details>
+            <details class="jsp-cours">
+                <summary>🏢 Feux en étages (superstructure)</summary>
+                <ul>
+                    <li>Propagation verticale (communications, gaines, conduits, façades) ; personnes piégées dans les étages supérieurs.</li>
+                    <li>Locaux techniques regroupés (chauffage, climatisation, machinerie d'ascenseur, local déchets).</li>
+                    <li>Vent plus fort en hauteur ; souvent <strong>un seul escalier</strong> d'accès et d'extraction ; établissements et port de matériel pénibles.</li>
+                    <li>Échelles à main, MEA ; au-delà d'une certaine hauteur, plus d'accès par l'extérieur. Feu développé : accès aux étages supérieurs risqué.</li>
+                    <li>Variabilité : grandes hauteurs sous plafond (auditoriums, musées) parfois masquées par des faux plafonds ; stabilité incertaine des constructions anciennes ; cloisonnement variable, cheminements parfois longs et non sécurisés.</li>
+                </ul>
+            </details>
+            <details class="jsp-cours">
+                <summary>⬇️ Feux en sous-sol (infrastructure)</summary>
+                <ul>
+                    <li>Propagation verticale fréquente (caves communiquant avec les étages ou les combles).</li>
+                    <li>Peu d'accès, escaliers qui s'enfument quand les tuyaux empêchent de fermer les portes ; établissements pénibles.</li>
+                    <li><strong>Désenfumage difficile</strong> : culs-de-sac et volumes morts.</li>
+                    <li>Stockages à fort potentiel calorifique ; sous-ventilation qui entretient des feux très longs pouvant ruiner la structure.</li>
+                    <li>Variabilité : nombreuses installations techniques ; sous-sols aménagés de façon précaire, <strong>victimes possibles</strong>.</li>
+                </ul>
+            </details>
+            <details class="jsp-cours">
+                <summary>🧱 Feux d'éléments de construction</summary>
+                <ul>
+                    <li><strong>Terrasses et toits-terrasses</strong> : installations techniques (CTA, photovoltaïque, chaufferie, machinerie), parfois zones de vie, étanchéité combustible ; enjeu surtout économique (relogement).</li>
+                    <li><strong>Combles</strong> : stockages à fort potentiel (parfois bouteilles de gaz), fluides et installations, isolation, séparations aux résistances aléatoires (dalle, faux plafond, plâtre, torchis), accès difficile (trappes, échelles de meunier), pas de recoupement ni de désenfumage ; enjeux : relogement et <strong>stabilité de l'édifice</strong> (charpente).</li>
+                    <li><strong>Joints de dilatation</strong> : foyer invisible et inaccessible, fumées et <strong>CO</strong> qui s'infiltrent dans tout le bâtiment ; enjeux : occupants, dégradations.</li>
+                    <li><strong>Façades</strong> : matériaux très variés, isolation par l'extérieur, balcons et pieds de façade encombrés, propagation extérieure rapide en langue de feu puis intérieure, installations (enseignes, climatisation) ; enjeux : occupants et bâtiment.</li>
+                    <li><strong>Cages d'escalier</strong> : <em>protégée</em> (à l'abri des fumées, isolée, dispositifs EC, CS, CH, exutoire) ou <em>non protégée</em> (non isolée, sans dispositif, stabilité non assurée, passage de canalisations) ; enjeux : limiter la propagation et <strong>garder l'accès aux niveaux supérieurs</strong>.</li>
+                </ul>
+            </details>
+            <details class="jsp-cours">
+                <summary>⚙️ Équipements techniques et nouvelles constructions</summary>
+                <ul>
+                    <li>Panneaux photovoltaïques : source électrique.</li>
+                    <li>Bâtiments basse consommation : plus étanches à l'air et à l'énergie, <strong>phénomènes thermiques accélérés</strong>.</li>
+                    <li>Constructions en conteneurs maritimes : propagation par conduction des parois métalliques.</li>
+                    <li>Façades et toitures végétalisées ; isolation en façade avec possible <strong>effet cheminée</strong>.</li>
+                </ul>
+            </details>
+        </div>
+        <p class="rd-source">GDO Incendies de structures 2018, chap. 1 sections II et III.</p>
+    </div>
+
+    <div id="gdoinc-homme" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <h2>🧑‍🚒 L'homme face au feu</h2>
+
+        <div class="rd-section">
+            <h3>Contraintes de l'intervenant</h3>
+            <table class="rd-table">
+                <tbody>
+                    <tr><td><strong>Physiques</strong></td><td>Météo, ambiance thermique, toxiques, manutention, port des EPI, efforts intenses (cardio-vasculaire), postures</td></tr>
+                    <tr><td><strong>Mentales</strong></td><td>Vigilance, stress, prise de décision, maîtrise des techniques, orientation, gestion de l'ARI</td></tr>
+                    <tr><td><strong>Sensorielles</strong></td><td>Bruit, perte de repères, champ visuel réduit, perte de dextérité (gants), odeurs</td></tr>
+                    <tr><td><strong>Organisationnelles</strong></td><td>Imprévisibilité, travail d'équipe, horaires variables, cycle jour / nuit, vie personnelle</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Risques</h3>
+            <ul>
+                <li><strong>Physiologiques</strong> : stress thermique (météo, feu, effort, EPI) et fatigue.</li>
+                <li><strong>Ergonomiques</strong> : efforts, charges, postures, chutes et blessures, même sous EPI.</li>
+                <li><strong>Comportementaux</strong> : stress, précipitation, affolement, aggravés par le manque d'expérience.</li>
+                <li><strong>Toxiques</strong> : CO, HCN, NO₂… ; <strong>hypoxie</strong> (confusion, incapacité à fuir) ; amiante et particules, y compris par voie cutanée via les équipements souillés. Le risque diffère entre attaque et déblai.</li>
+                <li><strong>Phénomènes thermiques et explosions</strong> (dont poussières) : brûlures, blast, projections ; brûlures aggravées par la vapeur.</li>
+                <li><strong>Fragilisation des structures</strong> : chutes de tuiles, pans de murs ; ossatures métalliques à fort risque de ruine ; signes : craquements, fléchissements, déformation des ouvrants, conduits de cheminée.</li>
+                <li><strong>Électricité</strong> : branchements non réglementaires ou doublés, <strong>même après coupure</strong> ; positionnement des engins (échelles, MEA, lignes, tramway), cheminement, lances, dégarnissage. Éloignement et mise en sécurité avec les services spécialisés.</li>
+                <li><strong>Autres</strong> : gaz (ville, bouteilles, réseau), fluides industriels, produits dangereux.</li>
+            </ul>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('electrique')">⚡ Lignes électriques</button> <button class="sal-lien" onclick="showModule('bouteilles')">💨 Bouteilles de gaz</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Effets du feu sur les personnes exposées (FSCI-HOM-1)</h3>
+            <p>Trois natures : <strong>perturbations sensorielles</strong> (vision, stress, entrave à l'évacuation), <strong>risques thermiques</strong>, <strong>risques toxiques</strong> (le plus important, parfois loin du foyer). Selon la littérature, <strong>75 à 90 % des décès</strong> sont dus à l'intoxication. L'embrasement n'est donc pas le principal critère pour estimer les chances de survie d'une victime ; en revanche, dans une pièce qui a subi un embrasement généralisé (20 à 25 kW/m² sous le plafond de fumées), la survie est très improbable.</p>
+            <p>En dessous de <strong>3 m de visibilité</strong>, les personnes n'entrent plus dans un volume enfumé et jugent le confinement plus sûr. Critère de désenfumage : hauteur libre de fumée toujours supérieure à <strong>1,80 m</strong>.</p>
+            <table class="rd-table">
+                <thead><tr><th>Flux (kW/m²)</th><th>Effet sur l'homme</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>Rayonnement solaire en zone tropicale</td></tr>
+                    <tr><td>2,5</td><td>Limite de tenabilité de la peau en 30 min (seuil d'atteinte cutanée)</td></tr>
+                    <tr><td>5</td><td>Cloques en 30 s ; bris de vitres</td></tr>
+                    <tr><td>9,5</td><td>Seuil de douleur en 6 s</td></tr>
+                    <tr><td>90</td><td>Destruction immédiate des tissus</td></tr>
+                </tbody>
+            </table>
+            <table class="rd-table">
+                <thead><tr><th>Air ambiant</th><th>Incapacité</th><th>Létalité</th></tr></thead>
+                <tbody>
+                    <tr><td>90 °C</td><td>35 min</td><td>60 min</td></tr>
+                    <tr><td>150 °C</td><td>5 min</td><td>30 min</td></tr>
+                    <tr><td>190 °C</td><td>Immédiate</td><td>15 min</td></tr>
+                    <tr><td>200 °C</td><td colspan="2">Dommages irréversibles aux voies respiratoires</td></tr>
+                    <tr><td>340 °C</td><td colspan="2">Mort instantanée</td></tr>
+                </tbody>
+            </table>
+            <p>Air sec à 100 °C : hyperthermie et brûlures en 2 à 5 min. En air saturé d'humidité, brûlures des voies respiratoires dès <strong>60 °C</strong>.</p>
+            <table class="rd-table">
+                <thead><tr><th>Seuils réglementaires (arrêté du 29/09/2005)</th><th>Flux</th></tr></thead>
+                <tbody>
+                    <tr><td>Effets irréversibles (personnes)</td><td>3 kW/m²</td></tr>
+                    <tr><td>Premiers effets létaux · destruction significative de vitres</td><td>5 kW/m²</td></tr>
+                    <tr><td>Effets létaux significatifs · effets domino, dégâts graves sur les structures</td><td>8 kW/m²</td></tr>
+                    <tr><td>Dégâts très graves sur les structures (hors béton)</td><td>16 kW/m²</td></tr>
+                    <tr><td>Tenue du béton pendant plusieurs heures</td><td>20 kW/m²</td></tr>
+                    <tr><td>Ruine du béton en quelques dizaines de minutes</td><td>200 kW/m²</td></tr>
+                </tbody>
+            </table>
+            <table class="rd-table">
+                <thead><tr><th>CO dans l'air</th><th>Effet</th></tr></thead>
+                <tbody>
+                    <tr><td>0,01 % (100 ppm)</td><td>Céphalées</td></tr>
+                    <tr><td>0,05 % (500 ppm)</td><td>Vertiges</td></tr>
+                    <tr><td>0,1 % (1 000 ppm)</td><td>Syncope</td></tr>
+                    <tr><td>0,2 % (2 000 ppm)</td><td>Coma, mort rapide</td></tr>
+                    <tr><td>0,5 % (5 000 ppm)</td><td>Mort immédiate</td></tr>
+                </tbody>
+            </table>
+            <p>CO, HCN et CO₂ causent la quasi-totalité des décès par intoxication ; le CO seul, 90 % des décès à l'autopsie. Gaz irritants, concentration critique (Purser) : HCl 200 ppm, HBr 200 ppm, HF 120 ppm, SO₂ 30 ppm, NO₂ 80 ppm (5 min) ou 25 ppm (30 min). Plus de 200 composés dans les fumées : leur toxicité combinée n'est pas prévisible par analyse.</p>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('rdeb-annexes')">CO et H₂S (RDEB)</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Stress thermique (FSCI-HOM-2)</h3>
+            <ul>
+                <li>Déséquilibre entre apports de chaleur et capacité d'évacuation : baisse de force et de réactivité, crampes, <strong>déshydratation dès 15 min d'effort</strong>, épuisement, coup de chaleur, brûlures.</li>
+                <li>Peau normale 28 à 36 °C ; seuil d'alarme 42 °C ; <strong>43 °C = sensation de brûlure</strong>.</li>
+                <li>Les EPI gênent l'évaporation de la sueur et ajoutent du poids. L'humidité de la tenue peut causer des brûlures : moins d'épaisseur d'air, séchage des vêtements, vapeur, eau brûlante, vêtements chauds.</li>
+                <li>Près de la <strong>moitié des décès</strong> de sapeurs-pompiers en intervention ou juste après sont d'origine <strong>cardiaque</strong> ; 25 événements cardiaques non mortels pour 1 mortel.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Rétablir l'équilibre</strong>
+                <ul>
+                    <li><strong>Fractionner l'effort</strong> : une autonomie d'ARI-CO (environ 20 min) est un repère raisonnable pour une phase de travail intense, avec un ratio <strong>travail / repos proche de 1/1</strong> (la température centrale monte encore 10 à 15 min après l'effort). Plus la contrainte est forte, plus le ratio doit être bas.</li>
+                    <li><strong>Optimiser le repos</strong> : zone tempérée, EPI retirés, peau humidifiée et ventilée ; surveiller comportement et paramètres, avis SSO si signe d'alarme.</li>
+                    <li><strong>Boire</strong> tout au long de l'opération (la soif arrive tard) ; apport alimentaire si l'intervention dure.</li>
+                    <li>Adapter la tenue : la plus isolante n'est pas toujours la plus adaptée (hors zone d'exclusion, conducteur).</li>
+                </ul>
+            </div>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('rdeb-reengagement')">Tableau de non-réengagement (RDEB)</button></p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Aptitude à la mission (FSCI-HOM-3)</summary>
+            <ul>
+                <li>Surpoids, obésité et hypertension sont des facteurs de risque cardiovasculaire fréquents et modifiables chez les sapeurs-pompiers.</li>
+                <li>Seuils de VO₂ proposés : <strong>38 à 42 ml/kg/min</strong> pour l'établissement, la progression sous EPI et l'attaque ou le sauvetage ; <strong>32 à 36 ml/kg/min</strong> pour le commandement (test de Luc Léger, palier 4 minimum). La VO₂max reflète mieux l'aptitude que l'IMC.</li>
+                <li>Épreuves pratiques possibles : écart pour ramasser en pont néerlandais, enjamber une fenêtre, ouvrir un velux à 1,90 m.</li>
+                <li>Programmes recommandés : addictions, sédentarité (encadrés par des personnels qualifiés), nutrition, surveillance ECG, réflexion sur les gardes de 24 h (obésité, hypertension).</li>
+            </ul>
+        </details>
+        <p class="rd-source">GDO Incendies de structures 2018, chap. 1 section III § 4 et fiches FSCI-HOM 1 à 3.</p>
+    </div>
+
+    <div id="gdoinc-eau" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <h2>💧 Les effets de l'eau</h2>
+
+        <div class="rd-section">
+            <h3>Pourquoi l'eau</h3>
+            <p>Abondante, pratique (transportée en tuyaux, projetée par pompes et lances), économique, facile à stocker hors gel.</p>
+            <table class="rd-table">
+                <thead><tr><th>Action</th><th>Effet</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Refroidissement</strong></td><td>En se vaporisant, l'eau absorbe l'énergie : action sur l'<strong>énergie</strong>.</td></tr>
+                    <tr><td><strong>Étouffement</strong></td><td>La vapeur limite l'apport d'air : action sur le <strong>comburant</strong>.</td></tr>
+                    <tr><td><strong>Inertage</strong></td><td>La vapeur abaisse la teneur en O₂ et en gaz combustibles : action sur le <strong>domaine d'inflammabilité</strong>.</td></tr>
+                    <tr><td><strong>Soufflage</strong></td><td>Jet violent qui perturbe l'émission des vapeurs inflammables.</td></tr>
+                    <tr><td><strong>Dispersion</strong></td><td>Jet plein qui disperse les matériaux : action sur le <strong>combustible</strong>.</td></tr>
+                </tbody>
+            </table>
+            <p>Pour les feux de volume, les deux modes fondamentaux sont le <strong>refroidissement</strong> et l'<strong>inertage</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Énergie absorbée par 1 g d'eau</h3>
+            <table class="rd-table">
+                <thead><tr><th>Étape</th><th>Calcul</th><th>Énergie</th></tr></thead>
+                <tbody>
+                    <tr><td>Chauffer l'eau de 20 à 100 °C</td><td>4,18 × 1 × 80</td><td>334 J</td></tr>
+                    <tr><td>La vaporiser à 100 °C</td><td>chaleur latente ≈ 2 250 J/g</td><td>2 250 J</td></tr>
+                    <tr><td>Chauffer la vapeur de 100 à 300 °C</td><td>1,41 × 1 × 200</td><td>282 J</td></tr>
+                    <tr><td colspan="2"><strong>Total 20 → 300 °C</strong></td><td><strong>≈ 2 866 J</strong></td></tr>
+                </tbody>
+            </table>
+            <p>Retenir : <strong>1 g d'eau par seconde absorbe environ 2,8 kW</strong>, à condition qu'elle se vaporise entièrement. La vaporisation représente l'essentiel de l'effet.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Capacité d'une LDV à 250 L/min</h3>
+            <p>1 s d'impulsion = 4,17 L d'eau. Théoriquement (20 → 300 °C) : <strong>11,9 MW</strong>. Toute l'eau ne se vaporise pas, il faut appliquer un rendement :</p>
+            <table class="rd-table">
+                <thead><tr><th>Rendement</th><th>Puissance absorbée</th></tr></thead>
+                <tbody>
+                    <tr><td>75 %</td><td>8,9 MW</td></tr>
+                    <tr><td>50 %</td><td>5,9 MW</td></tr>
+                    <tr><td><strong>30 % (réaliste)</strong></td><td><strong>≈ 3,5 à 4 MW</strong></td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">Une LDV à 250 L/min absorbe en réalité environ <strong>4 MW</strong>, à peine plus que la puissance d'une <strong>chambre en feu ventilée par une porte de 1 × 2 m</strong>.</div>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('fire')">🔥 Calcul puissance du feu / débit conseillé</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Inertage : 1 L d'eau = 1 700 L de vapeur</h3>
+            <p>1 L d'eau (55,6 moles) vaporisé à 100 °C et à pression atmosphérique occupe environ <strong>1 700 L (1,7 m³)</strong>. Projetée dans une pièce en feu, l'eau fait chuter la concentration des gaz combustibles sous leur LII : la vapeur, incombustible, <strong>inerte</strong> le volume.</p>
+            <ul>
+                <li>Quelques dizaines de litres vaporisés suffisent pour un volume courant (LDV 500 à environ 125 L/min).</li>
+                <li>Plus les gouttes sont fines, plus la surface d'échange, le temps de séjour et l'écran contre le rayonnement sont grands ; mais leur <strong>portée diminue</strong>.</li>
+                <li>Plus l'écart de température entre gouttes et fumées est grand, plus l'échange est fort.</li>
+                <li>Risque : <strong>retour de vapeur chaude</strong> sur les intervenants.</li>
+                <li>La formation du porte-lance fait l'efficacité de l'attaque.</li>
+            </ul>
+        </div>
+        <p class="rd-source">GDO Incendies de structures 2018, fiches FSCI-CSF-7 et FSCI-CSF-8.</p>
+    </div>
+
+    <div id="gdoinc-tactique" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <h2>♟️ Principes généraux & tactiques</h2>
+
+        <div class="rd-section">
+            <h3>Objectifs et démarche d'amélioration continue</h3>
+            <ul>
+                <li>Objectifs : <strong>protéger les personnes</strong> (y compris la santé et la sécurité des intervenants), <strong>préserver les biens</strong>, <strong>protéger l'environnement</strong>.</li>
+                <li>Étapes : <strong>stabiliser</strong> la situation → <strong>contrôler puis éteindre</strong> l'incendie → <strong>réduire et supprimer</strong> le risque.</li>
+                <li>Le citoyen est le <strong>premier acteur de sa sécurité</strong> ; le premier geste efficace peut être le sien.</li>
+                <li>Boucle de gestion du risque : connaissance du risque → prévention → prévision et planification → méthodologie opérationnelle → acquisition des moyens → développement des compétences → exercices et interventions → <strong>RETEX et partage de pratiques</strong> (analyse post-action, expérimentations, R&amp;D, relations internationales).</li>
+                <li>Outil d'analyse : <strong>source / flux / cibles</strong>, pour répondre à « que va-t-on faire contre le sinistre ? ».</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le choix tactique du COS : 3 critères indissociables</h3>
+            <table class="rd-table">
+                <tbody>
+                    <tr><td><strong>Évolution de la situation</strong></td><td>L'échelle de temps du feu de structure est de <strong>quelques minutes</strong>, comparable aux délais de mise en œuvre. Exemple : un feu de poubelle vu en reconnaissance peut être un feu développé quand le binôme arrive avec son seau-pompe. Anticiper : météo (vent), nature et destination du bâtiment, facteur de ventilation, occupants.</td></tr>
+                    <tr><td><strong>Sécurité</strong></td><td>Mettre en balance le risque et l'efficacité (« risquer sa vie pour un abri de jardin n'a pas de sens ») : évolution brutale possible, aptitude de l'équipe, capacité à se soustraire à une dégradation, possibilité de secourir une équipe en difficulté.</td></tr>
+                    <tr><td><strong>Moyens disponibles</strong></td><td>Faisabilité / délais : seules comptent les idées de manœuvre réalisables avec les moyens présents ou arrivant à temps. Un effectif réduit allonge les délais et <strong>dégrade la sécurité</strong>. « Dans certaines circonstances extrêmes, l'impossible ne sera jamais réalisable. »</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les 3 types de tactiques</h3>
+            <table class="rd-table">
+                <thead><tr><th>Tactique</th><th>Principe</th><th>Exemples</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Offensive</strong></td><td>Faire régresser et éteindre vite, engagement proche du feu (vulnérabilité). L'agressivité vient de la <strong>maîtrise des mouvements gazeux</strong> et de l'eau projetée sous une forme et en quantité adaptées, proportionnées (pas un litre d'eau sur un cendrier).</td><td>Attaque des feux naissants, attaque avec ventilation positive, attaque en antiventilation, lutte contre les propagations intérieures</td></tr>
+                    <tr><td><strong>Défensive</strong></td><td>Exposer moins les sapeurs-pompiers ; en périphérie ; limite l'extension mais éteint moins vite. Une action agressive peut être menée depuis une position défensive (gros débits depuis l'extérieur). La protection des EPI diminue quand leur face interne monte en température.</td><td>Attaque massive depuis l'extérieur, lutte contre les propagations extérieures</td></tr>
+                    <tr><td><strong>De transition</strong></td><td>Passer du défensif à l'offensif ou l'inverse.</td><td><strong>Attaque d'atténuation</strong> (depuis l'extérieur avant l'attaque intérieure) ; <strong>repli défensif</strong> (de l'appartement vers la circulation commune avec la lance)</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Zone de danger non maîtrisé</strong>
+                <ul>
+                    <li>Accidents graves les plus fréquents : <strong>déplacement des effets du feu</strong> (fumées, chaleur, flammes) qui piège les SP, et <strong>effondrements ou chutes de matériaux</strong>.</li>
+                    <li>Danger maximal quand on s'engage dans le volume en feu avec des moyens <strong>insuffisamment agressifs</strong> (hydraulique ou ventilation insuffisants ou mal utilisés), ou quand l'engagement dure trop (fatigue, protection thermique qui baisse, structure qui s'affaiblit).</li>
+                    <li>Feu naissant non confiné : l'absence de maîtrise de la ventilation pèse peu si les moyens hydrauliques suffisent. Mais un petit feu <strong>couvant depuis longtemps</strong> impose l'antiventilation pour éviter un embrasement violent des fumées.</li>
+                    <li>Les actions offensives à l'intérieur d'un volume se font <strong>systématiquement en binôme</strong>, avec dès que possible un <strong>binôme de sécurité</strong>.</li>
+                </ul>
+            </div>
+            <p>Les choix reposent sur la balance <strong>bénéfice / risque</strong> du COS (probabilité et gravité d'un accident, possibilité d'y réagir). L'acceptabilité du risque est jugée différemment selon les acteurs (COS, intervenants, témoins, familles, juge) et selon le moment (avant ou après) : les RETEX doivent faire converger les analyses, sans prise de risque excessive ni frilosité.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Dispositif opérationnel réduit (prompt secours)</h3>
+            <ul>
+                <li>Sauvetages à vue prioritaires, mais <strong>isoler le feu</strong> est une condition de sécurité majeure si les victimes sont sur le cheminement des fumées (voir AIDES).</li>
+                <li><strong>Feu naissant</strong> : la rapidité, même avec peu d'eau, reste à privilégier (offensif). Si l'extinction n'est pas rapide (extincteur, RIA…), <strong>se replier</strong> sur des positions défensives : des évolutions fortes et rapides sont à craindre.</li>
+                <li><strong>Feu développé</strong> : une tactique défensive est utile et efficace (attaque de transition), menée en parallèle du sauvetage ; peu exposante, peu technique, peu gourmande en personnel (<strong>une attaque de transition peut être réalisée par une seule personne</strong>).</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Préparation à la mission opérationnelle</summary>
+            <ul>
+                <li>Elle commence par la prévention et la mise en sécurité des installations, responsabilité du citoyen, résident ou exploitant. « La meilleure des interventions est celle qui n'a jamais lieu. »</li>
+                <li><strong>Planification</strong> : règlement départemental de DECI, outils cartographiques dynamiques (parcellaires, accès, établissements, ressources), plans de secours, conseil aux autorités pour les dispositifs prévisionnels.</li>
+                <li><strong>Réponse de terrain</strong> : chaque SIS adapte la doctrine nationale (trains de départ, concepts méthodologiques et techniques, règles d'engagement).</li>
+                <li><strong>Implication citoyenne</strong> : éducation aux bons comportements, mises en situation.</li>
+                <li><strong>Préparation de l'intervenant</strong> : compétences individuelles (formation, analyse de pratiques, lectures, manipulation du matériel : chacun est acteur de ses compétences) et collectives (risques locaux et émergents, exercices réalistes : stress, fumée, feux réels) ; aptitude physique (sommeil, condition physique, hygiène de vie, visite médicale à jour), préparation psychologique, prise en compte de la météo et de l'heure (coup de chaleur, hypothermie en phase d'attente).</li>
+                <li><strong>Matériels</strong> : choisis selon les typologies de feux, l'accessibilité, les ressources en eau et la nature des unités ; déployés en complémentarité avec la montée en puissance.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>📖 Principes fondamentaux de santé et sécurité en intervention</summary>
+            <ul>
+                <li><strong>Structurer l'intervention</strong> : commandement lisible (organisation, ordres clairs, OCT adapté), sectorisation et zonage partagés, chacun veille à sa sécurité et à celle du collectif.</li>
+                <li><strong>Communiquer</strong> : des radios pour le personnel exposé (radios de l'avant) : alerte de détresse, remontée des évolutions rapides, consignes et évacuation.</li>
+                <li><strong>Prévenir et anticiper l'accident</strong> : chaque action intègre un impératif de sécurité ; procédures prévues en cas d'accident de sapeur-pompier (y compris l'impact psychologique) ; soutien sanitaire en opération et, si besoin, officier sécurité.</li>
+            </ul>
+        </details>
+        <p class="rd-source">GDO Incendies de structures 2018, chap. 2.</p>
+    </div>
+
+    <div id="gdoinc-securite" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <h2>🦺 Analyse, arrivée & sécurité</h2>
+
+        <div class="rd-section">
+            <h3>Analyse permanente de la situation (de l'équipier au COS)</h3>
+            <p>Contexte (rural, urbain, social, météo, nuit), volonté d'associer les acteurs, <strong>lecture de la structure</strong> (imbrication des volumes), <strong>lecture du feu</strong> (embrasé ou non), moyens disponibles dans le temps. Appuis possibles : forces de l'ordre (zonage, évacuations), services de santé, gestionnaires de réseaux (voirie, électricité, gaz, eau), services municipaux (évacués, débris).</p>
+            <table class="rd-table">
+                <thead><tr><th>Qualifier la situation</th><th>Qualifier le résultat des actions</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Feu en développement</strong> : rien ne s'y oppose ou les actions sont inefficaces</td><td><strong>Feu circonscrit</strong> : ne peut plus se propager hors de son volume (dispositifs constructifs ou action des équipes : eau, ventilation, rideaux stop-fumée)</td></tr>
+                    <tr><td><strong>Feu stabilisé</strong> : ne progresse plus (plein développement atteint ou manque d'air)</td><td><strong>Maître du feu</strong> : la production d'énergie diminue, le feu décroît</td></tr>
+                    <tr><td><strong>Feu en régression</strong> : décroissance, généralement limité par le combustible</td><td><strong>Foyer(s) principal(aux) éteint(s)</strong> : restent quelques foyers résiduels ; début du déblai et de la surveillance</td></tr>
+                    <tr><td></td><td><strong>Feu éteint</strong> : objectif final du COS, fin des opérations de lutte</td></tr>
+                </tbody>
+            </table>
+            <p>Ces termes renseignent la hiérarchie et maintiennent la vigilance : <strong>tant que le feu n'est pas éteint, les équipes restent vigilantes</strong> sur tous les dangers.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>De l'alerte à l'arrivée : se projeter dans l'action</h3>
+            <ul>
+                <li><strong>Départs types</strong> : la qualité des renseignements initiaux est une clé du succès ; le premier chef d'agrès exploite l'ordre de départ, connaît la composition du départ et le <strong>délai d'arrivée des autres engins</strong>.</li>
+                <li><strong>Conseil à l'appelant</strong> : il peut accueillir et renseigner le premier COS ; conduite à tenir pour sa sécurité et celle des tiers.</li>
+                <li><strong>Parcellaires et plans ETARE</strong> : points d'eau, plans de masse et de niveaux, énergies, zones à risque ; appui possible de la prévention ou de la planification.</li>
+            </ul>
+            <h3>🚒 Positionnement des engins</h3>
+            <ul>
+                <li><strong>Sécurité</strong> : à l'abri des effets de l'intervention (chutes de matériaux, expansion) ; hors du panache de fumée (conditions astro-météo).</li>
+                <li><strong>Accessibilité</strong> : limites de charge (dalles de parking).</li>
+                <li><strong>Préserver l'accès des moyens arrivant ensuite</strong>, en particulier les moyens aériens.</li>
+                <li>Bonne gestion des ressources hydrauliques ; rapidité des actions de la MGO (sauvetages).</li>
+                <li><strong>MEA</strong> : le chef d'agrès prend contact avec le COS pour son emplacement, surtout s'il diffère de l'adresse ; en zone urbaine dense, les déplacements ultérieurs peuvent devenir impossibles. Certains plans ETARE pré-positionnent les moyens.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sécurité des intervenants</h3>
+            <p>Trois piliers : <strong>sécurité</strong>, <strong>soutien sanitaire opérationnel</strong>, <strong>réhabilitation des personnels</strong>. La sécurité identifie les dangers, supprime ou réduit les risques et adapte les protections. Elle dépend aussi de l'organisation, des techniques et matériels employés, des EPI (<strong>dernier rempart</strong>), de la formation, de la fatigue et de l'expérience.</p>
+            <table class="rd-table">
+                <thead><tr><th>Qui</th><th>Rôle</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Tout intervenant</strong></td><td>Surveille, évalue et rend compte des situations dangereuses ; face à un péril imminent, réalise les actions conservatoires et rend compte sans délai.</td></tr>
+                    <tr><td><strong>Équipier, chef d'équipe</strong></td><td>Premier responsable de sa sécurité : lecture du feu, port des EPI, respect des consignes, maîtrise des techniques de lutte et de protection, communication.</td></tr>
+                    <tr><td><strong>Binôme</strong></td><td>Obligatoire en zone d'exclusion ; unité de mission ; contrôle mutuel des EPI, angles de vue complémentaires pour détecter tôt l'aggravation.</td></tr>
+                    <tr><td><strong>Chef d'agrès</strong></td><td>Analyse l'environnement, connaît les objectifs du COS, la position et les actions de ses équipes, communique avec elles ; évalue la <strong>charge opérationnelle</strong> (fatigue, stress, chaleur, météo) avant d'engager ou de réengager.</td></tr>
+                    <tr><td><strong>COS</strong></td><td>Répartit la charge, s'assure des protections et des liaisons, met en place les dispositifs collectifs pour anticiper une dégradation.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Protection collective</h3>
+            <p>Les équipes doivent pouvoir : <strong>ne pas se perdre et être localisables</strong>, <strong>s'extraire ou être extraites</strong> vite de la zone d'exclusion, <strong>signaler tout problème</strong>, <strong>rendre compte</strong>.</p>
+            <ul>
+                <li><strong>Zonage</strong> : périmètres de sécurité a priori dès que possible ; points d'accès et de contrôle (principe du sas) pour gérer les entrées / sorties, le matériel souillé et le contrôle des actions. Dispositif incomplet : identifier la zone d'exclusion et ses points de pénétration, une zone pour le matériel souillé et un <strong>PRV</strong>.</li>
+                <li><strong>Binôme de sécurité</strong> : dès que le potentiel humain le permet (à anticiper dans la demande de renfort). En zone contrôlée, à disposition immédiate du COS ; mission : <strong>sauvetage de sauveteur</strong>. Missions secondaires possibles s'il reste en zone contrôlée. À défaut, pour un engagement limité du BAT, le <strong>chef d'agrès assure lui-même la sécurité</strong>, en contact permanent, éventuellement avec un ARI.</li>
+                <li><strong>Façades</strong> : système alphabétique, <strong>A = façade d'accès principal</strong>, puis B, C, D dans le sens des aiguilles d'une montre.</li>
+                <li><strong>Procédure d'évacuation d'urgence</strong> connue du binôme : signal (ex. « code rouge »), itinéraires, zone de regroupement, comptage.</li>
+                <li><strong>Itinéraire de repli</strong> : le chemin d'accès normal, reconnu, dégagé, à utiliser en priorité, avec les moyens hydrauliques. <strong>Itinéraire de secours</strong> : le remplace s'il n'est plus praticable ; à anticiper (échelles, MEA).</li>
+                <li><strong>Officier sécurité</strong> : gradé dédié à qui le COS peut confier cette partie. <strong>Contrôleur</strong> au point d'entrée : suivi de l'engagement des binômes.</li>
+            </ul>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('rdmi-zones')">Zonage opérationnel (RDMI)</button>
+                <button class="sal-lien" onclick="showModule('rdeb-autonomie')">Contrôleur & binôme de sécurité (RDEB)</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-evacuation-urgence')">Évacuation d'urgence</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-sauveteur')">Sauvetage de sauveteur</button>
+            </p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Protection individuelle</h3>
+            <p>Engagement d'un binôme en zone d'exclusion, a minima : tenue de protection adaptée au feu ; <strong>protection respiratoire</strong> avec <strong>balise</strong> sonore d'immobilité, de localisation et de température ; <strong>moyen hydraulique</strong> immédiatement disponible ; <strong>moyen de communication</strong> (radio ou corne d'appel) avec un intervenant hors zone ; <strong>éclairage</strong> individuel.</p>
+            <p>Compléments possibles : caméra thermique, outil de forcement, sangle de sauvetage, balise lumineuse, couteau / sécateur, cagoule de sauvetage. Attention au poids : il peut mettre le binôme en difficulté ; solution possible, le <strong>trinôme</strong>.</p>
+            <div class="rd-alerte">
+                <ul>
+                    <li>La sécurité repose d'abord sur la <strong>non-exposition</strong> : limiter la durée d'engagement, limiter la fatigue, utiliser judicieusement les moyens d'action et de protection.</li>
+                    <li><strong>Auto-sauvetage</strong> : si la sécurité d'un ou plusieurs intervenants est gravement menacée, ils assurent leur sauvegarde <strong>en priorité sur l'action en cours</strong>.</li>
+                </ul>
+            </div>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('rdsmes-autosauvetage')">Auto-sauvetage</button> <button class="sal-lien" onclick="showModule('rdsmes-detresse')">Message de détresse</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Soutien sanitaire (SSO) et réhabilitation</h3>
+            <ul>
+                <li>But du SSO : éviter que la condition physique et mentale des personnels ne se dégrade au point de menacer leur sécurité ou l'opération ; zone SSO définie sur l'intervention.</li>
+                <li><strong>Interventions courantes</strong> : le chef d'agrès, premier COS, est responsable de la sécurité et de la réhabilitation ; le <strong>sac de prompt secours</strong> est le premier niveau.</li>
+                <li><strong>Interventions importantes</strong> : montée en puissance (SSSM, VSAV, véhicule logistique), organisation préformatée ou à l'initiative du COS, connue des intervenants.</li>
+                <li><strong>Accident grave d'un intervenant</strong> : procédure écrite par chaque SIS (remplacement, couverture du secteur, soutien psychologique de tous, assistante sociale, aide aux familles).</li>
+                <li><strong>Réhabilitation</strong> : maintenir le potentiel des intervenants tout au long de l'intervention, dans un emplacement dédié. La « remise en condition » concerne les personnels, le « reconditionnement » le matériel.</li>
+            </ul>
+        </div>
+        <p class="rd-source">GDO Incendies de structures 2018, chap. 3 sections I et II.</p>
+    </div>
+
+    <div id="gdoinc-mgo" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <h2>🧭 Marche générale des opérations</h2>
+        <p style="text-align: center;">Plus qu'un enchaînement chronologique : une grille de réflexion pour coordonner les actions et revenir au plus vite à une situation normale.</p>
+
+        <div class="rd-section">
+            <h3>Les 11 critères de la MGO incendie</h3>
+            <ol>
+                <li>Reconnaissances</li>
+                <li>Placement des engins</li>
+                <li>Sauvetages et mises en sécurité</li>
+                <li>Ventilation</li>
+                <li>Établissements</li>
+                <li>Attaque</li>
+                <li>Protection</li>
+                <li>Déblais</li>
+                <li>Surveillance</li>
+                <li>Remise en condition des hommes et reconditionnement du matériel</li>
+                <li>Préservation des traces et indices</li>
+            </ol>
+            <p>(le relogement, point sensible, s'y ajoute)</p>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('rdmi-mgo')">MGO SDIS 34 (RDMI)</button></p>
+        </div>
+
+        <details class="jsp-cours" open>
+            <summary>🔎 Reconnaissances</summary>
+            <p>Collecter les informations sur la zone, le sinistre, les personnes et les biens menacés, et tous les axes de propagation potentiels. Prioritaires en début d'intervention, mais la prise d'information est <strong>permanente</strong> pour tous et fait l'objet d'un <strong>compte rendu systématique</strong>.</p>
+            <ul>
+                <li>Si le premier chef d'agrès sera vite rejoint par un supérieur : reconnaissance sommaire, missions de réaction immédiate.</li>
+                <li>S'il restera seul un moment : choix plus sûrs, reconnaissance plus approfondie ; renseignement et demande de renfort lui incombent.</li>
+                <li>S'appuyer sur la connaissance du système feu et du comportement des volumes selon l'activité (PAO).</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>🌬️ Ventilation opérationnelle</summary>
+            <p>« Un feu ventile, très bien, bien, peu ou très peu, mais il ventile, faute de quoi il s'éteint. » Trois actions : <strong>protéger</strong>, <strong>désenfumer</strong>, <strong>attaquer</strong>. Elle regroupe l'antiventilation, la VPP, le désenfumage naturel ou forcé et la protection par surpression, et s'obtient en canalisant les flux (cloisonnement, ouvertures, fermetures), en utilisant ou limitant le tirage, le vent et les ventilateurs, et en limitant les pertes de charge aérauliques. Elle se combine avec l'exploration, le sauvetage, la lutte contre les propagations et les foyers, la protection et le déblai, et s'adapte comme les lances à l'évolution de la situation.</p>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('vent-menu')">🌬️ GTO Ventilation opérationnelle</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>🪜 Sauvetages et mises en sécurité</summary>
+            <ul>
+                <li><strong>Sauver reste la priorité.</strong> Le sauvetage peut exiger une extinction ou une maîtrise du feu préalable ; l'auto-extinction peut être une option pour les autres objectifs.</li>
+                <li><strong>Sauvetage</strong> : extraire une personne d'un danger vital et imminent qu'elle ne peut fuir ; peut justifier une plus grande exposition (balance bénéfice / risque). <strong>Mise en sécurité</strong> : éloigner d'une menace différée, dans les meilleures conditions de sécurité (évacuation différée après assainissement des circulations, ou confinement).</li>
+                <li><strong>Sauvetages à vue</strong> : victimes visibles de l'extérieur ; échelles à main, MEA, lots de sauvetage ; risque principal : <strong>la chute</strong>. La rapidité impose un faible niveau de sécurité, compensé par l'entraînement régulier (sécurité rehaussée à l'entraînement).</li>
+                <li><strong>Sauvetages en exploration</strong> : itinéraire hostile (fumées, chaleur, effondrement) ; les sauveteurs ont un <strong>moyen hydraulique adapté</strong> et une <strong>ligne de vie</strong> (tuyau, commande, ligne guide) ; protection respiratoire de la victime recherchée ; sortie par l'accès ou un autre itinéraire plus sûr.</li>
+                <li><strong>AIDES</strong> – Accéder, Isoler, Désenfumer, Explorer, Sauver (ou Sortir) : exploration pièce par pièce depuis l'extérieur, en ressortant entre chaque pièce. Réservée aux pièces de surface modérée avec une seule porte intérieure (chambres). Le risque devient majeur si la <strong>porte de la pièce vers la circulation n'est pas fermée rapidement</strong>.</li>
+            </ul>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('rdsmes-sauvetage')">Sauvetage & mise en sécurité</button> <button class="sal-lien" onclick="showModule('rdeb-engagement')">AIDES (RDEB)</button> <button class="sal-lien" onclick="showModule('echelles-menu')">Échelles portables</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>🔥 Actions contre le feu</summary>
+            <p>Hors étouffement exceptionnel (couvercle, couverture sur un feu de corps gras), on utilise l'eau, éventuellement avec des techniques spécifiques : extinction de gaines, fours, machines capotées ; additifs (mouillants, moussants) pour pénétrer bois, tissus, mousses ; haute pression et abrasifs pour percer murs et cloisons.</p>
+            <table class="rd-table">
+                <thead><tr><th>Action</th><th>Principe</th><th>Débit indicatif</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Propagations externes</strong> (défensif)</td><td>3 façons : pulvériser sur le <strong>sortant</strong> pour refroidir les fumées dès leur sortie ; écran d'eau vertical (<strong>queue de paon</strong>) contre le rayonnement ; arroser les biens exposés. Éloigner le combustible est aussi une solution.</td><td>—</td></tr>
+                    <tr><td><strong>Propagations internes</strong></td><td>Dans le bâtiment, hors du volume en feu ; utiliser ou créer des <strong>sortants</strong> (exutoire, trouée) pour que les fumées sortent au lieu de migrer.</td><td>—</td></tr>
+                    <tr><td><strong>Attaque massive depuis l'extérieur</strong></td><td>Tactique agressive depuis une position défensive, quand les enjeux ne justifient pas l'exposition, que la ventilation est incontrôlable (nombreuses ouvertures, toiture effondrée) ou sur grands volumes. <strong>Concentrer les moyens sur une partie de la zone en feu</strong> pour la réduire progressivement plutôt que répartir l'eau (entrepôts ; lances sur moyens aériens peu efficaces).</td><td>Importants, selon surface en feu et potentiel calorifique</td></tr>
+                    <tr><td><strong>Feux naissants</strong></td><td>Idéalement éteint par les personnes présentes ; à l'arrivée des secours, <strong>la rapidité prime</strong> ; attaque directe de quelques secondes.</td><td>Relativement faible</td></tr>
+                    <tr><td><strong>Attaque avec ventilation positive</strong></td><td>Offensive au contact, visibilité améliorée, chaleur évacuée au-delà des SP. L'eau refroidit surtout les <strong>surfaces</strong> en pyrolyse ou incandescentes ; éviter l'eau au sol. Jet peu diffusé à grosses gouttes, mais capable de <strong>protéger le binôme</strong> si la veine d'air est coupée (ventilateur en panne, porte qui se referme).</td><td><strong>125 à 250 L/min</strong></td></tr>
+                    <tr><td><strong>Attaque en antiventilation</strong></td><td>Priver le feu d'air en limitant les ouvertures ; surtout pour un feu déjà sous-ventilé. <strong>Cas 1</strong> : l'équipe est dans le volume (porte refermée derrière elle) ou dans des circulations enfumées, progression en sécurisant le plafond de fumées (refroidissement, saturation en vapeur). <strong>Cas 2</strong> : depuis l'extérieur du local, séquences <strong>ouverture / aspersion brève / fermeture</strong>, ou sans ouvrir (lance très haute pression auto-forante, lance à frapper, trouée). Inerter d'abord (pulvérisation fine), puis <strong>mouiller les braises</strong> à grosses gouttes et faible débit ; caméra thermique.</td><td>Quelques dizaines de litres vaporisés ; LDV 500 à ≈ <strong>125 L/min</strong></td></tr>
+                    <tr><td><strong>Attaque de transition</strong> (atténuation)</td><td>De l'extérieur, limitée dans le temps (<strong>10 à 15 s</strong> pour un volume courant), jet concentré sur le <strong>plafond</strong> du volume en feu : vaporisation en partie haute et retombée en pluie ; puis <strong>attaque intérieure immédiate</strong>.</td><td><strong>250 à 500 L/min</strong> (LDV 500)</td></tr>
+                    <tr><td><strong>Repli défensif</strong></td><td>Adopté en cours d'action si les conditions s'aggravent ; sous la protection de la lance (léger écartement dans le binôme), jet vers le plafond de fumées, <strong>débit important et longues impulsions</strong> ; puis dès que possible <strong>refermer la porte</strong> entre l'équipe et le feu.</td><td>Important</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <ul>
+                    <li>Antiventilation : le risque majeur est l'<strong>inflammation brutale des fumées</strong> si la ventilation devient trop forte. Arroser des murs tièdes ne produit aucune vapeur : l'excès de débit ne compense pas. <strong>Si des débits plus importants deviennent nécessaires, le feu est sans doute plus ventilé que prévu : changer d'approche.</strong></li>
+                    <li><strong>Impossibilité d'agir sur la ventilation</strong> : l'attaque offensive d'un feu développé en croissance reste exceptionnelle (pas d'alternative plus sûre, balance bénéfice / risque favorable, potentiel combustible limité). L'excès de débit ne compense pas le défaut de maîtrise de la ventilation ; si l'action devient inefficace et dangereuse, <strong>se replier et modifier le dispositif</strong>.</li>
+                </ul>
+            </div>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('vent-attaquer')">🌬️ Ventiler pour attaquer</button> <button class="sal-lien" onclick="showModule('gdoinc-eau')">💧 Effets de l'eau</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>🚿 Choix du moyen hydraulique</summary>
+            <table class="rd-table">
+                <tbody>
+                    <tr><td><strong>Refroidir fumées et gaz chauds</strong></td><td>Eau finement divisée (grande surface de contact), en quantité suffisante.</td></tr>
+                    <tr><td><strong>Mouiller à cœur</strong></td><td>Grosses gouttes pour atteindre les matériaux en ignition et les surfaces chaudes (et produire de la vapeur).</td></tr>
+                    <tr><td><strong>Forme du jet</strong></td><td>Jet droit, jet diffusé d'attaque (<strong>30 à 60°</strong>), jet diffusé de protection (angle maximal).</td></tr>
+                    <tr><td><strong>Portée</strong></td><td>Cibles hautes ou éloignées ; dépend de la concentration du jet et de la pression.</td></tr>
+                    <tr><td><strong>Ergonomie</strong></td><td>Changer facilement de débit et de jet, limiter la fatigue, déplacer l'établissement en progression comme en retrait.</td></tr>
+                    <tr><td><strong>Options</strong></td><td>Lances perforantes (haute pression, à frapper), utilisables depuis le niveau inférieur, fixes (queue de paon, trépied).</td></tr>
+                </tbody>
+            </table>
+            <p>Moyen usuel : la <strong>lance à débit et jet réglables (LDJR / LDV)</strong>, de 125 à 500 L/min. La valeur de <strong>500 L/min</strong> n'est ni un impératif ni une garantie de sécurité, mais l'ordre de grandeur reste pertinent (400 à 500 L/min dans de nombreux pays). D'autres matériels sont possibles s'ils sont évalués selon le référentiel du ministère (refroidissement des gaz, atténuation du rayonnement, capture d'énergie) ; un débit réduit à performance égale diminue pertes de charge, sections de tuyaux, fatigue et dégâts des eaux. <strong>L'outil le plus performant n'est rien sans la compétence de celui qui l'utilise.</strong></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>🧵 Établissements</summary>
+            <p>Acheminer l'agent extincteur le plus approprié, dans un temps compatible avec la cinétique, en préservant le potentiel physique des équipes et en anticipant les prolongements. L'établissement idéal répond au besoin, <strong>rapidement, en sécurité, avec une économie de personnel et d'efforts</strong>. Les conditionnements (couronnes, écheveaux, en « 0 », en sac, dévidoir) accélèrent, fatiguent moins, évitent la dissociation du binôme et réduisent son temps <strong>sans eau</strong> en zone exposée.</p>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('rdmi-etablissements')">Établissements (RDMI)</button> <button class="sal-lien" onclick="showModule('pertes')">Pertes de charge</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>🛡️ Protection</summary>
+            <ul>
+                <li><strong>De quoi ?</strong> Des effets directs du feu et des fumées, mais aussi des effets de la lutte : dégâts des eaux, coupure des fluides.</li>
+                <li><strong>Quoi ?</strong> Biens courants et construction (valeur financière), biens patrimoniaux, historiques, artistiques (perte définitive), biens à valeur sentimentale, objets indispensables au retour à la normale (clés, papiers, justificatifs ; fichiers clients et comptabilité des entreprises).</li>
+                <li><strong>Environnement</strong> : pendant l'opération, confiner ou récupérer les eaux d'extinction, rideaux d'eau contre les effluents gazeux (qui créent de nouveaux effluents), mesures de polluants ; ensuite, avec les partenaires, mesures de pollution des sols et de l'air.</li>
+                <li><strong>Comment ?</strong> Sur la cible (déplacer les biens, isoler les captages d'eau potable), sur le flux (bâchage, endiguement, assèchement, protection contre les fumées par la ventilation dès le début).</li>
+                <li><strong>Quand ?</strong> « Quand l'eau ruisselle sur les biens à protéger, il est déjà trop tard. » La question se pose au COS <strong>dès le début</strong>, parfois avant l'extinction (œuvres d'art).</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>⛏️ Déblais</summary>
+            <ul>
+                <li>Faciliter l'extinction et éliminer les reprises.</li>
+                <li><strong>Phase accidentogène</strong> : ambiance toxique, effondrements, électricité, blessures, alors que la vigilance baisse (fatigue, ARI difficile à faire porter, désengagement des moyens). Maintenir le dispositif de protection.</li>
+                <li>Mesures ponctuelles ou continues des toxiques (appareils individuels ou balises) pour adapter la protection respiratoire ; détecteur CO pour rechercher les gaz de combustion.</li>
+                <li>Des déblais trop poussés gênent l'expertise judiciaire et la RCCI : décider après échange entre le COS, un officier RCCI s'il existe, l'OPJ, voire l'autorité judiciaire, le propriétaire, l'assureur. Selon les SDIS : déblais complets, ou déblais modérés et surveillance accrue.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>👁️ Surveillance et relogement</summary>
+            <ul>
+                <li>Surveillance <strong>continue</strong>, avec les moyens de répondre à une reprise ; éviter que des tiers s'exposent. Le gardiennage n'est pas une mission du SDIS, mais le COS éclaire les sinistrés ou l'autorité locale sur les mesures à prendre.</li>
+                <li>En situation courante, l'<strong>absence de point chaud pendant 2 heures</strong> peut permettre au COS de considérer le feu comme totalement éteint.</li>
+                <li>Ne pas sous-estimer les risques de cette phase : chutes, blessures, brûlures, toxiques (air et surfaces souillées).</li>
+                <li><strong>Relogement</strong> : responsabilité du DOS ; le COS l'informe au plus tôt si des logements sont inutilisables (fumées, suies, stabilité, énergies).</li>
+                <li>Avant de quitter les lieux, rechercher <strong>systématiquement</strong> dans toute la structure les gaz de pyrolyse (inflammables) et de combustion (toxiques). Toute fumée visible est dangereuse : une fumée blanche inexpliquée par l'extinction est de la <strong>pyrolyse</strong> (jaunâtre : indicateur plutôt fiable) ; même expliquée, elle n'est pas sans risque.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>🧼 Réhabilitation et reconditionnement (GDO toxicité des fumées)</summary>
+            <p>Nettoyer au maximum EPI et matériels <strong>sur les lieux</strong>, pour limiter les transferts dans le véhicule. Selon l'appréciation du COS, 4 options :</p>
+            <ol>
+                <li>Nettoyage non nécessaire.</li>
+                <li>Souillure superficielle : <strong>brossage léger à sec</strong> (brosse à poils doux), puis si besoin rinçage léger en jet diffusé à débit minimum (dévidoir tournant).</li>
+                <li>Souillure importante ou dépôts gras : brossage à l'<strong>eau savonneuse</strong> puis rinçage léger ; même protocole pour les matériels.</li>
+                <li>Souillure trop élevée, météo défavorable ou choix du COS : matériels et EPI <strong>emballés</strong> avant de rejoindre la zone de soutien, pour nettoyage au lieu dédié.</li>
+            </ol>
+            <p>Déshabillage en amont de la zone de soutien, aidé par des sapeurs-pompiers protégés (<strong>FFP3</strong>, masque à cartouche ou ARI, protection oculaire et cutanée, gants à usage unique). <strong>Lavage des mains et des chaussures</strong> avant de remonter dans le véhicule.</p>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('rdeb-apres')">Après l'engagement : DECOPI (RDEB)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>🔬 Préservation des traces et indices (PTI)</summary>
+            <ul>
+                <li>Objectifs : comprendre comment le feu a débuté et s'est propagé (enclencher tôt assurances et justice), identifier les comportements et équipements à risque (prévention, évolution des technologies), alimenter le RETEX.</li>
+                <li>Limiter l'altération et la contamination de la scène : <strong>observer et mémoriser</strong>, déblai <strong>temporisé</strong> et / ou <strong>adapté</strong>. D'autant plus efficace qu'elle est pratiquée tôt par le COS et les équipes, sans nuire aux secours.</li>
+                <li>Si le déblai nécessaire va détruire des indices, les <strong>recueillir en amont</strong> dans la mesure du possible.</li>
+                <li>Certains SIS disposent de sapeurs-pompiers investigateurs (RCCI).</li>
+            </ul>
+        </details>
+        <p class="rd-source">GDO Incendies de structures 2018, chap. 3 section III.</p>
+    </div>
+
+    <!-- ============ GTO Ventilation opérationnelle (DGSCGC, 2019) ============ -->
+    <div id="vent-menu" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🌬️ Ventilation opérationnelle – GTO 2019</h2>
+        <p style="text-align: center;">Toutes les actions des sapeurs-pompiers qui <strong>maîtrisent les flux de fumées, de gaz chauds et de chaleur</strong> dans une structure en feu : sur la source (le foyer), sur le flux (fumées, chaleur), sur les cibles (personnes, structure).</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('vent-proteger')"><b>🛡️ Ventiler pour protéger</b><span>Recloisonnement, mise en dépression, mise en surpression</span></button>
+            <button onclick="showModule('vent-desenfumer')"><b>💨 Ventiler pour désenfumer</b><span>Volume enfumé non touché par le feu, volumes compartimentés</span></button>
+            <button onclick="showModule('vent-attaquer')"><b>🔥 Ventiler pour attaquer</b><span>Ventilation d'attaque (VPP), antiventilation</span></button>
+            <button onclick="showModule('vent-volumes')"><b>🏭 Gros volumes, parkings, locaux borgnes</b><span>Situations particulières, optimisation du dispositif</span></button>
+            <button onclick="showModule('vent-outils')"><b>🧰 Stoppeurs, CO, lances, sortant</b><span>Stoppeurs de fumée et de vent, ventilateurs thermiques, entraînement d'air</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>Principes</h3>
+            <ul>
+                <li><strong>Entrant</strong> : ouverture par laquelle entre l'air frais (en général au niveau du feu ou dessous). <strong>Sortant</strong> : ouverture par laquelle sortent les fumées (au niveau du feu ou dessus). Entre les deux : la <strong>veine d'air</strong>.</li>
+                <li>Les gaz se déplacent comme l'eau dans un établissement : <strong>pertes de charge</strong> (frottements) et <strong>fuites</strong> tout au long de la veine d'air.</li>
+                <li>Deux moteurs : les <strong>différences de pression</strong> (vent) et la <strong>convection</strong> (gaz chauds qui montent, air froid aspiré en partie basse : tirage).</li>
+                <li>Moyens : ouvrir ou fermer les ouvrants (ou en créer), et <strong>ventilateurs</strong> en pression positive (VPP) ou en extraction.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Objectif</th><th>Actions</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Protéger</strong> : empêcher les fumées d'entrer dans un volume</td><td>Recloisonnement, mise en dépression du local en feu, mise en surpression d'un volume</td></tr>
+                    <tr><td><strong>Désenfumer</strong> : évacuer les fumées d'un local sans lien direct avec le feu</td><td>Désenfumage simple ou séquentiel</td></tr>
+                    <tr><td><strong>Attaquer</strong> : agir sur les fumées et le foyer</td><td>Ventilation d'attaque, antiventilation</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔎 À rechercher en reconnaissance</h3>
+            <p>Structure et organisation des volumes ; courants d'air, de fumées et de gaz chauds ; leurs cheminements (couloirs, escaliers) ; <strong>sens du vent</strong> ; entrants et sortants possibles ; cloisonnements intérieurs (portes).</p>
+            <h3>📢 L'ordre de ventilation du COS</h3>
+            <p>Il précise sans ambiguïté : la <strong>tactique</strong> (ventilation d'attaque, antiventilation…), le <strong>moyen</strong> (naturel, ventilateur thermique, hydraulique…), les <strong>emplacements</strong> (volume, entrant, sortant, accès et itinéraires de secours), les <strong>actions concomitantes et leur chronologie</strong>, les consignes particulières (régime du ventilateur) et les règles de sécurité. Exemple de restriction : « vous ne démarrez la ventilation que <strong>sur mon ordre</strong> ».</p>
+            <p>Un ventilateur thermique se place en général à une distance de l'ouvrant égale à la <strong>hauteur de l'ouvrant</strong>, à adapter selon le modèle.</p>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Règles de sécurité</strong>
+            <ul>
+                <li>Maîtriser l'alimentation en air du foyer et le déplacement des fumées.</li>
+                <li><strong>Jamais de ventilation d'attaque qui place des victimes ou des intervenants entre le foyer et le sortant.</strong></li>
+                <li><strong>Ne jamais s'engager par le sortant.</strong></li>
+                <li>Ventilateur thermique : vigilance vis-à-vis du <strong>CO</strong>.</li>
+                <li>Chacun est responsable de la veine d'air : portes maintenues ouvertes ou fermées, <strong>pas de stationnement dans la veine d'air</strong>. Vérifier qu'elle reste stable (porte qui se referme, vent).</li>
+                <li>Coordination : le COS et les chefs d'agrès partagent la même vision de l'ordre des actions ; communication entre chefs d'agrès et chefs d'équipe.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique</summary>
+            <ul>
+                <li><strong>VPP</strong> : ventilation par pression positive (protéger, désenfumer ou attaquer). <strong>VA</strong> : ventilation d'attaque. <strong>PPA</strong> : positive pressure attack.</li>
+                <li><strong>VGD</strong> : ventilateur grand débit. <strong>VAR</strong> : ventilateur auxiliaire en relais. <strong>CEV</strong> : cellule ou camion électro-ventilation (éclairage, VGD, gaines, mousse haut foisonnement).</li>
+                <li><strong>Aneti</strong> : ventilateur hydraulique (effet Venturi). <strong>ATEX</strong> : matériel utilisable en atmosphère explosible.</li>
+                <li><strong>EGE</strong> : embrasement généralisé éclair (flashover).</li>
+                <li><strong>Offensive</strong> : au contact du feu. <strong>Défensive</strong> : en périphérie, moins d'exposition.</li>
+                <li><strong>Exutoire</strong> : dispositif de désenfumage prévu dans la construction. <strong>Stoppeur de fumée</strong> : rideau posé dans l'encadrement d'une porte. <strong>Stoppeur de vent</strong> : toile plaquée devant une fenêtre exposée au vent.</li>
+                <li><strong>Pression statique, dynamique, totale</strong> ; 100 000 Pa = 1 bar. <strong>Virole / volute</strong> : carcasse qui canalise l'air du ventilateur.</li>
+                <li><strong>Relais</strong> : ventilateur ajouté dans la veine d'air pour compenser pertes de charge et fuites.</li>
+            </ul>
+        </details>
+
+        <div class="rd-section">
+            <h3>Voir aussi</h3>
+            <p>
+                <button class="sal-lien" onclick="showModule('rdeb-lecture')">🫁 RDEB : lecture du feu</button>
+                <button class="sal-lien" onclick="showModule('rdeb-annexes')">🫁 RDEB : parkings, CO</button>
+                <button class="sal-lien" onclick="showModule('gdoinc-menu')">🔥 GDO Incendies de structure</button>
+            </p>
+            <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Ventilation-operationnelle-2019.pdf" target="_blank" rel="noopener">GTO complet (PDF, 106 pages, avec illustrations)</a></p>
+        </div>
+        <p class="rd-source">📚 Source : <strong>Guide de techniques opérationnelles « Ventilation opérationnelle »</strong>, DGSCGC/DSP/SDDRH/BDFE, 26 février 2019. Doctrine de droit souple : à adapter à chaque situation. Textes résumés et reformulés ; illustrations non reproduites.</p>
+    </div>
+
+    <div id="vent-proteger" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('vent-menu')">← Ventilation</button>
+        <h2>🛡️ Ventiler pour protéger</h2>
+
+        <details class="jsp-cours" open>
+            <summary>VEN-STR-PRO-1 · Recloisonnement du feu</summary>
+            <p><strong>But</strong> : isoler le feu des zones enfumées pour que les flammes ne rattrapent pas et n'enflamment pas les fumées qui ont envahi couloirs, pièces voisines, étages. La porte fermée fait obstacle à la flamme ; les autres actions (souvent des <strong>sauvetages</strong>) se font plus sûrement ; l'extinction peut être différée.</p>
+            <p><strong>Quand</strong> : feu encore contenu dans un volume (chambre, cuisine), fumées abondantes ailleurs, action prioritaire dans un volume adjacent (victime signalée en zone enfumée). Tactique <strong>défensive de première intention</strong>.</p>
+            <ol>
+                <li><strong>Fermer immédiatement</strong> la porte du volume en feu (même avant la fin de la reconnaissance).</li>
+                <li>Évacuer les personnes (sauvetage ou mise en sécurité), avec ventilation des locaux enfumés.</li>
+                <li>Attaque d'<strong>atténuation par l'extérieur</strong> si un sortant existe déjà et si des équipes sont disponibles.</li>
+                <li>Une fois l'évacuation faite : attaque par l'intérieur en <strong>antiventilation</strong> ou en <strong>pression positive</strong>.</li>
+            </ol>
+            <ul>
+                <li>Porte endommagée : compléter par un <strong>jet diffusé dirigé uniquement sur la porte</strong> (sinon effet piston), ou un stoppeur de fumée.</li>
+                <li>Sûr seulement s'il n'existe pas d'autres ouvertures (trémies, gaines, autres portes) : très pertinent en appartement, beaucoup moins en industrie ou en habitat ancien. La porte fermée ne rend pas les locaux enfumés sûrs pour autant.</li>
+                <li>Vérifier la fermeture des clapets automatiques s'il y en a (SSI ou visuel).</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>VEN-STR-PRO-2 · Mise en dépression d'un local en feu</summary>
+            <p><strong>But</strong> : le haut du local en feu est en surpression, ce qui pousse les fumées vers les locaux voisins. Le mettre en dépression évite la propagation horizontale.</p>
+            <ul>
+                <li><strong>Quand</strong> : locaux en <strong>sous-sol</strong> (caves), où les autres méthodes sont inefficaces ou dangereuses. Souvent un raccord <strong>« ZAG »</strong> en façade.</li>
+                <li><strong>Comment</strong> : ventilateur en extraction (hydroventilateur, électrique ATEX) raccordé au ZAG, depuis l'extérieur : <strong>défensif</strong>, n'expose pas les sapeurs-pompiers, ralentit l'extension. Une prise sur l'extérieur peut aussi servir à injecter de la mousse haut foisonnement.</li>
+                <li>Matériel conçu pour l'<strong>extraction de gaz chauds</strong> (les adaptations de ventilateurs soufflants ne le sont pas).</li>
+                <li>Débit faible : ne garantit pas de bonnes conditions au binôme d'attaque ; au mieux protège l'escalier d'accès portes refermées (antiventilation partielle), et seulement sur <strong>feu naissant</strong>, sans risque d'EGE.</li>
+                <li><strong>Feu sous-ventilé</strong> : l'extraction peut rendre le mélange inflammable. Ne l'utiliser qu'<strong>après extinction totale</strong>, pour désenfumer.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>VEN-STR-PRO-3 · Mise en surpression d'un volume</summary>
+            <p><strong>But</strong> : empêcher les fumées d'envahir un local sain séparé du local en feu par une paroi qui fuit (principe du désenfumage de certains ERP). Action <strong>défensive</strong>.</p>
+            <ul>
+                <li>Un ventilateur en pression positive devant une porte du local sain. <strong>Aucun sortant n'est créé.</strong></li>
+                <li>La puissance nécessaire dépend des <strong>fuites</strong>, pas du volume.</li>
+                <li>Sans risque, sauf s'il existe une <strong>grande ouverture vers le local en feu</strong> (porte, trémie) : on activerait le feu, voire provoquerait un backdraft. À vérifier avant (facile : le local est encore sain).</li>
+                <li>Pas de moyen hydraulique nécessaire dans le local sain, sauf usage modéré sur les zones de fuite s'il y a des combustibles.</li>
+            </ul>
+        </details>
+        <p class="rd-source">📚 GTO Ventilation opérationnelle 2019, fiches VEN-STR-PRO.</p>
+    </div>
+
+    <div id="vent-desenfumer" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('vent-menu')">← Ventilation</button>
+        <h2>💨 Ventiler pour désenfumer</h2>
+        <div class="rd-alerte">Seulement quand le feu est <strong>éteint</strong> ou suffisamment <strong>isolé</strong> du volume à désenfumer : pas de possibilité d'allumage des fumées par le foyer. Les fumées peuvent être combustibles, voire explosives.</div>
+
+        <details class="jsp-cours" open>
+            <summary>VEN-STR-DEF-1 · Volume enfumé non touché par le feu</summary>
+            <p>Un gradient de pression entre l'<strong>entrant</strong> (air frais) et le <strong>sortant</strong> met les fumées en mouvement : l'air frais prend leur place. Action défensive.</p>
+            <ol>
+                <li><strong>Reconnaissance</strong> : trajet de la veine d'air, réalité du cloisonnement par rapport au feu, fermeture des portes et fenêtres en périphérie (pas de fuites).</li>
+                <li>Créer un ou plusieurs <strong>sortants</strong>, de préférence sans destruction, en tenant compte du vent.</li>
+                <li><strong>Ventilateur à l'entrant</strong>, en général à pleine puissance ; la réduire pour éviter de déstratifier (l'important est d'évacuer les fumées les plus concentrées, pas l'air frais).</li>
+                <li>Pas de pertes de charge ajoutées, pas de sapeurs-pompiers au milieu de la veine d'air.</li>
+            </ol>
+            <p><strong>Contrôle</strong> : la vitesse des fumées au sortant. Sinon vérifier l'absence de vent contraire, l'intégrité de la veine d'air (portes non calées qui se referment) et le ventilateur.</p>
+            <ul>
+                <li><strong>Vent de plus de 18 km/h (5 m/s) face au sortant</strong> : les fumées ne sortiront très probablement pas.</li>
+                <li>Plus la veine d'air est <strong>tubulaire</strong>, plus l'effet piston est net et le désenfumage rapide ; massive, l'air frais se mélange aux fumées qui restent dans les espaces morts.</li>
+                <li>Ventilateur thermique : on remplace un air très pollué par un air contenant des gaz d'échappement (voir CO).</li>
+                <li>Le gradient peut être naturel : entrant au vent et sortant abrité, ou entrant bas et sortant haut (tirage).</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>VEN-STR-DEF-2 · Volumes compartimentés (désenfumage séquentiel)</summary>
+            <p>Plusieurs pièces desservies par un couloir : il faut vérifier l'absence de victime et limiter les dégâts des fumées.</p>
+            <ol>
+                <li>Commencer par une pièce <strong>en bout de circulation</strong> : le couloir se libère vite. Toutes les autres pièces restent fermées.</li>
+                <li>Pièce libérée (assez pour la recherche, ou totalement) : refermer sa porte, laisser ses fenêtres ouvertes si les fumées ne peuvent pas revenir.</li>
+                <li>Pièce suivante : ouvrir la porte, ouvrir un ou plusieurs sortants, puis refermer. Recommencer jusqu'au désenfumage complet de l'étage ou du bâtiment.</li>
+            </ol>
+            <p><strong>Séquentiel ou simultané ?</strong> Si les pertes de charge des différentes veines d'air sont semblables, les débits s'équilibrent et le désenfumage <strong>simultané</strong> est plus rapide. Si elles sont très inégales, certaines pièces seront très mal ventilées : préférer le <strong>séquentiel</strong>.</p>
+        </details>
+        <p class="rd-source">📚 GTO Ventilation opérationnelle 2019, fiches VEN-STR-DEF.</p>
+    </div>
+
+    <div id="vent-attaquer" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('vent-menu')">← Ventilation</button>
+        <h2>🔥 Ventiler pour attaquer</h2>
+
+        <details class="jsp-cours" open>
+            <summary>VEN-STR-ATT-1 · Ventilation d'attaque (VPP)</summary>
+            <p><strong>But</strong> : remplacer les fumées de l'accès au volume en feu par de l'air frais et les rejeter dehors, pour une attaque rapide avec de la <strong>visibilité</strong>. La veine d'air <strong>passe par le foyer</strong> : tactique <strong>offensive</strong>, qui peut aviver le feu mais rejette l'essentiel des gaz très chauds à l'extérieur.</p>
+            <ol>
+                <li>Après reconnaissance, créer le <strong>sortant au plus près du foyer, en partie haute</strong>, sans destruction si possible. <strong>Moins de 1 m²</strong> : trop petit, les gaz chauds risquent de refouler à contre-flux.</li>
+                <li>Risque de propagation en façade : établir un moyen hydraulique pour le contrer.</li>
+                <li>Reconnaître la veine d'air (portes et fenêtres périphériques fermées), pas de personnel au milieu.</li>
+                <li><strong>Ventilateur à l'entrant</strong>, en général à pleine puissance, à réduire une fois l'accès libéré (éviter de suroxygéner ou de déstratifier).</li>
+                <li>Attaque : l'eau sert surtout à refroidir la flamme et le combustible (la vapeur est entraînée dehors). Adapter le débit au volume et au sortant.</li>
+            </ol>
+            <div class="rd-alerte"><strong>Jamais d'intervenant ni de victime entre le foyer et le sortant.</strong></div>
+            <p><strong>Particulièrement adaptée</strong> : feu déjà ventilé (sortant existant) ; fenêtres sur le point de casser (passage brutal d'un feu sous-ventilé à ventilé) ; volumes permettant une veine d'air <strong>allongée</strong>. Peu chronophage : le chef d'agrès aide le conducteur à poser le ventilateur, que le conducteur gère ensuite ; le sortant peut être agrandi depuis l'échelle.</p>
+            <p><strong>Contrôle</strong> : vitesse des fumées au sortant ; sinon vent contraire, portes non calées, ventilateur.</p>
+            <h3>Limites et risques</h3>
+            <ul>
+                <li><strong>Propagation au sortant</strong> (façade) : moyen hydraulique de protection si besoin.</li>
+                <li><strong>Gros volumes : à éviter</strong>. Pas d'effet piston, suroxygénation, turbulences qui propagent, pas d'amélioration de l'accès. À réserver à certains feux naissants.</li>
+                <li><strong>Vent contraire de plus de 18 km/h</strong> : la pression du vent égale celle du ventilateur ; une rafale peut transformer le sortant en entrant et renvoyer les gaz sur les équipes. Orientation défavorable du vent : pas de ventilation d'attaque. Couper brutalement une ventilation insuffisante ne ferait qu'aggraver.</li>
+                <li><strong>Flashover</strong> : juste avant l'embrasement, modifier les flux peut le précipiter.</li>
+                <li><strong>Backdraft</strong> : feu sous-ventilé, l'air frais peut le déclencher ; risque maximal juste après l'ouverture du sortant. La <strong>lecture du feu</strong> doit l'éviter.</li>
+                <li><strong>Sortant mal placé</strong> : voir <button class="sal-lien" onclick="showModule('vent-outils')">évaluation du sortant</button>.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>VEN-STR-ATT-2 · Antiventilation d'attaque</summary>
+            <p><strong>But</strong> : priver le feu d'air, combiné à une attaque hydraulique qui refroidit les fumées et inerte par la vapeur d'eau. Tactique offensive <strong>très agressive</strong> : progression dans la fumée, près du foyer. La sécurité dépend du <strong>maintien de l'antiventilation</strong> : un décloisonnement peut apporter assez d'air pour un phénomène thermique.</p>
+            <ol>
+                <li><strong>Entrée jusqu'au volume en feu</strong> : inerter les fumées pendant la progression par pulvérisations très fines, mouiller plafond et murs en partie haute. <strong>Refermer la porte d'accès sur le tuyau</strong> (surface d'échange environ 0,2 m²) ; stoppeur de fumée possible. Effet : limiter flashover, backdraft et FGI dans tous les volumes enfumés.</li>
+                <li><strong>Porte du volume en feu</strong> : entrouvrir, <strong>impulsion de 2 à 3 s</strong>, refermer. Porte fermée, on peut désenfumer les volumes adjacents (naturel, VPP depuis l'extérieur, lance).</li>
+                <li><strong>Renouveler</strong> autant que nécessaire. Quand la température ne permet plus de vaporiser l'eau, entrer dans le volume ; porte refermée sur le tuyau pour garder l'inertage ; caméra thermique utile. On passe de l'inertage au refroidissement des combustibles.</li>
+                <li><strong>Ventiler le volume</strong> une fois qu'il ne produit plus de gaz de pyrolyse (fenêtre, porte grande ouverte), puis déblai.</li>
+            </ol>
+            <ul>
+                <li>Il faut surtout <strong>vaporiser</strong>, pas beaucoup d'eau : 1 L d'eau donne 1,7 m³ de vapeur à 100 °C ; l'atmosphère est inertée quand la vapeur représente environ <strong>un tiers</strong> de la masse gazeuse. Trop de débit fait de l'eau tiède, pas de la vapeur.</li>
+                <li>Ensuite, mouiller les braises (grosses gouttes, jet purge) : la vapeur continue d'inerter, la pyrolyse s'arrête, pas de ré-inflammation.</li>
+                <li>Risques : rupture d'un ouvrant (simples vitrages, huisseries PVC), passage mal maîtrisé de la sous-ventilation à la ventilation, personnels non aguerris, <strong>engagement trop long</strong>. Sans stratification, plus de 100 °C à hauteur d'homme ; la vapeur qui se condense sur la tenue peut brûler.</li>
+                <li>Feux couvants ou refroidis : l'inertage est difficile (peu de chaleur pour vaporiser).</li>
+            </ul>
+        </details>
+        <p class="rd-source">📚 GTO Ventilation opérationnelle 2019, fiches VEN-STR-ATT.</p>
+    </div>
+
+    <div id="vent-volumes" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('vent-menu')">← Ventilation</button>
+        <h2>🏭 Gros volumes, parkings, locaux borgnes</h2>
+
+        <details class="jsp-cours" open>
+            <summary>PAR-1 · Gros volumes</summary>
+            <ul>
+                <li>Pas d'effet piston possible : brassage et <strong>déstratification</strong>.</li>
+                <li><strong>Feu naissant</strong> : la dilution garde des températures modérées en hauteur et une bonne visibilité ; attaque en VPP possible mais d'intérêt relatif.</li>
+                <li><strong>Feu développé</strong> (sous-ventilé) : la VPP est <strong>contre-productive</strong> (perte de visibilité, chaleur non évacuée, turbulence qui active le foyer). Exception : libérer un accès enfumé (couloir) vers le gros volume, avec une puissance modérée.</li>
+                <li>Le <strong>tirage naturel</strong> piloté par le feu suffit souvent, si les sortants (exutoires, parties fusibles) sont assez grands. Ouvrir en partie haute et limiter les entrants en partie basse met le volume en dépression : flux favorable aux entrants (attaque) et moins de propagation vers les volumes voisins.</li>
+                <li>Antiventilation volontaire rare (exutoires imposés) et extinction risquée (hyperthermie, visibilité nulle, effondrement de racks) ; mousse haut foisonnement possible, poussée par l'air.</li>
+                <li><strong>Désenfumage</strong> d'un gros volume : en général simple. Naturel par convection (ouvrir le maximum d'ouvrants), balayage horizontal par le vent, ou mécanique : un ventilateur thermique peut se placer <strong>à l'intérieur, devant le sortant, tourné vers l'extérieur</strong>.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>PAR-2 · Parking souterrain</summary>
+            <p>Objectifs : absence de victimes (renseignements), protection des bâtiments contigus, localisation puis extinction du feu, désenfumage. Identifier tôt les zones (exclusion, contrôlée) et les points d'accès ; <strong>visiter et s'exercer</strong> sur ces sites.</p>
+            <ol>
+                <li><strong>Reconnaissance, recherche, attaque</strong> : mettre les <strong>cages d'escalier en surpression</strong> (ventilateur devant la porte, sans sortant), y compris l'escalier débouchant à l'air libre : zones sûres et points d'accès à chaque niveau, distances en fumée raccourcies. Binômes engagés depuis chaque cage, avec <strong>caméra thermique</strong>, moyens de reconnaissance longue distance et/ou moyens hydrauliques. On ne cherche pas à brider la ventilation du feu : elle maintient la stratification et limite les imbrûlés.</li>
+                <li><strong>Après extinction</strong> : désenfumage par les moyens fixes du parking, complétés par les moyens mobiles (VGD si pas d'installation en état).</li>
+            </ol>
+            <ul>
+                <li>Les ventilateurs des cages d'escalier sont modestes : ils sécurisent l'extinction mais ne désenfument pas le parking.</li>
+                <li>Phénomènes thermiques à l'échelle du volume peu probables (inertie, peu de combustibles en hauteur), mais <strong>explosions de véhicules</strong> possibles. Reconnaissance sans moyen hydraulique envisageable aux niveaux non touchés (pas pour d'autres sous-sols que les parkings).</li>
+                <li>Parkings avec box et stockages très sous-ventilés : portes juste entrouvertes pour les tuyaux, <strong>extinction complète avant la ventilation</strong> de désenfumage.</li>
+                <li>Une victime signalée peut faire passer l'extraction avant l'extinction.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>PAR-3 · Locaux borgnes</summary>
+            <ul>
+                <li><strong>Petit local</strong> : ventilateur près de l'ouverture, qui sert d'entrant et de sortant : environ <strong>1 m</strong> pour un ventilateur à jet évasé, <strong>2 m</strong> pour un jet concentré. L'air frappe le fond et ressort en partie haute. Trop près (moins de 1 m) : les fumées sont ré-aspirées (et le CO recyclé avec un thermique). Orienter le ventilateur ou dévier la veine d'air (porte dégondée placée en biais) aide.</li>
+                <li><strong>Local profond</strong> : souffler en direct ne marche pas. <strong>Gaine</strong> fixée au ventilateur (manchon ZAG) déployée jusqu'au fond, qui est mis en surpression ; ventilateur pas trop près de l'ouverture.</li>
+                <li><strong>L'extraction n'est pas plus efficace</strong> dans un local borgne (comme aspirer l'air d'une bouteille vide) : l'impression contraire est trompeuse.</li>
+                <li><strong>Structures complexes</strong> (industrie) : un ou plusieurs ventilateurs brassent les locaux borgnes, un autre crée la veine d'air principale vers l'extérieur.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>PAR-4 · Optimiser le dispositif</summary>
+            <ul>
+                <li><strong>Surpression</strong> : adapter l'entrant au ventilateur (le réduire avec un stoppeur de fumée à un carré à peine plus grand que le ventilateur) ; si fuites importantes, un second ventilateur sur un second entrant.</li>
+                <li><strong>Désenfumage naturel</strong> : agrandir entrant ou sortant augmente le débit ; un rapport de <strong>2</strong> entre les deux donne environ <strong>90 %</strong> du rendement, au-delà peu d'effet. En volume compartimenté, les pertes de charge le long de la veine d'air limitent le gain.</li>
+                <li><strong>Désenfumage mécanique</strong> : entrant adapté au ventilateur (trop grand, il nuit) ; sortant grand. Ordre de grandeur : fumées à 5 m/s sur un sortant de 1 m², soit <strong>18 000 m³/h</strong>, le volume d'un appartement de 120 m² chaque minute ; il faut souvent un ventilateur de débit libre double.</li>
+                <li>Plusieurs ventilateurs : <strong>en série</strong> (l'un derrière l'autre), <strong>en V</strong> ou en parallèle sur un ouvrant large, <strong>en relais</strong> dans la veine d'air (couloir, étage), ou un à l'entrant et un au sortant en extraction (qui supporte chaleur et fumées grasses, raccord ZAG).</li>
+                <li><strong>Débit optimal plutôt que maximal</strong> : un sortant à hauteur des fumées stratifiées (fenêtre) vaut mieux qu'une porte-fenêtre qui évacue aussi l'air frais du bas. Trop de vitesse déstratifie. Réduire la puissance en éloignant le ventilateur.</li>
+                <li><strong>Ventilation d'attaque</strong> : refermer partiellement la porte de la pièce en feu augmente la pression en amont et empêche les fumées de revenir à contre-flux au-dessus des équipes. Garder une marge de puissance (personnels dans la veine d'air, sautes de vent, explosion). <strong>Sortant en deux temps</strong> : ouvrir d'abord en partie haute du vitrage, puis agrandir une fois la veine d'air établie. Sortant trop petit : contre-flux ; trop grand : l'air frais entre par le bas du sortant.</li>
+                <li>La mise à l'air libre de gaz chauds chargés de pyrolyse (bardage, toiture) s'accompagne d'une zone d'exclusion élargie, d'un minimum de personnel et d'un moyen hydraulique prêt.</li>
+            </ul>
+        </details>
+        <p class="rd-source">📚 GTO Ventilation opérationnelle 2019, fiches VEN-STR-PAR-1 à 4.</p>
+    </div>
+
+    <div id="vent-outils" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('vent-menu')">← Ventilation</button>
+        <h2>🧰 Stoppeurs, CO, lances, sortant</h2>
+
+        <details class="jsp-cours" open>
+            <summary>PAR-5 · Stoppeur de fumée</summary>
+            <ul>
+                <li>Rideau posé dans l'encadrement de la porte palière <strong>avant de l'ouvrir</strong> : il laisse passer le binôme et le tuyau mais bloque les fumées en partie haute et réduit l'apport d'air. Zone de repli sûre, moins de dégâts, feu maintenu en sous-ventilation.</li>
+                <li>Attaque en visibilité faible mais foyer affaibli : débits modérés, caméra thermique utile. <strong>Refroidir et saturer de vapeur</strong> les fumées chargées d'imbrûlés pendant la progression.</li>
+                <li>Personnels proches du rideau <strong>capelés</strong>. Attention au vent et à la rupture d'un vitrage (embrasement des fumées).</li>
+                <li>Usages : sécuriser l'ouverture de la porte, gérer une porte déjà ouverte puis désenfumer la cage d'escalier (ventilateur ensuite à bas régime), réduire un entrant trop grand.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>PAR-6 · Stoppeur de vent</summary>
+            <p>Toile rigidifiée déroulée depuis l'étage supérieur devant une fenêtre ouverte d'une façade très exposée au vent et inaccessible aux échelles. Le vent la plaque contre la fenêtre et supprime le <strong>« blow torching »</strong> (flammes et fumées poussées vers la cage d'escalier). Permet ensuite une attaque en antiventilation. Efficace mais difficile à poser : des services préfèrent une attaque de transition depuis le niveau N-1.</p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>PAR-7 · Ventilateurs thermiques et CO</summary>
+            <ul>
+                <li>Alternatives : ventilateurs hydrauliques ou électriques ; les thermiques tournent plus vite et équipent l'essentiel des engins pompe.</li>
+                <li>Le CO est aussi le marqueur d'autres polluants (oxydes d'azote, composés volatils). Garder l'<strong>ARI dans la veine d'air</strong> si l'exposition est longue ; entretenir les moteurs.</li>
+                <li><strong>Pas de travaux sans protection respiratoire adaptée sous ventilation thermique.</strong> Les accidents graves viennent de ventilateurs thermiques placés <strong>à l'intérieur</strong> (souvent en infrastructure) : possible seulement avec une grande vigilance et un <strong>contrôle continu du CO</strong> (si la ventilation devient inefficace, le CO grimpe alors que l'air semble brassé).</li>
+                <li>Même avec un ventilateur non thermique, garder la protection respiratoire au déblai (particules, fibres, désorption de gaz).</li>
+                <li>Prévention : rallonge d'échappement au-delà de la zone d'aspiration (plus de 2 m), pot catalytique additionnel (environ 50 % d'efficacité, brûlant).</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>CO (ppm)</th><th>Effets</th></tr></thead>
+                <tbody>
+                    <tr><td>35</td><td>Maux de tête, étourdissements après 6 à 8 h</td></tr>
+                    <tr><td>100</td><td>Légers maux de tête après 2 à 3 h ; atteignable avec une VPP bien faite</td></tr>
+                    <tr><td>200</td><td>Maux de tête en 2 à 3 h ; si dû à une VPP, vérifier son efficacité</td></tr>
+                    <tr><td>400</td><td>Céphalées frontales en 1 à 2 h ; ne doit pas résulter d'une VPP</td></tr>
+                    <tr><td>800</td><td>Étourdissements, nausées, convulsions en 45 min</td></tr>
+                    <tr><td>1 600</td><td>Maux de tête, vertiges, nausées en 20 min ; mortel en moins de 2 h</td></tr>
+                    <tr><td>3 200</td><td>Symptômes en 5 à 10 min ; décès en 30 min</td></tr>
+                    <tr><td>6 400</td><td>Symptômes en 1 à 2 min ; décès en moins de 20 min</td></tr>
+                    <tr><td>12 800</td><td>Perte de connaissance en 2 à 3 respirations ; décès en moins de 3 min</td></tr>
+                </tbody>
+            </table>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>PAR-8 · Entraînement d'air par la lance</summary>
+            <ul>
+                <li>Le jet diffusé pousse l'air : débit comparable à un ventilateur classique.</li>
+                <li><strong>En attaque</strong> : porte-lance entre l'entrant et le foyer, progression lance ouverte, « bulle » de fraîcheur. <strong>Il faut un sortant</strong> : sinon le flux revient sur le porte-lance en partie basse (brûlures). Variante : jet assez concentré en petits « O » continus. Mesurer les dégâts des eaux.</li>
+                <li><strong>En fin d'attaque et au déblai</strong> : porte-lance à environ <strong>1 m d'une fenêtre</strong>, débit maximal, jet diffusé dont tout le cône passe la fenêtre. Efficace, mais impossible pendant l'attaque (le porte-lance serait sur le trajet des fumées) et l'eau part par la fenêtre.</li>
+                <li>Pour limiter les turbulences qui gênent l'extinction : impulsions en changeant de direction, ou jet droit.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>PAR-9 · Sortant mal placé en ventilation d'attaque</summary>
+            <ul>
+                <li><strong>Sortant au-delà du local en feu</strong> : le feu n'est pas aspiré dans la circulation, le binôme progresse sans difficulté. La VPP propage des fumées qui seraient sorties de toute façon, mais canalisées, diluées et refroidies : proche d'un désenfumage. On peut ensuite recloisonner, désenfumer, attaquer en antiventilation, ou créer un sortant dans le local en feu.</li>
+                <li><strong>Feu sur le trajet mais loin du sortant</strong> : risque de propagation entre le feu et le sortant, qui existerait aussi sans VPP si le binôme est ralenti. Refroidir depuis l'extérieur les combustibles de la pièce du sortant (jet droit au plafond, attaque par ricochets).</li>
+                <li><strong>Victimes</strong> : la VPP accélère l'accès et augmente leurs chances. Sans flammes visibles à la fenêtre qui fume, ne pas lancer la VPP d'emblée : vérifier en reconnaissance que c'est bien le local en feu, en préparant le matériel. Dans un feu peu ventilé, les survivants sont surtout dans les <strong>pièces fermées</strong>, peu touchées par la création du sortant.</li>
+                <li>Moyens de communication entre équipes indispensables.</li>
+            </ul>
+        </details>
+        <p class="rd-source">📚 GTO Ventilation opérationnelle 2019, fiches VEN-STR-PAR-5 à 9.</p>
+    </div>
+
     <!-- ============ RDSMES – SDIS 34 (v2, avril 2026) ============ -->
     <div id="rdsmes-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -16401,13 +17816,414 @@ Je demande : ….</p>
         <p class="rd-source">📚 RDSMES SDIS 34 – v2 – avril 2026 – § 7 (annexes)</p>
     </div>
 
+    <!-- ============ GTO Secours en milieu périlleux et montagne (DGSCGC, juin 2021) ============ -->
+    <div id="smpm-menu" class="module" style="--jsp: #5A6FD8;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🧗 GTO Secours en milieu périlleux et montagne – 2021</h2>
+        <p style="text-align: center;">Guide de techniques opérationnelles DGSCGC (1<sup>re</sup> édition, <strong>juin 2021</strong>) : règles d'engagement, techniques et conditions de sécurité des unités <strong>SMPM</strong>.</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('smpm-materiels')"><b>1 · Matériels</b><span>Cordes, sangles, mousquetons, poulies, civières, point chaud, listes d'équipement</span></button>
+            <button onclick="showModule('smpm-principes')"><b>2-3 · Principes & cordes</b><span>Ancrage, amarrage, dispositif, charge, spécialiste ; nœuds, facteur de chute, force choc</span></button>
+            <button onclick="showModule('smpm-techniques')"><b>4 · Techniques collectives</b><span>Freins, palans, plan incliné, parois, cordes tendues, PRM, balancier, façade</span></button>
+            <button onclick="showModule('smpm-milieux')"><b>5-7 · Souterrain, canyon, montagne</b><span>Stratégie, localisation, déplacements, techniques propres</span></button>
+            <button onclick="showModule('smpm-appui')"><b>8 · Opérations d'appui</b><span>Primo-intervenants, bâchage, incendie, animaux, arbres, manèges</span></button>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Réservé aux spécialistes</strong>
+            <p>Les techniques de ce guide ne peuvent être réalisées que par des personnels <strong>habilités à la spécialité SMPM</strong>, complétée par les modules propres au milieu (souterrain, canyon…). Elles évoluent avec les innovations et les RETEX analysés par l'ECASC (CNFSMPM, Florac).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'essentiel</h3>
+            <ul>
+                <li>Un concept de manœuvre est un <strong>système</strong> : <strong>ancrage</strong> (ce qui tient) – <strong>amarrage</strong> (ce qui solidarise et oriente) – <strong>dispositif</strong> (ce qui permet la manœuvre) – <strong>charge</strong> (l'objet de la manœuvre) – <strong>spécialiste</strong> (qui installe et met en œuvre). Une chaîne dont chaque maillon dépend des autres.</li>
+                <li>Matériel normalisé, vérifié et entretenu selon la notice : sa fiabilité n'est pas remise en cause. La <strong>redondance n'est pas systématique mais d'opportunité</strong>, sur appréciation du chef d'unité.</li>
+                <li>Le <strong>spécialiste est l'élément le moins fiable du système</strong> : la plupart des accidents SMPM sont d'origine humaine.</li>
+                <li>Quelle que soit la nature de l'ancrage, <strong>en cas de doute, on le multiplie</strong>.</li>
+                <li>Une personne <strong>inconsciente suspendue dans un harnais</strong> a une espérance de vie limitée : maîtriser le sauvetage de victime et de sauveteur est une nécessité fondamentale.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Déjà dans Vulcain</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('impm-menu')">⛰️ IMPM – GDO milieu périlleux</button>
+                <button class="sal-lien" onclick="showModule('impm-organisation')">Organisation opérationnelle</button>
+                <button class="sal-lien" onclick="showModule('impm-risques')">Risques & sécurité</button>
+                <button class="sal-lien" onclick="showModule('lspcc-menu')">🪢 LSPCC</button>
+                <button class="sal-lien" onclick="showModule('lspcc-noeuds')">Nœuds</button>
+                <button class="sal-lien" onclick="showModule('lspcc-calculateur')">Calcul facteur de chute</button>
+            </p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Abréviations</summary>
+            <ul>
+                <li><strong>AML</strong> : advanced mobile location · <strong>CTDS</strong> : conseiller technique départemental spéléologie · <strong>DVA</strong> : détecteur de victimes d'avalanche</li>
+                <li><strong>daN</strong> : décanewton (10 N) · <strong>kN</strong> : kilonewton (1 000 N) · <strong>Fc</strong> : facteur de chute</li>
+                <li><strong>ISS</strong> : intervention en site souterrain · <strong>SSF</strong> : Spéléo secours français · <strong>MAVC</strong> : maillon à vis de ceinture</li>
+                <li><strong>PRM</strong> : poulie de renvoi mobile (antagonisme frein de charge / traction) · <strong>STEF</strong> : système technique d'équilibrage facile (change la position d'une civière en cours d'évolution) · <strong>TEF</strong> : technique d'évacuation de façade</li>
+                <li><strong>LSPCC</strong> : lot de sauvetage et de protection contre les chutes · <strong>MEA</strong> : moyen élévateur aérien · <strong>ORSEC</strong> : organisation de la réponse de sécurité civile</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique</summary>
+            <ul>
+                <li><strong>Absorbeur de choc</strong> : diminue la force choc subie par le grimpeur ou l'ancrage lors d'une chute.</li>
+                <li><strong>Amarrage (lexique grimpe)</strong> : point où installer une dégaine ou un relais (de préférence au moins deux ancrages). Amarrage naturel : arbre, béquet rocheux, lunule.</li>
+                <li><strong>Ancrage</strong> : tout système reliant le grimpeur ou la corde à la paroi. <strong>Broche scellée</strong> : anneau prolongé d'une tige, fixé dans la paroi. <strong>Broche à glace</strong> : grosse vis vissée à la main dans la glace.</li>
+                <li><strong>Cheville</strong> : pas de vis femelle recevant une plaquette (autoforeuse possible sans perforateur). <strong>Goujon</strong> : filetage mâle recevant une plaquette. <strong>Plaquette</strong> : pièce métallique fixée par écrou ou vis. <strong>Piton</strong> : lame enfoncée au marteau dans une fissure. <strong>Coinceur</strong> : pièce coincée dans une fissure, récupérable.</li>
+                <li><strong>Dégaine</strong> : sangle avec un mousqueton à chaque extrémité. <strong>Longe</strong> (« vache ») : lien entre harnais et mousqueton. <strong>Se vacher</strong> : s'attacher à la paroi.</li>
+                <li><strong>Harnais</strong> (baudrier) : sangles de taille et de cuisses pour s'attacher à une corde.</li>
+                <li><strong>Mouflage</strong> : palan démultipliant la force de levage. <strong>Palan</strong> : deux moufles (fixe et mobile) de poulies reliées par une corde.</li>
+                <li><strong>Rappel</strong> : descente sur corde avec récupération de la corde par le bas.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>📖 Le corpus doctrinal</summary>
+            <ul>
+                <li>L'État définit la doctrine (art. L112-2 du code de la sécurité intérieure) ; elle s'applique aux SPP et SPV et aide les SIS à construire leur réponse (CoTRRiM, SDACR, règlement opérationnel, plans d'équipement et de compétences).</li>
+                <li>Droit souple : pas un corpus contraignant au sens strict, mais une <strong>référence opposable</strong> soumise à l'appréciation du juge. S'en écarter relève du pouvoir d'appréciation du commandement.</li>
+                <li><strong>GDO</strong> : construire la réponse, raisonnement tactique du COS, sécurité des intervenants. <strong>GTO</strong> : méthodes et techniques. <strong>PIO</strong> : partage rapide d'information opérationnelle.</li>
+                <li>Mise à jour continue : PEX et RETEX des SIS, enquêtes IGSC, veilles juridique et technologique. Les photos et schémas n'imposent aucun matériel.</li>
+                <li>Analyse des pratiques : fiches FAPT, fiches PEX « retour terrain » et « observation matériel » centralisées par l'ECASC – CNFSMPM, validées chaque année par la DGSCGC (exemple : le rope jump, saut pendulaire sur cordes depuis 80 m minimum de falaise déversante).</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GTO-SMPM-2021.pdf" target="_blank" rel="noopener">GTO complet (PDF, 88 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Secours en milieu périlleux et montagne », DGSCGC/DSP/SDDRH/BDFE, juin 2021. Reproduction des textes autorisée pour les SIS ; illustrations non reproduites (autorisation de l'auteur requise).</p>
+    </div>
+
+    <div id="smpm-materiels" class="module" style="--jsp: #5A6FD8;">
+        <button class="back-btn" onclick="showModule('smpm-menu')">← GTO SMPM</button>
+        <h2>🎒 Matériels individuels et collectifs</h2>
+        <p style="text-align: center;">Chaque unité SMPM dispose au minimum d'un <strong>équipement individuel</strong> par membre et d'un <strong>équipement collectif de base</strong>.</p>
+
+        <div class="rd-section">
+            <h3>Agrès textiles</h3>
+            <table class="rd-table">
+                <thead><tr><th>Agrès</th><th>Caractéristiques</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Corde semi-statique</strong></td><td>Élasticité <strong>5 % maximum</strong>, diamètre 8,5 à 16 mm. <strong>Type A</strong> : usage général (travaux en hauteur, spéléo, secours). <strong>Type B</strong> : spéléo sportive et canyon, en secours <strong>pour la progression seulement</strong>. Support de base des techniques de secours.</td></tr>
+                    <tr><td><strong>Corde dynamique</strong></td><td>Absorbe une chute lors de la progression : corde à simple (1 brin), à double (2 brins), multi-label.</td></tr>
+                    <tr><td><strong>Cordelettes</strong></td><td>Autobloquants, auto-assurance ; déviations (souvent largables), amarrages, équilibrage de civière. Usure rapide.</td></tr>
+                    <tr><td><strong>Sangles</strong></td><td>Anneaux cousus (la couture n'affaiblit pas) ; élingues textiles (levage de charges lourdes ou normées EPI) ; sangles à nouer au mètre (nœud de sangle) ; sangles à cliquet (ligne de vie, amarrage).</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">Ne <strong>jamais</strong> faire de nœud de sangle sur une sangle de type <strong>Dyneema</strong> : risque de glissement dès 50 daN.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Agrès métalliques</h3>
+            <p>Toujours se reporter à la <strong>notice du fabricant</strong> (utilisation, entretien, vérification). Certains relèvent de la réglementation EPI.</p>
+            <ul>
+                <li><strong>Mousquetons</strong> : connecteurs privilégiés ; forme (asymétrique, symétrique, semi-symétrique, vrillé), fermeture (doigt libre, virole, verrouillage automatique), matériau (acier, alliage). Prévus pour la <strong>traction, jamais la compression</strong> ; résistances normées sur le grand axe, le petit axe, doigt ouvert et fermé.</li>
+                <li><strong>Descendeurs</strong> : freinage sur une ou deux cordes, parfois autobloquants ; modèles spéléo, canyon…</li>
+                <li><strong>Poulies</strong> : dévier la corde et réduire les frottements. <strong>La poulie au meilleur rendement se place à l'endroit le plus défavorable pour la traction.</strong></li>
+                <li><strong>Bloqueurs</strong> : coulissent dans un sens, bloquent dans l'autre ; progression individuelle, palans, mouflages.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Autres matériels collectifs</h3>
+            <ul>
+                <li><strong>Civières</strong> : prévoir plusieurs types pour extraire une victime d'un <strong>espace confiné</strong> (civière verticalisable), d'un milieu vertical, enneigé ou glaciaire, une victime de <strong>forte corpulence</strong>, ou par <strong>hélicoptère</strong>. Conditionnement : gestes de secourisme traditionnels ou adaptés.</li>
+                <li><strong>Mâts de déport et de rehausse</strong> (trépieds, potences) : écarter ou rehausser les cordes des obstacles.</li>
+                <li><strong>Treuils</strong> manuels, électriques ou thermiques : économisent l'énergie et fluidifient la translation, mais demandent maîtrise et attention.</li>
+                <li>Matériels antifriction.</li>
+            </ul>
+            <h3>🔥 Kit « point chaud »</h3>
+            <p>Abri pour qu'un blessé immobilisé attende l'équipe médicale : le protéger du froid et de l'humidité, le tenir <strong>allongé avec deux personnes accroupies</strong> à ses côtés, montable partout, bon ratio poids / volume / confort. Exemple de kit minimal :</p>
+            <ul>
+                <li>1 bâche au sol (3 × 2 m minimum) ;</li>
+                <li>50 m de ficelle minimum (Ø 2 mm maximum) ;</li>
+                <li>6 couvertures de survie renforcées ;</li>
+                <li>fixations : pointes acier, coins en bois, élastiques de chambre à air, marteau ; trombones ou pinces à linge en bois ;</li>
+                <li>carbure, nourriture et réchaud : le point chaud sert à <strong>reposer, réchauffer, réhydrater, restaurer</strong>.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📋 Équipement général SMPM (annexe D)</summary>
+            <p><strong>Individuel</strong> : casque, gants, tenue adaptée, couverture de survie épaisse, harnais cuissard (avec ou sans torse) ou baudrier de torse, longe double, mousquetons symétriques et grande ouverture, descendeur (autobloquant), mousqueton acier, bloqueur de poitrine, poignée et pédale d'ascension, cordelette multi-usage, dégaine, sifflet, couteau ou cisaille, lampe frontale, sac de transport.</p>
+            <p><strong>Collectif</strong> : cordes dynamiques à simple et à double, semi-statiques, cordelettes ; pitons, coinceurs mécaniques et câblés ; perforateur et accumulateur, lot de pose d'ancrage manuel, plaquettes ; anneaux cousus et sangle au mètre ; mousquetons de sécurité ; treuil à corde, antifriction, poulies, kit de mouflage, bloqueurs, dégaines ; civières, harnais ou triangle d'évacuation, déport ; radios, éclairage collectif ; griffes et scies d'élagueur ; lot de secourisme (attelles, colliers cervicaux, ACT, réanimation) ; crochets goutte d'eau ; altimètre, boussole, GPS, jumelles, télémètre ; fiches et barres d'ancrage ; lest et bobine de fil ; interface de treuillage.</p>
+        </details>
+        <details class="jsp-cours">
+            <summary>🕳️ Matériel « sites souterrains »</summary>
+            <p><strong>Individuel</strong> : casque avec éclairage, combinaison ou poncho, genouillères, cagoule, sous-vêtements hydrophobes, bottes ou chaussures, gants, cuissard et baudrier de torse spéléo, maillon à vis de ceinture, deux longes (courte et longue), descendeur spéléo, bloqueur ventral, bloqueur ou poignée, pédale, point chaud individuel.</p>
+            <p><strong>Collectif</strong> : cordes statiques, civière, matériel de conditionnement, point chaud « victime », kits bags, communication, ancrages, perforateur.</p>
+        </details>
+        <details class="jsp-cours">
+            <summary>🏞️ Matériel « canyon »</summary>
+            <p><strong>Individuel</strong> : sac canyon, bidon étanche, néoprène (combinaison étanche pour l'ice-canyon), chaussons, gants, chaussures canyon, harnais canyon, longe double, dégaine avec mousquetons de sécurité, maillon à vis (demi-lune ou triangulaire), masque ou lunettes de natation, couteau, point chaud individuel.</p>
+            <p><strong>Collectif</strong> : cordes de sécurité, cordes statiques de longueur adaptée, bidons ou sacs étanches, brancard, housses étanches pour radio, civière, conditionnement, point chaud « victime », kits bags, communication, ancrages, perforateur ; éventuellement canot pneumatique.</p>
+        </details>
+        <details class="jsp-cours">
+            <summary>🏔️ Matériel « montagne »</summary>
+            <p><strong>Individuel</strong> : casque ski-alpinisme, tenue et chaussures adaptées, sac airbag, pitons, coinceurs, marteau, brin de corde dynamique multi-label de <strong>50 m minimum</strong>, point chaud individuel, <strong>DVA</strong>, masque (réverbération), piolet(s), broches à glace, <strong>pelle</strong>, <strong>sonde</strong>, crochet à lunule, raquettes et / ou skis de randonnée (bâtons, peaux, couteaux), crampons avec antibottes.</p>
+            <p><strong>Collectif</strong> : altimètre, GPS, point chaud « victime », ancre à neige, sondes rigides (4 m minimum), pelles, pioches, broches à glace, pieux d'ancrage, traîneau d'évacuation guidable, piolets techniques, raquettes, sac avalanche normalisé, lot de sauvetage sur téléporté, lot de sécurité pour dépose héliportée sur glacier crevassé, détecteur de pastilles réflectrices.</p>
+        </details>
+        <p class="rd-source">GTO SMPM 2021, chapitre 1 et annexe D. Les listes sont à adapter à l'analyse des risques de chaque SIS.</p>
+    </div>
+
+    <div id="smpm-principes" class="module" style="--jsp: #5A6FD8;">
+        <button class="back-btn" onclick="showModule('smpm-menu')">← GTO SMPM</button>
+        <h2>⛓️ Principes fondamentaux & cordes</h2>
+
+        <div class="rd-section">
+            <h3>Le système : 5 maillons</h3>
+            <table class="rd-table">
+                <thead><tr><th>Élément</th><th>Règles</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Ancrage</strong><br>ce qui tient</td><td><strong>Artificiel</strong> (cheville, piton, broche, fiche, coinceur) : <strong>jamais considéré comme fiable</strong> ; toujours multiplié (2 à 6) quand il porte un dispositif exigeant une fiabilité totale (tête de puits, treuil). <strong>Naturel ou structurel</strong> (arbre, rocher, glace, élément de construction, engin, mobilier urbain) : fiabilité selon bon sens, expérience et connaissance du terrain ; s'il est fiable, pas besoin de le multiplier. <strong>Mobile</strong> (barre de porte, engin) : surtout en milieu bâti. <strong>En cas de doute : multiplier.</strong></td></tr>
+                    <tr><td><strong>Amarrage</strong> (relais)<br>ce qui solidarise et oriente</td><td>Agrès textiles et / ou métalliques reliant ancrage(s) et dispositif. Une fois monté, son <strong>connecteur ne doit plus être ouvert</strong> ; il est alors fiable et utilisable sans redondance. <strong>Doubler</strong> (surtout le textile) en cas de chute de matériaux, de contact agressif (produit chimique, point chaud, arête vive) ou de conditions difficiles (boue, nuit, froid, glace, stress) ; privilégier le déplacement ou la protection du concept. Sur ancrages multiples : <strong>répartir et équilibrer</strong> la charge (amarrage multidirectionnel, semi-directionnel ou monodirectionnel).</td></tr>
+                    <tr><td><strong>Dispositif</strong><br>ce qui permet la manœuvre</td><td>Porteur (cordes tendues, déviations, déports), équipement (corde de progression, main courante), environnement civière (train de poulies, STEF, agrès de médicalisation), translation (treuil, palan, frein de charge, contrepoids). Un dispositif de translation convertible reçoit son <strong>propre connecteur</strong>.</td></tr>
+                    <tr><td><strong>Charge</strong><br>l'objet de la manœuvre</td><td>Personne, animal, objet ou association (victime + secouriste, chien + maître). Point central de la mission : préserver la charge, optimiser confort, fluidité et sécurité, sans oublier la sécurité de l'unité.</td></tr>
+                    <tr><td><strong>Spécialiste</strong><br>qui installe et met en œuvre</td><td><strong>L'élément le moins fiable</strong> : rigueur, responsabilité individuelle et collective, attention permanente, remise en question systématique. Procédures, vérifications croisées et analyse des pratiques visent à parer l'erreur humaine.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les nœuds (principaux)</h3>
+            <table class="rd-table">
+                <thead><tr><th>Catégorie</th><th>Usage</th><th>Nœuds</th></tr></thead>
+                <tbody>
+                    <tr><td>Encordement</td><td>Relier le harnais à une corde</td><td>Huit tricoté, chaise</td></tr>
+                    <tr><td>Attache</td><td>Relier une corde à un dispositif ou un amarrage</td><td>Huit double, cabestan</td></tr>
+                    <tr><td>Jonction</td><td>Relier deux cordes</td><td>Huit triple, pêcheur double ou triple, huit tricoté, nœud de sangle</td></tr>
+                    <tr><td>Auto-assurance, autobloquant</td><td>Bloquer sur une corde</td><td>Français, Machard</td></tr>
+                    <tr><td>Frein</td><td>Freiner, descendre une charge</td><td>Demi-cabestan</td></tr>
+                    <tr><td>Largable</td><td>Bloquer puis libérer facilement</td><td>Nœud de mule</td></tr>
+                    <tr><td>Neutralisation</td><td>Signaler et isoler une anomalie sur une corde</td><td>Nœud en neuf</td></tr>
+                </tbody>
+            </table>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('lspcc-noeuds')">Nœuds & dispositifs (LSPCC)</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Facteur de chute et force choc</h3>
+            <ul>
+                <li><strong>Facteur de chute = hauteur de chute ÷ longueur de corde qui amortit</strong>. Avec 1 m de corde : chute de 0,3 m → Fc 0,3 ; 1 m → Fc 1 ; 2 m → Fc 2.</li>
+                <li>Les frottements (rocher, dégaines) empêchent toute la corde de s'allonger : seule la <strong>longueur efficace</strong> amortit. Le facteur réel est donc <strong>toujours supérieur</strong> au facteur théorique.</li>
+                <li><strong>Force choc</strong> (force maximale d'interception) : subie par tout le système ancrage – amarrage – dispositif – spécialiste ; dépend de la <strong>nature de la corde</strong>, du <strong>facteur de chute</strong> et du <strong>poids</strong>. Un système d'arrêt des chutes doit la limiter à <strong>600 daN</strong> pour l'utilisateur.</li>
+            </ul>
+            <div class="rd-alerte">Avec des <strong>agrès à picots</strong>, une chute de <strong>facteur 1</strong> entraîne systématiquement la <strong>rupture de la corde</strong>.</div>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('lspcc-calculateur')">🧮 Calculateur facteur de chute</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Progresser</h3>
+            <ul>
+                <li><strong>Corde fixe</strong> (« corde d'équipement ») : horizontale, verticale ou oblique, pour l'évolution autonome ; la mise en place exige la maîtrise de l'ancrage et de l'amarrage, l'évolution celle des techniques de franchissement.</li>
+                <li><strong>Escalade</strong> : progression le long d'une paroi par une voie ; progression, assurage et descente demandent des techniques et un matériel spécifiques.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Auto-sauvetage et sauvetage</strong>
+                <p>But : soustraire vite toute personne à un danger objectif (chute de pierres) ou subjectif (personne bloquée sur corde). Une personne <strong>inconsciente suspendue dans un harnais</strong> (corps rétroversé, relâchement musculaire) présente des troubles graves et rapides de la ventilation et de la circulation, aggravés par les chutes de matériaux, l'hypothermie, le choc : péril direct et imminent. Techniques : sauvetage <strong>depuis le haut</strong>, <strong>depuis le bas</strong>…</p>
+            </div>
+        </div>
+        <p class="rd-source">GTO SMPM 2021, chapitres 2 et 3.</p>
+    </div>
+
+    <div id="smpm-techniques" class="module" style="--jsp: #5A6FD8;">
+        <button class="back-btn" onclick="showModule('smpm-menu')">← GTO SMPM</button>
+        <h2>🪢 Techniques opérationnelles collectives</h2>
+        <p style="text-align: center;">Les agrès de traction, de déport et de rehausse sont des exemples, à adapter au choix tactique du chef d'unité et aux moyens. Les variantes ne dérogent <strong>jamais</strong> aux principes de sécurité.</p>
+
+        <div class="rd-section">
+            <h3>Généralités</h3>
+            <ul>
+                <li><strong>Redondance d'opportunité</strong> : doubler les agrès d'une même fonction (sangles, cordes) quand le système est vulnérable (chute de matériaux, points chauds, mauvaise visibilité) ou contraint (charge lourde, grande flèche de corde tendue). Le chef d'unité peut s'en affranchir si les circonstances le permettent.</li>
+                <li><strong>Communication</strong> : l'un des premiers actes de commandement ; ordres et comptes rendus compris de tous, à la voix ou par code ; sinon par impulsions (coup de sifflet, éclat lumineux) ; radio, téléphone filaire.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Dispositifs de translation de base</h3>
+            <table class="rd-table">
+                <tbody>
+                    <tr><td><strong>Frein de charge</strong></td><td>Agrès ou technique de descente placé en point fixe pour réguler la descente d'une charge.</td></tr>
+                    <tr><td><strong>Traction</strong></td><td>Treuils, balanciers et surtout <strong>palans</strong> : déplacement par à-coups ou linéaire selon l'espace de travail.</td></tr>
+                    <tr><td><strong>Porteur</strong></td><td>Une corde ; une <strong>seconde sur ordre du chef d'unité</strong> si l'environnement l'exige ou pour réduire la flèche (superposées ou juxtaposées) ; rehausses et déports.</td></tr>
+                    <tr><td><strong>Conversions</strong></td><td>Chaque dispositif est <strong>réversible</strong> et permet le passage de nœuds à la montée comme à la descente.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Techniques de secours (cordes semi-statiques)</h3>
+            <table class="rd-table">
+                <thead><tr><th>Technique</th><th>Principe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Plan incliné</strong></td><td>La civière suit le profil de la pente, <strong>accompagnée</strong> ; elle glisse si le sol le permet, sinon elle est portée (chaos, marches). Combinée au secours en paroi pour les passages verticaux.</td></tr>
+                    <tr><td><strong>Secours en paroi</strong></td><td>Civière suivant un plan vertical, <strong>systématiquement accompagnée d'un spécialiste</strong> (guider, passer les obstacles, manipuler en tête de verticale, surveiller la victime). Privilégier un <strong>déport</strong>. Le dispositif principal est accompagné d'une <strong>corde de relief</strong> (assurance).</td></tr>
+                    <tr><td><strong>Cacolet</strong></td><td>Victime ne nécessitant pas de civière, ou auto-sauvetage : <strong>de sentier</strong> (sur le dos du sauveteur) ou <strong>de paroi</strong> (sur le dos ou sur le côté).</td></tr>
+                    <tr><td><strong>Cordes tendues</strong> (tyrolienne)</td><td><strong>Horizontale</strong> : d'un bord à l'autre au-dessus d'un obstacle. <strong>Oblique</strong> : du bas vers le haut ou l'inverse. Passage de corde possible par drone ; lest ; corde de retenue à la main, sur ordre.</td></tr>
+                    <tr><td><strong>PRM sur corde tendue</strong></td><td>Poulie de renvoi mobile suspendue sous une corde tendue ; déplacement vertical, horizontal ou oblique par le jeu de deux dispositifs antagonistes (opposition et translation) ; corde « anti-giration » sur ordre.</td></tr>
+                    <tr><td><strong>PRM sur point fixe</strong></td><td>Axe oblique ; la corde porteuse sert aussi d'opposition ; les deux dispositifs antagonistes sont du même côté.</td></tr>
+                    <tr><td><strong>Balancier contrepoids</strong></td><td>Évacuation rapide et simple <strong>du bas vers le haut</strong>, peu de matériel, grande souplesse : mode privilégié des civières en vertical ou oblique (souterrain, canyon). En conditions normales, <strong>sans assurance</strong> ; redondance des parties vulnérables si l'environnement menace le système. 4 phases : reprise de charge, régulateur, contrepoids, transfert de charge.</td></tr>
+                    <tr><td><strong>Évacuation en façade (TEF)</strong></td><td>Depuis toute structure bâtie, notamment pour une personne de <strong>forte corpulence</strong> ou <strong>lourdement médicalisée</strong> quand les moyens classiques ne suffisent pas. Variantes : TEF de base, TEF mouflée, TEF « charge lourde » (montée au treuil, descente au frein de charge).</td></tr>
+                    <tr><td><strong>Extraction</strong></td><td>Méthodes traditionnelles adaptées au terrain, souvent avec techniques de cordes (ex. extraction d'une cabine de poids lourd au mini-palan double) ; puis brancardage.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">PRM : dans les deux cas, <strong>anticiper le risque de mise en giration</strong> de la civière.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔥 Point chaud</h3>
+            <p>En ambiance froide ou humide : abri isolé et chauffé pour le « sauveteur » (attente, déplacement fractionné, ré-équipement, gestes médicaux) ou pour la « victime » (<strong>avec un blessé mouillé, la couverture de survie seule ne suffit pas</strong>). Montage rapide ; emplacement qui permet :</p>
+            <ul>
+                <li>une <strong>fosse à air froid</strong> (point bas qui draine l'air froid, comme dans un igloo) ;</li>
+                <li>le blessé <strong>au plus près du plafond</strong>, dans la bulle d'air chaud ;</li>
+                <li>un accès de l'assistant <strong>par-dessous</strong>, sans ouvrir l'abri.</li>
+            </ul>
+            <p><strong>Le banc</strong> : gros blocs aménagés de galets, isolés par des sacs ou des cordes, abri autour. <strong>L'étagère</strong> : espace plat aménagé dans une pente (berge), l'assistant côté pente. Chauffage : grosse bougie ; abri tendu sur cordelettes.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🚡 Installations téléportées</h3>
+            <ul>
+                <li>Intervention sur <strong>demande formelle du chef d'exploitation</strong>, dans le respect des procédures (situation exceptionnelle ou acheminement au sol nécessitant des techniques alpines).</li>
+                <li>Le chef d'exploitation pilote en principe l'évacuation, sauf si le préfet prend la direction des opérations.</li>
+                <li>Évacuations verticales, par translation sur câble ou par hélitreuillage ; en montagne comme en milieu urbain.</li>
+                <li>Maintien des acquis régulier avec les personnels des remontées mécaniques.</li>
+            </ul>
+        </div>
+        <p class="rd-source">GTO SMPM 2021, chapitre 4.</p>
+    </div>
+
+    <div id="smpm-milieux" class="module" style="--jsp: #5A6FD8;">
+        <button class="back-btn" onclick="showModule('smpm-menu')">← GTO SMPM</button>
+        <h2>⛰️ Souterrain, canyon, montagne</h2>
+        <p class="jsp-liens"><button class="sal-lien" onclick="showModule('impm-souterrain')">Milieu souterrain (GDO)</button> <button class="sal-lien" onclick="showModule('impm-canyon')">Milieu canyon (GDO)</button> <button class="sal-lien" onclick="showModule('impm-montagne')">Milieu montagne (GDO)</button></p>
+
+        <details class="jsp-cours" open>
+            <summary>🕳️ Milieu souterrain</summary>
+            <ul>
+                <li>Interventions complexes, sous la disposition spécifique <strong>ORSEC « Secours en milieu souterrain »</strong> (convention nationale DGSCGC – Fédération française de spéléologie). Le <strong>commandement reste au SIS</strong>.</li>
+                <li><strong>Stratégie</strong> selon 3 cas : cavité non localisée et victime connue ; cavité localisée, victime inconnue et non localisée ; cavité connue, victime connue et localisée.</li>
+                <li>Le <strong>conseiller technique</strong> désigné par arrêté préfectoral propose au COS moyens et stratégie, coordonne les moyens souterrains, fixe les missions et constitue les équipes. Les SMPM ISS s'intègrent aux forces concourantes (<strong>SSF</strong>, SAMU…). Le COS fixe les relais à la sortie de la cavité.</li>
+                <li><strong>Localisation</strong> : listing des cavités et des personnes ressources du département ; sinon, recherche avec les forces de l'ordre.</li>
+                <li><strong>Approche</strong> : route, caravane terrestre, vecteur aérien.</li>
+                <li><strong>Cheminement horizontal</strong> : marcher autant que possible (pas de sauts : sols inégaux, planchers stalagmitiques qui peuvent céder). Ramping et laminoirs : accroupi, à quatre pattes, en rampant (respiration abdominale quand le thorax est coincé). Méandres : opposition de face ou de profil ; prudence si le méandre se rétrécit vers le bas (progresser en hauteur ; coincement : plus on bouge, plus on s'enfonce). <strong>Jamais tête la première dans un passage descendant.</strong> Sac et matériel <strong>poussés devant soi</strong>, jamais traînés. Eau profonde : à la nage (combinaison) ou en embarcation (risque de chavirage).</li>
+                <li><strong>Cheminement vertical</strong> : mains courantes (longe), techniques de cordes.</li>
+                <li><strong>Techniques</strong> : les formations du SSF constituent le socle commun ; beaucoup de techniques canyon servent aussi sous terre ; le <strong>balancier contrepoids</strong> est la technique de référence.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>🏞️ Milieu canyon</summary>
+            <p>Passages encaissés, en glace, en eau ou à sec, surtout verticaux : progression en <strong>eaux vives</strong>.</p>
+            <ul>
+                <li><strong>Équipe de base : un binôme</strong> (actions immédiates, reconnaissances, équipement d'une partie du site).</li>
+                <li><strong>Opération simple</strong> : rapide, un vecteur aérien et un binôme, une seule victime. <strong>Opération complexe</strong> : pas de vecteur aérien, nuit, plusieurs victimes ou impliqués, météo défavorable.</li>
+                <li>Victime <strong>localisée</strong> : binôme d'abordage, équipe médicale, équipe de soutien et d'évacuation, par le cheminement le plus adapté. <strong>Non localisée</strong> : binômes de reconnaissance sur tout le canyon (entrée, échappatoires, sorties), puis redéploiement selon le bilan.</li>
+                <li><strong>Localisation</strong> : questionnement adapté (département, commune, nom du canyon), géolocalisation, cartographie, partenaires (<strong>EDF pour les lâchers de barrage</strong>), connaissances du spécialiste, moyens aériens, équipes légères amont / aval / échappatoire.</li>
+                <li><strong>Accès</strong> à pied, à la nage ou par voie aérienne selon le niveau d'eau, la verticalité et l'engagement. Anticiper tourbillons, <strong>siphons</strong>, aspirations, placages, drossages. <strong>Sauts et toboggans</strong> : sonder la réception ; jambes jointes et légèrement fléchies, bras le long du corps ou croisés (éviter les luxations d'épaule). En hiver : neige, glace (DVA, piolet).</li>
+            </ul>
+            <table class="rd-table">
+                <tbody>
+                    <tr><td><strong>Progression</strong> (débrayables, guidées, largables, rappelables)</td><td>Portage de sacs ; conditionnement des cordes ; huit descendeur (montage, frein supplémentaire, clé d'arrêt) ; conversion montée-descente classique (obstacle non arrosé) ou rapide (obstacle arrosé) ; descente sur demi-cabestan ; auto-assurance du 1<sup>er</sup> en terrain inconnu ; main courante rappelable (éviter une cascade) ; rappel débrayable ; blocage rapide des brins (descente simultanée) ; rappel sur corde guide rappelable ; déviation rappelable ; signes de progression ; progression en eaux vives (lire le parcours, zones d'arrêt).</td></tr>
+                    <tr><td><strong>Évacuation</strong> (roulement des équipes de l'amont vers l'aval)</td><td>Cacolet pour blessé léger ; corde guide pour évacuer hors d'eau ; accompagnement d'une victime valide ; grande verticale avec relais intermédiaires ; passage de déviation avec civière sans démonter les poulies ; franchissement d'une partie aquatique courte avec civière rendue flottante par les sacs (bidons étanches) et tractée.</td></tr>
+                    <tr><td><strong>Secours d'urgence</strong></td><td>Cacolet en auto-secours (hors cascade arrosée) ; conversion d'un débrayable en mouflage ; mouflage sur corde tendue ; <strong>coupé de corde indirect</strong> (dégager une personne bloquée dans une cascade sur corde non débrayable, depuis le relais) ; récupération d'une personne dans une vasque par un <strong>sac flottant</strong> lancé depuis une position haute.</td></tr>
+                </tbody>
+            </table>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>🏔️ Milieu montagne</summary>
+            <ul>
+                <li>Complexité : approche, isolement, conditions nivo-météo, évacuation difficile. Trois phases : <strong>localisation</strong>, <strong>déplacement</strong>, <strong>techniques propres</strong>.</li>
+                <li><strong>Localisation</strong> : questionnement (massif, sommet, activité, météo), <strong>AML</strong>, géoloc 18-112, SIG, GPS, cartographie numérique ; partenaires (gardiens de refuge, service des pistes) ; <strong>conférence à trois</strong> (centre opérationnel, requérant, spécialiste) ; hélicoptères, drones ; équipes légères.</li>
+                <li><strong>Accès</strong> selon l'analyse du risque : terrain (pente, orientation, nature), météo et nivologie (orages, brouillard, risque d'avalanche), facteur humain (nombre, état physique, connaissance du secteur). Été : terrain varié, escalade artificielle ou en falaise, rappel, corde fixe. Hiver : terrain enneigé (skis), couloirs et pentes raides (piolets, crampons), haute montagne glaciaire, mixte, cascade de glace.</li>
+            </ul>
+            <table class="rd-table">
+                <tbody>
+                    <tr><td><strong>Évolution</strong></td><td>Orientation (cartes, électronique) ; corde coulissante (moulinette, en tête, grandes voies, réversible) ; corde fixe ; relais en rocher ou en glace ; progression de relais en relais ou simultanée (terrain crevassé ou non) ; amarrages ; assurage (auto-assurage, 1<sup>er</sup> et second de cordée, poulie) ; rappel ; <strong>test de pente enneigée</strong> ; équipement de pentes raides ; cramponnage (frontal, 10 pointes) ; encordement sur glacier ; via ferrata ; tyrolienne et téléphérique.</td></tr>
+                    <tr><td><strong>Évacuation</strong></td><td>Palans ; cacolet de paroi ; contrepoids (blessé léger en baudrier, civière ou perche sans accompagnateur) ; secours en avalanche ; civière pour milieu enneigé ; portage de civière.</td></tr>
+                    <tr><td><strong>Secours d'urgence</strong></td><td>Secours et auto-secours en paroi ; équipier bloqué sur un rappel (par le haut ou le bas) ; toits et dévers ; mouflages (simple, Mariner, boucle), aide au second (grenouille, balancier), cacolet italien, rappel à deux, rallonge de corde ; avalanche (<strong>DVA, sonde, pelle</strong>) ; bivouac (à plat, en pente, corniche) ; ancrages en neige ; secours et auto-secours en <strong>crevasse</strong> ; secourisme en montagne.</td></tr>
+                </tbody>
+            </table>
+        </details>
+        <p class="rd-source">GTO SMPM 2021, chapitres 5, 6 et 7.</p>
+    </div>
+
+    <div id="smpm-appui" class="module" style="--jsp: #5A6FD8;">
+        <button class="back-btn" onclick="showModule('smpm-menu')">← GTO SMPM</button>
+        <h2>🤝 Opérations diverses et d'appui</h2>
+
+        <div class="rd-section">
+            <h3>Appui aux primo-intervenants</h3>
+            <ul>
+                <li>Bâchages complexes après tempêtes.</li>
+                <li>Sécurisation des intervenants sur les incendies d'infrastructures en hauteur (silos…), soutien aux <strong>établissements verticaux</strong> (Notre-Dame de Paris).</li>
+                <li>Sauvetage d'animaux bloqués ou enlisés (milieux clos, étroits, manœuvres de force).</li>
+                <li>Sécurisation en zones effondrées, éléments menaçant de tomber (enseignes, matériaux), reconnaissances en environnement hostile.</li>
+                <li>Accès et remontée de produits pétroliers au pied de falaises inaccessibles (Belle-Île, Erika).</li>
+                <li>Appui aux autres équipes spécialisées : mains courantes, sécurisation de zone.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Bâchage</h3>
+            <p>En complément des primo-intervenants (et du <strong>LSPCC</strong>), pour protéger les biens après un incendie ou, plus souvent, un aléa météo (tempête, grêle). Les techniques varient selon la <strong>hauteur</strong>, la <strong>surface</strong> et le <strong>type de couverture</strong> ; exemple : recouvrement partiel des tuiles faîtières.</p>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('lspcc-menu')">🪢 LSPCC</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Lutte contre l'incendie</h3>
+            <p>Le COS peut buter sur la hauteur (au-delà des MEA), l'architecture, les cheminements, les matériaux, notamment pour le dégarnissage, le déblai ou la protection. Apports possibles des SMPM sur toute la MGO :</p>
+            <ul>
+                <li>reconnaissance et recherche de foyers <strong>sur corde</strong> (silos, tours, bâtiments de grande hauteur : joints de dilatation, isolants) ;</li>
+                <li>soutien des sauvetages au LSPCC et aux MEA ;</li>
+                <li>établissements verticaux ou obliques, <strong>hissage</strong> de charges (bidons d'émulseur, matériel) sur monuments historiques ou sites industriels ;</li>
+                <li>protection et déblai : dépose de charges légères, bâchage en hauteur (souvent délicats à cause des dégâts du feu) ;</li>
+                <li><strong>mains courantes</strong> pour sécuriser les équipes au déblai ;</li>
+                <li>sécurisation des enquêteurs (police, gendarmerie) et experts (architectes) ;</li>
+                <li>feux d'espaces naturels en terrain très escarpé.</li>
+            </ul>
+            <p>L'emploi des MEA reste conditionné aux prescriptions des constructeurs.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🐄 Sauvetage d'animaux</h3>
+            <p>Animaux tombés en excavation (puits, fosses à lisier, grottes), en ravin, bloqués en paroi, carrière ou falaise, ou en hauteur (arbres, bâtiments). D'abord <strong>accéder</strong> à l'animal (abordage rapide à deux, l'équipier d'abordage mains libres), puis l'<strong>extraire</strong> (levage, translation). Idée de manœuvre du COS après balance <strong>bénéfice / risque</strong>.</p>
+            <ul>
+                <li>Recourir si possible à un <strong>vétérinaire</strong> (tranquillisation) ; envoyer un sapeur-pompier évaluer au contact (éventuellement un personnel formé au risque animalier descendu par le SMPM).</li>
+                <li>Évaluer le <strong>poids</strong> (cheval : 450 kg à 1 t ; vache…).</li>
+                <li><strong>Sécuriser vite</strong> l'animal en paroi (sangle, corde) : épuisé ou rassuré, il peut se relâcher et chuter.</li>
+                <li><strong>Couvrir les yeux</strong> (couverture, veste) : l'obscurité calme et réduit le risque de morsure.</li>
+                <li>Sangles de levage sous le corps : <strong>une derrière les pattes avant, une devant les pattes arrière</strong>, reliées devant les pattes avant et derrière les pattes arrière pour ne pas glisser sur le ventre.</li>
+                <li>Petits animaux (ovins, porcins) : sac type big-bag, fermé en partie haute.</li>
+                <li>Chiens : museler si possible ; harnais réglable avec sangle d'amarrage (courte, reliée à l'avant) et sangle plate passée dans les pattes arrière, demi-clé sur le dos, reliée à la plaquette au plus près du corps.</li>
+            </ul>
+            <p class="jsp-liens"><button class="sal-lien" onclick="showModule('jsp4-od')">🐾 Opérations diverses et animalières (JSP)</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🌳 Arbres</h3>
+            <p>Parapente, paramoteur, chute libre (pratiquants suspendus ou blessés), tree-climbing et bivouacs en canopée, tree line, accrobranche, élagage. L'arbre est vivant : analyser son <strong>état sanitaire</strong> et la zone, maîtriser l'abordage et l'évolution sur corde dans l'arbre, le matériel de <strong>coupe</strong> pour libérer une victime, et une méthodologie adaptée issue des RETEX, en lien avec les acteurs de ces activités.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🎢 Manèges et parcs d'attraction</h3>
+            <p>En renfort des unités milieu périlleux internes : attractions de grande hauteur (montagnes russes, voitures, bateaux). Situations : <strong>consignation des énergies</strong>, immobilisation des véhicules ou de l'attraction, abordage et sauvetage, <strong>personnes en situation de handicap</strong>, évacuations en nombre, matériel d'évacuation adapté, chutes de matériaux, incendie, animaux. Procédures écrites et connaissance du site indispensables.</p>
+        </div>
+        <p class="rd-source">GTO SMPM 2021, chapitre 8.</p>
+    </div>
+
     <!-- Interventions en Milieu Périlleux et Montagne -->
     <!-- Menu Principal IMPM -->
     <div id="impm-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2 style="color: light-dark(#5d4037, #b99488); border-bottom: 3px solid #5D4037;">⛰️ IMPM - Milieu Périlleux</h2>
         <p style="text-align: center; margin-bottom: 25px; color: var(--text-secondary);">Interventions en Milieu Périlleux et Montagne - Secours en hauteur, profondeur et milieux hostiles</p>
-        
+        <p class="jsp-liens" style="text-align: center;">Techniques des unités SMPM : <button class="sal-lien" onclick="showModule('smpm-menu')">🧗 GTO SMPM 2021</button></p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-top: 20px;">
             <button onclick="showModule('impm-milieux')" style="background: linear-gradient(135deg, #5D4037 0%, #6D4C41 100%); border: 3px solid #6D4C41; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
                 <div style="font-size: 2.8em; margin-bottom: 8px;">🏔️</div>
@@ -20279,7 +22095,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.26.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.27.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
