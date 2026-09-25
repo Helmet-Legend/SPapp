@@ -30,6 +30,7 @@ test('chaque bouton appelle une fonction qui existe', async ({ app }) => {
 });
 
 test('chaque écran s\'ouvre sans erreur', async ({ app }) => {
+    test.setTimeout(180000);   // parcourt les ~190 écrans un par un
     const ids = await app.evaluate(() => [...document.querySelectorAll('.module')].map(m => m.id));
     expect(ids.length).toBeGreaterThan(90);
     for (const id of ids) {
