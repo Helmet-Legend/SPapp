@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.19.1 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.20.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025 - RESCUEAPP
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -98,7 +98,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.19.1';
+var APP_VERSION = '1.20.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1094,7 +1094,8 @@ function calculateFeuForetRegle3pct() {
     
     var vent = ventSelectionne;
     var angleCone = parseFloat(document.getElementById('angle-cone')?.value || 40);
-    var vitessePropagation = vent * 0.03;
+    var trabaud = facteurTrabaud(vent, hygroTrabaud);
+    var vitessePropagation = vent * trabaud.facteur / 100;
     var vitessePropagationMMin = vitessePropagation * (1000/60);
     
     var temps = [15, 30, 45, 60, 120];
@@ -1114,7 +1115,7 @@ function calculateFeuForetRegle3pct() {
         '<div style="font-size:3em;margin-bottom:10px;">' + emoji + '</div>' +
         '<div style="font-size:1.8em;font-weight:bold;">RISQUE ' + niveauRisque + '</div>' +
         '<div style="background:rgba(0,0,0,0.3);padding:15px;border-radius:10px;margin-top:15px;">' +
-        '<div style="font-size:0.9em;opacity:0.9;">Vent: ' + vent + ' km/h</div>' +
+        '<div style="font-size:0.9em;opacity:0.9;">Vent: ' + vent + ' km/h · ' + trabaud.texte + '</div>' +
         '<div style="font-size:2.5em;font-weight:bold;">' + vitessePropagationMMin.toFixed(1) + ' m/min</div></div></div>';
     
     html += '<div class="result-box"><h3>📏 Distances parcourues</h3><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:15px;">';
@@ -1127,6 +1128,33 @@ function calculateFeuForetRegle3pct() {
     html += '</div></div>';
     
     resultDiv.innerHTML = html;
+}
+
+// Table de Trabaud (GDO feux de forêts § 2.3.3) : facteur de propagation en % de la vitesse du vent
+var hygroTrabaud = '';
+var TRABAUD = {
+    '41-45': [1.0, 2.0, 2.8, 3.2, 3.4],
+    '31-40': [1.4, 2.8, 3.9, 4.5, 4.8],
+    '26-30': [2.0, 4.0, 5.6, 6.4, 6.8],
+    '16-25': [2.8, 5.6, 7.8, 9.0, 9.5],
+    '0-15': [3.2, 6.4, 9.0, 10.2, 10.9]
+};
+
+function facteurTrabaud(vent, hygro) {
+    if (!hygro || !TRABAUD[hygro]) return { facteur: 3, texte: 'règle des 3 %' };
+    var bornes = [16, 24, 32, 40, 48];
+    var i = bornes.findIndex(function(b) { return vent <= b; });
+    var horsTable = i === -1;
+    if (horsTable) i = bornes.length - 1;
+    var f = TRABAUD[hygro][i];
+    var hr = hygro === '0-15' ? 'HR < 15 %' : 'HR ' + hygro.replace('-', ' à ') + ' %';
+    return { facteur: f, texte: 'Trabaud ' + hr + ' : ' + String(f).replace('.', ',') + ' %' + (horsTable ? ' (vent au-delà de la table)' : '') };
+}
+
+function selectHygroTrabaud(hygro) {
+    hygroTrabaud = hygro;
+    document.querySelectorAll('[data-hygro]').forEach(function(b) { b.setAttribute('aria-pressed', String(b.dataset.hygro === hygro)); });
+    if (ventSelectionne > 0) calculateFeuForetRegle3pct();
 }
 
 function calculateFeuForet() { calculateFeuForetRegle3pct(); }
@@ -1495,7 +1523,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.19.1 COMPLET
+// FIN DU FICHIER - Vulcain v1.20.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

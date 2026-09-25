@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.19.1">
+    <meta name="version" content="1.20.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -46,6 +46,7 @@
         <symbol id="i-cross" viewBox="0 0 24 24"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/></symbol>
         <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
         <symbol id="i-mountain" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></symbol>
+        <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 2 5 12h4l-4 6h14l-4-6h4z"/><path d="M12 18v4"/></symbol>
         <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
         <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
         <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
@@ -97,7 +98,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.19.1</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.20.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -202,7 +203,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.19.1</span><br>
+                        Vulcain v<span class="app-version">1.20.0</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -3630,7 +3631,7 @@
     <!-- MODULE VENTILATION -->
     <!-- MODULE FEUX DE FORÊT - VERSION SIMPLIFIÉE -->
     <div id="feu-foret" class="module">
-        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
         <h2>🌲 Feux de Forêt - Règle des 3%</h2>
         
         <div class="alert-box" style="background: rgba(0,170,255,0.15); border-left-color: #00aaff; margin-bottom: 25px;">
@@ -3682,6 +3683,19 @@
                 </button>
             </div>
             <input type="hidden" id="angle-cone" value="40">
+        </div>
+        <!-- HUMIDITÉ DE L'AIR (table de Trabaud, GDO FDF) -->
+        <div class="form-group">
+            <label>💧 Humidité relative de l'air (facultatif) :</label>
+            <div class="rd-choix-technique" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+                <button type="button" data-hygro="" aria-pressed="true" onclick="selectHygroTrabaud('')">Règle des 3 %</button>
+                <button type="button" data-hygro="41-45" onclick="selectHygroTrabaud('41-45')">41 à 45 %</button>
+                <button type="button" data-hygro="31-40" onclick="selectHygroTrabaud('31-40')">31 à 40 %</button>
+                <button type="button" data-hygro="26-30" onclick="selectHygroTrabaud('26-30')">26 à 30 %</button>
+                <button type="button" data-hygro="16-25" onclick="selectHygroTrabaud('16-25')">16 à 25 %</button>
+                <button type="button" data-hygro="0-15" onclick="selectHygroTrabaud('0-15')">moins de 15 %</button>
+            </div>
+            <small>Affine le pourcentage avec la table de Trabaud (GDO feux de forêts, § 2.3.3). En conditions extrêmes, la propagation peut atteindre 4 à 10 % du vent.</small>
         </div>
 
         <!-- RÉSULTATS PROPAGATION -->
@@ -10249,6 +10263,1191 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – annexes 5.6 et 5.7</p>
     </div>
 
+    <!-- ============ FDF – GDO Feux de forêts et d'espaces naturels (DGSCGC 2021) ============ -->
+    <div id="gdo-menu" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🌲 GDO – Doctrine opérationnelle FDF</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle <strong>« Feux de forêts et d'espaces naturels »</strong> – DGSCGC, 1<sup>re</sup> édition, février 2021</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gdo-milieux')"><b>Ch. 1 · Milieux et végétation</b><span>Strates, massifs, espaces agricoles, interfaces, inflammabilité</span></button>
+            <button onclick="showModule('gdo-meteo')"><b>Ch. 1 · Relief, météo et indices</b><span>Vent, règle des 3 % et des 30, ICL, IH, IS, IFM</span></button>
+            <button onclick="showModule('gdo-acteurs')"><b>Ch. 1 · Les acteurs</b><span>OLD, forestiers sapeurs, ONF, CCFF, DPFM, UE</span></button>
+            <button onclick="showModule('gdo-comportement')"><b>Ch. 2 · Comportement du feu</b><span>Types de feux, puissance, propagation, sautes, lecture du feu</span></button>
+            <button onclick="showModule('gdo-ege')"><b>Ch. 2 · Embrasement généralisé éclair</b><span>Conditions, signes, bulle thermique, tapis de feu, effet Blin</span></button>
+            <button onclick="showModule('gdo-securite')"><b>Ch. 3 · Sécurité des intervenants</b><span>Cabine, EPI, hydratation, relèves, lignes électriques, voies ferrées</span></button>
+            <button onclick="showModule('gdo-reponse')"><b>Ch. 4 · Réponse opérationnelle</b><span>Stratégie, MGO, fixer-maîtriser-éteindre, manœuvres, RCCI</span></button>
+            <button onclick="showModule('gdo-grands-feux')"><b>Ch. 5 · Feux de grande envergure</b><span>COS, transmissions, moyens aériens, renforts, mégafeux</span></button>
+            <button onclick="showModule('gdo-lexique')"><b>Annexes · Abréviations et lexique</b><span>Vocabulaire FDF, anatomie du feu, verbes de mission</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>📄 Document officiel</h3>
+            <p>Le guide complet (186 pages, avec schémas, cartes et photos) est téléchargeable :</p>
+            <p><a class="rd-pdf" href="docs/fdf/GDO-FDF-2021.pdf" target="_blank" rel="noopener">📄 Ouvrir le GDO FDF (PDF, 21 Mo)</a></p>
+            <p><small>Les fiches reprennent le texte du guide ; schémas et photos non reproduits, chaque fiche renvoie aux pages du PDF.</small></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Autres fiches liées</h3>
+            <ul>
+                <li>Techniques et manœuvres (CCF, GIFF, autodéfense, feux tactiques) → <button onclick="showModule('gto-menu')">🌲 GTO – Techniques FDF</button></li>
+                <li>Estimer la vitesse de propagation → <button onclick="showModule('feu-foret')">Règle des 3 %</button></li>
+            </ul>
+        </div>
+
+        <p class="rd-source">📚 GDO « Feux de forêts et d'espaces naturels » – DGSCGC/DSP/SDDRH/BDFE – 1<sup>re</sup> édition, février 2021. Reproduction des textes autorisée pour les SIS dans le cadre de la doctrine et de la formation ; illustrations non reproduites (autorisation des auteurs requise).</p>
+    </div>
+
+    <div id="gdo-milieux" class="module">
+        <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <h2>🌳 Milieux et végétation</h2>
+
+        <div class="rd-section">
+            <h3>1 – Quatre types d'espaces</h3>
+            <ul>
+                <li><strong>Espaces forestiers</strong> : forêts et formations sub-forestières (maquis, garrigues, landes).</li>
+                <li><strong>Espaces agricoles</strong> : cultures annuelles, prairies, vignobles, arboriculture.</li>
+                <li><strong>Espaces en déprise</strong> : mosaïque de cultures, jachères et friches évoluant vers le sub-forestier.</li>
+                <li><strong>Interfaces périurbaines ou bâties</strong> : zones urbanisées mêlées à au moins deux des formations précédentes.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.1 – Les strates de végétation</h3>
+            <table class="rd-table">
+                <tr><th>Strate</th><th>Rôle dans le feu</th></tr>
+                <tr><td><strong>Humus</strong></td><td>Rôle mineur au passage du front mais <strong>points chauds pendant des jours ou des semaines</strong> près des lisières ; l'eau seule suffit rarement : action mécanique ou eau additivée</td></tr>
+                <tr><td><strong>Muscinale (litière)</strong></td><td>Très inflammable (aiguilles de pin), origine de nombreux départs ; réservoir d'énergie comparable aux cimes sous une pinède</td></tr>
+                <tr><td><strong>Herbacée</strong></td><td>Très inflammable, siège des départs, accélère la propagation, reçoit les brandons (sautes)</td></tr>
+                <tr><td><strong>Arbustive</strong></td><td>Inflammabilité moyenne, combustibilité parfois forte (garrigues, maquis) ; <strong>vecteur vers les cimes</strong></td></tr>
+                <tr><td><strong>Arborescente</strong></td><td>Combustibilité élevée : feux de cimes ; les pinèdes émettent des brandons (décollement des écorces)</td></tr>
+            </table>
+            <div class="rd-alerte">Dans les strates basses (muscinale, herbacée, arbustive), fausse impression de sécurité : le feu peut s'y déplacer très vite et provoquer des <strong>embrasements généralisés éclair</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.2 – Les massifs forestiers</h3>
+            <ul>
+                <li><strong>Arc méditerranéen</strong> (jusqu'à 1 000–1 200 m en versant sud) : très grande diversité, de la garrigue « en peau de léopard » aux futaies de pin d'Alep de plus de 25 m ; vulnérabilité maximale l'été ; forte continuité arbustive-arborescente → feux généralisés ; équipement DFCI hétérogène, souvent établissements hors des engins. Ces formations gagnent les zones agro-viticoles, surtout à l'ouest du Rhône.</li>
+                <li><strong>Corse</strong> : île la plus boisée de Méditerranée (556 000 ha), forêt publique surtout au-dessus de 1 000 m (pin laricio).</li>
+                <li><strong>Nouvelle-Aquitaine</strong> : 2,8 millions d'ha ; Landes de Gascogne, plus grand massif cultivé d'Europe (pin maritime), <strong>plus de 1 000 départs de feu par an</strong> ; ASA de DFCI obligatoires (ordonnance de 1945).</li>
+                <li><strong>Montagne</strong> : surtout sensibles en fin d'hiver (entre fonte des neiges et montée de sève), épisodes de <strong>foehn</strong> ; feux de surface dans les landes (genêts, fougères) ; humus épais difficile à éteindre ; peu d'accès (action à pied ou héliportée) ; avions bombardiers d'eau parfois inutilisables (relief, aérologie, gel).</li>
+                <li><strong>Espaces pastoraux</strong> (Pyrénées, sud des Alpes) : siège de la majorité des feux de montagne, période des écobuages.</li>
+                <li><strong>Outre-mer</strong> : sensibles en saison sèche ou sécheresse exceptionnelle (savanes, canne à sucre, landes à éricoïdes, maquis) ; humus épais ; à La Réunion, feux de « vounes » : <strong>roches volcaniques jusqu'à 200 °C</strong>.</li>
+                <li><strong>Zone continentale</strong> : forêts peu sensibles sauf landes et jeunes pinèdes ; basculement brutal lors des sécheresses exceptionnelles ; peu d'aménagements de lutte.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.2.2 à 1.2.4 – Agricole, déprise, interfaces</h3>
+            <p><strong>Espaces agricoles</strong> : très inflammables pendant les moissons (orge début juillet, blé mi-juillet, colza ensuite) ; phase la plus sensible quand <strong>T° &gt; 30 °C et hygrométrie &lt; 30 %</strong>. Aussi prairies sèches, arboriculture, lavande, vignes enherbées ; pratiques « bio » laissant plus de matière au sol.</p>
+            <p><strong>Déprise</strong> : mosaïques de céréales, jachères, friches et sub-forestier, petites constructions (« cabanisation »), accès discontinus, obstacles cachés par la végétation ou la fumée ; le <strong>renseignement terrain est primordial</strong>.</p>
+            <p><strong>Interfaces</strong> : espace dans un rayon de <strong>100 m</strong> autour des groupes d'habitations.</p>
+            <table class="rd-table">
+                <tr><th>Habitat</th><th>Densité</th></tr>
+                <tr><td>Isolé</td><td>&lt; 1 habitation/ha</td></tr>
+                <tr><td>Diffus</td><td>1 à 2/ha</td></tr>
+                <tr><td>Groupé dense / très dense</td><td>2 à 3/ha / 3 à 5/ha</td></tr>
+                <tr><td>Zone urbaine végétalisée</td><td>5 à 10/ha</td></tr>
+                <tr><td>Cabanisation</td><td>Sensibilité extrême (planches, tôles, caravanes)</td></tr>
+            </table>
+            <p>Haies = <strong>accélérateurs de feu</strong> ; accès encombrés, culs-de-sac, eau souvent insuffisante : zones très consommatrices de moyens.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.1 – Comportement au feu des végétaux</h3>
+            <p>Sensibilité liée à la <strong>teneur en eau</strong>, à l'<strong>architecture</strong> (densité, hauteur, continuités verticale et horizontale) et à la <strong>composition floristique</strong>.</p>
+            <table class="rd-table">
+                <tr><th>Caractéristique</th><th>Influence</th><th>Conséquence opérationnelle</th></tr>
+                <tr><td>Hauteur, densité, chablis</td><td>Flammes plus hautes, feu plus virulent</td><td>Manœuvres offensives délicates</td></tr>
+                <tr><td>Sécheresse</td><td>Inflammabilité plus rapide</td><td>Manœuvres offensives délicates</td></tr>
+                <tr><td>Discontinuité horizontale / verticale</td><td>Perturbe la propagation</td><td>Facilite les manœuvres offensives (attention)</td></tr>
+                <tr><td>Humus, andains, tourbe</td><td>Risque de reprise</td><td>Traitement en profondeur : arrosage abondant et séparation mécanique (bulldozer, râteau Rich)</td></tr>
+            </table>
+            <div class="rd-astuce">Végétation <strong>haute, dense, sèche et continue</strong> → feu violent → privilégier le <strong>défensif</strong>. Végétation <strong>basse, éparse, verte et discontinue</strong> → privilégier l'<strong>offensif</strong>. Densité et enchevêtrement piègent les COV : propagations flash même en végétation basse.</div>
+            <p><strong>Inflammabilité</strong> (aptitude à s'enflammer, note de 0 à 5) :</p>
+            <table class="rd-table">
+                <tr><th>Forte</th><td>Bruyères, callune, ajoncs, genêt scorpion, brachypode rameux, pin d'Alep, chêne vert</td></tr>
+                <tr><th>Assez forte</th><td>Chêne liège, thym, chaume et blé mûr, genévriers</td></tr>
+                <tr><th>Modérée</th><td>Pin maritime, chêne pubescent, chêne kermès, cistes, romarin</td></tr>
+                <tr><th>Faible</th><td>Cèdre, arbousier, tournesol, maïs</td></tr>
+            </table>
+            <p><strong>Combustibilité</strong> (aptitude à propager, temps de résidence de flamme) : très élevée pour la pinède dense à pin maritime ; élevée pour la pinède dense à pin d'Alep, la garrigue haute et la garrigue basse à chêne kermès ; modérée pour le taillis de chêne vert ou le blé mûr sur pied ; faible à très faible pour la hêtraie, la sapinière, les chaumes et le tournesol mûr. <strong>C'est la combustibilité, avec le relief et la météo, qui fixe la vitesse et la puissance du front</strong> et conditionne la sécurité des intervenants.</p>
+        </div>
+
+        <p class="rd-source">📚 GDO FDF – DGSCGC 2021 – chapitre 1 § 1 et 2.1 · <a class="rd-pdf" href="docs/fdf/GDO-FDF-2021.pdf#page=15" target="_blank" rel="noopener">📄 PDF p. 15 à 31 (schémas des strates, photos des milieux)</a></p>
+    </div>
+
+    <div id="gdo-meteo" class="module">
+        <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <h2>🌬️ Relief, météo et indices de danger</h2>
+
+        <div class="rd-section">
+            <h3>2.2 – Le relief</h3>
+            <p>Le relief influence l'axe et la vitesse de propagation : en <strong>pente ascendante le feu accélère</strong> (préchauffage par rayonnement), en descente il ralentit ; plus une zone est <strong>resserrée</strong>, plus le feu y passe vite (effet venturi).</p>
+            <table class="rd-table">
+                <tr><th>Relief</th><th>Influence</th><th>Conséquence</th></tr>
+                <tr><td>Zones montantes</td><td>Accélération</td><td>Manœuvres délicates</td></tr>
+                <tr><td>Zones descendantes</td><td>Ralentissement</td><td>Manœuvres plus faciles</td></tr>
+                <tr><td>Zones accidentées</td><td>Vitesse et front irréguliers</td><td>Feu difficile à prévoir</td></tr>
+                <tr><td>Cols</td><td>Passage privilégié du feu</td><td>Dangereux mais manœuvre efficace possible</td></tr>
+                <tr><td>Crêtes et talwegs</td><td>Perpendiculaires : changent la vitesse ; parallèles : peuvent diviser le feu</td><td>Délimitent des secteurs de manœuvre différents</td></tr>
+            </table>
+            <ul>
+                <li><strong>Expositions sud</strong> : plus de rayonnement solaire, végétation plus sèche ; nord : l'inverse.</li>
+                <li><strong>Points névralgiques</strong> : cols, divergences de talwegs (ouverture du cône de propagation).</li>
+                <li><strong>Situations dangereuses à éviter</strong> : crêtes, versants au vent, couloirs dans l'axe du vent (venturi), partie haute des cols.</li>
+                <li><strong>Situations favorables</strong> : zones sans accélération liée au relief, tiers supérieur des versants sous le vent.</li>
+            </ul>
+            <div class="rd-astuce">Le feu passe régulièrement par les mêmes <strong>« couloirs de feu »</strong> (bases de contours historiques) – mais il faut se préparer à être surpris.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.3 – Température et humidité</h3>
+            <ul>
+                <li><strong>Température</strong> (mesurée sous abri, bien plus forte en plein soleil : plus de 60 °C au sol en 2019) : <strong>&gt; 35 °C aggravant</strong> ; au-delà de 30 °C, pénibilité et déshydratation → raccourcir les engagements. Les températures négatives gênent matériels et avions.</li>
+                <li><strong>Humidité relative</strong> : <strong>&lt; 30 %</strong> éclosion et propagation très aggravées, sautes ; en foehn jusqu'à 5–10 % ; <strong>&gt; 50 %</strong> éclosion faible et propagation ralentie. Hygrométrie &gt; 45 % + T° &gt; 35 °C sans vent : risque de <strong>coup de chaleur</strong> pour les intervenants.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.3.3 – Le vent et la règle des 3 %</h3>
+            <p>Le vent renouvelle l'oxygène, couche les flammes et transporte gaz imbrûlés et particules. <strong>Vitesse de propagation ≈ 3 % de la vitesse du vent moyen</strong> en conditions moyennes – à nuancer, notamment avec l'hygrométrie. Rafales ≈ 2 × vent moyen.</p>
+            <p><strong>Facteur de propagation (% de la vitesse du vent) selon l'humidité – Trabaud :</strong></p>
+            <table class="rd-table">
+                <tr><th>Humidité relative</th><th>8–16 km/h</th><th>17–24</th><th>25–32</th><th>33–40</th><th>41–48</th></tr>
+                <tr><td>41–45 %</td><td>1,0</td><td>2,0</td><td>2,8</td><td>3,2</td><td>3,4</td></tr>
+                <tr><td>31–40 %</td><td>1,4</td><td>2,8</td><td>3,9</td><td>4,5</td><td>4,8</td></tr>
+                <tr><td>26–30 %</td><td>2,0</td><td>4,0</td><td>5,6</td><td>6,4</td><td>6,8</td></tr>
+                <tr><td>16–25 %</td><td>2,8</td><td>5,6</td><td>7,8</td><td>9,0</td><td>9,5</td></tr>
+                <tr><td>&lt; 15 %</td><td>3,2</td><td>6,4</td><td>9,0</td><td>10,2</td><td>10,9</td></tr>
+            </table>
+            <p>En stress hydrique extrême ou en végétation claire à graminées, <strong>4 à 10 % de la vitesse du vent</strong>. Exemples contredisant la règle : Vidauban 2003 (6,7 à 10,8 %), Rognac 2016 (7 %), Générac 2019 (10 %).</p>
+            <p><button onclick="showModule('feu-foret')">🧮 Calculer la propagation (3 % ou table de Trabaud)</button></p>
+            <table class="rd-table">
+                <tr><th>Vent</th><th>Influence</th><th>Conséquence</th></tr>
+                <tr><td>Vitesse</td><td>Vitesse du sinistre</td><td>Privilégier les manœuvres latérales et la défense de points sensibles</td></tr>
+                <tr><td>Irrégularité</td><td>Feu difficile à prévoir</td><td>Très grande attention à la sécurité</td></tr>
+                <tr><td>Soleil, sécheresse, chaleur</td><td>(Ré)inflammation des zones mal traitées</td><td>Surveillance accrue des zones fixées</td></tr>
+                <tr><td>Nuit</td><td>Feu plus facile à traiter</td><td>Mobilité et sécurité réduites</td></tr>
+            </table>
+            <div class="rd-alerte"><strong>Règle des « 30 »</strong> – risque FDF majeur quand : <strong>pente &gt; 30°, température &gt; 30 °C, hygrométrie &lt; 30 %, vent &gt; 30 km/h</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.4 – Les paramètres hydriques (méthode canadienne IFM)</h3>
+            <table class="rd-table">
+                <tr><th>Indice</th><th>Mesure</th><th>Évolution</th><th>Usage opérationnel</th></tr>
+                <tr><td><strong>ICL</strong> – combustible léger</td><td>Eau de la litière et des combustibles fins</td><td>Très rapide (2–3 jours)</td><td>Nombre de départs, horaires de surveillance, probabilité de sautes</td></tr>
+                <tr><td><strong>IH</strong> – humus</td><td>Couches organiques moyennes</td><td>10 à 20 jours (1 à 500)</td><td>Feux d'humus, besoin d'eau (mouillant), reprises, surveillance</td></tr>
+                <tr><td><strong>IS</strong> – sécheresse</td><td>Couches profondes (18 cm)</td><td>20 à 40 jours, sans limite haute</td><td>Stress des grands végétaux, humus profond, reprises très probables</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.5 – Les indices de danger (Météo-France)</h3>
+            <p><strong>NSV2 – sécheresse de la végétation vivante</strong> (strate arbustive), 5 stades : très faible, faible, modéré (vulnérable par vent fort et humidité basse), <strong>fort</strong> (très vulnérable : feux importants en toutes conditions sauf humidité élevée), <strong>très fort</strong> (conditions des très grands feux réunies). Aux deux derniers stades, en Méditerranée, l'IFM ne fonctionne plus : règles d'expertise « grande sécheresse ».</p>
+            <p><strong>IEPx – éclosion propagation</strong> (strate herbacée, cultures, rafales comprises) : 3/5 jaune des feux peuvent se produire ; 4/5 orange ils peuvent se propager sans traitement rapide ; 5/5 rouge éclosions et propagations rapides.</p>
+            <table class="rd-table">
+                <tr><th>IFM – niveau</th><th>Signification</th></tr>
+                <tr><td>1 Faible</td><td>Éclosion improbable</td></tr>
+                <tr><td>2 Léger</td><td>Propagation lente si départ</td></tr>
+                <tr><td>3 Modéré</td><td>Propagation modérée</td></tr>
+                <tr><td>4 Sévère</td><td>Zone sensible : départ probable si air sec, propagation rapide possible</td></tr>
+                <tr><td>5 Très sévère</td><td>Toute flamme risque de donner un feu rapide</td></tr>
+                <tr><td>6 Extrême</td><td>Feu de très forte intensité, extrêmement rapide (niveau fixé par un prévisionniste)</td></tr>
+            </table>
+            <p>Ces indices servent à <strong>anticiper et dimensionner</strong> le dispositif ; ils ne sont pas une carte des risques et doivent être complétés localement (état de la végétation, activités, pression incendiaire, enjeux). <strong>Niveau de danger météo + appréciation locale + analyse de l'activité = niveau de risque opérationnel départemental.</strong></p>
+            <p><strong>Zones sud et sud-ouest</strong> (annexe C) : au sud-ouest, NEP / NEP vert en hiver-printemps (ICL × vitesse de propagation VPSO), IFM sans rafales en été, bulletin « feu en cours » horaire sur 12 h et modélisation Prometheus ; en zone sud, 116 zones météo DFCI, sécheresse expertisée et <strong>IPSE</strong> quand la sécheresse est forte (c'est un indice de danger, pas une vitesse attendue).</p>
+        </div>
+
+        <p class="rd-source">📚 GDO FDF – DGSCGC 2021 – chapitre 1 § 2.2 à 2.6 et annexe C · <a class="rd-pdf" href="docs/fdf/GDO-FDF-2021.pdf#page=31" target="_blank" rel="noopener">📄 PDF p. 31 à 46 et 163 à 168 (cartes et schémas)</a></p>
+    </div>
+
+    <div id="gdo-acteurs" class="module">
+        <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <h2>🤝 Les acteurs</h2>
+
+        <div class="rd-section">
+            <h3>3.1 – Le citoyen et les OLD</h3>
+            <p>Le citoyen est le premier acteur de sa propre sécurité. Les <strong>obligations légales de débroussaillement</strong> (code forestier, art. L131-1 à L136-1) réduisent le combustible pour : protéger personnes et biens, <strong>permettre le confinement</strong>, sécuriser l'intervention des pompiers, éviter de mobiliser trop de moyens pour les zones habitées, limiter les départs depuis les habitations. Double effet : risque « induit » (qui part de l'habitation) et « subi » (qui arrive vers elle).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.2 – Les services</h3>
+            <table class="rd-table">
+                <tr><td><strong>Forestiers sapeurs</strong></td><td>Agents des conseils départementaux : travaux forestiers, surveillance et <strong>première intervention sur feux naissants</strong> en période à risque</td></tr>
+                <tr><td><strong>ONF</strong></td><td>Surveillance, première intervention, conseil du COS et du DOS, recherche des causes</td></tr>
+                <tr><td><strong>CCFF / réserves communales</strong></td><td>Bénévoles sous l'autorité du maire : surveillance, patrouilles, première intervention, <strong>guidage des renforts</strong></td></tr>
+                <tr><td><strong>Forces armées</strong></td><td>Protocole Héphaïstos : détachement hélicoptères du DIHN, groupes du génie, modules de surveillance en Corse, DetAir au COZ Sud</td></tr>
+                <tr><td><strong>DPFM</strong></td><td>Délégation à la protection de la forêt méditerranéenne (préfet de zone Sud) : prévention, PPRIF, débroussaillement, brûlage dirigé, base Prométhée, recherche des causes</td></tr>
+                <tr><td><strong>Police, gendarmerie</strong></td><td>Accès à la zone, évacuations et mises à l'abri, recherche des causes, sécurité des biens évacués</td></tr>
+                <tr><td><strong>Commissions locales d'écobuage</strong></td><td>Organisation et avis sur les écobuages (Pyrénées)</td></tr>
+                <tr><td><strong>DDT(M)</strong></td><td>Politique forestière, équipement DFCI, prise en compte du risque dans l'urbanisme</td></tr>
+                <tr><td><strong>Entente Valabre</strong></td><td>Établissement public de 15 départements méditerranéens et de la Corse</td></tr>
+                <tr><td><strong>Conseils départementaux</strong></td><td>Aménagement des massifs, pistes, ZAL, citernes ; service des routes pour fermetures et déviations</td></tr>
+                <tr><td><strong>Gestionnaires</strong></td><td>Autoroutes, voies ferrées, RTE, Enedis</td></tr>
+                <tr><td><strong>ASA de DFCI, GIP ATGeRi</strong></td><td>Sud-Ouest : 212 associations, plus de 2 500 bénévoles ; cartographie et aide à la décision</td></tr>
+            </table>
+            <p>Tout acteur intégré à un dispositif de surveillance ou de lutte se conforme aux ordres nationaux, zonaux et départementaux feux de forêts.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.3 – Le mécanisme européen</h3>
+            <p>Mécanisme de protection civile de l'Union (2001), 34 États : offres spontanées, réserve européenne, dispositif <strong>rescEU</strong> (moyens aériens FDF, médicaux, NRBC). La France met à disposition un module aérien (Beech, 2 Canadair, Dash) et des modules terrestres FDF.</p>
+        </div>
+
+        <p class="rd-source">📚 GDO FDF – DGSCGC 2021 – chapitre 1 § 3 · <a class="rd-pdf" href="docs/fdf/GDO-FDF-2021.pdf#page=46" target="_blank" rel="noopener">📄 PDF p. 46 à 53</a></p>
+    </div>
+
+    <div id="gdo-comportement" class="module">
+        <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <h2>🔥 Comportement du feu</h2>
+
+        <div class="rd-section">
+            <h3>Anatomie d'un feu</h3>
+            <table class="rd-table">
+                <tr><td><strong>Tête (front)</strong></td><td>Lisière poussée par le vent, s'élargit ; l'essentiel de la surface brûlée</td></tr>
+                <tr><td><strong>Flancs</strong></td><td>Lisières restant après le passage du front, beaucoup plus lentes. Depuis le point de départ, face à la tête : flanc droit à droite, flanc gauche à gauche</td></tr>
+                <tr><td><strong>Arrière</strong></td><td>Lisière contre le vent, peu active sauf forte pente, venturi, combustible</td></tr>
+                <tr><td><strong>Doigt</strong></td><td>Partie longue et étroite avec sa propre tête</td></tr>
+                <tr><td><strong>Baie</strong></td><td>Partie qui avance plus lentement (obstacle, pente défavorable)</td></tr>
+                <tr><td><strong>Saute de feu</strong></td><td>Foyer secondaire allumé par des brandons en avant du front</td></tr>
+                <tr><td><strong>Pénétrante / rocade</strong></td><td>Accès qui traverse la lisière / qui la longe sans la traverser</td></tr>
+            </table>
+            <p>Sans vent sur terrain plat, propagation en <strong>cercles concentriques</strong> ; avec vent ou pente, forme <strong>elliptique</strong> (« wind driven »), parfois morcelée (« léopardisation »).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.1 – Combustion et puissance</h3>
+            <p>Énergie en mégawatts : combustibles fins, milieu ouvert (oxygène illimité), <strong>20 à 45 t/ha</strong> en arbustif et <strong>60 à 85 t/ha et plus</strong> en arboré ; le végétal vert atteint environ 50 % du pouvoir calorifique des hydrocarbures. Phases : stress du végétal (évaporation, COV) → pyrolyse (gaz non inflammables jusqu'à 280 °C) → <strong>inflammation des gaz de 280 à 500 °C</strong> → combustion des résidus charbonneux.</p>
+            <p><strong>Puissance du front (Byram)</strong> : P = H × w × r (kW/m) = chaleur de combustion × combustible brûlé par m² × vitesse de propagation.</p>
+            <table class="rd-table">
+                <tr><th>Niveau</th><th>Vitesse</th><th>Fumée, sautes</th><th>Puissance</th></tr>
+                <tr><td>1 Très faible</td><td>&lt; 400 m/h</td><td>Blanche, pas de saute</td><td>&lt; 350 kW/m</td></tr>
+                <tr><td>2 Faible</td><td>400–800 m/h</td><td>Blanche et grise, sautes de 20 m</td><td>350–1 700 kW/m</td></tr>
+                <tr><td>3 Moyen</td><td>800–1 200 m/h</td><td>Grise, foncée à la base, sautes de 100 m</td><td>1 700–3 500 kW/m</td></tr>
+                <tr><td>4 Élevé</td><td>1 200–1 800 m/h</td><td>Rousse et noire, sautes systématiques</td><td>3 500–7 000 kW/m</td></tr>
+                <tr><td>5–6 Très élevé / exceptionnel</td><td>&gt; 1 800 m/h</td><td>Noire, moutonnante, sautes &gt; 500 m</td><td>&gt; 7 000 kW/m</td></tr>
+            </table>
+            <div class="rd-alerte">Un incendie est maîtrisable au sol jusqu'à environ <strong>2 000 kW/m</strong> ; au-delà, appui aérien indispensable ; à <strong>10 000 kW/m</strong> le front est très difficilement maîtrisable.</div>
+            <p><strong>Rayonnement</strong> (flux en 1/d², à titre indicatif) : à 100 m presque rien ; à <strong>65–70 m seuil de douleur</strong> ; à <strong>50–55 m brûlure de la peau sans EPI</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.2 – Les types de feux</h3>
+            <ul>
+                <li><strong>Feux de sol</strong> (litière, humus, tourbe) : lents mais destructeurs ; les <strong>feux de tourbe</strong> durent des mois, même sous la neige, et dégagent beaucoup de fumée et de <strong>monoxyde de carbone</strong>.</li>
+                <li><strong>Feux de surface</strong> (litière, herbe, ligneux bas – garrigue, landes) : propagation par rayonnement, <strong>0,5 à 1 km/h</strong>. Contraintes : habitations, gaz, hydrocarbures, bâtiments agricoles, lignes HT, voies, badauds.</li>
+                <li><strong>Feux de cimes</strong> : couronne de feu, énergie et vitesse très élevées, le plus souvent issus de feux arbustifs.</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Feux agricoles</th><th>Risques</th></tr>
+                <tr><td><strong>Récoltes sur pied</strong> (orge, blé ; colza très calorifique ; maïs, tournesol, betterave moins vulnérables, peuvent servir de pare-feu)</td><td>Front rapide de 3–4 m, fumées denses, escarbilles, fort rayonnement</td></tr>
+                <tr><td><strong>Chaumes</strong></td><td>Flammes ≤ 1 m, propagation rapide par vent fort, virulence faible, persistance courte ; andains en effet mèche</td></tr>
+                <tr><td><strong>Épis</strong></td><td>Propagation verticale et horizontale, bourrage de paille sous les engins, reprises</td></tr>
+                <tr><td><strong>Miscanthus</strong> (jusqu'à 4 m)</td><td>Potentiel calorifique très élevé, impénétrable, perte de contact visuel</td></tr>
+            </table>
+            <p>Engins agricoles : carburant et huile → prévoir de la mousse. Champs moissonnés servant de parkings : pots d'échappement au contact du chaume.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.3 – Les modes de propagation</h3>
+            <ul>
+                <li><strong>Conduction</strong> : ≈ 5 % des transferts, sauf feux de sol et de tourbe.</li>
+                <li><strong>Rayonnement</strong> : le front agit comme un panneau radiant qui dessèche la végétation en avant.</li>
+                <li><strong>Convection</strong> : prépondérante, surtout en phase ascendante ; colonne convective, <strong>pyrocumulus</strong>, parfois pyrocumulonimbus et orages de feu (feu erratique, sautes, effondrement de colonne avec vents violents au sol).</li>
+                <li>Feu <strong>convectif</strong> sous 40 km/h de vent, <strong>radiant</strong> au-dessus de 50 km/h.</li>
+                <li><strong>Sautes de feu</strong> : brandons portés jusqu'à 300 m d'altitude, de quelques mètres à plusieurs kilomètres ; plus nombreuses par vent fort et air sec ; risque de <strong>prise en tenaille</strong> entre le front et les foyers secondaires. Les animaux en fuite peuvent aussi propager le feu.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.4 – La lecture du feu</h3>
+            <table class="rd-table">
+                <tr><th>Panache</th><th>Lecture</th></tr>
+                <tr><td>Vertical, gris ou transparent</td><td>Petit feu, peut-être déjà combattu</td></tr>
+                <tr><td>Incliné, gris virant au noir, grossit à vue d'œil</td><td>Feu en croissance</td></tr>
+                <tr><td>Étiré, bouffées noires, incliné à moins de 45°</td><td>Feu virulent, vent au sol de l'ordre de 54 km/h (rafales 72 km/h), <strong>incontrôlable au sol dès le départ possible</strong></td></tr>
+                <tr><td>Volutes noires (« moutons ») et zones rousses avec petites flammes</td><td>Combustible abondant, croissance rapide</td></tr>
+            </table>
+            <table class="rd-table">
+                <tr><th>Fumée</th><th>Signification</th></tr>
+                <tr><td>Grise diffuse</td><td>La plupart des départs de feu</td></tr>
+                <tr><td>Noire épaisse moutonnante</td><td>Pleine pyrolyse, <strong>propagation par bonds</strong></td></tr>
+                <tr><td>Noire et rousse avec flammes</td><td>Combustion intense qui consomme tout l'oxygène</td></tr>
+                <tr><td>Blanche</td><td>Foyer en régression (extinction)</td></tr>
+            </table>
+            <div class="rd-alerte"><strong>Cisaillement du panache</strong> : il monte puis s'étale comme contre un toit (inversion, couche d'air froid) → risque de confinement thermique, peut dégénérer en <strong>bulle thermique ou toit de feu</strong>.</div>
+            <p><strong>L'ouïe</strong> : crépitement sec et fort (feu virulent, combustible de choix) ; ronflement puissant (grand feu qui crée son vent) ; déflagration sourde (mélange gazeux enflammé) ; <strong>silence anormal (« chambre sourde ») : possible pré-conflagration</strong>, par exemple en fond de talweg.</p>
+            <p><strong>L'odorat</strong> : forte odeur d'herbes, de térébenthine ou d'essences volatiles = végétation privée d'eau qui libère ses composés volatils, très inflammables.</p>
+        </div>
+
+        <p class="rd-source">📚 GDO FDF – DGSCGC 2021 – chapitre 2 § 1 · <a class="rd-pdf" href="docs/fdf/GDO-FDF-2021.pdf#page=55" target="_blank" rel="noopener">📄 PDF p. 55 à 76 (schémas de propagation, panaches, sautes)</a></p>
+    </div>
+
+    <div id="gdo-ege" class="module">
+        <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <h2>⚠️ Embrasement généralisé éclair (EGE)</h2>
+
+        <div class="rd-section">
+            <h3>2.2 – Le phénomène</h3>
+            <p>Accélération soudaine du feu qui peut <strong>prendre au piège les secours</strong>. Une poche de gaz de pyrolyse s'accumule : la végétation, déjà en déficit hydrique et chauffée longtemps par un feu lent, rejette de l'eau puis des <strong>COV (terpènes)</strong> et des HAP. Le nuage s'enflamme, la flamme pilote existant déjà (différence avec un UVCE) : situation comparable à une fuite de gaz en milieu ouvert.</p>
+            <p><strong>Conditions favorables</strong> :</p>
+            <ul>
+                <li>températures <strong>&gt; 35 °C à l'ombre</strong> ;</li>
+                <li>vent <strong>faible ou modéré (20 à 50 km/h)</strong> ;</li>
+                <li>hygrométrie <strong>&lt; 30 %</strong> ;</li>
+                <li>végétation : romarin, thym, ciste, pin d'Alep, chêne vert, chêne kermès ;</li>
+                <li>relief : <strong>fond de talweg</strong> (bulle thermique), <strong>talweg en pente opposée</strong> (pyrolyse du versant d'en face), <strong>plateaux</strong> même en végétation basse (tapis de feu).</li>
+            </ul>
+            <div class="rd-alerte"><strong>Signes d'alerte</strong> : accélération subite du front (<strong>5 à 40 m/s</strong>, plus de 1 500 °C), <strong>vision trouble, tout devient orange, sensation de compression d'air, sons assourdis, difficultés respiratoires</strong>, feuillage en pyrolyse sous le rayonnement.</div>
+            <p>Sans enjeu majeur (vie humaine, habitations directement menacées), <strong>ne pas exposer en première action les personnels au sol</strong> et renforcer le port des EPI.</p>
+            <p>Feu de Palasca (Haute-Corse, septembre 2000), tapis de feu : du départ du phénomène à l'embrasement jusqu'à la crête en <strong>environ 41 secondes</strong> ; 2 morts et 5 brûlés.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Annexe D – Les types d'EGE</h3>
+            <table class="rd-table">
+                <tr><th>Type</th><th>Site et scénario</th><th>Effet</th></tr>
+                <tr><td><strong>Bulle thermique</strong></td><td>Vallon riche en combustible (zone de torréfaction confinée) sous un col qui aspire le feu ; le feu monte, sa pointe longe la zone et la pyrolyse ; une masse de gaz à plus de 1 000 °C s'arrondit, tourne et surgit du fond du talweg par un bond. Personnel souvent sur une zone plate sans vue vers le bas</td><td>Le personnel à découvert est foudroyé ; sous un engin, risque grave (effet cheminée en pente) ; un détachement <strong>déjà en autodéfense</strong> subit un minimum d'effet</td></tr>
+                <tr><td><strong>Tapis de feu</strong></td><td>Même site ; le feu descend dans le vallon et le surchauffe ; une nappe de gaz surchauffés couvre tout le vallon</td><td>Toute la végétation du vallon s'embrase presque instantanément</td></tr>
+                <tr><td><strong>Fire devil (tornade de feu)</strong></td><td>Montée brutale en hélice le long du relief ; inversion avec couche d'air froid et vent fort (mistral) qui confine les gaz</td><td>Embrasement localisé total, explosion de fumées (backdraft en milieu ouvert)</td></tr>
+                <tr><td><strong>Versant à versant</strong></td><td>Vallon encaissé, garrigue ou maquis bas ; le feu descend lentement un versant, le versant opposé est irradié jusqu'à être entièrement en pyrolyse</td><td>Le versant opposé s'embrase d'un seul coup : vague de feu mortelle pour les équipes à pied</td></tr>
+                <tr><td><strong>Mini-tornade</strong> (feux de champs)</td><td>Plaines céréalières ; tourbillon hélicoïdal par temps chaud</td><td>Transport brusque du feu au-delà du front : le personnel à pied peut être <strong>pris à revers</strong></td></tr>
+                <tr><td><strong>Effet Blin</strong></td><td>Pente montante et crête arrondie coupée par une tranchée (autoroute, voie ferrée, pare-feu) ; vent fort dans l'axe de la montée</td><td>Un rouleau dans la coupure fait « sauter » le feu qui s'allume loin au-delà et accélère</td></tr>
+            </table>
+        </div>
+
+        <p class="rd-source">📚 GDO FDF – DGSCGC 2021 – chapitre 2 § 2.2 et annexe D (d'après l'étude Maret, Bozabalian, Persoglio, EMIZ Sud 2002) · <a class="rd-pdf" href="docs/fdf/GDO-FDF-2021.pdf#page=77" target="_blank" rel="noopener">📄 PDF p. 77 à 80 et 169 à 179 (schémas de chaque phénomène)</a></p>
+    </div>
+
+    <div id="gdo-securite" class="module">
+        <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <h2>🦺 Sécurité des intervenants</h2>
+
+        <div class="rd-section">
+            <h3>Les fondements</h3>
+            <p>Commandement adapté (anticipation, agilité, action), SSSM intégré au soutien, procédures radio, formation et maintien des acquis, procédures de sécurité en situation dégradée, EPI adaptés, connaissance du feu, toxicité des fumées, <strong>permanence de l'eau</strong>, soutien des intervenants, humilité : <strong>se préparer à être surpris</strong>.</p>
+            <p>Pour les risques par classe (terrain, feu, matériels, vie sur le terrain), voir <button onclick="showModule('gto-securite')">🛡️ Sécurité (GTO)</button>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1 – Sécurité collective des équipages</h3>
+            <ul>
+                <li>Sur les feux de récoltes et de chaumes, progresser <strong>uniquement dans le brûlé</strong>.</li>
+                <li><strong>Ne jamais abandonner une lance alimentée</strong> lors du retour à l'engin.</li>
+                <li>Personne sur la citerne pendant l'attaque ni sur un engin en mouvement (sauf plateforme équipée).</li>
+                <li>Assurer la permanence de l'eau dans les tuyaux.</li>
+            </ul>
+            <div class="rd-alerte">L'établissement est une <strong>ligne de vie</strong> par mauvaise visibilité : TOUJOURS le suivre pour regagner la cabine. La cabine est l'<strong>ESPACE DE SURVIE RÉFLEXE</strong>.</div>
+            <p>Arceaux, autoprotection et air respirable vérifiés <strong>à chaque prise de service</strong> ; tous les personnels doivent savoir les mettre en œuvre. Techniques de repli et d'autoprotection vérifiées à chaque garde. Sur le chantier : engins <strong>dans le sens du départ</strong>, itinéraire ou zone de repli, vitres et volets fermés, <strong>eau minimum conservée pour la protection</strong>, guidage dans les passages difficiles. Exceptionnellement, sur ordre, quitter le camion si l'extérieur devient plus favorable.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 – Sécurité individuelle et EPI</h3>
+            <p>Chaque intervenant : EPI complets et en état, consignes, <strong>ne pas s'isoler</strong>, observer le feu, un chemin et une zone de repli, procédures de largage, exercices de repli d'urgence, veille radio, eau en quantité suffisante. Surveillance mutuelle : stopper l'effort avant le malaise (essoufflement, douleur thoracique, désorientation).</p>
+            <table class="rd-table">
+                <tr><th>Situation</th><th>Tenue préconisée</th></tr>
+                <tr><td>Herbacés, broussailles, récoltes, haies ; forêt en grande longueur, noyage, surveillance</td><td>TSI + <strong>vêtement NF EN 15614</strong> (veste et pantalon, ou veste seule)</td></tr>
+                <tr><td>Manœuvres défensives (autodéfense, DPS, ligne d'appui) et offensives (front, flanc, percée)</td><td><strong>Tenue de feu NF EN 469</strong> sans la veste de TSI ; allègement sur ordre possible</td></tr>
+                <tr><td>Toujours</td><td><strong>Casque, cagoule et gants adaptés au flux thermique obligatoires</strong> ; haute visibilité classe 2 près d'une voie de circulation</td></tr>
+            </table>
+            <p>Le chef d'agrès, le chef de groupe, le chef de secteur et le COS décident des EPI selon la végétation, le flux thermique, la météo, la ZI et le type d'action. <strong>Masques de repli</strong> uniquement pour regagner un espace sécurisé ; <strong>masques FFP</strong> pendant le noyage.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 à 7 – Nuit, déplacements, vie sur le terrain</h3>
+            <ul>
+                <li><strong>Nuit</strong> : vigilance accrue hors réseau routier, éclairage pour tous.</li>
+                <li><strong>Déplacements</strong> : fatigue des longs transits ; période de reconditionnement avant engagement et avant le retour (tenue complète au pied de l'engin, test bref de l'autoprotection, filtres à air, végétaux coincés sous la cabine).</li>
+                <li><strong>Hydratation</strong> : boire avant d'avoir soif, <strong>3,5 à 5 L d'eau potable minimum par 24 h</strong>. <strong>Ne jamais boire l'eau des citernes ni des PEI.</strong></li>
+                <li><strong>Alimentation</strong> : au moins un repas chaud au calme par 24 h lors des longues opérations.</li>
+                <li><strong>Relèves</strong> : effort intense limité dans le temps ; attention aux interventions successives (chaumes, récoltes) : en informer le COS.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>8 à 11 – Abords d'infrastructures</h3>
+            <p><strong>Lignes électriques (Enedis, RTE)</strong> : l'amorçage peut se produire <strong>sans contact</strong> (fumées, poussières, eau vaporisée) ; un jet droit peut être conducteur ; ne jamais toucher un câble, même au sol. Un largage d'ABE peut provoquer un amorçage (aggravé par le sel ou le retardant). Le COS peut demander via le CODIS :</p>
+            <table class="rd-table">
+                <tr><th>Mesure</th><th>Délai</th><th>Ce qu'elle permet</th></tr>
+                <tr><td><strong>Mise hors tension</strong></td><td>Plusieurs dizaines de minutes</td><td>Limite l'amorçage mais n'autorise pas à approcher à moins de <strong>5 m des ouvrages RTE, 3 m des ouvrages Enedis</strong> ; les courants induits restent</td></tr>
+                <tr><td><strong>Consignation</strong></td><td>Plusieurs heures</td><td>Ligne hors tension, séparée et mise à la terre ; protège personnes et ouvrages. Autorisation écrite remise au COS</td></tr>
+            </table>
+            <p><strong>Voies ferrées</strong> : via le CODIS, demander au COGC la marche prudente, l'arrêt des trains ou la <strong>coupure d'urgence du courant de traction</strong> ; aucune lance sous pression à moins de <strong>3 m de la caténaire</strong> sans confirmation de la coupure.</p>
+            <p><strong>Routes</strong> : visibilité réduite par les fumées → balisage ou fermeture par les services compétents. <strong>RCCI</strong> : accès à la zone après accord du COS.</p>
+            <p>Voir aussi <button onclick="showModule('electrique')">⚡ Lignes électriques</button>.</p>
+        </div>
+
+        <p class="rd-source">📚 GDO FDF – DGSCGC 2021 – chapitre 3 · <a class="rd-pdf" href="docs/fdf/GDO-FDF-2021.pdf#page=81" target="_blank" rel="noopener">📄 PDF p. 81 à 90</a></p>
+    </div>
+
+    <div id="gdo-reponse" class="module">
+        <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <h2>🎯 Réponse opérationnelle</h2>
+
+        <div class="rd-section">
+            <h3>1 – La stratégie générale</h3>
+            <p>Approche globale et <strong>anticipation</strong>, au service de quatre objectifs :</p>
+            <ol>
+                <li><strong>Empêcher les feux</strong> : traitement des causes, sensibilisation, prévision du danger, surveillance dissuasive.</li>
+                <li><strong>Maîtriser l'éclosion au stade initial</strong> : aménagement du terrain, <strong>attaque massive des feux naissants</strong>, prioritaire sur toute autre intervention, avec une réponse surdimensionnée quand le danger est maximal.</li>
+                <li><strong>Limiter les développements catastrophiques</strong> : sécurité des intervenants par les choix tactiques ; pour la population, <strong>le confinement reste la règle, l'évacuation l'exception</strong> ; stratégie mobile, agressive, concentration des efforts terrestres et aériens.</li>
+                <li><strong>Réhabiliter les espaces incendiés</strong>.</li>
+            </ol>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 – Préparer la réponse</h3>
+            <ul>
+                <li><strong>Évaluation quotidienne du danger</strong> : météo (vent, chaleur, propagation, sécheresse), vulnérabilité des massifs ou des récoltes, activité du SIS, environnement sociologique (concerts, feux d'artifice, tourisme, pression incendiaire). Les EMIZ coordonnent les mesures zonales et les moyens rares.</li>
+                <li><strong>Surveillance préventive</strong> terrestre (caméras, vigies, patrouilles) et aérienne (guet aérien armé).</li>
+                <li><strong>Unités organiques</strong> : UIFF et GIFF (→ <button onclick="showModule('gto-moyens')">Moyens de lutte</button>). Le chef de groupe FDF peut commander jusqu'à un groupe en plus du sien.</li>
+                <li><strong>Prépositionnement</strong> : engins <strong>toujours par deux au minimum</strong> (UIFF) ; un engagement isolé exceptionnel ne se poursuit qu'avec la convergence rapide d'autres engins confirmée.</li>
+                <li>Le <strong>PDPFCI</strong> (10 ans maximum) est la pièce maîtresse de la DFCI.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 – Conduite des opérations</h3>
+            <p><strong>Détection</strong> : téléphones, vigies, caméras, guet aérien, aéronefs, sémaphores, moyens terrestres, déclarations d'écobuage, réseaux sociaux. <strong>Prise d'appel</strong> : discriminer les départs distincts ; recueillir la localisation, le type de zone (urbaine, périurbaine, forestière) et les personnes et biens menacés. Face à plusieurs sinistres, <strong>le COZ arbitre</strong> l'attribution des renforts extra-départementaux.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 – La marche générale des opérations</h3>
+            <p>Actions non chronologiques, parfois simultanées ou permanentes : <strong>analyse de la ZI en transit, reconnaissance, mise en sécurité, attaque, traitement des lisières, surveillance, recherche des causes</strong>. La protection des personnes et des biens reste la priorité.</p>
+            <p><strong>Analyse de la ZI</strong> dès l'alerte : connaissance du secteur, contours des feux passés, départ sur carte, météo → axe et vitesse théoriques.</p>
+            <table class="rd-table">
+                <tr><th>Facteur</th><th>Actions à anticiper</th></tr>
+                <tr><td>Relief et vent</td><td>Zones au vent et sous le vent, zones d'appui à la lutte</td></tr>
+                <tr><td>Végétation</td><td>Points d'engagement, zones de sécurité</td></tr>
+                <tr><td>Accès</td><td>Point de transit (PRM ou CRM), rocades et pénétrantes</td></tr>
+                <tr><td>Ressources en eau</td><td>Chaîne hydraulique pérenne, permanence de l'eau</td></tr>
+                <tr><td>Points sensibles</td><td>Populations sinistrées ou sinistrables, sans disperser les moyens au détriment du feu</td></tr>
+                <tr><td>Risques particuliers</td><td>Lignes électriques, voies routières et ferrées, postes gaz…</td></tr>
+            </table>
+            <p><strong>Reconnaissance</strong> rapide et continue : témoins, CCFF, cartes, reconnaissance à pied, aéronefs (dont infrarouge). <strong>Drones</strong> : signalés au COS et à l'AERO, posés avant l'arrivée des aéronefs d'État, liaison radio permanente, sinon posés.</p>
+            <p><strong>Mises en sécurité</strong> : confinement = règle pour les bâtiments en dur ; l'évacuation (campings, loisirs) relève du DOS sur proposition du COS, préparée (quand, comment, par où, vers où), coordonnée au plus tôt avec le COPG. En péril imminent, le COS prend les mesures et rend compte.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.4 – La phase d'attaque</h3>
+            <p>Efficace, rapide, coordonnée et sûre ; effort sur <strong>l'avant du feu, les lisières sous le vent, les lisières montantes</strong> ; accès maintenus libres. Sur un feu rapide, bien choisir le moment de la <strong>passation de commandement</strong>.</p>
+            <table class="rd-table">
+                <tr><th>Stade</th><th>Définition</th></tr>
+                <tr><td><strong>Fixer</strong></td><td>Le feu ne progresse plus hors de son contour (ZI ou action des secours) : propagation arrêtée ou nettement réduite</td></tr>
+                <tr><td><strong>Maîtriser</strong></td><td>Le feu baisse d'intensité ; extinction des foyers secondaires, traitement des lisières, allègement de la tête pour renforcer les flancs</td></tr>
+                <tr><td><strong>Éteindre</strong></td><td>Éviter toute reprise : noyage minutieux (grosses gouttes, mouillant), outils de pionnier, étalement des ballots, souches et fumerolles ; si tout ne peut être noyé, traiter en priorité les lisières</td></tr>
+            </table>
+            <p><strong>Manœuvres offensives</strong> (« aller chercher le feu ») :</p>
+            <ul>
+                <li><strong>Attaque de flanc</strong> (la plus utilisée) : engager sur l'avant du flanc le plus défavorable et le remonter jusqu'à la tête.</li>
+                <li><strong>Percée de flanc</strong> : trouée dans un flanc puis progression dans le brûlé pour casser la tête par l'intérieur, <strong>vent dans le dos</strong> ; si le front est violent ou l'accès difficile.</li>
+                <li><strong>Attaque de front</strong> : casser la tête par l'extérieur ; seulement <strong>vent nul à modéré, front peu violent</strong> et moyens suffisants.</li>
+            </ul>
+            <p><strong>Manœuvres défensives</strong> (« attendre le feu ») : <strong>défense de points sensibles</strong> (on ne peut pas mettre un engin derrière chaque maison : le débroussaillement reste la meilleure protection) et <strong>lignes d'appui</strong> statiques ou dynamiques, avec des engins côté opposé pour les sautes, jamais seuls (par deux minimum).</p>
+            <div class="rd-alerte">La <strong>pérennité de l'alimentation en eau</strong> est capitale : prévoir la rotation des engins pour éviter toute rupture.</div>
+            <p><strong>Tactiques spécifiques</strong> : feux tactiques (→ <button onclick="showModule('gto-feux-tactiques')">Feux tactiques</button>), forestage, équipes de pionniers, DIS, DIH, retardant terrestre, équipes d'évaluation pluridisciplinaires en montagne.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.5 à 6 – Après l'attaque</h3>
+            <ul>
+                <li><strong>Traces et indices</strong> : éviter noyage, piétinement et passages sur la zone présumée du départ ; la <strong>baliser en cercle à la rubalise</strong>, hors zone carbonisée si possible.</li>
+                <li><strong>Surveillance</strong> : piquet de surveillance, parfois plusieurs jours ; établissements maintenus si la météo est défavorable.</li>
+                <li><strong>Médias</strong> : communication décidée par le DOS ; le volet judiciaire relève exclusivement du procureur.</li>
+                <li><strong>Retour à la normale</strong> : débriefing, reconditionnement des engins et des personnels (hydratation, alimentation, hygiène), relève si repos nécessaire.</li>
+                <li><strong>Bases de données</strong> : chaque feu de végétation fait l'objet d'une fiche (Prométhée, GIP ATGeRi ou BDIFF).</li>
+                <li><strong>RCCI</strong> : équipe forestier-pompier-gendarme ou policier (parfois équipe cynotechnique) pour déterminer le lieu précis et la cause.</li>
+            </ul>
+        </div>
+
+        <p class="rd-source">📚 GDO FDF – DGSCGC 2021 – chapitre 4 · <a class="rd-pdf" href="docs/fdf/GDO-FDF-2021.pdf#page=91" target="_blank" rel="noopener">📄 PDF p. 91 à 117 (schémas des attaques et lignes d'appui)</a></p>
+    </div>
+
+    <div id="gdo-grands-feux" class="module">
+        <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <h2>🚁 Feux de grande envergure</h2>
+
+        <div class="rd-section">
+            <h3>1 – Le commandement</h3>
+            <p>Le <strong>COS départemental</strong> (DDSIS ou DDASIS) commande un feu isolé de grande ampleur ou arbitre la répartition des moyens entre plusieurs feux, tout en préservant un dispositif pour les opérations courantes, les nouveaux départs et un autre sinistre majeur ; son outil est le CODIS.</p>
+            <p>Sur le chantier, <strong>un seul COS</strong>, connu de tous, indicatif <strong>« COS + commune du départ »</strong>. Il s'entoure de chefs de secteur (géographiques ou fonctionnels) ; un responsable forestier rejoint le PC. Moyens militaires hors Héphaïstos : un officier est placé auprès du COS.</p>
+            <p><strong>Prise de commandement</strong> : signaler son arrivée au CODIS, contact physique avec le COS en place (passation, reconnaissance commune), prise formelle du commandement, analyse, situations envisageables, enjeux, objectifs et idées de manœuvre. Le COS descendant prend généralement le secteur le plus exposé. Le COS est à la fois <strong>leader</strong> et <strong>stratège</strong> ; il présente enjeux et objectifs au DOS pour validation.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.3 – Les transmissions</h3>
+            <table class="rd-table">
+                <tr><th>Tactique 1</th><td>COS, PC et chefs de secteur</td></tr>
+                <tr><th>Tactique 2</th><td>Chefs de secteur et chefs de sous-secteur</td></tr>
+                <tr><th>Tactique 3</th><td>Chefs de secteur (ou sous-secteur) et chefs d'unités constituées</td></tr>
+                <tr><th>Tactique 4</th><td>Au sein des unités constituées</td></tr>
+                <tr><th>Point de transit ↔ PC</th><td>Tactique 3/4</td></tr>
+            </table>
+            <p>Liaisons arrière par le réseau de commandement et le réseau FDF ; réseaux AIR/SOL et AIR/AIR ; l'OCT évolue avec la montée en puissance.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 – Les moyens aériens</h3>
+            <p>Dès la demande de moyens aériens nationaux, le COS désigne un <strong>cadre AERO</strong> (« AERO + nom du feu ») qui veille l'AIR/SOL jusqu'au départ du dernier aéronef, déchargé de toute autre tâche si possible.</p>
+            <ul>
+                <li><strong>Départementaux</strong> : indicatifs <strong>HORUS</strong> (observation, coordination) et <strong>MORANE</strong> (bombardiers d'eau) ; action combinée avec les moyens nationaux seulement avec pilotes formés, radio compatible et accord du chef de noria ou du coordonnateur.</li>
+                <li><strong>Investigation</strong> : « BENGALE INVESTIGATION » (OSII), évalue le feu et l'opportunité des moyens nationaux.</li>
+                <li><strong>Coordination</strong> : chef de noria par type d'appareil ou coordonnateur « <strong>ICARE</strong> + nom du feu » ; priorité au largage des avions.</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Appareil</th><th>Indicatif</th><th>Emport</th><th>Remplissage</th><th>Zone traitée</th></tr>
+                <tr><td>Beechcraft 200</td><td>Bengale</td><td>9 passagers</td><td>—</td><td>Investigation, coordination</td></tr>
+                <tr><td>Canadair CL 415</td><td>Pélican + n°</td><td>6 100 L</td><td>12 s d'écopage, 3 min au sol</td><td>100 m × 30 m</td></tr>
+                <tr><td>Dash 8 Q400</td><td>Milan + n°</td><td>10 000 L</td><td>6 min au sol</td><td>250 m × 50 m</td></tr>
+            </table>
+            <p><strong>Missions des ABE</strong> : <strong>guet aérien armé retardant (GAAr)</strong>, prioritaire sauf enjeu directement menacé ; attaque directe ; attaque indirecte (à moins de 30 m du foyer) ; pose de ligne de retardant.</p>
+            <div class="rd-alerte"><strong>Aucun largage sans autorisation</strong> (COS, AERO ou coordonnateur par délégation) ; <strong>largages interdits du coucher au lever du soleil</strong> ; le COS ou l'AERO s'assure que les personnels au sol sont en sécurité et visibles. Le commandant de bord peut refuser un largage dangereux ou différer en cas de doute.</div>
+            <p><strong>Premier contact avec les ABE</strong> : idée de manœuvre, zones d'application et effet souhaité, moyens terrestres engagés, obstacles, aérologie, végétation, vitesse de propagation, feu tactique éventuel.</p>
+            <p><strong>Pélicandrome</strong> : 1 responsable + 2 servants minimum, liaison radio AIR/AIR obligatoire (sinon pas de remplissage), zones de roulage matérialisées. <strong>Hélicoptères</strong> : commandement, reconnaissance, marquage des objectifs (prioritaire pour une ligne de retardant), guidage, transport, mises en sécurité ; le COS prévoit une <strong>zone de poser près du PC</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 – Les renforts terrestres</h3>
+            <ul>
+                <li><strong>Colonne FDF</strong> : chef de colonne + 3 GIFF (+ groupes commandement et soutien) ; engins normalisés ; <strong>autonomie logistique 48 h</strong> trajet compris (72 h souhaitables) ; extra-zonaux : <strong>7 jours sans relève</strong>.</li>
+                <li><strong>Transit</strong> : fiche de composition avec les RFGI des engins ; GRP 218 veillé ; contact avec le COZ.</li>
+                <li><strong>Accueil</strong> : point de transit et guidage, cartes, vérification des équipements et des radios (procédure de détresse), rappel des procédures de sécurité, repos si la fatigue du trajet l'impose.</li>
+                <li><strong>Engagement</strong> : toujours avec les moyens locaux ; colonnes engagées constituées ; <strong>toute période de 16 h d'activité est suivie de 8 h de repos</strong> par 24 h ; ne pas dissocier un GIFF ; diffuser les indices de danger du jour jusqu'aux chefs de groupe.</li>
+                <li><strong>Désengagement</strong> décidé par l'EMIZ ; reconditionnement si nécessaire avant le retour.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 – Les mégafeux</h3>
+            <p>En France, un feu de <strong>plus de 10 000 ha</strong> imposant la défense de nombreux points sensibles pourrait être qualifié de mégafeu. Marqueurs : saison estivale et touristes, végétalisation de l'habitat, sécheresse nationale, cinétique exponentielle, combustibilité accrue, gouvernance morcelée, écart entre les délais des moyens et la puissance des feux, rupture capacitaire nationale voire européenne.</p>
+            <p>Conséquences : passer de la lutte contre le feu à la gestion de ses <strong>effets dominos</strong> (« naufragés du feu », santé, hébergement, déplacements de population, infrastructures vitales).</p>
+            <ul>
+                <li><strong>Commandement</strong> : le COS se consacre à la stratégie avec le DO et confie la conduite tactique à un chef de l'opération de même niveau ; organisation en cellules (analyse, économique).</li>
+                <li><strong>Représentation</strong> du contour en 3 couleurs (lisière maîtrisée / active mais attaquée / propagation libre) + <strong>pourcentage de maîtrise</strong> (ex. « 30 % du feu est fixé »), utile aussi pour les points presse.</li>
+                <li><strong>Dimension internationale</strong> : mécanisme européen, aéronefs lourds et super-lourds.</li>
+            </ul>
+        </div>
+
+        <p class="rd-source">📚 GDO FDF – DGSCGC 2021 – chapitre 5 · <a class="rd-pdf" href="docs/fdf/GDO-FDF-2021.pdf#page=119" target="_blank" rel="noopener">📄 PDF p. 119 à 149</a></p>
+    </div>
+
+    <div id="gdo-lexique" class="module">
+        <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <h2>📖 Abréviations et lexique FDF</h2>
+
+        <div class="rd-section">
+            <h3>Abréviations (GDO et GTO)</h3>
+            <table class="rd-table">
+                <tr><td>ABE / HBE</td><td>Avion / hélicoptère bombardier d'eau</td></tr>
+                <tr><td>AMSEC</td><td>Aménagements de sécurité</td></tr>
+                <tr><td>CA / CU</td><td>Capacité d'autoprotection / capacité utile</td></tr>
+                <tr><td>CCF (L, M, S)</td><td>Camion-citerne feux de forêts léger, moyen, super</td></tr>
+                <tr><td>CCFF</td><td>Comité communal feux de forêts</td></tr>
+                <tr><td>CCR</td><td>Camion-citerne rural</td></tr>
+                <tr><td>CFT</td><td>Cadre feux tactiques</td></tr>
+                <tr><td>COGC</td><td>Centre opérationnel de gestion des circulations (ferroviaires)</td></tr>
+                <tr><td>COGIC / COZ</td><td>Centre opérationnel de gestion interministérielle de crise / de zone</td></tr>
+                <tr><td>COV / HAP</td><td>Composés organiques volatils / hydrocarbures aromatiques polycycliques</td></tr>
+                <tr><td>CRM / PRM</td><td>Centre / point de regroupement des moyens</td></tr>
+                <tr><td>DFCI</td><td>Défense de la forêt contre les incendies</td></tr>
+                <tr><td>DIH / DIHN</td><td>Détachement d'intervention héliporté / national</td></tr>
+                <tr><td>DIR / DIS</td><td>Détachement d'intervention retardant / spécialisé</td></tr>
+                <tr><td>DPS</td><td>Défense de points sensibles</td></tr>
+                <tr><td>EGE</td><td>Embrasement généralisé éclair</td></tr>
+                <tr><td>EMIZ</td><td>État-major interministériel de zone</td></tr>
+                <tr><td>GAAr</td><td>Guet aérien armé (retardant)</td></tr>
+                <tr><td>GALIMFF / GAPP</td><td>Groupe alimentation FDF / groupe appui</td></tr>
+                <tr><td>GIFF</td><td>Groupe d'intervention feux de forêts (1 VLHR + 4 CCF)</td></tr>
+                <tr><td>GPIHF</td><td>Groupe protection interface habitat-forêt</td></tr>
+                <tr><td>GTL(H)</td><td>Groupe de traitement des lisières (héliporté)</td></tr>
+                <tr><td>ICL / IH / IS</td><td>Indice de combustible léger / d'humus / de sécheresse</td></tr>
+                <tr><td>IFM / NEP</td><td>Indice forêt météo / niveau d'éclosion et de propagation</td></tr>
+                <tr><td>LDT / LDV</td><td>Lance du dévidoir tournant / lance à débit variable</td></tr>
+                <tr><td>MGO</td><td>Marche générale des opérations</td></tr>
+                <tr><td>MIR / MIL</td><td>Module d'intervention rapide / lourd</td></tr>
+                <tr><td>OLD</td><td>Obligations légales de débroussaillement</td></tr>
+                <tr><td>RCCI</td><td>Recherche des causes et circonstances d'incendie</td></tr>
+                <tr><td>RCT / RLT</td><td>Retardant court terme (moussant) / long terme</td></tr>
+                <tr><td>UFEN</td><td>Unité feu d'espace naturel</td></tr>
+                <tr><td>UIFF / ULIFF</td><td>Unité (lourde) d'intervention feux de forêts</td></tr>
+                <tr><td>UFR</td><td>Unité de fabrication de retardant</td></tr>
+                <tr><td>VLHR</td><td>Véhicule de liaison hors routes</td></tr>
+                <tr><td>ZAL</td><td>Zone d'appui à la lutte</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Zone d'intervention</h3>
+            <ul>
+                <li><strong>Chevelu</strong> : représentation des lignes de crêtes (rouge) et talwegs (bleu) – outil de l'officier anticipation.</li>
+                <li><strong>Itinéraire de repli</strong> : trajet de retraite vers une position sûre, désigné par le chef <strong>avant l'action</strong>.</li>
+                <li><strong>Point d'attaque</strong> : emplacement de la lance. <strong>Point de ralliement</strong> : regroupement en cas de besoin. <strong>Point de transit</strong> : passage obligé vers la ZI.</li>
+                <li><strong>Point sensible</strong> : lieu nécessitant protection ou mise en sécurité. <strong>Secteur</strong> : partie géographique ou fonctionnelle sous la responsabilité d'un chef.</li>
+                <li><strong>Zone d'appui</strong> (ZAL en Corse) : zone d'où une unité agit en sécurité avec la permanence de l'eau.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le sinistre</h3>
+            <ul>
+                <li><strong>Axe de propagation</strong> : direction générale ; il sépare les parties droite et gauche.</li>
+                <li><strong>Lisière au vent</strong> : flammes poussées vers le brûlé. <strong>Lisière sous le vent</strong> : flammes poussées vers le non-brûlé. <strong>Pointe de feu</strong> : partie saillante, souvent vers la tête.</li>
+                <li><strong>Reprise</strong> : nouvelle inflammation d'une lisière traitée. <strong>Être débordé</strong> : le feu passe par les côtés du dispositif. <strong>Être sauté</strong> : une saute passe par-dessus.</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>État du feu</th><th>Définition</th></tr>
+                <tr><td>En propagation libre / en cours</td><td>Propagation peu ou pas gênée par les moyens</td></tr>
+                <tr><td><strong>Fixé</strong></td><td>Ne progresse plus hors de son contour</td></tr>
+                <tr><td><strong>Maîtrisé</strong></td><td>Ne progresse plus, baisse d'intensité, parties actives possibles</td></tr>
+                <tr><td><strong>Sous surveillance</strong></td><td>Maîtrisé, plus de partie active visible, dispositif maintenu</td></tr>
+                <tr><td><strong>Éteint</strong></td><td>Plus aucune partie active, aucun dispositif ; définitif (une reprise = un nouveau feu)</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Raisonnement tactique</h3>
+            <ul>
+                <li><strong>Principes</strong> : concentration des efforts, liberté d'action, économie des forces.</li>
+                <li><strong>Effet majeur</strong> : résultat principal à obtenir sur le sinistre en un lieu, à un moment et pendant un temps donnés.</li>
+                <li><strong>Idée de manœuvre</strong> : comment, quand et par où le chef veut agir, sans détailler la répartition des moyens.</li>
+                <li><strong>Mission</strong> : un verbe + le lieu de concrétisation. <strong>Point décisif</strong> : objectif secondaire qui facilite l'objectif principal.</li>
+                <li><strong>Confrontation</strong> : chaque idée de manœuvre face à chaque situation envisageable.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Verbes et manœuvres</h3>
+            <table class="rd-table">
+                <tr><td><strong>Alimenter</strong></td><td>Assurer la permanence de l'eau</td></tr>
+                <tr><td><strong>Canaliser</strong></td><td>Restreindre le feu dans une zone étroite (feu tactique, moyens terrestres et aériens, retardant)</td></tr>
+                <tr><td><strong>Couvrir</strong></td><td>S'opposer à une action du feu menaçant l'action principale</td></tr>
+                <tr><td><strong>Défendre</strong></td><td>Interdire au feu de franchir une ligne ou d'embraser une zone</td></tr>
+                <tr><td><strong>Exploiter</strong></td><td>Poursuivre l'extinction après rupture du front</td></tr>
+                <tr><td><strong>Freiner</strong></td><td>Ralentir la progression par des manœuvres successives</td></tr>
+                <tr><td><strong>Jalonner</strong></td><td>Renseigner en permanence sur la progression en tenant les flancs sans se mettre en danger</td></tr>
+                <tr><td><strong>Noyer</strong></td><td>Mouiller abondamment une lisière ou le brûlé contre les reprises</td></tr>
+                <tr><td><strong>Recueillir</strong></td><td>Accueillir un élément qui se replie, le laisser franchir le dispositif puis le couvrir</td></tr>
+                <tr><td><strong>Surveiller / surveillance active</strong></td><td>Déceler tout changement / réagir sur toute reprise</td></tr>
+                <tr><td><strong>Tenir</strong></td><td>Occuper ou défendre un point ou un espace</td></tr>
+                <tr><td><strong>Traiter la lisière</strong></td><td>Supprimer ce qui permettrait au feu de repartir</td></tr>
+                <tr><td><strong>Attaque de type commando</strong></td><td>Aller chercher le feu loin des pénétrantes, en zone difficile d'accès</td></tr>
+                <tr><td><strong>Sonnette</strong></td><td>Petit élément qui observe le feu et les unités pour leur sécurité ou leur guidage</td></tr>
+            </table>
+        </div>
+
+        <p class="rd-source">📚 GDO FDF – DGSCGC 2021 – annexes A et B ; GTO FDF – annexe A · <a class="rd-pdf" href="docs/fdf/GDO-FDF-2021.pdf#page=151" target="_blank" rel="noopener">📄 PDF p. 151 à 162 (schémas de la ZI et du sinistre)</a></p>
+    </div>
+
+    <!-- ============ FDF – GTO Feux de forêts et d'espaces naturels (DGSCGC 2021) ============ -->
+    <div id="gto-menu" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🌲 GTO – Techniques opérationnelles FDF</h2>
+        <p style="text-align: center;">Guide de techniques opérationnelles <strong>« Lutte contre les feux de forêts et d'espaces naturels »</strong> – DGSCGC, 1<sup>re</sup> édition, février 2021</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gto-moyens')"><b>Ch. 1 · Matériels et moyens de lutte</b><span>CCF, unités (UIFF, UFEN, GIFF, colonne), DIH, DIR, lances, claies</span></button>
+            <button onclick="showModule('gto-securite')"><b>Ch. 2 · Sécurité collective et individuelle</b><span>Rôles, repli d'urgence, autoprotection, autodéfense, largage de sécurité</span></button>
+            <button onclick="showModule('gto-etablissements')"><b>Ch. 3 · Établissements du CCF</b><span>LDT, lance 500, transformation, prolongement, alimentation</span></button>
+            <button onclick="showModule('gto-manoeuvres')"><b>Ch. 4 · Manœuvres en unités organiques</b><span>Convoi, STOPD, offensives, défensives, lignes d'appui, norias</span></button>
+            <button onclick="showModule('gto-espaces')"><b>Ch. 5 · Espaces naturels particuliers</b><span>Agricoles, déprise, interfaces, montagne</span></button>
+            <button onclick="showModule('gto-feux-tactiques')"><b>Ch. 6 · Feux tactiques</b><span>Contre-feu, brûlage tactique, techniques d'allumage</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>📄 Document officiel</h3>
+            <p>Le guide complet (124 pages, avec schémas et photos) est téléchargeable :</p>
+            <p><a class="rd-pdf" href="docs/fdf/GTO-FDF-2021.pdf" target="_blank" rel="noopener">📄 Ouvrir le GTO FDF (PDF, 7,8 Mo)</a></p>
+            <p><small>Les fiches de l'application reprennent le texte du guide. Les schémas et photos ne sont pas reproduits : chaque fiche renvoie à la page du PDF correspondante.</small></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Autres fiches liées</h3>
+            <ul>
+                <li>Doctrine (milieux, météo, EGE, MGO, moyens aériens) → <button onclick="showModule('gdo-menu')">🌲 GDO – Doctrine FDF</button></li>
+                <li>Abréviations et lexique FDF → <button onclick="showModule('gdo-lexique')">Abréviations & lexique</button></li>
+                <li>Vitesse de propagation → <button onclick="showModule('feu-foret')">Règle des 3 %</button></li>
+            </ul>
+        </div>
+
+        <p class="rd-source">📚 GTO « Lutte contre les feux de forêts et d'espaces naturels » – DGSCGC/DSP/SDDRH/BDFE – 1<sup>re</sup> édition, février 2021. Reproduction des textes autorisée pour les SIS dans le cadre de la doctrine et de la formation ; illustrations non reproduites (autorisation des auteurs requise).</p>
+    </div>
+
+    <div id="gto-moyens" class="module">
+        <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <h2>🚒 Matériels et moyens de lutte</h2>
+
+        <div class="rd-section">
+            <h3>1.1 – Les camions-citernes feux de forêts (CCF)</h3>
+            <table class="rd-table">
+                <tr><th>Type</th><th>Masse totale en charge (MTC)</th></tr>
+                <tr><td>CCFL – léger</td><td>3 t &lt; MTC ≤ 7,5 t</td></tr>
+                <tr><td>CCFM – moyen</td><td>7,5 t &lt; MTC ≤ 14 t (catégorie 3 tout-terrain)</td></tr>
+                <tr><td>CCFS – super</td><td>MTC &gt; 14 t</td></tr>
+            </table>
+            <p>Le classement ne reflète pas les capacités opérationnelles de l'engin. Dans certains massifs (Sud-Ouest), l'attaque se fait depuis la cabine de <strong>CCF dits « pénétrants »</strong> : action mobile à l'intérieur du massif.</p>
+            <p><strong>Armement</strong> (2, 3 ou 4 SP selon l'engin et le SIS) : 1 chef d'agrès (FDF2), 1 conducteur (FDF1-COD2), 2 équipiers (FDF1).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.2 à 1.5 – Autres engins</h3>
+            <ul>
+                <li><strong>Camion-citerne rural (CCR)</strong> : feux de structure et certains feux d'espace naturel (récoltes sur pied), <strong>catégorie 2 = terrains peu accidentés</strong>, pas d'autoprotection ni d'air respirable en cabine.</li>
+                <li><strong>Moyens d'appui</strong> : alimentation continue dans les secteurs pauvres en eau (motopompes flottantes, immergées, remorquables) ; génie civil (bulldozer) pour pénétrantes, gués, sécurisation des lisières.</li>
+                <li><strong>VLHR équipé</strong> (montagne) : 2 à 4 SP en manœuvres pédestres, considéré comme un engin de lutte à part entière.</li>
+                <li><strong>Engin-pompe urbain</strong> : si le premier engin (FPT…) ne peut aller au contact, le réserver à la <strong>défense de point sensible</strong>, à la protection de matériels ou à la réalimentation des CCF.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 – Les unités organiques</h3>
+            <table class="rd-table">
+                <tr><th>Unité</th><th>Composition</th><th>Commandement</th></tr>
+                <tr><td><strong>UIFF</strong> – unité d'intervention FDF</td><td>2 CCF de classe M ou S (souvent pénétrants, armés à 2 ou 3). <strong>ULIFF</strong> si renforcée d'un CCFS</td><td>Chef d'agrès FDF2</td></tr>
+                <tr><td><strong>UFEN</strong> – unité feu d'espace naturel (montagne)</td><td>1 VLHR équipé (2 à 4 SP, manœuvres pédestres) + 1 CCFM (2 à 4 SP)</td><td>Chef d'unité</td></tr>
+                <tr><td><strong>GIFF</strong> – groupe d'intervention FDF</td><td>1 VLHR + 4 CCF de classe M</td><td>Chef de groupe FDF3</td></tr>
+                <tr><td><strong>GPIHF</strong> – protection interface habitat-forêt</td><td>Selon le département</td><td>—</td></tr>
+                <tr><td><strong>Colonne</strong></td><td>3 GIFF minimum + commandement et soutien</td><td>Chef de colonne FDF4</td></tr>
+            </table>
+            <p><strong>UIFF</strong> : attaque massive et dynamique au contact, projection d'eau efficace, polyvalence (depuis le CCF ou par établissement), sécurité des personnels.</p>
+            <div class="rd-astuce">Pour la sécurité et l'efficacité, le COS cherche dès que possible à <strong>regrouper les engins isolés</strong> avec un chef de groupe ou dans un GIFF existant.</div>
+            <p><strong>Groupes de protection interface habitat-forêt</strong> : présence SP dans les quartiers d'habitat en dur menacés (reconnaissance, information, évacuation ou confinement, préparation des lieux : fermeture des ouvrants, éloignement des combustibles, véhicules en zone sûre, repérage des points d'eau et zones de repli), protection des habitations, extinction des foyers résiduels, guidage des renforts. <strong>Jamais de manœuvre offensive FDF.</strong> Efficaces seulement si : débroussaillement correct, habitat en dur entretenu, accès praticables, points d'eau utilisables par motopompes.</p>
+            <p><strong>Colonnes de renfort</strong> : FDF1 et FDF2 (équipiers, chefs d'agrès), FDF3 (chef de groupe), FDF4 (chef de colonne), COD2 (conducteurs CCF) obligatoires. Complétées au besoin par PC de colonne, soutien sanitaire, logistique, « pionniers ».</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 – Moyens opérationnels spécialisés</h3>
+            <p><strong>Départementaux</strong></p>
+            <ul>
+                <li><strong>Équipes feux tactiques</strong> : feu secondaire allumé face à l'incendie (→ <button onclick="showModule('gto-feux-tactiques')">Feux tactiques</button>). Art. L131-3 du code forestier : le COS peut y recourir même sans autorisation du propriétaire.</li>
+                <li><strong>Forestage</strong> : engins lourds (bulldozers, broyeurs) ou portables (tronçonneuses, débroussailleuses) pour créer des accès ou séparer le combustible, traitement de lisière active.</li>
+                <li><strong>Retardant terrestre</strong> : ligne d'appui en aval du front ; retardants long terme (RLT) et court terme moussants (RCT).</li>
+                <li><strong>DIH – détachement d'intervention héliporté</strong> : unité autonome et indissociable ; mission donnée par le COS, faisabilité à l'initiative du chef du DIH après avis de l'équipage. Feux naissants en terrain difficile, feux éloignés ou en site difficile (îles, falaises), alimentation de CCF par dévidoir aérien DN 70, récupération de personnes menacées. <strong>Établissements uniquement de jour aéronautique.</strong></li>
+                <li><strong>DIS – détachement d'intervention spécialisé</strong> : surveillance, fumerolles et points chauds, extinction finale de lisière, accès, zones d'appui, points d'alimentation, zones de poser.</li>
+            </ul>
+            <p><strong>Nationaux</strong></p>
+            <ul>
+                <li><strong>DIHN</strong> : feux inaccessibles, établissements jusqu'à <strong>2 km</strong> avec permanence de l'eau ; évacuation d'urgence exceptionnelle. Le chef du détachement hélicoptère (armée de Terre, protocole Héphaïstos) décide de tout ce qui relève de la sécurité aéronautique.</li>
+                <li><strong>DIR – détachement retardant</strong> (chef FDF4) : préventif (inerter une zone d'appui) ou curatif. Capacité : <strong>1 km × 6 m en 1 heure</strong>, 80 000 L de solution = <strong>2,7 km</strong> avant recomplètement ; de jour comme de nuit, quelle que soit la météo.</li>
+                <li><strong>Groupe appui</strong> (2 tracto-niveleurs en convoi exceptionnel, 1 CCFM de protection) : pare-feu, ZAL, aires de retournement, pénétrantes, séparation de combustible. <strong>300 m d'ouverture en 1 h, 1 km de piste en 1 journée</strong>.</li>
+                <li><strong>DIS national</strong> : mêmes missions que le DIS départemental.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 – Les matériels</h3>
+            <table class="rd-table">
+                <tr><th>Matériel</th><th>Caractéristiques</th></tr>
+                <tr><td>Lance 500</td><td>Débit variable sur DN 45, 500 L/min max</td></tr>
+                <tr><td>Lance 150</td><td>Débit variable sur DN 25, 150 L/min max</td></tr>
+                <tr><td>Lance 20/7</td><td>Fût tronconique sur DN 25, 150 L/min max, robinet-ajutage diffuseur</td></tr>
+                <tr><td>Queue de paon DN 45</td><td>500 L/min – écran d'environ <strong>7 m de haut × 25 m de large</strong></td></tr>
+                <tr><td>Queue de paon DN 70</td><td>1 000 L/min – écran d'environ <strong>10 m × 30 m</strong></td></tr>
+                <tr><td>Vanne d'arrêt FDF</td><td>Garde l'établissement en eau pour débrancher/raccorder une lance, prolonger, transformer</td></tr>
+                <tr><td>Division mixte FDF à clapet</td><td>Maintient en eau un établissement de grande longueur en pente positive en cas de rupture ; gain au refoulement d'environ 1 min pour 100 m ; 1 ou 2 lances 150 de protection</td></tr>
+                <tr><td>Hydro-éjecteur</td><td>Ravitaillement sur point d'eau naturel ; <strong>300 L minimum</strong> dans la citerne</td></tr>
+                <tr><td>Claie de 25 (≈ 20 kg)</td><td>4 tuyaux Ø 25, 1 division 40-40/2×20, 2 lances 150 (+ 1 tuyau Ø 45 en option)</td></tr>
+                <tr><td>Claie de 45 (≈ 25 kg)</td><td>4 tuyaux Ø 45, 1 division 40-40/2×20 (+ vanne d'arrêt en option)</td></tr>
+                <tr><td>Torche d'égouttement</td><td>Allumage des feux tactiques ; clapet anti-retour de flamme</td></tr>
+                <tr><td>Réglette FDF</td><td>Tracé de l'axe de propagation sur carte, échelles 1/25 000 et 1/100 000</td></tr>
+            </table>
+            <p><strong>Forestage</strong> : outils coupants (serpe, croissant, hachette), non coupants (pelle, pioche, fourche, râteau Rich), mécaniques (tronçonneuse, élagueuse). Périmètre de sécurité et EPI pour les outils mécaniques.</p>
+            <p><strong>Paquetage « de feu »</strong> (engagement possible &gt; 24 h) : duvet, linge de rechange, toilette, papier, lampe et piles, gourde, alimentation énergétique (<strong>réchaud à gaz interdit</strong>).</p>
+        </div>
+
+        <p class="rd-source">📚 GTO FDF – DGSCGC 2021 – chapitre 1 · <a class="rd-pdf" href="docs/fdf/GTO-FDF-2021.pdf#page=17" target="_blank" rel="noopener">📄 PDF p. 17 à 33 (photos des engins et matériels)</a></p>
+    </div>
+
+    <div id="gto-securite" class="module">
+        <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <h2>🛡️ Sécurité collective et individuelle</h2>
+
+        <div class="rd-section">
+            <h3>1 – Les quatre classes de risques</h3>
+            <table class="rd-table">
+                <tr><th>Source</th><th>Risque</th><th>Protection</th></tr>
+                <tr><th colspan="3">Mécanismes du feu</th></tr>
+                <tr><td>Vitesse de propagation, rayonnement, particules incandescentes, fumées et gaz chauds</td><td>Brûlures, intoxication, dérèglement physiologique, gêne oculaire</td><td>EPI, règles de sécurité, placement par rapport aux fronts</td></tr>
+                <tr><th colspan="3">Terrain et environnement</th></tr>
+                <tr><td>Terrain accidenté, sol mouillé</td><td>Chute</td><td>Progresser lentement, regarder où l'on marche, éclairage la nuit</td></tr>
+                <tr><td>Lignes haute tension</td><td>Arc électrique (chaleur, fumée)</td><td>Ne pas rester sous les lignes THT, prévenir le chef d'agrès</td></tr>
+                <tr><td>Camps militaires, zones non dépolluées</td><td>Explosion de munitions</td><td>Rester sur l'itinéraire, consignes du responsable du site</td></tr>
+                <tr><td>Déchetteries, stockages sauvages</td><td>Fumées toxiques, explosions, chute dans un vide créé par la combustion</td><td>Personnel minimum, hors des fumées, éloigné, progression très prudente</td></tr>
+                <tr><th colspan="3">Matériels</th></tr>
+                <tr><td>Rotor d'hélicoptère</td><td>Projections, chute due au souffle</td><td>Casque lunettes baissées, se baisser, jamais sous la machine</td></tr>
+                <tr><td>Largages d'aéronefs</td><td>Choc, chute (retardant visqueux)</td><td><strong>Évacuer l'axe de largage : 40 m de part et d'autre</strong></td></tr>
+                <tr><td>Déplacement des véhicules</td><td>Retournement, choc, chute au débarquement</td><td>Code de la route, contrôle pneus et flexibles, équipage débarqué aux passages difficiles, casque en hors-piste, éviter la cuve mi-pleine</td></tr>
+                <tr><td>Claies, outils de forestage, treuil</td><td>Fatigue, plaies, rupture de câble</td><td>Règles d'utilisation de chaque matériel</td></tr>
+                <tr><th colspan="3">Vie sur le terrain</th></tr>
+                <tr><td>Eau de la citerne</td><td>Infection, intoxication</td><td><strong>Ne pas la boire</strong>, ni l'utiliser sur des plaies</td></tr>
+                <tr><td>Chaleur, effort</td><td>Déshydratation, carence, fatigue</td><td>Boire avant d'avoir soif, repas équilibrés, sucres rapides, récupération</td></tr>
+                <tr><td>Transpiration, fumée, tenue inadaptée</td><td>Irritations, ampoules</td><td>Toilette même succincte, sous-vêtements coton, rangers bien lacées</td></tr>
+            </table>
+            <p>Tous les intervenants : EPI définis par le chef de détachement, <strong>vitres et portières fermées</strong>, rendre compte de toute difficulté.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.1 à 1.5 – Rôle de chacun</h3>
+            <p><strong>Équipier</strong> : garde le contact avec son binôme et le chef d'agrès.</p>
+            <p><strong>Conducteur</strong> : contrôle les aménagements de sécurité, le niveau d'eau, la fermeture des vitres, portières et volets de ventilation ; se fait guider dans les passages à risque ; se range sans gêner la piste, <strong>dans le sens du départ, moteur tournant</strong> ; veille la radio et la permanence de l'eau ; protège le CCF (LDT ou autoprotection).</p>
+            <p><strong>Chef d'agrès</strong> : rappelle que la cabine autoprotégée est l'abri ; <strong>indique le lieu de repli avant toute action</strong> ; fait contrôler les équipements de sécurité ; liaison radio avec l'échelon supérieur ; guide le conducteur ; sollicite les relèves ; déclenche autoprotection et air respirable. Isolé : prévoit itinéraire ou zone de repli, signale les obstacles aux aéronefs (antennes, lignes HT), donne l'autorisation de largage après avoir fait mettre ses personnels à l'abri. En groupe : attend l'ordre du chef de groupe pour établir.</p>
+            <p><strong>Chef de groupe FDF</strong> : reconnaissance avant engagement, itinéraire et zone de repli, autodéfense du groupe, liaisons avant et arrière, regroupement rapide des CCF isolés, permanence de l'eau, <strong>présentation obligatoire au point de transit</strong>, désigne à chaque chef d'agrès points d'eau et zones de sécurité.</p>
+            <p><strong>Chef de colonne</strong> : inventaire des moyens, points d'eau et zones de sécurité pour chaque groupe, un ou plusieurs points de transit au plus tôt ; en COS avec moyens aériens : liaison (ou cadre AERO), obstacles, mise en sécurité, autorisation de largage. <strong>Chef de site</strong> : mêmes responsabilités de sécurité à son niveau.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 – Protection des personnels à pied</h3>
+            <p>Phénomènes rapides, voire brutaux : <strong>sautes de feu</strong> même à plusieurs centaines de mètres, <strong>accélération brutale</strong>, <strong>changement d'axe</strong> de propagation. Ils peuvent détruire l'établissement, couper le retour à l'engin, encercler le personnel. L'<strong>embrasement généralisé éclair</strong> est le phénomène le plus extrême (→ <button onclick="showModule('gdo-ege')">EGE</button>).</p>
+            <ul>
+                <li>Le chef d'agrès informe de la <strong>zone pyro-résistante</strong> proche (le brûlé en priorité ; cabanon, maison, piscine, point d'eau) et de l'<strong>itinéraire de repli</strong> jusqu'à l'engin.</li>
+                <li>Compléments : sentier débroussaillé (« draille ») vers l'engin, jalonnement de l'établissement avec des lances 20/7 et tuyaux de 20 m.</li>
+                <li>Contact radio constant ; en difficulté, donner : <strong>la situation, la position la plus précise, le moyen de protection envisagé</strong>.</li>
+            </ul>
+            <div class="rd-alerte">La cabine du véhicule, avec ses équipements de protection, reste <strong>l'unique espace de survie</strong> face à un événement brutal.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.2 – Le repli d'urgence (déroulé)</h3>
+            <p>Ce n'est pas une manœuvre au sens strict : il vise seulement à ramener l'équipage dans la cabine du CCF.</p>
+            <ol>
+                <li>Le chef d'agrès donne l'<strong>ordre de repli</strong>.</li>
+                <li>Les personnels <strong>s'accroupissent</strong> ; la lance reste <strong>ouverte en jet diffusé de protection</strong>.</li>
+                <li>Ils coiffent le <strong>masque de fuite</strong> (autonomie 6 min, uniquement pour le repli, jamais pour sauvetage ou reconnaissance) ; si le phénomène est fulgurant, pendant le retour quand l'air devient irrespirable.</li>
+                <li>Le chef d'agrès organise le repli : le <strong>tuyau sert de ligne guide</strong>, la lance reste posée au sol, ouverte en diffusé. Le chef d'agrès tient le tuyau, l'équipier tient le chef d'agrès et le second équipier, tous deux tiennent le tuyau.</li>
+                <li>Dès le début, le <strong>conducteur enclenche l'autoprotection</strong>, reste à l'arrière du camion, coiffe son masque de fuite si nécessaire, fait le point avec le chef d'agrès sur la présence de tous.</li>
+                <li>Il réceptionne ses coéquipiers et les fait entrer par la <strong>face non exposée</strong> au flux thermique ; ils longent le CCF grâce au balisage extérieur.</li>
+                <li>En cabine : <strong>surpression et air respirable ouverts, demi-masques coiffés</strong> ; le conducteur actionne l'avertisseur sonore.</li>
+            </ol>
+            <p>Si le repli à la cabine est impossible, rejoindre une zone de repli désignée à l'avance (vignes, pierrier, zone brûlée…). S'entraîner en conditions dégradées (occultation des lunettes pour simuler la fumée).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 – L'autoprotection des CCF</h3>
+            <p>Protection thermique (films sur vitrages, câblages protégés, aspersion de la cabine) et <strong>air respirable : 10 min minimum pour 4 personnes à 30 L/min</strong>.</p>
+            <table class="rd-table">
+                <tr><th>Engin</th><th>MTC</th><th>Capacité utile (CU) min.</th><th>Capacité d'autoprotection (CA) min.</th></tr>
+                <tr><td>CCFL</td><td>≤ 7,5 t</td><td>600 L</td><td>300 L</td></tr>
+                <tr><td>CCFM</td><td>7,5 t &lt; MTC ≤ 16 t</td><td>1 500 L</td><td>300 L</td></tr>
+                <tr><td>CCFS</td><td>&gt; 16 t</td><td>5 000 L</td><td>300 L</td></tr>
+            </table>
+            <p><strong>Menacé directement, le chef d'agrès</strong> : dégage si possible vers une zone sûre reconnue ; assure l'intégrité de l'habitacle ; fait fermer les vannes d'aspiration et de refoulement ; regroupe les personnels dans le CCF ; met en œuvre autoprotection et air respirable ; alerte l'échelon supérieur ; demande renforts et <strong>largages de sécurité</strong> ; prévient la panique ; déclenche la <strong>détresse ANTARES</strong> (bouton d'urgence, géolocalisation) ; active avertisseurs sonores et lumineux.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 – L'autodéfense des unités organiques</h3>
+            <p>Positionnement des véhicules + autoprotection + éventuellement moyens hydrauliques. <strong>Active</strong> (lances, canon) ou <strong>passive</strong> (autoprotection seule). Mise en place au plus vite, si possible en une seule manœuvre. Cabines protégées du flux ; un CCFS sert d'écran en priorité.</p>
+            <p><strong>Phase préalable, le chef de groupe</strong> : anticipe, fait évacuer la zone dangereuse, garde le contact radio, alerte l'échelon supérieur, choisit la zone la plus sûre, resserre le dispositif (VLHR entre les CCF sans bloquer les cabines), rassemble les équipages en cabine, demande renforts et largages. Puis il fait préparer les moyens hydrauliques selon l'eau restante (canon ou queue de paon devant les véhicules), commande l'autoprotection au moment opportun, fait le bilan et rend compte.</p>
+            <p><strong>UIFF à l'attaque</strong> : si un CCF est en panne ou enlisé, il prévient ; le 2<sup>e</sup> CCF le dépasse <strong>côté végétation non brûlée</strong> pour s'interposer entre les flammes et lui, et reste en protection jusqu'aux renforts. À plus de 2 CCF : le 3<sup>e</sup> passe dans le brûlé, le 4<sup>e</sup> suit le 2<sup>e</sup> pour entourer le 1<sup>er</sup>.</p>
+            <p><strong>UFEN</strong> : la VLTT n'a pas d'autoprotection ; une <strong>queue de paon</strong> la protège.</p>
+            <p><strong>GIFF</strong> : si l'action devient inefficace, privilégier le <strong>déplacement en marche avant</strong> (50 à 300 m, engins dans le sens du départ) pour laisser passer le front. Si la fuite est impossible (visibilité, engin immobilisé, piste bloquée, arbre tombé, front trop large) :</p>
+            <table class="rd-table">
+                <tr><th></th><th>En carré</th><th>En colonne</th></tr>
+                <tr><th>Active (eau et temps disponibles)</th><td>Emplacement assez grand et pyro-résistant ? Temps suffisant pour établir ? Citernes encore pleines ? Lances mises en œuvre par les chefs d'agrès, position signalée pour largages</td><td>Fuite impossible ? CCF <strong>pare-chocs à moins d'1 m</strong>, lances par les chefs d'agrès, position signalée</td></tr>
+                <tr><th>Passive (plus d'eau ou de temps)</th><td>Emplacement suffisant ? Délai trop court pour fuir ? <strong>Aucun personnel exposé</strong>, personnels de la VLTT dans les CCF</td><td>« Serrer » les véhicules pare-chocs à moins d'1 m, position signalée</td></tr>
+            </table>
+            <div class="rd-astuce">Une queue de paon DN 45 offre environ <strong>6 minutes</strong> d'autonomie avec une citerne à moitié pleine. Ces situations très dégradées exigent expérience, sang-froid et répétition des gestes à l'entraînement.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.5 – Le largage de sécurité</h3>
+            <p>Largage effectué <strong>délibérément sur un véhicule ou un groupe en difficulté</strong> pour faire tomber flammes et température et permettre le dégagement, à hauteur suffisante (écrasement de pavillon, chute d'arbres). Accord du COS ou de l'AERO ; en extrême urgence, par le bénéficiaire. Guidage de l'aéronef par l'appelant (code horaire, azimut-distance, guidage visuel), marquage par hélicoptère si possible.</p>
+            <div class="rd-alerte">Ce n'est pas un « appui aérien » : le largage de sécurité n'est demandé <strong>qu'en situation d'autodéfense</strong>. Tout COS, du chef d'agrès au chef de site, peut annuler un largage ou demander un largage de sécurité.</div>
+        </div>
+
+        <p class="rd-source">📚 GTO FDF – DGSCGC 2021 – chapitre 2 · <a class="rd-pdf" href="docs/fdf/GTO-FDF-2021.pdf#page=42" target="_blank" rel="noopener">📄 PDF p. 42 à 55 (photos du repli d'urgence, schémas d'autodéfense)</a></p>
+    </div>
+
+    <div id="gto-etablissements" class="module">
+        <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <h2>🧯 Établissements du CCF</h2>
+
+        <div class="rd-section">
+            <h3>Règles communes</h3>
+            <ul>
+                <li>Le chef d'agrès et le conducteur <strong>veillent la radio</strong>.</li>
+                <li>Toutes les manœuvres s'exécutent <strong>du point d'eau vers le point d'attaque</strong>, en maintenant la permanence de l'eau.</li>
+                <li>L'<strong>équipier 2 établit ses tuyaux avant ceux de l'équipier 1</strong>, pour que ce dernier soit toujours au plus près du point d'attaque.</li>
+                <li>Plus rapide avec claies de portage et dévidoir auxiliaire de tuyaux Ø 45.</li>
+            </ul>
+            <p>Cinq établissements du CCFM : lance du dévidoir tournant ; lance 500 ou prise d'eau ; prolongement d'une lance 500 ; transformation d'une lance 500 en 2 lances 150 sans ou après prolongement.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.1 – La lance du dévidoir tournant (LDT)</h3>
+            <p>Sert surtout au conducteur à <strong>protéger le CCF</strong> ; aussi extinction et sautes de feu. Si exceptionnellement prolongée par des tuyaux souples, l'équipier 1 la manœuvre.</p>
+            <table class="rd-table">
+                <tr><th>Conducteur</th><td>Met en œuvre la pompe</td></tr>
+                <tr><th>Chef d'agrès</th><td>Désigne le point d'attaque, fait suivre le tuyau, envoie l'eau sans ordre, s'assure de l'efficacité</td></tr>
+                <tr><th>Équipier 1</th><td>Prend la lance, tire l'établissement, rejoint le point d'attaque, procède à l'extinction</td></tr>
+                <tr><th>Équipier 2</th><td>Prend le 1<sup>er</sup> raccord, tire l'établissement, double le porte-lance</td></tr>
+            </table>
+            <p>En extinction complète des lisières (arrosage), le tuyau est déroulé de quelques mètres et l'équipier suit à pied la progression du CCF qu'il dirige.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.2 – Lance 500 ou prise d'eau jusqu'à 120 m</h3>
+            <p><strong>Au dévidoir auxiliaire de 45</strong> – « <em>Pour l'établissement de la lance 500, débit XXX L/min ou d'une prise d'eau (division) au moyen du dévidoir auxiliaire de 45, en reconnaissance</em> »</p>
+            <table class="rd-table">
+                <tr><th>Conducteur</th><td>Met en œuvre la pompe, aide à dérouler, débranche dès que le porte-lance est au point d'attaque, raccorde et envoie l'eau, veille à la permanence de l'eau, prévoit l'alimentation du CCF</td></tr>
+                <tr><th>Chef d'agrès</th><td>Prend la lance équipée de la vanne d'arrêt, se rend au point d'attaque en tirant l'établissement, manœuvre la lance à son arrivée puis la donne à l'équipier 1, fait réguler la pression selon le relief</td></tr>
+                <tr><th>Équipier 1</th><td>Prend le 1<sup>er</sup> raccord, tire l'établissement, rejoint le point d'attaque, récupère la lance et la manœuvre</td></tr>
+                <tr><th>Équipier 2</th><td>Prend le 2<sup>e</sup> raccord, tire l'établissement, retourne au CCF en vérifiant l'établissement, récupère la claie de 45 et la remonte au point d'attaque</td></tr>
+            </table>
+            <p><strong>Avec tuyaux roulés ou en écheveaux</strong> – « <em>… à l'aide de tuyaux, en reconnaissance</em> » : le chef d'agrès prend 2 tuyaux de 45 et la lance (ou prise d'eau), raccorde, commande « ouvrez » ; l'équipier 1 déroule deux tuyaux de 45 à sa suite ; l'équipier 2 déroule deux tuyaux, les raccorde et donne le raccord au conducteur, puis vérifie l'établissement et remonte la claie de 45 ; le conducteur envoie l'eau sur ordre.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.3 – Transformation d'une lance 500 en 2 lances 150 (sans prolongement)</h3>
+            <p>« <em>Pour la transformation de la lance 500 en 2 lances 150, débit XXX L/min avec claie de portage, établissez</em> » – le chef d'agrès désigne les 2 nouveaux points d'attaque et l'emplacement de la division. La lance 150 peut être remplacée par une lance 20/7.</p>
+            <ul>
+                <li><strong>Chef d'agrès</strong> : prend la lance 500 et poursuit l'action ; raccorde le nouvel établissement au tuyau de 45 ; dès qu'une des 2 lances est établie, ferme la vanne, démonte la lance et la pose à la division ; ouvre la vanne d'arrêt.</li>
+                <li><strong>Équipier 1</strong> : donne la lance au chef d'agrès ; établit le tuyau de 45 depuis la vanne et raccorde la division fermée ; récupère 2 tuyaux de 25 et 1 lance, établit sa lance.</li>
+                <li><strong>Équipier 2</strong> : ramène la claie de 25 du CCF ; aide à établir le tuyau de 45 et la division ; pose la claie à la division ; récupère 2 tuyaux de 25 et 1 lance, établit sa lance ; ouvre la division et rejoint son point d'attaque.</li>
+                <li><strong>Conducteur</strong> : régule la pression à vue ou sur ordre, rend compte.</li>
+            </ul>
+            <p>Sans claie : même manœuvre, les équipiers prennent au CCF 1 tuyau de 45, la division, des tuyaux de 25 et les lances.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.4 – Prolongement d'une lance 500</h3>
+            <p>« <em>Pour le prolongement de X mètres de la lance 500, débit XXX L/min avec claie de portage, établissez</em> » – la division est toujours placée entre le dernier et l'avant-dernier tuyau.</p>
+            <ul>
+                <li><strong>Chef d'agrès</strong> : désigne le nouveau point d'attaque, manœuvre la lance en attendant, donne l'ordre d'ouvrir sur la division, laisse la lance à l'équipier 1.</li>
+                <li><strong>Équipier 1</strong> : ferme la vanne d'arrêt et démonte la lance ; raccorde le tuyau de 45 sur la vanne et l'ouvre ; établit 1 tuyau de 45 ; raccorde la division 40/40-2×20 fermée ; établit un 2<sup>e</sup> tuyau après la division ; récupère la lance et poursuit.</li>
+                <li><strong>Équipier 2</strong> : achemine la claie de 45 vers la vanne ; établit 2 tuyaux de 45 après la vanne ; ouvre sur ordre ; sur ordre, retourne chercher la claie de 25 pour une éventuelle transformation.</li>
+                <li><strong>Conducteur</strong> : donne et réceptionne le matériel, régule la pression, rend compte.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.5 – Transformation après prolongement</h3>
+            <p>« <em>Pour la transformation de la lance 500 en 2 lances 150, débit XXX L/min sur division alimentée, avec claie de portage, établissez</em> » : l'équipier 1 établit un tuyau de 45 depuis la lance 500 et raccorde la division fermée ; dès qu'une lance 150 est établie, le chef d'agrès ferme la lance, fait fermer la division, démonte la lance 500, raccorde les établissements de 25 et fait rouvrir la division. Chaque équipier établit sa lance 150 (2 tuyaux de 25).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 – Les établissements d'alimentation</h3>
+            <p>Objectif : la <strong>permanence de l'eau</strong> (norias si nécessaire). Le CCF s'alimente par l'orifice de la pompe, de la citerne ou le trou d'homme ; seul sur un hydrant, il prend <strong>le plus gros diamètre</strong> (110 ou 70).</p>
+            <p>Points d'eau : naturels (lacs, cours d'eau…), artificiels (réserves, citernes, piscines…), <strong>forages DFCI</strong>, puis poteaux et bouches incendie <strong>par défaut</strong>. Pour économiser l'eau potable : aspiration (pompe, motopompes flottante, immergée, d'épuisement), véhicules (porteurs d'eau, DA, CCGC), hydro-éjecteur (300 L minimum en citerne).</p>
+            <div class="rd-alerte">Après de l'eau de mer ou d'un point d'eau naturel : <strong>rincer</strong> la citerne et vérifier qu'aucun sédiment n'obstrue la pompe ou les <strong>buses d'autoprotection</strong>.</div>
+            <p>En noria, le conducteur peut rouler seul entre le point d'attaque et le point d'eau, en liaison radio avec son échelon supérieur.</p>
+        </div>
+
+        <p class="rd-source">📚 GTO FDF – DGSCGC 2021 – chapitre 3 · <a class="rd-pdf" href="docs/fdf/GTO-FDF-2021.pdf#page=57" target="_blank" rel="noopener">📄 PDF p. 57 à 65 (schémas des établissements)</a></p>
+    </div>
+
+    <div id="gto-manoeuvres" class="module">
+        <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <h2>🚛 Manœuvres en unités organiques</h2>
+
+        <div class="rd-section">
+            <h3>1 – Circulation en convoi</h3>
+            <ul>
+                <li>Vitesse maximale fixée par le chef du détachement ; <strong>≈ 50 m entre véhicules sur route</strong>, dispositif resserré en agglomération, adapté sur piste.</li>
+                <li>Feux de croisement allumés ; le chef fixe l'usage des deux-tons et gyrophares ; <strong>guidage obligatoire</strong> lors des manœuvres d'engins.</li>
+                <li><strong>Formation de transit</strong> (route) : le véhicule le plus lent juste derrière le VLHR ; <strong>60 km/h max sur route, 50 km/h en agglomération</strong> – « <em>Prenez la formation de transit</em> ».</li>
+                <li><strong>Formation tactique</strong> (piste) : le véhicule le moins manœuvrant en dernière position – « <em>Prenez la formation tactique</em> ».</li>
+            </ul>
+            <p><strong>Retournement</strong> – « <em>Retournement du détachement, emplacement balisé par le VLHR</em> » : le VLHR balise l'aire ou l'amorce de chemin, les 4 véhicules la dépassent, le VLHR fait demi-tour, les chefs d'agrès descendent et guident des marches arrière synchronisées, puis reprise de la formation. Laisser si possible le passage pour les renforts et norias.</p>
+            <p><strong>Arrêt en parallèle</strong> (point de transit, stationnement prolongé) : VLHR en premier, marches arrière guidées, véhicules parallèles, descente sur ordre. <strong>Arrêt en colonne</strong> (courte durée) : véhicules derrière le VLHR.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 – Terrain accidenté : STOPD</h3>
+            <p>Si le contournement est impossible, reconnaissance indispensable avant chaque franchissement (chef d'agrès et conducteur) :</p>
+            <table class="rd-table">
+                <tr><th>S – S'arrêter</th><td>Reconnaître, faire descendre le personnel avant les manœuvres délicates</td></tr>
+                <tr><th>T – Terrain</th><td>Nature du sol (humide, sec…) → consignes (pression des pneus…)</td></tr>
+                <tr><th>O – Obstacle</th><td>Souche, pierres, gué, fossé, tronc</td></tr>
+                <tr><th>P – Pente</th><td>Franchie de face, <strong>50 % maximum pour un CCF</strong></td></tr>
+                <tr><th>D – Dévers</th><td><strong>30 % maximum pour un CCF</strong></td></tr>
+            </table>
+            <div class="rd-alerte">Dans la zone brûlée, attention à la <strong>dégradation thermique des pneumatiques</strong> : une exposition prolongée à la chaleur, même modérée, altère irréversiblement leurs propriétés.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.1 – Manœuvres offensives de l'UIFF</h3>
+            <p><strong>Offensive mobile, CCF en progression</strong> (technique privilégiée) : le 1<sup>er</sup> CCF abat les flammes par le toit ouvrant (lance jet droit) ou au canon ; le 2<sup>e</sup> complète l'extinction à distance adaptée (visibilité, terrain, feu). Attaque de front, de flanc ou par percée de flanc ; une 2<sup>e</sup> unité peut suivre pour parfaire ou relayer pendant la noria.</p>
+            <table class="rd-table">
+                <tr><th>Chef de l'UIFF</th><td>Adapte l'idée de manœuvre, désigne le point d'attaque, garde le contact visuel et radio, fait respecter la sécurité, rend compte</td></tr>
+                <tr><th>Porte-lance du 1<sup>er</sup> CCF (ou pilote du canon)</th><td>Rabat les flammes par un mouvement vertical, balayage de la lisière active <strong>1/3 dans le brûlé, 2/3 dans le non-brûlé</strong> ; guide le conducteur ; contact visuel avec le CCF suivant</td></tr>
+                <tr><th>Porte-lances suivants</th><td>Complètent par le même balayage, assurent la sécurité du CCF qui précède ; le dernier sur le flanc s'assure de la parfaite extinction de la lisière</td></tr>
+                <tr><th>Conducteur</th><td>Reste maître du véhicule, à l'écoute du porte-lance, liaison radio, distances de sécurité, dégonflage en terrain sablonneux, protection du châssis</td></tr>
+            </table>
+            <p><strong>Offensive à partir de CCF à l'arrêt</strong> (pénétration impossible : enlisement, relief, peuplement dense, obstacle) – uniquement sur <strong>feu non violent, en binôme, contact visuel permanent</strong> avec le chef d'UIFF (1 VLHR, 2 CCF, 5 SP ; un seul CCF alimente, l'autre assure la pérennité) :</p>
+            <ul>
+                <li><strong>LDT, CCF à l'arrêt</strong> – « <em>Pour l'établissement de la LDT du CCF 1 ou 2, en reconnaissance</em> » : le conducteur CCF 1 prévient quand la citerne est aux ¾ vide ; vide, il donne le ½ raccord au conducteur CCF 2 qui alimente.</li>
+                <li><strong>1 lance 150/500 à 120 m ou 2 lances à 60 m</strong> – « <em>Pour l'établissement de la lance 500, débit XXX L/min, en reconnaissance</em> » : l'équipier 1 déroule jusqu'au point d'attaque et commande l'alimentation ; relais par le CCF 2 à citerne vide ; le CCF 1 part faire le plein.</li>
+                <li><strong>Prolongement de la lance 500</strong> – « <em>Prolongement de la lance 500</em> ».</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.2 – Manœuvres de l'UFEN</h3>
+            <p>Tout le personnel en manœuvres pédestres, ou établissement du CCF combiné à une manœuvre pédestre ; les deux engins ne sont <strong>jamais dissociés</strong>. Extinction à la batte à feu, au seau-pompe et aux outils de forestage : l'unité complète traite <strong>jusqu'à 100 m de front</strong>. Technique préconisée : un layon d'appui en aval, extinction quand le feu l'atteint.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.3 – Manœuvres offensives du GIFF</h3>
+            <table class="rd-table">
+                <tr><th>Établissement</th><th>Cadre tactique et principe</th></tr>
+                <tr><td><strong>4 lances 500 jusqu'à 120 m</strong><br><em>« Pour l'établissement de 4 lances 500, débit XXX L/min, établissez »</em></td><td>Feux naissants, jalonnement, attaque de front. Les 4 CCF établissent chacun 1 lance 500 simultanément. Couvre <strong>320 m en jalonnement, 100 m en attaque de front</strong>. Risque de manquer d'eau sans alimentation à temps.</td></tr>
+                <tr><td><strong>2 lances 500 jusqu'à 280 m</strong><br><em>« Pour l'établissement de 2 lances 500, débit XX L/min par les CCF… à plus de 120 m, établissez »</em></td><td>CCF 1 et 3 établissent (les plus grosses capacités ou meilleur indice de pompe) ; le CA du CCF 2 se met à disposition du chef de GIFF, celui du CCF 4 organise la permanence de l'eau ; conducteurs 2 et 4 alimentent et font la noria.</td></tr>
+                <tr><td><strong>1 lance 500 ou 2 lances 150 jusqu'à 440 m</strong><br><em>« … débit 500 L/min jusqu'à 440 m (ou 2 × 150 L/min à 500 m), en reconnaissance »</em></td><td>Feux inaccessibles aux véhicules ; tout le personnel ; claies et forestage. Le chef de groupe désigne les responsables et place une <strong>sonnette</strong> ; parc à matériels, 120 premiers mètres en Ø 45, prise d'eau au début, <strong>une division tous les 80 m</strong>, l'eau monte progressivement.</td></tr>
+                <tr><td><strong>Grande longueur &gt; 440 m</strong></td><td>Claies, forestage, motopompes ; division FDF à clapet ; les 2 engins au meilleur indice de pompe refoulent <strong>en série</strong>, les autres font la noria ; fonctions sonnette, pénétration (cheminements, aires de matériels, zones de repli), alimentation (adjoint), établissement. Renforts possibles : DIH, DIS, groupe appui.</td></tr>
+            </table>
+            <p>Si toutes les lances ne sont pas nécessaires, le chef du GIFF désigne les chefs d'agrès chargés de l'établissement et ceux chargés de l'alimentation.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>5 – Manœuvres défensives</h3>
+            <p><strong>Défense de points sensibles (DPS)</strong> : reconnaissance du COS si possible, appui sur des points d'eau, <strong>engins à l'opposé du feu</strong> ; actions : confinement (règle), évacuation notamment des habitations légères, fermeture des portes et volets, recherche des points d'eau, dispositif hydraulique adapté à la virulence, tenue adaptée.</p>
+            <p><strong>Lignes d'appui</strong> : destinées à <strong>stopper le feu</strong>, en général par plusieurs GIFF, sur plusieurs centaines de mètres, souvent combinées aux moyens aériens ; grande anticipation.</p>
+            <ul>
+                <li><strong>Statique UIFF</strong> : lances ou canons depuis la cabine (toit ouvrant) – le dispositif reste mobile.</li>
+                <li><strong>Statique GIFF</strong> – « <em>Pour l'exécution d'une ligne d'appui, stationnement des véhicules à droite (à gauche) tous les X m, établissez…</em> » : véhicules sur le côté opposé au feu, passage libre, 1 lance 500 minimum par CCF, <strong>LDT établies côté opposé au front</strong> contre les sautes, ouverture sur ordre du chef de secteur (à défaut chef du GIFF), canons en priorité. Zone de sécurité entre engins et front, engins au plus loin de la végétation.</li>
+                <li><strong>Dynamique</strong> : convoi constitué attaquant en mouvement (lances 500 minimum ou canons, ouverture sur ordre).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>6 – Manœuvres d'alimentation</h3>
+            <p>Le COS s'assure de la présence constante d'une unité dédiée à la permanence de l'eau ; <strong>noria équilibrée</strong> pour ne pas délaisser le feu faute d'eau.</p>
+            <ul>
+                <li><strong>2 CCF sur un même hydrant</strong> : chaque conducteur déroule un tuyau adapté à l'hydrant.</li>
+                <li><strong>4 CCF sur PEI</strong> – « <em>Alimentation des 4 CCF sur le poteau ou sur la bouche</em> » : un tuyau de Ø 45 (ou 70 selon l'hydrant) chacun, en simultané.</li>
+                <li><strong>4 CCF sur point d'eau naturel ou artificiel</strong> : un CCF en aspiration ou tout autre dispositif (motopompes).</li>
+            </ul>
+        </div>
+
+        <p class="rd-source">📚 GTO FDF – DGSCGC 2021 – chapitre 4 · <a class="rd-pdf" href="docs/fdf/GTO-FDF-2021.pdf#page=67" target="_blank" rel="noopener">📄 PDF p. 67 à 92 (schémas des formations, attaques et lignes d'appui)</a></p>
+    </div>
+
+    <div id="gto-espaces" class="module">
+        <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <h2>🌾 Feux d'espaces naturels particuliers</h2>
+
+        <div class="rd-section">
+            <h3>Principes communs</h3>
+            <p>Hors montagne, ce chapitre ne concerne pas les forêts, garrigues ou maquis. Dès que le potentiel de développement est important, les règles FDF s'appliquent : moyens aériens pour comprendre l'incendie et localiser enjeux et moyens, <strong>demande précoce</strong> de moyens aériens, terrestres (de préférence hors route) et de soutien sanitaire, appui des forces de l'ordre (évacuations, norias, balisage), personnes connaissant le territoire auprès du COS, protections collectives et EPI. <strong>Vigilance particulière à l'hyperthermie.</strong></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1 – Espaces agricoles</h3>
+            <p><strong>Analyse et reconnaissance</strong>, si possible avec l'exploitant : zones pyro-résistantes (tournesol, maïs, luzerne), moyens agricoles disponibles (disques), desserte, enjeux, points d'eau, météo locale. Priorité aux personnes ; le sauvetage d'animaux après analyse bénéfice-risque.</p>
+            <p><strong>Attaque</strong> (attention aux fossés de drainage – renversement) :</p>
+            <ul>
+                <li>faire la part du feu ; demander aux agriculteurs des bandes de sol nu de <strong>10 à 20 m</strong> (disques) sans exposer le conducteur ;</li>
+                <li>préférer la <strong>percée de flanc</strong> par l'arrière, engins roulants ; pénétrer par le brûlé, personnel en cabine ;</li>
+                <li>attaquer le front par l'arrière en jet diffusé tout en roulant ; porte-lance à pied à côté de l'engin ou <strong>longé sur le CCF</strong> ;</li>
+                <li>économiser l'eau, privilégier rapidité et mobilité ; <strong>LDT</strong> partout où la puissance n'exige pas la LDV ;</li>
+                <li>s'appuyer sur des pare-feu artificiels (routes, labours) ou naturels (rivière, vignes, maïs) ; engager progressivement pour garder la permanence de l'eau.</li>
+            </ul>
+            <p><strong>Cas particuliers</strong> :</p>
+            <ul>
+                <li><strong>Chaumes</strong> : queues de paon fixées sur les CCF depuis le brûlé, LDT véhicule en marche systématique.</li>
+                <li><strong>Vignes enherbées, oliveraies, truffières</strong> : non pénétrables, combustibilité réduite ; action par les dessertes périphériques.</li>
+                <li><strong>Miscanthus</strong> : potentiel comparable à une garrigue haute ; mêmes règles qu'un feu d'espace naturel, action limitée à la périphérie de la parcelle.</li>
+            </ul>
+            <p><strong>Conduite à tenir</strong> : stratégie commune avec l'agriculteur (tracteurs, déchaumeuses) ; entrer par le brûlé, remonter au front en cabine, attaquer par l'arrière en roulant ; le CCF suivant prend le relais quand le premier est vide ; le porte-lance remonte en cabine pour aller au point d'eau ; <strong>engager les engins au fur et à mesure de leur arrivée</strong> (inutile d'attendre un groupe constitué) ; <strong>ne jamais attaquer un front ascendant en position haute</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 – Espaces en déprise</h3>
+            <p>Mosaïque de friches, cultures, bosquets et haies : propagation atypique, pas de cartographie DFCI, peu de partenaires habituels, ressources en eau pas toujours disponibles → développement parfois très rapide. <strong>Renseignement précoce et en volume</strong>. Bâtiments d'élevage abandonnés parfois squattés. <strong>Mobilité</strong> : engagement de moyens isolés possible, récupérés ensuite par un chef de groupe (qui peut commander plus de CCF qu'un groupe standard) ; <strong>position de tous les engins connue du COS et du PC</strong> ; chaque chef d'agrès évalue la capacité de son engin (franchissement, autonomie, sécurité).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 – Interfaces périurbaines</h3>
+            <p>La protection des personnes et des bâtiments prime et absorbe l'essentiel des moyens ; moyens aériens souvent très contraints.</p>
+            <ul>
+                <li><strong>Analyse</strong> : voies d'accès, permanence de l'eau, points sensibles, possibilité de mise à l'abri (la règle si l'habitation assure la sécurité : la plupart des décès en feux de forêt surviennent <strong>pendant les déplacements</strong>), conditions d'évacuation et d'engagement.</li>
+                <li><strong>Sauvetages</strong> : évacuation des personnes dont l'habitation ne permet pas l'abri, <strong>systématique en cabanisation et camping</strong> ; coordination avec police et gendarmerie (représentant au PC) ; groupes SAP, centre d'accueil des impliqués.</li>
+                <li><strong>Attaque</strong> : CCF engagés isolément sur les points sensibles si la constitution des GIFF fait perdre du temps ; moyens urbains dans les zones bien desservies ; avec un PPRIF (piste périmétrale, interface débroussaillée, hydrants), intervention mobile depuis la piste. Sinon, accès à la face exposée par l'intérieur de la zone urbaine, la construction servant d'<strong>écran au rayonnement</strong>.</li>
+            </ul>
+            <div class="rd-alerte">Après le passage du front, ne pas réengager sans que le chef d'agrès se soit assuré que <strong>tout risque est écarté pour le bâtiment</strong> : combustion différée de charpentes extérieures ou de mobilier.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 – Feux de végétation en montagne</h3>
+            <p>Du début de l'hiver au début du printemps (végétation en dormance, hygrométrie très basse, vent, versants sud), multipliés par les épisodes de <strong>foehn</strong> (plusieurs dizaines de feux simultanés possibles). Reconnaissance si possible aérienne pour hiérarchiser : villages, forêts RTM, potentiel de développement. Enjeux humains parfois prioritaires sur les sentiers de randonnée.</p>
+            <ul>
+                <li>En altitude, pelouses, névés et barres rocheuses ralentissent le feu ; le versant opposé, plus humide, le freine.</li>
+                <li>Personnels déposés ou en marche d'approche : <strong>autonomie en boissons, rations et moyens de communication</strong>.</li>
+                <li>Véhicules à proximité : établissement de grande longueur avec motopompe en relais. Sinon : feux tactiques et moyens aériens (largages, DIH).</li>
+                <li>Équipements : battes à feu, gilets porteurs d'eau, souffleurs thermiques, râteaux ; attaque de flanc <strong>depuis la base, en remontant vers la tête</strong>.</li>
+                <li>Sans PEI : entonnoirs de torrent ou barrages flottants avec motopompes flottantes.</li>
+                <li>Hors période à risques : <strong>équipes d'évaluation pluridisciplinaires</strong> (COS chef de colonne FDF minimum, cadre feux tactiques, agent ONF) pouvant proposer au DOS de laisser tout ou partie en propagation libre.</li>
+            </ul>
+        </div>
+
+        <p class="rd-source">📚 GTO FDF – DGSCGC 2021 – chapitre 5 · <a class="rd-pdf" href="docs/fdf/GTO-FDF-2021.pdf#page=93" target="_blank" rel="noopener">📄 PDF p. 93 à 102</a></p>
+    </div>
+
+    <div id="gto-feux-tactiques" class="module">
+        <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <h2>🔥 Feux tactiques</h2>
+
+        <div class="rd-section">
+            <h3>Principe</h3>
+            <p>Allumer un feu secondaire, <strong>ancré sur une zone servant d'appui</strong>, face à un front en développement pour le priver de combustible ; à la rencontre des deux foyers, l'incendie s'éteint faute de combustible. Deux méthodes : le <strong>contre-feu</strong> et le <strong>brûlage tactique</strong>. En plaine comme en montagne, été comme hiver ; matériel léger (torches) et moyens d'extinction selon la situation.</p>
+            <div class="rd-alerte">Code forestier, art. L131-3 : « le COS peut, même en l'absence d'autorisation du propriétaire […], recourir à des feux tactiques pour les nécessités de la lutte contre l'incendie ».</div>
+            <p>Zone d'appui fiable (chemin, layon, route, cours d'eau, culture, piste, autoroute), élargissable ou renforçable par du retardant. Règles :</p>
+            <ul>
+                <li>personnel formé, <strong>au minimum un cadre feux tactiques</strong> ;</li>
+                <li>respect des consignes de sécurité ;</li>
+                <li><strong>autorisation obligatoire du COS</strong> (« feu tactique autorisé ») ;</li>
+                <li>information des chefs de secteur et de l'officier AERO pour les avions bombardiers d'eau.</li>
+            </ul>
+            <p>La zone brûlée par le feu tactique doit être assez large pour <strong>ne pas être franchie</strong> par le front initial.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1 – Le contre-feu</h3>
+            <p>Feu allumé de façon contrôlée face à l'incendie, depuis une zone d'appui choisie ; peu, voire pas, de moyens d'extinction. Mis en œuvre par le cadre feux tactiques sous les ordres du COS, après reconnaissance (terrain, relief, végétation, météo, zone d'appui), avec réactivité pour saisir les opportunités.</p>
+            <table class="rd-table">
+                <tr><th>Selon le relief</th><th>Avantages</th><th>Inconvénients</th></tr>
+                <tr><td><strong>À plat</strong></td><td>Peut s'opposer à un front important ; relief sans influence</td><td>Localisation difficile de l'incendie ; fumée par vent fort ; saute ou franchissement selon vent et largeur de la zone d'appui</td></tr>
+                <tr><td><strong>Montant</strong> (face à un front qui descend, allumé en amont de la zone d'appui)</td><td>Progression rapide vers l'incendie ; peu de sautes ; confort ; économie de moyens</td><td>Attendre parfois la proximité de l'incendie</td></tr>
+                <tr><td><strong>Descendant</strong> (face à un front qui monte, allumé en aval)</td><td>Adapté aux feux à cinétique lente ; efficace en sous-bois</td><td>Progression lente ; à lancer bien avant ; sautes importantes de l'incendie montant ; fumées</td></tr>
+            </table>
+            <table class="rd-table">
+                <tr><th>Selon la localisation</th><th>Avantages</th><th>Inconvénients</th></tr>
+                <tr><td><strong>Frontal</strong> (arrêter la tête)</td><td>S'oppose à un front intense ; extinction nette, rapide ; économie de moyens</td><td>Anticipation indispensable ; zone d'appui large ; fumée ; franchissement non négligeable ; <strong>inadapté à un feu montant intense</strong></td></tr>
+                <tr><td><strong>Latéral</strong> (limiter l'élargissement par les flancs)</td><td>Limite l'extension ; extinction nette ; peu de franchissements ; allumage dynamique possible</td><td>Surveillance des sautes. Plus rapide par vent « rentrant » ou grâce à l'aspiration de l'incendie</td></tr>
+                <tr><td><strong>Arrière</strong> (stopper le secteur arrière)</td><td>Progression rapide ; peu de fumée ; peu de sautes ; travail au vent</td><td>Élargissement si la longueur est surestimée</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 – Le brûlage tactique</h3>
+            <p>Allumage planifié et anticipé dans l'espace et le temps. Objectifs : <strong>canaliser un flanc</strong>, <strong>éteindre complètement une lisière</strong>, <strong>protéger un point sensible</strong>, <strong>créer ou améliorer une zone d'appui</strong>, <strong>créer une zone de repli</strong>.</p>
+            <ul>
+                <li><strong>Alignement de lisière</strong> : parfaire l'extinction d'une lisière encore active (humus) en l'alignant sur une zone d'appui – zone d'allumage, météo, moyens d'extinction. Fenêtre favorable : vent qui faiblit, température qui baisse, hygrométrie qui monte (en été, <strong>la nuit ou au lever du jour</strong>).</li>
+                <li><strong>Zone servant d'appui</strong> : supprimer par le feu le combustible résiduel pour y engager ensuite une manœuvre défensive ou un contre-feu.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 – Mise en œuvre</h3>
+            <p><strong>Personnel</strong> : un cadre feux tactiques minimum, un ou plusieurs équipiers allumeurs formés, des équipes d'extinction si besoin, une sonnette si nécessaire ; EPI adaptés.</p>
+            <p><strong>Avant l'allumage</strong> : personne entre la zone d'allumage et l'incendie ; zone et itinéraire de repli définis ; <strong>autorisation du COS</strong> ; liaison radio permanente avec le COS ou le chef de secteur ; compte rendu de l'évolution ; sécurité des tiers ; suivi de la météo.</p>
+            <p><strong>Déroulé</strong> : le cadre reconnaît (observe l'incendie, cherche les opportunités d'allumage, estime les moyens) et propose l'idée de manœuvre au COS ; avec l'accord, il en informe le chef de secteur et positionne l'<strong>équipe d'allumage</strong>, l'<strong>équipe de contrôle</strong> (contenir, baisser le rayonnement, traiter toute saute au-delà de la zone d'appui) et la <strong>sonnette d'observation</strong>. <strong>L'ordre d'allumage est donné par le cadre feux tactiques et par lui seul.</strong> Il régule la vitesse d'allumage, commande l'arrêt et tient informés le COS et le chef de secteur.</p>
+            <div class="rd-astuce">Prévenir les avions bombardiers d'eau pour que les pilotes ne prennent pas le feu tactique pour une saute ou un feu naissant.</div>
+            <table class="rd-table">
+                <tr><th>Technique d'allumage</th><th>Emploi</th></tr>
+                <tr><td><strong>Continu à une torche</strong></td><td>La plus employée : ligne continue le long de la zone d'appui jusqu'au point d'arrêt, un peu plus large que le front</td></tr>
+                <tr><td><strong>Par points à une torche</strong></td><td>Points espacés de quelques mètres qui se rejoignent ; végétation continue près de la zone d'appui</td></tr>
+                <tr><td><strong>Lignes parallèles à deux torches</strong></td><td>Une ligne quelques mètres dans la végétation, une seconde le long de la zone d'appui : accélère la progression et élargit vite le brûlé</td></tr>
+                <tr><td><strong>Point central vers l'extérieur à deux torches</strong></td><td>Deux lignes en directions opposées ; rapide mais coordination et vue d'ensemble nécessaires, zone de repli pour chaque équipe ; surtout chaumes et récoltes</td></tr>
+            </table>
+        </div>
+
+        <p class="rd-source">📚 GTO FDF – DGSCGC 2021 – chapitre 6 · <a class="rd-pdf" href="docs/fdf/GTO-FDF-2021.pdf#page=103" target="_blank" rel="noopener">📄 PDF p. 103 à 118 (schémas des contre-feux et allumages)</a></p>
+    </div>
+
     <!-- ============ RDSMES – SDIS 34 (v2, avril 2026) ============ -->
     <div id="rdsmes-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -14625,7 +15824,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.19.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.20.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
