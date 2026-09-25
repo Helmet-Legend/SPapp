@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.22.0">
+    <meta name="version" content="1.22.1">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -99,7 +99,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.22.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.22.1</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -204,7 +204,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.22.0</span><br>
+                        Vulcain v<span class="app-version">1.22.1</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -4545,6 +4545,12 @@
                 <div style="font-size: 1.1em; font-weight: 700;">Zones</div>
                 <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Exclusion, Contrôle</div>
             </button>
+
+            <button onclick="showModule('deci-34')" style="background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%); border: 3px solid #1E88E5; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
+                <div style="font-size: 2.8em; margin-bottom: 8px;">💧</div>
+                <div style="font-size: 1.1em; font-weight: 700;">DECI Hérault</div>
+                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">RDDECI 2017</div>
+            </button>
         </div>
         
         <div class="warning-box" style="margin-top: 25px; background: rgba(211, 47, 47, 0.1); border: 2px solid #D32F2F;">
@@ -4961,7 +4967,117 @@
             <div class="warning-box" style="margin-top: 15px; background: rgba(211, 47, 47, 0.1); border: 2px solid #D32F2F;">
                 <strong style="color: light-dark(#c22727, #e57e7e);">📋 SDIS 34 - Limite opérationnelle :</strong> Débit max simultané <strong>450 m³/h</strong> ou <strong>900 m³ / 2h</strong>
             </div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('deci-34')">💧 DECI de l'Hérault (RDDECI)</button></p>
         </div>
+    </div>
+
+    <div id="deci-34" class="module">
+        <button class="back-btn" onclick="showModule('rdmi-menu')">← Retour RDMI</button>
+        <h2>💧 DECI de l'Hérault (RDDECI)</h2>
+        <p style="text-align: center;">Règlement départemental de défense extérieure contre l'incendie de l'Hérault – arrêté n° 2017-01-645 (version 2017). Les couleurs des poteaux, leurs débits et les niveaux de risque sont sur la fiche <button onclick="showModule('rdmi-pei')">Points d'eau incendie (PEI)</button>.</p>
+
+        <div class="rd-section">
+            <h3>🚒 Ce qu'il faut savoir sur le terrain</h3>
+            <ul>
+                <li><strong>FPT / FPTSR</strong> : pompe de 120 m³/h à 15 bar ; <strong>FPTL</strong> : 90 m³/h à 15 bar. Citerne de 2,5 à 3,5 m³, 2 dévidoirs de 200 m de tuyaux de 70 (400 m au total).</li>
+                <li><strong>Autonomie d'un FPT sur une seule LDV 500 : environ 6 minutes</strong>. Il faut donc s'alimenter vite.</li>
+                <li><strong>Temps pour alimenter un engin</strong> depuis un poteau : <strong>5 à 6 min à 200 m</strong>, <strong>12 à 15 min à 400 m</strong>. C'est plus long depuis un point d'eau en aspiration.</li>
+                <li><strong>Limite opérationnelle du SDIS 34</strong> : <strong>450 m³/h</strong> au maximum en simultané, soit 900 m³ pour 2 h.</li>
+                <li>Les poteaux sous pression sont les plus rapides à utiliser ; le SDIS 34 préfère les <strong>poteaux</strong> aux bouches (plus visibles, moins gênés par le stationnement).</li>
+                <li>Au-delà de <strong>10 bar statiques</strong> (environ 8 bar dynamiques), les bouchons à <strong>mise à l'air libre</strong> sont obligatoires : attention à la décompression brutale.</li>
+                <li>Le stationnement est interdit devant les poteaux et bouches (article R.417-11 du code de la route).</li>
+            </ul>
+            <div class="rd-alerte">Anomalie grave constatée en opération ou en reconnaissance (pas d'eau, débit très insuffisant, poteau inutilisable) : le SDIS 34 la <strong>signale au plus vite</strong> au maire (fiche type d'indisponibilité).</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>📏 Distances et cheminements</h3>
+            <ul>
+                <li>La distance se mesure entre le PEI et l'<strong>entrée principale</strong> du bâtiment, en suivant une voie engin ou, à défaut, un cheminement praticable en permanence.</li>
+                <li>Cheminement praticable = <strong>1,80 m de large minimum</strong>, pour 2 sapeurs-pompiers tirant un dévidoir mobile d'environ <strong>300 kg</strong>, sans obstacle infranchissable (route à terre-plein central, autoroute, voie ferrée, grands escaliers, fossés…).</li>
+                <li>Les distances fixées dépendent de la longueur des tuyaux des engins.</li>
+                <li><strong>Colonne sèche</strong> : le PEI doit être à <strong>60 m au maximum</strong> de la prise d'alimentation (30 m si poteau relais), et sous pression.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>🏠 Besoins en eau : habitations (extraits)</h3>
+            <table class="rd-table">
+                <tr><th>Cas</th><th>Risque</th><th>Besoin</th><th>PEI</th><th>Distance max PEI – entrée</th></tr>
+                <tr><td>Habitat dispersé, ≤ 300 m², isolé à 4 m au moins</td><td>Courant faible</td><td>30 m³/h pendant 1 h (30 m³)</td><td>1</td><td>300 m (sous pression) / 200 m (point d'eau naturel ou citerne)</td></tr>
+                <tr><td>Individuelle ou jumelée, 300 à 500 m², isolée à 4 m</td><td>Courant ordinaire</td><td>30 m³/h pendant 2 h (60 m³)</td><td>1</td><td>300 m / 200 m</td></tr>
+                <tr><td>Moins de 500 m², non isolée</td><td>Courant ordinaire</td><td>60 m³/h pendant 1 h (60 m³)</td><td>1</td><td>200 m</td></tr>
+                <tr><td>Grandes demeures (château, mas, corps de ferme), collectifs au-delà de R+3 (3<sup>e</sup> famille A), quartiers historiques</td><td>Courant important</td><td>60 m³/h pendant 2 h (120 m³)</td><td>1</td><td>150 m, ou 60 m de chaque prise de colonne sèche</td></tr>
+                <tr><td>Collectifs 3<sup>e</sup> famille B et 4<sup>e</sup> famille</td><td>Particulier</td><td>120 m³/h pendant 2 h (240 m³)</td><td>2, sous pression</td><td>60 m de la colonne sèche ; 2<sup>e</sup> PEI à 200 m max du premier</td></tr>
+            </table>
+            <p><small>Lotissements, habitations en bande et petits collectifs : 60 m³ environ, avec des distances de 150 à 300 m selon la configuration (voir la grille complète du règlement). Les gîtes et chambres d'hôtes de moins de 15 personnes comptent comme des habitations.</small></p>
+            <h4>🏢 Bureaux (ni ERP ni IGH)</h4>
+            <table class="rd-table">
+                <tr><th>Surface</th><th>Besoin</th><th>PEI et distance</th></tr>
+                <tr><td>≤ 300 m², hauteur ≤ 8 m</td><td>30 m³/h pendant 1 h</td><td>1 PEI à 300 m (sous pression) / 200 m</td></tr>
+                <tr><td>300 à 1 000 m², hauteur ≤ 8 m</td><td>60 m³/h pendant 2 h (120 m³)</td><td>1 PEI à 200 m</td></tr>
+                <tr><td>1 000 à 2 000 m² et/ou hauteur &gt; 8 m</td><td>120 m³/h pendant 2 h (240 m³)</td><td>1 ou 2 PEI, à 200 m ou 60 m de la colonne sèche</td></tr>
+                <tr><td>2 000 à 5 000 m²</td><td>180 m³/h pendant 2 h (360 m³)</td><td>2 PEI, à 150 m ou 60 m de la colonne sèche</td></tr>
+                <tr><td>Plus de 5 000 m²</td><td colspan="2">Étude au cas par cas</td></tr>
+            </table>
+            <p><small>ERP, IGH, parcs de stationnement, chapiteaux, bâtiments agricoles, industriels et zones d'activités ont leurs propres grilles : voir le règlement complet. Au-delà de 120 m³/h, un tiers au moins des besoins doit venir d'un réseau sous pression.</small></p>
+            <div class="rd-astuce"><strong>Surface de référence</strong> : la plus grande surface non recoupée par des murs coupe-feu. Un espace libre compte comme un mur coupe-feu s'il est assez large : <strong>4 m</strong> pour un coupe-feu 1 h (5 m pour un bâtiment haut ou avec sommeil au-dessus du 1<sup>er</sup> étage), <strong>8 m</strong> pour un coupe-feu 2 h.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>🌊 Points d'eau naturels ou artificiels (PENA)</h3>
+            <ul>
+                <li>Capacité minimale de <strong>30 m³</strong>, disponible en permanence et accessible en permanence ; réserves avec un indicateur de niveau et réalimentées après usage.</li>
+                <li><strong>Aire d'aspiration</strong> : 10 m × 5 m (50 m²) par engin, supportant 160 kN (90 kN par essieu), pente de 2 à 7 %, butée de calage, zébras jaunes au sol, reliée à la route par une voie de 3 m de large.</li>
+                <li><strong>Dispositif fixe d'aspiration</strong> : demi-raccord de 100 avec bouchon, à 0,5 – 0,8 m au-dessus de l'aire ; crépine sans clapet à 50 cm du fond et 30 cm sous le niveau le plus bas ; <strong>4 m au plus</strong> entre la prise et l'aire ; <strong>6 m au plus</strong> de hauteur d'aspiration ; couleur <strong>bleue</strong>. Un dispositif par tranche de 120 m³, espacés de 5 m.</li>
+                <li><strong>Poteau d'aspiration</strong> : poteau de 100 bleu, relié au point d'eau par une canalisation de 100. <strong>Guichet</strong> : trappe de 35 × 40 cm dans un parapet, manœuvrable à la polycoise.</li>
+                <li><strong>Puisards</strong> : ne sont des PEI que s'ils sont reliés au plan d'eau par une canalisation de 300 mm au moins.</li>
+                <li><strong>Bornes agricoles</strong> et réseaux d'eau brute : utilisables seulement s'ils sont pérennes et équipés d'un demi-raccord de 65 ou 100, avec mise à l'air libre (forte pression).</li>
+                <li><strong>Piscines privées</strong> : ce ne sont <strong>pas</strong> des PEI. Utilisables pour protéger la propriété concernée, ou en dernier recours (état de nécessité).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>🪧 Signalisation</h3>
+            <ul>
+                <li>Panneau rectangulaire de <strong>30 × 50 cm</strong>, rétroréfléchissant : disque blanc et flèche blanche sur fond rouge, posé entre 0,50 m et 2 m du sol, visible depuis l'axe d'arrivée des engins.</li>
+                <li>La flèche vers le bas indique que le PEI est juste en dessous ; à gauche, à droite ou vers le haut, elle en donne la direction, avec éventuellement la distance.</li>
+                <li>Autour du disque : la nature du PEI (BI, point d'aspiration, citerne…). Au centre : volume (m³), débit (m³/h) ou diamètre ; un <strong>triangle bleu</strong> signale une ressource illimitée.</li>
+                <li>Bouches d'incendie : plaque généralement noire ; le SDIS 34 préconise une plaque rouge et une protection contre le stationnement.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔍 Contrôles et reconnaissances</h3>
+            <table class="rd-table">
+                <tr><th></th><th>Contrôle technique</th><th>Reconnaissance opérationnelle</th></tr>
+                <tr><td>Qui</td><td>Le service public de DECI (mairie ou intercommunalité) ; le propriétaire pour un PEI privé</td><td>Le SDIS 34, pour son propre compte</td></tr>
+                <tr><td>Fréquence</td><td>Tous les <strong>3 ans</strong> au plus</td><td>Tous les <strong>2 ans</strong> au plus</td></tr>
+                <tr><td>Contenu</td><td>Débit sous 1 bar, pression statique, fonctionnement, volume des réserves, état, abords, signalisation, numérotation</td><td>Position, accès et abords (débroussaillement), signalisation, numéro, état visuel ; <strong>ouverture progressive</strong> des poteaux pour vérifier qu'ils ne sont pas grippés et qu'il y a de l'eau ; niveau et aspiration des PENA en cas de doute</td></tr>
+            </table>
+            <p>Chaque PEI a un <strong>numéro départemental</strong>. Le SDIS 34 tient une base de données partagée des PEI (disponibilité, contrôles, indisponibilités, remises en service).</p>
+            <div class="rd-astuce">Ouvrir et fermer les poteaux <strong>doucement</strong> : une manœuvre brutale provoque un <strong>coup de bélier</strong> dans le réseau et un risque de pollution de l'eau potable.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>⚖️ Qui fait quoi ?</h3>
+            <ul>
+                <li><strong>Le maire</strong> (ou le président de l'intercommunalité) a la police spéciale de la DECI : il fixe par arrêté la liste des PEI et garantit qu'ils fonctionnent. Il peut faire un schéma communal de DECI.</li>
+                <li><strong>Le service public de DECI</strong> crée, entretient, signale et contrôle les PEI publics (budget communal, pas la facture d'eau).</li>
+                <li><strong>Le SDIS 34</strong> rédige le règlement, conseille les maires, fait les reconnaissances opérationnelles et tient la base de données.</li>
+                <li><strong>Les PEI privés</strong> (ICPE, ERP, lotissements) sont entretenus et contrôlés par leur propriétaire.</li>
+            </ul>
+            <p><strong>En opération</strong> :</p>
+            <ul>
+                <li>Si les besoins sont importants ou le réseau faible, le COS ou le CODIS peut faire appel à l'<strong>astreinte du gestionnaire de l'eau</strong> pour renforcer le réseau.</li>
+                <li>En période de sécheresse, attention à ne pas vider les réservoirs d'eau potable.</li>
+                <li><strong>Eaux usées</strong> (lagunes) : à ne pas utiliser, sauf exception, et alors avec une protection des porte-lances contre les aérosols.</li>
+                <li>Sans enjeu humain et sans bien à sauver, le COS peut se limiter à surveiller et empêcher la propagation, pour préserver la ressource.</li>
+            </ul>
+            <p><small>Le règlement ne traite pas des forêts (DFCI : plans de protection des forêts, PPRIF), des ICPE (réglementation spécifique, D9), des tunnels ni des moyens internes aux bâtiments (RIA, sprinklers, extincteurs). Les zones d'habitation en lisière de forêt doivent avoir une DECI renforcée.</small></p>
+        </div>
+
+        <p class="rd-source">📚 Source : <strong>Règlement départemental de défense extérieure contre l'incendie de l'Hérault</strong> – arrêté n° 2017-01-645 (version 2017), rédigé par le SDIS 34. Extraits simplifiés : le texte officiel et ses annexes font foi.</p>
     </div>
 
     <!-- Module RDMI - Hydraulique -->
@@ -17869,7 +17985,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.22.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.22.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
