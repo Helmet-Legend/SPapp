@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.20.1">
+    <meta name="version" content="1.21.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -46,6 +46,7 @@
         <symbol id="i-cross" viewBox="0 0 24 24"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/></symbol>
         <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
         <symbol id="i-mountain" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></symbol>
+        <symbol id="i-jsp" viewBox="0 0 24 24"><path d="M2 18h20"/><path d="M4 18a8 8 0 0 1 16 0"/><path d="M12 7v5"/><path d="M8.5 12h7"/></symbol>
         <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 2 5 12h4l-4 6h14l-4-6h4z"/><path d="M12 18v4"/></symbol>
         <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
         <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
@@ -98,7 +99,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.20.1</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.21.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -203,7 +204,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.20.1</span><br>
+                        Vulcain v<span class="app-version">1.21.0</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -11448,6 +11449,1686 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 GTO FDF – DGSCGC 2021 – chapitre 6 · <a class="rd-pdf" href="docs/fdf/GTO-FDF-2021.pdf#page=103" target="_blank" rel="noopener">📄 PDF p. 103 à 118 (schémas des contre-feux et allumages)</a></p>
     </div>
 
+    <!-- ============ JSP 1 – 1re année (blanc) ============ -->
+    <div id="jsp1-menu" class="module jsp-a1">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🎓 JSP 1 – 1<sup>re</sup> année</h2>
+        <div class="jsp-bandeau"><span>JSP 1</span><small>1<sup>er</sup> cycle de formation · couleur blanche</small></div>
+        <p style="text-align: center;">Les cours de la 1<sup>re</sup> année, rangés en 3 modules. Touche un cours pour l'ouvrir.</p>
+
+        <div class="rd-tuiles jsp-tuiles">
+            <button onclick="showModule('jsp1-incendie')"><b>🔥 Incendie</b><span>Combustion, échelles, LSPCC, ARI, MGO, matériels, réseaux d'eau, extincteurs</span></button>
+            <button onclick="showModule('jsp1-transverse')"><b>🧭 Transverse</b><span>EPI et tenues, grades, activité physique, organisation de la sécurité civile</span></button>
+            <button onclick="showModule('jsp1-citoyen')"><b>🤝 Engagement citoyen</b><span>Réseau associatif, FNSPF, engagement, IPCS / AS.SEC, cérémonies</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les 4 années de JSP</h3>
+            <div class="rd-tuiles jsp-annees">
+                <button class="jsp-a1" onclick="showModule('jsp1-menu')"><b>JSP 1</b><span>Blanc</span></button>
+                <button class="jsp-a2" onclick="showModule('jsp2-menu')"><b>JSP 2</b><span>Jaune</span></button>
+                <button class="jsp-a3" onclick="showModule('jsp3-menu')"><b>JSP 3</b><span>Orange</span></button>
+                <button class="jsp-a4" onclick="showModule('jsp4-menu')"><b>JSP 4</b><span>Vert</span></button>
+            </div>
+        </div>
+
+        <p class="rd-source">📚 Supports de cours JSP – SDIS 34 (conception des diaporamas : Lieutenant Luc BEHAGUE). Résumés sans les photos ni les schémas des diaporamas.</p>
+    </div>
+
+    <div id="jsp1-incendie" class="module jsp-a1">
+        <button class="back-btn" onclick="showModule('jsp1-menu')">← Retour JSP 1</button>
+        <h2>🔥 JSP 1 – Incendie</h2>
+        <div class="jsp-bandeau"><span>JSP 1</span><small>Module Incendie · 9 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · La combustion et les modes de propagation</summary>
+            <p class="jsp-objectif">Objectif : comprendre le phénomène de combustion et les modes de propagation du feu.</p>
+            <p>La combustion est une <strong>réaction chimique exothermique</strong> (elle dégage de la chaleur) qui se produit quand on réunit trois éléments : c'est le <strong>triangle du feu</strong>.</p>
+            <ul>
+                <li><strong>Le combustible</strong> : ce qui brûle (bois, papier, essence, gaz…).</li>
+                <li><strong>Le comburant</strong> : l'oxygène (O₂) de l'air.</li>
+                <li><strong>L'énergie d'activation</strong> : la source de chaleur (flamme, étincelle…).</li>
+            </ul>
+            <p>Chauffé, le combustible dégage des <strong>gaz de pyrolyse</strong>. Trois températures sont importantes :</p>
+            <table class="rd-table">
+                <tr><th>Point</th><th>Ce qui se passe</th></tr>
+                <tr><td>Point éclair</td><td>Une flamme apparaît au contact d'une source de chaleur puis disparaît.</td></tr>
+                <tr><td>Point d'inflammation</td><td>La flamme apparaît et se maintient.</td></tr>
+                <tr><td>Point d'auto-inflammation</td><td>Les gaz de pyrolyse s'enflamment tout seuls, sans flamme extérieure.</td></tr>
+            </table>
+            <p><strong>Les formes de combustion</strong> : lente (décomposition organique), vive (flamme), très vive (déflagration), instantanée (détonation).</p>
+            <p><strong>Les 4 modes de propagation du feu</strong> :</p>
+            <ul>
+                <li><strong>Rayonnement</strong> : la chaleur se transmet horizontalement, comme le soleil.</li>
+                <li><strong>Convection</strong> : la chaleur monte avec les gaz chauds (transmission verticale).</li>
+                <li><strong>Conduction</strong> : la chaleur traverse un matériau conducteur (poutre métallique, tuyau…).</li>
+                <li><strong>Déplacement</strong> : des matières en feu tombent ou sont projetées (brandons, gouttes enflammées).</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Les échelles portables</summary>
+            <p class="jsp-objectif">Objectif : connaître les échelles portables utilisées par les sapeurs-pompiers (conforme au RDEP Échelles portables, juin 2023).</p>
+            <p>Les véhicules du SDIS 34 (hors spécialités) portent des <strong>échelles à crochets</strong>, des <strong>échelles à coulisse 2 ou 3 plans</strong> et des <strong>échelles télescopiques</strong>.</p>
+            <table class="rd-table">
+                <tr><th>Échelle</th><th>Hauteur atteinte</th><th>Sauvetage, mise en sécurité, établissement</th></tr>
+                <tr><td>Coulisse 3 plans grand modèle</td><td>R+4</td><td>Oui</td></tr>
+                <tr><td>Coulisse 3 plans petit modèle</td><td>R+3</td><td>Oui</td></tr>
+                <tr><td>Coulisse 2 plans grand modèle</td><td>R+2</td><td>Oui</td></tr>
+                <tr><td>Coulisse 2 plans petit modèle</td><td>R+1</td><td>Oui</td></tr>
+                <tr><td>Télescopique</td><td>R+1</td><td>Oui (sauvetage seulement en cas de force majeure)</td></tr>
+                <tr><td>À crochets</td><td>R+… (étage par étage)</td><td>Non : accès, reconnaissance et itinéraires seulement</td></tr>
+            </table>
+            <p>Toutes servent à l'<strong>accès</strong>, à la <strong>reconnaissance</strong> et aux <strong>itinéraires de repli ou de secours</strong>.</p>
+            <div class="rd-alerte">Pour un établissement, l'échelle sert seulement d'accès aux intervenants : <strong>aucune extinction depuis un plan d'échelle</strong>.</div>
+            <table class="rd-table">
+                <tr><th>Caractéristique</th><th>Crochets</th><th>Coulisse 2 plans (PM / GM)</th><th>Coulisse 3 plans (PM / GM)</th><th>Télescopique</th></tr>
+                <tr><td>Longueur reployée</td><td>2,4 m max</td><td>3,6 m / 5 m</td><td>5 m / 6 m</td><td>87 cm</td></tr>
+                <tr><td>Longueur développée</td><td>4,2 m min</td><td>5 m / 8,10 m</td><td>12,5 m / 15 m</td><td>3,5 m</td></tr>
+                <tr><td>Poids max</td><td>15 kg</td><td>25 kg / 45 kg</td><td>70 kg / 91 kg</td><td>14,5 kg</td></tr>
+                <tr><td>Manœuvre</td><td>1 SP</td><td>1 SP / 1 binôme</td><td>2 binômes</td><td>1 SP</td></tr>
+                <tr><td>Résistance des échelons</td><td>300 kg</td><td>500 kg</td><td>500 kg</td><td>150 kg</td></tr>
+                <tr><td>Échelons</td><td>14</td><td>11 à 13 / 17 à 19 par plan</td><td>19 / 23 par plan</td><td>—</td></tr>
+            </table>
+            <ul>
+                <li><strong>Crochets</strong> : quand les communications existantes sont impraticables et qu'une coulisse ou un MEA n'est pas possible (ou à ses limites). Résistance horizontale nulle.</li>
+                <li><strong>Coulisse 2 plans</strong> : sauvetage à vue jusqu'au <strong>R+2</strong>. Corde de 8 mm, parachutes 575 kg.</li>
+                <li><strong>Coulisse 3 plans</strong> : sauvetage à vue jusqu'au <strong>R+4</strong>. Corde de 14 mm, arcs-boutants (370 kg), pieds de dévers (33 cm).</li>
+                <li><strong>Télescopique</strong> : accès intérieur ou extérieur jusqu'au <strong>R+1</strong>. Plusieurs modèles au SDIS 34 : se référer aux valeurs du constructeur.</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('echelles-menu')">🪜 Échelles portables (RDEP)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Le LSPCC (lot de sauvetage et de protection contre les chutes)</summary>
+            <p class="jsp-objectif">Objectif : connaître la composition, l'emploi et l'entretien du lot de sauvetage (GTO Sauvetages et mises en sécurité, novembre 2020).</p>
+            <p>Le LSPCC est composé d'<strong>EPI de catégorie III</strong> : ils protègent contre les chutes de hauteur pouvant causer des lésions irréversibles ou mortelles. Le matériel est contrôlé et suivi strictement (notice du constructeur).</p>
+            <p><strong>Il sert à</strong> : sauver ou mettre en sécurité une personne par l'extérieur ou dans un puits, une fosse, une excavation ; reconnaître un appartement ; aborder et sécuriser une victime en péril ; déplacer une victime inconsciente ; évoluer avec un risque de chute.</p>
+            <p><strong>Limites</strong> : matériel insuffisant, situation qui demande une équipe spécialisée, état de la victime.</p>
+            <table class="rd-table">
+                <tr><th></th><th>Lot engin (sac jaune)</th><th>Lot échelle (sac bleu)</th></tr>
+                <tr><td>Corde semi-statique Ø 12 à 13 mm</td><td>30 m</td><td>60 m</td></tr>
+                <tr><td>Anneaux de sangle bleus (0,80 m)</td><td>3</td><td>6</td></tr>
+                <tr><td>Anneaux de sangle rouges (1,50 m)</td><td>3</td><td>3</td></tr>
+                <tr><td>Mousquetons à vis + 1 à fermeture automatique</td><td>6 + 1</td><td>9 + 1</td></tr>
+                <tr><td>Harnais</td><td>1</td><td>2</td></tr>
+                <tr><td>Triangle d'évacuation</td><td>1</td><td>en option</td></tr>
+            </table>
+            <ul>
+                <li><strong>Corde</strong> : nœud de huit double à chaque extrémité. Protections de corde systématiques.</li>
+                <li><strong>Frein de charge</strong> : régule la descente et assure une personne. Utilisable uniquement en <strong>point fixe</strong>.</li>
+                <li><strong>Connecteurs</strong> : l'effort se fait uniquement dans le sens du grand axe.</li>
+                <li><strong>Poulie</strong> : renvoi de la corde ou mouflage (démultiplier la force). Elle ne doit pas vriller.</li>
+                <li><strong>En option</strong> : cordelettes (nœud autobloquant, jamais pour un amarrage), protection de corde, commande (écarter la victime de la façade, estimer une hauteur).</li>
+            </ul>
+            <p><strong>Après chaque emploi</strong>, le binôme contrôle le matériel :</p>
+            <ul>
+                <li><strong>Contrôle tactile</strong> : corps étrangers, écrasement de l'âme, usure de la gaine.</li>
+                <li><strong>Contrôle visuel</strong> : fissures ou cassures des pièces métalliques, parties brûlées ou fondues, gaine coupée, contact avec des produits corrosifs.</li>
+            </ul>
+            <div class="rd-alerte">En cas de doute, le matériel est <strong>mis de côté immédiatement</strong> avec un compte rendu. Une chute arrêtée, quelle que soit la hauteur, peut entraîner la réforme de la corde, du harnais ou des anneaux.</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('lspcc-menu')">🧗 LSPCC – Lot de sauvetage</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · L'appareil respiratoire isolant (ARI)</summary>
+            <p class="jsp-objectif">Objectif : connaître l'ARI, les atmosphères viciées et la ligne de vie.</p>
+            <p>Une <strong>atmosphère viciée</strong> manque d'oxygène et/ou contient des aérosols, gaz ou vapeurs toxiques : on s'y engage avec une protection respiratoire adaptée.</p>
+            <p><strong>Les fumées d'incendie sont</strong> : chaudes, opaques, mobiles, inflammables, toxiques et explosives. Parmi les 200 toxiques les plus courants : monoxyde de carbone (CO), dioxyde de carbone (CO₂), composés de chlore, fluor, soufre et cyanure, oxydes d'azote.</p>
+            <ul>
+                <li><strong>Voies de pénétration</strong> : inhalation, ingestion, peau (percutanée).</li>
+                <li><strong>Effets</strong> : asphyxie, irritations, hypoxie (manque d'oxygène), brûlures.</li>
+            </ul>
+            <div class="rd-astuce">Certains matériaux absorbent les gaz de combustion et les relâchent après l'incendie : au <strong>déblai dans un local mal ventilé</strong>, on porte l'ARI.</div>
+            <p>L'<strong>ARICO</strong> fonctionne avec de l'air comprimé à haute pression stocké dans la bouteille portée sur le dos. Il isole de l'air extérieur et protège aussi les yeux.</p>
+            <p><strong>La ligne de vie</strong>, installée par le binôme de reconnaissance ou d'attaque, permet de revenir facilement au point d'entrée et de rester en liaison avec le contrôleur resté dehors. Elle comprend :</p>
+            <ul>
+                <li><strong>la ligne guide</strong>, avec des repères tactiles de progression ;</li>
+                <li><strong>la liaison personnelle</strong> : 6 m avec mousqueton, liaison courte possible à 1,25 m de l'extrémité.</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdeb-ari')">L'ARI-CO (RDEB)</button> <button onclick="showModule('rdeb-ligne-vie')">Ligne de vie</button> <button onclick="showModule('ari')">🧮 Calcul d'autonomie ARI</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · La marche générale des opérations (MGO)</summary>
+            <p class="jsp-objectif">Objectif : connaître les phases de la lutte contre l'incendie.</p>
+            <p>La MGO donne aux sapeurs-pompiers une méthode pour combattre les incendies. Ses phases ne suivent pas un ordre fixe : elles dépendent de la situation et de la tactique choisie par le COS.</p>
+            <ul>
+                <li><strong>Reconnaissance</strong> : trouver le maximum de renseignements et reconnaître les abords pour prioriser les actions.</li>
+                <li><strong>Placement de l'engin</strong> : sécurité, accessibilité, ressources en eau, rapidité d'action.</li>
+                <li><strong>Sauvetages</strong> : soustraire d'un péril direct ou imminent une personne ou un animal qui ne peut pas s'en sortir seul. C'est la mission première.</li>
+                <li><strong>Établissements</strong> : mise en place des tuyaux pour alimenter les lances (horizontaux, verticaux, obliques ou rampants).</li>
+                <li><strong>Attaque</strong> : lutte contre le feu depuis les points d'attaque choisis par le chef d'agrès.</li>
+                <li><strong>Ventilation</strong> : une ventilation précoce facilite souvent les sauvetages et l'attaque.</li>
+                <li><strong>Protection</strong> : limiter les dégâts dus à l'eau, à la chaleur et aux fumées, si possible dès l'attaque.</li>
+                <li><strong>Déblai</strong> : parfaire l'extinction pour éviter les reprises, avec rigueur et en sécurité.</li>
+                <li><strong>Protection des traces et indices</strong> : aide à rechercher les causes de l'incendie.</li>
+                <li><strong>Surveillance</strong> : empêcher une reprise après le départ des secours.</li>
+                <li><strong>Reconditionnement</strong> des hommes et du matériel : l'engin doit redevenir disponible.</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdmi-mgo')">MGO (RDMI)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · Les matériels de lutte contre l'incendie (1) : tuyaux, jonctions, lances</summary>
+            <p class="jsp-objectif">Objectif : connaître les tuyaux, les pièces de jonction et les lances.</p>
+            <p><strong>Les tuyaux</strong> sont souples ou semi-rigides. Il en existe trois sortes :</p>
+            <table class="rd-table">
+                <tr><th>Sorte</th><th>Rôle</th><th>Diamètres et longueurs</th></tr>
+                <tr><td>Refoulement</td><td>De la prise d'eau au point d'attaque</td><td>Souples 25, 45, 70, 110 mm × 20 m ; semi-rigides 22 ou 25 mm × 20 m</td></tr>
+                <tr><td>Alimentation</td><td>Alimente l'engin-pompe depuis un poteau</td><td>Souples 70 et 110 mm × 40 m</td></tr>
+                <tr><td>Aspiration</td><td>Aspire l'eau d'un point d'eau</td><td>Semi-rigides 70 et 110 mm × 2 m</td></tr>
+            </table>
+            <p><strong>Les pièces de jonction</strong> assemblent le matériel du point d'eau jusqu'au feu : raccords (symétriques avec tenons, joint, rampe de serrage, virole ; ou non symétriques mâle/femelle), retenue, coude et collecteur d'alimentation, divisions, vannes.</p>
+            <table class="rd-table">
+                <tr><th>Tuyau</th><th>Raccord</th></tr>
+                <tr><td>22 mm</td><td>20 mm GFR</td></tr>
+                <tr><td>45 mm</td><td>40 mm AR / DSP</td></tr>
+                <tr><td>70 mm</td><td>65 mm AR / DSP</td></tr>
+                <tr><td>110 mm</td><td>100 mm AR / DSP</td></tr>
+            </table>
+            <ul>
+                <li><strong>Raccords de réduction</strong> : 40 → 20, 65 → 40, 100 → 65.</li>
+                <li><strong>Divisions</strong> : 40 → 2 × 20 ; mixte 40 → 1 × 40 + 2 × 20 ; 65 → 2 × 40 ; mixte 65 → 1 × 65 + 2 × 40 ; 100 → 2 × 65 ou 3 × 65.</li>
+            </ul>
+            <p><strong>Les lances</strong> forment et dirigent le jet :</p>
+            <ul>
+                <li><strong>débit fixe, jet réglable</strong> : le porte-lance choisit seulement la forme du jet (de moins en moins utilisées) ;</li>
+                <li><strong>débit et jet réglables</strong> : on adapte la forme du jet et le débit à l'intensité du feu ;</li>
+                <li><strong>queue de paon</strong> : rideau d'eau contre un nuage gazeux ou toxique, protection en feu de forêt ;</li>
+                <li><strong>lances canon</strong> : gros débits pour les feux industriels, en travaillant à distance.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7 · Les matériels de lutte contre l'incendie (2) : accessoires, dévidoirs, outils</summary>
+            <p class="jsp-objectif">Objectif : connaître les accessoires hydrauliques, les dévidoirs et les outils.</p>
+            <p><strong>Accessoires hydrauliques</strong> : clé fédérale, clé de barrage, clés tricoises / polycoises / seccoises, crépine et flotteur d'aspiration, bouchons obturateurs, étrangleur, DFT, pulvérisateurs dorsaux.</p>
+            <table class="rd-table">
+                <tr><th>Dévidoir</th><th>Contenance</th></tr>
+                <tr><td>Dévidoir tournant (engins avec tonne d'eau)</td><td>CCF : 80 m + 2 m ; FPT : 40 m + 2 m</td></tr>
+                <tr><td>Dévidoir auxiliaire</td><td>CCF : 120 m ; FPT : 60 m</td></tr>
+                <tr><td>Dévidoir mobile à bobine</td><td>200 m de tuyaux de 70</td></tr>
+                <tr><td>Cellule dévidoir automobile</td><td>1 200 à 4 500 m de tuyaux de 110 en écheveaux</td></tr>
+            </table>
+            <p><strong>Outils de déblai et de forcement</strong> : manuels (OFD, pince, barre Halligan, hache, masse), électriques ou thermiques.</p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>8 · Les réseaux de distribution d'eau</summary>
+            <p class="jsp-objectif">Objectif : connaître les réseaux d'eau, les points d'eau et les réserves incendie.</p>
+            <p>La <strong>DECI</strong> (défense extérieure contre l'incendie) est fixée par un règlement départemental arrêté par le préfet. Il définit le débit et la pression attendus selon le risque.</p>
+            <table class="rd-table">
+                <tr><th>Risque courant</th><th>Besoin en eau minimum</th></tr>
+                <tr><td>Faible</td><td>30 m³ utilisables en 1 h ou instantanément</td></tr>
+                <tr><td>Ordinaire</td><td>60 m³ instantanés ou en 1 h (soit 30 m³/h pendant 2 h)</td></tr>
+                <tr><td>Important</td><td>120 m³ en 2 h ou instantanés, avec plusieurs sources, au cas par cas</td></tr>
+            </table>
+            <p>Les <strong>risques particuliers</strong> (ERP, patrimoine, bâtiments industriels et agricoles) demandent une étude au cas par cas.</p>
+            <ul>
+                <li><strong>Réseau étoilé</strong> : l'eau ne circule que dans un seul sens.</li>
+                <li><strong>Réseau maillé</strong> : l'eau peut arriver par plusieurs conduites, dans tous les sens.</li>
+            </ul>
+            <p><strong>Points d'eau incendie (PEI)</strong> : poteaux (PI) et bouches (BI). Quand le réseau est insuffisant : <strong>points d'aspiration</strong> sur les points d'eau naturels (panneau à triangle bleu), <strong>réservoirs</strong> aériens, souples ou ouverts (panneau indiquant la capacité).</p>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdmi-pei')">Points d'eau incendie (PEI)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>9 · Les extincteurs</summary>
+            <p class="jsp-objectif">Objectif : mettre en œuvre un extincteur en toute sécurité.</p>
+            <p>Appareils de première intervention qui projettent un agent extincteur sous pression. <strong>Portatifs</strong> (2, 6 ou 9 kg) ou <strong>mobiles</strong> (20 à 200 kg). À <strong>pression auxiliaire</strong> (percuteur et goupille) ou à <strong>pression permanente</strong> (avec manomètre).</p>
+            <table class="rd-table">
+                <tr><th>Classe de feu</th><th>Agents adaptés</th></tr>
+                <tr><td>A – solides (braises)</td><td>Eau pulvérisée (avec ou sans additif), poudre ABC</td></tr>
+                <tr><td>B – liquides</td><td>Eau pulvérisée + additif, poudre ABC ou BC, CO₂</td></tr>
+                <tr><td>C – gaz</td><td>Poudre ABC ou BC, CO₂</td></tr>
+                <tr><td>D – métaux</td><td>Poudres spéciales pour chaque métal</td></tr>
+                <tr><td>F – huiles de cuisson</td><td>Agent spécial classe F, CO₂</td></tr>
+            </table>
+            <p>Un extincteur efficace est <strong>visible, accessible, adapté au combustible et entretenu</strong>. Il faut savoir où ils se trouvent.</p>
+            <div class="rd-astuce">Utilisation : retirer la goupille, percuter, vérifier que ça fonctionne, puis attaquer <strong>vent dans le dos</strong>.</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('extincteurs')">🧯 Extincteurs</button></p>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 1 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE), conformes au RDEP Échelles portables (juin 2023) et au GTO Sauvetages et mises en sécurité (2020).</p>
+    </div>
+
+    <div id="jsp1-transverse" class="module jsp-a1">
+        <button class="back-btn" onclick="showModule('jsp1-menu')">← Retour JSP 1</button>
+        <h2>🧭 JSP 1 – Transverse</h2>
+        <div class="jsp-bandeau"><span>JSP 1</span><small>Module Transverse · 4 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · Les équipements de protection individuelle (EPI) et les tenues</summary>
+            <p class="jsp-objectif">Objectif : connaître les EPI et les tenues.</p>
+            <p>La tenue d'intervention réglementaire est <strong>obligatoire</strong> dès que des équipements spéciaux ne sont pas requis. Il faut connaître sa composition.</p>
+            <table class="rd-table">
+                <tr><th>Catégorie d'EPI</th><th>Risque</th></tr>
+                <tr><td>1</td><td>Risques mineurs, sans conséquence pour la santé</td></tr>
+                <tr><td>2</td><td>Risques intermédiaires : tests de conformité aux normes européennes</td></tr>
+                <tr><td>3</td><td>Risques graves, irréversibles ou mortels : mêmes tests + surveillance de la qualité (ISO 9002)</td></tr>
+            </table>
+            <div class="rd-alerte">Aucun bijou avec les EPI.</div>
+            <ul>
+                <li><strong>Tête</strong> : casque F1, casque F2, cagoule.</li>
+                <li><strong>Haut du corps</strong> : veste d'intervention, veste TSI, gants, gilet haute visibilité.</li>
+                <li><strong>Bas du corps</strong> : surpantalon, pantalon TSI, rangers.</li>
+            </ul>
+            <p>L'<strong>arrêté du 8 avril 2015</strong> classe les tenues en 5 catégories : 1 garde au drapeau · 2 tenue de sortie · 3 tenue de travail · 4 tenue de sport · 5 tenues de spécialités (CMIC, GMP, SAL, DEPOL, RAD).</p>
+            <p><strong>La tenue des JSP</strong> : tenue de travail, casquette rouge, tee-shirt, rangers, gants et casque.</p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Les grades</summary>
+            <p class="jsp-objectif">Objectif : connaître les cycles de formation JSP et les grades des sapeurs-pompiers civils et militaires.</p>
+            <p><strong>JSP</strong> : 4 cycles de formation, JSP 1, JSP 2, JSP 3 et JSP 4.</p>
+            <table class="rd-table">
+                <tr><th>Grades</th><th>Fonction</th></tr>
+                <tr><td>Sapeur 2<sup>e</sup> classe, sapeur 1<sup>re</sup> classe</td><td>Équipier</td></tr>
+                <tr><td>Caporal, caporal-chef</td><td>Chef d'équipe</td></tr>
+                <tr><td>Sergent, sergent-chef</td><td>Chef d'agrès une équipe</td></tr>
+                <tr><td>Adjudant, adjudant-chef</td><td>Chef d'agrès tout engin</td></tr>
+                <tr><td>Lieutenant</td><td>Chef de groupe</td></tr>
+                <tr><td>Capitaine</td><td>Chef de colonne</td></tr>
+                <tr><td>Commandant, lieutenant-colonel, colonel</td><td>Chef de site</td></tr>
+                <tr><td>Colonel hors classe, contrôleur général</td><td>Directeur départemental (DDSIS) ; responsabilités de l'État (IGSC, EMIZ, ENSOSP…)</td></tr>
+            </table>
+            <p><strong>Service de santé et de secours médical (SSSM)</strong> : infirmiers (infirmier, principal, chef, cadres de santé), médecins (aspirant à colonel), pharmaciens et vétérinaires (capitaine à colonel), psychologues et experts (avis techniques).</p>
+            <p><strong>Sapeurs-pompiers militaires</strong> : Bataillon de marins-pompiers de Marseille (BMPM), Brigade de sapeurs-pompiers de Paris (BSPP), unités d'instruction et d'intervention de la sécurité civile (UIISC).</p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Les objectifs de l'activité physique (APS)</summary>
+            <p class="jsp-objectif">Objectif : comprendre l'importance d'une bonne condition physique.</p>
+            <p>En intervention, le sapeur-pompier est exposé à des environnements dangereux, manipule du matériel lourd et reste parfois longtemps dans des positions inconfortables. Un feu de plusieurs heures épuise : douleurs, fatigue… et donc risque d'accident.</p>
+            <ul>
+                <li>Il doit entretenir <strong>une bonne condition physique, un bon état de santé et une bonne hygiène de vie</strong>, et savoir doser ses efforts.</li>
+                <li>En cas de problème, il doit pouvoir assurer son propre sauvetage et celui de son binôme : <strong>ma sécurité passe par celle de mon binôme</strong>.</li>
+                <li>Le sport évacue la tension et le stress, et renforce l'esprit d'équipe.</li>
+            </ul>
+            <p><strong>Qualités développées</strong> : résistance, force, vitesse, adresse, souplesse, détente, équilibre.</p>
+            <div class="rd-astuce">La condition physique n'est pas une contrainte : c'est <strong>un droit et un devoir</strong>, pour être sapeur-pompier longtemps.</div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · L'organisation de la sécurité civile</summary>
+            <p class="jsp-objectif">Objectif : connaître les échelons, les domaines et les moyens de la sécurité civile.</p>
+            <table class="rd-table">
+                <tr><th>Échelon</th><th>Organisme</th><th>Centre opérationnel</th></tr>
+                <tr><td>National</td><td>Direction générale de la sécurité civile et de la gestion des crises (DGSCGC)</td><td>COGIC</td></tr>
+                <tr><td>Zonal</td><td>7 zones de défense et de sécurité en métropole (l'Hérault est en zone Sud, à Marseille)</td><td>COZ</td></tr>
+                <tr><td>Départemental</td><td>Service départemental d'incendie et de secours (SDIS)</td><td>CODIS</td></tr>
+            </table>
+            <p><strong>Domaines</strong> : risques courants, naturels, technologiques, sanitaires et menaces.</p>
+            <p><strong>Moyens nationaux</strong> :</p>
+            <ul>
+                <li>Groupement des moyens aériens : 35 hélicoptères et 26 avions de lutte contre les feux de forêts.</li>
+                <li>Formations militaires (FORMISC) : UIISC 1, 5 et 7, environ 1 500 hommes.</li>
+                <li>Déminage : 20 centres, 307 démineurs.</li>
+                <li>ESCRIM : éléments de sécurité civile rapide d'intervention médicale.</li>
+            </ul>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 1 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE). Chiffres donnés à la date des diaporamas.</p>
+    </div>
+
+    <div id="jsp1-citoyen" class="module jsp-a1">
+        <button class="back-btn" onclick="showModule('jsp1-menu')">← Retour JSP 1</button>
+        <h2>🤝 JSP 1 – Engagement citoyen</h2>
+        <div class="jsp-bandeau"><span>JSP 1</span><small>Module Engagement citoyen · 5 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · Le réseau associatif fédéral</summary>
+            <p class="jsp-objectif">Objectif : connaître les échelons du réseau associatif.</p>
+            <p>Selon la <strong>loi du 1<sup>er</sup> juillet 1901</strong>, une association réunit des personnes qui mettent en commun leurs connaissances ou leur activité dans un but autre que de partager des bénéfices. C'est ce cadre qui permet aux sapeurs-pompiers de se regrouper.</p>
+            <ul>
+                <li><strong>Local</strong> : l'<strong>amicale</strong> (un centre de secours = une amicale), premier maillon. Les <strong>sections de JSP</strong> sont rattachées à l'union départementale ou à l'ADJSP.</li>
+                <li><strong>Départemental et régional</strong> : 98 unions départementales et 13 unions régionales, relais entre les amicales et la fédération. Elles forment le grand public au secourisme et aident les familles en difficulté. L'<strong>ADJSP</strong> peut être habilitée par le préfet, sur proposition du DDSIS, à former les JSP (décret n° 2021-1569 du 3 décembre 2021).</li>
+                <li><strong>National</strong> : la <strong>Fédération nationale des sapeurs-pompiers de France (FNSPF)</strong>, fondée en 1882, environ 266 400 adhérents (dont 187 000 actifs, 25 500 JSP, 48 700 anciens, 3 900 PATS) et 7 250 amicales.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Le rôle du réseau associatif (FNSPF, ODP, MNSP)</summary>
+            <p class="jsp-objectif">Objectif : comprendre l'importance et le rôle du réseau associatif.</p>
+            <ul>
+                <li><strong>18 septembre 1881</strong> : le capitaine Charles Auguste Michel (corps de Vailly, Aisne) réunit 93 officiers de 18 départements.</li>
+                <li><strong>17 septembre 1882</strong>, à Reims : premier congrès national et naissance de la fédération.</li>
+                <li><strong>21 juillet 1907</strong> : Fédération nationale des sapeurs-pompiers français (83 000 adhérents).</li>
+                <li><strong>1997</strong> : elle devient la FNSPF.</li>
+            </ul>
+            <p><strong>Organisation</strong> : comité exécutif (tous les 15 jours), conseil d'administration, 21 commissions (catégorielles, dont une commission JSP ; spécialisées ; de fonctionnement).</p>
+            <p><strong>Missions</strong> : représenter, animer, transmettre (engagement citoyen, comportements qui sauvent, valeurs).</p>
+            <table class="rd-table">
+                <tr><th>Organisme</th><th>Rôle</th></tr>
+                <tr><td>FNSPF</td><td>Rôle politique : représenter et défendre les sapeurs-pompiers</td></tr>
+                <tr><td>Œuvre des pupilles (ODP), créée en 1926</td><td>Rôle curatif : aide aux familles et aux enfants des sapeurs-pompiers décédés (en service, et hors service depuis 1993)</td></tr>
+                <tr><td>Mutuelle nationale des sapeurs-pompiers (MNSP), créée en 1992</td><td>Rôle préventif : mutuelle ouverte aux SP, PATS, JSP, anciens et à leurs familles</td></tr>
+            </table>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · L'engagement citoyen</summary>
+            <p class="jsp-objectif">Objectif : connaître les valeurs, l'éthique et le rôle des JSP dans la société.</p>
+            <ul>
+                <li><strong>Engagement</strong> : on assume librement les valeurs qu'on a choisies.</li>
+                <li><strong>Civilité</strong> : respect des autres et des lieux publics.</li>
+                <li><strong>Civisme</strong> : respecter et faire respecter les lois, connaître ses devoirs envers la société.</li>
+                <li><strong>Solidarité</strong> : être attaché à un projet commun.</li>
+            </ul>
+            <p><strong>Formes d'engagement</strong> : réserve opérationnelle, réserve citoyenne, service civique (16 à 25 ans, 6 à 12 mois, 24 h par semaine, indemnisé), <strong>JSP (11 à 18 ans)</strong>.</p>
+            <p><strong>Le rôle des JSP</strong> : informer à l'école sur les comportements qui sauvent, sensibiliser aux risques, aider (encadrés) à la formation aux gestes de premiers secours et à la prévention incendie.</p>
+            <p>Les sapeurs-pompiers ne sont pas des militaires, mais ils ont une hiérarchie, des grades et un uniforme : le JSP doit en être digne.</p>
+            <table class="rd-table">
+                <tr><th>Valeurs du JSP</th><th>Éthique du JSP</th></tr>
+                <tr><td>Honnêteté, discipline</td><td>Altruisme, efficience, discrétion</td></tr>
+            </table>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · L'IPCS et l'assistant de sécurité (AS.SEC)</summary>
+            <p class="jsp-objectif">Objectif : connaître le rôle des AS.SEC dans les établissements scolaires.</p>
+            <p>L'<strong>information préventive aux comportements qui sauvent (IPCS)</strong> développe la culture de sécurité civile de chacun pour augmenter ses chances de survie et faciliter l'action des secours. Grâce à une convention entre la FNSPF, le ministère de l'Intérieur et l'Éducation nationale (18 juin 2015), les JSP peuvent devenir <strong>assistants de sécurité (AS.SEC)</strong> dans leur établissement, en appui du plan particulier de mise en sûreté (PPMS).</p>
+            <h4>🏠 Mise à l'abri (danger extérieur : nuage toxique…)</h4>
+            <ul>
+                <li>Rejoindre la zone de mise à l'abri dans le calme, s'informer, suivre les consignes.</li>
+                <li>Fermer fenêtres, volets et rideaux, s'éloigner des vitres (risque d'explosion), limiter l'entrée d'air.</li>
+                <li>Ne pas boire l'eau du robinet, ne pas téléphoner (réseaux saturés), s'occuper dans le calme.</li>
+                <li>Les AS.SEC aident à repérer les élèves ou adultes en difficulté.</li>
+            </ul>
+            <h4>🌍 Séisme</h4>
+            <ul>
+                <li>Pendant la secousse : sous la table, en boule, mains sur la nuque. L'adulte ouvre la porte et se protège.</li>
+                <li>Après : se relever en vérifiant le plafond et les camarades, évacuer dans l'ordre vers le point de rassemblement. Attention aux répliques : ne jamais rentrer sans l'accord des secours, s'éloigner des bâtiments, poteaux et abribus.</li>
+            </ul>
+            <h4>🚪 Évacuation</h4>
+            <ul>
+                <li>Laisser ses affaires (sauf vêtements d'hiver et traitements médicaux).</li>
+                <li>Sortir en 2 colonnes, en ordre, en silence, mains hors des poches, près des murs.</li>
+                <li>Au point de rassemblement, faire asseoir la classe pour compter les absents.</li>
+                <li>Accueillir les secours et leur indiquer où sont les manquants.</li>
+            </ul>
+            <div class="rd-alerte">« Là où il y a de la fumée, il ne faut pas aller. »</div>
+            <h4>🧍 Adulte au sol, inconscient</h4>
+            <ul>
+                <li>2 AS.SEC (en chasuble) alertent un adulte proche : « Je suis X de la classe X, nous sommes en salle X, notre professeur est au sol. »</li>
+                <li>2 AS.SEC vérifient qu'il ne réagit pas et le mettent sur le côté (PLS simplifiée, ou PLS s'ils ont le PSC1).</li>
+                <li>2 AS.SEC gardent les portes pour qu'aucun élève ne sorte.</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('suap-bilan')">🩺 Bilan (RT SUAP)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Protocole et cérémonie</summary>
+            <p class="jsp-objectif">Objectif : connaître les règles de position et de mouvement, et les temps forts d'une cérémonie.</p>
+            <p>Les cérémonies sont l'occasion de se présenter à la population et de susciter des vocations. Le JSP y a une <strong>tenue et un comportement irréprochables</strong> : immobilité, politesse (connaître les grades pour s'adresser aux officiers), y compris pendant les discours et le vin d'honneur.</p>
+            <p>Le <strong>protocole</strong> est l'ensemble des règles d'étiquette et de préséance des cérémonies officielles.</p>
+            <ol>
+                <li><strong>Mise en place du dispositif</strong> : plan préparé par l'officier de cérémonie selon les lieux.</li>
+                <li><strong>Accueil des autorités</strong>, selon leur rang.</li>
+                <li><strong>Passage en revue des troupes.</strong></li>
+                <li><strong>Honneurs au drapeau</strong> par le commandant de cérémonie et les autorités.</li>
+                <li><strong>Honneurs au pavillon national</strong> (couleurs hissées).</li>
+                <li><strong>Dépôt de gerbe</strong> : l'officier commande « Garde à vous » et invite les autorités à déposer la gerbe.</li>
+                <li><strong>Hymne national</strong> : joué seulement quand les troupes rendent les honneurs de pied ferme ; rejoué une fois après la minute de silence.</li>
+            </ol>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 1 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE). Le dossier contient aussi le guide pédagogique ASSEC/IPCS et des sons d'alerte (non repris ici).</p>
+    </div>
+
+    <!-- ============ JSP 2 – 2e année (jaune) ============ -->
+    <div id="jsp2-menu" class="module jsp-a2">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🎓 JSP 2 – 2<sup>e</sup> année</h2>
+        <div class="jsp-bandeau"><span>JSP 2</span><small>2<sup>e</sup> cycle de formation · couleur jaune</small></div>
+        <p style="text-align: center;">Les cours de la 2<sup>e</sup> année, rangés en 4 modules. Touche un cours pour l'ouvrir.</p>
+
+        <div class="rd-tuiles jsp-tuiles">
+            <button onclick="showModule('jsp2-incendie')"><b>🔥 Incendie</b><span>Réaction au feu, ARI, engins, établissements, mousse, LSPCC, échelles à coulisse</span></button>
+            <button onclick="showModule('jsp2-transverse')"><b>🧭 Transverse</b><span>Statuts des sapeurs-pompiers, personnels d'un SDIS</span></button>
+            <button onclick="showModule('jsp2-citoyen')"><b>🤝 Engagement citoyen</b><span>Risque incendie domestique, accidents de la vie courante</span></button>
+            <button onclick="showModule('jsp2-od')"><b>🛠️ Opérations diverses</b><span>Épuisement, éclairage et groupes électrogènes</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les 4 années de JSP</h3>
+            <div class="rd-tuiles jsp-annees">
+                <button class="jsp-a1" onclick="showModule('jsp1-menu')"><b>JSP 1</b><span>Blanc</span></button>
+                <button class="jsp-a2" onclick="showModule('jsp2-menu')"><b>JSP 2</b><span>Jaune</span></button>
+                <button class="jsp-a3" onclick="showModule('jsp3-menu')"><b>JSP 3</b><span>Orange</span></button>
+                <button class="jsp-a4" onclick="showModule('jsp4-menu')"><b>JSP 4</b><span>Vert</span></button>
+            </div>
+        </div>
+
+        <p class="rd-source">📚 Supports de cours JSP – SDIS 34 (conception des diaporamas : Lieutenant Luc BEHAGUE). Résumés sans les photos ni les schémas des diaporamas.</p>
+    </div>
+
+    <div id="jsp2-incendie" class="module jsp-a2">
+        <button class="back-btn" onclick="showModule('jsp2-menu')">← Retour JSP 2</button>
+        <h2>🔥 JSP 2 – Incendie</h2>
+        <div class="jsp-bandeau"><span>JSP 2</span><small>Module Incendie · 7 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · Comportement et réaction au feu des matériaux</summary>
+            <p class="jsp-objectif">Objectif : connaître les règles de base du comportement au feu des matériaux.</p>
+            <p>La tenue au feu des matériaux et des éléments de construction sert deux objectifs de la prévention : <strong>faciliter l'évacuation du public</strong> et <strong>limiter la propagation</strong>. On l'apprécie selon deux critères.</p>
+            <h4>La résistance au feu</h4>
+            <p>C'est le <strong>temps</strong> pendant lequel un élément de construction (paroi, plancher, plafond, porte…) garde ses propriétés quand il est exposé au feu :</p>
+            <ul>
+                <li><strong>Stable au feu (SF)</strong> : il continue à porter sa charge.</li>
+                <li><strong>Pare-flamme (PF)</strong> : il est stable et arrête les flammes et les gaz chauds.</li>
+                <li><strong>Coupe-feu (CF)</strong> : il est pare-flamme et, en plus, isole de la chaleur.</li>
+            </ul>
+            <h4>La réaction au feu</h4>
+            <p>Elle concerne les revêtements, la décoration et le gros mobilier, qui doivent respecter le règlement de sécurité. Deux critères :</p>
+            <ul>
+                <li><strong>La combustibilité</strong> : la quantité de chaleur dégagée par la combustion complète du matériau.</li>
+                <li><strong>L'inflammabilité</strong> : la quantité de gaz inflammables qu'il dégage.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · L'ARI : contraintes et contrôle croisé</summary>
+            <p class="jsp-objectif">Objectif : connaître les contraintes de l'ARI et s'équiper en binôme en toute sécurité.</p>
+            <p>Un incendie dégage beaucoup de chaleur et de produits toxiques : oxydes d'azote, composés de chlore, fluor, soufre et cyanure, CO₂, CO… sans oublier les <strong>suies</strong>. La liste s'allonge avec les nouveaux matériaux.</p>
+            <ul>
+                <li><strong>Voies de pénétration</strong> : peau, ingestion, inhalation.</li>
+                <li><strong>Effets</strong> : hypoxie, asphyxie, irritations des poumons, de la peau et des yeux.</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Contrainte</th><th>Effets de l'ARI</th></tr>
+                <tr><td>Physique</td><td>Centre de gravité modifié, plus d'effort musculaire et de dépense d'énergie, performances en baisse, passages étroits difficiles</td></tr>
+                <tr><td>Physiologique</td><td>« Espace mort » augmenté, cœur plus rapide, respiration plus difficile</td></tr>
+                <tr><td>Psychologique</td><td>Perception de l'espace et contact avec les autres réduits, audition diminuée (bruit, casque, cagoule)</td></tr>
+            </table>
+            <p><strong>Réserve d'air</strong> : le temps d'intervention dépend de la bouteille (volume, pression) et de la consommation du porteur. Formule : <strong>T = P × V ÷ Q</strong>.</p>
+            <h4>✅ Le contrôle croisé (obligatoire)</h4>
+            <p>Le chef et l'équipier se contrôlent l'un l'autre :</p>
+            <ul>
+                <li>tenue de feu complète et bien portée ;</li>
+                <li>cagoule bien ajustée ;</li>
+                <li>masque ajusté, étanche et bien fixé ;</li>
+                <li>soupape à la demande (SAD) bien encliquetée ;</li>
+                <li>casque, jugulaire attachée ;</li>
+                <li>pression de la bouteille vérifiée.</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdeb-controle')">Contrôle croisé (RDEB)</button> <button onclick="showModule('rdeb-preparation')">Contraintes & préparation</button> <button onclick="showModule('ari')">🧮 Calcul d'autonomie ARI</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Les engins d'incendie et de secours</summary>
+            <p class="jsp-objectif">Objectif : connaître les engins, leur armement et leur entretien.</p>
+            <table class="rd-table">
+                <tr><th>Engin</th><th>Armement</th><th>Missions</th></tr>
+                <tr><td>VSAV – véhicule de secours et d'assistance aux victimes</td><td>1 chef d'agrès + 2 équipiers</td><td>Secours à personne</td></tr>
+                <tr><td>VSR – véhicule de secours routier</td><td>1 chef d'agrès + 2 équipiers</td><td>Accidents de la circulation</td></tr>
+                <tr><td>FPT – fourgon pompe-tonne</td><td>1 conducteur + 1 chef d'agrès + 2 ou 3 binômes</td><td>Incendies urbains</td></tr>
+                <tr><td>EPS – échelle pivotante séquentielle</td><td>1 conducteur + 1 chef d'agrès + 1 équipier</td><td>Incendies urbains (sauvetages en hauteur)</td></tr>
+                <tr><td>CCF – camion-citerne feux de forêts</td><td>1 conducteur + 1 chef d'agrès + 1 ou 2 équipiers</td><td>Feux d'espaces naturels</td></tr>
+                <tr><td>CCGC – camion-citerne grande capacité</td><td>1 conducteur + 1 chef d'agrès + 1 équipier</td><td>Appui en eau</td></tr>
+            </table>
+            <p>Tout le personnel est titulaire de la formation correspondante.</p>
+            <h4>Contrôle et reconditionnement</h4>
+            <p>Après chaque intervention, l'engin et le personnel doivent redevenir disponibles. On remet l'engin en état sur place si possible. Les tuyaux et accessoires sont nettoyés, séchés, contrôlés et remplacés si besoin, puis on fait l'inventaire.</p>
+            <h4>Vérifications à la prise de garde</h4>
+            <ul>
+                <li><strong>Tous les engins</strong> : avertisseurs sonores, feux et gyrophares, niveaux, armement.</li>
+                <li><strong>Engins incendie</strong> : plein d'eau, agents extincteurs, essais de pompe, échelles aériennes déployées et dressées.</li>
+                <li><strong>Engins de secours</strong> : dates de péremption, matériel de secourisme, d'immobilisation et de relevage.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Les établissements de lances</summary>
+            <p class="jsp-objectif">Objectif : connaître et réaliser les établissements en binôme (RDMI SDIS 34, mars 2022).</p>
+            <p>Le <strong>binôme</strong> = 1 chef d'équipe + 1 équipier. Il est <strong>organique</strong> (armement de l'engin-pompe) ou <strong>de circonstance</strong> (personnels venant d'autres engins).</p>
+            <table class="rd-table">
+                <tr><th>Engin</th><th>1<sup>er</sup> binôme</th><th>2<sup>e</sup> binôme</th><th>3<sup>e</sup> binôme</th></tr>
+                <tr><td>FPT / FPTL à 6</td><td>Attaque (lance)</td><td>Prise d'eau et/ou alimentation de l'engin</td><td>—</td></tr>
+                <tr><td>FPTGP à 8</td><td>Attaque (lance)</td><td>Prise d'eau</td><td>Alimentation de l'engin</td></tr>
+            </table>
+            <table class="rd-table">
+                <tr><th>Qui</th><th>Matériel emporté</th></tr>
+                <tr><td>Chef 1<sup>er</sup> binôme</td><td>ARI, 1 tuyau en O, 1 projecteur, 1 OFD</td></tr>
+                <tr><td>Équipier 1<sup>er</sup> binôme</td><td>ARI, 2 tuyaux en Z, 1 commande</td></tr>
+                <tr><td>Chef 2<sup>e</sup> binôme</td><td>1 à 2 tuyaux en Z + division d'attaque</td></tr>
+                <tr><td>Équipier 2<sup>e</sup> binôme</td><td>1 à 2 tuyaux en Z</td></tr>
+                <tr><td>Binôme alimentation</td><td>Dévidoir, clés, bouchons obturateurs, division ou retenue</td></tr>
+            </table>
+            <div class="rd-astuce"><strong>1 binôme = 1 action.</strong> L'ordre d'une lance précise son <strong>point d'attaque</strong> et sa <strong>prise d'eau</strong>. Une lance est toujours alimentée par une prise d'eau ; une prise d'eau peut être alimentée par une autre.</div>
+            <table class="rd-table">
+                <tr><th>Établissement</th><th>1 tuyau de 20 m =</th></tr>
+                <tr><td>Horizontal</td><td>20 mètres</td></tr>
+                <tr><td>Vertical</td><td>4 étages</td></tr>
+                <tr><td>Oblique ou rampant (escalier)</td><td>2 étages</td></tr>
+            </table>
+            <p><strong>Règles</strong> : ouvrir et fermer les vannes doucement ; attention aux objets coupants, aux décombres brûlants et aux chutes de matériaux ; utiliser les DFT ; protéger les raccords ; par temps de gel, laisser la lance entrouverte. Longer le trottoir, faire une <strong>réserve en boucle au point d'attaque</strong>, utiliser le moins de tuyaux possible, éviter plis, coudes et torsions, et éviter de couper les rues.</p>
+            <p><strong>ETB 1</strong> lance sur dévidoir tournant · <strong>ETB 2</strong> prise d'eau · <strong>ETB 3</strong> LDV 500 sur prise d'eau · <strong>ETB 4</strong> alimentation de l'engin · <strong>ETB 5</strong> établissement particulier · <strong>ETB 6</strong> prolongement ou remplacement d'un tuyau.</p>
+            <table class="rd-table">
+                <tr><th>Jet</th><th>Avantages</th><th>Inconvénients</th><th>Quand l'utiliser</th></tr>
+                <tr><td>Droit</td><td>Grande portée, bonne pénétration, résiste au vent</td><td>Absorbe mal la chaleur, dégâts, recul, conduit l'électricité</td><td>Attaque à l'air libre ou à distance, grande surface, vent fort</td></tr>
+                <tr><td>Diffusé d'attaque</td><td>Bonne pénétration, grande surface de contact, absorbe bien la chaleur</td><td>Portée moyenne, sensible au vent</td><td>Feux virulents, volume clos, inertage des fumées, test du plafond</td></tr>
+                <tr><td>Diffusé de protection</td><td>Protège le binôme, refroidit très bien</td><td>Faible portée, aucune pénétration</td><td>Rideau d'eau, protection contre un fort dégagement de chaleur ou un EGE</td></tr>
+            </table>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdmi-etablissements')">Établissements (RDMI)</button> <button onclick="showModule('rdmi-binomes')">Binômes & armement</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Les moyens de production de mousse portables</summary>
+            <p class="jsp-objectif">Objectif : connaître les mousses et le matériel pour en produire.</p>
+            <p>On éteint les feux d'<strong>hydrocarbures</strong> avec de la mousse : des bulles de gaz emprisonnées dans une fine pellicule de liquide.</p>
+            <ul>
+                <li><strong>Mousse chimique</strong> : réaction d'un acide sur une base carbonique, avec de l'eau et un émulsifiant.</li>
+                <li><strong>Mousse physique</strong> : solution moussante brassée énergiquement avec de l'air.</li>
+            </ul>
+            <p>La mousse s'étale en nappe sur le liquide. Elle agit de 3 façons : <strong>étouffement, isolement, refroidissement</strong>.</p>
+            <table class="rd-table">
+                <tr><th>Étape</th><th>Matériel</th></tr>
+                <tr><td>1</td><td>Un engin-pompe</td></tr>
+                <tr><td>2</td><td>De l'<strong>émulseur</strong> : il diminue la tension de surface de l'eau pour former des bulles</td></tr>
+                <tr><td>3</td><td>Un <strong>injecteur-proportionneur</strong> : eau + émulseur = <strong>solution moussante</strong></td></tr>
+                <tr><td>4</td><td>Une <strong>lance ou un générateur</strong> : solution moussante + air = <strong>mousse</strong></td></tr>
+            </table>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('mousses-menu')">🫧 Mousses</button> <button onclick="showModule('emulseur')">🧮 Taux d'application</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · L'évolution au moyen du LSPCC</summary>
+            <p class="jsp-objectif">Objectif : mettre en œuvre le LSPCC en sécurité (procédure « évolution au moyen du LSPCC »).</p>
+            <p><strong>L'ancrage (point fixe)</strong> peut être naturel, structurel ou artificiel. Sa fiabilité dépend du bon sens, de l'expérience et de la connaissance du terrain.</p>
+            <ul>
+                <li><strong>Un véhicule</strong> comme point fixe : moteur arrêté, clé retirée, vitesse engagée, frein de parc serré, roues calées.</li>
+                <li>Sans ancrage, l'<strong>équipier</strong> peut servir de point fixe.</li>
+            </ul>
+            <p><strong>L'amarrage</strong> relie l'ancrage au dispositif : au minimum <strong>un connecteur + un anneau cousu</strong>, avec un angle de moins de 90°. Nœuds : <strong>huit double</strong>, <strong>nœud français</strong>, <strong>clé sur huit descendeur</strong>.</p>
+            <table class="rd-table">
+                <tr><th>Moment</th><th>Règles</th></tr>
+                <tr><td>Avant</td><td>Choisir la méthode, évaluer la hauteur et la difficulté, vérifier le contenu du sac</td></tr>
+                <tr><td>Pendant</td><td>Protections de corde ; lot réservé aux personnes ; doubler l'amarrage principal ; bons points fixes ; ne pas marcher sur le textile ; toujours un mousqueton entre deux anneaux ; huit descendeur en point fixe ; mousquetons vissés ; rien sur des débris</td></tr>
+                <tr><td>Après</td><td>Ranger, contrôler au toucher et à l'œil, nettoyer, regrouper par lot</td></tr>
+            </table>
+            <table class="rd-table">
+                <tr><th></th><th>Chef</th><th>Équipier</th></tr>
+                <tr><td>Avant</td><td>Prend une commande, se rend sur place</td><td>Prend le lot de sauvetage, suit le chef</td></tr>
+                <tr><td>Pendant</td><td>S'équipe du harnais, progresse, pose des amarrages intermédiaires, récupère les anneaux au retour</td><td>Choisit 1 ou 2 points fixes, amarre le descendeur, assure le chef</td></tr>
+                <tr><td>Après</td><td colspan="2">Démontent, rangent et vérifient ensemble. Le responsable contrôle le lot au retour au centre.</td></tr>
+            </table>
+            <div class="rd-alerte">Toute anomalie qui peut entraîner la réforme d'un agrès textile ou du descendeur rend le lot <strong>indisponible</strong> jusqu'au contrôle. Signaler tout incident ou emploi hors limites.</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('lspcc-noeuds')">Nœuds & dispositifs</button> <button onclick="showModule('lspcc-techniques')">Techniques générales</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7 · Les échelles à coulisse</summary>
+            <p class="jsp-objectif">Objectif : évoluer sur une échelle à coulisse 2 plans en toute sécurité (RDEP juin 2023).</p>
+            <p><strong>Protection minimale</strong> : tenue de service et d'intervention, casque de type B, gants de type C. La veste peut être allégée selon la météo ; la protection peut être renforcée sur ordre du chef d'agrès ; ARI possible ; écran du casque au choix.</p>
+            <ul>
+                <li>Bons gestes et postures ; un SP stabilise l'échelle si possible ; la porter le plus bas possible.</li>
+                <li>Attention aux câbles électriques au dressage et au vent au déploiement.</li>
+                <li>L'aluminium fond vers <strong>660 °C</strong> : éloigner l'échelle du rayonnement.</li>
+                <li><strong>3 plans</strong> : les SP aux arcs-boutants travaillent en miroir, rien dans leur prolongement ; au sol, on les tient au pied ou on les cale. Le chef d'agrès coordonne (sinon le chef du 1<sup>er</sup> binôme).</li>
+                <li><strong>Port</strong> : base devant, chef côté sommet, équipier côté base. La 2 plans peut se porter à l'épaule sur une longue distance, sur ordre.</li>
+            </ul>
+            <div class="rd-astuce"><strong>Piétage</strong> : la base est à environ <strong>1/3 de la hauteur d'appui</strong> du mur. L'échelle fait alors 65° à 75°, et on monte corps vertical, bras à 90°.</div>
+            <table class="rd-table">
+                <tr><th>Réseau électrique</th><th>Distance minimale</th></tr>
+                <tr><td>Basse tension (≤ 1 000 V)</td><td>1 m</td></tr>
+                <tr><td>Haute tension A (≤ 50 000 V)</td><td>3 m</td></tr>
+                <tr><td>Tramway (≤ 750 V), train (≤ 25 000 V)</td><td>3 m</td></tr>
+                <tr><td>Haute tension B (&gt; 50 000 V)</td><td>5 m</td></tr>
+            </table>
+            <p>Les échelles <strong>ne sont pas isolantes</strong>. On ne déroge au code du travail qu'en opération, pour force majeure.</p>
+            <ul>
+                <li><strong>Appui</strong> : sans dépassement de préférence en incendie urbain, sur une partie résistante et un sol stable, les deux montants contre le mur.</li>
+                <li><strong>Sécuriser en bas</strong> : se placer devant, mains sur les montants ; arcs-boutants ; pied de dévers ; corde attachée au milieu d'un échelon ; parachutes engagés.</li>
+                <li><strong>Sécuriser en haut</strong> : amarrage avec la sangle individuelle (SIM) sur opération diverse ; un SP à l'étage peut tenir les montants.</li>
+                <li><strong>Monter</strong> : toujours <strong>3 points de contact</strong> (2 mains + 1 pied ou 2 pieds + 1 main). Les deux pieds sur le même échelon sont permis.</li>
+                <li><strong>Accès et dégagement</strong> : par enroulement, par enjambement ou par accompagnement.</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('echelles-coulisses')">Échelles à coulisse</button> <button onclick="showModule('echelles-securite')">Sécurité & mise en œuvre</button></p>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 2 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE), conformes au RDMI SDIS 34 (mars 2022) et au RDEP Échelles portables (juin 2023).</p>
+    </div>
+
+    <div id="jsp2-transverse" class="module jsp-a2">
+        <button class="back-btn" onclick="showModule('jsp2-menu')">← Retour JSP 2</button>
+        <h2>🧭 JSP 2 – Transverse</h2>
+        <div class="jsp-bandeau"><span>JSP 2</span><small>Module Transverse · 1 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · Les statuts des sapeurs-pompiers et les personnels d'un SDIS</summary>
+            <p class="jsp-objectif">Objectif : connaître les statuts des sapeurs-pompiers français et les personnels d'un SDIS.</p>
+            <table class="rd-table">
+                <tr><th>Statut</th><th>Qui</th><th>Effectifs (date du cours)</th></tr>
+                <tr><td>Publics (civils)</td><td>Professionnels (SPP) et volontaires (SPV)</td><td>41 800 SPP, 197 800 SPV</td></tr>
+                <tr><td>Militaires</td><td>BSPP (Paris), BMPM (Marseille), FORMISC (UIISC 1, 5, 7)</td><td>8 456, 2 330 et 1 500</td></tr>
+                <tr><td>Privés</td><td>Services de sécurité incendie obligatoires (aéroports, certaines industries)</td><td>Qualification propre à chaque structure</td></tr>
+            </table>
+            <p><strong>Au SDIS 34</strong> : 764 SPP, 3 383 SPV, 250 membres du SSSM et 222 personnels administratifs, techniques et spécialisés (PATS).</p>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 2 – SDIS 34 (diaporama du Lieutenant Luc BEHAGUE). Chiffres donnés à la date du diaporama.</p>
+    </div>
+
+    <div id="jsp2-citoyen" class="module jsp-a2">
+        <button class="back-btn" onclick="showModule('jsp2-menu')">← Retour JSP 2</button>
+        <h2>🤝 JSP 2 – Engagement citoyen</h2>
+        <div class="jsp-bandeau"><span>JSP 2</span><small>Module Engagement citoyen · 2 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · Le risque incendie domestique</summary>
+            <p class="jsp-objectif">Objectif : sensibiliser au risque d'incendie à la maison et connaître la conduite à tenir.</p>
+            <p>En France, chaque année : <strong>plus de 83 000 incendies domestiques</strong> (une intervention toutes les 7 minutes), <strong>plus de 10 000 blessés</strong> et <strong>près de 800 morts</strong>. <strong>70 %</strong> des incendies mortels ont lieu <strong>la nuit</strong>.</p>
+            <p>L'incendie d'habitation tue, détruit, est fréquent, toxique et <strong>rapide</strong> : 1<sup>re</sup> minute, un verre d'eau suffit ; 2<sup>e</sup> minute, il faut un seau ; ensuite, il faut les pompiers.</p>
+            <p><strong>Causes</strong> : surtout humaines (malveillance, négligence, imprudence), mais aussi naturelles ou liées à l'énergie.</p>
+            <table class="rd-table">
+                <tr><th>Risque</th><th>Prévention</th></tr>
+                <tr><td>Électricité (multiprises surchargées, électroménager, halogènes)</td><td>Multiprises aux normes sans dépasser la puissance ; pas d'appareil en marche en votre absence ; rien d'inflammable dessus</td></tr>
+                <tr><td>Gaz (tuyau, branchement)</td><td>Faire réviser régulièrement</td></tr>
+                <tr><td>Chauffage (cheminée, chaudière, chauffage d'appoint)</td><td>Ramoner, faire réviser ; pas d'appoint près des rideaux ; pas de linge sur les radiateurs</td></tr>
+                <tr><td>Cuisson</td><td>Ne jamais laisser une casserole sur le feu sans surveillance ; éteindre après usage</td></tr>
+                <tr><td>Flammes (bougies, cigarettes, foyers)</td><td>Bien les éteindre ; pas de bougie près de matières inflammables ; fermer les foyers</td></tr>
+            </table>
+            <div class="rd-astuce">Le <strong>détecteur de fumée (DAAF)</strong> est obligatoire dans les logements depuis le <strong>1<sup>er</sup> mars 2015</strong>. Il se fixe <strong>au plafond, à 30 cm des murs</strong> (couloirs, chambres, salon, buanderie).</div>
+            <p><strong>Plan d'évacuation familial</strong> (modèle sur pompiers.fr) : définir un point de rassemblement et s'exercer une fois par an.</p>
+            <h4>Le feu est chez moi et je ne peux pas l'éteindre</h4>
+            <ul>
+                <li>J'évacue, je <strong>ferme la porte</strong> de la pièce, je sors par l'issue la plus proche.</li>
+                <li>Je vais au point de rassemblement et je vérifie que personne ne manque.</li>
+                <li>J'appelle les secours (18 ou 112). <strong>Je ne retourne jamais dans la fumée.</strong></li>
+            </ul>
+            <h4>Le feu est ailleurs dans l'immeuble</h4>
+            <ul>
+                <li>Je <strong>reste chez moi</strong> : la fumée envahit couloirs et escaliers.</li>
+                <li>Je ferme la porte, je la mouille et je la calfeutre avec un linge humide.</li>
+                <li>Je me montre à la fenêtre pour que les pompiers me voient.</li>
+            </ul>
+            <div class="rd-alerte">La fumée tue plus que les flammes. « Là où il y a de la fumée, il ne faut pas aller. »</div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Les accidents de la vie courante</summary>
+            <p class="jsp-objectif">Objectif : connaître les risques de la vie courante et savoir donner des conseils de prévention.</p>
+            <p>Ce sont les accidents domestiques, scolaires, de sport et de loisirs, ou survenus près du domicile. En France, chaque année : <strong>1 personne sur 5</strong> est victime, <strong>20 000 décès</strong>, <strong>4,5 millions</strong> de passages aux urgences. C'est la <strong>1<sup>re</sup> cause de décès des enfants de moins de 15 ans</strong>, et il y en a plus à l'intérieur de la maison qu'à l'extérieur.</p>
+            <p><strong>Principales causes de décès</strong> : étouffement, intoxication, chute, brûlure, noyade, électrocution, suffocation, incendie.</p>
+            <table class="rd-table">
+                <tr><th>Pièce</th><th>Dangers</th><th>Prévention</th></tr>
+                <tr><td>Cuisine</td><td>Ventilation bouchée, liquides chauds, couteaux, appareils électriques, produits toxiques</td><td>Ne pas boucher les aérations, tourner les manches des casseroles, ranger hors de portée des enfants, débrancher pour nettoyer</td></tr>
+                <tr><td>Salon</td><td>Fenêtres et balcons, alcool, prises, cheminée, bougies</td><td>Protections aux fenêtres, cache-prises, pare-feu, bien éteindre bougies et cigarettes</td></tr>
+                <tr><td>Salle de bain</td><td>Eau trop chaude, appareils électriques, sol mouillé, médicaments, chauffe-eau défectueux</td><td>Régler le chauffe-eau, rien d'électrique près de l'eau, tapis, ranger les médicaments, faire vérifier le chauffage</td></tr>
+                <tr><td>Chambre</td><td>Cache-cache dans un placard, prises, lits superposés, cigarette au lit</td><td>Aérations, cache-prises, barrières sur les lits, ne jamais fumer au lit</td></tr>
+                <tr><td>Garage et jardin</td><td>Outils, produits inflammables, barbecue, jeux dans les arbres</td><td>Outils en bon état et protections, débrancher avant de réparer, pas d'alcool sur le barbecue, surveiller les enfants</td></tr>
+            </table>
+            <div class="rd-alerte"><strong>Piscine</strong> : ne jamais laisser un enfant seul, le surveiller, l'équiper d'une bouée adaptée, lui apprendre à nager, retirer les jouets de l'eau après la baignade.</div>
+            <p><strong>Loisirs à risque</strong> : baignade, activités nautiques et subaquatiques, montagne. <strong>Facteurs aggravants</strong> : foudre, froid, soleil et chaleur.</p>
+            <p>Sois acteur de ta sécurité et aide ton entourage à repérer les dangers chez lui.</p>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 2 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE). Le dossier contient aussi une vidéo (non reprise ici).</p>
+    </div>
+
+    <div id="jsp2-od" class="module jsp-a2">
+        <button class="back-btn" onclick="showModule('jsp2-menu')">← Retour JSP 2</button>
+        <h2>🛠️ JSP 2 – Opérations diverses</h2>
+        <div class="jsp-bandeau"><span>JSP 2</span><small>Module Opérations diverses · 2 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · Les matériels d'épuisement et d'assèchement</summary>
+            <p class="jsp-objectif">Objectif : connaître et mettre en œuvre le matériel d'épuisement électrique.</p>
+            <p>Les <strong>opérations diverses</strong> sont toutes les interventions qui ne relèvent ni du secours à personne ni de l'incendie.</p>
+            <p><strong>Inondations</strong> : orages violents, fuite de canalisation, robinet ouvert… La mission : <strong>parer à l'urgence en supprimant la cause</strong> et éviter l'aggravation.</p>
+            <ul>
+                <li><strong>Risques</strong> : asphyxie (gaz d'échappement), noyade (trou caché), effondrement, électrisation.</li>
+                <li><strong>Volume d'eau</strong> = longueur × largeur × hauteur (en m³). Il détermine le matériel.</li>
+            </ul>
+            <p><strong>Reconnaissance d'abord</strong> : couper l'électricité (ou protéger ce qui doit rester sous tension), repérer les locaux touchés, trouver et supprimer la cause, prioriser (assèchement, mise à l'abri), choisir les moyens.</p>
+            <p><strong>Pompes électriques</strong> (caves, vides sanitaires) : toujours dans l'eau quand elles tournent ; pas posées à même le sol ; portées par la poignée ; débranchées avant toute manipulation ; tuyau de refoulement avec le moins de coudes possible ; amarrées avec une commande. Il existe aussi des pompes hydrauliques et thermiques.</p>
+            <div class="rd-alerte"><strong>Eau + électricité</strong> : boîtiers étanches, courant pris chez le voisin ou groupe électrogène, câbles vérifiés, fiche de terre présente.</div>
+            <p>Autres matériels : aspirateur à eau, écopes et seaux, balai raclette, collecteur.</p>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('epuisement')">🧮 Calcul d'épuisement de volume</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Les matériels électriques portatifs (éclairage et groupes électrogènes)</summary>
+            <p class="jsp-objectif">Objectif : connaître et mettre en œuvre le matériel électrique collectif.</p>
+            <p>L'<strong>éclairage</strong> facilite le travail et augmente la sécurité : la nuit, dans les locaux sombres ou quand l'électricité a été coupée. Le COS y porte une attention particulière.</p>
+            <ul>
+                <li><strong>Éclairage individuel</strong> : lampes ATEX (utilisables en atmosphère explosive).</li>
+                <li><strong>Éclairage collectif</strong> : projecteurs, ballons éclairants.</li>
+                <li><strong>Groupes électrogènes</strong> : portable, remorquable, cellule éclairage (CEVAR).</li>
+            </ul>
+            <div class="rd-alerte">Groupe <strong>toujours à l'extérieur</strong> (gaz d'échappement), plein <strong>moteur arrêté</strong>, <strong>mise à la terre</strong>. Ne pas manipuler un projecteur allumé. Attention aux eaux d'extinction : électricité et humidité ne font pas bon ménage.</div>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 2 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE).</p>
+    </div>
+
+    <!-- ============ JSP 3 – 3e année (orange) ============ -->
+    <div id="jsp3-menu" class="module jsp-a3">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🎓 JSP 3 – 3<sup>e</sup> année</h2>
+        <div class="jsp-bandeau"><span>JSP 3</span><small>3<sup>e</sup> cycle de formation · couleur orange</small></div>
+        <p style="text-align: center;">Les cours de la 3<sup>e</sup> année, rangés en 3 modules. Touche un cours pour l'ouvrir.</p>
+
+        <div class="rd-tuiles jsp-tuiles">
+            <button onclick="showModule('jsp3-incendie')"><b>🔥 Incendie</b><span>Fumées, ARI, aides aux secours, PEI, agents extincteurs, binômes, échelles à crochets, phases du feu, hydraulique, explosimétrie, sauvetages LSPCC</span></button>
+            <button onclick="showModule('jsp3-transverse')"><b>🧭 Transverse</b><span>SDIS 34, hygiène de vie, stress et CUMP, radio</span></button>
+            <button onclick="showModule('jsp3-od')"><b>🛠️ Opérations diverses</b><span>Ascenseurs, épuisement hydraulique et thermique</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les 4 années de JSP</h3>
+            <div class="rd-tuiles jsp-annees">
+                <button class="jsp-a1" onclick="showModule('jsp1-menu')"><b>JSP 1</b><span>Blanc</span></button>
+                <button class="jsp-a2" onclick="showModule('jsp2-menu')"><b>JSP 2</b><span>Jaune</span></button>
+                <button class="jsp-a3" onclick="showModule('jsp3-menu')"><b>JSP 3</b><span>Orange</span></button>
+                <button class="jsp-a4" onclick="showModule('jsp4-menu')"><b>JSP 4</b><span>Vert</span></button>
+            </div>
+        </div>
+
+        <p class="rd-source">📚 Supports de cours JSP – SDIS 34 (conception des diaporamas : Lieutenant Luc BEHAGUE). Résumés sans les photos ni les schémas des diaporamas.</p>
+    </div>
+
+    <div id="jsp3-incendie" class="module jsp-a3">
+        <button class="back-btn" onclick="showModule('jsp3-menu')">← Retour JSP 3</button>
+        <h2>🔥 JSP 3 – Incendie</h2>
+        <div class="jsp-bandeau"><span>JSP 3</span><small>Module Incendie · 11 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · Les risques liés à la toxicité des fumées</summary>
+            <p class="jsp-objectif">Objectif : connaître les risques liés aux fumées d'incendie.</p>
+            <p>La combustion est plus ou moins complète selon le combustible et l'oxygène disponible. Les deux dangers principaux : le <strong>flux thermique</strong> et le <strong>flux toxique</strong> (gaz de combustion et de pyrolyse). Toxiques courants : CO, CO₂, oxydes d'azote, composés de chlore, fluor, soufre et cyanure, sans oublier les <strong>suies</strong>.</p>
+            <table class="rd-table">
+                <tr><th>Phénomène</th><th>Définition</th></tr>
+                <tr><td>Absorption</td><td>Un solide ou un liquide retient une substance.</td></tr>
+                <tr><td>Adsorption</td><td>Phénomène de surface : des gaz ou des liquides se fixent sur un support. Dépend de sa porosité.</td></tr>
+                <tr><td>Désorption</td><td>L'inverse : le support relâche la substance, tout de suite ou plus tard (selon la volatilité et la température).</td></tr>
+            </table>
+            <p>Les <strong>suies</strong> contiennent des <strong>HAP</strong> (hydrocarbures aromatiques polycycliques) qui s'adsorbent très facilement. Les EPI, les outils et les matériaux se chargent de toxiques, puis les relâchent ou les transfèrent par contact.</p>
+            <ul>
+                <li><strong>Inhalation</strong> : la voie principale. Les microparticules (1 millionième de mètre) et les nanoparticules (1 milliardième de mètre) vont loin dans l'organisme.</li>
+                <li><strong>Ingestion</strong> : en buvant ou en mangeant pendant les pauses avec les mains sales.</li>
+                <li><strong>Peau</strong> : favorisée par la chaleur du corps, la transpiration dans les EPI, la peau humide. Le visage et le cou sont les plus sensibles.</li>
+            </ul>
+            <p>Le risque s'apprécie selon la <strong>fréquence</strong>, l'<strong>intensité</strong> et la <strong>durée</strong> de l'exposition (feux, et formations en feu réel). Les moments de transfert : déblai, nettoyage sur place, trajet retour, pauses, reconditionnement.</p>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('jsp4-incendie')">JSP 4 : préconisations contre les fumées</button> <button onclick="showModule('rdeb-apres')">Après l'engagement (RDEB)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · L'ARI : règles avant, pendant et après l'engagement</summary>
+            <p class="jsp-objectif">Objectif : connaître les règles de base de l'engagement sous ARI.</p>
+            <h4>Avant</h4>
+            <ul>
+                <li>Vérifier l'état du masque avant de capeler ; ne jamais échanger les masques entre types d'appareils.</li>
+                <li><strong>Ne pas entrer</strong> en zone à risque avec moins de <strong>180 bar</strong> (bouteille 200 bar) ou moins de <strong>280 bar</strong> (bouteille 300 bar).</li>
+                <li>Vérifier que le sifflet se déclenche à l'ouverture de la bouteille.</li>
+                <li>Convenir d'un code d'alerte (sonore, filaire, radio).</li>
+                <li>Capeler à l'air frais, hors de la zone à risque, et contrôler l'étanchéité du masque.</li>
+            </ul>
+            <h4>Pendant : 3 principes</h4>
+            <ol>
+                <li><strong>Enregistrement et surveillance</strong> : le binôme engagé est enregistré ; on travaille toujours en binôme.</li>
+                <li><strong>Communication</strong> : le binôme a un moyen de communication.</li>
+                <li><strong>Itinéraire de repli</strong> facile à retrouver (ligne de vie s'il n'y a pas de repère).</li>
+            </ol>
+            <h4>Après</h4>
+            <ul>
+                <li><strong>Matériel</strong> : nettoyer et contrôler les masques, remplir les bouteilles et vérifier la pression, plomber et remettre bouchons et plaques, ranger, rendre compte de toute indisponibilité. Tout matériel agressé (chimique ou thermique) est retiré et contrôlé.</li>
+                <li><strong>Personnel</strong> : boire avant et après l'effort, repos adapté à l'effort fourni, hygiène (douche, vêtements propres).</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdeb-autonomie')">Autonomie & enregistrement (RDEB)</button> <button onclick="showModule('ari')">🧮 Calcul d'autonomie ARI</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Les moyens facilitant l'action des secours</summary>
+            <p class="jsp-objectif">Objectif : connaître les installations et matériels qui aident les sapeurs-pompiers.</p>
+            <ul>
+                <li><strong>Plan ETARE</strong> (établissement répertorié) : pour les établissements à risque important, avec des symboles communs à tous.</li>
+                <li><strong>Plan d'intervention</strong> affiché à chaque entrée : sous-sol, rez-de-chaussée et chaque étage, avec dégagements, espaces d'attente sécurisés, cloisonnements, moyens d'extinction et d'alarme, coupures des fluides et de l'énergie, locaux techniques et à risques, commandes de sécurité.</li>
+                <li><strong>Tours d'incendie</strong> : escaliers protégés, faciles d'accès depuis l'extérieur, marches antidérapantes, desservant tous les niveaux, avec accès vers l'extérieur en partie haute et une colonne sèche ou en charge.</li>
+                <li><strong>Colonne sèche ou en charge</strong> : long tuyau rigide qui traverse le bâtiment de bas en haut.</li>
+                <li><strong>Trémies d'attaque</strong> : trappes pour attaquer un feu de sous-sol.</li>
+                <li><strong>Raccord ZAG</strong> : au bout des « gaines pompiers », pour ventiler et évacuer les fumées.</li>
+                <li><strong>Voies échelles</strong> : largeur utile de 4 m, aire de stationnement d'au moins 10 m.</li>
+            </ul>
+            <p><strong>Matériels</strong> : échelles, passerelles, outils de déblai et de forcement (manuels, électriques, thermiques), explosimètre, détecteur de CO, caméra thermique, thermomètre infrarouge.</p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · La mise en œuvre des dispositifs d'alimentation (DECI et PEI)</summary>
+            <p class="jsp-objectif">Objectif : connaître le fonctionnement et l'utilisation des hydrants.</p>
+            <p>La <strong>DECI</strong> assure l'alimentation en eau des moyens du SDIS grâce à des points d'eau identifiés. Elle est définie à partir de l'analyse des risques (dans la continuité du SDACR).</p>
+            <table class="rd-table">
+                <tr><th>Risque courant</th><th>Exemple</th><th>Besoin en eau (indicatif)</th></tr>
+                <tr><td>Faible</td><td>Bâtiment isolé, peu de combustible, pas de propagation</td><td>≥ 30 m³ en 1 h ou instantanés</td></tr>
+                <tr><td>Ordinaire</td><td>Combustible modéré, propagation faible à moyenne</td><td>60 m³ en 1 h, jusqu'à 120 m³ en 2 h</td></tr>
+                <tr><td>Important</td><td>Beaucoup de combustible et/ou forte propagation</td><td>≥ 120 m³ en 2 h, plusieurs sources</td></tr>
+            </table>
+            <p><strong>Risques particuliers</strong> (ERP, patrimoine, industrie, agriculture) : étude au cas par cas. On prévoit l'eau pour <strong>2 heures</strong> environ : attaque, prévention des accidents, protection des intervenants et des voisins, limitation de la propagation. Les valeurs sont ajustées par chaque département.</p>
+            <p><strong>Un PEI (poteau ou bouche d'incendie) doit</strong> : être raccordé à un réseau sous pression, fournir son débit pendant au moins 2 h, avec une pression de <strong>1 à 16 bar</strong>, être incongelable (arrivée à 1 m sous terre au moins), visible et signalé.</p>
+            <ul>
+                <li><strong>Poteau</strong> : vanne d'ouverture, volant de manœuvre, bouchons de 100 et de 65, vidange de la colonne, clapet.</li>
+                <li><strong>Bouche</strong> : couvercle métallique, carré de manœuvre, raccord mâle de 100 mm, vidange.</li>
+                <li><strong>Couleurs des poteaux</strong> : rouge = sous pression permanente ; bleu = nécessite une aspiration ; jaune = précautions particulières (pression). Certains poteaux ne sont pas utilisables par les sapeurs-pompiers.</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdmi-pei')">Points d'eau incendie (PEI)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Les agents extincteurs et les procédés d'extinction</summary>
+            <p class="jsp-objectif">Objectif : connaître les agents extincteurs et leur fonctionnement.</p>
+            <table class="rd-table">
+                <tr><th>Classe</th><th>Feu de…</th></tr>
+                <tr><td>A</td><td>Solides qui font des braises</td></tr>
+                <tr><td>B</td><td>Liquides ou solides qui fondent</td></tr>
+                <tr><td>C</td><td>Gaz</td></tr>
+                <tr><td>D</td><td>Métaux</td></tr>
+                <tr><td>F</td><td>Huiles et graisses de cuisson</td></tr>
+            </table>
+            <table class="rd-table">
+                <tr><th>Agent</th><th>Action</th><th>Feux</th></tr>
+                <tr><td>Eau</td><td>Refroidit (agit sur l'énergie)</td><td>A</td></tr>
+                <tr><td>Mousses</td><td>Étouffent, isolent, refroidissent</td><td>B</td></tr>
+                <tr><td>Poudres (ABC, BC, D)</td><td>Ralentissent la réaction chimique</td><td>A, B, C, D selon la poudre</td></tr>
+                <tr><td>Gaz (CO₂, azote, argon)</td><td>Étouffent (agissent sur l'oxygène)</td><td>Postes électriques, locaux informatiques</td></tr>
+            </table>
+            <p><strong>Procédés d'extinction</strong> :</p>
+            <ul>
+                <li><strong>Refroidissement</strong> : faire baisser la température.</li>
+                <li><strong>Étouffement</strong> : empêcher l'air d'arriver.</li>
+                <li><strong>Inhibition</strong> : bloquer la réaction chimique.</li>
+                <li><strong>Soufflage</strong> : couper la flamme des vapeurs inflammables.</li>
+                <li><strong>Coupure d'alimentation</strong> : supprimer le combustible (fermer une vanne de gaz).</li>
+                <li><strong>Faire la part du feu</strong> : choisir ce qu'on laisse brûler et ce qu'on sauve.</li>
+                <li><strong>Dispersion</strong> : étaler les matériaux en feu pour que l'agent pénètre mieux.</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('extincteurs')">🧯 Extincteurs</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · Les différents binômes, le porte-lance et le double porte-lance</summary>
+            <p class="jsp-objectif">Objectif : connaître les binômes et les devoirs du porte-lance (RDMI SDIS 34, mars 2022).</p>
+            <p><strong>Le binôme</strong> exécute les ordres et consignes de sécurité du chef d'agrès, rend compte, contrôle les EPI de son coéquipier, reste à son engin s'il n'a pas de mission et <strong>entre toujours à deux en zone d'exclusion</strong>. Le COS met en place un <strong>binôme de sécurité</strong> dès que possible.</p>
+            <table class="rd-table">
+                <tr><th>Binôme</th><th>Mission</th></tr>
+                <tr><td>Reconnaissance</td><td>Reconnaît sous ARI et indique au chef d'agrès les passages, les difficultés et les victimes</td></tr>
+                <tr><td>Sauvetage</td><td>Sauve ou met en sécurité les personnes ou les animaux</td></tr>
+                <tr><td>Sécurité</td><td>Protège l'action des premiers binômes avec une lance en eau, n'intervient que si nécessaire ou sur ordre</td></tr>
+                <tr><td>Appui et soutien</td><td>Prêt à intervenir sur ordre si un binôme a un problème</td></tr>
+            </table>
+            <h4>Le porte-lance</h4>
+            <ul>
+                <li>Respecte le débit commandé ; n'augmente que sur ordre.</li>
+                <li>Se place au niveau du feu ou un peu au-dessus, pour atteindre la <strong>base des flammes</strong>.</li>
+                <li>Attaque d'abord le foyer principal, du côté le plus menacé, puis les foyers secondaires.</li>
+                <li>Se rapproche quand son jet se disperse avant d'atteindre les flammes.</li>
+                <li>Local fermé : n'ouvre la porte <strong>qu'avec de l'eau à la lance</strong>, près du sol, à l'abri des retours de flammes.</li>
+                <li>Jet diffusé d'abord vers le <strong>haut des flammes</strong>, puis descend vers la base.</li>
+                <li>Utilise seulement l'eau nécessaire ; ferme la lance pour se déplacer ou quand il ne voit plus le feu.</li>
+                <li>Ne vise pas toujours le même point ; noircit les bois ; évite les vitres et les objets fragiles.</li>
+                <li>Prévient son chef de secteur s'il change de place et reste en liaison avec ses voisins.</li>
+            </ul>
+            <h4>Le double porte-lance</h4>
+            <ul>
+                <li>Aide le porte-lance et le relève si besoin.</li>
+                <li>Fait tomber dans le foyer ce qui menace de s'écrouler.</li>
+                <li>Veille à la sécurité du binôme.</li>
+                <li>Dégage les obstacles (porte à ouvrir, meuble à déplacer).</li>
+                <li>Assure la liaison avec les voisins et le chef de secteur.</li>
+            </ul>
+            <div class="rd-astuce">Le binôme est <strong>indissociable</strong>. 1 binôme = 1 action ; il peut ensuite recevoir une autre mission sur ordre.</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdmi-binomes')">Binômes & armement (RDMI)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7 · Les échelles à crochets</summary>
+            <p class="jsp-objectif">Objectif : évoluer sur une échelle à crochets en toute sécurité (RDEP juin 2023).</p>
+            <p><strong>Caractéristiques</strong> : 4,2 m déployée, 2,4 m reployée, 14 échelons, 15 kg maximum, échelons et crochets résistants à 300 kg, <strong>aucune résistance horizontale</strong>. Pièces : crochet, pointes, montants, échelons, entretoise, verrouillage, anti-dérapant, écartement.</p>
+            <p>On l'utilise quand les communications existantes sont impraticables et qu'une échelle à coulisse ou un MEA n'est pas possible ou a atteint ses limites.</p>
+            <ul>
+                <li>Mêmes précautions que pour toutes les échelles : gestes et postures, transport bas, câbles électriques, vent, rayonnement (fusion à 660 °C).</li>
+                <li>Elle s'appuie sur ses <strong>crochets</strong> ou sur ses <strong>pointes</strong>.</li>
+                <li><strong>Avant tout engagement, un intervenant la teste en se suspendant dessus.</strong></li>
+                <li>En bas, elle est plaquée contre la façade ou tenue par un SP placé derrière (jambes en appui, bras tendus sur les montants) pour éviter le ballant. En haut, un SP déjà à l'étage peut tenir les crochets si l'appui glisse.</li>
+                <li>Toujours <strong>3 points de contact</strong>.</li>
+            </ul>
+            <p><strong>Monter</strong> : à la force des bras (mains le plus haut possible sur les montants, jusqu'à poser le pied sur l'échelon du bas) ou en appuyant une échelle télescopique dessus. Monter sans à-coups, pied légèrement engagé, genoux à l'extérieur, corps au plus près, mains le long des montants. Accès à l'étage par enroulement.</p>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('echelles-crochets')">Échelle à crochets</button> <button onclick="showModule('echelles-proc-crochets')">Procédures – crochets</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>8 · Les phases de développement du feu et les principes d'extinction</summary>
+            <p class="jsp-objectif">Objectif : connaître les phases du feu et les principes de maîtrise et d'extinction.</p>
+            <p>Un incendie est un feu qui n'est pas maîtrisé, dans l'espace et dans le temps. S'il a assez de combustible et d'oxygène, il grandit très vite (de façon exponentielle).</p>
+            <table class="rd-table">
+                <tr><th>Phase</th><th>Ce qui se passe</th></tr>
+                <tr><td>Feu naissant</td><td>Chaleur modérée, peu de fumée. Le feu est <strong>limité par le combustible</strong>.</td></tr>
+                <tr><td>Croissance</td><td>Puissance, température et fumées augmentent. Dépend des matériaux, du bâtiment et de la <strong>ventilation</strong>.</td></tr>
+                <tr><td>Pleinement développé</td><td>Tous les combustibles de la pièce brûlent (après un embrasement généralisé). Le feu est <strong>limité par la ventilation</strong>.</td></tr>
+                <tr><td>Régression</td><td>Les matériaux finissent de brûler, la puissance baisse. Les fumées restent dangereuses.</td></tr>
+            </table>
+            <ul>
+                <li><strong>Feu limité par le combustible (FLC)</strong> : bien ventilé, il atteint sa puissance maximale.</li>
+                <li><strong>Feu limité par la ventilation (FLV)</strong> : s'il reste confiné, il peut presque s'éteindre seul ; si on ouvre, il peut repartir brutalement. Une pièce meublée en plein développement est presque toujours FLV.</li>
+            </ul>
+            <h4>Maîtriser le feu</h4>
+            <ul>
+                <li><strong>Agir sur l'arrivée d'air</strong> : moins d'oxygène, moins de feu. Gérer les portes et fenêtres (anti-ventilation) stabilise la situation.</li>
+                <li><strong>Agir sur les fumées</strong> : les évacuer (moins d'intoxication, meilleure visibilité, moins de propagation), les inerter avec de la vapeur d'eau, les refroidir.</li>
+                <li><strong>Agir sur le combustible</strong> : en réduire la quantité, le refroidir pour diminuer les gaz de pyrolyse.</li>
+            </ul>
+            <p>À la lance, on joue sur <strong>la forme du jet</strong> (fines gouttes ou paquets d'eau), <strong>l'angle et le geste</strong> (T, Z, O, 8) et <strong>la quantité d'eau</strong> (débit, durée d'ouverture).</p>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdeb-lecture')">Lecture du feu (RDEB)</button> <button onclick="showModule('fire')">🧮 Puissance du feu</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>9 · Notions élémentaires d'hydraulique</summary>
+            <p class="jsp-objectif">Objectif : connaître les lois des pertes de charge et les calculer sur un établissement.</p>
+            <ul>
+                <li><strong>1 bar</strong> = la pression d'une colonne d'eau de <strong>10,33 m</strong> sur 1 cm². La pression atmosphérique vaut 1 013,25 hPa.</li>
+                <li><strong>Pression statique</strong> : lances fermées. <strong>Pression dynamique</strong> : eau en mouvement.</li>
+                <li><strong>P</strong> (pression, en bar) = force ÷ surface ; <strong>Q</strong> (débit) en L/min ou m³/h ; <strong>J</strong> (perte de charge) en bar pour 100 m.</li>
+            </ul>
+            <p>Les <strong>pertes de charge</strong> sont des pertes de pression dues aux frottements de l'eau contre les tuyaux et les pièces de jonction. Elles sont :</p>
+            <ul>
+                <li>proportionnelles au <strong>carré du débit</strong> (débit × 2 = pertes × 4) ;</li>
+                <li>proportionnelles à la <strong>longueur</strong> ;</li>
+                <li>d'autant plus faibles que le <strong>diamètre</strong> est grand ;</li>
+                <li>d'environ <strong>1 bar par pièce de jonction</strong> ;</li>
+                <li>et le dénivelé compte : <strong>+1 bar par 10 m de montée</strong>, −1 bar par 10 m de descente.</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Tuyau</th><th>Débit</th><th>Perte pour 20 m</th></tr>
+                <tr><td rowspan="2">Ø 25</td><td>58 L/min</td><td>1,7 bar</td></tr>
+                <tr><td>150 L/min</td><td>2,2 bar</td></tr>
+                <tr><td rowspan="2">Ø 45</td><td>250 L/min</td><td>0,3 bar</td></tr>
+                <tr><td>500 L/min</td><td>1,2 bar</td></tr>
+                <tr><td rowspan="3">Ø 70</td><td>500 L/min</td><td>0,11 bar</td></tr>
+                <tr><td>1 000 L/min</td><td>0,44 bar</td></tr>
+                <tr><td>2 000 L/min</td><td>1,8 bar</td></tr>
+                <tr><td rowspan="2">Ø 110</td><td>1 000 L/min</td><td>0,06 bar</td></tr>
+                <tr><td>2 000 L/min</td><td>0,24 bar</td></tr>
+            </table>
+            <p>Le <strong>conducteur</strong> est le conseiller technique du chef d'agrès : il doit connaître le dénivelé (ou la colonne sèche), le débit aux lances, la longueur et le nombre de pièces de jonction.</p>
+            <div class="rd-astuce"><strong>Exemple</strong> : LDV 500 par l'extérieur au 4<sup>e</sup> étage, avec 40 m de Ø 45 et 40 m de Ø 70.<br>
+            Ø 45 : 2,4 bar + Ø 70 : 0,22 bar + division : 1 bar + pression à la lance : 6 bar + dénivelé 10 m : 1 bar = <strong>10,62 bar à la pompe</strong>.</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('pertes')">🧮 Calcul des pertes de charge</button> <button onclick="showModule('rdmi-hydraulique')">Hydraulique (RDMI)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>10 · L'explosimétrie et la coupure des fluides</summary>
+            <p class="jsp-objectif">Objectif : connaître les bases de l'explosimétrie, l'explosimètre et la coupure des fluides.</p>
+            <p>Une <strong>explosion</strong> se produit quand un gaz combustible, mélangé à l'air dans certaines proportions, rencontre une source d'inflammation ou de chaleur.</p>
+            <ul>
+                <li><strong>Sous la LIE</strong> (limite inférieure d'explosivité) : trop peu de gaz, le mélange ne brûle pas.</li>
+                <li><strong>Au-dessus de la LSE</strong> (limite supérieure) : trop de gaz, pas assez d'air.</li>
+                <li><strong>Entre les deux</strong> : c'est la plage d'explosivité, le mélange peut exploser.</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Gaz</th><th>LIE</th><th>LSE</th></tr>
+                <tr><td>Acétylène</td><td>1,5 %</td><td>82 %</td></tr>
+                <tr><td>Méthane (gaz de ville)</td><td>5 %</td><td>15 %</td></tr>
+                <tr><td>Butane</td><td>1,5 %</td><td>8,5 %</td></tr>
+                <tr><td>Propane</td><td>2,1 %</td><td>9,5 %</td></tr>
+                <tr><td>Hydrogène sulfuré (H₂S)</td><td>4,3 %</td><td>45,5 %</td></tr>
+                <tr><td>Hydrogène</td><td>4,1 %</td><td>75,6 %</td></tr>
+            </table>
+            <p>Le danger existe dès la LIE : l'<strong>explosimètre</strong> mesure de 0 à 100 % de la LIE. Précautions : piles chargées, orifices propres, pas d'eau dans l'appareil, l'allumer dans une zone sans gaz, tenir compte de la forme du local et de la <strong>densité du gaz</strong> : le méthane (0,55) monte, le propane (1,5) et le butane (2) descendent.</p>
+            <h4>Coupure des fluides</h4>
+            <p>Électricité, gaz de ville, eau, ventilation. Les pictogrammes des coupures sont souvent jaunes ou rouges et les organes de coupure souvent en façade, côté rue.</p>
+            <ul>
+                <li><strong>Gaz</strong> : fermé immédiatement par le chef d'agrès en cas d'incendie ou de fuite (dans la rue ou à l'étage). <strong>Les sapeurs-pompiers ne rouvrent jamais le gaz</strong> : c'est le rôle de GRDF.</li>
+                <li><strong>Électricité</strong> : coupure décidée par le chef d'agrès. Ne pas être en contact avec l'eau ou un conducteur, ni en atmosphère explosive.</li>
+                <li>Pas de coupure systématique dans les hôpitaux et les centres de soins.</li>
+            </ul>
+            <div class="rd-alerte">Le binôme attend toujours l'ordre de son <strong>chef d'agrès</strong>, et de personne d'autre, pour couper les fluides.</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('explosimetrie')">🧮 Explosimétrie</button> <button onclick="showModule('risques-gaz-menu')">Gaz</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>11 · Les sauvetages au moyen du LSPCC</summary>
+            <p class="jsp-objectif">Objectif : connaître la procédure de sauvetage par l'extérieur et en excavation.</p>
+            <p>Parfois, monter ou descendre la victime de quelques mètres suffit à la mettre en sécurité. En danger immédiat, on choisit la solution la plus simple.</p>
+            <table class="rd-table">
+                <tr><th></th><th>Par l'extérieur</th><th>Puits, fosses, excavations</th></tr>
+                <tr><td>Possibilité</td><td>Évacuation verticale (descente) d'une victime consciente ou non</td><td>Remontée verticale d'une victime consciente ou non ; le matériel classique peut compléter le lot</td></tr>
+                <tr><td>Limite</td><td>Hauteur maximale = longueur utile de la corde</td><td>Dénivelé maximal = longueur utile de la corde ; état de la victime</td></tr>
+            </table>
+            <div class="rd-alerte">En cas de doute sur l'air respirable dans une excavation : <strong>ARI</strong>. Difficulté technique ou victime gravement blessée : faire appel aux <strong>équipes spécialisées</strong>.</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('lspcc-emploi')">Emploi du LSPCC</button> <button onclick="showModule('lspcc-triangle')">Triangle & harnais</button></p>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 3 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE), conformes au RDMI SDIS 34 (mars 2022) et au RDEP Échelles portables (juin 2023).</p>
+    </div>
+
+    <div id="jsp3-transverse" class="module jsp-a3">
+        <button class="back-btn" onclick="showModule('jsp3-menu')">← Retour JSP 3</button>
+        <h2>🧭 JSP 3 – Transverse</h2>
+        <div class="jsp-bandeau"><span>JSP 3</span><small>Module Transverse · 4 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · L'organisation et les missions du SDIS 34</summary>
+            <p class="jsp-objectif">Objectif : connaître le fonctionnement et les missions du SDIS 34.</p>
+            <p>Les sapeurs-pompiers ont <strong>deux autorités</strong> :</p>
+            <ul>
+                <li>le <strong>président du conseil d'administration du SDIS (PCASDIS)</strong> : autorité de gestion (administration) ;</li>
+                <li>le <strong>préfet</strong> : autorité opérationnelle.</li>
+            </ul>
+            <p>Le <strong>directeur départemental (DDSIS)</strong> est à la fois directeur (gestion) et chef de corps (opérations).</p>
+            <table class="rd-table">
+                <tr><th>Instance ou document</th><th>Rôle</th></tr>
+                <tr><td>CASDIS (élu pour 3 ans)</td><td>Président, élus du département et des communes, représentants des SPP et SPV, avec le préfet, le DDSIS, le médecin-chef (DSSSM) et le président de l'union départementale</td></tr>
+                <tr><td>SDACR</td><td>Inventaire des risques du département et adaptation des moyens ; plans de recrutement, de formation et d'équipement. Arrêté par le préfet, révisé tous les 5 ans</td></tr>
+                <tr><td>Règlement opérationnel (RO)</td><td>Consignes opérationnelles et effectifs minimum : incendie 6 ou 8 SP, secours à personne 3 ou 4, autres missions 2 ou 3. Arrêté par le préfet</td></tr>
+                <tr><td>Règlement intérieur (RI)</td><td>Fonctionnement du corps et obligations de service. Arrêté par le PCASDIS</td></tr>
+            </table>
+            <p><strong>Organes consultatifs</strong> : CCDSPV (questions des volontaires, sauf discipline), CTP (organisation des services), CAP (avancements, mutations, sanctions des SPP), CATSIS (questions techniques et opérationnelles).</p>
+            <h4>Missions des SDIS (loi du 3 mai 1996)</h4>
+            <ul>
+                <li>Prévention, protection et lutte contre les incendies.</li>
+                <li>Prévention et évaluation des risques de sécurité civile.</li>
+                <li>Préparation des mesures de sauvegarde et organisation des moyens de secours.</li>
+                <li>Protection des personnes, des biens et de l'environnement.</li>
+                <li>Secours d'urgence aux victimes d'accidents, de sinistres ou de catastrophes, et leur évacuation.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · L'hygiène de vie</summary>
+            <p class="jsp-objectif">Objectif : adopter les bons comportements pour préserver son potentiel physique.</p>
+            <p>L'hygiène de vie, ce sont les bonnes habitudes qu'on choisit pour rester en bonne santé physique et mentale : sommeil, sport, alimentation, hygiène, et lutte contre le stress, le tabac, l'alcool et les infections sexuellement transmissibles.</p>
+            <ul>
+                <li><strong>Physique</strong> : oxygénation, hydratation, nutrition, activité physique, <strong>sommeil complet</strong>.</li>
+                <li><strong>Corporelle</strong> : se laver les mains souvent, une douche par jour minimum, sous-vêtements changés chaque jour, dents brossées, tenue propre et conforme.</li>
+                <li><strong>Alimentaire</strong> : une assiette équilibrée = <strong>50 % de légumes, 25 % de féculents, 25 % de protéines</strong>. Boire sans attendre d'avoir soif.</li>
+            </ul>
+            <h4>Les substances psychoactives</h4>
+            <p>Elles modifient la conscience, l'humeur et les pensées (produits légaux ou illégaux). À l'adolescence, on les découvre souvent par curiosité, et on en consomme souvent plusieurs.</p>
+            <table class="rd-table">
+                <tr><th>Produit</th><th>À retenir</th></tr>
+                <tr><td>Tabac</td><td>66 000 morts par an en France. On perd 2 à 3 ans de vie avec 10 cigarettes par jour, 5 à 7 ans avec 20, 8 à 10 ans avec 40.</td></tr>
+                <tr><td>Alcool</td><td>Accidents de la route, maladies comme la cirrhose.</td></tr>
+                <tr><td>Cannabis</td><td>Essayé en moyenne vers 15 ans. Abîme la mémoire, l'apprentissage, la vigilance et les réflexes ; avant 14 ans, peut altérer le cerveau ; fumée plus cancérigène que celle du tabac ; mauvais pour le cœur.</td></tr>
+            </table>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Préserver son potentiel psychologique (stress et CUMP)</summary>
+            <p class="jsp-objectif">Objectif : adopter les bons comportements pour préserver son équilibre psychique.</p>
+            <p>Le <strong>stress</strong> est une réaction normale d'alarme et de défense face à une menace. Chacun le vit différemment.</p>
+            <ul>
+                <li><strong>Ce qui stresse</strong> : un événement soudain, des destructions, des morts ou des blessures graves, beaucoup de victimes, des enfants ou des sapeurs-pompiers parmi les victimes, la pression des témoins et des médias ; la fatigue, l'attente, l'inconfort ; une mauvaise organisation.</li>
+                <li><strong>Stress positif</strong> : il mobilise l'énergie, concentre l'attention, pousse à agir et à décider vite.</li>
+                <li><strong>Stress négatif</strong> : gestes automatiques, fuite panique, sidération, agitation, crises de larmes, abattement, irritabilité.</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Quand</th><th>Que faire</th></tr>
+                <tr><td>Avant l'intervention</td><td>Bonne hygiène de vie, maîtrise des techniques, entraînement régulier</td></tr>
+                <tr><td>Pendant</td><td>Repérer les signes chez soi et chez ses coéquipiers ; repérer un événement potentiellement traumatisant ; savoir se mettre en retrait</td></tr>
+                <tr><td>Après</td><td>S'appuyer sur le groupe, en parler à froid au centre ; le service de santé (SSSM) repère et soutient</td></tr>
+            </table>
+            <p>La <strong>CUMP 34</strong> (cellule d'urgence médico-psychologique) prend en charge rapidement les blessés psychiques lors des situations d'urgence collective. Elle suit aussi les sapeurs-pompiers choqués. On la sollicite par un membre du SSSM de son centre ou d'un centre voisin.</p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Les moyens radio</summary>
+            <p class="jsp-objectif">Objectif : utiliser un poste radio, connaître la procédure, l'alphabet et les chiffres.</p>
+            <table class="rd-table">
+                <tr><th>Station</th><th>Indicatif</th><th>Exemple</th></tr>
+                <tr><td>Fixe (centre de secours)</td><td>« Fixe » + nom du CIS</td><td>« Fixe FLORENSAC »</td></tr>
+                <tr><td>Mobile (véhicule)</td><td>Engin + n° + CIS</td><td>« FPT 032 FLORENSAC »</td></tr>
+                <tr><td>Portative</td><td>Fonction + CIS</td><td>« Chef de groupe FLORENSAC »</td></tr>
+                <tr><td>Directrice</td><td>CODIS + n° du département</td><td>« CODIS 34 » : fait respecter la discipline radio et fait les essais quotidiens</td></tr>
+                <tr><td>Autorités</td><td>Nom + département</td><td>« LANCELOT 34 » (directeur), « HIPPOCRATE 34 » (médecin-chef)</td></tr>
+            </table>
+            <p><strong>ANTARES</strong> (Adaptation nationale des transmissions aux risques et aux secours) regroupe les réseaux départementaux : voix et données (statuts, géolocalisation). Mode <strong>relayé</strong> (conférences 2xx) ou <strong>direct</strong> (canaux tactiques 6xx). Postes : BER (boîtier émetteur radio), P2G, TPH 700.</p>
+            <h4>Alphabet international (OACI), obligatoire pour épeler</h4>
+            <p>Alpha · Bravo · Charlie · Delta · Écho · Fox-trot · Golf · Hôtel · India · Juliet · Kilo · Lima · Mike · November · Oscar · Papa · Québec · Roméo · Sierra · Tango · Uniform · Victor · Whisky · X-ray · Yankee · Zulu</p>
+            <table class="rd-table">
+                <tr><th>Chiffre</th><th>On dit</th><th>Chiffre</th><th>On dit</th></tr>
+                <tr><td>0</td><td>zéro comme rien</td><td>5</td><td>cinq comme trois et deux</td></tr>
+                <tr><td>1</td><td>un tout seul</td><td>6</td><td>six comme deux fois trois</td></tr>
+                <tr><td>2</td><td>deux comme un et un</td><td>7</td><td>sept comme quatre et trois</td></tr>
+                <tr><td>3</td><td>trois comme deux et un</td><td>8</td><td>huit comme deux fois quatre</td></tr>
+                <tr><td>4</td><td>quatre comme deux fois deux</td><td>9</td><td>neuf comme cinq et quatre</td></tr>
+            </table>
+            <p><strong>Termes de procédure</strong> : « parlez », « répétez », « je répète », « collationnez »… ; « je vous reçois fort et clair ».</p>
+            <p><strong>Un message</strong> = l'en-tête (groupe horaire, qui appelle, qui est appelé, n°), le corps (« je suis… je vois… je demande… ») et le final (on rend la parole).</p>
+            <div class="rd-alerte"><strong>Urgence</strong> : « CODIS 34 du CCF 66 FLORENSAC – URGENT, URGENT, URGENT ». Le CODIS impose alors : « À toutes les stations du CODIS – SILENCE RADIO ».</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdsmes-detresse')">Message & appel de détresse</button></p>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 3 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE). Chiffres donnés à la date des diaporamas.</p>
+    </div>
+
+    <div id="jsp3-od" class="module jsp-a3">
+        <button class="back-btn" onclick="showModule('jsp3-menu')">← Retour JSP 3</button>
+        <h2>🛠️ JSP 3 – Opérations diverses</h2>
+        <div class="jsp-bandeau"><span>JSP 3</span><small>Module Opérations diverses · 2 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · La typologie des ascenseurs</summary>
+            <p class="jsp-objectif">Objectif : connaître les types d'ascenseurs et leur fonctionnement (FOD n° 14 Ascenseur, juin 2019).</p>
+            <p>Un <strong>ascenseur</strong> transporte des personnes ; un <strong>monte-charge</strong> ne transporte que des charges, jamais de personnes.</p>
+            <table class="rd-table">
+                <tr><th>Type</th><th>Fonctionnement</th><th>À savoir</th></tr>
+                <tr><td>Traction électrique avec local des machines</td><td>Un moteur entraîne une poulie qui déplace les câbles de la cabine et de son contrepoids</td><td>Le plus répandu. Local souvent en haut : tableau électrique, limiteur de vitesse, treuil (volant de manœuvre, frein et son levier)</td></tr>
+                <tr><td>Traction électrique sans local des machines</td><td>Le treuil est dans la gaine ; courroies plates en acier à la place des câbles</td><td>Armoire de manœuvre sur la porte palière du dernier niveau (instructions, commande, coupure force)</td></tr>
+                <tr><td>Hydraulique</td><td>Un moteur entraîne une pompe qui envoie de l'huile sous pression dans un vérin</td><td>Pour les faibles hauteurs. Levier de pompe manuelle et purge</td></tr>
+            </table>
+            <p><strong>Autres éléments</strong> : la gaine (guides, câbles, contrepoids), la cuvette (amortisseurs, renvoi du limiteur de vitesse), les <strong>parachutes</strong> qui bloquent la cabine en cas de survitesse.</p>
+            <div class="rd-alerte">Chaque installation est différente : suivre les <strong>instructions de dépannage du fabricant</strong> affichées dans le local des machines.</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('jsp4-od')">JSP 4 : procédure ascenseur bloqué</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Le matériel d'épuisement hydraulique et thermique</summary>
+            <p class="jsp-objectif">Objectif : mettre en œuvre le matériel d'épuisement hydraulique et thermique.</p>
+            <p><strong>Matériels hydrauliques</strong> (alimentés par un engin-pompe, pour vider caves, puits et réservoirs, ou remplir un engin) : <strong>hydro-éjecteur</strong>, <strong>vide-cave</strong>, <strong>turbopompe</strong> (eau propre).</p>
+            <ol>
+                <li>Établir la ligne d'évacuation, puis la ligne d'alimentation, et les raccorder sur l'appareil.</li>
+                <li>Descendre l'appareil avec des commandes.</li>
+                <li>Prendre un repère du niveau d'eau.</li>
+                <li>Mettre en pression ; déplacer l'appareil vers un point plus bas si besoin.</li>
+                <li>À la fin : couper l'alimentation, débrancher l'alimentation puis le refoulement, nettoyer.</li>
+            </ol>
+            <p><strong>Motopompes thermiques</strong> (pompe + amorçage + moteur essence ou diesel) : <strong>250 à 1 000 L/min</strong> sous faible pression (environ 4 bar). Portable, flottante ou remorquable.</p>
+            <ol>
+                <li>Établir l'aspiration (tuyaux semi-rigides et crépine) ou poser la flottante sur l'eau.</li>
+                <li>Raccorder le refoulement (sortie à gueule bée) et démarrer.</li>
+                <li>À la fin : arrêter, démonter l'aspiration, nettoyer.</li>
+            </ol>
+            <div class="rd-alerte">Les pompes thermiques restent <strong>toujours à l'extérieur</strong> : les gaz d'échappement intoxiquent (CO).</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('epuisement')">🧮 Calcul d'épuisement de volume</button></p>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 3 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE), conformes à la FOD n° 14 Ascenseur (juin 2019).</p>
+    </div>
+
+    <!-- ============ JSP 4 – 4e année (vert) ============ -->
+    <div id="jsp4-menu" class="module jsp-a4">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🎓 JSP 4 – 4<sup>e</sup> année</h2>
+        <div class="jsp-bandeau"><span>JSP 4</span><small>4<sup>e</sup> cycle de formation · couleur verte</small></div>
+        <p style="text-align: center;">Les cours de la 4<sup>e</sup> année, rangés en 4 modules. Touche un cours pour l'ouvrir.</p>
+
+        <div class="rd-tuiles jsp-tuiles">
+            <button onclick="showModule('jsp4-incendie')"><b>🔥 Incendie</b><span>Traces et indices, sauvetage, risques, mesures conservatoires, fumées, phénomènes thermiques, extinction, prévention, reconnaissance</span></button>
+            <button onclick="showModule('jsp4-transverse')"><b>🧭 Transverse</b><span>Condition physique (ICP), risque routier, prise de garde</span></button>
+            <button onclick="showModule('jsp4-citoyen')"><b>🤝 Engagement citoyen</b><span>Feux de forêts, inondations, noyades</span></button>
+            <button onclick="showModule('jsp4-od')"><b>🛠️ Opérations diverses et animalières</b><span>Ascenseur bloqué, animaux, hyménoptères, calage, forcement, bâchage, tronçonneuse</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les 4 années de JSP</h3>
+            <div class="rd-tuiles jsp-annees">
+                <button class="jsp-a1" onclick="showModule('jsp1-menu')"><b>JSP 1</b><span>Blanc</span></button>
+                <button class="jsp-a2" onclick="showModule('jsp2-menu')"><b>JSP 2</b><span>Jaune</span></button>
+                <button class="jsp-a3" onclick="showModule('jsp3-menu')"><b>JSP 3</b><span>Orange</span></button>
+                <button class="jsp-a4" onclick="showModule('jsp4-menu')"><b>JSP 4</b><span>Vert</span></button>
+            </div>
+        </div>
+
+        <p class="rd-source">📚 Supports de cours JSP – SDIS 34 (conception des diaporamas : Lieutenant Luc BEHAGUE). Résumés sans les photos ni les schémas des diaporamas.</p>
+    </div>
+
+    <div id="jsp4-incendie" class="module jsp-a4">
+        <button class="back-btn" onclick="showModule('jsp4-menu')">← Retour JSP 4</button>
+        <h2>🔥 JSP 4 – Incendie</h2>
+        <div class="jsp-bandeau"><span>JSP 4</span><small>Module Incendie · 9 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · La préservation des traces et indices (PTI)</summary>
+            <p class="jsp-objectif">Objectif : savoir se comporter sur une intervention qui peut mener à une enquête judiciaire.</p>
+            <p>Préserver les traces laissées par le feu aide la justice, les assureurs et les enquêteurs à trouver les <strong>causes et circonstances</strong> de l'incendie. La réussite d'une enquête peut dépendre d'un détail.</p>
+            <p>Sur le lieu d'un crime, il est <strong>interdit</strong> de modifier les lieux ou de faire des prélèvements avant l'enquête, <strong>sauf</strong> pour la sécurité, la salubrité publique ou les soins aux victimes.</p>
+            <ul>
+                <li><strong>En général</strong> : porter les gants, baliser un chemin d'accès jusqu'à la victime, le moins de personnel possible, ne pas utiliser le téléphone fixe, ne pas ouvrir les fenêtres, ne pas utiliser les toilettes.</li>
+                <li><strong>Pendant l'attaque</strong> : le débit, le choix du jet et la ventilation mécanique peuvent effacer des traces.</li>
+                <li><strong>Pendant le déblai</strong> : déblai « intelligent » et sans précipitation. Un corps découvert <strong>ne se déplace pas</strong>. Ne pas gratter les bois (la carbonisation montre le chemin des flammes), ne pas arracher les cadres de portes.</li>
+                <li><strong>Les objets</strong> : éviter de les déplacer. « Si je déplace, je mémorise et je remets en place. »</li>
+                <li><strong>L'électricité</strong> : laisser les appareils branchés, préserver les fils (la cause électrique est fréquente).</li>
+                <li><strong>Ne pas polluer</strong> : faire le plein des outils thermiques dehors, attention à ses empreintes.</li>
+            </ul>
+            <p>Mouillant moussant, caméra thermique et thermomètre laser aident à préserver les indices, sur ordre du COS.</p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Sauvetage, mise en sécurité, confinement, évacuation</summary>
+            <p class="jsp-objectif">Objectif : connaître les procédures de sauvetage, avec ou sans matériel.</p>
+            <p><strong>« SAUVER »</strong> reste la priorité. Les actions sont décidées par le COS (analyse rapide, moyens, risques) et réalisées vite par les binômes désignés.</p>
+            <table class="rd-table">
+                <tr><th>Action</th><th>Définition</th></tr>
+                <tr><td>Sauvetage</td><td>Soustraire d'un <strong>danger vital et imminent</strong> une personne ou un animal qui ne peut pas s'en sortir seul. Le temps est capital.</td></tr>
+                <tr><td>Mise en sécurité</td><td>Mettre à l'abri d'un <strong>risque éventuel</strong>, par les communications existantes si possible, sinon par l'extérieur.</td></tr>
+                <tr><td>Confinement</td><td>Garder les personnes <strong>à l'intérieur</strong> d'un local pour les protéger (nuage toxique, explosion, inondation). Décidé par le COS.</td></tr>
+                <tr><td>Évacuation</td><td>Faire <strong>sortir</strong> préventivement les personnes du périmètre de sécurité, en les accompagnant si besoin, avec une attitude rassurante pour éviter la panique.</td></tr>
+            </table>
+            <ul>
+                <li><strong>Sauvetage à vue</strong> (victime visible de l'extérieur) : échelles à main, LSPCC, MEA. Risque principal : la <strong>chute</strong>.</li>
+                <li><strong>Sauvetage en exploration</strong> (victime à l'intérieur) : lance, ARI, <strong>cagoule d'évacuation</strong> pour protéger la respiration de la victime.</li>
+                <li><strong>Personnes dépendantes</strong> : évacuation d'abord horizontale (vers un espace d'attente sécurisé, EAS), puis verticale.</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdsmes-sauvetage')">Sauvetage & mise en sécurité (RDSMES)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Les différents risques et les actions adaptées</summary>
+            <p class="jsp-objectif">Objectif : connaître les principaux risques en intervention et les équipes spécialisées.</p>
+            <table class="rd-table">
+                <tr><th>Risque</th><th>Actions adaptées</th></tr>
+                <tr><td>Explosion (souvent une fuite de gaz)</td><td>Périmètre, supprimer les sources d'étincelles, matériel ATEX, EPI, explosimètre, confiner ou évacuer</td></tr>
+                <tr><td>Chimique (solide, liquide, gaz)</td><td>Périmètre, EPI adaptés, fermer la source (vanne), limiter l'écoulement (barrage de terre), confiner ou évacuer, aucun contact</td></tr>
+                <tr><td>Radiologique (irradiation, contamination)</td><td>Périmètre, se protéger derrière des écrans, <strong>s'éloigner</strong>, <strong>réduire le temps d'exposition</strong>, aucun contact</td></tr>
+                <tr><td>Biologique (bactéries, virus, toxines)</td><td>Tenue adaptée, protocoles du service de santé</td></tr>
+                <tr><td>Électrique (électrisation, électrocution)</td><td>Rester à distance (arcs), aucun contact, coupure demandée par le chef d'agrès, lances selon ses ordres</td></tr>
+                <tr><td>Effondrement</td><td>Périmètre, étaiement si possible, victimes possibles sous les décombres, attention aux parties instables</td></tr>
+                <tr><td>Ferroviaire</td><td>Pas d'intervention sur les voies tant que les trains ne sont pas arrêtés ; à moins de 3 m de la caténaire, <strong>coupure du courant obligatoire</strong></td></tr>
+                <tr><td>Panneaux photovoltaïques</td><td>Aucun contact avec les panneaux (extinction et déblai) ; le chef d'agrès choisit l'agent extincteur</td></tr>
+            </table>
+            <p><strong>Équipes spécialisées</strong> : CMIC (chimique), CMIR (radiologique), SAV (plongeurs), GMP/GRIMP (milieux périlleux), cynotechnie (chiens), SDE (sauvetage-déblaiement).</p>
+            <div class="rd-astuce">Le COS veille à la cohérence entre les EPI, la situation et les compétences des intervenants.</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('distances')">Distances de sécurité</button> <button onclick="showModule('electrique')">Lignes électriques</button> <button onclick="showModule('tmd')">Matières dangereuses</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Les premières mesures conservatoires</summary>
+            <p class="jsp-objectif">Objectif : connaître les premières mesures conservatoires et l'autoprotection.</p>
+            <p>Ce sont les actions immédiates pour protéger la population, les intervenants, les biens et l'environnement, et <strong>éviter un sur-accident</strong>.</p>
+            <ul>
+                <li><strong>Couper les fluides</strong> : eau, électricité, gaz.</li>
+                <li><strong>Périmètre de sécurité</strong> selon le risque : <strong>zone d'exclusion</strong> (par exemple 50 m), <strong>zone contrôlée</strong> (par exemple 100 m), puis <strong>zone de soutien</strong>.</li>
+                <li><strong>Baliser</strong> sur la voie publique pour protéger les intervenants.</li>
+                <li><strong>Protéger les biens</strong> : bâchage, mettre à l'abri les objets de valeur.</li>
+            </ul>
+            <h4>Autoprotection</h4>
+            <ul>
+                <li>Se replier avec la lance en <strong>jet diffusé de protection, au débit maximum</strong>.</li>
+                <li>Prendre la position de protection si un phénomène thermique survient.</li>
+                <li>En feu de forêt : lance queue de paon et système d'autoprotection de l'engin.</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdmi-zones')">Zonage opérationnel</button> <button onclick="showModule('gto-securite')">Sécurité FDF (GTO)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Les fumées d'incendie : se protéger</summary>
+            <p class="jsp-objectif">Objectif : connaître les bonnes pratiques contre la toxicité des fumées.</p>
+            <p>Chaque sapeur-pompier est responsable de sa santé et de celle de ses collègues. L'image du pompier « héros » couvert de suie ne doit plus être valorisée.</p>
+            <h4>Pendant l'intervention</h4>
+            <ul>
+                <li>Garer les engins hors des fumées, <strong>vitres et ventilation fermées</strong>.</li>
+                <li>EPI complets, contrôle croisé, <strong>ARI recommandé au déblai</strong>.</li>
+                <li>Zonage adapté et zone de soutien (sur décision du COS).</li>
+                <li>Se nettoyer <strong>le visage et les mains</strong> (lingettes ou eau froide et savon) <strong>avant de boire ou manger</strong>, dans un espace dédié.</li>
+            </ul>
+            <h4>En fin d'intervention</h4>
+            <table class="rd-table">
+                <tr><th>Salissure des EPI et du matériel</th><th>Nettoyage sur place</th></tr>
+                <tr><td>Aucune</td><td>Pas nécessaire</td></tr>
+                <tr><td>Superficielle</td><td>Brossage à sec avec une brosse douce, rinçage léger à la LDT si besoin</td></tr>
+                <tr><td>Importante, grasse</td><td>Brossage à l'eau savonneuse puis rinçage léger à la LDT</td></tr>
+                <tr><td>Trop importante, ou météo défavorable</td><td>Emballer avant la zone de soutien et envoyer au nettoyage</td></tr>
+            </table>
+            <ul>
+                <li>Le déshabillage se fait avant la zone de soutien, aidé par des SP protégés (masque FFP3 ou à cartouche, lunettes, gants jetables).</li>
+                <li>Dans le véhicule, les EPI sales restent <strong>séparés</strong> du propre (sacs, bacs).</li>
+            </ul>
+            <h4>Au retour au centre</h4>
+            <ul>
+                <li>Enlever la suie de la peau à l'<strong>eau savonneuse froide</strong> (les pores restent fermés), puis se doucher le plus vite possible.</li>
+                <li>Mettre des vêtements propres. <strong>Pas d'espace de vie avant la douche.</strong></li>
+                <li>Ceux qui nettoient les tenues sont protégés, manches baissées.</li>
+            </ul>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdeb-apres')">Après l'engagement (RDEB)</button> <button onclick="showModule('jsp3-incendie')">JSP 3 : toxicité des fumées</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · Les phénomènes thermiques (EGE, explosion de fumées, FGI)</summary>
+            <p class="jsp-objectif">Objectif : connaître les phénomènes thermiques et leurs signes.</p>
+            <p>Ce sont des progressions rapides du feu qui augmentent brutalement sa puissance. Très dangereux, ils peuvent survenir à toutes les phases, et dans les pièces voisines.</p>
+            <table class="rd-table">
+                <tr><th>Phénomène</th><th>Ce qui se passe</th><th>Signes</th></tr>
+                <tr><td><strong>Embrasement généralisé éclair (EGE, « flashover »)</strong></td><td>Un feu localisé passe brutalement à l'embrasement de tout ce qui brûle dans un volume ventilé</td><td>Apport d'air frais, fumées en couches, <strong>« anges danseurs »</strong> (flammes dans les fumées) = EGE imminent</td></tr>
+                <tr><td><strong>Explosion de fumées (« backdraft »)</strong></td><td>Un feu privé d'air depuis longtemps reçoit soudain de l'air (porte ouverte) : les fumées explosent</td><td>À chercher <strong>dehors, avant d'ouvrir</strong> : bruits étouffés, chaleur sentie de l'extérieur, fumée brun-jaune qui sort par les fentes et par bouffées puis est ré-aspirée, <strong>aucune flamme visible</strong>, vitres noircies qui vibrent</td></tr>
+                <tr><td><strong>Inflammation des gaz d'incendie (FGI)</strong></td><td>Des gaz imbrûlés accumulés s'enflamment au contact d'une source de chaleur, parfois en explosant</td><td>Aucun signe clair ; seule la fumée alerte : dense et stagnante, blanche ou jaunâtre (pyrolyse), grise ou noire</td></tr>
+            </table>
+            <div class="rd-alerte">Face aux anges danseurs : <strong>attitude défensive et repli immédiat</strong> hors du volume. Les signes sont plus marqués quand le feu est découvert tard (nuit, week-end, sous-sol). Les FGI peuvent se produire loin du feu, par les gaines et les communications.</div>
+            <p><strong>Conséquences</strong> : brûlures (chaleur), surpression (souffle), blessures (projections).</p>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdeb-lecture')">Lecture du feu (RDEB)</button> <button onclick="showModule('gdo-ege')">EGE en feu de forêt</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7 · Les techniques d'extinction</summary>
+            <p class="jsp-objectif">Objectif : connaître les différentes techniques d'extinction.</p>
+            <table class="rd-table">
+                <tr><th>Technique</th><th>Principe</th><th>Quand</th></tr>
+                <tr><td><strong>Refroidissement des fumées</strong> (« gas cooling »)</td><td>L'eau se vaporise dans les fumées et les refroidit. Impulsions courtes ou longues selon le volume.</td><td>Avant d'engager un binôme dans un local enfumé : moins de rayonnement, plafond de fumée stabilisé et rehaussé, moins de gaz combustibles</td></tr>
+                <tr><td><strong>Extinction directe</strong></td><td>L'eau est posée sur les surfaces qui brûlent : badigeonnage (« painting »), petites touches précises (« pencilling »), ricochet au plafond</td><td>Attaque offensive, massive et précise, quand on atteint le foyer</td></tr>
+                <tr><td><strong>Extinction indirecte</strong></td><td>L'eau projetée sur les parois chaudes fait de la vapeur qui étouffe le feu (inertage, dilution, surpression)</td><td>Local qu'on peut refermer ; depuis l'extérieur du local (retour de vapeur)</td></tr>
+                <tr><td><strong>Attaque massive / combinée</strong></td><td>Directe + indirecte avec le même geste (jet diffusé en T, Z, O, 8…)</td><td>Depuis l'extérieur, sur un feu pleinement développé. Attention à la propagation vers une pièce voisine ouverte</td></tr>
+                <tr><td><strong>Attaque d'atténuation</strong> (transitoire, de temporisation)</td><td>Jet lancé par une ouverture vers le <strong>plafond</strong> : l'eau retombe en grosses gouttes sur les combustibles</td><td>Depuis l'extérieur, pour stopper vite un feu pleinement développé (accès difficile, porte blindée…). Rapidité et quantité d'eau</td></tr>
+            </table>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>8 · La prévention appliquée à l'opération (PAO)</summary>
+            <p class="jsp-objectif">Objectif : comprendre la prévention et la prévision au service de l'intervention.</p>
+            <p>La <strong>prévention</strong> regroupe les mesures qui s'opposent à la naissance du feu, à sa propagation et à ses effets. Ses 3 objectifs :</p>
+            <ol>
+                <li><strong>Éviter la naissance du feu</strong> : bâtiment conforme, interdiction de fumer, personnel formé aux extincteurs, exercices d'évacuation.</li>
+                <li><strong>Évacuer vite</strong> les occupants : dégagements, désenfumage ; mise à l'abri puis évacuation différée pour ceux qui ne peuvent pas sortir seuls.</li>
+                <li><strong>Limiter la propagation</strong> : cloisonnement traditionnel, sectorisation, compartimentage.</li>
+            </ol>
+            <p>La <strong>prévision</strong> permet de déceler le feu dès le début et de préparer la réponse :</p>
+            <ol>
+                <li><strong>Détecter</strong> (automatiquement ou manuellement).</li>
+                <li><strong>Alarmer</strong> les occupants : alarme restreinte, générale ou générale sélective.</li>
+                <li><strong>Alerter</strong> les secours : consignes d'appel affichées, ligne directe avec le CTA.</li>
+                <li><strong>Moyens de secours du bâtiment</strong> : extincteurs, RIA, personnel formé.</li>
+                <li><strong>Faciliter l'arrivée des secours</strong> : voies engins et échelles, façades accessibles, plans d'intervention et d'évacuation, colonnes sèches ou humides.</li>
+            </ol>
+            <p>Dans les ERP : équipements de premiers secours, extinction automatique, système de sécurité incendie (SSI), complétés si besoin par un service de sécurité (SSIAP), des équipiers de première intervention ou des sapeurs-pompiers privés.</p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>9 · Le rôle de l'équipier au sein du binôme de reconnaissance</summary>
+            <p class="jsp-objectif">Objectif : effectuer une reconnaissance en binôme en toute sécurité.</p>
+            <p>À l'arrivée, le chef d'agrès et le 1<sup>er</sup> binôme explorent les lieux pour : faire les premières mesures (sauvetage, coupure des fluides), voir ce qui brûle et les risques de propagation, choisir les points d'attaque et les cheminements de secours.</p>
+            <div class="rd-astuce">La reconnaissance est <strong>permanente, complète, systématique, méthodique et cubique</strong> (dessus, dessous, à côté). Elle est dirigée par le chef d'agrès.</div>
+            <h4>L'équipier, sous les ordres de son chef d'équipe</h4>
+            <ul>
+                <li>Garde un contact permanent avec son chef.</li>
+                <li>Mémorise le chemin de repli, les accès et les difficultés.</li>
+                <li>Déroule et amarre la ligne guide ; surveille les signes d'affaiblissement de la structure.</li>
+                <li>S'assure que le chef d'agrès connaît le point d'entrée et l'heure d'engagement.</li>
+                <li>Explore chaque pièce, <strong>referme les portes</strong> et les <strong>marque à la craie</strong>.</li>
+                <li>Déclenche le signal sonore face à une victime, puis rend compte.</li>
+            </ul>
+            <p><strong>À rechercher</strong> : victimes (personnes, animaux), foyer, ce qui brûle, lecture du feu, ampleur, propagation, désenfumage, plans d'intervention, risques particuliers.</p>
+            <p><strong>Sécurité</strong> : contrôle croisé des EPI, matériel nécessaire, agir ensemble, rester vigilant, penser au repli, rester en contact avec le chef d'agrès et les autres binômes.</p>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('rdeb-recherche')">Recherche & retour (RDEB)</button> <button onclick="showModule('rdeb-engagement')">Engagement (RDEB)</button></p>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 4 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE).</p>
+    </div>
+
+    <div id="jsp4-transverse" class="module jsp-a4">
+        <button class="back-btn" onclick="showModule('jsp4-menu')">← Retour JSP 4</button>
+        <h2>🧭 JSP 4 – Transverse</h2>
+        <div class="jsp-bandeau"><span>JSP 4</span><small>Module Transverse · 3 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · Les indicateurs de la condition physique (ICP)</summary>
+            <p class="jsp-objectif">Objectif : réaliser les épreuves sportives des ICP.</p>
+            <p>La condition physique est l'outil de travail du sapeur-pompier. Les ICP servent à <strong>préserver la santé</strong> et la sécurité des agents, à les aider à s'entraîner et à se situer, et donnent au service de santé un élément de plus pour la visite d'aptitude.</p>
+            <ul>
+                <li><strong>Souplesse</strong> : pousser la règle du bout des doigts, jambes tendues, et tenir 2 secondes.</li>
+                <li><strong>Pompes</strong> (ou tractions) : le plus possible, au rythme d'une toutes les 2 secondes.</li>
+                <li><strong>Gainage</strong> : tenir en appui sur les avant-bras et la pointe des pieds.</li>
+                <li><strong>Chaise (« Killy »)</strong> : tenir assis dos au mur.</li>
+                <li><strong>Luc Léger / VAMEVAL</strong> : courir entre deux lignes à 20 m au rythme d'un signal sonore.</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Niveau</th><th>Signification</th></tr>
+                <tr><td>1</td><td>Seuil de vigilance pour sa santé et sa sécurité</td></tr>
+                <tr><td>2</td><td>Seuil minimum pour l'engagement opérationnel</td></tr>
+                <tr><td>3</td><td>Niveau haut de l'engagement opérationnel</td></tr>
+            </table>
+            <p><strong>Barèmes du SDIS 34</strong> (niveau 1 / niveau 2 / niveau 3) :</p>
+            <table class="rd-table">
+                <tr><th>Âge</th><th>Souplesse (F et H)</th><th>Pompes F</th><th>Pompes H</th><th>Luc Léger F (palier)</th><th>Luc Léger H (palier)</th></tr>
+                <tr><td>18–29</td><td>&lt; 23 / 23–25,5 / ≥ 26 cm</td><td>&lt; 7 / 7–9 / ≥ 10</td><td>&lt; 18 / 18–19 / ≥ 20</td><td>&lt; 7 / 7–8 / ≥ 8,5</td><td>&lt; 8 / 8–9 / ≥ 9,5</td></tr>
+                <tr><td>30–39</td><td>&lt; 21 / 21–23 / ≥ 23,5 cm</td><td>&lt; 6 / 6–8 / ≥ 9</td><td>&lt; 15 / 15–17 / ≥ 18</td><td>&lt; 6 / 6–7 / ≥ 7,5</td><td>&lt; 7 / 7–8,5 / ≥ 9</td></tr>
+                <tr><td>40–49</td><td>&lt; 19 / 19–20,5 / ≥ 21 cm</td><td>&lt; 5 / 5–7 / ≥ 8</td><td>&lt; 14 / 14–16 / ≥ 17</td><td>&lt; 5 / 5–6 / ≥ 6,5</td><td>&lt; 5,5 / 5,5–7 / ≥ 7,5</td></tr>
+                <tr><td>50–65</td><td>&lt; 14 / 14–15 / ≥ 15,5 cm</td><td>&lt; 4 / 4–6 / ≥ 7</td><td>&lt; 11 / 11–13 / ≥ 14</td><td>&lt; 4 / 4–5 / ≥ 5,5</td><td>&lt; 4,5 / 4,5–6 / ≥ 6,5</td></tr>
+            </table>
+            <div class="rd-astuce">La condition physique est <strong>un droit</strong> (sauvegarder sa vie et sa santé) et <strong>un devoir</strong> (bien accomplir ses missions).</div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · La prévention du risque routier</summary>
+            <p class="jsp-objectif">Objectif : connaître les risques routiers et leurs conséquences pour les sapeurs-pompiers.</p>
+            <p>Les accidents de trajet et de circulation ne représentent que 5 % des accidents de service des SPP et 8 % de ceux des SPV, mais <strong>41 % des décès</strong> de la profession. Au SDIS 34 : environ <strong>280 accidents par an</strong>.</p>
+            <p><strong>Comportements en cause</strong> : ceinture non attachée dans les véhicules du SDIS, vitesse excessive (en intervention ou pour rejoindre le centre), manœuvres sans guidage, véhicules mal adaptés aux remises, obstacles non signalés.</p>
+            <table class="rd-table">
+                <tr><th>Accident</th><th>Définition</th></tr>
+                <tr><td>De circulation en service commandé</td><td>Pendant le service, avec un véhicule de service (par exemple entre la caserne et l'intervention)</td></tr>
+                <tr><td>De trajet en service commandé</td><td>Entre l'appel du bip et l'arrivée à la caserne (ou pour aller en stage à la demande de l'employeur), par le trajet le plus direct</td></tr>
+            </table>
+            <div class="rd-alerte">Le volontaire qui rejoint la caserne avec sa voiture personnelle <strong>n'est pas prioritaire</strong> : les règles de priorité (article R.432-1 du code de la route) ne concernent que les véhicules d'intérêt général prioritaires en intervention. Il respecte le code de la route comme tout le monde.</div>
+            <p><strong>Alcool et drogues</strong> sont interdits au volant, et encore plus en service. Pour mémoire (règles générales du code de la route) : dès 0,5 g/L de sang, retrait de 6 points et suspension possible du permis ; à partir de 0,8 g/L, c'est un délit (jusqu'à 4 500 € d'amende et 2 ans de prison). Conduire après avoir pris des stupéfiants est aussi un délit, puni plus sévèrement encore s'il y a de l'alcool en plus.</p>
+            <p><strong>Conséquences</strong> : pour soi (blessures, perte de revenus, véhicule, poursuites, choc pour la famille, voire décès) et pour le service (départ retardé, secours à engager pour le pompier accidenté, mission refusée faute d'effectif, autre centre engagé, agent indisponible, coût).</p>
+            <div class="rd-astuce">Précipitation ne rime pas avec efficacité.</div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · La prise de garde</summary>
+            <p class="jsp-objectif">Objectif : s'intégrer dans une équipe lors d'une prise de garde.</p>
+            <p><strong>Les gardes</strong> : journalières (12 h ou 24 h dans les centres mixtes ; selon le fonctionnement du centre chez les volontaires) ou hebdomadaires.</p>
+            <table class="rd-table">
+                <tr><th>Prise de garde administrative</th><th>Prise de garde fonctionnelle</th></tr>
+                <tr><td>
+                    <ul>
+                        <li>Être présent le bon jour, à l'heure.</li>
+                        <li>Écouter le briefing du sous-officier de garde (nouvelles notes de service).</li>
+                        <li>Signaler tout souci de santé ou restriction.</li>
+                        <li>Tenue propre, bip avec pile, piquets consultés.</li>
+                    </ul>
+                </td><td>
+                    <ul>
+                        <li>S'informer des nouveautés dans les véhicules.</li>
+                        <li>Faire la montée en véhicule (vérifications).</li>
+                        <li>Participer à la manœuvre de garde.</li>
+                    </ul>
+                </td></tr>
+            </table>
+            <p>Le métier compte plus de 120 profils différents : pour garder ses acquis, la <strong>formation de maintien et de perfectionnement des acquis (FMPA)</strong> est obligatoire.</p>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('jsp2-incendie')">JSP 2 : vérifications des engins</button></p>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 4 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE). Barèmes ICP du SDIS 34 à la date du diaporama.</p>
+    </div>
+
+    <div id="jsp4-citoyen" class="module jsp-a4">
+        <button class="back-btn" onclick="showModule('jsp4-menu')">← Retour JSP 4</button>
+        <h2>🤝 JSP 4 – Engagement citoyen</h2>
+        <div class="jsp-bandeau"><span>JSP 4</span><small>Module Engagement citoyen · 1 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · Les principaux risques locaux : feux de forêts, inondations, noyades</summary>
+            <p class="jsp-objectif">Objectif : connaître les principaux risques du département.</p>
+            <h4>🌲 Feux de forêts</h4>
+            <p>Le <strong>vent</strong> propage le feu et la <strong>chaleur</strong> assèche la végétation. En 2022, 66 360 hectares de forêts ont brûlé en France.</p>
+            <table class="rd-table">
+                <tr><th>Type de feu</th><th>Ce qui brûle</th><th>Vitesse</th></tr>
+                <tr><td>Feu de sol</td><td>Litière, humus (brûle en profondeur, sans flamme)</td><td>Lente</td></tr>
+                <tr><td>Feu de surface</td><td>Végétation basse : garrigue, landes</td><td>Rapide par vent fort</td></tr>
+                <tr><td>Feu de cimes</td><td>Le haut des arbres, en couronne de feu</td><td>Très rapide, très intense</td></tr>
+            </table>
+            <p><strong>37 %</strong> des feux sont volontaires, <strong>30 %</strong> sont déclenchés par des particuliers sans le vouloir : <strong>4 feux sur 5</strong> viennent d'une imprudence.</p>
+            <h4>🌊 Inondations</h4>
+            <p>Une zone habituellement sèche est submergée :</p>
+            <ul>
+                <li>montée lente des eaux en plaine (nappes phréatiques) ;</li>
+                <li><strong>crues torrentielles</strong> rapides après des pluies violentes ;</li>
+                <li>ruissellement en ville (sols bétonnés) ;</li>
+                <li>rupture de digue, submersion marine sur le littoral.</li>
+            </ul>
+            <p><strong>Conséquences</strong> : victimes, routes et voies ferrées coupées, dégâts aux biens et aux cultures, érosion, pollutions, voire accidents industriels.</p>
+            <h4>🏊 Noyades</h4>
+            <p>Plus de <strong>500 morts chaque été</strong> en France, environ 3 par jour. C'est la 1<sup>re</sup> cause de décès par accident de la vie courante chez les moins de 15 ans. Mer, rivière, lac, piscine : le risque est partout.</p>
+            <ul>
+                <li>Attention aux changements brusques de température.</li>
+                <li>Surveiller les plus jeunes ; sécuriser les piscines ; retirer les jouets de l'eau.</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Drapeau</th><th>Signification</th></tr>
+                <tr><td>Vert</td><td>Baignade surveillée, sans danger particulier</td></tr>
+                <tr><td>Jaune</td><td>Baignade dangereuse mais surveillée</td></tr>
+                <tr><td>Rouge</td><td>Baignade interdite</td></tr>
+                <tr><td>Damier noir et blanc</td><td>Zone réservée aux activités nautiques</td></tr>
+                <tr><td>Violet</td><td>Pollution ou espèces aquatiques dangereuses</td></tr>
+                <tr><td>Rouge et jaune</td><td>Zone de baignade surveillée pendant les heures d'ouverture du poste de secours</td></tr>
+            </table>
+            <div class="rd-astuce"><strong>En difficulté dans l'eau</strong> : ne pas lutter contre le courant, se laisser porter, lever le bras pour appeler à l'aide, <strong>faire la planche</strong> si on est fatigué, garder son calme jusqu'aux secours.</div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('gdo-menu')">🌲 Feux de forêts (GDO)</button> <button onclick="showModule('gdo-milieux')">Milieux et végétation</button></p>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 4 – SDIS 34 (diaporama du Lieutenant Luc BEHAGUE). Chiffres donnés à la date du diaporama.</p>
+    </div>
+
+    <div id="jsp4-od" class="module jsp-a4">
+        <button class="back-btn" onclick="showModule('jsp4-menu')">← Retour JSP 4</button>
+        <h2>🛠️ JSP 4 – Opérations diverses et animalières</h2>
+        <div class="jsp-bandeau"><span>JSP 4</span><small>Module Opérations diverses et animalières · 7 cours</small></div>
+
+        <details class="jsp-cours">
+            <summary>1 · La procédure d'intervention sur les ascenseurs</summary>
+            <p class="jsp-objectif">Objectif : connaître la procédure pour dégager des personnes bloquées dans un ascenseur (FOD n° 14 Ascenseur, juin 2019).</p>
+            <p>Dégager une personne bloquée <strong>n'est pas une mission de service public</strong> : c'est le rôle de l'ascensoriste. Le SDIS intervient pour :</p>
+            <ul>
+                <li>une personne bloquée (intervention <strong>payante</strong> quand le prestataire est défaillant) ;</li>
+                <li>une personne <strong>vulnérable</strong> ou en détresse ;</li>
+                <li>une <strong>porte palière ouverte</strong> (risque de chute).</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Départ</th><th>Moyens</th></tr>
+                <tr><td>Ascenseur bloqué</td><td>1 VTU (ou VPRO / VTUBAL) armé à 3 SP minimum</td></tr>
+                <tr><td>Ascenseur bloqué aggravé (personne en détresse, femme enceinte, panique…)</td><td>1 VTU + 1 VSAV</td></tr>
+            </table>
+            <p><strong>Tenue</strong> : EPI complets (veste de feu, casque F1, écran baissé pour les commandes hydrauliques) et radios portatives.</p>
+            <h4>La méthode S.E.C.U.R.I.T.E.</h4>
+            <table class="rd-table">
+                <tr><th></th><th>Étape</th><th>Actions</th></tr>
+                <tr><td><strong>S</strong></td><td>Situation</td><td>Reconnaître le type d'ascenseur, la cabine, le local des machines. Localiser la cabine en ouvrant la 1<sup>re</sup> porte palière avec la clé d'ascenseur.</td></tr>
+                <tr><td><strong>E</strong></td><td>Électricité</td><td>Couper l'alimentation de l'ascenseur (local des machines, ou à défaut bouton d'arrêt d'urgence sur la cabine ou au rez-de-chaussée dans la gaine). Garder l'éclairage si possible.</td></tr>
+                <tr><td><strong>C</strong></td><td>Contact</td><td>Vérifier l'état des personnes, les rassurer, leur demander de rester calmes.</td></tr>
+                <tr><td><strong>U</strong></td><td>Utiliser les radios</td><td>Liaison permanente. Le 1<sup>er</sup> équipier reste près des victimes ; le chef d'agrès et le 2<sup>e</sup> équipier vont en machinerie.</td></tr>
+                <tr><td><strong>R</strong></td><td>Ramener la cabine</td><td>Choisir le sens. Traction : desserrer le frein, tourner le volant, aligner les repères de l'étage. Commande électrique : position « rappel ». <strong>Hydraulique : toujours vers le bas</strong>, par la purge.</td></tr>
+                <tr><td><strong>I</strong></td><td>Inviter à sortir</td><td>Ouvrir la porte palière avec la clé. <strong>Faire sortir vers le haut plutôt que vers le bas</strong> (pas de chute dans la gaine).</td></tr>
+                <tr><td><strong>T</strong></td><td>Technicien</td><td>Le faire venir ; prévenir le gardien ; noter la marque et le numéro de l'ascenseur pour le compte rendu.</td></tr>
+                <tr><td><strong>E</strong></td><td>Empêcher l'accès</td><td>Vérifier que <strong>toutes</strong> les portes palières sont fermées, signaler l'ascenseur hors service, verrouiller le local des machines.</td></tr>
+            </table>
+            <div class="rd-alerte">
+                <ul>
+                    <li>Des accidents mortels sont arrivés par excès de confiance : l'intervention est simple, la vigilance doit rester totale. Risques : chutes (accès machinerie, gaine), électrisation (220 à 380 V) ; pour les victimes : malaise, panique, chute à la sortie.</li>
+                    <li>Les sapeurs-pompiers <strong>ne remettent jamais l'ascenseur en service</strong>.</li>
+                    <li>Cabine bloquée par les <strong>parachutes</strong> : ne pas la débloquer, attendre le dépanneur. En urgence vitale, sortir la victime par l'étage du dessus sans bouger la cabine.</li>
+                    <li>Avant de couper le courant d'un bâtiment (fuite de gaz, incendie), faire redescendre l'ascenseur au rez-de-chaussée pour vérifier que personne n'est dedans.</li>
+                </ul>
+            </div>
+            <p class="jsp-liens">Pour aller plus loin → <button onclick="showModule('jsp3-od')">JSP 3 : types d'ascenseurs</button> <button onclick="showModule('rdeb-annexes')">Ascenseurs et incendie (RDEB)</button></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Les espèces animales et leurs risques</summary>
+            <p class="jsp-objectif">Objectif : connaître les dangers liés aux animaux et le rôle du vétérinaire.</p>
+            <p>Les sapeurs-pompiers interviennent quand un animal <strong>est en danger</strong> ou <strong>présente un danger</strong> pour l'homme.</p>
+            <ul>
+                <li><strong>5 catégories</strong> : domestiques (chiens, chats), de ferme (chevaux, bovins, porcs, chèvres, moutons), sauvages, oiseaux, nouveaux animaux de compagnie (NAC).</li>
+                <li><strong>3 risques</strong>, parfois cumulés : <strong>physique</strong> (griffure, morsure, coup, bousculade), <strong>toxique</strong> (venin), <strong>infectieux</strong> (maladies transmises à l'homme, parasites comme les tiques et la maladie de Lyme).</li>
+            </ul>
+            <p><strong>Le vétérinaire</strong> fait partie du service de santé (SSSM) : il neutralise les animaux dangereux (télé-anesthésie), encadre les équipes cynotechniques, gère les animaux lors des accidents de transport, contrôle l'aptitude des chiens du SDIS, conseille le COS en cas de pollution, participe à la prévention et à la lutte contre les épidémies animales.</p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Les EPI et le matériel de capture</summary>
+            <p class="jsp-objectif">Objectif : connaître les EPI et utiliser le matériel de capture.</p>
+            <ul>
+                <li><strong>Tête</strong> : casque F1 ou F2, masque, lunettes.</li>
+                <li><strong>Corps</strong> : veste textile, surpantalon ; <strong>pieds</strong> : rangers ou bottes.</li>
+                <li><strong>Mains</strong> : gants en cuir, gants latex, gant renforcé ou manchon anti-morsure.</li>
+                <li><strong>Tenue spéciale</strong> contre les hyménoptères.</li>
+            </ul>
+            <p><strong>Capture</strong> : lasso, épuisette, pince, crochet (serpents), couvertures, nourriture, balles et jouets. <strong>Contention</strong> : muselière, licol, cages ; contention chimique par le vétérinaire (sarbacane, fusil hypodermique).</p>
+            <div class="rd-astuce"><strong>Tout animal est potentiellement dangereux</strong>, surtout s'il a peur, est stressé ou blessé. Rester calme, sans geste brusque, sans cri ; avancer doucement et s'arrêter dès qu'il bouge ; éviter son regard ; l'approcher dans son champ de vision ; le toucher avec douceur ; être patient.</div>
+            <p>Animal inconnu ou très agressif, sans équipe animalière : <strong>le confiner et faire appel à un vétérinaire</strong>.</p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Les hyménoptères (guêpes, frelons, abeilles)</summary>
+            <p class="jsp-objectif">Objectif : connaître et mettre en œuvre le matériel de neutralisation des hyménoptères.</p>
+            <p>Insectes à 4 ailes : <strong>abeille, guêpe, frelon européen, frelon asiatique</strong>. Environ <strong>15 morts par an</strong> en France, surtout des personnes allergiques. Seule la femelle pique.</p>
+            <p>Peu agressifs en temps normal, ils deviennent <strong>très agressifs à 5 à 10 m du nid</strong>. Le frelon asiatique est particulièrement agressif et peut projeter son venin à distance. Le danger : les <strong>piqûres multiples</strong>.</p>
+            <p><strong>Complications</strong> : piqûres multiples, piqûre dans la bouche ou l'œil, personne allergique.</p>
+            <div class="rd-alerte">Tout sapeur-pompier déjà allergique à une piqûre est <strong>définitivement inapte</strong> aux interventions sur les hyménoptères.</div>
+            <p><strong>Tenue</strong> : en binôme, tenue d'intervention manches baissées + tenue anti-insectes complète (combinaison, gants, casque F2 écran baissé), bottes ou rangers, scotchées si besoin.</p>
+            <p><strong>Horaires</strong> : immédiatement si urgent ; sinon <strong>le matin (6 h – 9 h)</strong> ou <strong>le soir (après 18 h)</strong>, quand tous les insectes sont au nid.</p>
+            <ul>
+                <li>Garer le véhicule à distance, éloigner les personnes non équipées, bien reconnaître les lieux.</li>
+                <li>Vérifier mutuellement l'étanchéité des tenues ; toujours en binôme ; LSPCC si on travaille en hauteur.</li>
+                <li>Pulvériser <strong>copieusement</strong> dans l'entrée principale du nid.</li>
+                <li>Jamais d'essence ; ne pas allumer de feu dans une cheminée.</li>
+                <li>Piqûres multiples : demander un médecin. Nettoyer le matériel après.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Le calage temporaire</summary>
+            <p class="jsp-objectif">Objectif : connaître et mettre en œuvre le matériel de calage.</p>
+            <p>Le calage maintient, pour un temps limité et <strong>sans le déplacer</strong>, un véhicule, une structure, une tranchée ou une excavation qui menace de bouger ou de s'effondrer (accident, éboulement, séisme, incendie, explosion). Il protège la victime et les secours.</p>
+            <p><strong>Matériel</strong> : cales et coins, écarteur et vérins de désincarcération, étais métalliques ou en bois.</p>
+            <ul>
+                <li>Un étai a une <strong>semelle</strong> (en bas) et un <strong>chapeau</strong> (en haut).</li>
+                <li>Il est posé bien perpendiculaire, sur un sol dur.</li>
+                <li>La surface d'appui est au moins égale à la surface portée.</li>
+                <li>Plus il est court, plus il est résistant.</li>
+                <li>Penser à laisser passer le brancard.</li>
+            </ul>
+            <p><strong>Mise en œuvre</strong> : estimer le poids à tenir, porter les EPI, choisir la section et l'écartement, bien fixer l'étai, répartir le poids sans le déplacer.</p>
+            <div class="rd-astuce">L'étaiement est une spécialité du <strong>sauvetage-déblaiement</strong> : le COS demande des renforts si besoin avant d'engager son personnel.</div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · Les matériels de forcement</summary>
+            <p class="jsp-objectif">Objectif : connaître et mettre en œuvre le matériel de forcement.</p>
+            <p>Forcer, c'est faire céder ou percer pour entrer dans un local : secours à personne, protection des biens (fuite d'eau…).</p>
+            <table class="rd-table">
+                <tr><th>Outils</th><th>Exemples</th></tr>
+                <tr><td>À main</td><td>Pince, hache, coupe-boulon, outil de forcement et de déblai (OFD), masse, barre Halligan</td></tr>
+                <tr><td>Électriques et mécaniques</td><td>Disqueuse thermique ou électrique, scie sabre</td></tr>
+                <tr><td>Hydrauliques</td><td>Ouvre-porte, vérin, cisaille, écarteur</td></tr>
+            </table>
+            <ul>
+                <li>Inspecter et nettoyer les outils ; retirer du service un outil abîmé.</li>
+                <li>Utiliser l'outil adapté à l'effort.</li>
+                <li>Porter les outils de frappe <strong>tête en bas</strong>.</li>
+                <li>Ne jamais rallonger un levier avec un autre outil.</li>
+                <li>Porter les EPI adaptés à l'outil.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7 · Le bâchage et les opérations de dégagement (tronçonneuse)</summary>
+            <p class="jsp-objectif">Objectif : connaître et mettre en œuvre le matériel de bâchage et de dégagement.</p>
+            <h4>🏠 Bâchage</h4>
+            <p>Après des intempéries, un incendie ou une inondation.</p>
+            <table class="rd-table">
+                <tr><th>Bâche</th><th>Avantage</th><th>Inconvénient</th></tr>
+                <tr><td>Textile (œillets)</td><td>Très solide</td><td>Lourde à porter</td></tr>
+                <tr><td>Polyéthylène (œillets)</td><td>Légère</td><td>Fragile par grand vent</td></tr>
+                <tr><td>Rouleau de film à usage unique</td><td>Se coupe à la longueur voulue</td><td>Sans œillets, fragile au vent</td></tr>
+            </table>
+            <ul>
+                <li><strong>Toiture</strong> : bâche à cheval sur le faîtage, pose en partant du haut, fixation par les œillets sur les chevrons ou lestage ; le film se fixe par des lattes clouées.</li>
+                <li><strong>Meubles</strong> : les regrouper au centre et les couvrir ; en cas d'inondation, les poser sur une plateforme surélevée, remonter la bâche, l'attacher, recouvrir.</li>
+            </ul>
+            <div class="rd-alerte">Le danger principal est la <strong>chute de hauteur</strong> (et le vent). Utiliser le LSPCC ; enlever les clous ; pas de bâche sur des arêtes coupantes ; tester le support du pied ; éviter fibrociment et verrières ; à quatre pattes sur une pente moyenne ; monter en diagonale.</div>
+            <h4>🌳 Dégagement à la tronçonneuse</h4>
+            <p>Arbres tombés sur la route ou menaçant de tomber, poteaux renversés après une tempête.</p>
+            <ul>
+                <li><strong>Vocabulaire</strong> : élagage (branches d'un arbre debout), abattage (faire tomber l'arbre), ébranchage (branches d'un arbre au sol), tronçonnage (découper le tronc).</li>
+                <li><strong>Sécurité de la machine</strong> : EPI adaptés, plein loin de toute flamme, moteur arrêté pour la poser, la porter ou contrôler la chaîne, chaîne libre au démarrage, lieu aéré, chaîne bien affûtée.</li>
+                <li><strong>Zone de travail</strong> : baliser ; pendant un abattage, distance d'au moins <strong>2 fois la hauteur du plus grand arbre</strong> ; pendant le tronçonnage, au moins <strong>4,50 m</strong> entre intervenants ; ni curieux ni animaux ; prévoir un chemin de fuite avant de couper ; faire couper le courant près des lignes ; <strong>jamais seul</strong>.</li>
+                <li><strong>Entretien</strong> après chaque usage : nettoyage, filtre à air, bougie (écartement 0,6 à 0,7 mm), usure de la chaîne.</li>
+            </ul>
+            <p>S'il n'y a pas de danger immédiat, on balise et l'autorité de police fait appel à une entreprise spécialisée.</p>
+        </details>
+
+        <p class="rd-source">📚 Cours JSP 4 – SDIS 34 (diaporamas du Lieutenant Luc BEHAGUE), FOD n° 14 Ascenseur (juin 2019) et note opérationnelle 2019/10 sur l'engagement pour ascenseur bloqué.</p>
+    </div>
+
     <!-- ============ RDSMES – SDIS 34 (v2, avril 2026) ============ -->
     <div id="rdsmes-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -15824,7 +17505,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.20.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.21.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

@@ -56,6 +56,11 @@ const Navigation = (function() {
     function pictoDomaine(d) {
         return `<span class="nav-picto" style="--c:${d.couleur}">${icone(d.picto || 'info')}</span>`;
     }
+    // Pastille de couleur d'un sous-menu (ex. couleur de l'année de JSP)
+    function pastilleTheme(d, theme) {
+        const c = d.couleursThemes && d.couleursThemes[theme];
+        return c ? `<span class="nav-sub-pastille" style="--jsp:${c}" aria-hidden="true"></span>` : '';
+    }
     function pagesDuTheme(d, theme) {
         return registre.pages.filter(p => p.domaine === d.id && p.theme === theme && p.type !== 'menu');
     }
@@ -98,7 +103,7 @@ const Navigation = (function() {
                     const themeOuvert = d.themes.length === 1 || !!ouverts[cle];
                     let sous = `<div class="nav-sub">
                         <button class="nav-sub-head" data-theme="${esc(cle)}" aria-expanded="${themeOuvert}">
-                            <span class="nav-sub-title">${esc(theme)}</span><span class="nav-count">${pages.filter(p => p.type !== 'presentation').length}</span>
+                            ${pastilleTheme(d, theme)}<span class="nav-sub-title">${esc(theme)}</span><span class="nav-count">${pages.filter(p => p.type !== 'presentation').length}</span>
                             ${icone('chev', 'nav-chev')}
                         </button>`;
                     if (themeOuvert) {
