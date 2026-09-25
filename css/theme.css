@@ -769,3 +769,21 @@ html[data-theme] .gouv-pages { display: grid; gap: 10px; margin: 10px 0; }
 html[data-theme] .gouv-pages a { display: block; }
 html[data-theme] .gouv-page { display: block; width: 100%; height: auto; border: 1px solid var(--t-line); border-radius: 8px; background: #fff; }
 @media (min-width: 900px) { html[data-theme] .gouv-pages { grid-template-columns: 1fr 1fr; } }
+
+/* SAL – calculateur de paliers MT 2012 */
+html[data-theme] .sal-saisie { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+html[data-theme] .sal-saisie label { display: flex; flex-direction: column; gap: 6px; font-weight: 700; }
+html[data-theme] .sal-saisie input { font-size: 1.3em; padding: 12px; border-radius: 10px; border: 2px solid var(--t-line); background: var(--t-s1); color: var(--t-ink); text-align: center; width: 100%; box-sizing: border-box; }
+html[data-theme] .sal-res-info { color: var(--t-muted); font-size: 0.9em; }
+html[data-theme] .sal-res { border: 2px solid var(--t-line); border-left-width: 8px; border-radius: var(--t-radius); padding: 14px 16px; margin-top: 12px; background: var(--t-s2); }
+html[data-theme] .sal-res > strong { font-size: 1.2em; }
+html[data-theme] .sal-res-ok { border-left-color: light-dark(#2E7D32, #66BB6A); }
+html[data-theme] .sal-res-paliers { border-left-color: light-dark(#E65100, #FFA726); }
+html[data-theme] .sal-paliers { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 8px; margin: 12px 0; }
+html[data-theme] .sal-paliers div, html[data-theme] .sal-res-carte { background: var(--t-s1); border: 1px solid var(--t-line); border-radius: 10px; padding: 10px; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+html[data-theme] .sal-paliers span, html[data-theme] .sal-res-carte span { color: var(--t-muted); font-size: 0.85em; }
+html[data-theme] .sal-paliers b { font-size: 1.6em; color: var(--t-ink); }
+html[data-theme] .sal-res-cartes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+html[data-theme] .sal-res-carte b { font-size: 1.3em; color: var(--t-ink); }
+html[data-theme] .sal-ok { color: light-dark(#1B5E20, #81C784); font-weight: 700; }
+html[data-theme] .sal-non { color: light-dark(#B71C1C, #EF9A9A); font-weight: 700; }

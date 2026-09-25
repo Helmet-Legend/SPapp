@@ -1,126 +1,2676 @@
 {
+ "source": "Tables du Ministère du Travail MT 2012 (arrêté du 30/10/2012), telles que reproduites dans l'annexe II du référentiel SAL de la DGSCGC (version du 12 mars 2014), tables Air Standard. Vérifiées ligne par ligne : total = remontée + paliers.",
+ "sansPalier": {
+  "intervalles": [
+   "12 h",
+   "6 h",
+   "4 h"
+  ],
+  "lignes": [
+   {
+    "profondeur": "7.5",
+    "valeurs": [
+     "illimité",
+     "illimité",
+     "illimité"
+    ]
+   },
+   {
+    "profondeur": "9",
+    "valeurs": [
+     360,
+     330,
+     300
+    ]
+   },
+   {
+    "profondeur": "10.5",
+    "valeurs": [
+     270,
+     250,
+     240
+    ]
+   },
+   {
+    "profondeur": "12",
+    "valeurs": [
+     165,
+     150,
+     135
+    ]
+   },
+   {
+    "profondeur": "13.5",
+    "valeurs": [
+     100,
+     90,
+     90
+    ]
+   },
+   {
+    "profondeur": "15",
+    "valeurs": [
+     80,
+     70,
+     60
+    ]
+   },
+   {
+    "profondeur": "18",
+    "valeurs": [
+     50,
+     40,
+     35
+    ]
+   },
+   {
+    "profondeur": "21",
+    "valeurs": [
+     35,
+     25,
+     20
+    ]
+   },
+   {
+    "profondeur": "24",
+    "valeurs": [
+     25,
+     20,
+     10
+    ]
+   },
+   {
+    "profondeur": "27",
+    "valeurs": [
+     20,
+     25,
+     10
+    ]
+   },
+   {
+    "profondeur": "30",
+    "valeurs": [
+     15,
+     10,
+     5
+    ]
+   },
+   {
+    "profondeur": "33",
+    "valeurs": [
+     12,
+     7,
+     2
+    ]
+   },
+   {
+    "profondeur": "36",
+    "valeurs": [
+     10,
+     5,
+     null
+    ]
+   },
+   {
+    "profondeur": "39",
+    "valeurs": [
+     8,
+     3,
+     null
+    ]
+   },
+   {
+    "profondeur": "42",
+    "valeurs": [
+     7,
+     2,
+     null
+    ]
+   },
+   {
+    "profondeur": "45",
+    "valeurs": [
+     6,
+     null,
+     null
+    ]
+   },
+   {
+    "profondeur": "48",
+    "valeurs": [
+     5,
+     null,
+     null
+    ]
+   },
+   {
+    "profondeur": "51",
+    "valeurs": [
+     5,
+     null,
+     null
+    ]
+   }
+  ]
+ },
+ "air": {
   "12": [
-    {"temps": 135, "p9": 0, "p6": 0, "p3": 0, "dtr": 1, "gps": "A"},
-    {"temps": 150, "p9": 0, "p6": 0, "p3": 2, "dtr": 3, "gps": "B"},
-    {"temps": 180, "p9": 0, "p6": 0, "p3": 7, "dtr": 8, "gps": "D"}
+   {
+    "temps": 165,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "1:00",
+    "successive": true
+   },
+   {
+    "temps": 170,
+    "remontee": "0:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "3:45",
+    "successive": true
+   },
+   {
+    "temps": 180,
+    "remontee": "0:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 5,
+    "total": "5:45",
+    "successive": true
+   },
+   {
+    "temps": 210,
+    "remontee": "0:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 10,
+    "total": "10:45",
+    "successive": false
+   },
+   {
+    "temps": 240,
+    "remontee": "0:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 15,
+    "total": "15:45",
+    "successive": false
+   },
+   {
+    "temps": 270,
+    "remontee": "0:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 25,
+    "total": "25:45",
+    "successive": false
+   },
+   {
+    "temps": 300,
+    "remontee": "0:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 30,
+    "total": "30:45",
+    "successive": false
+   },
+   {
+    "temps": 330,
+    "remontee": "0:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 35,
+    "total": "35:45",
+    "successive": false
+   },
+   {
+    "temps": 360,
+    "remontee": "0:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 40,
+    "total": "40:45",
+    "successive": false
+   }
   ],
   "15": [
-    {"temps": 75, "p9": 0, "p6": 0, "p3": 0, "dtr": 1, "gps": "B"},
-    {"temps": 90, "p9": 0, "p6": 0, "p3": 5, "dtr": 6, "gps": "D"},
-    {"temps": 120, "p9": 0, "p6": 0, "p3": 17, "dtr": 18, "gps": "G"},
-    {"temps": 150, "p9": 0, "p6": 0, "p3": 32, "dtr": 33, "gps": "I"}
+   {
+    "temps": 80,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "1:15",
+    "successive": true
+   },
+   {
+    "temps": 90,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "4:00",
+    "successive": true
+   },
+   {
+    "temps": 100,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 5,
+    "total": "6:00",
+    "successive": true
+   },
+   {
+    "temps": 110,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 7,
+    "total": "8:00",
+    "successive": true
+   },
+   {
+    "temps": 120,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 12,
+    "total": "13:00",
+    "successive": true
+   },
+   {
+    "temps": 130,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 15,
+    "total": "16:00",
+    "successive": true
+   },
+   {
+    "temps": 140,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 20,
+    "total": "21:00",
+    "successive": true
+   },
+   {
+    "temps": 150,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 25,
+    "total": "26:00",
+    "successive": true
+   },
+   {
+    "temps": 160,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 25,
+    "total": "26:00",
+    "successive": false
+   },
+   {
+    "temps": 170,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 30,
+    "total": "31:00",
+    "successive": false
+   },
+   {
+    "temps": 180,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 35,
+    "total": "36:00",
+    "successive": false
+   },
+   {
+    "temps": 210,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 45,
+    "total": "46:00",
+    "successive": false
+   },
+   {
+    "temps": 240,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 60,
+    "total": "61:00",
+    "successive": false
+   },
+   {
+    "temps": 270,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 70,
+    "total": "71:00",
+    "successive": false
+   }
   ],
   "18": [
-    {"temps": 50, "p9": 0, "p6": 0, "p3": 0, "dtr": 2, "gps": "B"},
-    {"temps": 60, "p9": 0, "p6": 0, "p3": 3, "dtr": 5, "gps": "D"},
-    {"temps": 75, "p9": 0, "p6": 0, "p3": 10, "dtr": 12, "gps": "F"},
-    {"temps": 90, "p9": 0, "p6": 0, "p3": 19, "dtr": 21, "gps": "H"}
+   {
+    "temps": 50,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "1:30",
+    "successive": true
+   },
+   {
+    "temps": 55,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "4:15",
+    "successive": true
+   },
+   {
+    "temps": 60,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 5,
+    "total": "6:15",
+    "successive": true
+   },
+   {
+    "temps": 70,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 7,
+    "total": "8:15",
+    "successive": true
+   },
+   {
+    "temps": 80,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 15,
+    "total": "16:15",
+    "successive": true
+   },
+   {
+    "temps": 90,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 20,
+    "total": "21:15",
+    "successive": true
+   },
+   {
+    "temps": 100,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 25,
+    "total": "26:15",
+    "successive": true
+   },
+   {
+    "temps": 110,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 30,
+    "total": "31:15",
+    "successive": true
+   },
+   {
+    "temps": 120,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 35,
+    "total": "36:15",
+    "successive": true
+   },
+   {
+    "temps": 130,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 40,
+    "total": "44:00",
+    "successive": true
+   },
+   {
+    "temps": 140,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 5,
+    "p3": 45,
+    "total": "51:00",
+    "successive": true
+   },
+   {
+    "temps": 150,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 7,
+    "p3": 50,
+    "total": "58:00",
+    "successive": true
+   },
+   {
+    "temps": 160,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 10,
+    "p3": 50,
+    "total": "61:00",
+    "successive": true
+   },
+   {
+    "temps": 170,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 12,
+    "p3": 55,
+    "total": "68:00",
+    "successive": true
+   },
+   {
+    "temps": 180,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 15,
+    "p3": 60,
+    "total": "76:00",
+    "successive": false
+   },
+   {
+    "temps": 210,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 20,
+    "p3": 70,
+    "total": "91:00",
+    "successive": false
+   }
   ],
-  "20": [
-    {"temps": 40, "p9": 0, "p6": 0, "p3": 0, "dtr": 2, "gps": "C"},
-    {"temps": 50, "p9": 0, "p6": 0, "p3": 4, "dtr": 6, "gps": "E"},
-    {"temps": 60, "p9": 0, "p6": 0, "p3": 9, "dtr": 11, "gps": "F"},
-    {"temps": 75, "p9": 0, "p6": 0, "p3": 17, "dtr": 19, "gps": "H"},
-    {"temps": 90, "p9": 0, "p6": 0, "p3": 27, "dtr": 29, "gps": "I"}
+  "21": [
+   {
+    "temps": 35,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "1:45",
+    "successive": true
+   },
+   {
+    "temps": 40,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "4:30",
+    "successive": true
+   },
+   {
+    "temps": 45,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 5,
+    "total": "6:30",
+    "successive": true
+   },
+   {
+    "temps": 50,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 7,
+    "total": "8:30",
+    "successive": true
+   },
+   {
+    "temps": 60,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 15,
+    "total": "16:30",
+    "successive": true
+   },
+   {
+    "temps": 70,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 20,
+    "total": "21:30",
+    "successive": true
+   },
+   {
+    "temps": 80,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 25,
+    "total": "29:15",
+    "successive": true
+   },
+   {
+    "temps": 90,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 5,
+    "p3": 30,
+    "total": "36:15",
+    "successive": true
+   },
+   {
+    "temps": 100,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 7,
+    "p3": 35,
+    "total": "43:15",
+    "successive": true
+   },
+   {
+    "temps": 110,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 10,
+    "p3": 40,
+    "total": "51:15",
+    "successive": true
+   },
+   {
+    "temps": 120,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 15,
+    "p3": 45,
+    "total": "61:15",
+    "successive": true
+   },
+   {
+    "temps": 130,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 20,
+    "p3": 50,
+    "total": "71:15",
+    "successive": true
+   },
+   {
+    "temps": 140,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 25,
+    "p3": 55,
+    "total": "81:15",
+    "successive": true
+   },
+   {
+    "temps": 150,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 25,
+    "p3": 60,
+    "total": "89:00",
+    "successive": false
+   },
+   {
+    "temps": 180,
+    "remontee": "1:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 5,
+    "p6": 40,
+    "p3": 75,
+    "total": "121:00",
+    "successive": false
+   }
   ],
-  "22": [
-    {"temps": 30, "p9": 0, "p6": 0, "p3": 0, "dtr": 2, "gps": "C"},
-    {"temps": 40, "p9": 0, "p6": 0, "p3": 3, "dtr": 5, "gps": "E"},
-    {"temps": 50, "p9": 0, "p6": 0, "p3": 9, "dtr": 11, "gps": "F"},
-    {"temps": 60, "p9": 0, "p6": 0, "p3": 15, "dtr": 17, "gps": "H"}
+  "24": [
+   {
+    "temps": 25,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "2:00",
+    "successive": true
+   },
+   {
+    "temps": 30,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "4:45",
+    "successive": true
+   },
+   {
+    "temps": 35,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 5,
+    "total": "6:45",
+    "successive": true
+   },
+   {
+    "temps": 40,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 7,
+    "total": "8:45",
+    "successive": true
+   },
+   {
+    "temps": 45,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 10,
+    "total": "11:45",
+    "successive": true
+   },
+   {
+    "temps": 50,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 15,
+    "total": "16:45",
+    "successive": true
+   },
+   {
+    "temps": 60,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 20,
+    "total": "24:30",
+    "successive": true
+   },
+   {
+    "temps": 70,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 5,
+    "p3": 30,
+    "total": "36:30",
+    "successive": true
+   },
+   {
+    "temps": 80,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 10,
+    "p3": 35,
+    "total": "46:30",
+    "successive": true
+   },
+   {
+    "temps": 90,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 15,
+    "p3": 40,
+    "total": "56:30",
+    "successive": true
+   },
+   {
+    "temps": 100,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 20,
+    "p3": 45,
+    "total": "69:15",
+    "successive": true
+   },
+   {
+    "temps": 110,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 25,
+    "p3": 50,
+    "total": "79:15",
+    "successive": true
+   },
+   {
+    "temps": 120,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 30,
+    "p3": 60,
+    "total": "94:15",
+    "successive": true
+   },
+   {
+    "temps": 130,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 5,
+    "p6": 30,
+    "p3": 65,
+    "total": "101:15",
+    "successive": true
+   },
+   {
+    "temps": 140,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 10,
+    "p6": 35,
+    "p3": 70,
+    "total": "116:15",
+    "successive": false
+   },
+   {
+    "temps": 150,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 10,
+    "p6": 40,
+    "p3": 75,
+    "total": "126:15",
+    "successive": false
+   }
   ],
-  "25": [
-    {"temps": 20, "p9": 0, "p6": 0, "p3": 0, "dtr": 2, "gps": "D"},
-    {"temps": 30, "p9": 0, "p6": 0, "p3": 4, "dtr": 6, "gps": "F"},
-    {"temps": 40, "p9": 0, "p6": 0, "p3": 11, "dtr": 13, "gps": "H"},
-    {"temps": 50, "p9": 0, "p6": 0, "p3": 20, "dtr": 22, "gps": "I"},
-    {"temps": 60, "p9": 0, "p6": 2, "p3": 29, "dtr": 33, "gps": "J"}
-  ],
-  "28": [
-    {"temps": 15, "p9": 0, "p6": 0, "p3": 0, "dtr": 2, "gps": "D"},
-    {"temps": 20, "p9": 0, "p6": 0, "p3": 3, "dtr": 5, "gps": "E"},
-    {"temps": 25, "p9": 0, "p6": 0, "p3": 7, "dtr": 9, "gps": "F"},
-    {"temps": 30, "p9": 0, "p6": 0, "p3": 11, "dtr": 13, "gps": "G"},
-    {"temps": 40, "p9": 0, "p6": 1, "p3": 19, "dtr": 22, "gps": "I"}
+  "27": [
+   {
+    "temps": 20,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "2:15",
+    "successive": true
+   },
+   {
+    "temps": 25,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "5:00",
+    "successive": true
+   },
+   {
+    "temps": 30,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 5,
+    "total": "7:00",
+    "successive": true
+   },
+   {
+    "temps": 35,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 10,
+    "total": "12:00",
+    "successive": true
+   },
+   {
+    "temps": 40,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 12,
+    "total": "16:45",
+    "successive": true
+   },
+   {
+    "temps": 45,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 15,
+    "total": "19:45",
+    "successive": true
+   },
+   {
+    "temps": 50,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 5,
+    "p3": 20,
+    "total": "26:45",
+    "successive": true
+   },
+   {
+    "temps": 60,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 7,
+    "p3": 30,
+    "total": "38:45",
+    "successive": true
+   },
+   {
+    "temps": 70,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 12,
+    "p3": 35,
+    "total": "51:30",
+    "successive": true
+   },
+   {
+    "temps": 80,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 17,
+    "p3": 40,
+    "total": "61:30",
+    "successive": true
+   },
+   {
+    "temps": 90,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 5,
+    "p6": 25,
+    "p3": 50,
+    "total": "81:30",
+    "successive": true
+   },
+   {
+    "temps": 100,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 10,
+    "p6": 30,
+    "p3": 55,
+    "total": "96:30",
+    "successive": true
+   },
+   {
+    "temps": 110,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 12,
+    "p6": 30,
+    "p3": 65,
+    "total": "108:30",
+    "successive": true
+   },
+   {
+    "temps": 120,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 15,
+    "p6": 35,
+    "p3": 70,
+    "total": "121:30",
+    "successive": true
+   },
+   {
+    "temps": 130,
+    "remontee": "1:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 20,
+    "p6": 40,
+    "p3": 75,
+    "total": "139:15",
+    "successive": false
+   }
   ],
   "30": [
-    {"temps": 10, "p9": 0, "p6": 0, "p3": 0, "dtr": 3, "gps": "D"},
-    {"temps": 15, "p9": 0, "p6": 0, "p3": 2, "dtr": 5, "gps": "E"},
-    {"temps": 20, "p9": 0, "p6": 0, "p3": 5, "dtr": 8, "gps": "F"},
-    {"temps": 25, "p9": 0, "p6": 0, "p3": 10, "dtr": 13, "gps": "G"},
-    {"temps": 30, "p9": 0, "p6": 1, "p3": 14, "dtr": 18, "gps": "H"},
-    {"temps": 40, "p9": 0, "p6": 3, "p3": 23, "dtr": 29, "gps": "J"}
+   {
+    "temps": 15,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "2:30",
+    "successive": true
+   },
+   {
+    "temps": 20,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "5:15",
+    "successive": true
+   },
+   {
+    "temps": 25,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 5,
+    "total": "7:15",
+    "successive": true
+   },
+   {
+    "temps": 30,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 10,
+    "total": "12:15",
+    "successive": true
+   },
+   {
+    "temps": 35,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 12,
+    "total": "17:00",
+    "successive": true
+   },
+   {
+    "temps": 40,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 5,
+    "p3": 17,
+    "total": "24:00",
+    "successive": true
+   },
+   {
+    "temps": 45,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 7,
+    "p3": 20,
+    "total": "29:00",
+    "successive": true
+   },
+   {
+    "temps": 50,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 10,
+    "p3": 25,
+    "total": "37:00",
+    "successive": true
+   },
+   {
+    "temps": 60,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 15,
+    "p3": 35,
+    "total": "54:45",
+    "successive": true
+   },
+   {
+    "temps": 70,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 5,
+    "p6": 20,
+    "p3": 40,
+    "total": "66:45",
+    "successive": true
+   },
+   {
+    "temps": 80,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 10,
+    "p6": 25,
+    "p3": 50,
+    "total": "86:45",
+    "successive": true
+   },
+   {
+    "temps": 90,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 12,
+    "p6": 30,
+    "p3": 60,
+    "total": "106:30",
+    "successive": true
+   },
+   {
+    "temps": 100,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 17,
+    "p6": 35,
+    "p3": 65,
+    "total": "121:30",
+    "successive": true
+   },
+   {
+    "temps": 110,
+    "remontee": "1:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 20,
+    "p6": 40,
+    "p3": 75,
+    "total": "139:30",
+    "successive": false
+   }
   ],
-  "32": [
-    {"temps": 10, "p9": 0, "p6": 0, "p3": 0, "dtr": 3, "gps": "D"},
-    {"temps": 15, "p9": 0, "p6": 0, "p3": 4, "dtr": 7, "gps": "F"},
-    {"temps": 20, "p9": 0, "p6": 0, "p3": 8, "dtr": 11, "gps": "G"},
-    {"temps": 25, "p9": 0, "p6": 1, "p3": 13, "dtr": 17, "gps": "H"},
-    {"temps": 30, "p9": 0, "p6": 3, "p3": 18, "dtr": 24, "gps": "I"}
+  "33": [
+   {
+    "temps": 12,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "2:45",
+    "successive": true
+   },
+   {
+    "temps": 15,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "5:30",
+    "successive": true
+   },
+   {
+    "temps": 20,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 5,
+    "total": "7:30",
+    "successive": true
+   },
+   {
+    "temps": 25,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 7,
+    "total": "12:15",
+    "successive": true
+   },
+   {
+    "temps": 30,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 12,
+    "total": "17:15",
+    "successive": true
+   },
+   {
+    "temps": 35,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 5,
+    "p3": 15,
+    "total": "22:15",
+    "successive": true
+   },
+   {
+    "temps": 40,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 7,
+    "p3": 20,
+    "total": "32:00",
+    "successive": true
+   },
+   {
+    "temps": 45,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 10,
+    "p3": 25,
+    "total": "40:00",
+    "successive": true
+   },
+   {
+    "temps": 50,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 5,
+    "p6": 15,
+    "p3": 30,
+    "total": "52:00",
+    "successive": true
+   },
+   {
+    "temps": 60,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 10,
+    "p6": 20,
+    "p3": 40,
+    "total": "72:00",
+    "successive": true
+   },
+   {
+    "temps": 70,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 12,
+    "p6": 25,
+    "p3": 50,
+    "total": "91:45",
+    "successive": true
+   },
+   {
+    "temps": 80,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 15,
+    "p6": 30,
+    "p3": 60,
+    "total": "109:45",
+    "successive": true
+   },
+   {
+    "temps": 90,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 5,
+    "p9": 20,
+    "p6": 35,
+    "p3": 65,
+    "total": "126:45",
+    "successive": true
+   },
+   {
+    "temps": 100,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 10,
+    "p9": 25,
+    "p6": 40,
+    "p3": 75,
+    "total": "151:45",
+    "successive": false
+   }
   ],
-  "35": [
-    {"temps": 10, "p9": 0, "p6": 0, "p3": 0, "dtr": 3, "gps": "E"},
-    {"temps": 15, "p9": 0, "p6": 0, "p3": 5, "dtr": 8, "gps": "F"},
-    {"temps": 20, "p9": 0, "p6": 0, "p3": 12, "dtr": 15, "gps": "H"},
-    {"temps": 25, "p9": 0, "p6": 2, "p3": 17, "dtr": 22, "gps": "I"},
-    {"temps": 30, "p9": 0, "p6": 5, "p3": 22, "dtr": 30, "gps": "J"}
+  "36": [
+   {
+    "temps": 10,
+    "remontee": "3:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "3:00",
+    "successive": true
+   },
+   {
+    "temps": 15,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "5:45",
+    "successive": true
+   },
+   {
+    "temps": 20,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 7,
+    "total": "9:45",
+    "successive": true
+   },
+   {
+    "temps": 25,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 12,
+    "total": "17:30",
+    "successive": true
+   },
+   {
+    "temps": 30,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 5,
+    "p3": 17,
+    "total": "24:30",
+    "successive": true
+   },
+   {
+    "temps": 35,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 10,
+    "p3": 20,
+    "total": "35:15",
+    "successive": true
+   },
+   {
+    "temps": 40,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 12,
+    "p3": 25,
+    "total": "42:15",
+    "successive": true
+   },
+   {
+    "temps": 45,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 5,
+    "p6": 15,
+    "p3": 30,
+    "total": "52:15",
+    "successive": true
+   },
+   {
+    "temps": 50,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 7,
+    "p6": 20,
+    "p3": 35,
+    "total": "67:00",
+    "successive": true
+   },
+   {
+    "temps": 60,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 12,
+    "p6": 25,
+    "p3": 45,
+    "total": "87:00",
+    "successive": true
+   },
+   {
+    "temps": 70,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 5,
+    "p9": 15,
+    "p6": 30,
+    "p3": 55,
+    "total": "107:00",
+    "successive": true
+   },
+   {
+    "temps": 80,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 7,
+    "p9": 20,
+    "p6": 35,
+    "p3": 65,
+    "total": "129:00",
+    "successive": true
+   },
+   {
+    "temps": 90,
+    "remontee": "1:45",
+    "p18": 0,
+    "p15": 3,
+    "p12": 12,
+    "p9": 25,
+    "p6": 40,
+    "p3": 75,
+    "total": "156:45",
+    "successive": false
+   }
   ],
-  "38": [
-    {"temps": 5, "p9": 0, "p6": 0, "p3": 0, "dtr": 3, "gps": "D"},
-    {"temps": 10, "p9": 0, "p6": 0, "p3": 2, "dtr": 5, "gps": "F"},
-    {"temps": 15, "p9": 0, "p6": 0, "p3": 9, "dtr": 12, "gps": "G"},
-    {"temps": 20, "p9": 0, "p6": 2, "p3": 16, "dtr": 21, "gps": "I"},
-    {"temps": 25, "p9": 0, "p6": 5, "p3": 22, "dtr": 30, "gps": "J"}
-  ],
-  "40": [
-    {"temps": 5, "p9": 0, "p6": 0, "p3": 0, "dtr": 3, "gps": "D"},
-    {"temps": 10, "p9": 0, "p6": 0, "p3": 4, "dtr": 7, "gps": "F"},
-    {"temps": 15, "p9": 0, "p6": 1, "p3": 12, "dtr": 16, "gps": "H"},
-    {"temps": 20, "p9": 0, "p6": 4, "p3": 19, "dtr": 26, "gps": "I"},
-    {"temps": 25, "p9": 0, "p6": 7, "p3": 25, "dtr": 35, "gps": "J"}
+  "39": [
+   {
+    "temps": 8,
+    "remontee": "3:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "3:15",
+    "successive": true
+   },
+   {
+    "temps": 10,
+    "remontee": "3:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "6:00",
+    "successive": true
+   },
+   {
+    "temps": 15,
+    "remontee": "3:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 5,
+    "total": "8:00",
+    "successive": true
+   },
+   {
+    "temps": 20,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 7,
+    "total": "12:45",
+    "successive": true
+   },
+   {
+    "temps": 25,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 5,
+    "p3": 15,
+    "total": "22:45",
+    "successive": true
+   },
+   {
+    "temps": 30,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 7,
+    "p3": 20,
+    "total": "32:30",
+    "successive": true
+   },
+   {
+    "temps": 35,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 5,
+    "p6": 10,
+    "p3": 25,
+    "total": "42:30",
+    "successive": true
+   },
+   {
+    "temps": 40,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 7,
+    "p6": 15,
+    "p3": 30,
+    "total": "57:15",
+    "successive": true
+   },
+   {
+    "temps": 45,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 10,
+    "p6": 20,
+    "p3": 35,
+    "total": "70:15",
+    "successive": true
+   },
+   {
+    "temps": 50,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 10,
+    "p6": 25,
+    "p3": 45,
+    "total": "85:15",
+    "successive": true
+   },
+   {
+    "temps": 60,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 5,
+    "p9": 15,
+    "p6": 30,
+    "p3": 55,
+    "total": "107:15",
+    "successive": true
+   },
+   {
+    "temps": 70,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 3,
+    "p12": 10,
+    "p9": 20,
+    "p6": 35,
+    "p3": 65,
+    "total": "135:00",
+    "successive": true
+   },
+   {
+    "temps": 80,
+    "remontee": "2:00",
+    "p18": 0,
+    "p15": 3,
+    "p12": 12,
+    "p9": 25,
+    "p6": 40,
+    "p3": 75,
+    "total": "157:00",
+    "successive": false
+   }
   ],
   "42": [
-    {"temps": 5, "p9": 0, "p6": 0, "p3": 0, "dtr": 4, "gps": "E"},
-    {"temps": 10, "p9": 0, "p6": 0, "p3": 6, "dtr": 10, "gps": "G"},
-    {"temps": 15, "p9": 0, "p6": 2, "p3": 15, "dtr": 21, "gps": "H"},
-    {"temps": 20, "p9": 0, "p6": 6, "p3": 22, "dtr": 32, "gps": "J"}
+   {
+    "temps": 7,
+    "remontee": "3:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "3:30",
+    "successive": true
+   },
+   {
+    "temps": 10,
+    "remontee": "3:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "6:15",
+    "successive": true
+   },
+   {
+    "temps": 15,
+    "remontee": "3:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 5,
+    "total": "11:00",
+    "successive": true
+   },
+   {
+    "temps": 20,
+    "remontee": "3:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 12,
+    "total": "18:00",
+    "successive": true
+   },
+   {
+    "temps": 25,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 7,
+    "p3": 17,
+    "total": "29:45",
+    "successive": true
+   },
+   {
+    "temps": 30,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 5,
+    "p6": 10,
+    "p3": 25,
+    "total": "42:45",
+    "successive": true
+   },
+   {
+    "temps": 35,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 7,
+    "p6": 15,
+    "p3": 30,
+    "total": "57:30",
+    "successive": true
+   },
+   {
+    "temps": 40,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 10,
+    "p6": 20,
+    "p3": 35,
+    "total": "70:30",
+    "successive": true
+   },
+   {
+    "temps": 45,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 5,
+    "p9": 12,
+    "p6": 25,
+    "p3": 40,
+    "total": "84:30",
+    "successive": true
+   },
+   {
+    "temps": 50,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 5,
+    "p9": 15,
+    "p6": 25,
+    "p3": 45,
+    "total": "92:30",
+    "successive": true
+   },
+   {
+    "temps": 60,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 3,
+    "p12": 10,
+    "p9": 17,
+    "p6": 30,
+    "p3": 60,
+    "total": "122:15",
+    "successive": true
+   },
+   {
+    "temps": 70,
+    "remontee": "2:15",
+    "p18": 0,
+    "p15": 5,
+    "p12": 12,
+    "p9": 25,
+    "p6": 40,
+    "p3": 75,
+    "total": "159:15",
+    "successive": false
+   }
   ],
   "45": [
-    {"temps": 5, "p9": 0, "p6": 0, "p3": 1, "dtr": 5, "gps": "E"},
-    {"temps": 10, "p9": 0, "p6": 2, "p3": 10, "dtr": 16, "gps": "G"},
-    {"temps": 15, "p9": 0, "p6": 5, "p3": 18, "dtr": 27, "gps": "I"},
-    {"temps": 20, "p9": 1, "p6": 8, "p3": 25, "dtr": 38, "gps": "J"}
+   {
+    "temps": 6,
+    "remontee": "3:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "3:45",
+    "successive": true
+   },
+   {
+    "temps": 10,
+    "remontee": "3:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "6:30",
+    "successive": true
+   },
+   {
+    "temps": 15,
+    "remontee": "3:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 7,
+    "total": "13:15",
+    "successive": true
+   },
+   {
+    "temps": 20,
+    "remontee": "3:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 5,
+    "p3": 12,
+    "total": "23:00",
+    "successive": true
+   },
+   {
+    "temps": 25,
+    "remontee": "3:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 7,
+    "p3": 20,
+    "total": "33:00",
+    "successive": true
+   },
+   {
+    "temps": 30,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 5,
+    "p6": 12,
+    "p3": 25,
+    "total": "47:45",
+    "successive": true
+   },
+   {
+    "temps": 35,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 7,
+    "p6": 15,
+    "p3": 30,
+    "total": "57:45",
+    "successive": true
+   },
+   {
+    "temps": 40,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 5,
+    "p9": 10,
+    "p6": 20,
+    "p3": 40,
+    "total": "77:45",
+    "successive": true
+   },
+   {
+    "temps": 45,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 3,
+    "p12": 5,
+    "p9": 12,
+    "p6": 25,
+    "p3": 45,
+    "total": "92:30",
+    "successive": true
+   },
+   {
+    "temps": 50,
+    "remontee": "2:30",
+    "p18": 0,
+    "p15": 3,
+    "p12": 7,
+    "p9": 15,
+    "p6": 30,
+    "p3": 55,
+    "total": "112:30",
+    "successive": true
+   },
+   {
+    "temps": 60,
+    "remontee": "2:15",
+    "p18": 3,
+    "p15": 5,
+    "p12": 12,
+    "p9": 20,
+    "p6": 35,
+    "p3": 65,
+    "total": "142:15",
+    "successive": false
+   }
   ],
   "48": [
-    {"temps": 5, "p9": 0, "p6": 0, "p3": 2, "dtr": 6, "gps": "E"},
-    {"temps": 10, "p9": 0, "p6": 3, "p3": 13, "dtr": 20, "gps": "H"},
-    {"temps": 15, "p9": 1, "p6": 6, "p3": 22, "dtr": 33, "gps": "J"},
-    {"temps": 20, "p9": 3, "p6": 10, "p3": 29, "dtr": 46, "gps": "K"}
+   {
+    "temps": 5,
+    "remontee": "4:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "4:00",
+    "successive": true
+   },
+   {
+    "temps": 10,
+    "remontee": "3:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 5,
+    "total": "8:45",
+    "successive": true
+   },
+   {
+    "temps": 15,
+    "remontee": "3:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 7,
+    "total": "13:30",
+    "successive": true
+   },
+   {
+    "temps": 20,
+    "remontee": "3:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 7,
+    "p3": 15,
+    "total": "28:15",
+    "successive": true
+   },
+   {
+    "temps": 25,
+    "remontee": "3:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 5,
+    "p6": 10,
+    "p3": 20,
+    "total": "38:15",
+    "successive": true
+   },
+   {
+    "temps": 30,
+    "remontee": "3:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 7,
+    "p6": 15,
+    "p3": 30,
+    "total": "58:00",
+    "successive": true
+   },
+   {
+    "temps": 35,
+    "remontee": "3:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 5,
+    "p9": 10,
+    "p6": 20,
+    "p3": 35,
+    "total": "73:00",
+    "successive": true
+   },
+   {
+    "temps": 40,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 3,
+    "p12": 7,
+    "p9": 15,
+    "p6": 25,
+    "p3": 45,
+    "total": "97:45",
+    "successive": true
+   },
+   {
+    "temps": 45,
+    "remontee": "2:45",
+    "p18": 0,
+    "p15": 5,
+    "p12": 10,
+    "p9": 17,
+    "p6": 30,
+    "p3": 50,
+    "total": "114:45",
+    "successive": true
+   },
+   {
+    "temps": 50,
+    "remontee": "2:30",
+    "p18": 3,
+    "p15": 5,
+    "p12": 10,
+    "p9": 20,
+    "p6": 30,
+    "p3": 60,
+    "total": "130:30",
+    "successive": true
+   },
+   {
+    "temps": 60,
+    "remontee": "2:30",
+    "p18": 3,
+    "p15": 7,
+    "p12": 15,
+    "p9": 25,
+    "p6": 40,
+    "p3": 75,
+    "total": "167:30",
+    "successive": false
+   }
   ],
-  "50": [
-    {"temps": 5, "p9": 0, "p6": 0, "p3": 4, "dtr": 8, "gps": "F"},
-    {"temps": 10, "p9": 0, "p6": 4, "p3": 15, "dtr": 23, "gps": "I"},
-    {"temps": 15, "p9": 2, "p6": 7, "p3": 24, "dtr": 37, "gps": "J"},
-    {"temps": 20, "p9": 4, "p6": 12, "p3": 32, "dtr": 52, "gps": "K"}
+  "51": [
+   {
+    "temps": 5,
+    "remontee": "4:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 0,
+    "total": "4:15",
+    "successive": true
+   },
+   {
+    "temps": 10,
+    "remontee": "3:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 5,
+    "total": "11:45",
+    "successive": true
+   },
+   {
+    "temps": 15,
+    "remontee": "3:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 5,
+    "p3": 12,
+    "total": "23:30",
+    "successive": true
+   },
+   {
+    "temps": 20,
+    "remontee": "3:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 5,
+    "p6": 7,
+    "p3": 17,
+    "total": "32:30",
+    "successive": true
+   },
+   {
+    "temps": 25,
+    "remontee": "3:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 5,
+    "p6": 12,
+    "p3": 25,
+    "total": "48:15",
+    "successive": true
+   },
+   {
+    "temps": 30,
+    "remontee": "3:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 5,
+    "p9": 7,
+    "p6": 15,
+    "p3": 35,
+    "total": "65:15",
+    "successive": true
+   },
+   {
+    "temps": 35,
+    "remontee": "3:00",
+    "p18": 0,
+    "p15": 3,
+    "p12": 5,
+    "p9": 10,
+    "p6": 20,
+    "p3": 40,
+    "total": "81:00",
+    "successive": true
+   },
+   {
+    "temps": 40,
+    "remontee": "3:00",
+    "p18": 0,
+    "p15": 5,
+    "p12": 7,
+    "p9": 15,
+    "p6": 25,
+    "p3": 50,
+    "total": "105:00",
+    "successive": true
+   },
+   {
+    "temps": 45,
+    "remontee": "2:45",
+    "p18": 3,
+    "p15": 5,
+    "p12": 10,
+    "p9": 17,
+    "p6": 30,
+    "p3": 55,
+    "total": "122:45",
+    "successive": true
+   },
+   {
+    "temps": 50,
+    "remontee": "2:45",
+    "p18": 3,
+    "p15": 7,
+    "p12": 12,
+    "p9": 20,
+    "p6": 35,
+    "p3": 65,
+    "total": "144:45",
+    "successive": false
+   }
   ],
-  "52": [
-    {"temps": 5, "p9": 0, "p6": 0, "p3": 5, "dtr": 9, "gps": "F"},
-    {"temps": 10, "p9": 0, "p6": 5, "p3": 17, "dtr": 26, "gps": "I"},
-    {"temps": 15, "p9": 2, "p6": 9, "p3": 27, "dtr": 42, "gps": "J"}
+  "54": [
+   {
+    "temps": 5,
+    "remontee": "4:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "7:15",
+    "successive": false
+   },
+   {
+    "temps": 10,
+    "remontee": "4:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 7,
+    "total": "14:00",
+    "successive": false
+   },
+   {
+    "temps": 15,
+    "remontee": "3:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 5,
+    "p3": 12,
+    "total": "23:45",
+    "successive": false
+   },
+   {
+    "temps": 20,
+    "remontee": "3:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 5,
+    "p6": 10,
+    "p3": 17,
+    "total": "38:30",
+    "successive": false
+   },
+   {
+    "temps": 25,
+    "remontee": "3:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 5,
+    "p9": 7,
+    "p6": 15,
+    "p3": 30,
+    "total": "60:30",
+    "successive": false
+   },
+   {
+    "temps": 30,
+    "remontee": "3:15",
+    "p18": 0,
+    "p15": 3,
+    "p12": 5,
+    "p9": 10,
+    "p6": 20,
+    "p3": 35,
+    "total": "76:15",
+    "successive": false
+   },
+   {
+    "temps": 35,
+    "remontee": "3:15",
+    "p18": 0,
+    "p15": 5,
+    "p12": 7,
+    "p9": 12,
+    "p6": 25,
+    "p3": 45,
+    "total": "97:15",
+    "successive": false
+   },
+   {
+    "temps": 40,
+    "remontee": "3:00",
+    "p18": 3,
+    "p15": 5,
+    "p12": 10,
+    "p9": 15,
+    "p6": 30,
+    "p3": 55,
+    "total": "121:00",
+    "successive": false
+   },
+   {
+    "temps": 45,
+    "remontee": "3:00",
+    "p18": 5,
+    "p15": 7,
+    "p12": 12,
+    "p9": 20,
+    "p6": 35,
+    "p3": 60,
+    "total": "142:00",
+    "successive": false
+   }
   ],
-  "55": [
-    {"temps": 5, "p9": 0, "p6": 1, "p3": 8, "dtr": 13, "gps": "G"},
-    {"temps": 10, "p9": 1, "p6": 6, "p3": 20, "dtr": 31, "gps": "I"},
-    {"temps": 15, "p9": 3, "p6": 11, "p3": 30, "dtr": 48, "gps": "K"}
-  ],
-  "58": [
-    {"temps": 5, "p9": 0, "p6": 1, "p3": 10, "dtr": 15, "gps": "G"},
-    {"temps": 10, "p9": 1, "p6": 7, "p3": 23, "dtr": 35, "gps": "J"},
-    {"temps": 15, "p9": 4, "p6": 13, "p3": 34, "dtr": 55, "gps": "K"}
+  "57": [
+   {
+    "temps": 5,
+    "remontee": "4:30",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 3,
+    "total": "7:30",
+    "successive": false
+   },
+   {
+    "temps": 10,
+    "remontee": "4:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 3,
+    "p3": 7,
+    "total": "14:15",
+    "successive": false
+   },
+   {
+    "temps": 15,
+    "remontee": "4:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 7,
+    "p3": 15,
+    "total": "29:00",
+    "successive": false
+   },
+   {
+    "temps": 20,
+    "remontee": "3:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 5,
+    "p6": 10,
+    "p3": 20,
+    "total": "41:45",
+    "successive": false
+   },
+   {
+    "temps": 25,
+    "remontee": "3:30",
+    "p18": 0,
+    "p15": 3,
+    "p12": 5,
+    "p9": 7,
+    "p6": 15,
+    "p3": 30,
+    "total": "63:30",
+    "successive": false
+   },
+   {
+    "temps": 30,
+    "remontee": "3:30",
+    "p18": 0,
+    "p15": 3,
+    "p12": 7,
+    "p9": 10,
+    "p6": 20,
+    "p3": 40,
+    "total": "83:30",
+    "successive": false
+   },
+   {
+    "temps": 35,
+    "remontee": "3:15",
+    "p18": 3,
+    "p15": 5,
+    "p12": 7,
+    "p9": 15,
+    "p6": 25,
+    "p3": 50,
+    "total": "108:15",
+    "successive": false
+   },
+   {
+    "temps": 40,
+    "remontee": "3:15",
+    "p18": 3,
+    "p15": 7,
+    "p12": 10,
+    "p9": 20,
+    "p6": 30,
+    "p3": 60,
+    "total": "133:15",
+    "successive": false
+   }
   ],
   "60": [
-    {"temps": 5, "p9": 0, "p6": 2, "p3": 11, "dtr": 17, "gps": "H"},
-    {"temps": 10, "p9": 2, "p6": 8, "p3": 25, "dtr": 39, "gps": "J"},
-    {"temps": 15, "p9": 5, "p6": 14, "p3": 37, "dtr": 60, "gps": "K"}
+   {
+    "temps": 5,
+    "remontee": "4:45",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 0,
+    "p6": 0,
+    "p3": 5,
+    "total": "9:45",
+    "successive": false
+   },
+   {
+    "temps": 10,
+    "remontee": "4:15",
+    "p18": 0,
+    "p15": 0,
+    "p12": 0,
+    "p9": 3,
+    "p6": 5,
+    "p3": 7,
+    "total": "19:15",
+    "successive": false
+   },
+   {
+    "temps": 15,
+    "remontee": "4:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 3,
+    "p9": 5,
+    "p6": 7,
+    "p3": 15,
+    "total": "34:00",
+    "successive": false
+   },
+   {
+    "temps": 20,
+    "remontee": "4:00",
+    "p18": 0,
+    "p15": 0,
+    "p12": 5,
+    "p9": 7,
+    "p6": 12,
+    "p3": 25,
+    "total": "53:00",
+    "successive": false
+   },
+   {
+    "temps": 25,
+    "remontee": "3:45",
+    "p18": 0,
+    "p15": 3,
+    "p12": 5,
+    "p9": 10,
+    "p6": 20,
+    "p3": 35,
+    "total": "76:45",
+    "successive": false
+   },
+   {
+    "temps": 30,
+    "remontee": "3:30",
+    "p18": 3,
+    "p15": 5,
+    "p12": 7,
+    "p9": 12,
+    "p6": 25,
+    "p3": 45,
+    "total": "100:30",
+    "successive": false
+   },
+   {
+    "temps": 35,
+    "remontee": "3:30",
+    "p18": 3,
+    "p15": 5,
+    "p12": 10,
+    "p9": 15,
+    "p6": 30,
+    "p3": 55,
+    "total": "121:30",
+    "successive": false
+   }
   ]
+ }
 }

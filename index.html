@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.24.0">
+    <meta name="version" content="1.24.1">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -99,7 +99,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.24.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.24.1</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -204,7 +204,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.24.0</span><br>
+                        Vulcain v<span class="app-version">1.24.1</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -10451,44 +10451,22 @@
                 </div>
                 
                 <div style="background: linear-gradient(135deg, light-dark(#E3F2FD, #3b3f44) 0%, light-dark(#BBDEFB, #343c43) 100%); padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #2196F3;">
-                    <div style="font-size: 0.9em; color: light-dark(#1565c0, #5da1ed); margin-bottom: 5px;">Vitesse PALIERS</div>
-                    <div style="font-size: 2em; font-weight: 700; color: light-dark(#0d47a1, #649cf2);">6</div>
-                    <div style="font-size: 1.1em;">m/min</div>
+                    <div style="font-size: 0.9em; color: var(--t-ink); margin-bottom: 5px;">Entre PALIERS</div>
+                    <div style="font-size: 2em; font-weight: 700; color: var(--t-ink);">1 min</div>
+                    <div style="font-size: 1.1em;">dernière minute du palier</div>
                 </div>
             </div>
         </div>
         
-        <!-- Mini-table sans palier -->
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px; overflow-x: auto;">
-            <h3 style="color: light-dark(#b71c1c, #eb7c7c); margin-bottom: 15px; border-bottom: 2px solid #C62828; padding-bottom: 10px;">⏱️ Temps Max SANS Palier (Air)</h3>
-            
-            <table style="width: 100%; border-collapse: collapse; text-align: center;">
-                <thead>
-                    <tr style="background: linear-gradient(135deg, #B71C1C 0%, #C62828 100%); color: #fff;">
-                        <th style="padding: 10px; border: 1px solid #B71C1C;">Prof.</th>
-                        <th style="padding: 10px; border: 1px solid #B71C1C;">12m</th>
-                        <th style="padding: 10px; border: 1px solid #B71C1C;">15m</th>
-                        <th style="padding: 10px; border: 1px solid #B71C1C;">20m</th>
-                        <th style="padding: 10px; border: 1px solid #B71C1C;">25m</th>
-                        <th style="padding: 10px; border: 1px solid #B71C1C;">30m</th>
-                        <th style="padding: 10px; border: 1px solid #B71C1C;">35m</th>
-                        <th style="padding: 10px; border: 1px solid #B71C1C;">40m</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background: #EF9A9A; color: #000;">
-                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: 700;">Temps max</td>
-                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: 700; color: #214b22;">2h15</td>
-                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: 700; color: #214b22;">1h15</td>
-                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: 700; color: #533f00;">40'</td>
-                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: 700; color: #533f00;">20'</td>
-                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: 700; color: #613a00;">10'</td>
-                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: 700; color: #891008;">10'</td>
-                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: 700; color: #821a1a;">5'</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="font-size: 0.85em; margin-top: 10px; color: var(--text-secondary);">Valeurs indicatives - Se référer aux tables officielles MT2012</p>
+        <!-- Temps sans palier (MT 2012) -->
+        <div class="rd-section">
+            <h3>⏱️ Temps au fond maximum sans palier (min)</h3>
+            <div style="overflow-x:auto"><table class="rd-table">
+                <thead><tr><th>Profondeur</th><th>Intervalle 12 h</th><th>6 h</th><th>4 h</th></tr></thead>
+                <tbody><tr><td>7,5 m</td><td>illimité</td><td>illimité</td><td>illimité</td></tr><tr><td>9 m</td><td>360</td><td>330</td><td>300</td></tr><tr><td>10,5 m</td><td>270</td><td>250</td><td>240</td></tr><tr><td>12 m</td><td>165</td><td>150</td><td>135</td></tr><tr><td>13,5 m</td><td>100</td><td>90</td><td>90</td></tr><tr><td>15 m</td><td>80</td><td>70</td><td>60</td></tr><tr><td>18 m</td><td>50</td><td>40</td><td>35</td></tr><tr><td>21 m</td><td>35</td><td>25</td><td>20</td></tr><tr><td>24 m</td><td>25</td><td>20</td><td>10</td></tr><tr><td>27 m</td><td>20</td><td>25 *</td><td>10</td></tr><tr><td>30 m</td><td>15</td><td>10</td><td>5</td></tr><tr><td>33 m</td><td>12</td><td>7</td><td>2</td></tr><tr><td>36 m</td><td>10</td><td>5</td><td>–</td></tr><tr><td>39 m</td><td>8</td><td>3</td><td>–</td></tr><tr><td>42 m</td><td>7</td><td>2</td><td>–</td></tr><tr><td>45 m</td><td>6</td><td>–</td><td>–</td></tr><tr><td>48 m</td><td>5</td><td>–</td><td>–</td></tr><tr><td>51 m</td><td>5</td><td>–</td><td>–</td></tr></tbody>
+            </table></div>
+            <p class="sal-res-info">Intervalle = temps écoulé depuis la plongée précédente. * Valeur telle qu'imprimée dans le référentiel (plus grande qu'à 12 h, donc vraisemblablement une coquille) : à vérifier sur la table papier.</p>
+            <div class="rd-tuiles"><button onclick="showModule('sal-calculateur')"><b>🧮 Calculateur MT 2012</b><span>Paliers selon la table Air Standard</span></button></div>
         </div>
         
         <!-- Règles paliers -->
@@ -10690,156 +10668,45 @@
 
     <div id="sal-calculateur" class="module">
         <button class="back-btn" onclick="showModule('sal-menu')">← Retour SAL/SAV</button>
-        <h2 style="color: light-dark(#1a237e, #9098e8); border-bottom: 3px solid #1A237E;">🧮 Calculateur de Paliers MT2012</h2>
-        
-        <!-- Calculateur interactif -->
-        <div class="result-box" style="background: linear-gradient(135deg, var(--t-s2, #E8EAF6) 0%, light-dark(#C5CAE9, #363840) 100%); border: 3px solid #3F51B5; margin-top: 20px;">
-            <h3 style="color: light-dark(#1a237e, #9098e8); margin-bottom: 20px; text-align: center;">⚙️ Calcul Plongée Simple - Air</h3>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-                <div>
-                    <label style="display: block; font-weight: 700; margin-bottom: 8px; color: light-dark(#283593, #8d97e0);">📏 Profondeur (m)</label>
-                    <select id="calc-profondeur" style="width: 100%; padding: 15px; font-size: 1.2em; border-radius: 10px; border: 2px solid #3F51B5; background: var(--t-s1, #fff);" onchange="calculerPaliers()">
-                        <option value="">-- Choisir --</option>
-                        <option value="12">12 m</option>
-                        <option value="15">15 m</option>
-                        <option value="18">18 m</option>
-                        <option value="20">20 m</option>
-                        <option value="22">22 m</option>
-                        <option value="25">25 m</option>
-                        <option value="28">28 m</option>
-                        <option value="30">30 m</option>
-                        <option value="32">32 m</option>
-                        <option value="35">35 m</option>
-                        <option value="38">38 m</option>
-                        <option value="40">40 m</option>
-                        <option value="42">42 m</option>
-                        <option value="45">45 m</option>
-                        <option value="48">48 m</option>
-                        <option value="50">50 m</option>
-                        <option value="52">52 m</option>
-                        <option value="55">55 m</option>
-                        <option value="58">58 m</option>
-                        <option value="60">60 m</option>
-                    </select>
-                </div>
-                <div>
-                    <label style="display: block; font-weight: 700; margin-bottom: 8px; color: light-dark(#283593, #8d97e0);">⏱️ Temps au fond (min)</label>
-                    <input type="number" id="calc-temps" min="1" max="180" placeholder="Ex: 25" style="width: 100%; padding: 15px; font-size: 1.2em; border-radius: 10px; border: 2px solid #3F51B5; box-sizing: border-box;" onchange="calculerPaliers()" onkeyup="calculerPaliers()">
-                </div>
+        <h2>🧮 Calculateur de paliers MT 2012 (air)</h2>
+        <p style="text-align: center;">Tables Air Standard du Ministère du Travail (MT 2012, arrêté du 30/10/2012), reprises dans l'annexe II du référentiel SAL (DGSCGC). Intervalle de 12 h avant la plongée.</p>
+
+        <div class="rd-section">
+            <div class="sal-saisie">
+                <label>📏 Profondeur maximale (m)
+                    <input type="number" id="calc-profondeur" min="1" max="60" step="0.5" inputmode="decimal" placeholder="Ex : 28" oninput="calculerPaliers()">
+                </label>
+                <label>⏱️ Temps de plongée (min)
+                    <input type="number" id="calc-temps" min="1" max="360" inputmode="numeric" placeholder="Ex : 25" oninput="calculerPaliers()">
+                </label>
             </div>
-            
-            <button onclick="calculerPaliers()" style="width: 100%; padding: 15px; font-size: 1.2em; font-weight: 700; background: linear-gradient(135deg, #1A237E 0%, #3F51B5 100%); color: #fff; border: none; border-radius: 10px; cursor: pointer; margin-bottom: 15px;">
-                🔄 CALCULER LES PALIERS
-            </button>
-            
-            <!-- Zone résultat -->
-            <div id="calc-resultat" style="background: var(--t-s1, #fff); padding: 20px; border-radius: 12px; min-height: 100px;">
-                <p style="text-align: center; color: var(--t-muted, #9E9E9E); font-style: italic;">Sélectionnez profondeur et temps pour calculer</p>
+            <p class="sal-res-info">Temps de plongée : du départ de la surface au début de la remontée. Profondeur ou temps absents de la table → valeur <strong>immédiatement supérieure</strong>.</p>
+            <div id="calc-resultat" aria-live="polite">
+                <p class="sal-res-info">Saisissez la profondeur et le temps au fond.</p>
             </div>
         </div>
-        
-        <!-- Rappel vitesses -->
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
-            <h3 style="color: light-dark(#1a237e, #9098e8); margin-bottom: 15px; border-bottom: 2px solid #3F51B5; padding-bottom: 10px;">📋 Rappel Vitesses MT2012</h3>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center;">
-                <div style="background: #EF9A9A; color: #000; padding: 12px; border-radius: 8px;">
-                    <div style="font-weight: 700; color: #821a1a;">Descente</div>
-                    <div style="font-size: 1.3em; font-weight: 700;">≤ 30 m/min</div>
-                </div>
-                <div style="background: light-dark(#A5D6A7, #303a34); color: var(--t-ink, #000); padding: 12px; border-radius: 8px;">
-                    <div style="font-weight: 700; color: light-dark(#2a722e, #41b147);">Remontée</div>
-                    <div style="font-size: 1.3em; font-weight: 700;">9-15 m/min</div>
-                    <div style="font-size: 0.8em;">(réf: 12 m/min)</div>
-                </div>
-                <div style="background: light-dark(#90CAF9, #2c3843); color: var(--t-ink, #000); padding: 12px; border-radius: 8px;">
-                    <div style="font-weight: 700; color: light-dark(#1565c0, #5da1ed);">Entre paliers</div>
-                    <div style="font-size: 1.3em; font-weight: 700;">6 m/min</div>
-                </div>
-            </div>
+
+        <div class="rd-section">
+            <h3>📋 Rappels MT 2012</h3>
+            <ul>
+                <li><strong>Descente</strong> : 30 m/min maximum.</li>
+                <li><strong>Remontée au 1er palier</strong> : 9 à 15 m/min (les durées de la table sont calculées à 12 m/min, 3 m toutes les 15 s).</li>
+                <li><strong>Entre paliers</strong> : la dernière minute de chaque palier sert à rejoindre le palier suivant (ou la surface). Ligne de palier graduée, pas d'effort.</li>
+                <li><strong>Mauvaises conditions</strong> (fatigue, froid, effort) : prendre le temps immédiatement supérieur.</li>
+                <li>Paliers à l'<strong>oxygène pur</strong> : table Air/Oxy/6 m, tous les paliers se font à 6 m.</li>
+                <li><strong>« Non »</strong> en plongée successive : pas de nouvelle plongée avant 12 h. Une seule plongée successive ; aucune au-delà de 51 m.</li>
+                <li>Altitude du site au-delà de 300 m : profondeur équivalente (table altitude). Pas d'effort intense dans les 6 h qui suivent.</li>
+            </ul>
+            <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/sal/Referentiel-SAL-DGSCGC-2014.pdf" target="_blank" rel="noopener">Référentiel SAL et tables (PDF, annexe II p. 46-64)</a></p>
         </div>
-        
-        <!-- Table complète MT2012 simplifiée -->
-        <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px; overflow-x: auto;">
-            <h3 style="color: light-dark(#1a237e, #9098e8); margin-bottom: 15px; border-bottom: 2px solid #3F51B5; padding-bottom: 10px;">📊 Table MT2012 Air - Référence</h3>
-            
-            <table id="table-mt2012" style="width: 100%; border-collapse: collapse; font-size: 0.75em;">
-                <thead>
-                    <tr style="background: linear-gradient(135deg, #1A237E 0%, #283593 100%); color: #fff;">
-                        <th style="padding: 8px 4px; border: 1px solid #1A237E; position: sticky; left: 0; background: #1A237E; color: #ffffff; z-index: 1;">Prof.</th>
-                        <th style="padding: 8px 4px; border: 1px solid #1A237E;">Temps</th>
-                        <th style="padding: 8px 4px; border: 1px solid #1A237E;">P.9m</th>
-                        <th style="padding: 8px 4px; border: 1px solid #1A237E;">P.6m</th>
-                        <th style="padding: 8px 4px; border: 1px solid #1A237E;">P.3m</th>
-                        <th style="padding: 8px 4px; border: 1px solid #1A237E;">DTR</th>
-                        <th style="padding: 8px 4px; border: 1px solid #1A237E;">GPS</th>
-                    </tr>
-                </thead>
-                <tbody style="font-size: 0.95em;">
-                    <!-- 12m -->
-                    <tr style="background: light-dark(#A5D6A7, #303a34); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: #81C784; color: #000;">12m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">≤135</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">1'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">A</td></tr>
-                    <tr style="background: light-dark(#A5D6A7, #303a34); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: #81C784; color: #000;">12m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">150</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">2'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">3'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">B</td></tr>
-                    <!-- 15m -->
-                    <tr style="background: light-dark(#90CAF9, #2c3843); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: #64B5F6; color: #000;">15m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">≤75</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">1'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">B</td></tr>
-                    <tr style="background: light-dark(#90CAF9, #2c3843); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: #64B5F6; color: #000;">15m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">90</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">5'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">6'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">D</td></tr>
-                    <tr style="background: light-dark(#90CAF9, #2c3843); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: #64B5F6; color: #000;">15m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">120</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">17'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">18'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">G</td></tr>
-                    <!-- 20m -->
-                    <tr style="background: light-dark(#FFE082, #403c2e); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: light-dark(#FFD54F, #403a24); color: var(--t-ink, #000);">20m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">≤40</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">2'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">C</td></tr>
-                    <tr style="background: light-dark(#FFE082, #403c2e); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: light-dark(#FFD54F, #403a24); color: var(--t-ink, #000);">20m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">50</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">4'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">6'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">E</td></tr>
-                    <tr style="background: light-dark(#FFE082, #403c2e); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: light-dark(#FFD54F, #403a24); color: var(--t-ink, #000);">20m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">60</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">9'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">11'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">F</td></tr>
-                    <tr style="background: light-dark(#FFE082, #403c2e); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: light-dark(#FFD54F, #403a24); color: var(--t-ink, #000);">20m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">75</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">17'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">19'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">H</td></tr>
-                    <!-- 25m -->
-                    <tr style="background: light-dark(#FFCC80, #40382d); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: light-dark(#FFB74D, #403524); color: var(--t-ink, #000);">25m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">≤20</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">2'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">D</td></tr>
-                    <tr style="background: light-dark(#FFCC80, #40382d); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: light-dark(#FFB74D, #403524); color: var(--t-ink, #000);">25m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">30</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">4'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">6'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">F</td></tr>
-                    <tr style="background: light-dark(#FFCC80, #40382d); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: light-dark(#FFB74D, #403524); color: var(--t-ink, #000);">25m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">40</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">11'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">13'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">H</td></tr>
-                    <tr style="background: light-dark(#FFCC80, #40382d); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: light-dark(#FFB74D, #403524); color: var(--t-ink, #000);">25m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">50</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">20'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">22'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">I</td></tr>
-                    <!-- 30m -->
-                    <tr style="background: #EF9A9A; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #E57373; color: #000;">30m</td><td style="padding: 6px; border: 1px solid #ddd;">≤10</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">3'</td><td style="padding: 6px; border: 1px solid #ddd;">D</td></tr>
-                    <tr style="background: #EF9A9A; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #E57373; color: #000;">30m</td><td style="padding: 6px; border: 1px solid #ddd;">15</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">2'</td><td style="padding: 6px; border: 1px solid #ddd;">5'</td><td style="padding: 6px; border: 1px solid #ddd;">E</td></tr>
-                    <tr style="background: #EF9A9A; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #E57373; color: #000;">30m</td><td style="padding: 6px; border: 1px solid #ddd;">20</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">5'</td><td style="padding: 6px; border: 1px solid #ddd;">8'</td><td style="padding: 6px; border: 1px solid #ddd;">F</td></tr>
-                    <tr style="background: #EF9A9A; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #E57373; color: #000;">30m</td><td style="padding: 6px; border: 1px solid #ddd;">25</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">10'</td><td style="padding: 6px; border: 1px solid #ddd;">13'</td><td style="padding: 6px; border: 1px solid #ddd;">G</td></tr>
-                    <tr style="background: #EF9A9A; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #E57373; color: #000;">30m</td><td style="padding: 6px; border: 1px solid #ddd;">30</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">1'</td><td style="padding: 6px; border: 1px solid #ddd;">14'</td><td style="padding: 6px; border: 1px solid #ddd;">18'</td><td style="padding: 6px; border: 1px solid #ddd;">H</td></tr>
-                    <tr style="background: #EF9A9A; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #E57373; color: #000;">30m</td><td style="padding: 6px; border: 1px solid #ddd;">40</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">3'</td><td style="padding: 6px; border: 1px solid #ddd;">23'</td><td style="padding: 6px; border: 1px solid #ddd;">29'</td><td style="padding: 6px; border: 1px solid #ddd;">J</td></tr>
-                    <!-- 35m -->
-                    <tr style="background: #F48FB1; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #e2175b; color: #fff;">35m</td><td style="padding: 6px; border: 1px solid #ddd;">≤10</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">3'</td><td style="padding: 6px; border: 1px solid #ddd;">E</td></tr>
-                    <tr style="background: #F48FB1; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #e2175b; color: #fff;">35m</td><td style="padding: 6px; border: 1px solid #ddd;">15</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">5'</td><td style="padding: 6px; border: 1px solid #ddd;">8'</td><td style="padding: 6px; border: 1px solid #ddd;">F</td></tr>
-                    <tr style="background: #F48FB1; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #e2175b; color: #fff;">35m</td><td style="padding: 6px; border: 1px solid #ddd;">20</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">12'</td><td style="padding: 6px; border: 1px solid #ddd;">15'</td><td style="padding: 6px; border: 1px solid #ddd;">H</td></tr>
-                    <tr style="background: #F48FB1; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #e2175b; color: #fff;">35m</td><td style="padding: 6px; border: 1px solid #ddd;">25</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">2'</td><td style="padding: 6px; border: 1px solid #ddd;">17'</td><td style="padding: 6px; border: 1px solid #ddd;">22'</td><td style="padding: 6px; border: 1px solid #ddd;">I</td></tr>
-                    <tr style="background: #F48FB1; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #e2175b; color: #fff;">35m</td><td style="padding: 6px; border: 1px solid #ddd;">30</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">5'</td><td style="padding: 6px; border: 1px solid #ddd;">22'</td><td style="padding: 6px; border: 1px solid #ddd;">30'</td><td style="padding: 6px; border: 1px solid #ddd;">J</td></tr>
-                    <!-- 40m -->
-                    <tr style="background: #CE93D8; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #ae4ebe; color: #fff;">40m</td><td style="padding: 6px; border: 1px solid #ddd;">≤5</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">3'</td><td style="padding: 6px; border: 1px solid #ddd;">D</td></tr>
-                    <tr style="background: #CE93D8; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #ae4ebe; color: #fff;">40m</td><td style="padding: 6px; border: 1px solid #ddd;">10</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">4'</td><td style="padding: 6px; border: 1px solid #ddd;">7'</td><td style="padding: 6px; border: 1px solid #ddd;">F</td></tr>
-                    <tr style="background: #CE93D8; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #ae4ebe; color: #fff;">40m</td><td style="padding: 6px; border: 1px solid #ddd;">15</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">1'</td><td style="padding: 6px; border: 1px solid #ddd;">12'</td><td style="padding: 6px; border: 1px solid #ddd;">16'</td><td style="padding: 6px; border: 1px solid #ddd;">H</td></tr>
-                    <tr style="background: #CE93D8; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #ae4ebe; color: #fff;">40m</td><td style="padding: 6px; border: 1px solid #ddd;">20</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">4'</td><td style="padding: 6px; border: 1px solid #ddd;">19'</td><td style="padding: 6px; border: 1px solid #ddd;">26'</td><td style="padding: 6px; border: 1px solid #ddd;">I</td></tr>
-                    <tr style="background: #CE93D8; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #ae4ebe; color: #fff;">40m</td><td style="padding: 6px; border: 1px solid #ddd;">25</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">7'</td><td style="padding: 6px; border: 1px solid #ddd;">25'</td><td style="padding: 6px; border: 1px solid #ddd;">35'</td><td style="padding: 6px; border: 1px solid #ddd;">J</td></tr>
-                    <!-- 45m -->
-                    <tr style="background: #B39DDB; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #8762c6; color: #fff;">45m</td><td style="padding: 6px; border: 1px solid #ddd;">≤5</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">1'</td><td style="padding: 6px; border: 1px solid #ddd;">5'</td><td style="padding: 6px; border: 1px solid #ddd;">E</td></tr>
-                    <tr style="background: #B39DDB; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #8762c6; color: #fff;">45m</td><td style="padding: 6px; border: 1px solid #ddd;">10</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">2'</td><td style="padding: 6px; border: 1px solid #ddd;">10'</td><td style="padding: 6px; border: 1px solid #ddd;">16'</td><td style="padding: 6px; border: 1px solid #ddd;">G</td></tr>
-                    <tr style="background: #B39DDB; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #8762c6; color: #fff;">45m</td><td style="padding: 6px; border: 1px solid #ddd;">15</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">5'</td><td style="padding: 6px; border: 1px solid #ddd;">18'</td><td style="padding: 6px; border: 1px solid #ddd;">27'</td><td style="padding: 6px; border: 1px solid #ddd;">I</td></tr>
-                    <tr style="background: #B39DDB; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #8762c6; color: #fff;">45m</td><td style="padding: 6px; border: 1px solid #ddd;">20</td><td style="padding: 6px; border: 1px solid #ddd;">1'</td><td style="padding: 6px; border: 1px solid #ddd;">8'</td><td style="padding: 6px; border: 1px solid #ddd;">25'</td><td style="padding: 6px; border: 1px solid #ddd;">38'</td><td style="padding: 6px; border: 1px solid #ddd;">J</td></tr>
-                    <!-- 50m -->
-                    <tr style="background: #9FA8DA; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #5f6fc1; color: #fff;">50m</td><td style="padding: 6px; border: 1px solid #ddd;">≤5</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">4'</td><td style="padding: 6px; border: 1px solid #ddd;">8'</td><td style="padding: 6px; border: 1px solid #ddd;">F</td></tr>
-                    <tr style="background: #9FA8DA; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #5f6fc1; color: #fff;">50m</td><td style="padding: 6px; border: 1px solid #ddd;">10</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">4'</td><td style="padding: 6px; border: 1px solid #ddd;">15'</td><td style="padding: 6px; border: 1px solid #ddd;">23'</td><td style="padding: 6px; border: 1px solid #ddd;">I</td></tr>
-                    <tr style="background: #9FA8DA; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #5f6fc1; color: #fff;">50m</td><td style="padding: 6px; border: 1px solid #ddd;">15</td><td style="padding: 6px; border: 1px solid #ddd;">2'</td><td style="padding: 6px; border: 1px solid #ddd;">7'</td><td style="padding: 6px; border: 1px solid #ddd;">24'</td><td style="padding: 6px; border: 1px solid #ddd;">37'</td><td style="padding: 6px; border: 1px solid #ddd;">J</td></tr>
-                    <tr style="background: #9FA8DA; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #5f6fc1; color: #fff;">50m</td><td style="padding: 6px; border: 1px solid #ddd;">20</td><td style="padding: 6px; border: 1px solid #ddd;">4'</td><td style="padding: 6px; border: 1px solid #ddd;">12'</td><td style="padding: 6px; border: 1px solid #ddd;">32'</td><td style="padding: 6px; border: 1px solid #ddd;">52'</td><td style="padding: 6px; border: 1px solid #ddd;">K</td></tr>
-                    <!-- 55m -->
-                    <tr style="background: #9E9E9E; color: #000; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #9E9E9E; color: #000;">55m</td><td style="padding: 6px; border: 1px solid #ddd;">5</td><td style="padding: 6px; border: 1px solid #ddd;">-</td><td style="padding: 6px; border: 1px solid #ddd;">1'</td><td style="padding: 6px; border: 1px solid #ddd;">8'</td><td style="padding: 6px; border: 1px solid #ddd;">13'</td><td style="padding: 6px; border: 1px solid #ddd;">G</td></tr>
-                    <tr style="background: #9E9E9E; color: #000; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #9E9E9E; color: #000;">55m</td><td style="padding: 6px; border: 1px solid #ddd;">10</td><td style="padding: 6px; border: 1px solid #ddd;">1'</td><td style="padding: 6px; border: 1px solid #ddd;">6'</td><td style="padding: 6px; border: 1px solid #ddd;">20'</td><td style="padding: 6px; border: 1px solid #ddd;">31'</td><td style="padding: 6px; border: 1px solid #ddd;">I</td></tr>
-                    <tr style="background: #9E9E9E; color: #000; color: #000;"><td style="padding: 6px; border: 1px solid #ddd; font-weight: 700; background: #9E9E9E; color: #000;">55m</td><td style="padding: 6px; border: 1px solid #ddd;">15</td><td style="padding: 6px; border: 1px solid #ddd;">3'</td><td style="padding: 6px; border: 1px solid #ddd;">11'</td><td style="padding: 6px; border: 1px solid #ddd;">30'</td><td style="padding: 6px; border: 1px solid #ddd;">48'</td><td style="padding: 6px; border: 1px solid #ddd;">K</td></tr>
-                    <!-- 60m -->
-                    <tr style="background: light-dark(#B0BEC5, #32363a); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: #627a86; color: #fff;">60m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">5</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">-</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">2'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">11'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">17'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">H</td></tr>
-                    <tr style="background: light-dark(#B0BEC5, #32363a); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: #627a86; color: #fff;">60m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">10</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">2'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">8'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">25'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">39'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">J</td></tr>
-                    <tr style="background: light-dark(#B0BEC5, #32363a); color: var(--t-ink, #000);"><td style="padding: 6px; border: 1px solid var(--t-line, #ddd); font-weight: 700; background: #627a86; color: #fff;">60m</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">15</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">5'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">14'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">37'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">60'</td><td style="padding: 6px; border: 1px solid var(--t-line, #ddd);">K</td></tr>
-                </tbody>
-            </table>
-            <p style="font-size: 0.8em; margin-top: 10px; color: var(--text-secondary);">
-                <strong>Légende :</strong> P.9m/P.6m/P.3m = Paliers en minutes | DTR = Durée Totale Remontée | GPS = Groupe de Plongée Successive
-            </p>
+
+        <div class="rd-section">
+            <h3>📊 Table Air Standard complète</h3>
+            <p class="sal-res-info">Paliers en minutes. Remontée et total en min:s. « Succ. » = plongée successive possible.</p>
+            <div id="table-mt2012"><p class="sal-res-info">Chargement…</p></div>
         </div>
-        
-        <div class="warning-box" style="margin-top: 20px; background: rgba(26, 35, 126, 0.1); border: 2px solid #1A237E;">
-            <strong style="color: light-dark(#1a237e, #9098e8);">⚠️ ATTENTION :</strong> Ce calculateur est un outil d'aide. En opération, toujours se référer aux <strong>tables officielles MT2012</strong> et au <strong>Directeur de Plongée</strong>. Les ordinateurs de plongée sont <strong>interdits</strong> (sauf comme profondimètres).
-        </div>
+
+        <div class="rd-alerte"><strong>⚠️ Outil d'aide.</strong> En opération, la décompression est validée par le <strong>directeur de plongée</strong> sur les <strong>tables officielles</strong>. Les ordinateurs de plongée ne servent que de profondimètres.</div>
     </div>
 
 
@@ -20700,7 +20567,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.24.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.24.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
