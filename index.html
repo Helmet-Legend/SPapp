@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.21.0">
+    <meta name="version" content="1.22.0">
     <meta name="author" content="RESCUEAPP - LP ACADEMY">
     <meta name="copyright" content="© 2025 RESCUEAPP - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -99,7 +99,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.21.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.22.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -204,7 +204,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.21.0</span><br>
+                        Vulcain v<span class="app-version">1.22.0</span><br>
                         © 2025 RESCUEAPP - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>RESCUEAPP</strong> - <strong>LP ACADEMY</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -5648,10 +5648,202 @@
             </button>
         </div>
         
+        <div class="rd-section">
+            <h3>🧰 Matériel & protocoles SDIS 34</h3>
+            <div class="rd-tuiles">
+                <button onclick="showModule('suap-dgt7')"><b>🫀 DGT7</b><span>Défibrillateur multiparamètres Defigard Touch 7</span></button>
+                <button onclick="showModule('suap-infectieux')"><b>🦠 Risque infectieux</b><span>FOD 13 : kit, protections, fin d'intervention</span></button>
+                <button onclick="showModule('suap-fat-vsav')"><b>🚑 Armement VSAV</b><span>Fiche d'armement type (FAT)</span></button>
+            </div>
+        </div>
+
         <div class="warning-box" style="margin-top: 25px; background: rgba(0, 137, 123, 0.1); border: 2px solid #00897B;">
             <strong style="color: light-dark(#007064, #00b2a0);">🩺 Source :</strong> RT SUAP - Recommandations Techniques SUAP<br>
             <span style="font-size: 0.9em;">SDIS 34 - SSSM - Version 2025 - Conforme DGSCGC</span>
         </div>
+    </div>
+
+    <!-- ============ SAP – Matériel & protocoles SDIS 34 ============ -->
+    <div id="suap-dgt7" class="module">
+        <button class="back-btn" onclick="showModule('suap-menu')">← Retour SUAP</button>
+        <h2>🫀 DGT7 – Défibrillateur multiparamètres (Defigard Touch 7)</h2>
+        <p style="text-align: center;">Notice simplifiée du SDIS 34 (V3) – références RT SUAP : FT 01 M 02, FT 01 M 03, FT 04 U 01.</p>
+
+        <div class="rd-section">
+            <h3>À quoi il sert</h3>
+            <ul>
+                <li><strong>DSA</strong> : défibrillation semi-automatique d'une victime en arrêt cardio-respiratoire (inconsciente, ne respire pas, sans pouls) qui présente un rythme choquable (FV, TV).</li>
+                <li><strong>Moniteur</strong> : pression artérielle (PNI), saturation en oxygène (SpO₂), fréquence cardiaque, avec une surveillance continue du début à la fin de l'intervention.</li>
+                <li><strong>Transmission</strong> de captures d'écran au CDAU ; ECG 12 dérivations sur demande du médecin (voir la fiche ECG).</li>
+            </ul>
+            <p><strong>Matériel</strong> : sacoche de protection (lisible à plat, debout ou incliné à 30°), câble SpO₂ avec pince adulte et rallonge, brassards PNI, câble ECG 4 + 8 brins, électrodes DSA adulte et enfant.</p>
+            <div class="rd-alerte">Utiliser uniquement les <strong>électrodes Schiller du DGT7</strong> : celles de l'ancien DSA Fred Easy ne sont <strong>pas compatibles</strong>. Les câbles sont pré-connectés : ne pas les débrancher.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Avant de l'utiliser</h3>
+            <ul>
+                <li>Vérifier que le boîtier et les connecteurs ne sont pas abîmés.</li>
+                <li>Placer les câbles pour éviter qu'ils s'emmêlent ou étranglent la victime.</li>
+                <li>Poser l'appareil hors de portée de la victime, là où il ne peut pas tomber.</li>
+                <li><strong>Batterie</strong> : 180 chocs ou 6 h de surveillance à pleine charge. Elle se recharge quand le VSAV est branché au secteur. Démarrage en moins de 7 secondes, avec un test automatique (voyant de bon fonctionnement).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>⚡ Mode DSA</h3>
+            <ol>
+                <li>Appuyer sur la touche DSA.</li>
+                <li>Enfant sans électrodes pédiatriques : passer l'appareil en <strong>mode enfant</strong>.</li>
+                <li>Ouvrir le sachet, brancher le connecteur des électrodes (en bas à gauche), coller les électrodes.</li>
+                <li>L'analyse démarre seule et dure <strong>8 à 10 secondes</strong> (« Ne touchez pas la victime, analyse en cours »). On peut aussi la relancer à tout moment.</li>
+                <li>Si un choc est indiqué, il est prêt en moins d'1 seconde : la touche choc s'allume. Personne ne touche la victime.</li>
+            </ol>
+            <p>Les messages vocaux sont aussi écrits à l'écran. L'écran affiche le type de patient, la durée depuis la connexion, le nombre de chocs, la qualité du contact (impédance), et un <strong>métronome</strong> pour le rythme des compressions.</p>
+            <div class="rd-alerte"><strong>En mode DSA, ne jamais se fier à la courbe ECG affichée.</strong> Seule la prise du pouls central confirme l'arrêt cardiaque, et permet de repérer une activité électrique sans pouls.</div>
+            <p class="jsp-liens">Voir aussi → <button onclick="showModule('suap-rcp')">RCP selon l'âge</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>📊 Mode moniteur</h3>
+            <ul>
+                <li><strong>Fiche patient</strong> : type (adulte, enfant, nouveau-né), identité, sexe, âge.</li>
+                <li>On accède aux réglages en touchant la courbe, la valeur ou l'icône. Glisser le doigt pour passer de l'affichage en courbes à l'affichage en chiffres.</li>
+                <li><strong>Arrêt</strong> : appui bref sur Marche/Arrêt puis confirmer ; arrêt forcé par un appui long. <strong>Verrouiller l'écran</strong> par un appui bref ; déverrouiller par deux appuis.</li>
+            </ul>
+            <h4>Pression artérielle (PNI)</h4>
+            <ul>
+                <li>Brassard <strong>adapté à la taille</strong> de la victime, au <strong>niveau du cœur</strong>, repère juste au-dessus de l'artère (face interne du pli du coude). Victime assise, demi-assise ou allongée.</li>
+                <li>Mesure manuelle, ou automatique toutes les 2, 3, 5, 10 ou 30 min sur demande du médecin.</li>
+                <li><strong>Pas de brassard</strong> sur le bras de la perfusion ou de la SpO₂, sur une fistule de dialyse, ni après une chirurgie du cancer du sein.</li>
+                <li>Mesure fausse ou impossible si : pouls irrégulier, état de choc, hypothermie, obésité, œdème, victime qui bouge, frissons, convulsions, transport.</li>
+                <li>La fonction garrot est réservée au personnel de santé (pose de perfusion).</li>
+            </ul>
+            <h4>Saturation (SpO₂)</h4>
+            <ul>
+                <li>Enfoncer le doigt jusqu'au bout de la pince, capteur bien couvert.</li>
+                <li>Vérifier l'<strong>indice de perfusion</strong> : s'il est bas, la valeur peut être fausse ; changer de doigt ou prendre un orteil.</li>
+                <li>« --- » = capteur non branché à l'appareil ; « -?- » = capteur non posé sur la victime.</li>
+            </ul>
+            <h4>Transmettre une capture d'écran</h4>
+            <p>Menu principal → Capture d'écran → choisir la ou les captures → Suivant → choisir le destinataire. L'icône en haut à droite montre la progression ; en cas d'échec, renvoyer de la même façon.</p>
+            <p class="jsp-liens">Voir aussi → <button onclick="showModule('suap-ecg')">📈 Électrocardiogramme (ECG)</button> <button onclick="showModule('suap-bilan')">Bilan</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>⚠️ Risques et contraintes</h3>
+            <ul>
+                <li>Une seule victime à la fois. Mode DSA uniquement sur une victime en arrêt cardio-respiratoire.</li>
+                <li>Résultat inattendu : vérifier les branchements et <strong>faire confiance à la clinique</strong> (pouls radial et carotidien, peau, coloration).</li>
+                <li>Pendant le choc : personne ne touche la victime ; elle n'est ni sur du métal (brancard) ni sur un sol mouillé (pluie, noyade) ; essuyer les produits inflammables sur la peau.</li>
+                <li>Pas près d'une IRM, ni en zone à risque d'explosion. Éloigner les radios et téléphones.</li>
+                <li>Ne pas ouvrir l'appareil, ne pas le plonger dans un liquide.</li>
+                <li>Panne qui persiste : prévenir le service matériel du SSSM.</li>
+            </ul>
+            <p><small>Formation : faite en centre avec le boîtier <strong>ShockLink</strong>, qui relie le DGT7 à un mannequin et neutralise le choc (validation de la pose des électrodes et choix du tracé par télécommande).</small></p>
+        </div>
+
+        <p class="rd-source">📚 Sources : <strong>Notice simplifiée DGT7 V3 – SDIS 34</strong>, diaporama DGT7 (09-2020), note d'information du groupement formation (24/09/2020). Reproduit avec l'autorisation du SDIS de l'Hérault. Suivre la notice du fabricant.</p>
+    </div>
+
+    <div id="suap-infectieux" class="module">
+        <button class="back-btn" onclick="showModule('suap-menu')">← Retour SUAP</button>
+        <h2>🦠 Risque infectieux (FOD n° 13)</h2>
+        <p style="text-align: center;">Fiche opérationnelle départementale n° 13 – SDIS 34 (04/2019).</p>
+
+        <div class="rd-section">
+            <h3>Principe</h3>
+            <p>Une victime infectée peut contaminer le sapeur-pompier et, par lui, son entourage ou d'autres victimes. On utilise donc des protections adaptées à la situation.</p>
+            <ul>
+                <li><strong>Kits risque infectieux</strong> : 3 par VSAV, 2 par VLSM.</li>
+                <li>Le CDAU signale dans l'ordre de départ tout statut infectieux connu. L'information remonte à l'officier CODIS, à l'officier santé et au médecin régulateur du SAMU.</li>
+            </ul>
+            <p><strong>Contenu du kit</strong> : 1 masque FFP2, 1 masque chirurgical, 1 charlotte, 1 paire de lunettes, 1 paire de gants nitrile, 1 surblouse. On en utilise tout ou partie selon le risque.</p>
+            <p><strong>Quand le mettre</strong> : dès qu'un risque infectieux est suspecté, en particulier pour <strong>aspirer des mucosités</strong>, en cas de <strong>projection de sang</strong> (crachats de sang, plaie artérielle), ou pour une victime à risque infectieux connu ou présumé (appréciation du chef d'agrès au bilan).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Quelle protection ?</h3>
+            <table class="rd-table">
+                <tr><th>Transmission</th><th>Exemples</th><th>Protection</th><th>Conduite à tenir</th></tr>
+                <tr><td><strong>Projection de sang</strong> ou de liquides biologiques (vomi, pus…)</td><td>Hémorragie, accouchement, aspiration, VIH, hépatites</td><td>Gants nitrile, masque chirurgical, lunettes</td><td>Couvrir plaies et saignements avec des compresses stériles</td></tr>
+                <tr><td><strong>Contact avec la peau</strong></td><td>Gale, plaies infectées, poux</td><td>Gants nitrile, surblouse</td><td>Couvrir les plaies avec des compresses stériles</td></tr>
+                <tr><td><strong>Voie aérienne</strong> (postillons, salive, sécrétions)</td><td>Tuberculose, méningite, grippe, rougeole, choléra</td><td>Gants nitrile, <strong>masque FFP2</strong>, lunettes, charlotte, surblouse</td><td><strong>Masque chirurgical sur la victime</strong> (ou masque haute concentration si détresse respiratoire), témoins à <strong>plus de 2 m</strong>, garder la tenue jusqu'à l'hôpital, envelopper la victime dans une couverture de survie</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Fin d'intervention</h3>
+            <ol>
+                <li>Retirer les protections <strong>en terminant par les gants</strong>.</li>
+                <li>Lunettes : lavées à l'eau chaude puis désinfectées, et remises dans un kit. Le reste va dans un <strong>sac jaune DASRI</strong>.</li>
+                <li>Se désinfecter les mains (solution hydroalcoolique).</li>
+                <li>Avec des gants nitrile, désinfecter le VSAV et le matériel selon les protocoles en vigueur.</li>
+                <li>Recompléter le kit (commande à la pharmacie du SDIS).</li>
+                <li>Laver les tenues à <strong>60 °C</strong>, séparément des autres vêtements. Se laver les mains et prendre une douche.</li>
+                <li>Informer son chef de centre et l'officier CODIS.</li>
+            </ol>
+            <div class="rd-astuce">En cas d'<strong>accident d'exposition au sang</strong> (piqûre, coupure, projection), le VSAV contient du Dakin pour le premier soin : suivre ensuite la procédure AES du service de santé.</div>
+            <p class="jsp-liens">Voir aussi → <button onclick="showModule('suap-hemorragies')">Hémorragies</button> <button onclick="showModule('suap-accouchement')">Accouchement</button></p>
+        </div>
+
+        <p class="rd-source">📚 Source : <strong>FOD n° 13 « Risque infectieux » – SDIS 34</strong> (04/2019), validée par le directeur. Reproduit avec l'autorisation du SDIS de l'Hérault.</p>
+    </div>
+
+    <div id="suap-fat-vsav" class="module" style="--jsp: #0E9A86;">
+        <button class="back-btn" onclick="showModule('suap-menu')">← Retour SUAP</button>
+        <h2>🚑 Armement type du VSAV (FAT)</h2>
+        <p style="text-align: center;">Fiche d'armement type VSAV – SDIS 34 (06/2019, mise à jour risque infectieux). Utile pour la vérification à la prise de garde et le reconditionnement.</p>
+
+        <details class="jsp-cours">
+            <summary>Cabine, protection, éclairage</summary>
+            <ul>
+                <li><strong>Lot de bord</strong> : inventaire FAT, atlas, carte carburant, lot du constructeur (2 cales de roue, cric, triangles, chaînes).</li>
+                <li><strong>Protection</strong> : 4 gilets haute visibilité, 4 lots individuels NRBC, 1 détecteur de monoxyde de carbone (fixé sur le sac de premiers secours).</li>
+                <li><strong>Éclairage</strong> : 1 projecteur à main, 2 projecteurs de travail 12 V.</li>
+                <li><strong>Cabine</strong> : abaisse-borne, clés, solution hydroalcoolique, plaquette chef d'agrès, plan de commune, fiches d'admission et d'intervention (CA, ISP, MSP), formulaires de soins psychiatriques (SPDT, SPDRE, péril imminent).</li>
+                <li><strong>Divers</strong> : coupe-ceinture, petite pince ou OFD, extincteur poudre ABC 9 kg.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Kits et matériel de brancardage</summary>
+            <ul>
+                <li><strong>Kits</strong> : accouchement, brûlé, membre sectionné, <strong>risque infectieux</strong>, trousse hémorragie.</li>
+                <li><strong>Brancardage et immobilisation</strong> : brancard, brancard cuillère, chaise portoir, portoir souple, plan dur avec cale-tête et sangle araignée, matelas coquille avec pompe, 3 attelles à dépression, attelle cervico-thoracique, colliers cervicaux (5 adultes, 3 enfants), 4 sangles, 4 draps.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Soins, surveillance et hygiène</summary>
+            <ul>
+                <li><strong>Surveillance</strong> : appareil tension/saturation, <strong>DSA</strong> (2 électrodes adultes, 1 enfant, 2 rasoirs).</li>
+                <li><strong>Pansements</strong> : bandes extensibles (5, 10 et 15 cm), compresses stériles et non stériles, champs stériles, pansements absorbants, sparadrap, ciseaux type Gesco, tube de Flammazine.</li>
+                <li><strong>Hygiène</strong> : gants à usage unique, lunettes, masques chirurgicaux, solution hydroalcoolique, spray désinfectant, sacs DASRI, sacs à vomi, haricots, flacon de Dakin (AES), couvertures de survie et couverture bactériostatique.</li>
+                <li><strong>Matériel de perfusion</strong> (utilisé par le personnel de santé) : cathéters, perfuseurs, solutés, seringues, garrot, boîte à aiguilles.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Ventilation et oxygène</summary>
+            <ul>
+                <li><strong>Oxygène</strong> : bouteilles B05 (5 L) et B15 (15 L), 2 débitlitres muraux, tubulures, masques haute concentration adulte (3) et enfant (2).</li>
+                <li><strong>Aspiration</strong> : aspirateur de mucosités électrique et manuel, canules souples et rigide, poches et tuyaux d'aspiration.</li>
+                <li><strong>Ventilation</strong> : BAVU adulte, enfant et pédiatrique avec réserve O₂ et filtres antibactériens, masques et canules de Guedel de toutes tailles.</li>
+                <li><strong>Sac oxygénothérapie</strong> : bouteille B05, gants, masques haute concentration adulte et enfant, poches ventilation adulte, enfant et pédiatrique.</li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Sac de premiers secours</summary>
+            <ul>
+                <li><strong>Poches extérieures</strong> : drap ; glycémie (lecteur, bandelettes, lancettes), ciseaux, lampe, solution hydroalcoolique, récipient à aiguilles.</li>
+                <li><strong>Poche intercalaire</strong> : 2 couvertures de survie, gants, thermomètre hypothermie.</li>
+                <li><strong>Poches 1 à 6</strong> : tensiomètre manuel et 3 brassards (adulte, enfant, nourrisson), stéthoscope ; compresses et sparadrap ; haricot, sac DASRI, sac à vomi ; pansements absorbants et bandes ; sérum physiologique, antiseptique, alcool pour DSA, Dakin.</li>
+            </ul>
+        </details>
+
+        <p class="rd-source">📚 Source : <strong>Fiche d'armement type VSAV – SDIS 34</strong> (06/2019), validée par le directeur. Liste résumée : se référer à l'inventaire à jour du véhicule. Reproduit avec l'autorisation du SDIS de l'Hérault.</p>
     </div>
 
     <!-- Module SUAP - Âges et Définitions -->
@@ -15366,7 +15558,179 @@ Je demande : ….</p>
                 <div style="font-size: 2.5em; margin-bottom: 8px;">📐</div>
                 <div style="font-size: 1em; font-weight: 700; color: #fff; text-align: center;">SCHÉMA<br>SYNTHÈSE</div>
             </button>
+
+            <button onclick="showModule('mousses-lif')" style="background: linear-gradient(135deg, #8a3b00 0%, #a14700 100%); color: #ffffff; border: 3px solid #E65100; padding: 18px 12px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <div style="font-size: 2.5em; margin-bottom: 8px;">🛢️</div>
+                <div style="font-size: 1em; font-weight: 700; color: #fff; text-align: center;">LIQUIDES<br>INFLAMMABLES</div>
+            </button>
         </div>
+    </div>
+
+    <div id="mousses-lif" class="module">
+        <button class="back-btn" onclick="showModule('mousses-menu')">← Retour Mousses</button>
+        <h2>🛢️ Feux de liquides inflammables (guide SDIS 34)</h2>
+        <p style="text-align: center;">Guide technique départemental <strong>« Feu de liquides inflammables »</strong> – SDIS 34. Outil d'aide à la décision : il n'existe pas de doctrine nationale, le guide s'appuie sur les critères de l'ENSOSP et sur les moyens de l'Hérault.</p>
+
+        <div class="rd-section">
+            <h3>📌 À retenir en 30 secondes</h3>
+            <table class="rd-table">
+                <tr><th></th><th>Hydrocarbures (non miscibles)</th><th>Liquides polaires / alcools (miscibles)</th></tr>
+                <tr><td>Taux d'application (si le POI ou le plan ETARE ne donne rien)</td><td><strong>10 L/min/m²</strong></td><td><strong>20 L/min/m²</strong></td></tr>
+                <tr><td>Concentration de l'émulseur</td><td><strong>3 %</strong></td><td><strong>6 %</strong></td></tr>
+                <tr><td>Application de la mousse</td><td>Directe possible (AFFF)</td><td><strong>Indirecte obligatoire</strong></td></tr>
+            </table>
+            <ul>
+                <li><strong>Débit d'extinction</strong> (L/min de solution moussante) = surface en feu (m²) × taux d'application.</li>
+                <li><strong>Continuité en émulseur : 40 min minimum</strong> à partir du moment où le débit d'extinction est atteint (« top extinction »).</li>
+                <li><strong>Temporisation</strong> : si ce débit ne peut pas être atteint ou tenu 40 min, on applique <strong>la moitié du débit d'extinction</strong> pour réduire l'intensité du feu, en attendant les moyens.</li>
+                <li><strong>Entretien du tapis</strong> (risque industriel) : appliquer le débit d'extinction <strong>10 min toutes les heures</strong>.</li>
+            </ul>
+            <div class="rd-astuce"><strong>Exemple</strong> : 200 m² d'hydrocarbures → 200 × 10 = 2 000 L/min de solution moussante → à 3 % = 60 L d'émulseur par minute → 60 × 40 = <strong>2 400 L d'émulseur</strong>.</div>
+            <p class="jsp-liens">Calcul rapide → <button onclick="showModule('emulseur')">🧮 Taux d'application additif</button> (mettre la durée sur 40 min)</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>📖 Définitions</h3>
+            <ul>
+                <li><strong>Liquide inflammable</strong> : hydrocarbure ou autre liquide dont les vapeurs s'enflamment au contact d'une flamme à partir d'une température appelée point éclair.</li>
+                <li><strong>Liquide miscible (polaire)</strong> : se mélange à l'eau (alcools). Il ne s'éteint qu'avec un émulseur <strong>polyvalent AR</strong> (« alcool résistant »), qui forme un gel protecteur contre la ré-inflammation.</li>
+                <li><strong>Liquide non miscible</strong> : hydrocarbures, sans affinité avec l'eau. Légers (essence, heptane, cyclohexane, terpènes), lourds (fioul, gazole, kérosène), aromatiques (benzène, toluène).</li>
+                <li><strong>Eau dopée</strong> : eau + additif à 0,1 – 0,4 %.</li>
+                <li><strong>Solution moussante</strong> : eau + émulseur, ou eau + additif à 1 %.</li>
+                <li><strong>Mousse</strong> : solution moussante + air.</li>
+                <li><strong>Taux de concentration</strong> : 3 % pour les hydrocarbures (97 L d'eau + 3 L d'émulseur pour 100 L), 6 % pour les liquides polaires (94 L + 6 L), 1 % pour l'additif M51+ en moussant.</li>
+                <li><strong>Décantation</strong> : la mousse se détruit dès qu'elle est formée. Lente = mousse de qualité ; rapide = utile pour former le film flottant (AFFF). Il faut un compromis.</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Foisonnement</th><th>Valeur</th><th>Usage</th></tr>
+                <tr><td>Bas</td><td>0 – 20</td><td>Grandes surfaces d'hydrocarbures (bacs, cuvettes). Grande portée, stable au vent et à la pluie, refroidit bien</td></tr>
+                <tr><td>Moyen</td><td>20 – 200</td><td>Petites surfaces en local clos ou semi-clos (caves, locaux à solvants). Portée d'une dizaine de mètres, sensible au vent</td></tr>
+                <tr><td>Haut</td><td>&gt; 200</td><td>Produits secs, entrepôts, magasins. Portée presque nulle : amener l'orifice au plus près du feu</td></tr>
+            </table>
+            <p class="jsp-liens">Voir aussi → <button onclick="showModule('mousses-taux')">Taux & calculs</button> <button onclick="showModule('mousses-definition')">Définition & types</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🧪 Les produits du SDIS 34</h3>
+            <h4>L'additif M51+</h4>
+            <ul>
+                <li><strong>Mouillant</strong> (0,1 à 0,4 %) : abaisse la tension superficielle, l'eau pénètre mieux (végétation, textiles, pneus, habitations).</li>
+                <li><strong>Moussant</strong> (0,5 à 1 %) : isole aussi les vapeurs. Adapté aux <strong>petits feux d'hydrocarbures</strong>, en bas et moyen foisonnement.</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Position du doseur</th><th>Feu</th><th>Dosage</th></tr>
+                <tr><td>1</td><td>Carton, bois (classe A)</td><td>0,1 %</td></tr>
+                <tr><td>2</td><td>Pneumatiques, solides liquéfiables</td><td>0,3 %</td></tr>
+                <tr><td>3</td><td>Habitation, industrie</td><td>0,4 %</td></tr>
+                <tr><td>4</td><td>Voiture</td><td>0,5 %</td></tr>
+                <tr><td>5</td><td>Hydrocarbures, petites flaques (classe B)</td><td>1 %</td></tr>
+                <tr><td>6</td><td>Liquides polaires</td><td><strong>Non adapté</strong></td></tr>
+            </table>
+            <p><small>Réglage selon la note d'information n° 67 du 23 juillet 2015.</small></p>
+            <h4>L'émulseur polyvalent synthétique filmogène</h4>
+            <ul>
+                <li>Pour les feux de classe B : <strong>3 %</strong> sur hydrocarbures, <strong>6 %</strong> sur alcools. Polyvalent = utilisable sur les deux.</li>
+                <li><strong>AFFF</strong> (agent formant un film flottant) : la mousse décante vite et forme un mince film à la surface de l'hydrocarbure, qui bloque les vapeurs.</li>
+                <li><strong>AR</strong> (alcool résistant) : la mousse s'accumule en matelas qui isole le solvant.</li>
+                <li>Additif et émulseur se conservent <strong>10 ans</strong> ; les mousses obtenues sont compatibles entre elles.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>🎯 Modes d'action et application</h3>
+            <p>La mousse agit en deux temps : <strong>isolation</strong> (plus d'air ni d'évaporation) puis <strong>refroidissement</strong> (l'eau des bulles décante et s'évapore).</p>
+            <table class="rd-table">
+                <tr><th>Application</th><th>Principe</th><th>Pour quels feux</th></tr>
+                <tr><td><strong>Directe</strong></td><td>Mousse projetée au cœur du liquide, lance ou canon en jet « bâton », à distance du flux thermique</td><td>Hydrocarbures seulement, avec un émulseur AFFF</td></tr>
+                <tr><td><strong>Indirecte</strong></td><td>Mousse projetée sur une paroi verticale : elle s'écoule et se répand doucement sur le liquide</td><td><strong>Obligatoire</strong> pour tous les liquides polaires (miscibles)</td></tr>
+            </table>
+            <p><small>Modes reconnus par les normes EN 1568 et ISO 7203.</small></p>
+            <p class="jsp-liens">Voir aussi → <button onclick="showModule('mousses-action')">Modes d'action des mousses</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>⚠️ Phénomènes dangereux</h3>
+            <table class="rd-table">
+                <tr><th>Phénomène</th><th>Ce qui se passe</th></tr>
+                <tr><td><strong>UVCE</strong></td><td>Explosion d'un nuage de gaz ou de vapeurs non confiné : flamme dans le nuage + onde de surpression (effets thermiques et mécaniques)</td></tr>
+                <tr><td><strong>Boil-over</strong></td><td>Débordement violent d'un réservoir en feu quand la couche d'eau au fond se met à bouillir</td></tr>
+                <tr><td><strong>Slop-over</strong></td><td>En éteignant un feu d'hydrocarbures lourds, l'eau ou la mousse forme une émulsion qui fait déborder le liquide, sans projection violente</td></tr>
+                <tr><td><strong>Froth-over</strong></td><td>Moussage du produit causé par de l'eau qui s'y vaporise</td></tr>
+                <tr><td><strong>BLEVE</strong></td><td>Vaporisation explosive après la rupture d'un réservoir contenant un liquide chauffé au-delà de sa température d'ébullition (tout liquide, inflammable ou non)</td></tr>
+            </table>
+            <table class="rd-table">
+                <tr><th>Effets sur l'homme</th><th>Feu de nappe (flux thermique)</th><th>Explosion (surpression)</th></tr>
+                <tr><td>Bris de vitres (effets indirects)</td><td>—</td><td>20 mbar</td></tr>
+                <tr><td>Effets irréversibles</td><td>3 kW/m²</td><td>50 mbar</td></tr>
+                <tr><td>Premiers effets létaux</td><td>5 kW/m²</td><td>140 mbar</td></tr>
+                <tr><td>Effets létaux significatifs</td><td>8 kW/m²</td><td>—</td></tr>
+            </table>
+            <p class="jsp-liens">Voir aussi → <button onclick="showModule('distances')">Distances de sécurité</button> <button onclick="showModule('bouteilles')">Bouteilles de gaz (BLEVE)</button></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🚒 Moyens du SDIS 34</h3>
+            <table class="rd-table">
+                <tr><th>Système d'injection</th><th>Engins</th><th>Débit d'émulseur</th></tr>
+                <tr><td>TRITON</td><td>CCFS</td><td>jusqu'à 12 L/min</td></tr>
+                <tr><td>—</td><td>CCFM-HP</td><td>limité à 3 L/min</td></tr>
+                <tr><td>CAMÉLÉON</td><td>FPTL, FPT, CCAM</td><td>jusqu'à 24 ou 30 L/min</td></tr>
+                <tr><td>SALAMANDRE</td><td>FMOGP, CEMUL</td><td>120 L/min (la CEMUL a 2 pompes de 120 L/min)</td></tr>
+            </table>
+            <ul>
+                <li><strong>Lances bas et moyen foisonnement</strong> : 500 L/min à <strong>7 bar</strong> à la lance.</li>
+                <li><strong>Lance monitor portable</strong> (LMP 80) et lances-canons (LCM) pour les gros débits.</li>
+                <li>Engins spécialisés : <strong>FMOGP</strong> (fourgon mousse grande puissance, canon 1 000 L/min), <strong>CEMUL</strong> (cellule émulseur), <strong>CCAM</strong> ; un groupe liquides inflammables (<strong>GIFLI</strong>) dispose au maximum d'environ 8 400 L d'émulseur.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>🚛 Risque courant (feu sur la voie publique, PL TMD)</h3>
+            <p><strong>Principe</strong> : attaque rapide, en assurant la continuité de la mousse.</p>
+            <p><strong>Départ type</strong> : 1 FPT, 1 FMOGP (ou 1 FPT + CEMUL), 1 chef de groupe, 1 CCGC.</p>
+            <ol>
+                <li><strong>Zone d'exclusion de 50 m minimum</strong> et <strong>périmètre public de 100 m</strong>.</li>
+                <li>Identifier le produit (miscible ou non) et la quantité.</li>
+                <li><strong>Attaque immédiate</strong> : LDV mousse 500 L/min bas foisonnement (additif à 1 %), et/ou canon du FMOGP à 1 000 L/min.</li>
+                <li>Protéger le binôme avec une <strong>LDV en eau</strong>.</li>
+                <li>Entretenir le tapis de mousse tant qu'il y a un risque de ré-inflammation.</li>
+                <li>Contrôler à l'<strong>explosimètre</strong> au-dessus du tapis de mousse.</li>
+            </ol>
+            <table class="rd-table">
+                <tr><th>Débit (additif 1 %, réserve de 200 L par FPT)</th><th>Autonomie avec 1 FPT</th><th>Avec 2 FPT</th></tr>
+                <tr><td>500 L/min (1 lance)</td><td>40 min</td><td>80 min</td></tr>
+                <tr><td>1 000 L/min (2 lances)</td><td>20 min</td><td>40 min</td></tr>
+            </table>
+            <p><small>Petit feu d'hydrocarbures uniquement : le premier chef d'agrès attaque en additif à 1 % avec une LDV 500 en bas foisonnement. Sur une citerne, le jet indirect peut viser le trou d'homme qui fuit.</small></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🏭 Risque particulier (feu industriel)</h3>
+            <ol>
+                <li><strong>Contacter l'exploitant</strong> : produit (miscible ou non), type d'installation (réservoir à toit fixe, flottant, rétention), surface en feu et installations menacées, moyens de l'exploitant (canons, sprinklers, réserves d'émulseur, réseau d'eau), risque de pollution, météo.</li>
+                <li><strong>Calculer le débit d'extinction</strong> = surface × taux (celui du plan ETARE ou de l'étude de danger ; sinon 10 ou 20 L/min/m²), à 3 % ou 6 %.</li>
+                <li>Garantir <strong>40 min de continuité en émulseur</strong>.</li>
+                <li>Entretenir le tapis : débit d'extinction <strong>10 min toutes les heures</strong>.</li>
+                <li>Si le débit ne peut pas être atteint : <strong>temporisation</strong> à la moitié du débit, pour réduire le flux thermique.</li>
+            </ol>
+            <table class="rd-table">
+                <tr><th>Surface en feu</th><th>Hydrocarbures : débit / émulseur pour 40 min</th><th>Liquides polaires : débit / émulseur pour 40 min</th></tr>
+                <tr><td>100 m²</td><td>1 000 L/min / 1 200 L</td><td>2 000 L/min / 4 800 L</td></tr>
+                <tr><td>200 m²</td><td>2 000 L/min / 2 400 L</td><td>4 000 L/min / 9 600 L*</td></tr>
+                <tr><td>300 m²</td><td>3 000 L/min / 3 600 L</td><td>—</td></tr>
+                <tr><td>400 m²</td><td>4 000 L/min / 4 800 L</td><td>—</td></tr>
+            </table>
+            <p><small>* Au-delà de 8 400 L (capacité d'un GIFLI), demander une seconde CEMUL.</small></p>
+            <h4>Stratégies opérationnelles (logistique en tuyaux de 110)</h4>
+            <ol>
+                <li><strong>LCM du FMOGP à 3 %</strong>, 4 000 L/min, avec cellule dévidoir et ravitaillement par la cellule émulseur.</li>
+                <li><strong>2 LCM avec la CEMUL</strong> : 2 × 2 000 L/min à 3 % ou 6 % (moto-pompes ou FPT pour l'alimentation).</li>
+                <li><strong>Attaque combinée FMOGP + CEMUL</strong> : 1 LCM de 2 000 L/min chacun, à 3 % ou 6 % (2 FPT peuvent remplacer le FMOGP).</li>
+            </ol>
+            <div class="rd-astuce"><strong>Montée en puissance</strong> (exemple du guide) : bac d'hydrocarbures de 800 m² → 8 000 L/min de solution moussante → 240 L/min d'émulseur → 9 600 L pour 40 min. Si l'industriel fournit 4 000 L/min et le SDIS 4 000 L/min, le SDIS apporte 4 800 L d'émulseur. On temporise jusqu'au « top extinction », puis on compte 40 min, puis on entretient le tapis.</div>
+        </div>
+
+        <p class="rd-source">📚 Source : <strong>Guide technique départemental « Feu de liquides inflammables » – SDIS 34</strong> (groupe de travail liquides inflammables). Reproduit avec l'autorisation du SDIS de l'Hérault. Doctrine départementale : vérifiez celle de votre SDIS.</p>
     </div>
 
     <!-- Module Mousses - Définition & Types -->
@@ -17505,7 +17869,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.21.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.22.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025 RESCUEAPP · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
