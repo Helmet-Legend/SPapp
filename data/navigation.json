@@ -298,6 +298,28 @@
    "motsCles": []
   },
   {
+   "id": "deci-34",
+   "titre": "DECI de l'Hérault (RDDECI)",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "deci",
+    "rddeci",
+    "défense extérieure contre l'incendie",
+    "points d'eau",
+    "poteau",
+    "bouche",
+    "pena",
+    "aire d'aspiration",
+    "colonne sèche",
+    "besoins en eau",
+    "reconnaissance opérationnelle",
+    "signalisation",
+    "piscine"
+   ]
+  },
+  {
    "id": "rdmi-hydraulique",
    "titre": "Hydraulique - Pertes de Charge",
    "domaine": "incendie",
