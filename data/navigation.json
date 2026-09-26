@@ -119,7 +119,8 @@
    "couleur": "#6B7280",
    "themes": [
     "Calculs pratiques",
-    "Préparation"
+    "Préparation",
+    "Administration"
    ]
   }
  ],
@@ -3922,6 +3923,20 @@
     "sirène",
     "fr-alert",
     "confinement"
+   ]
+  },
+  {
+   "id": "notif-envoi",
+   "titre": "Envoyer une notification",
+   "domaine": "outils",
+   "theme": "Administration",
+   "type": "fiche",
+   "motsCles": [
+    "notification",
+    "push",
+    "message",
+    "administrateur",
+    "envoyer"
    ]
   },
   {

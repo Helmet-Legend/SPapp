@@ -1,5 +1,5 @@
-// Vulcain Service Worker v1.27.0
-const CACHE_NAME = 'vulcain-v1.27.0';
+// Vulcain Service Worker v1.28.0
+const CACHE_NAME = 'vulcain-v1.28.0';
 const urlsToCache = [
   './',
   './index.html',
@@ -198,6 +198,7 @@ const urlsToCache = [
   './images/rdsmes/traction-sim.jpg',
   './images/rdsmes/traction-sol.jpg',
   './js/modules/lspcc.js',
+  './js/push.js',
   './js/pwa-theme.js',
   './js/theme.js',
   './js/navigation.js',
@@ -279,5 +280,34 @@ self.addEventListener('fetch', event => {
             }
           });
       })
+  );
+});
+
+// Notifications push (abonnement dans Réglages › Notifications)
+self.addEventListener('push', event => {
+  let donnees = {};
+  try { donnees = event.data ? event.data.json() : {}; } catch (e) { donnees = { texte: event.data && event.data.text() }; }
+  const titre = donnees.titre || 'Vulcain';
+  event.waitUntil(self.registration.showNotification(titre, {
+    body: donnees.texte || '',
+    icon: './icons/icon-192.png',
+    badge: './icons/icon-192.png',
+    tag: donnees.tag || 'vulcain',
+    data: { url: donnees.url || './' }
+  }));
+});
+
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  const cible = new URL(event.notification.data && event.notification.data.url || './', self.location.origin).href;
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(fenetres => {
+      for (const f of fenetres) {
+        if (new URL(f.url).origin === self.location.origin && 'navigate' in f) {
+          return f.focus().then(() => f.navigate(cible));
+        }
+      }
+      return self.clients.openWindow(cible);
+    })
   );
 });
