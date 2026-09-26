@@ -1,6 +1,6 @@
 {
-  "version": "1.28.0",
-  "titre": "Vulcain 1.28.0 : notifications",
-  "texte": "Vulcain peut maintenant vous prévenir des nouveautés. Dernier ajout (1.27) : GDO Incendies de structures, GTO Ventilation, GTO SMPM et GTO Milieu vicié.",
-  "fiche": "gdoinc-menu"
+  "version": "1.29.0",
+  "titre": "Vulcain 1.29.0 : notifications activées par défaut",
+  "texte": "Les notifications s'activent désormais par défaut à la première utilisation (nouveautés de l'app et messages du service). Tu peux les désactiver dans Réglages à tout moment.",
+  "fiche": ""
 }

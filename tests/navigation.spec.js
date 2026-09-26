@@ -109,8 +109,8 @@ test('la fenêtre À propos s\'ouvre et affiche la version', async ({ app }) => 
 
 test('Réglages : section Notifications et écran d\'envoi administrateur', async ({ app }) => {
     await app.click('#reglagesBtn');
-    await expect(app.locator('[data-push-type="nouveautes"]')).toBeVisible();
-    await expect(app.locator('[data-push-type="messages"]')).toBeVisible();
+    await expect(app.locator('[data-push-type="nouveautes"]')).toHaveAttribute('aria-checked', 'true');
+    await expect(app.locator('[data-push-type="messages"]')).toHaveAttribute('aria-checked', 'true');
     await expect(app.locator('#pushStatut')).not.toBeEmpty();
     await app.click('.reglages-lien');
     expect(await ecranActif(app)).toBe('notif-envoi');

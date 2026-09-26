@@ -1,15 +1,20 @@
 /**
  * Vulcain - Notifications push
  *
- * Réglages › Notifications : deux abonnements indépendants
+ * Réglages › Notifications : deux abonnements indépendants, activés par défaut
  *  - « nouveautes » : annonce automatique de chaque nouvelle version (data/nouveautes.json) ;
  *  - « messages »   : messages libres envoyés depuis l'écran « Envoyer une notification ».
+ * Activés par défaut, mais le navigateur exige un geste utilisateur pour demander
+ * la permission : elle est donc demandée dès le premier geste dans l'app (sauf
+ * si l'utilisateur a explicitement désactivé un des deux types).
  * Serveur : api/push.js (abonnement), api/push-nouveautes.js, api/push-envoyer.js.
  */
 var Push = (function () {
     var CLE_TYPES = 'vulcain-push-types';
     var CLE_ANNONCE = 'vulcain-push-annonce';
     var CLE_ADMIN = 'vulcain-push-admin';
+    var CLE_DEMANDE = 'vulcain-push-demande';
+    var TYPES_PAR_DEFAUT = ['nouveautes', 'messages'];
     var PROD = location.hostname === 's-papp.vercel.app';
 
     function lire(cle, defaut) {
@@ -42,7 +47,7 @@ var Push = (function () {
     }
 
     function afficher() {
-        var types = lire(CLE_TYPES, []);
+        var types = lire(CLE_TYPES, TYPES_PAR_DEFAUT);
         document.querySelectorAll('[data-push-type]').forEach(function (b) {
             b.setAttribute('aria-checked', types.indexOf(b.dataset.pushType) >= 0 ? 'true' : 'false');
         });
@@ -54,8 +59,12 @@ var Push = (function () {
             statut('Notifications bloquées : autorise-les pour Vulcain dans les réglages du téléphone.');
         } else if (iosNonInstalle()) {
             statut('Sur iPhone et iPad : installe d\'abord Vulcain sur l\'écran d\'accueil pour recevoir les notifications.');
+        } else if (!types.length) {
+            statut('Notifications désactivées.');
+        } else if (Notification.permission !== 'granted') {
+            statut('Notifications activées par défaut : elles seront confirmées à ta prochaine action dans l\'app (autorisation du téléphone).');
         } else {
-            statut(types.length ? 'Notifications activées sur cet appareil.' : 'Notifications désactivées.');
+            statut('Notifications activées sur cet appareil.');
         }
     }
 
@@ -70,7 +79,8 @@ var Push = (function () {
 
     async function basculer(type) {
         if (!supporte() || iosNonInstalle()) { afficher(); return; }
-        var types = lire(CLE_TYPES, []);
+        ecrire(CLE_DEMANDE, true); // un geste explicite sur l'interrupteur n'a plus besoin de la tentative automatique
+        var types = lire(CLE_TYPES, TYPES_PAR_DEFAUT);
         var actif = types.indexOf(type) >= 0;
         var nouveaux = actif ? types.filter(function (t) { return t !== type; }) : types.concat([type]);
         try {
@@ -95,6 +105,44 @@ var Push = (function () {
             afficher();
             statut('Impossible de modifier l\'abonnement : ' + (e.message || 'réseau indisponible') + '.');
         }
+    }
+
+    // Activation par défaut : les notifications sont proposées activées d'emblée
+    // (Réglages), mais le navigateur exige un geste de l'utilisateur pour demander
+    // la permission (obligatoire sur iOS/Safari, recommandé partout ailleurs). On
+    // saisit donc le tout premier geste dans l'app pour la demander une seule fois.
+    async function activerSilencieusement(types) {
+        try {
+            var abo = await abonnement(true);
+            if (abo) {
+                await fetch('/api/push', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'abonner', abonnement: abo.toJSON(), types: types })
+                });
+            }
+        } catch (e) { /* on retentera au prochain lancement */ }
+        afficher();
+    }
+
+    function demanderPermissionApresGeste() {
+        if (lire(CLE_DEMANDE, false)) return;
+        ecrire(CLE_DEMANDE, true);
+        Notification.requestPermission().then(function (reponse) {
+            if (reponse === 'granted') activerSilencieusement(lire(CLE_TYPES, TYPES_PAR_DEFAUT));
+            else afficher();
+        }).catch(function () { afficher(); });
+    }
+
+    function tenterActivationParDefaut() {
+        if (!supporte() || iosNonInstalle()) return;
+        var types = lire(CLE_TYPES, TYPES_PAR_DEFAUT);
+        if (!types.length) return; // désactivé explicitement
+        if (Notification.permission === 'denied') return;
+        if (Notification.permission === 'granted') { activerSilencieusement(types); return; }
+        if (lire(CLE_DEMANDE, false)) return; // déjà proposé une fois (accepté, refusé ou fermé)
+        document.addEventListener('click', demanderPermissionApresGeste, { once: true });
+        document.addEventListener('touchend', demanderPermissionApresGeste, { once: true });
     }
 
     // Annonce de version : le premier appareil qui charge une nouvelle version
@@ -153,6 +201,7 @@ var Push = (function () {
     window.addEventListener('load', function () {
         afficher();
         ouvrirFicheDemandee();
+        tenterActivationParDefaut();
         setTimeout(annoncerVersion, 3000);
     });
 
