@@ -106,3 +106,17 @@ test('la fenêtre À propos s\'ouvre et affiche la version', async ({ app }) => 
     await app.keyboard.press('Escape');
     await expect(app.locator('#aboutModal')).not.toHaveClass(/active/);
 });
+
+test('Réglages : section Notifications et écran d\'envoi administrateur', async ({ app }) => {
+    await app.click('#reglagesBtn');
+    await expect(app.locator('[data-push-type="nouveautes"]')).toBeVisible();
+    await expect(app.locator('[data-push-type="messages"]')).toBeVisible();
+    await expect(app.locator('#pushStatut')).not.toBeEmpty();
+    await app.click('.reglages-lien');
+    expect(await ecranActif(app)).toBe('notif-envoi');
+});
+
+test('un lien de notification /?fiche=… ouvre la fiche', async ({ page }) => {
+    await page.goto('/index.html?fiche=gdoinc-eau');
+    await expect.poll(() => ecranActif(page)).toBe('gdoinc-eau');
+});

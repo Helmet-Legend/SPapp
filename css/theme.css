@@ -900,3 +900,13 @@ html[data-theme="sombre"] body.accueil-photo .nav-tabbar {
     -webkit-backdrop-filter: blur(20px);
 }
 body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
+
+/* ---------- Notifications (v1.28) ---------- */
+.reglages-statut { margin: 0; font-size: .85em; color: var(--t-muted); }
+.reglages-statut:empty { display: none; }
+.reglages-modal .reglages-lien { align-self: flex-start; background: none; border: 0; padding: 4px 0; color: var(--t-muted); text-decoration: underline; font-size: .85em; min-height: 0; }
+.notif-form { display: flex; flex-direction: column; gap: 12px; }
+.notif-form label { display: flex; flex-direction: column; gap: 4px; font-weight: 600; }
+.notif-form label.notif-case { flex-direction: row; align-items: center; gap: 8px; font-weight: 400; }
+.notif-form input[type="text"], .notif-form input[type="password"], .notif-form textarea { font: inherit; padding: 10px 12px; border-radius: var(--t-radius-s); border: 1.5px solid var(--t-line); background: var(--t-s2); color: var(--t-ink); }
+.reglages-panel { max-height: 100dvh; overflow-y: auto; }
