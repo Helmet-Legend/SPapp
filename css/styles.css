@@ -805,6 +805,14 @@
             border: 2px solid rgba(255, 152, 0, 0.2);
         }
 
+        .danger-box {
+            background: rgba(229, 57, 53, 0.1);
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin-top: 10px;
+            border-left: 3px solid var(--danger, var(--primary-red));
+        }
+
         .warning-box {
             background: rgba(229, 57, 53, 0.1);
             padding: 16px;
