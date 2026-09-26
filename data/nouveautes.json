@@ -1,6 +1,6 @@
 {
-  "version": "1.29.0",
-  "titre": "Vulcain 1.29.0 : notifications activées par défaut",
-  "texte": "Les notifications s'activent désormais par défaut à la première utilisation (nouveautés de l'app et messages du service). Tu peux les désactiver dans Réglages à tout moment.",
+  "version": "1.30.0",
+  "titre": "Vulcain 1.30.0 : À propos mis à jour",
+  "texte": "L'écran « À propos » liste maintenant tous les domaines couverts et le nombre de fiches à jour automatiquement.",
   "fiche": ""
 }

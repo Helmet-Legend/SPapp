@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.29.1 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.30.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025 - RESCUEAPP
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -100,7 +100,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.29.1';
+var APP_VERSION = '1.30.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -110,6 +110,13 @@ function toggleAbout() {
         document.querySelectorAll('.app-version').forEach(function(el) { el.textContent = APP_VERSION; });
         var tmdCount = document.getElementById('aboutTmdCount');
         if (tmdCount && tmdDatabase.length) tmdCount.textContent = tmdDatabase.length;
+        // Domaines et nombre de fiches : lus dans le registre de navigation, toujours à jour
+        if (typeof Navigation !== 'undefined') {
+            var domaines = document.getElementById('aboutDomaines');
+            if (domaines && Navigation.domaines) domaines.textContent = Navigation.domaines().map(function(d) { return d.titre; }).join(' • ');
+            var nb = document.getElementById('aboutNbFiches');
+            if (nb && Navigation.nombrePages) nb.textContent = Navigation.nombrePages();
+        }
     }
     modal.classList.toggle('active', ouvrir);
 }
@@ -1504,7 +1511,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.29.1 COMPLET
+// FIN DU FICHIER - Vulcain v1.30.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

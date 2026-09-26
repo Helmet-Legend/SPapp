@@ -384,5 +384,9 @@ const Navigation = (function() {
     }
 
     document.addEventListener('DOMContentLoaded', init);
-    return { allerOnglet, ouvrirPage };
+    return {
+        allerOnglet, ouvrirPage,
+        domaines: () => registre.domaines,
+        nombrePages: () => registre.pages.length
+    };
 })();
