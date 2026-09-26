@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.30.1 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.30.2 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -100,7 +100,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.30.1';
+var APP_VERSION = '1.30.2';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -168,31 +168,31 @@ function searchTMD() {
     if (results.length > 30) results = results.slice(0, 30);
     
     resultsContainer.innerHTML = results.map(function(item) {
-        var borderColor = '#FF9800';
-        if (item.classe == 2) borderColor = '#00aaff';
-        else if (item.classe == 3) borderColor = '#ff0000';
-        else if (item.classe == 8) borderColor = '#ffffff';
-        
-        var dangerDisplay = item.classe == 1 ? 
+        var borderColor = 'var(--warning)';
+        if (item.classe == 2) borderColor = 'var(--info)';
+        else if (item.classe == 3) borderColor = 'var(--danger)';
+        else if (item.classe == 8) borderColor = 'var(--text-secondary)';
+
+        var dangerDisplay = item.classe == 1 ?
             '<div style="font-size:1.2em;color:var(--t-muted, #888);font-style:italic;">Pas de code</div>' :
             '<div style="font-size:1.5em;">' + (item.danger || '--') + '</div>';
-        
+
         var caracteristiquesHTML = buildCaracteristiquesHTML(item);
-        
-        return '<div class="result-box" style="border-left:8px solid ' + borderColor + ';margin-bottom:15px;padding:15px;background:var(--bg-card);border-radius:10px;">' +
+
+        return '<div class="result-box" style="border-left:4px solid ' + borderColor + ';margin-bottom:15px;">' +
             '<div style="display:flex;gap:20px;align-items:start;">' +
             '<div style="text-align:center;min-width:100px;">' +
             '<div style="font-size:3em;">' + (item.picto || '⚠️') + '</div>' +
-            '<div style="background:#FF9800;color:#000;padding:8px;border-radius:5px;font-weight:bold;margin-top:10px;">' +
+            '<div style="background:#FF9800;color:#101318;padding:8px;border-radius:8px;font-weight:bold;margin-top:10px;">' +
             dangerDisplay +
-            '<div style="font-size:2em;border-top:2px solid #000;margin-top:5px;padding-top:5px;">' + item.onu + '</div></div></div>' +
+            '<div style="font-size:2em;border-top:2px solid rgba(0,0,0,.35);margin-top:5px;padding-top:5px;">' + item.onu + '</div></div></div>' +
             '<div style="flex:1;">' +
             '<h3 style="color:var(--warning);margin-top:0;">' + item.nom + '</h3>' +
             '<div class="result-item"><span><strong>Classe :</strong></span><span>' + item.classe + '</span></div>' +
-            '<div class="danger-box" style="margin-top:10px;"><strong>⚠️ Risques :</strong> ' + (item.risques || 'Non renseignés') + '</div>' +
+            '<div class="danger-box"><strong>⚠️ Risques :</strong> ' + (item.risques || 'Non renseignés') + '</div>' +
             caracteristiquesHTML +
             '<button onclick="preparerFicheGMU(\'' + item.onu + '\')" ' +
-            'style="margin-top:15px;background:linear-gradient(135deg,#c25100 0%,#b26200 100%);' +
+            'style="margin-top:15px;background:linear-gradient(135deg,var(--primary-red) 0%,var(--primary-red-dark) 100%);' +
             'border:none;padding:12px 25px;border-radius:10px;color:white;' +
             'font-weight:bold;font-size:1.1em;cursor:pointer;width:100%;">' +
             '📖 Consulter la Fiche GMU</button></div></div></div>';
@@ -270,7 +270,7 @@ function buildCaracteristiquesHTML(item) {
     if (rows.length === 0) return '';
     
     return '<div style="background:var(--t-s2, #f5f5f5);border-radius:10px;padding:12px;margin:15px 0;border:1px solid var(--t-line, #ddd);">' +
-        '<div style="font-weight:bold;color:var(--t-ink, #333);margin-bottom:10px;font-size:1.1em;border-bottom:2px solid #FF9800;padding-bottom:5px;">' +
+        '<div style="font-weight:bold;color:var(--t-muted, #666);margin-bottom:10px;font-size:1em;border-bottom:1px solid var(--t-line, #ddd);padding-bottom:5px;">' +
         '📊 CARACTÉRISTIQUES TECHNIQUES</div>' +
         rows.join('') + '</div>';
 }
@@ -1511,7 +1511,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.30.1 COMPLET
+// FIN DU FICHIER - Vulcain v1.30.2 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
