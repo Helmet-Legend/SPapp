@@ -1,4 +1,4 @@
-# Vulcain v1.30.0 - Architecture Modulaire
+# Vulcain v1.30.1 - Architecture Modulaire
 
 ## 📁 Structure du projet
 
@@ -171,5 +171,5 @@ Les données sont stockées dans des variables globales pour compatibilité :
 
 ## 👨‍🚒 Crédits
 
-**RESCUEAPP** - Solution professionnelle pour sapeurs-pompiers
+**Helmet Legend** - Solution professionnelle pour sapeurs-pompiers
 © 2025 Vulcain - Tous droits réservés
