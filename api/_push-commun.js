@@ -82,7 +82,9 @@ async function envoyerATous(type, contenu) {
         try { donnees = JSON.parse(valeur); } catch (e) { expires.push(cle); return; }
         if (!Array.isArray(donnees.types) || !donnees.types.includes(type)) return;
         try {
-            await webpush.sendNotification(donnees.abonnement, charge, { TTL: 24 * 3600, urgency: 'normal' });
+            // urgency 'high' : incite Android/Chrome à livrer la notification en priorité
+            // (bannière immédiate) plutôt qu'en simple point sur l'icône, quand l'appareil le permet.
+            await webpush.sendNotification(donnees.abonnement, charge, { TTL: 24 * 3600, urgency: 'high' });
             envoyes++;
         } catch (e) {
             if (e.statusCode === 404 || e.statusCode === 410) expires.push(cle);
