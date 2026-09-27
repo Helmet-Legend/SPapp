@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.33.0 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.34.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -116,7 +116,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.33.0';
+var APP_VERSION = '1.34.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -128,8 +128,8 @@ function toggleAbout() {
         if (tmdCount && tmdDatabase.length) tmdCount.textContent = tmdDatabase.length;
         // Domaines et nombre de fiches : lus dans le registre de navigation, toujours à jour
         if (typeof Navigation !== 'undefined') {
-            var domaines = document.getElementById('aboutDomaines');
-            if (domaines && Navigation.domaines) domaines.textContent = Navigation.domaines().map(function(d) { return d.titre; }).join(' • ');
+            var domainesCount = document.getElementById('aboutDomainesCount');
+            if (domainesCount && Navigation.domaines) domainesCount.textContent = Navigation.domaines().length;
             var nb = document.getElementById('aboutNbFiches');
             if (nb && Navigation.nombrePages) nb.textContent = Navigation.nombrePages();
         }
@@ -1366,7 +1366,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.33.0 COMPLET
+// FIN DU FICHIER - Vulcain v1.34.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
