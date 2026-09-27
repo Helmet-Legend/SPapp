@@ -1,6 +1,6 @@
 {
-  "version": "1.37.1",
-  "titre": "Vulcain 1.37.1",
-  "texte": "Ajout des schémas manquants dans la fiche COD 1 (pompe, amorceur, DECI, établissement, guidage).",
-  "fiche": "cod1"
+  "version": "1.38.0",
+  "titre": "Vulcain 1.38.0",
+  "texte": "Refonte des fiches GTO Établissements & techniques d'extinction : texte rédigé au lieu de pages de PDF brutes, avec schémas et photos sélectionnés.",
+  "fiche": "etex-etb"
 }
