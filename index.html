@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.35.0">
+    <meta name="version" content="1.36.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -45,6 +45,7 @@
         <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
         <symbol id="i-cross" viewBox="0 0 24 24"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/></symbol>
         <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+        <symbol id="i-truck" viewBox="0 0 24 24"><path d="M1 3h14v13H1z"/><path d="M15 8h4l3 3v5h-7V8z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
         <symbol id="i-mountain" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></symbol>
         <symbol id="i-jsp" viewBox="0 0 24 24"><path d="M2 18h20"/><path d="M4 18a8 8 0 0 1 16 0"/><path d="M12 7v5"/><path d="M8.5 12h7"/></symbol>
         <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 2 5 12h4l-4 6h14l-4-6h4z"/><path d="M12 18v4"/></symbol>
@@ -214,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.35.0</span><br>
+                        Vulcain v<span class="app-version">1.36.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -16271,6 +16272,103 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Source : <strong>Guide de techniques opérationnelles – Établissements et techniques d’extinction</strong>, ministère de l’Intérieur (DGSCGC), GTO-DSP/SDDRH/BDFE, 29 août 2018.</p>
     </div>
 
+    <div id="cod2" class="module" style="--jsp: #A16207;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🚛 COD 2 – Conduite tout-terrain</h2>
+        <p style="text-align: center;">Formation conducteur : mécanique tout-terrain, reconnaissance et franchissement d’obstacles, pentes et dévers, autoprotection, et techniques d’auto-dégagement (treuil, mouflage, points d’ancrage).</p>
+        <div class="rd-alerte">Fiche fusionnée à partir de 3 documents de formation COD 2 (SDIS 42 et SDIS 60), qui se recoupaient largement. En cas de doute sur un véhicule précis, se référer à la notice du constructeur.</div>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Norme NF EN 1846</strong> : catégorie 1 (urbain), 2 (rural), 3 (tout-terrain) × type L/M/S selon la masse totale en charge (MTC). Elle fixe les angles minimaux d’attaque, de fuite, de rampe et la garde au sol.</li>
+                <li><strong>3 types de châssis</strong> : rigide (peu de déformation, adhérence limitée), souple (se déforme, meilleur contact roues/sol), articulé (2 demi-châssis, très bonnes performances). <strong>Interdit de percer, meuler ou souder un châssis</strong> (garantie constructeur).</li>
+                <li><strong>Différentiel</strong> : répartit le couple entre les roues d’un même essieu ; « fainéant », il envoie toute la puissance à la roue qui patine. <strong>Blocage</strong> = solidarise les demi-arbres pour répartir la force sur les 2 roues ; s’engage à l’arrêt (ou allure réduite si une roue patine déjà), se débloque dès le franchissement.</li>
+                <li><strong>Boîte de transfert</strong> : 4x2/4x4 → crabotage du pont avant (0/100 % en route → 50/50 % craboté) ; 4x4 permanent → blocage du différentiel inter-ponts. <strong>Passage en petites vitesses et crabotage/blocage : toujours à l’arrêt.</strong></li>
+                <li><strong>Règle des 5</strong> pour la reconnaissance : <strong>T.O.P.D.</strong> (Terrain, Obstacle, Pente, Dévers), toujours immobiliser le véhicule en sécurité avant de descendre (frein de parc, vitesse engagée, véhicule calé).</li>
+                <li><strong>Seuils de franchissement</strong> : marche ≤ rayon de roue (~50 cm) · fossé ≤ 80 cm de profondeur / ≥ 120 cm de largeur · gué ≤ 3/4 roue · entonnoir/cassis dans la limite des angles d’attaque/fuite/rampe.</li>
+                <li><strong>Pente maxi franchissable en sécurité : 50 %</strong> (mesurée à 4 pas — 6 pas = 30 %) ; jusqu’à 100 % si la longueur de la pente est inférieure à l’empattement (un seul pont engagé à la fois). <strong>Dévers maxi : 30 %</strong> (3 pas), à éviter au maximum — ne jamais s’y arrêter, ne jamais bloquer les différentiels en dévers.</li>
+                <li><strong>Une pente s’aborde de face</strong>, jamais en devers ; rapport le plus petit engagé, point effet et essai de frein/ralentisseur systématiques avant. Faire descendre le personnel si pente &gt; 30 % ou dangereuse.</li>
+                <li><strong>Enlisement</strong> : bloquer les différentiels, accélérer <strong>doucement</strong> en braquant légèrement ; ne pas insister si aucune amélioration (le véhicule ne fait que s’enfoncer) — passer au treuil, au cric ou à la traction par un autre véhicule.</li>
+                <li><strong>Autoprotection</strong> (dispositif intégré au CCF) vs <strong>autodéfense</strong> (dispositif du chef d’agrès/du groupe, active avec moyens hydrauliques ou passive sans) : à mettre en œuvre dès que le personnel est directement menacé par le feu et que le repli est impossible. <strong>Garder toujours une réserve de 500 L d’eau pour l’autodéfense.</strong></li>
+                <li><strong>Auto-dégagement</strong> : effort résistant = poids × (coefficient de roulement ou de glissement selon la nature du sol) + poids × coefficient de pente − poids × coefficient d’adhérence si le véhicule peut encore rouler. Toujours garder une marge (effort au crochet) : ne jamais tabler sur la puissance maximale du treuil.</li>
+                <li><strong>Treuil</strong> : force maximale quand le tambour est vide (câble déroulé), minimale quand il est plein ; laisser toujours 3 à 5 spires sur le tambour ; câble tendu dans l’axe, roues dans l’axe de la tension, zone de sécurité en cas de rupture. Si le treuil est insuffisant : mouflage (chaque poulie sur la charge divise l’effort par 2).</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Aspect juridique, classification et géométrie des véhicules</summary>
+<div class="gouv-pages"><a href="images/cod2-ref/p-03.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-03.jpg" alt="Aspect juridique et classification – page 03"></a><a href="images/cod2-ref/p-04.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-04.jpg" alt="Aspect juridique et classification – page 04"></a><a href="images/cod2-ref/p-05.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-05.jpg" alt="Aspect juridique et classification – page 05"></a><a href="images/cod2-ref/p-06.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-06.jpg" alt="Aspect juridique et classification – page 06"></a><a href="images/cod2-ref/p-07.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-07.jpg" alt="Aspect juridique et classification – page 07"></a><a href="images/cod2-ref/p-08.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-08.jpg" alt="Aspect juridique et classification – page 08"></a><a href="images/cod2-ref/p-09.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-09.jpg" alt="Aspect juridique et classification – page 09"></a><a href="images/cod2-ref/p-10.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-10.jpg" alt="Aspect juridique et classification – page 10"></a><a href="images/cod2-ref/p-11.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-11.jpg" alt="Aspect juridique et classification – page 11"></a><a href="images/cod2-ref/p-12.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-12.jpg" alt="Aspect juridique et classification – page 12"></a><a href="images/cod2-ref/p-13.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-13.jpg" alt="Aspect juridique et classification – page 13"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Mécanique tout-terrain : châssis, ponts, différentiels, boîte de transfert</summary>
+<div class="gouv-pages"><a href="images/cod2-mem/p-07.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-07.jpg" alt="Mécanique tout-terrain – page 07"></a><a href="images/cod2-mem/p-08.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-08.jpg" alt="Mécanique tout-terrain – page 08"></a><a href="images/cod2-mem/p-09.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-09.jpg" alt="Mécanique tout-terrain – page 09"></a><a href="images/cod2-mem/p-10.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-10.jpg" alt="Mécanique tout-terrain – page 10"></a><a href="images/cod2-mem/p-11.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-11.jpg" alt="Mécanique tout-terrain – page 11"></a><a href="images/cod2-mem/p-12.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-12.jpg" alt="Mécanique tout-terrain – page 12"></a><a href="images/cod2-mem/p-13.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-13.jpg" alt="Mécanique tout-terrain – page 13"></a><a href="images/cod2-mem/p-14.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-14.jpg" alt="Mécanique tout-terrain – page 14"></a><a href="images/cod2-mem/p-15.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-15.jpg" alt="Mécanique tout-terrain – page 15"></a><a href="images/cod2-mem/p-16.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-16.jpg" alt="Mécanique tout-terrain – page 16"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Les pneumatiques (structure, marquage, gonflage, crevaison)</summary>
+<div class="gouv-pages"><a href="images/cod2-mem/p-17.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-17.jpg" alt="Pneumatiques – page 17"></a><a href="images/cod2-mem/p-18.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-18.jpg" alt="Pneumatiques – page 18"></a><a href="images/cod2-mem/p-19.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-19.jpg" alt="Pneumatiques – page 19"></a><a href="images/cod2-mem/p-20.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-20.jpg" alt="Pneumatiques – page 20"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Cabine, sécurité et vérifications du véhicule (avant / pendant / après)</summary>
+<div class="gouv-pages"><a href="images/cod2-mem/p-21.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-21.jpg" alt="Cabine, sécurité et vérifications – page 21"></a><a href="images/cod2-mem/p-22.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-22.jpg" alt="Cabine, sécurité et vérifications – page 22"></a><a href="images/cod2-mem/p-23.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-23.jpg" alt="Cabine, sécurité et vérifications – page 23"></a><a href="images/cod2-mem/p-24.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-24.jpg" alt="Cabine, sécurité et vérifications – page 24"></a><a href="images/cod2-mem/p-25.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-25.jpg" alt="Cabine, sécurité et vérifications – page 25"></a><a href="images/cod2-mem/p-26.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-26.jpg" alt="Cabine, sécurité et vérifications – page 26"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Les ralentisseurs</summary>
+<div class="gouv-pages"><a href="images/cod2-mem/p-27.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-27.jpg" alt="Ralentisseurs – page 27"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · Manœuvres du GIFF (déplacements, arrêts) et guidage</summary>
+<div class="gouv-pages"><a href="images/cod2-mem/p-28.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-28.jpg" alt="Manœuvres du GIFF et guidage – page 28"></a><a href="images/cod2-mem/p-29.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-29.jpg" alt="Manœuvres du GIFF et guidage – page 29"></a><a href="images/cod2-mem/p-30.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-30.jpg" alt="Manœuvres du GIFF et guidage – page 30"></a><a href="images/cod2-mem/p-31.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-31.jpg" alt="Manœuvres du GIFF et guidage – page 31"></a><a href="images/cod2-mem/p-32.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-32.jpg" alt="Manœuvres du GIFF et guidage – page 32"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7 · Utilisation des dispositifs tout-terrain et point effet</summary>
+<div class="gouv-pages"><a href="images/cod2-mem/p-33.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-33.jpg" alt="Dispositifs tout-terrain et point effet – page 33"></a><a href="images/cod2-mem/p-34.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-34.jpg" alt="Dispositifs tout-terrain et point effet – page 34"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>8 · Reconnaissance, obstacles, pentes et dévers (méthode et seuils)</summary>
+<div class="gouv-pages"><a href="images/cod2-ref/p-41.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-41.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 41"></a><a href="images/cod2-ref/p-42.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-42.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 42"></a><a href="images/cod2-ref/p-43.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-43.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 43"></a><a href="images/cod2-ref/p-44.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-44.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 44"></a><a href="images/cod2-ref/p-45.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-45.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 45"></a><a href="images/cod2-ref/p-46.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-46.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 46"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>9 · Franchissements pas à pas : pente, dévers, fossé, marche, cassis</summary>
+<div class="gouv-pages"><a href="images/cod2-ref/p-48.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-48.jpg" alt="Franchissements pas à pas – page 48"></a><a href="images/cod2-ref/p-49.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-49.jpg" alt="Franchissements pas à pas – page 49"></a><a href="images/cod2-ref/p-50.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-50.jpg" alt="Franchissements pas à pas – page 50"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>10 · Gué, ornières, enlisement, roue motrice/directrice, conduite de nuit</summary>
+<div class="gouv-pages"><a href="images/cod2-mem/p-39.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-39.jpg" alt="Gué, ornières, enlisement, conduite de nuit – page 39"></a><a href="images/cod2-mem/p-40.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-40.jpg" alt="Gué, ornières, enlisement, conduite de nuit – page 40"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>11 · Mesures d’autoprotection et d’autodéfense (CCF, GIFF, UIFF/ULIFF)</summary>
+<div class="gouv-pages"><a href="images/cod2-mem/p-41.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-41.jpg" alt="Autoprotection et autodéfense – page 41"></a><a href="images/cod2-mem/p-42.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-42.jpg" alt="Autoprotection et autodéfense – page 42"></a><a href="images/cod2-mem/p-43.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-43.jpg" alt="Autoprotection et autodéfense – page 43"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>12 · Techniques d’auto-dégagement : efforts, treuil, tirfor, mouflage, points d’ancrage</summary>
+<div class="gouv-pages"><a href="images/cod2-mem/p-44.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-44.jpg" alt="Techniques d’auto-dégagement – page 44"></a><a href="images/cod2-mem/p-45.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-45.jpg" alt="Techniques d’auto-dégagement – page 45"></a><a href="images/cod2-mem/p-46.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-46.jpg" alt="Techniques d’auto-dégagement – page 46"></a><a href="images/cod2-mem/p-47.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-47.jpg" alt="Techniques d’auto-dégagement – page 47"></a><a href="images/cod2-mem/p-48.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-48.jpg" alt="Techniques d’auto-dégagement – page 48"></a><a href="images/cod2-mem/p-49.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-49.jpg" alt="Techniques d’auto-dégagement – page 49"></a><a href="images/cod2-mem/p-50.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-50.jpg" alt="Techniques d’auto-dégagement – page 50"></a><a href="images/cod2-mem/p-51.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-51.jpg" alt="Techniques d’auto-dégagement – page 51"></a><a href="images/cod2-mem/p-52.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-52.jpg" alt="Techniques d’auto-dégagement – page 52"></a><a href="images/cod2-mem/p-53.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-53.jpg" alt="Techniques d’auto-dégagement – page 53"></a><a href="images/cod2-mem/p-54.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-54.jpg" alt="Techniques d’auto-dégagement – page 54"></a><a href="images/cod2-mem/p-55.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-55.jpg" alt="Techniques d’auto-dégagement – page 55"></a><a href="images/cod2-mem/p-56.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-56.jpg" alt="Techniques d’auto-dégagement – page 56"></a><a href="images/cod2-mem/p-57.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-57.jpg" alt="Techniques d’auto-dégagement – page 57"></a><a href="images/cod2-mem/p-58.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-58.jpg" alt="Techniques d’auto-dégagement – page 58"></a></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>13 · Fiches réflexe COD 2 (synthèse visuelle)</summary>
+<div class="gouv-pages"><a href="images/cod2-fr/p-1.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-fr/p-1.jpg" alt="Fiches réflexe COD 2 – page 1"></a><a href="images/cod2-fr/p-2.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-fr/p-2.jpg" alt="Fiches réflexe COD 2 – page 2"></a><a href="images/cod2-fr/p-3.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-fr/p-3.jpg" alt="Fiches réflexe COD 2 – page 3"></a><a href="images/cod2-fr/p-4.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-fr/p-4.jpg" alt="Fiches réflexe COD 2 – page 4"></a></div>
+        </details>
+
+        <p class="jsp-liens">Voir aussi → <button onclick="showModule('secours')">Secours routier</button></p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/Referentiel-COD2-SDIS42.pdf" target="_blank" rel="noopener">Référentiel COD 2 (PDF)</a>
+            📄 <a class="rd-pdf" href="docs/conduite/Memento-COD2-SDIS60-2020.pdf" target="_blank" rel="noopener">Mémento COD 2 (PDF)</a>
+            📄 <a class="rd-pdf" href="docs/conduite/Fiches-reflexe-COD2.pdf" target="_blank" rel="noopener">Fiches réflexe COD 2 (PDF)</a>
+        </p>
+        <p class="rd-source">📚 Sources : <strong>Référentiel COD 2</strong> (SDIS 42) · <strong>Mémento stagiaire COD 2 – Conduite des véhicules tout terrain</strong>, SDIS de l’Oise (SDIS 60), Groupement formation, comité pédagogique COD 3 Oise, version 01/2020 · <strong>Fiches réflexe COD 2</strong>. Documents de formation internes, fusionnés ici en une seule fiche.</p>
+    </div>
+
     <!-- ============ Envoi de notifications (administrateur) ============ -->
     <div id="notif-envoi" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -22840,7 +22938,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.35.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.36.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
