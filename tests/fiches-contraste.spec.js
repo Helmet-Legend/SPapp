@@ -50,7 +50,7 @@ function textesPeuLisibles([id, seuil]) {
 
 for (const nom of ['clair', 'sombre']) {
     test(`thème ${nom} : le contenu de toutes les fiches est lisible`, async ({ page }) => {
-        test.setTimeout(180000);
+        test.setTimeout(300000);
         await page.addInitScript(t => localStorage.setItem('deciops.theme', t), nom);
         await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
         await page.goto('/index.html');

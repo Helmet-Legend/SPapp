@@ -1,11 +1,27 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.30.2 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.31.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
  * ═══════════════════════════════════════════════════════════════════════
  */
+
+// ==================== VIDÉO YOUTUBE (miniature cliquable) ====================
+// Usage dans une fiche :
+// <button class="yt-facade" onclick="chargerVideo(this,'ID_VIDEO')" aria-label="Lire la vidéo : ...">
+//   <img src="https://i.ytimg.com/vi/ID_VIDEO/hqdefault.jpg" alt="" loading="lazy">
+//   <span class="yt-play"><span></span></span>
+// </button>
+function chargerVideo(bouton, videoId) {
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0';
+    iframe.title = 'Vidéo YouTube';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.loading = 'lazy';
+    bouton.replaceWith(iframe);
+}
 
 // ==================== VARIABLES GLOBALES ====================
 let fireSelection = {fenetre: 0, porte: 0, baie: 0, garage: 0, entrepot: 0};
@@ -100,7 +116,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.30.2';
+var APP_VERSION = '1.31.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1511,7 +1527,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.30.2 COMPLET
+// FIN DU FICHIER - Vulcain v1.31.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

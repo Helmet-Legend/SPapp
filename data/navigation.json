@@ -52,7 +52,8 @@
    "themes": [
     "RT SUAP 2025",
     "Matériel & protocoles SDIS 34",
-    "PSE – Références nationales 2026"
+    "PSE – Références nationales 2026",
+    "GDO – Secours et soins d'urgence (2022)"
    ]
   },
   {
@@ -2282,6 +2283,150 @@
     "oxygène",
     "bavu",
     "sac premiers secours"
+   ]
+  },
+  {
+   "id": "gdossuap-menu",
+   "titre": "Présentation",
+   "domaine": "sap",
+   "theme": "GDO – Secours et soins d'urgence (2022)",
+   "type": "presentation",
+   "motsCles": [
+    "gdo",
+    "ssuap",
+    "doctrine",
+    "secours et soins d'urgence",
+    "amu",
+    "dgscgc"
+   ]
+  },
+  {
+   "id": "gdossuap-cadre",
+   "titre": "Cadre général",
+   "domaine": "sap",
+   "theme": "GDO – Secours et soins d'urgence (2022)",
+   "type": "fiche",
+   "motsCles": [
+    "ssuap",
+    "amu",
+    "samu",
+    "smur",
+    "transport sanitaire urgent",
+    "carence ambulancière",
+    "prompt secours",
+    "actes de soins d'urgence",
+    "secret professionnel",
+    "libre choix"
+   ]
+  },
+  {
+   "id": "gdossuap-victime",
+   "titre": "La victime",
+   "domaine": "sap",
+   "theme": "GDO – Secours et soins d'urgence (2022)",
+   "type": "fiche",
+   "motsCles": [
+    "victime",
+    "impliqué",
+    "malade",
+    "blessé",
+    "décédé",
+    "état léger",
+    "état grave",
+    "urgence absolue",
+    "urgence relative",
+    "refus de soins",
+    "consentement"
+   ]
+  },
+  {
+   "id": "gdossuap-risques",
+   "titre": "Risques & sécurité des intervenants",
+   "domaine": "sap",
+   "theme": "GDO – Secours et soins d'urgence (2022)",
+   "type": "fiche",
+   "motsCles": [
+    "risque infectieux",
+    "agression",
+    "tms",
+    "risque routier",
+    "risque juridique",
+    "sécurité collective",
+    "sécurité individuelle"
+   ]
+  },
+  {
+   "id": "gdossuap-reponse",
+   "titre": "Prise d'appel & engagement",
+   "domaine": "sap",
+   "theme": "GDO – Secours et soins d'urgence (2022)",
+   "type": "fiche",
+   "motsCles": [
+    "prise d'appel",
+    "localisation",
+    "aml",
+    "pflau",
+    "départ réflexe",
+    "carence ambulancière",
+    "cta-codis",
+    "crra"
+   ]
+  },
+  {
+   "id": "gdossuap-conduite",
+   "titre": "Conduite des opérations",
+   "domaine": "sap",
+   "theme": "GDO – Secours et soins d'urgence (2022)",
+   "type": "fiche",
+   "motsCles": [
+    "zonage opérationnel",
+    "laisser sur place",
+    "évacuation",
+    "structure de soins",
+    "reconditionnement",
+    "temps d'attente"
+   ]
+  },
+  {
+   "id": "gdossuap-situations",
+   "titre": "Situations particulières",
+   "domaine": "sap",
+   "theme": "GDO – Secours et soins d'urgence (2022)",
+   "type": "fiche",
+   "motsCles": [
+    "urgence psychiatrique",
+    "violences intrafamiliales",
+    "personnes fragiles",
+    "sdf",
+    "mineur non accompagné",
+    "ivresse",
+    "icms",
+    "handicap",
+    "troubles du comportement",
+    "bariatrique",
+    "noyade",
+    "convictions religieuses",
+    "personnes violentes",
+    "détenus",
+    "traces et indices",
+    "scène de crime"
+   ]
+  },
+  {
+   "id": "gdossuap-novi",
+   "titre": "Nombreuses victimes (NOVI)",
+   "domaine": "sap",
+   "theme": "GDO – Secours et soins d'urgence (2022)",
+   "type": "fiche",
+   "motsCles": [
+    "novi",
+    "orsec",
+    "tri",
+    "catégorisation",
+    "sinus",
+    "damage control",
+    "prv",
+    "prm"
    ]
   },
   {
