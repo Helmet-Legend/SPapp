@@ -15,6 +15,7 @@
     "RDEB – Engagement des binômes",
     "GDO – Incendies de structures",
     "Ventilation opérationnelle – GTO",
+    "GTO – Établissements & techniques d'extinction",
     "Protection & matériels",
     "Échelles portables"
    ]
@@ -1295,6 +1296,70 @@
     "extincteur",
     "surface",
     "protection"
+   ]
+  },
+  {
+   "id": "etex-res",
+   "titre": "GTO – Ressources en eau (DECI, points d'eau, aspiration)",
+   "domaine": "incendie",
+   "theme": "GTO – Établissements & techniques d'extinction",
+   "type": "fiche",
+   "motsCles": [
+    "deci",
+    "défense extérieure contre l'incendie",
+    "point d'eau incendie",
+    "pei",
+    "poteau d'incendie",
+    "bouche d'incendie",
+    "hydrant",
+    "point d'aspiration",
+    "aire d'aspiration",
+    "réserve incendie",
+    "citerne souple",
+    "rddeci"
+   ]
+  },
+  {
+   "id": "etex-etb",
+   "titre": "GTO – Les établissements (hydraulique, tuyaux, manœuvres ETB)",
+   "domaine": "incendie",
+   "theme": "GTO – Établissements & techniques d'extinction",
+   "type": "fiche",
+   "motsCles": [
+    "établissement",
+    "tuyau",
+    "ldt",
+    "dévidoir tournant",
+    "division",
+    "ligne d'attaque",
+    "alimentation",
+    "colonne sèche",
+    "débit",
+    "pression",
+    "perte de charge",
+    "lance canon",
+    "lance queue de paon"
+   ]
+  },
+  {
+   "id": "etex-tde",
+   "titre": "GTO – Techniques d'extinction (gas cooling, directe, indirecte…)",
+   "domaine": "incendie",
+   "theme": "GTO – Établissements & techniques d'extinction",
+   "type": "fiche",
+   "motsCles": [
+    "gas cooling",
+    "refroidissement des fumées",
+    "extinction directe",
+    "extinction indirecte",
+    "extinction combinée",
+    "pré-backdraft",
+    "repli",
+    "écran hydraulique",
+    "feu soumis au vent",
+    "effet chalumeau",
+    "attaque d'atténuation",
+    "attaque transitoire"
    ]
   },
   {
