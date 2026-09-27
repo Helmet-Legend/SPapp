@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.31.0">
+    <meta name="version" content="1.31.1">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -111,7 +111,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.31.0</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.31.1</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -207,7 +207,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.31.0</span><br>
+                        Vulcain v<span class="app-version">1.31.1</span><br>
                         © 2025-2026 Helmet Legend - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>Helmet Legend</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -421,182 +421,115 @@
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2>🫧 Taux d'application additif</h2>
 
-        <div class="result-box" style="margin-bottom: 20px;">
+        <div class="result-box">
             <h3>🎯 Mode de calcul</h3>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                <button onclick="setEmulseurMode('direct')" id="btnModeDirect" style="flex: 1; min-width: 200px;">
-                    📐 Calcul direct<br>
-                    <small style="font-size: 0.8em; font-weight: normal;">Surface → Besoins</small>
-                </button>
-                <button onclick="setEmulseurMode('inverse')" id="btnModeInverse" style="flex: 1; min-width: 200px; background: #666;">
-                    🔄 Calcul inverse<br>
-                    <small style="font-size: 0.8em; font-weight: normal;">Stock émulseur → Surface possible</small>
-                </button>
+            <div class="rd-choix-technique" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <button type="button" data-emu-mode="direct" aria-pressed="true" onclick="emuMode('direct')">📐 Calcul direct<br><small>Surface → besoins</small></button>
+                <button type="button" data-emu-mode="inverse" aria-pressed="false" onclick="emuMode('inverse')">🔄 Calcul inverse<br><small>Stock → surface possible</small></button>
             </div>
         </div>
 
         <!-- Mode Direct -->
         <div id="emulseurDirect">
             <div class="form-group">
-                <label>Taux d'application (L/min/m²) :</label>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px;">
-                    <button onclick="setTauxApplication(10)" id="btnTaux10" style="padding: 20px; background: #39843c; border: 2px solid #4CAF50; color: #FFFFFF;">
-                        <div style="font-weight: bold; font-size: 1.8em; color: #FFFFFF;">10</div>
-                        <div style="font-size: 0.8em; margin-top: 5px; color: #FFFFFF;">Hydrocarbure</div>
-                    </button>
-                    <button onclick="setTauxApplication(20)" id="btnTaux20" style="padding: 20px; background: #2E7D32; border: 2px solid #2E7D32; color: #FFFFFF;">
-                        <div style="font-weight: bold; font-size: 1.8em; color: #FFFFFF;">20</div>
-                        <div style="font-size: 0.8em; margin-top: 5px; color: #FFFFFF;">Liquide polaire</div>
-                    </button>
-                    <button onclick="toggleCustomTaux()" id="btnTauxCustom" style="padding: 20px; background: #0b76cc; border: 2px solid #2196F3; color: #FFFFFF;">
-                        <div style="font-weight: bold; font-size: 1.4em; color: #FFFFFF;">Autre</div>
-                        <div style="font-size: 0.7em; margin-top: 5px; color: #FFFFFF;">L/min/m²</div>
-                    </button>
+                <label>Taux d'application (L/min/m²)</label>
+                <div class="rd-choix-technique" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+                    <button type="button" data-emu-taux="10" aria-pressed="true" onclick="emuChoisirTaux(10)">10<br><small>Hydrocarbure</small></button>
+                    <button type="button" data-emu-taux="20" aria-pressed="false" onclick="emuChoisirTaux(20)">20<br><small>Liquide polaire</small></button>
+                    <button type="button" id="emuTauxCustom" aria-pressed="false" onclick="emuToggleCustom('emuTauxCustomDiv')">Autre<br><small>L/min/m²</small></button>
                 </div>
-                <input type="hidden" id="liquidType" value="10">
-                <div id="customRateDiv" style="display: none; margin-top: 10px;">
-                    <input type="number" id="customRate" value="10" min="0.1" step="0.5" oninput="setTauxApplication(parseFloat(this.value))" style="width: 100%; text-align: center; font-size: 1.5em; font-weight: bold; padding: 15px;" placeholder="Entrer L/min/m²">
+                <div id="emuTauxCustomDiv" style="display: none; margin-top: 8px;">
+                    <input type="number" min="0.1" step="0.5" value="10" inputmode="decimal" placeholder="L/min/m²" oninput="emuChoisirTaux(parseFloat(this.value) || 0, true)">
                 </div>
             </div>
 
             <div class="form-group">
-                <label>Surface (m²) :</label>
-                <input type="number" id="surface" min="0" value="50" oninput="updateEmulseur()">
+                <label for="emuSurface">Surface (m²)</label>
+                <input type="number" id="emuSurface" min="0" value="50" inputmode="numeric" oninput="emuCalculer()">
             </div>
 
             <div class="form-group">
-                <label>Concentration (%) :</label>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px;">
-                    <button onclick="setConcentration(1)" id="btnConc1" style="padding: 20px; font-size: 1.8em; font-weight: bold; background: #3b843e; border: 2px solid #81C784; color: #FFFFFF;">
-                        1%
-                    </button>
-                    <button onclick="setConcentration(3)" id="btnConc3" style="padding: 20px; font-size: 1.8em; font-weight: bold; background: light-dark(#FFEB3B, #403e21); border: 2px solid light-dark(#FFEB3B, #7f7729); color: var(--t-ink, #000000);">
-                        3%
-                    </button>
-                    <button onclick="setConcentration(6)" id="btnConc6" style="padding: 20px; font-size: 1.8em; font-weight: bold; background: #a86400; border: 2px solid #FF9800; color: #FFFFFF;">
-                        6%
-                    </button>
-                    <button onclick="toggleCustomConc()" id="btnConcCustom" style="padding: 20px; font-size: 1.4em; font-weight: bold; background: #0b76cc; border: 2px solid #2196F3; color: #FFFFFF;">
-                        Autre<br><span style="font-size: 0.6em; color: #FFFFFF;">%</span>
-                    </button>
+                <label>Concentration (%)</label>
+                <div class="rd-choix-technique" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+                    <button type="button" data-emu-conc="1" aria-pressed="false" onclick="emuChoisirConcentration(1)">1 %</button>
+                    <button type="button" data-emu-conc="3" aria-pressed="true" onclick="emuChoisirConcentration(3)">3 %</button>
+                    <button type="button" data-emu-conc="6" aria-pressed="false" onclick="emuChoisirConcentration(6)">6 %</button>
+                    <button type="button" id="emuConcCustom" aria-pressed="false" onclick="emuToggleCustom('emuConcCustomDiv')">Autre</button>
                 </div>
-                <input type="hidden" id="concentration" value="3">
-                <div id="customConcDiv" style="display: none; margin-top: 10px;">
-                    <input type="number" id="customConcValue" value="3" min="0.1" max="100" step="0.1" oninput="setConcentration(parseFloat(this.value))" style="width: 100%; text-align: center; font-size: 1.5em; font-weight: bold; padding: 15px;" placeholder="Entrer %">
+                <div id="emuConcCustomDiv" style="display: none; margin-top: 8px;">
+                    <input type="number" min="0.1" max="100" step="0.1" value="3" inputmode="decimal" placeholder="%" oninput="emuChoisirConcentration(parseFloat(this.value) || 0, true)">
                 </div>
             </div>
 
             <div class="form-group">
-                <label>Durée d'application (min) :</label>
+                <label for="emuDuree">Durée d'application (min)</label>
                 <div style="display: flex; gap: 10px; align-items: center;">
-                    <button onclick="adjustDuree(-5)" style="min-width: 60px; font-size: 1.5em;">−5</button>
-                    <input type="number" id="duree" value="20" min="5" max="60" step="5" oninput="updateEmulseur()" style="text-align: center; font-size: 1.5em; font-weight: bold;">
-                    <button onclick="adjustDuree(5)" style="min-width: 60px; font-size: 1.5em;">+5</button>
-                </div>
-                <div style="text-align: center; margin-top: 8px; font-size: 0.85em; opacity: 0.7;">
-                    Ajustable par pas de 5 minutes
+                    <button type="button" onclick="emuAjusterDuree('emuDuree', -5)">−5</button>
+                    <input type="number" id="emuDuree" value="20" min="5" max="60" step="5" inputmode="numeric" style="text-align: center;" oninput="emuCalculer()">
+                    <button type="button" onclick="emuAjusterDuree('emuDuree', 5)">+5</button>
                 </div>
             </div>
 
-            <!-- RÉSULTATS REPOSITIONNÉS ICI -->
-            <div class="result-box" style="background: #FF9800 !important; color: #101318; border: 3px solid #F57C00 !important; margin-top: 20px;">
-                <h3 style="color: #000000 !important; font-size: 1.3em;">🛢️ Émulseur nécessaire</h3>
-                <div id="emulseurQuantite" style="color: #000000 !important;"></div>
-            </div>
-
+            <div class="info-card" id="emuResultatPrincipal" style="margin-top: 20px; text-align: center;"></div>
             <div class="result-box">
-                <h3 style="font-size: 1.2em;">📊 Besoins pour la durée sélectionnée</h3>
-                <div id="emulseurVolumes"></div>
-            </div>
-
-            <div class="result-box">
-                <h3 style="font-size: 1.2em;">⏱️ Débits nécessaires</h3>
-                <div id="emulseurDebits"></div>
+                <h3>📋 Détails du calcul</h3>
+                <div id="emuDetails"></div>
             </div>
         </div>
 
         <!-- Mode Inverse -->
         <div id="emulseurInverse" style="display: none;">
             <div class="form-group">
-                <label>Taux d'application (L/min/m²) :</label>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px;">
-                    <button onclick="setTauxApplicationInv(10)" id="btnTauxInv10" style="padding: 20px; background: #39843c; border: 2px solid #4CAF50; color: #FFFFFF;">
-                        <div style="font-weight: bold; font-size: 1.8em; color: #FFFFFF;">10</div>
-                        <div style="font-size: 0.8em; margin-top: 5px; color: #FFFFFF;">Hydrocarbure</div>
-                    </button>
-                    <button onclick="setTauxApplicationInv(20)" id="btnTauxInv20" style="padding: 20px; background: #2E7D32; border: 2px solid #2E7D32; color: #FFFFFF;">
-                        <div style="font-weight: bold; font-size: 1.8em; color: #FFFFFF;">20</div>
-                        <div style="font-size: 0.8em; margin-top: 5px; color: #FFFFFF;">Liquide polaire</div>
-                    </button>
-                    <button onclick="toggleCustomTauxInv()" id="btnTauxInvCustom" style="padding: 20px; background: #0b76cc; border: 2px solid #2196F3; color: #FFFFFF;">
-                        <div style="font-weight: bold; font-size: 1.4em; color: #FFFFFF;">Autre</div>
-                        <div style="font-size: 0.7em; margin-top: 5px; color: #FFFFFF;">L/min/m²</div>
-                    </button>
+                <label>Taux d'application (L/min/m²)</label>
+                <div class="rd-choix-technique" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+                    <button type="button" data-emu-taux-inv="10" aria-pressed="true" onclick="emuChoisirTauxInv(10)">10<br><small>Hydrocarbure</small></button>
+                    <button type="button" data-emu-taux-inv="20" aria-pressed="false" onclick="emuChoisirTauxInv(20)">20<br><small>Liquide polaire</small></button>
+                    <button type="button" id="emuTauxInvCustom" aria-pressed="false" onclick="emuToggleCustom('emuTauxInvCustomDiv')">Autre<br><small>L/min/m²</small></button>
                 </div>
-                <input type="hidden" id="liquidTypeInv" value="10">
-                <div id="customRateDivInv" style="display: none; margin-top: 10px;">
-                    <input type="number" id="customRateInv" value="10" min="0.1" step="0.5" oninput="setTauxApplicationInv(parseFloat(this.value))" style="width: 100%; text-align: center; font-size: 1.5em; font-weight: bold; padding: 15px;" placeholder="Entrer L/min/m²">
+                <div id="emuTauxInvCustomDiv" style="display: none; margin-top: 8px;">
+                    <input type="number" min="0.1" step="0.5" value="10" inputmode="decimal" placeholder="L/min/m²" oninput="emuChoisirTauxInv(parseFloat(this.value) || 0, true)">
                 </div>
             </div>
 
             <div class="form-group">
-                <label>Concentration (%) :</label>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px;">
-                    <button onclick="setConcentrationInv(1)" id="btnConcInv1" style="padding: 20px; font-size: 1.8em; font-weight: bold; background: #3b843e; border: 2px solid #81C784; color: #FFFFFF;">
-                        1%
-                    </button>
-                    <button onclick="setConcentrationInv(3)" id="btnConcInv3" style="padding: 20px; font-size: 1.8em; font-weight: bold; background: light-dark(#FFEB3B, #403e21); border: 2px solid light-dark(#FFEB3B, #7f7729); color: var(--t-ink, #000000);">
-                        3%
-                    </button>
-                    <button onclick="setConcentrationInv(6)" id="btnConcInv6" style="padding: 20px; font-size: 1.8em; font-weight: bold; background: #a86400; border: 2px solid #FF9800; color: #FFFFFF;">
-                        6%
-                    </button>
-                    <button onclick="toggleCustomConcInv()" id="btnConcInvCustom" style="padding: 20px; font-size: 1.4em; font-weight: bold; background: #0b76cc; border: 2px solid #2196F3; color: #FFFFFF;">
-                        Autre<br><span style="font-size: 0.6em; color: #FFFFFF;">%</span>
-                    </button>
+                <label>Concentration (%)</label>
+                <div class="rd-choix-technique" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+                    <button type="button" data-emu-conc-inv="1" aria-pressed="false" onclick="emuChoisirConcentrationInv(1)">1 %</button>
+                    <button type="button" data-emu-conc-inv="3" aria-pressed="true" onclick="emuChoisirConcentrationInv(3)">3 %</button>
+                    <button type="button" data-emu-conc-inv="6" aria-pressed="false" onclick="emuChoisirConcentrationInv(6)">6 %</button>
+                    <button type="button" id="emuConcInvCustom" aria-pressed="false" onclick="emuToggleCustom('emuConcInvCustomDiv')">Autre</button>
                 </div>
-                <input type="hidden" id="concentrationInv" value="3">
-                <div id="customConcDivInv" style="display: none; margin-top: 10px;">
-                    <input type="number" id="customConcValueInv" value="3" min="0.1" max="100" step="0.1" oninput="setConcentrationInv(parseFloat(this.value))" style="width: 100%; text-align: center; font-size: 1.5em; font-weight: bold; padding: 15px;" placeholder="Entrer %">
+                <div id="emuConcInvCustomDiv" style="display: none; margin-top: 8px;">
+                    <input type="number" min="0.1" max="100" step="0.1" value="3" inputmode="decimal" placeholder="%" oninput="emuChoisirConcentrationInv(parseFloat(this.value) || 0, true)">
                 </div>
             </div>
 
             <div class="form-group">
-                <label>Stock d'émulseur disponible (litres) :</label>
+                <label for="emuStock">Stock d'émulseur disponible (litres)</label>
                 <div style="display: flex; gap: 10px; align-items: center;">
-                    <button onclick="adjustEmulseurStock(-10)">−</button>
-                    <input type="number" id="stockEmulseur" value="100" min="0" step="10" oninput="updateEmulseurInverse()" style="text-align: center; font-size: 1.3em; font-weight: bold;">
-                    <button onclick="adjustEmulseurStock(10)">+</button>
+                    <button type="button" onclick="emuAjusterStock(-10)">−10</button>
+                    <input type="number" id="emuStock" value="100" min="0" step="10" inputmode="numeric" style="text-align: center;" oninput="emuCalculerInverse()">
+                    <button type="button" onclick="emuAjusterStock(10)">+10</button>
                 </div>
             </div>
 
             <div class="form-group">
-                <label>Durée d'application souhaitée (min) :</label>
+                <label for="emuDureeInv">Durée d'application souhaitée (min)</label>
                 <div style="display: flex; gap: 10px; align-items: center;">
-                    <button onclick="adjustDureeInv(-5)" style="min-width: 60px; font-size: 1.5em;">−5</button>
-                    <input type="number" id="dureeInv" value="20" min="5" max="60" step="5" oninput="updateEmulseurInverse()" style="text-align: center; font-size: 1.5em; font-weight: bold;">
-                    <button onclick="adjustDureeInv(5)" style="min-width: 60px; font-size: 1.5em;">+5</button>
-                </div>
-                <div style="text-align: center; margin-top: 8px; font-size: 0.85em; opacity: 0.7;">
-                    Ajustable par pas de 5 minutes
+                    <button type="button" onclick="emuAjusterDuree('emuDureeInv', -5)">−5</button>
+                    <input type="number" id="emuDureeInv" value="20" min="5" max="60" step="5" inputmode="numeric" style="text-align: center;" oninput="emuCalculerInverse()">
+                    <button type="button" onclick="emuAjusterDuree('emuDureeInv', 5)">+5</button>
                 </div>
             </div>
 
-            <!-- RÉSULTATS REPOSITIONNÉS ICI -->
-            <div class="result-box" style="background: #FF9800 !important; color: #101318; border: 3px solid #F57C00 !important; margin-top: 20px;">
-                <h3 style="color: #000000 !important; font-size: 1.3em;">📊 Surface réalisable</h3>
-                <div id="emulseurInverseResults" style="color: #000000 !important;"></div>
-            </div>
-
+            <div class="info-card" id="emuInverseResultatPrincipal" style="margin-top: 20px; text-align: center;"></div>
             <div class="result-box">
-                <h3 style="font-size: 1.2em;">📋 Détails du calcul</h3>
-                <div id="emulseurInverseDetails"></div>
+                <h3>📋 Détails du calcul</h3>
+                <div id="emuInverseDetails"></div>
             </div>
         </div>
 
-        <div class="alert-box">
-            💡 <strong>Rappel :</strong> Taux d'application = Débit de solution par m² de surface
-        </div>
+        <p class="rd-alerte">💡 <strong>Rappel :</strong> taux d'application = débit de solution par m² de surface.</p>
     </div>
 
     <!-- Module Pertes de Charge -->
@@ -22520,7 +22453,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.31.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.31.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
@@ -22543,6 +22476,7 @@ Je demande : ….</p>
     <script src="js/modules/rdsmes.js"></script>
     <script src="js/modules/rdeb.js"></script>
     <script src="js/modules/pertes-rapide.js"></script>
+    <script src="js/modules/emulseur.js"></script>
     <script src="js/navigation.js"></script>
     
 
