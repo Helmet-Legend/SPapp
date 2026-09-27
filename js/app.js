@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.31.0 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.31.1 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -116,7 +116,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.31.0';
+var APP_VERSION = '1.31.1';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -389,167 +389,6 @@ function resetFire() {
     if (totalPowerElement) totalPowerElement.textContent = '0 MW';
     if (flowRateElement) { flowRateElement.textContent = '0 L/min'; flowRateElement.style.color = 'var(--text-primary)'; }
 }
-
-// ═══════════════════════════════════════════════════════════════════════
-// MODULE ÉMULSEUR
-// ═══════════════════════════════════════════════════════════════════════
-
-function calculateEmulseur() {
-    var surface = parseFloat(document.getElementById('emul-surface')?.value || 0);
-    var type = document.getElementById('emul-type')?.value || 'hydrocarbure';
-    var concentration = parseFloat(document.getElementById('emul-concentration')?.value || 3);
-    
-    var debitEau = type === 'hydrocarbure' ? surface * 6 : type === 'polaire' ? surface * 8 : surface * 10;
-    var debitEmulseur = (debitEau * concentration) / (100 - concentration);
-    var volumeEmulseur10min = debitEmulseur * 10;
-    var bidons20L = Math.ceil(volumeEmulseur10min / 20);
-    
-    var resultDiv = document.getElementById('emul-result');
-    if (resultDiv) {
-        resultDiv.innerHTML = '<div class="result-box"><h3>Besoins en émulseur :</h3>' +
-            '<div class="result-item"><span>Débit eau :</span><span class="result-value">' + debitEau.toFixed(0) + ' L/min</span></div>' +
-            '<div class="result-item"><span>Débit émulseur :</span><span class="result-value">' + debitEmulseur.toFixed(1) + ' L/min</span></div>' +
-            '<div class="result-item"><span>Volume pour 10 min :</span><span class="result-value">' + volumeEmulseur10min.toFixed(0) + ' L</span></div>' +
-            '<div class="result-item"><span>Bidons 20L nécessaires :</span><span class="result-value">' + bidons20L + '</span></div></div>';
-    }
-}
-
-function setEmulseurMode(mode) {
-    var directDiv = document.getElementById('emulseurDirect');
-    var inverseDiv = document.getElementById('emulseurInverse');
-    var btnDirect = document.getElementById('btnModeDirect');
-    var btnInverse = document.getElementById('btnModeInverse');
-    
-    if (mode === 'direct') {
-        if (directDiv) directDiv.style.display = 'block';
-        if (inverseDiv) inverseDiv.style.display = 'none';
-        if (btnDirect) btnDirect.style.background = 'linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%)';
-        if (btnInverse) btnInverse.style.background = '#666';
-        updateEmulseur();
-    } else {
-        if (directDiv) directDiv.style.display = 'none';
-        if (inverseDiv) inverseDiv.style.display = 'block';
-        if (btnDirect) btnDirect.style.background = '#666';
-        if (btnInverse) btnInverse.style.background = 'linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%)';
-        updateEmulseurInverse();
-    }
-}
-
-function setTauxApplication(value) {
-    var tauxInput = document.getElementById('liquidType');
-    if (tauxInput) tauxInput.value = value;
-    highlightButton(['btnTaux10', 'btnTaux20'], 'btnTaux' + value);
-    updateEmulseur();
-}
-
-function setConcentration(value) {
-    var concInput = document.getElementById('concentration');
-    if (concInput) concInput.value = value;
-    highlightButton(['btnConc1', 'btnConc3', 'btnConc6'], 'btnConc' + value);
-    updateEmulseur();
-}
-
-function setTauxApplicationInv(value) {
-    var tauxInput = document.getElementById('liquidTypeInv');
-    if (tauxInput) tauxInput.value = value;
-    updateEmulseurInverse();
-}
-
-function setConcentrationInv(value) {
-    var concInput = document.getElementById('concentrationInv');
-    if (concInput) concInput.value = value;
-    updateEmulseurInverse();
-}
-
-function adjustDuree(delta) {
-    var dureeInput = document.getElementById('duree');
-    if (dureeInput) {
-        var newValue = Math.max(5, Math.min(60, parseInt(dureeInput.value) + delta));
-        dureeInput.value = newValue;
-        updateEmulseur();
-    }
-}
-
-function adjustDureeInv(delta) {
-    var dureeInput = document.getElementById('dureeInv');
-    if (dureeInput) {
-        var newValue = Math.max(5, Math.min(60, parseInt(dureeInput.value) + delta));
-        dureeInput.value = newValue;
-        updateEmulseurInverse();
-    }
-}
-
-function adjustEmulseurStock(delta) {
-    var stockInput = document.getElementById('stockEmulseur');
-    if (stockInput) {
-        var newValue = Math.max(0, parseInt(stockInput.value) + delta);
-        stockInput.value = newValue;
-        updateEmulseurInverse();
-    }
-}
-
-function updateEmulseur() {
-    var surface = parseFloat(document.getElementById('surface')?.value || 0);
-    var duree = parseInt(document.getElementById('duree')?.value || 20);
-    var tauxApplication = parseFloat(document.getElementById('liquidType')?.value || 10);
-    var concentration = parseFloat(document.getElementById('concentration')?.value || 3);
-    
-    var debitSolution = surface * tauxApplication;
-    var volumeSolution = debitSolution * duree;
-    var volumeEmulseur = volumeSolution * (concentration / 100);
-    var volumeEau = volumeSolution - volumeEmulseur;
-    var bidons20L = Math.ceil(volumeEmulseur / 20);
-    
-    var volumesDiv = document.getElementById('emulseurVolumes');
-    if (volumesDiv) {
-        volumesDiv.innerHTML = '<div class="result-item"><span>Volume solution :</span><span class="result-value">' + volumeSolution.toFixed(0) + ' L</span></div>' +
-            '<div class="result-item"><span>Eau nécessaire :</span><span class="result-value">' + volumeEau.toFixed(0) + ' L</span></div>';
-    }
-    
-    var debitsDiv = document.getElementById('emulseurDebits');
-    if (debitsDiv) {
-        debitsDiv.innerHTML = '<div class="result-item"><span>Débit solution :</span><span class="result-value">' + debitSolution.toFixed(0) + ' L/min</span></div>';
-    }
-    
-    var quantiteDiv = document.getElementById('emulseurQuantite');
-    if (quantiteDiv) {
-        quantiteDiv.innerHTML = '<div class="info-card" style="background:light-dark(rgba(255,255,255,0.3), rgba(22, 24, 27, 0.3));border:2px solid #F57C00;">' +
-            '<div class="label" style="color:var(--t-ink, #000);">Volume émulseur à ' + concentration + '%</div>' +
-            '<div class="value" style="font-size:1.8em;color:var(--t-ink, #000);font-weight:900;">' + volumeEmulseur.toFixed(0) + ' L</div></div>' +
-            '<div class="result-item" style="margin-top:10px;"><span>Bidons 20L :</span><span class="result-value">' + bidons20L + ' bidons</span></div>';
-    }
-}
-
-function updateEmulseurInverse() {
-    var stockEmulseur = parseFloat(document.getElementById('stockEmulseur')?.value || 100);
-    var duree = parseInt(document.getElementById('dureeInv')?.value || 20);
-    var tauxApplication = parseFloat(document.getElementById('liquidTypeInv')?.value || 10);
-    var concentration = parseFloat(document.getElementById('concentrationInv')?.value || 3);
-    
-    var volumeSolution = stockEmulseur / (concentration / 100);
-    var debitSolution = volumeSolution / duree;
-    var surface = debitSolution / tauxApplication;
-    var volumeEau = volumeSolution - stockEmulseur;
-    
-    var resultsDiv = document.getElementById('emulseurInverseResults');
-    if (resultsDiv) {
-        resultsDiv.innerHTML = '<div class="info-card" style="background:light-dark(rgba(255,255,255,0.3), rgba(22, 24, 27, 0.3));border:2px solid #F57C00;">' +
-            '<div class="label" style="color:var(--t-ink, #000);">Surface couverte</div>' +
-            '<div class="value" style="font-size:1.8em;color:var(--t-ink, #000);font-weight:900;">' + surface.toFixed(1) + ' m²</div></div>';
-    }
-    
-    var detailsDiv = document.getElementById('emulseurInverseDetails');
-    if (detailsDiv) {
-        detailsDiv.innerHTML = '<div class="result-item"><span>Eau nécessaire :</span><span class="result-value">' + volumeEau.toFixed(0) + ' L</span></div>' +
-            '<div class="result-item"><span>Volume solution :</span><span class="result-value">' + volumeSolution.toFixed(0) + ' L</span></div>' +
-            '<div class="result-item"><span>Débit solution :</span><span class="result-value">' + debitSolution.toFixed(0) + ' L/min</span></div>';
-    }
-}
-
-function toggleCustomTaux() { toggleCustomField('customRateDiv', 'customRate'); }
-function toggleCustomTauxInv() { toggleCustomField('customRateDivInv', 'customRateInv'); }
-function toggleCustomConc() { toggleCustomField('customConcDiv', 'customConcValue'); }
-function toggleCustomConcInv() { toggleCustomField('customConcDivInv', 'customConcValueInv'); }
 
 function toggleCustomField(divId, inputId) {
     var div = document.getElementById(divId);
@@ -1527,7 +1366,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.31.0 COMPLET
+// FIN DU FICHIER - Vulcain v1.31.1 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
