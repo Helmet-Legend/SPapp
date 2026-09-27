@@ -1,6 +1,6 @@
 {
-  "version": "1.33.0",
-  "titre": "Vulcain 1.33.0",
-  "texte": "Secours routier : nouvelle fiche CTIF (2025) sur la FAD et l'emballement thermique des batteries de véhicules électriques, avec vidéo d'essais.",
-  "fiche": "gouv-ctif"
+  "version": "1.34.0",
+  "titre": "Vulcain 1.34.0",
+  "texte": "Nouveau design de la page « À propos » : plus direct, plus lisible, avec l'histoire de l'appli.",
+  "fiche": null
 }
