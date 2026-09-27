@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.30.2">
+    <meta name="version" content="1.31.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -111,7 +111,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.30.2</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.31.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -207,7 +207,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.30.2</span><br>
+                        Vulcain v<span class="app-version">1.31.0</span><br>
                         © 2025-2026 Helmet Legend - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>Helmet Legend</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -5778,6 +5778,13 @@
         </div>
 
         <div class="rd-section">
+            <h3>📘 Doctrine nationale</h3>
+            <div class="rd-tuiles">
+                <button onclick="showModule('gdossuap-menu')"><b>🩺 GDO SSUAP 2022</b><span>Cadre général, victime, risques, engagement, conduite, situations particulières, NOVI</span></button>
+            </div>
+        </div>
+
+        <div class="rd-section">
             <h3>📘 Référentiel national PSE 2026</h3>
             <div class="rd-tuiles">
                 <button onclick="showModule('pse-menu')"><b>📘 PSE 1 et PSE 2</b><span>Références techniques nationales (DGSCGC, 2026) : toutes les fiches, chapitre par chapitre</span></button>
@@ -8335,6 +8342,407 @@
         </details>
 
         <p class="rd-source">📚 Source : <strong>Fiche d'armement type VSAV – SDIS 34</strong> (06/2019), validée par le directeur. Liste résumée : se référer à l'inventaire à jour du véhicule. Reproduit avec l'autorisation du SDIS de l'Hérault.</p>
+    </div>
+
+    <div id="gdossuap-menu" class="module" style="--jsp: #00897B;">
+        <button class="back-btn" onclick="showModule('suap-menu')">← Retour SUAP</button>
+        <h2>🩺 GDO Secours et soins d'urgence aux personnes – 2022</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle DGSCGC du <strong>novembre 2022 (V1.1)</strong> : doctrine du SSUAP, sécurité des intervenants, construction et conduite des opérations, situations particulières, nombreuses victimes.</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gdossuap-cadre')"><b>1 · Cadre général</b><span>SSUAP, AMU, carence ambulancière, actes de secours et de soins, secret professionnel</span></button>
+            <button onclick="showModule('gdossuap-victime')"><b>1 · La victime</b><span>Catégorisation, état léger/grave, urgence absolue/relative, relation à la victime, refus</span></button>
+            <button onclick="showModule('gdossuap-risques')"><b>2-3 · Risques & sécurité</b><span>7 risques identifiés, sécurité collective et individuelle des intervenants</span></button>
+            <button onclick="showModule('gdossuap-reponse')"><b>4 · Prise d'appel & engagement</b><span>Localisation, qualification, départs réflexes, carences ambulancières, arrêt des moyens</span></button>
+            <button onclick="showModule('gdossuap-conduite')"><b>5 · Conduite des opérations</b><span>Zonage opérationnel, prise en charge, laisser sur place, évacuation, structure d'accueil</span></button>
+            <button onclick="showModule('gdossuap-situations')"><b>5 · Situations particulières</b><span>13 situations : psychiatrie, violences, mineurs, ivresse, handicap, bariatrique…</span></button>
+            <button onclick="showModule('gdossuap-novi')"><b>5 · Nombreuses victimes</b><span>Zonage NOVI, tri par code couleur, dénombrement, SINUS</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'essentiel</h3>
+            <ul>
+                <li>Le SSUAP a atteint <strong>3,61 millions d'interventions en 2020</strong>, soit <strong>71 %</strong> de l'activité opérationnelle des SIS.</li>
+                <li>Trois réponses complémentaires à l'urgence pré-hospitalière : <strong>secours et soins d'urgence</strong> (SIS), <strong>aide médicale urgente</strong> (SAMU), <strong>transport sanitaire urgent</strong> (ambulanciers privés).</li>
+                <li>Le <strong>prompt secours</strong> est réflexe et rapide ; les <strong>actes de soins d'urgence</strong> (décret n°2022-621) élargissent les compétences des sapeurs-pompiers formés.</li>
+                <li>La victime dispose d'un <strong>droit de refus</strong> et d'un <strong>libre choix de destination</strong> ; rien n'autorise à la forcer à suivre les secours.</li>
+                <li>Le zonage opérationnel SSUAP se réduit souvent à quelques mètres autour du VSAV (zone d'exclusion / contrôlée / soutien), pour garantir le <strong>secret professionnel</strong> et la <strong>dignité</strong> de la victime.</li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Avertissement du guide</strong>
+            <p>Document de doctrine à caractère de <strong>droit souple</strong>, sans portée réglementaire contraignante. Il guide l'action et facilite le raisonnement tactique du COS ; s'en écarter relève du pouvoir d'appréciation du commandement, adapté à chaque situation.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Déjà dans Vulcain (non dupliqué ici)</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('suap-bilan')">📋 Bilan patient-victime</button>
+                <button class="sal-lien" onclick="showModule('suap-rcp')">❤️ RCP selon l'âge</button>
+                <button class="sal-lien" onclick="showModule('suap-hemorragies')">🩸 Hémorragies</button>
+                <button class="sal-lien" onclick="showModule('suap-infectieux')">🦠 Risque infectieux (FOD 13)</button>
+                <button class="sal-lien" onclick="showModule('suap-dgt7')">📈 DGT7 – Defigard Touch 7</button>
+                <button class="sal-lien" onclick="showModule('suap-fat-vsav')">🚑 Armement type VSAV</button>
+            </p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique du guide</summary>
+            <ul>
+                <li><strong>SSUAP</strong> : secours et soins d'urgence aux personnes · <strong>AMU</strong> : aide médicale urgente · <strong>SAMU / SMUR</strong> : service / structure mobile d'urgence et de réanimation</li>
+                <li><strong>CTA-CODIS</strong> : centre de traitement de l'alerte – centre opérationnel départemental d'incendie et de secours · <strong>CRRA</strong> : centre de réception et de régulation des appels (SAMU – « 15 »)</li>
+                <li><strong>EL / EG</strong> : état léger / état grave · <strong>UA / UR</strong> : urgence absolue / urgence relative (classement en plan NOVI)</li>
+                <li><strong>ICMS</strong> : intervention à caractère social ou médico-social · <strong>CUMP</strong> : cellule d'urgence médico-psychologique · <strong>IAO</strong> : infirmière d'accueil et d'orientation</li>
+                <li><strong>NOVI</strong> : nombreuses victimes · <strong>PRV</strong> : point de regroupement des victimes · <strong>SINUS</strong> : système d'information numérique standardisé (dénombrement des victimes)</li>
+                <li><strong>DASRI</strong> : déchets d'activités de soins à risque infectieux · <strong>TMS</strong> : troubles musculo-squelettiques</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/suap/GDO-SSUAP-2022.pdf" target="_blank" rel="noopener">GDO complet (PDF, 76 pages)</a></p>
+        <p class="rd-source">Source : GDO « Secours et soins d'urgence aux personnes », DGSCGC/DSP/SDDRH/BDFE, novembre 2022 (1ère édition, V1.1). Texte repris et résumé ; schémas et photos non reproduits.</p>
+    </div>
+
+    <div id="gdossuap-cadre" class="module" style="--jsp: #00897B;">
+        <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <h2>📚 Cadre général du SSUAP</h2>
+
+        <div class="rd-section">
+            <h3>Trois réponses complémentaires à l'urgence pré-hospitalière</h3>
+            <table class="rd-table">
+                <thead><tr><th>Réponse</th><th>Qui</th><th>Objet</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Secours et soins d'urgence</strong></td><td>Services d'incendie et de secours (SIS)</td><td>Porter secours, mettre en sécurité, prendre en charge les détresses vitales ou fonctionnelles justifiant l'urgence à agir.</td></tr>
+                    <tr><td><strong>Aide médicale urgente (AMU)</strong></td><td>SAMU / SMUR</td><td>Répondre par des moyens exclusivement médicaux aux situations d'urgence ; écoute médicale permanente, régulation, transfert inter-établissements.</td></tr>
+                    <tr><td><strong>Transport sanitaire urgent (TSU)</strong></td><td>Ambulanciers privés</td><td>Transporter un patient vers un établissement de santé, sans nécessiter de technique de secours.</td></tr>
+                </tbody>
+            </table>
+            <p>Ces trois modalités sont complémentaires, dans un <strong>continuum le plus fluide possible</strong> : la coopération entre acteurs est un impératif de qualité du service rendu, la personne en détresse restant au cœur de l'organisation.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le prompt secours et les actes de soins d'urgence</h3>
+            <p>Le <strong>prompt secours</strong> est une action réflexe et rapide de sapeurs-pompiers en équipe, visant à prendre en charge sans délai une détresse vitale ou fonctionnelle. Le décret n°2022-621 du 22 avril 2022 précise les actes réalisables :</p>
+            <ul>
+                <li><strong>Recueil clinique</strong> (accessible à tous après formation) : température, pulsation, pression artérielle non invasive, glycémie capillaire, aérosols de produits non médicamenteux, scores de gravité, saturation en O₂ ou en CO.</li>
+                <li><strong>Actes thérapeutiques</strong> (sapeur-pompier habilité, en l'absence de professionnel de santé) : reconnaissance d'une situation d'urgence relevant de compétences renforcées.</li>
+                <li><strong>Actes sur prescription</strong> (médecin régulateur ou médecin présent) : aérosols/pulvérisation (asthme aigu grave, douleur aiguë), voie orale ou intra-nasale (overdose d'opiacés, douleur aiguë), stylo auto-injecteur (choc anaphylactique, hypoglycémie), ECG, hémoglobinémie.</li>
+            </ul>
+            <div class="rd-alerte">Tous les détails d'une prescription (prescripteur, actes réalisés, médicaments, posologie) doivent être tracés précisément sur la fiche bilan.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>La notion de carence ambulancière</h3>
+            <p>Le SIS n'est tenu de procéder qu'aux interventions rattachées à ses missions de service public (art. L.1424-2 CGCT). Une <strong>carence ambulancière</strong> répond à plusieurs critères : transport prescrit par le SAMU, demandé suite à un défaut constaté de disponibilité des transporteurs sanitaires privés. En cas de désaccord, une <strong>commission de conciliation paritaire</strong> statue.</p>
+            <div class="rd-alerte">Afin de préserver leurs ressources (urgences vitales, incendie, secours routier), les SIS peuvent moduler leur réponse aux carences : <strong>refus ou temporisation possibles</strong> lorsque les circonstances opérationnelles le justifient.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Secret professionnel et transmission d'informations</h3>
+            <ul>
+                <li>Le secret professionnel protège tout ce qui a été vu, entendu ou supposé sur l'état de santé ou la vie privée de la victime. Sa violation est un <strong>délit</strong> (art. 226-13 du Code pénal), hors cas prévus.</li>
+                <li>La révélation est <strong>obligatoire</strong> notamment pour : dénonciation de crimes/délits, sévices sur mineur de 15 ans ou personne vulnérable, réquisitions judiciaires, témoignage en matière criminelle.</li>
+                <li>Le <strong>secret partagé</strong> se limite aux informations strictement utiles à la prise en charge et à la sécurité des intervenants (jamais l'intégralité du dossier).</li>
+                <li>Le secret professionnel <strong>ne s'éteint pas avec le décès</strong> de la victime ; le conjoint n'en fait pas partie.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Libre choix de destination</h3>
+            <p>Le droit du malade au libre choix de son praticien et de son établissement est un principe fondamental. L'évacuation se fait néanmoins vers la structure de soins <strong>la plus proche et la mieux adaptée</strong>, déterminée par le médecin régulateur, qui prend en compte le choix de la victime sans immobiliser durablement un moyen de secours.</p>
+        </div>
+
+        <p class="rd-source">GDO SSUAP 2022, chapitre 1.</p>
+    </div>
+
+    <div id="gdossuap-victime" class="module" style="--jsp: #00897B;">
+        <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <h2>🧍 La victime</h2>
+
+        <div class="rd-section">
+            <h3>Qualification de la victime</h3>
+            <table class="rd-table">
+                <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Impliqué</strong></td><td>Victime non blessée physiquement, exposée directement à un risque de mort ou de blessure, pouvant nécessiter une prise en charge médico-psychologique.</td></tr>
+                    <tr><td><strong>Malade</strong></td><td>Victime non décédée dont l'état, caractérisé par une affection, nécessite une prise en charge par les secours et/ou équipes médicales.</td></tr>
+                    <tr><td><strong>Blessé</strong></td><td>Victime non décédée dont l'état, caractérisé par une atteinte corporelle traumatique, nécessite une prise en charge.</td></tr>
+                    <tr><td><strong>Décédé</strong></td><td>Décès constaté par un médecin, ou par un secouriste quand la tête est détachée du tronc ou en cas de rigidité cadavérique ou de putréfaction.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Catégorisation clinique</h3>
+            <table class="rd-table">
+                <thead><tr><th>Catégorie</th><th>Définition</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>État léger (EL)</strong></td><td>Personne valide, blessée légèrement ou non.</td></tr>
+                    <tr><td><strong>État grave (EG)</strong></td><td>Blessé dont le pronostic vital peut être engagé.</td></tr>
+                    <tr><td><strong>Urgence relative (UR)</strong></td><td>Blessé dont le pronostic vital n'est pas engagé (utilisé en plan NOVI).</td></tr>
+                    <tr><td><strong>Urgence absolue (UA)</strong></td><td>Blessé dont le pronostic vital est engagé (utilisé en plan NOVI).</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li><strong>Urgence vitale</strong> : la vie du patient est en danger imminent, risque de décéder faute de soins rapides et adaptés.</li>
+                <li><strong>Urgence fonctionnelle</strong> : la vie n'est pas en danger imminent, mais des soins rapides évitent un handicap.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>La relation avec la victime</h3>
+            <ul>
+                <li>Politesse, bienveillance, discrétion : s'adresser calmement, en vouvoyant, en respectant les particularités psychologiques, physiques, sociales et culturelles qui ne nuisent pas à la prise en charge.</li>
+                <li>Limiter le contact physique aux nécessités du bilan et des gestes ; expliquer chaque geste et le déroulé de l'opération.</li>
+                <li>Remarquer la conduite aggravante de l'entourage et l'isoler ; à l'inverse, associer les personnes apaisantes.</li>
+            </ul>
+            <div class="rd-alerte">Toute discrimination (ethnie, religion, âge, handicap, orientation sexuelle, sexe, grossesse…) est formellement interdite par la loi et passible de poursuites pénales.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le refus de prise en charge</h3>
+            <p>Toute victime majeure en pleine possession de ses capacités mentales peut <strong>refuser</strong> la prise en charge ou l'évacuation. Le consentement libre et éclairé implique une information <strong>simple, intelligible, explicite et loyale</strong>.</p>
+            <div class="rd-alerte">Rien n'autorise un sapeur-pompier à forcer une personne à le suivre.</div>
+            <ul>
+                <li>Le chef d'agrès transmet obligatoirement un bilan au médecin régulateur avant de quitter les lieux, précisant le refus.</li>
+                <li>Le médecin régulateur s'entretient si possible directement avec la victime pour l'informer des risques liés à sa décision.</li>
+                <li>Autant que possible, le refus est matérialisé par une <strong>décharge de responsabilité signée</strong>, dont un double est laissé à la victime.</li>
+            </ul>
+        </div>
+
+        <p class="rd-source">GDO SSUAP 2022, chapitre 1, §5.</p>
+    </div>
+
+    <div id="gdossuap-risques" class="module" style="--jsp: #00897B;">
+        <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <h2>⚠️ Dangers, risques & sécurité des intervenants</h2>
+
+        <div class="rd-section">
+            <h3>Les 7 risques identifiés en SSUAP</h3>
+            <table class="rd-table">
+                <thead><tr><th>Risque</th><th>Points clés</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Infectieux</strong></td><td>Pénétration d'agents pathogènes (piqûre, coupure, muqueuses, sécrétions ORL). Le sapeur-pompier peut aussi contaminer la victime.</td></tr>
+                    <tr><td><strong>Blessures</strong></td><td>Principalement par maladresse (précipitation, obstacles) ou lors du brancardage.</td></tr>
+                    <tr><td><strong>Psychologique</strong></td><td>Situations difficiles : suicide, mort d'un enfant, intégrité corporelle ou psychique atteinte (torture, viol…).</td></tr>
+                    <tr><td><strong>Agression</strong></td><td>80 % des agressions de sapeurs-pompiers surviennent en SSUAP : verbales (50 %), simples (35 %), jets de projectile (11 %), armes (4 %).</td></tr>
+                    <tr><td><strong>Troubles musculo-squelettiques</strong></td><td>1ʳᵉ cause d'accidents liés au SSUAP : charges lourdes, postures inconfortables ou maintenues.</td></tr>
+                    <tr><td><strong>Routier</strong></td><td>1ʳᵉ cause de mortalité au travail. Vitesse excessive, non-respect des distances, fatigue, téléphone/radio.</td></tr>
+                    <tr><td><strong>Juridique</strong></td><td>Contentieux croissant : la qualité et l'exhaustivité du bilan et du compte-rendu sont essentielles.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sécurité collective</h3>
+            <ul>
+                <li>Approche prudente, repérage des personnes exposées, éviction des dangers, recueil du nombre de victimes, balayage visuel à distance.</li>
+                <li><strong>Risque routier</strong> : ceinture obligatoire pour tous les occupants du VSAV, matériel arrimé, vitesse adaptée (la dérogation d'urgence ne dispense pas de rester maître du véhicule), balisage systématique de la zone.</li>
+                <li><strong>Risque d'agression</strong> : surveiller l'environnement, demander les forces de l'ordre, isoler la victime, conserver une attitude ferme mais non agressive ; en cas de menace grave, <strong>repli raisonné</strong> possible.</li>
+                <li><strong>Risque juridique</strong> : qualité de la communication et des actions, traçabilité systématique.</li>
+            </ul>
+            <div class="rd-alerte">La prise en charge des victimes prime toujours sur les autres actions en cours.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sécurité individuelle</h3>
+            <ul>
+                <li><strong>Risque infectieux</strong> : gants à usage unique systématiques, protection respiratoire en cas de suspicion infectieuse, sur-tenue et protection oculaire si besoin, limiter le temps d'exposition, hygiène des mains, gestion des DASRI.</li>
+                <li>En cas de piqûre/coupure sans protocole local : laver la plaie à l'eau et au savon puis désinfecter 5 minutes minimum. Projection sur muqueuses : rincer abondamment au sérum physiologique.</li>
+                <li><strong>Troubles musculo-squelettiques</strong> : bonnes pratiques de gestes et postures, répartition des charges, moyens complémentaires (renfort brancardage, moyen élévateur, équipe SMPM) si la corpulence ou la configuration des lieux l'exige.</li>
+            </ul>
+        </div>
+
+        <p class="rd-source">GDO SSUAP 2022, chapitres 2 et 3.</p>
+    </div>
+
+    <div id="gdossuap-reponse" class="module" style="--jsp: #00897B;">
+        <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <h2>📞 Prise d'appel & engagement des secours</h2>
+
+        <div class="rd-section">
+            <h3>Les éléments à recueillir</h3>
+            <ul>
+                <li><strong>Localisation</strong> : n° du requérant, adresse précise, site ou point remarquable, coordonnées GPS, absence d'homonymie. Outils : AML (localisation mobile avancée), PFLAU, SMS d'urgence.</li>
+                <li><strong>Qualification du motif</strong> : nature de l'opération, contexte et cinétique, nombre de victimes, type et gravité des atteintes, qualité du requérant (professionnel, victime, témoin, tiers).</li>
+                <li><strong>Facteurs aggravants</strong> : risque de sur-accident, grand nombre de victimes, public sensible, météo, difficultés de communication, accessibilité.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les départs réflexes</h3>
+            <p>L'engagement des moyens du SIS peut précéder la régulation médicale du SAMU dans trois cas :</p>
+            <ol>
+                <li><strong>Urgence vitale identifiée à l'appel</strong> (ou suspectée par l'opérateur).</li>
+                <li><strong>Opération sur la voie publique ou en lieu public</strong> (sauf « zone protégée » avec personne compétente présente).</li>
+                <li><strong>Circonstances de l'urgence</strong> précisées par convention départementale SAMU-SIS (VSAV, VL prompt secours…).</li>
+            </ol>
+            <div class="rd-alerte">Lorsque le CRRA 15 sollicite l'engagement de moyens du SIS, le CTA-CODIS reste décisionnaire de leur déclenchement.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Carences ambulancières : refus ou temporisation</h3>
+            <p>Pour préserver leurs ressources sur les urgences vitales, incendie et secours routier, les SIS peuvent moduler leur réponse aux carences selon les critères d'urgence et la ressource opérationnelle disponible en temps réel.</p>
+            <div class="rd-alerte">Lorsque les circonstances opérationnelles le justifient, <strong>le refus reste possible</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'arrêt des moyens avant l'arrivée sur les lieux</h3>
+            <p>Le SIS reste pleinement maître de ses moyens opérationnels et peut décider d'arrêter ou d'annuler des moyens déjà engagés, notamment après régulation médicale. Cette décision <strong>n'exonère pas le SIS de sa responsabilité</strong> en cas de contentieux au titre de ses missions de service public.</p>
+            <div class="rd-alerte">Si la demande d'arrêt émane du SAMU, le SIS peut, après analyse de la situation opérationnelle, décider d'arrêter ou de laisser les moyens engagés poursuivre l'opération.</div>
+        </div>
+
+        <p class="rd-source">GDO SSUAP 2022, chapitre 4.</p>
+    </div>
+
+    <div id="gdossuap-conduite" class="module" style="--jsp: #00897B;">
+        <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <h2>🧭 Conduite des opérations</h2>
+
+        <div class="rd-section">
+            <h3>Le zonage opérationnel spécifique au SSUAP</h3>
+            <p>Comme pour toute opération, le zonage respecte le principe des trois zones : <strong>exclusion (rouge)</strong>, <strong>contrôlée (orange)</strong>, <strong>soutien (verte)</strong>. Pour une intervention SSUAP courante avec une seule victime, ce zonage se réduit souvent à <strong>quelques mètres</strong> autour du véhicule de secours.</p>
+            <ul>
+                <li>Stationnement de l'engin limitant l'impact sur le trafic.</li>
+                <li>Matérialisation de la zone d'opération.</li>
+                <li>Demande ou confirmation des forces de l'ordre si nécessaire.</li>
+            </ul>
+            <div class="rd-alerte">Ce zonage permet de garantir le <strong>secret professionnel</strong>, les données médicales à caractère personnel, les droits et la <strong>dignité</strong> de la personne.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les grandes phases de la prise en charge</h3>
+            <table class="rd-table">
+                <thead><tr><th>Phase</th><th>Contenu</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Prise en charge par les primo-intervenants</strong></td><td>Bilan patient-victime, fiche bilan transmise au SAMU, message de renseignement au CODIS, gestes de secours et actes de soins, conditionnement, surveillance permanente.</td></tr>
+                    <tr><td><strong>« Laisser sur place »</strong></td><td>Si l'évacuation n'est pas jugée nécessaire par le médecin régulateur ; l'appelant est mis en relation directe avec lui.</td></tr>
+                    <tr><td><strong>Évacuation</strong></td><td>Vecteur adapté (terrestre, aérien, nautique), matériel non oublié, conditionnement et surveillance constante durant le transport.</td></tr>
+                    <tr><td><strong>Prise en charge par la structure d'accueil</strong></td><td>Transfert de la victime, remise de la fiche bilan (IAO), dernier bilan horodaté avant transfert de responsabilité.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">La victime est sous la responsabilité du chef d'agrès durant toute l'évacuation, jusqu'à ce qu'elle soit confiée à une structure de soins.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Réduction du temps d'attente aux urgences & reconditionnement</h3>
+            <p>Enjeu opérationnel majeur pour optimiser la disponibilité des SIS : accords locaux de dépose des victimes autonomes, reconditionnement du vecteur (protocole d'hygiène, rearmement) à l'hôpital ou dans un centre proche pour libérer le VSAV au plus vite.</p>
+        </div>
+
+        <p class="rd-source">GDO SSUAP 2022, chapitre 5, §1-2.</p>
+    </div>
+
+    <div id="gdossuap-situations" class="module" style="--jsp: #00897B;">
+        <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <h2>🧩 Situations particulières</h2>
+        <p style="text-align: center;">13 situations identifiées par le GDO, nécessitant une attention ou une conduite à tenir adaptée.</p>
+
+        <div class="rd-section">
+            <h3>Fin de vie et arrêt des manœuvres de réanimation</h3>
+            <ul>
+                <li>Pas de geste engagé si : tête séparée du tronc, raideur cadavérique/putréfaction, ACR en situation exceptionnelle de nombreuses victimes sans moyens suffisants, refus familial d'acharnement, danger imminent impossible à écarter.</li>
+                <li>Situation de « fin de vie » à domicile : recueil (famille, âge, antécédents, circonstances) transmis au médecin régulateur qui décide de poursuivre ou d'arrêter la réanimation ; le chef d'agrès met en relation la famille avec le médecin régulateur.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Urgence psychiatrique</h3>
+            <p>Fait exception au principe général du consentement. Admission sans consentement possible sur décision du directeur d'établissement (à la demande d'un tiers ou en péril imminent) ou du préfet (ordre public). La présence physique d'un médecin est indispensable avant tout transport.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Violences intrafamiliales</h3>
+            <p>Pas de profil type. Poser des questions simples et explicites lors du bilan (« Avez-vous été victime de violences de la part de votre conjoint ? »). Consigner les dires de la victime sur la fiche bilan, rester attentif au comportement du conjoint (minimise, répond à sa place), consigner et rendre compte au retour.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Personnes fragiles, mineurs, ivresse</h3>
+            <ul>
+                <li><strong>Personnes fragiles</strong> (SDF, isolement) : vigilance hivernale et canicule ; si refus de mise à l'abri en danger réel, persuader avec l'aide du médecin régulateur ; signaler au CTA-CODIS.</li>
+                <li><strong>Mineurs non accompagnés</strong> : personne vulnérable placée sous la protection des sapeurs-pompiers à défaut de représentant légal ; seul le responsable légal peut refuser une prise en charge ; il est recommandé qu'un équipier accompagne le mineur en cellule sanitaire.</li>
+                <li><strong>Ivresse publique et manifeste</strong> : bilan complet et surveillance attentive systématiques (évolution rapide possible vers une détresse vitale) ; la prise en charge sur la voie publique relève en 1er lieu de la compétence des forces de l'ordre.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>ICMS, handicap, troubles du comportement</h3>
+            <ul>
+                <li><strong>Interventions à caractère social/médico-social (ICMS)</strong> : assistance à un public fragile (précarité, exclusion, dépendance) sans acte de secours technique, hors bilan patient-victime.</li>
+                <li><strong>Handicap</strong> : s'adresser directement à la victime (pas à l'accompagnant), ne pas présumer du handicap, demander comment aider, ne pas toucher au fauteuil ou à l'animal d'assistance sans permission.</li>
+                <li><strong>Troubles du comportement / idées suicidaires</strong> : un seul interlocuteur, distance de sécurité (≥ 1 m), chemin de retrait conservé, ton calme, questions ouvertes, amener la personne à venir plutôt que se précipiter vers elle. Couper avertisseurs lumineux/sonores à l'approche si besoin. Contention physique réservée aux forces de l'ordre.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Bariatrique, personnes injoignables, noyades</h3>
+            <ul>
+                <li><strong>Opérations à caractère bariatrique</strong> : demande de moyens complémentaires selon le poids estimé (brancardage, moyens aériens, SMPM, USAR) ; attention au poids total en charge du véhicule.</li>
+                <li><strong>Personnes ne répondant pas aux appels</strong> : confirmer le logement, ne pas sonner/rester devant la porte, privilégier une fenêtre plutôt que la porte, s'annoncer à chaque étape, reconnaissance approfondie de toutes les pièces.</li>
+                <li><strong>Noyades</strong> : le prompt secours reste valable jusqu'à 1 à 2 heures d'immersion (eau très froide, &lt;6°C) ; rechercher des témoins pour réduire le temps de recherche.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Convictions religieuses, personnes violentes, personnels SIS</h3>
+            <ul>
+                <li><strong>Convictions religieuses</strong> : neutralité du sapeur-pompier, adaptation possible sans jamais nuire aux soins, à l'hygiène ou à la sécurité. Le droit de choisir son praticien ne s'applique pas en urgence.</li>
+                <li><strong>Transport de personnes violentes</strong> : neutralisation du ressort des forces de l'ordre, contention physique uniquement sur prescription médicale, forces de l'ordre invitées à bord dès que la victime est dangereuse ou menottée.</li>
+                <li><strong>Transport de détenus</strong> : 4 catégories de dangerosité ; personnel pénitentiaire à bord du VSAV pendant l'évacuation.</li>
+                <li><strong>Personnels des SIS</strong> : un sapeur-pompier victime bénéficie des mêmes conditions de prise en charge que toute victime secourue.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Préservation des traces et indices</h3>
+            <p>Un lieu de secours peut être une scène de crime. Limiter le nombre d'intervenants, cheminement d'accès unique, gants et masque, ne pas déplacer le corps ni fouiller, découper les vêtements sans impacter les trous existants, ne pas toucher à une lettre ou une arme, photographier si possible avant modification, communiquer les identités des équipiers à l'OPJ.</p>
+            <div class="rd-alerte">L'action des secours ne doit pas compromettre le travail des techniciens d'investigation criminelle et/ou de médecine légale.</div>
+        </div>
+
+        <p class="rd-source">GDO SSUAP 2022, chapitre 5, §3-4.</p>
+    </div>
+
+    <div id="gdossuap-novi" class="module" style="--jsp: #00897B;">
+        <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <h2>🚨 Interventions face à de nombreuses victimes (NOVI)</h2>
+
+        <div class="rd-section">
+            <h3>Premiers renseignements et premier tri</h3>
+            <p>Le premier COS évalue : nature et localisation exacte du sinistre, circonstances, nombre et état présumés des victimes, point de regroupement des moyens (PRM) et point de rassemblement des victimes (PRV).</p>
+            <table class="rd-table">
+                <thead><tr><th>Type</th><th>1ʳᵉ action</th><th>Action complémentaire</th></tr></thead>
+                <tbody>
+                    <tr><td>Décédés</td><td rowspan="4">Catégorisation</td><td>Laissés sur place</td></tr>
+                    <tr><td>Blessés graves</td><td>Gestes de survie, <em>damage control</em></td></tr>
+                    <tr><td>Blessés légers</td><td rowspan="2">À regrouper dans un lieu différent des blessés graves</td></tr>
+                    <tr><td>Impliqués</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Repérage des victimes par code couleur</h3>
+            <table class="rd-table">
+                <thead><tr><th>Couleur</th><th>État de la victime</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Noir</strong></td><td>Décès ne faisant aucun doute, ou perte de connaissance sans respiration après libération des voies aériennes (LVA).</td></tr>
+                    <tr><td><strong>Rouge</strong></td><td>Perte de connaissance qui respire (après LVA), détresse vitale évidente (FR&gt;30/min ou FC&gt;120/min chez l'adulte), hémorragie.</td></tr>
+                    <tr><td><strong>Jaune</strong></td><td>Consciente, sans détresse vitale, ne peut pas se déplacer seule.</td></tr>
+                    <tr><td><strong>Vert</strong></td><td>Consciente, sans détresse vitale, peut se déplacer seule ou avec de l'aide.</td></tr>
+                </tbody>
+            </table>
+            <p>Le <strong>damage control</strong> consiste à prodiguer en première intention les soins immédiatement indispensables (arrêt des grandes hémorragies, sécurisation des voies aériennes) pour assurer la survie, sans traiter la totalité des lésions.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Dispositif ORSEC-NOVI et SINUS</h3>
+            <ul>
+                <li>Objectif : organisation permettant de faire face à un événement générant de nombreuses victimes, quelle qu'en soit l'origine, sous l'autorité du préfet (unicité de commandement, rapidité, moyens adaptés, coordination).</li>
+                <li><strong>SINUS</strong> (Système d'Information NUmérique Standardisé) : référencement individuel de chaque victime (QR code), base de données nationale sécurisée, solution logicielle de comptage sur le terrain, organisation opérationnelle intégrée à l'ORSEC-NOVI.</li>
+            </ul>
+            <div class="rd-alerte">La pierre angulaire du dispositif ORSEC-NOVI est la prise en charge de <strong>toutes</strong> les victimes ; le dénombrement dès l'arrivée sur les lieux est un élément clé pour exprimer les besoins de renfort.</div>
+        </div>
+
+        <p class="rd-source">GDO SSUAP 2022, chapitre 5, §5.</p>
     </div>
 
     <!-- Module SUAP - Âges et Définitions -->
@@ -22112,7 +22520,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.30.2</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.31.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

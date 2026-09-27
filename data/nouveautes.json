@@ -1,6 +1,6 @@
 {
-  "version": "1.30.2",
-  "titre": "Vulcain 1.30.2",
-  "texte": "Écran TMD relooké : design plus sobre et cohérent avec le reste de l'appli, encadré « Risques » enfin visible.",
-  "fiche": ""
+  "version": "1.31.0",
+  "titre": "Vulcain 1.31.0",
+  "texte": "Nouvelle section SUAP : GDO Secours et soins d'urgence aux personnes 2022 (8 fiches). Support des vidéos YouTube (miniature cliquable) dans les fiches.",
+  "fiche": "gdossuap-menu"
 }

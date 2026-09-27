@@ -740,6 +740,15 @@ html[data-theme] .ia-jeton.utilise { color: var(--t-muted); }
 /* Liens vers les documents PDF (FDF) */
 html[data-theme] .rd-pdf { display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--t-accent); color: var(--t-ink); background: var(--t-s1); font-weight: 700; text-decoration: none; }
 html[data-theme] .rd-source .rd-pdf { padding: 4px 10px; border-width: 1px; font-weight: 600; margin-top: 4px; }
+
+/* Vidéo YouTube : miniature cliquable (facade), l'iframe ne charge qu'au clic */
+.yt-facade { position: relative; width: 100%; max-width: 560px; aspect-ratio: 16 / 9; margin: 12px auto; border-radius: var(--t-radius-s, 12px); overflow: hidden; cursor: pointer; background: #000; border: none; padding: 0; display: block; }
+.yt-facade img { width: 100%; height: 100%; object-fit: cover; opacity: .85; display: block; }
+.yt-facade .yt-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.yt-facade .yt-play span { width: 68px; height: 48px; border-radius: 14px; background: rgba(20, 20, 20, .75); display: flex; align-items: center; justify-content: center; transition: background .2s, transform .2s; }
+.yt-facade .yt-play span::before { content: ''; border-style: solid; border-width: 11px 0 11px 18px; border-color: transparent transparent transparent #fff; margin-left: 4px; }
+.yt-facade:hover .yt-play span, .yt-facade:focus-visible .yt-play span { background: #FF0000; transform: scale(1.06); }
+.yt-facade iframe { width: 100%; height: 100%; border: 0; display: block; }
 .nav-home .nav-acc-head, .nav-home .nav-sub-head { scroll-margin-top: 12px; }
 
 /* ===== JSP : une couleur par année (blanc, jaune, orange, vert) ===== */
