@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.37.0">
+    <meta name="version" content="1.37.1">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.37.0</span><br>
+                        Vulcain v<span class="app-version">1.37.1</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -16440,6 +16440,8 @@ Je fais : extinction.</p>
             <summary>3 · La pompe centrifuge d'incendie</summary>
             <p>La pompe centrifuge est l'organe hydraulique d'extinction par excellence. Elle permet d'élever la pression de l'eau en convertissant l'énergie cinétique imprimée au fluide en énergie de pression. <strong>Elle n'est en aucun cas auto-amorçante</strong> : elle requiert obligatoirement un système d'amorçage auxiliaire pour puiser l'eau en dépression.</p>
             <p><strong>Principe mécanique</strong> : l'eau pénètre axialement dans l'ouïe centrale de la roue ; les aubes profilées de l'impulseur en rotation projettent le fluide radialement sous l'effet de la force centrifuge, lui conférant une forte vélocité ; la volute divergente (diffuseur) décélère l'eau et transforme sa vitesse en pression statique vers le collecteur de refoulement.</p>
+            <figure class="rd-fig etroite"><img src="images/cod1/pompe-schema.jpg" alt="Schéma synoptique en coupe de pompe centrifuge : ouïe, roue à aubes, volute/diffuseur, refoulement" loading="lazy"><figcaption>Schéma synoptique en coupe de pompe centrifuge</figcaption></figure>
+            <figure class="rd-fig"><img src="images/cod1/fpt-circuit.jpg" alt="Synoptique général des circuits de pompe, alimentation, gavage et refoulement d'un FPT" loading="lazy"><figcaption>Synoptique général des circuits de pompe, alimentation, gavage et refoulement</figcaption></figure>
             <div class="rd-astuce">Une pompe d'incendie est définie par son débit et sa pression nominale à une dénivelée d'aspiration géométrique de 3 mètres. Exemple : pompe <strong>2000/15</strong> = 2000 L/min à 15 bars de refoulement.</div>
             <p><strong>Lecture du vacuo-manomètre</strong> : gradué de −1 à +25 bars. En aspiration, l'aiguille indique la dépression relative nécessaire pour vaincre la hauteur géométrique d'aspiration (Hga) — une valeur de −0,2 bar équivaut à 2 mètres de colonne d'eau. Une aiguille qui s'affole signale un risque imminent de cavitation mécanique.</p>
             <p><strong>Régulation automatique de pression</strong> (norme NF S 61-510, obligatoire pour toutes les pompes débitant ≥ 1500 L/min) : l'automate compense les variations d'ouverture des lances en maintenant la consigne à ± 10 % en agissant sur le régime moteur, et assure la détection de surchauffe, cavitation et avarie mécanique. <strong>Règle d'or : toujours armer la régulation automatique dès l'enclenchement de la PDM, même si la pompe tourne au ralenti.</strong></p>
@@ -16455,6 +16457,7 @@ Je fais : extinction.</p>
                     <td>Deux pistons opposés actionnés en va-et-vient continu par un excentrique ou un moteur électrique 24 V dédié. <strong>Amorçage ultra rapide</strong> (quelques secondes seulement), entraînement par courroie avec galet tendeur/sélecteur ou électroaimant automatique. <strong>Sécurité électrique</strong> : ne jamais dépasser 90 secondes en continu à sec, et 20 secondes une fois en eau ! Ne pas actionner si dévers &gt; 10° ou pente &gt; 15°.</td>
                 </tr>
             </table>
+            <figure class="rd-fig"><img src="images/cod1/amorceur-pistons.jpg" alt="Cinématique de fonctionnement de l'amorceur à pistons alternatifs : piston 1 refoulement air, excentrique rotatif, piston 2 admission d'air corps de pompe" loading="lazy"><figcaption>Cinématique de fonctionnement de l'amorceur à pistons alternatifs</figcaption></figure>
             <h4>Guide de diagnostic : pannes et anomalies d'amorçage</h4>
             <table class="rd-table">
                 <tr><th>Symptôme au vacuomètre</th><th>Causes probables</th><th>Actions correctives immédiates</th></tr>
@@ -16495,6 +16498,7 @@ Je fais : extinction.</p>
             <p><strong>Facteurs de dégradation de la Hga</strong> : altitude (perte de 0,125 m tous les 100 m d'élévation) · température (−0,12 m à 10 °C ; −1,3 m à 50 °C ; aspiration impossible à 100 °C) · pertes de charge singulières (~0,50 m dans la crépine).</p>
             <p><strong>Montage méthodique de la ligne</strong> : contrôle de la hauteur géométrique (≤ 6 m) → positionnement de l'engin (perpendiculaire sur aire aménagée, parallèle au plus près en berge naturelle) → alignement au sol des aspiraux avec le binôme d'alimentation (BAL) → serrage rigoureux avec 2 clés tricoises en opposition → fixation du flotteur à chaînette et amarrage de la crépine par un nœud de batelier avec commande → immersion complète de la crépine à mi-profondeur (hors fond boueux, sans prise d'air de surface).</p>
             <p>Aire de mise en station normalisée : longueur maxi de ligne 8 m, aire stabilisée 8 m × 4 m (résistance PL), réserve ≥ 30 m³ minimum.</p>
+            <figure class="rd-fig"><img src="images/cod1/deci-aspiration.jpg" alt="Profil côté d'une aire de mise en station et aspiration normalisée pour engin-pompe : longueur maxi de ligne 8 mètres, aire stabilisée 8 x 4 m, Hga maxi 6 m, réserve supérieure ou égale à 30 m3" loading="lazy"><figcaption>Profil côté d'une aire de mise en station et aspiration normalisée</figcaption></figure>
             <table class="rd-table">
                 <tr><th>Type de borne</th><th>Diamètre canalisation</th><th>Nombre de tours clé</th><th>Sorties disponibles</th><th>Code couleur &amp; rôle</th></tr>
                 <tr><td>PI DN 80</td><td>80 mm</td><td>13 tours</td><td>1× 65 mm (+ 2× 40 mm)</td><td>Entièrement rouge</td></tr>
@@ -16531,6 +16535,7 @@ Je fais : extinction.</p>
                 <tr><td>Tuyau plat PIL Ø 110 mm</td><td>1000 L/min</td><td>0,28 bar/hm</td><td>0,06 bar</td></tr>
             </table>
             <p><strong>Cas pratique résolu</strong> : établissement fractionné FPT (A) → division (B) via 80 m de Ø 70 mm à 1000 L/min, puis 2 lances : BC = 40 m Ø 45 à 500 L/min de plain-pied, BD = 60 m Ø 45 à 500 L/min + 15 m de dénivelé.</p>
+            <figure class="rd-fig"><img src="images/cod1/etablissement-2lances.jpg" alt="Schéma d'établissement fractionné en tronçons avec lances dissymétriques : FPT (A), ligne AB 80 m Ø 70 mm 1000 L/min vers division B, lance BC 40 m Ø 45 500 L/min de plain-pied, lance BD 60 m Ø 45 500 L/min plus 15 m de dénivelé" loading="lazy"><figcaption>Schéma d'établissement fractionné en tronçons avec lances dissymétriques</figcaption></figure>
             <ul>
                 <li>Branche BC (lance 1) : 2×20 m Ø45 à 500 L/min = 2 × 1,2 bar = 2,4 bars + 6,0 bars (pression lance) = <strong>8,4 bars</strong>.</li>
                 <li>Branche BD (lance 2, étage) : 3×20 m Ø45 à 500 L/min = 3 × 1,2 bar = 3,6 bars + 1,5 bar (dénivelé +15 m) + 6,0 bars (pression lance) = <strong>11,1 bars</strong> (branche prioritaire, la plus défavorable).</li>
@@ -16595,6 +16600,7 @@ Je fais : extinction.</p>
                 </tr>
             </table>
             <p><strong>Répertoire visuel des commandements gestuels</strong> : stop absolu (bras levé tendu), en avant (battement de vers le torse), en arrière (poussée vers l'engin), braquer à gauche (bras tendu à l'horizontale), braquer à droite (bras tendu à l'horizontale).</p>
+            <figure class="rd-fig"><img src="images/cod1/guidage-gestes.jpg" alt="Commandements visuels réglementaires du guidage sapeur-pompier : stop absolu bras levé tendu, en avant battement vers le torse, en arrière poussée vers l'engin, braquer gauche et braquer droite bras tendu à l'horizontale" loading="lazy"><figcaption>Commandements visuels réglementaires du guidage sapeur-pompier</figcaption></figure>
         </details>
 
         <p class="jsp-liens">Voir aussi → <button onclick="showModule('cod2')">🚛 COD 2 – Conduite tout-terrain</button> <button onclick="showModule('etex-etb')">💧 Les établissements</button> <button onclick="showModule('etex-res')">💧 Ressources en eau</button></p>
@@ -23171,7 +23177,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.37.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.37.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
