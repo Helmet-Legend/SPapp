@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.39.0">
+    <meta name="version" content="1.40.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.39.0</span><br>
+                        Vulcain v<span class="app-version">1.40.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -16571,7 +16571,7 @@ Je fais : extinction.</p>
                 <p><strong>Retournement du groupe</strong> : le chef du GIFF balise l'emplacement avec la VLTT, qui fait demi-tour ; les 4 véhicules dépassent l'emplacement et stoppent ; les chefs d'agrès descendent et guident la marche arrière de leur véhicule dans l'emplacement, dernier véhicule en premier, chacun repartant à son tour. <strong>Arrêt en parallèle</strong> (point de transit / stationnement prolongé) : la VLTT se gare la première, les autres véhicules se garent parallèlement, guidés en marche arrière par leur chef d'agrès. <strong>Arrêt en colonne</strong> (stationnement court) : les véhicules se garent simplement derrière la VLTT.</p>
                 <h3>📌 Le guidage</h3>
                 <p>Se faire guider dès qu'une manœuvre est délicate, en cas de mauvaise visibilité, de présence de personnes à proximité, ou de manque d'habitude sur l'engin — cela évite accrochages, accidents corporels et incidents dans les passages difficiles en tout-terrain. Le guideur se positionne à <strong>8-10 m</strong> du véhicule pour un large champ de vision des côtés et de l'arrière, gestes précis et anticipés ; en cas de doute il arrête le véhicule pour reconnaître. Le conducteur se conforme aveuglément aux gestes du guideur, <strong>ne regarde plus jamais dans les rétroviseurs</strong>, tourne le volant lentement en le laissant glisser dans les mains.</p>
-                <figure class="rd-fig"><img src="images/cod1/guidage-gestes.jpg" alt="Répertoire visuel des commandements gestuels de guidage sapeur-pompier : stop absolu, en avant, en arrière, braquer gauche, braquer droite" loading="lazy"><figcaption>Répertoire des commandements gestuels réglementaires du guidage (identiques à ceux du COD 1)</figcaption></figure>
+                <figure class="rd-fig"><img src="images/cod1/guidage-gestes.jpg" alt="Répertoire visuel des gestes de guidage du conducteur : avancez, reculez, à droite, à gauche, stop, ralentissez" loading="lazy"><figcaption>Répertoire des gestes réglementaires du guidage (identiques à ceux du COD 1)</figcaption></figure>
             </div>
         </details>
 
@@ -16846,8 +16846,8 @@ Je fais : extinction.</p>
             <summary>3 · La pompe centrifuge d'incendie</summary>
             <p>La pompe centrifuge est l'organe hydraulique d'extinction par excellence. Elle permet d'élever la pression de l'eau en convertissant l'énergie cinétique imprimée au fluide en énergie de pression. <strong>Elle n'est en aucun cas auto-amorçante</strong> : elle requiert obligatoirement un système d'amorçage auxiliaire pour puiser l'eau en dépression.</p>
             <p><strong>Principe mécanique</strong> : l'eau pénètre axialement dans l'ouïe centrale de la roue ; les aubes profilées de l'impulseur en rotation projettent le fluide radialement sous l'effet de la force centrifuge, lui conférant une forte vélocité ; la volute divergente (diffuseur) décélère l'eau et transforme sa vitesse en pression statique vers le collecteur de refoulement.</p>
-            <figure class="rd-fig etroite"><img src="images/cod1/pompe-schema.jpg" alt="Schéma synoptique en coupe de pompe centrifuge : ouïe, roue à aubes, volute/diffuseur, refoulement" loading="lazy"><figcaption>Schéma synoptique en coupe de pompe centrifuge</figcaption></figure>
-            <figure class="rd-fig"><img src="images/cod1/fpt-circuit.jpg" alt="Synoptique général des circuits de pompe, alimentation, gavage et refoulement d'un FPT" loading="lazy"><figcaption>Synoptique général des circuits de pompe, alimentation, gavage et refoulement</figcaption></figure>
+            <figure class="rd-fig etroite"><img src="images/cod1/pompe-schema.jpg" alt="Coupe d'une pompe centrifuge : aspiration, turbine mettant l'eau en rotation, volute qui collecte le flux, diffuseur qui transforme la vitesse en pression, refoulement" loading="lazy"><figcaption>Coupe d'une pompe centrifuge : aspiration → turbine → volute → diffuseur → refoulement</figcaption></figure>
+            <figure class="rd-fig"><img src="images/cod1/fpt-circuit.jpg" alt="Schéma fonctionnel hydraulique d'un FPT/CCR : aspiration, turbine dans le corps de pompe, amorceur, tableau de commande, sorties refoulement, purges" loading="lazy"><figcaption>Schéma fonctionnel hydraulique d'un FPT/CCR : aspiration, turbine, amorceur, tableau de commande, sorties refoulement</figcaption></figure>
             <div class="rd-astuce">Une pompe d'incendie est définie par son débit et sa pression nominale à une dénivelée d'aspiration géométrique de 3 mètres. Exemple : pompe <strong>2000/15</strong> = 2000 L/min à 15 bars de refoulement.</div>
             <p><strong>Lecture du vacuo-manomètre</strong> : gradué de −1 à +25 bars. En aspiration, l'aiguille indique la dépression relative nécessaire pour vaincre la hauteur géométrique d'aspiration (Hga) — une valeur de −0,2 bar équivaut à 2 mètres de colonne d'eau. Une aiguille qui s'affole signale un risque imminent de cavitation mécanique.</p>
             <p><strong>Régulation automatique de pression</strong> (norme NF S 61-510, obligatoire pour toutes les pompes débitant ≥ 1500 L/min) : l'automate compense les variations d'ouverture des lances en maintenant la consigne à ± 10 % en agissant sur le régime moteur, et assure la détection de surchauffe, cavitation et avarie mécanique. <strong>Règle d'or : toujours armer la régulation automatique dès l'enclenchement de la PDM, même si la pompe tourne au ralenti.</strong></p>
@@ -16863,7 +16863,7 @@ Je fais : extinction.</p>
                     <td>Deux pistons opposés actionnés en va-et-vient continu par un excentrique ou un moteur électrique 24 V dédié. <strong>Amorçage ultra rapide</strong> (quelques secondes seulement), entraînement par courroie avec galet tendeur/sélecteur ou électroaimant automatique. <strong>Sécurité électrique</strong> : ne jamais dépasser 90 secondes en continu à sec, et 20 secondes une fois en eau ! Ne pas actionner si dévers &gt; 10° ou pente &gt; 15°.</td>
                 </tr>
             </table>
-            <figure class="rd-fig"><img src="images/cod1/amorceur-pistons.jpg" alt="Cinématique de fonctionnement de l'amorceur à pistons alternatifs : piston 1 refoulement air, excentrique rotatif, piston 2 admission d'air corps de pompe" loading="lazy"><figcaption>Cinématique de fonctionnement de l'amorceur à pistons alternatifs</figcaption></figure>
+            <figure class="rd-fig"><img src="images/cod1/amorceur-pistons.jpg" alt="Coupe de l'amorceur à pistons coaxiaux : aspiration de l'air depuis le corps de pompe, deux pistons opposés en va-et-vient, évacuation de l'air vers l'atmosphère" loading="lazy"><figcaption>Coupe de l'amorceur à pistons coaxiaux : l'air aspiré depuis le corps de pompe est évacué vers l'atmosphère par le va-et-vient des deux pistons</figcaption></figure>
             <h4>Guide de diagnostic : pannes et anomalies d'amorçage</h4>
             <table class="rd-table">
                 <tr><th>Symptôme au vacuomètre</th><th>Causes probables</th><th>Actions correctives immédiates</th></tr>
@@ -16883,6 +16883,7 @@ Je fais : extinction.</p>
                     <td>Effectuer une purge immédiate en ouvrant une vanne de refoulement pour chasser la contre-pression d'air/eau.</td>
                 </tr>
             </table>
+            <figure class="rd-fig"><img src="images/cod1/causes-echec-amorcage.jpg" alt="Quatre causes d'échec d'amorçage : prise d'air sur l'aspiration, crépine colmatée, hauteur géométrique d'aspiration trop importante, vannes mal positionnées" loading="lazy"><figcaption>Quatre causes fréquentes d'échec d'amorçage : prise d'air, crépine colmatée, Hga excessive, vannes mal positionnées</figcaption></figure>
             <div class="rd-alerte">
                 <strong>Phénomène destructeur : la cavitation.</strong> Lorsque la pression à l'entrée de l'ouïe tombe sous la tension de vapeur saturante de l'eau, des bulles gazeuses se créent dans la veine liquide puis implosent avec une violence extrême contre les parois métalliques.
                 <ul>
@@ -16904,7 +16905,7 @@ Je fais : extinction.</p>
             <p><strong>Facteurs de dégradation de la Hga</strong> : altitude (perte de 0,125 m tous les 100 m d'élévation) · température (−0,12 m à 10 °C ; −1,3 m à 50 °C ; aspiration impossible à 100 °C) · pertes de charge singulières (~0,50 m dans la crépine).</p>
             <p><strong>Montage méthodique de la ligne</strong> : contrôle de la hauteur géométrique (≤ 6 m) → positionnement de l'engin (perpendiculaire sur aire aménagée, parallèle au plus près en berge naturelle) → alignement au sol des aspiraux avec le binôme d'alimentation (BAL) → serrage rigoureux avec 2 clés tricoises en opposition → fixation du flotteur à chaînette et amarrage de la crépine par un nœud de batelier avec commande → immersion complète de la crépine à mi-profondeur (hors fond boueux, sans prise d'air de surface).</p>
             <p>Aire de mise en station normalisée : longueur maxi de ligne 8 m, aire stabilisée 8 m × 4 m (résistance PL), réserve ≥ 30 m³ minimum.</p>
-            <figure class="rd-fig"><img src="images/cod1/deci-aspiration.jpg" alt="Profil côté d'une aire de mise en station et aspiration normalisée pour engin-pompe : longueur maxi de ligne 8 mètres, aire stabilisée 8 x 4 m, Hga maxi 6 m, réserve supérieure ou égale à 30 m3" loading="lazy"><figcaption>Profil côté d'une aire de mise en station et aspiration normalisée</figcaption></figure>
+            <figure class="rd-fig"><img src="images/cod1/deci-aspiration.jpg" alt="Aire d'aspiration type en point d'eau naturel ou artificiel : longueur d'aspiration la plus courte possible, tuyau d'aspiration rigide, crépine immergée 30 à 50 cm sous le niveau d'eau, hauteur géométrique d'aspiration Hga limitée à 7-8 m" loading="lazy"><figcaption>Aire d'aspiration type en point d'eau naturel ou artificiel (Hga, crépine immergée, points de vigilance)</figcaption></figure>
             <table class="rd-table">
                 <tr><th>Type de borne</th><th>Diamètre canalisation</th><th>Nombre de tours clé</th><th>Sorties disponibles</th><th>Code couleur &amp; rôle</th></tr>
                 <tr><td>PI DN 80</td><td>80 mm</td><td>13 tours</td><td>1× 65 mm (+ 2× 40 mm)</td><td>Entièrement rouge</td></tr>
@@ -16964,6 +16965,7 @@ Je fais : extinction.</p>
                     <li><strong>Vérification</strong> : Σ PE = PN.</li>
                 </ol>
             </div>
+            <figure class="rd-fig"><img src="images/cod1/etablissement-relais.jpg" alt="Schéma d'établissement avec dénivelé et relais : engin pompe en aspiration à 7-15 bars, élévation de 30 m, relais refoulant à 7-15 bars, pression à la lance de 4 à 6 bars" loading="lazy"><figcaption>Schéma d'établissement avec dénivelé et relais entre l'engin pompe et la lance</figcaption></figure>
         </details>
 
         <details class="jsp-cours">
@@ -16982,6 +16984,7 @@ Je fais : extinction.</p>
             </ul>
             <div class="rd-alerte"><strong>Proportionneur Venturi</strong> : la dépression créée par l'étranglement aspire l'émulseur. <strong>Impératif technique</strong> : l'injecteur nécessite impérativement une pression de refoulement de 10 bars minimum à son entrée pour amorcer le mélange ! Lors d'une injection à l'aspiration de pompe, maintenir impérativement la sauterelle de retour cuve fermée pour éviter toute contamination de la tonne.</div>
             <p><strong>Système automatique Caméléon (CTD)</strong> : dispositif à injection motorisée sous pression régulé électroniquement par débitmètre, injecte l'additif proportionnellement au débit d'eau instantané (0,1 % à 6 %). Pression d'injection requise : +1 bar au-dessus de la pression d'eau. Débit seuil de déclenchement : &gt; 50 L/min. Rinçage automatique intégré à la coupure.</p>
+            <figure class="rd-fig"><img src="images/cod1/dosage-cameleon.jpg" alt="Système de dosage Caméléon/CTD : arrivée d'eau en dépression, dosage émulseur réglable 1/3/6 % selon intervention depuis le réservoir émulseur, sortie du mélange eau + émulseur vers le refoulement" loading="lazy"><figcaption>Système de dosage automatique Caméléon/CTD : arrivée d'eau, réservoir émulseur, dosage réglable, sortie du mélange vers le refoulement</figcaption></figure>
             <p><strong>Calcul d'autonomie</strong> — exemple type FPT standard : tonne 3000 L d'eau, réserve d'émulseur 200 L, lance débitant 225 L/min.</p>
             <ul>
                 <li>Dosage 3 % (hydrocarbures), engin alimenté en eau : consommation émulseur = 225 × 0,03 = 6,75 L/min ⇒ autonomie réserve = 200 / 6,75 ≈ <strong>29 minutes</strong>.</li>
@@ -17006,7 +17009,7 @@ Je fais : extinction.</p>
                 </tr>
             </table>
             <p><strong>Répertoire visuel des commandements gestuels</strong> : stop absolu (bras levé tendu), en avant (battement de vers le torse), en arrière (poussée vers l'engin), braquer à gauche (bras tendu à l'horizontale), braquer à droite (bras tendu à l'horizontale).</p>
-            <figure class="rd-fig"><img src="images/cod1/guidage-gestes.jpg" alt="Commandements visuels réglementaires du guidage sapeur-pompier : stop absolu bras levé tendu, en avant battement vers le torse, en arrière poussée vers l'engin, braquer gauche et braquer droite bras tendu à l'horizontale" loading="lazy"><figcaption>Commandements visuels réglementaires du guidage sapeur-pompier</figcaption></figure>
+            <figure class="rd-fig"><img src="images/cod1/guidage-gestes.jpg" alt="Gestes réglementaires du guidage du conducteur sapeur-pompier : avancez, reculez, à droite, à gauche, stop, ralentissez" loading="lazy"><figcaption>Gestes réglementaires du guidage du conducteur sapeur-pompier</figcaption></figure>
         </details>
 
         <p class="jsp-liens">Voir aussi → <button onclick="showModule('cod2')">🚛 COD 2 – Conduite tout-terrain</button> <button onclick="showModule('etex-etb')">💧 Les établissements</button> <button onclick="showModule('etex-res')">💧 Ressources en eau</button></p>
@@ -23583,7 +23586,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.39.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.40.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

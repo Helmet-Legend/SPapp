@@ -1,6 +1,6 @@
 {
-  "version": "1.38.0",
-  "titre": "Vulcain 1.38.0",
-  "texte": "Refonte des fiches GTO Établissements & techniques d'extinction : texte rédigé au lieu de pages de PDF brutes, avec schémas et photos sélectionnés.",
-  "fiche": "etex-etb"
+  "version": "1.40.0",
+  "titre": "Vulcain 1.40.0",
+  "texte": "Nouveaux schémas de la fiche COD 1 (pompe, amorçage, aspiration DECI, dosage, guidage) : illustrations modernisées et plus lisibles.",
+  "fiche": "cod1"
 }
