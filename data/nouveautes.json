@@ -1,6 +1,6 @@
 {
-  "version": "1.32.0",
-  "titre": "Vulcain 1.32.0",
-  "texte": "Nouvelle fiche Incendie : Halligan Tool (techniques d'ouverture de porte, cadenas, autres usages), avec vidéos de démonstration.",
-  "fiche": "halligan"
+  "version": "1.33.0",
+  "titre": "Vulcain 1.33.0",
+  "texte": "Secours routier : nouvelle fiche CTIF (2025) sur la FAD et l'emballement thermique des batteries de véhicules électriques, avec vidéo d'essais.",
+  "fiche": "gouv-ctif"
 }

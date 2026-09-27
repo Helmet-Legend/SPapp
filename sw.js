@@ -1,5 +1,5 @@
-// Vulcain Service Worker v1.32.1
-const CACHE_NAME = 'vulcain-v1.32.1';
+// Vulcain Service Worker v1.33.0
+const CACHE_NAME = 'vulcain-v1.33.0';
 const urlsToCache = [
   './',
   './index.html',

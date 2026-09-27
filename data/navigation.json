@@ -3837,6 +3837,26 @@
    ]
   },
   {
+   "id": "gouv-ctif",
+   "titre": "GOUV – CTIF : FAD et emballement thermique des batteries (2025)",
+   "domaine": "routier",
+   "theme": "GOUV – Véhicules à énergies alternatives",
+   "type": "fiche",
+   "motsCles": [
+    "véhicule électrique",
+    "fad",
+    "fiche d'aide à la décision",
+    "emballement thermique",
+    "batterie",
+    "lithium",
+    "extinction",
+    "euro ncap",
+    "euro rescue",
+    "hydrogène",
+    "ctif"
+   ]
+  },
+  {
    "id": "pse-menu",
    "titre": "PSE 1 et PSE 2 – Présentation",
    "domaine": "sap",
