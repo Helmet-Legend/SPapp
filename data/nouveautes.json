@@ -1,6 +1,6 @@
 {
-  "version": "1.34.0",
-  "titre": "Vulcain 1.34.0",
-  "texte": "Nouveau design de la page « À propos » : plus direct, plus lisible, avec l'histoire de l'appli.",
+  "version": "1.34.1",
+  "titre": "Vulcain 1.34.1",
+  "texte": "Correctif : la page « À propos » défile de nouveau normalement.",
   "fiche": null
 }
