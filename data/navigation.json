@@ -124,6 +124,16 @@
     "Préparation",
     "Administration"
    ]
+  },
+  {
+   "id": "conduite",
+   "titre": "Conduite",
+   "icone": "🚛",
+   "picto": "truck",
+   "couleur": "#A16207",
+   "themes": [
+    "COD 2 – Conduite tout-terrain"
+   ]
   }
  ],
  "pages": [
@@ -1360,6 +1370,33 @@
     "effet chalumeau",
     "attaque d'atténuation",
     "attaque transitoire"
+   ]
+  },
+  {
+   "id": "cod2",
+   "titre": "COD 2 – Conduite tout-terrain",
+   "domaine": "conduite",
+   "theme": "COD 2 – Conduite tout-terrain",
+   "type": "fiche",
+   "motsCles": [
+    "conduite tout-terrain",
+    "4x4",
+    "châssis",
+    "différentiel",
+    "boîte de transfert",
+    "pneumatiques",
+    "pente",
+    "dévers",
+    "gué",
+    "ornière",
+    "enlisement",
+    "autoprotection",
+    "autodéfense",
+    "auto-dégagement",
+    "treuil",
+    "mouflage",
+    "GIFF",
+    "point effet"
    ]
   },
   {
