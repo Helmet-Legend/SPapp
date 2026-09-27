@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.32.1">
+    <meta name="version" content="1.33.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -111,7 +111,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.32.1</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.33.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -207,7 +207,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.32.1</span><br>
+                        Vulcain v<span class="app-version">1.33.0</span><br>
                         © 2025-2026 Helmet Legend - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>Helmet Legend</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -15741,6 +15741,7 @@ Je fais : extinction.</p>
             <button onclick="showModule('gouv-incendie')"><b>🔥 Feu de véhicule</b><span>Énergie alternative : 2 LDV, binômes, réservoir ou batterie, NOD n° 001</span></button>
             <button onclick="showModule('gouv-sr')"><b>🚑 Secours routier</b><span>MGO SR, les 5 i, service plug, 30-60-90, NOD n° 002</span></button>
             <button onclick="showModule('gouv-fiches')"><b>🛠️ Fiches techniques SR</b><span>Calage, vitrages, portes, baies, tableau de bord, pavillon, pédales…</span></button>
+            <button onclick="showModule('gouv-ctif')"><b>⚡ CTIF – FAD & emballement thermique</b><span>2025 : la FAD, sécurisation S1-S5, emballement thermique des batteries, techniques mondiales</span></button>
         </div>
         <div class="rd-section">
             <h3>Voir aussi</h3>
@@ -16071,6 +16072,58 @@ Je fais : extinction.</p>
         </details>
         <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/vehicules/GOUV-SDIS34-2015.pdf" target="_blank" rel="noopener">Guide complet (PDF, 25 Mo)</a></p>
         <p class="rd-source">📚 Source : <strong>Guide opérationnel d'urgence sur les véhicules – SDIS 34</strong> (V1.1.1, mai 2015), réalisé avec le SDIS de la Vienne (86), et notes opérationnelles départementales n° 001 et 002 (12/2014). Reproduit avec l'autorisation du SDIS de l'Hérault. <strong>Document de 2015</strong> : les véhicules récents peuvent différer, consulter la fiche d'aide à la décision (FAD) du modèle.</p>
+    </div>
+    <div id="gouv-ctif" class="module" style="--jsp: #00897B;">
+        <button class="back-btn" onclick="showModule('gouv-menu')">← Retour GOUV</button>
+        <h2>⚡ CTIF – FAD & emballement thermique des batteries</h2>
+        <p style="text-align: center;">Guide d'intervention d'urgence sur les véhicules électriques (CTIF, V1, décembre 2025) : la fiche d'aide à la décision (FAD), la sécurisation du véhicule accidenté, et l'emballement thermique des batteries (données, extinction, techniques mondiales, moyens traditionnels des sapeurs-pompiers).</p>
+        <div class="rd-alerte">Ce guide <strong>complète</strong> le GOUV SDIS 34 de 2015 avec les évolutions récentes (normes Euro NCAP, applications FAD, retours d'expérience sur l'emballement thermique). En intervention, se référer en priorité à la <strong>FAD du véhicule</strong> (Euro Rescue, ANCAP Rescue) quand elle est disponible.</div>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>4 types de véhicules électrifiés</strong> : hybride électrique (HEV, pas de recharge secteur), hybride rechargeable (PHEV), tout électrique (BEV), pile à combustible (FCEV, hydrogène). Structure de la batterie : <strong>cellule → module → pack</strong>.</li>
+                <li><strong>Risques liés au lithium-ion</strong> : électriques (haute tension), thermiques (emballement), toxiques (fumées HF/CO) et explosifs (gaz inflammables H2/CH4 en espace clos).</li>
+                <li><strong>Dispositifs de sécurité électrique</strong>, 2 catégories : liaison directe à la haute tension (<strong>service-plug</strong> : nécessite un EPI adapté) ou liaison indirecte (<strong>e-plug, boucle d'isolement, fusible 12 V</strong> : pas d'EPI nécessaire, action possible sans risque électrique).</li>
+                <li><strong>FAD</strong> (fiche d'aide à la décision / rescue sheet, norme ISO 17840) : consultable via l'application <strong>Euro Rescue</strong> (Euro NCAP, environ 1 900 FAD en 2025, 22 langues) ou <strong>ANCAP Rescue</strong> (Australie). L'<strong>e-call 112</strong> est obligatoire depuis 2018 ; en France, les services de secours ont accès au <strong>SIV</strong> depuis 2022 pour identifier un véhicule.</li>
+                <li><strong>Sécurisation du véhicule (MGO)</strong> en 5 phases <strong>S1 à S5</strong>, avec la règle des <strong>5 i</strong> : <strong>I</strong>dentifier le véhicule et son énergie · <strong>I</strong>nspecter sans toucher · <strong>I</strong>nterdire toute action sur les vecteurs d'énergie non identifiés · <strong>I</strong>mmobiliser (frein, calage) · <strong>I</strong>soler les énergies (12 V puis HT selon la FAD).</li>
+                <li><strong>Emballement thermique</strong> : température critique des cellules entre <strong>130 et 180 °C</strong>. Signes : flammes (torchères), fumées denses, crépitements — comparable à une fuite de gaz enflammée ou non. <strong>Cinétique très variable</strong> (de quelques minutes à plusieurs dizaines de minutes avant les premières flammes).</li>
+                <li><strong>Durée de combustion</strong> d'une batterie en combustion libre : <strong>en moyenne 30 minutes, rarement plus d'une heure</strong>. Critère clé pour la décision entre extinction active et « laisser-brûler ».</li>
+                <li><strong>Emballement sans flamme</strong> (fumées seules) = <strong>risque d'explosion</strong> en milieu clos (garage, parking souterrain, habitacle) : gaz inflammables H2 et CH4 émis.</li>
+                <li><strong>Ré-ignition possible</strong> plusieurs heures voire plusieurs jours après (13 % des cas), surtout <strong>après déplacement du véhicule</strong> (dépannage). Vérifier l'absence de point chaud à la caméra thermique avant de lever le dispositif, informer le dépanneur du risque.</li>
+                <li><strong>Extinction</strong> : l'eau est efficace mais difficile à faire pénétrer dans le casing de la batterie. Rechercher les <strong>parties fusibles</strong> (sorties de câbles, casing aluminium fondu à 660 °C) ou les <strong>déformations</strong> du casing comme points d'accès. Aucun risque électrique pour les porte-lances en extinction ; en déblai, tout contact avec les éléments électriques reste interdit.</li>
+                <li><strong>2 cas pour les moyens traditionnels des SP</strong> : feu de VE <strong>sans</strong> emballement → protéger/éteindre/<strong>éviter</strong> l'emballement en refroidissant la batterie ; feu de VE <strong>avec</strong> emballement → essayer d'éteindre, sinon <strong>laisser-brûler</strong> (au-delà de 10 min et 2 LDV sans résultat), et toujours <strong>stopper la propagation</strong> (effet domino) en refroidissant.</li>
+                <li><strong>Consignes porte-lances</strong> : attaque massive au contact en jet diffusé (125 L/min), jet plein visant les parties fusibles ou déformations du casing.</li>
+                <li><strong>Cas particuliers</strong> : véhicule <strong>en charge</strong> → n'éteindre qu'après coupure de la borne (bouton d'urgence ou coupure générale), sinon protection de l'environnement seule. <strong>Bus électrique</strong> → attention à la chute des packs batteries en toiture, attaque à 2 LDV (extinction + refroidissement). Véhicule à <strong>hydrogène</strong> → priorité au refroidissement du réservoir H2.</li>
+                <li><strong>Techniques mondiales</strong> (aucune n'est validée comme référence) : <strong>immersion</strong> du véhicule (fiable mais mise en œuvre lourde, gestion post-opérationnelle de l'eau et du véhicule) ; <strong>extinction par perforation</strong> du casing (Cobra ColdCut, Murer, Rosenbauer, AVL Stingray One) ; <strong>couvertures thermiques</strong> (ne permettent pas l'extinction proprement dite, limitent les effets dominos et la propagation fumigène).</li>
+                <li><strong>Stratégie tous véhicules</strong> (GPL/GNV/H2 compris) : attaque massive à <strong>2 LDV en simultané</strong>, binôme 1 sur la source d'énergie (réservoir/batterie), binôme 2 sur l'extinction du véhicule, approche par les 3/4 avant.</li>
+            </ul>
+        </div>
+        <details class="jsp-cours">
+            <summary>1 · Rappels sur les véhicules électriques et la FAD (pages 1 à 20)</summary>
+            <p class="jsp-objectif">Types de véhicules, structure et risques de la batterie, dispositifs de sécurité, la FAD comme outil d'aide à la décision, sécurisation du véhicule (S1-S5, 5 i), perspectives Euro NCAP (FAD simplifiées, protocoles d'isolement, ouverture du hayon).</p>
+            <div class="gouv-pages"><a href="images/ctif/p-003.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-003.jpg" alt="CTIF – page 3"></a><a href="images/ctif/p-004.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-004.jpg" alt="CTIF – page 4"></a><a href="images/ctif/p-005.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-005.jpg" alt="CTIF – page 5"></a><a href="images/ctif/p-006.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-006.jpg" alt="CTIF – page 6"></a><a href="images/ctif/p-007.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-007.jpg" alt="CTIF – page 7"></a><a href="images/ctif/p-008.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-008.jpg" alt="CTIF – page 8"></a><a href="images/ctif/p-009.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-009.jpg" alt="CTIF – page 9"></a><a href="images/ctif/p-010.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-010.jpg" alt="CTIF – page 10"></a><a href="images/ctif/p-011.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-011.jpg" alt="CTIF – page 11"></a><a href="images/ctif/p-012.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-012.jpg" alt="CTIF – page 12"></a><a href="images/ctif/p-013.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-013.jpg" alt="CTIF – page 13"></a><a href="images/ctif/p-014.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-014.jpg" alt="CTIF – page 14"></a><a href="images/ctif/p-015.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-015.jpg" alt="CTIF – page 15"></a><a href="images/ctif/p-016.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-016.jpg" alt="CTIF – page 16"></a><a href="images/ctif/p-017.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-017.jpg" alt="CTIF – page 17"></a><a href="images/ctif/p-018.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-018.jpg" alt="CTIF – page 18"></a><a href="images/ctif/p-019.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-019.jpg" alt="CTIF – page 19"></a><a href="images/ctif/p-020.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-020.jpg" alt="CTIF – page 20"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2 · Emballement thermique : données, risques et extinction (pages 21 à 30)</summary>
+            <p class="jsp-objectif">Causes et signes de l'emballement thermique, durée, risque de ré-ignition, équipements constructeurs (fireman access), consignes en cas d'incendie, techniques mondiales (immersion, perforation, couvertures thermiques).</p>
+            <div class="gouv-pages"><a href="images/ctif/p-021.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-021.jpg" alt="CTIF – page 21"></a><a href="images/ctif/p-022.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-022.jpg" alt="CTIF – page 22"></a><a href="images/ctif/p-023.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-023.jpg" alt="CTIF – page 23"></a><a href="images/ctif/p-024.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-024.jpg" alt="CTIF – page 24"></a><a href="images/ctif/p-025.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-025.jpg" alt="CTIF – page 25"></a><a href="images/ctif/p-026.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-026.jpg" alt="CTIF – page 26"></a><a href="images/ctif/p-027.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-027.jpg" alt="CTIF – page 27"></a><a href="images/ctif/p-028.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-028.jpg" alt="CTIF – page 28"></a><a href="images/ctif/p-029.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-029.jpg" alt="CTIF – page 29"></a><a href="images/ctif/p-030.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-030.jpg" alt="CTIF – page 30"></a></div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3 · Moyens traditionnels des SP et situations particulières (pages 31 à 36)</summary>
+            <p class="jsp-objectif">Les 2 cas (avec/sans emballement), consignes aux porte-lances, véhicule en charge, bus électrique, véhicule hydrogène, stratégie tous véhicules à 2 LDV, perspectives (alarme post-crash).</p>
+            <div class="gouv-pages"><a href="images/ctif/p-031.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-031.jpg" alt="CTIF – page 31"></a><a href="images/ctif/p-032.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-032.jpg" alt="CTIF – page 32"></a><a href="images/ctif/p-033.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-033.jpg" alt="CTIF – page 33"></a><a href="images/ctif/p-034.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-034.jpg" alt="CTIF – page 34"></a><a href="images/ctif/p-035.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-035.jpg" alt="CTIF – page 35"></a><a href="images/ctif/p-036.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/ctif/p-036.jpg" alt="CTIF – page 36"></a></div>
+        </details>
+        <div class="rd-section">
+            <h3>🎥 Vidéo</h3>
+            <p>Essais d'emballement thermique sur voitures électriques, réalisés en mai 2024 par le centre de formation des sapeurs-pompiers de la Vienne (cinétique, développement, extinction par moyens traditionnels).</p>
+            <button class="yt-facade" onclick="chargerVideo(this,'rg8k4zyqu4M')" aria-label="Lire la vidéo : essais d'emballement thermique sur voitures électriques">
+                <img src="https://i.ytimg.com/vi/rg8k4zyqu4M/hqdefault.jpg" alt="" loading="lazy">
+                <span class="yt-play"><span></span></span>
+            </button>
+        </div>
+        <p class="jsp-liens">Voir aussi → <button onclick="showModule('gouv-vehicules')">🔋 Les véhicules</button> <button onclick="showModule('gouv-incendie')">🔥 Feu de véhicule</button> <button onclick="showModule('gouv-sr')">🚑 Secours routier</button></p>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/vehicules/Guide-operationnel-VE-V1-12-2025-FR.pdf" target="_blank" rel="noopener">Guide complet (PDF, 4,3 Mo)</a></p>
+        <p class="rd-source">📚 Source : <strong>Guide d'intervention d'urgence – Véhicules électriques</strong>, CTIF (Comité Technique International de prévention et d'extinction du Feu), Michel Gentilleau, V1, décembre 2025. Le guide cite également : Euro NCAP, <a href="https://www.euroncap.com/en/for-engineers/supporting-information/technical-bulletins/" target="_blank" rel="noopener">Technical Bulletin TB 030</a> (Rescue Sheet & Associated Document Guidelines) ; CTIF, <a href="https://ctif.org/fr/news/disabling-direct-hazards-vehicle-crash-what-does-it-mean-emergency-responders" target="_blank" rel="noopener">« Disabling direct hazards in a vehicle crash »</a> ; <a href="https://www.evfiresafe.com" target="_blank" rel="noopener">EV FireSafe</a> (données statistiques sur les incendies de batteries) ; <a href="https://www.evfiresafe.com/post/ev-fire-blanket-explosion" target="_blank" rel="noopener">EV FireSafe, « EV fire blanket explosion »</a>.</p>
     </div>
 
     <!-- ============ Envoi de notifications (administrateur) ============ -->
@@ -22642,7 +22695,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.32.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.33.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
