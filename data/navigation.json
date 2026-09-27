@@ -1298,6 +1298,30 @@
    ]
   },
   {
+   "id": "halligan",
+   "titre": "Halligan Tool",
+   "domaine": "incendie",
+   "theme": "Protection & matériels",
+   "type": "fiche",
+   "motsCles": [
+    "halligan",
+    "pied de biche",
+    "fourche",
+    "herminette",
+    "pointeau",
+    "écarter",
+    "engager",
+    "forcer",
+    "porte poussante",
+    "porte tirante",
+    "arrachement de gonds",
+    "barre anti-panique",
+    "cadenas",
+    "effraction",
+    "ouverture de porte"
+   ]
+  },
+  {
    "id": "echelles-menu",
    "titre": "Présentation",
    "domaine": "incendie",

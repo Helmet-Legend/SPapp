@@ -1,6 +1,6 @@
 {
-  "version": "1.31.1",
-  "titre": "Vulcain 1.31.1",
-  "texte": "Calculateur « Taux d'application additif » relooké : design cohérent avec le reste de l'appli.",
-  "fiche": "emulseur"
+  "version": "1.32.0",
+  "titre": "Vulcain 1.32.0",
+  "texte": "Nouvelle fiche Incendie : Halligan Tool (techniques d'ouverture de porte, cadenas, autres usages), avec vidéos de démonstration.",
+  "fiche": "halligan"
 }

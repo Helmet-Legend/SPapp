@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.31.2">
+    <meta name="version" content="1.32.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -111,7 +111,7 @@
             <h2 style="color: var(--primary-red); margin-bottom: 20px; font-size: 1.8em;">ℹ️ À Propos</h2>
             
             <div style="line-height: 1.8;">
-                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.31.2</span></h3>
+                <h3 style="color: var(--primary-red); margin-top: 20px; margin-bottom: 10px;">📱 Vulcain v<span class="app-version">1.32.0</span></h3>
                 <p><strong>Outil d'aide à la décision opérationnelle pour sapeurs-pompiers</strong></p>
                 
                 <!-- DÉVELOPPEUR ET ORIGINE -->
@@ -207,7 +207,7 @@
                 
                 <div style="margin-top: 25px; padding: 15px; background: var(--bg-main); border-radius: 10px; text-align: center;">
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
-                        Vulcain v<span class="app-version">1.31.2</span><br>
+                        Vulcain v<span class="app-version">1.32.0</span><br>
                         © 2025-2026 Helmet Legend - Vulcain - Tous droits réservés<br>
                         Éditeur : <strong>Helmet Legend</strong><br>
                         <strong>Par les pompiers, pour les pompiers</strong> 🚒
@@ -16280,6 +16280,7 @@ Je fais : extinction.</p>
                 <button class="sal-lien" onclick="showModule('rdmi-etablissements')">Établissements</button>
                 <button class="sal-lien" onclick="showModule('fire')">🔥 Calcul puissance du feu</button>
                 <button class="sal-lien" onclick="showModule('extincteurs')">🧯 Extincteurs</button>
+                <button class="sal-lien" onclick="showModule('halligan')">🔧 Halligan Tool</button>
             </p>
         </div>
 
@@ -20963,6 +20964,191 @@ Je demande : ….</p>
 
     <!-- FIN MODULE MOUSSES -->
 
+    <!-- Module Halligan Tool -->
+    <div id="halligan" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🔧 Halligan Tool</h2>
+        <p style="text-align: center;">Outil mis au point par le Lieutenant Halligan (FDNY) en 1948. Utilisation en binôme ; la hache est l'outil complémentaire indispensable.</p>
+
+        <div class="rd-alerte">
+            <strong>Rappel</strong>
+            <p>Une porte forcée doit toujours pouvoir être <strong>refermée</strong>, notamment pour éviter l'apport d'air et la propagation de l'incendie et des fumées. Une fois les techniques maîtrisées, la plupart des portes s'ouvrent rapidement, même résistantes : c'est une technique de <strong>bras de levier</strong>, pas de force brute. <strong>Gants et lunettes de protection obligatoires.</strong></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Présentation</h3>
+            <figure class="rd-fig"><img src="images/halligan/outil-complet.jpg" alt="Barre Halligan et hache, outils complémentaires" loading="lazy"></figure>
+            <figure class="rd-fig"><img src="images/halligan/anatomie-legendee.jpg" alt="Anatomie de la barre Halligan : fourche incurvée, zone de maintien, semelle (herminette), pointeau" loading="lazy">
+                <figcaption>Fourche incurvée, zone de maintien, semelle (herminette), pointeau.</figcaption>
+            </figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>Méthode et sécurité</h3>
+            <p>L'utilisation se décompose en 3 étapes : <strong>Écarter – Engager – Forcer</strong>.</p>
+            <figure class="rd-fig"><img src="images/halligan/zones-de-frappe.jpg" alt="Zones de frappe de la barre Halligan (flèches rouges)" loading="lazy">
+                <figcaption>Les flèches rouges indiquent les zones de frappe.</figcaption>
+            </figure>
+            <p><strong>Le contrôle de la porte est primordial</strong>, afin d'éviter l'apport d'air et la propagation de l'incendie et des fumées.</p>
+            <figure class="rd-fig etroite"><img src="images/halligan/controle-porte.jpg" alt="Sapeur-pompier contrôlant la porte lors de l'engagement" loading="lazy"></figure>
+            <button class="yt-facade" onclick="chargerVideo(this,'86FHP_bwdBM')" aria-label="Lire la vidéo : présentation et méthode d'utilisation du Halligan Tool">
+                <img src="https://i.ytimg.com/vi/86FHP_bwdBM/hqdefault.jpg" alt="" loading="lazy">
+                <span class="yt-play"><span></span></span>
+            </button>
+        </div>
+
+        <div class="rd-section">
+            <h3>🚪 Ouverture de porte poussante</h3>
+
+            <h4>Par arrachement de verrous</h4>
+            <figure class="rd-fig etroite"><img src="images/halligan/verrous-1-pointeau-barillet.jpg" alt="Mettre le pointeau sur le barillet" loading="lazy">
+                <figcaption>Mettre le pointeau sur le barillet et frapper fortement.</figcaption>
+            </figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/verrous-2-frapper.jpg" alt="Frapper sur le pointeau engagé" loading="lazy"></figure>
+
+            <h4>Avec l'herminette</h4>
+            <figure class="rd-fig etroite"><img src="images/halligan/poussante-herminette-1-engager.jpg" alt="Engager l'herminette dans la feuillure" loading="lazy">
+                <figcaption>Engager l'herminette dans la feuillure (environ 15 cm au-dessus ou en dessous de la serrure).</figcaption>
+            </figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/poussante-herminette-2-pivoter.jpg" alt="Pivoter l'outil vers le bas ou vers le haut" loading="lazy">
+                <figcaption>Pivoter ensuite vers le bas ou vers le haut.</figcaption>
+            </figure>
+
+            <h4>Avec le pointeau</h4>
+            <figure class="rd-fig"><img src="images/halligan/poussante-pointeau-schema.jpg" alt="Introduire le pointeau dans le cadre et faire levier" loading="lazy">
+                <figcaption>Introduire le pointeau dans le cadre et faire levier avec l'outil (bons résultats sur cadres et portes en bois).</figcaption>
+            </figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/poussante-pointeau-photo.jpg" alt="Écarter la porte" loading="lazy">
+                <figcaption>Écarter la porte.</figcaption>
+            </figure>
+
+            <h4>Avec la fourche</h4>
+            <figure class="rd-fig etroite"><img src="images/halligan/poussante-fourche-1-contact.jpg" alt="Mettre la fourche au contact de la feuillure" loading="lazy">
+                <figcaption>Mettre la fourche au contact de la feuillure et frapper sur la zone prévue à cet effet afin d'insérer l'outil correctement.</figcaption>
+            </figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/poussante-fourche-2-levier.jpg" alt="Faire levier avec l'outil" loading="lazy">
+                <figcaption>Faire levier avec l'outil afin de créer l'ouverture.</figcaption>
+            </figure>
+
+            <details class="jsp-cours">
+                <summary>Variante avec la fourche (photos complémentaires)</summary>
+                <figure class="rd-fig etroite"><img src="images/halligan/poussante-fourche-variante-schema-1.jpg" alt="Engager l'outil afin d'écarter la porte du cadre" loading="lazy">
+                    <figcaption>Engager l'outil afin d'écarter la porte du cadre.</figcaption>
+                </figure>
+                <figure class="rd-fig etroite"><img src="images/halligan/poussante-fourche-variante-photo-1.jpg" alt="Engagement de la fourche, photo 1" loading="lazy"></figure>
+                <figure class="rd-fig etroite"><img src="images/halligan/poussante-fourche-variante-photo-2.jpg" alt="Engagement de la fourche, photo 2" loading="lazy"></figure>
+                <figure class="rd-fig etroite"><img src="images/halligan/poussante-fourche-variante-schema-2.jpg" alt="Faire levier contre la porte" loading="lazy">
+                    <figcaption>Ensuite, faire levier contre la porte.</figcaption>
+                </figure>
+                <figure class="rd-fig etroite"><img src="images/halligan/poussante-fourche-variante-photo-3.jpg" alt="Levier contre la porte, photo 1" loading="lazy"></figure>
+                <figure class="rd-fig etroite"><img src="images/halligan/poussante-fourche-variante-photo-4.jpg" alt="Levier contre la porte, photo 2" loading="lazy"></figure>
+            </details>
+
+            <button class="yt-facade" onclick="chargerVideo(this,'98T0VRSyi98')" aria-label="Lire la vidéo : ouverture de porte poussante au Halligan Tool">
+                <img src="https://i.ytimg.com/vi/98T0VRSyi98/hqdefault.jpg" alt="" loading="lazy">
+                <span class="yt-play"><span></span></span>
+            </button>
+        </div>
+
+        <div class="rd-section">
+            <h3>🚪 Ouverture de porte tirante</h3>
+
+            <h4>Avec l'herminette</h4>
+            <figure class="rd-fig etroite"><img src="images/halligan/tirante-herminette-schema-1.jpg" alt="Engager l'herminette et pivoter l'outil" loading="lazy">
+                <figcaption>Engager l'herminette et pivoter l'outil.</figcaption>
+            </figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/tirante-herminette-photo.jpg" alt="Herminette engagée sur porte tirante" loading="lazy"></figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/tirante-herminette-schema-2.jpg" alt="Une fois l'herminette engagée, il suffit de forcer" loading="lazy">
+                <figcaption>Une fois l'herminette engagée, il suffit de forcer.</figcaption>
+            </figure>
+
+            <h4>Avec la fourche</h4>
+            <figure class="rd-fig etroite"><img src="images/halligan/tirante-fourche-schema.jpg" alt="Engager la fourche et pivoter l'outil" loading="lazy">
+                <figcaption>Engager la fourche et pivoter l'outil.</figcaption>
+            </figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/tirante-fourche-photo.jpg" alt="Binôme engageant la fourche sur porte tirante" loading="lazy"></figure>
+
+            <h4>Par arrachement de gonds</h4>
+            <figure class="rd-fig etroite"><img src="images/halligan/gonds-schema.jpg" alt="Engager la fourche et pivoter l'outil pour arracher les gonds" loading="lazy">
+                <figcaption>Engager la fourche et pivoter l'outil pour arracher les gonds.</figcaption>
+            </figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/gonds-photo-1.jpg" alt="Gond de porte, photo 1" loading="lazy"></figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/gonds-photo-2.jpg" alt="Gond de porte, photo 2" loading="lazy"></figure>
+
+            <details class="jsp-cours">
+                <summary>Avec barre anti-panique</summary>
+                <figure class="rd-fig etroite"><img src="images/halligan/anti-panique-1-ouverture.jpg" alt="Réaliser une ouverture avec le pointeau" loading="lazy">
+                    <figcaption>Réaliser une ouverture avec le pointeau.</figcaption>
+                </figure>
+                <figure class="rd-fig etroite"><img src="images/halligan/anti-panique-2-fourche.jpg" alt="Faire pénétrer la fourche par l'ouverture" loading="lazy">
+                    <figcaption>Faire pénétrer la fourche par l'ouverture.</figcaption>
+                </figure>
+                <figure class="rd-fig etroite"><img src="images/halligan/anti-panique-3-barre.jpg" alt="Relever l'outil afin d'appuyer sur la barre anti-panique" loading="lazy">
+                    <figcaption>Relever l'outil afin d'appuyer sur la barre anti-panique.</figcaption>
+                </figure>
+            </details>
+
+            <button class="yt-facade" onclick="chargerVideo(this,'TYLXVItoCS8')" aria-label="Lire la vidéo : ouverture de porte tirante au Halligan Tool">
+                <img src="https://i.ytimg.com/vi/TYLXVItoCS8/hqdefault.jpg" alt="" loading="lazy">
+                <span class="yt-play"><span></span></span>
+            </button>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔒 Casser un cadenas</h3>
+            <figure class="rd-fig"><img src="images/halligan/cadenas-schema.jpg" alt="Engager le pointeau et frapper avec la hache" loading="lazy">
+                <figcaption>Engager le pointeau et frapper avec la hache (ou engager la fourche et pivoter l'outil).</figcaption>
+            </figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/cadenas-1-hache.jpg" alt="Cadenas de grillage frappé à la hache" loading="lazy"></figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/cadenas-2-fourche.jpg" alt="Fourche pivotant sur un cadenas de casier" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>⚠️ Problèmes rencontrés</h3>
+            <p><strong>L'outil butte contre le chambranle et/ou est coincé</strong></p>
+            <figure class="rd-fig etroite"><img src="images/halligan/probleme-chambranle-schema-1.jpg" alt="L'outil butte contre le chambranle, schéma 1" loading="lazy"></figure>
+            <figure class="rd-fig etroite"><img src="images/halligan/probleme-chambranle-schema-2.jpg" alt="L'outil butte contre le chambranle, schéma 2" loading="lazy"></figure>
+            <ul>
+                <li>Augmenter l'angle pour engager.</li>
+                <li>Secouer la porte et/ou l'outil pour le libérer.</li>
+                <li>Inverser la courbe de la fourche.</li>
+            </ul>
+
+            <p><strong>L'outil butte contre la serrure</strong></p>
+            <figure class="rd-fig"><img src="images/halligan/probleme-serrure-schema.jpg" alt="L'outil butte contre la serrure" loading="lazy"></figure>
+            <ul>
+                <li>S'éloigner de la serrure, ce qui rend la porte plus facile à écarter.</li>
+            </ul>
+
+            <p><strong>La porte plie mais ne rompt pas</strong></p>
+            <figure class="rd-fig"><img src="images/halligan/probleme-plie-schema-1.jpg" alt="La porte plie mais ne rompt pas, schéma 1" loading="lazy"></figure>
+            <figure class="rd-fig"><img src="images/halligan/probleme-plie-schema-2.jpg" alt="La porte plie mais ne rompt pas, schéma 2" loading="lazy"></figure>
+            <ul>
+                <li>Maintenir la prise avec la hache, une cale ou un autre outil.</li>
+                <li>Éventuellement, placer la lame ou la tête de la hache entre la porte et le Halligan afin d'obtenir une contrainte supplémentaire.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>🧭 Autres utilisations</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px;">
+                <figure class="rd-fig" style="margin: 0;"><img src="images/halligan/autre-marche-pied.jpg" alt="Marche-pied" loading="lazy"><figcaption>Marche-pied</figcaption></figure>
+                <figure class="rd-fig" style="margin: 0;"><img src="images/halligan/autre-test-plancher.jpg" alt="Test de plancher" loading="lazy"><figcaption>Test de plancher</figcaption></figure>
+                <figure class="rd-fig" style="margin: 0;"><img src="images/halligan/autre-cale-pied.jpg" alt="Cale-pied" loading="lazy"><figcaption>Cale-pied</figcaption></figure>
+                <figure class="rd-fig" style="margin: 0;"><img src="images/halligan/autre-recherche-victime.jpg" alt="Recherche de victime" loading="lazy"><figcaption>Recherche de victime</figcaption></figure>
+                <figure class="rd-fig" style="margin: 0;"><img src="images/halligan/autre-ouverture-rideau.jpg" alt="Ouverture de rideau métallique" loading="lazy"><figcaption>Ouverture de rideau</figcaption></figure>
+                <figure class="rd-fig" style="margin: 0;"><img src="images/halligan/autre-souleve-plaque-egout.jpg" alt="Soulèvement de plaque d'égout" loading="lazy"><figcaption>Soulèvement de plaque d'égout</figcaption></figure>
+            </div>
+            <button class="yt-facade" onclick="chargerVideo(this,'Rb6sCapCVC8')" aria-label="Lire la vidéo : autres utilisations du Halligan Tool" style="margin-top: 14px;">
+                <img src="https://i.ytimg.com/vi/Rb6sCapCVC8/hqdefault.jpg" alt="" loading="lazy">
+                <span class="yt-play"><span></span></span>
+            </button>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/Halligan-Tool-2014.pdf" target="_blank" rel="noopener">Document complet (PDF, 15 pages)</a></p>
+        <p class="rd-source">Source : « Halligan Tool », École Départementale d'Incendie et de Secours de la Haute-Garonne (07-2014). Texte, schémas et photos repris du document original avec mention de la source.</p>
+    </div>
+
     <!-- ========== MODULE ÉCHELLES PORTABLES (RDEP SDIS 34 – v2, avril 2026) ========== -->
     <!-- Conforme NF EN 1147, NF EN 131-6 et N.I.T. n°331 du 01/10/2003 -->
 
@@ -22457,7 +22643,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.31.2</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.32.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
