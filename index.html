@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.38.0">
+    <meta name="version" content="1.39.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.38.0</span><br>
+                        Vulcain v<span class="app-version">1.39.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -16407,67 +16407,363 @@ Je fais : extinction.</p>
 
         <details class="jsp-cours">
             <summary>1 · Aspect juridique, classification et géométrie des véhicules</summary>
-<div class="gouv-pages"><a href="images/cod2-ref/p-03.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-03.jpg" alt="Aspect juridique et classification – page 03"></a><a href="images/cod2-ref/p-04.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-04.jpg" alt="Aspect juridique et classification – page 04"></a><a href="images/cod2-ref/p-05.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-05.jpg" alt="Aspect juridique et classification – page 05"></a><a href="images/cod2-ref/p-06.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-06.jpg" alt="Aspect juridique et classification – page 06"></a><a href="images/cod2-ref/p-07.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-07.jpg" alt="Aspect juridique et classification – page 07"></a><a href="images/cod2-ref/p-08.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-08.jpg" alt="Aspect juridique et classification – page 08"></a><a href="images/cod2-ref/p-09.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-09.jpg" alt="Aspect juridique et classification – page 09"></a><a href="images/cod2-ref/p-10.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-10.jpg" alt="Aspect juridique et classification – page 10"></a><a href="images/cod2-ref/p-11.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-11.jpg" alt="Aspect juridique et classification – page 11"></a><a href="images/cod2-ref/p-12.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-12.jpg" alt="Aspect juridique et classification – page 12"></a><a href="images/cod2-ref/p-13.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-13.jpg" alt="Aspect juridique et classification – page 13"></a></div>
+            <div class="rd-section">
+                <h3>📌 Cadre juridique de la circulation</h3>
+                <p>Les sapeurs-pompiers restent soumis au code de la route, avec quelques dérogations pour les véhicules en intervention urgente utilisant leurs avertisseurs spéciaux (deux tons + gyrophare bleu) : l'article <strong>R21</strong> impose à tout usager de réduire sa vitesse ou de s'arrêter pour faciliter le passage d'un véhicule de lutte contre l'incendie annonçant son approche ; l'article <strong>R28</strong> reconnaît la priorité de passage (sans exonérer le conducteur du respect des règles élémentaires de prudence) et permet de s'affranchir de l'arrêt à un stop, du franchissement d'un feu rouge et de l'interdiction de stationner sur la bande d'arrêt d'urgence. L'article <strong>R11</strong> lève la limitation de vitesse en intervention urgente, mais le conducteur doit rester à tout instant maître de son véhicule.</p>
+                <div class="rd-alerte">Ces dérogations ne s'appliquent pas au retour d'intervention : le conducteur doit alors se conformer aux dispositions générales du code de la route. Le sens interdit ne peut être emprunté que pour un sauvetage de vie humaine avéré (faire barrer la route par un équipier) ; le code de la route reste muet sur ce point et aucune jurisprudence ne l'a validé.</div>
+                <p><strong>Permis de conduire</strong> : A (moto), B (PTAC &lt; 3,5 t, 9 places), C (véhicule isolé, PTAC &gt; 3,5 t), D (transport en commun &gt; 9 personnes), E(B)/E(C)/E(D) pour l'attelage d'une remorque &gt; 750 kg. Le sapeur-pompier doit déclarer à sa hiérarchie toute suspension, retrait ou restriction de permis, même à titre privé (faute professionnelle grave en cas de conduite sans titre valide).</p>
+                <table class="rd-table">
+                    <tr><th>Responsabilité en cas d'accident</th><th>Contenu</th></tr>
+                    <tr><td>Conducteur</td><td>Responsable juridiquement des dégâts si une faute de conduite ou une infraction est relevée contre lui ; en cas de retrait de permis ou d'amende, lui seul en subit les conséquences.</td></tr>
+                    <tr><td>Chef d'agrès</td><td>Doit guider le conducteur (itinéraire, manœuvre), le renseigner sur les obstacles, l'inciter à modérer l'allure — mais ne partage pas sa responsabilité juridique.</td></tr>
+                    <tr><td>Service (SDIS)</td><td>Prend en charge l'assurance du véhicule et les dommages causés par un conducteur dès lors que la victime n'a commis aucune faute.</td></tr>
+                </table>
+                <p>Documents à établir : constat amiable (obligatoire en présence d'un tiers), compte-rendu d'accident (imprimé SDIS), compte-rendu circonstancié, transmis au SDIS par la voie hiérarchique. Sur les pistes privées ou terrains non ouverts à la circulation publique, la partie <em>réglementaire</em> du code de la route ne s'applique pas, mais sa partie <em>législative</em> (conduite en état d'ivresse, dépistage, refus d'obtempérer, conduite sans permis) reste opposable sur tout le territoire, y compris hors voie publique.</p>
+                <div class="rd-astuce"><strong>Charte du bon conducteur (extraits) :</strong> je vérifie pneus et niveaux à chaque prise de garde, je me fais guider dans les passages étroits, je garde une distance de sécurité, je ne téléphone jamais au volant, je connais le gabarit de mon véhicule, je ne conduis jamais sous l'emprise de l'alcool ou de stupéfiants (taux réglementaire 0,0 g/L), je ralentis systématiquement aux carrefours.</div>
+
+                <h3>📌 Classification NF EN 1846</h3>
+                <p>Tout véhicule de lutte contre l'incendie répond à la norme européenne <strong>NF EN 1846</strong> (issue de la norme française XPS 61-518 de 1995), en trois parties : 1846-1 nomenclature/désignation, 1846-2 châssis et sécurité/performances, 1846-3 équipements installés à demeure. Elle classe les engins par <strong>catégorie</strong> (usage) et par <strong>type</strong> (masse totale en charge, MTC = masse à vide + équipage à 90 kg/personne + 15 kg d'équipement + agents extincteurs + équipement technique).</p>
+                <table class="rd-table">
+                    <tr><th>Catégorie</th><th>Définition</th></tr>
+                    <tr><td>1 – Urbain</td><td>Utilise normalement des structures routières praticables (FPT, EPA…).</td></tr>
+                    <tr><td>2 – Rural</td><td>Capable d'utiliser tous types de routes ainsi que des terrains peu accidentés (CCR…).</td></tr>
+                    <tr><td>3 – Tout-terrain</td><td>Capable d'utiliser tous types de routes et de se déplacer en terrain non aménagé (CCF…).</td></tr>
+                </table>
+                <table class="rd-table">
+                    <tr><th>Type (MTC)</th><th>Léger (L)</th><th>Moyen (M)</th><th>Super (S)</th></tr>
+                    <tr><td>Seuils</td><td>2 t &lt; MTC ≤ 7,5 t</td><td>7,5 t &lt; MTC ≤ 14 t</td><td>MTC &gt; 14 t</td></tr>
+                </table>
+                <table class="rd-table">
+                    <tr><th>Catégorie / seuils minimaux</th><th>1</th><th>2</th><th>3</th></tr>
+                    <tr><td>Angle d'attaque</td><td>≥ 13°</td><td>≥ 23°</td><td>≥ 30° à 35°</td></tr>
+                    <tr><td>Angle de fuite</td><td>≥ 12°</td><td>≥ 23°</td><td>≥ 30° à 35°</td></tr>
+                    <tr><td>Angle de rampe</td><td>—</td><td>≥ 18°</td><td>≥ 25° à 30°</td></tr>
+                    <tr><td>Garde au sol</td><td>0,15 à 0,25 m</td><td>≥ 0,20 à 0,30 m</td><td>≥ 0,25 à 0,40 m</td></tr>
+                </table>
+                <div class="rd-astuce">Le mémento SDIS 60 donne des seuils de MTC légèrement différents (léger 3-7,5 t, moyen 7,5-16 t, super &gt; 16 t) ; le tableau ci-dessus reprend la norme telle que détaillée par le référentiel SDIS 42, cohérente avec la classification déjà utilisée dans la fiche COD 1.</div>
+
+                <h3>📌 Géométrie du véhicule (NF EN 1846-2)</h3>
+                <ul>
+                    <li><strong>Angle d'attaque</strong> : angle entre le plan horizontal et la tangente partant du pneu avant, passant sous le point le plus bas à l'avant du véhicule.</li>
+                    <li><strong>Angle de fuite</strong> : même principe à l'arrière du véhicule ; il détermine les possibilités d'approche et de dégagement des pentes et fossés.</li>
+                    <li><strong>Angle de rampe</strong> : plus petit angle mesuré entre les deux tangentes partant du pneu avant et du pneu arrière et passant sous le point rigide le plus bas du véhicule (souvent la boîte de transfert) ; il définit la plus grande « bosse » franchissable.</li>
+                    <li><strong>Garde au sol</strong> (hors essieu) : hauteur entre le sol et le point fixe le plus bas du véhicule (généralement la boîte de transfert). <strong>Garde au sol sous essieu</strong> : hauteur entre le sol et le point le plus bas d'un essieu (nez de pont — attention aux « boules de pont », premier point de contact).</li>
+                    <li><strong>Empattement</strong> : distance entre l'axe médian du pneu avant et l'axe médian du pneu arrière. <strong>Voie</strong> : distance entre les pneus d'un même essieu. <strong>Encombrement</strong> : largeur rétroviseurs rabattus ; <strong>largeur hors tout</strong> : rétroviseurs dépliés.</li>
+                </ul>
+                <figure class="rd-fig etroite"><img src="images/cod2/angle-attaque.jpg" alt="Schéma de l'angle d'attaque d'un CCF : angle entre le sol et la tangente au point le plus bas à l'avant du véhicule" loading="lazy"><figcaption>L'angle d'attaque : tangente au point le plus bas à l'avant</figcaption></figure>
+                <figure class="rd-fig etroite"><img src="images/cod2/angle-rampe.jpg" alt="Schéma de l'angle de rampe d'un CCF : plus petit angle entre les tangentes avant et arrière passant sous le point le plus bas du véhicule" loading="lazy"><figcaption>L'angle de rampe : plus petit angle entre les deux tangentes avant/arrière</figcaption></figure>
+            </div>
         </details>
 
         <details class="jsp-cours">
             <summary>2 · Mécanique tout-terrain : châssis, ponts, différentiels, boîte de transfert</summary>
-<div class="gouv-pages"><a href="images/cod2-mem/p-07.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-07.jpg" alt="Mécanique tout-terrain – page 07"></a><a href="images/cod2-mem/p-08.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-08.jpg" alt="Mécanique tout-terrain – page 08"></a><a href="images/cod2-mem/p-09.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-09.jpg" alt="Mécanique tout-terrain – page 09"></a><a href="images/cod2-mem/p-10.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-10.jpg" alt="Mécanique tout-terrain – page 10"></a><a href="images/cod2-mem/p-11.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-11.jpg" alt="Mécanique tout-terrain – page 11"></a><a href="images/cod2-mem/p-12.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-12.jpg" alt="Mécanique tout-terrain – page 12"></a><a href="images/cod2-mem/p-13.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-13.jpg" alt="Mécanique tout-terrain – page 13"></a><a href="images/cod2-mem/p-14.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-14.jpg" alt="Mécanique tout-terrain – page 14"></a><a href="images/cod2-mem/p-15.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-15.jpg" alt="Mécanique tout-terrain – page 15"></a><a href="images/cod2-mem/p-16.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-16.jpg" alt="Mécanique tout-terrain – page 16"></a></div>
+            <div class="rd-section">
+                <h3>📌 Les châssis</h3>
+                <p>Le châssis constitue l'ossature du véhicule : il assure la fixation des organes, supporte la charge totale et permet, en hors chemin, le franchissement d'obstacles. Il est constitué de deux longerons assemblés par des traverses, renforcés par des équerres et des attaches.</p>
+                <table class="rd-table">
+                    <tr><th>Type</th><th>Déformation</th><th>Avantages</th><th>Inconvénients</th></tr>
+                    <tr><td><strong>Rigide</strong> (à échelles, mécano-soudé)</td><td>1 à 3° maxi</td><td>Poids contenu, bonne tenue de route</td><td>Débattement des roues limité, faible adhérence sur obstacles (ACMAT, Land Rover, GMC, Dodge, UMM…)</td></tr>
+                    <tr><td><strong>Souple</strong>, déformable</td><td>9° selon le référentiel SDIS 42 (le mémento SDIS 60 indique jusqu'à 18°)</td><td>Facilite le contact roues/sol, bonne adhérence sur obstacles</td><td>Moins bonne tenue sur route (Renault, Mercedes, MAN, Unimog…)</td></tr>
+                    <tr><td><strong>Articulé</strong> (2 demi-châssis + axe de rotation, verrouillable sur route)</td><td>15° maxi</td><td>Très bonnes performances tout-terrain, excellent contact roues/sol</td><td>Complexité du système, coût, vigilance particulière sur route (blocage) (Brimont de la Sécurité civile)</td></tr>
+                </table>
+                <div class="rd-alerte">Un châssis est garanti à vie par le constructeur à condition de ne pas être modifié : <strong>il est interdit de le percer, le meuler ou le souder.</strong> Il doit être inspecté régulièrement pour repérer déformations et contraintes.</div>
+                <figure class="rd-fig"><img src="images/cod2/chassis-types.jpg" alt="Trois types de châssis de véhicule tout-terrain sapeur-pompier : rigide, souple et articulé avec dispositif de verrouillage" loading="lazy"><figcaption>Les trois types de châssis : rigide, souple, articulé (avec verrou de route)</figcaption></figure>
+
+                <h3>📌 Les ponts</h3>
+                <p>Le pont transforme le mouvement rotatif longitudinal de l'arbre de transmission en mouvement rotatif transversal via un renvoi d'angle (couple conique = pignon d'attaque + grande couronne), tout en réduisant la vitesse. Il assure la garde au sol, supporte la charge, dirige le véhicule (pont avant) et assure sa stabilité (pont arrière).</p>
+                <table class="rd-table">
+                    <tr><th>Pont droit</th><th>Pont portique</th></tr>
+                    <tr><td>Axe des demi-arbres de roues = axe des roues ; garde au sol limitée (RVI, GMC…).</td><td>Axe des demi-arbres au-dessus de l'axe des roues (train de réducteurs dans les moyeux) ; meilleure garde au sol sans élever le centre de gravité (Unimog, Iveco…).</td></tr>
+                </table>
+                <p>Deux types d'enveloppes : <strong>banjo</strong> (monobloc en acier coulé, robuste, courant sur PL) et <strong>split</strong> (deux demi-coques symétriques boulonnées). Règle de bon usage : le pont arrière guide le véhicule en franchissement (il porte la majorité du poids) — bien choisir le positionnement du nez de pont (central ou désaxé) pour éviter sa détérioration.</p>
+
+                <h3>📌 Les différentiels</h3>
+                <p>Le différentiel permet aux roues d'un même essieu de tourner à des vitesses différentes (indispensable en virage, où la roue extérieure parcourt une distance plus longue que la roue intérieure) ; il sert aussi de renvoi d'angle.</p>
+                <figure class="rd-fig"><img src="images/cod2/differentiel-virage.jpg" alt="Schéma du fonctionnement du différentiel sphérique en ligne droite et en courbe" loading="lazy"><figcaption>En ligne droite les deux roues parcourent la même distance ; en courbe la roue extérieure parcourt une distance plus grande</figcaption></figure>
+                <p><strong>Différentiel sphérique</strong> (dans chaque pont) : le pignon d'attaque entraîne la grande couronne, solidaire de la coquille, qui entraîne les pignons satellites (montés libres sur un axe), lesquels entraînent les demi-arbres de roue via les pignons planétaires. C'est un dispositif « fainéant » : dès qu'une roue patine et perd son adhérence, elle reçoit paradoxalement toute la puissance motrice sans faire avancer le véhicule — l'autre roue, adhérente, s'arrête.</p>
+                <div class="rd-alerte"><strong>Blocage du différentiel inter-roues</strong> : solidarise les deux demi-arbres (crabots fixe/mobile accouplés) pour forcer la répartition de la puissance sur les deux roues. Il s'engage à l'arrêt ou à allure réduite (sauf si une roue patine déjà), roues le plus droit possible, jamais en courbe serrée ; il se désengage dès le franchissement effectué, toujours sans débrayer. Prendre des risques inconsidérés à bloquer les différentiels d'un véhicule en charge, sur route sèche et dure.</div>
+                <p><strong>Différentiel épicycloïdal</strong> (dans la boîte de transfert, inter-ponts) : le pignon d'attaque entraîne le corps creux solidaire du porte-satellites, qui transmet le mouvement au pignon planétaire (arbre avant) et à la grande couronne (arbre arrière) ; les pignons satellites absorbent la différence de vitesse entre trains avant et arrière. Son blocage annule cette différence et solidarise les deux arbres de transmission — engagé à l'arrêt, sans débrayer, il doit être débloqué dès le retour sur route.</p>
+                <figure class="rd-fig"><img src="images/cod2/differentiel-localisation.jpg" alt="Localisation des différentiels : un véhicule 4x2/4x4 en possède 2 (un par essieu moteur), un 4x4 permanent en possède 3 (un par essieu + un dans la boîte de transfert)" loading="lazy"><figcaption>4x2/4x4 : 2 différentiels (un par pont) — 4x4 permanent : 3 différentiels (+ un inter-ponts dans la boîte de transfert)</figcaption></figure>
+
+                <h3>📌 La boîte de transfert</h3>
+                <p>Située entre la boîte à vitesses et les arbres de transmission avant/arrière, elle assure la liaison boîte de vitesses ↔ ponts, multiplie les combinaisons (petites vitesses, 4 roues motrices) et permet la prise de force d'accessoires (pompe, treuil…).</p>
+                <table class="rd-table">
+                    <tr><th></th><th>4x2 / 4x4</th><th>4x4 permanent</th></tr>
+                    <tr><td>Sur route</td><td>100 % de la puissance sur le pont arrière (pont avant débrayé)</td><td>Puissance répartie de façon non équivalente entre AV et AR (0 à 100 %) via un différentiel inter-ponts non bloqué</td></tr>
+                    <tr><td>Tout-terrain</td><td>Crabotage du pont avant → 50/50 % + passage petites vitesses</td><td>Blocage du différentiel inter-ponts → 50/50 % + passage petites vitesses</td></tr>
+                </table>
+                <div class="rd-alerte"><strong>Passage en petites vitesses, crabotage du pont avant, blocage du différentiel inter-ponts : toujours à l'arrêt</strong> (le blocage inter-ponts peut exceptionnellement se faire à allure réduite en première petite).</div>
+                <figure class="rd-fig"><img src="images/cod2/boite-transfert-coupe.jpg" alt="Vue en coupe de la boîte de transfert : arbre primaire, arbre intermédiaire, arbre secondaire, commande GV-PV, crabot pont avant" loading="lazy"><figcaption>Coupe de boîte de transfert : arbres primaire/intermédiaire/secondaire, commande grande vitesse-petite vitesse, crabot du pont avant</figcaption></figure>
+            </div>
         </details>
 
         <details class="jsp-cours">
             <summary>3 · Les pneumatiques (structure, marquage, gonflage, crevaison)</summary>
-<div class="gouv-pages"><a href="images/cod2-mem/p-17.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-17.jpg" alt="Pneumatiques – page 17"></a><a href="images/cod2-mem/p-18.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-18.jpg" alt="Pneumatiques – page 18"></a><a href="images/cod2-mem/p-19.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-19.jpg" alt="Pneumatiques – page 19"></a><a href="images/cod2-mem/p-20.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-20.jpg" alt="Pneumatiques – page 20"></a></div>
+            <div class="rd-section">
+                <h3>📌 Rôle et structure</h3>
+                <p>Seuls éléments du véhicule en contact avec le sol, les pneumatiques conditionnent la charge, la vitesse, le freinage, la tenue de route et l'adhérence en tout-terrain. Structure diagonale, diagonale ceinturée ou <strong>radiale</strong> (la plus employée : meilleure tenue de route, usure moindre, plus de souplesse). La carcasse est un ensemble de nappes de fils d'acier, textile ou nylon ; le talon (avec la tringle, anneau en câble d'acier dans le bourrelet) rend l'enveloppe solidaire de la jante ; les flancs, qui prolongent la bande de roulement, sont les parties les plus fragiles.</p>
+                <figure class="rd-fig"><img src="images/cod2/pneu-structure.jpg" alt="Coupe d'un pneumatique : bande de roulement, carcasse, flanc, bourrelet, tringle" loading="lazy"><figcaption>Structure d'un pneumatique : bande de roulement, carcasse, flanc, bourrelet, tringle</figcaption></figure>
+                <p><strong>Marquage</strong> (exemple XZA TUBELESS 295/80 R 22,5 152/146 M) : 295 = section en mm · 80 = hauteur en % de la section · R = structure radiale · 22,5 = diamètre intérieur (pouces) · 152/146 = indice de charge (152 = 3 350 kg en monte simple, 146 = 3 000 kg en monte double) · M = indice de vitesse garantie (130 km/h).</p>
+                <table class="rd-table">
+                    <tr><th>Type de pneu</th><th>Caractéristiques</th></tr>
+                    <tr><td>Mixte</td><td>Compromis route / tout-terrain, capacités tout-terrain limitées.</td></tr>
+                    <tr><td>Tout-terrain</td><td>Larges rainures et gros pavés : nettoyage et évacuation de la boue, bon accrochage.</td></tr>
+                    <tr><td>Sable</td><td>Quasi lisse, rainures peu profondes (guidage seulement) pour ne pas creuser dans le meuble.</td></tr>
+                </table>
+                <h3>📌 Gonflage</h3>
+                <p>Contrôle systématique à froid. Sur terrain mou et instable, un léger <strong>sous-gonflage</strong> provisoire augmente la surface de contact au sol (ne pas prolonger : flancs très exposés, pneu fragilisé). Sur terrain boueux, un léger <strong>sur-gonflage</strong> provisoire aide à atteindre les couches stables. Le franchissement de zones difficiles doit être bref, vitesse ≤ 20 km/h. Dégonflage temporaire possible jusqu'à <strong>1,2 bar</strong> (si gonfleur disponible) : le pneu se tord sous la traction, ses sculptures s'écartent et évacuent mieux la terre, limitant le « bourrage ».</p>
+                <table class="rd-table">
+                    <tr><th>Type de crevaison</th><th>Conduite à tenir</th></tr>
+                    <tr><td>Lente</td><td>Regonfler pour sortir de la zone accidentée → regagner un terrain stabilisé et plat → caler le véhicule → changer la roue.</td></tr>
+                    <tr><td>Rapide</td><td>Rejoindre un terrain plat → caler le véhicule → changer la roue.</td></tr>
+                    <tr><td>Sur obstacle</td><td>Sortir de l'obstacle → utiliser le blocage du différentiel inter-roues (perte d'adhérence).</td></tr>
+                </table>
+            </div>
         </details>
 
         <details class="jsp-cours">
             <summary>4 · Cabine, sécurité et vérifications du véhicule (avant / pendant / après)</summary>
-<div class="gouv-pages"><a href="images/cod2-mem/p-21.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-21.jpg" alt="Cabine, sécurité et vérifications – page 21"></a><a href="images/cod2-mem/p-22.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-22.jpg" alt="Cabine, sécurité et vérifications – page 22"></a><a href="images/cod2-mem/p-23.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-23.jpg" alt="Cabine, sécurité et vérifications – page 23"></a><a href="images/cod2-mem/p-24.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-24.jpg" alt="Cabine, sécurité et vérifications – page 24"></a><a href="images/cod2-mem/p-25.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-25.jpg" alt="Cabine, sécurité et vérifications – page 25"></a><a href="images/cod2-mem/p-26.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-26.jpg" alt="Cabine, sécurité et vérifications – page 26"></a></div>
+            <div class="rd-section">
+                <h3>📌 Sécurité cabine</h3>
+                <ul>
+                    <li><strong>Pare-brise et vitres</strong> : film conseillé (étanchéité en cas de rupture, réduction du rayonnement/chaleur d'environ 30 %).</li>
+                    <li><strong>Poignées de portes</strong> marquées en blanc (repérage dans la fumée) · <strong>arceaux de sécurité</strong> intérieurs.</li>
+                    <li><strong>Surpression cabine</strong> (conseillée) : bouteille d'air 6 L × 300 bars · <strong>air respirable</strong> d'environ 10 minutes d'autonomie via une bouteille 6 L × 300 bars et 4 à 5 demi-masques selon le véhicule.</li>
+                    <li><strong>Gaine de protection</strong> des flexibles pneumatiques et câblages électriques : résistance thermique 130 °C pendant 10 minutes · possibilité de passage en manuel des vannes pneumatiques en secours.</li>
+                </ul>
+                <div class="rd-alerte"><strong>Autoprotection et pare-branches</strong> : contrôler filtres et buses. Sur CCF, limite de fin de cuve à 500 L avec avertisseur sonore et temporisation de 12 secondes avant fermeture automatique de la vanne d'aspiration citerne (il reste alors environ 300 L) ; sur les CCF récents, une réserve de 500 L pour la sécurité est obligatoire et non acquittable.</div>
+                <h3>📌 Présentation du véhicule et poste de conduite</h3>
+                <p>Tour complet du véhicule : porte conducteur (marque, type, puissance, catégorie/type NF EN 1846), avant (dimensions géométriques, pare-brise, feux, treuil, pare-choc, manilles, pare-branches, autoprotection), côté droit (vitres, rétroviseur, joints, arrimage, gyrophare, coffres, pneumatiques), arrière (dimensions, feux, fixations), côté gauche (dessous du véhicule : suspensions, flexibles, arbres de transmission, boîte de transfert), puis intérieur cabine.</p>
+                <p><strong>Installation au poste de conduite</strong> : régler le siège, rabattre les rétroviseurs, fermer vitres et aérations, mettre ceinture (et harnais CCF), maintenir le volant pouces à l'extérieur sans croiser les bras, pied droit serré contre la paroi moteur, régime moteur en zone verte pour les obstacles, descendre reconnaître le terrain avant chaque franchissement, faire descendre le personnel si besoin, arrimer le matériel, effectuer un point effet et un essai de freins avant de partir, <strong>garder toujours une réserve de 500 L d'eau pour l'autodéfense.</strong></p>
+                <table class="rd-table">
+                    <tr><th>Avant (prise de garde)</th><th>Pendant (transit aller / sur les lieux)</th><th>Après (transit retour / rentrée)</th></tr>
+                    <tr><td>Gabarit et possibilités hydrauliques · niveaux et fuites (carburant, huile, eau) · pression pneus · plein de la tonne, pompe, inventaire · blocage cabine · roue de secours · bouteilles d'air · réglages poste de conduite · essais radio et freins · cran de pompe</td><td>Feux tournants, respect du code VIGP (70 km/h maxi route sèche, 60 km/h route mouillée) · distance de sécurité ≥ 50 m en convoi · placer judicieusement le véhicule à l'arrivée (PI/BI/point d'eau, accès), le baliser, le caler, le stationner à l'horizontale · cran de pompe, alimentation, pression d'établissement · veille radio et liaison chef d'agrès</td><td>Reconditionnement complet (véhicule, pompe, tonne, armement) · complément carburant · signalement des anomalies · propreté irréprochable · purge de la pompe (hors-gel hiver) · véhicule placé dans le sens du départ · coupe-circuit après arrêt total</td></tr>
+                </table>
+            </div>
         </details>
 
         <details class="jsp-cours">
             <summary>5 · Les ralentisseurs</summary>
-<div class="gouv-pages"><a href="images/cod2-mem/p-27.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-27.jpg" alt="Ralentisseurs – page 27"></a></div>
+            <div class="rd-section">
+                <h3>📌 Rôle et types</h3>
+                <p>Le ralentisseur permet de ralentir le véhicule indépendamment du circuit de freinage, en accentuant l'effet de retenue moteur.</p>
+                <table class="rd-table">
+                    <tr><th>Type</th><th>Principe</th><th>Commande</th></tr>
+                    <tr><td>Électrique</td><td>Diminue la vitesse de rotation de l'arbre de transmission par création d'un champ magnétique.</td><td>À la main</td></tr>
+                    <tr><td>Sur échappement</td><td>Compression de l'air dans les cylindres par obturation de la tuyauterie d'échappement.</td><td>Au pied</td></tr>
+                    <tr><td>Hydraulique</td><td>Énergie hydraulique réduisant la vitesse de l'arbre de transmission (placé entre boîte de vitesses et arbre de transmission).</td><td>À la main</td></tr>
+                    <tr><td>Avec mise à l'air des cylindres</td><td>Ralentisseur sur échappement + soupape de décharge constante sur chaque cylindre.</td><td>À la main</td></tr>
+                    <tr><td>Échappement + coupure injection</td><td>Suppression de l'alimentation en carburant couplée à l'obturation de l'échappement (frein moteur renforcé).</td><td>Au pied (robinet)</td></tr>
+                </table>
+                <div class="rd-alerte">Un freinage intensif et prolongé échauffe les freins et leur fait perdre en efficacité. Utiliser le ralentisseur de façon progressive, combiné au bon rapport de boîte, pour préserver la pleine capacité des freins en cas de freinage d'urgence. <strong>Ne jamais s'arrêter immédiatement après une utilisation intensive du ralentisseur électrique</strong> (laisser refroidir : risque d'incendie à l'arrêt).</div>
+            </div>
         </details>
 
         <details class="jsp-cours">
             <summary>6 · Manœuvres du GIFF (déplacements, arrêts) et guidage</summary>
-<div class="gouv-pages"><a href="images/cod2-mem/p-28.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-28.jpg" alt="Manœuvres du GIFF et guidage – page 28"></a><a href="images/cod2-mem/p-29.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-29.jpg" alt="Manœuvres du GIFF et guidage – page 29"></a><a href="images/cod2-mem/p-30.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-30.jpg" alt="Manœuvres du GIFF et guidage – page 30"></a><a href="images/cod2-mem/p-31.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-31.jpg" alt="Manœuvres du GIFF et guidage – page 31"></a><a href="images/cod2-mem/p-32.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-32.jpg" alt="Manœuvres du GIFF et guidage – page 32"></a></div>
+            <div class="rd-section">
+                <h3>📌 Déplacements du groupe</h3>
+                <p>La vitesse maximale du convoi est fixée par le chef du GIFF. Distance de sécurité entre véhicules : environ <strong>50 m sur route</strong>, dispositif resserré en agglomération et adapté sur piste. Feux de croisement allumés en permanence ; le chef du GIFF fixe l'usage des avertisseurs sonores et lumineux.</p>
+                <table class="rd-table">
+                    <tr><th>Formation de transit</th><th>Formation tactique</th></tr>
+                    <tr><td>Sur route : le véhicule le plus lent ou le moins manœuvrant est placé juste derrière la VLTT.</td><td>Sur piste : le véhicule le moins manœuvrant est placé en dernière position.</td></tr>
+                </table>
+                <p><strong>Retournement du groupe</strong> : le chef du GIFF balise l'emplacement avec la VLTT, qui fait demi-tour ; les 4 véhicules dépassent l'emplacement et stoppent ; les chefs d'agrès descendent et guident la marche arrière de leur véhicule dans l'emplacement, dernier véhicule en premier, chacun repartant à son tour. <strong>Arrêt en parallèle</strong> (point de transit / stationnement prolongé) : la VLTT se gare la première, les autres véhicules se garent parallèlement, guidés en marche arrière par leur chef d'agrès. <strong>Arrêt en colonne</strong> (stationnement court) : les véhicules se garent simplement derrière la VLTT.</p>
+                <h3>📌 Le guidage</h3>
+                <p>Se faire guider dès qu'une manœuvre est délicate, en cas de mauvaise visibilité, de présence de personnes à proximité, ou de manque d'habitude sur l'engin — cela évite accrochages, accidents corporels et incidents dans les passages difficiles en tout-terrain. Le guideur se positionne à <strong>8-10 m</strong> du véhicule pour un large champ de vision des côtés et de l'arrière, gestes précis et anticipés ; en cas de doute il arrête le véhicule pour reconnaître. Le conducteur se conforme aveuglément aux gestes du guideur, <strong>ne regarde plus jamais dans les rétroviseurs</strong>, tourne le volant lentement en le laissant glisser dans les mains.</p>
+                <figure class="rd-fig"><img src="images/cod1/guidage-gestes.jpg" alt="Répertoire visuel des commandements gestuels de guidage sapeur-pompier : stop absolu, en avant, en arrière, braquer gauche, braquer droite" loading="lazy"><figcaption>Répertoire des commandements gestuels réglementaires du guidage (identiques à ceux du COD 1)</figcaption></figure>
+            </div>
         </details>
 
         <details class="jsp-cours">
             <summary>7 · Utilisation des dispositifs tout-terrain et point effet</summary>
-<div class="gouv-pages"><a href="images/cod2-mem/p-33.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-33.jpg" alt="Dispositifs tout-terrain et point effet – page 33"></a><a href="images/cod2-mem/p-34.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-34.jpg" alt="Dispositifs tout-terrain et point effet – page 34"></a></div>
+            <div class="rd-section">
+                <h3>📌 Dispositifs selon le terrain</h3>
+                <table class="rd-table">
+                    <tr><th>Terrain</th><th>4x2 / 4x4</th><th>4x4 permanent</th></tr>
+                    <tr><td>Piste</td><td>Crabotage du pont avant + gamme courte du réducteur</td><td>Petite vitesse</td></tr>
+                    <tr><td>Tout-terrain</td><td>Crabotage du pont avant + gamme courte du réducteur</td><td>Petite vitesse + blocage du différentiel inter-ponts</td></tr>
+                </table>
+                <p>Les blocages de différentiels inter-roues s'utilisent chaque fois qu'une roue risque de perdre l'adhérence : pentes importantes (montée ou descente), passages boueux/sableux/caillouteux, gués, ornières, fossés, obstacles importants.</p>
+                <div class="rd-astuce"><strong>Le point effet</strong> permet de savoir si une vitesse est enclenchée, si c'est le bon sens de marche, et de rattraper les jeux de la chaîne cinématique pour éviter tout effet de roue libre.<br><strong>Pour partir</strong> : embrayer jusqu'à ce que le véhicule soit en prise → relâcher légèrement le frein → embrayer complètement → retirer le pied du frein en dernier.<br><strong>Pour s'arrêter</strong> : freiner → débrayer avant que le véhicule ne cale.</div>
+                <div class="rd-alerte">Le conducteur prend des risques inconsidérés à bloquer les différentiels, véhicule en charge, sur route sèche et dure.</div>
+            </div>
         </details>
 
         <details class="jsp-cours">
             <summary>8 · Reconnaissance, obstacles, pentes et dévers (méthode et seuils)</summary>
-<div class="gouv-pages"><a href="images/cod2-ref/p-41.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-41.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 41"></a><a href="images/cod2-ref/p-42.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-42.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 42"></a><a href="images/cod2-ref/p-43.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-43.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 43"></a><a href="images/cod2-ref/p-44.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-44.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 44"></a><a href="images/cod2-ref/p-45.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-45.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 45"></a><a href="images/cod2-ref/p-46.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-46.jpg" alt="Reconnaissance, obstacles, pentes et dévers – page 46"></a></div>
+            <div class="rd-section">
+                <h3>📌 La méthode T.O.P.D. / STOPD</h3>
+                <p>La reconnaissance est indispensable avant tout franchissement : elle détermine si la piste est praticable, la trajectoire à adopter, un itinéraire aller distinct du retour, et permet de baliser le parcours (surtout de nuit). Méthode <strong>T.O.P.D.</strong> (Terrain, Obstacle, Pente, Dévers) — le mémento SDIS 60 l'étend en <strong>S.T.O.P.D.</strong> en ajoutant un « S » pour « S'arrêter » en amont.</p>
+                <div class="rd-alerte">Avant toute reconnaissance à pied, immobiliser le véhicule en sécurité, si possible hors d'une pente, en respectant les <strong>3 points de sécurité</strong> : frein de parc/rampe engagé, vitesse engagée, véhicule calé.</div>
+                <ul>
+                    <li><strong>Terrain</strong> — état (carrossable, accidenté, stable/instable, sec/humide) et nature : rocailleux (attention aux pierres saillantes, franchir avec la bande de roulement si impossible de contourner ; pierres mouillées = perte d'adhérence), boueux et sablonneux (garder de l'inertie et un peu d'allure pour ne pas s'enliser/s'ensabler, favoriser le 2<sup>e</sup> rapport, possibilité de dégonfler les pneus). Végétation dense : franchissement guidé par un équipier à pied, prévoir un itinéraire aller et retour, déboisement si nécessaire (tronçonneuse, serpette).</li>
+                </ul>
+                <table class="rd-table">
+                    <tr><th>Obstacle</th><th>Seuil franchissable</th></tr>
+                    <tr><td>Marche</td><td>Hauteur ≤ rayon de la roue (≈ 50 cm pour un CCF)</td></tr>
+                    <tr><td>Fossé</td><td>Profondeur ≤ 80 cm et largeur ≥ 120 cm</td></tr>
+                    <tr><td>Gué</td><td>Profondeur ≤ 3/4 de la roue</td></tr>
+                    <tr><td>Entonnoir</td><td>Dans la limite des angles d'attaque et de fuite</td></tr>
+                    <tr><td>Cassis</td><td>Dans la limite des angles d'attaque, de fuite et de rampe</td></tr>
+                </table>
+                <h3>📌 Pentes et dévers</h3>
+                <p>La pente est l'inclinaison du sol par rapport à l'horizontale (positive ou négative), exprimée en % sur une base de 100 m. <strong>Méthode d'évaluation à pied</strong> : le conducteur se place au point le plus défavorable, projette horizontalement son regard sur la pente, repère le point ainsi visé (matérialisable par un équipier) et compte le nombre de pas pour l'atteindre.</p>
+                <figure class="rd-fig etroite"><img src="images/cod2/pente-evaluation-pas.jpg" alt="Méthode d'évaluation d'une pente au nombre de pas : projection horizontale du regard depuis le point le plus défavorable" loading="lazy"><figcaption>Évaluation d'une pente par projection horizontale du regard et comptage des pas</figcaption></figure>
+                <table class="rd-table">
+                    <tr><th>Nombre de pas</th><th>Pente</th></tr>
+                    <tr><td>6 pas</td><td>≈ 30 %</td></tr>
+                    <tr><td>4 pas</td><td><strong>≈ 50 % (pente maxi franchissable en sécurité)</strong></td></tr>
+                </table>
+                <p>Il est possible de franchir jusqu'à <strong>100 %</strong> si la longueur de la pente est inférieure à l'empattement du véhicule (un seul pont engagé à la fois dans la difficulté). Le dévers est une pente perpendiculaire au sens de marche ; il se mesure par projection horizontale de la mi-cuisse : <strong>3 pas (≈ 3 m) = 30 % = limite absolue</strong>, à éviter au maximum.</p>
+                <table class="rd-table">
+                    <tr><th>%</th><th>10</th><th>20</th><th>30</th><th>40</th><th>50</th><th>60</th><th>70</th><th>80</th><th>90</th><th>100</th></tr>
+                    <tr><td>degrés</td><td>6°</td><td>11°</td><td>17°</td><td>22°</td><td>26-27°</td><td>31°</td><td>35°</td><td>38°</td><td>42°</td><td>45°</td></tr>
+                </table>
+                <div class="rd-alerte">C'est le <strong>pont arrière qui commande le risque de renversement</strong> : s'il reste sur le plat pendant que le pont avant est en dévers, le risque est faible ; dès que le pont arrière se retrouve en dévers, il transmet ce dévers à tout le véhicule. Ne jamais s'arrêter dans un dévers, ne jamais bloquer les différentiels de roues en dévers, éviter tout dévers si la citerne n'est ni pleine ni vide (ballant de l'eau), si le terrain est instable ou humide.</div>
+            </div>
         </details>
 
         <details class="jsp-cours">
             <summary>9 · Franchissements pas à pas : pente, dévers, fossé, marche, cassis</summary>
-<div class="gouv-pages"><a href="images/cod2-ref/p-48.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-48.jpg" alt="Franchissements pas à pas – page 48"></a><a href="images/cod2-ref/p-49.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-49.jpg" alt="Franchissements pas à pas – page 49"></a><a href="images/cod2-ref/p-50.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-ref/p-50.jpg" alt="Franchissements pas à pas – page 50"></a></div>
+            <div class="rd-section">
+                <h3>📌 Pente positive (montée)</h3>
+                <p>Se présenter le plus droit possible (jamais en dévers), pente ≤ 50 % (ou ≤ 100 % si sa longueur est inférieure à l'empattement). Enclencher le 1<sup>er</sup> ou 2<sup>e</sup> rapport. Monter en haut de zone verte (≈ 1200 tr/min sur MAN). En cas de perte d'adhérence, relâcher légèrement l'accélérateur pour retrouver de la motricité, garder une trajectoire droite sur toute la difficulté. En cas d'échec : stopper, marche arrière guidée en reculant dans ses traces, vérifier trajectoire/régime/rapport/faisabilité, puis retenter en corrigeant, éventuellement en bloquant les différentiels de pont.</p>
+                <h3>📌 Pente négative (descente)</h3>
+                <p>Se présenter droit, essai de frein et de ralentisseur avant l'engagement, 1<sup>er</sup> rapport engagé, différentiels bloqués si nécessaire (longueur, boue). Descendre sur la retenue moteur en utilisant le ralentisseur, pied en attente sur le frein (très légère pression), sans jamais freiner brutalement (risque de glissade incontrôlable). En cas de perte d'adhérence : relâcher le ralentisseur et donner un léger coup d'accélérateur pour retrouver de la motricité.</p>
+                <h3>📌 Dévers</h3>
+                <p>Se présenter au point le plus bas d'un dévers ≤ 30 %, 1<sup>er</sup> rapport, vitesse lente et régulière, ne jamais s'arrêter, ne jamais bloquer les différentiels de pont. Si le dévers est boueux, chercher un autre itinéraire ; ne jamais contrarier le véhicule qui part de l'avant ou de l'arrière (mieux vaut se retrouver dans une pente de 30 % qu'en mauvaise posture en dévers).</p>
+                <h3>📌 Fossé</h3>
+                <p>Se présenter de biais (30 à 45° par rapport à l'obstacle), 1<sup>er</sup> rapport, différentiels avant et arrière bloqués, engager le véhicule pour n'avoir qu'une seule roue dans la difficulté à la fois (ralentisseur + pied en attente sur le frein). Une fois la 2<sup>e</sup> roue avant au fond de la difficulté, débloquer le différentiel avant pour redresser la trajectoire et faciliter la remontée ; répéter l'opération pour le pont arrière ; débloquer le différentiel arrière une fois l'obstacle franchi, avant de changer de trajectoire.</p>
+                <h3>📌 Marche</h3>
+                <p>Se présenter le plus droit possible, 1<sup>er</sup> rapport, différentiels avant/arrière bloqués. Laisser venir en butée le pont avant, donner un coup d'accélérateur pour le faire passer, décélérer pour mettre en butée le pont arrière, redonner un coup d'accélérateur. Débloquer les différentiels une fois le pont arrière passé, avant de changer de trajectoire.</p>
+                <h3>📌 Cassis</h3>
+                <p>Se présenter le plus droit possible, 1<sup>er</sup> ou 2<sup>e</sup> rapport, régime moteur assez soutenu à la montée, relâcher l'accélération dès que le pont avant franchit le sommet, laisser sortir le pont arrière au ralenti et attendre que tout le véhicule soit sorti avant de changer de trajectoire.</p>
+            </div>
         </details>
 
         <details class="jsp-cours">
             <summary>10 · Gué, ornières, enlisement, roue motrice/directrice, conduite de nuit</summary>
-<div class="gouv-pages"><a href="images/cod2-mem/p-39.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-39.jpg" alt="Gué, ornières, enlisement, conduite de nuit – page 39"></a><a href="images/cod2-mem/p-40.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-40.jpg" alt="Gué, ornières, enlisement, conduite de nuit – page 40"></a></div>
+            <div class="rd-section">
+                <h3>📌 Le gué</h3>
+                <p>Se référer systématiquement à la notice constructeur pour la hauteur d'eau franchissable maximale (en moyenne, <strong>3/4 de la roue</strong>). Étudier la nature du fond avant de traverser un cours d'eau inexploré (trous, pierres, branchages). Au-delà de la hauteur préconisée : protéger le système électrique, étanchéiser les reniflards de ponts, surélever les prises d'admission d'air et de sortie d'échappement. Ne jamais dépasser la vague d'eau poussée par le véhicule ; inutile d'emballer le moteur (patinage + projection d'eau par le ventilateur). Après le gué, les freins à tambour perdent en efficacité : accélérer le séchage en gardant le pied gauche légèrement sur le frein sur une centaine de mètres.</p>
+                <h3>📌 Les ornières</h3>
+                <p>S'habituer à rouler « à cheval » : les deux roues d'un côté circulent hors de l'ornière, les deux roues de l'autre côté sur la bande centrale entre les ornières — pour éviter de poser le dessous du véhicule au sol même si les ornières s'approfondissent. Si impossible, positionner les deux roues d'un même côté dans l'ornière, les deux autres sur le talus central.</p>
+                <h3>📌 Enlisement</h3>
+                <div class="rd-alerte">Si le véhicule s'enlise et que les roues patinent : <strong>bloquer les différentiels et accélérer doucement</strong> en braquant légèrement à droite ou à gauche pour que les roues avant retrouvent un appui. Si aucune amélioration n'est perceptible, ne pas insister (les roues creuseraient davantage et le véhicule risquerait de reposer sur le plancher) : utiliser le treuil, le cric pour glisser pierres et branches sous les roues, ou se faire tracter par un autre véhicule.</div>
+                <h3>📌 Roue motrice et directrice</h3>
+                <p>Une roue à la fois motrice et directrice tend à monter sur l'obstacle rencontré et fait brutalement tourner le volant, qui peut blesser le conducteur (d'où l'importance de conduire pouces à l'extérieur) ou lui échapper des mains (risque de renversement ou de collision).</p>
+                <h3>📌 Conduite de nuit</h3>
+                <p>À éviter en tout-terrain (même si l'extinction d'un feu de forêt y est souvent plus efficace) : redoubler de prudence, faire reconnaître les obstacles par du personnel à pied, et baliser systématiquement la piste pour éviter les erreurs de parcours.</p>
+            </div>
         </details>
 
         <details class="jsp-cours">
-            <summary>11 · Mesures d’autoprotection et d’autodéfense (CCF, GIFF, UIFF/ULIFF)</summary>
-<div class="gouv-pages"><a href="images/cod2-mem/p-41.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-41.jpg" alt="Autoprotection et autodéfense – page 41"></a><a href="images/cod2-mem/p-42.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-42.jpg" alt="Autoprotection et autodéfense – page 42"></a><a href="images/cod2-mem/p-43.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-43.jpg" alt="Autoprotection et autodéfense – page 43"></a></div>
+            <summary>11 · Mesures d'autoprotection et d'autodéfense (CCF, GIFF, UIFF/ULIFF)</summary>
+            <div class="rd-section">
+                <h3>📌 Définitions</h3>
+                <p>Ces mesures sont un ensemble d'actions à réaliser en situation d'urgence, lorsque tout repli est impossible, pour protéger le personnel dont la sécurité physique est menacée.</p>
+                <table class="rd-table">
+                    <tr><th>Autoprotection</th><th>Autodéfense</th></tr>
+                    <tr><td>Déclenchement des dispositifs de protection intégrés à un CCF conforme à la norme en vigueur.</td><td>Dispositif de sécurité intégrant le positionnement des véhicules, l'autoprotection des CCF équipés, et éventuellement des moyens hydrauliques (lances, canon). Elle peut être <strong>active</strong> (avec moyens hydrauliques) ou <strong>passive</strong> (sans).</td></tr>
+                </table>
+                <p><strong>Autoprotection du CCF</strong> : lorsque le personnel est directement menacé, le chef d'agrès doit fermer les vannes d'aspiration/refoulement si nécessaire, regrouper le personnel dans le CCF, mettre en œuvre l'autoprotection, alerter la hiérarchie, demander des renforts (terrestres/aériens), prévenir toute panique, maintenir le contact radio.</p>
+                <p><strong>Autodéfense du GIFF</strong> : mise en place en une seule manœuvre si possible. Véhicules positionnés pour protéger les cabines du flux thermique (un CCF de classe S sert d'écran si disponible), VLTT de préférence entre les CCF sans bloquer l'accès aux cabines. Phase préalable : anticiper l'évolution du feu, évacuer la zone dangereuse, choisir la zone la plus sûre, rassembler les équipages aux points d'abri (centre du dispositif ou cabines), alerter la hiérarchie.</p>
+                <table class="rd-table">
+                    <tr><th>Autodéfense active</th><th>Autodéfense passive</th></tr>
+                    <tr><td>Le groupe a le temps et l'eau nécessaires pour mettre en œuvre des moyens hydrauliques : canon et lances 500, selon la réserve du GIFF.</td><td>Le groupe n'a plus assez d'eau ni de temps pour mettre en œuvre des moyens hydrauliques.</td></tr>
+                </table>
+                <p>L'autodéfense de l'<strong>UIFF</strong> et de l'<strong>ULIFF</strong> suit la même méthodologie que celle du GIFF. Un <strong>largage de sécurité</strong> est un largage délibéré sur un véhicule ou un groupe en difficulté, pour faire tomber flammes et température et permettre au personnel de se dégager.</p>
+            </div>
         </details>
 
         <details class="jsp-cours">
-            <summary>12 · Techniques d’auto-dégagement : efforts, treuil, tirfor, mouflage, points d’ancrage</summary>
-<div class="gouv-pages"><a href="images/cod2-mem/p-44.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-44.jpg" alt="Techniques d’auto-dégagement – page 44"></a><a href="images/cod2-mem/p-45.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-45.jpg" alt="Techniques d’auto-dégagement – page 45"></a><a href="images/cod2-mem/p-46.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-46.jpg" alt="Techniques d’auto-dégagement – page 46"></a><a href="images/cod2-mem/p-47.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-47.jpg" alt="Techniques d’auto-dégagement – page 47"></a><a href="images/cod2-mem/p-48.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-48.jpg" alt="Techniques d’auto-dégagement – page 48"></a><a href="images/cod2-mem/p-49.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-49.jpg" alt="Techniques d’auto-dégagement – page 49"></a><a href="images/cod2-mem/p-50.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-50.jpg" alt="Techniques d’auto-dégagement – page 50"></a><a href="images/cod2-mem/p-51.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-51.jpg" alt="Techniques d’auto-dégagement – page 51"></a><a href="images/cod2-mem/p-52.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-52.jpg" alt="Techniques d’auto-dégagement – page 52"></a><a href="images/cod2-mem/p-53.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-53.jpg" alt="Techniques d’auto-dégagement – page 53"></a><a href="images/cod2-mem/p-54.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-54.jpg" alt="Techniques d’auto-dégagement – page 54"></a><a href="images/cod2-mem/p-55.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-55.jpg" alt="Techniques d’auto-dégagement – page 55"></a><a href="images/cod2-mem/p-56.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-56.jpg" alt="Techniques d’auto-dégagement – page 56"></a><a href="images/cod2-mem/p-57.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-57.jpg" alt="Techniques d’auto-dégagement – page 57"></a><a href="images/cod2-mem/p-58.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-mem/p-58.jpg" alt="Techniques d’auto-dégagement – page 58"></a></div>
+            <summary>12 · Techniques d'auto-dégagement : efforts, treuil, tirfor, mouflage, points d'ancrage</summary>
+            <div class="rd-section">
+                <h3>📌 Principe : l'effort résistant</h3>
+                <p>« Sachons nous arrêter avant qu'il ne soit trop tard. » L'auto-dégagement (se dégager seul ou se faire dégager) est une manœuvre simple et rapide, à ne pas confondre avec les manœuvres de force. L'effort à vaincre pour déplacer un véhicule dépend de son poids, affecté d'un coefficient de <strong>roulement</strong> (le véhicule peut encore rouler) ou de <strong>glissement</strong> (il ne roule plus), selon la nature du sol, auquel s'ajoute un coefficient dû à la pente.</p>
+                <table class="rd-table">
+                    <tr><th>Nature du sol</th><th>Roulement</th><th>Glissement</th></tr>
+                    <tr><td>Dur sec</td><td>3 %</td><td>70 %</td></tr>
+                    <tr><td>Dur humide</td><td>6 %</td><td>50 %</td></tr>
+                    <tr><td>Varié dur</td><td>10 %</td><td>40 %</td></tr>
+                    <tr><td>Varié gras</td><td>30 %</td><td>35 %</td></tr>
+                    <tr><td>Boue &lt; 30 cm</td><td>50 %</td><td>30 %</td></tr>
+                    <tr><td>Boue épaisse</td><td colspan="2">Levée partielle nécessaire</td></tr>
+                    <tr><td>Sable</td><td>20 %</td><td>20 %</td></tr>
+                    <tr><td>Verglas</td><td>1 %</td><td>1 %</td></tr>
+                </table>
+                <table class="rd-table">
+                    <tr><th>Pente</th><th>10 %</th><th>20 %</th><th>30 %</th><th>40 %</th><th>50 %</th><th>100 %</th></tr>
+                    <tr><td>Coefficient</td><td>10 %</td><td>20 %</td><td>30 %</td><td>40 %</td><td>45 %</td><td>70 %</td></tr>
+                </table>
+                <div class="rd-astuce"><strong>Formule complète</strong> : effort à fournir = (masse × coefficient de roulement ou de glissement) + (masse × coefficient de pente) − (masse × coefficient d'adhérence, si le véhicule peut encore rouler avec tous ses dispositifs tout-terrain enclenchés). Le coefficient d'adhérence est sensiblement égal au coefficient de glissement, mais se soustrait à l'effort résistant. <strong>Toujours prévoir une marge pour l'effort au crochet</strong> (force supplémentaire nécessaire pour ébranler le véhicule à l'arrêt, bien supérieure à la seule force d'entretien du mouvement).</div>
+                <p><strong>Exemple</strong> : CCF de 14 t bloqué sur pente de 40 %, sol varié gras, roues encore motrices, treuil de 9 500 daN. Sol : 14 000 × 30 % = 4 200 daN. Pente : 14 000 × 40 % = 5 600 daN. Effort résistant brut : 9 800 daN. Adhérence (35 %) : 14 000 × 35 % = 4 900 daN à déduire → effort net : <strong>4 900 daN</strong>, réalisable avec ce treuil.</p>
+
+                <h3>📌 Le treuil</h3>
+                <p>La force d'un treuil n'est pas constante : elle varie avec l'épaisseur de câble enroulé sur le tambour (F1 × D1 = F2 × D2) — elle est <strong>maximale quand le tambour est vide</strong> (câble déroulé) et <strong>minimale quand il est plein</strong>. Toujours laisser <strong>3 à 5 spires</strong> sur le tambour pour ne pas forcer sur l'épissure. Pour un véhicule embourbé, la <strong>traction mixte</strong> (treuil + moteur de traction simultanés) diminue l'effort demandé au treuil sans augmenter les puissances en jeu.</p>
+                <div class="rd-alerte">Consignes : vérifier l'état du câble, câble tendu dans l'axe du véhicule, roues dans l'axe de la tension, se ménager une zone de sécurité en cas de rupture, ne jamais manipuler les câbles sans gants, ne pas les graisser sauf spécification constructeur, éviter le chevauchement du câble sous tension. La puissance du treuil doit correspondre au véhicule : <strong>(MTC − masse de la charge à l'essieu) / 2</strong>, à titre indicatif.</div>
+
+                <h3>📌 Mouflages, tirfor et agrès de traction</h3>
+                <p>Lorsque le treuil est insuffisant : alléger le véhicule (vider la tonne, retirer le matériel) ou effectuer un <strong>mouflage</strong> (assemblage de poulies et d'agrès démultipliant l'effort). Traction directe (effort dans le sens du déplacement) ou indirecte (sens opposé, change la direction de traction).</p>
+                <figure class="rd-fig"><img src="images/cod2/mouflage-simple-compose.jpg" alt="Schéma d'un mouflage simple (une poulie sur la charge) et d'un mouflage composé (poulies reliées entre elles)" loading="lazy"><figcaption>Mouflage simple (une poulie, un seul garant) et mouflage composé (poulies reliées entre elles)</figcaption></figure>
+                <div class="rd-astuce">Règle pratique de démultiplication : <strong>chaque poulie placée sur la charge divise l'effort par deux</strong> ; plus simplement, la force est divisée par le nombre de brins partant de la charge. Chaque poulie ajoute environ <strong>10 %</strong> de perte par frottement. Plus l'angle du câble à la poulie est ouvert, plus l'effort nécessaire augmente (0° → coefficient 1 ; 30° → 1,04 ; 60° → 1,2 ; 90° → 1,4 ; 120° → 2).</div>
+                <table class="rd-table">
+                    <tr><th>Agrès</th><th>Formule / repère</th></tr>
+                    <tr><td>Câble — charge de manœuvre (CM)</td><td>CM (daN) = 8 × D² (D = diamètre en mm)</td></tr>
+                    <tr><td>Câble — charge de rupture (CR)</td><td>CR (daN) = 50 × d²</td></tr>
+                    <tr><td>Manille — force (sans indication constructeur)</td><td>F (daN) = 4 × D²</td></tr>
+                </table>
+                <table class="rd-table">
+                    <tr><th>Tirfor</th><th>T7</th><th>T13</th><th>T35</th></tr>
+                    <tr><td>Force de traction (daN)</td><td>1 250</td><td>2 500</td><td>5 000</td></tr>
+                    <tr><td>Diamètre du câble (mm)</td><td>8,3</td><td>11,5</td><td>15,5</td></tr>
+                    <tr><td>Résistance à la rupture du câble (daN)</td><td>4 500</td><td>9 000</td><td>18 000</td></tr>
+                </table>
+                <p>Le tirfor maintient le câble en tension dès que le levier de marche avant n'est plus actionné (auto-serrage des mâchoires proportionnel à la charge) ; en charge, la poignée de débrayage est verrouillée automatiquement — ne jamais tenter de la débrayer.</p>
+
+                <h3>📌 Points d'ancrage</h3>
+                <table class="rd-table">
+                    <tr><th>Essence d'arbre</th><th>Résistance comme point d'ancrage naturel</th></tr>
+                    <tr><td>Chêne</td><td>Très bon</td></tr>
+                    <tr><td>Hêtre</td><td>Bon</td></tr>
+                    <tr><td>Châtaignier</td><td>Médiocre</td></tr>
+                    <tr><td>Bouleau, pin, sapin</td><td>Très médiocre</td></tr>
+                </table>
+                <p>Points d'ancrage artificiels : assemblage de piquets/rondins solidarisés par cordages ou chaînes (efforts limités, environ 30°) ; un autre véhicule (freins serrés, roues non calées) constitue un point fixe dont la résistance dépend du poids, de la nature du sol et de l'état des pneumatiques.</p>
+                <p><strong>Méthode de la manœuvre</strong> : reconnaissance (désigner un chef, évaluer le poids de la charge) → préparation (terrain, moyens disponibles, équipement de sécurité, idée de manœuvre) → exécution lente et progressive (personnel strictement nécessaire, légère tension avant traction, vérification constante du comportement du dispositif) → rangement et contrôle du matériel après la manœuvre.</p>
+            </div>
         </details>
 
         <details class="jsp-cours">
-            <summary>13 · Fiches réflexe COD 2 (synthèse visuelle)</summary>
-<div class="gouv-pages"><a href="images/cod2-fr/p-1.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-fr/p-1.jpg" alt="Fiches réflexe COD 2 – page 1"></a><a href="images/cod2-fr/p-2.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-fr/p-2.jpg" alt="Fiches réflexe COD 2 – page 2"></a><a href="images/cod2-fr/p-3.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-fr/p-3.jpg" alt="Fiches réflexe COD 2 – page 3"></a><a href="images/cod2-fr/p-4.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/cod2-fr/p-4.jpg" alt="Fiches réflexe COD 2 – page 4"></a></div>
+            <summary>13 · Fiches réflexe COD 2 (synthèse)</summary>
+            <div class="rd-section">
+                <h3>📌 Check-list express avant engagement</h3>
+                <p><strong>Cabine/sécurité</strong> : pied sur le frein · réglage siège · mains à 09h15/10h10, pouces à l'extérieur, sans croiser · accès pédales et ralentisseur · ceinture · rétros rabattus · vitres/ventilation/toit fermés · matériel arrimé · personnel descendu si franchissement · connaissance des commandes (air respirable…) puis vérification extérieure.</p>
+                <table class="rd-table">
+                    <tr><th>Dispositifs tout-terrain</th><th>Ordre</th></tr>
+                    <tr><td>1. Petite vitesse</td><td rowspan="3">Toujours à l'arrêt</td></tr>
+                    <tr><td>2. Boîte de transfert (blocage inter-ponts) ou crabotage pont avant (50/50 %)</td></tr>
+                    <tr><td>3. Point effet : 1<sup>er</sup>, 2<sup>e</sup> ou marche arrière</td></tr>
+                </table>
+                <h3>📌 Obstacles — tableau récapitulatif</h3>
+                <table class="rd-table">
+                    <tr><th>Obstacle</th><th>Seuil</th><th>Méthode</th></tr>
+                    <tr><td>Marche</td><td>H max &lt; rayon de roue (≈ 50 cm)</td><td>De face, 1<sup>re</sup> petite vitesse, accélérer franchement au contact</td></tr>
+                    <tr><td>Gué</td><td>H max = 3/4 roue (≈ 70 cm)</td><td>2<sup>e</sup> petite vitesse, bloquer différentiels AV/AR, allure constante, suivre la vague, sonder les 2 côtés si humide, prévoir un point d'ancrage</td></tr>
+                    <tr><td>Fossé</td><td>Prof max 0,80 m, larg min 1,20 m</td><td>Biais 45°, une roue après l'autre, 1<sup>re</sup> petite vitesse, ralentisseur, bloquer différentiels AV/AR</td></tr>
+                    <tr><td>Entonnoir / dos d'âne</td><td>Selon la géométrie du véhicule</td><td>Ralentisseur, zone verte</td></tr>
+                </table>
+                <p><strong>Évaluation</strong> — pente : AB = 6 pas → 30 % ; AB = 4 pas → 50 % (pente maxi en sécurité) ; jusqu'à 100 % si la longueur de pente est inférieure à l'empattement. Dévers : AB = 3 pas (≈ 70 cm de référence) → 30 % maxi.</p>
+                <div class="rd-alerte">Après tout franchissement, refaire systématiquement une vérification extérieure du véhicule.</div>
+                <h3>📌 Auto-dégagement — pense-bête</h3>
+                <p>Effort à fournir = (masse × coefficient roulement/glissement) + (masse × coefficient de pente) − (masse × coefficient d'adhérence, si le véhicule roule encore avec ses dispositifs TT). Toujours prévoir une marge pour l'effort au crochet (à l'arrachement).</p>
+                <ul>
+                    <li><strong>Treuil</strong> : vérifier la plaque de treuil · laisser 3 à 4 spires sur le tambour · la force est maximale câble déroulé · pour aider, vider la tonne ou moufler · mettre un poids sur les câbles et respecter un périmètre de sécurité · vérifier la résistance des autres agrès.</li>
+                    <li><strong>Mouflage</strong> : la charge est divisée par le nombre de brins qui en partent · plus l'angle à la poulie est ouvert, plus l'effort est important · chaque poulie ajoute environ 10 % de l'effort qu'elle reçoit.</li>
+                </ul>
+                <div class="rd-alerte">Dans tous les cas : ne pas prendre de risques, ne pas stationner dans la zone dangereuse, engager le minimum de personnel, et <strong>prévenir systématiquement le CODIS.</strong></div>
+            </div>
         </details>
 
         <p class="jsp-liens">Voir aussi → <button onclick="showModule('secours')">Secours routier</button></p>
@@ -23287,7 +23583,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.38.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.39.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

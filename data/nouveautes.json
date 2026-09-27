@@ -1,6 +1,6 @@
 {
-  "version": "1.38.0",
-  "titre": "Vulcain 1.38.0",
-  "texte": "Refonte des fiches GTO Établissements & techniques d'extinction : texte rédigé au lieu de pages de PDF brutes, avec schémas et photos sélectionnés.",
-  "fiche": "etex-etb"
+  "version": "1.39.0",
+  "titre": "Vulcain 1.39.0",
+  "texte": "Refonte de la fiche COD 2 (conduite tout-terrain) : texte rédigé au lieu de pages de PDF brutes, avec schémas sélectionnés.",
+  "fiche": "cod2"
 }
