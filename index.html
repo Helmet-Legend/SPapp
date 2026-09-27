@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.36.0">
+    <meta name="version" content="1.37.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.36.0</span><br>
+                        Vulcain v<span class="app-version">1.37.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -16369,6 +16369,239 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Sources : <strong>Référentiel COD 2</strong> (SDIS 42) · <strong>Mémento stagiaire COD 2 – Conduite des véhicules tout terrain</strong>, SDIS de l’Oise (SDIS 60), Groupement formation, comité pédagogique COD 3 Oise, version 01/2020 · <strong>Fiches réflexe COD 2</strong>. Documents de formation internes, fusionnés ici en une seule fiche.</p>
     </div>
 
+    <div id="cod1" class="module" style="--jsp: #0E7490;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🚒 COD 1 – Pompes & génératrices</h2>
+        <p style="text-align: center;">Manuel technique d'intervention : responsabilités du conducteur, pompe centrifuge, systèmes d'amorçage, DECI, calculs hydrauliques, additifs moussants, génératrices électriques et protocole de guidage.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Le conducteur est le seul et unique responsable légal</strong> de la conduite de son véhicule en circulation (responsabilité pénale personnelle), même si le chef d'agrès peut lui donner des comptes-rendus hiérarchiques.</li>
+                <li><strong>Triptyque de la priorité opérationnelle</strong> : être vu (gyrophare et feux) + être entendu (avertisseur 2-tons) = être compris (priorité accordée). Même sous avertisseurs, restent <strong>strictement interdits</strong> : franchir un feu rouge clignotant (passage à niveau, pont mobile), dépasser les limitations de tonnage/gabarit d'un ouvrage d'art, rouler sans ceinture, s'engager en sens interdit sans nécessité vitale avérée.</li>
+                <li><strong>Alcoolémie</strong> : taux réglementaire strict 0,0 g/L, seuil de tolérance de mesure 0,2 g/L de sang (0,10 mg/L d'air expiré).</li>
+                <li><strong>La pompe centrifuge n'est pas auto-amorçante</strong> : elle élève la pression de l'eau (ouïe → aubes de la roue → volute/diffuseur qui transforme la vitesse en pression statique) mais nécessite un amorceur pour purger l'air et créer la dépression initiale.</li>
+                <li><strong>2 types d'amorceurs</strong> : <strong>anneau d'eau</strong> (roue à palettes excentrée dans un carter rempli d'eau, débrayée par friction/vérin dès 3-4 bars) ou <strong>à pistons coaxiaux</strong> (très rapide, quelques secondes ; ne jamais dépasser 90 s en continu à sec, 20 s une fois en eau ; ne pas actionner si dévers &gt; 10° ou pente &gt; 15°).</li>
+                <li><strong>Cavitation</strong> : bulles de vapeur qui implosent violemment contre les parois métalliques quand la pression à l'entrée de la roue tombe sous la tension de vapeur saturante. Signes : bruit de « gravier dans une bétonnière », tuyaux d'aspiration qui s'écrasent, aiguille de refoulement qui s'affole. <strong>Remède immédiat</strong> : réduire le régime et le débit, ou doubler la ligne d'aspiration.</li>
+                <li><strong>Hauteur géométrique d'aspiration (Hga)</strong> : limite théorique 10,33 m (pression atmosphérique = 760 mmHg = 1013 mbar), limite pratique ~8 m, <strong>recommandation opérationnelle ≤ 6 m</strong>. Dégradée par l'altitude (−0,125 m / 100 m), la température de l'eau (aspiration impossible à 100 °C) et les pertes de charge de la crépine (~0,50 m).</li>
+                <li><strong>Régulation automatique de pression</strong> (norme NF S 61-510, obligatoire ≥ 1500 L/min) : à armer systématiquement dès l'enclenchement de la prise de mouvement, même pompe au ralenti.</li>
+                <li><strong>Pertes de charge</strong> : proportionnelles à la longueur du tuyau et au <strong>carré du débit</strong> (débit ×2 → pertes ×4), inversement proportionnelles au diamètre, indépendantes de la pression. Dénivelé : ±1 bar par tranche de 10 m.</li>
+                <li><strong>Relais hydraulique</strong> : nécessaire si les pertes de charge cumulées + dénivelé dépassent la pression disponible d'un seul engin (&gt; 15 bars). Règle : la pompe réceptrice doit être alimentée entre <strong>4 et 5 bars, jamais plus de 8 bars</strong>.</li>
+                <li><strong>Émulseur 3/6 M (S.F.P.M. M)</strong> : mouillant 0,1-1 % (classe A, pénètre les solides), eau dopée 1-3 %, <strong>3 % sur hydrocarbures</strong>, <strong>6 % sur liquides polaires</strong>. Foisonnement bas (×2-20, portée &gt; 25 m, stable au vent), moyen (×20-200) ou haut (&gt; ×200, volumes clos).</li>
+                <li><strong>Proportionneur Venturi</strong> : nécessite impérativement <strong>10 bars minimum</strong> au refoulement pour amorcer l'aspiration de l'émulseur. À l'aspiration de pompe : garder la sauterelle de retour cuve fermée pour éviter toute contamination de la tonne.</li>
+                <li><strong>Génératrices électriques</strong> (VSR) : <strong>mise à la terre par piquet et câble de masse strictement obligatoire</strong> avant toute mise en action (risque mortel d'électrisation/électrocution).</li>
+                <li><strong>Guidage obligatoire</strong> pour toute manœuvre sans visibilité directe. Guide : se positionne à 8-10 m face au véhicule, dans le champ visuel du conducteur, gestes francs et amples. Conducteur : <strong>ne plus jamais regarder dans les rétroviseurs</strong>, se conformer aveuglément aux ordres, <strong>arrêt immédiat</strong> dès que le guide disparaît de la vue.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Responsabilités du conducteur & cadre juridique</summary>
+            <p>La conduite constitue 100 % de nos interventions. Le conducteur est le seul et unique responsable légal de la conduite de son véhicule en circulation. Le chef d'agrès peut lui demander des comptes hiérarchiques en sa qualité de chef de bord, mais la responsabilité juridique directe des infractions au volant incombe exclusivement au conducteur.</p>
+            <table class="rd-table">
+                <tr><th>Responsabilité disciplinaire</th><th>Responsabilité pénale</th></tr>
+                <tr><td>Sanctionne le non-respect des devoirs professionnels, des ordres de la hiérarchie, des règlements intérieurs et notes de service du SDIS. La sanction relève de l'autorité territoriale.</td><td>Responsabilité de l'individu face à la loi pénale : le sapeur-pompier est jugé personnellement en tant que citoyen. Tout manquement grave ou imprudence caractérisée peut donner lieu à des condamnations pénales.</td></tr>
+            </table>
+            <ul>
+                <li><strong>Permis de conduire</strong> (art. R. 221-11 &amp; L. 221-2 du code de la route) : tout conducteur doit posséder un permis valide et adapté à la catégorie du véhicule (VL, PL). La conduite sans titre valide est punie d'un an de prison et de 15 000 € d'amende. Le conducteur doit avertir sans délai sa hiérarchie de toute suspension, retrait ou inaptitude médicale.</li>
+                <li><strong>Véhicule d'intérêt général prioritaire</strong> (art. R. 311-1 &amp; R. 432-1) : le conducteur en mission urgente utilisant ses avertisseurs spéciaux (gyrophares et 2-tons) peut déroger aux règles de circulation <em>sous réserve absolue de ne pas mettre en danger la vie d'autrui</em> (art. R. 414-9 et R. 415-12).</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Interdictions strictes, même sous avertisseurs sonores et lumineux :</strong>
+                <ol>
+                    <li>Feux rouges clignotants (passages à niveau ferroviaires, ponts mobiles) : arrêt absolu obligatoire.</li>
+                    <li>Limitations de tonnage et gabarit d'ouvrage d'art (risque d'effondrement mécanique ou d'encastrement).</li>
+                    <li>Port de la ceinture de sécurité obligatoire pour tous les membres de l'équipage.</li>
+                    <li>Sens interdit : ne jamais s'y engager sans nécessité vitale absolue (sauvetage avéré) et après reconnaissance complète.</li>
+                </ol>
+            </div>
+            <p><strong>Alcoolémie &amp; stupéfiants</strong> : taux réglementaire strict 0,0 g/L, seuil de tolérance de mesure inopinée 0,2 g/L de sang (0,10 mg/L d'air expiré). Dépistage stupéfiants obligatoire à l'incorporation et aux visites périodiques.</p>
+            <p><strong>Comportement en carrefour</strong> : allure fortement réduite, voire marquer un temps d'arrêt. L'utilisation du 2-tons doit intervenir bien en amont pour éviter les réactions imprévisibles des tiers.</p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Rôle, devoirs et missions du conducteur COD 1</summary>
+            <p>Le conducteur COD 1 est le technicien exclusif du véhicule et de l'installation hydraulique. Il est garant de l'acheminement de l'équipage, de l'alimentation ininterrompue en eau à la pression adéquate, et du reconditionnement opérationnel.</p>
+            <table class="rd-table">
+                <tr><th>À la prise de garde</th><th>Sur intervention</th><th>Retour &amp; hivernage</th></tr>
+                <tr>
+                    <td>Tour d'engin &amp; pneumatiques · niveaux (carburant, eau, émulseur) · éclairage et gyrophares/2-tons · engagement de la prise de mouvement (PDM) · test d'amorçage et de rotation de pompe · inventaire du lot d'alimentation</td>
+                    <td>Placement sécurisé (roues braquées opposées au danger) · EPI complets + gilet haute visibilité · zone d'exclusion (dépassement d'adresse pour laisser la place à l'échelle, 50 m pour fuite de gaz) · alimentation continue et calcul de Pr · refroidissement de pompe et appoint de tonne</td>
+                    <td>Réarmement complet et plein d'eau/carburant · nettoyage et mise en charge batterie · <strong>procédure hors-gel</strong> : vanne d'isolement et sauterelle fermées, chasse d'air dans la LDT, ouverture de toutes les vannes de refoulement et purges</td>
+                </tr>
+            </table>
+            <table class="rd-table">
+                <tr><th>Classement par masse (MTC)</th><th>Catégorie opérationnelle</th><th>Normes particulières NF S</th></tr>
+                <tr><td>Léger (L) : 2,0 T &lt; MTC ≤ 7,5 T</td><td>Catégorie 1 - Urbain : chaussées praticables</td><td>NF S 61-515 : VPI, FPTL, FPT (engins pompe d'extinction)</td></tr>
+                <tr><td>Moyen (M) : 7,5 T &lt; MTC ≤ 16 T</td><td>Catégorie 2 - Rural : tous types de routes + tout chemin</td><td>NF S 61-517 : camions-citernes ruraux (CCR)</td></tr>
+                <tr><td>Super (S) : MTC &gt; 16 T</td><td>Catégorie 3 - Tout-terrain : hors piste accidenté</td><td>NF S 61-518 / 527 : CCF (feux de forêt) &amp; VSR (secours routier)</td></tr>
+            </table>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · La pompe centrifuge d'incendie</summary>
+            <p>La pompe centrifuge est l'organe hydraulique d'extinction par excellence. Elle permet d'élever la pression de l'eau en convertissant l'énergie cinétique imprimée au fluide en énergie de pression. <strong>Elle n'est en aucun cas auto-amorçante</strong> : elle requiert obligatoirement un système d'amorçage auxiliaire pour puiser l'eau en dépression.</p>
+            <p><strong>Principe mécanique</strong> : l'eau pénètre axialement dans l'ouïe centrale de la roue ; les aubes profilées de l'impulseur en rotation projettent le fluide radialement sous l'effet de la force centrifuge, lui conférant une forte vélocité ; la volute divergente (diffuseur) décélère l'eau et transforme sa vitesse en pression statique vers le collecteur de refoulement.</p>
+            <div class="rd-astuce">Une pompe d'incendie est définie par son débit et sa pression nominale à une dénivelée d'aspiration géométrique de 3 mètres. Exemple : pompe <strong>2000/15</strong> = 2000 L/min à 15 bars de refoulement.</div>
+            <p><strong>Lecture du vacuo-manomètre</strong> : gradué de −1 à +25 bars. En aspiration, l'aiguille indique la dépression relative nécessaire pour vaincre la hauteur géométrique d'aspiration (Hga) — une valeur de −0,2 bar équivaut à 2 mètres de colonne d'eau. Une aiguille qui s'affole signale un risque imminent de cavitation mécanique.</p>
+            <p><strong>Régulation automatique de pression</strong> (norme NF S 61-510, obligatoire pour toutes les pompes débitant ≥ 1500 L/min) : l'automate compense les variations d'ouverture des lances en maintenant la consigne à ± 10 % en agissant sur le régime moteur, et assure la détection de surchauffe, cavitation et avarie mécanique. <strong>Règle d'or : toujours armer la régulation automatique dès l'enclenchement de la PDM, même si la pompe tourne au ralenti.</strong></p>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Systèmes d'amorçage & phénomènes aérauliques</summary>
+            <p>L'amorceur est une pompe volumétrique auxiliaire dont la mission exclusive est d'évacuer l'air emprisonné dans le corps de pompe et la ligne d'aspiration. L'amorceur ne monte pas l'eau : en créant le vide relatif, il permet à la pression atmosphérique d'exercer sa poussée sur la surface de la nappe et de propulser l'eau jusqu'aux aubes.</p>
+            <table class="rd-table">
+                <tr><th>Amorceur à anneau d'eau</th><th>Amorceur à pistons coaxiaux</th></tr>
+                <tr>
+                    <td>Roue à palettes excentrée tournant dans un carter rempli d'eau via un bocal tampon. La rotation plaque le liquide en anneau hermétique contre les parois. <strong>Aspiration</strong> : le volume entre palettes s'élargit en face de la lumière d'admission, pompant l'air du corps. <strong>Compression &amp; éjection</strong> : le volume diminue face à la lumière de refoulement et chasse l'air à l'extérieur. <strong>Débrayage</strong> : asservi par friction et vérin commandé par la pression d'eau (&gt; 3-4 bars).</td>
+                    <td>Deux pistons opposés actionnés en va-et-vient continu par un excentrique ou un moteur électrique 24 V dédié. <strong>Amorçage ultra rapide</strong> (quelques secondes seulement), entraînement par courroie avec galet tendeur/sélecteur ou électroaimant automatique. <strong>Sécurité électrique</strong> : ne jamais dépasser 90 secondes en continu à sec, et 20 secondes une fois en eau ! Ne pas actionner si dévers &gt; 10° ou pente &gt; 15°.</td>
+                </tr>
+            </table>
+            <h4>Guide de diagnostic : pannes et anomalies d'amorçage</h4>
+            <table class="rd-table">
+                <tr><th>Symptôme au vacuomètre</th><th>Causes probables</th><th>Actions correctives immédiates</th></tr>
+                <tr>
+                    <td><strong>Aiguille reste proche de 0</strong> (aucune dépression)</td>
+                    <td>Prise d'air sur les demi-raccords ou absence de joint · crépine mal immergée ou hors d'eau · vanne de refoulement ou de vidange entrouverte · PDM non engagée ou courroie amorceur rompue</td>
+                    <td>Vérifier le serrage aux tricoises. S'assurer de la présence des joints d'étanchéité. Fermer hermétiquement toutes les purges et sorties refoulement.</td>
+                </tr>
+                <tr>
+                    <td><strong>Aiguille chute brutalement à −1 bar</strong> (dépression maximale immédiate)</td>
+                    <td>Crépine obstruée ou enfouie dans la vase · vanne d'aspiration restée fermée · paroi interne d'un aspiral décollée/délaminée · grille de crépine colmatée par débris</td>
+                    <td>Stopper l'accélération. Remonter la ligne, inspecter la crépine et le flotteur. Contrôler l'état intérieur des tuyaux d'aspiration.</td>
+                </tr>
+                <tr>
+                    <td><strong>L'amorceur refuse de démarrer</strong></td>
+                    <td>Pression résiduelle positive dans le corps de pompe bloquant le clapet d'amorçage.</td>
+                    <td>Effectuer une purge immédiate en ouvrant une vanne de refoulement pour chasser la contre-pression d'air/eau.</td>
+                </tr>
+            </table>
+            <div class="rd-alerte">
+                <strong>Phénomène destructeur : la cavitation.</strong> Lorsque la pression à l'entrée de l'ouïe tombe sous la tension de vapeur saturante de l'eau, des bulles gazeuses se créent dans la veine liquide puis implosent avec une violence extrême contre les parois métalliques.
+                <ul>
+                    <li><strong>Symptômes</strong> : bruit assourdissant de « gravier dans une bétonnière », tuyaux d'aspiration qui s'écrasent, aiguille du manomètre de refoulement folle, perte immédiate de pression.</li>
+                    <li><strong>Remède d'urgence</strong> : réduire immédiatement le régime moteur et le débit de refoulement, ou doubler sans délai la ligne d'aspiration !</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Mise en aspiration & dispositifs de défense extérieure (DECI)</summary>
+            <p><strong>Physique de l'aspiration &amp; Torricelli</strong> : l'expérience de Torricelli (1643) démontre que la pression atmosphérique au niveau de la mer équivaut à une colonne de 760 mm de mercure, soit 10,33 mètres de colonne d'eau (1013 mbar).</p>
+            <table class="rd-table">
+                <tr><th>Hauteur géométrique d'aspiration (Hga)</th><th>Valeur</th></tr>
+                <tr><td>Limite théorique absolue</td><td>10,33 m</td></tr>
+                <tr><td>Limite pratique sur le terrain</td><td>~ 8,00 m</td></tr>
+                <tr><td>Recommandation opérationnelle de sécurité</td><td>≤ 6,00 m</td></tr>
+            </table>
+            <p><strong>Facteurs de dégradation de la Hga</strong> : altitude (perte de 0,125 m tous les 100 m d'élévation) · température (−0,12 m à 10 °C ; −1,3 m à 50 °C ; aspiration impossible à 100 °C) · pertes de charge singulières (~0,50 m dans la crépine).</p>
+            <p><strong>Montage méthodique de la ligne</strong> : contrôle de la hauteur géométrique (≤ 6 m) → positionnement de l'engin (perpendiculaire sur aire aménagée, parallèle au plus près en berge naturelle) → alignement au sol des aspiraux avec le binôme d'alimentation (BAL) → serrage rigoureux avec 2 clés tricoises en opposition → fixation du flotteur à chaînette et amarrage de la crépine par un nœud de batelier avec commande → immersion complète de la crépine à mi-profondeur (hors fond boueux, sans prise d'air de surface).</p>
+            <p>Aire de mise en station normalisée : longueur maxi de ligne 8 m, aire stabilisée 8 m × 4 m (résistance PL), réserve ≥ 30 m³ minimum.</p>
+            <table class="rd-table">
+                <tr><th>Type de borne</th><th>Diamètre canalisation</th><th>Nombre de tours clé</th><th>Sorties disponibles</th><th>Code couleur &amp; rôle</th></tr>
+                <tr><td>PI DN 80</td><td>80 mm</td><td>13 tours</td><td>1× 65 mm (+ 2× 40 mm)</td><td>Entièrement rouge</td></tr>
+                <tr><td>PI DN 100</td><td>100 mm</td><td>13 tours</td><td>1× 100 mm + 2× 65 mm</td><td>Coquille rouge avec capot gris</td></tr>
+                <tr><td>PI DN 150</td><td>150 mm</td><td>17 tours</td><td>2× 100 mm + 1× 65 mm</td><td>Coquille rouge avec capot jaune</td></tr>
+                <tr><td>Bouche d'incendie (BI)</td><td>100 mm</td><td>13 tours (clé de barrage)</td><td>Raccord à baïonnette / retenue</td><td>Enterrée sous coffre de chaussée</td></tr>
+                <tr><td>Poteau surpressé</td><td>Variable</td><td>Progressif impératif !</td><td>100 ou 65 mm</td><td>Jaune ≥ 50 % : pression dyn. 6 à 16 bars</td></tr>
+            </table>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · Calculs hydrauliques opérationnels & établissements</summary>
+            <ul>
+                <li><strong>Débit (Q)</strong> : volume écoulé par unité de temps, en L/min ou m³/h.</li>
+                <li><strong>Pression (P)</strong> : force appliquée par unité de surface (1 bar = 1 kg/cm²).</li>
+                <li><strong>Pression statique</strong> : pression à lances fermées (débit nul), identique partout sur un plan horizontal.</li>
+                <li><strong>Pression dynamique</strong> : pression mesurée fluide en écoulement, varie tout au long du tracé.</li>
+            </ul>
+            <div class="rd-astuce">
+                <strong>Règles incompressibles des pertes de charge (J)</strong> :
+                <ol>
+                    <li>Proportionnelles à la longueur du tuyau (L).</li>
+                    <li><strong>Proportionnelles au carré du débit</strong> : débit ×2 ⇒ pertes de charge ×4 !</li>
+                    <li>Inversement proportionnelles au diamètre du tuyau.</li>
+                    <li>Indépendantes de la pression statique.</li>
+                    <li><strong>Dénivelé (Z)</strong> : ± 1 bar par tranche de 10 mètres de dénivelée (+ si on monte, − si on descend).</li>
+                </ol>
+            </div>
+            <table class="rd-table">
+                <tr><th>Tuyau &amp; diamètre</th><th>Débit opérationnel</th><th>Pertes de charge / 100 m</th><th>Pertes de charge / 20 m</th></tr>
+                <tr><td>Semi-rigide Ø 25 mm (LDT)</td><td>58 L/min (nominal) · 150 L/min (LDV 25)</td><td>2,2 bars/hm · <strong>14,7 bars/hm</strong></td><td>0,44 bar · 2,94 bars</td></tr>
+                <tr><td>Tuyau plat PIL Ø 45 mm</td><td>250 L/min · 500 L/min</td><td>1,5 bar/hm · <strong>6,0 bars/hm</strong></td><td>0,3 bar · <strong>1,2 bar</strong></td></tr>
+                <tr><td>Tuyau plat PIL Ø 70 mm</td><td>500 L/min · 1000 L/min</td><td>0,55 bar/hm · <strong>2,2 bars/hm</strong></td><td>0,11 bar · <strong>0,44 bar</strong></td></tr>
+                <tr><td>Tuyau plat PIL Ø 110 mm</td><td>1000 L/min</td><td>0,28 bar/hm</td><td>0,06 bar</td></tr>
+            </table>
+            <p><strong>Cas pratique résolu</strong> : établissement fractionné FPT (A) → division (B) via 80 m de Ø 70 mm à 1000 L/min, puis 2 lances : BC = 40 m Ø 45 à 500 L/min de plain-pied, BD = 60 m Ø 45 à 500 L/min + 15 m de dénivelé.</p>
+            <ul>
+                <li>Branche BC (lance 1) : 2×20 m Ø45 à 500 L/min = 2 × 1,2 bar = 2,4 bars + 6,0 bars (pression lance) = <strong>8,4 bars</strong>.</li>
+                <li>Branche BD (lance 2, étage) : 3×20 m Ø45 à 500 L/min = 3 × 1,2 bar = 3,6 bars + 1,5 bar (dénivelé +15 m) + 6,0 bars (pression lance) = <strong>11,1 bars</strong> (branche prioritaire, la plus défavorable).</li>
+                <li>Tronçon principal AB : 4 × 20 m Ø70 à 1000 L/min = 4 × 0,44 bar = 1,76 bar.</li>
+                <li><strong>Pr = J<sub>AB</sub> + P<sub>B(BD)</sub> = 1,76 + 11,1 = 12,86 bars ⇒ régler le refoulement à 13 bars !</strong></li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7 · Établissement en relais hydraulique</summary>
+            <p>Le relais s'impose lorsque les pertes de charge cumulées et le dénivelé excèdent la pression maximale disponible d'un seul engin (&gt; 15 bars), ou lors de contraintes géographiques d'accès au point d'eau. <strong>Règle fondamentale</strong> : la pompe réceptrice doit être alimentée à une pression comprise entre <strong>4 et 5 bars (ne jamais dépasser 8 bars)</strong>.</p>
+            <div class="rd-astuce">
+                <strong>La méthode opérationnelle en 6 étapes</strong> :
+                <ol>
+                    <li><strong>Pression nécessaire globale (PN)</strong> : pertes totales de l'établissement + pression aux lances + dénivelé global.</li>
+                    <li><strong>Nombre d'engins nécessaires (NE)</strong> : NE = PN / P<sub>disponible</sub> (arrondi à l'entier supérieur).</li>
+                    <li><strong>Pression moyenne de travail (PM)</strong> : PM = PN / NE.</li>
+                    <li><strong>Distance d'implantation du 1<sup>er</sup> engin (D1)</strong> : D1 = (PM / J<sub>hectométrique</sub>) × 100 (arrondi au nombre de tuyaux).</li>
+                    <li><strong>Calcul de refoulement de chaque engin (PE)</strong> : calcul spécifique selon son tronçon assigné.</li>
+                    <li><strong>Vérification</strong> : Σ PE = PN.</li>
+                </ol>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>8 · Additifs, émulseurs & systèmes de dosage</summary>
+            <p>La mousse est un agrégat de bulles généré par le malaxage de trois éléments : <strong>eau + émulseur (solution moussante) + air</strong>. Elle éteint le foyer par une triple action simultanée : étouffement (écran anti-oxygène), arrêt du dégagement des vapeurs inflammables, et refroidissement par son eau de constitution.</p>
+            <table class="rd-table">
+                <tr><th>Bas foisonnement (×2 à ×20)</th><th>Moyen foisonnement (×20 à ×200)</th><th>Haut foisonnement (&gt; ×200)</th></tr>
+                <tr><td>Mousse dense et lourde, projetable à grande distance (&gt; 25 m). Très stable au vent et intempéries. Usage feux d'hydrocarbures et cuvettes de rétention.</td><td>Portée moyenne (~10 m). Conçu pour couvrir de grandes surfaces avec une ressource en eau limitée ou pour neutraliser les nappes toxiques de gaz liquéfiés.</td><td>Déversé directement sans portée. De faible densité, destiné au noyage volumétrique total d'espaces clos (caves, entrepôts industriels, cales de navire, caniveaux techniques).</td></tr>
+            </table>
+            <p><strong>L'émulseur polyvalent « 3/6 M » (S.F.P.M. M)</strong>, Synthétique Filmogène Polyvalent Multifoisonnement Mouillant, est un AFFF polyvalent :</p>
+            <ul>
+                <li><strong>Mouillant (0,1 % à 1 %)</strong> : abaisse la tension superficielle de l'eau, favorise l'imprégnation en profondeur des solides (feux de classe A - paille, forêts).</li>
+                <li><strong>Eau dopée (1 % à 3 %)</strong> : efficacité d'extinction accrue sans structure alvéolaire de mousse.</li>
+                <li><strong>Hydrocarbures (3 %)</strong> : formation d'un film aqueux étanche flottant sur le carburant.</li>
+                <li><strong>Solvants polaires (6 %)</strong> : barrière anti-alcools, cétones, éthers pour empêcher la destruction chimique de la mousse.</li>
+            </ul>
+            <div class="rd-alerte"><strong>Proportionneur Venturi</strong> : la dépression créée par l'étranglement aspire l'émulseur. <strong>Impératif technique</strong> : l'injecteur nécessite impérativement une pression de refoulement de 10 bars minimum à son entrée pour amorcer le mélange ! Lors d'une injection à l'aspiration de pompe, maintenir impérativement la sauterelle de retour cuve fermée pour éviter toute contamination de la tonne.</div>
+            <p><strong>Système automatique Caméléon (CTD)</strong> : dispositif à injection motorisée sous pression régulé électroniquement par débitmètre, injecte l'additif proportionnellement au débit d'eau instantané (0,1 % à 6 %). Pression d'injection requise : +1 bar au-dessus de la pression d'eau. Débit seuil de déclenchement : &gt; 50 L/min. Rinçage automatique intégré à la coupure.</p>
+            <p><strong>Calcul d'autonomie</strong> — exemple type FPT standard : tonne 3000 L d'eau, réserve d'émulseur 200 L, lance débitant 225 L/min.</p>
+            <ul>
+                <li>Dosage 3 % (hydrocarbures), engin alimenté en eau : consommation émulseur = 225 × 0,03 = 6,75 L/min ⇒ autonomie réserve = 200 / 6,75 ≈ <strong>29 minutes</strong>.</li>
+                <li>Dosage 6 % (liquides polaires), engin <strong>non alimenté</strong> : consommation émulseur = 225 × 0,06 = 13,5 L/min ⇒ 200/13,5 ≈ 14 min ; consommation eau = 225 × 0,94 = 211,5 L/min ⇒ 3000/211,5 ≈ 14 min. <strong>L'eau et l'émulseur s'épuisent simultanément en 14 minutes chrono !</strong></li>
+            </ul>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>9 · Génératrices électriques & matériel de secours routier (VSR)</summary>
+            <p>Embarquées sur les véhicules d'assistance et de secours routier, les génératrices convertissent la puissance mécanique de la prise de mouvement en énergie électrique pour alimenter le mât d'éclairage, les groupes hydrauliques de désincarcération (cisaille, écarteur, vérins) et la pompe haute pression.</p>
+            <div class="rd-alerte"><strong>Sécurité électrique vitale</strong> : tout matériel générateur ou récepteur non isolé présente un risque mortel d'électrisation ou d'électrocution. <strong>La mise à la terre par piquet et câble de masse est strictement obligatoire avant toute mise en action de la génératrice !</strong></div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>10 · Protocole opérationnel de guidage des véhicules</summary>
+            <p>La majorité des sinistres matériels et corporels impliquant les engins de secours ont lieu lors de manœuvres arrière ou de franchissements étroits sans guidage. <strong>Le guidage est obligatoire</strong> pour toute manœuvre sans visibilité directe. Il est exécuté en principe par le chef d'agrès ou un équipier désigné.</p>
+            <table class="rd-table">
+                <tr><th>Règles pour le guide</th><th>Règles pour le conducteur</th></tr>
+                <tr>
+                    <td>Reconnaissance préalable de la zone de manœuvre · se positionner à 8-10 mètres en face du véhicule, toujours dans le champ visuel direct du chauffeur · marcher au rythme de l'engin en conservant la distance de sécurité · ordres gestuels francs, amples et posés (avec torche de nuit)</td>
+                    <td>Se conformer aveuglément aux ordres du guide · <strong>cesser de regarder dans les rétroviseurs</strong> · engager la plus petite vitesse (avant ou arrière) · faire glisser le volant sans gestes brusques · <strong>arrêt immédiat dès que le guide disparaît de la vue !</strong></td>
+                </tr>
+            </table>
+            <p><strong>Répertoire visuel des commandements gestuels</strong> : stop absolu (bras levé tendu), en avant (battement de vers le torse), en arrière (poussée vers l'engin), braquer à gauche (bras tendu à l'horizontale), braquer à droite (bras tendu à l'horizontale).</p>
+        </details>
+
+        <p class="jsp-liens">Voir aussi → <button onclick="showModule('cod2')">🚛 COD 2 – Conduite tout-terrain</button> <button onclick="showModule('etex-etb')">💧 Les établissements</button> <button onclick="showModule('etex-res')">💧 Ressources en eau</button></p>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/conduite/Guide-Technique-COD1-Moderne.pdf" target="_blank" rel="noopener">Guide technique COD 1 (PDF)</a></p>
+        <p class="rd-source">📚 Source : <strong>Manuel technique d'intervention – Conduite &amp; hydraulique opérationnelle COD 1</strong>, édition spéciale restructurée et modernisée, conforme aux normes NF EN 1846 et NF S 61-510/515/517/518/527 et aux doctrines de la DGSCGC.</p>
+    </div>
+
     <!-- ============ Envoi de notifications (administrateur) ============ -->
     <div id="notif-envoi" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -22938,7 +23171,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.36.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.37.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

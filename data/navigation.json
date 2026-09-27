@@ -132,6 +132,7 @@
    "picto": "truck",
    "couleur": "#A16207",
    "themes": [
+    "COD 1 – Pompes & génératrices",
     "COD 2 – Conduite tout-terrain"
    ]
   }
@@ -1370,6 +1371,34 @@
     "effet chalumeau",
     "attaque d'atténuation",
     "attaque transitoire"
+   ]
+  },
+  {
+   "id": "cod1",
+   "titre": "COD 1 – Pompes & génératrices",
+   "domaine": "conduite",
+   "theme": "COD 1 – Pompes & génératrices",
+   "type": "fiche",
+   "motsCles": [
+    "pompe centrifuge",
+    "amorçage",
+    "amorceur",
+    "anneau d'eau",
+    "pistons coaxiaux",
+    "cavitation",
+    "vacuo-manomètre",
+    "DECI",
+    "aspiration",
+    "hauteur géométrique",
+    "pertes de charge",
+    "relais hydraulique",
+    "émulseur",
+    "mousse",
+    "foisonnement",
+    "proportionneur",
+    "caméléon",
+    "génératrice",
+    "guidage"
    ]
   },
   {

@@ -1,6 +1,6 @@
 {
-  "version": "1.36.0",
-  "titre": "Vulcain 1.36.0",
-  "texte": "Nouveau domaine Conduite : fiche COD 2 (conduite tout-terrain) — mécanique 4x4, franchissement d'obstacles, pentes/dévers, autoprotection, auto-dégagement.",
-  "fiche": "cod2"
+  "version": "1.37.0",
+  "titre": "Vulcain 1.37.0",
+  "texte": "Domaine Conduite : nouvelle fiche COD 1 (pompes & génératrices) — pompe centrifuge, amorçage, cavitation, DECI, calculs hydrauliques, mousse, génératrices, guidage.",
+  "fiche": "cod1"
 }
