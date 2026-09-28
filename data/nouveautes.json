@@ -1,6 +1,6 @@
 {
-  "version": "1.45.0",
-  "titre": "Vulcain 1.45.0",
-  "texte": "Calculateur de puissance de feu modernisé : photos réelles pour chaque type d'ouverture (fenêtre, porte, baie vitrée, porte de garage, porte d'entrepôt).",
-  "fiche": "fire"
+  "version": "1.45.1",
+  "titre": "Vulcain 1.45.1",
+  "texte": "Correctif : le bouton « Consulter la Fiche GMU » depuis la recherche TMD fonctionne à nouveau.",
+  "fiche": "tmd"
 }
