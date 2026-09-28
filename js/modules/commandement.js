@@ -203,6 +203,22 @@ function ajouterVehiculeAutre() {
     ouvrirModalEquipageLibre(type, nbPersonnes);
 }
 
+const GRADES_SP = [
+    'SAP', 'CAP', 'CCH', 'SGT', 'SCH', 'ADJ', 'ADC', 'MJR',
+    'LTN', 'CNE', 'CDT', 'LCL', 'COL'
+];
+
+function optionsGrades(id, valeurActuelle) {
+    const options = GRADES_SP.map(function(g) {
+        const selected = g === valeurActuelle ? ' selected' : '';
+        return `<option value="${g}"${selected}>${g}</option>`;
+    }).join('');
+    return `<select id="${id}" style="width: 100%; padding: 8px;">
+        <option value=""${valeurActuelle ? '' : ' selected'}>—</option>
+        ${options}
+    </select>`;
+}
+
 function ouvrirModalEquipage(type, armement) {
     const modal = document.getElementById('modalEquipage');
     const titre = document.getElementById('modalTitre');
@@ -220,7 +236,7 @@ function ouvrirModalEquipage(type, armement) {
                 <div style="display: grid; grid-template-columns: 120px 1fr 1fr; gap: 10px;">
                     <div>
                         <label style="display: block; font-size: 0.9em; margin-bottom: 5px; color: var(--text-secondary);">Grade</label>
-                        <input type="text" id="equipage-${index}-grade" placeholder="Ex: CAP" style="width: 100%; padding: 8px;">
+                        ${optionsGrades(`equipage-${index}-grade`)}
                     </div>
                     <div>
                         <label style="display: block; font-size: 0.9em; margin-bottom: 5px; color: var(--text-secondary);">Nom</label>
@@ -256,7 +272,7 @@ function ouvrirModalEquipageLibre(type, nbPersonnes) {
                 <div style="display: grid; grid-template-columns: 120px 1fr 1fr; gap: 10px;">
                     <div>
                         <label style="display: block; font-size: 0.9em; margin-bottom: 5px; color: var(--text-secondary);">Grade</label>
-                        <input type="text" id="equipage-${i}-grade" placeholder="Ex: CAP" style="width: 100%; padding: 8px;">
+                        ${optionsGrades(`equipage-${i}-grade`)}
                     </div>
                     <div>
                         <label style="display: block; font-size: 0.9em; margin-bottom: 5px; color: var(--text-secondary);">Nom</label>

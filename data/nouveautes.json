@@ -1,6 +1,6 @@
 {
-  "version": "1.45.1",
-  "titre": "Vulcain 1.45.1",
-  "texte": "Correctif : le bouton « Consulter la Fiche GMU » depuis la recherche TMD fonctionne à nouveau.",
-  "fiche": "tmd"
+  "version": "1.45.2",
+  "titre": "Vulcain 1.45.2",
+  "texte": "PATRAC DR : le grade de l'équipage se choisit désormais dans un menu déroulant, plus rapide à remplir.",
+  "fiche": "patrac-dr"
 }
