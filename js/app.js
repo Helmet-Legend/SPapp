@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.40.1 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.40.2 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -99,18 +99,25 @@ function setupEventListeners() {
 
 document.addEventListener('DOMContentLoaded', initApp);
 
-// Referme tous les accordéons des fiches (<details class="jsp-cours">) dès que
-// l'app passe en arrière-plan : sur une PWA, fermer/rouvrir ne recharge pas
-// forcément la page, donc sans ça les onglets restent ouverts d'une session à l'autre.
+// Referme tous les accordéons des fiches (<details class="jsp-cours">) à chaque
+// fermeture ET à chaque réouverture de l'app : sur une PWA, fermer/rouvrir ne
+// recharge pas forcément la page (le navigateur peut juste la suspendre), donc
+// sans ça les onglets restent ouverts d'une session à l'autre. On multiplie les
+// évènements car aucun n'est déclenché de façon fiable sur toutes les plateformes.
 function fermerTousLesAccordeons() {
     document.querySelectorAll('details.jsp-cours[open]').forEach(function(d) {
         d.removeAttribute('open');
     });
 }
 document.addEventListener('visibilitychange', function() {
-    if (document.visibilityState === 'hidden') fermerTousLesAccordeons();
+    fermerTousLesAccordeons();
 });
 window.addEventListener('pagehide', fermerTousLesAccordeons);
+window.addEventListener('pageshow', fermerTousLesAccordeons);
+window.addEventListener('freeze', fermerTousLesAccordeons);
+window.addEventListener('resume', fermerTousLesAccordeons);
+window.addEventListener('blur', fermerTousLesAccordeons);
+document.addEventListener('DOMContentLoaded', fermerTousLesAccordeons);
 
 // ==================== NAVIGATION ====================
 function showModule(moduleName) {
@@ -129,7 +136,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.40.1';
+var APP_VERSION = '1.40.2';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1379,7 +1386,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.40.1 COMPLET
+// FIN DU FICHIER - Vulcain v1.40.2 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
