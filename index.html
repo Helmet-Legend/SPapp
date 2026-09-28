@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.41.0">
+    <meta name="version" content="1.42.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.41.0</span><br>
+                        Vulcain v<span class="app-version">1.42.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -23939,13 +23939,242 @@ Je demande : ….</p>
         <p class="rd-source">📚 Source : <strong>Guide de doctrine opérationnelle « Interventions à bord des navires et bateaux en milieu maritime » (IBNB)</strong>, GDO 2017, DGSCGC/DSP/SDDRH/BDFE, novembre 2017. Texte repris et résumé ; schémas et photos sélectionnés, non reproduits intégralement.</p>
     </div>
 
+    <div id="ulm" class="module" style="--jsp: #2563EB;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🪂 GDO – Interventions en présence d'ULM</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle « Interventions sur des aéronefs de type Ultra Léger Motorisé » : connaissance des 6 classes d'ULM, risques spécifiques (incendie, parachute balistique), aérodromes et SSLIA, planification opérationnelle (ARCC/SAR, ORSEC Aérodrome), prise d'appel et conduite des opérations.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>6 classes d'ULM</strong> définies par masse/puissance maximales : 1 paramoteur, 2 pendulaire, 3 multi-axes, 4 autogire ultraléger, 5 aérostat dirigeable ultraléger, 6 hélicoptère ultraléger. Masse maxi généralement <strong>300 kg (monoplace) / 450 kg (biplace)</strong>, 2 personnes à bord au maximum.</li>
+                <li><strong>Structure légère</strong> : pas de moyens de désincarcération lourds nécessaires. Traumatismes et brûlures sont les principales pathologies rencontrées.</li>
+                <li><strong>Carburant</strong> : d'une dizaine à une centaine de litres (réservoirs plastique/résine), super sans plomb le plus souvent, kérosène plus rare.</li>
+                <li><strong>Parachute balistique</strong> : présent sur de nombreux ULM, actionnable par le pilote en urgence. <strong>Non déclenché, il reste actif et instable pendant et après un incendie</strong> — s'éjecte sur une vingtaine de mètres à très grande vitesse, emplacement imprévisible. Sa neutralisation relève exclusivement des <strong>services de déminage</strong>.</li>
+                <li><strong>Cône d'exclusion recommandé</strong> autour de l'épave : <strong>100 m / 30 m / 100 m</strong> dans l'axe présumé d'éjection. En cas de décès manifeste, zone d'exclusion de <strong>100 m</strong> autour de l'aéronef dans l'attente de la levée de doute sur la présence d'un parachute.</li>
+                <li><strong>Désincarcération</strong> : démarche prudente pour ne pas sectionner les câbles de commande du parachute de secours. Toute action sur l'épave doit être verbalisée auprès des enquêteurs.</li>
+                <li><strong>BEA (Bureau Enquêtes Analyses)</strong> : accès immédiat et sans restriction à l'accident garanti par accord interministériel. Sauf nécessité, <strong>l'état du site ne doit pas être modifié</strong> ; aucun prélèvement ni déplacement de l'épave sans son autorisation expresse.</li>
+                <li><strong>ARCC de Lyon</strong> (Aeronautical Rescue Coordination Center) : organisme unique coordonnant la phase de recherche (SAR), joignable au <strong>191</strong>. À solliciter pour toute notion d'aéronef en difficulté.</li>
+                <li><strong>60 % des accidents</strong> ont lieu sur les lieux de décollage/atterrissage ou à proximité immédiate — connaître les aérodromes et plateformes ULM du secteur (recensement : basulm.ffplum.info) est utile dès la prise d'appel.</li>
+                <li>En France : environ <strong>15 000 ULM</strong> et <strong>1 200 sites de décollage</strong>, pour une centaine d'accidents ULM par an sur ~300 accidents aériens (chiffres 2016).</li>
+            </ul>
+        </div>
+
+        <figure class="rd-fig">
+            <img src="images/ulm/cover-avion.jpg" alt="ULM multi-axes au sol, vue rapprochée du train avant et de l'hélice" loading="lazy">
+            <figcaption>Un ULM multi-axes (classe 3) : structure tubulaire légère, voilure fixe, moteur apparent — la conception reste très différente de celle d'un avion léger certifié.</figcaption>
+        </figure>
+
+        <details class="jsp-cours">
+            <summary>1 · Les aéronefs ULM : définition et 6 classes</summary>
+            <div class="rd-section">
+                <h3>📌 Définition</h3>
+                <p>Un <strong>ultra-léger motorisé (ULM)</strong> est un aéronef muni d'un moteur, répondant à des critères de masse ou de puissance maximales définis par les juridictions nationales, et autorisant son utilisation dans des conditions de navigabilité <strong>simplifiées</strong> par rapport à celles d'un avion léger, avec une licence de pilotage spécifique. La plupart des ULM peuvent décoller et atterrir sur des distances réduites hors des aérodromes, mais les plus performants s'apparentent à des avions légers certifiés.</p>
+                <p>En France, la réglementation distingue <strong>6 classes</strong>, chacune assortie d'une sous-classe « à motorisation auxiliaire » (monoplace uniquement, puissance ≤ 30 kW, masse ≤ 170 kg, charge alaire < 30 kg/m²) pour les classes 1 à 3.</p>
+                <table class="rd-table">
+                    <tr><th>Classe</th><th>Appellation</th><th>Sustentation</th></tr>
+                    <tr><td><strong>1</strong></td><td>Paramoteur</td><td>Voilure souple de type parachute</td></tr>
+                    <tr><td><strong>2</strong></td><td>Pendulaire</td><td>Voilure souple, chariot motorisé suspendu</td></tr>
+                    <tr><td><strong>3</strong></td><td>Multi-axes</td><td>Voilure fixe (le plus proche d'un avion léger)</td></tr>
+                    <tr><td><strong>4</strong></td><td>Autogire ultraléger</td><td>Rotor libre (giravion)</td></tr>
+                    <tr><td><strong>5</strong></td><td>Aérostat dirigeable ultraléger</td><td>Enveloppe gonflée (hélium ou air chaud)</td></tr>
+                    <tr><td><strong>6</strong></td><td>Hélicoptère ultraléger</td><td>Rotor motorisé</td></tr>
+                </table>
+                <h3>📌 Puissances et masses maximales par classe</h3>
+                <table class="rd-table">
+                    <tr><th>Classe</th><th>Puissance max. (monoplace / biplace)</th><th>Masse max. (monoplace / biplace)</th><th>Particularités</th></tr>
+                    <tr><td>1 · Paramoteur</td><td>60 kW / 75 kW</td><td>300 kg / 450 kg</td><td>—</td></tr>
+                    <tr><td>2 · Pendulaire</td><td>45 kW / 60 kW</td><td>300 kg / 450 kg</td><td>+5 % si parachute de secours, +10 % si flotteurs ; Vs0 ≤ 65 km/h</td></tr>
+                    <tr><td>3 · Multi-axes</td><td>60 kW / 75 kW</td><td>300 kg / 450 kg</td><td>+5 % si parachute de secours, +10 % si flotteurs ; vitesse décrochage ≤ 65 km/h</td></tr>
+                    <tr><td>4 · Autogire ultraléger</td><td>75 kW / 90 kW</td><td>300 kg / 450 kg</td><td>+5 % si parachute de secours ; charge rotorique 4,5 à 12 kg/m²</td></tr>
+                    <tr><td>5 · Aérostat dirigeable</td><td>&lt; 75 kW / &lt; 90 kW</td><td>—</td><td>Enveloppe hélium ≤ 900 m³ ; enveloppe air chaud ≤ 2 000 m³ ; puissances cumulées si multimoteur</td></tr>
+                    <tr><td>6 · Hélicoptère ultraléger</td><td>80 kW / 100 kW</td><td>300 kg / 450 kg</td><td>Monomoteur ; +10 % si flotteurs ; charge rotorique 8 à 20 kg/m²</td></tr>
+                </table>
+                <div class="rd-astuce">Retenir l'ordre de grandeur commun aux classes 1 à 4 et 6 : <strong>masse maxi ≈ 300 kg en monoplace, 450 kg en biplace</strong>, avec des majorations possibles (+5 % parachute de secours, +10 % flotteurs). La <strong>charge alaire</strong> (rapport masse/surface portante) doit rester inférieure à 30 kg/m² pour les sous-classes « à motorisation auxiliaire ».</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Les risques associés aux ULM</summary>
+            <div class="rd-section">
+                <h3>📌 Secours d'urgence aux personnes</h3>
+                <p>Un ULM peut accueillir <strong>au maximum 2 personnes</strong>. Les <strong>traumatismes et brûlures</strong> restent les principales pathologies rencontrées sur les victimes. Dans certains cas, une désincarcération pourra être utile, mais la <strong>structure légère</strong> de ces aéronefs ne nécessite pas de disposer de moyens de désincarcération lourds.</p>
+                <h3>📌 Incendie</h3>
+                <p>Un incendie peut survenir à la suite d'un crash, mais aussi <strong>en vol au niveau du moteur</strong>. Ce risque est également présent hors vol, dans les lieux d'entreposage de ces aéronefs (aérodromes, mais aussi chez des particuliers).</p>
+                <p>La quantité de carburant présent peut aller d'<strong>une dizaine de litres à une centaine au plus</strong>, dans des réservoirs en plastique ou en résine. Les carburants utilisés sont assimilables à du <strong>super sans plomb</strong> ou, plus rarement, du <strong>kérosène</strong>.</p>
+                <div class="rd-alerte">En cas de <strong>non-inflammation</strong>, il faut prendre en compte les risques générés par ces matières : explosion à l'air libre, inflammation différée, pollution.</div>
+                <h3>📌 Risque pyrotechnique : le parachute balistique</h3>
+                <p>Des <strong>parachutes balistiques</strong> peuvent être installés sur ces aéronefs. Ils ont vocation à être actionnés par le pilote en situation d'urgence. <strong>Non déclenchés, ils présentent un risque pour les victimes, les intervenants et les tiers présents.</strong></p>
+                <figure class="rd-fig">
+                    <img src="images/ulm/parachute-sequence.jpg" alt="Schéma des 7 étapes de déploiement normal d'un parachute balistique d'ULM : extraction par fusée, extension du parachute, gonflage progressif de la voilure, désaérage" loading="lazy">
+                    <figcaption>Séquence de déploiement normal d'un parachute balistique (7 phases, de l'extraction par fusée à la stabilisation sous voilure) — utile pour comprendre la trajectoire et la cinématique d'un déclenchement intempestif.</figcaption>
+                </figure>
+                <p>Tous les dispositifs répondent au même principe : actionnement via une <strong>poignée</strong>, mise à feu d'un <strong>lanceur</strong> entraînant l'éjection du parachute. On retrouve systématiquement 4 éléments : un <strong>parachute</strong>, une <strong>charge pyrotechnique</strong>, un <strong>câble de commande</strong> et une <strong>poignée de déclenchement</strong>.</p>
+                <figure class="rd-fig">
+                    <img src="images/ulm/parachute-kit.jpg" alt="Kit de parachute balistique démonté : sac contenant la voilure, lanceur pyrotechnique blanc, câble de commande et poignée de déclenchement rouge" loading="lazy">
+                    <figcaption>Composants d'un kit de parachute balistique : sac/voilure, charge pyrotechnique (lanceur blanc), câble souple et poignée de déclenchement.</figcaption>
+                </figure>
+                <p>Le parachute <strong>s'éjecte sur une distance d'une vingtaine de mètres à très grande vitesse</strong>. Les observations montrent que son emplacement d'installation reste aléatoire et ne permet pas d'établir une ligne de conduite prescrite en termes d'approche — cette incertitude est encore accrue par les dommages subis par l'aéronef au cours du crash.</p>
+                <div class="rd-alerte"><strong>Sa neutralisation reste de la compétence exclusive des services de déminage.</strong> Dans l'attente, les secours veilleront à ne pas travailler dans la zone d'éjection du parachute.</div>
+                <h3>📌 Signalement du dispositif</h3>
+                <p>Le signalement de ces dispositifs reste une simple <strong>recommandation</strong> — les repérages sur les aéronefs, quand ils existent, prennent la forme de petites étiquettes qui peuvent être plus petites que la paume d'une main.</p>
+                <figure class="rd-fig">
+                    <img src="images/ulm/parachute-stickers.jpg" alt="Quatre types d'étiquettes de signalement d'un parachute balistique observées sur des ULM : EXPLOSIVE EGRESS / STAY CLEAR, DANGER fusée d'extraction, triangle DANGER FUSÉE D'EXTRACTION avec flèche, ATTENTION MONTAGE DANGEREUX" loading="lazy">
+                    <figcaption>Exemples d'étiquettes de signalement rencontrées (aucune n'est normalisée ni obligatoire) — leur absence ne garantit en rien l'absence de parachute balistique à bord.</figcaption>
+                </figure>
+                <figure class="rd-fig">
+                    <img src="images/ulm/parachute-installe.jpg" alt="Boîtier de parachute balistique installé derrière le siège d'un ULM, sanglé, avec sa sortie orientée vers le haut à travers la verrière" loading="lazy">
+                    <figcaption>Exemple d'installation d'un parachute balistique derrière le siège, sortie orientée vers le haut à travers la verrière — l'emplacement varie fortement d'un modèle à l'autre.</figcaption>
+                </figure>
+                <div class="rd-alerte">Ce signalement peut être <strong>altéré ou disparaître après un impact suivi de feu</strong>. À ce titre, ces systèmes restent <strong>actifs et instables pendant et après un incendie</strong>, y compris quand aucune étiquette n'est visible.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Les aérodromes et le SSLIA</summary>
+            <div class="rd-section">
+                <h3>📌 Une spécificité géographique</h3>
+                <p>Dans <strong>60 % des cas</strong>, les accidents ont lieu sur les lieux de décollage et d'atterrissage ou à toute proximité. Il est donc nécessaire de connaître ces sites ainsi que les autres parties prenantes utiles au bon déroulement des opérations de secours. Les ULM présentent une spécificité : ils peuvent décoller et atterrir depuis des aérodromes ouverts ou non à la circulation aérienne publique (CAP), mais aussi depuis des <strong>plateformes qui leur sont spécifiques</strong>.</p>
+                <h3>📌 Aérodromes ouverts à la circulation aérienne publique</h3>
+                <p>Ils peuvent être <strong>contrôlés</strong> (tour de contrôle, interlocuteur privilégié en cas d'alerte) ou <strong>non contrôlés</strong> (aucun interlocuteur garanti en cas de sinistre). Ils sont classés en 5 catégories :</p>
+                <table class="rd-table">
+                    <tr><th>Catégorie</th><th>Vocation</th></tr>
+                    <tr><td><strong>A</strong></td><td>Services à grande distance assurés normalement en toutes circonstances</td></tr>
+                    <tr><td><strong>B</strong></td><td>Services à moyenne distance en toutes circonstances + certains services à grande distance sans étape longue au départ</td></tr>
+                    <tr><td><strong>C</strong></td><td>Services à courte distance, certains services moyenne/longue distance en étapes courtes, grand tourisme</td></tr>
+                    <tr><td><strong>D</strong></td><td>Formation aéronautique, sports aériens, tourisme, certains services à courte distance</td></tr>
+                    <tr><td><strong>E</strong></td><td>Giravions et aéronefs à décollage vertical ou oblique</td></tr>
+                </table>
+                <p>Les hydrobases ouvertes à la CAP sont classées en 3 catégories A, B, C, selon la même logique de distance de service.</p>
+                <h3>📌 Aérodromes non ouverts à la CAP et plateformes ULM</h3>
+                <ul>
+                    <li><strong>Aérodromes privés</strong> : créés sur demande à l'autorité préfectorale, peuvent ne pas être balisés ni signalés ;</li>
+                    <li><strong>Aérodromes à usage restreint</strong> : doivent disposer d'une signalisation et d'un balisage ;</li>
+                    <li><strong>Plateformes ULM</strong> : créées sur autorisation préalable en mairie ou par arrêté préfectoral, accès publics ou privés, classes d'ULM autorisées définies. Recensement disponible sur <strong>basulm.ffplum.info</strong>.</li>
+                </ul>
+                <h3>📌 Le SSLIA (RFFS)</h3>
+                <p>Le <strong>Service de Sauvetage et de Lutte contre l'Incendie des Aéronefs (SSLIA)</strong>, ou RFFS (Rescue and Fire Fighting Service), a pour mission principale d'intervenir sur tous les incidents et/ou accidents mettant en cause des aéronefs de tout type. Il est présent sur les <strong>aérodromes contrôlés</strong>. Le niveau de protection requis est déterminé par la classe d'aéronef desservant l'aérodrome (longueur hors-tout / largeur maximale du fuselage, de la classe 1 à la classe 10) et peut être majoré.</p>
+                <table class="rd-table">
+                    <tr><th>Niveau</th><th>Quantité d'eau (L)</th><th>Débit (L/min)</th><th>Agent complémentaire (kg)</th><th>Véhicules SSLIA</th><th>Personnels</th></tr>
+                    <tr><td>10</td><td>32 300</td><td>11 200</td><td>450</td><td>3</td><td>6 pompiers d'aérodrome + 1 chef de manœuvre</td></tr>
+                    <tr><td>9</td><td>24 300</td><td>9 000</td><td>450</td><td>3</td><td>6 pompiers d'aérodrome + 1 chef de manœuvre</td></tr>
+                    <tr><td>8</td><td>18 200</td><td>7 200</td><td>450</td><td>3</td><td>6 pompiers d'aérodrome + 1 chef de manœuvre</td></tr>
+                    <tr><td>7</td><td>12 100</td><td>5 300</td><td>225</td><td>2</td><td>4 pompiers d'aérodrome + 1 chef de manœuvre</td></tr>
+                    <tr><td>6</td><td>7 900</td><td>4 000</td><td>225</td><td>2</td><td>4 pompiers d'aérodrome + 1 chef de manœuvre</td></tr>
+                    <tr><td>5</td><td>5 400</td><td>3 000</td><td>180</td><td>1</td><td>2 pompiers d'aérodrome</td></tr>
+                    <tr><td>4</td><td>2 400</td><td>1 800</td><td>135</td><td>1</td><td>2 pompiers d'aérodrome</td></tr>
+                    <tr><td>3</td><td>1 200</td><td>900</td><td>135</td><td>1</td><td>2 pompiers d'aérodrome</td></tr>
+                    <tr><td>2</td><td>—</td><td>—</td><td>250</td><td>1 véhicule léger</td><td>1 pompier d'aérodrome</td></tr>
+                    <tr><td>1</td><td>—</td><td>—</td><td>50</td><td>—</td><td>Aucun pompier d'aérodrome</td></tr>
+                </table>
+                <div class="rd-astuce">Pour la majorité des aérodromes où circulent des ULM, les moyens disponibles vont d'un simple <strong>extincteur à poudre de 50 kg</strong> (niveau 1) à un <strong>véhicule léger avec un pompier d'aérodrome et 250 kg de poudre</strong> (niveau 2) — des moyens souvent modestes, à ne pas surestimer lors de l'engagement des secours.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Synthèse des scénarios possibles</summary>
+            <div class="rd-section">
+                <p>La superposition des risques et aléas propres aux aéronefs ULM permet de lister les principaux scénarios d'accident ou d'incident et leurs conséquences possibles :</p>
+                <table class="rd-table">
+                    <tr><th>Scénario</th><th>Conséquences possibles</th></tr>
+                    <tr><td><strong>Crash d'aéronef non localisé</strong></td><td>Aggravation de l'état de la ou des victimes liée aux délais de recherche</td></tr>
+                    <tr><td><strong>Crash d'aéronef localisé</strong></td><td>Aggravation de l'état des victimes ; déploiement du parachute de secours ; fuite de carburant</td></tr>
+                    <tr><td><strong>Feu d'aéronef</strong></td><td>Aggravation de l'état des victimes ; déploiement du parachute de secours</td></tr>
+                    <tr><td><strong>Fuite de carburant</strong></td><td>Inflammation ou explosion</td></tr>
+                </table>
+                <p>Ce tableau de synthèse souligne l'importance, dès la prise d'appel, d'évaluer rapidement si l'aéronef est <strong>localisé ou non</strong> (orientant vers un dispositif de recherche) et si un <strong>parachute de secours</strong> a pu être déployé ou reste présent à bord.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Éléments de planification opérationnelle</summary>
+            <div class="rd-section">
+                <h3>📌 Plan d'urgence en cas d'accident de l'aviation civile</h3>
+                <p>La circulaire du <strong>26 avril 2017</strong> fait évoluer les dispositions ORSEC en prévoyant deux volets : <strong>« Recherche et sauvetage »</strong> et <strong>« Assistance aux victimes et à leurs proches »</strong>.</p>
+                <p>Le volet « Recherche et sauvetage » intègre le dispositif <strong>SAR (Search And Rescue)</strong> pour la phase de recherche, coordonnée par un organisme unique basé à Lyon : l'<strong>ARCC (Aeronautical Rescue Coordination Center)</strong>, joignable au numéro d'urgence unique <strong>191</strong>. Cet organisme est sollicité pour toute notion d'aéronef en difficulté ; il peut être complété par les dispositions ORSEC <strong>SATER</strong> (Sauvetage Aéro-Terrestre, plan départemental déclenché par le Préfet) ou <strong>SAMAR</strong> (version maritime du SATER, intégrée à l'ORSEC maritime).</p>
+                <p>L'ARCC a vocation à déterminer une <strong>zone probable d'accident</strong> et à coordonner les moyens de reconnaissance aérienne (militaires ou civils).</p>
+                <div class="rd-astuce">Pour la phase de recherche, les sapeurs-pompiers pourront être sollicités en qualité de <strong>forces concourantes</strong>, pour devenir <strong>forces menantes</strong> lors du basculement vers la phase de secours.</div>
+                <h3>📌 ORSEC Aérodrome</h3>
+                <p>La circulaire interministérielle <strong>n° 99-575 du 10 novembre 1999</strong> régit les accidents d'aéronefs en <strong>zone d'aérodrome (ZA)</strong> et <strong>zone voisine d'aérodrome (ZVA)</strong>, et s'applique aux aérodromes civils et militaires disposant d'un organisme de circulation aérienne, en métropole et outre-mer. Ses principes fondamentaux :</p>
+                <ul>
+                    <li>délimitation des zones d'application des dispositions (ZA/ZVA) ;</li>
+                    <li>enchaînement des différentes phases de l'opération ;</li>
+                    <li>responsabilité de la direction des opérations de secours ;</li>
+                    <li>rôle du directeur des opérations de secours ;</li>
+                    <li>déclenchement d'autres plans de secours si nécessaire.</li>
+                </ul>
+                <h3>📌 Accord préalable Intérieur / Transition écologique (BEA)</h3>
+                <p>Un accord entre le ministère de l'Intérieur et le ministère chargé de la Transition écologique prévoit l'<strong>accès immédiat et sans restriction</strong> au site de l'accident pour les enquêteurs de première information du <strong>BEA (Bureau Enquêtes Analyses)</strong>, chargé de la sécurité de l'aviation civile.</p>
+                <div class="rd-alerte">Le COS de l'opération doit être informé de cette disposition afin de garantir la sécurité des intervenants. <strong>Dans l'attente du BEA</strong>, sauf si des circonstances l'imposent, <strong>l'état du site de l'accident ne doit pas être modifié</strong>. Aucun prélèvement ou déplacement de l'épave ou de son contenu ne doit être réalisé sans autorisation expresse du BEA.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · La prise d'appel et l'envoi des secours</summary>
+            <div class="rd-section">
+                <h3>📌 Une localisation parfois incertaine</h3>
+                <p>Une incertitude sur la localisation du sinistre peut être une particularité de ces opérations. Un CTA peut être sollicité par des proches d'un pilote inquiets ou sans nouvelles. Dans ce contexte, l'<strong>ARCC de Lyon</strong>, tout comme les <strong>services préfectoraux</strong>, doivent être immédiatement sollicités afin que les phases de recherche soient coordonnées.</p>
+                <h3>📌 Éléments clés de la prise d'appel</h3>
+                <ul>
+                    <li><strong>La localisation</strong> (commune, accès pour atteindre le sinistre…) : la géolocalisation en amont des aérodromes et plateformes ULM du secteur peut être utile pour les situer par rapport à l'environnement proche ;</li>
+                    <li><strong>La description de la problématique</strong> (type de sinistre, nombre de personnes en difficulté, pathologie, localisation…) — un <strong>vocabulaire aéronautique de base</strong> connu des opérateurs CTA-CODIS facilite le questionnement ;</li>
+                    <li><strong>La nature du requérant</strong> (témoin, proche du ou des pilotes, tour de contrôle, SSLIA…), à qui il sera nécessaire de donner des consignes avant l'arrivée des secours ;</li>
+                    <li><strong>Les facteurs aggravants</strong> (nombreux appels simultanés, rassemblement de curieux à proximité…).</li>
+                </ul>
+                <p>En fonction du service d'incendie et de secours, la présence d'équipes spécialisées peut être possible dès le départ des secours. Si la spécialité nécessaire n'est pas développée localement, le recours au <strong>renfort zonal</strong> est à anticiper et à prévoir sans délai.</p>
+                <div class="rd-astuce">Conseils à donner aux témoins avant l'arrivée des secours : <strong>se tenir à distance</strong> (une centaine de mètres selon la situation), <strong>prodiguer des gestes de premiers secours</strong> si possible, <strong>assurer un balisage</strong> pour protéger et matérialiser le sinistre, <strong>guider les secours</strong> à leur arrivée.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7 · Les mesures opérationnelles sur intervention</summary>
+            <div class="rd-section">
+                <p>La situation de crash d'aéronef reste la part la plus importante des sollicitations des SIS liées aux ULM. Plusieurs cas de figure peuvent se présenter à l'arrivée des secours : l'<strong>incendie</strong>, la <strong>présence de victimes</strong> et leur éventuelle <strong>désincarcération</strong>.</p>
+                <h3>📌 Mesures communes à toute opération de crash d'aéronef</h3>
+                <p>L'approche vers l'aéronef doit rester <strong>prudente</strong> dans les actions de reconnaissance. Les équipes veillent à la <strong>recherche visuelle</strong> indiquant la présence d'un parachute de secours. Dans tous les cas, il faut considérer la présence potentielle d'un parachute de secours avec les risques qu'il comporte pour les victimes, les secours et les autres parties prenantes.</p>
+                <p>À ce titre, le cône d'exclusion recommandé, orienté dans l'axe présumé d'éjection, est le suivant :</p>
+                <table class="rd-table">
+                    <tr><th>Dimension</th><th>Valeur</th></tr>
+                    <tr><td>Côté proche (largeur à l'aéronef)</td><td>30 m</td></tr>
+                    <tr><td>Longueur de chaque côté du triangle</td><td>100 m</td></tr>
+                </table>
+                <div class="rd-alerte">En cas de <strong>décès manifeste</strong> du ou des occupants de l'aéronef, une <strong>zone d'exclusion de 100 mètres</strong> autour de l'aéronef doit être mise en place, dans l'attente de la levée de doute sur la présence d'un parachute. Cette disposition vise à éviter toute exposition inutile et à favoriser la conduite de l'enquête de sécurité qui suivra.</div>
+                <h3>📌 Le feu d'aéronef</h3>
+                <p>Pour faire face à un feu d'aéronef de type ULM, les grands principes opérationnels à respecter restent ceux de la <strong>marche générale des opérations</strong>. Le port des équipements de protection individuelle (<strong>tenue de feu et protection respiratoire</strong>) est obligatoire.</p>
+                <figure class="rd-fig">
+                    <img src="images/ulm/feu-route.jpg" alt="ULM multi-axes en flammes sur une voie de circulation, fort panache de fumée noire, véhicules arrêtés à distance" loading="lazy">
+                    <figcaption>Feu d'aéronef ULM après un crash en bordure de voie : la propagation rapide de l'incendie sur une structure aussi légère impose des engagements limités sur zone et une évacuation précoce des victimes.</figcaption>
+                </figure>
+                <p>Les <strong>engagements restent limités sur zone</strong>. Les victimes sont évacuées d'urgence et prises en charge à distance des effets du foyer et des autres risques secondaires. Les foyers générés sont de nature à provoquer des propagations autour du lieu de crash. En fonction des quantités de carburant présentes, une extinction avec des <strong>moyens mousse</strong> pourra être utile.</p>
+                <figure class="rd-fig">
+                    <img src="images/ulm/feu-mousse.jpg" alt="Épave d'ULM calcinée et recouverte de mousse extinctrice dans un champ, sapeur-pompier présent en second plan" loading="lazy">
+                    <figcaption>Épave traitée à la mousse après extinction : la faible quantité de carburant embarqué (dizaine à centaine de litres) limite en général le volume d'agent extincteur nécessaire.</figcaption>
+                </figure>
+                <h3>📌 La prise en compte des victimes</h3>
+                <p>L'approche vers l'aéronef doit rester prudente et les équipements de protection individuelle sont adaptés à la situation rencontrée (fuite de carburant, etc.). Des mesures de protection (<strong>tapis de mousse préventif</strong>, etc.) peuvent être réalisées en fonction de l'analyse des risques du COS.</p>
+                <figure class="rd-fig">
+                    <img src="images/ulm/victime-champ.jpg" alt="Épave de pendulaire ULM détruite dans un champ, aile bleue et blanche déchirée, siège et structure tubulaire visibles" loading="lazy">
+                    <figcaption>Épave d'ULM pendulaire après un crash en champ : la structure légère et la déformation importante imposent une désincarcération prudente, sans certitude sur la présence ou l'état d'un parachute de secours.</figcaption>
+                </figure>
+                <p>La prise en charge de la ou des victimes est réalisée comme pour une opération de secours d'urgence classique, en prenant en compte les risques liés à l'aéronef. <strong>Si une désincarcération est nécessaire, la démarche doit rester prudente pour ne pas sectionner les câbles actionnant les systèmes de parachute.</strong> Le cas échéant, ces actions devront être verbalisées auprès des services d'enquête.</p>
+                <figure class="rd-fig">
+                    <img src="images/ulm/desincarceration-arbre.jpg" alt="Sapeur-pompier encordé intervenant sur un ULM accroché dans un arbre après un crash, technique de sauvetage en hauteur" loading="lazy">
+                    <figcaption>Cas particulier d'un ULM accroché en hauteur après un crash : intervention en cordes nécessitant une technique de sauvetage en hauteur adaptée, en complément des mesures communes de sécurité.</figcaption>
+                </figure>
+                <p>Une attention particulière du COS porte sur la prise en compte des <strong>autres parties prenantes</strong> dans l'environnement direct de l'accident. En fonction des lieux du crash et de ses conséquences, le recours à des équipes spécialisées (GRIMP, désincarcération, déminage…) pourra être demandé et déclenché <strong>sans délai</strong> si le service d'incendie et de secours ne dispose pas de ces ressources en propre.</p>
+            </div>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/milieux/GDO-Interventions-en-presence-ULM.pdf" target="_blank" rel="noopener">GDO ULM complet (PDF, 40 pages)</a></p>
+        <p class="rd-source">📚 Source : <strong>Guide de doctrine opérationnelle « Interventions sur des aéronefs de type Ultra Léger Motorisé »</strong>, GDO V1-2017, DGSCGC/DSP/SDDRH/BDFE, décembre 2017. Texte repris et résumé ; schémas et photos sélectionnés, non reproduits intégralement.</p>
+    </div>
+
     <script src="js/modules/lspcc.js"></script>
 
     <!-- MODULE PICTOGRAMMES -->
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.41.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.42.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
