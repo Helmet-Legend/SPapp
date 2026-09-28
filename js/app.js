@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.40.0 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.40.1 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -99,6 +99,19 @@ function setupEventListeners() {
 
 document.addEventListener('DOMContentLoaded', initApp);
 
+// Referme tous les accordéons des fiches (<details class="jsp-cours">) dès que
+// l'app passe en arrière-plan : sur une PWA, fermer/rouvrir ne recharge pas
+// forcément la page, donc sans ça les onglets restent ouverts d'une session à l'autre.
+function fermerTousLesAccordeons() {
+    document.querySelectorAll('details.jsp-cours[open]').forEach(function(d) {
+        d.removeAttribute('open');
+    });
+}
+document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'hidden') fermerTousLesAccordeons();
+});
+window.addEventListener('pagehide', fermerTousLesAccordeons);
+
 // ==================== NAVIGATION ====================
 function showModule(moduleName) {
     document.querySelectorAll('.module').forEach(function(m) { m.classList.remove('active'); });
@@ -116,7 +129,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.40.0';
+var APP_VERSION = '1.40.1';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1366,7 +1379,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.40.0 COMPLET
+// FIN DU FICHIER - Vulcain v1.40.1 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

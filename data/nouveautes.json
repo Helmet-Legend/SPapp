@@ -1,6 +1,6 @@
 {
-  "version": "1.40.0",
-  "titre": "Vulcain 1.40.0",
-  "texte": "Nouveaux schémas de la fiche COD 1 (pompe, amorçage, aspiration DECI, dosage, guidage) : illustrations modernisées et plus lisibles.",
-  "fiche": "cod1"
+  "version": "1.40.1",
+  "titre": "Vulcain 1.40.1",
+  "texte": "Correctif : les accordéons des fiches se referment désormais automatiquement à chaque fermeture de l'app.",
+  "fiche": ""
 }
