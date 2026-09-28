@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.40.2">
+    <meta name="version" content="1.41.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.40.2</span><br>
+                        Vulcain v<span class="app-version">1.41.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -23580,13 +23580,372 @@ Je demande : ….</p>
         </div>
     </div>
 
+    <div id="ibnb" class="module" style="--jsp: #0369A1;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🚢 GDO – Interventions à bord des navires (IBNB)</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle « Interventions à bord des navires et bateaux en milieu maritime » : commandement en mer, connaissance du navire, marche générale des opérations, gestion des fumées, stabilité et cas particuliers (mouillage, SMGA).</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>3 priorités</strong>, toujours dans cet ordre : préservation des <strong>vies humaines</strong>, des <strong>biens</strong>, de l'<strong>environnement</strong>.</li>
+                <li><strong>DOS/COS varie selon la localisation du navire</strong> : à quai ou en zone administrative du port → préfet de département/SDIS (droit commun) ; en chenal d'accès ou mouillage en rade → idem mais <strong>pas de COS en mer</strong>, coordination par le CROSS ; en mer hors limites administratives → <strong>préfet maritime</strong>, le <strong>capitaine du navire reste maître à bord</strong>.</li>
+                <li><strong>Le COS n'a pas d'obligation d'être spécialisé IBNB</strong> mais doit s'entourer d'un ou plusieurs <strong>conseillers techniques IBNB</strong>. Stratégie : s'appuyer sur les moyens du bord + agir en collaboration avec l'équipage.</li>
+                <li><strong>Unité d'investigation (UI) IBNB</strong> = au minimum 3 binômes : <strong>attaque</strong> (pointe), <strong>soutien</strong> (facilite la progression), <strong>sécurité</strong> (porte assistance). Engagée depuis un <strong>point de pénétration</strong>, tenu par un chef d'unité IBNB 2 minimum, qui gère entrées/sorties, BSL et relèves.</li>
+                <li><strong>Marche générale des opérations navire</strong> : sauvetages/mise en sécurité → analyse de la ZI → établissements/attaque directe → gestion des fumées → <strong>fermeture du cube</strong> (protection des équipements sensibles + traitement des axes de propagation + préservation des zones de mise à l'abri) → surveillance/déblai.</li>
+                <li><strong>Fermeture du cube</strong> : le sinistre est maîtrisé dès lors que toutes les faces du volume sinistré et tous les vecteurs de propagation sont protégés (surveillance ou moyen d'attaque). Priorité à la <strong>passerelle, propulsion, énergie et appareil à gouverner</strong>.</li>
+                <li><strong>Stabilité</strong> : un cargo chavire à 40° de gîte, un chalutier à 60°. Quelques centimètres d'eau sur un pont garage roulier suffisent à créer une <strong>carène liquide</strong> dangereuse dès 15-20° de gîte. La gestion des eaux d'extinction (débits entrants/sortants) est une priorité permanente du COS.</li>
+                <li><strong>Cloisonnement incendie SOLAS</strong> : types A (acier, A-60 à A-0 = 60 à 0 min de résistance), B (matériau incombustible, 30 à 0 min) et C (aucune prescription de résistance au feu).</li>
+                <li><strong>Sécurité du personnel à bord</strong> : coupure des énergies (440 V et HT) avant engagement, choix des cheminements sûrs, caméra thermique + radio + BSL pour chaque binôme au minimum, ligne de vie selon la difficulté.</li>
+                <li><strong>Cas particulier du navire au mouillage/en mer</strong> : accès très limité (coupée de mer, échelle de pilote, hélicoptère), débit hydraulique cible &gt; 600 m³/h sur sinistre majeur, le COS peut rapidement être confronté à un <strong>impossible opérationnel</strong>.</li>
+                <li><strong>SMGA (Sauvetage Maritime de Grande Ampleur)</strong> : opération pilotée par le préfet maritime/CROSS, en deux phases (maritime puis terrestre) articulées autour du choix du <strong>point de débarquement/rassemblement des victimes (PRV)</strong>.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Cadre général, priorités et commandement des opérations</summary>
+            <div class="rd-section">
+                <h3>📌 Enjeux et priorités</h3>
+                <p>Ce guide de doctrine opérationnelle (GDO 2017, DGSCGC) répond à l'évolution du « risque navire » : si la probabilité d'occurrence d'un sinistre en mer ou dans les ports a fortement diminué, le <strong>gigantisme actuel</strong> (nombre de passagers, dimensions hors normes, volumes de marchandises) en a considérablement augmenté la gravité potentielle, qui doit être considérée comme un <strong>risque majeur</strong>. Les navires sinistrés ont de plus en plus vocation à être pris en charge à proximité des côtes ou dans un port refuge (Safe Return To Port) : tout sinistre commencé en mer est susceptible de se terminer à terre, imposant aux services de secours terrestres de préparer l'interface terre-mer.</p>
+                <p>Pour toute intervention à bord d'un navire, l'ordre des priorités reste celui du droit commun :</p>
+                <table class="rd-table">
+                    <tr><th>Priorité</th><th>Objet</th></tr>
+                    <tr><td>1</td><td>Préservation des <strong>vies humaines</strong></td></tr>
+                    <tr><td>2</td><td>Préservation des <strong>biens</strong></td></tr>
+                    <tr><td>3</td><td>Protection de l'<strong>environnement</strong></td></tr>
+                </table>
+                <h3>📌 Direction et commandement des opérations de secours</h3>
+                <p>Les notions de DOS et de COS dépendent intimement de la situation géographique du navire (à quai, au mouillage en rade, ou en pleine mer) et non de la nature du sinistre.</p>
+                <table class="rd-table">
+                    <tr><th>Situation du navire</th><th>DOS</th><th>COS</th><th>Observations</th></tr>
+                    <tr><td>À quai (limites administratives du port)</td><td>Préfet de département</td><td>SDIS</td><td>Information/concours du CROSS selon la situation du navire</td></tr>
+                    <tr><td>Zone fluviale ou limites du port</td><td>Préfet de département</td><td>SDIS</td><td>Idem</td></tr>
+                    <tr><td>Chenal d'accès, mouillage en rade (zone maritime)</td><td>Préfet maritime</td><td><strong>Pas de COS en mer</strong>, coordination des secours par le CROSS compétent</td><td>Le capitaine du navire est chargé de la lutte contre le sinistre ; les renforts projetés sont mis à sa disposition</td></tr>
+                    <tr><td>En mer (hors limites administratives du port)</td><td>Préfet maritime</td><td><strong>Pas de COS en mer</strong>, coordination par le CROSS compétent</td><td>Idem — le capitaine reste maître à bord</td></tr>
+                </table>
+                <div class="rd-alerte">En dehors des limites administratives d'un port, il n'existe <strong>pas de notion de COS</strong> : la coordination des moyens de secours maritimes est assurée par l'<strong>On Scene Coordinator (OSC)</strong> désigné par le CROSS ou le COM, et le <strong>capitaine du navire reste maître à bord</strong> — le droit appliqué est celui de l'État du pavillon. En cas d'engagement d'une équipe d'évaluation et d'intervention (EEI), son chef se met à la disposition du capitaine.</div>
+                <h3>📌 Principes d'intervention du COS</h3>
+                <p>Quel que soit le cadre, le COS sera confronté à un sinistre majeur ayant déjà échappé à l'équipage — une situation « installée » très consommatrice de moyens humains et matériels. Il doit :</p>
+                <ul>
+                    <li><strong>S'appuyer sur les moyens du bord</strong> (avec l'appui technique de l'équipage), tout en gardant à l'esprit que le matériel présent à bord ne garantit pas un débit hydraulique suffisant pour la sécurité des intervenants ni pour un sinistre majeur ;</li>
+                    <li><strong>Agir en collaboration avec les équipes du bord</strong>, à tous les niveaux (capitaine, chefs de secteurs, unités d'investigation) ;</li>
+                    <li><strong>Permettre l'engagement de personnel sans qualification IBNB</strong> pour les sinistres simples (accès direct, prompt secours) ;</li>
+                    <li><strong>Faire encadrer le personnel non spécialisé</strong> par du personnel qualifié IBNB, hors zone d'exclusion, pour des actions non spécialisées (surveillance de point chaud, relevé de température, accompagnement de victime…).</li>
+                </ul>
+                <p>Le COS <strong>n'a pas d'obligation d'être spécialisé IBNB</strong>, mais doit systématiquement s'entourer d'un ou plusieurs <strong>conseillers techniques IBNB</strong>, aussi bien pour le travail d'anticipation que pour le commandement de secteurs complexes. La stratégie reste classique pour la plupart des risques (SAP, RT), à l'exception notable de l'incendie (marche générale des opérations très spécifique, gestion des fumées et de la stabilité) et de la voie d'eau (étaler le débit entrant, fermer les portes étanches, épontiller).</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Phasage, montée en puissance et sécurité d'engagement</summary>
+            <div class="rd-section">
+                <h3>📌 Le phasage d'une opération IBNB</h3>
+                <p>Dans les limites administratives d'un port, une intervention IBNB obéit généralement à un séquençage en deux phases, dans une logique d'<strong>appui au bord</strong> :</p>
+                <table class="rd-table">
+                    <tr><th>Phase</th><th>Caractéristiques</th></tr>
+                    <tr><td><strong>Réflexe</strong></td><td>Actions de sauvetage et missions « simples » sans difficulté de progression (accès direct). Ne nécessite pas forcément de personnel spécialisé IBNB.</td></tr>
+                    <tr><td><strong>Renfort IBNB</strong></td><td>Savoir-faire particulier, connaissance de l'organisation et des « pièges » du navire. Personnel spécialisé, équipement dédié, cheminements longs et complexes, en collaboration avec le bord.</td></tr>
+                </table>
+                <h3>📌 Montée en puissance selon la situation géographique</h3>
+                <ul>
+                    <li><strong>Navire à quai (ou au bassin)</strong> : cas le plus favorable — moyens terrestres traditionnels, dimensionnement hydraulique par véhicules incendie urbains, points d'accès supplémentaires (élévateurs, engins nautiques, échelles de coupée). Le PC de site peut se tenir à bord (passerelle) ou à terre avec un officier de liaison.</li>
+                    <li><strong>Navire au mouillage/en navigation, zone de compétence « terrestre »</strong> : accès délicat, nécessite un vecteur nautique et/ou aérien (évaluation, embarquement d'équipes, transport de matériel, norias de relève, évacuations sanitaires). Le COS cherche autant que possible le déplacement du navire vers un poste à quai — décision du DOS en concertation avec le capitaine et l'autorité portuaire.</li>
+                    <li><strong>En mer, zone de compétence du préfet maritime</strong> : lutte sous l'autorité du préfet maritime, personnel SIS en renfort d'une équipe d'évaluation et d'intervention (EEI) déjà déployée, opérations coordonnées par le CROSS. Le personnel engagé doit en principe être spécialisé IBNB + formation complémentaire « sécurité maritime ».</li>
+                </ul>
+                <h3>📌 L'unité d'investigation IBNB</h3>
+                <p>Module opérationnel de base pour la lutte contre l'incendie à bord d'un navire, l'<strong>unité d'investigation (UI)</strong> est un module autonome qui s'engage depuis un point désigné, le <strong>point de pénétration</strong>. Composition minimale :</p>
+                <table class="rd-table">
+                    <tr><th>Binôme</th><th>Rôle</th></tr>
+                    <tr><td><strong>Attaque</strong></td><td>Conduit la pointe de l'investigation, réalise l'action « au plus près » confiée à l'UI</td></tr>
+                    <tr><td><strong>Soutien</strong></td><td>Facilite la progression du binôme d'attaque, en assure la sécurité</td></tr>
+                    <tr><td><strong>Sécurité</strong></td><td>Engagé en appui d'un binôme en difficulté</td></tr>
+                </table>
+                <p>Le volume de l'UI peut être augmenté de binômes supplémentaires selon la difficulté du cheminement. La décision d'engager ou non l'UI en unité constituée revient au responsable des secours, en fonction des difficultés techniques et des moyens disponibles.</p>
+                <h3>📌 Sécurité et limites d'engagement</h3>
+                <p>L'analyse de la zone d'intervention, conduite en amont par les autorités de permanence, peut limiter l'emploi des équipes pour : conditions météo défavorables, absence d'enjeu avéré, risque de dégradation majeure du flotteur, situation évoluant vers une aggravation irréversible, informations insuffisantes sur le navire. En cours d'intervention, toute limitation d'emploi relève d'une concertation étroite responsable des secours / DOS / capitaine du navire.</p>
+                <div class="rd-alerte">À bord, règles fondamentales de sécurité : port des EPI (thermique, électrique, chimique), permanence des liaisons radio/VHF avec la terre, maintien d'un vecteur d'évacuation d'urgence, surveillance de l'état de la mer et de la stabilité, suivi permanent du nombre et de la position des intervenants, <strong>au moins une équipe de sécurité par point de pénétration</strong>, vigilance sur l'altération de la structure sous l'effet de la chaleur rayonnée par les parois métalliques.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Organisation des secours en mer et interface terre-mer</summary>
+            <div class="rd-section">
+                <h3>📌 Conduite des opérations en mer</h3>
+                <p>Le <strong>préfet maritime</strong> exerce la responsabilité générale des opérations de recherche et sauvetage en mer, de lutte contre les pollutions et d'assistance aux navires en difficulté : il agit en tant que <strong>DOS mer</strong>. L'interface entre la mer et la terre s'organise à trois niveaux : entre autorités préfectorales (préfet maritime / préfet de département / préfet de zone), entre structures de gestion de crise (CTC préfecture maritime / COD / COZ), et entre structures de conduite de l'intervention (CROSS et/ou COM en mer / CODIS et PCO à terre).</p>
+                <h3>📌 Accueil d'un navire en difficulté (ANED)</h3>
+                <p>Le préfet maritime évalue la situation d'un navire en difficulté et décide s'il doit être maintenu en mer ou mis à l'abri, et détermine le lieu d'accueil. Il peut projeter à bord une <strong>équipe d'évaluation et d'intervention (EEI)</strong>. Un document de <strong>transfert de responsabilité (TOA – transfer of authority)</strong>, rédigé par la préfecture maritime, est signé conjointement par le préfet de département et le préfet maritime pour la prise en charge d'un navire dans un port refuge.</p>
+                <h3>📌 Principes de l'aide médicale en mer</h3>
+                <p>Le <strong>directeur des secours médicaux en mer (DSM mer)</strong> est désigné par le CROSS. Le DSM et les équipes médicales sont subordonnées à l'autorité du capitaine du navire sur lequel ils opèrent, sans que cela ne fasse obstacle à leur responsabilité exclusive sur leurs actions médicales.</p>
+                <table class="rd-table">
+                    <tr><th>Acteur</th><th>Rôle</th></tr>
+                    <tr><td><strong>CCMM</strong> (Toulouse)</td><td>Centre de consultations médicales maritimes : avis médical à distance en l'absence de médecin embarqué</td></tr>
+                    <tr><td><strong>SCMM</strong></td><td>SAMU de coordination médicale maritime, territorialement compétent, interlocuteur médical du CROSS</td></tr>
+                    <tr><td><strong>SMUR maritime</strong></td><td>Équipe médicale spécifiquement formée et entraînée à la mer, hélistation dédiée, liste limitative arrêtée par le ministère de la Santé</td></tr>
+                    <tr><td><strong>CROSS</strong></td><td>Direction des interventions en mer (DI), coordonnateur de mission de sauvetage (CMS), désigne l'On Scene Coordinator (OSC)</td></tr>
+                </table>
+                <p>En situation de victimes en nombre, trois niveaux de médicalisation en mer sont possibles : absence de médicalisation, prise en charge par l'équipe d'évaluation, ou médicalisation sur place (PMA mer). Si le flotteur est en difficulté, priorité à l'évacuation vers un point de regroupement des naufragés.</p>
+                <h3>📌 Les acteurs portuaires</h3>
+                <p>L'<strong>Autorité Investie du Pouvoir de Police Portuaire (AIPP)</strong> exerce la police du plan d'eau et des matières dangereuses ; elle constitue un partenaire privilégié du responsable des secours et peut exercer un pouvoir de réquisition (armateurs, capitaines, manutention, lamanage, remorquage, pilotage…).</p>
+                <figure class="rd-fig"><img src="images/ibnb/incendie-remorqueur.jpg" alt="Remorqueur portuaire luttant contre un incendie majeur à bord d'un porte-conteneurs en perdition, avec ses canons à eau et sa réserve d'émulseur" loading="lazy"><figcaption>Remorqueur portuaire en action : forte capacité hydraulique, mais action d'extinction limitée par l'impossibilité d'atteindre l'intérieur des volumes en feu — attention à la carène liquide créée par les débits entrants.</figcaption></figure>
+                <p>Les <strong>remorqueurs portuaires</strong> disposent parfois de moyens de lutte contre l'incendie (pompe ~500 m³/h, collecteur sur le pont, canons). Leur action de refroidissement des structures extérieures est réelle, mais leur action d'extinction reste très limitée ; le COS doit rester vigilant sur les forts débits projetés à distance et sur le risque de <strong>carène liquide</strong> menaçant la stabilité du navire. Les <strong>navires de pilotage (pilotines)</strong> et les <strong>vedettes de lamanage</strong> complètent les moyens portuaires mobilisables, ainsi que de nombreuses entreprises présentes dans l'enceinte portuaire, mobilisables via les officiers de port.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Organisation interne du navire et formation de l'équipage</summary>
+            <div class="rd-section">
+                <h3>📌 L'organisation du personnel à bord</h3>
+                <p>La convention <strong>SOLAS</strong> impose que les équipages soient organisés et formés pour faire face aux différents types de sinistres. En cas d'urgence, le <strong>rôle d'appel</strong> (muster list) fixe à chaque membre d'équipage le poste à rejoindre et les tâches à accomplir selon la nature de l'événement (incendie, pollution, homme à la mer, voie d'eau, rassemblement des passagers…), affiché en plusieurs endroits du navire. Si le sinistre n'a pu être maîtrisé, le commandant peut décider d'abandonner le navire : le <strong>rôle d'abandon</strong> indique alors à chacun son embarcation et ses fonctions (préparation, mise à l'eau, armement).</p>
+                <table class="rd-table">
+                    <tr><th>Fonction</th><th>Rôle</th></tr>
+                    <tr><td><strong>Capitaine / commandant</strong></td><td>Responsable de l'ensemble des activités du navire, seul habilité à ordonner l'abandon. En mer, dirige les opérations de lutte ; à quai, se met à disposition du COS.</td></tr>
+                    <tr><td><strong>Second capitaine</strong></td><td>Suppléant, chef du service pont et responsable sécurité (sauvetage, stabilité, chargement/déchargement, entretien)</td></tr>
+                    <tr><td><strong>Chef machine</strong></td><td>Responsable de la propulsion et des installations techniques, positionné au PC machine en relation permanente avec la passerelle</td></tr>
+                    <tr><td><strong>Commissaire</strong></td><td>Supervise le service général (ADSG) sur navire à passagers, chargé du rassemblement aux « muster stations »</td></tr>
+                </table>
+                <div class="rd-astuce">La <strong>cellule de crise de la compagnie</strong> (imposée par le code ISM) fournit un conseil technique et décisionnel au capitaine, et peut travailler au profit du COS aussi bien pour l'anticipation que pour la mise à disposition de moyens capacitaires.</div>
+                <h3>📌 Formation des équipages à la lutte contre les sinistres</h3>
+                <table class="rd-table">
+                    <tr><th>Formation</th><th>Contenu</th></tr>
+                    <tr><td><strong>FBLI</strong> (Formation de Base à la Lutte contre l'Incendie)</td><td>Équivalent équipier IBNB : intervention immédiate (alerte, moyens légers) puis intervention renforcée (binômes ARICO)</td></tr>
+                    <tr><td><strong>QALI</strong> (Qualification Avancée de Lutte contre l'Incendie)</td><td>Diriger les opérations, organiser/entraîner les équipes, inspecter le matériel, enquêter sur les incidents</td></tr>
+                </table>
+                <h3>📌 Les différentes situations du navire</h3>
+                <p>Le niveau de risque et l'état des moyens de secours varient fortement selon la situation du navire :</p>
+                <ul>
+                    <li><strong>En forme ou bassin de radoub</strong> : probabilité de sinistre la plus élevée (travaux de tôlerie, soudure), compartimentage et moyens de secours souvent dégradés, équipage parfois absent (recours aux pompiers privés de la société de réparation navale) ;</li>
+                    <li><strong>Sur dock flottant</strong> : mêmes contraintes, aggravées par la stabilité de l'installation lors des manœuvres d'émersion/immersion, accès par 2 coupées successives ;</li>
+                    <li><strong>En gardiennage</strong> : au moins un membre d'équipage reste à bord (obligation, sauf dérogation de l'autorité portuaire) pour donner l'alerte et prendre les premières mesures conservatoires ;</li>
+                    <li><strong>À quai en exploitation</strong> ou <strong>en avitaillement</strong> (pavillon « Bravo ») : la majeure partie de l'équipage est présente, moyens de secours opérationnels ;</li>
+                    <li><strong>En mer ou au mouillage</strong> : condition d'étanchéité optimale, équipage complet, moyens de secours opérationnels.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Dispositions constructives : coque, ponts, compartimentage, cloisons</summary>
+            <div class="rd-section">
+                <h3>📌 La coque</h3>
+                <p>La coque assure flottabilité, étanchéité et résistance du navire. On distingue les <strong>œuvres vives</strong> (sous la ligne de flottaison) et les <strong>œuvres mortes</strong> (au-dessus) ; <strong>bâbord</strong> = côté gauche vu de l'arrière vers l'avant, <strong>tribord</strong> = côté droit. Le matériau de base est l'acier : incombustible et résistant aux flammes, mais conducteur de chaleur et déformable sous son effet.</p>
+                <figure class="rd-fig"><img src="images/ibnb/double-fond.jpg" alt="Schéma technique en coupe d'un double fond de navire dans le système transversal : plafond de double fond, varangue pleine, varangue cadre, bordé de fond, carlingues" loading="lazy"><figcaption>Double fond dans le système transversal : seule la partie basse de la coque est doublée (ballast ou stockage) — à distinguer de la double coque (fond + muraille), obligatoire sur les navires de croisière et citernes récents.</figcaption></figure>
+                <h3>📌 Les ponts et le compartimentage</h3>
+                <p>Le <strong>pont principal</strong> (ou de franc-bord) est le pont complet étanche le plus élevé exposé aux intempéries, doté de dispositifs permanents de fermeture. Le <strong>pont de cloisonnement</strong> est le pont le plus élevé à hauteur duquel s'élèvent les cloisons étanches transversales. Sous ce pont, le navire est divisé en tranches et ponts pour s'opposer à l'extension d'un sinistre (envahissement ou feu), en protégeant particulièrement l'avant (risque d'abordage), la tranche des machines et l'arrière (ligne d'arbre, appareil à gouverner).</p>
+                <h3>📌 Le cloisonnement incendie (SOLAS)</h3>
+                <p>Les navires sont divisés en locaux par des cloisonnements classés selon leur résistance au feu, testée par un essai standard (élévation de 500 à 1000 °C pendant 60 minutes) :</p>
+                <table class="rd-table">
+                    <tr><th>Type</th><th>Variantes</th><th>Matériaux</th><th>Durée de résistance</th></tr>
+                    <tr><td><strong>A</strong></td><td>A-60, A-30, A-15, A-0</td><td>Acier ou équivalent, isolation incombustible</td><td>60 à 0 min, empêche fumées et flammes pendant 1 heure</td></tr>
+                    <tr><td><strong>B</strong></td><td>B-15, B-0</td><td>Matériau incombustible (revêtement combustible autorisé)</td><td>15 à 0 min, étanche aux flammes ½ heure (pas aux fumées)</td></tr>
+                    <tr><td><strong>C</strong></td><td>—</td><td>Matériau incombustible</td><td>Aucune prescription de résistance au feu</td></tr>
+                </table>
+                <div class="rd-alerte">Le niveau de résistance au feu d'un même pont ou d'une même cloison <strong>n'est pas continu</strong> : il évolue selon la classification des locaux adjacents. Le COS doit en tenir compte dans la définition de ses priorités lors de la fermeture du cube.</div>
+                <h3>📌 Portes et panneaux de ponts</h3>
+                <p>Dans les œuvres vives, les <strong>portes étanches</strong> s'opposent à la progression de l'eau et du feu, activables en local ou à distance (passerelle, PC Machine). Deux types principaux : à glissières (sliding, horizontales ou verticales) et à charnières (hinged, entrepont des cargaisons). Les <strong>portelones</strong> facilitent l'accès sur les navires à franc-bord important. Dans les œuvres mortes, les <strong>portes coupe-feu</strong> (coulissantes ou battantes) sont normalement retenues ouvertes par un dispositif magnétique ou pneumatique, et se ferment automatiquement sur ordre de la centrale de détection.</p>
+                <figure class="rd-fig"><img src="images/ibnb/porte-etanche.jpg" alt="Porte étanche à glissière horizontale dans une cloison de navire, avec vérin de commande visible au plafond" loading="lazy"><figcaption>Porte étanche à glissières : manœuvrable en local et à distance (passerelle/PC machine) ; en PC machine, un voyant vert = ouverte, rouge = fermée, rouge clignotant = position intermédiaire.</figcaption></figure>
+                <figure class="rd-fig"><img src="images/ibnb/porte-coupe-feu.jpg" alt="Deux photos de portes coupe-feu à bord : porte équipée d'une chatière pour le passage des tuyaux, et ventouse aimantée asservie à la détection automatique" loading="lazy"><figcaption>Porte coupe-feu équipée d'une chatière (passage des tuyaux en limitant la propagation) et ventouse aimantée asservie à la détection automatique.</figcaption></figure>
+                <h3>📌 La ventilation à bord</h3>
+                <p>Trois réseaux interconnectés par tranche (~40 m) : <strong>air neuf</strong> (renouvellement), <strong>air vicié</strong> (extrait), <strong>air recyclé</strong> (filtré). L'arrêt d'une sous-zone entraîne l'arrêt des moteurs de ventilation et la fermeture automatique des clapets d'air neuf/vicié — à anticiper car cela peut impacter d'autres installations. Les conduits ne sont, sauf exception, <strong>pas stables au feu</strong>. Les locaux particuliers (cuisine, machine, PC sécurité, ponts garage, escaliers) disposent de circuits de ventilation indépendants avec volets à télécommande automatique.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · Les moyens de secours fixes et semi-fixes du bord</summary>
+            <div class="rd-section">
+                <h3>📌 Passerelle et PC machine</h3>
+                <p>Considérés comme <strong>postes de sécurité</strong>, ils sont reliés en permanence (téléphone/interphone avec système de secours indépendant) et disposent d'un report redondant des installations essentielles. En passerelle : plans de compartimentage, d'évacuation, plans incendie, étude de stabilité après avarie, plan d'arrimage des matières dangereuses. Le PC machine reçoit les alarmes et peut actionner à distance pompes incendie et d'épuisement, ainsi que visualiser la position (ouverte/fermée/intermédiaire) de chaque porte étanche ou coupe-feu.</p>
+                <h3>📌 Le réseau incendie</h3>
+                <p>Les <strong>pompes incendie</strong> alimentent un collecteur généralement bouclé, muni de bouches réparties de façon à ce que tout point du navire soit atteint par deux lances (40 m). Une pompe de secours sur moteur thermique, en local indépendant, doit fonctionner en autonomie <strong>36 heures</strong> sur navire à passagers, <strong>18 heures</strong> sur navire de charge. Le collecteur peut être réalimenté depuis l'extérieur (raccord international) — les SIS ont intérêt à s'équiper de raccords compatibles (DSP / STORZ / GFR / Guillemin à vis / John Morris / Barcelona / Nakajima…).</p>
+                <h3>📌 Dispositifs fixes d'extinction à eau et à mousse</h3>
+                <table class="rd-table">
+                    <tr><th>Dispositif</th><th>Principe</th></tr>
+                    <tr><td><strong>Sprinkler</strong></td><td>Déclenchement automatique par rupture d'ampoule thermosensible, canalisations sèches, pompe démarrée dès chute de pression</td></tr>
+                    <tr><td><strong>Hi-Fog</strong></td><td>Brouillard d'eau haute pression (120-140 bars), obligatoire depuis 2005 dans les emménagements — légèreté, n'affecte pas la stabilité</td></tr>
+                    <tr><td><strong>Drenchers</strong></td><td>Arrosage en pluie très haut débit (jusqu'à 600 m³/h) sur ponts garages des navires rouliers, commande manuelle</td></tr>
+                    <tr><td><strong>Mousse bas foisonnement</strong></td><td>Compartiments machine : couche de 150 mm en moins de 5 min</td></tr>
+                    <tr><td><strong>Mousse haut foisonnement</strong></td><td>Remplissage rapide de grands locaux (≥ 1 m d'épaisseur/min, 5 × le volume du local) — hauteur pouvant atteindre 15 m, port de l'ARI nécessaire en phase de densification</td></tr>
+                    <tr><td><strong>Mousse extérieure (citernes)</strong></td><td>Obligatoire sur navires citernes ; canons ≥ 1250 l/min, cannes ≥ 400 l/min à 15 m de portée ; autonomie émulseur 20 à 30 min</td></tr>
+                </table>
+                <h3>📌 Dispositifs fixes d'inertage à gaz</h3>
+                <p>Le <strong>CO2</strong> agit par étouffement (anoxie, risque mortel dès 12 % du volume), stocké liquide à -80 °C. Mise en œuvre toujours manuelle, précédée d'une pré-alarme sonore/visuelle et d'un signal d'au moins 20 secondes avant l'envoi du gaz. Des gaz équivalents (Argonite, Inergen, FM 200, NOVEC 1230, FE 13/36…) protègent également les locaux machine.</p>
+                <div class="rd-alerte">Le maintien du <strong>confinement</strong> est essentiel lors de la mise en œuvre de tout dispositif fixe à gaz — toute ouverture compromet son efficacité et expose le personnel à un risque d'anoxie.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7 · Sauvetage, évacuation et matières dangereuses</summary>
+            <div class="rd-section">
+                <h3>📌 Alarmes et postes de rassemblement</h3>
+                <p>L'<strong>alarme générale</strong> (7 coups courts au moins + 1 long) appelle passagers et équipage au poste de rassemblement (« muster station »). Sur navire de charge, l'équipage doit pouvoir évacuer en <strong>moins de 10 minutes</strong> après le signal d'abandon ; sur navire à passagers, <strong>moins de 30 minutes</strong> après rassemblement et port des brassières.</p>
+                <h3>📌 Matériel de sauvetage individuel et collectif</h3>
+                <figure class="rd-fig"><img src="images/ibnb/evacuation-radeaux.jpg" alt="Toboggan d'évacuation déployé depuis le pont d'un navire de croisière, et radeau de sauvetage largué vu du dessus près d'une embarcation" loading="lazy"><figcaption>Toboggan (chaussette) d'évacuation vers les radeaux de sauvetage, et radeau largué en mer récupéré par une embarcation de secours.</figcaption></figure>
+                <table class="rd-table">
+                    <tr><th>Matériel</th><th>Caractéristiques</th></tr>
+                    <tr><td>Brassière de sauvetage</td><td>Orange, 140 kg maxi, bandes réfléchissantes, sifflet, lampe</td></tr>
+                    <tr><td>Radeau de survie</td><td>Largage manuel ou automatique (dégagement hydrostatique), mise en œuvre ≤ 5 min, sans moteur</td></tr>
+                    <tr><td>Canot de sauvetage rapide (FRC)</td><td>Motorisé, jusqu'à 5 personnes + 1 civière, autonomie 4 h à 20 nœuds, remorquage à 2 nœuds</td></tr>
+                    <tr><td>MOR (Mean Of Rescue)</td><td>Seul dispositif conçu pour remonter du personnel à bord ; enveloppe orange (vs blanc pour les radeaux)</td></tr>
+                </table>
+                <p>Composition de la <strong>drome de sauvetage</strong> : sur navire de charge, embarcation fermée pour 100 % du personnel ou système « Free Fall » + radeaux ; sur pétroliers/chimiquiers/gaziers, 2 radeaux à 200 % du personnel. Sur navire à passagers en navigation internationale : embarcations pour 50 % + radeaux pour 25 % des personnes, par bord.</p>
+                <h3>📌 Matières dangereuses et documentation du bord</h3>
+                <p>Le commandant des opérations de secours doit rapidement demander au commandant du navire un point précis sur la nature et le plan de chargement des matières dangereuses. Trois documents réglementaires : le <strong>manifeste</strong> (déclaration de chargement), le <strong>plan de chargement/arrimage</strong> (emplacement par classe) et les <strong>fiches de données de sécurité</strong>. Réglementation internationale de référence : SOLAS, MARPOL 73/78, IGC (gaz liquéfiés), IBC (vrac liquide), IMDG (colis), IMSBC (solides).</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>8 · Moyens spécifiques des services de secours</summary>
+            <div class="rd-section">
+                <h3>📌 Moyens nautiques spécialisés</h3>
+                <p>Le <strong>bateau-pompe</strong> apporte une forte capacité hydraulique et peut servir de point de pénétration supplémentaire et de parc à matériel de proximité. Des <strong>barges incendie</strong> (ex. Lorient : 2 groupes de 600 CV, 2800 m³/h à 8 bars ; Toulon : 3 groupes de 450 m³/h à 15 bars, non propulsée) apportent des débits comparables — leur mise en œuvre nécessite souvent un remorqueur pour la stabiliser sous l'effet du recul des lances canons.</p>
+                <h3>📌 Matériel de gestion des fumées et d'attaque</h3>
+                <table class="rd-table">
+                    <tr><th>Matériel</th><th>Usage</th></tr>
+                    <tr><td>Ventilateurs mobiles (électrique, thermique, hydraulique)</td><td>Désenfumage par point de pénétration/extraction, améliore la vision et réduit la température</td></tr>
+                    <tr><td>Rideaux coupe-fumée</td><td>Confinement quand l'étanchéité entre volumes ne peut être obtenue (portes/panneaux impossibles à fermer)</td></tr>
+                    <tr><td>Lance d'inertage / auto-perforante</td><td>Étouffement d'un volume clos (compartiment, conteneur) — n'affranchit pas de la ligne de vie et de la caméra thermique avant ouverture</td></tr>
+                    <tr><td>Matériel de découpage (lance thermique, oxycoupage)</td><td>Crée des points de pénétration ou des exutoires — toujours en concertation avec le bord (chemins de câbles)</td></tr>
+                    <tr><td>Obturation de voie d'eau (ventouses, aimants, plaques)</td><td>Utilisable uniquement à quai ou à vitesse &lt; 4 nœuds</td></tr>
+                </table>
+                <h3>📌 Protection individuelle</h3>
+                <p>Chaque appareil respiratoire isolant (ARI) doit être doté d'une <strong>Balise Sonore de Localisation (BSL)</strong>, déclenchée à l'immobilité, pouvant intégrer un capteur de température (seuils préréglés, ex. 260 °C instantané ou 150 °C durant 5 min). La BSL détient une clé mobile remise au gestionnaire du point de pénétration, garantissant la traçabilité des porteurs. Le balisage de couleur (cordon, magnettes, LEDs) facilite les cheminements en zone saine, mais est à proscrire en zone impactée par un incendie (fumées, chaleur).</p>
+                <div class="rd-astuce">En projection air/mer, tenue de survie obligatoire dès que l'eau de mer est ≤ 17 °C, brassière 275 N à déclenchement automatique (manuel si vecteur hélicoptère). La marine nationale utilise le <strong>VAARP</strong> (Vêtement d'Approche Antifeu Réflecteur Polyvalent) conforme NF EN 469 niveau 2.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>9 · Marche générale des opérations à bord d'un navire</summary>
+            <div class="rd-section">
+                <p>La MGO traditionnelle urbaine n'est pas directement transposable au navire : les modes de propagation, la gestion des fumées et la stabilité imposent des phases complémentaires.</p>
+                <table class="rd-table">
+                    <tr><th>Phase</th><th>Contenu</th></tr>
+                    <tr><td><strong>1. Sauvetages / mise en sécurité</strong></td><td>Évacuation immédiate de la tranche sinistrée (entre deux cloisons résistantes au feu ou à l'eau), puis affinement des zones non sinistrables</td></tr>
+                    <tr><td><strong>2. Analyse de la ZI</strong></td><td>Nature/dimension de l'événement, capacité de manœuvre, état de la stabilité, disponibilité des moyens du bord (FM200, mousse, drencher…), environnement immédiat</td></tr>
+                    <tr><td><strong>3. Établissements — attaque directe</strong></td><td>Ouverture d'un point de pénétration, coupure des énergies, définition du cheminement, équipe « rescue » prête au plus tôt</td></tr>
+                    <tr><td><strong>4. Gestion des fumées</strong></td><td>Confinement → désenfumage des voies d'accès → reconquête (désenfumage) du local sinistré</td></tr>
+                    <tr><td><strong>5. Fermeture du cube</strong></td><td>Protection des équipements sensibles + traitement des axes de propagation + préservation des zones de mise à l'abri</td></tr>
+                    <tr><td><strong>6. Surveillance / environnement</strong></td><td>Propulsion, distribution électrique, pompes, stabilité, sécurité du plan d'eau (AVURNAV en mer)</td></tr>
+                    <tr><td><strong>7. Déblai / surveillance</strong></td><td>Soustraire les éléments menaçants, prévenir la reprise de feu, allégée progressivement par des rondes</td></tr>
+                </table>
+                <h3>📌 Pour l'incendie</h3>
+                <p>Ouverture d'un ou plusieurs points de pénétration pour l'attaque directe et les protections des locaux contigus/superposés. Les établissements sont alimentés par le bord ou par d'autres moyens ; les moyens du bord (mousse sous parquet, Hi-Fog, FM200, drencher) peuvent concourir à l'attaque ou aux protections.</p>
+                <h3>📌 Pour la voie d'eau</h3>
+                <p>Trois actions possibles selon le débit : action directe sur l'origine (fermeture de vanne), confinement + épontillage si le débit dépasse la capacité d'épuisement, ou épuisement/assèchement si le débit est inférieur à la capacité de pompage disponible. Une mise en œuvre hydraulique de précaution accompagne systématiquement ces actions pour traiter tout départ de feu sur les installations électriques exposées à l'eau.</p>
+                <h3>📌 Fermeture du cube — définition</h3>
+                <p>Le « <strong>cube</strong> » désigne le volume sinistré et les locaux contigus/superposés. Il est fermé dès lors que toutes ses faces et tous les vecteurs de propagation (gaines, nappes de câbles) sont protégés par un moyen de surveillance ou d'attaque. Priorité aux équipements sensibles : passerelle, sources d'énergie, propulsion, appareil à gouverner, tableaux électriques. En mer, la fermeture du cube est primordiale pour permettre le retour au port en sécurité (Safe Return To Port).</p>
+                <p>Techniques de traitement des axes de propagation : désenfumage des locaux contigus, moyen hydraulique intermittent ou continu sur les cloisons, <strong>« tapis d'eau »</strong> (couche mince sur la face supérieure du cube pour absorber les calories et empêcher la propagation verticale), surveillance de température sans contact.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>10 · Progression, point de pénétration et gestion des fumées</summary>
+            <div class="rd-section">
+                <h3>📌 Sécurité du personnel en investigation</h3>
+                <figure class="rd-fig"><img src="images/ibnb/securite-investigation.jpg" alt="Schéma de principe de la sécurité du personnel en investigation à bord d'un navire : point de pénétration, ligne guide, radio, BSL, caméra thermique, binôme d'attaque au contact du feu" loading="lazy"><figcaption>Sécurité du personnel en investigation : chaque binôme engagé après le point de pénétration dispose au minimum d'un ARI avec BSL, d'une liaison radio et d'une caméra thermique.</figcaption></figure>
+                <p>Une équipe engagée depuis un point de pénétration progresse a minima avec ARI + BSL, liaison radio et caméra thermique, complétée selon le contexte par une <strong>ligne de vie avec dérivateurs</strong> (babouins). La coupure des énergies (réseau 440 V et haute tension) est un pré-requis à l'engagement — potentiellement difficile à réaliser sur tout le cheminement entre le point de pénétration et le local sinistré.</p>
+                <h3>📌 Le point de pénétration</h3>
+                <p>Point d'accès physique à la zone d'exclusion, où sont gérées et suivies les équipes engagées sur cheminements longs et/ou difficiles. Sa création est facultative pour les sauvetages/mise en sécurité et les sinistres extérieurs à accès simple. Critères de choix : moyen de confinement entre sinistre et point, cheminement simple et si possible libre de fumées, absence de traversée de locaux à risques, facilement repérable.</p>
+                <p>Il est tenu par un pompier <strong>chef d'unité IBNB 2 minimum</strong> (assisté d'un IBNB 1), responsable de la gestion des entrées/sorties (tableau de gestion des investigateurs + BSL), de l'anticipation des relèves, de la mise en place des protections, et de la coordination avec les chefs de secteur. Un IBNB 2 peut suivre jusqu'à 3 binômes isolés maximum.</p>
+                <h3>📌 Gestion des fumées</h3>
+                <p>Réalisée au moyen des dispositions constructives du bord, de la ventilation mécanique (fixe ou mobile), du vent vrai/relatif, et des rideaux coupe-fumée.</p>
+                <table class="rd-table">
+                    <tr><th>Phase</th><th>Objectif</th></tr>
+                    <tr><td>Confinement</td><td>Fermer les organes étanches un pont au-dessus et un pont en dessous du local sinistré, sur toute la tranche</td></tr>
+                    <tr><td>Désenfumage des voies d'accès</td><td>Créer un courant d'air entre un exutoire et un moyen de surpression, surveiller la propagation</td></tr>
+                    <tr><td>Désenfumage du local sinistré</td><td>Exutoire direct sur l'extérieur (protégé par une lance) ou cheminement sous gaine avec extraction mécanique</td></tr>
+                </table>
+                <div class="rd-astuce"><strong>Vent vrai et vent relatif</strong> : à quai, seul le vent vrai compte (choix des points de pénétration à l'abri des fumées, balayage de grands volumes). En mer, si le navire est manœuvrant, le choix de la route peut rendre le vent relatif favorable — sous réserve de l'état de la mer pour ne pas embarquer d'eau par les ouvrants utilisés.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>11 · La stabilité du navire</summary>
+            <div class="rd-section">
+                <h3>📌 Notions fondamentales</h3>
+                <p>La <strong>stabilité</strong> est l'aptitude à revenir à sa position d'équilibre après une perturbation. Le <strong>centre de gravité (CG)</strong> dépend de la répartition des poids à bord ; le <strong>centre de carène (CB)</strong> est le point d'application de la poussée d'Archimède ; la <strong>hauteur métacentrique (GM)</strong> détermine la grandeur du bras de redressement <strong>GZ</strong>.</p>
+                <figure class="rd-fig"><img src="images/ibnb/courbe-stabilite.jpg" alt="Courbe de stabilité d'un navire : bras de redressement GZ en fonction de l'angle de gîte de 0 à 180 degrés, avec le point de chavirage et le moment de redressement maximal" loading="lazy"><figcaption>Courbe de stabilité : le point de chavirage est atteint lorsque la courbe coupe l'axe horizontal ; le sommet correspond au moment de redressement maximal.</figcaption></figure>
+                <table class="rd-table">
+                    <tr><th>Type de bâtiment</th><th>Angle de chavirage (statique)</th></tr>
+                    <tr><td>Cargo</td><td>40°</td></tr>
+                    <tr><td>Chalutier</td><td>60°</td></tr>
+                    <tr><td>Trois-mâts</td><td>50°</td></tr>
+                    <tr><td>Canot de sauvetage</td><td>160°</td></tr>
+                    <tr><td>Monocoque IMOCA (Vendée Globe)</td><td>127,5°</td></tr>
+                </table>
+                <p>L'angle réel de chavirage (dynamique) est toujours <strong>plus faible de 5 à 10°</strong> que l'angle statique, sous l'effet des forces d'inertie (vent, mer) et des carènes liquides.</p>
+                <h3>📌 Carènes liquides et voie d'eau</h3>
+                <p>Une <strong>carène liquide</strong> (masse d'eau se déplaçant à bord) diminue la stabilité par déplacement du CG. Quelques centimètres d'eau sur un pont garage peuvent suffire à faire chavirer un navire roulier par ripage de la cargaison, dès <strong>15 à 20° de gîte</strong>. La gestion des eaux d'extinction (débits entrants/sortants) est une priorité permanente — l'usage d'un <strong>tableau de suivi hydraulique</strong> est recommandé.</p>
+                <div class="rd-alerte">Formule de débit d'une brèche : <strong>Q = K·S·√(2g·h)</strong> avec K = 2200, S = surface (m²), g = 9,81 m/s², h = hauteur sous la flottaison (m). Exemple : une brèche carrée de 30 cm de côté à 3 m sous la flottaison délivre <strong>1500 m³/h</strong>. Une pompe d'épuisement de 100 m³/h permet d'étaler une brèche de Ø 11 cm à 1 m de profondeur.</div>
+                <h3>📌 Idées de manœuvre correctrices</h3>
+                <ul>
+                    <li><strong>Mouvements de poids</strong> (en concertation avec le bord) : déplacer du poids des hauts vers les fonds, utiliser les ballasts, transférer d'un bord à l'autre, jeter à la mer du matériel lourd ;</li>
+                    <li><strong>Lutte contre les voies d'eau</strong> : obturation extérieure (plots magnétiques), pompes d'épuisement du bord (SOLAS impose ≥ 3 pompes sur navire à passagers, ≥ 2 sur les autres) ;</li>
+                    <li><strong>Lignes de résistance</strong> : 1ère ligne = fermeture des panneaux/portes/cloisons en contact direct avec l'eau ; 2ème ligne = ponts et cloisons principales étanches, renforcées par épontillage (savoir-faire Sauvetage Déblaiement) ;</li>
+                    <li><strong>Autres manœuvres</strong> : doubler les aussières, disposer les remorqueurs en position pousseur, poser le tablier (RORO/ROPAX) sur le quai, ouvrir les sabords de décharge.</li>
+                </ul>
+                <p>Si la stabilité reste critique malgré ces mesures, <strong>l'évacuation du navire et l'arrêt des opérations</strong> doit être envisagé pour ne pas compromettre la sécurité de l'équipage et des intervenants.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>12 · Cas particuliers : navire au mouillage, SMGA et engagement de personnel non IBNB</summary>
+            <div class="rd-section">
+                <h3>📌 Intervention sur un navire au mouillage ou en mer</h3>
+                <p>Situation opérationnelle particulièrement complexe : retard dans la montée en puissance, impossibilité de disposer des mêmes moyens qu'à quai — le COS peut rapidement être confronté à un <strong>impossible opérationnel</strong>. Les accès à bord sont très limités : voie maritime (coupée de mer, échelle de pilote, nacelle de transbordement) ou voie aérienne (DZ existante ou treuillage). La sécurité hydraulique cible un débit &gt; 600 m³/h sur un sinistre majeur ; bateaux-pompes et barges hydrauliques offrent une réelle plus-value, de même que les remorqueurs (sous réserve de formation de leurs équipages).</p>
+                <h3>📌 Le Sauvetage Maritime de Grande Ampleur (SMGA)</h3>
+                <p>Réponse à un accident appelant assistance rapide et massive à un grand nombre de personnes en détresse (définition OMI : Mass Rescue Operation), dépassant les moyens habituels du sauvetage maritime. Direction et conduite relèvent du dispositif ORSEC maritime.</p>
+                <table class="rd-table">
+                    <tr><th>Phase</th><th>Contenu</th></tr>
+                    <tr><td><strong>Maritime</strong></td><td>Critique, technique et complexe. Si le navire conserve sa flottabilité, priorité au maintien des victimes à bord + assistance médicale + lutte contre le sinistre. Si l'abandon est inévitable : évacuation générale, récupération, aide médicale, transfert vers un point d'accueil</td></tr>
+                    <tr><td><strong>Terrestre</strong></td><td>Prise en charge au point de débarquement (psychologique, médicale, tri, acheminement hospitalier, traitement des dépouilles)</td></tr>
+                    <tr><td><strong>Interface</strong></td><td>Choix du point de débarquement des victimes (PRV) — paramètres nautiques et terrestres combinés</td></tr>
+                </table>
+                <p>Le responsable des secours en mer (cadre sapeur-pompier IBNB 3 minimum) travaille sous les ordres du chef de l'EEI, conseiller technique tenant compte en permanence : sécurité des passagers en enjeu principal, montée en puissance potentiellement inexistante, balance des moyens toujours défavorable, nécessité de durer sans relève, préparation de l'interface mer/terre.</p>
+                <h3>📌 Engagement de personnel non qualifié IBNB</h3>
+                <p>Possible mais encadré, sous deux conditions cumulatives : situation dont l'évolution ne menace pas l'intégrité du flotteur, et conditions environnementales (météo, état de la mer) compatibles avec du personnel non « amariné ». Ces équipes viennent toujours en appui d'un dispositif spécialisé, sous approbation du DOS.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>13 · La zone de soutien opérationnel (ZSO)</summary>
+            <div class="rd-section">
+                <p>Sur un sinistre majeur, la ZSO assure la mise à disposition permanente de personnels et de matériel au profit du COS, ainsi que le reconditionnement du personnel et du matériel remis par les chefs de secteurs. Elle est placée sous les ordres d'un <strong>chef de ZSO</strong>, implantée au vent du sinistre, à distance raisonnable pour limiter le transit tout en restant réactive.</p>
+                <table class="rd-table">
+                    <tr><th>Sous-zone</th><th>Composition / mission</th></tr>
+                    <tr><td><strong>Soutien logistique</strong></td><td>Hydraulique, mousse, épuisement, épontillage, ventilation, éclairage, émulseur</td></tr>
+                    <tr><td><strong>Soutien investigateurs</strong></td><td>Parc ARICO/ARICF avec reconditionnement, lignes guides, projecteurs, caméras thermiques, appareils radio, EPI, préparation à l'engagement</td></tr>
+                    <tr><td><strong>Soutien de l'homme</strong></td><td>Vestiaires, alimentation, infirmerie, sanitaires, zone repos — suivi physiologique, paramédical, psychologique</td></tr>
+                </table>
+                <figure class="rd-fig"><img src="images/ibnb/zso-schema.jpg" alt="Schéma de principe d'organisation d'une zone de soutien opérationnel (ZSO) sur un incendie de navire majeur : accueil-stationnement, pool personnel, soutien logistique, soutien investigateurs, soutien de l'homme, chaîne médicale, PCC/ZSO" loading="lazy"><figcaption>Organisation d'une ZSO sur incendie majeur : flux du personnel opérationnel (vert), en récupération (jaune), en retour (orange) et inapte à être réengagé (rouge).</figcaption></figure>
+                <p>Le chef de ZSO doit être identifié par une chasuble fonctionnelle. Missions clés : réception des engins, regroupement du personnel et du matériel en réserve tactique, mise à disposition du COS dans le respect des niveaux de qualification, facilitation des norias, petite maintenance des ARI, compte rendu régulier des disponibilités et besoins au PC de l'opération.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>14 · Fiches techniques OPS (feux types à bord)</summary>
+            <div class="rd-section">
+                <p>Le GDO propose 11 fiches réflexes (TOP/IBNB) structurées en dangers potentiels, accès-cheminements, actions (moyens du bord puis moyens SIS), points à retenir et facteurs aggravants. Constante commune : s'assurer des mesures conservatoires prises par le bord (coupure des énergies, confinement) avant d'utiliser les moyens de secours du bord en première intention, complétés par les moyens SIS.</p>
+                <table class="rd-table">
+                    <tr><th>Fiche</th><th>Dangers / facteurs aggravants spécifiques</th></tr>
+                    <tr><td><strong>Feu de cabine</strong></td><td>Propagation rapide en milieu clos, panique des passagers ; accès par coursives, escaliers, balcons</td></tr>
+                    <tr><td><strong>Feu de cuisine</strong></td><td>Huile de friteuses, sol glissant, gaz des chambres froides ; inspecter les conduits d'évacuation (trappes de visite)</td></tr>
+                    <tr><td><strong>Feu de compartiment machines</strong></td><td>Explosion, capacités de liquides inflammables (caisses journalières) à refroidir en priorité ; sur roulier, refroidir aussi le pont garage adjacent</td></tr>
+                    <tr><td><strong>Feu de local électrique</strong></td><td>Électrisation/électrocution, explosion ; accès limités et complexes, moyens SIS seulement si l'alimentation est coupée</td></tr>
+                    <tr><td><strong>Feu de chambre des pompes / feu de pont (citernes)</strong></td><td>Risque d'explosion en atmosphère explosive ; dispositifs fixes mousse/gaz inerte obligatoires</td></tr>
+                    <tr><td><strong>Gaziers (LNG/LPG), porte-conteneurs, cale, espace roulier</strong></td><td>Chaque configuration a sa propre fiche réflexe (accessibilité, moyens fixes disponibles, cheminements spécifiques)</td></tr>
+                </table>
+                <div class="rd-astuce">Point commun à toutes les fiches : effectuer des <strong>relevés de points chauds périphériques</strong> et travailler systématiquement en relation avec le bord et les acteurs portuaires.</div>
+            </div>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/milieux/GDO-Interventions-Navires-Bateaux-Milieu-Maritime.pdf" target="_blank" rel="noopener">GDO IBNB complet (PDF, 213 pages)</a></p>
+        <p class="rd-source">📚 Source : <strong>Guide de doctrine opérationnelle « Interventions à bord des navires et bateaux en milieu maritime » (IBNB)</strong>, GDO 2017, DGSCGC/DSP/SDDRH/BDFE, novembre 2017. Texte repris et résumé ; schémas et photos sélectionnés, non reproduits intégralement.</p>
+    </div>
+
     <script src="js/modules/lspcc.js"></script>
 
     <!-- MODULE PICTOGRAMMES -->
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.40.2</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.41.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

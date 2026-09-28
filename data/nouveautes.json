@@ -1,6 +1,6 @@
 {
-  "version": "1.40.0",
-  "titre": "Vulcain 1.40.0",
-  "texte": "Nouveaux schémas de la fiche COD 1 (pompe, amorçage, aspiration DECI, dosage, guidage) : illustrations modernisées et plus lisibles.",
-  "fiche": "cod1"
+  "version": "1.41.0",
+  "titre": "Vulcain 1.41.0",
+  "texte": "Nouvelle fiche GDO « Interventions à bord des navires et bateaux en milieu maritime (IBNB) » : commandement en mer, connaissance des navires, marche générale des opérations, gestion des fumées, stabilité du navire, SMGA et zone de soutien opérationnel.",
+  "fiche": "ibnb"
 }
