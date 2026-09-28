@@ -1,6 +1,6 @@
 {
-  "version": "1.44.0",
-  "titre": "Vulcain 1.44.0",
-  "texte": "Nouvelle fiche GDO « Interventions en milieux effondrés ou instables » : typologie des effondrements de bâtiments (à plat, en V, en oblique) et des mouvements de terrain (fontis, glissements, éboulements, coulées de boue, séismes), risques liés à l'environnement et aux personnes, sécurité des intervenants, organisation des unités de sauvetage, d'appui et de recherche (USAR), zonage opérationnel, évaluation bâtimentaire (RBAT) et marche générale des opérations en 5 phases (MGO 1 à 5, marquage INSARAG).",
-  "fiche": "effondres"
+  "version": "1.45.0",
+  "titre": "Vulcain 1.45.0",
+  "texte": "Calculateur de puissance de feu modernisé : photos réelles pour chaque type d'ouverture (fenêtre, porte, baie vitrée, porte de garage, porte d'entrepôt).",
+  "fiche": "fire"
 }
