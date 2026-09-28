@@ -1,6 +1,6 @@
 {
-  "version": "1.45.2",
-  "titre": "Vulcain 1.45.2",
-  "texte": "PATRAC DR : le grade de l'équipage se choisit désormais dans un menu déroulant, plus rapide à remplir.",
-  "fiche": "patrac-dr"
+  "version": "1.46.0",
+  "titre": "Vulcain 1.46.0",
+  "texte": "Convertisseur d'unités modernisé : photos réelles pour les 6 conversions rapides (pression, débit, volume, distance, vitesse, température).",
+  "fiche": "convertisseur"
 }
