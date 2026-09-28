@@ -1,6 +1,6 @@
 {
-  "version": "1.45.1",
-  "titre": "Vulcain 1.45.1",
-  "texte": "Correctif : le bouton « Consulter la Fiche GMU » depuis la recherche TMD fonctionne à nouveau.",
-  "fiche": "tmd"
+  "version": "1.46.0",
+  "titre": "Vulcain 1.46.0",
+  "texte": "Convertisseur d'unités modernisé : photos réelles pour les 6 conversions rapides (pression, débit, volume, distance, vitesse, température).",
+  "fiche": "convertisseur"
 }

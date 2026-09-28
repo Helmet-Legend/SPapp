@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.45.1">
+    <meta name="version" content="1.46.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.45.1</span><br>
+                        Vulcain v<span class="app-version">1.46.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -3659,54 +3659,25 @@
         <div style="background: var(--bg-card); padding: 20px; border-radius: 15px; border: 2px solid var(--primary-red); margin-bottom: 25px;">
             <h3 style="color: var(--primary-red); margin-bottom: 20px; text-align: center;">⚡ Conversions Rapides</h3>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
-                <!-- Pression -->
-                <div onclick="selectQuickConvert('pression')" style="background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%); color: #ffffff; padding: 20px; border-radius: 12px; cursor: pointer; transition: transform 0.3s; text-align: center;" 
-                     onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🔧</div>
-                    <div style="font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">PRESSION</div>
-                    <div style="font-size: 0.85em; opacity: 0.9;">bar ⇄ psi ⇄ Pa</div>
-                </div>
-                
-                <!-- Débit -->
-                <div onclick="selectQuickConvert('debit')" style="background: linear-gradient(135deg, #0066cc 0%, #004499 100%); color: #ffffff; padding: 20px; border-radius: 12px; cursor: pointer; transition: transform 0.3s; text-align: center;" 
-                     onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">💧</div>
-                    <div style="font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">DÉBIT</div>
-                    <div style="font-size: 0.85em; opacity: 0.9;">L/min ⇄ L/s ⇄ m³/h</div>
-                </div>
-                
-                <!-- Volume -->
-                <div onclick="selectQuickConvert('volume')" style="background: linear-gradient(135deg, #ff6600 0%, #cc5200 100%); color: #101318; padding: 20px; border-radius: 12px; cursor: pointer; transition: transform 0.3s; text-align: center;" 
-                     onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🪣</div>
-                    <div style="font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">VOLUME</div>
-                    <div style="font-size: 0.85em; opacity: 0.9;">L ⇄ m³ ⇄ gal</div>
-                </div>
-                
-                <!-- Distance -->
-                <div onclick="selectQuickConvert('distance')" style="background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%); color: #101318; padding: 20px; border-radius: 12px; cursor: pointer; transition: transform 0.3s; text-align: center;" 
-                     onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">📏</div>
-                    <div style="font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">DISTANCE</div>
-                    <div style="font-size: 0.85em; opacity: 0.9;">m ⇄ km ⇄ cm</div>
-                </div>
-                
-                <!-- Vitesse -->
-                <div onclick="selectQuickConvert('vitesse')" style="background: linear-gradient(135deg, #9900cc 0%, #660099 100%); color: #ffffff; padding: 20px; border-radius: 12px; cursor: pointer; transition: transform 0.3s; text-align: center;" 
-                     onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🚒</div>
-                    <div style="font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">VITESSE</div>
-                    <div style="font-size: 0.85em; opacity: 0.9;">km/h ⇄ m/s ⇄ mph</div>
-                </div>
-                
-                <!-- Température -->
-                <div onclick="selectQuickConvert('temperature')" style="background: linear-gradient(135deg, #FF9800 0%, #ff9900 100%); color: #101318; padding: 20px; border-radius: 12px; cursor: pointer; transition: transform 0.3s; text-align: center;" 
-                     onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🌡️</div>
-                    <div style="font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">TEMPÉRATURE</div>
-                    <div style="font-size: 0.85em; opacity: 0.9;">°C ⇄ °F ⇄ K</div>
-                </div>
+            <div class="conv-quick-grid">
+                <button type="button" class="conv-quick-card" onclick="selectQuickConvert('pression')">
+                    <img src="images/convertisseur/pression.jpg" alt="Pression : bar, psi, Pa" loading="lazy">
+                </button>
+                <button type="button" class="conv-quick-card" onclick="selectQuickConvert('debit')">
+                    <img src="images/convertisseur/debit.jpg" alt="Débit : L/min, L/s, m³/h" loading="lazy">
+                </button>
+                <button type="button" class="conv-quick-card" onclick="selectQuickConvert('volume')">
+                    <img src="images/convertisseur/volume.jpg" alt="Volume : L, m³, gal" loading="lazy">
+                </button>
+                <button type="button" class="conv-quick-card" onclick="selectQuickConvert('distance')">
+                    <img src="images/convertisseur/distance.jpg" alt="Distance : m, km, cm" loading="lazy">
+                </button>
+                <button type="button" class="conv-quick-card" onclick="selectQuickConvert('vitesse')">
+                    <img src="images/convertisseur/vitesse.jpg" alt="Vitesse : km/h, m/s, mph" loading="lazy">
+                </button>
+                <button type="button" class="conv-quick-card" onclick="selectQuickConvert('temperature')">
+                    <img src="images/convertisseur/temperature.jpg" alt="Température : °C, °F, K" loading="lazy">
+                </button>
             </div>
         </div>
 
@@ -24838,7 +24809,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.45.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.46.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
