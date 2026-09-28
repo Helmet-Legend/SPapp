@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.43.0 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.45.1 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -136,7 +136,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.43.0';
+var APP_VERSION = '1.45.1';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -325,14 +325,14 @@ function getPointEclairColor(pointEclair) {
 
 function preparerFicheGMU(onu) {
     var matiere = tmdDatabase.find(function(p) { return p.onu.toString() === onu.toString(); });
-    
+
     if (!matiere) {
         alert("⚠️ Erreur : Impossible de retrouver les données pour l'ONU " + onu);
         return;
     }
 
-    if (typeof afficherFicheGMU === 'function') {
-        afficherFicheGMU(matiere);
+    if (typeof afficherFicheTMD === 'function') {
+        afficherFicheTMD(matiere.onu, matiere.nom, matiere.classe);
     } else {
         alert('❌ Erreur : Le module GMU (affichage-gmu.js) n\'est pas chargé.');
     }
@@ -1386,7 +1386,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.43.0 COMPLET
+// FIN DU FICHIER - Vulcain v1.45.1 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

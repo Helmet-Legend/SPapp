@@ -876,78 +876,75 @@
 
         .fire-icons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 12px;
             margin: 20px 0;
         }
 
         .fire-icon {
             background: var(--bg-card);
-            border: 2px solid var(--border-light);
-            padding: 20px;
-            border-radius: 12px;
+            border: 2px solid var(--fire-border, var(--border-light));
+            padding: 0;
+            border-radius: 14px;
             cursor: pointer;
-            text-align: center;
+            text-align: left;
             transition: all var(--transition-base);
             position: relative;
             box-shadow: var(--shadow-sm);
-            min-height: 120px;
+            overflow: hidden;
         }
 
         .fire-icon:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-md);
-            border-color: var(--primary-red);
         }
 
-        .fire-icon.selected {
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
-            border-color: var(--primary-red);
-            box-shadow: var(--shadow-lg);
-            color: white;
+        .fire-icon-photo {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
         }
 
-        .fire-icon .emoji {
-            font-size: 3em;
-            margin-bottom: 12px;
+        .fire-icon-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .fire-icon-info {
+            padding: 10px 12px 12px;
         }
 
         .fire-icon .label {
             font-size: 0.95em;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             color: var(--text-primary);
         }
 
-        .fire-icon.selected .label {
-            color: white;
-        }
-
         .fire-icon .power {
-            font-size: 0.85em;
-            color: var(--warning);
-            margin-top: 8px;
+            font-size: 0.8em;
+            color: var(--fire-border, var(--warning));
             font-weight: 600;
-        }
-
-        .fire-icon.selected .power {
-            color: rgba(255, 255, 255, 0.9);
         }
 
         .counter-badge {
             background: #c41e3a;
             color: white;
             border-radius: 50%;
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9em;
+            font-size: 0.85em;
             font-weight: bold;
             position: absolute;
             top: 8px;
             right: 8px;
+            box-shadow: 0 2px 6px rgba(196, 30, 58, 0.4);
         }
 
         .distance-card {
@@ -1302,19 +1299,13 @@
             }
 
             .fire-icons {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
                 gap: 10px;
                 margin: 16px 0;
             }
 
-            .fire-icon {
-                padding: 16px;
-                min-height: 110px;
-            }
-
-            .fire-icon .emoji {
-                font-size: 2.5em;
-                margin-bottom: 8px;
+            .fire-icon-info {
+                padding: 8px 10px 10px;
             }
 
             .fire-icon .label {
@@ -1322,7 +1313,7 @@
             }
 
             .fire-icon .power {
-                font-size: 0.75em;
+                font-size: 0.7em;
             }
 
             .shape-selector {

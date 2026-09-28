@@ -1,6 +1,6 @@
 {
-  "version": "1.43.0",
-  "titre": "Vulcain 1.43.0",
-  "texte": "Nouvelle fiche GDO « Interventions en milieu agricole » : bâtiments (bois, métal, amiante), engrais et ammonitrates, phytosanitaires, méthanisation, déjections animales (lisier, H₂S), matériel agricole, fourrage, élevages et animaux, récoltes sur pieds, explosifs et munitions, silos, photovoltaïque, et conduite des opérations (laisser brûler, collaboration avec les exploitants).",
-  "fiche": "agricole"
+  "version": "1.45.1",
+  "titre": "Vulcain 1.45.1",
+  "texte": "Correctif : le bouton « Consulter la Fiche GMU » depuis la recherche TMD fonctionne à nouveau.",
+  "fiche": "tmd"
 }

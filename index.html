@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.43.0">
+    <meta name="version" content="1.45.1">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.43.0</span><br>
+                        Vulcain v<span class="app-version">1.45.1</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -336,56 +336,59 @@
         <h2>🔥 Calcul de Puissance du Feu / Extinction</h2>
         
         <div class="fire-icons">
-            <div class="fire-icon" onclick="addFire('fenetre')" style="background: rgba(76, 175, 80, 0.15) !important; border: 2px solid rgba(76, 175, 80, 0.3) !important;">
-                <svg width="80" height="80" viewBox="0 0 80 80" style="margin-bottom: 10px;">
-                    <rect x="10" y="10" width="60" height="60" fill="none" stroke="#4CAF50" stroke-width="3"/>
-                    <line x1="40" y1="10" x2="40" y2="70" stroke="#4CAF50" stroke-width="2"/>
-                    <line x1="10" y1="40" x2="70" y2="40" stroke="#4CAF50" stroke-width="2"/>
-                </svg>
-                <div class="label">Fenêtre</div>
-                <div class="power">1m × 1m = 2 MW</div>
-                <span class="counter-badge" id="count-fenetre">0</span>
+            <div class="fire-icon" onclick="addFire('fenetre')" style="--fire-border: #4CAF50;">
+                <div class="fire-icon-photo">
+                    <img src="images/fire/fenetre.jpg" alt="Fenêtre" loading="lazy">
+                    <span class="counter-badge" id="count-fenetre">0</span>
+                </div>
+                <div class="fire-icon-info">
+                    <div class="label">Fenêtre</div>
+                    <div class="power">1m × 1m = 2 MW</div>
+                </div>
             </div>
-            
-            <div class="fire-icon" onclick="addFire('porte')" style="background: rgba(76, 175, 80, 0.15) !important; border: 2px solid rgba(76, 175, 80, 0.3) !important;">
-                <svg width="80" height="80" viewBox="0 0 80 80" style="margin-bottom: 10px;">
-                    <rect x="20" y="5" width="40" height="70" fill="none" stroke="#4CAF50" stroke-width="3"/>
-                    <circle cx="52" cy="40" r="3" fill="#4CAF50"/>
-                </svg>
-                <div class="label">Porte</div>
-                <div class="power">1m × 2m = 4 MW</div>
-                <span class="counter-badge" id="count-porte">0</span>
+
+            <div class="fire-icon" onclick="addFire('porte')" style="--fire-border: #4CAF50;">
+                <div class="fire-icon-photo">
+                    <img src="images/fire/porte.jpg" alt="Porte" loading="lazy">
+                    <span class="counter-badge" id="count-porte">0</span>
+                </div>
+                <div class="fire-icon-info">
+                    <div class="label">Porte</div>
+                    <div class="power">1m × 2m = 4 MW</div>
+                </div>
             </div>
-            
-            <div class="fire-icon" onclick="addFire('baie')" style="background: rgba(255, 152, 0, 0.15) !important; border: 2px solid rgba(255, 152, 0, 0.3) !important;">
-                <svg width="80" height="80" viewBox="0 0 80 80" style="margin-bottom: 10px;">
-                    <rect x="5" y="10" width="70" height="60" fill="none" stroke="#FF9800" stroke-width="3"/>
-                    <line x1="28" y1="10" x2="28" y2="70" stroke="#FF9800" stroke-width="2"/>
-                    <line x1="52" y1="10" x2="52" y2="70" stroke="#FF9800" stroke-width="2"/>
-                </svg>
-                <div class="label">Baie Vitrée</div>
-                <div class="power">2m × 2m = 8.4 MW</div>
-                <span class="counter-badge" id="count-baie">0</span>
+
+            <div class="fire-icon" onclick="addFire('baie')" style="--fire-border: #FF9800;">
+                <div class="fire-icon-photo">
+                    <img src="images/fire/baie.jpg" alt="Baie vitrée" loading="lazy">
+                    <span class="counter-badge" id="count-baie">0</span>
+                </div>
+                <div class="fire-icon-info">
+                    <div class="label">Baie Vitrée</div>
+                    <div class="power">2m × 2m = 8.4 MW</div>
+                </div>
             </div>
-            
-            <div class="fire-icon" onclick="addFire('garage')" style="background: rgba(255, 152, 0, 0.15) !important; border: 2px solid rgba(255, 152, 0, 0.3) !important;">
-                <svg width="80" height="80" viewBox="0 0 80 80" style="margin-bottom: 10px;">
-                    <rect x="12" y="20" width="56" height="45" fill="none" stroke="#FF9800" stroke-width="3"/>
-                    <rect x="35" y="58" width="10" height="7" fill="#FF9800"/>
-                </svg>
-                <div class="label">Porte Garage</div>
-                <div class="power">2.5m × 2m = 11 MW</div>
-                <span class="counter-badge" id="count-garage">0</span>
+
+            <div class="fire-icon" onclick="addFire('garage')" style="--fire-border: #FF9800;">
+                <div class="fire-icon-photo">
+                    <img src="images/fire/garage.jpg" alt="Porte de garage" loading="lazy">
+                    <span class="counter-badge" id="count-garage">0</span>
+                </div>
+                <div class="fire-icon-info">
+                    <div class="label">Porte Garage</div>
+                    <div class="power">2.5m × 2m = 11 MW</div>
+                </div>
             </div>
-            
-            <div class="fire-icon" onclick="addFire('entrepot')" style="background: rgba(244, 67, 54, 0.15) !important; border: 2px solid rgba(244, 67, 54, 0.3) !important;">
-                <svg width="80" height="80" viewBox="0 0 80 80" style="margin-bottom: 10px;">
-                    <rect x="10" y="5" width="60" height="70" fill="none" stroke="#F44336" stroke-width="4"/>
-                    <rect x="32" y="64" width="16" height="7" fill="#F44336"/>
-                </svg>
-                <div class="label">Porte Entrepôt</div>
-                <div class="power">3m × 4m = 36 MW</div>
-                <span class="counter-badge" id="count-entrepot">0</span>
+
+            <div class="fire-icon" onclick="addFire('entrepot')" style="--fire-border: #F44336;">
+                <div class="fire-icon-photo">
+                    <img src="images/fire/entrepot.jpg" alt="Porte d'entrepôt" loading="lazy">
+                    <span class="counter-badge" id="count-entrepot">0</span>
+                </div>
+                <div class="fire-icon-info">
+                    <div class="label">Porte Entrepôt</div>
+                    <div class="power">3m × 4m = 36 MW</div>
+                </div>
             </div>
         </div>
 
@@ -24449,6 +24452,385 @@ Je demande : ….</p>
         <p class="rd-source">📚 Source : <strong>Guide de doctrine opérationnelle « Interventions en milieu agricole »</strong>, GDO 2019, DGSCGC/DSP/SDDRH/BDFE, janvier 2019. Texte repris et résumé ; schémas et photos sélectionnés, non reproduits intégralement.</p>
     </div>
 
+    <div id="effondres" class="module" style="--jsp: #78716C;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🏚️ GDO – Interventions en milieux effondrés ou instables</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle « Interventions en milieux effondrés ou instables » : typologie des effondrements et mouvements de terrain, risques liés à l'environnement et aux personnes, sécurité des intervenants, organisation des unités de sauvetage, d'appui et de recherche (USAR), conduite des opérations (zonage, évaluation bâtimentaire, marche générale des opérations MGO 1 à 5) et prise en charge psychologique des victimes ensevelies.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li>La doctrine française retient <strong>trois types d'effondrement de bâtiment</strong> basés sur les effets d'un séisme : <strong>à plat</strong> (superposition de plans), <strong>en V</strong> (poutres pivotées sur leurs appuis, risque de rupture en cascade des planchers inférieurs) et <strong>en oblique</strong> (planchers détachés reposant sur les décombres). Dans les trois cas, des <strong>lieux de survie</strong> (espaces vides) subsistent et offrent des chances de survie aux victimes.</li>
+                <li>Les <strong>mouvements de terrain</strong> couvrent affaissements (déformation lente et progressive), effondrements localisés (dont le <strong>fontis</strong>, entonnoir brutal), effondrements généralisés, glissements (plan, rotationnel, composite), éboulements/chutes de blocs, retrait-gonflement des argiles, effondrements de tranchées, coulées de boue (¼ eau, ¾ matériaux solides, jusqu'à 90 km/h) et séismes.</li>
+                <li>Trois types de victimes à distinguer : <strong>emmurées</strong> (espace suffisant pour survivre), <strong>incarcérées</strong> (prisonnières, immobiles, blessées graves), <strong>ensevelies</strong> (sous décombres ou matériaux meubles).</li>
+                <li>Le <strong>zonage opérationnel</strong> distingue zone d'exclusion (rouge), zone contrôlée (orange) et zone de soutien (verte). Périmètres réflexes théoriques : <strong>édifice menaçant ruine = 1,5 × la hauteur</strong> du bâtiment ; <strong>effondrement de tranchée = 2 × la profondeur</strong> de la fouille.</li>
+                <li>L'unité de sauvetage, d'appui et de recherche (<strong>USAR</strong>) s'articule en <strong>unité</strong> (1 chef + 6 équipiers), <strong>groupe</strong> (2 unités, GOC 3) et <strong>colonne</strong> (2 à 4 groupes, GOC 4) — soit, en référence INSARAG, LUSAR/MUSAR/HUSAR.</li>
+                <li>La marche générale des opérations de grande ampleur se décompose en <strong>5 phases (MGO 1 à 5)</strong> : reconnaissance générale de zone, reconnaissance des secteurs, 1ʳᵉ opération de recherche-sauvetage (victimes accessibles), 2ᵉ opération (victimes ensevelies/difficiles), déblaiement généralisé et recherche des corps.</li>
+                <li>Le <strong>marquage INSARAG</strong> catégorise chaque chantier par une lettre : <strong>A</strong> = victimes vivantes confirmées &lt; 12 h, <strong>B</strong> = victimes vivantes confirmées &gt; 12 h, <strong>C</strong> = victimes vivantes possibles, <strong>D</strong> = victimes décédées seulement.</li>
+                <li><strong>Amiante</strong> : une attention systématique est portée à sa recherche (interdite en France depuis 1997, utilisée 130 ans) — protection respiratoire et suivi médical des personnels engagés.</li>
+                <li>Les notions de « péril » ou « péril imminent » relèvent de procédures administratives et juridiques du DOS — <strong>elles ne doivent jamais être employées par les USAR</strong> pour qualifier l'état d'un bâtiment.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · L'environnement effondré ou instable et les effondrements de bâtiments</summary>
+            <div class="rd-section">
+                <h3>📌 Définition</h3>
+                <p>Un milieu effondré ou instable est une zone sur laquelle des éléments naturels et/ou artificiels ont subi des modifications engendrant un équilibre structurel instable. L'origine peut être naturelle, accidentelle ou volontaire (criminelle). L'environnement concerné varie selon qu'il se situe en zone urbaine, industrielle ou rurale, avec des conséquences et des enjeux souvent très différents.</p>
+                <h3>📌 Les causes d'effondrement de bâtiments</h3>
+                <p>Changement du taux d'humidité de sols très argileux, vétusté propre du bâtiment, attaque d'insectes (termites), travaux de réhabilitation non exécutés dans les règles de l'art, travaux souterrains (métro, tunnels), présence de cavités souterraines, constructions sur galeries non entretenues, fragilisation des structures porteuses lors d'un incendie (feu et eau), effets mécaniques d'une explosion, événements météorologiques majeurs, fuites sur les réseaux de fluides. La hauteur maximale des décombres correspond le plus souvent au <strong>tiers de la hauteur</strong> de l'immeuble ; le cône de projection s'étend en largeur jusqu'à une distance maximale égale à la <strong>mi-hauteur</strong> de l'immeuble. L'effondrement peut se produire par plaque avec un effet domino.</p>
+                <div class="rd-alerte">Effondrements majeurs en France : rue Raynouard, Paris 1978 (12 morts) ; bd Perier, Marseille 1985 (6 morts) ; Maison des têtes, Toulon 1989 (13 morts) ; usine AZF, Toulouse 2001 (31 morts, 2500 blessés) ; La Part-Dieu, Lyon 2008 (1 sapeur-pompier mort) ; Rosny-sous-Bois 2014 (8 morts) ; rue d'Aubagne, Marseille 2018 (8 morts) ; rue de Trévise, Paris 2019 (4 morts dont 2 sapeurs-pompiers, 66 blessés).</div>
+                <h3>📌 Les trois types d'effondrement retenus par la doctrine française</h3>
+                <p>Basés principalement sur les effets d'un séisme provoquant des effets mécaniques importants sur la totalité d'une structure.</p>
+                <table class="rd-table">
+                    <tr><th>Type</th><th>Caractéristiques</th><th>Conséquences pour le dégagement</th></tr>
+                    <tr><td><strong>À plat</strong></td><td>Superposition de plans inclinés ou horizontaux entre lesquels s'interposent éléments de construction et débris ; dans certains cas les murs tiennent encore. Espaces vides très aléatoires (meuble, machine à laver, réfrigérateur…).</td><td>Dégagement couche par couche ; accès latéral possible depuis une ouverture existante.</td></tr>
+                    <tr><td><strong>En V</strong></td><td>Forme de V caractéristique : les extrémités des poutres ont pivoté sur leurs appuis. Peut provoquer un effet dynamique et une rupture en cascade des planchers inférieurs, partiellement ensevelis dans cloisons, portes, mobilier.</td><td>Éviter de déplacer les plans inclinés, parfaitement encastrés dans les murs porteurs ; dégagement latéral par porte ou fenêtre.</td></tr>
+                    <tr><td><strong>En oblique</strong></td><td>Concerne les planchers bois ou béton armé dont un appui a cédé ; détachés du reste de la construction, ils reposent sur les décombres.</td><td>Victimes au pied des murs ou des plans inclinés ; dégagement latéral après étaiement éventuel des planchers.</td></tr>
+                </table>
+                <figure class="rd-fig">
+                    <img src="images/effondres/effondrement-plat.jpg" alt="Croquis au crayon d'un effondrement de bâtiment à plat : superposition de dalles empilées avec des espaces vides et des gravats entre les couches" loading="lazy">
+                    <figcaption>Effondrement à plat : superposition de plans avec espaces vides aléatoires entre les couches. © Matthieu Robert – SDIS 85.</figcaption>
+                </figure>
+                <figure class="rd-fig">
+                    <img src="images/effondres/effondrement-v.jpg" alt="Croquis au crayon d'une façade de maison effondrée en V, poutres du toit pivotées vers l'intérieur du bâtiment" loading="lazy">
+                    <figcaption>Effondrement en V : les poutres ont pivoté sur leurs appuis, provoquant un effet dynamique sur les planchers inférieurs. © Matthieu Robert – SDIS 85.</figcaption>
+                </figure>
+                <figure class="rd-fig">
+                    <img src="images/effondres/effondrement-oblique.jpg" alt="Croquis au crayon d'un plancher effondré en oblique, appuyé contre un mur en pierre, un appui ayant cédé" loading="lazy">
+                    <figcaption>Effondrement en oblique : un appui a cédé, le plancher détaché repose incliné sur les décombres. © Matthieu Robert – SDIS 85.</figcaption>
+                </figure>
+                <div class="rd-astuce">Dans les trois types d'effondrement, des <strong>lieux de survie</strong> (espaces libres fermés par planchers, toitures, pans de mur, ameublement) subsistent toujours — ils offrent les meilleures chances de survie aux victimes et orientent la recherche.</div>
+                <h3>📌 Désordres de l'habitat ancien</h3>
+                <p>L'habitat ancien présente naturellement une forte vulnérabilité au risque de chute de matériaux ou d'effondrement partiel ou total, accentuée par la vétusté, le défaut d'entretien ou les malfaçons. Des facteurs aggravants (forts épisodes pluvieux, venteux, travaux à proximité) peuvent jouer le rôle de déclencheurs immédiats.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Les mouvements de terrain</summary>
+            <div class="rd-section">
+                <h3>📌 Définition</h3>
+                <p>Les mouvements de terrain sont les manifestations du déplacement, sous l'effet de la pesanteur, de masses de terre déstabilisées par des sollicitations naturelles (action de la mer, fonte des neiges, pluviométrie anormale) ou artificielles (vibrations de circulation, ruptures de canalisation, déforestation, terrassements).</p>
+                <table class="rd-table">
+                    <tr><th>Phénomène</th><th>Caractéristiques</th></tr>
+                    <tr><td><strong>Affaissement de terrain</strong></td><td>Déformation souple, sans rupture, progressive, pouvant s'étendre sur plusieurs hectares au droit de carrières ou mines mal remblayées ou profondes. Peu de victimes physiques car l'évacuation préalable est le plus souvent possible.</td></tr>
+                    <tr><td><strong>Effondrement localisé (fontis)</strong></td><td>Désordre brutal apparaissant en surface (parfois après une montée progressive du vide pendant des années). Diamètre pouvant atteindre plusieurs mètres, forme d'entonnoir ou de cratère. Peut causer un nombre élevé de victimes en raison de la rapidité du phénomène.</td></tr>
+                    <tr><td><strong>Effondrement généralisé</strong></td><td>Abaissement violent et spontané de la surface d'un terrain, parfois sur plusieurs hectares et plusieurs mètres de profondeur, associé aux grandes carrières (rupture en chaîne des piliers d'exploitation).</td></tr>
+                    <tr><td><strong>Glissement de terrain</strong></td><td>Déplacement généralement lent (mm/an à m/jour) le long d'une surface de rupture (« surface de cisaillement »). Trois types : plan, rotationnel, composite. Indices : niches d'arrachement, fissures, bourrelets, arbres basculés, zones de rétention d'eau, fissuration des bâtiments.</td></tr>
+                    <tr><td><strong>Éboulements, chutes de pierres et blocs</strong></td><td>Mouvements rapides, discontinus, brutaux, affectant matériaux rigides fracturés (calcaires, grès). Classés par volume : pierres (&lt; 1 dm³), blocs (1 dm³–1 m³), gros blocs (&gt; 1 m³) ; ou par volume total : chutes (dizaines à centaines de m³), éboulements en masse (centaines à centaines de milliers de m³), écroulements en grande masse (&gt; 1 million de m³).</td></tr>
+                    <tr><td><strong>Retrait-gonflement des argiles</strong></td><td>Lié aux variations de teneur en eau : l'argile gonfle avec l'humidité et se rétracte avec la sécheresse, provoquant des tassements différentiels (fissurations, distorsion des ouvrants, rupture de canalisations enterrées). Les maisons individuelles (structure légère, fondations superficielles) sont les principales victimes.</td></tr>
+                    <tr><td><strong>Effondrement de tranchée</strong></td><td>La plupart des accidents mortels surviennent sur de petits chantiers de courte durée (raccordements réseaux, excavation de drains). Risques : chute, ensevelissement, écrasement, électrisation/électrocution sur réseau enterré endommagé.</td></tr>
+                    <tr><td><strong>Coulée de boue</strong></td><td>Le plus rapide (jusqu'à <strong>90 km/h</strong>) et le plus fluide des mouvements de terrain, comportement intermédiaire solide/liquide. Charge très importante en matériaux solides (≈ 1/4 d'eau, 3/4 de matériaux solides). Trois zones : départ, transfert (chenal étroit), accumulation (cône de déjection convexe).</td></tr>
+                </table>
+                <figure class="rd-fig">
+                    <img src="images/effondres/coulee-de-boue.jpg" alt="Schéma manuscrit du phénomène de coulée de boue en trois zones : montagne, zone de départ des matériaux, chenal d'écoulement, vallée, voies de circulation, lobe terminal" loading="lazy">
+                    <figcaption>Le phénomène de coulée de boue : zone de départ des matériaux, chenal d'écoulement, puis lobe terminal en zone d'accumulation. © Matthieu Robert – SDIS 85.</figcaption>
+                </figure>
+                <div class="rd-alerte">Catastrophes historiques : fontis de Bagnolet 1993 (2 morts) ; effondrement généralisé de Clamart-Issy-les-Moulineaux 1961 (21 morts) ; glissement de Fourvière 1930 (40 morts dont 19 pompiers et 4 policiers) ; catastrophe du plateau d'Assy 1970 (71 morts) ; coulée de boue de Modane 1987 et de Lyon 2013 (conservatoire national de musique envahi, 80 élèves évacués).</div>
+                <h3>📌 Les séismes</h3>
+                <p>Conséquence du frottement des plaques tectoniques, concentrée sur la zone de friction (« faille » sismique). La libération brutale de l'énergie stockée correspond au phénomène sismique ; des répliques, parfois destructrices, peuvent suivre. Deux paramètres : la <strong>magnitude</strong> (énergie libérée, échelle de Richter — un degré supplémentaire multiplie l'énergie par 30) et l'<strong>intensité</strong> (dégâts en surface, échelle MSK de 1 à 12, maximale à l'épicentre). Des séismes superficiels peuvent aussi être provoqués par l'activité humaine (remplissage de barrage, injections d'eaux usées, extraction minière ou géothermique). Le risque est faible à modéré en métropole (Provence, Alpes, Pyrénées) et élevé en Guadeloupe et Martinique.</p>
+                <figure class="rd-fig">
+                    <img src="images/effondres/seisme-teil.jpg" alt="Photographie d'une maison en pierre du Teil (Ardèche) gravement endommagée par le séisme de 2019, façade fissurée, décombres au sol" loading="lazy">
+                    <figcaption>Séisme du Teil (07), novembre 2019 : plus de 3 000 évaluations « risques bâtimentaires » ont été réalisées à la suite de ce séisme d'intensité modérée mais aux dégâts très étendus. © Jean-Luc Rey – SDIS 13.</figcaption>
+                </figure>
+                <div class="rd-astuce">Séismes marquants en France : Lambesc 1909 (46 morts) ; Arette 1967 ; Annecy 1996 ; Guadeloupe 2004 et Martinique 2007 ; Barcelonnette 2014 ; Mayotte 2018 ; Le Teil (Ardèche/Drôme) 2019 — plus de 3 000 constructions impactées.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Phénomènes liés à l'incendie, à l'eau, à la météo et acteurs à connaître</summary>
+            <div class="rd-section">
+                <h3>📌 Les phénomènes liés aux incendies</h3>
+                <p>Les murs porteurs garantissent la stabilité du bâtiment ; leur stabilité au feu décroît avec le temps, ce qui impose au COS de prendre en compte la durée du sinistre. Toute trouée dans un mur porteur risque d'engendrer la ruine de la structure. L'eau projetée depuis un moyen élévateur ou depuis le sol peut compromettre la stabilité des murs et son poids peut mettre en péril des planchers bois. Les bâtiments désaffectés ou abandonnés présentent des risques accrus par manque d'entretien.</p>
+                <div class="rd-alerte">Rechercher les signes annonciateurs d'effondrement imminent : craquements, fléchissements ou déformation des ouvrants intéressant de grands volumes (conduits de cheminée, etc.).</div>
+                <h3>📌 Les phénomènes liés à l'eau</h3>
+                <p>Les inondations diminuent la solidarité des terrains (risque d'affaissement des fondations) à trois étapes : arrivée des eaux (pression torrentielle), stagnation (soulèvement des bâtiments à fondations faibles), retrait (drains déstabilisant les fondations). Rupture du barrage de Malpasset (83) en 1959 : 423 morts. Les falaises de craie et les berges de cours d'eau sont particulièrement sujettes à l'érosion (force érosive de l'écoulement, enfoncement du lit au fil du temps).</p>
+                <h3>📌 Les phénomènes météorologiques</h3>
+                <p>Une tempête naît de l'affrontement de deux masses d'air formant un « front » ; elle se caractérise par des vents dépassant 89 km/h (rafales pouvant dépasser 200 km/h), se déplaçant à environ 50 km/h sur des distances de 2 000 km. Le vent est généralement le plus destructeur (chute d'arbres et de pylônes, arrachement de toitures). Une tornade se distingue par une durée de vie très courte et une zone d'impact limitée mais des vents pouvant atteindre 450 km/h (Hautmont, Nord, 2008). Les cyclones provoquent des dégâts aux toitures et fenêtres ; la chute de pression atmosphérique qui les précède peut faire « éclater » un bâtiment.</p>
+                <div class="rd-astuce">Le phénomène de <strong>submersion marine</strong> résulte de la conjonction des vagues et de l'élévation du niveau de la mer en cas de fort coefficient de marée, pouvant faire céder les digues — survenu en Vendée et Charente-Maritime lors de la tempête Xynthia (février 2010, 59 morts).</div>
+                <h3>📌 Situations pouvant constituer des systèmes instables</h3>
+                <p>Directement liées à l'action humaine sur les constructions ou l'environnement : accidents aériens, accidents ferroviaires, accidents de chantier de travaux publics, de manutention et de grutage, accidents de silos (matière stockée et/ou infrastructures).</p>
+                <h3>📌 Les différents acteurs à connaître</h3>
+                <table class="rd-table">
+                    <tr><th>Acteur</th><th>Rôle</th></tr>
+                    <tr><td><strong>BRGM</strong></td><td>Bureau de recherches géologiques et minières — protection durable des populations et ressources</td></tr>
+                    <tr><td><strong>BCSF</strong></td><td>Bureau central sismologique français — collecte et diffusion des informations sur la sismicité</td></tr>
+                    <tr><td><strong>SRTM</strong></td><td>Service de restauration des terrains en montagne — stabilisation et restauration des sols</td></tr>
+                    <tr><td>Architectes, ingénieurs béton/structures</td><td>Architectes de sécurité, architectes des bâtiments de France, architectes sans frontières</td></tr>
+                    <tr><td><strong>AFPS</strong></td><td>Association française de génie parasismique — inspecteurs formés aux diagnostics bâtimentaires d'urgence post-sismiques (convention DGSCGC)</td></tr>
+                    <tr><td>Associations agréées</td><td>Radioamateurs au service de la sécurité civile, spéléo secours français (SSF)</td></tr>
+                    <tr><td>Services publics</td><td>UIISC, gendarmerie, police nationale, SAMU, DREAL, DDTM</td></tr>
+                </table>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Les risques liés à l'environnement : matériaux, phénomènes mécaniques, risques secondaires</summary>
+            <div class="rd-section">
+                <h3>📌 Le comportement des matériaux</h3>
+                <p>Les matériaux se comportent différemment selon les efforts auxquels ils sont soumis : <strong>compression</strong> (écrasement par deux forces opposées), <strong>traction</strong> (étirement), <strong>flexion</strong> (déformation par une force), <strong>cisaillement</strong> (deux forces rapprochées de directions opposées), <strong>flambage</strong> (tendance à fléchir sous compression longitudinale) et <strong>torsion</strong> (pivotement sur un axe imaginaire). Le matériau se rompt lorsque la contrainte dépasse la « charge de rupture » ; la résistance admissible tient compte de l'élasticité, de l'homogénéité et de l'altérabilité dans le temps.</p>
+                <figure class="rd-fig etroite">
+                    <img src="images/effondres/flambage.jpg" alt="Schéma 3D d'une structure de bâtiment illustrant le flambage : un plancher fléchit et se déforme sous l'effet d'une compression verticale" loading="lazy">
+                    <figcaption>Le flambage : tendance d'un matériau soumis à une compression longitudinale à fléchir perpendiculairement à la force appliquée. © Guillaume Vermeulen – SDIS 59.</figcaption>
+                </figure>
+                <table class="rd-table">
+                    <tr><th>Matériau</th><th>Compression</th><th>Flexion</th><th>Traction</th><th>Particularité</th></tr>
+                    <tr><td>Pierre</td><td>Très bonne</td><td>Mauvaise</td><td>Mauvaise</td><td>Murs porteurs, linteaux</td></tr>
+                    <tr><td>Bois (sens des fibres)</td><td>Bonne</td><td>Bonne</td><td>Bonne</td><td>Craint l'humidité</td></tr>
+                    <tr><td>Brique</td><td>Bonne</td><td>Mauvaise</td><td>Mauvaise</td><td>Craint chocs et humidité</td></tr>
+                    <tr><td>Béton armé</td><td>Très bonne</td><td>Bonne</td><td>Bonne</td><td>Sable, gravier, ciment, acier</td></tr>
+                    <tr><td>Acier</td><td>Très bonne</td><td>Très bonne</td><td>Très bonne</td><td>Craint les élévations de température</td></tr>
+                    <tr><td>Aluminium</td><td>Bonne</td><td>Bonne</td><td>Bonne</td><td>Craint les élévations de température</td></tr>
+                </table>
+                <h3>📌 Les phénomènes mécaniques (séismes)</h3>
+                <ul>
+                    <li><strong>Action sussultoire</strong> (mouvement saccadé de haut en bas) : poussée horizontale des poutres de toit non enchaînées, fissures des planchers, chute des corniches, fissures aux balcons.</li>
+                    <li><strong>Action ondulatoire</strong> : cassure des poteaux de rez-de-chaussée, fissures obliques sur murs et cloisons, poussées des toits et planchers sur les murs, désolidarisation des têtes de poutres.</li>
+                    <li><strong>Action de rotation</strong> : fissures verticales à la jonction des murs.</li>
+                </ul>
+                <h3>📌 Les risques secondaires</h3>
+                <table class="rd-table">
+                    <tr><th>Éléments en présence</th><th>Risques pour victimes et sauveteurs</th></tr>
+                    <tr><td>Eau</td><td>Noyade en sous-sol</td></tr>
+                    <tr><td>Gaz</td><td>Explosion, anoxie, intoxication, incendie</td></tr>
+                    <tr><td>Électricité</td><td>Électrisation, électrocution</td></tr>
+                    <tr><td>Radioactifs</td><td>Irradiation, contamination</td></tr>
+                    <tr><td>Chimiques</td><td>Explosion, intoxication, brûlures</td></tr>
+                    <tr><td>Munitions non éclatées/explosifs</td><td>Explosion, intoxication</td></tr>
+                </table>
+                <figure class="rd-fig">
+                    <img src="images/effondres/explosion-effondrement.jpg" alt="Photographie de nuit d'une maison partiellement effondrée après une explosion, façade fissurée et toiture éventrée, deux sapeurs-pompiers en action avec une lance" loading="lazy">
+                    <figcaption>Effondrement consécutif à une explosion de gaz : la gestion des risques secondaires (ici incendie et instabilité structurelle combinés) doit rester un souci permanent du COS. © Fabrice Hebrard – Le Dauphiné Libéré.</figcaption>
+                </figure>
+                <div class="rd-astuce">En fonction des risques identifiés, une demande de renfort appropriée peut être réalisée ; une action coordonnée des premiers intervenants et des renforts spécialisés peut accélérer la prise en charge des victimes.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Les risques pour les personnes : sauveteurs et victimes</summary>
+            <div class="rd-section">
+                <h3>📌 Les sauveteurs</h3>
+                <p>Le principal risque est l'<strong>ensevelissement</strong> au cours des opérations, du fait de l'insuffisance ou l'absence d'étaiement des ruines, d'une explosion, de chutes de matériaux, ou du non-respect des mesures de sécurité. Les contraintes de sécurité, d'accessibilité et de délais propres au milieu effondré ou instable peuvent significativement limiter ou ralentir les actions classiques de secours à personne.</p>
+                <div class="rd-alerte">L'amiante, interdite en France en 1997 mais utilisée durant 130 ans (incombustible, isolant, imputrescible, bon marché), libère sous agression des fibres 400 à 500 fois plus fines qu'un cheveu, capables de se scinder en fibrilles et de se fixer durablement au fond des poumons. Une attention particulière est systématiquement portée à sa recherche, avec les moyens de protection et de suivi médical adaptés.</div>
+                <h3>📌 Les trois types de victimes</h3>
+                <table class="rd-table">
+                    <tr><th>Type</th><th>Situation</th><th>Gravité typique</th></tr>
+                    <tr><td><strong>Emmurées</strong></td><td>Enfouies sous décombres et gravats, mais dans un espace suffisant pour survivre un certain temps</td><td>Blessés légers, parfois indemnes</td></tr>
+                    <tr><td><strong>Incarcérées</strong></td><td>Prisonnières d'un amas de matériaux, incapables de se dégager seules, sans mobilité</td><td>Blessés graves</td></tr>
+                    <tr><td><strong>Ensevelies</strong></td><td>Prisonnières sous décombres, gravats, ou matériaux meubles (céréales de silo, par ex.)</td><td>Écrasement variable selon la nature des matériaux</td></tr>
+                </table>
+                <p>Il importe de prendre en compte non seulement l'état de la victime au moment de sa découverte, mais aussi le déroulement de l'accident : effets de souffle en cas d'explosion à l'origine de l'effondrement, lésions non visibles lors d'une chute depuis plusieurs étages. L'état d'un polytraumatisé étant particulièrement évolutif, une surveillance permanente est requise.</p>
+                <h3>📌 Le vécu psychologique de la victime</h3>
+                <p>La situation d'effondrement et/ou d'ensevelissement provoque un stress évoluant en crescendo : <strong>changement radical d'environnement</strong> (structuré → déstructuré, lumineux → obscur), <strong>sentiment d'irréalité</strong>, puis <strong>frayeur</strong> à mesure que la victime prend conscience de la précarité de sa situation. Si la situation dure, le sujet peut renoncer à se signaler (cesser d'appeler ou de taper). L'événement, de l'ordre de l'irreprésentable, peut provoquer une véritable <strong>sidération</strong>.</p>
+                <p>Les conséquences comportementales varient : hébétude et inaction (corps statique), agitation fébrile (tremblements, gestes désorganisés), colère et agressivité, initiatives inadaptées épuisant physiquement et psychiquement, propos délirants, ou au contraire passivité extrême avec risque de non-coopération, voire résistance.</p>
+                <div class="rd-astuce">Il est important de savoir repérer dans quel état d'esprit se trouve la victime, afin d'anticiper et d'analyser son comportement — cette attention facilite sa prise en charge.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · La sécurité des intervenants</summary>
+            <div class="rd-section">
+                <h3>📌 Les règles générales de sécurité pour les primo-intervenants</h3>
+                <p>Avant l'arrivée des USAR : évaluer la sécurité des systèmes effondrés ou instables avant d'engager les sauveteurs, ne pas déranger l'équilibre instable des décombres, évaluer la solidité du sol par une pression prudente du pied, ne jamais déplacer une pièce soutenant des décombres (la contourner ou la sécuriser), ne pas se déplacer le long de murs fissurés non stabilisés, se déplacer en binôme en marchant lentement avec quelques mètres d'écart, mettre en place au besoin une main courante, faire surveiller le secteur par une « sonnette » (observateur équipé d'un sifflet), et rester le plus silencieux possible pour percevoir d'éventuels craquements annonciateurs.</p>
+                <div class="rd-alerte">Les étais ne doivent jamais être utilisés comme éléments de rétablissement (vérins) des structures non stabilisées, sous peine de modifier dangereusement la totalité des équilibres en jeu.</div>
+                <h3>📌 La surveillance des systèmes instables</h3>
+                <p>Trois moyens de surveillance peuvent être combinés :</p>
+                <ul>
+                    <li><strong>Surveillance humaine</strong> : un ou plusieurs observateurs « sonnette » chargés de détecter un mouvement par observation visuelle et sonore (craquements).</li>
+                    <li><strong>Télémètres</strong> : mesure en continu de la distance séparant l'élément instable du point de mesure, précision généralement de l'ordre du millimètre, seuils d'alerte réglables de 2 à 100 mm pour une portée jusqu'à 50 m.</li>
+                    <li><strong>Contrôleurs de stabilité</strong> : placés directement sur l'élément instable, détectent un changement de position de l'ordre du 1/10ᵉ de degré ou de vibration.</li>
+                </ul>
+                <p>Quel que soit le dispositif retenu, il est primordial de connaître à tout instant le nombre et la position des sauveteurs engagés, de désigner un responsable des signaux d'alarme, de définir le moyen de transmission de l'alerte (radio, sonore, visuel) et le point de regroupement en cas d'évacuation.</p>
+                <h3>📌 Les contraintes pour les spécialistes</h3>
+                <p>Le travail en espace clos en milieu effondré ou instable atteint parfois un degré élevé de difficulté : environnement hostile et confiné, obscurité, odeurs, fuites de produits, état des victimes, position de travail inconfortable, poussières, chaleur/froid/humidité, dangers du matériel utilisé, anxiété du sauveteur.</p>
+                <p>Le COS doit veiller à briefer et rassurer les sauveteurs, mettre en place des protections collectives, n'engager que le personnel strictement nécessaire, s'assurer du bon équipement individuel, garder le contact en permanence, prévoir un chemin de repli et un signal de repli, utiliser des appareils de détection (explosimètre, détecteur de CO, catharomètre), ventiler et éclairer le chantier, organiser la sortie des décombres, effectuer des relèves régulières, assurer le soutien sanitaire et psychologique, et mettre en place un binôme de sécurité.</p>
+                <div class="rd-astuce">Pression temporelle : les <strong>48 premières heures</strong> sont essentielles pour les chances de survie — mais il faut savoir se ressourcer pour éviter des prises de risque inutiles liées à la fatigue.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7 · L'organisation des unités de sauvetage, d'appui et de recherche (USAR)</summary>
+            <div class="rd-section">
+                <h3>📌 Les emplois de la spécialité</h3>
+                <p>La spécialité USAR (unité de sauvetage, d'appui et de recherche — anciennement « sauvetage-déblaiement ») comprend trois emplois : <strong>équipier</strong> (reconnaissance, techniques de base), <strong>chef d'unité</strong> (premier élément de commandement) et <strong>chef de section</strong> (dirige plusieurs unités, groupe ou colonne, intègre un PC). La spécialité cynotechnique comprend de manière similaire conducteur, chef d'unité et chef de section cynotechniques, chargés de la recherche de personnes ensevelies avec leur chien.</p>
+                <h3>📌 L'articulation des unités (référentiel INSARAG)</h3>
+                <table class="rd-table">
+                    <tr><th>Échelon</th><th>Composition</th><th>Missions principales</th></tr>
+                    <tr><td><strong>Unité</strong> (LUSAR)</td><td>1 chef d'unité + 6 équipiers</td><td>Chantier à périmètre réduit, 1-2 techniques ; reconnaissances, étaiement, percement, conditionnement/évacuation ; pas de capacité à durer.</td></tr>
+                    <tr><td><strong>Groupe</strong> (MUSAR)</td><td>2 unités, commandé par chef de section GOC 3, renforcé éventuellement de cynotechnie</td><td>Chantier de grande ampleur ou 2 chantiers simultanés ; détection-localisation, étaiement, sauvetage d'1 à 2 victimes.</td></tr>
+                    <tr><td><strong>Colonne</strong> (HUSAR)</td><td>2 à 4 groupes, commandée par chef de section GOC 4, + équipe logistique/soutien</td><td>2 chantiers simultanés ; peut effectuer une relève sur 2 chantiers activés.</td></tr>
+                </table>
+                <div class="rd-astuce">Le fait de calquer l'articulation et les techniques sur le modèle INSARAG ne vaut pas certification ou accréditation des unités. Un plus petit élément — l'<strong>équipe USAR</strong> (chef d'unité + deux binômes) — peut aussi être engagé pour un premier point de situation sans mobiliser toute une unité.</div>
+                <h3>📌 Le détachement USAR : composantes</h3>
+                <p>Un détachement projeté sur une opération de grande envergure détient des composantes de <strong>commandement/transmissions</strong> (maintien de la liaison avec les autorités en cas de réseaux détériorés), <strong>logistique</strong> (colisage, ponts aériens, traitement de l'eau), <strong>santé</strong> (soutien du détachement, premiers soins à la population), <strong>recherche</strong> (moyens techniques et équipes cynophiles) et <strong>secours</strong> (7 à 28 personnels, « couteaux suisses » du détachement pouvant renforcer les autres cellules).</p>
+                <h3>📌 Le commandement</h3>
+                <p>Une communication permanente est assurée au sein du détachement ; les équipiers ne reçoivent qu'une mission à la fois et en rendent compte à leur chef, qui valide et assigne la suivante. L'<strong>ordre préparatoire</strong>, donné dès l'arrivée sur les lieux, contient a minima : ordre de s'équiper, type d'équipement, emplacement du parc matériel de première intention, moyens d'éclairage et de communication, point de regroupement des victimes/décédés, préparation du binôme de reconnaissance, place et délais du chef d'unité. L'<strong>ordre d'exécution</strong> est adapté à la situation, formalisé au besoin par un canevas ou une charte graphique.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>8 · La prise d'appel et l'engagement des secours</summary>
+            <div class="rd-section">
+                <h3>📌 Les éléments à recueillir</h3>
+                <p><strong>Localisation</strong> : numéro du requérant, adresse (parfois différente de celle de l'appelant), site ou point remarquable, coordonnées GPS ; en cas de doute, recours à l'AML, à la plateforme PFLAU ou à un échange de SMS.</p>
+                <p><strong>Qualification du motif</strong> : nature de l'intervention, phénomène déclencheur (événement climatique, travaux, effet domino, explosion), type de bâtiment, contexte, nombre de blessés/impliqués, gravité, victimes à l'abri ou exposées, dangers secondaires perceptibles (sifflement de conduite, écoulement de fluide, nuage toxique).</p>
+                <p><strong>Qualité du requérant</strong> (victime, témoin, tiers) et <strong>facteurs aggravants</strong> : contexte opérationnel, nombre de victimes/impliqués, public sensible, conditions météo et horaires, difficultés de communication, hydrogéologie, accessibilité.</p>
+                <div class="rd-astuce">Dès l'apparition d'une notion de milieu particulier à la prise d'appel, un membre de l'équipe spécialisée peut fournir un appui pour le traitement de l'alerte.</div>
+                <h3>📌 Les conseils au requérant</h3>
+                <p>Mémoriser le point de disparition, évacuer préventivement la zone suspectée à risque, réaliser un périmètre de sécurité avec des moyens de fortune en attendant les secours, prendre des photos pour figer « l'instant zéro » et permettre de mesurer l'évolution de la situation.</p>
+                <h3>📌 L'engagement des secours</h3>
+                <p>Un contact préalable avec un cadre de la spécialité, avant l'engagement des moyens, permet d'analyser la situation et de calibrer la réponse. Si la spécialité nécessaire (USAR, cynotechnie, SMPM) n'est pas développée localement, le recours au renfort zonal doit être anticipé sans délai.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>9 · La conduite des opérations : actions des primo-intervenants et zonage</summary>
+            <div class="rd-section">
+                <h3>📌 Les principes immuables</h3>
+                <p>Protection des personnes et des animaux soumis directement ou indirectement aux effets d'un sinistre, préservation des biens, protection de l'environnement. Les phases de la marche générale des opérations classique (reconnaissances, sauvetages et mises en sécurité, actions spécifiques, ventilation, établissements, protection, remise en condition) s'appliquent partiellement ou totalement, sans que leur chronologie ne soit nécessairement respectée compte tenu de la réalité du terrain.</p>
+                <h3>📌 Les actions des primo-intervenants</h3>
+                <p>En cas de sauvetage urgent de vie humaine, l'opération peut commencer sous l'autorité et la validation du COS, qui utilise en priorité les personnels USAR faisant partie des primo-intervenants. Une des missions principales des primo-intervenants est la mise en place du <strong>périmètre de sécurité</strong>, puis le dégagement des victimes de surface.</p>
+                <h3>📌 Le zonage opérationnel</h3>
+                <p>Un ou plusieurs périmètres de sécurité « a priori », mis en place au plus tôt, se déclinent selon le concept suivant :</p>
+                <table class="rd-table">
+                    <tr><th>Zone</th><th>Couleur</th><th>Fonction</th></tr>
+                    <tr><td>Exclusion</td><td>Rouge</td><td>Accès strictement contrôlé, réservé aux intervenants engagés</td></tr>
+                    <tr><td>Contrôlée</td><td>Orange</td><td>Accès filtré</td></tr>
+                    <tr><td>Soutien</td><td>Verte</td><td>Aucune restriction opérationnelle</td></tr>
+                </table>
+                <p>Ce zonage peut nécessiter la création d'un ou plusieurs points d'accès et de contrôle (gestion des entrées/sorties, des matériels souillés, contrôle des actions), l'identification d'une zone pour les matériels souillés, et le choix de la localisation d'un point de regroupement des victimes (PRV) ou d'une morgue provisoire.</p>
+                <div class="rd-alerte">Le périmètre de sécurité réflexe mis en place par le 1ᵉʳ COS doit ensuite évoluer vers un zonage de l'opération de secours avec l'arrivée des équipes spécialisées, qui confirment ou infirment ce 1ᵉʳ périmètre, le matérialisent et le contrôlent.</div>
+                <h3>📌 Périmètres réflexes selon le type de sinistre</h3>
+                <figure class="rd-fig">
+                    <img src="images/effondres/perimetre-eboulement-mur.jpg" alt="Croquis coté d'un éboulement de mur maçonné : périmètre de sécurité fixé à 0,5 fois la hauteur H côté fissures et à 1 fois H côté éboulis" loading="lazy">
+                    <figcaption>Mise en sécurité d'un éboulement de mur maçonné : périmètre dissymétrique, 0,5 × H côté fissures et 1 × H côté éboulis. © Matthieu Robert – SDIS 85.</figcaption>
+                </figure>
+                <figure class="rd-fig">
+                    <img src="images/effondres/perimetre-menacant-ruine.jpg" alt="Croquis d'une longère menaçant ruine avec un périmètre de sécurité elliptique fixé à 1,5 fois la hauteur H du bâtiment" loading="lazy">
+                    <figcaption>Mise en sécurité d'un édifice menaçant ruine : le périmètre réflexe théorique s'établit à 1,5 fois la hauteur du bâtiment. © Matthieu Robert – SDIS 85.</figcaption>
+                </figure>
+                <figure class="rd-fig">
+                    <img src="images/effondres/perimetre-affaissement.jpg" alt="Croquis en plan et en coupe d'un affaissement généralisé du sol avec périmètre de sécurité proportionnel à la largeur affaissée L" loading="lazy">
+                    <figcaption>Mise en sécurité d'un affaissement généralisé : périmètre de sécurité dimensionné sur la largeur affaissée (L), tant en plan qu'en coupe. © Matthieu Robert – SDIS 85.</figcaption>
+                </figure>
+                <div class="rd-astuce">Effondrement de tranchée : périmètre de sécurité non franchissable = <strong>2 fois la profondeur</strong> de la fouille. Les mesures de mise en sécurité (fontis, glissement, éboulement de falaise) sont adaptées au cas par cas selon la configuration du terrain — un fontis découvert en cave, par exemple, est plus délicat car le phénomène peut aller au-delà des fondations de l'immeuble.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>10 · L'évaluation bâtimentaire</summary>
+            <div class="rd-section">
+                <h3>📌 Trois objectifs</h3>
+                <p>L'évaluation des bâtiments en situation opérationnelle vise à : déceler les lieux les plus propices à la survie dans les décombres (recherche de victimes) ; prendre en compte les risques potentiels d'engagement sur le chantier (sécurité des sauveteurs) ; évaluer, à grande échelle et dans le cadre du retour à la normale, les possibilités de pénétrer à nouveau dans l'édifice à moyen et long terme.</p>
+                <h3>📌 Deux types d'évaluation</h3>
+                <p>L'évaluation intégrée à la mission de secours (objectifs 1 et 2), rapide et sommaire, est assurée par des spécialistes USAR titulaires de la formation <strong>risques bâtimentaires (RBAT)</strong>. L'évaluation en tant que mission à part entière (objectif 3) nécessite un niveau d'expertise supérieur (cadres formés, professionnels qualifiés, architectes, ingénieurs génie civil).</p>
+                <div class="rd-alerte">Les évaluations d'urgence ne se substituent en aucun cas aux expertises approfondies mandatées auprès de professionnels qualifiés. Les notions de « péril » et « péril imminent » relèvent de procédures administratives et juridiques du DOS — elles ne doivent jamais être utilisées par les USAR pour qualifier l'état d'un bâtiment dans leurs messages de renseignement.</div>
+                <h3>📌 Quatre missions distinctes</h3>
+                <ol>
+                    <li>Reconnaissance avec évaluation d'urgence de la stabilité et triage selon les chances de survie ;</li>
+                    <li>Conseil au COS sur les interventions type incendie de bâtiment (fléchage des risques d'effondrement, idées de manœuvre conservatoires) ;</li>
+                    <li>Lecture des désordres bâtimentaires en cas de vétusté ou de solidité non assurée ;</li>
+                    <li>Évaluation bâtimentaire d'urgence dans le cadre d'une catastrophe naturelle, préalable au retour à la normale décidé par le DOS.</li>
+                </ol>
+                <h3>📌 Les évaluations à grande échelle</h3>
+                <p>Le séisme du Teil (2019) a mis en lumière la nécessité d'une organisation rodée : le COS, en liaison avec le DOS, effectue la sectorisation et détermine les priorités ; un chef de section USAR le conseille pour l'emploi des équipes d'évaluation. Les outils dédiés sont la <strong>fiche EBRAS</strong> (Emergency Building Risk Assessment Sheet) pour les mesures de sécurité à moyen terme et la <strong>fiche de marquage des bâtiments</strong> pour les mesures à long terme (hommes de l'art, ONG).</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>11 · La marche générale des opérations à périmètre réduit</summary>
+            <div class="rd-section">
+                <h3>📌 Les interventions en milieux très urbanisés</h3>
+                <p>Certaines interventions, bien qu'à périmètre réduit, concentrent des problématiques spécifiques : architectures complexes, urbanisme concentré, hétérogénéité des constructions, effets dominos, enjeux humains, sociaux, médiatiques, politiques et économiques. L'engagement d'un élément rapide de reconnaissance permet de procéder aux mesures immédiates de sauvegarde, de mettre en œuvre les premiers moyens USAR, de conseiller le COS et de mettre à jour la situation tactique.</p>
+                <table class="rd-table">
+                    <tr><th>Rôle</th><th>Tâches</th></tr>
+                    <tr><td>Prise en compte du site</td><td>Mesures immédiates de sauvegarde, recherche de renseignements, reconnaissances, marquage de l'emplacement suspecté de victime(s), sectorisation</td></tr>
+                    <tr><td>Opération de recherche et sauvetage</td><td>1ʳᵉ opération (surface) puis 2ᵉ opération (localisation, découpe, manœuvres de force, étaiement d'urgence)</td></tr>
+                    <tr><td>Déblaiement et dégagement</td><td>Déblaiement sélectionné (bras d'homme, petits matériels) et généralisé (engins lourds)</td></tr>
+                </table>
+                <h3>📌 Les effondrements de tranchées</h3>
+                <p>La difficulté est accrue par la présence potentielle de plusieurs personnes ensevelies et l'impossibilité pour les victimes de manifester leur présence. Il faut éloigner les curieux (recours aux forces de l'ordre) et exiger le silence. Mesures impératives : périmètre de sécurité non franchissable = 2 fois la profondeur, coupure des moteurs environnants et des fluides, engagement du minimum de personnel, mise en place d'une sonnette et d'un blindage de tranchée, amarrage du personnel en sols meubles, abordage de la victime en évitant toute pression sur les bords (platelage, échelle à coulisse, bastaings), constitution d'un coffrage de fortune, protection de la tête et des voies respiratoires de la victime.</p>
+                <div class="rd-alerte">Garder à l'esprit la possible formation de poches d'atmosphère explosible ou irrespirable dans une tranchée. Si des trouées sont faites pour accéder à une victime, prendre garde aux chocs répétés qui peuvent causer de nouveaux éboulements.</div>
+                <h3>📌 Les immeubles menaçant ruine et la dépose de matériaux</h3>
+                <p>Le spécialiste en risque bâtimentaire agit sous les ordres du COS et l'assiste dans sa mission de conseil auprès de l'autorité de police compétente (maire ou préfet). Pour la dépose de matériaux menaçant de chuter, la plupart des situations sont traitées par des équipes non spécialistes ; le concours des USAR devient nécessaire pour la sécurisation d'un élément instable requérant des moyens de découpe particuliers, et peut révéler une situation anormale appelant des évaluations bâtimentaires complémentaires.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>12 · La marche générale des opérations de grande ampleur (MGO 1 à 5)</summary>
+            <div class="rd-section">
+                <h3>📌 Les cinq phases (référence INSARAG ASR 1 à 5)</h3>
+                <p>Ces opérations, caractérisées par un nombre variable de victimes, un besoin important de renforts, la destruction des infrastructures et un impact médiatique fort, se décomposent en 5 phases non toutes obligatoires :</p>
+                <table class="rd-table">
+                    <tr><th>Phase</th><th>Objet</th><th>Acteurs</th></tr>
+                    <tr><td><strong>MGO 1</strong></td><td>Reconnaissance et évaluation générale de la zone (échelle départementale/régionale) : contrôle rapide et visuel, sectorisation, priorités, identification des risques généraux</td><td>COS + chef de détachement USAR, vecteur aérien (hélicoptère, drone)</td></tr>
+                    <tr><td><strong>MGO 2</strong></td><td>Reconnaissance et évaluation des secteurs : identifier les sites à forte potentialité de sauvetage, division en sous-secteurs lettrés (A, B, C…) puis numérotés (C-1, C-2…)</td><td>Chef de détachement, binôme USAR, cynotechnie, officier RBAT</td></tr>
+                    <tr><td><strong>MGO 3</strong></td><td>1ʳᵉ opération de recherche-sauvetage : ratissage de surface en ligne, victimes facilement accessibles, structures peu endommagées</td><td>Chef d'unité USAR, 1-2 binômes, cynotechnie</td></tr>
+                    <tr><td><strong>MGO 4</strong></td><td>2ᵉ opération : victimes ensevelies profondément ou difficilement accessibles, détection puis localisation précise avant tout sauvetage</td><td>Chef d'unité USAR, binômes, cynotechnie, équipe médicale</td></tr>
+                    <tr><td><strong>MGO 5</strong></td><td>Déblaiement généralisé et recherche des corps : enlèvement sélectionné puis général (engins lourds)</td><td>Chef d'unité USAR, binômes, personnels non USAR</td></tr>
+                </table>
+                <figure class="rd-fig">
+                    <img src="images/effondres/sectorisation-insarag.jpg" alt="Vue aérienne d'une zone urbaine et industrielle sectorisée pour une opération USAR avec des secteurs lettrés C-1 à C-8 délimités par des lignes oranges" loading="lazy">
+                    <figcaption>Exemple de sectorisation (MGO 2) : la lettre du secteur (ici C) et un numéro séquentiel produisent l'identifiant unique de chaque site (C-1, C-2…). © Louis Bonfils – ECASC.</figcaption>
+                </figure>
+                <h3>📌 Le marquage INSARAG</h3>
+                <p>Utilisé pour signaler de façon apparente les immeubles visités et coordonner les équipes qui se succèdent sur une même zone sinistrée, notamment en cas de renforts internationaux.</p>
+                <table class="rd-table">
+                    <tr><th>Lettre</th><th>Type de victimes</th><th>Durée estimée pour le dégagement</th></tr>
+                    <tr><td><strong>A</strong></td><td>Confirmées vivantes</td><td>&lt; 12 heures</td></tr>
+                    <tr><td><strong>B</strong></td><td>Confirmées vivantes</td><td>&gt; 12 heures</td></tr>
+                    <tr><td><strong>C</strong></td><td>Victimes vivantes possibles</td><td>—</td></tr>
+                    <tr><td><strong>D</strong></td><td>Seulement des victimes décédées</td><td>—</td></tr>
+                </table>
+                <div class="rd-astuce">Détection (déceler la présence de victimes) et localisation (situer précisément où se trouvent les victimes détectées) sont deux actions distinctes : la localisation est obligatoire avant tout sauvetage ou déplacement de matériaux pour éviter toute aggravation. Moyens : équipes cynotechniques, appels avec exploration, radar terrestre, matériel d'écoute ou de recherche visuelle.</div>
+                <h3>📌 Le déblaiement généralisé (MGO 5)</h3>
+                <p>Généralement mené une fois les phases de sauvetage terminées et la phase de retour à la normale amorcée — une victime vivante peut néanmoins être trouvée sous plusieurs couches d'éléments effondrés. Décomposé en deux temps : enlèvement sélectionné à bras d'homme (avec récupération des biens, placés en un lieu unique à disposition des forces de l'ordre — l'accès direct aux biens par des personnes se disant propriétaires est interdit), puis enlèvement général aux engins lourds sous surveillance des sauveteurs pour localiser et dégager corps humains et animaux. La décision de passage à cette phase relève du COS et du DOS, une fois la probabilité de découvrir des victimes vivantes jugée trop faible ou les risques sanitaires trop importants.</p>
+                <div class="rd-alerte">De nombreuses pressions (économiques, sociales, cultuelles, culturelles, politiques) peuvent inciter à avancer la mise en œuvre du déblaiement généralisé. C'est le COS qui décide du délai maximum avant sa mise en œuvre.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>13 · La gestion des moyens spécialisés et la prise en compte des victimes</summary>
+            <div class="rd-section">
+                <h3>📌 La cellule de coordination d'appui et de soutien</h3>
+                <p>Pour une catastrophe majeure ou à périmètre étendu, le COS s'appuie sur une cellule pluridisciplinaire chargée de le conseiller sur l'emploi des moyens spécialisés (USAR, RBAT, équipes nautiques, cynotechniques, risques technologiques, moyens de génie civil), de fournir les informations nécessaires dès la conception des ordres, et de suivre la situation des ressources en matériels. Animée par un chef de cellule (planification, coordination, participation au SOIEC) secondé par un adjoint (synthèse des éléments, liaison avec l'officier renseignement).</p>
+                <h3>📌 Le cas d'une victime seule et ensevelie</h3>
+                <p>Un contact doit être établi dès que possible par l'infirmier USAR, d'abord de manière verbale puis en se rapprochant au plus vite. Attitude calme et assurée, recherche du regard de la victime, gestes calmes et précis, annonce systématique du geste à venir. Utiliser plusieurs canaux de communication (mots, regard, toucher) ; donner son propre nom et demander celui de la victime pour la « replacer dans le monde des vivants ». Des accessoires lumineux autonomes (bâton chimioluminescent, balise) favorisent le ressenti présentiel.</p>
+                <h3>📌 Le cas des victimes prisonnières dans une poche de survie</h3>
+                <p>En présence de plusieurs victimes, une organisation « sociale » a pu se mettre en place (leaders, entraide). Le sauveteur repère l'ambiance et les sous-groupes, s'adresse à chacun individuellement, expose le mode de fonctionnement des secours et l'ordre d'évacuation (état de santé, syndrome de compression des membres). Exemple de message-type : « Il y a des médecins et des sauveteurs à l'extérieur qui vous attendent […] Nous allons tous vous sortir un par un […] ceux qui sont blessés vont sortir en premier. »</p>
+                <h3>📌 Le cas de nombreuses victimes dans un quartier ou un village</h3>
+                <p>Face à des rescapés abattus, dynamiques ou paniqués, une approche plus directive s'impose : repérer et responsabiliser les leaders, identifier des personnes « relais » parmi les moins fragilisées, isoler les mouvements de panique pour éviter leur propagation.</p>
+                <div class="rd-astuce">En résumé, le sauveteur doit pouvoir : rassurer par son comportement et ses mots, guider pour mener à bien le sauvetage, prendre en charge de manière singulière et adaptée, et soutenir les victimes comme les équipes tout au long de l'opération.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>14 · Annexes : abréviations, fiche détachement USAR et classification de chantier</summary>
+            <div class="rd-section">
+                <h3>📌 Principales abréviations du guide</h3>
+                <table class="rd-table">
+                    <tr><th>Sigle</th><th>Signification</th></tr>
+                    <tr><td>USAR</td><td>Unité de sauvetage, d'appui et de recherche (terminologie nationale) / Urban Search And Rescue (terminologie internationale)</td></tr>
+                    <tr><td>RBAT</td><td>Risque bâtimentaire</td></tr>
+                    <tr><td>EBRAS</td><td>Emergency Building Risk Assessment Sheet</td></tr>
+                    <tr><td>INSARAG</td><td>International Search And Rescue Advisory Group</td></tr>
+                    <tr><td>MGO</td><td>Marche générale des opérations</td></tr>
+                    <tr><td>GOC</td><td>Gestion opérationnelle et commandement</td></tr>
+                    <tr><td>SINUS</td><td>Système d'information numérique standardisé</td></tr>
+                    <tr><td>SITAC</td><td>Situation tactique</td></tr>
+                    <tr><td>BRGM / BCSF / SRTM</td><td>Bureau de recherches géologiques et minières / Bureau central sismologique français / Service de restauration des terrains en montagne</td></tr>
+                    <tr><td>RETEX</td><td>Retour d'expérience</td></tr>
+                </table>
+                <h3>📌 La fiche technique de détachement USAR</h3>
+                <p>Transmise le plus tôt possible avant l'arrivée sur zone (à défaut remise au point de transit, au CRM ou au PC), elle recense notamment : identification et pays de l'équipe, effectifs (personnes, chiens), type d'équipe et classification INSARAG, capacités de réponse (recherche technique, recherche canine, secours, médical, détection de matières dangereuses, spécialistes risques bâtimentaires), informations d'arrivée sur zone, autonomie logistique (eau, nourriture en jours) et besoins matériels (carburants, gaz de coupe, oxygène médical, surface de campement), coordonnées des membres de l'équipe et du camp de base.</p>
+                <h3>📌 Le formulaire de classification de chantier</h3>
+                <p>Utilisé pendant la reconnaissance pour identifier les chantiers présentant une possibilité de sauvetage : identifiant du chantier, coordonnées GPS, adresse et limites, destination et type de construction, nombre d'étages et de sous-sols, décompte des victimes vivantes confirmées, disparues et décédées avec catégorisation A/B/C/D, description du type d'effondrement et des poches de survie possibles, opérations USAR envisagées (recherche technique/cyno, étaiement, percement, manœuvre de force, travail en hauteur/cordes, soutien médical) avec estimation du temps, des personnels et des équipements nécessaires, et récapitulatif des risques et dangers identifiés.</p>
+                <div class="rd-astuce">Ce document normalisé, rédigé au fil de la reconnaissance, constitue une base de renseignement partagée essentielle pour la coordination entre équipes qui se succèdent sur un même chantier ou secteur, en particulier lors de renforts nationaux ou internationaux.</div>
+            </div>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/milieux/GDO-Interventions-Milieux-Effondres-Ou-Instables.pdf" target="_blank" rel="noopener">GDO Milieux effondrés complet (PDF, 112 pages)</a></p>
+        <p class="rd-source">📚 Source : <strong>Guide de doctrine opérationnelle « Interventions en milieux effondrés ou instables »</strong>, DGSCGC/DSP/SDDRH/BDFE, 1ère édition, septembre 2021. Texte repris et résumé ; schémas et photos sélectionnés, non reproduits intégralement.</p>
+    </div>
 
     <script src="js/modules/lspcc.js"></script>
 
@@ -24456,7 +24838,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.43.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.45.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
