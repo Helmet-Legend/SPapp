@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.42.0">
+    <meta name="version" content="1.43.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.42.0</span><br>
+                        Vulcain v<span class="app-version">1.43.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -24168,13 +24168,295 @@ Je demande : ….</p>
         <p class="rd-source">📚 Source : <strong>Guide de doctrine opérationnelle « Interventions sur des aéronefs de type Ultra Léger Motorisé »</strong>, GDO V1-2017, DGSCGC/DSP/SDDRH/BDFE, décembre 2017. Texte repris et résumé ; schémas et photos sélectionnés, non reproduits intégralement.</p>
     </div>
 
+    <div id="agricole" class="module" style="--jsp: #6B8E23;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🚜 GDO – Interventions en milieu agricole</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle « Interventions en milieu agricole » : acculturation au monde agricole, principales sources de risque de l'exploitation (bâtiments, engrais, phytosanitaires, méthanisation, alcools, déjections animales, matériel, fourrage, élevages, récoltes sur pieds, explosifs, silos, photovoltaïque) et conduite des opérations adaptée à chaque risque.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>La moitié du territoire national</strong> (surface agricole utile ≈ 29 millions d'hectares, soit ≈ 54 % du territoire) est concernée par l'activité agricole : tous les SIS y sont exposés, avec une <strong>DECI souvent aléatoire ou sous-dimensionnée</strong> du fait de l'éloignement des exploitations.</li>
+                <li><strong>Bâtiments</strong> : bois (bonne tenue au feu mais points d'assemblage acier fragiles), métal (l'acier ne brûle pas mais perd sa résistance dès <strong>400 °C</strong> — ne jamais couper un <strong>contreventement</strong>), maçonnerie traditionnelle (pas de mur coupe-feu entre habitation et parties agricoles, risque d'effondrement aggravé par le poids de l'eau projetée). <strong>Amiante</strong> fréquente sur les toitures fibrociment antérieures à 1997.</li>
+                <li><strong>Engrais</strong> : non explosifs, combustibles ni toxiques en conditions normales. Danger particulier des <strong>ammonitrates à plus de 80 % de nitrate d'ammonium</strong> (comburants, détonants si contaminés) et des engrais composés <strong>NK/NPK</strong> exposés à une <strong>décomposition auto-entretenue (DAE)</strong> émettant des gaz toxiques (NOx, HCl, Cl₂).</li>
+                <li><strong>Méthanisation</strong> : biogaz = méthane + CO₂ + H₂S essentiellement → risques incendie/explosion (ATEX en enceinte confinée), toxique et de pollution. Engagement avec détecteur multigaz, stationnement des engins à <strong>100 m minimum</strong>.</li>
+                <li><strong>Lisier</strong> : dégage 4 gaz principaux lors du brassage — CO₂, CH₄, NH₃ et surtout <strong>l'hydrogène sulfuré (H₂S)</strong>, mortel et inodore au-delà de 150 ppm. Les caillebotis béton peuvent s'effondrer et précipiter les animaux dans la pré-fosse.</li>
+                <li><strong>Matériel agricole</strong> : première cause d'accident professionnel agricole (plus d'une cinquantaine de décès par an) — chutes, renversements, happements. Réservoirs pouvant contenir plusieurs centaines de litres de carburant et d'huile.</li>
+                <li><strong>Fourrage</strong> : la fermentation naturelle (dès le 2ᵉ jour de stockage, jusqu'à 4 mois) devient dangereuse au-delà de <strong>45 °C</strong> ; à partir de <strong>70 °C</strong>, bascule possible vers l'auto-combustion à tout moment.</li>
+                <li><strong>Récoltes sur pieds</strong> : feux de végétation à cinétique rapide (front de flamme de 3-4 m), propagation par escarbilles — traitement proche des feux de forêt.</li>
+                <li><strong>Explosifs et munitions</strong> : le milieu agricole reste le principal dépositaire d'un arsenal de guerre devenu instable — zone d'exclusion minimale de <strong>100 m</strong>, ne jamais manipuler, arroser ou recouvrir, faire appel aux démineurs.</li>
+                <li><strong>La « permission de laisser brûler »</strong> peut être envisagée, sur décision du DOS après concertation avec le COS et le propriétaire, lorsque le bâtiment n'a ni DECI ni enjeu de propagation à une habitation, un élevage ou l'environnement.</li>
+                <li>Le concours des exploitants (engins, connaissance du site) peut être précieux mais reste encadré juridiquement (<strong>collaborateur occasionnel du service public</strong> ou <strong>réquisition</strong>) : le COS demeure responsable de leur sécurité.</li>
+            </ul>
+        </div>
+
+        <figure class="rd-fig">
+            <img src="images/agricole/schema-exploitation.jpg" alt="Schéma d'ensemble d'une exploitation agricole situant les principales sources de risque : habitation, méthanisation, déjections animales, fourrage, matériel agricole, phytosanitaire, engrais, silos et stockage de grains, gaz et gaz liquéfiés, alcools, photovoltaïque, récoltes sur pieds, munitions et explosifs, animaux" loading="lazy">
+            <figcaption>Vue d'ensemble d'une exploitation agricole : localisation schématique des grandes sources de risque traitées par ce GDO (la symbolique ne caractérise que les dangers principaux, pas les produits réellement présents).</figcaption>
+        </figure>
+
+        <details class="jsp-cours">
+            <summary>1 · Le monde agricole : acculturation et contexte d'intervention</summary>
+            <div class="rd-section">
+                <h3>📌 L'agriculture en quelques repères</h3>
+                <p>L'agriculture regroupe l'ensemble des travaux du sol en vue d'une production végétale et, plus largement, des activités développées par l'homme pour obtenir des produits végétaux et animaux utiles à son alimentation. La <strong>surface agricole utile (SAU)</strong> française représente environ <strong>29 millions d'hectares</strong>, soit près de <strong>54 % du territoire national</strong> — la France reste la première puissance agricole d'Europe. La tendance de fond, depuis plus de 30 ans, est à la <strong>disparition des petites exploitations au profit de structures moins nombreuses mais plus grandes</strong> (surface moyenne passée d'environ 43 ha en 2000 à environ 61 ha en 2013), avec en parallèle la montée d'installations classées de grande taille et la diversification de certaines exploitations vers le tourisme (gîtes ruraux, fermes pédagogiques, centres équestres).</p>
+                <h3>📌 Les motifs de sollicitation des secours</h3>
+                <p>La taille des installations, leur complexité et la diversité des activités imposent une extrême prudence. Les secours peuvent être sollicités pour : feux de bâtiments, de véhicules, de champs ou de produits dangereux (associés ou non à un risque d'explosion) ; secours d'urgence à victime ; accidents (véhicules, travail) ; interventions en présence d'animaux (récupération, épizootie) ; interventions liées à l'eau, au gaz ou à l'électricité (photovoltaïque, méthanisation, cuves) ; protection des biens (effondrement, éboulement) ; pollution des sols, lacs et rivières.</p>
+                <h3>📌 La défense extérieure contre l'incendie (DECI)</h3>
+                <p>L'alimentation en eau des engins reste une problématique constante en milieu agricole : la DECI y est très aléatoire d'une commune à l'autre et fréquemment sous-dimensionnée du fait de l'éloignement géographique des installations. Elle est encadrée par le code général des collectivités territoriales et le référentiel national du <strong>15 décembre 2015</strong> ; pour les bâtiments d'élevage relevant des installations classées, elle est fixée par arrêtés ministériels et, le cas échéant, préfectoraux. Des solutions locales existent : récupération des eaux de toiture, points d'eau artificiels, voire <strong>forages et réseaux d'irrigation agricoles</strong> utilisables (directement ou via raccord d'adaptation) pour l'alimentation des engins-pompes — il est utile de se renseigner auprès de l'exploitant sur les caractéristiques de son réseau, ce qui peut limiter le travail de noria.</p>
+                <div class="rd-astuce">Le référentiel national DECI rappelle qu'« il conviendra de rechercher, sur le terrain, des solutions pragmatiques, adaptées aux risques, simples et durables » — un contact en amont avec la chambre d'agriculture ou l'exploitant reste le meilleur levier de connaissance du secteur.</div>
+                <h3>📌 Accessibilité</h3>
+                <p>Très variable d'un établissement à l'autre (ferme traditionnelle, ferme isolée, exploitation moderne, installation classée), l'accessibilité est particulièrement compliquée dans les exploitations de montagne (climat, relief). À l'intérieur de l'exploitation, une attention particulière doit être portée aux abords des bâtiments : des <strong>fosses en plus ou moins bon état</strong> peuvent y être implantées, avec un risque d'effondrement au passage d'un engin ou de chute d'un sapeur-pompier dans un bac de reprise d'effluent.</p>
+                <h3>📌 Les acteurs institutionnels à connaître</h3>
+                <table class="rd-table">
+                    <tr><th>Acteur</th><th>Rôle</th></tr>
+                    <tr><td><strong>DRAAF</strong> / DAAF (outre-mer)</td><td>Direction régionale de l'alimentation, de l'agriculture et de la forêt — connaissance socio-économique des territoires ruraux</td></tr>
+                    <tr><td><strong>AFB</strong> (ex-ONEMA)</td><td>Agence française pour la biodiversité — police des eaux, qualité et préservation des milieux</td></tr>
+                    <tr><td><strong>ARS</strong></td><td>Agence régionale de santé (englobe les services vétérinaires) — interlocuteur en cas de crise sanitaire</td></tr>
+                    <tr><td><strong>DDCSPP</strong> / DDPP</td><td>Protection de la santé de la population (zoonoses) et de la santé animale</td></tr>
+                    <tr><td><strong>DREAL</strong></td><td>Préservation de la qualité des milieux (eau, air, sol)</td></tr>
+                    <tr><td>Chambre d'agriculture</td><td>Expertise et conseil aux exploitants</td></tr>
+                    <tr><td><strong>RADART</strong> (DGSCGC)</td><td>Aide à la décision en matière de protection des populations face aux risques technologiques</td></tr>
+                    <tr><td><strong>INERIS / CASU</strong></td><td>Cellule d'appui aux situations d'urgence, opérationnelle 24h/24 et 7j/7 (03.44.55.69.99)</td></tr>
+                </table>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Les bâtiments agricoles</summary>
+            <div class="rd-section">
+                <h3>📌 Description générale</h3>
+                <p>Les bâtiments agricoles se composent de locaux d'habitation (parfois associés à des locaux touristiques ou ruraux) et de dépendances, en construction <strong>bois</strong>, <strong>métallique</strong> ou <strong>« traditionnelle »</strong> (maçonnerie, pierre, moellons), le plus souvent distinctes des zones habitées dans les exploitations modernes.</p>
+                <h3>📌 Constructions en bois</h3>
+                <p>Le bois massif, bien que combustible, offre selon son état une meilleure tenue au feu que d'autres matériaux : il conserve mieux ses propriétés mécaniques sous incendie (résistance au feu) et transmet la chaleur <strong>12 fois moins vite que le béton, 250 fois moins vite que l'acier et 1500 fois moins vite que l'aluminium</strong> (très faible dilatation et conductivité thermiques). Il se consume lentement (≈ 0,7 mm par face et par minute). Il faut néanmoins surveiller les <strong>points d'assemblage</strong> (souvent en acier galvanisé), qui entretiennent une combustion localisée plus importante — nombre de ces charpentes anciennes ont été modifiées sans le concours d'un homme de l'art.</p>
+                <h3>📌 Constructions en métal</h3>
+                <p>L'acier ne brûle pas et ne dégage ni fumée ni chaleur : c'est un matériau ininflammable. Mais sa résistance commence à diminuer <strong>dès 400 °C</strong>, avec des dilatations importantes qui accroissent les contraintes internes et provoquent un effondrement plus rapide de la structure (phénomène de <strong>flambage</strong>) — d'autant plus vite que la charge calorifique intérieure est importante.</p>
+                <figure class="rd-fig">
+                    <img src="images/agricole/hangar-metallique.jpg" alt="Hangar agricole métallique ouvert avec tracteur orange stationné à l'intérieur, structure de charpente et contreventements visibles" loading="lazy">
+                    <figcaption>Hangar à ossature métallique : le contreventement (barres diagonales visibles) assure la stabilité globale de l'ouvrage — il ne doit jamais être coupé, y compris pour créer un accès.</figcaption>
+                </figure>
+                <div class="rd-alerte">Le <strong>contreventement</strong> est le système statique assurant la stabilité globale d'une ossature ou charpente métallique — il ne faut jamais le couper, y compris pour se créer un accès.</div>
+                <h3>📌 Constructions traditionnelles</h3>
+                <p>Constructions maçonnées (moellons, pierre) où <strong>aucune séparation coupe-feu</strong> ne sépare souvent les locaux de vie des locaux agricoles ; le fourrage vient même parfois entourer la partie habitation pour l'isolation, ce qui facilite la propagation des fumées et flammes. Ces constructions présentent des risques d'effondrement majeurs : l'apport important d'eau sur des stockages haute densité <strong>surcharge les structures</strong>, tandis que la projection d'eau lessive les murs et affaiblit les joints. Les <strong>tirants métalliques</strong> reliés aux ancres de façade (chaînage) deviennent, en cas d'incendie, une source de transmission de la chaleur qui affaiblit paradoxalement la structure.</p>
+                <h3>📌 La problématique de l'amiante</h3>
+                <p>De nombreux hangars agricoles antérieurs à <strong>1997</strong> sont couverts de plaques isolantes amiantées (fibrociment / éverite, très isolant et bon marché). Tant que le bâtiment est en bon état, le risque reste faible ; mais lors d'un incendie ou d'une intervention dans un hangar vétuste, les plaques portées à haute température <strong>éclatent et libèrent des milliards de fibres d'amiante</strong>, transportées à distance par les gaz chauds.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Les engrais</summary>
+            <div class="rd-section">
+                <h3>📌 Définition et composition</h3>
+                <p>Les engrais sont des substances organiques ou minérales apportant aux végétaux des éléments nutritifs. On distingue les éléments majeurs — <strong>azote (N)</strong>, <strong>phosphore (P)</strong>, <strong>potassium (K)</strong> — les éléments secondaires (calcium, magnésium, sodium, soufre) et les oligo-éléments. Un engrais commercialisé est caractérisé par sa teneur N-P-K (ex. : 16-0-32).</p>
+                <h3>📌 Grandes catégories</h3>
+                <table class="rd-table">
+                    <tr><th>Catégorie</th><th>Définition</th><th>Exemples</th></tr>
+                    <tr><td><strong>Simples</strong></td><td>Un seul élément fertilisant majeur</td><td>Ammonitrates (33,5-0-0), urée (46-0-0), chlorure de potassium (0-0-60)</td></tr>
+                    <tr><td><strong>Composés binaires/ternaires</strong></td><td>≥ 2 éléments majeurs par réaction, mélange ou combinaison</td><td>DAP/NP (18-46-0), nitrate de potassium/NK (13-0-46), NPK (15-5-15)</td></tr>
+                    <tr><td><strong>Complexes</strong></td><td>Chaque granulé contient tous les éléments déclarés</td><td>—</td></tr>
+                    <tr><td><strong>Mélangés</strong></td><td>Mélange à sec sans réaction chimique</td><td>—</td></tr>
+                </table>
+                <p>Ils se présentent en liquides, solides (granulés, perles, sacs, big-bags de 1 m³) ou gaz liquéfié (cas de l'<strong>ammoniaque</strong>, gaz irritant à forte odeur piquante, seul engrais azoté utilisé à l'état gazeux, avec la plus forte teneur en azote du marché — 82 %).</p>
+                <h3>📌 Les risques</h3>
+                <p>En conditions normales de stockage, les engrais commercialisés <strong>ne sont ni explosifs, ni combustibles, ni toxiques</strong> ; certains (engrais verts, urée) sont même sans danger particulier. Mais confrontés à une source de chaleur, ils peuvent se liquéfier et émettre des gaz toxiques variables (NOx, HCN, SO₂, HCl, NH₃, HNO₃, Cl₂).</p>
+                <div class="rd-alerte">Les <strong>ammonitrates à plus de 80 % de nitrate d'ammonium</strong> sont des <strong>comburants</strong> qui facilitent le développement de l'incendie et peuvent <strong>détonner</strong> s'ils sont contaminés (matières organiques, chlore, acides, poudres métalliques, hydrocarbures, eaux d'extinction) en présence de dérive de température, confinement ou impact haute vitesse.</div>
+                <p>Les engrais composés contenant du nitrate d'ammonium (<strong>NK et NPK</strong>) peuvent, échauffés, subir une <strong>décomposition auto-entretenue (DAE)</strong> qui se poursuit même après suppression de la source de chaleur, avec émission de gaz chauds (300-450 °C) toxiques et corrosifs — le danger est maximal pour les compositions dites « en V » (ex. NPK 15-5-15).</p>
+                <figure class="rd-fig">
+                    <img src="images/agricole/schema-engrais-decomposition.jpg" alt="Schéma hexagonal des dangers de décomposition thermique des engrais composés NPK : contamination, choc, confinement ou détonation à partir de 20% d'azote entraînent décomposition thermique, source de chaleur, températures supérieures à 1000°C, émissions toxiques d'oxydes d'azote, chlore, acide chlorhydrique, acide nitrique, ammoniac et composés fluorés" loading="lazy">
+                    <figcaption>Schématisation du cumul des dangers d'un engrais composé NPK par addition des risques de ses éléments simples (N, P, K) : contamination/choc/confinement peuvent enclencher une décomposition thermique auto-entretenue émettant des composés toxiques.</figcaption>
+                </figure>
+                <div class="rd-astuce">On peut déduire les dangers d'un engrais composé par <strong>cumul des risques de ses éléments simples</strong> (N, P, K) : PK ne présente aucune décomposition connue, alors que N, NP, NK et NPK présentent tous un risque de décomposition thermique, croissant avec la présence d'azote.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Produits phytosanitaires et gaz / GPL</summary>
+            <div class="rd-section">
+                <h3>📌 Produits phytosanitaires</h3>
+                <p>Également appelés agropharmaceutiques, ces produits chimiques (homologués, famille des pesticides) protègent les végétaux ou agissent sur leur croissance. Quatre grandes familles : <strong>insecticides/acaricides, fongicides, herbicides, anti-nuisibles</strong>. Conditionnés en poudres, granulés, liquides ou aérosols, ils doivent être <strong>séparés selon leur incompatibilité</strong> (inflammable, comburant, toxique). Les plus grosses quantités se trouvent dans les magasins spécialisés de stockage et distribution.</p>
+                <table class="rd-table">
+                    <tr><th>Type de produit</th><th>Symbole</th><th>Incompatible avec</th><th>Remarque</th></tr>
+                    <tr><td>Herbicides à base de sodium, certains désinfectants</td><td>Comburant</td><td>Produits inflammables</td><td>Intensifie les flammes, gêne l'extinction</td></tr>
+                    <tr><td>Fumigants (taupicides, désinfectants)</td><td>Inflammable</td><td>Eau, produits comburants</td><td>Dégage un gaz mortel en présence d'eau/humidité</td></tr>
+                    <tr><td>Acides concentrés</td><td>Corrosif</td><td>Bases concentrées</td><td>Échauffement, projections bouillantes et corrosives</td></tr>
+                    <tr><td>Bases concentrées (soude, eau de javel)</td><td>Corrosif</td><td>Acides concentrés</td><td>Dégage un gaz toxique au contact d'acide</td></tr>
+                    <tr><td>Certains phytosanitaires</td><td>Toxique</td><td>Inflammables, comburants, corrosifs</td><td>Fumées toxiques dès le début d'incendie</td></tr>
+                </table>
+                <h3>📌 Gaz et gaz de pétrole liquéfiés (GPL)</h3>
+                <p>Stockages fréquents et très variables dans les exploitations : GPL pour le chauffage des bâtiments d'élevage, le séchage des céréales/tabac, les serres, le désherbage thermique, le carburant d'engins ou comme insectifuge ; petits conditionnements en ateliers (poste acétylène) ; plus rarement, citernes d'<strong>ammoniaque</strong> pour l'injection dans le sol. Cette thématique fait l'objet d'un GDO dédié : « <strong>Interventions en présence de bouteilles de gaz soumises à un incendie ou à un choc</strong> ».</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · La méthanisation</summary>
+            <div class="rd-section">
+                <h3>📌 Définition et principe</h3>
+                <p>Processus biologique naturel de dégradation de la matière organique en l'absence d'oxygène, produisant du <strong>biogaz</strong> (méthane CH₄ et CO₂ principalement, plus d'autres gaz en faible quantité) valorisé en chaleur, électricité ou biocarburant, voire injecté dans un réseau de distribution. Trois étapes : dégradation de la matière organique, formation de biogaz, valorisation énergétique. Trois filières : territoriale (déchets de collectivités), industrielle (déchets agro-alimentaires), agricole (effluents d'élevage, résidus de culture) — avec une perspective de <strong>1 700 unités</strong> en France à l'horizon 2023.</p>
+                <figure class="rd-fig">
+                    <img src="images/agricole/schema-methanisation.jpg" alt="Schéma de principe d'une installation de méthanisation agricole en 6 étapes numérotées : fosse de stockage des effluents d'élevage, préfosse de mélange avec biomasse et co-substrats, digesteur produisant du biogaz, post-digesteur produisant l'engrais naturel, condenseur, stockage du gaz, unité de combustion produisant électricité et chaleur" loading="lazy">
+                    <figcaption>Schéma de principe d'une installation de méthanisation agricole : (1) fosse de stockage, (2) préfosse de mélange, (3) digesteur, (4) condenseur, (5) stockage de gaz, (6) unité de combustion (électricité, chaleur).</figcaption>
+                </figure>
+                <p>Les installations de production et de stockage du biogaz relèvent du régime des <strong>installations classées</strong> ; dans la filière agricole, le stockage se fait généralement en <strong>bâches souples à l'air libre</strong>.</p>
+                <h3>📌 Les risques</h3>
+                <p>Sources d'accidents : débordement du méthaniseur, surpression interne, rupture de canalisation en enceinte confinée, gel de soupapes, envol de membranes souples.</p>
+                <table class="rd-table">
+                    <tr><th>Risque</th><th>Détail</th></tr>
+                    <tr><td><strong>Incendie / explosion</strong></td><td>Gaz combustibles, atmosphère explosive possible en espace confiné (canalisations, réservoirs)</td></tr>
+                    <tr><td><strong>Toxique / anoxie</strong></td><td>Biogaz = CH₄, CO₂, CO, H₂S et eau ; selon origine : azote, oxygène, composés organo-halogénés (Cl, F), métaux lourds</td></tr>
+                    <tr><td><strong>Pollution</strong></td><td>Déversement accidentel ou eaux d'extinction ; substrats non dangereux en eux-mêmes mais quantités importantes sur faible surface</td></tr>
+                </table>
+                <div class="rd-alerte">Engagement sur méthaniseur : port des EPI et de l'ARI, stationnement des engins à <strong>100 m minimum</strong>, détecteur multigaz obligatoire, appareils déflagrants déposés aux engins, fermeture des vannes intrants/sortie de biogaz en concertation avec l'exploitant, relevés d'explosimétrie et de toxicologie réguliers (CH₄, CO₂, H₂S, NH₃, SO₂).</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · Alcools et déjections animales</summary>
+            <div class="rd-section">
+                <h3>📌 Production et stockage d'alcools</h3>
+                <p>Stockages présents chez les distillateurs (agro-alimentaire) comme chez les viticulteurs (fermentation). Deux modes de production : <strong>distillation</strong> (séparation par chauffage) et <strong>fermentation</strong> (décomposition de glucides par des micro-organismes en éthanol et CO₂ en l'absence d'air). Risques d'incendie/explosion liés à l'éthanol hautement inflammable et aux poussières de grain, d'asphyxie/intoxication par les vapeurs d'alcool et le CO₂ de fermentation en espace confiné, d'explosion/implosion des cuves. Le vin dont le degré d'alcool est ≥ 13 % vol. peut être considéré comme substance combustible et inflammable auto-entretenue.</p>
+                <h3>📌 Déjections animales : trois types</h3>
+                <table class="rd-table">
+                    <tr><th>Type</th><th>Composition</th><th>Stockage</th></tr>
+                    <tr><td><strong>Produits secs</strong></td><td>Fientes des élevages avicoles</td><td>Séchées sur place, utilisées comme engrais</td></tr>
+                    <tr><td><strong>Fumiers</strong></td><td>Bouses, urine et paille (bovins/ovins)</td><td>Fumières à l'air libre ou sous toiture ventilée, compostage</td></tr>
+                    <tr><td><strong>Lisiers</strong></td><td>Mélange liquide de fèces et d'urine (porcs/bovins)</td><td>Pré-fosses sous bâtiment, fosses aériennes/semi-enterrées, bâchées</td></tr>
+                </table>
+                <p>Les déjections maîtrisables représenteraient en France près de <strong>180 millions de tonnes</strong> de matière brute riche en azote et autres nutriments — un enjeu environnemental et économique majeur, valorisé en fertilisation ou en méthanisation.</p>
+                <figure class="rd-fig">
+                    <img src="images/agricole/prefosse-lisier-schema.jpg" alt="Infographie en coupe d'un bâtiment d'élevage porcin montrant les porcs installés sur un caillebotis surplombant la pré-fosse de récupération du lisier en sous-sol" loading="lazy">
+                    <figcaption>Coupe schématique d'un bâtiment d'élevage porcin : les animaux évoluent sur un caillebotis béton surplombant la pré-fosse de récupération du lisier — un effondrement du plancher précipite les bêtes dans la fosse.</figcaption>
+                </figure>
+                <h3>📌 Les risques du lisier</h3>
+                <ul>
+                    <li><strong>Risque incendie</strong> : possible pour les produits secs (fermentation dégénérant en auto-inflammation) mais généralement peu d'enjeux, les stockages étant tenus à l'écart des bâtiments.</li>
+                    <li><strong>Risque toxique</strong> : lors du brassage mécanique des fosses ou des travaux de réfection/curage, dégagement de <strong>CO₂, CH₄, NH₃</strong> et surtout d'<strong>hydrogène sulfuré (H₂S)</strong> — le plus dangereux, plus lourd que l'air, odeur d'œufs pourris détectable dès 0,02 ppm mais <strong>devenant inodore et mortel à partir de 150 ppm</strong>. Les lisiers de bovins forment en surface une croûte étanche pouvant libérer une bouffée concentrée de gaz toxique en cas de rupture.</li>
+                    <li><strong>Risque de pollution</strong> : rupture ou débordement de fosse (volumes de 250 à 2 500 m³) provoquant une <strong>eutrophisation</strong> des cours d'eau (prolifération bactérienne, asphyxie de la faune aquatique), surtout avec le lisier de porc plus riche en azote — impact possible sur les prises d'eau potable, piscicultures et activités ostréicoles.</li>
+                    <li><strong>Effondrement des caillebotis</strong> : le mélange aliments/déjections forme un composé corrosif qui altère le béton ; les pré-fosses ont une profondeur de <strong>0,50 m à 2,50 m</strong>, à vider et ventiler avant tout sauvetage d'animaux.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7 · Le matériel agricole</summary>
+            <div class="rd-section">
+                <h3>📌 Généralités</h3>
+                <p>Matériel classé par fonction (manutention, élevage, traitement, récolte, plantation, travail du sol, traction), tracté (charrue, semoir) ou automoteur (tracteur, ensileuse, moissonneuse-batteuse, épandeur), de plus en plus imposant.</p>
+                <h3>📌 Le risque d'accident</h3>
+                <p>Premier risque professionnel agricole en fréquence et gravité, avec <strong>plus d'une cinquantaine de décès annuellement</strong> (chutes, renversements de tracteur, coincements, écrasements, happements). En phase de <strong>conduite</strong> : chute à la descente, renversement en dévers, contact avec des lignes électriques. En phase de <strong>manipulation</strong> (cas les plus fréquents) : heurts et happements par des parties mobiles (herses rotatives, lames, trémie), écrasement par chute de charge ou renversement en déclivité/ornière, projections de particules, chute — aggravés par la puissance relative élevée et la faible stabilité des tracteurs enjambeurs.</p>
+                <figure class="rd-fig">
+                    <img src="images/agricole/accident-tracteur.jpg" alt="Sapeurs-pompiers en tenue et casque intervenant sur un tracteur agricole renversé dans un fossé, vue aérienne montrant les roues et l'attelage" loading="lazy">
+                    <figcaption>Intervention sur un renversement de tracteur : les opérations de désincarcération sur machine agricole sont souvent complexes et de longue durée du fait de l'enchevêtrement des éléments mécaniques.</figcaption>
+                </figure>
+                <div class="rd-astuce">Dans les deux cas (conduite et manipulation), les éventuelles opérations de désincarcération deviennent plus complexes et généralement de longue durée : anticiper le matériel lourd de levage et les vecteurs d'évacuation.</div>
+                <h3>📌 Le risque incendie</h3>
+                <p>En <strong>extérieur</strong> : sinistres fréquents en période de forte chaleur ou lors des remplissages ; réservoirs de grande capacité (à titre d'exemple documenté, une moissonneuse-batteuse peut embarquer <strong>900 litres de carburant et 450 litres d'huile</strong>) — risques de propagation aux champs, d'effet missile (éclatement hydraulique/pneumatique) et de brûlures de tiers voulant aider les secours. En <strong>hangar</strong> : risque multiforme (liquides inflammables, engrais contaminés à proximité, bouteilles de gaz, matériaux divers) avec propagation possible à l'habitation, rayonnement thermique important et explosions à effet missile.</p>
+                <h3>📌 Le risque de pollution</h3>
+                <p>À l'extérieur : incendie, fuite de carburant, huile, produits phytosanitaires, engrais ou produits alimentaires (lait). Lors d'un feu de bâtiment : pollution par les eaux d'extinction.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>8 · Le fourrage</summary>
+            <div class="rd-section">
+                <h3>📌 Définition et conditionnements</h3>
+                <p>Le fourrage désigne les végétaux (strate herbacée) cultivés pour l'alimentation animale ; le <strong>foin</strong> est issu des prairies (herbes séchées, graminées, parfois légumineuses comme luzerne ou trèfle), la <strong>paille</strong> est une tige de céréale débarrassée de ses grains.</p>
+                <table class="rd-table">
+                    <tr><th>Conditionnement</th><th>Humidité tolérée</th><th>Poids</th><th>Risque de fermentation</th></tr>
+                    <tr><td>Vrac et séchoir</td><td>20 à 30 %</td><td>40 à 60 kg/m³</td><td>+</td></tr>
+                    <tr><td>Balle ronde (roundball)</td><td>Maxi 20 %</td><td>450 à 900 kg</td><td>++</td></tr>
+                    <tr><td>Balle rectangulaire</td><td>Impérativement &lt; 18 %</td><td>300 à 600 kg (bigball), 15-25 kg (balles)</td><td>+++</td></tr>
+                </table>
+                <h3>📌 Le risque de fermentation</h3>
+                <p>La fermentation, réaction biochimique libérant de l'énergie à partir du glucose, est systématique en milieu anaérobie et peut survenir dès le <strong>2ᵉ jour de stockage et jusqu'à 4 mois</strong>. La température normale de fermentation à cœur avoisine <strong>45 °C</strong> ; au-delà, elle devient dangereuse, et à partir de <strong>70 °C</strong>, une bascule vers l'auto-combustion peut survenir à tout moment. Signes précurseurs d'une fermentation anormale : condensation en partie supérieure du tas, odeur de « roussi », tassement anormal du fourrage — et danger de chute des tas dans tous les cas.</p>
+                <figure class="rd-fig">
+                    <img src="images/agricole/feu-hangar-fourrage.jpg" alt="Hangar agricole en tôle effondré et en flammes, stock de fourrage embrasé, dégagement de fumée dense au premier plan" loading="lazy">
+                    <figcaption>Feu de hangar de stockage de fourrage : l'exploitant peut renseigner utilement le COS (température, humidité, couleur, odeur, dates de coupe et de stockage) pour distinguer une combustion par fermentation d'une autre origine de départ de feu.</figcaption>
+                </figure>
+                <p>Stratégie à évaluer avant toute action : permanence en eau (ou bénéfice du « laisser brûler »), risques secondaires (exploitations, habitations, matériels, animaux, environnement), état des structures, exposition aux fumées, organisation avec l'exploitant et le DOS (détassage, transfert du stockage), durée prévisible de l'intervention (relève, soutien sanitaire).</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>9 · Les élevages et les animaux</summary>
+            <div class="rd-section">
+                <h3>📌 Une dimension animale omniprésente</h3>
+                <p>Les interventions à composante animale sont soit celles où l'animal motive l'engagement (sauvetage, animal blessé ou en divagation), soit celles où une dimension animale s'ajoute aux problématiques courantes du COS (incendie, AVP). Depuis la reconnaissance des animaux comme « <strong>êtres doués de sensibilité</strong> » (art. 515-14 du code civil), leur prise en compte requiert une attention particulière — au-delà de la perte financière ou affective qu'ils représentent pour l'exploitant, ils demeurent soumis au régime des biens « sous réserve des lois qui les protègent ».</p>
+                <h3>📌 Modes d'hébergement</h3>
+                <p>Selon les exploitations, de quelques bêtes à plusieurs milliers (volailles, lapins) : en <strong>stabulation à l'étable</strong> (petit enclos, libre, entravée), en <strong>stabulation plein-air</strong> (clôtures sur pâture), en <strong>box</strong> (écuries) ou <strong>hors-sol</strong> (cage, petits groupes, caillebotis).</p>
+                <figure class="rd-fig">
+                    <img src="images/agricole/stabulation-bovins.jpg" alt="Têtes de bovins entravées dans une étable, mangeant du foin dans une auge, chaînes visibles au niveau du cou" loading="lazy">
+                    <figcaption>Bovins en stabulation entravée à l'étable : la contention et le comportement de l'animal doivent être évalués avant toute approche, y compris en dehors de tout sinistre.</figcaption>
+                </figure>
+                <h3>📌 Les risques</h3>
+                <p>Divagation ou chute des animaux (voie publique, milieu aquatique, excavation) ; présence d'un animal paniqué ou non maîtrisable ; animaux blessés (brûlés, intoxiqués, incarcérés) ; <strong>risque biologique</strong> : épizooties entre animaux, zoonoses vers l'homme. Toute blessure infligée par un animal (morsure, griffure, coup de corne, ruade) expose à un risque infectieux.</p>
+                <div class="rd-alerte">Cas particulier des feux de bâtiments d'élevage avicole ou porcin : forte présence d'isolant synthétique (polystyrène extrudé, polyuréthane) générant gouttes enflammées et gaz toxiques/inflammables ; bâtiments très isolés propices à l'<strong>embrasement généralisé éclair (EGE)</strong> ou à l'explosion de fumées ; structure métallique peu résistante au feu. En l'absence de sauvetage humain à réaliser, <strong>aucun sapeur-pompier ne doit s'engager à l'intérieur</strong> — l'action se limite à une attaque par l'extérieur et à la protection des structures avoisinantes.</div>
+                <p>Il faut distinguer la <strong>ventilation statique</strong> (volets latéraux et lanterneau de faîtage : en cas d'incendie ou de coupure électrique, les ouvrants restent ouverts, facilitant l'évacuation des fumées) de la <strong>ventilation dynamique</strong> (extraction mécanique par ventilateurs : en cas de coupure électrique, les ventelles restent fermées et n'assurent plus aucun désenfumage — le risque de phénomène thermique devient fort probable).</p>
+                <figure class="rd-fig">
+                    <img src="images/agricole/veau-fumee.jpg" alt="Jeune veau debout sur un tas de paille au milieu d'une épaisse fumée, charpente calcinée en arrière-plan après un incendie de bâtiment agricole" loading="lazy">
+                    <figcaption>Feu en présence d'animaux : périmètre de sécurité adapté à l'espèce, action dans le calme, parcage à distance et vigilance sur le retour spontané des bêtes vers le foyer — un comportement très fréquent.</figcaption>
+                </figure>
+                <h3>📌 Conduite à tenir en présence d'animaux</h3>
+                <p>Réaliser un périmètre de sécurité adapté à l'espèce, se renseigner auprès du propriétaire (espèces, nombre, comportement), agir dans le calme, limiter l'usage du deux-tons (stress), faire arrêter la circulation au besoin, détacher et parquer les animaux, se prémunir de leur retour vers le foyer, solliciter un vétérinaire (SIS, DDCSPP/DDPP) et, pour les sauvetages, prévoir sangles, treuil ou tir hypodermique — en fosse à lisier, prendre garde à la toxicité/anoxie et au reconditionnement du personnel en fin d'opération. <strong>Bien mesurer les enjeux dès lors qu'une vie humaine est exposée.</strong></p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>10 · Récoltes sur pieds, explosifs, silos et photovoltaïque</summary>
+            <div class="rd-section">
+                <h3>📌 Les récoltes sur pieds</h3>
+                <p>Feux de végétation (broussailles, chaumes, récoltes sur pieds) comparables à des feux de forêt, particulièrement prégnants aux fortes chaleurs estivales. Ils se caractérisent par des matières abondantes, un <strong>front de flamme rapide (3-4 m de haut)</strong>, une propagation par escarbilles, un flux thermique important et une persistance après passage du front, pouvant <strong>piéger les sapeurs-pompiers</strong>. Les feux de chaume sont en comparaison moins intenses (flammes ≤ 1 m, flux thermique modeste, extinction rapide). Origines diverses : feu de friche, feu de véhicule, mégot, malveillance, foudre, barbecue mal éteint, écobuage non contrôlé, étincelles d'outils agricoles. Risques associés : propagation aux bâtiments, engins et points sensibles (éoliennes), changement brutal de direction du vent, propagation à de grandes surfaces, perturbation d'infrastructures de transport.</p>
+                <h3>📌 Explosifs et munitions</h3>
+                <p>Le milieu agricole, théâtre de conflits successifs, reste le principal dépositaire d'un arsenal de guerre devenu instable avec le temps (grenades, projectiles de mortier, roquettes, cartouches, mines, obus, bombes aériennes, mais aussi dispositifs pyrotechniques « anti-grêle » d'usage agricole), pouvant comporter des chargements explosifs, incendiaires, toxiques de combat (phosphore, ypérite) ou fumigènes. Ces engins refont souvent surface lors de travaux publics ou agricoles, dans les fossés, cours de ferme, garages, champs ou bennes à déchets — des lieux de stockage pouvant atteindre plusieurs tonnes existent dans l'attente de leur destruction.</p>
+                <figure class="rd-fig">
+                    <img src="images/agricole/obus-decouverte.jpg" alt="Obus de la seconde guerre mondiale rouillé et couvert de terre, découvert au sol parmi des feuilles mortes en bordure de champ" loading="lazy">
+                    <figcaption>Découverte d'un obus en bordure de champ : ne jamais manipuler ni déplacer, établir un périmètre de sécurité et prévenir sans délai le service de déminage compétent.</figcaption>
+                </figure>
+                <div class="rd-alerte">Découverte d'explosifs ou munitions : éloigner le public sans délai, établir une <strong>zone d'exclusion de 100 m minimum</strong> autour de l'objet (en gardant à l'esprit la possibilité d'en trouver plusieurs), <strong>ne pas manipuler, ne pas arroser, ne pas recouvrir</strong>, ne pas utiliser de radiocommunication à proximité immédiate, ne pas produire de vibrations, ne pas laisser de garde à proximité (même en véhicule), demander l'intervention des démineurs en précisant type, description, lieu exact et environnement (citernes, cuves à proximité).</div>
+                <h3>📌 Stockage de grains (silos)</h3>
+                <p>Réalisé en silos, réservoirs souvent cylindriques verticaux ou horizontaux. Cette thématique fait l'objet d'un GDO dédié « Interventions dans les silos et environnements assimilés » ; en son absence, se référer au partage d'information opérationnelle « Feux de silos, bois et céréales » (2017).</p>
+                <h3>📌 Le photovoltaïque</h3>
+                <p>De plus en plus présent sur les toitures agricoles (hangars, habitations) comme au sol (centrales), il fait l'objet d'un GDO dédié « Interventions en présence d'éléments photovoltaïques » — s'assurer systématiquement de la mise en sécurité des installations avant toute opération de protection.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>11 · La conduite des opérations</summary>
+            <div class="rd-section">
+                <h3>📌 Prise d'appel et envoi des secours</h3>
+                <p>Le traitement CTA/CODIS s'appuie sur : la localisation (accès, problématique de desserte), la description de la problématique (type de sinistre, victimes et pathologie, engrais/phytosanitaire éventuels), la nature du requérant, les facteurs aggravants (cumul de risques, météo) et la DECI (anticipation des renforts). Le recours au renfort zonal doit être anticipé sans délai si la spécialité nécessaire n'est pas disponible localement.</p>
+                <h3>📌 Reconnaissances</h3>
+                <p>Recherche prioritaire du renseignement auprès de l'exploitant : desserte et accès, identification des risques et enjeux, ressources en eau (PEI) et, selon le cas, structure du bâtiment (bois/acier/béton), conception, système de ventilation, volume, nature et quantités des stockages ou du cheptel — ou, pour les récoltes sur pieds, conditions météorologiques et zones à protéger.</p>
+                <h3>📌 Sauvetages et « laisser brûler »</h3>
+                <p>Priorité aux sauvetages de personnes par tous moyens disponibles ; le sauvetage d'animaux, bien que pouvant être une priorité, reste soumis à l'analyse « bénéfice/risque » du COS. Compte tenu des difficultés fréquentes d'alimentation en eau, la <strong>possibilité réglementaire de laisser brûler</strong> (référentiel national DECI du 15 décembre 2015) peut être envisagée sur la base d'une analyse mettant en évidence l'absence d'habitation, d'élevage ou de risque de propagation, une valeur faible du bien menacé, la rapidité de propagation intérieure et le risque de pollution par les eaux d'extinction — <strong>décision relevant du DOS</strong>, après concertation avec le COS et le propriétaire.</p>
+                <figure class="rd-fig">
+                    <img src="images/agricole/feu-ruine-laisser-bruler.jpg" alt="Ruine de bâtiment agricole en pierre calcinée avec un chargeur télescopique vert dégageant les décombres fumants, fumée blanche s'élevant du foyer" loading="lazy">
+                    <figcaption>Post-sinistre sur bâtiment agricole : l'engin de l'exploitant (chargeur télescopique) facilite le dégarnissage et le détassage des décombres, sous encadrement strict du COS.</figcaption>
+                </figure>
+                <div class="rd-astuce">Le concours d'un exploitant (transfert de stockage, éloignement de matériaux sensibles, gestion des animaux, réalisation de coupe-feu) peut être précieux, mais le COS demeure responsable de sa sécurité. Trois options : <strong>refuser</strong> son intervention, accepter le concours d'un <strong>collaborateur occasionnel du service public</strong> (jurisprudence constante depuis l'arrêt Cames, 1895), ou procéder à une <strong>réquisition</strong> (urgence avérée, atteinte à l'ordre public, absence de moyens conventionnels — habilitation du COS en l'absence de l'autorité préfectorale, régularisée ensuite par arrêté).</div>
+                <h3>📌 Feux selon la matière en cause</h3>
+                <ul>
+                    <li><strong>Engrais</strong> : périmètre de sécurité (zone d'exclusion 200 m minimum de personnel, zone contrôlée 200-300 m selon vent), écarter les engrais non contaminés, éviter l'accumulation d'engrais fondu en milieu confiné, désenfumer les stockages, attaque massive à l'eau pour solubiliser le produit (débit estimé à environ 1000 L/min pour 6 t d'engrais, à diminuer avec l'intensité du foyer), lances auto-propulsantes pour les foyers profonds, renfort CMIC, rétention des eaux polluées, décontamination sommaire des EPI en fin d'opération.</li>
+                    <li><strong>Produits phytosanitaires</strong> : zone contrôlée de 100 m de rayon (fumées toxiques), identification du type et de la quantité, confinement ou évacuation selon la météo, renfort CMIC, attaque à la LDV (eau dopée) puis à la mousse en second temps, rétention stricte des eaux d'extinction, ventilation et déblai sous ARI en séparant les produits.</li>
+                    <li><strong>Alcools</strong> : émulseur adapté aux liquides polaires, vigilance sur les eaux d'extinction, risque d'explosion permanent (engagement minimal de personnel), combustibles additionnels (emballages, cartons, bois, plastiques).</li>
+                    <li><strong>Engins agricoles</strong> : mise en sécurité du conducteur, renforts en porteur d'eau, mousse si grandes quantités d'huile/carburant ; en hangar, reconnaissance approfondie (risque d'effondrement), engagement minimal, analyse post-extinction de l'impact sur cours d'eau et nappes.</li>
+                    <li><strong>Récoltes sur pieds</strong> : vigilance sur l'hyperthermie du personnel, accès par rocade, pénétration par la zone déjà brûlée, attention aux fossés de drainage, appui des forces de l'ordre pour norias et balisage, manœuvre offensive par percée de flanc, engagement progressif des engins pour conserver la permanence en eau.</li>
+                </ul>
+                <h3>📌 Déblai, amiante et pollutions</h3>
+                <p>En présence avérée d'amiante (toiture fibrociment), limiter le déblai/dégarnissage au strict impératif opérationnel sous protection respiratoire permanente : éviter manipulations, casse et découpe, bâcher et humidifier les matériaux dégradés, privilégier tenues jetables type 5 avec ARI ou masque FFP3/P3. Pour toute pollution (chimique, agricole ou déjections animales) : reconnaissance de la zone et de la cinétique, suppression de la cause (colmater, barrer, obturer), renfort CMIC, rétention/canalisation des effluents, protection des points de captage (en lien avec DRAAF, AFB, ARS, DDCSPP, DREAL), relevés d'explosimétrie et d'oxygénométrie réguliers, et rappel systématique des règles d'hygiène individuelle en fin d'intervention.</p>
+            </div>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/milieux/GDO-Interventions-Milieu-Agricole.pdf" target="_blank" rel="noopener">GDO Milieu agricole complet (PDF, 88 pages)</a></p>
+        <p class="rd-source">📚 Source : <strong>Guide de doctrine opérationnelle « Interventions en milieu agricole »</strong>, GDO 2019, DGSCGC/DSP/SDDRH/BDFE, janvier 2019. Texte repris et résumé ; schémas et photos sélectionnés, non reproduits intégralement.</p>
+    </div>
+
+
     <script src="js/modules/lspcc.js"></script>
 
     <!-- MODULE PICTOGRAMMES -->
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.42.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.43.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
