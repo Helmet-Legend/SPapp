@@ -83,7 +83,8 @@
     "LSPCC – Lot de sauvetage",
     "GDO – Navires & milieu maritime",
     "GDO – Interventions en présence d'ULM",
-    "GDO – Interventions en milieu agricole"
+    "GDO – Interventions en milieu agricole",
+    "GDO – Interventions en milieux effondrés ou instables"
    ]
   },
   {
@@ -3612,6 +3613,46 @@
     "cos",
     "dos",
     "cmic",
+    "gdo"
+   ]
+  },
+  {
+   "id": "effondres",
+   "titre": "GDO – Interventions en milieux effondrés ou instables",
+   "domaine": "specialites",
+   "theme": "GDO – Interventions en milieux effondrés ou instables",
+   "type": "fiche",
+   "motsCles": [
+    "effondres",
+    "effondrement",
+    "milieux effondres",
+    "instable",
+    "usar",
+    "sauvetage deblaiement",
+    "sauvetage appui recherche",
+    "effondrement a plat",
+    "effondrement en v",
+    "effondrement oblique",
+    "fontis",
+    "affaissement",
+    "glissement de terrain",
+    "eboulement",
+    "coulee de boue",
+    "seisme",
+    "mouvement de terrain",
+    "rbat",
+    "risques batimentaires",
+    "ebras",
+    "insarag",
+    "marquage insarag",
+    "mgo",
+    "zonage operationnel",
+    "perimetre de securite",
+    "tranchee",
+    "menacant ruine",
+    "deblaiement",
+    "victime ensevelie",
+    "sectorisation",
     "gdo"
    ]
   },
