@@ -1,6 +1,6 @@
 {
-  "version": "1.46.0",
-  "titre": "Vulcain 1.46.0",
-  "texte": "Convertisseur d'unités modernisé : photos réelles pour les 6 conversions rapides (pression, débit, volume, distance, vitesse, température).",
-  "fiche": "convertisseur"
+  "version": "1.46.1",
+  "titre": "Vulcain 1.46.1",
+  "texte": "Module GOUV « Les véhicules » réécrit en texte rédigé (énergies, sécurité embarquée, airbags, GPL, GNV, VE/hybrides) avec des figures sélectionnées, à la place des pages scannées du guide SDIS 34.",
+  "fiche": "gouv-vehicules"
 }

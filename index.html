@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.46.0">
+    <meta name="version" content="1.46.1">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.46.0</span><br>
+                        Vulcain v<span class="app-version">1.46.1</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -15758,20 +15758,134 @@ Je fais : extinction.</p>
             </table>
         </div>
         <details class="jsp-cours">
-            <summary>Partie 1 · Généralités : énergies, sécurité embarquée, vitrages, outils d'aide (pages 9 à 16)</summary>
-            <div class="gouv-pages"><a href="images/gouv/p-009.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-009.jpg" alt="GOUV généralités – page 9"></a><a href="images/gouv/p-010.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-010.jpg" alt="GOUV généralités – page 10"></a><a href="images/gouv/p-011.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-011.jpg" alt="GOUV généralités – page 11"></a><a href="images/gouv/p-012.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-012.jpg" alt="GOUV généralités – page 12"></a><a href="images/gouv/p-013.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-013.jpg" alt="GOUV généralités – page 13"></a><a href="images/gouv/p-014.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-014.jpg" alt="GOUV généralités – page 14"></a><a href="images/gouv/p-015.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-015.jpg" alt="GOUV généralités – page 15"></a><a href="images/gouv/p-016.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-016.jpg" alt="GOUV généralités – page 16"></a></div>
+            <summary>1 · Généralités : énergies, sécurité embarquée, vitrages, outils d'aide (pages 9 à 16)</summary>
+            <div class="rd-section">
+                <h3>📌 Les énergies de traction</h3>
+                <p>On distingue trois grandes familles de véhicules selon leur carburation : <strong>mono-carburation</strong> (une seule source : essence, gazole, GPL ou GNV), <strong>bi-carburation</strong> (deux sources, par exemple essence + GPL ou essence + GNV), et <strong>hybride</strong> (au moins deux convertisseurs d'énergie différents et au moins deux systèmes de stockage différents — le plus courant étant l'hybride électrique).</p>
+                <figure class="rd-fig"><img src="images/gouv-vehicules/energies-traction.jpg" alt="Trois familles d'énergie de traction : électrique (batterie), hydrocarbure liquide ou gaz (essence, diesel, GNV, GPL), hydrogène" loading="lazy"><figcaption>Les trois grandes familles d'énergie de traction rencontrées sur le terrain.</figcaption></figure>
+                <p>Le stockage de l'énergie est assuré en réservoir classique (essence/gazole), en réservoir sous pression (GPL, GNV, H₂) ou par batterie haute tension (électrique). La distribution se fait ensuite par câble (gainage <strong>orange</strong> pour la haute tension) ou par tuyauterie.</p>
+                <div class="rd-alerte">Les énergies de traction devront, si possible, être neutralisées. On n'agit jamais sur les vecteurs d'énergie : tuyaux, câbles oranges…</div>
+                <p>Les réservoirs sous pression doivent être pris en compte en cas de rupture d'enveloppe (fuite) ou d'incendie (risque de surpression, BLEVE). Les batteries haute tension (200 à 600 V) peuvent être lithium-ion ou LMP (lithium métal polymère) : en cas d'emballement thermique, l'extinction sera <strong>difficile pour le lithium-ion</strong> et <strong>impossible pour le LMP</strong> — la protection de l'environnement devient alors la priorité. Certains constructeurs (Renault) équipent leurs batteries de trappes thermofusibles (« Fireman Access ») pour faciliter le noyage. Des projections de métal en fusion sont possibles, et une vigilance particulière s'impose en espace clos (parking souterrain). Le poids du pack batterie modifie aussi la répartition des charges du véhicule : en tenir compte dans les opérations de calage.</p>
+
+                <h3>📌 La sécurité embarquée</h3>
+                <p>Les constructeurs ne cessent d'accroître les performances des systèmes de sécurité embarquée pour protéger les occupants en cas d'accident. Cette sécurité se décline sous trois formes complémentaires :</p>
+                <figure class="rd-fig"><img src="images/gouv-vehicules/securite-embarquee.jpg" alt="Schéma des trois formes de sécurité embarquée : primaire ou active (avant le choc, ABS/ESP, pas de danger pour les SP), secondaire ou passive (au moment du choc, airbags/prétensionneurs, danger pour les SP), tertiaire (après le choc, système d'alerte automatique, pas de danger pour les SP)" loading="lazy"><figcaption>Les trois formes de sécurité embarquée : seule la sécurité secondaire (passive) présente un danger pour les sapeurs-pompiers.</figcaption></figure>
+                <table class="rd-table">
+                    <tr><th>Forme</th><th>Moment</th><th>Exemples</th><th>Danger SP</th></tr>
+                    <tr><td>Primaire (active)</td><td>Avant le choc</td><td>ABS, ESP…</td><td>Non</td></tr>
+                    <tr><td>Secondaire (passive)</td><td>Au moment du choc</td><td>Airbags, prétensionneurs</td><td><strong>Oui</strong></td></tr>
+                    <tr><td>Tertiaire</td><td>Après le choc</td><td>Système d'alerte automatique</td><td>Non</td></tr>
+                </table>
+
+                <h3>📌 Les airbags</h3>
+                <p>L'<strong>ECU</strong> (Electronic Control Unit) est le boîtier électronique qui gère l'ensemble des éléments pyrotechniques de sécurité passive : c'est le cerveau central du système. Pour éviter tout déclenchement intempestif, il est impératif de ne jamais le toucher ni le déformer.</p>
+                <p>Il existe trois catégories d'airbags : ceux déclenchés par une cartouche expansive contenant un noyau solide ou de la poudre générant un gaz (airbag conducteur, passager…), ceux déclenchés par un générateur de gaz (hydrogène et oxygène), et ceux à système hybride combinant les deux.</p>
+                <p>La position approximative d'un airbag dans le véhicule est reconnaissable, selon le modèle, au marquage <strong>SRS AIRBAG, AIRBAG, SRP, SIPS BAG, SIR, HPS, IC, WC, RS…</strong>, ou à l'aide d'une icône sur le tableau de bord ou le pare-brise.</p>
+                <div class="rd-alerte">Ne jamais agir sur les emplacements d'un airbag ! Éviter d'être dans sa zone de déploiement.</div>
+                <figure class="rd-fig"><img src="images/gouv-vehicules/airbag-double-deploiement.jpg" alt="Schéma d'un airbag à double déploiement : impact mineur (tendeurs activés, airbags pas activés), impact moyennement sévère (airbags déployés à 70 %), impact sévère (airbags déployés à 100 %)" loading="lazy"><figcaption>Airbag à double déploiement : le volume libéré dépend de la cinétique de l'accident (70 % ou 100 %).</figcaption></figure>
+                <div class="rd-alerte">Un airbag déployé n'est pas forcément inerte : il peut se réenclencher ! Un airbag n'est jamais sécurisé sauf avec un dispositif de protection dédié.</div>
+                <p>Le <strong>prétensionneur</strong> maintient le corps des occupants en les plaquant contre le siège, en réduisant la course morte de la ceinture. Il est équipé d'une cartouche pyrotechnique à mise à feu électronique. Même règle que pour les airbags : ne jamais agir sur son emplacement.</p>
+
+                <h3>📌 Renforts structuraux et arceaux</h3>
+                <p>Pour former une « cellule de survie » autour des occupants, les constructeurs emploient des aciers alliés au bore dits <strong>THLE</strong> (Très Haute Limite Élastique) et <strong>UHLE</strong> (Ultra Haute Limite Élastique), avec une résistance pouvant aller jusqu'à 7 à 10 fois celle d'un acier doux. Sur certains aciers, le matériel de désincarcération peut s'avérer totalement inefficace : la cisaille, même alimentée par un groupe haute pression (700 bars), ne parvient pas toujours à entailler ces renforts.</p>
+                <div class="rd-astuce">Idée reçue à corriger : ce n'est pas parce qu'un véhicule est de petite taille (Fiat 500, Smart…) que sa structure est moins résistante — bien au contraire, la réduction des zones de déformation programmée oblige à renforcer davantage la cellule de survie.</div>
+                <p><strong>Avant de couper, il faut savoir ce que l'on coupe et adapter le bon outil pour réussir l'action.</strong></p>
+                <p>Les <strong>arceaux pyrotechniques</strong> protègent les occupants en cas de retournement du véhicule (cabriolets notamment). Détectant un tangage important, une charge pyrotechnique libère un système de ressorts précontraints permettant l'extraction rapide des arceaux, identifiés par le sigle <strong>ROPS</strong> (ROllover Protection System).</p>
+                <figure class="rd-fig"><img src="images/gouv-vehicules/arceaux-rops.jpg" alt="Arceau de sécurité ROPS déployé sur un cabriolet Peugeot 307 CC, avec les deux positions avant/après déclenchement" loading="lazy"><figcaption>Arceau ROPS : repère sur l'appui-tête, et déploiement en cas de retournement (Peugeot 307 CC).</figcaption></figure>
+                <div class="rd-alerte">Interdiction d'évoluer dans la zone de déploiement des arceaux pyrotechniques ! Le déclenchement intempestif pourrait nuire à la sécurité des équipes de secours.</div>
+                <p>Les générateurs de <strong>capot actif</strong> permettent, en cas de choc VL/piéton, de soulever le capot pour absorber une partie de l'énergie du choc. La mise à feu du système pyrotechnique est déclenchée par l'impact.</p>
+                <div class="rd-alerte">Ne pas poser de matériel sur le capot d'un véhicule accidenté, ni effectuer de calage dessus !</div>
+
+                <h3>📌 Les vitrages</h3>
+                <table class="rd-table">
+                    <tr><th>Type</th><th>Comportement</th></tr>
+                    <tr><td><strong>Trempé</strong> (nomenclature I)</td><td>Résiste 5 fois plus qu'une vitre classique, se brise en petits morceaux (type verre pyrex)</td></tr>
+                    <tr><td><strong>Feuilleté</strong> (nomenclature II ou III)</td><td>Feuille plastique intercalaire, élasticité de 240 %, maintient l'occupant dans le véhicule</td></tr>
+                    <tr><td><strong>Polycarbonate</strong> (nomenclature IV)</td><td>Pas de casse possible</td></tr>
+                </table>
+                <div class="rd-alerte">Les vitrages peuvent occasionner des risques mécaniques (coupures), oculaires et respiratoires (particules de verre à la découpe). Protéger le personnel et les victimes, adapter le matériel et la technique de dépose selon le vitrage — <strong>masque FFP2</strong> conseillé.</div>
+
+                <h3>📌 Équipements divers</h3>
+                <ul>
+                    <li><strong>Vérins hydrauliques</strong> (hayon, capot) : peuvent être projetés en cas d'incendie ou lors de la césarisation.</li>
+                    <li><strong>Alliages</strong> (jantes, structure) : projection de métaux en fusion en cas d'incendie, réaction violente avec l'eau.</li>
+                    <li><strong>Système de déconnexion pyrotechnique</strong> : en cas de choc, isole le véhicule en débranchant une borne de la batterie — la gestion de l'énergie basse tension s'en trouve perturbée (voir fiche technique SR n° 9.1).</li>
+                    <li><strong>Gaz frigorigène</strong> (climatisation) : certains gaz utilisés peuvent s'avérer toxiques.</li>
+                    <li><strong>Supercondensateurs</strong> : emmagasinent un courant continu haute tension et peuvent émettre des gaz toxiques et explosifs s'ils sont éventrés.</li>
+                    <li><strong>Pneumatiques</strong> : lors d'un incendie de véhicule (notamment PL et bus), l'éclatement d'un pneu peut être dangereux pour les SP (souffle, projection, impact auditif) — y compris <strong>après l'extinction complète</strong> (éclatement « à retardement »).</li>
+                </ul>
+
+                <h3>📌 Les outils d'aide à la décision</h3>
+                <p>Deux outils complémentaires aident les sapeurs-pompiers à intervenir en sécurité :</p>
+                <ul>
+                    <li><strong>ERG</strong> (Emergency Response Guide) : rédigés sous forme de livret par les constructeurs automobiles, principalement pour les véhicules hybrides/électriques, ils couvrent l'identification, l'immobilisation, la mise en sécurité électrique, la neutralisation d'électrolyte et les premiers secours.</li>
+                    <li><strong>FAD</strong> (Fiche d'Aide à la Décision, aussi appelée « fiche de secours à bord » ou « rescue sheet ») : document recto ou recto/verso, réalisé sur la base de schémas ou de photos du véhicule, sur lesquels sont intégrés les éléments à prendre en compte pour une désincarcération en sécurité.</li>
+                </ul>
+            </div>
         </details>
         <details class="jsp-cours">
-            <summary>Partie 2 · Véhicules électriques et hybrides (pages 17 à 19)</summary>
-            <div class="gouv-pages"><a href="images/gouv/p-017.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-017.jpg" alt="GOUV VE VeH – page 17"></a><a href="images/gouv/p-018.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-018.jpg" alt="GOUV VE VeH – page 18"></a><a href="images/gouv/p-019.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-019.jpg" alt="GOUV VE VeH – page 19"></a></div>
+            <summary>2 · Véhicules électriques et hybrides (pages 17 à 19)</summary>
+            <div class="rd-section">
+                <h3>📌 Principe et équipements spécifiques</h3>
+                <p>Un <strong>véhicule électrique (VE)</strong> n'est propulsé que par un moteur électrique ; un <strong>véhicule hybride (VeH)</strong> combine un moteur thermique et un moteur électrique. Ces deux technologies peuvent équiper tous types de véhicules roulants : PL, VL, bus, deux-roues… La différence majeure entre VE et VeH tient à la capacité énergétique nécessaire pour déplacer l'engin, donc à la quantité de batterie embarquée.</p>
+                <p>Les câbles haute tension sont identifiés par une gaine de couleur <strong>orange</strong>, pour bien les différencier du circuit basse tension de servitude (12 ou 24 V). Les batteries peuvent être de différentes technologies (lithium-ion, lithium métal polymère LMP, nickel métal hydrure NiMH) avec des tensions de 200 à 600 volts ; les câbles orange peuvent véhiculer des intensités de 200 à 600 mA — un danger réel.</p>
+
+                <h3>📌 La sécurité des VE/VeH</h3>
+                <p>Les constructeurs prennent des dispositions pour garantir l'intégrité des organes sous tension : câbles haute tension passés en dehors des zones de découpe habituelles, longueur de câble HT réduite, emplacement des batteries de traction dans des zones « protégées » (entre les roues arrière, position centrale…), caisson de batterie résistant aux chocs.</p>
+                <p>Certains véhicules disposent d'un ou plusieurs dispositifs d'arrêt de l'alimentation des batteries de traction : <strong>automatiques</strong> (fusibles, relais, en cas de choc ou d'augmentation de température) ou <strong>manuels</strong> (le « service plug »). Ce dernier, destiné aux professionnels de l'automobile, permet la consignation électrique du véhicule — son emplacement n'est pas standardisé, il est propre à chaque modèle.</p>
+                <div class="rd-alerte">Sans connaître les consignes du constructeur (ERG), ne pas toucher au service plug. En cas de manipulation nécessaire : les deux visières du casque baissées, regard détourné.</div>
+
+                <h3>📌 Risques associés</h3>
+                <figure class="rd-fig"><img src="images/gouv-vehicules/ve-schema-composants.jpg" alt="Schéma d'un véhicule électrique en coupe avec les zones à risque repérées : câble orange, batterie de traction, prise de recharge, réservoir, plug service, ultracapacité — pictogrammes toxique, électrique, thermique, mécanique" loading="lazy"><figcaption>Localisation des principaux composants à risque sur un véhicule électrique/hybride.</figcaption></figure>
+                <table class="rd-table">
+                    <tr><th>Composant</th><th>Risque</th></tr>
+                    <tr><td>Câble orange</td><td>Courant continu HT</td></tr>
+                    <tr><td>Ultracapacité</td><td>Courant continu HT, dégagement de gaz toxiques</td></tr>
+                    <tr><td>Batterie de traction</td><td>Courant continu HT, gaz toxiques et corrosifs si soumise au feu ou éventrée</td></tr>
+                    <tr><td>Plug service / prise de recharge</td><td>Courant continu HT, risque de flash électrique</td></tr>
+                </table>
+                <p>En cas d'emballement thermique, l'extinction est difficile et un besoin en eau supplémentaire est à prévoir (renfort porteur d'eau ou alimentation de l'engin) : sur la plupart des modèles, la batterie de traction est inaccessible (protection « sarcophage »), sauf cas particulier de trappe thermofusible (exemple : Renault Zoé).</p>
+            </div>
         </details>
         <details class="jsp-cours">
-            <summary>Partie 3 · Véhicules GPL (pages 21 et 22)</summary>
-            <div class="gouv-pages"><a href="images/gouv/p-021.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-021.jpg" alt="GOUV GPL – page 21"></a><a href="images/gouv/p-022.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-022.jpg" alt="GOUV GPL – page 22"></a></div>
+            <summary>3 · Véhicules GPL (pages 18, 21 et 22)</summary>
+            <div class="rd-section">
+                <h3>📌 Principe de fonctionnement</h3>
+                <p>Le <strong>GPLc</strong> (Gaz de Pétrole Liquéfié Carburant) résulte d'un assemblage de propane et de butane liquéfiés, stocké dans un réservoir acier rempli à 80 % de son volume. Les véhicules peuvent être à simple carburation GPLc ou à bicarburation essence-GPLc (la carburation GPLc s'ajoutant alors à la carburation traditionnelle). Le gaz circule vers le moteur par un réseau de canalisation spécifique, y est vaporisé (passage de l'état liquide à gazeux), puis brûlé. Le GPLc concerne surtout les VL de tourisme, mais aussi les poids lourds et certains transports en commun.</p>
+                <div class="rd-astuce">À ce jour, il n'y a pas d'identification particulière (couleur, inscription) du réseau de canalisation GPL sur le véhicule.</div>
+                <figure class="rd-fig"><img src="images/gouv-vehicules/gpl-schema-circuit.jpg" alt="Schéma en coupe d'un véhicule GPL montrant le réservoir sous pression (7 bar), les canalisations GPL et les canalisations essence" loading="lazy"><figcaption>Implantation type du réservoir GPL et de ses canalisations, à côté du circuit essence.</figcaption></figure>
+
+                <h3>📌 Sécurité intrinsèque</h3>
+                <p>Le réservoir (acier, 70 à 80 L, rempli à 7,5 bar) est équipé d'une soupape qui se déclenche si la pression interne dépasse <strong>27 bars</strong>, libérant le flux via une torchère ; certains réservoirs possèdent en plus un thermofusible (au-delà de 110 °C, fonte du témoin et évacuation du gaz).</p>
+                <table class="rd-table">
+                    <tr><th>Situation</th><th>Conséquence</th></tr>
+                    <tr><td>Véhicule retourné ou couché</td><td>Le GPLc reste en phase liquide : pas de changement d'état, pas de refroidissement du réservoir → <strong>risque de BLEVE</strong></td></tr>
+                    <tr><td>Manque de liquide dans le réservoir</td><td>La pression augmente mais pas assez pour ouvrir la soupape → risque de rupture d'enveloppe</td></tr>
+                    <tr><td>Réservoirs cylindriques</td><td>Résistance amoindrie de la virole sous forte agression thermique : rupture possible avant l'ouverture de la soupape</td></tr>
+                    <tr><td>Débit insuffisant de la soupape</td><td>L'acier surchauffé se fragilise → risque de rupture d'enveloppe</td></tr>
+                </table>
+                <figure class="rd-fig"><img src="images/gouv-vehicules/gpl-bleve-toit.jpg" alt="Comparaison de deux essais feu sur véhicule GPL : à gauche VL sur ses roues avec torchère en cycles réguliers (phase gazeuse), à droite VL sur le toit avec torchère continue (phase liquide)" loading="lazy"><figcaption>VL sur ses roues : torchère en cycles réguliers (phase gazeuse). VL sur le toit : torchère en continu (phase liquide) — c'est la configuration à risque de BLEVE.</figcaption></figure>
+                <div class="rd-alerte">Un véhicule GPL retourné (sur le toit) ne permet plus le refroidissement naturel du réservoir par la phase gazeuse : c'est la configuration la plus dangereuse pour un risque de BLEVE.</div>
+
+                <h3>📌 Risques associés</h3>
+                <p>Trois familles de risques sont à retenir pour un véhicule GPL : <strong>toxique</strong> (fuite de gaz non enflammée, notamment en milieu clos), <strong>thermique</strong> (torchère) et <strong>mécanique</strong> (explosion d'un réservoir).</p>
+            </div>
         </details>
         <details class="jsp-cours">
-            <summary>Partie 4 · Véhicules GNV (pages 23 et 24)</summary>
-            <div class="gouv-pages"><a href="images/gouv/p-023.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-023.jpg" alt="GOUV GNV – page 23"></a><a href="images/gouv/p-024.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-024.jpg" alt="GOUV GNV – page 24"></a></div>
+            <summary>4 · Véhicules GNV (pages 20, 23 et 24)</summary>
+            <div class="rd-section">
+                <h3>📌 Principe de fonctionnement</h3>
+                <p>Le <strong>GNV</strong> (Gaz Naturel Véhicule) est du gaz naturel de ville stocké à <strong>200 bars</strong>, dans des réservoirs métal ou composite de différentes formes, remplis à 80 % de leur volume. Le gaz circule vers le moteur par un réseau de canalisation spécifique repéré en <strong>jaune</strong>, avant combustion. La carburation GNV intéresse surtout les poids lourds et certains transports en commun ; elle reste peu répandue sur les VL, faute de stations de remplissage.</p>
+                <figure class="rd-fig"><img src="images/gouv-vehicules/gnv-schema-composants.jpg" alt="Schéma en coupe d'un véhicule GNV avec les composants repérés : unité de contrôle électrique gaz naturel, trappe de rechargement, réservoirs sous pression et valves de sécurité, régulateur de pression, vanne manuelle, système d'injection moteur" loading="lazy"><figcaption>Composants spécifiques d'un véhicule GNV : réservoirs sous pression, vannes et régulateur de pression.</figcaption></figure>
+
+                <h3>📌 Sécurité intrinsèque</h3>
+                <p>Le réservoir (métal ou composite) est équipé de dispositifs de sécurité : <strong>vannes</strong> (manuelles ou non), <strong>thermofusible</strong> (déclenchement au-delà de 110 °C, avec torchère permanente et sans cyclage, contrairement au GPL) et <strong>limiteur de débit</strong>.</p>
+                <div class="rd-astuce">Contrairement à la soupape GPL qui peut fonctionner par cycles, le thermofusible GNV, une fois déclenché, libère le gaz en continu jusqu'à épuisement du réservoir.</div>
+
+                <h3>📌 Risques associés</h3>
+                <p>Les risques identifiés pour un véhicule GNV sont l'<strong>explosion du réservoir</strong> et du véhicule (mécanique), la <strong>fuite de gaz non enflammée</strong> avec appauvrissement en oxygène de l'air ambiant (toxique), et le <strong>flux de l'incendie avec torchère en continu à partir de 110 °C</strong> (thermique).</p>
+                <div class="rd-alerte">Ne jamais souffler la flamme d'une torchère GNV ; fermer la vanne manuelle si elle est accessible en phase réfléchie, et rester attentif au lâcher de soupape qui peut être violent.</div>
+            </div>
         </details>
         <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/vehicules/GOUV-SDIS34-2015.pdf" target="_blank" rel="noopener">Guide complet (PDF, 25 Mo)</a></p>
         <p class="rd-source">📚 Source : <strong>Guide opérationnel d'urgence sur les véhicules – SDIS 34</strong> (V1.1.1, mai 2015), réalisé avec le SDIS de la Vienne (86), et notes opérationnelles départementales n° 001 et 002 (12/2014). Reproduit avec l'autorisation du SDIS de l'Hérault. <strong>Document de 2015</strong> : les véhicules récents peuvent différer, consulter la fiche d'aide à la décision (FAD) du modèle.</p>
@@ -24809,7 +24923,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.46.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.46.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
