@@ -81,7 +81,8 @@
     "IMPM – Milieu périlleux",
     "GTO – Techniques SMPM",
     "LSPCC – Lot de sauvetage",
-    "GDO – Navires & milieu maritime"
+    "GDO – Navires & milieu maritime",
+    "GDO – Interventions en présence d'ULM"
    ]
   },
   {
@@ -3490,6 +3491,52 @@
     "port",
     "quai",
     "mouillage",
+    "gdo"
+   ]
+  },
+  {
+   "id": "ulm",
+   "titre": "GDO – Interventions en présence d'ULM",
+   "domaine": "specialites",
+   "theme": "GDO – Interventions en présence d'ULM",
+   "type": "fiche",
+   "motsCles": [
+    "ulm",
+    "ultra léger motorisé",
+    "aéronef",
+    "avion",
+    "crash",
+    "accident aérien",
+    "paramoteur",
+    "pendulaire",
+    "multi-axes",
+    "autogire",
+    "aérostat",
+    "dirigeable",
+    "hélicoptère ultraléger",
+    "parachute balistique",
+    "parachute de secours",
+    "cône d'exclusion",
+    "désincarcération",
+    "bea",
+    "bureau enquête analyse",
+    "arcc",
+    "sar",
+    "search and rescue",
+    "sater",
+    "samar",
+    "aérodrome",
+    "sslia",
+    "rffs",
+    "pompier d'aérodrome",
+    "plateforme ulm",
+    "basulm",
+    "orsec aérodrome",
+    "za",
+    "zva",
+    "prise d'appel",
+    "carburant",
+    "feu d'aéronef",
     "gdo"
    ]
   },

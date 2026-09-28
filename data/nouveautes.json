@@ -1,6 +1,6 @@
 {
-  "version": "1.41.0",
-  "titre": "Vulcain 1.41.0",
-  "texte": "Nouvelle fiche GDO « Interventions à bord des navires et bateaux en milieu maritime (IBNB) » : commandement en mer, connaissance des navires, marche générale des opérations, gestion des fumées, stabilité du navire, SMGA et zone de soutien opérationnel.",
-  "fiche": "ibnb"
+  "version": "1.42.0",
+  "titre": "Vulcain 1.42.0",
+  "texte": "Nouvelle fiche GDO « Interventions en présence d'ULM » : les 6 classes d'aéronefs ultra-légers motorisés, risques spécifiques (incendie, parachute balistique), aérodromes et SSLIA, planification opérationnelle (ARCC/SAR, ORSEC Aérodrome), prise d'appel et mesures sur intervention (cône d'exclusion, désincarcération).",
+  "fiche": "ulm"
 }
