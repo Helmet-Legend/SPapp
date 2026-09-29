@@ -17,7 +17,7 @@ const VAPID_PRIVATE = process.env.VAPID_PRIVATE_KEY;
 const VAPID_SUBJECT = process.env.VAPID_SUBJECT || 'https://s-papp.vercel.app';
 
 const CLE_ABONNEMENTS = 'vulcain:push:abonnements';
-const TYPES = ['nouveautes', 'messages'];
+const TYPES = ['nouveautes', 'messages', 'contact'];
 
 const ORIGINES_AUTORISEES = [
     'https://s-papp.vercel.app',

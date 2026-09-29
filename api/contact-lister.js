@@ -25,7 +25,9 @@ export default async function handler(req, res) {
     }
     res.setHeader('Cache-Control', 'no-store');
     if (req.method !== 'GET') return res.status(405).json({ erreur: 'Méthode non autorisée' });
-    if (!origineAutorisee(origine)) return res.status(403).json({ erreur: 'Origine non autorisée' });
+    // Une requête GET même origine n'envoie pas toujours l'en-tête Origin :
+    // on ne bloque que si un Origin est fourni et qu'il n'est pas autorisé.
+    if (origine && !origineAutorisee(origine)) return res.status(403).json({ erreur: 'Origine non autorisée' });
     if (!REDIS_URL || !REDIS_TOKEN || !CLE_ADMIN) return res.status(503).json({ erreur: 'Formulaire pas encore configuré sur le serveur' });
 
     const auth = (req.headers.authorization || '').replace(/^Bearer\s+/i, '');
