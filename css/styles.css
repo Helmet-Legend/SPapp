@@ -975,6 +975,183 @@
             object-fit: cover;
         }
 
+        /* ===================================================================
+           Cartes photo : menu catégories distances, sous-menu type gaz,
+           couleurs de bouteilles (même famille que .fire-icon / .conv-quick-card)
+           =================================================================== */
+        .photo-cat-grid, .photo-type-grid, .photo-color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 14px;
+        }
+
+        .photo-cat-card, .photo-type-card, .photo-color-card {
+            position: relative;
+            background: var(--bg-card);
+            border: 3px solid var(--cat-color, var(--border-light));
+            border-radius: 14px;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            min-height: 120px;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-base);
+            text-align: left;
+            font-family: inherit;
+        }
+
+        .photo-cat-card:hover, .photo-type-card:hover, .photo-color-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .photo-cat-card img, .photo-type-card img, .photo-color-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-cat-overlay, .photo-type-overlay, .photo-color-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            padding: 8px;
+            background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 30%, rgba(0,0,0,0.65) 55%, rgba(0,0,0,0.9) 100%);
+        }
+
+        .photo-color-overlay {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            gap: 1px;
+        }
+
+        .photo-cat-badge, .photo-type-badge, .photo-color-badge {
+            flex: 0 0 auto;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--cat-color, #757575);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.45);
+            border: 2px solid rgba(255,255,255,0.85);
+        }
+
+        .photo-color-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .photo-cat-badge svg, .photo-type-badge svg, .photo-color-badge svg {
+            width: 18px;
+            height: 18px;
+            fill: #fff;
+            stroke: #fff;
+        }
+
+        .photo-cat-text, .photo-type-text {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
+        .photo-cat-label, .photo-type-label, .photo-color-label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.95em;
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .photo-type-label {
+            font-size: 0.88em;
+        }
+
+        .photo-cat-sub, .photo-type-sub {
+            display: block;
+            font-size: 0.72em;
+            color: #f0f0f0;
+            opacity: 0.95;
+            margin-top: 2px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .photo-color-risk {
+            display: block;
+            font-size: 0.75em;
+            font-weight: 600;
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .photo-color-ral {
+            display: block;
+            font-size: 0.68em;
+            color: #f0f0f0;
+            opacity: 0.9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .photo-cat-chev, .photo-type-chev, .photo-color-chev {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            color: #ffffff;
+            font-size: 1.2em;
+            line-height: 1;
+            opacity: 0.9;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .photo-color-chev {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+        }
+
+        @media (max-width: 480px) {
+            .photo-cat-grid, .photo-type-grid {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            }
+        }
+
+        /* Cartes bouteilles : bannières pleine largeur avec texte incrusté dans la photo (pas d'overlay CSS) */
+        .photo-color-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .photo-color-card {
+            aspect-ratio: 2.35 / 1;
+            min-height: 72px;
+        }
+
+        .photo-color-card img {
+            object-fit: contain;
+            background: #000;
+        }
+
         .distance-card {
             background: var(--bg-card);
             padding: 20px;
@@ -1910,15 +2087,6 @@ body.dark-mode #resultat-ia {
     border-color: #4CAF50 !important;
     box-shadow: 0 8px 30px rgba(0, 255, 0, 0.6) !important;
     transform: translateY(-5px) scale(1.03);
-}
-
-.color-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.6) !important;
-}
-
-.color-card:active {
-    transform: translateY(-4px) scale(1.02);
 }
 
 .ia-checkbox {
