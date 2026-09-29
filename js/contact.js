@@ -51,6 +51,8 @@ var Contact = (function () {
             var b = await r.json().catch(function () { return {}; });
             if (!r.ok) { retour.textContent = b.erreur || ('Erreur ' + r.status); return; }
             if (document.getElementById('contactMemoriser').checked) { try { localStorage.setItem(CLE_ADMIN, JSON.stringify(cle)); } catch (e) {} }
+            var alerteBox = document.getElementById('contactAlerteBox');
+            if (alerteBox) { alerteBox.hidden = false; if (typeof Push !== 'undefined') Push.afficher(); }
             if (!b.messages.length) { retour.textContent = 'Aucun message pour le moment.'; return; }
             retour.textContent = b.messages.length + ' message' + (b.messages.length > 1 ? 's' : '') + '.';
             b.messages.forEach(function (m) {
