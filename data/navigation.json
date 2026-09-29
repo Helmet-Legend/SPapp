@@ -2356,6 +2356,20 @@
    ]
   },
   {
+   "id": "suap-wallace-calc",
+   "titre": "Calculateur Wallace",
+   "domaine": "sap",
+   "theme": "RT SUAP 2025",
+   "type": "calculateur",
+   "motsCles": [
+    "brûlure",
+    "wallace",
+    "surface cutanée brûlée",
+    "scb",
+    "calculateur"
+   ]
+  },
+  {
    "id": "suap-trauma",
    "titre": "Traumatismes",
    "domaine": "sap",

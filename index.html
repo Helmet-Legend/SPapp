@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.49.4">
+    <meta name="version" content="1.50.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.49.4</span><br>
+                        Vulcain v<span class="app-version">1.50.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -9082,6 +9082,45 @@
                 <strong style="color: light-dark(#b33f00, #ff7124);">💡 Gel d'eau (WaterGel©, BrulStop©) :</strong> Retirer au bout de <strong>15 min</strong>, sauf zones fonctionnelles (visage, mains, pieds).
             </div>
         </div>
+
+        <p class="jsp-liens">📐 <button onclick="showModule('suap-wallace-calc')">Calculateur interactif Wallace →</button></p>
+    </div>
+
+    <!-- Module SUAP - Calculateur Wallace (surface cutanée brûlée) -->
+    <div id="suap-wallace-calc" class="module">
+        <button class="back-btn" onclick="showModule('suap-brulures')">← Retour Brûlures</button>
+        <h2 style="color: light-dark(#945800, #ff9800); border-bottom: 3px solid #FF9800;">📐 Calculateur Wallace</h2>
+        <p style="text-align: center;">Touchez les zones brûlées : le pourcentage de surface cutanée brûlée (SCB) se calcule tout seul.</p>
+
+        <div class="result-box" style="background: var(--bg-elevated); margin-top: 15px;">
+            <div class="wallace-mode-choix" role="radiogroup" aria-label="Âge de la victime">
+                <button type="button" role="radio" id="wallaceModeAdulte" aria-checked="true" onclick="wallaceChangerMode('adulte')">🧑 Adulte</button>
+                <button type="button" role="radio" id="wallaceModeEnfant" aria-checked="false" onclick="wallaceChangerMode('enfant')">🧒 Enfant</button>
+            </div>
+
+            <div id="wallaceZonesGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px;">
+                <!-- Rempli par JS : js/modules/wallace.js -->
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--t-line);">
+                <span>✋ Petites taches isolées (main de la victime = 1 % chacune)</span>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <button type="button" onclick="wallaceAjusterMains(-1)" style="font-size: 1.3em; padding: 8px 16px; min-height: 44px;">−</button>
+                    <span id="wallaceMainsCompte" style="font-weight: 700; min-width: 20px; text-align: center;">0</span>
+                    <button type="button" onclick="wallaceAjusterMains(1)" style="font-size: 1.3em; padding: 8px 16px; min-height: 44px;">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="wallaceResultat" class="result-box" style="background: var(--t-s1, #FFFFFF); border: 4px solid #4CAF50; text-align: center;">
+            <h3 style="margin-bottom: 5px;">Surface cutanée brûlée</h3>
+            <div id="wallaceTotalPct" style="font-size: 3em; font-weight: 800; line-height: 1;">0 %</div>
+            <p id="wallaceInterpretation" style="margin-top: 10px; font-weight: 600;"></p>
+        </div>
+
+        <button onclick="wallaceReinitialiser()" class="secondary" style="margin-top: 5px;">↺ Réinitialiser</button>
+
+        <div class="rd-alerte" style="margin-top: 15px;">Outil d'aide à l'estimation, sur la base de la règle des 9 de Wallace (RT SUAP 2025). Ne remplace jamais l'appréciation clinique ni l'avis médical.</div>
     </div>
 
     <!-- Module SUAP - Bilan -->
@@ -25681,7 +25720,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.49.4</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.50.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
@@ -25705,6 +25744,7 @@ Je demande : ….</p>
     <script src="js/modules/rdeb.js"></script>
     <script src="js/modules/pertes-rapide.js"></script>
     <script src="js/modules/emulseur.js"></script>
+    <script src="js/modules/wallace.js"></script>
     <script src="js/navigation.js"></script>
     
 

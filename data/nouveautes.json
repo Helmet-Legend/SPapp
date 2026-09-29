@@ -1,6 +1,6 @@
 {
-  "version": "1.46.1",
-  "titre": "Vulcain 1.46.1",
-  "texte": "Module GOUV « Les véhicules » réécrit en texte rédigé (énergies, sécurité embarquée, airbags, GPL, GNV, VE/hybrides) avec des figures sélectionnées, à la place des pages scannées du guide SDIS 34.",
-  "fiche": "gouv-vehicules"
+  "version": "1.50.0",
+  "titre": "Vulcain 1.50.0",
+  "texte": "Nouveau calculateur interactif Wallace : tapez les zones brûlées, la surface cutanée brûlée (SCB) se calcule automatiquement avec alerte de gravité, dans Secours à personne › Brûlures.",
+  "fiche": "suap-wallace-calc"
 }
