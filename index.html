@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.46.5">
+    <meta name="version" content="1.46.6">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.46.5</span><br>
+                        Vulcain v<span class="app-version">1.46.6</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -16144,219 +16144,360 @@ Je fais : extinction.</p>
     <div id="gouv-fiches" class="module" style="--jsp: #F57C00;">
         <button class="back-btn" onclick="showModule('gouv-menu')">← Retour GOUV</button>
         <h2>🛠️ Fiches techniques secours routier</h2>
-        <p style="text-align: center;">34 fiches (réalisées avec le SDIS de la Vienne) : objectif, matériel, conditions, critères de réussite, sécurité, puis le déroulement en photos. Touche une image pour l'agrandir.</p>
+        <p style="text-align: center;">34 fiches (réalisées avec le SDIS de la Vienne) : objectif, matériel, conditions, critères de réussite, sécurité, déroulement type et astuces.</p>
         <h3>1 · Calage</h3>
         <details class="jsp-cours">
             <summary>1.1 · Caler un véhicule sur ses roues</summary>
             <p class="jsp-objectif">Savoir caler une VL sur ses roues</p>
             <p><strong>Matériel</strong> : Cales de différentes tailles et formes : octogonales, rectangulaire (polyéthylène, bois), Cales escaliers, Massette, Ecarteur.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-064.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-064.jpg" alt="Fiche SR 1.1 – page 64"></a><a href="images/gouv/p-065.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-065.jpg" alt="Fiche SR 1.1 déroulement – page 65"></a></div>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/calage-roues.jpg" alt="Véhicule accidenté calé sur ses roues avec des cales sous les pneus avant et arrière" loading="lazy"><figcaption>Calage en 3 ou 4 points : cales avant/arrière, dans l'axe longitudinal.</figcaption></figure>
+            <p><strong>Déroulement</strong> : Caler en translation (cales diagonalement opposées) → lever doucement le véhicule à l'écarteur, placé au milieu du bas de caisse, sans décoller les roues du sol → mettre les cales à l'avant et à l'arrière puis reposer le véhicule → répéter symétriquement de l'autre côté.</p>
+            <p><strong>Sécurité</strong> : risque de pincement ou d'écrasement.</p>
+            <p><strong>Astuce</strong> : calage possible avec cales et coins à marier, poussés par une massette ; l'écarteur peut être suppléé par un équipier positionné sur le passage de roue. <em>Variante</em> : calage plus sécurisant à 4 points, réalisable aussi à 3 points selon la situation et le matériel disponible.</p>
         </details>
         <details class="jsp-cours">
             <summary>1.2 · Caler un véhicule sur le côté (2 étais)</summary>
             <p class="jsp-objectif">Savoir caler un véhicule sur le côté</p>
             <p><strong>Matériel</strong> : Cales escalier pour le calage primaire, Etais à sangles et outils associés.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-066.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-066.jpg" alt="Fiche SR 1.2 – page 66"></a><a href="images/gouv/p-067.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-067.jpg" alt="Fiche SR 1.2 déroulement – page 67"></a></div>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/calage-cote.jpg" alt="Véhicule renversé sur le côté, calé avec des cales escalier et un étai à sangle" loading="lazy"><figcaption>Véhicule sur le côté : calage primaire aux cales escalier, puis 2 étais à sangles.</figcaption></figure>
+            <p><strong>Déroulement</strong> : calage primaire à l'aide des cales escalier → positionner un étai au 1/3 avant du véhicule, crochet fixé dans un trou du châssis → positionner un 2e étai sur le tiers arrière (trous du châssis, protection thermique ajustée) → serrage simultané et verrouillage des étais.</p>
+            <p><strong>Critères de réussite</strong> : étais à sangles à 30° du châssis et 60° du sol ; le véhicule ne bascule pas, aucun mouvement possible.</p>
+            <p><strong>Sécurité</strong> : vigilance à la pose et à la stabilité des étais (appuis), protection thermique des sangles. Sur véhicule à énergie de traction électrique, prendre en compte le poids du pack batterie et le localiser : l'équilibre et la répartition des charges sont modifiés.</p>
+            <p><strong>Astuce</strong> : un point fixe peut être réalisé (après vérification de son intégrité) à l'aide des sangles et d'un mousqueton au niveau du triangle de direction.</p>
         </details>
         <h3>2 · Vitrages</h3>
         <details class="jsp-cours">
             <summary>2.1 · Gestion générale des vitrages</summary>
             <p class="jsp-objectif">Savoir gérer les différents vitrages et utiliser les outils adaptés en réduisant au maximum les débris et les poussières</p>
             <p><strong>Matériel</strong> : Ruban adhésif, Pointeau ou sécoise, Coupe pare-brise, Scie sabre, Halligan tool ou outils de forcement.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-068.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-068.jpg" alt="Fiche SR 2.1 – page 68"></a><a href="images/gouv/p-069.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-069.jpg" alt="Fiche SR 2.1 déroulement – page 69"></a></div>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/vitrage-depose.jpg" alt="Sapeur-pompier casqué et masqué déposant un vitrage latéral brisé sur un véhicule accidenté" loading="lazy"><figcaption>Identifier le type de vitrage (marquage gravé) avant de choisir la technique.</figcaption></figure>
+            <p><strong>Déroulement</strong> : identifier le vitrage en repérant le marquage gravé → <strong>trempé</strong> : se dépose après scotchage à l'aide d'un pointeau choc → <strong>feuilleté</strong> : se découpe au coupe pare-brise ou à la scie sabre (protection respiratoire FFP2 obligatoire) → <strong>polycarbonate</strong> : casse difficile, à retirer à l'outil de forcement.</p>
+            <p><strong>Sécurité</strong> : la victime est protégée des débris résiduels, port des protections respiratoires (masques papier).</p>
         </details>
         <details class="jsp-cours">
             <summary>2.2 · Déposer un vitrage trempé</summary>
             <p class="jsp-objectif">Savoir déposer un vitrage en toute sécurité en réduisant au maximum les débris et poussières</p>
             <p><strong>Matériel</strong> : Ruban adhésif, Couteau, Pointeau.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-070.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-070.jpg" alt="Fiche SR 2.2 – page 70"></a><a href="images/gouv/p-071.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-071.jpg" alt="Fiche SR 2.2 déroulement – page 71"></a></div>
+            <p><strong>Conditions</strong> : vitrage non cassé, impossible à descendre.</p>
+            <p><strong>Déroulement</strong> : scotcher le vitrage → quadriller l'ensemble → briser le vitrage au pointeau, en commençant par un angle → déposer l'ensemble du vitrage.</p>
+            <p><strong>Astuce</strong> : une fois le vitrage brisé, passer la main à l'intérieur pour le déposer entier vers l'extérieur ; plus le quadrillage du ruban adhésif est serré, moins il y a de débris résiduels ; utiliser la batterie avant son débranchement pour descendre les vitrages.</p>
         </details>
         <details class="jsp-cours">
             <summary>2.3 · Déposer un vitrage jointé</summary>
             <p class="jsp-objectif">Savoir identifier et déposer un vitrage jointé en toute sécurité en réduisant au maximum les débris et les poussières</p>
             <p><strong>Matériel</strong> : Couteau, lame de coupe pare-brise.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-072.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-072.jpg" alt="Fiche SR 2.3 – page 72"></a><a href="images/gouv/p-073.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-073.jpg" alt="Fiche SR 2.3 déroulement – page 73"></a></div>
+            <p><strong>Conditions</strong> : besoin d'un accès rapide à la victime, ou prérequis d'une technique SR.</p>
+            <p><strong>Déroulement</strong> : couper le joint sur sa partie supérieure → déposer le joint → extraire le vitrage en le poussant vers l'extérieur.</p>
+            <p><strong>Sécurité</strong> : vigilance lors de la découpe du joint, opération à 2 SP.</p>
+            <p><strong>Astuce</strong> : un petit outil (type outil de dégarnissage) peut faire levier pour décoller le vitrage.</p>
         </details>
         <details class="jsp-cours">
             <summary>2.4 · Déposer un pare-brise collé</summary>
-            <p class="jsp-objectif">Savoir identifier et déposer un pareͲbrise collé en toute sécurité en réduisant au maximum les débris et les poussières</p>
+            <p class="jsp-objectif">Savoir identifier et déposer un pare-brise collé en toute sécurité en réduisant au maximum les débris et les poussières</p>
             <p><strong>Matériel</strong> : Masque FFP2, Scie manuelle, pneumatique ou électrique.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-074.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-074.jpg" alt="Fiche SR 2.4 – page 74"></a><a href="images/gouv/p-075.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-075.jpg" alt="Fiche SR 2.4 déroulement – page 75"></a></div>
+            <p><strong>Conditions</strong> : besoin d'un accès rapide à la victime, ou prérequis d'une technique SR.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/parebrise-colle.jpg" alt="Pare-brise feuilleté collé d'un véhicule accidenté à découper à la scie" loading="lazy"><figcaption>Pare-brise collé : découpe à la scie, en partant du bas de chaque côté.</figcaption></figure>
+            <p><strong>Déroulement</strong> : identifier le pare-brise comme feuilleté collé, le perforer pour introduire la lame → trait de scie vers le bas de chaque côté → découper la partie inférieure → finir par la découpe de la partie supérieure → déposer l'ensemble du pare-brise collé.</p>
+            <p><strong>Sécurité</strong> : prendre en compte le personnel environnant et les projections dues au sciage du vitrage ; protections (casque, lunettes, masque FFP2) pour travailler en sécurité, protection de la victime.</p>
+            <p><strong>Astuce</strong> : à défaut d'outil spécifique, une scie égoïne peut être utilisée ; la scie sabre est conseillée en surveillant la pénétration de la lame dans l'habitacle. <em>Variante</em> : replier le pare-brise sur le capot.</p>
         </details>
         <h3>3 · Ouvertures</h3>
         <details class="jsp-cours">
             <summary>3.1 · Ouverture de porte (écrasement de porte)</summary>
             <p class="jsp-objectif">Savoir réaliser une ouverture de porte</p>
             <p><strong>Matériel</strong> : Cales en bois ou balle souple (tennis), Ecarteur.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-076.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-076.jpg" alt="Fiche SR 3.1 – page 76"></a><a href="images/gouv/p-077.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-077.jpg" alt="Fiche SR 3.1 déroulement – page 77"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses 4 roues et sécurisé, impossibilité d'ouvrir la porte, gestion des vitrages réalisée.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/porte-ecrasement.jpg" alt="Écarteur hydraulique inséré au-dessus de la poignée d'une portière pour faire céder la serrure" loading="lazy"><figcaption>Écarteur inséré au-dessus de la poignée, pour faire céder la serrure.</figcaption></figure>
+            <p><strong>Déroulement</strong> : pincer la porte légèrement au-dessus de la poignée pour se dégager un jour de quelques centimètres (attention aux véhicules équipés d'airbags latéraux dans les portières) → insérer l'écarteur dans ce jour → ouvrir l'outil afin de faire céder la serrure.</p>
+            <p><strong>Sécurité</strong> : vigilance au risque d'écrasement, ne pas se positionner entre l'écarteur et le véhicule.</p>
+            <p><strong>Astuce</strong> : travailler dans le sens classique de l'ouverture ; insérer une cale dans la poignée intérieure de la porte pour faciliter son déblocage. <em>Variantes</em> : ouverture forcée à l'écarteur, écartement dans l'espace vitré.</p>
         </details>
         <details class="jsp-cours">
             <summary>3.2 · Ouverture de porte (écarteur cadre de vitre)</summary>
             <p class="jsp-objectif">Savoir réaliser une ouverture de porte</p>
             <p><strong>Matériel</strong> : Cales en bois, balle souple (tennis), Ecarteur.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-078.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-078.jpg" alt="Fiche SR 3.2 – page 78"></a><a href="images/gouv/p-079.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-079.jpg" alt="Fiche SR 3.2 déroulement – page 79"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses 4 roues et sécurisé, impossibilité d'ouvrir la porte, gestion des vitrages réalisée.</p>
+            <p><strong>Sécurité</strong> : méthode à n'utiliser qu'en l'absence d'airbags localisés.</p>
+            <p><strong>Déroulement</strong> : positionner l'écarteur dans le cadre de vitre, becs en appui sur les bords du cadre (bras du haut de l'écarteur à l'horizontal) → mettre en action l'écarteur afin de déformer la porte et faire céder la serrure → si besoin, terminer l'ouverture en insérant l'écarteur dans l'espace créé après déformation.</p>
+            <p><strong>Astuce</strong> : travailler dans le sens classique de l'ouverture ; si la course de l'écarteur est trop courte, le replacer dans la brèche créée. <em>Variantes</em> : ouverture forcée à l'écarteur, écrasement de la porte (fiche 3.1).</p>
         </details>
         <details class="jsp-cours">
             <summary>3.3 · Ouverture de coffre</summary>
             <p class="jsp-objectif">Savoir ouvrir un coffre</p>
             <p><strong>Matériel</strong> : Halligan tool, Ecarteur.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-080.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-080.jpg" alt="Fiche SR 3.3 – page 80"></a><a href="images/gouv/p-081.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-081.jpg" alt="Fiche SR 3.3 déroulement – page 81"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses 4 roues et sécurisé, impossibilité d'ouvrir le coffre.</p>
+            <p><strong>Déroulement</strong> : au moyen du Halligan tool, déposer un bloc optique → insérer l'écarteur entre le coffre (ou hayon) et le contour du feu, en s'appuyant sur un point rigide → ouvrir l'outil de manière à faire pivoter le coffre sur la serrure.</p>
+            <p><strong>Critères de réussite</strong> : le coffre s'ouvre, l'écarteur est inséré au contact d'une partie rigide.</p>
+            <p><strong>Sécurité</strong> : projections plastique à la dépose du bloc optique, effet ressort du coffre à l'écartement, gérer les vitrages si besoin.</p>
+            <p><strong>Astuce</strong> : l'écarteur peut servir à la dépose du bloc optique en remplacement du Halligan. <em>Variante</em> : « pré-écarter » le coffre au Halligan jusqu'à une partie rigide, puis insérer l'écarteur au niveau de la serrure.</p>
         </details>
         <details class="jsp-cours">
             <summary>3.4 · Ouverture de capot</summary>
             <p class="jsp-objectif">Savoir ouvrir un capot</p>
             <p><strong>Matériel</strong> : Cales, Ecarteur, Cisaille, Coupe boulon.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-082.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-082.jpg" alt="Fiche SR 3.4 – page 82"></a><a href="images/gouv/p-083.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-083.jpg" alt="Fiche SR 3.4 déroulement – page 83"></a></div>
+            <p><strong>Conditions</strong> : impossibilité d'actionner la commande manuelle d'ouverture.</p>
+            <p><strong>Déroulement</strong> : déterminer le sens d'ouverture du capot, localiser la serrure, insérer l'écarteur en fonction → ouvrir l'écarteur → faire céder la serrure.</p>
+            <p><strong>Sécurité</strong> : pincement à la pose de la cale, attention aux capots actifs, phares au xénon, dispositif Start&amp;Stop et liquide de refroidissement.</p>
+            <p><strong>Astuce</strong> : une cale peut maintenir un jour entre le capot et l'aile ; si la serrure est côté pare-chocs, retirer l'optique de phare côté conducteur et tirer le câble de gaine (80 % des cas) ; si la serrure ne cède pas sous l'écarteur, couper l'anneau du verrou à la cisaille ou au coupe-boulon.</p>
         </details>
         <details class="jsp-cours">
             <summary>3.5 · Ouverture de porte latérale</summary>
             <p class="jsp-objectif">Savoir ouvrir une porte latérale</p>
             <p><strong>Matériel</strong> : Cale, Ecarteur.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-084.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-084.jpg" alt="Fiche SR 3.5 – page 84"></a><a href="images/gouv/p-085.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-085.jpg" alt="Fiche SR 3.5 déroulement – page 85"></a></div>
+            <p><strong>Déroulement</strong> : placer une cale dans la poignée de porte → insérer l'écarteur dans la partie arrière de la porte, juste à côté du rail coulissant → écarter jusqu'à extraire le dispositif coulissant → tirer la porte au maximum dans son rail coulissant pour laisser la plus grande ouverture possible.</p>
+            <p><strong>Sécurité</strong> : pincement lors de la traction de la porte, chute de la porte sur les pieds ou les flexibles.</p>
+            <p><strong>Astuce</strong> : la porte peut être entièrement déposée en insérant l'écarteur dans les brides supérieures.</p>
         </details>
         <details class="jsp-cours">
-            <summary>3.6 · Ouverture de porte montant A/A’</summary>
+            <summary>3.6 · Ouverture de porte montant A/A'</summary>
             <p class="jsp-objectif">Savoir réaliser une ouverture de porte</p>
             <p><strong>Matériel</strong> : Cales en bois, balle souple (tennis), Ecarteur.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-086.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-086.jpg" alt="Fiche SR 3.6 – page 86"></a><a href="images/gouv/p-087.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-087.jpg" alt="Fiche SR 3.6 déroulement – page 87"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses 4 roues et sécurisé, impossibilité d'ouvrir la porte, gestion des vitrages réalisée.</p>
+            <p><strong>Sécurité</strong> : méthode à n'utiliser qu'en l'absence d'airbags localisés.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/porte-montant-a.jpg" alt="Écarteur positionné au niveau du montant A d'une portière pour l'écarter progressivement jusqu'aux charnières" loading="lazy"><figcaption>Écartement progressif du montant A/A' jusqu'aux charnières.</figcaption></figure>
+            <p><strong>Déroulement</strong> : positionner l'écarteur et pincer la portière à hauteur du montant pour créer un espace suffisant pour glisser le bec → introduire l'écarteur et progresser en écartant le montant A/A' de la portière, jusqu'aux charnières → terminer l'opération en écartant les charnières.</p>
+            <p><strong>Astuce</strong> : utiliser un écarteur à bec fin, caler la poignée intérieure. <em>Variantes</em> : ouverture forcée au Halligan (3.1), écrasement de porte (3.2), écrasement du bas de l'aile avant Start&amp;Stop, écarteur cadre de vitre, VL sur le toit.</p>
         </details>
         <details class="jsp-cours">
             <summary>3.7 · Ouverture de porte charnière cisaille</summary>
             <p class="jsp-objectif">Savoir réaliser une ouverture de porte</p>
             <p><strong>Matériel</strong> : Cales en bois ou balle souple (tennis), Cisaille.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-088.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-088.jpg" alt="Fiche SR 3.7 – page 88"></a><a href="images/gouv/p-089.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-089.jpg" alt="Fiche SR 3.7 déroulement – page 89"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses 4 roues et sécurisé, gestion des vitrages réalisée, écarteur indisponible.</p>
+            <p><strong>Déroulement</strong> : découper l'aile de façon à faire apparaître les charnières → soulever l'aile découpée → couper les charnières apparentes.</p>
+            <p><strong>Sécurité</strong> : vigilance aux projections lors de la découpe des charnières, ne pas se positionner entre la cisaille et le véhicule ; réalisable si pas de cartouche Start&amp;Stop.</p>
+            <p><strong>Astuce</strong> : caler la poignée intérieure de la porte. <em>Variantes</em> : ouverture forcée au Halligan (3.1), écartement dans l'espace vitré (3.3), écartement du montant A, écartement du bas de l'aile avant Start&amp;Stop, VL sur le toit.</p>
         </details>
         <details class="jsp-cours">
-            <summary>3.8 · Ouverture de porte (vl sur le toit)</summary>
+            <summary>3.8 · Ouverture de porte (VL sur le toit)</summary>
             <p class="jsp-objectif">Savoir réaliser une ouverture de porte</p>
             <p><strong>Matériel</strong> : Cales en bois, balle souple (tennis), Ecarteur.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-090.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-090.jpg" alt="Fiche SR 3.8 – page 90"></a><a href="images/gouv/p-091.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-091.jpg" alt="Fiche SR 3.8 déroulement – page 91"></a></div>
+            <p><strong>Conditions</strong> : véhicule calé et sécurisé, impossibilité d'ouvrir la porte, gestion des vitrages réalisée.</p>
+            <p><strong>Sécurité</strong> : méthode à n'utiliser qu'en l'absence d'airbags localisés.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/porte-vl-toit.jpg" alt="Écarteur hydraulique pinçant le bas de caisse d'un véhicule renversé sur le toit, dans l'axe de la serrure" loading="lazy"><figcaption>VL sur le toit : écarteur pincé dans l'axe de la serrure, sur le bas de caisse.</figcaption></figure>
+            <p><strong>Déroulement</strong> : positionner l'écarteur et pincer le bas de caisse dans l'axe de la serrure → introduire l'écarteur et progresser en écartant la portière, le but étant de faire sauter la serrure → terminer l'opération en écartant la serrure.</p>
+            <p><strong>Astuce</strong> : utiliser un gros écarteur, caler la poignée intérieure. <em>Variantes</em> : ouverture forcée au Halligan (3.1), écrasement de porte (3.2), écrasement du bas de l'aile avant Start&amp;Stop, écarteur cadre de vitre, cisaille charnière (3.7).</p>
         </details>
         <h3>4 · Baies latérales</h3>
         <details class="jsp-cours">
             <summary>4.1 · Ouvrir une baie sur véhicule 5 portes</summary>
             <p class="jsp-objectif">Savoir dégager un accès pour envisager une sortie de la victime par le côté du véhicule</p>
             <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Écarteur, Cisaille, Protections de coupes.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-092.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-092.jpg" alt="Fiche SR 4.1 – page 92"></a><a href="images/gouv/p-093.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-093.jpg" alt="Fiche SR 4.1 déroulement – page 93"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses roues, sécurisé.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/baie-5-portes.jpg" alt="Véhicule 5 portes avec les deux portières déposées et l'habitacle protégé par des bâches jaunes" loading="lazy"><figcaption>Baie créée après dépose des deux portières et coupe du montant B.</figcaption></figure>
+            <p><strong>Déroulement</strong> : déposer les deux portières → dégarnir le montant B, le couper en partie haute selon la charte graphique → couper le montant B en partie basse (la coupe dans les renforts structuraux, 20 cm de bas de caisse, ne se fait qu'après dégarnissage) → protéger les coupes.</p>
+            <p><strong>Critères de réussite</strong> : les portes et le montant B sont déposés et laissent un libre accès latéral.</p>
+            <p><strong>Sécurité</strong> : protéger l'ensemble des coupes pour le personnel, attention aux éléments pyrotechniques.</p>
+            <p><strong>Astuce</strong> : la porte avant n'est pas obligatoirement déposée : après coupe du tirant de porte, elle peut être forcée et rabattue sur l'aile avant. <em>Variante</em> : voie américaine (fiche 4.2).</p>
         </details>
         <details class="jsp-cours">
             <summary>4.2 · Ouvrir une baie sur véhicule 5 portes – Voie américaine</summary>
             <p class="jsp-objectif">Savoir dégager un accès pour envisager une sortie de la victime par le côté du véhicule</p>
             <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Ecarteur, Cisaille, Protections de coupes.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-094.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-094.jpg" alt="Fiche SR 4.2 – page 94"></a><a href="images/gouv/p-095.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-095.jpg" alt="Fiche SR 4.2 déroulement – page 95"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses roues, sécurisé, espace de sortie dégagé et sécurisé.</p>
+            <p><strong>Déroulement</strong> : ouvrir la porte arrière → couper le montant B (après dégarnissage) en partie haute selon la charte graphique → couper le montant B en partie basse, finir à l'écarteur si la césarisation est incomplète (coupe dans les renforts structuraux, 20 cm de bas de caisse, possible après dégarnissage) → utiliser les charnières de la porte avant pour replier l'ensemble portes + montant vers l'avant.</p>
+            <p><strong>Critères de réussite</strong> : le montant B est retiré avec un minimum de parties saillantes.</p>
+            <p><strong>Sécurité</strong> : vigilance lors de la découpe, dans les 20 cm du bas de caisse, aux éléments impactants (airbags, prétensionneurs, satellite) ; attention à l'environnement lors de la dépose de l'ensemble.</p>
+            <p><strong>Astuce</strong> : effectuer une coupe du tirant de porte pour une ouverture forcée sans déposer l'ensemble porte + montant. <em>Variante</em> : fiche 4.1.</p>
         </details>
         <details class="jsp-cours">
             <summary>4.3 · Ouvrir une baie véhicule 3 portes</summary>
             <p class="jsp-objectif">Savoir dégager un espace pour une extraction de la victime par le côté du véhicule</p>
             <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Cisaille, Ecarteur, Protections de coupes.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-096.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-096.jpg" alt="Fiche SR 4.3 – page 96"></a><a href="images/gouv/p-097.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-097.jpg" alt="Fiche SR 4.3 déroulement – page 97"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses 4 roues et sécurisé, porte déposée.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/baie-3-portes.jpg" alt="Véhicule 3 portes avec la portière avant déposée et le siège protégé, préparation d'une baie latérale" loading="lazy"><figcaption>Véhicule 3 portes, porte avant déposée avant coupe du montant B.</figcaption></figure>
+            <p><strong>Déroulement</strong> : dégarnir et couper le montant B en partie haute (attention au rail de réglage de hauteur de la ceinture de sécurité) → réaliser la coupe verticale selon la charte graphique, la prolonger au maximum → effectuer la coupe horizontale le long du bas de caisse en bas du montant B, en la coupant intégralement → pincer l'aile à l'écarteur → utiliser le poids de l'écarteur pour déchirer la tôle et terminer l'ouverture de la baie, protéger les parties saillantes.</p>
+            <p><strong>Critères de réussite</strong> : l'espace créé est suffisant.</p>
+            <p><strong>Sécurité</strong> : le montant B est retiré avec le minimum de parties saillantes, attention aux parties saillantes et au réservoir de carburant.</p>
+            <p><strong>Astuce</strong> : cette technique peut se faire en inversant les coupes et en tirant l'aile vers l'arrière. <em>Variante</em> : ouverture d'une baie véhicule 3 portes à la scie sabre (fiche 4.4).</p>
         </details>
         <h3>5 · Tableau de bord</h3>
         <details class="jsp-cours">
             <summary>5.1 · Relevage du tableau de bord</summary>
-            <p class="jsp-objectif">Savoir dégager une victime sous l’emprise de son tableau de bord ou de son volant</p>
+            <p class="jsp-objectif">Savoir dégager une victime sous l'emprise de son tableau de bord ou de son volant</p>
             <p><strong>Matériel</strong> : Crayon carrosserie, Outils de dégarnissage, Cisaille, Ecarteur, Protections de coupes.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-098.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-098.jpg" alt="Fiche SR 5.1 – page 98"></a><a href="images/gouv/p-099.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-099.jpg" alt="Fiche SR 5.1 déroulement – page 99"></a></div>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/relevage-tdb.jpg" alt="Écarteur hydraulique inséré dans le montant A d'un véhicule accidenté, porte et aile déposées" loading="lazy"><figcaption>Écarteur inséré à l'horizontal dans la fenêtre découpée du montant A.</figcaption></figure>
+            <p><strong>Déroulement</strong> : la porte est déposée, procéder à la dépose de l'aile (attention aux condensateurs UCAP) → créer une fenêtre en découpant la partie inférieure du montant A selon la charte graphique → effectuer une coupe de décharge au niveau du longeron, au passage de roue (avant la suspension) → vérifier que le calage est efficace, insérer l'écarteur dans la fenêtre réalisée dans la partie inférieure du montant A → mettre en action l'écarteur (à l'horizontal) pour relever le tableau de bord jusqu'à la hauteur souhaitée, réajuster le calage.</p>
+            <p><strong>Critères de réussite</strong> : le volant est relevé sans affaissement du véhicule.</p>
+            <p><strong>Sécurité</strong> : attention, lors de la mise en œuvre de l'écarteur en appui sur le bas de caisse, au risque d'écrasement/affaissement.</p>
+            <p><strong>Astuce</strong> : voir fiche technique SR n°5.3 — Astuces de dégagement du tableau de bord.</p>
         </details>
         <details class="jsp-cours">
             <summary>5.2 · Bascule du tableau de bord</summary>
-            <p class="jsp-objectif">Savoir dégager une victime sous l’emprise de son tableau de bord ou de son volant</p>
+            <p class="jsp-objectif">Savoir dégager une victime sous l'emprise de son tableau de bord ou de son volant</p>
             <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Cisailles, Vérin, Écarteur, Protections de coupes.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-100.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-100.jpg" alt="Fiche SR 5.2 – page 100"></a><a href="images/gouv/p-101.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-101.jpg" alt="Fiche SR 5.2 déroulement – page 101"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses 4 roues et sécurisé, technique possible sans dépose du pavillon.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/bascule-tdb.jpg" alt="Vérin hydraulique positionné entre une cale et le montant A d'un véhicule, aile déposée, pour repousser le tableau de bord" loading="lazy"><figcaption>Vérin en appui sur une cale et le montant A, au plus près de la poutrelle du tableau de bord.</figcaption></figure>
+            <p><strong>Déroulement</strong> : dégarnir et déposer l'aile → poser la cale, mettre le vérin en appui sur la cale et le montant A, au plus près de la poutrelle du tableau de bord → réaliser une coupe de décharge dans l'aile (efficacité maximale entre l'amortisseur et le montant A), puis une 2e coupe en bas du montant A selon la charte graphique → pousser le montant avec le vérin, ne pas oublier le contre-calage sous le sabot et réajuster le calage si nécessaire.</p>
+            <p><strong>Critères de réussite</strong> : le tableau de bord est basculé rapidement, l'espace créé est suffisamment grand, le vérin est correctement positionné et sa poignée tournée vers l'extérieur.</p>
+            <p><strong>Sécurité</strong> : attention à l'affaissement du siège, prendre en compte le personnel environnant et la victime lors de la mise en œuvre des vérins.</p>
+            <p><strong>Astuce</strong> : prendre appui au plus près de la barre de renfort de tableau de bord. <em>Variante</em> : la cale du vérin peut être remplacée par l'écarteur pinçant une cale bois.</p>
         </details>
         <details class="jsp-cours">
             <summary>5.3 · Astuces de dégagement du tableau de bord</summary>
-            <p class="jsp-objectif">Savoir comment obtenir de l’espace en agissant sur le tableau de bord de manière rapide</p>
-            <p><strong>Matériel</strong> : Vérins, Ecarteur, Mini - cisaille ou cisaille.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-102.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-102.jpg" alt="Fiche SR 5.3 – page 102"></a><a href="images/gouv/p-103.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-103.jpg" alt="Fiche SR 5.3 déroulement – page 103"></a></div>
+            <p class="jsp-objectif">Savoir comment obtenir de l'espace en agissant sur le tableau de bord de manière rapide</p>
+            <p><strong>Matériel</strong> : Vérins, Ecarteur, Mini-cisaille ou cisaille.</p>
+            <p><strong>Conditions</strong> : véhicule calé et sécurisé.</p>
+            <p><strong>Déroulement</strong> — 3 méthodes distinctes : 1) placer l'écarteur sous le volant, en appui sur le bas de caisse avec contre-calage, l'ouvrir ; 2) placer un vérin à l'aplomb du tableau de bord et le développer jusqu'à l'espace souhaité (s'assurer de l'appui stable du vérin sur une cale) ; 3) couper les branches du volant à la mini-cisaille (manœuvre possible avec airbag).</p>
+            <p><strong>Critères de réussite</strong> : l'espace produit est suffisamment grand, la sécurité de la victime est assurée.</p>
+            <p><strong>Sécurité</strong> : attention aux effets mécaniques dus au soulèvement du tableau de bord.</p>
         </details>
         <details class="jsp-cours">
             <summary>5.4 · Bascule du tableau de bord barre de renfort</summary>
-            <p class="jsp-objectif">Savoir dégager une victime sous l’emprise de son tableau de bord ou de son volant</p>
+            <p class="jsp-objectif">Savoir dégager une victime sous l'emprise de son tableau de bord ou de son volant</p>
             <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Écarteur long bec, Protections de coupes.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-104.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-104.jpg" alt="Fiche SR 5.4 – page 104"></a><a href="images/gouv/p-105.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-105.jpg" alt="Fiche SR 5.4 déroulement – page 105"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses 4 roues et sécurisé, technique possible sans couper les montants.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/tdb-barre-renfort.jpg" alt="Écarteur long bec en appui sur le bas de caisse et l'extrémité de la barre de renfort du tableau de bord" loading="lazy"><figcaption>Écarteur long bec en appui sur le bas de caisse et la barre de renfort du tableau de bord.</figcaption></figure>
+            <p><strong>Déroulement</strong> : dégarnir la partie latérale du tableau de bord pour faire apparaître la barre de renfort → positionner l'écarteur en appui sur le bas de caisse et l'extrémité de la barre → déployer l'écarteur jusqu'à ce que la victime soit libérée.</p>
+            <p><strong>Critères de réussite</strong> : le tableau de bord est basculé rapidement, l'espace créé est suffisamment grand pour l'extraction de la victime.</p>
+            <p><strong>Sécurité</strong> : attention à l'appui de l'écarteur (toujours acier contre acier), prendre en compte le personnel environnant et la victime.</p>
+            <p><strong>Astuce</strong> : positionner les becs de l'écarteur le plus perpendiculairement possible par rapport à la barre de renfort.</p>
         </details>
         <h3>6 · Pavillon</h3>
         <details class="jsp-cours">
             <summary>6.1 · Pavillon complet</summary>
-            <p class="jsp-objectif">Réaliser l’accès d’une victime incarcérée en dégageant le pavillon en vue d’une sortie arrière</p>
+            <p class="jsp-objectif">Réaliser l'accès d'une victime incarcérée en dégageant le pavillon en vue d'une sortie arrière</p>
             <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Coupe ceinture, Cisailles, Protections de coupes.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-106.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-106.jpg" alt="Fiche SR 6.1 – page 106"></a><a href="images/gouv/p-107.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-107.jpg" alt="Fiche SR 6.1 déroulement – page 107"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses roues, calé et sécurisé.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/pavillon-complet.jpg" alt="Véhicule accidenté avec le pavillon entièrement déposé, montants A et B coupés" loading="lazy"><figcaption>Pavillon déposé après coupe des montants A et B, dans un ordre judicieux.</figcaption></figure>
+            <p><strong>Déroulement</strong> : gérer le pare-brise et les vitrages selon les fiches techniques réalisées, dégarnir les montants → couper les montants A et B selon la charte graphique en suivant un ordre judicieux → couper les montants en prenant garde à ne pas sectionner les vérins du coffre (les gérer au préalable) → soulever le pavillon et l'évacuer vers la zone de dépôt des structures.</p>
+            <p><strong>Critères de réussite</strong> : le pavillon est enlevé entièrement, dégageant ainsi l'habitacle du véhicule.</p>
+            <p><strong>Sécurité</strong> : le pavillon est soutenu par des équipiers judicieusement placés, annoncer la coupe de tous les montants pour ne pas surprendre le personnel environnant et la victime, protéger toutes les parties saillantes.</p>
+            <p><strong>Astuce</strong> : la scie sabre peut être un outil complémentaire pour la césarisation des montants et du pare-brise.</p>
         </details>
         <details class="jsp-cours">
             <summary>6.2 · Demi-pavillon avant</summary>
-            <p class="jsp-objectif">Créer l’espace suffisant pour le dégagement d’une victime sans déposer le pavillon</p>
+            <p class="jsp-objectif">Créer l'espace suffisant pour le dégagement d'une victime sans déposer le pavillon</p>
             <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Cisaille, Protections de coupes.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-108.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-108.jpg" alt="Fiche SR 6.2 – page 108"></a><a href="images/gouv/p-109.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-109.jpg" alt="Fiche SR 6.2 déroulement – page 109"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses roues, calé et sécurisé.</p>
+            <p><strong>Déroulement</strong> : après dégarnissage des montants B et C et gestion des vitrages, couper selon la charte graphique les montants B et C → effectuer une coupe de décharge en haut des montants A (derrière le renfort de pare-brise) → soulever puis basculer le pavillon vers l'avant (en cas de hayon, le déposer au préalable) → protéger les parties saillantes.</p>
+            <p><strong>Critères de réussite</strong> : le pavillon est basculé vers l'avant, dégageant ainsi l'habitacle du véhicule.</p>
+            <p><strong>Sécurité</strong> : le pavillon est soutenu par des équipiers judicieusement placés, annoncer la coupe des montants, protéger toutes les parties saillantes.</p>
+            <p><strong>Astuce</strong> : une commande (vérin) peut être utilisée pour assurer le basculement du pavillon.</p>
         </details>
         <details class="jsp-cours">
             <summary>6.3 · Demi-pavillon arrière ou accès médical</summary>
-            <p class="jsp-objectif">Créer l’espace suffisant pour le dégagement d’une victime sans dépose totale du pavillon en le basculant vers l’arrière</p>
+            <p class="jsp-objectif">Créer l'espace suffisant pour le dégagement d'une victime sans dépose totale du pavillon en le basculant vers l'arrière</p>
             <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Cisaille, Protections de coupes.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-110.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-110.jpg" alt="Fiche SR 6.3 – page 110"></a><a href="images/gouv/p-111.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-111.jpg" alt="Fiche SR 6.3 déroulement – page 111"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses roues, calé et sécurisé.</p>
+            <p><strong>Déroulement</strong> : gérer le pare-brise et les vitrages selon les fiches techniques SR → dégarnir les montants A, couper selon la charte graphique les montants avant → faire une coupe de décharge à l'endroit du pliage après dégarnissage → soulever puis basculer le pavillon vers l'arrière → protéger les parties saillantes.</p>
+            <p><strong>Critères de réussite</strong> : le pavillon est basculé vers l'arrière, dégageant ainsi l'habitacle du véhicule.</p>
+            <p><strong>Sécurité</strong> : le pavillon est soutenu par des équipiers judicieusement placés, annoncer la coupe des montants, protéger toutes les parties saillantes.</p>
+            <p><strong>Astuce</strong> : une commande peut être utilisée pour assurer le basculement du pavillon.</p>
         </details>
         <details class="jsp-cours">
             <summary>6.4 · Demi-pavillon latéral</summary>
-            <p class="jsp-objectif">Créer l’espace suffisant pour le dégagement d’une victime dans un véhicule sur le côté</p>
+            <p class="jsp-objectif">Créer l'espace suffisant pour le dégagement d'une victime dans un véhicule sur le côté</p>
             <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Coupe ceinture, Masque FFP2, Coupe pare-brise, Cisaille, Protections de coupes.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-112.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-112.jpg" alt="Fiche SR 6.4 – page 112"></a><a href="images/gouv/p-113.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-113.jpg" alt="Fiche SR 6.4 déroulement – page 113"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur le côté et sécurisé.</p>
+            <p><strong>Déroulement</strong> : dégarnir et couper les montants A, B et C en partie supérieure selon la charte graphique → couper le pare-brise → effectuer une coupe de décharge en partie inférieure du pavillon (selon la charte graphique) au niveau des montants A et C → préparer un lit de cales, faire pivoter le pavillon sans secousse → caler le pavillon au sol, protéger les points de coupe.</p>
+            <p><strong>Critères de réussite</strong> : le pavillon est basculé sur le côté et l'ensemble de l'habitacle du véhicule est dégagé.</p>
+            <p><strong>Sécurité</strong> : toutes les parties saillantes doivent être protégées.</p>
+            <p><strong>Astuce</strong> : possibilité d'ajouter une cale pour laisser la portière ouverte. <em>Variante</em> : demi-pavillon latéral à la scie sabre (fiche 6.5 bis).</p>
         </details>
         <details class="jsp-cours">
-            <summary>6.5 · Sortie arrière VL sur le toit écarteur chaine</summary>
+            <summary>6.5 · Sortie arrière VL toit écarteur chaîne</summary>
             <p class="jsp-objectif">Savoir dégager un accès pour envisager une sortie arrière de la victime lorsque le véhicule est sur le toit</p>
-            
-            <div class="gouv-pages"><a href="images/gouv/p-114.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-114.jpg" alt="Fiche SR 6.5 – page 114"></a><a href="images/gouv/p-115.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-115.jpg" alt="Fiche SR 6.5 déroulement – page 115"></a></div>
+            <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Ecarteur, Cisaille, Chaîne, Étai, Protections de coupes.</p>
+            <p><strong>Conditions</strong> : véhicule sur le toit et sécurisé (VL 5 portes).</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/sortie-arriere-toit.jpg" alt="Coffre arrière d'un véhicule renversé sur le toit, tôle du hayon déchirée pour créer un accès" loading="lazy"><figcaption>VL sur le toit : ouverture arrière créée à l'écarteur-chaîne, après coupe des montants C/C'.</figcaption></figure>
+            <p><strong>Déroulement</strong> : caler et effectuer suivant les fiches techniques réalisées → mettre en place l'écarteur-chaîne sur les triangles de suspension en diagonale, caler le véhicule au niveau du coffre avec un étai ou vérin → couper les montants C et C', après dégarnissage, selon la charte graphique, affaiblir le bas de caisse sur une ligne qui délimite le réservoir, puis couper le pot d'échappement sur cette même ligne, mettre en pression l'écarteur → développer l'écarteur jusqu'à ce que l'espace créé soit suffisant, aider au départ en poussant le coffre vers le haut.</p>
+            <p><strong>Critères de réussite</strong> : l'espace est suffisamment dégagé pour permettre d'extraire la victime.</p>
+            <p><strong>Sécurité</strong> : attention lors du calage réflexe (cales escalier) à la bascule du véhicule, caler le coffre avant traction (étai ou homme).</p>
+            <p><strong>Astuce</strong> : bien dégarnir, couper les ceintures de sécurité.</p>
         </details>
         <details class="jsp-cours">
             <summary>6.6 · Demi-pavillon inversé – Pavillon inversé</summary>
             <p class="jsp-objectif">Savoir dégager un accès pour envisager une sortie arrière de la victime lorsque le véhicule est sur le toit</p>
             <p><strong>Matériel</strong> : Crayon carrosserie, Outil de dégarnissage, Ecarteur, Cisaille, Vérin, Protections de coupes.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-116.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-116.jpg" alt="Fiche SR 6.6 – page 116"></a><a href="images/gouv/p-117.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-117.jpg" alt="Fiche SR 6.6 déroulement – page 117"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur le toit et sécurisé.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/demi-pavillon-inverse.jpg" alt="Véhicule renversé sur le toit avec le pavillon partiellement abaissé, vérin en cours de mise en pression" loading="lazy"><figcaption>VL sur le toit : pavillon abaissé après coupe des montants B et C, vérin en pression.</figcaption></figure>
+            <p><strong>Déroulement</strong> : le calage est effectué suivant les fiches techniques réalisées → couper les montants B et C, après dégarnissage, selon la charte graphique, et affaiblir le montant A → retirer les cales escalier, abaisser le pavillon, positionner le vérin et le mettre en pression → développer le vérin jusqu'à ce que l'espace créé soit suffisant, ajuster la tension des étais au fur et à mesure (calage évolutif).</p>
+            <p><strong>Critères de réussite</strong> : l'espace est suffisamment dégagé pour permettre d'extraire la victime.</p>
+            <p><strong>Sécurité</strong> : attention lors du calage réflexe à la bascule du véhicule, surveiller l'aplomb du vérin et assurer le contre-calage.</p>
+            <p><strong>Astuce</strong> : il est possible de dégager complètement le pavillon en césarisant entièrement les montants A et en sciant le pare-brise ; le pavillon fait alors office de plan dur pour dégager en urgence la victime.</p>
         </details>
         <details class="jsp-cours">
             <summary>6.7 · Pavillon « jack in the box »</summary>
-            <p class="jsp-objectif">Réaliser l’accès d’une victime incarcérée en dégageant le pavillon en vue d’une sortie latérale</p>
+            <p class="jsp-objectif">Réaliser l'accès d'une victime incarcérée en dégageant le pavillon en vue d'une sortie latérale</p>
             <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Coupe ceinture, Cisailles, Protections de coupes, Vérin long.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-118.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-118.jpg" alt="Fiche SR 6.7 – page 118"></a><a href="images/gouv/p-119.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-119.jpg" alt="Fiche SR 6.7 déroulement – page 119"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses roues, calé et sécurisé, curarisation latérale.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/pavillon-jack.jpg" alt="Vérin long positionné en appui dans l'axe du montant B pour relever le pavillon en vue d'une sortie latérale" loading="lazy"><figcaption>Vérin long en appui dans l'axe du montant B, pavillon relevé côté extraction.</figcaption></figure>
+            <p><strong>Déroulement</strong> : gérer le pare-brise et les vitrages selon les fiches techniques réalisées, dégarnir les montants → couper les montants A, B, C (côté extraction) selon la charte graphique en suivant un ordre judicieux → positionner le vérin en appui sur une cale, dans l'axe du montant B → déployer le vérin jusqu'à créer un espace suffisant.</p>
+            <p><strong>Critères de réussite</strong> : le pavillon est relevé, dégageant ainsi l'habitacle du véhicule.</p>
+            <p><strong>Sécurité</strong> : le pavillon est accompagné par des équipiers judicieusement placés lors du déploiement du vérin, annoncer la coupe de tous les montants, protéger toutes les parties saillantes.</p>
+            <p><strong>Astuce</strong> : il est judicieux de s'appuyer avec le vérin sur la structure renforcée du pavillon.</p>
         </details>
         <h3>7 · Pédales</h3>
         <details class="jsp-cours">
-            <summary>7.1 · Baie d’accès aux pédales</summary>
-            <p class="jsp-objectif">Créer l’accès sous le tableau de bord pour césariser les pédales</p>
+            <summary>7.1 · Baie d'accès aux pédales</summary>
+            <p class="jsp-objectif">Créer l'accès sous le tableau de bord pour césariser les pédales</p>
             <p><strong>Matériel</strong> : Outil de dégarnissage, Crayon carrosserie, Cisaille, Ecarteur, Mini cisaille ou coupe pédales.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-120.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-120.jpg" alt="Fiche SR 7.1 – page 120"></a><a href="images/gouv/p-121.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-121.jpg" alt="Fiche SR 7.1 déroulement – page 121"></a></div>
+            <p><strong>Conditions</strong> : véhicule calé et sécurisé.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/baie-pedales.jpg" alt="Habitacle d'un véhicule accidenté, portière avant déposée, pour créer un accès aux pédales" loading="lazy"><figcaption>Accès créé après coupe du montant A, entre les deux charnières de porte.</figcaption></figure>
+            <p><strong>Déroulement</strong> : suite à la dépose de la porte, couper le montant A selon la charte graphique pour obtenir l'espace souhaité (entre les 2 charnières de porte) → pincer à l'aide de l'écarteur entre les 2 coupes, écarter pour créer une fenêtre laissant un accès à l'outil de coupe → couper la pédale à l'aide de l'outil.</p>
+            <p><strong>Critères de réussite</strong> : la ou les pédales sont césarisées pour laisser un accès libre en vue de dégager les pieds de la victime.</p>
+            <p><strong>Sécurité</strong> : maintenir l'élément sectionné pour prévenir de l'effet ressort, attention au risque de pincement avec l'outil, protections de coupe.</p>
+            <p><strong>Astuce</strong> : si le coupe-pédales ou la mini-cisaille peut être introduit sans créer la fenêtre dans le montant, il est inutile de la créer.</p>
         </details>
         <details class="jsp-cours">
             <summary>7.2 · Dégagement des pédales (écarteur)</summary>
             <p class="jsp-objectif">Savoir créer un espace libre pour dégager les pieds de la victime</p>
             <p><strong>Matériel</strong> : Ecarteur, Anneau cousu.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-122.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-122.jpg" alt="Fiche SR 7.2 – page 122"></a><a href="images/gouv/p-123.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-123.jpg" alt="Fiche SR 7.2 déroulement – page 123"></a></div>
+            <p><strong>Conditions</strong> : véhicule calé et sécurisé.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/degagement-pedales.jpg" alt="Écarteur hydraulique relié par un anneau cousu à une pédale, en appui sur le bas de caisse du véhicule" loading="lazy"><figcaption>Anneau cousu noué à la pédale, écarteur en appui sur le bas de caisse.</figcaption></figure>
+            <p><strong>Déroulement</strong> : nouer l'anneau cousu à la pédale → insérer l'écarteur dans l'anneau cousu et ouvrir progressivement en prenant appui sur le bas de caisse du véhicule → écarter de manière à dévier suffisamment la pédale.</p>
+            <p><strong>Critères de réussite</strong> : la pédale est suffisamment déviée pour permettre le dégagement de la victime.</p>
+            <p><strong>Sécurité</strong> : ne pas travailler sur la couture de l'anneau cousu, prendre en compte la puissance de l'écarteur par rapport à la résistance de l'anneau, ne travailler qu'avec les becs de l'écarteur.</p>
+            <p><strong>Astuce</strong> : l'anneau cousu peut être remplacé par une section de ceinture de sécurité. <em>Variante</em> : dégagement des pédales par la porte (fiche 7.3).</p>
         </details>
         <h3>8 · Divers</h3>
         <details class="jsp-cours">
-            <summary>8.1 · Augmentation de l’espace de survie</summary>
-            <p class="jsp-objectif">Savoir augmenter l’espace de survie en utilisant un vérin</p>
+            <summary>8.1 · Augmentation de l'espace de survie</summary>
+            <p class="jsp-objectif">Savoir augmenter l'espace de survie en utilisant un vérin</p>
             <p><strong>Matériel</strong> : Cale en bois, Outil de dégarnissage, Ecarteur, Vérin.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-124.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-124.jpg" alt="Fiche SR 8.1 – page 124"></a><a href="images/gouv/p-125.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-125.jpg" alt="Fiche SR 8.1 déroulement – page 125"></a></div>
+            <p><strong>Conditions</strong> : déformation d'un montant, qui réduit l'espace de survie.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/espace-survie.jpg" alt="Vérin hydraulique positionné entre une cale en bois calée sous le toit et un montant déformé de l'habitacle" loading="lazy"><figcaption>Vérin positionné entre la cale en bois (serrée au toit) et le montant à redresser.</figcaption></figure>
+            <p><strong>Déroulement</strong> : poser une cale en bois côté opposé au montant à redresser, puis la serrer contre le toit de l'habitacle avec un écarteur → positionner le vérin contre la cale en bois et le montant → pousser le montant avec le vérin.</p>
+            <p><strong>Critères de réussite</strong> : la manœuvre ne gêne pas l'équipier au maintien tête, la position du vérin est assurée par un équipier SR, l'espace de survie est augmenté.</p>
+            <p><strong>Sécurité</strong> : maintenir en permanence le vérin à l'intérieur de l'habitacle, attention au risque d'écrasement lors de l'utilisation du vérin, technique à ne réaliser qu'après un dégarnissage.</p>
+            <p><strong>Astuce</strong> : placer la poignée parallèle au plafond, prendre en considération le sens du fil du bois pour les cales.</p>
         </details>
         <details class="jsp-cours">
-            <summary>8.2 · Dégagement d&#x27;un véhicule d’un obstacle</summary>
-            <p class="jsp-objectif">Savoir retirer un véhicule sur ses roues d’un obstacle empêchant le relevage du tableau de bord</p>
+            <summary>8.2 · Dégagement d'un véhicule d'un obstacle</summary>
+            <p class="jsp-objectif">Savoir retirer un véhicule sur ses roues d'un obstacle empêchant le relevage du tableau de bord</p>
             <p><strong>Matériel</strong> : Treuil du Véhicule SR ou Tirfor, Elingues textiles, Chaîne (éventuel).</p>
-            <div class="gouv-pages"><a href="images/gouv/p-126.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-126.jpg" alt="Fiche SR 8.2 – page 126"></a><a href="images/gouv/p-127.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-127.jpg" alt="Fiche SR 8.2 déroulement – page 127"></a></div>
+            <p><strong>Conditions</strong> : véhicule sur ses roues, sécurisé contre un obstacle, avec un secouriste au maintien tête.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/degagement-obstacle.jpg" alt="Câble de treuil ou Tirfor amarré à un point fixe du véhicule pour le tracter hors d'un obstacle" loading="lazy"><figcaption>Câble amarré à un point fixe du véhicule (berceau, anneau de remorquage).</figcaption></figure>
+            <p><strong>Déroulement</strong> : sécuriser le véhicule (balisage, protection airbag et incendie) et positionner un secouriste à l'intérieur → utiliser un point fixe ou positionner le véhicule calé à l'opposé de la traction, mettre en place le treuil ou le Tirfor → amarrer le câble sur un point fixe du véhicule → mettre en tension le système après avoir balisé la zone et sécurisé le câble → tirer sans secousse le véhicule au moyen du Tirfor ou du treuil, immobiliser le véhicule avant d'enlever le système de traction.</p>
+            <p><strong>Critères de réussite</strong> : zone de déplacement libre et stable, véhicule sécurisé, fiabilité du point fixe utilisé, traction sans secousse en communiquant avec l'équipier-écureuil (au maintien tête durant toute la manœuvre), point fixe solide du véhicule (berceau, anneau de remorquage). Un déplacement de quelques mètres suffit généralement à permettre une désincarcération sans gêne de l'obstacle.</p>
+            <p><strong>Sécurité</strong> : respecter les règles de sécurité relatives à l'utilisation du Tirfor.</p>
         </details>
         <details class="jsp-cours">
             <summary>8.3 · Découpe de tôle : véhicule utilitaire</summary>
-            <p class="jsp-objectif">Savoir découper une tôle d’un véhicule utilitaire en vue de pouvoir observer le contenu d’un chargement ou d’accéder à la partie arrière</p>
+            <p class="jsp-objectif">Savoir découper une tôle d'un véhicule utilitaire en vue de pouvoir observer le contenu d'un chargement ou d'accéder à la partie arrière</p>
             <p><strong>Matériel</strong> : Crayon carrosserie, Halligan tool, Scie sabre ou à défaut cisaille.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-128.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-128.jpg" alt="Fiche SR 8.3 – page 128"></a><a href="images/gouv/p-129.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-129.jpg" alt="Fiche SR 8.3 déroulement – page 129"></a></div>
+            <p><strong>Conditions</strong> : véhicule calé et sécurisé, un accès doit être effectué.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/decoupe-tole.jpg" alt="Batterie et compartiment moteur d'un véhicule utilitaire, préparation d'une découpe de tôle à l'aide d'un halligan tool" loading="lazy"><figcaption>Repérage des renforts avant découpe de la tôle à la scie sabre.</figcaption></figure>
+            <p><strong>Déroulement</strong> : à l'aide de la fiche d'aide à la désincarcération (FAD) ou, à défaut, par toucher, identifier la présence de renforts → à l'aide du pointeau du Halligan tool, créer un trou pour laisser pénétrer la scie sabre ou, à défaut, la cisaille → à l'aide de la scie sabre, réaliser la découpe souhaitée → écarter la tôle de manière à ne pas se blesser.</p>
+            <p><strong>Critères de réussite</strong> : l'espace créé permet une visibilité sur la caisse arrière.</p>
+            <p><strong>Sécurité</strong> : vigilance aux aménagements intérieurs qui peuvent être réalisés.</p>
+            <p><strong>Astuce</strong> : cette même méthode peut s'adapter à la cloison qui sépare l'habitacle de la caisse arrière.</p>
         </details>
         <h3>9 · Énergie</h3>
         <details class="jsp-cours">
             <summary>9.1 · Gestion des énergies basse tension</summary>
-            <p class="jsp-objectif">Savoir gérer l’énergie basse tension pour faciliter les actions de désincarcération et d’extraction</p>
+            <p class="jsp-objectif">Savoir gérer l'énergie basse tension pour faciliter les actions de désincarcération et d'extraction</p>
             <p><strong>Matériel</strong> : Clé de 10, Coupe boulon, Pince coupante.</p>
-            <div class="gouv-pages"><a href="images/gouv/p-130.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-130.jpg" alt="Fiche SR 9.1 – page 130"></a><a href="images/gouv/p-131.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-131.jpg" alt="Fiche SR 9.1 déroulement – page 131"></a></div>
+            <p><strong>Conditions</strong> : évaluer le degré d'intensité de l'accident et envisager la gestion des énergies la plus appropriée.</p>
+            <figure class="rd-fig etroite"><img src="images/gouv-fiches/energie-basse-tension.jpg" alt="Batterie basse tension 12 V d'un véhicule dans le compartiment moteur, avec une pince coupante prête à sectionner un câble" loading="lazy"><figcaption>Batterie basse tension (12 V) : coupure destructive au coupe-boulon ou à la pince coupante en 3ᵉ degré.</figcaption></figure>
+            <p><strong>Déroulement</strong> — le débranchement de la batterie n'est pas systématique, il est défini selon 3 degrés, en fonction de l'intensité de l'accident et de l'état de la voiture :</p>
+            <ul>
+                <li><strong>1er degré</strong> (AVP de faible intensité) : l'accident ne nécessite pas obligatoirement une déconnexion électrique des équipements ; une simple mise à l'arrêt moteur permet d'utiliser l'énergie électrique.</li>
+                <li><strong>2e degré</strong> : l'état du véhicule ou la présence d'un sauveteur à l'intérieur peut nécessiter la déconnexion de manière non destructive de la batterie.</li>
+                <li><strong>3e degré</strong> (déformation des structures, accident de forte intensité, notion d'urgence ou d'incarcération d'une victime) : coupure destructive possible au moyen d'une pince coupante ou d'un coupe-boulon.</li>
+            </ul>
+            <p><strong>Critères de réussite</strong> : les actions de gestion de l'énergie permettent une action de sécurisation du véhicule ; utiliser tous les dispositifs nécessaires à la sortie de la victime avant la coupure (vitres, siège, coffre…).</p>
+            <p><strong>Sécurité</strong> : ne s'applique pas aux véhicules hybrides et électriques, pour lesquels les actions d'isolement électrique sont prioritaires et rendent impossible ce type de stratégie ; ne pas appliquer cette fiche sur les circuits haute tension (câbles orange non sectionnables). Pour les 2ᵉ et 3ᵉ degrés sur véhicules électriques/hybrides, la mise en sécurité électrique du véhicule est prioritaire à toute autre action.</p>
         </details>
         <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/vehicules/GOUV-SDIS34-2015.pdf" target="_blank" rel="noopener">Guide complet (PDF, 25 Mo)</a></p>
         <p class="rd-source">📚 Source : <strong>Guide opérationnel d'urgence sur les véhicules – SDIS 34</strong> (V1.1.1, mai 2015), réalisé avec le SDIS de la Vienne (86), et notes opérationnelles départementales n° 001 et 002 (12/2014). Reproduit avec l'autorisation du SDIS de l'Hérault. <strong>Document de 2015</strong> : les véhicules récents peuvent différer, consulter la fiche d'aide à la décision (FAD) du modèle.</p>
@@ -25267,7 +25408,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.46.5</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.46.6</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
