@@ -1132,9 +1132,24 @@
         }
 
         @media (max-width: 480px) {
-            .photo-cat-grid, .photo-type-grid, .photo-color-grid {
+            .photo-cat-grid, .photo-type-grid {
                 grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             }
+        }
+
+        /* Cartes bouteilles : bannières pleine largeur avec texte incrusté dans la photo (pas d'overlay CSS) */
+        .photo-color-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .photo-color-card {
+            aspect-ratio: 2.35 / 1;
+            min-height: 72px;
+        }
+
+        .photo-color-card img {
+            object-fit: contain;
+            background: #000;
         }
 
         .distance-card {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.47.1">
+    <meta name="version" content="1.47.2">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -226,7 +226,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.47.1</span><br>
+                        Vulcain v<span class="app-version">1.47.2</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -3307,113 +3307,43 @@
             <div class="photo-color-grid" style="margin-bottom: 30px;">
 
                 <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('jaune')" style="--cat-color: #FFC107;">
-                    <img src="images/bouteilles-couleurs/jaune.jpg" alt="Bouteille à ogive jaune" loading="lazy">
-                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
-                    <span class="photo-color-overlay">
-                        <span class="photo-color-label">JAUNE</span>
-                        <span class="photo-color-risk">Toxique/Corrosif</span>
-                        <span class="photo-color-ral">RAL 1018</span>
-                    </span>
-                    <span class="photo-color-chev">›</span>
+                    <img src="images/bouteilles-couleurs/jaune.jpg" alt="Bouteille à ogive jaune — Toxique/Corrosif — RAL 1018" loading="lazy">
                 </button>
 
                 <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('rouge')" style="--cat-color: #FF0000;">
-                    <img src="images/bouteilles-couleurs/rouge.jpg" alt="Bouteille à ogive rouge" loading="lazy">
-                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
-                    <span class="photo-color-overlay">
-                        <span class="photo-color-label">ROUGE</span>
-                        <span class="photo-color-risk">Inflammable</span>
-                        <span class="photo-color-ral">RAL 3000</span>
-                    </span>
-                    <span class="photo-color-chev">›</span>
+                    <img src="images/bouteilles-couleurs/rouge.jpg" alt="Bouteille à ogive rouge — Inflammable — RAL 3000" loading="lazy">
                 </button>
 
                 <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('bleu')" style="--cat-color: #0099FF;">
-                    <img src="images/bouteilles-couleurs/bleu.jpg" alt="Bouteille à ogive bleu clair" loading="lazy">
-                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
-                    <span class="photo-color-overlay">
-                        <span class="photo-color-label">BLEU CLAIR</span>
-                        <span class="photo-color-risk">Oxydant</span>
-                        <span class="photo-color-ral">RAL 5012</span>
-                    </span>
-                    <span class="photo-color-chev">›</span>
+                    <img src="images/bouteilles-couleurs/bleu.jpg" alt="Bouteille à ogive bleu clair — Oxydant — RAL 5012" loading="lazy">
                 </button>
 
                 <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('vert')" style="--cat-color: #00CC00;">
-                    <img src="images/bouteilles-couleurs/vert.jpg" alt="Bouteille à ogive vert vif" loading="lazy">
-                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
-                    <span class="photo-color-overlay">
-                        <span class="photo-color-label">VERT VIF</span>
-                        <span class="photo-color-risk">Inerte</span>
-                        <span class="photo-color-ral">RAL 6018</span>
-                    </span>
-                    <span class="photo-color-chev">›</span>
+                    <img src="images/bouteilles-couleurs/vert.jpg" alt="Bouteille à ogive vert vif — Inerte — RAL 6018" loading="lazy">
                 </button>
 
                 <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('marron')" style="--cat-color: #8B4513;">
-                    <img src="images/bouteilles-couleurs/marron.jpg" alt="Bouteille à ogive marron" loading="lazy">
-                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
-                    <span class="photo-color-overlay">
-                        <span class="photo-color-label">MARRON</span>
-                        <span class="photo-color-risk">Acétylène ⚠️</span>
-                        <span class="photo-color-ral">RAL 3009</span>
-                    </span>
-                    <span class="photo-color-chev">›</span>
+                    <img src="images/bouteilles-couleurs/marron.jpg" alt="Bouteille à ogive marron — Acétylène — RAL 3009" loading="lazy">
                 </button>
 
                 <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('blanc')" style="--cat-color: #BDBDBD;">
-                    <img src="images/bouteilles-couleurs/blanc.jpg" alt="Bouteille à ogive blanche" loading="lazy">
-                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
-                    <span class="photo-color-overlay">
-                        <span class="photo-color-label">BLANC</span>
-                        <span class="photo-color-risk">Oxygène</span>
-                        <span class="photo-color-ral">RAL 9010</span>
-                    </span>
-                    <span class="photo-color-chev">›</span>
+                    <img src="images/bouteilles-couleurs/blanc.jpg" alt="Bouteille à ogive blanche — Oxygène — RAL 9010" loading="lazy">
                 </button>
 
                 <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('vertfonce')" style="--cat-color: #00AA44;">
-                    <img src="images/bouteilles-couleurs/vertfonce.jpg" alt="Bouteille à ogive vert foncé" loading="lazy">
-                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
-                    <span class="photo-color-overlay">
-                        <span class="photo-color-label">VERT FONCÉ</span>
-                        <span class="photo-color-risk">Argon</span>
-                        <span class="photo-color-ral">RAL 6001</span>
-                    </span>
-                    <span class="photo-color-chev">›</span>
+                    <img src="images/bouteilles-couleurs/vertfonce.jpg" alt="Bouteille à ogive vert foncé — Argon — RAL 6001" loading="lazy">
                 </button>
 
                 <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('noir')" style="--cat-color: #555555;">
-                    <img src="images/bouteilles-couleurs/noir.jpg" alt="Bouteille à ogive noire" loading="lazy">
-                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
-                    <span class="photo-color-overlay">
-                        <span class="photo-color-label">NOIR</span>
-                        <span class="photo-color-risk">Azote</span>
-                        <span class="photo-color-ral">RAL 9005</span>
-                    </span>
-                    <span class="photo-color-chev">›</span>
+                    <img src="images/bouteilles-couleurs/noir.jpg" alt="Bouteille à ogive noire — Azote — RAL 9005" loading="lazy">
                 </button>
 
                 <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('gris')" style="--cat-color: #9E9E9E;">
-                    <img src="images/bouteilles-couleurs/gris.jpg" alt="Bouteille à ogive grise" loading="lazy">
-                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
-                    <span class="photo-color-overlay">
-                        <span class="photo-color-label">GRIS</span>
-                        <span class="photo-color-risk">CO2</span>
-                        <span class="photo-color-ral">RAL 7037</span>
-                    </span>
-                    <span class="photo-color-chev">›</span>
+                    <img src="images/bouteilles-couleurs/gris.jpg" alt="Bouteille à ogive grise — CO2 — RAL 7037" loading="lazy">
                 </button>
 
                 <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('brun')" style="--cat-color: #826C34;">
-                    <img src="images/bouteilles-couleurs/brun.jpg" alt="Bouteille à ogive brun" loading="lazy">
-                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
-                    <span class="photo-color-overlay">
-                        <span class="photo-color-label">BRUN</span>
-                        <span class="photo-color-risk">Hélium</span>
-                        <span class="photo-color-ral">RAL 8008</span>
-                    </span>
-                    <span class="photo-color-chev">›</span>
+                    <img src="images/bouteilles-couleurs/brun.jpg" alt="Bouteille à ogive brun — Hélium — RAL 8008" loading="lazy">
                 </button>
             </div>
 
@@ -25717,7 +25647,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.47.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.47.2</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
