@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.47.0">
+    <meta name="version" content="1.47.1">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -66,6 +66,17 @@
         <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
         <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
         <symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.31"/><path d="M14 9.3V2"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/></symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></symbol>
+        <symbol id="i-silo" viewBox="0 0 24 24"><path d="M7 6a5 5 0 0 1 10 0v3H7z"/><rect x="7" y="9" width="10" height="11" rx="1.5"/></symbol>
+        <symbol id="i-plane" viewBox="0 0 24 24"><path d="M3 11 21 3l-5 18-4-7-7-3z"/></symbol>
+        <symbol id="i-tractor" viewBox="0 0 24 24"><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="4"/><path d="M6 15V6h5l3 5h4v5"/></symbol>
+        <symbol id="i-wall" viewBox="0 0 24 24"><rect x="2" y="5" width="7" height="4"/><rect x="10" y="5" width="7" height="4"/><rect x="18" y="5" width="4" height="4"/><rect x="2" y="10" width="4" height="4"/><rect x="7" y="10" width="7" height="4"/><rect x="15" y="10" width="7" height="4"/><rect x="2" y="15" width="7" height="4"/><rect x="10" y="15" width="7" height="4"/><rect x="18" y="15" width="4" height="4"/></symbol>
+        <symbol id="i-pipe" viewBox="0 0 24 24"><path d="M3 6h6v4h6v4h6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+        <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 20V10l5 3V10l5 3V8l5 3v9z"/></symbol>
+        <symbol id="i-tank" viewBox="0 0 24 24"><rect x="9" y="4" width="6" height="5"/><rect x="5" y="9" width="14" height="11" rx="5"/></symbol>
+        <symbol id="i-cylinder" viewBox="0 0 24 24"><rect x="8" y="3" width="8" height="4" rx="2"/><rect x="6" y="7" width="12" height="14" rx="3"/></symbol>
+        <symbol id="i-gauge" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 13 16 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 3v2M4 13H2M22 13h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+        <symbol id="i-dome" viewBox="0 0 24 24"><path d="M2 18a10 6 0 0 1 20 0z"/></symbol>
     </svg>
     
 
@@ -215,7 +226,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.47.0</span><br>
+                        Vulcain v<span class="app-version">1.47.1</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -998,41 +1009,77 @@
         <h2>📏 Distances de Sécurité</h2>
 
         <!-- Menu principal des catégories -->
-        <div id="distancesMenu" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 25px;">
-            <button onclick="showDistanceCategory('gaz')" style="background: linear-gradient(135deg, #d83a00 0%, #e51b0d 100%); color: #ffffff; border: 3px solid #F44336; padding: 18px 15px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 110px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.8em; margin-bottom: 6px;">🔥</div>
-                <div style="font-size: 1.1em; font-weight: 700; margin-bottom: 4px; color: #fff;">GAZ</div>
-                <div style="font-size: 0.85em; opacity: 0.9; color: #fff;">GPL, GNR, Citernes</div>
+        <div id="distancesMenu" class="photo-cat-grid" style="margin-top: 25px;">
+            <button type="button" class="photo-cat-card" onclick="showDistanceCategory('gaz')" style="--cat-color: #F44336;">
+                <img src="images/distances-menu/gaz.jpg" alt="Gaz" loading="lazy">
+                <span class="photo-cat-overlay">
+                    <span class="photo-cat-badge"><svg class="ico"><use href="#i-flame"/></svg></span>
+                    <span class="photo-cat-text">
+                        <span class="photo-cat-label">GAZ</span>
+                        <span class="photo-cat-sub">GPL, GNR, Citernes</span>
+                    </span>
+                    <span class="photo-cat-chev">›</span>
+                </span>
             </button>
-            
-            <button onclick="showDistanceCategory('electricite')" style="background: linear-gradient(135deg, light-dark(#FFD60A, #403a18) 0%, light-dark(#ffd699, #392b17) 100%); border: 3px solid #FF9800; padding: 18px 15px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 110px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.8em; margin-bottom: 6px;">⚡</div>
-                <div style="font-size: 1.1em; font-weight: 700; margin-bottom: 4px; color: var(--t-ink, #000);">ÉLECTRICITÉ</div>
-                <div style="font-size: 0.85em; opacity: 0.9; color: var(--t-ink, #000);">Lignes HT/BT</div>
+
+            <button type="button" class="photo-cat-card" onclick="showDistanceCategory('electricite')" style="--cat-color: #FF9800;">
+                <img src="images/distances-menu/electricite.jpg" alt="Électricité" loading="lazy">
+                <span class="photo-cat-overlay">
+                    <span class="photo-cat-badge"><svg class="ico"><use href="#i-bolt"/></svg></span>
+                    <span class="photo-cat-text">
+                        <span class="photo-cat-label">ÉLECTRICITÉ</span>
+                        <span class="photo-cat-sub">Lignes HT/BT</span>
+                    </span>
+                    <span class="photo-cat-chev">›</span>
+                </span>
             </button>
-            
-            <button onclick="showDistanceCategory('silos')" style="background: linear-gradient(135deg, #59812b 0%, #39843c 100%); color: #ffffff; border: 3px solid #4CAF50; padding: 18px 15px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 110px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.8em; margin-bottom: 6px;">🌾</div>
-                <div style="font-size: 1.1em; font-weight: 700; margin-bottom: 4px; color: #fff;">SILOS</div>
-                <div style="font-size: 0.85em; opacity: 0.9; color: #fff;">Céréales, Engrais</div>
+
+            <button type="button" class="photo-cat-card" onclick="showDistanceCategory('silos')" style="--cat-color: #4CAF50;">
+                <img src="images/distances-menu/silos.jpg" alt="Silos" loading="lazy">
+                <span class="photo-cat-overlay">
+                    <span class="photo-cat-badge"><svg class="ico"><use href="#i-silo"/></svg></span>
+                    <span class="photo-cat-text">
+                        <span class="photo-cat-label">SILOS</span>
+                        <span class="photo-cat-sub">Céréales, Engrais</span>
+                    </span>
+                    <span class="photo-cat-chev">›</span>
+                </span>
             </button>
-            
-            <button onclick="showDistanceCategory('vea')" style="background: linear-gradient(135deg, #0b78d0 0%, #0b76cc 100%); color: #ffffff; border: 3px solid #2196F3; padding: 18px 15px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 110px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.8em; margin-bottom: 6px;">🚗</div>
-                <div style="font-size: 1.1em; font-weight: 700; margin-bottom: 4px; color: #fff;">VEA/ULM</div>
-                <div style="font-size: 0.85em; opacity: 0.9; color: #fff;">Aéronefs</div>
+
+            <button type="button" class="photo-cat-card" onclick="showDistanceCategory('vea')" style="--cat-color: #2196F3;">
+                <img src="images/distances-menu/vea.jpg" alt="VEA/ULM" loading="lazy">
+                <span class="photo-cat-overlay">
+                    <span class="photo-cat-badge"><svg class="ico"><use href="#i-plane"/></svg></span>
+                    <span class="photo-cat-text">
+                        <span class="photo-cat-label">VEA/ULM</span>
+                        <span class="photo-cat-sub">Aéronefs</span>
+                    </span>
+                    <span class="photo-cat-chev">›</span>
+                </span>
             </button>
-            
-            <button onclick="showDistanceCategory('agricole')" style="background: linear-gradient(135deg, #AB47BC 0%, #9C27B0 100%); color: #ffffff; border: 3px solid #9C27B0; padding: 18px 15px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 110px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.8em; margin-bottom: 6px;">🚜</div>
-                <div style="font-size: 1.1em; font-weight: 700; margin-bottom: 4px; color: #fff;">AGRICOLE</div>
-                <div style="font-size: 0.85em; opacity: 0.9; color: #fff;">Machines, Produits</div>
+
+            <button type="button" class="photo-cat-card" onclick="showDistanceCategory('agricole')" style="--cat-color: #9C27B0;">
+                <img src="images/distances-menu/agricole.jpg" alt="Agricole" loading="lazy">
+                <span class="photo-cat-overlay">
+                    <span class="photo-cat-badge"><svg class="ico"><use href="#i-tractor"/></svg></span>
+                    <span class="photo-cat-text">
+                        <span class="photo-cat-label">AGRICOLE</span>
+                        <span class="photo-cat-sub">Machines, Produits</span>
+                    </span>
+                    <span class="photo-cat-chev">›</span>
+                </span>
             </button>
-            
-            <button onclick="showDistanceCategory('murs')" style="background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%); color: #ffffff; border: 3px solid #5D4037; padding: 18px 15px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 110px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.8em; margin-bottom: 6px;">🧱</div>
-                <div style="font-size: 1.1em; font-weight: 700; margin-bottom: 4px; color: #fff;">MURS & ARBRES</div>
-                <div style="font-size: 0.85em; opacity: 0.9; color: #fff;">Effondrement</div>
+
+            <button type="button" class="photo-cat-card" onclick="showDistanceCategory('murs')" style="--cat-color: #5D4037;">
+                <img src="images/distances-menu/murs.jpg" alt="Murs et arbres" loading="lazy">
+                <span class="photo-cat-overlay">
+                    <span class="photo-cat-badge"><svg class="ico"><use href="#i-wall"/></svg></span>
+                    <span class="photo-cat-text">
+                        <span class="photo-cat-label">MURS & ARBRES</span>
+                        <span class="photo-cat-sub">Effondrement</span>
+                    </span>
+                    <span class="photo-cat-chev">›</span>
+                </span>
             </button>
         </div>
 
@@ -1044,34 +1091,76 @@
             <!-- Sélecteur de type -->
             <div style="background: var(--bg-elevated); padding: 20px; border-radius: 15px; margin-bottom: 25px; border: 3px solid var(--primary-red);">
                 <h4 style="margin-bottom: 15px; text-align: center; color: var(--primary-red); font-size: 1.2em;">Sélectionnez le type</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px;">
-                    <button onclick="showGazType('transport')" id="btnGazTransport" class="type-selector-btn" style="padding: 15px 10px; font-size: 0.95em; font-weight: 700; border-radius: 10px; background: linear-gradient(135deg, #d83a00 0%, #e51b0d 100%); border: 2px solid #F44336; color: #fff; transition: all 0.3s; cursor: pointer; min-height: 75px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                        <div style="font-size: 1.5em; margin-bottom: 3px;">🔴</div>
-                        <div>Transport</div>
+                <div class="photo-type-grid">
+                    <button type="button" onclick="showGazType('transport')" id="btnGazTransport" class="photo-type-card type-selector-btn" style="--cat-color: #F44336;">
+                        <img src="images/gaz-types/transport.jpg" alt="Transport" loading="lazy">
+                        <span class="photo-type-overlay">
+                            <span class="photo-type-badge"><svg class="ico"><use href="#i-truck"/></svg></span>
+                            <span class="photo-type-text">
+                                <span class="photo-type-label">Transport</span>
+                                <span class="photo-type-sub">Camion-citerne</span>
+                            </span>
+                        </span>
                     </button>
-                    <button onclick="showGazType('distribution')" id="btnGazDistribution" class="type-selector-btn" style="padding: 15px 10px; font-size: 0.95em; font-weight: 700; border-radius: 10px; background: linear-gradient(135deg, light-dark(#FFD60A, #403a18) 0%, light-dark(#FFC107, #403617) 100%); border: 2px solid light-dark(#FFC107, #7f6412); color: var(--t-ink, #000); transition: all 0.3s; cursor: pointer; min-height: 75px; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0.6;">
-                        <div style="font-size: 1.5em; margin-bottom: 3px;">🟡</div>
-                        <div>Distribution</div>
+                    <button type="button" onclick="showGazType('distribution')" id="btnGazDistribution" class="photo-type-card type-selector-btn" style="--cat-color: #FFC107; opacity: 0.6;">
+                        <img src="images/gaz-types/distribution.jpg" alt="Distribution" loading="lazy">
+                        <span class="photo-type-overlay">
+                            <span class="photo-type-badge"><svg class="ico"><use href="#i-pipe"/></svg></span>
+                            <span class="photo-type-text">
+                                <span class="photo-type-label">Distribution</span>
+                                <span class="photo-type-sub">Réseau gaz</span>
+                            </span>
+                        </span>
                     </button>
-                    <button onclick="showGazType('mpc')" id="btnGazMpc" class="type-selector-btn" style="padding: 15px 10px; font-size: 0.95em; font-weight: 700; border-radius: 10px; background: linear-gradient(135deg, #a86400 0%, #b85d00 100%); border: 2px solid #F57C00; color: #fff; transition: all 0.3s; cursor: pointer; min-height: 75px; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0.6;">
-                        <div style="font-size: 1.5em; margin-bottom: 3px;">🔶</div>
-                        <div>CPSE</div>
+                    <button type="button" onclick="showGazType('mpc')" id="btnGazMpc" class="photo-type-card type-selector-btn" style="--cat-color: #F57C00; opacity: 0.6;">
+                        <img src="images/gaz-types/cpse.jpg" alt="CPSE" loading="lazy">
+                        <span class="photo-type-overlay">
+                            <span class="photo-type-badge"><svg class="ico"><use href="#i-factory"/></svg></span>
+                            <span class="photo-type-text">
+                                <span class="photo-type-label">CPSE</span>
+                                <span class="photo-type-sub">Site industriel</span>
+                            </span>
+                        </span>
                     </button>
-                    <button onclick="showGazType('gpl')" id="btnGazGpl" class="type-selector-btn" style="padding: 15px 10px; font-size: 0.95em; font-weight: 700; border-radius: 10px; background: linear-gradient(135deg, #AB47BC 0%, #9C27B0 100%); border: 2px solid #9C27B0; color: #fff; transition: all 0.3s; cursor: pointer; min-height: 75px; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0.6;">
-                        <div style="font-size: 1.5em; margin-bottom: 3px;">⛽</div>
-                        <div>GPL</div>
+                    <button type="button" onclick="showGazType('gpl')" id="btnGazGpl" class="photo-type-card type-selector-btn" style="--cat-color: #9C27B0; opacity: 0.6;">
+                        <img src="images/gaz-types/gpl.jpg" alt="GPL" loading="lazy">
+                        <span class="photo-type-overlay">
+                            <span class="photo-type-badge"><svg class="ico"><use href="#i-tank"/></svg></span>
+                            <span class="photo-type-text">
+                                <span class="photo-type-label">GPL</span>
+                                <span class="photo-type-sub">Citernes, réservoirs</span>
+                            </span>
+                        </span>
                     </button>
-                    <button onclick="showGazType('bouteilles')" id="btnGazBouteilles" class="type-selector-btn" style="padding: 15px 10px; font-size: 0.95em; font-weight: 700; border-radius: 10px; background: linear-gradient(135deg, #0b78d0 0%, #0b76cc 100%); border: 2px solid #2196F3; color: #fff; transition: all 0.3s; cursor: pointer; min-height: 75px; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0.6;">
-                        <div style="font-size: 1.5em; margin-bottom: 3px;">🏠</div>
-                        <div>Bouteilles</div>
+                    <button type="button" onclick="showGazType('bouteilles')" id="btnGazBouteilles" class="photo-type-card type-selector-btn" style="--cat-color: #2196F3; opacity: 0.6;">
+                        <img src="images/gaz-types/bouteilles.jpg" alt="Bouteilles" loading="lazy">
+                        <span class="photo-type-overlay">
+                            <span class="photo-type-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
+                            <span class="photo-type-text">
+                                <span class="photo-type-label">Bouteilles</span>
+                                <span class="photo-type-sub">Gaz domestique</span>
+                            </span>
+                        </span>
                     </button>
-                    <button onclick="showGazType('acetylene')" id="btnGazAcetylene" class="type-selector-btn" style="padding: 15px 10px; font-size: 0.95em; font-weight: 700; border-radius: 10px; background: linear-gradient(135deg, #e81915 0%, #C62828 100%); border: 2px solid #C62828; color: #fff; transition: all 0.3s; cursor: pointer; min-height: 75px; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0.6;">
-                        <div style="font-size: 1.5em; margin-bottom: 3px;">💥</div>
-                        <div>Acétylène</div>
+                    <button type="button" onclick="showGazType('acetylene')" id="btnGazAcetylene" class="photo-type-card type-selector-btn" style="--cat-color: #C62828; opacity: 0.6;">
+                        <img src="images/gaz-types/acetylene.jpg" alt="Acétylène" loading="lazy">
+                        <span class="photo-type-overlay">
+                            <span class="photo-type-badge"><svg class="ico"><use href="#i-gauge"/></svg></span>
+                            <span class="photo-type-text">
+                                <span class="photo-type-label">Acétylène</span>
+                                <span class="photo-type-sub">Bouteilles, manomètres</span>
+                            </span>
+                        </span>
                     </button>
-                    <button onclick="showGazType('methanisation')" id="btnGazMethanisation" class="type-selector-btn" style="padding: 15px 10px; font-size: 0.95em; font-weight: 700; border-radius: 10px; background: linear-gradient(135deg, #59812b 0%, #39843c 100%); border: 2px solid #4CAF50; color: #fff; transition: all 0.3s; cursor: pointer; min-height: 75px; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0.6;">
-                        <div style="font-size: 1.5em; margin-bottom: 3px;">🌾</div>
-                        <div>Méthanisation</div>
+                    <button type="button" onclick="showGazType('methanisation')" id="btnGazMethanisation" class="photo-type-card type-selector-btn" style="--cat-color: #4CAF50; opacity: 0.6;">
+                        <img src="images/gaz-types/methanisation.jpg" alt="Méthanisation" loading="lazy">
+                        <span class="photo-type-overlay">
+                            <span class="photo-type-badge"><svg class="ico"><use href="#i-dome"/></svg></span>
+                            <span class="photo-type-text">
+                                <span class="photo-type-label">Méthanisation</span>
+                                <span class="photo-type-sub">Cuves agricoles</span>
+                            </span>
+                        </span>
                     </button>
                 </div>
             </div>
@@ -3215,87 +3304,117 @@
             </p>
 
             <!-- Grille de cartes colorées -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-bottom: 30px;">
-                
-                <!-- Carte JAUNE -->
-                <div class="color-card" onclick="identifierBouteilleParCouleur('jaune')" style="background: linear-gradient(135deg, light-dark(#FFD700, #403a16) 0%, light-dark(#ffdb99, #392d17) 100%); cursor: pointer; padding: 20px; border-radius: 12px; text-align: center; border: 3px solid light-dark(#FFD700, #7f6e0f); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255,215,0,0.4);">
-                    <div style="font-size: 3em; margin-bottom: 10px;">🟡</div>
-                    <div style="font-size: 1.3em; font-weight: bold; color: var(--t-ink, #000000); text-shadow: 1px 1px 2px rgba(255,255,255,0.5);">JAUNE</div>
-                    <div style="font-size: 0.85em; color: var(--t-ink, #000000); margin-top: 5px; font-weight: 600;">Toxique/Corrosif</div>
-                    <div style="font-size: 0.75em; color: var(--t-ink, #333); margin-top: 3px;">RAL 1018</div>
-                </div>
+            <div class="photo-color-grid" style="margin-bottom: 30px;">
 
-                <!-- Carte ROUGE -->
-                <div class="color-card" onclick="identifierBouteilleParCouleur('rouge')" style="background: linear-gradient(135deg, #eb0000 0%, #CC0000 100%); color: #ffffff; cursor: pointer; padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #FF0000; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255,0,0,0.4);">
-                    <div style="font-size: 3em; margin-bottom: 10px;">🔴</div>
-                    <div style="font-size: 1.3em; font-weight: bold; color: #FFFFFF; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">ROUGE</div>
-                    <div style="font-size: 0.85em; color: #FFFFFF; margin-top: 5px; font-weight: 600;">Inflammable</div>
-                    <div style="font-size: 0.75em; color: #fff1a3; margin-top: 3px;">RAL 3000</div>
-                </div>
+                <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('jaune')" style="--cat-color: #FFC107;">
+                    <img src="images/bouteilles-couleurs/jaune.jpg" alt="Bouteille à ogive jaune" loading="lazy">
+                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
+                    <span class="photo-color-overlay">
+                        <span class="photo-color-label">JAUNE</span>
+                        <span class="photo-color-risk">Toxique/Corrosif</span>
+                        <span class="photo-color-ral">RAL 1018</span>
+                    </span>
+                    <span class="photo-color-chev">›</span>
+                </button>
 
-                <!-- Carte BLEU CLAIR -->
-                <div class="color-card" onclick="identifierBouteilleParCouleur('bleu')" style="background: linear-gradient(135deg, #0077c7 0%, #0066CC 100%); color: #ffffff; cursor: pointer; padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #0099FF; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,153,255,0.4);">
-                    <div style="font-size: 3em; margin-bottom: 10px;">🔵</div>
-                    <div style="font-size: 1.3em; font-weight: bold; color: #FFFFFF; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">BLEU CLAIR</div>
-                    <div style="font-size: 0.85em; color: #FFFFFF; margin-top: 5px; font-weight: 600;">Oxydant</div>
-                    <div style="font-size: 0.75em; color: #fff1a8; margin-top: 3px;">RAL 5012</div>
-                </div>
+                <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('rouge')" style="--cat-color: #FF0000;">
+                    <img src="images/bouteilles-couleurs/rouge.jpg" alt="Bouteille à ogive rouge" loading="lazy">
+                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
+                    <span class="photo-color-overlay">
+                        <span class="photo-color-label">ROUGE</span>
+                        <span class="photo-color-risk">Inflammable</span>
+                        <span class="photo-color-ral">RAL 3000</span>
+                    </span>
+                    <span class="photo-color-chev">›</span>
+                </button>
 
-                <!-- Carte VERT VIF -->
-                <div class="color-card" onclick="identifierBouteilleParCouleur('vert')" style="background: linear-gradient(135deg, #008a00 0%, #358739 100%); color: #ffffff; cursor: pointer; padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #00CC00; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,204,0,0.4);">
-                    <div style="font-size: 3em; margin-bottom: 10px;">🟢</div>
-                    <div style="font-size: 1.3em; font-weight: bold; color: #FFFFFF; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">VERT VIF</div>
-                    <div style="font-size: 0.85em; color: #FFFFFF; margin-top: 5px; font-weight: 600;">Inerte</div>
-                    <div style="font-size: 0.75em; color: #000000; margin-top: 3px;">RAL 6018</div>
-                </div>
+                <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('bleu')" style="--cat-color: #0099FF;">
+                    <img src="images/bouteilles-couleurs/bleu.jpg" alt="Bouteille à ogive bleu clair" loading="lazy">
+                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
+                    <span class="photo-color-overlay">
+                        <span class="photo-color-label">BLEU CLAIR</span>
+                        <span class="photo-color-risk">Oxydant</span>
+                        <span class="photo-color-ral">RAL 5012</span>
+                    </span>
+                    <span class="photo-color-chev">›</span>
+                </button>
 
-                <!-- Carte MARRON -->
-                <div class="color-card" onclick="identifierBouteilleParCouleur('marron')" style="background: linear-gradient(135deg, #8B4513 0%, #654321 100%); color: #ffffff; cursor: pointer; padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #8B4513; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(139,69,19,0.4);">
-                    <div style="font-size: 3em; margin-bottom: 10px;">🟤</div>
-                    <div style="font-size: 1.3em; font-weight: bold; color: #FFFFFF; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">MARRON</div>
-                    <div style="font-size: 0.85em; color: #FFD700; margin-top: 5px; font-weight: 600;">Acétylène ⚠️</div>
-                    <div style="font-size: 0.75em; color: #FFD700; margin-top: 3px;">RAL 3009</div>
-                </div>
+                <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('vert')" style="--cat-color: #00CC00;">
+                    <img src="images/bouteilles-couleurs/vert.jpg" alt="Bouteille à ogive vert vif" loading="lazy">
+                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
+                    <span class="photo-color-overlay">
+                        <span class="photo-color-label">VERT VIF</span>
+                        <span class="photo-color-risk">Inerte</span>
+                        <span class="photo-color-ral">RAL 6018</span>
+                    </span>
+                    <span class="photo-color-chev">›</span>
+                </button>
 
-                <!-- Carte BLANC -->
-                <div class="color-card" onclick="identifierBouteilleParCouleur('blanc')" style="background: linear-gradient(135deg, var(--t-s1, #FFFFFF) 0%, var(--t-s2, #E0E0E0) 100%); cursor: pointer; padding: 20px; border-radius: 12px; text-align: center; border: 3px solid var(--t-line, #FFFFFF); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255,255,255,0.4);">
-                    <div style="font-size: 3em; margin-bottom: 10px;">⚪</div>
-                    <div style="font-size: 1.3em; font-weight: bold; color: var(--t-ink, #000000); text-shadow: 1px 1px 2px rgba(255,255,255,0.5);">BLANC</div>
-                    <div style="font-size: 0.85em; color: light-dark(#0063c7, #42a1ff); margin-top: 5px; font-weight: 600;">Oxygène</div>
-                    <div style="font-size: 0.75em; color: var(--t-muted, #666); margin-top: 3px;">RAL 9010</div>
-                </div>
+                <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('marron')" style="--cat-color: #8B4513;">
+                    <img src="images/bouteilles-couleurs/marron.jpg" alt="Bouteille à ogive marron" loading="lazy">
+                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
+                    <span class="photo-color-overlay">
+                        <span class="photo-color-label">MARRON</span>
+                        <span class="photo-color-risk">Acétylène ⚠️</span>
+                        <span class="photo-color-ral">RAL 3009</span>
+                    </span>
+                    <span class="photo-color-chev">›</span>
+                </button>
 
-                <!-- Carte VERT FONCÉ -->
-                <div class="color-card" onclick="identifierBouteilleParCouleur('vertfonce')" style="background: linear-gradient(135deg, #008636 0%, #007733 100%); color: #ffffff; cursor: pointer; padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #00AA44; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,170,68,0.4);">
-                    <div style="font-size: 3em; margin-bottom: 10px;">🟢</div>
-                    <div style="font-size: 1.3em; font-weight: bold; color: #FFFFFF; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">VERT FONCÉ</div>
-                    <div style="font-size: 0.85em; color: #FFFFFF; margin-top: 5px; font-weight: 600;">Argon</div>
-                    <div style="font-size: 0.75em; color: #fff09e; margin-top: 3px;">RAL 6001</div>
-                </div>
+                <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('blanc')" style="--cat-color: #BDBDBD;">
+                    <img src="images/bouteilles-couleurs/blanc.jpg" alt="Bouteille à ogive blanche" loading="lazy">
+                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
+                    <span class="photo-color-overlay">
+                        <span class="photo-color-label">BLANC</span>
+                        <span class="photo-color-risk">Oxygène</span>
+                        <span class="photo-color-ral">RAL 9010</span>
+                    </span>
+                    <span class="photo-color-chev">›</span>
+                </button>
 
-                <!-- Carte NOIR -->
-                <div class="color-card" onclick="identifierBouteilleParCouleur('noir')" style="background: linear-gradient(135deg, #2a2a2a 0%, #000000 100%); cursor: pointer; padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #555555; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.6);">
-                    <div style="font-size: 3em; margin-bottom: 10px;">⚫</div>
-                    <div style="font-size: 1.3em; font-weight: bold; color: #ffffff; text-shadow: 1px 1px 2px rgba(255,255,255,0.3);">NOIR</div>
-                    <div style="font-size: 0.85em; color: #FFFFFF; margin-top: 5px; font-weight: 600;">Azote</div>
-                    <div style="font-size: 0.75em; color: #FFD700; margin-top: 3px;">RAL 9005</div>
-                </div>
+                <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('vertfonce')" style="--cat-color: #00AA44;">
+                    <img src="images/bouteilles-couleurs/vertfonce.jpg" alt="Bouteille à ogive vert foncé" loading="lazy">
+                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
+                    <span class="photo-color-overlay">
+                        <span class="photo-color-label">VERT FONCÉ</span>
+                        <span class="photo-color-risk">Argon</span>
+                        <span class="photo-color-ral">RAL 6001</span>
+                    </span>
+                    <span class="photo-color-chev">›</span>
+                </button>
 
-                <!-- Carte GRIS -->
-                <div class="color-card" onclick="identifierBouteilleParCouleur('gris')" style="background: linear-gradient(135deg, #9E9E9E 0%, #757575 100%); cursor: pointer; padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #9E9E9E; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(158,158,158,0.4);">
-                    <div style="font-size: 3em; margin-bottom: 10px;">⚫</div>
-                    <div style="font-size: 1.3em; font-weight: bold; color: #101318; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">GRIS</div>
-                    <div style="font-size: 0.85em; color: #101318; margin-top: 5px; font-weight: 600;">CO2</div>
-                    <div style="font-size: 0.75em; color: #292200; margin-top: 3px;">RAL 7037</div>
-                </div>
+                <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('noir')" style="--cat-color: #555555;">
+                    <img src="images/bouteilles-couleurs/noir.jpg" alt="Bouteille à ogive noire" loading="lazy">
+                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
+                    <span class="photo-color-overlay">
+                        <span class="photo-color-label">NOIR</span>
+                        <span class="photo-color-risk">Azote</span>
+                        <span class="photo-color-ral">RAL 9005</span>
+                    </span>
+                    <span class="photo-color-chev">›</span>
+                </button>
 
-                <!-- Carte BRUN -->
-                <div class="color-card" onclick="identifierBouteilleParCouleur('brun')" style="background: linear-gradient(135deg, #826C34 0%, #5a4a20 100%); color: #ffffff; cursor: pointer; padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #826C34; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(130,108,52,0.4);">
-                    <div style="font-size: 3em; margin-bottom: 10px;">🟤</div>
-                    <div style="font-size: 1.3em; font-weight: bold; color: #FFFFFF; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">BRUN</div>
-                    <div style="font-size: 0.85em; color: #FFFFFF; margin-top: 5px; font-weight: 600;">Hélium</div>
-                    <div style="font-size: 0.75em; color: #FFD700; margin-top: 3px;">RAL 8008</div>
-                </div>
+                <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('gris')" style="--cat-color: #9E9E9E;">
+                    <img src="images/bouteilles-couleurs/gris.jpg" alt="Bouteille à ogive grise" loading="lazy">
+                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
+                    <span class="photo-color-overlay">
+                        <span class="photo-color-label">GRIS</span>
+                        <span class="photo-color-risk">CO2</span>
+                        <span class="photo-color-ral">RAL 7037</span>
+                    </span>
+                    <span class="photo-color-chev">›</span>
+                </button>
+
+                <button type="button" class="photo-color-card" onclick="identifierBouteilleParCouleur('brun')" style="--cat-color: #826C34;">
+                    <img src="images/bouteilles-couleurs/brun.jpg" alt="Bouteille à ogive brun" loading="lazy">
+                    <span class="photo-color-badge"><svg class="ico"><use href="#i-cylinder"/></svg></span>
+                    <span class="photo-color-overlay">
+                        <span class="photo-color-label">BRUN</span>
+                        <span class="photo-color-risk">Hélium</span>
+                        <span class="photo-color-ral">RAL 8008</span>
+                    </span>
+                    <span class="photo-color-chev">›</span>
+                </button>
             </div>
 
             <div id="resultatIdentificationBouteille"></div>
@@ -25598,7 +25717,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.47.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.47.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
