@@ -41,7 +41,8 @@
     "Matières dangereuses",
     "Gaz",
     "Électricité",
-    "Périmètres"
+    "Périmètres",
+    "NRBC"
    ]
   },
   {
@@ -2220,6 +2221,27 @@
     "haute tension",
     "BT",
     "HTA"
+   ]
+  },
+  {
+   "id": "nrbc-prv",
+   "titre": "NRBC / CMIC – Risques chimiques, biologiques",
+   "domaine": "risques",
+   "theme": "NRBC",
+   "type": "fiche",
+   "motsCles": [
+    "nrbc",
+    "cmic",
+    "nucléaire",
+    "radiologique",
+    "biologique",
+    "chimique",
+    "prv",
+    "point de regroupement des victimes",
+    "décontamination",
+    "antidote",
+    "zonage",
+    "rch"
    ]
   },
   {

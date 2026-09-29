@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.46.6">
+    <meta name="version" content="1.47.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.46.6</span><br>
+                        Vulcain v<span class="app-version">1.47.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -12846,6 +12846,196 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 RDEB SDIS 34 – v2 – avril 2026 – annexes 5.6 et 5.7</p>
     </div>
 
+    <!-- ============ NRBC – Point de regroupement des victimes (SGDSN 2021) ============ -->
+    <div id="nrbc-prv" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>☢️ NRBC / CMIC – Risques chimiques, biologiques</h2>
+        <p style="text-align: center;">Doctrine des <strong>cellules mobiles d'intervention chimique et biologique</strong> (CMIC — guide national de référence « Risques chimiques et biologiques », DDSC, mars 2006) et guide de mise en œuvre d'un <strong>point de regroupement des victimes</strong> (PRV) lors d'un événement NRBC (SGDSN, validé le 8 mars 2021).</p>
+        <div class="rd-alerte">Cette fiche couvre l'<strong>organisation opérationnelle</strong> (missions, zonage, méthodologie CMIC, organisation du PRV, moyens, antidotes) — elle ne remplace pas les fiches ORSEC NRBC départementales ni la formation RCH1 à RCH4 requise pour intervenir.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>CMIC</strong> (cellule mobile d'intervention chimique et biologique) : 1 chef de CMIC (RCH3) + 1 équipe reconnaissance (RCH1, 3 agents) + 1 équipe intervention (RCH2, 3 agents). Peut intervenir isolément (équipe reco ou interv. seule) ou en cellule complète.</li>
+                <li><strong>Zonage réflexe</strong> (identique CMIC et PRV NRBC) : <strong>zone d'exclusion</strong> (contaminée/contaminable, tenue de protection obligatoire — zone de danger immédiat + zone de danger sous le vent, ouverture 40° si vent &gt; 1 m/s), <strong>zone contrôlée</strong> (bande tampon, tenue obligatoire, PRV et moyens de décontamination), <strong>zone de soutien</strong> (sans tenue, PC et moyens médicaux).</li>
+                <li><strong>Méthodologie CMIC</strong> en 4 temps : recherche du renseignement (dès l'alerte) → reconnaissance (présentation au COS, analyse, adaptation, contrôle de contamination) → conduite de l'opération (sauvetages, balisage, points de contrôle d'accès, action sur la source) → fin d'opération (compte rendu, reconditionnement, déchets).</li>
+                <li><strong>PRV</strong> (point de regroupement des victimes) : 1er rassemblement des victimes en zone contrôlée. Tri en 3 groupes à l'arrivée (valides / invalides / impliqués), décontamination d'urgence obligatoire et immédiate pour toutes les victimes.</li>
+                <li><strong>Priorité médicale par domaine</strong> : en nucléaire/radiologique/biologique, l'urgence médico-chirurgicale prime sur la décontamination ; en chimique, l'urgence médicale (antidote, intubation) prime sur la décontamination approfondie.</li>
+            </ul>
+        </div>
+
+        <p class="rd-source" style="font-size: 1.05em; margin-top: 2em;"><strong>▬▬▬ PARTIE 1 · CMIC — Guide national de référence « Risques chimiques et biologiques » (DDSC, mars 2006) ▬▬▬</strong></p>
+
+        <div class="rd-section">
+            <h3>1 · Missions et acteurs</h3>
+            <p>Les personnels formés « risques chimiques et biologiques » interviennent dans le cadre des missions dévolues aux services d'incendie et de secours. En cas d'engagement d'une équipe reconnaissance ou intervention, le chef de la CMIC ou le conseiller technique de rattachement est informé ; en cas d'engagement de plus d'une équipe, il est engagé et le centre opérationnel zonal (COZ) est prévenu.</p>
+            <table class="rd-table">
+                <tr><th>Acteur</th><th>Missions principales</th></tr>
+                <tr><td><strong>Équipe reconnaissance</strong> (RCH1, sous l'autorité de son chef d'équipe)</td><td>S'intègre au dispositif, renseigne le COS ; mesures conservatoires (balisage, protection des 1<sup>ers</sup> intervenants, isolement des impliqués/victimes) ; qualification de l'incident (recherche d'informations, détection/localisation, évaluation du risque) ; réduction du risque avec les moyens de l'équipe ; soutien aux équipes intervention.</td></tr>
+                <tr><td><strong>Équipe intervention</strong> (RCH2, sous l'autorité de son chef d'équipe)</td><td>Mêmes missions que la reconnaissance, complétées par : mesures de sauvegarde de la population impliquée, prise en charge des victimes contaminées, décontamination systématique des intervenants et matériels, détermination/caractérisation du risque, prélèvements pour analyse.</td></tr>
+                <tr><td><strong>Chef de CMIC</strong> (RCH3)</td><td>Commande les équipes reconnaissance et intervention : organise la CMIC, valide et complète le dispositif, veille au respect de la méthodologie et des mesures de sécurité, participe à la décontamination, conseille le COS en l'absence du conseiller technique.</td></tr>
+                <tr><td><strong>Conseiller technique risques chimiques</strong></td><td>Conseil technique au COS et au DOS sur opération ; prépare les éléments de réponse aux médias ; propose et met en œuvre les éléments d'aide à la décision en cas de déclenchement du plan ORSEC ; peut proposer un appel à des renforts non sapeurs-pompiers.</td></tr>
+            </table>
+            <div class="rd-astuce">Dans le cadre d'un risque biologique, le conseil technique au COS est assuré par le conseiller risques biologiques de rattachement, en liaison avec le conseiller technique risques chimiques.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 · Composition et équipement de la CMIC</h3>
+            <p>Une CMIC est composée d'1 chef de CMIC (RCH3), 1 équipe reconnaissance (1 chef RCH1+GOC + 2 équipiers RCH1) et 1 équipe intervention (1 chef RCH2+GOC + 2 équipiers RCH2) — ou de deux équipes intervention. L'implantation relève du DDSIS après avis du conseiller technique risques chimiques ; chaque CMIC est obligatoirement commandée par un chef de CMIC ou, à défaut, par un conseiller technique.</p>
+            <div style="overflow-x: auto;">
+            <table class="rd-table">
+                <tr><th>Catégorie</th><th>Matériels (extraits, dotation type équipe intervention)</th></tr>
+                <tr><td><strong>Protection individuelle</strong></td><td>Tenues type 1a/1b et type 3, surprotection thermique/chimique, masques + cartouches filtrantes NRBC, ARI, gants (nitrile, surgants, sous-gants), bottes chimiques.</td></tr>
+                <tr><td><strong>Détection air / liquide</strong></td><td>Explosimètre, toximètres/tubes réactifs, oxygènomètre, catharomètre, appareil de détection de toxiques de guerre ; papier pH, phmètre, conductimètre.</td></tr>
+                <tr><td><strong>Prélèvement</strong></td><td>Poches et tubes charbon actif/silice (air), flacons plastique/verre (liquide), pots (sols).</td></tr>
+                <tr><td><strong>Protection collective / zonage</strong></td><td>Lot de cagoules de fuite, ensemble mobile de diffusion d'alerte, matériel de balisage, sas.</td></tr>
+                <tr><td><strong>Lutte contre les pollutions</strong></td><td>Valise de 1<sup>ère</sup> intervention (pinoches, coins, poche trou d'homme), coussins/pâtes obturantes, absorbants polyvalents, barrages et boudins absorbants, pompes ADF, citernes de récupération.</td></tr>
+                <tr><td><strong>Décontamination / divers</strong></td><td>Douche, solutions et terre de foulon, pulvérisateurs, station météo, girouette/manche à air, poste à sécurité intrinsèque, guide de mesures d'urgence, fiches de données de sécurité, matériel anti-déflagrant.</td></tr>
+            </table>
+            </div>
+            <p><small>Cette liste évolue avec les avancées technologiques ; il appartient au DDSIS de la compléter selon les risques identifiés au SDACR. Un ou des exercices CMIC doivent être organisés annuellement.</small></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 · Méthodologie opérationnelle</h3>
+            <p>La méthodologie se déroule hors déclenchement du plan ORSEC (ou reprend les périmètres qu'il définit s'il est déclenché, validés par le DOS après avis du COS) :</p>
+            <table class="rd-table">
+                <tr><th>Phase</th><th>Actions clés</th></tr>
+                <tr><td><strong>1 · Recherche du renseignement</strong> (dès l'alerte)</td><td>Météo (vent, pression, hygrométrie), type d'accident, source(s) en cause, déroulement/messages transmis ; demande au COS du point de rendez-vous, itinéraires d'accès/repli, personnes/services spécialisés présents ; conseil sécurité, préparation à priori du matériel.</td></tr>
+                <tr><td><strong>2 · Reconnaissance</strong></td><td>Présentation au COS, prise en compte de la mission, reconnaissance générale ; analyse (météo locale, source, victimes/impliqués, incidents connexes) ; contact avec responsables/spécialistes ; adaptation de la protection, des matériels et des périmètres ; contrôle de contamination (personnels, matériels, air, environnement) ; décontamination systématique ; compte-rendu au COS avec idée de manœuvre et demande de renforts.</td></tr>
+                <tr><td><strong>3 · Conduite de l'opération</strong></td><td>Sauvetages/mises en sécurité ; prise en charge des victimes contaminées ou supposées ; affinage du balisage ; mesures d'évacuation/mise à l'abri ; points de contrôle d'accès à la zone contaminée ; repérage et action sur la source et le flux ; protection des personnes, biens, environnement.</td></tr>
+                <tr><td><strong>4 · Fin d'opération</strong></td><td>Compte-rendu au COS ; reconditionnement du matériel selon présence/absence de contamination ; dispositions pour le stockage et/ou la récupération des déchets.</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 · Le zonage</h3>
+            <p>Identique dans son principe au zonage NRBC (partie 2) : <strong>zone d'exclusion</strong> (source du danger, contaminée/contaminable, accès réservé aux spécialistes et personnes autorisées par le COS — comprend la zone de danger immédiat et la zone de danger sous le vent), <strong>zone contrôlée</strong> (bande séparant exclusion et soutien, moyens de décontamination), <strong>zone de soutien</strong> (au vent, structures de prise en charge médicale/évacuation et postes de commandement). À l'intérieur d'un bâtiment, ces zones peuvent être ramenées au local puis à tout ou partie du bâtiment, à condition d'avoir arrêté la ventilation mécanique.</p>
+            <p>Le zonage prend en compte les caractéristiques de la source/du flux/des cibles, l'analyse de la zone, la météo locale (vent) et le positionnement des intervenants : <strong>au vent</strong> (face au danger, vent dans le dos) ou <strong>sous le vent</strong> (face au danger, vent de face).</p>
+            <figure class="rd-fig">
+                <img src="images/cmic/zonage-reflexe-priori.jpg" alt="Zonage réflexe a priori par le 1er COS : source, périmètre de sécurité, zone d'intervention non accessible, point de contrôle d'accès au vent" loading="lazy">
+                <figcaption>Zonage réflexe a priori par le 1<sup>er</sup> COS : un périmètre de sécurité est posé dès l'analyse initiale, avec point(s) de contrôle d'accès installés au vent du danger.</figcaption>
+            </figure>
+            <p>Dans un second temps, le zonage est organisé plus précisément selon la vitesse du vent :</p>
+            <figure class="rd-fig">
+                <img src="images/cmic/zonage-vent-faible.jpg" alt="Zonage si vent inférieur à 1 m/s : cercles concentriques zone d'exclusion, zone contrôlée, zone de soutien" loading="lazy">
+                <figcaption>Vent &lt; 1 m/s : zonage circulaire (rayon D à adapter à la situation) — zone d'exclusion au centre, zone contrôlée en bande, zone de soutien à l'extérieur, SAS et points de contrôle d'accès sur la zone contrôlée.</figcaption>
+            </figure>
+            <figure class="rd-fig">
+                <img src="images/cmic/zonage-vent-fort.jpg" alt="Zonage si vent supérieur à 1 m/s : zone de danger immédiat circulaire, zone de danger sous le vent en cône à 20 degrés" loading="lazy">
+                <figcaption>Vent &gt; 1 m/s : la zone d'exclusion se prolonge sous le vent en cône (ouverture 20° de part et d'autre de l'axe du vent) — zone de danger immédiat + zone de danger sous le vent.</figcaption>
+            </figure>
+        </div>
+
+        <p class="rd-source" style="font-size: 1.05em; margin-top: 2em;"><strong>▬▬▬ PARTIE 2 · PRV NRBC — Guide de mise en œuvre d'un point de regroupement des victimes (SGDSN, mars 2021) ▬▬▬</strong></p>
+
+        <div class="rd-section">
+            <h3>5 · Le point de regroupement des victimes (PRV)</h3>
+            <ul>
+                <li><strong>PRV</strong> : 1er rassemblement des victimes en <strong>zone contrôlée</strong>. Objectifs : rapprocher les victimes des secours, les trier/catégoriser/dénombrer, assurer une <strong>décontamination d'urgence</strong> pour toutes, débuter les gestes de survie.</li>
+                <li><strong>Tri en 3 groupes</strong> à l'arrivée : victimes <strong>valides</strong> (mobiles, peuvent se déshabiller seules), <strong>invalides</strong> (symptomatiques ou non, nécessitent une assistance), <strong>impliquées</strong> (valides sans symptôme, sous surveillance). En phase nominale, un médecin urgentiste affine en 4 flux : UR/UA valide, UR/UA invalide, PRI (impliqués), PRD (décédés).</li>
+                <li><strong>Principe cardinal</strong> : décontamination d'urgence <strong>obligatoire et immédiate</strong> pour toutes les victimes (déshabillage de la couche extérieure, retrait des chaussures, poudrage), la décontamination approfondie est optionnelle et réfléchie, réalisée ensuite par les unités dédiées.</li>
+                <li><strong>Priorité médicale par domaine</strong> : en <strong>nucléaire/radiologique/biologique</strong>, l'urgence médico-chirurgicale prime sur la décontamination ; en <strong>chimique</strong>, l'urgence médicale (antidote, intubation) prime sur la décontamination approfondie.</li>
+                <li><strong>Coordination</strong> : le PRV est placé sous la responsabilité du <strong>médecin-chef PRV</strong> (désigné par le DSM), en lien avec l'<strong>officier PRV</strong> (sapeur-pompier, logistique/organisation) et un représentant des forces de sécurité intérieure (menant/concourant avec le COS).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>6 · Le zonage réflexe (détail PRV)</h3>
+            <p>Dès l'arrivée, les premiers intervenants en tenue de protection NRBC mettent en place un zonage réflexe à 3 zones, fonction du danger et de la menace estimée :</p>
+            <ul>
+                <li><strong>Zone d'exclusion</strong> : contaminée ou contaminable, port de la tenue de protection obligatoire. Elle comprend la <strong>zone de danger immédiat</strong> (rayon indicatif de 100 m autour de la source, réductible selon les capacités à boucler rapidement un périmètre) et la <strong>zone de danger sous le vent</strong> (indicatif : 500 m, angle d'ouverture de 40°, pour un attentat à ciel ouvert).</li>
+                <li><strong>Zone contrôlée</strong> : bande tampon au vent de la zone d'exclusion, séparant celle-ci de la zone de soutien. Le ou les PRV y sont installés d'emblée. Port de la tenue de protection obligatoire.</li>
+                <li><strong>Zone de soutien</strong> : opposée au vent par rapport à la zone contrôlée, accueille l'ensemble des services intervenants sans tenue de protection (PMA, PRE, centre d'accueil des impliqués).</li>
+            </ul>
+            <p>Ce zonage réflexe initial est ensuite remplacé, dans un second temps, par un <strong>zonage réfléchi</strong> affiné selon les mesures réelles. À l'intérieur d'un bâtiment, ces zones peuvent être ramenées respectivement au local et à tout ou partie du bâtiment. Un périmètre de sécurité complémentaire est établi par le commandant des opérations de police et de gendarmerie (COPG) si nécessaire. La sécurisation de l'ensemble de la zone est assurée par les forces de sécurité intérieure (FSI).</p>
+            <figure class="rd-fig">
+                <img src="images/nrbc/zonage-general.jpg" alt="Schéma général d'une intervention NRBC : zone d'exclusion, zone contrôlée, zone de soutien, PRV, structures de décontamination, PMA, PRE" loading="lazy">
+                <figcaption>Schéma général d'une intervention NRBC : zone d'exclusion (①), zone contrôlée (②) avec PRV et structures de décontamination, zone de soutien (③) avec PMA et PRE.</figcaption>
+            </figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>7 · Organisation du PRV</h3>
+            <p>L'organisation générale conserve une gestion dynamique de <strong>marche en avant</strong> : après extraction de la zone d'exclusion, les victimes sont orientées vers la zone contrôlée pour une décontamination d'urgence et les premiers gestes médicaux/secouristes. Le 1<sup>er</sup> COS, en lien avec le 1<sup>er</sup> directeur des secours médicaux (DSM), définit l'organisation générale au regard des moyens disponibles.</p>
+            <p>Le PRV comprend, selon l'autonomie des victimes, jusqu'à 3 parties :</p>
+            <ul>
+                <li><strong>Partie « valides »</strong> : victimes en capacité de se déplacer et de se déshabiller au moins en partie seules. 4 points : entrée (après tri secouriste/instrumental/médical) → décontamination d'urgence → attente et surveillance médicale → convergence vers la décontamination approfondie si nécessaire. Zone suffisamment vaste et ventilée pour limiter l'inhalation et la contamination croisée.</li>
+                <li><strong>Partie « invalides »</strong> : victimes incapables de se déplacer/déshabiller seules. 4 zones : transfert (après catégorisation médicale, victimes déposées sur brancard) → traitement (distinguant zone UA/urgence absolue et zone UR/urgence relative) → surveillance (UA/UR) → préparation des médicaments. Les brancards sont idéalement déposés en rosace autour des bouteilles d'oxygène, têtes vers le centre.</li>
+                <li><strong>Partie « impliqués » (PRI)</strong> : victimes valides sans symptôme apparent, nécessitant surveillance et conseils pour détecter l'apparition éventuelle de symptômes.</li>
+            </ul>
+            <p>Un <strong>point de regroupement des effets personnels</strong> (PREP) est tenu par les FSI (traçabilité pour l'enquête judiciaire et la restitution). Un <strong>point de regroupement des personnes décédées</strong> (PRD) accueille les victimes déclarées décédées par un médecin.</p>
+            <figure class="rd-fig">
+                <img src="images/nrbc/organisation-prv-invalides.jpg" alt="Organisation d'un point de regroupement des victimes symptomatiques invalides : zone de jonction, zone de décontamination d'urgence/traitement/surveillance, zone de préparation des traitements" loading="lazy">
+                <figcaption>Exemple d'organisation d'un PRV pour victimes symptomatiques invalides : de la jonction avec la zone d'exclusion (équipes VSAV, poudrage) à la zone de préparation des traitements, en passant par la décontamination d'urgence, le traitement et la surveillance.</figcaption>
+            </figure>
+            <div class="rd-astuce">Le contrôle instrumental de contamination (portiques P2CR en radiologique) est une aide au tri, jamais un préalable systématique — trop consommateur de temps face à l'urgence de la décontamination. Un contrôle de l'ambiance toxique des PRV doit en revanche être mis en place dès que possible.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>8 · Rôle des acteurs</h3>
+            <table class="rd-table">
+                <tr><th>Acteur</th><th>Rôle au PRV</th></tr>
+                <tr><td>Forces de sécurité intérieure (police/gendarmerie)</td><td>Sécurisent, protègent, orientent et canalisent les impliqués ; contrôle sécuritaire en zone de tri ; gèrent PREP et PRD ; sous commandement du COPG, en concertation avec le COS (principe menant/concourant).</td></tr>
+                <tr><td>Sapeurs-pompiers (4 groupes ORSEC NRBC)</td><td><strong>Ramassage</strong> (lots PRV NRBC, dénombrement, vecteurs d'évacuation) · <strong>intervention spécialisée</strong> (CMIC/CMIR : réduction du risque, mesures, levée de doute) · <strong>décontamination</strong> (approfondie des valides symptomatiques et invalides contaminés) · <strong>commandement et soutien</strong>.</td></tr>
+                <tr><td>SSSM des SIS</td><td>Prise en charge médicale des victimes, soutien sanitaire opérationnel, emploi de médecin-chef PRV, aide à l'identification de l'agent, participation à la décontamination et à l'approvisionnement.</td></tr>
+                <tr><td>SAMU / SMUR / CUMP</td><td>Pivot de la réponse sanitaire (SAMU), médicalisation via SMUR, prise en charge médico-psychologique des impliqués (CUMP), régulation médicale et orientation vers les établissements de santé (plan blanc, dispositif ORSAN NRC).</td></tr>
+                <tr><td>Formations militaires de la sécurité civile (ForMiSC / UIISC)</td><td>Renfort national sur ordre du préfet DGSCGC via le COGIC : ramassage, interventions spécialisées, décontamination, relève des sapeurs-pompiers, déploiement de moyens de protection individuelle.</td></tr>
+            </table>
+            <p>Au total, un PRV en situation nominale est armé par environ <strong>30 professionnels de santé et assimilés</strong> (binômes médecin-infirmier et sapeurs-pompiers répartis entre tri, zone de traitement/surveillance et préparation des médicaments), en complément des effectifs FSI dédiés à la sécurisation du site, du PREP et du PRD.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>9 · Moyens : le « lot PRV NRBC »</h3>
+            <p>Un lot type dimensionné pour <strong>50 victimes graves et 250 victimes valides</strong> comprend 3 sous-ensembles :</p>
+            <div style="overflow-x: auto;">
+            <table class="rd-table">
+                <tr><th>Sous-ensemble</th><th>Contenu (extraits)</th></tr>
+                <tr><td><strong>Matériel médico-sanitaire</strong></td><td>50 lots individuels « NRBC » pour invalides, oxymètres de pouls, masques à oxygène (adulte/pédiatrique), demi-masques FFP3 (adulte/pédiatrique), ciseaux, matériel d'aspiration de mucosité.</td></tr>
+                <tr><td><strong>Lot médicaments / antidotes</strong></td><td>Sulfate d'atropine, pralidoxime (Contrathion), dimercaprol (BAL), hydroxocobalamine (Cyanokit), Kélocyanor, DTPA calcique, clonazépam, G30 %, seringues.</td></tr>
+                <tr><td><strong>Matériel de réanimation</strong></td><td>Perfuseurs et rampes 3 voies, lots de perfusion adulte/pédiatrique, kits de pansements, lot d'intubation, matériel de récupération d'objets coupants/tranchants.</td></tr>
+            </table>
+            </div>
+            <p>S'y ajoutent des <strong>lots individuels de décontamination d'urgence</strong> (LIDUVA pour adultes, LIDUVE pour enfants, tailles S/M/XL et XS/S) : gant poudreur, gants nitrile, masque FFP3, chaussures « type surf », tenue papier, sacs étanches — conditionnés individuellement sous vide avec notice multilingue (français, anglais, arabe, espagnol).</p>
+            <div class="rd-astuce">Certains SIS sont dotés de lots PRV NRBC par l'État, en complément des moyens habituels des VSAV et ambulances de réanimation. Les établissements de santé sièges de SAMU disposent de postes sanitaires mobiles avec malles d'antidotes.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>10 · Antidotes NRBC (aide-mémoire)</h3>
+            <div class="rd-alerte">Administration réservée aux personnels médicaux et SSSM habilités. Ce tableau est un aide-mémoire de reconstitution standardisée — se référer systématiquement aux fiches <strong>Piratox/Piratome</strong> (ANSM) et aux protocoles du médecin-chef PRV pour la prescription, les contre-indications et les effets indésirables.</div>
+            <div style="overflow-x: auto;">
+            <table class="rd-table">
+                <tr><th>Indication</th><th>Médicament</th><th>Posologie adulte (repère)</th></tr>
+                <tr><td rowspan="4">Intoxication aux neurotoxiques</td><td>Atropine 2 mg/ml</td><td>2 mg (1 ml) IVL toutes les 5-10 min jusqu'à tarissement des sécrétions</td></tr>
+                <tr><td>AIBC / Ineurope (auto-injecteur)</td><td>1 seringue auto-injectante IM, renouvelable 1 fois au-delà de 15 min</td></tr>
+                <tr><td>Contrathion (pralidoxime)</td><td>Dose initiale 1 à 2 g IV en 15 min selon la forme (mineure/modérée/sévère), puis entretien selon poids</td></tr>
+                <tr><td>Valium (diazépam), si convulsions</td><td>Ampoule 10 mg/2 ml, IV lente</td></tr>
+                <tr><td>Lewisite / métaux lourds (As, Pb, Hg, Au)</td><td>BAL (dimercaprol)</td><td>2 à 3 mg/kg IM profonde, max 200 mg/injection, jusqu'à 6 injections/jour</td></tr>
+                <tr><td rowspan="2">Intoxication aux dérivés cyanés</td><td>Cyanokit (hydroxocobalamine)</td><td>5 g dans 200 ml NaCl 0,9 % en IV 15 min, renouvelable 1 fois</td></tr>
+                <tr><td>Kélocyanor (en 2<sup>e</sup> intention)</td><td>2 ampoules (600 mg) IV rapide, +50 ml glucose 30 % IV</td></tr>
+                <tr><td rowspan="3">Contamination radiologique</td><td>DTPA-Ca (pentétate de calcium)</td><td>1 g IV en 15 min ; décontamination cutanée ou de plaie possible en application directe</td></tr>
+                <tr><td>Phosphalugel (ou pansement gastrique)</td><td>5 sachets per os, à distance des autres médicaments</td></tr>
+                <tr><td>Radiogardase (bleu de Prusse)</td><td>3 g (6 gélules) per os, 3×/jour, posologie enfant selon le poids</td></tr>
+            </table>
+            </div>
+            <p><small>Voies d'administration à privilégier du plus simple au plus invasif : masque à oxygène, aérosol, sous-cutanée, intramusculaire, intra-osseuse, intraveineuse périphérique. Le matériel utilisé en zone contaminée ne doit pas en sortir.</small></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>11 · Principes de prise en charge des victimes</h3>
+            <ul>
+                <li><strong>Principe n°1</strong> : médecine de catastrophe — « faire du mieux possible, pour le plus grand nombre ».</li>
+                <li><strong>Principe n°2</strong> : en nucléaire/radiologique/biologique, l'urgence médico-chirurgicale prime sur la décontamination ; en chimique, l'urgence médicale (antidote, intubation) prime sur la décontamination approfondie.</li>
+                <li><strong>Principe n°3</strong> : la décontamination d'urgence est obligatoire et immédiate ; la décontamination approfondie est optionnelle et réfléchie.</li>
+                <li><strong>Principe n°4</strong> : à la phase initiale, tous les primo-intervenants équipés et formés au port de l'EPI NRBC sont déployés en zone contrôlée ; le dispositif ORSEC NOVI en zone de soutien est réalisé par des moyens de renfort.</li>
+                <li><strong>Principe n°5</strong> : l'organisation et les actions du PRV doivent rester reproductibles à l'accueil d'un établissement de santé en cas d'arrivée inopinée de victimes non décontaminées.</li>
+            </ul>
+            <p><strong>Damage control</strong> (victimes invalides) : contrôle des hémorragies (compression, pansements hémostatiques, garrots), lavage abondant au sérum physiologique des plaies (+ irrigation au DTPA si contamination radiologique), remplissage vasculaire maîtrisé, usage précoce de noradrénaline et d'acide tranéxamique, lutte contre la triade létale (hypothermie, acidose, coagulopathie).</p>
+        </div>
+
+        <p class="rd-source">📚 Guide de bonnes pratiques pour la mise en œuvre d'un PRV NRBC – SGDSN, validé par le comité stratégique NRBC-E le 8 mars 2021</p>
+    </div>
+
     <!-- ============ FDF – GDO Feux de forêts et d'espaces naturels (DGSCGC 2021) ============ -->
     <div id="gdo-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -25408,7 +25598,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.46.6</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.47.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
