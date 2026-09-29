@@ -953,4 +953,19 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
 .contact-message { padding: 12px 14px; margin: 0 0 10px; border-radius: var(--t-radius-s); border: 1px solid var(--t-line); background: var(--t-s1); }
 .contact-message-meta { margin: 0 0 6px; font-size: 12px; color: var(--t-muted); }
 .contact-message-texte { margin: 0; font-size: 14px; line-height: 1.5; white-space: pre-wrap; }
+.wallace-zone {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    padding: 14px 8px; min-height: 64px; border-radius: var(--t-radius-s);
+    border: 2px solid var(--t-line); background: var(--t-s1); color: var(--t-ink); font: inherit;
+}
+.wallace-zone-nom { font-weight: 600; font-size: 0.9em; text-align: center; }
+.wallace-zone-pct { font-size: 0.85em; color: var(--t-muted); }
+.wallace-zone-active { border-color: #FF9800; background: color-mix(in srgb, #FF9800 18%, var(--t-s1)); }
+.wallace-zone-active .wallace-zone-pct { color: light-dark(#945800, #ff9800); font-weight: 700; }
+.wallace-mode-choix { display: flex; gap: 8px; margin-bottom: 15px; }
+.wallace-mode-choix button {
+    flex: 1; padding: 12px; border-radius: var(--t-radius-s); border: 2px solid var(--t-line);
+    background: var(--t-s1); color: var(--t-ink); font: inherit; font-weight: 700;
+}
+.wallace-mode-choix button[aria-checked="true"] { border-color: #FF9800; background: color-mix(in srgb, #FF9800 18%, var(--t-s1)); color: light-dark(#945800, #ff9800); }
 .reglages-panel { max-height: 100dvh; overflow-y: auto; }
