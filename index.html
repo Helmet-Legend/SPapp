@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.48.4">
+    <meta name="version" content="1.49.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -117,6 +117,7 @@
             </div>
             <p class="reglages-statut" id="pushStatut" aria-live="polite"></p>
             <button class="reglages-lien" onclick="ouvrirEnvoiNotification()">Envoyer une notification (administrateur)</button>
+            <button class="reglages-lien" onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
         </div>
     </div>
 
@@ -222,15 +223,23 @@
                     <strong style="font-size: 14px;">Données personnelles</strong>
                     <p style="margin: 4px 0 0; font-size: 13px; color: var(--t-muted); line-height: 1.5;">Rien n'est collecté, rien n'est transmis. Tout reste sur l'appareil de l'utilisateur.</p>
                 </div>
-                <div style="padding: 14px 0 2px; border-top: 1px solid var(--t-line); display: flex; gap: 10px; align-items: flex-start;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--t-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 3px;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
-                    <div><strong style="font-size: 14px;">Une erreur, une idée ?</strong><p style="margin: 4px 0 0; font-size: 13px; color: var(--t-muted); line-height: 1.5;">Écrivez-nous à <a href="#" style="color: var(--t-accent);">[contact@à-préciser]</a> — chaque signalement terrain est lu.</p></div>
+                <div style="padding: 14px 0 2px; border-top: 1px solid var(--t-line);">
+                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--t-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 3px;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                        <div><strong style="font-size: 14px;">Une erreur, une idée ?</strong><p style="margin: 4px 0 0; font-size: 13px; color: var(--t-muted); line-height: 1.5;">Écrivez-nous ci-dessous — chaque signalement terrain est lu.</p></div>
+                    </div>
+                    <div class="notif-form" style="margin-top: 12px;">
+                        <label>Message<textarea id="contactMessage" maxlength="1000" rows="4" placeholder="Décris le bug ou l'idée…"></textarea></label>
+                        <label>Ton contact (facultatif, pour te répondre)<input type="text" id="contactEmail" maxlength="200" placeholder="email ou téléphone"></label>
+                        <button onclick="envoyerContact()">✉️ Envoyer</button>
+                        <p id="contactRetour" aria-live="polite" class="reglages-statut"></p>
+                    </div>
                 </div>
 
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.48.4</span><br>
+                        Vulcain v<span class="app-version">1.49.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -17854,6 +17863,20 @@ Je fais : extinction.</p>
         <div class="rd-alerte">Les nouvelles versions sont annoncées automatiquement : inutile d'envoyer un message pour une mise à jour.</div>
     </div>
 
+    <!-- ============ Messages reçus (administrateur) ============ -->
+    <div id="contact-lister" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>✉️ Messages reçus</h2>
+        <p style="text-align: center;">Messages envoyés depuis le formulaire de contact (À propos). Réservé à l'administrateur : la clé est demandée.</p>
+        <div class="rd-section notif-form">
+            <label>Clé administrateur<input type="password" id="contactCleAdmin" autocomplete="off"></label>
+            <label class="notif-case"><input type="checkbox" id="contactMemoriser"> Mémoriser la clé sur cet appareil</label>
+            <button onclick="chargerMessagesRecus()">🔄 Charger les messages</button>
+            <p id="contactListeRetour" aria-live="polite"></p>
+        </div>
+        <div id="contactListe"></div>
+    </div>
+
     <!-- ============ GTO Engagement en milieu vicié (DGSCGC, 2e éd. février 2024) : correspondances RDEB + compléments ============ -->
     <div id="gtomv" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← RDEB</button>
@@ -25655,7 +25678,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.48.4</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.49.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
@@ -25690,6 +25713,7 @@ Je demande : ….</p>
     
     <!-- Service Worker Registration -->
     <script src="js/push.js"></script>
+    <script src="js/contact.js"></script>
     <script src="js/pwa-theme.js"></script>
 
 

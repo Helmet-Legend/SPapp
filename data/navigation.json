@@ -4494,6 +4494,19 @@
    ]
   },
   {
+   "id": "contact-lister",
+   "titre": "Messages reçus",
+   "domaine": "outils",
+   "theme": "Administration",
+   "type": "fiche",
+   "motsCles": [
+    "contact",
+    "message",
+    "administrateur",
+    "formulaire"
+   ]
+  },
+  {
    "id": "commandement-menu",
    "titre": "Commandement Opérationnel",
    "domaine": "commandement",
