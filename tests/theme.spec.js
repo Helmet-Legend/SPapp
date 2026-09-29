@@ -3,14 +3,14 @@ const { test, expect } = require('./outils');
 
 const theme = page => page.evaluate(() => document.documentElement.dataset.theme);
 
-for (const [systeme, attendu] of [['light', 'clair'], ['dark', 'sombre']]) {
-    test(`sans préférence enregistrée, le thème suit le téléphone (${systeme} → ${attendu})`, async ({ page }) => {
+for (const systeme of ['light', 'dark']) {
+    test(`sans préférence enregistrée, le thème sombre est appliqué par défaut (téléphone en ${systeme})`, async ({ page }) => {
         await page.emulateMedia({ colorScheme: systeme });
         await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
         await page.goto('/index.html');
-        expect(await theme(page)).toBe(attendu);
-        await expect(page.locator('body')).toHaveClass(attendu === 'sombre' ? /dark-mode/ : /^(?!.*dark-mode)/);
-        await expect(page.locator('[data-theme-choix="auto"]')).toHaveAttribute('aria-checked', 'true');
+        expect(await theme(page)).toBe('sombre');
+        await expect(page.locator('body')).toHaveClass(/dark-mode/);
+        await expect(page.locator('[data-theme-choix="sombre"]')).toHaveAttribute('aria-checked', 'true');
     });
 }
 
