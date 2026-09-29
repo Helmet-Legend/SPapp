@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.46.1">
+    <meta name="version" content="1.46.2">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -215,7 +215,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.46.1</span><br>
+                        Vulcain v<span class="app-version">1.46.2</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -15719,7 +15719,7 @@ Je fais : extinction.</p>
         <div class="rd-alerte">Guide de <strong>2015</strong>. Les principes restent valables, mais les véhicules ont beaucoup évolué : pour un modèle précis, consultez sa <strong>fiche d'aide à la décision (FAD / rescue sheet)</strong> et le guide du constructeur (ERG).</div>
         <div class="rd-tuiles">
             <button onclick="showModule('gouv-vehicules')"><b>🔋 Les véhicules</b><span>Airbags, renforts, vitrages, VE / hybrides, GPL, GNV : équipements et risques</span></button>
-            <button onclick="showModule('gouv-incendie')"><b>🔥 Feu de véhicule</b><span>Énergie alternative : 2 LDV, binômes, réservoir ou batterie, NOD n° 001</span></button>
+            <button onclick="showModule('gouv-incendie')"><b>🔥 Feu de véhicule</b><span>Énergie alternative : 2 LDV, binômes, réservoir ou batterie, NOD n° 003</span></button>
             <button onclick="showModule('gouv-sr')"><b>🚑 Secours routier</b><span>MGO SR, les 5 i, service plug, 30-60-90, NOD n° 002</span></button>
             <button onclick="showModule('gouv-fiches')"><b>🛠️ Fiches techniques SR</b><span>Calage, vitrages, portes, baies, tableau de bord, pavillon, pédales…</span></button>
             <button onclick="showModule('gouv-ctif')"><b>⚡ CTIF – FAD & emballement thermique</b><span>2025 : la FAD, sécurisation S1-S5, emballement thermique des batteries, techniques mondiales</span></button>
@@ -15909,12 +15909,128 @@ Je fais : extinction.</p>
             </ul>
         </div>
         <details class="jsp-cours">
-            <summary>Réponse opérationnelle incendie : principes et MGO GPL / GNV / VE (pages 25 à 27)</summary>
-            <div class="gouv-pages"><a href="images/gouv/p-025.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-025.jpg" alt="GOUV incendie – page 25"></a><a href="images/gouv/p-026.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-026.jpg" alt="GOUV incendie – page 26"></a><a href="images/gouv/p-027.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-027.jpg" alt="GOUV incendie – page 27"></a></div>
+            <summary>1 · Réponse opérationnelle incendie : principe général et MGO GPL / GNV / VE (pages 25 à 27)</summary>
+            <div class="rd-section">
+                <h3>📌 Principe général</h3>
+                <p>Pour réaliser l'extinction d'un feu de véhicule à énergie alternative dans un environnement sécurisé, la méthodologie vise deux objectifs répartis entre deux binômes : <strong>Binôme 1</strong> stoppe tout rayonnement calorifique aux abords des sources d'énergie, <strong>Binôme 2</strong> refroidit ces sources d'énergie. Pour le GPL et le GNV, il s'agit d'éviter la surpression du réservoir (effet « lâcher de soupape ») ; pour les VE et VeH, d'éviter l'emballement thermique et/ou l'inflammation de la batterie. Dans tous les cas, l'objectif final reste l'extinction complète du véhicule.</p>
+                <div class="rd-alerte">Quelle que soit l'énergie embarquée, l'établissement de <strong>2 LDV est un préalable systématique</strong>. Seule la connaissance confirmée d'un feu de véhicule à carburation traditionnelle (essence/gazole) peut autoriser l'extinction à l'aide d'une seule LDV.</div>
+                <table class="rd-table">
+                    <tr><th>Situation</th><th>Établissement</th></tr>
+                    <tr><td>Autre énergie, feu <strong>avec enjeu</strong></td><td><strong>2 LDV en eau dopée</strong></td></tr>
+                    <tr><td>Carburation classique ou feu naissant</td><td>1 LDV en eau dopée</td></tr>
+                </table>
+                <p class="jsp-objectif">VEA sans enjeu : limiter au maximum l'engagement du personnel, le principe de l'extinction offensive reposant sur une attaque massive à deux binômes pour une efficacité maximale.</p>
+                <div class="rd-alerte">Extinction et déblai systématiquement <strong>sous ARI capelé et coiffé</strong>. Tenue de feu complète nécessaire pour toute intervention pour feu de véhicule.</div>
+                <figure class="rd-fig"><img src="images/gouv-incendie/perimetre-50m.jpg" alt="Schéma du périmètre civil GPLc/GNV : véhicule au centre, zone de danger à 50 m (cercle rouge), périmètre civil (cercle vert), attaque par les 3/4 avant depuis l'engin-pompe" loading="lazy"><figcaption>Périmètre civil GPLc/GNV et attaque par les 3/4 avant, à 50 m du véhicule.</figcaption></figure>
+
+                <h3>📌 MGO incendie GPL / GNV avec enjeu</h3>
+                <table class="rd-table">
+                    <tr><th>Phase</th><th>Actions</th></tr>
+                    <tr><td>Reconnaissance</td><td><strong>Identifier</strong> : logo, marque, propriétaire, plaque d'immatriculation, soupape et orifice de remplissage. <strong>Inspecter</strong> : contrôler l'intégrité des équipements d'énergie, questionner le propriétaire sur la présence de la soupape de sécurité. <strong>Interdire</strong> l'attaque dans les axes avant/arrière et le déplacement du véhicule, axer dans un périmètre de 50 m. <strong>Isoler</strong> : action sur la vanne manuelle GNV si possible ; si véhicule sur borne de recharge, couper l'alimentation.</td></tr>
+                    <tr><td>Sauvetage</td><td>Réactions immédiates de prompt secours, dégagement d'urgence lors de l'éclosion d'un incendie.</td></tr>
+                    <tr><td>Établissement</td><td><strong>Intervenir</strong> : attaque offensive, rapide et précoce, pour éviter la rupture de l'enveloppe (BLEVE), à 50 m du véhicule. 2 LDV, à défaut 1 LDV + 1 LDT (80 m), en eau dopée préconisée. Privilégier l'avant du véhicule et un écran (naturel, autre véhicule…) ; si arrivée par l'arrière, interdiction de stationner derrière. Prise d'eau : 2×40 alimentée directement sur l'engin ; LDV alimentée par 60 m de tuyaux de 45, Q = 250 L/min à pression nominale.</td></tr>
+                    <tr><td>Attaque</td><td>Progression par les <strong>3/4 avant</strong>, axe des clignotants, les deux binômes du même côté. Jet plein sur les 40 premiers mètres, diffusé d'attaque sur les 10 derniers. <strong>Binôme 1</strong> : extinction du feu habitacle (banquette vers bloc moteur), en priorisant la sécurité du binôme 2. <strong>Binôme 2</strong> : refroidissement du réservoir GPLc/GNV, coupe le rayonnement calorifique de l'habitacle ; mission terminée si refroidissement complet (fin d'évaporation, caméra thermique). Attention à ne pas souffler la flamme d'une torchère GNV.</td></tr>
+                    <tr><td>Protection</td><td>Prise en compte de l'environnement, périmètre de sécurité de 50 m a priori, ventilation si besoin. Attention au lâcher de soupape : torchère de gaz virulente.</td></tr>
+                    <tr><td>Déblai</td><td>Peu de déblai ; inspection de l'environnement soumis à torchère.</td></tr>
+                    <tr><td>Surveillance</td><td>Opération terminée si refroidissement du réservoir achevé. Pas d'action technique sur la source d'énergie ; informer le personnel chargé de l'enlèvement (ou les forces de l'ordre) du type d'énergie.</td></tr>
+                </table>
+                <figure class="rd-fig"><img src="images/gouv-incendie/torchere-gplc.jpg" alt="Photo d'un véhicule léger en feu avec une torchère de gaz jaillissant du réservoir GPLc en flamme horizontale" loading="lazy"><figcaption>Torchère sur VL GPLc consécutive au lâcher de soupape.</figcaption></figure>
+
+                <h3>📌 MGO incendie VE / VeH avec enjeu</h3>
+                <table class="rd-table">
+                    <tr><th>Phase</th><th>Actions</th></tr>
+                    <tr><td>Reconnaissance</td><td><strong>Identifier</strong> : logo, marque (type de batterie), propriétaire, présence de câbles oranges, dégagements gazeux, plaque d'immatriculation. <strong>Inspecter</strong> : contrôler l'intégrité des équipements d'énergie (batterie, câbles HT 600 V), détecter les fuites éventuelles. <strong>Interdire</strong> le déplacement du véhicule et l'attaque dans les axes avant/arrière, de retirer le sectionneur ou de toucher les câbles HT sans EPI. <strong>Isoler</strong> : déconnecter/débrancher la source d'alimentation si le véhicule est en charge.</td></tr>
+                    <tr><td>Sauvetage</td><td>Réactions immédiates de prompt secours, dégagement d'urgence lors de l'éclosion d'un incendie.</td></tr>
+                    <tr><td>Établissement</td><td><strong>Intervenir</strong> : attaque offensive, rapide et précoce, pour éviter l'emballement thermique, à 50 m du véhicule. 2 LDV, à défaut 1 LDV + 1 LDT (80 m), en eau dopée préconisée. Si possible à l'avant du véhicule, préparation hors zone de danger et hors périmètre ; privilégier un écran. Prise d'eau : 2×40 alimentée directement sur l'engin ; LDV alimentée par 60 m de tuyaux de 45, Q = 250 L/min à pression nominale.</td></tr>
+                    <tr><td>Attaque</td><td>Progression par les <strong>3/4 avant</strong>, axe des clignotants, les deux binômes du même côté. Jet plein sur les 40 premiers mètres, diffusé d'attaque sur les 10 derniers. <strong>Binôme 1</strong> : extinction du feu habitacle (adjonction d'eau dopée si fuite d'hydrocarbure), banquette vers bloc moteur. <strong>Binôme 2</strong> : refroidissement du pack batterie ; si évent de batterie accessible (« fireman access »), jet plein dessus. Mission terminée si refroidissement complet (évaporation, relevé caméra thermique). En cas d'emballement, l'extinction est difficile : privilégier la protection de l'environnement.</td></tr>
+                    <tr><td>Protection</td><td>Prise en compte de l'environnement ; relevés HF, HCN, H₂ à l'explosimètre. Périmètre de sécurité de 50 m a priori, gestion de la fuite d'électrolyte, ventilation si besoin.</td></tr>
+                    <tr><td>Déblai</td><td>Peu de déblai, pas de dégarnissage.</td></tr>
+                    <tr><td>Surveillance</td><td>Décroissance thermique de la batterie vérifiée (éviter l'emballement). Opération terminée si refroidissement du pack batterie total. Pas d'action technique sur la source d'énergie ; informer le personnel chargé de l'enlèvement (ou les forces de l'ordre) du type d'énergie.</td></tr>
+                </table>
+                <div class="rd-alerte"><strong>Batterie LMP (lithium métal polymère)</strong> : pas d'extinction possible, protection de l'environnement uniquement.</div>
+
+                <h3>📌 Cas particulier d'un véhicule en charge</h3>
+                <p>Lors de l'incendie d'un VEA en charge, l'action de secours est identique. Il convient toutefois d'<strong>isoler le véhicule de la station de recharge</strong> (coupure de l'arrivée de l'énergie : GPL, GNV, électrique…).</p>
+            </div>
         </details>
         <details class="jsp-cours">
-            <summary>NOD n° 001 · Feu de véhicule à énergie alternative (pages 39 à 48)</summary>
-            <div class="gouv-pages"><a href="images/gouv/p-039.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-039.jpg" alt="NOD 001 feu de VEA – page 39"></a><a href="images/gouv/p-040.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-040.jpg" alt="NOD 001 feu de VEA – page 40"></a><a href="images/gouv/p-041.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-041.jpg" alt="NOD 001 feu de VEA – page 41"></a><a href="images/gouv/p-042.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-042.jpg" alt="NOD 001 feu de VEA – page 42"></a><a href="images/gouv/p-043.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-043.jpg" alt="NOD 001 feu de VEA – page 43"></a><a href="images/gouv/p-044.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-044.jpg" alt="NOD 001 feu de VEA – page 44"></a><a href="images/gouv/p-045.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-045.jpg" alt="NOD 001 feu de VEA – page 45"></a><a href="images/gouv/p-046.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-046.jpg" alt="NOD 001 feu de VEA – page 46"></a><a href="images/gouv/p-047.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-047.jpg" alt="NOD 001 feu de VEA – page 47"></a><a href="images/gouv/p-048.jpg" target="_blank" rel="noopener"><img class="gouv-page" loading="lazy" src="images/gouv/p-048.jpg" alt="NOD 001 feu de VEA – page 48"></a></div>
+            <summary>2 · NOD n° 003 · Feu de véhicule à énergie alternative, 12/2014 (pages 39 à 48)</summary>
+            <div class="rd-section">
+                <h3>📌 Préambule et risques</h3>
+                <p>Face aux nouvelles carburations (hybride, électrique, piles à combustible), la méthode défensive de la NIO n° 4 du 05/02/1999 a été remplacée par une méthode plutôt <strong>offensive</strong>, conformément à la note opérationnelle « intervention sur les véhicules électriques &amp; hybrides » de la DGSCGC du 29 juin 2012.</p>
+                <table class="rd-table">
+                    <tr><th>Risque</th><th>Détail</th></tr>
+                    <tr><td>Thermique</td><td>Risque principal, similaire à un feu de véhicule classique ; attention aux brûlures par projection de particules de métaux réactifs à l'oxygène et à l'eau</td></tr>
+                    <tr><td>Explosif</td><td>Torchère (cas des bus au GNV) ou explosion de type BLEVE, pour les carburations au gaz (GPL, GNV)</td></tr>
+                    <tr><td>Toxique</td><td>Combustion de la batterie de traction : gaz toxiques (dont fluorure d'hydrogène) qui s'ajoutent aux gaz de combustion habituels (CO, CO₂, HCN, HCl, SO₂…)</td></tr>
+                    <tr><td>Mécanique</td><td>Bruit et sifflement important en cas de fuite sur véhicule au gaz (cas des bus au GNV)</td></tr>
+                    <tr><td>Emballement thermique</td><td>Risque lié aux batteries de traction qui prennent feu</td></tr>
+                </table>
+
+                <h3>📌 Principe d'intervention</h3>
+                <p>Dès la prise d'appel, la détection précoce d'une énergie alternative doit être recherchée. Sur les lieux, le chef d'agrès s'appuie sur une méthode générale des opérations en incendie : <strong>balisage et protection du sur-accident</strong>, <strong>reconnaissance</strong>, <strong>établissements et attaque du foyer</strong>, <strong>déblai et surveillance</strong>, puis <strong>retour d'intervention (RETEX)</strong>.</p>
+
+                <h3>📌 Mémento opérationnel CTA-CODIS</h3>
+                <p>Pour tout appel de feu de véhicule, l'opérateur cherche à identifier s'il s'agit d'un véhicule à énergie alternative (VEA) : <strong>type</strong> de véhicule (VL, PL, bus…), <strong>nature de la propulsion</strong> (GPL, GNV, électrique, hybride HEV), <strong>localisation</strong> (extérieur, parking souterrain, en charge…), <strong>immatriculation</strong> et marque si possible. Il contacte systématiquement le CIC/COG en indiquant l'immatriculation pour préciser la carburation.</p>
+                <table class="rd-table">
+                    <tr><th>Code sinistre</th><th>Type de départ</th><th>Moyens proposés</th></tr>
+                    <tr><td>F101 / F103 / F104 — Feu VL ou PL toute carburation classique</td><td>Élémentaire</td><td>1 FPT ou 1 FPTL</td></tr>
+                    <tr><td>F102 — Feu VL électrique, avec notion de VEA</td><td>Aggravé</td><td>Moyens élémentaires + 1 VLCG, 1 porteur d'eau (CCAM/CCGC) le cas échéant, 1 CT CMIC sur demande du COS</td></tr>
+                </table>
+                <p class="jsp-objectif">Les engins devront, dans la mesure du possible, être armés avec deux binômes minimum. Pour tout feu de véhicule avec notion de VEA, engager si besoin une caméra thermique.</p>
+                <p>Dès que le CODIS a connaissance d'un VEA en cause, il prévient sans délai par radio les moyens en transit et renforce le départ (VLCG, caméra thermique). Il vérifie aussi auprès du CIC/COG la liste des dépanneurs agréés UTE C 18-550 pour le remorquage des VEA.</p>
+
+                <h3>📌 Mémento COS : tenue et comportement</h3>
+                <p>Lorsque le doute sur la carburation ne peut être écarté, le COS privilégie la méthode d'extinction pour feux de VEA, avec <strong>tenue de feu complète et ARI coiffé obligatoires</strong>, personnels en binôme, progression par les 3/4 avant. Les services et partenaires extérieurs (police, gendarmerie, DIR, patrouilleurs…) sont exclus des zones de danger et d'exclusion durant l'attaque.</p>
+
+                <h3>📌 Conduite à tenir : sécurisation de la zone d'intervention</h3>
+                <p>Dès l'arrivée, chaque engin se positionne dans un <strong>périmètre de 50 m</strong> (zone de danger), procède au balisage de la zone d'intervention et met en place, avec les forces de l'ordre, un périmètre supérieur à 50 m (zone contrôlée civile). Le passage en zone d'exclusion (ZE) est proscrit.</p>
+
+                <h3>📌 Sécurisation du véhicule : la règle des 5 « i »</h3>
+                <table class="rd-table">
+                    <tr><th>Étape</th><th>Contenu</th></tr>
+                    <tr><td><strong>Identifier</strong></td><td>Type de véhicule, logo, soupape ou orifice de remplissage, nature de propulsion (bi-motorisation) : GPL, GNV, électrique, hybride HEV. Questionner le propriétaire, communiquer l'immatriculation aux forces de l'ordre.</td></tr>
+                    <tr><td><strong>Inspecter</strong></td><td>Vérifier s'il s'agit d'une carburation traditionnelle, GPL, GNV ou électrique/hybride (câble orange, absence de pot d'échappement, lecture du feu). Détecter les fuites, reconnaître les odeurs de gaz.</td></tr>
+                    <tr><td><strong>Isoler</strong></td><td>Débrancher si possible la source d'alimentation si le véhicule est en charge.</td></tr>
+                    <tr><td><strong>Interdire</strong></td><td>De toucher les câbles oranges, l'approche du véhicule dans un rayon inférieur à 50 m.</td></tr>
+                    <tr><td><strong>Intervenir</strong></td><td>Selon le type de carburation : GNV, GPL ou électrique/hybride.</td></tr>
+                </table>
+                <figure class="rd-fig"><img src="images/gouv-incendie/bus-gnv-identification.jpg" alt="Trois photos : bus au GNV vu de l'extérieur, ouverture du capot montrant les bouteilles de gaz, et rampe de 8 bouteilles de 126 litres à 200 bars sous le pavillon du bus" loading="lazy"><figcaption>Identification d'un bus au GNV : réservoirs sous le pavillon (8 bouteilles de 126 L à 200 bars).</figcaption></figure>
+                <div class="rd-astuce">Cas particulier du bus au GNV : vérifier auprès du chauffeur si les arrêts d'urgence ont été coupés.</div>
+                <figure class="rd-fig"><img src="images/gouv-incendie/bus-gnv-coupe-circuit.jpg" alt="Deux photos : poste de conduite du bus avec le bouton d'arrêt d'urgence repéré, et coupe-circuit extérieur repéré sur le flanc du véhicule" loading="lazy"><figcaption>Poste conducteur (arrêt d'urgence) et coupe-circuit extérieur d'un bus au GNV.</figcaption></figure>
+
+                <h3>📌 Méthode d'extinction</h3>
+                <p><strong>Attaque offensive</strong>, rapide et précoce, pour éviter la rupture de l'enveloppe, l'explosion (BLEVE) ou l'emballement thermique (VEA électriques). Engagement de 2 binômes en tenue de feu complète et ARI coiffé, progression par les 3/4 avant, vent dans le dos si possible, en utilisant tout écran de protection disponible. Établissement privilégié : 2 LDV (250 L/min) en eau dopée, à défaut 1 LDV + 1 LDT (moins de 80 m).</p>
+                <table class="rd-table">
+                    <tr><th>Phase</th><th>Action</th></tr>
+                    <tr><td>1<sup>ère</sup> phase</td><td>Attaque initiale au jet bâton jusqu'à 20 m pour les deux binômes, pour faire tomber les flammes et baisser le pouvoir calorifique</td></tr>
+                    <tr><td>2<sup>e</sup> phase</td><td>Approche du véhicule en jet diffusé d'attaque : Binôme 1 refroidit l'habitacle, Binôme 2 refroidit le réservoir/la batterie (certains modèles disposent d'une trappe pour noyer la batterie de traction)</td></tr>
+                </table>
+                <div class="rd-alerte">En cas de réaction violente avec l'agent extincteur, se limiter à réduire la propagation, à protéger et éteindre les tiers.</div>
+                <p>Protection, déblai et surveillance : ventiler les locaux en milieu clos, surveiller la température du réservoir ou de la batterie, vérification par le chef de groupe à la caméra thermique (campagne de mesure si dégagement gazeux important), maintien d'un périmètre de sécurité de 5 m autour du véhicule en attendant la dépanneuse.</p>
+
+                <h3>📌 Glossaire</h3>
+                <table class="rd-table">
+                    <tr><td><strong>BLEVE</strong></td><td>Vaporisation violente à caractère explosif consécutive à la rupture d'un réservoir</td></tr>
+                    <tr><td><strong>CIC</strong></td><td>Centre d'Information et de Commandement (police)</td></tr>
+                    <tr><td><strong>CIS</strong></td><td>Centre d'Incendie et de Secours</td></tr>
+                    <tr><td><strong>COG</strong></td><td>Centre Opérationnel de la Gendarmerie</td></tr>
+                    <tr><td><strong>COS</strong></td><td>Commandant des Opérations de Secours</td></tr>
+                    <tr><td><strong>DGSCGC</strong></td><td>Direction Générale de la Sécurité Civile et de Gestion des Crises</td></tr>
+                    <tr><td><strong>EPI</strong></td><td>Équipement de Protection Individuel</td></tr>
+                    <tr><td><strong>GNV</strong></td><td>Gaz Naturel Véhicule</td></tr>
+                    <tr><td><strong>GPL</strong></td><td>Gaz Pétrole Liquéfié</td></tr>
+                    <tr><td><strong>HEV</strong></td><td>Hybrid Electric Vehicle</td></tr>
+                    <tr><td><strong>NIO</strong></td><td>Note d'Information Opérationnelle</td></tr>
+                    <tr><td><strong>RETEX</strong></td><td>Retour d'Expérience</td></tr>
+                    <tr><td><strong>VEA</strong></td><td>Véhicule à Énergie Alternative</td></tr>
+                    <tr><td><strong>VLCG</strong></td><td>Véhicule de Liaison du Chef de Groupe</td></tr>
+                    <tr><td><strong>ZC</strong></td><td>Zone Contrôlée</td></tr>
+                    <tr><td><strong>ZE</strong></td><td>Zone d'Exclusion</td></tr>
+                    <tr><td><strong>ZI</strong></td><td>Zone d'Intervention</td></tr>
+                </table>
+                <p class="jsp-objectif">Références : études du groupe technique de secours des moyens de transport du SDIS 34, NIO du 26 juin 2012, guide à l'usage des sapeurs-pompiers du SDIS 86 et du SDIS 44.</p>
+            </div>
         </details>
         <p class="jsp-liens">Voir aussi → <button onclick="showModule('gdo-ege')">Phénomènes thermiques</button> <button onclick="showModule('mousses-lif')">Liquides inflammables</button></p>
         <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/vehicules/GOUV-SDIS34-2015.pdf" target="_blank" rel="noopener">Guide complet (PDF, 25 Mo)</a></p>
@@ -24923,7 +25039,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.46.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.46.2</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
