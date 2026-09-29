@@ -926,7 +926,7 @@
 
         .fire-icon .power {
             font-size: 0.8em;
-            color: var(--fire-border, var(--warning));
+            color: var(--text-secondary);
             font-weight: 600;
         }
 

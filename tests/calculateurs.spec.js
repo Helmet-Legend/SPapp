@@ -32,7 +32,7 @@ test('PATRAC DR : ajouter puis retirer un véhicule', async ({ app }) => {
     await app.click("button[onclick=\"ajouterVehiculeAvecEquipage('FPT', 8)\"]");
     await expect(app.locator('#modalEquipage')).toBeVisible();
     await app.fill('#modalNumero', 'FPT 347');
-    await app.fill('#equipage-0-grade', 'SGT');
+    await app.selectOption('#equipage-0-grade', 'SGT');
     await app.fill('#equipage-0-nom', 'DUPONT');
     await app.click('button[onclick="validerEquipage()"]');
     await expect(app.locator('#listeVehiculesEquipages')).toContainText('FPT 347');
