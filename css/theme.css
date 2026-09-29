@@ -851,7 +851,7 @@ body.accueil-photo > .app-footer { position: relative; z-index: 1; }
 body.accueil-photo .app-stripe { display: none !important; }
 
 /* En-tête : bandeau avec logo sur la photo */
-body.accueil-photo .app-header { align-items: flex-start; min-height: 380px; padding-top: calc(16px + env(safe-area-inset-top, 0px)); }
+body.accueil-photo .app-header { align-items: flex-start; min-height: 420px; padding-top: calc(16px + env(safe-area-inset-top, 0px)); }
 body.accueil-photo .app-brand { align-self: flex-start; min-width: 0; flex-direction: column-reverse; gap: 6px; padding: 0 0 4px 4px; }
 body.accueil-photo .app-brand h1 {
     display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
