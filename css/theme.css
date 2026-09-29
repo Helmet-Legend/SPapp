@@ -818,7 +818,7 @@ body.accueil-photo .accueil-fond {
     background: #0B0C0E center / cover no-repeat;
     background-position: 40% 10%;
 }
-html[data-theme="sombre"] body.accueil-photo .accueil-fond { background-image: url(../images/accueil/accueil-nuit.webp); }
+html[data-theme="sombre"] body.accueil-photo .accueil-fond { background-image: url(../images/accueil/accueil-nuit.webp); filter: brightness(.68) saturate(1.05); }
 html[data-theme="clair"] body.accueil-photo .accueil-fond { background-color: #F3F4F6; background-image: url(../images/accueil/accueil-jour.webp); }
 .accueil-fond::before, .accueil-fond::after { content: ''; position: absolute; inset: 0; }
 .accueil-fond::before {
@@ -889,9 +889,14 @@ body.accueil-photo .nav-home > .nav-acc .nav-acc-head .nav-count,
 body.accueil-photo .nav-home > .nav-acc .nav-acc-head .nav-chev { color: var(--verre-texte); }
 body.accueil-photo .nav-home > .nav-acc .nav-acc-head .nav-count { border: 0; padding: 0; }
 html[data-theme="sombre"] body.accueil-photo .nav-home .nav-acc-head .nav-picto {
-    width: 38px; height: 38px; border-radius: 11px;
-    background: color-mix(in srgb, var(--c) 24%, transparent);
+    width: 40px; height: 40px; border-radius: 12px;
+    background: color-mix(in srgb, var(--c) 18%, rgba(10, 11, 13, .5));
+    border: 1.5px solid color-mix(in srgb, var(--c) 65%, transparent);
     color: color-mix(in srgb, var(--c) 55%, #FFFFFF);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--c) 60%, transparent), 0 0 18px color-mix(in srgb, var(--c) 35%, transparent);
+}
+html[data-theme="sombre"] body.accueil-photo .nav-home .nav-acc-head .nav-picto .ico {
+    filter: drop-shadow(0 0 4px color-mix(in srgb, var(--c) 75%, transparent));
 }
 html[data-theme="clair"] body.accueil-photo .nav-home .nav-acc-head .nav-picto { background: color-mix(in srgb, var(--c) 14%, #FFFFFF); }
 /* Domaine ouvert : fond plein pour lire les sous-menus sans effort */
