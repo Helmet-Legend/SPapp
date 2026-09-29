@@ -835,13 +835,13 @@ html[data-theme="clair"] body.accueil-photo .accueil-fond { background-color: #F
 }
 html[data-theme="sombre"] body {
     --voile0: rgba(6, 7, 8, .08); --voile1: rgba(6, 7, 8, .2); --voile2: rgba(6, 7, 8, .45); --voile3: rgba(8, 9, 10, .7); --voile4: rgba(10, 11, 13, .88);
-    --verre: linear-gradient(135deg, rgba(8, 9, 10, .68), rgba(8, 9, 10, .58));
+    --verre: linear-gradient(135deg, rgba(8, 9, 10, .48), rgba(8, 9, 10, .38));
     --verre-ligne: rgba(255, 255, 255, .12);
     --verre-texte: #E4E7EA;
 }
 html[data-theme="clair"] body {
     --voile0: rgba(6, 7, 8, .26); --voile1: rgba(6, 7, 8, .34); --voile2: rgba(243, 244, 246, .4); --voile3: rgba(243, 244, 246, .66); --voile4: rgba(243, 244, 246, .85);
-    --verre: linear-gradient(135deg, rgba(255, 255, 255, .46), rgba(255, 255, 255, .34));
+    --verre: linear-gradient(135deg, rgba(255, 255, 255, .42), rgba(255, 255, 255, .32));
     --verre-ligne: rgba(255, 255, 255, .75);
     --verre-texte: #3A3F46;
 }
