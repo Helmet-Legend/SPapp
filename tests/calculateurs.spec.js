@@ -141,3 +141,119 @@ test('paliers MT 2012 : plongée successive, Nitrox et altitude', async ({ app }
     await expect(res).toContainText('profondeur équivalente 27 m');
     await expect(res).toContainText('7:00');
 });
+
+test('Wallace : tête seule (adulte) = 9 %, sous le seuil de gravité', async ({ app }) => {
+    await app.evaluate(() => showModule('suap-wallace-calc'));
+    await app.click('button[data-zone="tete"]');
+    await expect(app.locator('#wallaceTotalPct')).toHaveText('9 %');
+    await expect(app.locator('#wallaceInterpretation')).toContainText('refroidie');
+});
+
+test('Wallace : au-delà de 20 % (adulte), alerte de gravité', async ({ app }) => {
+    await app.evaluate(() => showModule('suap-wallace-calc'));
+    await app.click('button[data-zone="tronc_av"]');
+    await app.click('button[data-zone="tronc_ar"]');
+    await expect(app.locator('#wallaceTotalPct')).toHaveText('36 %');
+    await expect(app.locator('#wallaceInterpretation')).toContainText('SB > 20 %');
+    await expect(app.locator('#wallaceInterpretation')).toContainText('coordination médicale');
+});
+
+test('Wallace : passage en mode enfant recalcule les pourcentages (tête 17 %)', async ({ app }) => {
+    await app.evaluate(() => showModule('suap-wallace-calc'));
+    await app.click('#wallaceModeEnfant');
+    await app.click('button[data-zone="tete"]');
+    await expect(app.locator('#wallaceTotalPct')).toHaveText('17 %');
+    await expect(app.locator('#wallaceInterpretation')).toContainText('SB > 10 %');
+});
+
+test('Wallace : petites taches (main = 1 % chacune) et réinitialisation', async ({ app }) => {
+    await app.evaluate(() => showModule('suap-wallace-calc'));
+    await app.click('button[onclick="wallaceAjusterMains(1)"]');
+    await app.click('button[onclick="wallaceAjusterMains(1)"]');
+    await expect(app.locator('#wallaceTotalPct')).toHaveText('2 %');
+    await app.click('button[onclick="wallaceReinitialiser()"]');
+    await expect(app.locator('#wallaceTotalPct')).toHaveText('0 %');
+    await expect(app.locator('#wallaceMainsCompte')).toHaveText('0');
+});
+
+test('émulseur (mode direct) : 100 m² à 20 L/min/m², 6 %, 15 min = 1800 L (90 bidons)', async ({ app }) => {
+    await app.evaluate(() => showModule('emulseur'));
+    await app.click('button[onclick="emuChoisirTaux(20)"]');
+    await app.click('button[onclick="emuChoisirConcentration(6)"]');
+    await app.fill('#emuSurface', '100');
+    await app.fill('#emuDuree', '15');
+    await expect(app.locator('#emuResultatPrincipal')).toContainText('1800 L');
+    await expect(app.locator('#emuResultatPrincipal')).toContainText('90 bidons de 20 L');
+    await expect(app.locator('#emuDetails')).toContainText('2000 L/min');
+    await expect(app.locator('#emuDetails')).toContainText('28200 L');
+});
+
+test('émulseur (mode inverse) : 100 L de stock à 3 %, 10 L/min/m², 20 min = 16,7 m²', async ({ app }) => {
+    await app.evaluate(() => showModule('emulseur'));
+    await app.click('button[onclick="emuMode(\'inverse\')"]');
+    await expect(app.locator('#emulseurInverse')).toBeVisible();
+    await expect(app.locator('#emuInverseResultatPrincipal')).toContainText('16.7 m²');
+    await expect(app.locator('#emuInverseDetails')).toContainText('3333 L');
+});
+
+test('feux de forêt règle des 3 % : vent 30 km/h = 15 m/min, risque MODÉRÉ', async ({ app }) => {
+    await app.evaluate(() => showModule('feu-foret'));
+    await app.click('button[onclick="selectVentRapide(30)"]');
+    const res = app.locator('#feu-foret-result');
+    await expect(res).toContainText('15.0 m/min');
+    await expect(res).toContainText('RISQUE MODÉRÉ');
+    await expect(res).toContainText('225 m'); // distance à 15 min
+    await expect(res).toContainText('1.80 km'); // distance à 2 h
+});
+
+test('facteur de chute LSPCC : 2 m sur 5 m de corde = 0,40 (à éviter)', async ({ app }) => {
+    await app.evaluate(() => showModule('lspcc-calculateur'));
+    await app.fill('#lspcc-hauteur', '2');
+    await app.fill('#lspcc-corde', '5');
+    const res = app.locator('#lspcc-resultat');
+    await expect(res).toContainText('0.40');
+    await expect(res).toContainText('FACTEUR À ÉVITER');
+});
+
+test('facteur de chute LSPCC : 6 m sur 4 m de corde = 1,50 (interdit)', async ({ app }) => {
+    await app.evaluate(() => showModule('lspcc-calculateur'));
+    await app.fill('#lspcc-hauteur', '6');
+    await app.fill('#lspcc-corde', '4');
+    await expect(app.locator('#lspcc-resultat')).toContainText('1.50');
+    await expect(app.locator('#lspcc-resultat')).toContainText('FACTEUR INTERDIT');
+});
+
+test('convertisseur : 90 km/h = 25 m/s', async ({ app }) => {
+    await app.evaluate(() => showModule('convertisseur'));
+    await app.click('button[onclick="selectQuickConvert(\'vitesse\')"]');
+    await app.click('button[onclick="setQuickValue(90)"]');
+    await expect(app.locator('#value2')).toHaveText('25.0000');
+});
+
+test('convertisseur : 37 °C = 98,6 °F', async ({ app }) => {
+    await app.evaluate(() => showModule('convertisseur'));
+    await app.click('button[onclick="selectQuickConvert(\'temperature\')"]');
+    await app.click('button[onclick="setQuickValue(37)"]');
+    await expect(app.locator('#value2')).toHaveText('98.6000');
+});
+
+test('abaque des charges : 1 m³ d\'eau = 1,00 tonne, d\'essence = 730 kg', async ({ app }) => {
+    await app.evaluate(() => showModule('abaque'));
+    await expect.poll(() => app.evaluate(() => densityData.length)).toBeGreaterThan(0);
+    await app.fill('#abaque-longueur', '2');
+    await app.fill('#abaque-largeur', '1');
+    await app.fill('#abaque-hauteur', '0.5');
+    const res = app.locator('#abaque-results');
+    await expect(res).toContainText('1.00');
+    await expect(res).toContainText('tonnes');
+    await expect(res).toContainText('730');
+});
+
+test('épuisement de volume : 10×5 m, 50 cm d\'eau, 1 pompe 30 m³/h = 50 min', async ({ app }) => {
+    await app.evaluate(() => showModule('epuisement'));
+    await app.click('button[onclick="modifierQuantite(\'mat30\', 1)"]');
+    await expect(app.locator('#surfaceEpuis')).toHaveText('50.00 m²');
+    await expect(app.locator('#volumeEau')).toHaveText('25000 L (25.00 m³)');
+    await expect(app.locator('#tempsTotalEpuis')).toHaveText('50 min');
+    await expect(app.locator('#detailMateriel')).toContainText('500 L/min');
+});
