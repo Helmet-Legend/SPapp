@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.50.0">
+    <meta name="version" content="1.50.1">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.50.0</span><br>
+                        Vulcain v<span class="app-version">1.50.1</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -504,7 +504,7 @@
                 </div>
             </div>
 
-            <div class="info-card" id="emuResultatPrincipal" style="margin-top: 20px; text-align: center;"></div>
+            <div class="info-card" id="emuResultatPrincipal" aria-live="polite" style="margin-top: 20px; text-align: center;"></div>
             <div class="result-box">
                 <h3>📋 Détails du calcul</h3>
                 <div id="emuDetails"></div>
@@ -556,7 +556,7 @@
                 </div>
             </div>
 
-            <div class="info-card" id="emuInverseResultatPrincipal" style="margin-top: 20px; text-align: center;"></div>
+            <div class="info-card" id="emuInverseResultatPrincipal" aria-live="polite" style="margin-top: 20px; text-align: center;"></div>
             <div class="result-box">
                 <h3>📋 Détails du calcul</h3>
                 <div id="emuInverseDetails"></div>
@@ -2570,7 +2570,7 @@
             </div>
         </div>
 
-        <div class="result-box">
+        <div class="result-box" aria-live="polite">
             <h3>📊 Volume à épuiser</h3>
             <div class="result-item">
                 <span>Surface :</span>
@@ -2582,7 +2582,7 @@
             </div>
         </div>
 
-        <div class="result-box" id="resultatMateriel" style="display: none;">
+        <div class="result-box" id="resultatMateriel" aria-live="polite" style="display: none;">
             <h3>⏱️ Temps d'épuisement</h3>
             <div id="detailMateriel"></div>
             <div style="text-align: center; margin-top: 20px;">
@@ -3100,7 +3100,7 @@
             <h3 style="color: light-dark(#945800, #ff9800);">🎯 Configuration de l'explosimètre</h3>
             
             <div class="form-group">
-                <label style="color: light-dark(#945800, #ff9800); font-weight: bold; font-size: 1.1em;">Gaz d'étalonnage de l'appareil :</label>
+                <label for="gazEtalon" style="color: light-dark(#945800, #ff9800); font-weight: bold; font-size: 1.1em;">Gaz d'étalonnage de l'appareil :</label>
                 <select id="gazEtalon" onchange="updateTableauGaz()" style="font-weight: bold; font-size: 1.1em; padding: 12px;">
                     <optgroup label="Alcanes courants">
                         <option value="methane">Méthane (CH₄) - LIE 5.0%</option>
@@ -3121,11 +3121,11 @@
             </div>
 
             <div class="form-group">
-                <label style="color: light-dark(#945800, #ff9800); font-weight: bold; font-size: 1.1em;">📊 Valeur affichée par l'explosimètre (% LIE) :</label>
+                <label for="valeurExplo" style="color: light-dark(#945800, #ff9800); font-weight: bold; font-size: 1.1em;">📊 Valeur affichée par l'explosimètre (% LIE) :</label>
                 <div style="display: flex; gap: 10px; align-items: center;">
-                    <button onclick="adjustValeurExplo(-5)" style="font-size: 1.5em; padding: 15px 25px; min-height: 60px; min-width: 60px;">−</button>
+                    <button onclick="adjustValeurExplo(-5)" aria-label="Diminuer de 5" style="font-size: 1.5em; padding: 15px 25px; min-height: 60px; min-width: 60px;">−</button>
                     <input type="number" id="valeurExplo" value="20" min="0" max="100" step="1" oninput="if(gazSelectionne) calculerCorrectionGaz()" style="text-align: center; font-size: 1.8em; font-weight: bold; flex: 1; padding: 15px; border: 3px solid #FF9800;">
-                    <button onclick="adjustValeurExplo(5)" style="font-size: 1.5em; padding: 15px 25px; min-height: 60px; min-width: 60px;">+</button>
+                    <button onclick="adjustValeurExplo(5)" aria-label="Augmenter de 5" style="font-size: 1.5em; padding: 15px 25px; min-height: 60px; min-width: 60px;">+</button>
                 </div>
                 <small style="color: var(--text-secondary); display: block; margin-top: 8px; font-size: 0.95em;">
                     Valeur lue directement sur l'écran de l'explosimètre
@@ -3154,7 +3154,7 @@
             </div>
         </div>
 
-        <div id="resultCorrection" class="result-box" style="display: none; background: var(--t-s1, #FFFFFF); border: 4px solid #4CAF50; box-shadow: 0 8px 30px rgba(76, 175, 80, 0.3);">
+        <div id="resultCorrection" class="result-box" aria-live="polite" style="display: none; background: var(--t-s1, #FFFFFF); border: 4px solid #4CAF50; box-shadow: 0 8px 30px rgba(76, 175, 80, 0.3);">
             <h3 style="color: light-dark(#327334, #4caf50); font-size: 1.8em; text-align: center;">✅ Résultat de la correction</h3>
             
             <div style="background: linear-gradient(135deg, var(--t-s2, #E8F5E9) 0%, light-dark(#C8E6C9, #363d3a) 100%); padding: 30px; border-radius: 16px; text-align: center; margin: 25px 0; border: 4px solid #4CAF50; box-shadow: 0 4px 20px rgba(76, 175, 80, 0.2);">
@@ -3709,7 +3709,7 @@
         </div>
 
         <!-- RÉSULTATS PROPAGATION -->
-        <div id="feu-foret-result"></div>
+        <div id="feu-foret-result" aria-live="polite"></div>
     </div>
 
     <!-- MODULE CONVERTISSEUR -->
@@ -3775,7 +3775,7 @@
                         <div style="text-align: center; margin-bottom: 15px;">
                             <select id="unit2" onchange="convertValue()" style="width: 100%; padding: 12px; font-size: 1.2em; font-weight: bold; border-radius: 8px; border: 2px solid #4CAF50; background: var(--bg-card); color: var(--text-light); text-align: center;"></select>
                         </div>
-                        <div id="value2" style="width: 100%; padding: 20px 10px; font-size: clamp(1.5em, 5vw, 2em); font-weight: bold; text-align: center; border-radius: 12px; border: 3px solid #4CAF50; background: var(--t-s1, #FFFFFF); color: var(--t-ink, #000000); min-height: 70px; display: flex; align-items: center; justify-content: center; word-wrap: break-word; overflow-wrap: break-word; box-sizing: border-box;">
+                        <div id="value2" aria-live="polite" style="width: 100%; padding: 20px 10px; font-size: clamp(1.5em, 5vw, 2em); font-weight: bold; text-align: center; border-radius: 12px; border: 3px solid #4CAF50; background: var(--t-s1, #FFFFFF); color: var(--t-ink, #000000); min-height: 70px; display: flex; align-items: center; justify-content: center; word-wrap: break-word; overflow-wrap: break-word; box-sizing: border-box;">
                             --
                         </div>
                     </div>
@@ -4363,7 +4363,7 @@
         </div>
 
         <!-- Résultats par matériau -->
-        <div id="abaque-results"></div>
+        <div id="abaque-results" aria-live="polite"></div>
     </div>
 
     <!-- MODULE CALCUL TEMPS DE TRAJET -->
@@ -24438,7 +24438,7 @@ Je demande : ….</p>
             </div>
         </div>
         
-        <div id="lspcc-resultat" style="background: var(--t-s1, #fff); padding: 25px; border-radius: 12px; border: 2px solid #9E9E9E; text-align: center;">
+        <div id="lspcc-resultat" aria-live="polite" style="background: var(--t-s1, #fff); padding: 25px; border-radius: 12px; border: 2px solid #9E9E9E; text-align: center;">
             <p style="color: var(--t-muted, #9E9E9E); font-style: italic;">Entrez les valeurs pour calculer le facteur de chute</p>
         </div>
     </div>
@@ -25720,7 +25720,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.50.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.50.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
