@@ -2463,24 +2463,6 @@
    ]
   },
   {
-   "id": "suap-fat-vsav",
-   "titre": "Armement type VSAV (FAT)",
-   "domaine": "sap",
-   "theme": "Matériel & protocoles SDIS 34",
-   "type": "fiche",
-   "motsCles": [
-    "fat",
-    "armement",
-    "vsav",
-    "inventaire",
-    "prise de garde",
-    "kit",
-    "oxygène",
-    "bavu",
-    "sac premiers secours"
-   ]
-  },
-  {
    "id": "gdossuap-menu",
    "titre": "Présentation",
    "domaine": "sap",
