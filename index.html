@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.52.1">
+    <meta name="version" content="1.53.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.52.1</span><br>
+                        Vulcain v<span class="app-version">1.53.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -17692,6 +17692,199 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Sources : <strong>Référentiel COD 2</strong> (SDIS 42) · <strong>Mémento stagiaire COD 2 – Conduite des véhicules tout terrain</strong>, SDIS de l’Oise (SDIS 60), Groupement formation, comité pédagogique COD 3 Oise, version 01/2020 · <strong>Fiches réflexe COD 2</strong>. Documents de formation internes, fusionnés ici en une seule fiche.</p>
     </div>
 
+    <div id="cod6" class="module" style="--jsp: #0369A1;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🪜 COD 6 – Moyens élévateurs aériens (MEA)</h2>
+        <p style="text-align: center;">Formation conducteur : les engins et leur terminologie, les manœuvres et repères techniques, les missions, la conduite et la réglementation, la formation et l'habilitation, le guidage et les voies d'accès.</p>
+        <div class="rd-alerte">Fiche de synthèse construite à partir de plusieurs sources de formation et de textes réglementaires (code de la route, code du travail, normes NF/EN), recoupées et reformulées. Les éléments propres à un matériel précis (performances, inclinomètre) sont propres à chaque engin : se référer systématiquement à sa notice constructeur et à la doctrine de son SDIS.</div>
+
+        <details class="jsp-cours" open>
+            <summary>1 · Les engins et leur terminologie</summary>
+            <div class="rd-section">
+                <h3>📌 Les familles de MEA</h3>
+                <table class="rd-table">
+                    <tr><th>Famille</th><th>Norme</th><th>Définition</th></tr>
+                    <tr><td><strong>Échelles remorquables (ER)</strong></td><td>NF S 61-554</td><td>Échelle tractée, sans porteur dédié. En voie de disparition dans les parcs.</td></tr>
+                    <tr><td><strong>Échelles sur porteur (EP)</strong></td><td>NF S 61-554</td><td>Porteur automobile + échelle proprement dite, sans mouvement pivotant motorisé.</td></tr>
+                    <tr><td><strong>Échelles pivotantes à mouvements séquentiels (EPS)</strong></td><td>NF EN 14044</td><td>L'énergie des mouvements est motorisée, mais les mouvements ne s'exécutent pas simultanément (anciennement EPAS / EPSA).</td></tr>
+                    <tr><td><strong>Échelles pivotantes à mouvements combinés (EPC)</strong></td><td>XP S 61-552</td><td>Permet à l'échelier de combiner plusieurs mouvements en même temps, dans un temps déterminé (ancienne appellation : EPA).</td></tr>
+                    <tr><td><strong>Bras élévateurs aériens (BEA)</strong></td><td>NF EN 1777 / NF S 61-550/A1</td><td>Bras articulé et/ou télescopique, avec nacelle ; logique de mise en œuvre proche des EPC mais cinématique différente.</td></tr>
+                </table>
+
+                <h3>📌 Les parties constitutives</h3>
+                <p>De la base vers le sommet : le <strong>châssis</strong> porte le <strong>faux châssis</strong>, sur lequel sont fixés les <strong>stabilisateurs</strong> (poutres + semelles) et les <strong>coffres</strong> de rangement. Le <strong>portique</strong> soutient la <strong>tourelle</strong> pivotante, qui porte le <strong>poste de pilotage</strong> (ou poste de commande) et le <strong>parc échelle</strong> — la structure extensible elle-même, fixée sur un <strong>berceau</strong>.</p>
+                <p>Le <strong>panier de secours</strong> est le terme générique pour l'équipement qui permet d'embarquer une victime ou du matériel au bout du parc échelle : on parle de <strong>plateforme</strong> quand il est posé au-dessus du parc échelle, de <strong>nacelle</strong> quand il est suspendu en dessous. Son <strong>platelage</strong> est la surface sur laquelle on prend pied.</p>
+                <p>Le parc échelle est composé de plusieurs <strong>plans</strong> télescopiques (3 à 5 selon les engins) : le 1er plan (largeur minimale 45 cm) est en haut, le dernier plan — fixé au berceau et portant l'<strong>inclinomètre</strong> — est en bas. Le premier échelon est celui du bas, le dernier celui du haut. L'<strong>échelonnage</strong> consiste à faire correspondre les échelons des différents plans pour faciliter l'ascension.</p>
+
+                <h3>📌 Les mouvements et leur enchaînement</h3>
+                <table class="rd-table">
+                    <tr><th>Mouvement</th><th>Effet</th></tr>
+                    <tr><td>Stabiliser / déstabiliser</td><td>Pose ou relève les 4 semelles au sol — conditionne tous les autres mouvements</td></tr>
+                    <tr><td>Sortir / rentrer le panier</td><td>Dégage le panier de secours de son logement sur le portique</td></tr>
+                    <tr><td>Dresser / abaisser</td><td>Fait varier l'angle de dressage du parc échelle</td></tr>
+                    <tr><td>Déployer / reployer</td><td>Fait varier la longueur développée du parc échelle</td></tr>
+                    <tr><td>Pivoter à droite / à gauche</td><td>Oriente la tourelle autour de son axe</td></tr>
+                </table>
+                <p>Une mise en station respecte une logique simple : on <strong>stabilise</strong> avant tout, puis on <strong>sort le panier</strong>, on <strong>dresse</strong>, on <strong>déploie</strong> et on <strong>pivote</strong> pour atteindre l'objectif. La fin de manœuvre suit l'ordre inverse — pivoter pour se dégager, reployer, abaisser, rentrer le panier, puis seulement déstabiliser.</p>
+                <div class="rd-alerte"><strong>Le coup de poing</strong> (arrêt d'urgence) doit être actionné systématiquement dès qu'un agent évolue sur la structure, ou que le manipulateur quitte le poste de commande.</div>
+
+                <h3>📌 Repères techniques</h3>
+                <ul>
+                    <li><strong>Angle de dressage</strong> : angle, en degrés, entre l'axe du dernier plan et l'horizontale.</li>
+                    <li><strong>Hauteur (H)</strong> : distance entre le sol et le dernier échelon de la structure déployée. La <strong>hauteur maximale</strong> est obtenue à l'angle de dressage maxi et à la longueur développée maxi.</li>
+                    <li><strong>Portée théorique (P)</strong> : distance entre la projection au sol du panier de secours (ou du dernier échelon du premier plan) et le point le plus proche du polygone de sustentation.</li>
+                    <li><strong>Longueur développée (L)</strong> : distance entre le premier échelon du dernier plan et le dernier échelon du premier plan, échelle déployée.</li>
+                    <li><strong>Polygone de sustentation</strong> : figure dessinée au sol par l'appui des stabilisateurs et, selon les engins, le contact des roues avant. Sur certains MEA, l'essieu avant n'entre pas dans le calcul s'il ne touche plus le sol une fois stabilisé.</li>
+                    <li><strong>Atteinte</strong> : couple de coordonnées hauteur/portée accessible par l'engin, donné par l'inclinomètre pour une configuration donnée.</li>
+                    <li><strong>Dévers</strong> : angle entre les échelons et l'horizontale une fois l'échelle en station. Une correction automatique s'applique en général au dressage et/ou au pivotement pour maintenir les échelons parallèles au sol, dans certaines limites selon les engins.</li>
+                </ul>
+                <div class="rd-alerte">Les atteintes maximales sont normalisées par classe d'engin : à titre indicatif, un MEA 18 m atteint environ 18 m de hauteur pour 3,3 m de portée ; un MEA 24 m, environ 23,5 m pour 6 m ; un MEA 30 m, environ 28 m pour 10 m. Ces repères permettent une estimation rapide, mais seul l'inclinomètre de l'engin — propre à chaque MEA — fait foi en intervention.</div>
+
+                <h3>📌 La stabilisation</h3>
+                <p>Plus la stabilisation est large, plus la zone de travail est importante. Deux familles de stabilisateurs existent : <strong>non réglables</strong> (empattement fixe) et <strong>réglables</strong>, qui peuvent prendre différentes configurations au sol selon l'espace disponible.</p>
+                <figure class="rd-fig">
+                    <svg viewBox="0 0 400 120" role="img" aria-label="Quatre configurations de stabilisateurs : en A, en I, en X et en H">
+                        <g font-family="sans-serif" font-size="12" font-weight="600" text-anchor="middle" stroke="#1a2230" fill="#1a2230">
+                            <g transform="translate(50,55)">
+                                <rect x="-6" y="-6" width="12" height="12" fill="none" stroke-width="2"/>
+                                <line x1="-5" y1="-4" x2="-28" y2="-22" stroke-width="2.5"/>
+                                <line x1="5" y1="-4" x2="28" y2="-22" stroke-width="2.5"/>
+                                <line x1="-5" y1="4" x2="-28" y2="22" stroke-width="2.5"/>
+                                <line x1="5" y1="4" x2="28" y2="22" stroke-width="2.5"/>
+                                <text y="48" stroke="none">En A</text>
+                            </g>
+                            <g transform="translate(150,55)">
+                                <rect x="-6" y="-6" width="12" height="12" fill="none" stroke-width="2"/>
+                                <line x1="-30" y1="-22" x2="30" y2="-22" stroke-width="2.5"/>
+                                <line x1="-30" y1="22" x2="30" y2="22" stroke-width="2.5"/>
+                                <line x1="0" y1="-22" x2="0" y2="-6" stroke-width="2.5"/>
+                                <line x1="0" y1="22" x2="0" y2="6" stroke-width="2.5"/>
+                                <text y="48" stroke="none">En I</text>
+                            </g>
+                            <g transform="translate(250,55)">
+                                <rect x="-6" y="-6" width="12" height="12" fill="none" stroke-width="2"/>
+                                <line x1="-5" y1="-4" x2="-30" y2="-28" stroke-width="2.5"/>
+                                <line x1="5" y1="-4" x2="30" y2="-28" stroke-width="2.5"/>
+                                <line x1="-5" y1="4" x2="-10" y2="28" stroke-width="2.5"/>
+                                <line x1="5" y1="4" x2="10" y2="28" stroke-width="2.5"/>
+                                <text y="48" stroke="none">En X</text>
+                            </g>
+                            <g transform="translate(350,55)">
+                                <rect x="-6" y="-6" width="12" height="12" fill="none" stroke-width="2"/>
+                                <line x1="-28" y1="-24" x2="-28" y2="24" stroke-width="2.5"/>
+                                <line x1="28" y1="-24" x2="28" y2="24" stroke-width="2.5"/>
+                                <line x1="-28" y1="0" x2="-6" y2="0" stroke-width="2.5"/>
+                                <line x1="28" y1="0" x2="6" y2="0" stroke-width="2.5"/>
+                                <text y="48" stroke="none">En H</text>
+                            </g>
+                        </g>
+                    </svg>
+                    <figcaption>Les 4 configurations de stabilisation (schéma de principe, vue du dessus)</figcaption>
+                </figure>
+                <p>Quand la stabilisation diffère d'un côté à l'autre (stabilisateurs sortis au maximum d'un côté, au minimum de l'autre), l'engin adapte ses performances disponibles au pivotement en fonction du polygone de sustentation réellement obtenu.</p>
+                <p>Un dispositif de <strong>neutralisation des suspensions</strong> arrière (par crochets, par chaînes ou par câbles, selon les engins) augmente la stabilité du véhicule pendant la stabilisation ; il s'active hydrauliquement pendant la descente des stabilisateurs.</p>
+                <div class="rd-alerte"><strong>La stabilisation n'est acquise que lorsque les 4 semelles sont au sol et que le voyant de contrôle est allumé.</strong> Une fois le parc échelle sorti du portique, il n'est plus possible de modifier la stabilisation.</div>
+                <p>La <strong>zone limite d'utilisation libre</strong> est la zone où le MEA s'arrête automatiquement dès que la charge maximale autorisée pour cette configuration est atteinte ; la dépasser compromettrait la stabilité de l'engin. En <strong>mise en appui</strong> contre un obstacle, l'extrémité du parc échelle (hors panier) se positionne entre 25 et 30 cm au-dessus du point visé avant d'y appliquer une charge. <strong>Haubaner</strong> consiste à amarrer le parc échelle au sol avec des cordes (haubans) prévues à cet effet.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Les missions opérationnelles</summary>
+            <div class="rd-section">
+                <p>Selon leur modèle, leurs caractéristiques et leurs équipements, les MEA remplissent plusieurs types de missions. Du personnel extérieur à l'équipage (autres SP, forces de l'ordre, SAMU…) peut être amené à évoluer sur l'engin : il reste alors sous la responsabilité du conducteur.</p>
+                <table class="rd-table">
+                    <tr><th>Mission</th><th>Mise en œuvre</th></tr>
+                    <tr><td><strong>Sauvetage et mise en sécurité</strong></td><td>Selon le nombre de victimes et leur état : panier de secours en aller-retour, ou évacuation en empruntant le parc échelle.</td></tr>
+                    <tr><td><strong>Évacuation sanitaire par l'extérieur</strong></td><td>En appui d'un VSAV ou d'une équipe médicale : victime conditionnée à l'horizontale (centre de gravité bas, gestion de l'appréhension du vide). Le poids de la victime et du matériel associé (MID, O2…) est pris en compte dès la reconnaissance.</td></tr>
+                    <tr><td><strong>Attaque du feu par l'extérieur</strong></td><td>Dominer le feu, faire la part du feu, servir de prise d'eau par l'extérieur, créer un exutoire.</td></tr>
+                    <tr><td><strong>Appui aux missions diverses</strong></td><td>Destruction de nids d'hyménoptères en hauteur, éclairage de zone, bâchage de toiture.</td></tr>
+                </table>
+                <div class="rd-alerte">
+                    <strong>Ce qu'un MEA n'est pas :</strong> un engin de levage de charges — sans agrément ni équipement spécifique, il ne peut ni lever ni déplacer de charge comme le ferait une grue, et ne doit pas servir à dégager une victime coincée sous des décombres. Les exercices ou démonstrations acrobatiques sur l'engin, ou prenant appui dessus, sont interdits.
+                </div>
+                <p>Seuls le conducteur ou un chef d'agrès formé manipulent les commandes du MEA — y compris si un médecin ou un autre intervenant a besoin d'y accéder, c'est l'équipage habilité qui actionne l'engin.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Conduite et responsabilités</summary>
+            <div class="rd-section">
+                <h3>📌 Conduite et code de la route</h3>
+                <ul>
+                    <li>Pour bénéficier de la priorité de passage, un véhicule du SIS doit faire usage <strong>simultanément</strong> du gyrophare, du deux-tons et des feux de croisement.</li>
+                    <li><strong>La priorité n'est pas un droit absolu</strong> : la jurisprudence retient régulièrement la responsabilité d'un conducteur prioritaire qui a méconnu les règles élémentaires de prudence. En intervention urgente, le conducteur doit rester maître de son véhicule à tout instant.</li>
+                    <li>Interdiction de forcer le passage, de changer de direction sans clignotant, de franchir un sens interdit.</li>
+                    <li>Les limitations de vitesse ne s'imposent pas en mission urgente et nécessaire, sous réserve explicite de ne pas mettre en danger les autres usagers — en cas d'accident, la compatibilité de la vitesse avec la sécurité d'autrui est examinée même si l'urgence est avérée. <strong>Le retour d'intervention se fait aux vitesses normales.</strong></li>
+                    <li>Les limitations de tonnage ne concernent pas les engins de secours (ce ne sont pas des véhicules de transport de marchandises), sauf arrêté municipal ou préfectoral contraire.</li>
+                    <li>Le MEA impose une conduite adaptée à ses spécificités : gabarit important, centre de gravité élevé, porte-à-faux avant marqué, rapport poids/puissance conséquent.</li>
+                </ul>
+
+                <h3>📌 Les trois niveaux de responsabilité</h3>
+                <table class="rd-table">
+                    <tr><th>Qui</th><th>Responsabilité engagée</th></tr>
+                    <tr><td>Le conducteur</td><td>Responsabilité juridique individuelle</td></tr>
+                    <tr><td>Le chef d'agrès</td><td>Responsabilité de la mission</td></tr>
+                    <tr><td>Le service d'incendie et de secours</td><td>Responsabilité des dommages causés aux tiers</td></tr>
+                </table>
+                <p>En cas d'accident, l'enquête vérifie notamment que le conducteur disposait d'un permis valide pour la catégorie du véhicule, qu'il était en mission urgente, et que les avertisseurs (deux-tons, gyrophare, feux de croisement) étaient actionnés à temps pour laisser les autres usagers dégager le passage. La mise en danger de la vie d'autrui peut à elle seule justifier une plainte, y compris de la part de collègues blessés dans l'engagement ; des sanctions disciplinaires peuvent également être engagées par l'autorité d'emploi.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Formation, habilitation et équipements de protection</summary>
+            <div class="rd-section">
+                <h3>📌 Une habilitation obligatoire, engin par engin</h3>
+                <p>Les moyens élévateurs à mouvements combinés ou séquentiels équipés d'une nacelle sont juridiquement des plates-formes élévatrices mobiles de personnes : leur conduite est réservée à des agents ayant reçu une formation adéquate, régulièrement actualisée (code du travail), et soumise à une <strong>autorisation de conduite</strong> délivrée par l'autorité d'emploi pour chaque type d'engin à utiliser — y compris un engin affecté à titre provisoire ou un MEA de réserve.</p>
+                <p>L'autorisation repose sur une évaluation certificative qui combine :</p>
+                <ol>
+                    <li>un examen d'aptitude médicale réalisé par le médecin du travail ;</li>
+                    <li>un contrôle des connaissances et savoir-faire pour la conduite en sécurité de l'engin ;</li>
+                    <li>une connaissance des lieux et des consignes propres au site d'intervention.</li>
+                </ol>
+                <p>La formation se construit en deux volets : un tronc commun d'échelier, valable pour l'ensemble des moyens élévateurs articulés, puis une formation spécifique au matériel réellement utilisé — intégrant la formation constructeur, la documentation technique et la notice d'utilisation propres à l'engin. La traçabilité des formations suivies conditionne l'inscription sur une liste d'aptitude ; seuls les agents inscrits peuvent être engagés comme conducteur échelier, sous réserve d'un maintien des acquis à jour.</p>
+
+                <h3>📌 Équipements de protection individuelle</h3>
+                <ul>
+                    <li>Tout agent évoluant sur le parc échelle ou posté en plateforme/nacelle est équipé, en plus de sa tenue d'intervention de base, d'un <strong>casque</strong>, de <strong>gants</strong> et du <strong>kit squad</strong>.</li>
+                    <li>Le personnel présent sur le parc ou la plateforme est obligatoirement <strong>amarré</strong> (ceinturon + longe) aux points d'ancrage prévus — y compris en cas d'arrêt nécessaire en cours d'ascension sur le parc échelle.</li>
+                    <li>C'est le <strong>conducteur du MEA</strong> qui autorise l'accès au parc échelle, après avoir obligatoirement enclenché l'arrêt d'urgence (coup de poing).</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Guidage, communication et voies d'accès</summary>
+            <div class="rd-section">
+                <h3>📌 Communiquer avec le conducteur</h3>
+                <p>La communication entre le chef d'agrès et le conducteur du MEA repose en priorité sur la <strong>radio</strong>, avec un oreillette/micro intégré aux EPI. Les systèmes de communication embarqués sur certains MEA viennent en complément. À défaut, ou en renfort, des <strong>gestes conventionnels</strong> permettent de guider l'engin.</p>
+                <table class="rd-table">
+                    <tr><th>Phase</th><th>Gestes utilisés</th></tr>
+                    <tr><td>Placement de l'engin</td><td>Diriger à droite / à gauche, stopper</td></tr>
+                    <tr><td>Approche de l'objectif</td><td>Dresser / abaisser, pivoter à droite / à gauche, déployer / reployer, indiquer une approche horizontale ou verticale</td></tr>
+                </table>
+
+                <h3>📌 Les voies destinées aux engins de secours</h3>
+                <table class="rd-table">
+                    <tr><th>Caractéristique</th><th>Voie engins</th><th>Voie échelles</th></tr>
+                    <tr><td>Largeur</td><td>8 m mini (dont 3 m utilisables)</td><td>4 m mini (variable selon la catégorie d'ERP et en impasse)</td></tr>
+                    <tr><td>Longueur</td><td>—</td><td>10 m mini</td></tr>
+                    <tr><td>Pente</td><td>15 % maxi</td><td>10 % maxi</td></tr>
+                    <tr><td>Force portante</td><td>16 t mini</td><td>16 t mini</td></tr>
+                    <tr><td>Hauteur libre</td><td>3,5 m mini</td><td>3,5 m mini</td></tr>
+                    <tr><td>Résistance au poinçonnement</td><td>80 N/cm² sur 0,20 m² mini</td><td>100 kN sur un disque de 0,20 m de diamètre</td></tr>
+                    <tr><td>Rayon intérieur</td><td>11 m mini (surlargeur si R &lt; 50 m : 15/R)</td><td>—</td></tr>
+                </table>
+                <p>La voie échelles est une portion de voie engins dédiée à la mise en station d'un MEA ; si elle n'est pas directement sur la voie publique, elle doit lui être raccordée par une voie engins, et porter en permanence un panneau indiquant le tonnage limite autorisé.</p>
+                <p>Une voie échelles <strong>perpendiculaire</strong> à la façade doit se terminer à 1 m maxi de celle-ci, pour une longueur de 10 m mini. Une voie <strong>parallèle</strong> doit être distante de la façade de 1 à 8 m pour une échelle de 30 m, réduit à 6 m pour 24 m et à 3 m pour 18 m.</p>
+                <p>À défaut de voie goudronnée, un <strong>espace libre</strong> (cour, jardin, parc) peut être aménagé et traité en voie engins ou en voie échelles selon la hauteur du plancher bas du dernier niveau du bâtiment desservi. Au-delà de 8 m de plancher bas, il doit répondre aux conditions de voie engins/échelles, mesurer au moins 8 m dans sa plus petite dimension, rester dégagé de tout obstacle, et ses issues doivent se trouver à moins de 60 m d'une voie utilisable par les engins (accès large de 3 m mini, réduit à 1,80 m si le plancher bas du dernier niveau est inférieur à 8 m).</p>
+                <p>Chaque bâtiment recevant du public doit disposer, selon sa hauteur et son effectif, d'une ou plusieurs <strong>façades accessibles</strong> desservies par une voie engins, une voie échelles ou un espace libre. Une façade accessible dessert tous les niveaux recevant du public par des <strong>baies accessibles</strong> (0,90 × 1,30 m mini), ouvrables de l'extérieur et repérables depuis la voie publique (marquage, souvent un point rouge).</p>
+                <div class="rd-alerte">Dans tous les cas, la <strong>reconnaissance et la connaissance du secteur</strong> restent le facteur décisif pour une mise en station rapide et sûre.</div>
+            </div>
+        </details>
+
+        <p class="rd-source">📚 Synthèse de documents de formation conducteur MEA (COD 6), de textes réglementaires (code de la route, code du travail) et des normes NF S 61-554, NF EN 14044, XP S 61-552, NF EN 1777 et NF S 61-550/A1. Reformulée et recoupée ; les performances précises restent propres à chaque engin — se référer à sa notice constructeur et à son inclinomètre.</p>
+    </div>
+
     <div id="cod1" class="module" style="--jsp: #0E7490;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
@@ -25826,7 +26019,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.52.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.53.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
