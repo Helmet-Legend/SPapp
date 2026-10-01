@@ -42,7 +42,8 @@
     "Gaz",
     "Électricité",
     "Périmètres",
-    "NRBC"
+    "NRBC",
+    "Opérations diverses"
    ]
   },
   {
@@ -4582,6 +4583,24 @@
    "theme": "Gaz",
    "type": "menu",
    "motsCles": []
+  },
+  {
+   "id": "ascenseurs",
+   "titre": "Personne bloquée dans un ascenseur",
+   "domaine": "risques",
+   "theme": "Opérations diverses",
+   "type": "fiche",
+   "motsCles": [
+    "ascenseur",
+    "cabine bloquée",
+    "gaine",
+    "machinerie",
+    "contrepoids",
+    "SECURITE",
+    "technicien",
+    "parachutes",
+    "limiteur de vitesse"
+   ]
   }
  ]
 }
