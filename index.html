@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.50.2">
+    <meta name="version" content="1.51.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.50.2</span><br>
+                        Vulcain v<span class="app-version">1.51.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
                     </p>
@@ -2662,6 +2662,7 @@
     <!-- Module Lignes Électriques -->
     <div id="electrique" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>⚡ Identification Lignes Électriques</h2>
 
         <div class="rd-section">
@@ -3294,6 +3295,7 @@
     <!-- Module Bouteilles de Gaz -->
     <div id="bouteilles" class="module">
         <button class="back-btn" onclick="showModule('bouteilles-gaz-menu')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>💨 Bouteilles de Gaz</h2>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
@@ -4953,6 +4955,7 @@
 
     <div id="deci-34" class="module">
         <button class="back-btn" onclick="showModule('rdmi-menu')">← Retour RDMI</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>💧 DECI de l'Hérault (RDDECI)</h2>
         <p style="text-align: center;">Règlement départemental de défense extérieure contre l'incendie de l'Hérault – arrêté n° 2017-01-645 (version 2017). Les couleurs des poteaux, leurs débits et les niveaux de risque sont sur la fiche <button onclick="showModule('rdmi-pei')">Points d'eau incendie (PEI)</button>.</p>
 
@@ -5574,6 +5577,7 @@
     <!-- Module RDMI - Zones -->
     <div id="rdmi-zones" class="module">
         <button class="back-btn" onclick="showModule('rdmi-menu')">← Retour RDMI</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2 style="color: light-dark(#c81e1a, #ee7b79); border-bottom: 3px solid #E53935;">🚧 Zonage Opérationnel</h2>
         
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
@@ -5749,7 +5753,6 @@
             <div class="rd-tuiles">
                 <button onclick="showModule('suap-dgt7')"><b>🫀 DGT7</b><span>Défibrillateur multiparamètres Defigard Touch 7</span></button>
                 <button onclick="showModule('suap-infectieux')"><b>🦠 Risque infectieux</b><span>FOD 13 : kit, protections, fin d'intervention</span></button>
-                <button onclick="showModule('suap-fat-vsav')"><b>🚑 Armement VSAV</b><span>Fiche d'armement type (FAT)</span></button>
             </div>
         </div>
 
@@ -5776,6 +5779,7 @@
     <!-- ============ PSE – Références techniques nationales (DGSCGC, 2026) ============ -->
     <div id="pse-menu" class="module" style="--jsp: #1565C0;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>📘 PSE 1 et PSE 2 – Références techniques nationales</h2>
         <p style="text-align: center;">Premiers secours en équipe, édition <strong>2026</strong> (DGSCGC) : les règles de l'art nationales, fiche par fiche, pour réviser et vérifier un geste.</p>
         <div class="rd-alerte">Sur intervention, ce sont les <strong>protocoles du SDIS 34</strong> (RT SUAP, fiches opérationnelles) et les <strong>consignes du médecin régulateur</strong> qui s'appliquent. Les gestes à visée diagnostique (glycémie, ECG…) sont réservés aux personnes habilitées.</div>
@@ -5826,7 +5830,7 @@
             <h3>Voir aussi</h3>
             <ul>
                 <li>Protocoles du SDIS 34 → <button onclick="showModule('suap-menu')">🩺 RT SUAP 2025</button></li>
-                <li>Matériel → <button onclick="showModule('suap-dgt7')">🫀 DGT7</button> <button onclick="showModule('suap-fat-vsav')">🚑 Armement VSAV</button> <button onclick="showModule('suap-infectieux')">🦠 Risque infectieux</button></li>
+                <li>Matériel → <button onclick="showModule('suap-dgt7')">🫀 DGT7</button> <button onclick="showModule('suap-infectieux')">🦠 Risque infectieux</button></li>
             </ul>
             <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/sap/PSE-RTN-2026.pdf" target="_blank" rel="noopener">Référentiel complet (PDF, 17 Mo, 389 pages)</a></p>
         </div>
@@ -8140,6 +8144,7 @@
     <!-- ============ SAP – Matériel & protocoles SDIS 34 ============ -->
     <div id="suap-dgt7" class="module">
         <button class="back-btn" onclick="showModule('suap-menu')">← Retour SUAP</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🫀 DGT7 – Défibrillateur multiparamètres (Defigard Touch 7)</h2>
         <p style="text-align: center;">Notice simplifiée du SDIS 34 (V3) – références RT SUAP : FT 01 M 02, FT 01 M 03, FT 04 U 01.</p>
 
@@ -8222,6 +8227,7 @@
 
     <div id="suap-infectieux" class="module">
         <button class="back-btn" onclick="showModule('suap-menu')">← Retour SUAP</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🦠 Risque infectieux (FOD n° 13)</h2>
         <p style="text-align: center;">Fiche opérationnelle départementale n° 13 – SDIS 34 (04/2019).</p>
 
@@ -8264,64 +8270,9 @@
         <p class="rd-source">📚 Source : <strong>FOD n° 13 « Risque infectieux » – SDIS 34</strong> (04/2019), validée par le directeur. Reproduit avec l'autorisation du SDIS de l'Hérault.</p>
     </div>
 
-    <div id="suap-fat-vsav" class="module" style="--jsp: #0E9A86;">
-        <button class="back-btn" onclick="showModule('suap-menu')">← Retour SUAP</button>
-        <h2>🚑 Armement type du VSAV (FAT)</h2>
-        <p style="text-align: center;">Fiche d'armement type VSAV – SDIS 34 (06/2019, mise à jour risque infectieux). Utile pour la vérification à la prise de garde et le reconditionnement.</p>
-
-        <details class="jsp-cours">
-            <summary>Cabine, protection, éclairage</summary>
-            <ul>
-                <li><strong>Lot de bord</strong> : inventaire FAT, atlas, carte carburant, lot du constructeur (2 cales de roue, cric, triangles, chaînes).</li>
-                <li><strong>Protection</strong> : 4 gilets haute visibilité, 4 lots individuels NRBC, 1 détecteur de monoxyde de carbone (fixé sur le sac de premiers secours).</li>
-                <li><strong>Éclairage</strong> : 1 projecteur à main, 2 projecteurs de travail 12 V.</li>
-                <li><strong>Cabine</strong> : abaisse-borne, clés, solution hydroalcoolique, plaquette chef d'agrès, plan de commune, fiches d'admission et d'intervention (CA, ISP, MSP), formulaires de soins psychiatriques (SPDT, SPDRE, péril imminent).</li>
-                <li><strong>Divers</strong> : coupe-ceinture, petite pince ou OFD, extincteur poudre ABC 9 kg.</li>
-            </ul>
-        </details>
-
-        <details class="jsp-cours">
-            <summary>Kits et matériel de brancardage</summary>
-            <ul>
-                <li><strong>Kits</strong> : accouchement, brûlé, membre sectionné, <strong>risque infectieux</strong>, trousse hémorragie.</li>
-                <li><strong>Brancardage et immobilisation</strong> : brancard, brancard cuillère, chaise portoir, portoir souple, plan dur avec cale-tête et sangle araignée, matelas coquille avec pompe, 3 attelles à dépression, attelle cervico-thoracique, colliers cervicaux (5 adultes, 3 enfants), 4 sangles, 4 draps.</li>
-            </ul>
-        </details>
-
-        <details class="jsp-cours">
-            <summary>Soins, surveillance et hygiène</summary>
-            <ul>
-                <li><strong>Surveillance</strong> : appareil tension/saturation, <strong>DSA</strong> (2 électrodes adultes, 1 enfant, 2 rasoirs).</li>
-                <li><strong>Pansements</strong> : bandes extensibles (5, 10 et 15 cm), compresses stériles et non stériles, champs stériles, pansements absorbants, sparadrap, ciseaux type Gesco, tube de Flammazine.</li>
-                <li><strong>Hygiène</strong> : gants à usage unique, lunettes, masques chirurgicaux, solution hydroalcoolique, spray désinfectant, sacs DASRI, sacs à vomi, haricots, flacon de Dakin (AES), couvertures de survie et couverture bactériostatique.</li>
-                <li><strong>Matériel de perfusion</strong> (utilisé par le personnel de santé) : cathéters, perfuseurs, solutés, seringues, garrot, boîte à aiguilles.</li>
-            </ul>
-        </details>
-
-        <details class="jsp-cours">
-            <summary>Ventilation et oxygène</summary>
-            <ul>
-                <li><strong>Oxygène</strong> : bouteilles B05 (5 L) et B15 (15 L), 2 débitlitres muraux, tubulures, masques haute concentration adulte (3) et enfant (2).</li>
-                <li><strong>Aspiration</strong> : aspirateur de mucosités électrique et manuel, canules souples et rigide, poches et tuyaux d'aspiration.</li>
-                <li><strong>Ventilation</strong> : BAVU adulte, enfant et pédiatrique avec réserve O₂ et filtres antibactériens, masques et canules de Guedel de toutes tailles.</li>
-                <li><strong>Sac oxygénothérapie</strong> : bouteille B05, gants, masques haute concentration adulte et enfant, poches ventilation adulte, enfant et pédiatrique.</li>
-            </ul>
-        </details>
-
-        <details class="jsp-cours">
-            <summary>Sac de premiers secours</summary>
-            <ul>
-                <li><strong>Poches extérieures</strong> : drap ; glycémie (lecteur, bandelettes, lancettes), ciseaux, lampe, solution hydroalcoolique, récipient à aiguilles.</li>
-                <li><strong>Poche intercalaire</strong> : 2 couvertures de survie, gants, thermomètre hypothermie.</li>
-                <li><strong>Poches 1 à 6</strong> : tensiomètre manuel et 3 brassards (adulte, enfant, nourrisson), stéthoscope ; compresses et sparadrap ; haricot, sac DASRI, sac à vomi ; pansements absorbants et bandes ; sérum physiologique, antiseptique, alcool pour DSA, Dakin.</li>
-            </ul>
-        </details>
-
-        <p class="rd-source">📚 Source : <strong>Fiche d'armement type VSAV – SDIS 34</strong> (06/2019), validée par le directeur. Liste résumée : se référer à l'inventaire à jour du véhicule. Reproduit avec l'autorisation du SDIS de l'Hérault.</p>
-    </div>
-
     <div id="gdossuap-menu" class="module" style="--jsp: #00897B;">
         <button class="back-btn" onclick="showModule('suap-menu')">← Retour SUAP</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🩺 GDO Secours et soins d'urgence aux personnes – 2022</h2>
         <p style="text-align: center;">Guide de doctrine opérationnelle DGSCGC du <strong>novembre 2022 (V1.1)</strong> : doctrine du SSUAP, sécurité des intervenants, construction et conduite des opérations, situations particulières, nombreuses victimes.</p>
 
@@ -8359,7 +8310,6 @@
                 <button class="sal-lien" onclick="showModule('suap-hemorragies')">🩸 Hémorragies</button>
                 <button class="sal-lien" onclick="showModule('suap-infectieux')">🦠 Risque infectieux (FOD 13)</button>
                 <button class="sal-lien" onclick="showModule('suap-dgt7')">📈 DGT7 – Defigard Touch 7</button>
-                <button class="sal-lien" onclick="showModule('suap-fat-vsav')">🚑 Armement type VSAV</button>
             </p>
         </div>
 
@@ -8381,6 +8331,7 @@
 
     <div id="gdossuap-cadre" class="module" style="--jsp: #00897B;">
         <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>📚 Cadre général du SSUAP</h2>
 
         <div class="rd-section">
@@ -8433,6 +8384,7 @@
 
     <div id="gdossuap-victime" class="module" style="--jsp: #00897B;">
         <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🧍 La victime</h2>
 
         <div class="rd-section">
@@ -8491,6 +8443,7 @@
 
     <div id="gdossuap-risques" class="module" style="--jsp: #00897B;">
         <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>⚠️ Dangers, risques & sécurité des intervenants</h2>
 
         <div class="rd-section">
@@ -8534,6 +8487,7 @@
 
     <div id="gdossuap-reponse" class="module" style="--jsp: #00897B;">
         <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>📞 Prise d'appel & engagement des secours</h2>
 
         <div class="rd-section">
@@ -8573,6 +8527,7 @@
 
     <div id="gdossuap-conduite" class="module" style="--jsp: #00897B;">
         <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🧭 Conduite des opérations</h2>
 
         <div class="rd-section">
@@ -8610,6 +8565,7 @@
 
     <div id="gdossuap-situations" class="module" style="--jsp: #00897B;">
         <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🧩 Situations particulières</h2>
         <p style="text-align: center;">13 situations identifiées par le GDO, nécessitant une attention ou une conduite à tenir adaptée.</p>
 
@@ -8679,6 +8635,7 @@
 
     <div id="gdossuap-novi" class="module" style="--jsp: #00897B;">
         <button class="back-btn" onclick="showModule('gdossuap-menu')">← GDO SSUAP</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🚨 Interventions face à de nombreuses victimes (NOVI)</h2>
 
         <div class="rd-section">
@@ -8817,6 +8774,7 @@
     <!-- Module SUAP - RCP -->
     <div id="suap-rcp" class="module">
         <button class="back-btn" onclick="showModule('suap-menu')">← Retour SUAP</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2 style="color: light-dark(#c02929, #e47f7f); border-bottom: 3px solid #D32F2F;">❤️ RCP selon l'Âge</h2>
         
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px; overflow-x: auto;">
@@ -9659,6 +9617,7 @@
 
     <div id="sal-menu" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🤿 Plongée – Scaphandrier autonome léger (SAL)</h2>
         <p style="text-align: center;">Interventions, secours et sécurité en milieu <strong>subaquatique et hyperbare</strong> : sous la surface, à plus de 100 hPa (environ 1 m d'eau). Le sauvetage <strong>en surface</strong> relève d'une autre spécialité, le <button class="sal-lien" onclick="showModule('sav-menu')">🛟 sauvetage aquatique (SAV)</button>.</p>
 
@@ -9720,6 +9679,7 @@
 
     <div id="sal-niveaux" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🎓 Emplois, qualifications et habilitations</h2>
 
         <div class="rd-section">
@@ -9777,6 +9737,7 @@
 
     <div id="sal-competences" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🎯 Activités et compétences</h2>
 
         <details class="jsp-cours" open>
@@ -9836,6 +9797,7 @@
 
     <div id="sal-missions" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🆘 Missions</h2>
         <p style="text-align: center;">Toujours caractérisées par l'<strong>urgence</strong> : sauvegarde des personnes et des biens, protection de l'environnement.</p>
 
@@ -9880,6 +9842,7 @@
 
     <div id="sal-organisation" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>👥 Unité et encadrement</h2>
 
         <div class="rd-section">
@@ -9936,6 +9899,7 @@
 
     <div id="sal-methodes" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>⚗️ Méthodes de plongée</h2>
         <div class="rd-section">
             <table class="rd-table">
@@ -9969,6 +9933,7 @@
 
     <div id="sal-preparation" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🗺️ Préparer et planifier une plongée</h2>
         <div class="rd-alerte">Règle d'or : <strong>annuler ou écourter</strong> une plongée reste toujours une option, même une fois sur le site. Aucune première défaillance ne doit provoquer d'accident grave.</div>
 
@@ -10037,6 +10002,7 @@
 
     <div id="sal-deroulement" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>⬇️ Déroulement d'une plongée</h2>
 
         <div class="rd-section">
@@ -10116,6 +10082,7 @@
 
     <div id="sal-securite" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🦺 Limites et sécurité</h2>
 
         <div class="rd-section">
@@ -10164,6 +10131,7 @@
 
     <div id="sal-tables" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>📊 Tables MT 2012 et règles de décompression</h2>
         <div class="rd-alerte">Les plongeurs de la sécurité civile utilisent <strong>exclusivement les tables du ministère du Travail « MT 2012 » (arrêté du 30/10/2012)</strong>, en entraînement, en formation et en opération. Les tables IANTD peuvent servir pour le Trimix.</div>
 
@@ -10341,6 +10309,7 @@
 
     <div id="sal-rattrapage" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🔁 Plongée non conforme : procédures de rattrapage</h2>
         <div class="rd-alerte">Ces procédures ne valent qu'<strong>en l'absence de tout signe clinique</strong>. Au moindre signe : <button class="sal-lien" onclick="showModule('sal-accidents')">🚨 accident de plongée</button>. Ensuite : <strong>repos 12 h près d'un centre hyperbare</strong>, <strong>aucune plongée successive</strong>, surveillance de toute la palanquée.</div>
 
@@ -10438,6 +10407,7 @@
 
     <div id="sal-accidents" class="module" style="--jsp: #C62828;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🚨 Accident de plongée</h2>
         <div class="rd-alerte"><strong>Tout signe dans les 24 h suivant une plongée est un accident de plongée jusqu'à preuve du contraire.</strong> Toute plongée non conforme sans procédure de rattrapage se traite comme un accident, même sans signe. Signes fluctuants ou disparus : trompeurs. <strong>La recompression par réimmersion est interdite en France.</strong></div>
 
@@ -10512,6 +10482,7 @@
 
     <div id="sal-materiel" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🧰 Matériels et équipements</h2>
 
         <div class="rd-section">
@@ -10572,6 +10543,7 @@
 
     <div id="sal-formations" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>📚 Formations</h2>
 
         <div class="rd-section">
@@ -10641,6 +10613,7 @@
 
     <div id="sal-fma" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>✅ Aptitude annuelle et documents</h2>
         <div class="rd-alerte">Les qualifications font l'objet d'une <strong>habilitation annuelle</strong>. Seuls les plongeurs inscrits sur la <strong>liste d'aptitude opérationnelle départementale</strong> sont engagés en intervention.</div>
 
@@ -10713,6 +10686,7 @@
 
     <div id="sav-menu" class="module" style="--jsp: #00838F;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🛟 Sauvetage aquatique (SAV)</h2>
         <p style="text-align: center;">Porter secours à des victimes en détresse <strong>à la surface de l'eau</strong>, en eaux intérieures ou en mer (bande des 300 m). Ce qui se passe <strong>sous la surface</strong> relève de la <button class="sal-lien" onclick="showModule('sal-menu')">🤿 plongée (SAL)</button>.</p>
 
@@ -10749,6 +10723,7 @@
 
     <div id="sav-securite" class="module" style="--jsp: #00838F;">
         <button class="back-btn" onclick="showModule('sav-menu')">← Sauvetage aquatique</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🦺 Sécurité et aptitude (SAV)</h2>
 
         <div class="rd-section">
@@ -10795,6 +10770,7 @@
 
     <div id="sav-formation" class="module" style="--jsp: #00838F;">
         <button class="back-btn" onclick="showModule('sav-menu')">← Sauvetage aquatique</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>📚 Formations SAV</h2>
 
         <div class="rd-section">
@@ -12056,6 +12032,7 @@
     <!-- ============ RDEB – SDIS 34 (v2, avril 2026) : engagement des binômes ============ -->
     <div id="rdeb-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🫁 RDEB – Engagement des binômes</h2>
         <p style="text-align: center;">Référentiel départemental <strong>Engagement Des Binômes</strong> – engagement en milieu vicié, lutte contre l'incendie en milieu urbain</p>
 
@@ -12110,6 +12087,7 @@
 
     <div id="rdeb-ari" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🫁 L'ARI-CO</h2>
         <div class="rd-section">
             <p>Un appareil de protection respiratoire est un <strong>EPI de catégorie III</strong> (risques graves à effets irréversibles ou mortels).</p>
@@ -12186,6 +12164,7 @@
 
     <div id="rdeb-preparation" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>💪 Contraintes & préparation</h2>
 
         <div class="rd-section">
@@ -12269,6 +12248,7 @@
 
     <div id="rdeb-ligne-vie" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🧵 Ligne de vie & TTH 900</h2>
 
         <div class="rd-section">
@@ -12325,6 +12305,7 @@
 
     <div id="rdeb-controle" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>✅ Contrôle croisé & codes de communication</h2>
 
         <div class="rd-section">
@@ -12370,6 +12351,7 @@
 
     <div id="rdeb-autonomie" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>⏱️ Autonomie, enregistrement & contrôle</h2>
 
         <div class="rd-section">
@@ -12490,6 +12472,7 @@
 
     <div id="rdeb-lecture" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🔎 Zonage, lecture du feu & radio</h2>
 
         <div class="rd-section">
@@ -12542,6 +12525,7 @@
 
     <div id="rdeb-engagement" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🔥 Engagement</h2>
 
         <div class="rd-section">
@@ -12645,6 +12629,7 @@
 
     <div id="rdeb-recherche" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🔦 Recherche & retour d'engagement</h2>
 
         <div class="rd-section">
@@ -12709,6 +12694,7 @@ Je fais : extinction.</p>
 
     <div id="rdeb-reengagement" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🔄 Réengagement & récupération</h2>
 
         <div class="rd-section">
@@ -12758,6 +12744,7 @@ Je fais : extinction.</p>
 
     <div id="rdeb-apres" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🧼 Après l'engagement</h2>
 
         <div class="rd-section">
@@ -12835,6 +12822,7 @@ Je fais : extinction.</p>
 
     <div id="rdeb-annexes" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← Retour RDEB</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>📎 Annexes : parkings, CO, H₂S, ascenseurs</h2>
 
         <div class="rd-section">
@@ -12899,6 +12887,7 @@ Je fais : extinction.</p>
     <!-- Étiquettes de danger (RDEB annexes 5.6-5.7) -->
     <div id="etiquettes-danger" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>⚠️ Étiquettes de danger (CLP & ADR)</h2>
 
         <div class="rd-section">
@@ -12950,6 +12939,7 @@ Je fais : extinction.</p>
     <!-- ============ NRBC – Point de regroupement des victimes (SGDSN 2021) ============ -->
     <div id="nrbc-prv" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>☢️ NRBC / CMIC – Risques chimiques, biologiques</h2>
         <p style="text-align: center;">Doctrine des <strong>cellules mobiles d'intervention chimique et biologique</strong> (CMIC — guide national de référence « Risques chimiques et biologiques », DDSC, mars 2006) et guide de mise en œuvre d'un <strong>point de regroupement des victimes</strong> (PRV) lors d'un événement NRBC (SGDSN, validé le 8 mars 2021).</p>
         <div class="rd-alerte">Cette fiche couvre l'<strong>organisation opérationnelle</strong> (missions, zonage, méthodologie CMIC, organisation du PRV, moyens, antidotes) — elle ne remplace pas les fiches ORSEC NRBC départementales ni la formation RCH1 à RCH4 requise pour intervenir.</div>
@@ -13144,6 +13134,7 @@ Je fais : extinction.</p>
     <!-- ============ FDF – GDO Feux de forêts et d'espaces naturels (DGSCGC 2021) ============ -->
     <div id="gdo-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🌲 GDO – Doctrine opérationnelle FDF</h2>
         <p style="text-align: center;">Guide de doctrine opérationnelle <strong>« Feux de forêts et d'espaces naturels »</strong> – DGSCGC, 1<sup>re</sup> édition, février 2021</p>
 
@@ -13179,6 +13170,7 @@ Je fais : extinction.</p>
 
     <div id="gdo-milieux" class="module">
         <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🌳 Milieux et végétation</h2>
 
         <div class="rd-section">
@@ -13259,6 +13251,7 @@ Je fais : extinction.</p>
 
     <div id="gdo-meteo" class="module">
         <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🌬️ Relief, météo et indices de danger</h2>
 
         <div class="rd-section">
@@ -13345,6 +13338,7 @@ Je fais : extinction.</p>
 
     <div id="gdo-acteurs" class="module">
         <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🤝 Les acteurs</h2>
 
         <div class="rd-section">
@@ -13381,6 +13375,7 @@ Je fais : extinction.</p>
 
     <div id="gdo-comportement" class="module">
         <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🔥 Comportement du feu</h2>
 
         <div class="rd-section">
@@ -13467,6 +13462,7 @@ Je fais : extinction.</p>
 
     <div id="gdo-ege" class="module">
         <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>⚠️ Embrasement généralisé éclair (EGE)</h2>
 
         <div class="rd-section">
@@ -13503,6 +13499,7 @@ Je fais : extinction.</p>
 
     <div id="gdo-securite" class="module">
         <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🦺 Sécurité des intervenants</h2>
 
         <div class="rd-section">
@@ -13564,6 +13561,7 @@ Je fais : extinction.</p>
 
     <div id="gdo-reponse" class="module">
         <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🎯 Réponse opérationnelle</h2>
 
         <div class="rd-section">
@@ -13647,6 +13645,7 @@ Je fais : extinction.</p>
 
     <div id="gdo-grands-feux" class="module">
         <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🚁 Feux de grande envergure</h2>
 
         <div class="rd-section">
@@ -13715,6 +13714,7 @@ Je fais : extinction.</p>
 
     <div id="gdo-lexique" class="module">
         <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>📖 Abréviations et lexique FDF</h2>
 
         <div class="rd-section">
@@ -13823,6 +13823,7 @@ Je fais : extinction.</p>
     <!-- ============ FDF – GTO Feux de forêts et d'espaces naturels (DGSCGC 2021) ============ -->
     <div id="gto-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🌲 GTO – Techniques opérationnelles FDF</h2>
         <p style="text-align: center;">Guide de techniques opérationnelles <strong>« Lutte contre les feux de forêts et d'espaces naturels »</strong> – DGSCGC, 1<sup>re</sup> édition, février 2021</p>
 
@@ -13856,6 +13857,7 @@ Je fais : extinction.</p>
 
     <div id="gto-moyens" class="module">
         <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🚒 Matériels et moyens de lutte</h2>
 
         <div class="rd-section">
@@ -13941,6 +13943,7 @@ Je fais : extinction.</p>
 
     <div id="gto-securite" class="module">
         <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🛡️ Sécurité collective et individuelle</h2>
 
         <div class="rd-section">
@@ -14040,6 +14043,7 @@ Je fais : extinction.</p>
 
     <div id="gto-etablissements" class="module">
         <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🧯 Établissements du CCF</h2>
 
         <div class="rd-section">
@@ -14118,6 +14122,7 @@ Je fais : extinction.</p>
 
     <div id="gto-manoeuvres" class="module">
         <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🚛 Manœuvres en unités organiques</h2>
 
         <div class="rd-section">
@@ -14205,6 +14210,7 @@ Je fais : extinction.</p>
 
     <div id="gto-espaces" class="module">
         <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🌾 Feux d'espaces naturels particuliers</h2>
 
         <div class="rd-section">
@@ -14266,6 +14272,7 @@ Je fais : extinction.</p>
 
     <div id="gto-feux-tactiques" class="module">
         <button class="back-btn" onclick="showModule('gto-menu')">← Retour GTO</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🔥 Feux tactiques</h2>
 
         <div class="rd-section">
@@ -16009,6 +16016,7 @@ Je fais : extinction.</p>
     <!-- ============ GOUV – Guide opérationnel d'urgence sur les véhicules (SDIS 34) ============ -->
     <div id="gouv-menu" class="module" style="--jsp: #4C6FA3;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🚗 GOUV – Véhicules à énergies alternatives</h2>
         <p style="text-align: center;">Guide opérationnel d'urgence sur les véhicules du SDIS 34 : énergies embarquées (électrique, hybride, GPL, GNV), feux de véhicules, secours routier et <strong>34 fiches techniques de désincarcération</strong> en photos.</p>
         <div class="rd-alerte">Guide de <strong>2015</strong>. Les principes restent valables, mais les véhicules ont beaucoup évolué : pour un modèle précis, consultez sa <strong>fiche d'aide à la décision (FAD / rescue sheet)</strong> et le guide du constructeur (ERG).</div>
@@ -16032,6 +16040,7 @@ Je fais : extinction.</p>
     </div>
     <div id="gouv-vehicules" class="module" style="--jsp: #4C6FA3;">
         <button class="back-btn" onclick="showModule('gouv-menu')">← Retour GOUV</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🔋 Les véhicules : équipements et énergies</h2>
         <div class="rd-section">
             <h3>📌 À retenir</h3>
@@ -16187,6 +16196,7 @@ Je fais : extinction.</p>
     </div>
     <div id="gouv-incendie" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('gouv-menu')">← Retour GOUV</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🔥 Feu de véhicule à énergie alternative</h2>
         <div class="rd-section">
             <h3>📌 À retenir</h3>
@@ -16333,6 +16343,7 @@ Je fais : extinction.</p>
     </div>
     <div id="gouv-sr" class="module" style="--jsp: #4C6FA3;">
         <button class="back-btn" onclick="showModule('gouv-menu')">← Retour GOUV</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🚑 Secours routier sur véhicule à énergie alternative</h2>
         <div class="rd-section">
             <h3>📌 À retenir</h3>
@@ -16438,6 +16449,7 @@ Je fais : extinction.</p>
     </div>
     <div id="gouv-fiches" class="module" style="--jsp: #F57C00;">
         <button class="back-btn" onclick="showModule('gouv-menu')">← Retour GOUV</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🛠️ Fiches techniques secours routier</h2>
         <p style="text-align: center;">34 fiches (réalisées avec le SDIS de la Vienne) : objectif, matériel, conditions, critères de réussite, sécurité, déroulement type et astuces.</p>
         <h3>1 · Calage</h3>
@@ -17003,6 +17015,7 @@ Je fais : extinction.</p>
 
     <div id="etex-res" class="module" style="--jsp: #4C6FA3;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>💧 GTO – Ressources en eau</h2>
         <p style="text-align: center;">Guide de techniques opérationnelles Établissements et techniques d’extinction (DGSCGC, 2018) : défense extérieure contre l’incendie (DECI), points d’eau incendie (PI/BI) et points d’aspiration.</p>
         <div class="rd-section">
@@ -17058,6 +17071,7 @@ Je fais : extinction.</p>
     </div>
     <div id="etex-etb" class="module" style="--jsp: #4C6FA3;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>💧 GTO – Les établissements</h2>
         <p style="text-align: center;">Principes hydrauliques, choix des tuyaux et les 6 manœuvres types d’établissement (ETB-1 à ETB-6).</p>
         <div class="rd-section">
@@ -17149,6 +17163,7 @@ Je fais : extinction.</p>
     </div>
     <div id="etex-tde" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🔥 GTO – Techniques d’extinction</h2>
         <p style="text-align: center;">Les méthodes d’application de l’eau : refroidissement des fumées (gas cooling), extinction directe, indirecte, combinée, situations pré-backdraft, repli, vent et attaque d’atténuation.</p>
         <div class="rd-section">
@@ -17645,6 +17660,7 @@ Je fais : extinction.</p>
 
     <div id="cod1" class="module" style="--jsp: #0E7490;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🚒 COD 1 – Pompes & génératrices</h2>
         <p style="text-align: center;">Manuel technique d'intervention : responsabilités du conducteur, pompe centrifuge, systèmes d'amorçage, DECI, calculs hydrauliques, additifs moussants, génératrices électriques et protocole de guidage.</p>
         <div class="rd-section">
@@ -17922,6 +17938,7 @@ Je fais : extinction.</p>
     <!-- ============ GTO Engagement en milieu vicié (DGSCGC, 2e éd. février 2024) : correspondances RDEB + compléments ============ -->
     <div id="gtomv" class="module">
         <button class="back-btn" onclick="showModule('rdeb-menu')">← RDEB</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>😷 GTO Engagement en milieu vicié – 2024</h2>
         <p style="text-align: center;">Le RDEB SDIS 34 (v2, avril 2026) reprend déjà ce guide national. Cette page renvoie vers les fiches RDEB correspondantes et ajoute <strong>ce que le RDEB ne détaille pas</strong>.</p>
 
@@ -18067,6 +18084,7 @@ Je fais : extinction.</p>
     <!-- ============ GDO Interventions sur les incendies de structures (DGSCGC, 16 avril 2018) ============ -->
     <div id="gdoinc-menu" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🏢 GDO Incendies de structures – 2018</h2>
         <p style="text-align: center;">Guide de doctrine opérationnelle DGSCGC du <strong>16 avril 2018</strong> : connaissance du risque, principes généraux de la lutte, actions de lutte et marche générale des opérations.</p>
 
@@ -18143,6 +18161,7 @@ Je fais : extinction.</p>
 
     <div id="gdoinc-systeme-feu" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🔥 Le système feu</h2>
 
         <div class="rd-section">
@@ -18254,6 +18273,7 @@ Je fais : extinction.</p>
 
     <div id="gdoinc-phenomenes" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>💥 Phénomènes thermiques</h2>
         <p style="text-align: center;">Progressions rapides du feu : augmentation significative et/ou brutale de la puissance, dans le local en feu ou dans des volumes voisins. Trois familles.</p>
 
@@ -18342,6 +18362,7 @@ Je fais : extinction.</p>
 
     <div id="gdoinc-structure" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🧱 La structure</h2>
 
         <div class="rd-section">
@@ -18420,6 +18441,7 @@ Je fais : extinction.</p>
 
     <div id="gdoinc-analyse" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🎯 Maîtrise du feu & analyse de risques</h2>
 
         <div class="rd-section">
@@ -18504,6 +18526,7 @@ Je fais : extinction.</p>
 
     <div id="gdoinc-homme" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🧑‍🚒 L'homme face au feu</h2>
 
         <div class="rd-section">
@@ -18617,6 +18640,7 @@ Je fais : extinction.</p>
 
     <div id="gdoinc-eau" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>💧 Les effets de l'eau</h2>
 
         <div class="rd-section">
@@ -18680,6 +18704,7 @@ Je fais : extinction.</p>
 
     <div id="gdoinc-tactique" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>♟️ Principes généraux & tactiques</h2>
 
         <div class="rd-section">
@@ -18760,6 +18785,7 @@ Je fais : extinction.</p>
 
     <div id="gdoinc-securite" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🦺 Analyse, arrivée & sécurité</h2>
 
         <div class="rd-section">
@@ -18856,6 +18882,7 @@ Je fais : extinction.</p>
 
     <div id="gdoinc-mgo" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('gdoinc-menu')">← GDO Incendies</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🧭 Marche générale des opérations</h2>
         <p style="text-align: center;">Plus qu'un enchaînement chronologique : une grille de réflexion pour coordonner les actions et revenir au plus vite à une situation normale.</p>
 
@@ -19012,6 +19039,7 @@ Je fais : extinction.</p>
     <!-- ============ GTO Ventilation opérationnelle (DGSCGC, 2019) ============ -->
     <div id="vent-menu" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🌬️ Ventilation opérationnelle – GTO 2019</h2>
         <p style="text-align: center;">Toutes les actions des sapeurs-pompiers qui <strong>maîtrisent les flux de fumées, de gaz chauds et de chaleur</strong> dans une structure en feu : sur la source (le foyer), sur le flux (fumées, chaleur), sur les cibles (personnes, structure).</p>
 
@@ -19089,6 +19117,7 @@ Je fais : extinction.</p>
 
     <div id="vent-proteger" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('vent-menu')">← Ventilation</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🛡️ Ventiler pour protéger</h2>
 
         <details class="jsp-cours" open>
@@ -19135,6 +19164,7 @@ Je fais : extinction.</p>
 
     <div id="vent-desenfumer" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('vent-menu')">← Ventilation</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>💨 Ventiler pour désenfumer</h2>
         <div class="rd-alerte">Seulement quand le feu est <strong>éteint</strong> ou suffisamment <strong>isolé</strong> du volume à désenfumer : pas de possibilité d'allumage des fumées par le foyer. Les fumées peuvent être combustibles, voire explosives.</div>
 
@@ -19171,6 +19201,7 @@ Je fais : extinction.</p>
 
     <div id="vent-attaquer" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('vent-menu')">← Ventilation</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🔥 Ventiler pour attaquer</h2>
 
         <details class="jsp-cours" open>
@@ -19218,6 +19249,7 @@ Je fais : extinction.</p>
 
     <div id="vent-volumes" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('vent-menu')">← Ventilation</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🏭 Gros volumes, parkings, locaux borgnes</h2>
 
         <details class="jsp-cours" open>
@@ -19274,6 +19306,7 @@ Je fais : extinction.</p>
 
     <div id="vent-outils" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('vent-menu')">← Ventilation</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🧰 Stoppeurs, CO, lances, sortant</h2>
 
         <details class="jsp-cours" open>
@@ -19341,6 +19374,7 @@ Je fais : extinction.</p>
     <!-- ============ RDSMES – SDIS 34 (v2, avril 2026) ============ -->
     <div id="rdsmes-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🛟 RDSMES – Sauvetages & sauvegarde</h2>
         <p style="text-align: center;">Référentiel départemental <strong>Sauvetages, Mises En Sécurité, mesures de Sauvegarde</strong> – incendie en milieu urbain</p>
 
@@ -19384,6 +19418,7 @@ Je fais : extinction.</p>
 
     <div id="rdsmes-principes" class="module">
         <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🧭 Grands principes & environnement opérationnel</h2>
 
         <div class="rd-section">
@@ -19470,6 +19505,7 @@ Je fais : extinction.</p>
 
     <div id="rdsmes-sauvetage" class="module">
         <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🪜 Sauvetage & mise en sécurité</h2>
 
         <div class="rd-section">
@@ -19530,6 +19566,7 @@ Je fais : extinction.</p>
 
     <div id="rdsmes-mea" class="module">
         <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🚒 Moyens élévateurs aériens (MEA)</h2>
 
         <div class="rd-section">
@@ -19603,6 +19640,7 @@ Je fais : extinction.</p>
 
     <div id="rdsmes-securite" class="module">
         <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🛡️ Sécurité des intervenants</h2>
 
         <div class="rd-section">
@@ -19650,6 +19688,7 @@ Je fais : extinction.</p>
 
     <div id="rdsmes-autosauvetage" class="module">
         <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🧯 Auto-sauvetage</h2>
 
         <div class="rd-section">
@@ -19756,6 +19795,7 @@ Je fais : extinction.</p>
 
     <div id="rdsmes-detresse" class="module">
         <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>📻 Message & appel de détresse</h2>
 
         <div class="rd-section">
@@ -19830,6 +19870,7 @@ Je demande : ….</p>
 
     <div id="rdsmes-evacuation-urgence" class="module">
         <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🪟 Évacuation d'urgence d'un intervenant</h2>
 
         <div class="rd-section">
@@ -19864,6 +19905,7 @@ Je demande : ….</p>
 
     <div id="rdsmes-sauveteur" class="module">
         <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🤝 Sauvetage de sauveteur</h2>
 
         <div class="rd-section">
@@ -19956,6 +19998,7 @@ Je demande : ….</p>
 
     <div id="rdsmes-derniers-recours" class="module">
         <button class="back-btn" onclick="showModule('rdsmes-menu')">← Retour RDSMES</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🪢 Sauvetage ou évacuation de derniers recours</h2>
 
         <div class="rd-alerte">En formation : supervision par du personnel expérimenté et dispositifs de protection contre les chutes.</div>
@@ -20011,6 +20054,7 @@ Je demande : ….</p>
     <!-- ============ GTO Secours en milieu périlleux et montagne (DGSCGC, juin 2021) ============ -->
     <div id="smpm-menu" class="module" style="--jsp: #5A6FD8;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🧗 GTO Secours en milieu périlleux et montagne – 2021</h2>
         <p style="text-align: center;">Guide de techniques opérationnelles DGSCGC (1<sup>re</sup> édition, <strong>juin 2021</strong>) : règles d'engagement, techniques et conditions de sécurité des unités <strong>SMPM</strong>.</p>
 
@@ -20092,6 +20136,7 @@ Je demande : ….</p>
 
     <div id="smpm-materiels" class="module" style="--jsp: #5A6FD8;">
         <button class="back-btn" onclick="showModule('smpm-menu')">← GTO SMPM</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🎒 Matériels individuels et collectifs</h2>
         <p style="text-align: center;">Chaque unité SMPM dispose au minimum d'un <strong>équipement individuel</strong> par membre et d'un <strong>équipement collectif de base</strong>.</p>
 
@@ -20164,6 +20209,7 @@ Je demande : ….</p>
 
     <div id="smpm-principes" class="module" style="--jsp: #5A6FD8;">
         <button class="back-btn" onclick="showModule('smpm-menu')">← GTO SMPM</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>⛓️ Principes fondamentaux & cordes</h2>
 
         <div class="rd-section">
@@ -20224,6 +20270,7 @@ Je demande : ….</p>
 
     <div id="smpm-techniques" class="module" style="--jsp: #5A6FD8;">
         <button class="back-btn" onclick="showModule('smpm-menu')">← GTO SMPM</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🪢 Techniques opérationnelles collectives</h2>
         <p style="text-align: center;">Les agrès de traction, de déport et de rehausse sont des exemples, à adapter au choix tactique du chef d'unité et aux moyens. Les variantes ne dérogent <strong>jamais</strong> aux principes de sécurité.</p>
 
@@ -20291,6 +20338,7 @@ Je demande : ….</p>
 
     <div id="smpm-milieux" class="module" style="--jsp: #5A6FD8;">
         <button class="back-btn" onclick="showModule('smpm-menu')">← GTO SMPM</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>⛰️ Souterrain, canyon, montagne</h2>
         <p class="jsp-liens"><button class="sal-lien" onclick="showModule('impm-souterrain')">Milieu souterrain (GDO)</button> <button class="sal-lien" onclick="showModule('impm-canyon')">Milieu canyon (GDO)</button> <button class="sal-lien" onclick="showModule('impm-montagne')">Milieu montagne (GDO)</button></p>
 
@@ -20347,6 +20395,7 @@ Je demande : ….</p>
 
     <div id="smpm-appui" class="module" style="--jsp: #5A6FD8;">
         <button class="back-btn" onclick="showModule('smpm-menu')">← GTO SMPM</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🤝 Opérations diverses et d'appui</h2>
 
         <div class="rd-section">
@@ -21986,6 +22035,7 @@ Je demande : ….</p>
 
     <div id="mousses-lif" class="module">
         <button class="back-btn" onclick="showModule('mousses-menu')">← Retour Mousses</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🛢️ Feux de liquides inflammables (guide SDIS 34)</h2>
         <p style="text-align: center;">Guide technique départemental <strong>« Feu de liquides inflammables »</strong> – SDIS 34. Outil d'aide à la décision : il n'existe pas de doctrine nationale, le guide s'appuie sur les critères de l'ENSOSP et sur les moyens de l'Hérault.</p>
 
@@ -22983,6 +23033,7 @@ Je demande : ….</p>
     <!-- Menu Principal Échelles -->
     <div id="echelles-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🪜 Échelles portables</h2>
         <p style="text-align: center;">Référentiel départemental <strong>Échelles Portables (RDEP)</strong> – manipulation des échelles en lutte contre l'incendie urbain et opérations diverses</p>
 
@@ -23026,6 +23077,7 @@ Je demande : ….</p>
     <!-- Champs d'utilisation et comparatif -->
     <div id="echelles-comparatif" class="module">
         <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>📊 Champs d'utilisation & comparatif</h2>
 
         <div class="rd-section">
@@ -23091,6 +23143,7 @@ Je demande : ….</p>
     <!-- Échelle à Crochets -->
     <div id="echelles-crochets" class="module">
         <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🪝 Échelle à crochets</h2>
 
         <div class="rd-section">
@@ -23171,6 +23224,7 @@ Je demande : ….</p>
     <!-- Échelles à Coulisse -->
     <div id="echelles-coulisses" class="module">
         <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>📐 Échelles à coulisse (2 et 3 plans)</h2>
 
         <div class="rd-section">
@@ -23266,6 +23320,7 @@ Je demande : ….</p>
     <!-- Échelle Téléscopique -->
     <div id="echelles-telescopique" class="module">
         <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>📏 Échelle télescopique</h2>
 
         <div class="rd-section">
@@ -23320,6 +23375,7 @@ Je demande : ….</p>
     <!-- Sécurité et mise en œuvre -->
     <div id="echelles-securite" class="module">
         <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🛡️ Sécurité & mise en œuvre</h2>
 
         <div class="rd-section">
@@ -23428,6 +23484,7 @@ Je demande : ….</p>
     <!-- Commandement -->
     <div id="echelles-commandement" class="module">
         <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>📣 Commandement des échelles</h2>
 
         <div class="rd-section">
@@ -23478,6 +23535,7 @@ Je demande : ….</p>
     <!-- Procédures coulisse 2 plans -->
     <div id="echelles-proc-coulisse2" class="module">
         <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🧰 Procédures – coulisse 2 plans grand modèle</h2>
 
         <div class="rd-section">
@@ -23563,6 +23621,7 @@ Je demande : ….</p>
     <!-- Procédures coulisse 3 plans -->
     <div id="echelles-proc-coulisse3" class="module">
         <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🧰 Procédures – coulisse 3 plans</h2>
 
         <div class="rd-section">
@@ -23650,6 +23709,7 @@ Je demande : ….</p>
     <!-- Procédures échelle à crochets -->
     <div id="echelles-proc-crochets" class="module">
         <button class="back-btn" onclick="showModule('echelles-menu')">← Retour Échelles</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🧰 Procédures – échelle à crochets</h2>
 
         <div class="rd-section">
@@ -23740,6 +23800,7 @@ Je demande : ….</p>
     <!-- MENU PRINCIPAL LSPCC (RDLSPCC SDIS 34 – v1, novembre 2025) -->
     <div id="lspcc-menu" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🪢 LSPCC – Lot de sauvetage et de protection contre les chutes</h2>
         <p style="text-align: center;">Référentiel départemental <strong>RDLSPCC</strong> – emploi du lot de sauvetage et de protection contre les chutes</p>
 
@@ -23791,6 +23852,7 @@ Je demande : ….</p>
     <!-- MODULE MATÉRIELS & ÉQUIPEMENTS LSPCC -->
     <div id="lspcc-materiels" class="module">
         <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🎒 Matériels & équipements</h2>
 
         <div class="rd-section">
@@ -23879,6 +23941,7 @@ Je demande : ….</p>
     <!-- MODULE EMPLOI LSPCC -->
     <div id="lspcc-emploi" class="module">
         <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>📋 Emploi du LSPCC</h2>
 
         <div class="rd-section">
@@ -23987,6 +24050,7 @@ Je demande : ….</p>
     <!-- MODULE TRIANGLE & HARNAIS LSPCC -->
     <div id="lspcc-triangle" class="module">
         <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🦺 Triangle & harnais</h2>
 
         <div class="rd-section">
@@ -24064,6 +24128,7 @@ Je demande : ….</p>
     <!-- MODULE TECHNIQUES LSPCC -->
     <div id="lspcc-techniques" class="module">
         <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🧗 Techniques générales</h2>
         <p><small>Tableaux reproduits tels que dans le référentiel : une action placée dans une seule colonne revient à ce rôle.</small></p>
 
@@ -24267,6 +24332,7 @@ Je demande : ….</p>
     <!-- MODULE SÉCURISATION LSPCC -->
     <div id="lspcc-securisation" class="module">
         <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🪜 Sécurisation échelles & MEA</h2>
         <div class="rd-alerte">Après analyse préalable des risques, la sécurisation est <strong>conseillée en formation</strong>. En opération, elle peut ne pas être utilisée selon l'urgence.</div>
 
@@ -24315,6 +24381,7 @@ Je demande : ….</p>
     <!-- MODULE NOEUDS LSPCC -->
     <div id="lspcc-noeuds" class="module">
         <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🔗 Nœuds & dispositifs</h2>
 
         <div class="rd-section">
@@ -24381,6 +24448,7 @@ Je demande : ….</p>
     <!-- MODULE ENTRETIEN LSPCC -->
     <div id="lspcc-entretien" class="module">
         <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour LSPCC</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
         <h2>🧼 Entretien & réforme des agrès</h2>
 
         <div class="rd-section">
@@ -24467,6 +24535,7 @@ Je demande : ….</p>
 
     <div id="ibnb" class="module" style="--jsp: #0369A1;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🚢 GDO – Interventions à bord des navires (IBNB)</h2>
         <p style="text-align: center;">Guide de doctrine opérationnelle « Interventions à bord des navires et bateaux en milieu maritime » : commandement en mer, connaissance du navire, marche générale des opérations, gestion des fumées, stabilité et cas particuliers (mouillage, SMGA).</p>
         <div class="rd-section">
@@ -24826,6 +24895,7 @@ Je demande : ….</p>
 
     <div id="ulm" class="module" style="--jsp: #2563EB;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🪂 GDO – Interventions en présence d'ULM</h2>
         <p style="text-align: center;">Guide de doctrine opérationnelle « Interventions sur des aéronefs de type Ultra Léger Motorisé » : connaissance des 6 classes d'ULM, risques spécifiques (incendie, parachute balistique), aérodromes et SSLIA, planification opérationnelle (ARCC/SAR, ORSEC Aérodrome), prise d'appel et conduite des opérations.</p>
         <div class="rd-section">
@@ -25055,6 +25125,7 @@ Je demande : ….</p>
 
     <div id="agricole" class="module" style="--jsp: #6B8E23;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🚜 GDO – Interventions en milieu agricole</h2>
         <p style="text-align: center;">Guide de doctrine opérationnelle « Interventions en milieu agricole » : acculturation au monde agricole, principales sources de risque de l'exploitation (bâtiments, engrais, phytosanitaires, méthanisation, alcools, déjections animales, matériel, fourrage, élevages, récoltes sur pieds, explosifs, silos, photovoltaïque) et conduite des opérations adaptée à chaque risque.</p>
         <div class="rd-section">
@@ -25336,6 +25407,7 @@ Je demande : ….</p>
 
     <div id="effondres" class="module" style="--jsp: #78716C;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
         <h2>🏚️ GDO – Interventions en milieux effondrés ou instables</h2>
         <p style="text-align: center;">Guide de doctrine opérationnelle « Interventions en milieux effondrés ou instables » : typologie des effondrements et mouvements de terrain, risques liés à l'environnement et aux personnes, sécurité des intervenants, organisation des unités de sauvetage, d'appui et de recherche (USAR), conduite des opérations (zonage, évaluation bâtimentaire, marche générale des opérations MGO 1 à 5) et prise en charge psychologique des victimes ensevelies.</p>
         <div class="rd-section">
@@ -25720,7 +25792,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.50.2</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.51.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

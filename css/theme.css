@@ -973,4 +973,25 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
     background: var(--t-s1); color: var(--t-ink); font: inherit; font-weight: 700;
 }
 .wallace-mode-choix button[aria-checked="true"] { border-color: #FF9800; background: color-mix(in srgb, #FF9800 18%, var(--t-s1)); color: light-dark(#945800, #ff9800); }
+.rd-tampon {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin: 10px 0 14px; padding: 5px 12px;
+    font-family: var(--t-display); font-weight: var(--t-display-weight);
+    font-size: 12px; text-transform: uppercase; letter-spacing: .12em;
+    border: 2px solid; border-radius: 6px;
+    background: transparent;
+    position: relative;
+}
+.rd-tampon::before {
+    content: ''; position: absolute; inset: 2px;
+    border: 1px solid currentColor; border-radius: 3px; opacity: .5;
+}
+.rd-tampon-national { color: light-dark(#1157a8, #5b9fe8); border-color: currentColor; }
+.rd-tampon-dept { color: light-dark(#b5570c, #f0914a); border-color: currentColor; }
+.rd-tampon-national::after {
+    content: ''; flex-shrink: 0;
+    width: 16px; height: 11px;
+    border: 1px solid currentColor; border-radius: 1px;
+    background: linear-gradient(to right, #002654 0 33%, #fff 33% 66%, #ED2939 66% 100%);
+}
 .reglages-panel { max-height: 100dvh; overflow-y: auto; }
