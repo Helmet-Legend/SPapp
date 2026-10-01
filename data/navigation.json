@@ -138,7 +138,8 @@
    "couleur": "#A16207",
    "themes": [
     "COD 1 – Pompes & génératrices",
-    "COD 2 – Conduite tout-terrain"
+    "COD 2 – Conduite tout-terrain",
+    "COD 6 – Moyens élévateurs aériens (MEA)"
    ]
   }
  ],
@@ -1431,6 +1432,31 @@
     "mouflage",
     "GIFF",
     "point effet"
+   ]
+  },
+  {
+   "id": "cod6",
+   "titre": "COD 6 – Moyens élévateurs aériens (MEA)",
+   "domaine": "conduite",
+   "theme": "COD 6 – Moyens élévateurs aériens (MEA)",
+   "type": "fiche",
+   "motsCles": [
+    "MEA",
+    "échelle pivotante",
+    "EPC",
+    "EPS",
+    "BEA",
+    "bras élévateur",
+    "stabilisation",
+    "inclinomètre",
+    "parc échelle",
+    "panier de secours",
+    "nacelle",
+    "voie engins",
+    "voie échelles",
+    "façade accessible",
+    "échelier",
+    "guidage"
    ]
   },
   {
