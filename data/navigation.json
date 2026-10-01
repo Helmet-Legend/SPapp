@@ -4601,6 +4601,26 @@
     "parachutes",
     "limiteur de vitesse"
    ]
+  },
+  {
+   "id": "materiel-epuisement",
+   "titre": "Matériel d'épuisement et d'assèchement",
+   "domaine": "risques",
+   "theme": "Opérations diverses",
+   "type": "fiche",
+   "motsCles": [
+    "épuisement",
+    "assèchement",
+    "inondation",
+    "pompe électrique",
+    "hydro-éjecteur",
+    "vide-cave",
+    "turbopompe",
+    "motopompe",
+    "aspirateur à eau",
+    "crue",
+    "dégât des eaux"
+   ]
   }
  ]
 }

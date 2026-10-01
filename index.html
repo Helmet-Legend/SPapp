@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.54.0">
+    <meta name="version" content="1.55.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.54.0</span><br>
+                        Vulcain v<span class="app-version">1.55.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -17952,6 +17952,69 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Synthèse de documents de formation SDIS 34 sur l'intervention ascenseurs, reformulée. L'évacuation de personnes bloquées reste, en droit, du ressort de l'installateur/mainteneur ; les sapeurs-pompiers interviennent en pratique le plus souvent, mais sans se substituer au technicien pour la remise en service.</p>
     </div>
 
+    <div id="materiel-epuisement" class="module" style="--jsp: #0369A1;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>💧 Matériel d'épuisement et d'assèchement</h2>
+        <p style="text-align: center;">Opération diverse : les inondations de locaux (orage, fuite de canalisation, robinet resté ouvert, égout fissuré…) ne relèvent pas d'une réparation par les sapeurs-pompiers, mais de la suppression de la cause et du danger pour éviter l'aggravation.</p>
+
+        <h3>📌 Avant toute mise en œuvre : la reconnaissance</h3>
+        <ul>
+            <li><strong>Couper l'alimentation électrique</strong> en priorité, ou protéger les installations devant rester sous tension ; ne s'engager qu'après confirmation de la coupure.</li>
+            <li>Reconnaître la nature et le nombre de locaux sinistrés, déterminer la cause de l'inondation et la supprimer si possible.</li>
+            <li>Prendre en compte les risques associés : asphyxie, noyade, effondrement.</li>
+            <li>Prioriser les opérations et définir les moyens à mettre en œuvre.</li>
+        </ul>
+        <div class="rd-alerte">S'il s'agit d'une <strong>crue</strong>, il est inutile de pomper tant que la décrue n'est pas amorcée.</div>
+
+        <h3>📌 Estimer le volume à épuiser</h3>
+        <p>Le volume d'eau conditionne le choix du matériel : <strong>longueur (m) × largeur (m) × hauteur d'eau (m) = volume (m³)</strong>. Exemple : une pièce de 2,5 × 8 m avec 0,60 m d'eau représente 12 m³ ; avec une pompe de 15 m³/h, l'épuisement dure environ 48 minutes (12 ÷ 15 = 0,8 h).</p>
+        <p class="jsp-liens">📐 <button onclick="showModule('epuisement')">Calculateur épuisement (surface, volume, durée selon le débit) →</button></p>
+
+        <h3>📌 Les pompes électriques</h3>
+        <p>Utilisées pour vider caves et vide-sanitaires ; débits courants 15 ou 30 m³/h selon le modèle (se référer à la notice du constructeur).</p>
+        <table class="rd-table">
+            <tr><th>Consigne</th><th>Détail</th></tr>
+            <tr><td>Immersion</td><td>La pompe doit être dans l'eau sans y être complètement immergée ; ne pas la poser à même le sol (interposer une brique) pour éviter l'aspiration de boue ou de sable.</td></tr>
+            <tr><td>Atmosphère</td><td>Ne jamais utiliser en atmosphère explosive ou inflammable (fermentation, local fermé depuis longtemps).</td></tr>
+            <tr><td>Électrique</td><td>Toutes les manipulations hors-tension ; débrancher avant toute intervention sur la pompe ; brancher sur une prise avec terre ; ne jamais immerger la fiche du câble.</td></tr>
+            <tr><td>Énergie</td><td>Chercher la source d'énergie chez le voisin si besoin, ou utiliser un groupe électrogène et des boîtiers étanches prévus à cet effet.</td></tr>
+            <tr><td>Manutention</td><td>Amarrer la pompe par une commande ; limiter les coudes sur le tuyau de refoulement ; transporter uniquement par sa poignée.</td></tr>
+        </table>
+
+        <h3>📌 Les pompes hydrauliques</h3>
+        <p>Alimentées à partir d'un engin-pompe, elles permettent d'aspirer caves, puits ou réservoirs, ou de remplir des véhicules.</p>
+        <table class="rd-table">
+            <tr><th>Matériel</th><th>Usage</th><th>Caractéristiques</th></tr>
+            <tr><td><strong>Hydro-éjecteur</strong></td><td>Volume d'eau limité, ou aspiration impossible par pompe classique (effet Venturi)</td><td>Alimentation en 45 mm, refoulement en 70 mm, débit nominal 250 l/min</td></tr>
+            <tr><td><strong>Vide-cave</strong></td><td>Caves, puits, réservoirs, cales de navire, ou aspiration à grande profondeur</td><td>Alimentation en 70 mm, refoulement en 110 mm, 25 m de profondeur maxi, débit nominal 500 l/min</td></tr>
+            <tr><td><strong>Turbopompe</strong></td><td>Pompage sans risque de mélange avec l'eau motrice</td><td>Deux circuits distincts : eau motrice en circuit fermé (depuis un engin-pompe) et eau pompée/refoulée</td></tr>
+        </table>
+
+        <h3>📌 Les motopompes thermiques</h3>
+        <p>Pompe + dispositif d'amorçage accouplé à un moteur essence ou diesel ; débit courant autour de 1000 l/min sous faible pression (environ 4 bars).</p>
+        <table class="rd-table">
+            <tr><th>Type</th><th>Usage</th></tr>
+            <tr><td>Portable</td><td>Mise en œuvre générale, tuyau d'aspiration semi-rigide + crépine d'épuisement</td></tr>
+            <tr><td>Remorquable</td><td>Emploi soumis à un apprentissage spécifique</td></tr>
+            <tr><td>Flottante</td><td>Utilisée par les CCF en feux de forêt</td></tr>
+        </table>
+        <div class="rd-alerte">Une motopompe thermique se place <strong>toujours à l'extérieur</strong> des locaux inondés (risque d'intoxication par les gaz d'échappement), sur terrain plat ; plein de carburant moteur à l'arrêt.</div>
+        <p><strong>Mise en œuvre</strong> : établir la ligne d'évacuation puis d'alimentation selon les règles d'établissement des tuyaux, raccorder sur la pompe, descendre la pompe sans choc, prendre un repère de niveau d'eau, mettre en pression et surveiller la baisse du niveau. En fin d'épuisement : arrêter l'alimentation, débrancher les tuyaux, nettoyer le matériel — remonter si besoin tuyaux et pompe ensemble, sans interrompre la marche, pour éviter que l'eau des tuyaux ne retombe dans le local.</p>
+
+        <h3>📌 Le matériel d'assèchement</h3>
+        <p>À utiliser après l'épuisement, ou directement si le volume d'eau est faible :</p>
+        <table class="rd-table">
+            <tr><th>Matériel</th><th>Usage</th></tr>
+            <tr><td>Aspirateur à eau</td><td>Petits volumes (capacité 50 à 60 L), assèchement de quelques millimètres</td></tr>
+            <tr><td>Écope</td><td>Réceptacle à main pour de petites quantités de liquide</td></tr>
+            <tr><td>Raclette</td><td>Évacuation rapide d'une fine couche de liquide, notamment la boue résiduelle</td></tr>
+            <tr><td>Serpillère</td><td>Finition</td></tr>
+        </table>
+
+        <p class="rd-source">📚 Synthèse de documents de formation SDIS 34 sur le matériel d'épuisement et d'assèchement, reformulée.</p>
+    </div>
+
     <div id="cod1" class="module" style="--jsp: #0E7490;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
@@ -26086,7 +26149,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.54.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.55.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
