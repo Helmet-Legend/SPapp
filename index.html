@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.51.0">
+    <meta name="version" content="1.52.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -221,7 +221,7 @@
                 </div>
                 <div style="padding: 14px 0; border-top: 1px solid var(--t-line);">
                     <strong style="font-size: 14px;">Données personnelles</strong>
-                    <p style="margin: 4px 0 0; font-size: 13px; color: var(--t-muted); line-height: 1.5;">Rien n'est collecté, rien n'est transmis. Tout reste sur l'appareil de l'utilisateur.</p>
+                    <p style="margin: 4px 0 0; font-size: 13px; color: var(--t-muted); line-height: 1.5;">Les fiches et calculateurs restent sur l'appareil, hors ligne. Le formulaire de contact, les notifications et le générateur IA transmettent des données au serveur — détail et vos droits dans les <button class="rd-lien-inline" onclick="showModule('mentions-legales')">mentions légales</button>.</p>
                 </div>
                 <div style="padding: 14px 0 2px; border-top: 1px solid var(--t-line);">
                     <div style="display: flex; gap: 10px; align-items: flex-start;">
@@ -239,12 +239,46 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.51.0</span><br>
+                        Vulcain v<span class="app-version">1.52.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
-                        <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong>
+                        <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
+                        <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
                     </p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Mentions légales -->
+    <div id="mentions-legales" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>📜 Mentions légales</h2>
+
+        <div style="padding: 14px 0; border-top: 1px solid var(--t-line);">
+            <strong style="font-size: 14px;">Éditeur</strong>
+            <p style="margin: 4px 0 0; font-size: 13px; color: var(--t-muted); line-height: 1.5;">Vulcain est édité par « Helmet Legend », projet individuel non encore constitué en société. Responsable de la publication : Helmet Legend. Contact : formulaire de contact de l'application (À propos).</p>
+        </div>
+        <div style="padding: 14px 0; border-top: 1px solid var(--t-line);">
+            <strong style="font-size: 14px;">Hébergement</strong>
+            <p style="margin: 4px 0 0; font-size: 13px; color: var(--t-muted); line-height: 1.5;">Application hébergée par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis. Les données du formulaire de contact et des abonnements aux notifications sont stockées via Upstash (base Redis) chez le même hébergeur.</p>
+        </div>
+        <div style="padding: 14px 0; border-top: 1px solid var(--t-line);">
+            <strong style="font-size: 14px;">Données personnelles (RGPD)</strong>
+            <p style="margin: 4px 0 0; font-size: 13px; color: var(--t-muted); line-height: 1.5;">
+                <strong>Fiches et calculateurs</strong> : aucune donnée collectée, tout reste sur l'appareil (localStorage).<br><br>
+                <strong>Formulaire de contact</strong> : le message et le contact facultatif (email/téléphone) que vous saisissez sont envoyés à notre serveur et conservés pour pouvoir vous répondre, jusqu'à 500 messages conservés en rotation. Base légale : intérêt légitime (traiter les signalements des utilisateurs).<br><br>
+                <strong>Notifications push</strong> : si vous les activez, votre navigateur génère un identifiant d'abonnement (endpoint + clés de chiffrement) transmis à notre serveur pour pouvoir vous notifier. Base légale : consentement (activation explicite dans Réglages). Désactivable à tout moment.<br><br>
+                <strong>Générateur de manœuvre IA</strong> : les paramètres du formulaire (type d'intervention, véhicules, consignes) sont transmis à l'API Claude d'Anthropic pour générer le scénario. Aucune donnée d'identification n'est envoyée avec.<br><br>
+                <strong>Vos droits</strong> : accès, rectification et suppression des données vous concernant, à exercer via le formulaire de contact (À propos).
+            </p>
+        </div>
+        <div style="padding: 14px 0; border-top: 1px solid var(--t-line);">
+            <strong style="font-size: 14px;">Propriété intellectuelle</strong>
+            <p style="margin: 4px 0 0; font-size: 13px; color: var(--t-muted); line-height: 1.5;">Les contenus rédigés par Helmet Legend (synthèses, calculateurs, mise en forme) sont © Helmet Legend. Certaines fiches citent et résument des référentiels nationaux (GDO, GTO, REAC, DGSCGC) ou des documents internes de SDIS (repérés par le tampon « SDIS 34 » sur la fiche) ; leur reproduction reste soumise aux droits de leurs auteurs respectifs.</p>
+        </div>
+        <div style="padding: 14px 0; border-top: 1px solid var(--t-line);">
+            <strong style="font-size: 14px;">Responsabilité</strong>
+            <p style="margin: 4px 0 0; font-size: 13px; color: var(--t-muted); line-height: 1.5;">Vulcain est un outil d'aide à la décision, pas un substitut au jugement professionnel, à la doctrine en vigueur dans votre service ni aux consignes de votre hiérarchie. Usage réservé aux services d'incendie et de secours ; vérifiez toujours vos protocoles locaux avant application.</p>
         </div>
     </div>
 
@@ -25792,7 +25826,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.51.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.52.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
