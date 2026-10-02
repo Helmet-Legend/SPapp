@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.55.1">
+    <meta name="version" content="1.56.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.55.1</span><br>
+                        Vulcain v<span class="app-version">1.56.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -5726,60 +5726,16 @@
         <h2 style="color: light-dark(#007064, #00b2a0); border-bottom: 3px solid #00897B;">🩺 RT SUAP 2025</h2>
         <p style="text-align: center; margin-bottom: 25px; color: var(--text-secondary);">Recommandations Techniques - Secours d'Urgence Aux Personnes - SDIS 34</p>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-top: 20px;">
-            <button onclick="showModule('suap-ages')" style="background: linear-gradient(135deg, #7B1FA2 0%, #9C27B0 100%); border: 3px solid #9C27B0; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">👶</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Âges & Définitions</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Juste-né → Adulte</div>
-            </button>
-            
-            <button onclick="showModule('suap-rcp')" style="background: linear-gradient(135deg, #D32F2F 0%, #e51b0d 100%); border: 3px solid #F44336; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">❤️</div>
-                <div style="font-size: 1.1em; font-weight: 700;">RCP</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Selon l'âge</div>
-            </button>
-            
-            <button onclick="showModule('suap-hemorragies')" style="background: linear-gradient(135deg, #C62828 0%, #B71C1C 100%); border: 3px solid #B71C1C; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🩸</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Hémorragies</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Garrot, PCU, Points</div>
-            </button>
-            
-            <button onclick="showModule('suap-brulures')" style="background: linear-gradient(135deg, #c25400 0%, #a86400 100%); border: 3px solid #FF9800; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🔥</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Brûlures</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Wallace, Gravité</div>
-            </button>
-            
-            <button onclick="showModule('suap-bilan')" style="background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%); border: 3px solid #1976D2; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">📋</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Bilan</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">EVDA, Douleur</div>
-            </button>
-            
-            <button onclick="showModule('suap-oxygene')" style="background: linear-gradient(135deg, #027bbd 0%, #027cb3 100%); border: 3px solid #03A9F4; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">💨</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Oxygène</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Débits O₂</div>
-            </button>
-            
-            <button onclick="showModule('suap-trauma')" style="background: linear-gradient(135deg, #5D4037 0%, #795548 100%); border: 3px solid #795548; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🦴</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Traumatismes</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Bassin, Membre</div>
-            </button>
-            
-            <button onclick="showModule('suap-accouchement')" style="background: linear-gradient(135deg, #e6175d 0%, #e5165c 100%); border: 3px solid #F06292; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">👼</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Accouchement</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Juste-né, Transport</div>
-            </button>
-            
-            <button onclick="showModule('suap-ecg')" style="background: linear-gradient(135deg, #00695C 0%, #008476 100%); border: 3px solid #00897B; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">📈</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Électrocardiogramme</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">ECG 12D - Touch 7</div>
-            </button>
+        <div class="rd-cartes-photo">
+            <button onclick="showModule('suap-ages')"><img src="images/suap/ages.jpg" alt="Âges & Définitions — Juste-né → Adulte"></button>
+            <button onclick="showModule('suap-rcp')"><img src="images/suap/rcp.jpg" alt="RCP — Selon l'âge"></button>
+            <button onclick="showModule('suap-hemorragies')"><img src="images/suap/hemorragies.jpg" alt="Hémorragies — Garrot, PCU, Points"></button>
+            <button onclick="showModule('suap-brulures')"><img src="images/suap/brulures.jpg" alt="Brûlures — Wallace, Gravité"></button>
+            <button onclick="showModule('suap-bilan')"><img src="images/suap/bilan.jpg" alt="Bilan — EVDA, Douleur"></button>
+            <button onclick="showModule('suap-oxygene')"><img src="images/suap/oxygene.jpg" alt="Oxygène — Débits O₂"></button>
+            <button onclick="showModule('suap-trauma')"><img src="images/suap/trauma.jpg" alt="Traumatismes — Bassin, Membre"></button>
+            <button onclick="showModule('suap-accouchement')"><img src="images/suap/accouchement.jpg" alt="Accouchement — Juste-né, Transport"></button>
+            <button onclick="showModule('suap-ecg')"><img src="images/suap/ecg.jpg" alt="Électrocardiogramme — ECG 12D - Touch 7"></button>
         </div>
         
         <div class="rd-section">
@@ -26131,7 +26087,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.55.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.56.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
