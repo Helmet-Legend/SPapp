@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.56.0">
+    <meta name="version" content="1.57.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.56.0</span><br>
+                        Vulcain v<span class="app-version">1.57.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -487,7 +487,7 @@
     <!-- Module Taux d'application additif -->
     <div id="emulseur" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
-        <h2>🫧 Taux d'application additif</h2>
+        <div class="rd-calc-head"><span class="ico-badge">🎯</span><h2>Taux d'application additif</h2></div>
 
         <div class="result-box">
             <h3>🎯 Mode de calcul</h3>
@@ -538,10 +538,9 @@
                 </div>
             </div>
 
-            <div class="info-card" id="emuResultatPrincipal" aria-live="polite" style="margin-top: 20px; text-align: center;"></div>
-            <div class="result-box">
-                <h3>📋 Détails du calcul</h3>
-                <div id="emuDetails"></div>
+            <div class="rd-resultats">
+                <div class="rd-tile" id="emuResultatPrincipal" aria-live="polite"></div>
+                <div id="emuDetails" style="display: contents;"></div>
             </div>
         </div>
 
@@ -590,10 +589,9 @@
                 </div>
             </div>
 
-            <div class="info-card" id="emuInverseResultatPrincipal" aria-live="polite" style="margin-top: 20px; text-align: center;"></div>
-            <div class="result-box">
-                <h3>📋 Détails du calcul</h3>
-                <div id="emuInverseDetails"></div>
+            <div class="rd-resultats">
+                <div class="rd-tile" id="emuInverseResultatPrincipal" aria-live="polite"></div>
+                <div id="emuInverseDetails" style="display: contents;"></div>
             </div>
         </div>
 
@@ -606,7 +604,7 @@
         <h2>🔧 Calcul des Pertes de Charge</h2>
 
         <div class="result-box" id="pdcRapide">
-            <h3>⚡ Calcul rapide – un établissement</h3>
+            <div class="rd-calc-head"><span class="ico-badge">⚡</span><h3 style="margin:0;">Calcul rapide – un établissement</h3></div>
             <p style="margin: 0 0 10px;">Valeurs du tableau « Hydraulique – Pertes de charge » (RDMI) : la perte varie avec le carré du débit et la longueur.</p>
             <div class="form-group">
                 <label>Diamètre :</label>
@@ -640,10 +638,11 @@
                     <input type="number" id="pdcJonctions" value="0" min="0" max="20" inputmode="numeric" oninput="pdcCalculer()">
                 </div>
             </div>
-            <div class="info-card" style="margin: 15px 0 0; padding: 16px 18px; text-align: center;">
-                <div class="label">Pression à afficher à la pompe</div>
-                <div class="value" id="pdcPompe" style="font-size: 2em; margin: 6px 0;">–</div>
-                <div class="label" id="pdcDetail"></div>
+            <div class="rd-resultats" style="margin-top: 16px;">
+                <div class="rd-tile" style="--tile-c:light-dark(#1565c0, #5da1ed)"><div class="rd-tile-label">Pression à la pompe</div><div class="rd-tile-value" id="pdcPompe">–</div><div class="rd-tile-sub">Pression nécessaire en sortie de pompe</div></div>
+                <div class="rd-tile" style="--tile-c:light-dark(#c22727, #e57e7e)"><div class="rd-tile-label">Pertes de charge totales</div><div class="rd-tile-value" id="pdcPertes">–</div><div class="rd-tile-sub" id="pdcDetail"></div></div>
+                <div class="rd-tile" style="--tile-c:light-dark(#2a722e, #41b147)"><div class="rd-tile-label">Débit</div><div class="rd-tile-value" id="pdcDebitAffiche">–</div><div class="rd-tile-sub">Débit de référence</div></div>
+                <div class="rd-tile" style="--tile-c:light-dark(#b33f00, #ff7124)"><div class="rd-tile-label">Longueur totale</div><div class="rd-tile-value" id="pdcLongueur">–</div><div class="rd-tile-sub"></div></div>
             </div>
             <p id="pdcAlerte" class="rd-alerte" style="display: none; margin-top: 12px;"></p>
             <button type="button" onclick="showModule('rdmi-hydraulique')" style="margin-top: 12px;">📘 Tableau des pertes de charge (RDMI)</button>
@@ -3679,7 +3678,8 @@
     <div id="feu-foret" class="module">
         <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
         <h2>🌲 Feux de Forêt - Règle des 3%</h2>
-        
+        <figure class="rd-fig" style="margin-top: 0;"><img src="images/calc/fdf-banner.jpg" alt="Feux de forêt — Règle des 3%" loading="lazy"></figure>
+
         <div class="alert-box" style="background: rgba(0,170,255,0.15); border-left-color: #00aaff; margin-bottom: 25px;">
             <strong>📖 Règle des 3% :</strong> La vitesse de propagation du feu est approximativement égale à <strong>3% de la vitesse du vent</strong>.<br>
             <span style="font-size: 0.9em; opacity: 0.9;">Exemple : Vent à 30 km/h → Vitesse propagation ≈ 0.9 km/h (soit 15 m/min)</span>
@@ -8849,26 +8849,7 @@
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
             <h3 style="color: light-dark(#c22727, #e57e7e); margin-bottom: 20px; border-bottom: 2px solid #B71C1C; padding-bottom: 10px;">👆 Points de Compression à Distance</h3>
             <p style="margin-bottom: 15px; color: var(--text-secondary);">Indiqués <strong>préalablement</strong> à la pose d'un garrot ou d'un PCU, dans une stratégie d'épargne sanguine.</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                <div style="background: var(--t-s1, #fff); padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #F44336;">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🦵</div>
-                    <strong style="color: light-dark(#c22727, #e57e7e); font-size: 1.1em;">FÉMORAL</strong>
-                    <p style="margin: 10px 0 0 0; font-size: 0.9em;">Pli de l'aine<br>Poing, bras tendu, milieu du pli</p>
-                </div>
-                
-                <div style="background: var(--t-s1, #fff); padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #FF9800;">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">💪</div>
-                    <strong style="color: light-dark(#b33f00, #ff7124); font-size: 1.1em;">BRACHIAL</strong>
-                    <p style="margin: 10px 0 0 0; font-size: 0.9em;">Face interne du bras<br>Pouce appuyé vers l'os + rotation</p>
-                </div>
-                
-                <div style="background: var(--t-s1, #fff); padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #9C27B0;">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🫁</div>
-                    <strong style="color: light-dark(#7b1fa2, #c77ee6); font-size: 1.1em;">CAROTIDIEN</strong>
-                    <p style="margin: 10px 0 0 0; font-size: 0.9em;">Base du cou<br>Pouce à la base, sans écraser la trachée</p>
-                </div>
-            </div>
+            <figure class="rd-fig"><img src="images/suap/points-compression.jpg" alt="Points de compression à distance : fémoral (pli de l'aine), brachial (face interne du bras), carotidien (base du cou)" loading="lazy"></figure>
         </div>
         
         <!-- Garrot -->
@@ -8891,34 +8872,7 @@
             <h3 style="color: light-dark(#c22727, #e57e7e); margin-bottom: 20px; border-bottom: 2px solid #B71C1C; padding-bottom: 10px;">🩹 Pansement Compressif d'Urgence (PCU)</h3>
             
             <p style="margin-bottom: 15px;">Indiqué pour relayer une compression manuelle <strong>quand le garrot est impossible</strong> : tête, cou, racines des membres, fesses.</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #F44336;">
-                    <div style="font-size: 2em;">🗣️</div>
-                    <strong style="color: light-dark(#c22727, #e57e7e);">Cou</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">JAMAIS circulaire</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #FF9800;">
-                    <div style="font-size: 2em;">💪</div>
-                    <strong style="color: light-dark(#b33f00, #ff7124);">Aisselle</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">+ Collier cervical</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #4CAF50;">
-                    <div style="font-size: 2em;">🦵</div>
-                    <strong style="color: light-dark(#2a722e, #41b147);">Pli de l'aine</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">Autour cuisse + bassin</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #2196F3;">
-                    <div style="font-size: 2em;">🍑</div>
-                    <strong style="color: light-dark(#1565c0, #5da1ed);">Fesse</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">Victime sur le ventre</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #9C27B0;">
-                    <div style="font-size: 2em;">🗣️</div>
-                    <strong style="color: light-dark(#7b1fa2, #c77ee6);">Crâne</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">+ Passage menton</p>
-                </div>
-            </div>
+            <figure class="rd-fig"><img src="images/suap/pcu.jpg" alt="Pansement compressif d'urgence : cou (jamais circulaire), aisselle (+ collier cervical), pli de l'aine (autour cuisse et bassin), fesse (victime sur le ventre), crâne (+ passage menton)" loading="lazy"></figure>
         </div>
         
         <!-- Pansement 3 côtés -->
@@ -11054,35 +11008,14 @@
             <small>ADJ ALBORCH Gregory / CAP BOY Corentin</small>
         </p>
         
-        <div class="nav-buttons">
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-materiels')">
-                <div>🎒</div>
-                <span class="nav-label">Matériels & Équipements</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-generalites')">
-                <div>📋</div>
-                <span class="nav-label">Généralités Opérationnelles</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-milieux')">
-                <div>🏢</div>
-                <span class="nav-label">Milieux d'Intervention</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-arbre')">
-                <div>🔀</div>
-                <span class="nav-label">Arbre Décisionnel</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-psc')">
-                <div>🅿️</div>
-                <span class="nav-label">Parc de Stationnement</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-complexe')">
-                <div>🏭</div>
-                <span class="nav-label">Milieu Complexe</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-distance')">
-                <div>🚇</div>
-                <span class="nav-label">Grande Distance</span>
-            </div>
+        <div class="rd-cartes-photo">
+            <button onclick="showModule('eld-materiels')"><img src="images/eld/eld-materiels.jpg" alt="Matériels & Équipements"></button>
+            <button onclick="showModule('eld-generalites')"><img src="images/eld/eld-generalites.jpg" alt="Généralités Opérationnelles"></button>
+            <button onclick="showModule('eld-milieux')"><img src="images/eld/eld-milieux.jpg" alt="Milieux d'Intervention"></button>
+            <button onclick="showModule('eld-arbre')"><img src="images/eld/eld-arbre.jpg" alt="Arbre Décisionnel"></button>
+            <button onclick="showModule('eld-psc')"><img src="images/eld/eld-psc.jpg" alt="Parc de Stationnement"></button>
+            <button onclick="showModule('eld-complexe')"><img src="images/eld/eld-complexe.jpg" alt="Milieu Complexe"></button>
+            <button onclick="showModule('eld-distance')" style="grid-column: 1 / -1;"><img src="images/eld/eld-distance.jpg" alt="Reconnaissance Longue Distance"></button>
         </div>
     </div>
 
@@ -17699,43 +17632,8 @@ Je fais : extinction.</p>
                 <h3>📌 La stabilisation</h3>
                 <p>Plus la stabilisation est large, plus la zone de travail est importante. Deux familles de stabilisateurs existent : <strong>non réglables</strong> (empattement fixe) et <strong>réglables</strong>, qui peuvent prendre différentes configurations au sol selon l'espace disponible.</p>
                 <figure class="rd-fig">
-                    <svg viewBox="0 0 400 120" role="img" aria-label="Quatre configurations de stabilisateurs : en A, en I, en X et en H">
-                        <g font-family="sans-serif" font-size="12" font-weight="600" text-anchor="middle" stroke="#1a2230" fill="#1a2230">
-                            <g transform="translate(50,55)">
-                                <rect x="-6" y="-6" width="12" height="12" fill="none" stroke-width="2"/>
-                                <line x1="-5" y1="-4" x2="-28" y2="-22" stroke-width="2.5"/>
-                                <line x1="5" y1="-4" x2="28" y2="-22" stroke-width="2.5"/>
-                                <line x1="-5" y1="4" x2="-28" y2="22" stroke-width="2.5"/>
-                                <line x1="5" y1="4" x2="28" y2="22" stroke-width="2.5"/>
-                                <text y="48" stroke="none">En A</text>
-                            </g>
-                            <g transform="translate(150,55)">
-                                <rect x="-6" y="-6" width="12" height="12" fill="none" stroke-width="2"/>
-                                <line x1="-30" y1="-22" x2="30" y2="-22" stroke-width="2.5"/>
-                                <line x1="-30" y1="22" x2="30" y2="22" stroke-width="2.5"/>
-                                <line x1="0" y1="-22" x2="0" y2="-6" stroke-width="2.5"/>
-                                <line x1="0" y1="22" x2="0" y2="6" stroke-width="2.5"/>
-                                <text y="48" stroke="none">En I</text>
-                            </g>
-                            <g transform="translate(250,55)">
-                                <rect x="-6" y="-6" width="12" height="12" fill="none" stroke-width="2"/>
-                                <line x1="-5" y1="-4" x2="-30" y2="-28" stroke-width="2.5"/>
-                                <line x1="5" y1="-4" x2="30" y2="-28" stroke-width="2.5"/>
-                                <line x1="-5" y1="4" x2="-10" y2="28" stroke-width="2.5"/>
-                                <line x1="5" y1="4" x2="10" y2="28" stroke-width="2.5"/>
-                                <text y="48" stroke="none">En X</text>
-                            </g>
-                            <g transform="translate(350,55)">
-                                <rect x="-6" y="-6" width="12" height="12" fill="none" stroke-width="2"/>
-                                <line x1="-28" y1="-24" x2="-28" y2="24" stroke-width="2.5"/>
-                                <line x1="28" y1="-24" x2="28" y2="24" stroke-width="2.5"/>
-                                <line x1="-28" y1="0" x2="-6" y2="0" stroke-width="2.5"/>
-                                <line x1="28" y1="0" x2="6" y2="0" stroke-width="2.5"/>
-                                <text y="48" stroke="none">En H</text>
-                            </g>
-                        </g>
-                    </svg>
-                    <figcaption>Les 4 configurations de stabilisation (schéma de principe, vue du dessus)</figcaption>
+                    <img src="images/cod6/stabilisation.jpg" alt="Les 4 configurations de stabilisation vues du dessus : en A (stabilisation complète, plus grande zone de travail), en I (longitudinale, espace latéral réduit), en X (partielle, espace avant ou arrière limité), en H (transversale, espace avant et arrière réduit)" loading="lazy">
+                    <figcaption>Les 4 configurations de stabilisation (vue du dessus)</figcaption>
                 </figure>
                 <p>Quand la stabilisation diffère d'un côté à l'autre (stabilisateurs sortis au maximum d'un côté, au minimum de l'autre), l'engin adapte ses performances disponibles au pivotement en fonction du polygone de sustentation réellement obtenu.</p>
                 <p>Un dispositif de <strong>neutralisation des suspensions</strong> arrière (par crochets, par chaînes ou par câbles, selon les engins) augmente la stabilité du véhicule pendant la stabilisation ; il s'active hydrauliquement pendant la descente des stabilisateurs.</p>
@@ -26087,7 +25985,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.56.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.57.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
