@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.56.0">
+    <meta name="version" content="1.56.1">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.56.0</span><br>
+                        Vulcain v<span class="app-version">1.56.1</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -8849,26 +8849,7 @@
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
             <h3 style="color: light-dark(#c22727, #e57e7e); margin-bottom: 20px; border-bottom: 2px solid #B71C1C; padding-bottom: 10px;">👆 Points de Compression à Distance</h3>
             <p style="margin-bottom: 15px; color: var(--text-secondary);">Indiqués <strong>préalablement</strong> à la pose d'un garrot ou d'un PCU, dans une stratégie d'épargne sanguine.</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                <div style="background: var(--t-s1, #fff); padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #F44336;">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🦵</div>
-                    <strong style="color: light-dark(#c22727, #e57e7e); font-size: 1.1em;">FÉMORAL</strong>
-                    <p style="margin: 10px 0 0 0; font-size: 0.9em;">Pli de l'aine<br>Poing, bras tendu, milieu du pli</p>
-                </div>
-                
-                <div style="background: var(--t-s1, #fff); padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #FF9800;">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">💪</div>
-                    <strong style="color: light-dark(#b33f00, #ff7124); font-size: 1.1em;">BRACHIAL</strong>
-                    <p style="margin: 10px 0 0 0; font-size: 0.9em;">Face interne du bras<br>Pouce appuyé vers l'os + rotation</p>
-                </div>
-                
-                <div style="background: var(--t-s1, #fff); padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #9C27B0;">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🫁</div>
-                    <strong style="color: light-dark(#7b1fa2, #c77ee6); font-size: 1.1em;">CAROTIDIEN</strong>
-                    <p style="margin: 10px 0 0 0; font-size: 0.9em;">Base du cou<br>Pouce à la base, sans écraser la trachée</p>
-                </div>
-            </div>
+            <img src="images/suap/points-compression.jpg" alt="Points de compression à distance : fémoral (pli de l'aine), brachial (face interne du bras), carotidien (base du cou)" loading="lazy" style="width: 100%; height: auto; display: block; border-radius: 12px; margin: 12px 0;">
         </div>
         
         <!-- Garrot -->
@@ -8891,34 +8872,7 @@
             <h3 style="color: light-dark(#c22727, #e57e7e); margin-bottom: 20px; border-bottom: 2px solid #B71C1C; padding-bottom: 10px;">🩹 Pansement Compressif d'Urgence (PCU)</h3>
             
             <p style="margin-bottom: 15px;">Indiqué pour relayer une compression manuelle <strong>quand le garrot est impossible</strong> : tête, cou, racines des membres, fesses.</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #F44336;">
-                    <div style="font-size: 2em;">🗣️</div>
-                    <strong style="color: light-dark(#c22727, #e57e7e);">Cou</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">JAMAIS circulaire</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #FF9800;">
-                    <div style="font-size: 2em;">💪</div>
-                    <strong style="color: light-dark(#b33f00, #ff7124);">Aisselle</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">+ Collier cervical</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #4CAF50;">
-                    <div style="font-size: 2em;">🦵</div>
-                    <strong style="color: light-dark(#2a722e, #41b147);">Pli de l'aine</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">Autour cuisse + bassin</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #2196F3;">
-                    <div style="font-size: 2em;">🍑</div>
-                    <strong style="color: light-dark(#1565c0, #5da1ed);">Fesse</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">Victime sur le ventre</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #9C27B0;">
-                    <div style="font-size: 2em;">🗣️</div>
-                    <strong style="color: light-dark(#7b1fa2, #c77ee6);">Crâne</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">+ Passage menton</p>
-                </div>
-            </div>
+            <img src="images/suap/pcu.jpg" alt="Pansement compressif d'urgence : cou (jamais circulaire), aisselle (+ collier cervical), pli de l'aine (autour cuisse et bassin), fesse (victime sur le ventre), crâne (+ passage menton)" loading="lazy" style="width: 100%; height: auto; display: block; border-radius: 12px; margin: 12px 0;">
         </div>
         
         <!-- Pansement 3 côtés -->
@@ -26087,7 +26041,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.56.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.56.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
