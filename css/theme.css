@@ -738,6 +738,29 @@ html[data-theme] .ia-jeton.utilise { color: var(--t-muted); }
 .ia-compteur-aide ul { margin: 8px 0 0; padding-left: 20px; line-height: 1.5; }
 #btn-generer.ia-epuise { filter: grayscale(0.8); opacity: 0.7; }
 
+/* Feux de forêt : sélection vitesse du vent / angle du cône */
+.rd-vent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 10px; margin-top: 10px; }
+.rd-angle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+html[data-theme] .rd-vent-btn, html[data-theme] .rd-angle-btn { background: var(--t-s1); border: 2px solid var(--vc); border-radius: 14px; color: var(--t-ink); cursor: pointer; text-align: center; transition: transform .15s, outline-color .15s; }
+html[data-theme] .rd-vent-btn[aria-pressed="true"], html[data-theme] .rd-angle-btn[aria-pressed="true"] { outline: 3px solid var(--vc); outline-offset: 2px; transform: scale(1.04); }
+.rd-vent-btn { padding: 14px 6px; }
+.rd-vent-icone { font-size: 1.3em; line-height: 1; }
+.rd-vent-valeur { font-size: 1.3em; font-weight: 800; color: var(--vc); line-height: 1.1; }
+.rd-vent-unite { font-size: 0.7em; font-weight: 600; color: var(--t-muted); }
+.rd-angle-btn { padding: 18px 10px; }
+.rd-angle-icone { font-size: 1.8em; line-height: 1; }
+.rd-angle-valeur { font-size: 1.3em; font-weight: 800; color: var(--vc); }
+.rd-angle-libelle { font-size: 0.8em; color: var(--t-muted); margin-top: 4px; }
+html[data-theme] .rd-vent-btn[data-vent="20"] { --vc: light-dark(#2a722e, #41b147); }
+html[data-theme] .rd-vent-btn[data-vent="30"] { --vc: light-dark(#4a7a1f, #7fc23e); }
+html[data-theme] .rd-vent-btn[data-vent="40"] { --vc: light-dark(#7a7a12, #c7c73a); }
+html[data-theme] .rd-vent-btn[data-vent="50"] { --vc: light-dark(#8a5a0a, #e0a830); }
+html[data-theme] .rd-vent-btn[data-vent="60"] { --vc: light-dark(#b33f00, #ff7124); }
+html[data-theme] .rd-vent-btn[data-vent="70"] { --vc: light-dark(#c23a1e, #ff6a4d); }
+html[data-theme] .rd-vent-btn[data-vent="80"] { --vc: light-dark(#c22727, #e57e7e); }
+html[data-theme] .rd-angle-btn[data-angle="30"] { --vc: light-dark(#1565c0, #5da1ed); }
+html[data-theme] .rd-angle-btn[data-angle="40"] { --vc: light-dark(#c22727, #e57e7e); }
+
 /* Liens vers les documents PDF (FDF) */
 html[data-theme] .rd-pdf { display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--t-accent); color: var(--t-ink); background: var(--t-s1); font-weight: 700; text-decoration: none; }
 html[data-theme] .rd-source .rd-pdf { padding: 4px 10px; border-width: 1px; font-weight: 600; margin-top: 4px; }

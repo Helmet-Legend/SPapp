@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.56.1 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.56.3 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -136,7 +136,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.56.1';
+var APP_VERSION = '1.56.3';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -948,22 +948,19 @@ function calculateAbaque() { calculateAbaqueAll(); }
 // MODULE FEU DE FORÊT
 // ═══════════════════════════════════════════════════════════════════════
 
-function selectVentRapide(vitesse) {
+function selectVentRapide(vitesse, btn) {
     ventSelectionne = vitesse;
-    document.querySelectorAll('.vent-btn').forEach(function(btn) { btn.style.transform = 'scale(1)'; btn.style.boxShadow = ''; });
-    if (event && event.target) {
-        event.target.style.boxShadow = '0 0 0 4px rgba(229, 57, 53, 0.3)';
-        event.target.style.transform = 'scale(1.05)';
-    }
+    document.querySelectorAll('.rd-vent-btn').forEach(function(b) { b.setAttribute('aria-pressed', 'false'); });
+    if (btn) btn.setAttribute('aria-pressed', 'true');
     calculateFeuForetRegle3pct();
 }
 
 function selectAngleCone(angle) {
     var input = document.getElementById('angle-cone');
     if (input) input.value = angle;
-    document.querySelectorAll('.angle-btn').forEach(function(btn) { btn.classList.remove('angle-selected'); });
+    document.querySelectorAll('.rd-angle-btn').forEach(function(btn) { btn.setAttribute('aria-pressed', 'false'); });
     var selectedBtn = document.getElementById('angle-btn-' + angle);
-    if (selectedBtn) selectedBtn.classList.add('angle-selected');
+    if (selectedBtn) selectedBtn.setAttribute('aria-pressed', 'true');
     if (ventSelectionne > 0) calculateFeuForetRegle3pct();
 }
 
@@ -1386,7 +1383,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.56.1 COMPLET
+// FIN DU FICHIER - Vulcain v1.56.3 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
