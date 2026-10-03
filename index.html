@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.56.4">
+    <meta name="version" content="1.57.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.56.4</span><br>
+                        Vulcain v<span class="app-version">1.57.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -492,8 +492,8 @@
         <div class="result-box">
             <h3>🎯 Mode de calcul</h3>
             <div class="rd-choix-technique" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                <button type="button" data-emu-mode="direct" aria-pressed="true" onclick="emuMode('direct')">📐 Calcul direct<br><small>Surface → besoins</small></button>
-                <button type="button" data-emu-mode="inverse" aria-pressed="false" onclick="emuMode('inverse')">🔄 Calcul inverse<br><small>Stock → surface possible</small></button>
+                <button type="button" data-emu-mode="direct" aria-pressed="true" onclick="emuMode('direct')" class="rd-badge-btn"><img src="images/emulseur/icon-mode-direct.png" alt=""><span class="rd-badge-texte">Calcul direct<br><small>Surface → besoins</small></span></button>
+                <button type="button" data-emu-mode="inverse" aria-pressed="false" onclick="emuMode('inverse')" class="rd-badge-btn"><img src="images/emulseur/icon-mode-inverse.png" alt=""><span class="rd-badge-texte">Calcul inverse<br><small>Stock → surface possible</small></span></button>
             </div>
         </div>
 
@@ -502,9 +502,9 @@
             <div class="form-group">
                 <label>Taux d'application (L/min/m²)</label>
                 <div class="rd-choix-technique" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
-                    <button type="button" data-emu-taux="10" aria-pressed="true" onclick="emuChoisirTaux(10)">10<br><small>Hydrocarbure</small></button>
-                    <button type="button" data-emu-taux="20" aria-pressed="false" onclick="emuChoisirTaux(20)">20<br><small>Liquide polaire</small></button>
-                    <button type="button" id="emuTauxCustom" aria-pressed="false" onclick="emuToggleCustom('emuTauxCustomDiv')">Autre<br><small>L/min/m²</small></button>
+                    <button type="button" data-emu-taux="10" aria-pressed="true" onclick="emuChoisirTaux(10)" class="rd-badge-btn"><img src="images/emulseur/icon-taux-hydro.png" alt=""><span class="rd-badge-texte">10<br><small>Hydrocarbure</small></span></button>
+                    <button type="button" data-emu-taux="20" aria-pressed="false" onclick="emuChoisirTaux(20)" class="rd-badge-btn"><img src="images/emulseur/icon-taux-polaire.png" alt=""><span class="rd-badge-texte">20<br><small>Liquide polaire</small></span></button>
+                    <button type="button" id="emuTauxCustom" aria-pressed="false" onclick="emuToggleCustom('emuTauxCustomDiv')" class="rd-badge-btn"><img src="images/emulseur/icon-taux-autre.png" alt=""><span class="rd-badge-texte">Autre<br><small>L/min/m²</small></span></button>
                 </div>
                 <div id="emuTauxCustomDiv" style="display: none; margin-top: 8px;">
                     <input type="number" min="0.1" step="0.5" value="10" inputmode="decimal" placeholder="L/min/m²" oninput="emuChoisirTaux(parseFloat(this.value) || 0, true)">
@@ -550,9 +550,9 @@
             <div class="form-group">
                 <label>Taux d'application (L/min/m²)</label>
                 <div class="rd-choix-technique" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
-                    <button type="button" data-emu-taux-inv="10" aria-pressed="true" onclick="emuChoisirTauxInv(10)">10<br><small>Hydrocarbure</small></button>
-                    <button type="button" data-emu-taux-inv="20" aria-pressed="false" onclick="emuChoisirTauxInv(20)">20<br><small>Liquide polaire</small></button>
-                    <button type="button" id="emuTauxInvCustom" aria-pressed="false" onclick="emuToggleCustom('emuTauxInvCustomDiv')">Autre<br><small>L/min/m²</small></button>
+                    <button type="button" data-emu-taux-inv="10" aria-pressed="true" onclick="emuChoisirTauxInv(10)" class="rd-badge-btn"><img src="images/emulseur/icon-taux-hydro.png" alt=""><span class="rd-badge-texte">10<br><small>Hydrocarbure</small></span></button>
+                    <button type="button" data-emu-taux-inv="20" aria-pressed="false" onclick="emuChoisirTauxInv(20)" class="rd-badge-btn"><img src="images/emulseur/icon-taux-polaire.png" alt=""><span class="rd-badge-texte">20<br><small>Liquide polaire</small></span></button>
+                    <button type="button" id="emuTauxInvCustom" aria-pressed="false" onclick="emuToggleCustom('emuTauxInvCustomDiv')" class="rd-badge-btn"><img src="images/emulseur/icon-taux-autre.png" alt=""><span class="rd-badge-texte">Autre<br><small>L/min/m²</small></span></button>
                 </div>
                 <div id="emuTauxInvCustomDiv" style="display: none; margin-top: 8px;">
                     <input type="number" min="0.1" step="0.5" value="10" inputmode="decimal" placeholder="L/min/m²" oninput="emuChoisirTauxInv(parseFloat(this.value) || 0, true)">
@@ -26020,7 +26020,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.56.4</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.57.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

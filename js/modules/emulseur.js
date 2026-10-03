@@ -79,10 +79,21 @@ function emuCalculer() {
         `<div class="value">${volumeEmulseur.toFixed(0)} L</div>` +
         `<div class="label">${bidons20L} bidon${bidons20L > 1 ? 's' : ''} de 20 L</div>`;
 
-    document.getElementById('emuDetails').innerHTML =
-        `<div class="result-item"><span>Débit de solution</span><span class="result-value">${debitSolution.toFixed(0)} L/min</span></div>` +
-        `<div class="result-item"><span>Volume de solution</span><span class="result-value">${volumeSolution.toFixed(0)} L</span></div>` +
-        `<div class="result-item"><span>Eau nécessaire</span><span class="result-value">${volumeEau.toFixed(0)} L</span></div>`;
+    document.getElementById('emuDetails').innerHTML = `<div class="rd-resultats">` +
+        emuTuile('debit', 'c-bleu', 'Débit requis', debitSolution.toFixed(0), 'L/min') +
+        emuTuile('emulseur', 'c-rouge', 'Volume émulseur', volumeEmulseur.toFixed(0), `L (concentration ${emuConcentration} %)`) +
+        emuTuile('eau', 'c-orange', "Volume d'eau", volumeEau.toFixed(0), 'L') +
+        emuTuile('mousse', 'c-violet', 'Volume de solution', volumeSolution.toFixed(0), 'L') +
+        `</div>`;
+}
+
+function emuTuile(icone, couleur, label, valeur, unite) {
+    return `<div class="rd-tile ${couleur}">` +
+        `<img class="rd-tile-icone" src="images/emulseur/icon-${icone}.png" alt="" loading="lazy">` +
+        `<div class="rd-tile-label">${label}</div>` +
+        `<div class="rd-tile-valeur">${valeur} </div>` +
+        `<div class="rd-tile-unite">${unite}</div>` +
+        `</div>`;
 }
 
 function emuCalculerInverse() {
@@ -98,10 +109,11 @@ function emuCalculerInverse() {
         `<div class="label">Surface réalisable</div>` +
         `<div class="value">${surface.toFixed(1)} m²</div>`;
 
-    document.getElementById('emuInverseDetails').innerHTML =
-        `<div class="result-item"><span>Volume de solution</span><span class="result-value">${volumeSolution.toFixed(0)} L</span></div>` +
-        `<div class="result-item"><span>Eau nécessaire</span><span class="result-value">${volumeEau.toFixed(0)} L</span></div>` +
-        `<div class="result-item"><span>Débit de solution</span><span class="result-value">${debitSolution.toFixed(0)} L/min</span></div>`;
+    document.getElementById('emuInverseDetails').innerHTML = `<div class="rd-resultats">` +
+        emuTuile('debit', 'c-bleu', 'Débit de solution', debitSolution.toFixed(0), 'L/min') +
+        emuTuile('eau', 'c-orange', "Eau nécessaire", volumeEau.toFixed(0), 'L') +
+        emuTuile('mousse', 'c-violet', 'Volume de solution', volumeSolution.toFixed(0), 'L') +
+        `</div>`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
