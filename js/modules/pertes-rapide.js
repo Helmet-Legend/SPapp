@@ -48,19 +48,24 @@ function pdcCalculer() {
     document.querySelectorAll('[data-pdc-debit]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.pdcDebit) === debit)));
 
     const perte20 = pdcPertePour20m(pdcDiametreChoisi, debit);
+    document.getElementById('pdcDebitAffiche').textContent = debit ? `${debit} L/min` : '–';
+    document.getElementById('pdcLongueur').textContent = tuyaux ? `${tuyaux * 20} m` : '–';
+    document.querySelector('#pdcRapide .rd-tile:nth-child(4) .rd-tile-sub').textContent = tuyaux ? `${tuyaux} tuyau${tuyaux > 1 ? 'x' : ''} de 20 m` : '';
     if (perte20 === null || debit <= 0) {
         sortie.textContent = '–';
+        document.getElementById('pdcPertes').textContent = '–';
         document.getElementById('pdcDetail').textContent = 'Indiquez un débit.';
         alerte.style.display = 'none';
         return;
     }
     const perteTuyaux = perte20 * tuyaux;
     const perteDenivele = denivele / 10;
-    const total = pression + perteTuyaux + perteDenivele + jonctions;
+    const pertesTotales = perteTuyaux + perteDenivele + jonctions;
+    const total = pression + pertesTotales;
     sortie.textContent = `${total.toFixed(1)} bar`;
+    document.getElementById('pdcPertes').textContent = `${pertesTotales.toFixed(1)} bar`;
     document.getElementById('pdcDetail').textContent =
-        `Lance ${pression} + tuyaux ${perteTuyaux.toFixed(2)} (${tuyaux} × ${perte20.toFixed(2)}) ` +
-        `${perteDenivele >= 0 ? '+' : '−'} dénivelé ${Math.abs(perteDenivele).toFixed(1)} + jonctions ${jonctions} bar`;
+        `Tuyaux : ${perteTuyaux.toFixed(1)} bar · Dénivelé : ${perteDenivele >= 0 ? '+' : '−'}${Math.abs(perteDenivele).toFixed(1)} bar · Jonctions : ${jonctions} bar`;
 
     const messages = [];
     const max = ref.debits[ref.debits.length - 1];
