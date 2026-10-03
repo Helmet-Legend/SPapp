@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.56.0">
+    <meta name="version" content="1.56.4">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.56.0</span><br>
+                        Vulcain v<span class="app-version">1.56.4</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -608,6 +608,7 @@
         <div class="result-box" id="pdcRapide">
             <h3>⚡ Calcul rapide – un établissement</h3>
             <p style="margin: 0 0 10px;">Valeurs du tableau « Hydraulique – Pertes de charge » (RDMI) : la perte varie avec le carré du débit et la longueur.</p>
+            <img src="images/cod1/pertes-charge-tableau.jpg" alt="Tableau des pertes de charge par tuyau de 20 m : Ø25 mm (58 L/min = 1,7 bar, 150 L/min = 2,2 bars), Ø45 mm (250 L/min = 0,3 bar, 500 L/min = 1,2 bar), Ø70 mm (500 L/min = 0,11 bar, 1000 L/min = 0,44 bar, 2000 L/min = 1,8 bar), Ø110 mm (1000 L/min = 0,06 bar, 2000 L/min = 0,24 bar)" loading="lazy" style="width: 100%; height: auto; display: block; border-radius: 12px; margin: 0 0 15px;">
             <div class="form-group">
                 <label>Diamètre :</label>
                 <div class="rd-choix-technique" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
@@ -3688,45 +3689,23 @@
         <!-- SÉLECTION RAPIDE VITESSE DU VENT -->
         <div class="form-group">
             <label>💨 Sélection rapide vitesse du vent :</label>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; margin-top: 15px;">
-                <button onclick="selectVentRapide(20)" class="vent-btn" style="padding: 20px; border: 3px solid #4CAF50; border-radius: 10px; background: linear-gradient(135deg, #39843c 0%, #3b853f 100%); color: white; cursor: pointer; transition: all 0.3s; text-align: center; font-size: 1.2em; font-weight: bold; box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);">
-                    20<br><span style="font-size: 0.7em; font-weight: normal;">km/h</span>
-                </button>
-                <button onclick="selectVentRapide(30)" class="vent-btn" style="padding: 20px; border: 3px solid #8BC34A; border-radius: 10px; background: linear-gradient(135deg, #59812b 0%, #59822b 100%); color: white; cursor: pointer; transition: all 0.3s; text-align: center; font-size: 1.2em; font-weight: bold; box-shadow: 0 4px 10px rgba(139, 195, 74, 0.3);">
-                    30<br><span style="font-size: 0.7em; font-weight: normal;">km/h</span>
-                </button>
-                <button onclick="selectVentRapide(40)" class="vent-btn" style="padding: 20px; border: 3px solid light-dark(#CDDC39, #687028); border-radius: 10px; background: linear-gradient(135deg, light-dark(#CDDC39, #373b20) 0%, light-dark(#D4E157, #383c26) 100%); color: var(--t-ink, #333); cursor: pointer; transition: all 0.3s; text-align: center; font-size: 1.2em; font-weight: bold; box-shadow: 0 4px 10px rgba(205, 220, 57, 0.3);">
-                    40<br><span style="font-size: 0.7em; font-weight: normal;">km/h</span>
-                </button>
-                <button onclick="selectVentRapide(50)" class="vent-btn" style="padding: 20px; border: 3px solid light-dark(#FFC107, #7f6412); border-radius: 10px; background: linear-gradient(135deg, light-dark(#FFC107, #403617) 0%, light-dark(#FFD54F, #403a24) 100%); color: var(--t-ink, #333); cursor: pointer; transition: all 0.3s; text-align: center; font-size: 1.2em; font-weight: bold; box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);">
-                    50<br><span style="font-size: 0.7em; font-weight: normal;">km/h</span>
-                </button>
-                <button onclick="selectVentRapide(60)" class="vent-btn" style="padding: 20px; border: 3px solid #FF9800; border-radius: 10px; background: linear-gradient(135deg, #a86400 0%, #a96500 100%); color: white; cursor: pointer; transition: all 0.3s; text-align: center; font-size: 1.2em; font-weight: bold; box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);">
-                    60<br><span style="font-size: 0.7em; font-weight: normal;">km/h</span>
-                </button>
-                <button onclick="selectVentRapide(70)" class="vent-btn" style="padding: 20px; border: 3px solid #FF5722; border-radius: 10px; background: linear-gradient(135deg, #df3500 0%, #dc3500 100%); color: white; cursor: pointer; transition: all 0.3s; text-align: center; font-size: 1.2em; font-weight: bold; box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);">
-                    70<br><span style="font-size: 0.7em; font-weight: normal;">km/h</span>
-                </button>
-                <button onclick="selectVentRapide(80)" class="vent-btn" style="padding: 20px; border: 3px solid #F44336; border-radius: 10px; background: linear-gradient(135deg, #e51b0d 0%, #da3737 100%); color: white; cursor: pointer; transition: all 0.3s; text-align: center; font-size: 1.2em; font-weight: bold; box-shadow: 0 4px 10px rgba(244, 67, 54, 0.3);">
-                    80<br><span style="font-size: 0.7em; font-weight: normal;">km/h</span>
-                </button>
+            <div class="rd-vent-grid">
+                <button type="button" onclick="selectVentRapide(20, this)" class="rd-vent-btn" data-vent="20" aria-pressed="false"><img src="images/fdf/vent-20.png" alt="20 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(30, this)" class="rd-vent-btn" data-vent="30" aria-pressed="false"><img src="images/fdf/vent-30.png" alt="30 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(40, this)" class="rd-vent-btn" data-vent="40" aria-pressed="false"><img src="images/fdf/vent-40.png" alt="40 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(50, this)" class="rd-vent-btn" data-vent="50" aria-pressed="false"><img src="images/fdf/vent-50.png" alt="50 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(60, this)" class="rd-vent-btn" data-vent="60" aria-pressed="false"><img src="images/fdf/vent-60.png" alt="60 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(70, this)" class="rd-vent-btn" data-vent="70" aria-pressed="false"><img src="images/fdf/vent-70.png" alt="70 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(80, this)" class="rd-vent-btn" data-vent="80" aria-pressed="false"><img src="images/fdf/vent-80.png" alt="80 km/h" loading="lazy"></button>
             </div>
         </div>
 
         <!-- ANGLE DU CÔNE DE PROPAGATION -->
         <div class="form-group">
             <label>📐 Angle du cône de propagation :</label>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
-                <button onclick="selectAngleCone(30)" id="angle-btn-30" class="angle-btn" style="padding: 20px; border: 3px solid #2196F3; border-radius: 10px; background: linear-gradient(135deg, #0b76cc 0%, #0b78d0 100%); color: white; cursor: pointer; transition: all 0.3s; text-align: center; box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);">
-                    <div style="font-size: 2em; margin-bottom: 5px;">📐</div>
-                    <div style="font-weight: bold;">30°</div>
-                    <div style="font-size: 0.8em; opacity: 0.9; margin-top: 5px;">Propagation étroite</div>
-                </button>
-                <button onclick="selectAngleCone(40)" id="angle-btn-40" class="angle-btn angle-selected" style="padding: 20px; border: 4px solid #4CAF50; border-radius: 10px; background: linear-gradient(135deg, #9C27B0 0%, #AB47BC 100%); color: white; cursor: pointer; transition: all 0.3s; text-align: center; box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);">
-                    <div style="font-size: 2em; margin-bottom: 5px;">📐</div>
-                    <div style="font-weight: bold;">40°</div>
-                    <div style="font-size: 0.8em; opacity: 0.9; margin-top: 5px;">Propagation large</div>
-                </button>
+            <div class="rd-angle-grid">
+                <button type="button" onclick="selectAngleCone(30)" id="angle-btn-30" class="rd-angle-btn" data-angle="30" aria-pressed="false"><img src="images/fdf/angle-30.png" alt="30° : propagation étroite" loading="lazy"></button>
+                <button type="button" onclick="selectAngleCone(40)" id="angle-btn-40" class="rd-angle-btn" data-angle="40" aria-pressed="true"><img src="images/fdf/angle-40.png" alt="40° : propagation large" loading="lazy"></button>
             </div>
             <input type="hidden" id="angle-cone" value="40">
         </div>
@@ -8849,26 +8828,7 @@
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
             <h3 style="color: light-dark(#c22727, #e57e7e); margin-bottom: 20px; border-bottom: 2px solid #B71C1C; padding-bottom: 10px;">👆 Points de Compression à Distance</h3>
             <p style="margin-bottom: 15px; color: var(--text-secondary);">Indiqués <strong>préalablement</strong> à la pose d'un garrot ou d'un PCU, dans une stratégie d'épargne sanguine.</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                <div style="background: var(--t-s1, #fff); padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #F44336;">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🦵</div>
-                    <strong style="color: light-dark(#c22727, #e57e7e); font-size: 1.1em;">FÉMORAL</strong>
-                    <p style="margin: 10px 0 0 0; font-size: 0.9em;">Pli de l'aine<br>Poing, bras tendu, milieu du pli</p>
-                </div>
-                
-                <div style="background: var(--t-s1, #fff); padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #FF9800;">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">💪</div>
-                    <strong style="color: light-dark(#b33f00, #ff7124); font-size: 1.1em;">BRACHIAL</strong>
-                    <p style="margin: 10px 0 0 0; font-size: 0.9em;">Face interne du bras<br>Pouce appuyé vers l'os + rotation</p>
-                </div>
-                
-                <div style="background: var(--t-s1, #fff); padding: 20px; border-radius: 12px; text-align: center; border: 3px solid #9C27B0;">
-                    <div style="font-size: 2.5em; margin-bottom: 10px;">🫁</div>
-                    <strong style="color: light-dark(#7b1fa2, #c77ee6); font-size: 1.1em;">CAROTIDIEN</strong>
-                    <p style="margin: 10px 0 0 0; font-size: 0.9em;">Base du cou<br>Pouce à la base, sans écraser la trachée</p>
-                </div>
-            </div>
+            <img src="images/suap/points-compression.jpg" alt="Points de compression à distance : fémoral (pli de l'aine), brachial (face interne du bras), carotidien (base du cou)" loading="lazy" style="width: 100%; height: auto; display: block; border-radius: 12px; margin: 12px 0;">
         </div>
         
         <!-- Garrot -->
@@ -8891,34 +8851,7 @@
             <h3 style="color: light-dark(#c22727, #e57e7e); margin-bottom: 20px; border-bottom: 2px solid #B71C1C; padding-bottom: 10px;">🩹 Pansement Compressif d'Urgence (PCU)</h3>
             
             <p style="margin-bottom: 15px;">Indiqué pour relayer une compression manuelle <strong>quand le garrot est impossible</strong> : tête, cou, racines des membres, fesses.</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #F44336;">
-                    <div style="font-size: 2em;">🗣️</div>
-                    <strong style="color: light-dark(#c22727, #e57e7e);">Cou</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">JAMAIS circulaire</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #FF9800;">
-                    <div style="font-size: 2em;">💪</div>
-                    <strong style="color: light-dark(#b33f00, #ff7124);">Aisselle</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">+ Collier cervical</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #4CAF50;">
-                    <div style="font-size: 2em;">🦵</div>
-                    <strong style="color: light-dark(#2a722e, #41b147);">Pli de l'aine</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">Autour cuisse + bassin</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #2196F3;">
-                    <div style="font-size: 2em;">🍑</div>
-                    <strong style="color: light-dark(#1565c0, #5da1ed);">Fesse</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">Victime sur le ventre</p>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #9C27B0;">
-                    <div style="font-size: 2em;">🗣️</div>
-                    <strong style="color: light-dark(#7b1fa2, #c77ee6);">Crâne</strong>
-                    <p style="font-size: 0.8em; margin: 5px 0 0 0;">+ Passage menton</p>
-                </div>
-            </div>
+            <img src="images/suap/pcu.jpg" alt="Pansement compressif d'urgence : cou (jamais circulaire), aisselle (+ collier cervical), pli de l'aine (autour cuisse et bassin), fesse (victime sur le ventre), crâne (+ passage menton)" loading="lazy" style="width: 100%; height: auto; display: block; border-radius: 12px; margin: 12px 0;">
         </div>
         
         <!-- Pansement 3 côtés -->
@@ -26087,7 +26020,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.56.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.56.4</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
