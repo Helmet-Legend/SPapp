@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.56.3">
+    <meta name="version" content="1.56.4">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.56.3</span><br>
+                        Vulcain v<span class="app-version">1.56.4</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -3690,27 +3690,13 @@
         <div class="form-group">
             <label>💨 Sélection rapide vitesse du vent :</label>
             <div class="rd-vent-grid">
-                <button type="button" onclick="selectVentRapide(20, this)" class="rd-vent-btn" data-vent="20" aria-pressed="false">
-                    <div class="rd-vent-icone">💨</div><div class="rd-vent-valeur">20</div><div class="rd-vent-unite">km/h</div>
-                </button>
-                <button type="button" onclick="selectVentRapide(30, this)" class="rd-vent-btn" data-vent="30" aria-pressed="false">
-                    <div class="rd-vent-icone">💨</div><div class="rd-vent-valeur">30</div><div class="rd-vent-unite">km/h</div>
-                </button>
-                <button type="button" onclick="selectVentRapide(40, this)" class="rd-vent-btn" data-vent="40" aria-pressed="false">
-                    <div class="rd-vent-icone">💨</div><div class="rd-vent-valeur">40</div><div class="rd-vent-unite">km/h</div>
-                </button>
-                <button type="button" onclick="selectVentRapide(50, this)" class="rd-vent-btn" data-vent="50" aria-pressed="false">
-                    <div class="rd-vent-icone">💨</div><div class="rd-vent-valeur">50</div><div class="rd-vent-unite">km/h</div>
-                </button>
-                <button type="button" onclick="selectVentRapide(60, this)" class="rd-vent-btn" data-vent="60" aria-pressed="false">
-                    <div class="rd-vent-icone">💨</div><div class="rd-vent-valeur">60</div><div class="rd-vent-unite">km/h</div>
-                </button>
-                <button type="button" onclick="selectVentRapide(70, this)" class="rd-vent-btn" data-vent="70" aria-pressed="false">
-                    <div class="rd-vent-icone">💨</div><div class="rd-vent-valeur">70</div><div class="rd-vent-unite">km/h</div>
-                </button>
-                <button type="button" onclick="selectVentRapide(80, this)" class="rd-vent-btn" data-vent="80" aria-pressed="false">
-                    <div class="rd-vent-icone">💨</div><div class="rd-vent-valeur">80</div><div class="rd-vent-unite">km/h</div>
-                </button>
+                <button type="button" onclick="selectVentRapide(20, this)" class="rd-vent-btn" data-vent="20" aria-pressed="false"><img src="images/fdf/vent-20.png" alt="20 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(30, this)" class="rd-vent-btn" data-vent="30" aria-pressed="false"><img src="images/fdf/vent-30.png" alt="30 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(40, this)" class="rd-vent-btn" data-vent="40" aria-pressed="false"><img src="images/fdf/vent-40.png" alt="40 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(50, this)" class="rd-vent-btn" data-vent="50" aria-pressed="false"><img src="images/fdf/vent-50.png" alt="50 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(60, this)" class="rd-vent-btn" data-vent="60" aria-pressed="false"><img src="images/fdf/vent-60.png" alt="60 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(70, this)" class="rd-vent-btn" data-vent="70" aria-pressed="false"><img src="images/fdf/vent-70.png" alt="70 km/h" loading="lazy"></button>
+                <button type="button" onclick="selectVentRapide(80, this)" class="rd-vent-btn" data-vent="80" aria-pressed="false"><img src="images/fdf/vent-80.png" alt="80 km/h" loading="lazy"></button>
             </div>
         </div>
 
@@ -3718,16 +3704,8 @@
         <div class="form-group">
             <label>📐 Angle du cône de propagation :</label>
             <div class="rd-angle-grid">
-                <button type="button" onclick="selectAngleCone(30)" id="angle-btn-30" class="rd-angle-btn" data-angle="30" aria-pressed="false">
-                    <div class="rd-angle-icone">📐</div>
-                    <div class="rd-angle-valeur">30°</div>
-                    <div class="rd-angle-libelle">Propagation étroite</div>
-                </button>
-                <button type="button" onclick="selectAngleCone(40)" id="angle-btn-40" class="rd-angle-btn" data-angle="40" aria-pressed="true">
-                    <div class="rd-angle-icone">📐</div>
-                    <div class="rd-angle-valeur">40°</div>
-                    <div class="rd-angle-libelle">Propagation large</div>
-                </button>
+                <button type="button" onclick="selectAngleCone(30)" id="angle-btn-30" class="rd-angle-btn" data-angle="30" aria-pressed="false"><img src="images/fdf/angle-30.png" alt="30° : propagation étroite" loading="lazy"></button>
+                <button type="button" onclick="selectAngleCone(40)" id="angle-btn-40" class="rd-angle-btn" data-angle="40" aria-pressed="true"><img src="images/fdf/angle-40.png" alt="40° : propagation large" loading="lazy"></button>
             </div>
             <input type="hidden" id="angle-cone" value="40">
         </div>
@@ -26042,7 +26020,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.56.3</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.56.4</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

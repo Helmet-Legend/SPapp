@@ -738,19 +738,12 @@ html[data-theme] .ia-jeton.utilise { color: var(--t-muted); }
 .ia-compteur-aide ul { margin: 8px 0 0; padding-left: 20px; line-height: 1.5; }
 #btn-generer.ia-epuise { filter: grayscale(0.8); opacity: 0.7; }
 
-/* Feux de forêt : sélection vitesse du vent / angle du cône */
+/* Feux de forêt : sélection vitesse du vent / angle du cône (illustrations fournies) */
 .rd-vent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 10px; margin-top: 10px; }
 .rd-angle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
-html[data-theme] .rd-vent-btn, html[data-theme] .rd-angle-btn { background: var(--t-s1); border: 2px solid var(--vc); border-radius: 14px; color: var(--t-ink); cursor: pointer; text-align: center; transition: transform .15s, outline-color .15s; }
-html[data-theme] .rd-vent-btn[aria-pressed="true"], html[data-theme] .rd-angle-btn[aria-pressed="true"] { outline: 3px solid var(--vc); outline-offset: 2px; transform: scale(1.04); }
-.rd-vent-btn { padding: 14px 6px; }
-.rd-vent-icone { font-size: 1.3em; line-height: 1; }
-.rd-vent-valeur { font-size: 1.3em; font-weight: 800; color: var(--vc); line-height: 1.1; }
-.rd-vent-unite { font-size: 0.7em; font-weight: 600; color: var(--t-muted); }
-.rd-angle-btn { padding: 18px 10px; }
-.rd-angle-icone { font-size: 1.8em; line-height: 1; }
-.rd-angle-valeur { font-size: 1.3em; font-weight: 800; color: var(--vc); }
-.rd-angle-libelle { font-size: 0.8em; color: var(--t-muted); margin-top: 4px; }
+html[data-theme] .rd-vent-btn, html[data-theme] .rd-angle-btn { padding: 0; border: none; border-radius: 14px; overflow: hidden; cursor: pointer; transition: transform .15s, box-shadow .15s; background: none; }
+.rd-vent-btn img, .rd-angle-btn img { display: block; width: 100%; height: auto; border-radius: 14px; }
+html[data-theme] .rd-vent-btn[aria-pressed="true"], html[data-theme] .rd-angle-btn[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--vc); transform: scale(1.03); }
 html[data-theme] .rd-vent-btn[data-vent="20"] { --vc: light-dark(#2a722e, #41b147); }
 html[data-theme] .rd-vent-btn[data-vent="30"] { --vc: light-dark(#4a7a1f, #7fc23e); }
 html[data-theme] .rd-vent-btn[data-vent="40"] { --vc: light-dark(#7a7a12, #c7c73a); }
