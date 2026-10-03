@@ -74,16 +74,15 @@ function emuCalculer() {
     const volumeEau = volumeSolution - volumeEmulseur;
     const bidons20L = Math.ceil(volumeEmulseur / 20);
 
-    document.getElementById('emuResultatPrincipal').style.setProperty('--tile-c', 'light-dark(#c22727, #e57e7e)');
     document.getElementById('emuResultatPrincipal').innerHTML =
-        `<div class="rd-tile-label">Volume émulseur</div>` +
-        `<div class="rd-tile-value">${volumeEmulseur.toFixed(0)} L</div>` +
-        `<div class="rd-tile-sub">(concentration ${emuConcentration} %) · ${bidons20L} bidon${bidons20L > 1 ? 's' : ''} de 20 L</div>`;
+        `<div class="label">Émulseur nécessaire à ${emuConcentration} %</div>` +
+        `<div class="value">${volumeEmulseur.toFixed(0)} L</div>` +
+        `<div class="label">${bidons20L} bidon${bidons20L > 1 ? 's' : ''} de 20 L</div>`;
 
     document.getElementById('emuDetails').innerHTML =
-        `<div class="rd-tile" style="--tile-c:light-dark(#1565c0, #5da1ed)"><div class="rd-tile-label">Débit requis</div><div class="rd-tile-value">${debitSolution.toFixed(0)} </div><div class="rd-tile-sub">L/min</div></div>` +
-        `<div class="rd-tile" style="--tile-c:light-dark(#b33f00, #ff7124)"><div class="rd-tile-label">Volume d'eau</div><div class="rd-tile-value">${volumeEau.toFixed(0)} </div><div class="rd-tile-sub">L</div></div>` +
-        `<div class="rd-tile" style="--tile-c:light-dark(#7b1fa2, #c77ee6)"><div class="rd-tile-label">Volume de mousse</div><div class="rd-tile-value">${volumeSolution.toFixed(0)} </div><div class="rd-tile-sub">L</div></div>`;
+        `<div class="result-item"><span>Débit de solution</span><span class="result-value">${debitSolution.toFixed(0)} L/min</span></div>` +
+        `<div class="result-item"><span>Volume de solution</span><span class="result-value">${volumeSolution.toFixed(0)} L</span></div>` +
+        `<div class="result-item"><span>Eau nécessaire</span><span class="result-value">${volumeEau.toFixed(0)} L</span></div>`;
 }
 
 function emuCalculerInverse() {
@@ -95,15 +94,14 @@ function emuCalculerInverse() {
     const surface = emuTauxInv ? debitSolution / emuTauxInv : 0;
     const volumeEau = volumeSolution - stock;
 
-    document.getElementById('emuInverseResultatPrincipal').style.setProperty('--tile-c', 'light-dark(#c22727, #e57e7e)');
     document.getElementById('emuInverseResultatPrincipal').innerHTML =
-        `<div class="rd-tile-label">Surface réalisable</div>` +
-        `<div class="rd-tile-value">${surface.toFixed(1)} m²</div>`;
+        `<div class="label">Surface réalisable</div>` +
+        `<div class="value">${surface.toFixed(1)} m²</div>`;
 
     document.getElementById('emuInverseDetails').innerHTML =
-        `<div class="rd-tile" style="--tile-c:light-dark(#1565c0, #5da1ed)"><div class="rd-tile-label">Débit de solution</div><div class="rd-tile-value">${debitSolution.toFixed(0)} </div><div class="rd-tile-sub">L/min</div></div>` +
-        `<div class="rd-tile" style="--tile-c:light-dark(#b33f00, #ff7124)"><div class="rd-tile-label">Volume d'eau</div><div class="rd-tile-value">${volumeEau.toFixed(0)} </div><div class="rd-tile-sub">L</div></div>` +
-        `<div class="rd-tile" style="--tile-c:light-dark(#7b1fa2, #c77ee6)"><div class="rd-tile-label">Volume de solution</div><div class="rd-tile-value">${volumeSolution.toFixed(0)} </div><div class="rd-tile-sub">L</div></div>`;
+        `<div class="result-item"><span>Volume de solution</span><span class="result-value">${volumeSolution.toFixed(0)} L</span></div>` +
+        `<div class="result-item"><span>Eau nécessaire</span><span class="result-value">${volumeEau.toFixed(0)} L</span></div>` +
+        `<div class="result-item"><span>Débit de solution</span><span class="result-value">${debitSolution.toFixed(0)} L/min</span></div>`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
