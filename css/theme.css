@@ -1002,18 +1002,4 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
 .rd-cartes-photo { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 20px; }
 .rd-cartes-photo button { padding: 0; border: none; border-radius: 14px; overflow: hidden; cursor: pointer; background: none; line-height: 0; }
 .rd-cartes-photo img { width: 100%; height: auto; display: block; border-radius: 14px; }
-
-/* Cartes de résultats colorées (calculateurs) */
-.rd-resultats { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 10px; margin-top: 16px; }
-.rd-resultats .rd-tile { border: 2px solid var(--tile-c, var(--t-line)); border-radius: 12px; padding: 14px 10px; text-align: center; background: var(--t-s1); }
-.rd-resultats .rd-tile .rd-tile-label { font-size: .7em; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; color: var(--tile-c, var(--t-muted)); margin-bottom: 6px; }
-.rd-resultats .rd-tile .rd-tile-value { font-family: var(--t-display); font-weight: var(--t-display-weight); font-size: 1.55em; line-height: 1.1; color: var(--t-ink); }
-.rd-resultats .rd-tile .rd-tile-sub { font-size: .72em; color: var(--t-muted); margin-top: 4px; }
-
-/* Bandeau titre calculateur */
-.rd-calc-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; margin: -4px 0 18px; border-radius: 14px; background: light-dark(#fff0f0, #1a0d0d); border: 1px solid light-dark(#ffd1d1, #4a1414); }
-.rd-calc-head .ico-badge { flex-shrink: 0; width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3em; background: var(--t-accent); }
-.rd-calc-head h2, .rd-calc-head h3 { margin: 0; border: none !important; padding: 0 !important; }
-
-/* Boutons de choix segmentés, variante mise en avant */
-.rd-choix-technique button[aria-pressed="true"] { box-shadow: 0 0 0 3px color-mix(in srgb, var(--t-accent) 25%, transparent); }
+.reglages-panel { max-height: 100dvh; overflow-y: auto; }

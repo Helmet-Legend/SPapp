@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.57.0 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.56.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -136,7 +136,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.57.0';
+var APP_VERSION = '1.56.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1002,12 +1002,12 @@ function calculateFeuForetRegle3pct() {
         '<div style="font-size:0.9em;opacity:0.9;">Vent: ' + vent + ' km/h · ' + trabaud.texte + '</div>' +
         '<div style="font-size:2.5em;font-weight:bold;">' + vitessePropagationMMin.toFixed(1) + ' m/min</div></div></div>';
     
-    html += '<div class="result-box"><h3>📏 Distances parcourues</h3><div class="rd-resultats">';
+    html += '<div class="result-box"><h3>📏 Distances parcourues</h3><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:15px;">';
     var colors = ['#4CAF50', '#8BC34A', '#FFC107', '#FF9800', '#FF5722'];
     temps.forEach(function(t, i) {
-        html += '<div class="rd-tile" style="--tile-c:' + colors[i] + ';">' +
-            '<div class="rd-tile-label">⏱️ ' + (t >= 60 ? (t/60) + 'h' : t + ' min') + '</div>' +
-            '<div class="rd-tile-value">' + formatDistance(distances[i]) + '</div></div>';
+        html += '<div style="background:var(--bg-elevated);padding:15px;border-radius:10px;text-align:center;border-left:4px solid ' + colors[i] + ';">' +
+            '<div style="font-size:0.9em;opacity:0.9;">⏱️ ' + (t >= 60 ? (t/60) + 'h' : t + ' min') + '</div>' +
+            '<div style="font-size:1.8em;font-weight:bold;color:' + colors[i] + ';">' + formatDistance(distances[i]) + '</div></div>';
     });
     html += '</div></div>';
     
@@ -1386,7 +1386,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.57.0 COMPLET
+// FIN DU FICHIER - Vulcain v1.56.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
