@@ -198,7 +198,7 @@ test('émulseur (mode inverse) : 100 L de stock à 3 %, 10 L/min/m², 20 min = 1
 
 test('feux de forêt règle des 3 % : vent 30 km/h = 15 m/min, risque MODÉRÉ', async ({ app }) => {
     await app.evaluate(() => showModule('feu-foret'));
-    await app.click('button[onclick="selectVentRapide(30)"]');
+    await app.click('button[data-vent="30"]');
     const res = app.locator('#feu-foret-result');
     await expect(res).toContainText('15.0 m/min');
     await expect(res).toContainText('RISQUE MODÉRÉ');
