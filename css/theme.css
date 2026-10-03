@@ -999,4 +999,7 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
     font: inherit; color: var(--t-accent); text-decoration: underline;
     cursor: pointer; display: inline;
 }
+.rd-cartes-photo { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 20px; }
+.rd-cartes-photo button { padding: 0; border: none; border-radius: 14px; overflow: hidden; cursor: pointer; background: none; line-height: 0; }
+.rd-cartes-photo img { width: 100%; height: auto; display: block; border-radius: 14px; }
 .reglages-panel { max-height: 100dvh; overflow-y: auto; }
