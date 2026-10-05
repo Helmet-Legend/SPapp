@@ -124,7 +124,7 @@ function construirePrompt(body) {
 **LIEU :** ${lieux.length > 0 ? lieux.join(', ') : 'Non spécifié'}
 **MATÉRIEL DE SIMULATION :** ${materiels.length > 0 ? materiels.join(', ') : 'Basique'}
 **EFFECTIF :** ${nbPersonnel} sapeurs-pompiers
-**GRADES :** ${grades.join(', ')}
+**GRADES :** ${grades.length > 0 ? grades.join(', ') : 'Non spécifié'}
 **PERSONNEL MÉDICAL :** ${medical.length > 0 ? medical.join(', ') : 'Aucun'}
 **DURÉE :** ${duree}
 **NIVEAU :** ${niveau}
