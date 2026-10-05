@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.57.1 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.58.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -43,8 +43,22 @@ let gazBouteillesData = {};
 let appConfig = {};
 
 // ==================== INITIALISATION ====================
+// Compteur d'usage anonyme (tableau de bord administrateur) : un total par jour
+// et par type d'événement, aucune donnée personnelle. Échec silencieux.
+function statsEvenement(type) {
+    try {
+        fetch('/api/stats-evenement', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ type }),
+            keepalive: true
+        }).catch(() => {});
+    } catch (e) { /* tant pis */ }
+}
+
 async function initApp() {
     console.log('🚒 Vulcain v' + APP_VERSION + ' - Initialisation...');
+    statsEvenement('ouverture');
     try {
         const data = await DataLoader.loadAll();
         tmdDatabase = data.tmd || [];
@@ -136,7 +150,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.57.1';
+var APP_VERSION = '1.58.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1383,7 +1397,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.57.1 COMPLET
+// FIN DU FICHIER - Vulcain v1.58.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

@@ -4530,6 +4530,20 @@
    ]
   },
   {
+   "id": "admin-dashboard",
+   "titre": "Tableau de bord",
+   "domaine": "outils",
+   "theme": "Administration",
+   "type": "fiche",
+   "motsCles": [
+    "tableau de bord",
+    "statistiques",
+    "administrateur",
+    "générations",
+    "ouvertures"
+   ]
+  },
+  {
    "id": "mentions-legales",
    "titre": "Mentions légales",
    "domaine": "outils",
