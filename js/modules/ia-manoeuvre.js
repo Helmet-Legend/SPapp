@@ -230,6 +230,7 @@ async function genererManoeuvre() {
             throw new Error('Aucune réponse générée par l\'IA');
         }
         iaEnregistrerGeneration();
+        statsEvenement('generation');
 
     } catch (error) {
         console.error('Erreur:', error);
@@ -396,7 +397,8 @@ function telechargerPDF() {
     
     // Télécharger le PDF
     doc.save(filename);
-    
+    statsEvenement('pdf');
+
     // Confirmation
     setTimeout(() => {
         alert(`✅ PDF téléchargé : ${filename}`);

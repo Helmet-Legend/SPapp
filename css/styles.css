@@ -2167,4 +2167,42 @@ body.dark-mode #resultat-ia {
     animation: pulse 1.5s infinite;
 }
 
+/* Tableau de bord administrateur (ouvertures, générations IA, PDF) */
+.ia-dashboard-cartes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+.ia-dash-carte {
+    background: var(--t-s1, #fff);
+    border: 1px solid var(--t-line, #ddd);
+    border-radius: 12px;
+    padding: 16px;
+}
+.ia-dash-tete {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+.ia-dash-icone { font-size: 1.2em; }
+.ia-dash-total {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: var(--t-ink, #000);
+    margin-bottom: 10px;
+}
+.ia-dash-total small {
+    font-size: 0.4em;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+.ia-dash-graphe { width: 100%; height: 64px; display: block; }
+.ia-dash-barre.ia-dash-bleu { fill: light-dark(#2a78d6, #3987e5); }
+.ia-dash-barre.ia-dash-orange { fill: light-dark(#eb6834, #d95926); }
+.ia-dash-barre.ia-dash-aqua { fill: light-dark(#1baf7a, #199e70); }
+
 /* Navigation, en-tête, pied de page et habillages clair / sombre : voir css/theme.css */

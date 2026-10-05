@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.57.1">
+    <meta name="version" content="1.58.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -118,6 +118,7 @@
             <p class="reglages-statut" id="pushStatut" aria-live="polite"></p>
             <button class="reglages-lien" onclick="ouvrirEnvoiNotification()">Envoyer une notification (administrateur)</button>
             <button class="reglages-lien" onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
+            <button class="reglages-lien" onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
         </div>
     </div>
 
@@ -239,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.57.1</span><br>
+                        Vulcain v<span class="app-version">1.58.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -18155,6 +18156,20 @@ Je fais : extinction.</p>
         <div class="rd-alerte">Les nouvelles versions sont annoncées automatiquement : inutile d'envoyer un message pour une mise à jour.</div>
     </div>
 
+    <!-- ============ Tableau de bord (administrateur) ============ -->
+    <div id="admin-dashboard" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>📊 Tableau de bord</h2>
+        <p style="text-align: center;">Ouvertures de l'app, générations IA et téléchargements PDF, 30 derniers jours. Réservé à l'administrateur : la clé est demandée.</p>
+        <div class="rd-section notif-form">
+            <label>Clé administrateur<input type="password" id="statsCleAdmin" autocomplete="off"></label>
+            <label class="notif-case"><input type="checkbox" id="statsMemoriser"> Mémoriser la clé sur cet appareil</label>
+            <button onclick="chargerTableauDeBord()">🔄 Charger les statistiques</button>
+            <p id="statsRetour" aria-live="polite"></p>
+        </div>
+        <div id="statsCartes" class="ia-dashboard-cartes"></div>
+    </div>
+
     <!-- ============ Messages reçus (administrateur) ============ -->
     <div id="contact-lister" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -26029,7 +26044,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.57.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.58.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
@@ -26066,6 +26081,7 @@ Je demande : ….</p>
     <!-- Service Worker Registration -->
     <script src="js/push.js"></script>
     <script src="js/contact.js"></script>
+    <script src="js/admin-stats.js"></script>
     <script src="js/pwa-theme.js"></script>
 
 
