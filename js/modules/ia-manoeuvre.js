@@ -12,6 +12,42 @@ function getCheckedValues(name) {
     return Array.from(checkboxes).map(cb => cb.value);
 }
 
+// Véhicules : un clic ajoute une unité (ex. 4 clics sur CCF = « 4x CCF »), boucle après 9
+const IA_VEHICULE_MAX = 9;
+function iaVehiculeClic(bouton) {
+    const compte = (parseInt(bouton.dataset.count, 10) || 0) + 1;
+    bouton.dataset.count = compte > IA_VEHICULE_MAX ? 0 : compte;
+    bouton.querySelector('.ia-veh-badge').textContent = bouton.dataset.count;
+}
+
+function getVehiculeValues() {
+    return Array.from(document.querySelectorAll('.ia-veh-btn'))
+        .map(bouton => {
+            const compte = parseInt(bouton.dataset.count, 10) || 0;
+            if (compte === 0) return null;
+            return compte > 1 ? `${compte}x ${bouton.dataset.vehicule}` : bouton.dataset.vehicule;
+        })
+        .filter(Boolean);
+}
+
+// Remet le formulaire à son état initial (les grades par défaut restent cochés)
+function iaReinitialiser() {
+    document.querySelectorAll('#ia-manoeuvre input[type="checkbox"]').forEach(cb => {
+        cb.checked = cb.id === 'grade-equipiers';
+    });
+    document.querySelectorAll('#ia-manoeuvre .ia-veh-btn').forEach(bouton => {
+        bouton.dataset.count = 0;
+        bouton.querySelector('.ia-veh-badge').textContent = '0';
+    });
+    const nbPersonnel = document.getElementById('nb-personnel');
+    nbPersonnel.value = 8;
+    document.getElementById('nb-personnel-val').textContent = '8';
+    document.getElementById('duree-manoeuvre').value = '1 heure';
+    document.getElementById('niveau-manoeuvre').value = 'Perfectionnement';
+    document.getElementById('consignes-particulieres').value = '';
+    document.getElementById('resultat-ia').style.display = 'none';
+}
+
 // Limite : 2 générations par 24 h sur cet appareil (le serveur applique aussi la limite)
 const IA_LIMITE = 2;
 const IA_FENETRE_MS = 24 * 60 * 60 * 1000;
@@ -98,7 +134,7 @@ document.addEventListener('DOMContentLoaded', iaAfficherQuota);
 async function genererManoeuvre() {
     const parametres = {
         types: getCheckedValues('type'),
-        vehicules: getCheckedValues('vehicule'),
+        vehicules: getVehiculeValues(),
         lieux: getCheckedValues('lieu'),
         materiels: getCheckedValues('materiel'),
         grades: getCheckedValues('grade'),
@@ -223,8 +259,11 @@ function formatScenario(texte) {
         .replace(/^### (.*$)/gm, '<h4 style="color: light-dark(#8e24aa, #cf7ee4); margin-top: 20px;">$1</h4>')
         .replace(/^## (.*$)/gm, '<h3 style="color: light-dark(#6a1b9a, #c383e9); margin-top: 25px; border-bottom: 2px solid light-dark(#E1BEE7, #716377); padding-bottom: 5px;">$1</h3>')
         .replace(/^# (.*$)/gm, '<h2 style="color: light-dark(#4a148c, #b688ee); margin-top: 25px;">$1</h2>')
-        .replace(/^- (.*$)/gm, '<li style="margin-left: 20px;">$1</li>')
-        .replace(/^(\d+)\. (.*$)/gm, '<li style="margin-left: 20px;"><strong>$1.</strong> $2</li>')
+        .replace(/^- (.*$)/gm, '<li style="margin-left: 20px; list-style-type: disc;">$1</li>')
+        .replace(/^(\d+)\. (.*$)/gm, '<li style="margin-left: 20px; list-style-type: none;"><strong>$1.</strong> $2</li>')
+        // Regroupe les <li> consécutifs dans un <ul> : sans ça ce sont des éléments de liste
+        // orphelins (hors <ul>/<ol>), invalides et mal annoncés par les lecteurs d'écran.
+        .replace(/(?:^<li.*<\/li>\n?)+/gm, bloc => `<ul style="list-style: none; padding-left: 0; margin: 8px 0;">${bloc.trim().replace(/\n/g, '')}</ul>`)
         .replace(/\n\n/g, '</p><p style="margin-top: 10px;">')
         .replace(/📋|🎯|📖|👥|⏱️|🔄|✅|⚠️|📦/g, '<span style="font-size: 1.2em;">$&</span>');
 }

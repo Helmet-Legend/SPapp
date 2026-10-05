@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.57.0">
+    <meta name="version" content="1.57.1">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -239,7 +239,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.57.0</span><br>
+                        Vulcain v<span class="app-version">1.57.1</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -10755,8 +10755,9 @@
     <div id="ia-manoeuvre" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2 style="color: light-dark(#6a1b9a, #c383e9); border-bottom: 3px solid #8E24AA;">🤖 Générateur de Manœuvre IA</h2>
-        <p style="text-align: center; margin-bottom: 20px; color: var(--text-secondary);">Créez des scénarios d'entraînement personnalisés grâce à l'intelligence artificielle</p>
-        
+        <p style="text-align: center; margin-bottom: 10px; color: var(--text-secondary);">Créez des scénarios d'entraînement personnalisés grâce à l'intelligence artificielle</p>
+        <p style="text-align: center; margin-bottom: 20px;"><button type="button" onclick="iaReinitialiser()">🔄 Réinitialiser le formulaire</button></p>
+
         <!-- Compteur de générations (2 par 24 h) -->
         <div id="ia-compteur" class="ia-compteur" aria-live="polite">
             <div class="ia-compteur-tete">
@@ -10785,7 +10786,7 @@
                 <h3 style="color: light-dark(#6a1b9a, #c383e9); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
                     <span style="font-size: 1.3em;">🎯</span> Type de manœuvre
                 </h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <div role="group" aria-label="Type de manœuvre" style="display: flex; flex-wrap: wrap; gap: 10px;">
                     <label class="ia-checkbox" style="background: #EF9A9A; color: #000; border-color: #F44336;"><input type="checkbox" name="type" value="SUAP"> 🚑 SUAP</label>
                     <label class="ia-checkbox" style="background: light-dark(#FFCC80, #40382d); color: var(--t-ink, #000); border-color: #FF9800;"><input type="checkbox" name="type" value="Incendie"> 🔥 Incendie</label>
                     <label class="ia-checkbox" style="background: light-dark(#90CAF9, #2c3843); color: var(--t-ink, #000); border-color: #2196F3;"><input type="checkbox" name="type" value="Désincarcération"> 🚗 Désincarcération</label>
@@ -10797,36 +10798,42 @@
             </div>
             
             <!-- Véhicules -->
-            <div class="result-box" style="background: var(--bg-elevated);">
-                <h3 style="color: light-dark(#c22727, #e57e7e); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 1.3em;">🚒</span> Véhicules disponibles
-                </h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="VSAV"> VSAV</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="FPTGP"> FPTGP</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="FPTL"> FPTL</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="FPT"> FPT</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="EPA"> EPA</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="EPSA"> EPSA</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="VSR"> VSR</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="VRM"> VRM</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="VTU"> VTU</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="VPRO"> VPRO</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="CCF"> CCF</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="CCFM"> CCFM</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="VLCG"> VLCG</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="VL Chef de groupe"> VL CG</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="CMIC"> CMIC</label>
-                    <label class="ia-checkbox"><input type="checkbox" name="vehicule" value="VGRIMP"> VGRIMP</label>
+            <details class="result-box ia-section-repliable" style="background: var(--bg-elevated);" open>
+                <summary>
+                    <h3 style="color: light-dark(#c22727, #e57e7e); display: inline-flex; align-items: center; gap: 10px; margin: 0;">
+                        <span style="font-size: 1.3em;">🚒</span> Véhicules disponibles
+                    </h3>
+                </summary>
+                <p style="margin: 10px 0 0; font-size: 0.85em; color: var(--text-secondary);">Clique plusieurs fois sur un véhicule pour en demander plusieurs (ex. 4× CCF).</p>
+                <div role="group" aria-label="Véhicules disponibles" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                    <button type="button" class="ia-veh-btn" data-vehicule="VSAV" data-count="0" onclick="iaVehiculeClic(this)">VSAV<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="FPTGP" data-count="0" onclick="iaVehiculeClic(this)">FPTGP<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="FPTL" data-count="0" onclick="iaVehiculeClic(this)">FPTL<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="FPT" data-count="0" onclick="iaVehiculeClic(this)">FPT<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="EPA" data-count="0" onclick="iaVehiculeClic(this)">EPA<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="EPSA" data-count="0" onclick="iaVehiculeClic(this)">EPSA<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="VSR" data-count="0" onclick="iaVehiculeClic(this)">VSR<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="VRM" data-count="0" onclick="iaVehiculeClic(this)">VRM<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="VTU" data-count="0" onclick="iaVehiculeClic(this)">VTU<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="VPRO" data-count="0" onclick="iaVehiculeClic(this)">VPRO<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="CCF" data-count="0" onclick="iaVehiculeClic(this)">CCF<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="CCFM" data-count="0" onclick="iaVehiculeClic(this)">CCFM<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="CCFS" data-count="0" onclick="iaVehiculeClic(this)">CCFS<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="VLCG" data-count="0" onclick="iaVehiculeClic(this)">VLCG<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="VL Chef de groupe" data-count="0" onclick="iaVehiculeClic(this)">VL CG<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="CMIC" data-count="0" onclick="iaVehiculeClic(this)">CMIC<span class="ia-veh-badge">0</span></button>
+                    <button type="button" class="ia-veh-btn" data-vehicule="VGRIMP" data-count="0" onclick="iaVehiculeClic(this)">VGRIMP<span class="ia-veh-badge">0</span></button>
                 </div>
-            </div>
-            
+            </details>
+
             <!-- Lieu -->
-            <div class="result-box" style="background: var(--bg-elevated);">
-                <h3 style="color: light-dark(#1565c0, #5da1ed); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 1.3em;">📍</span> Lieu de manœuvre
-                </h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <details class="result-box ia-section-repliable" style="background: var(--bg-elevated);">
+                <summary>
+                    <h3 style="color: light-dark(#1565c0, #5da1ed); display: inline-flex; align-items: center; gap: 10px; margin: 0;">
+                        <span style="font-size: 1.3em;">📍</span> Lieu de manœuvre
+                    </h3>
+                </summary>
+                <div role="group" aria-label="Lieu de manœuvre" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
                     <label class="ia-checkbox"><input type="checkbox" name="lieu" value="Cour de caserne"> Cour caserne</label>
                     <label class="ia-checkbox"><input type="checkbox" name="lieu" value="Tour de manœuvre"> Tour manœuvre</label>
                     <label class="ia-checkbox"><input type="checkbox" name="lieu" value="Voie publique"> Voie publique</label>
@@ -10847,14 +10854,16 @@
                     <label class="ia-checkbox"><input type="checkbox" name="lieu" value="Chantier BTP"> Chantier</label>
                     <label class="ia-checkbox"><input type="checkbox" name="lieu" value="Zone industrielle"> Zone industrielle</label>
                 </div>
-            </div>
-            
+            </details>
+
             <!-- Matériel de simulation -->
-            <div class="result-box" style="background: var(--bg-elevated);">
-                <h3 style="color: light-dark(#9e5000, #f57c00); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                    <span style="font-size: 1.3em;">🎭</span> Matériel de simulation disponible
-                </h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <details class="result-box ia-section-repliable" style="background: var(--bg-elevated);">
+                <summary>
+                    <h3 style="color: light-dark(#9e5000, #f57c00); display: inline-flex; align-items: center; gap: 10px; margin: 0;">
+                        <span style="font-size: 1.3em;">🎭</span> Matériel de simulation disponible
+                    </h3>
+                </summary>
+                <div role="group" aria-label="Matériel de simulation disponible" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
                     <label class="ia-checkbox"><input type="checkbox" name="materiel" value="Fumigène"> 💨 Fumigène</label>
                     <label class="ia-checkbox"><input type="checkbox" name="materiel" value="Générateur de fumée électrique"> 🌫️ Générateur fumée</label>
                     <label class="ia-checkbox"><input type="checkbox" name="materiel" value="Mannequin adulte 70kg"> 🧍 Mannequin adulte</label>
@@ -10870,7 +10879,7 @@
                     <label class="ia-checkbox"><input type="checkbox" name="materiel" value="Caméra thermique"> 📷 Caméra thermique</label>
                     <label class="ia-checkbox"><input type="checkbox" name="materiel" value="Explosimètre"> 📟 Explosimètre</label>
                 </div>
-            </div>
+            </details>
             
             <!-- Personnel -->
             <div class="result-box" style="background: var(--bg-elevated);">
@@ -10884,17 +10893,17 @@
                         <div style="text-align: center; font-size: 1.5em; font-weight: 700; color: light-dark(#2a722e, #41b147);"><span id="nb-personnel-val">8</span> SP</div>
                     </div>
                     <div>
-                        <label style="font-weight: 600; display: block; margin-bottom: 8px;">Grades disponibles</label>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <label class="ia-checkbox"><input type="checkbox" name="grade" value="Équipiers SPV/SPP" checked> Équipiers</label>
+                        <label id="ia-label-grades" style="font-weight: 600; display: block; margin-bottom: 8px;">Grades disponibles</label>
+                        <div role="group" aria-labelledby="ia-label-grades" style="display: flex; flex-direction: column; gap: 8px;">
+                            <label class="ia-checkbox"><input type="checkbox" id="grade-equipiers" name="grade" value="Équipiers SPV/SPP" checked> Équipiers</label>
                             <label class="ia-checkbox"><input type="checkbox" name="grade" value="Chefs d'agrès (CA)"> Chefs d'agrès</label>
                             <label class="ia-checkbox"><input type="checkbox" name="grade" value="Chef de groupe (CG)"> Chef de groupe</label>
                             <label class="ia-checkbox"><input type="checkbox" name="grade" value="Officier"> Officier</label>
                         </div>
                     </div>
                     <div>
-                        <label style="font-weight: 600; display: block; margin-bottom: 8px;">Personnel médical</label>
-                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label id="ia-label-medical" style="font-weight: 600; display: block; margin-bottom: 8px;">Personnel médical</label>
+                        <div role="group" aria-labelledby="ia-label-medical" style="display: flex; flex-direction: column; gap: 8px;">
                             <label class="ia-checkbox"><input type="checkbox" name="medical" value="Médecin SP"> 👨‍⚕️ Médecin</label>
                             <label class="ia-checkbox"><input type="checkbox" name="medical" value="Infirmier (IDE/ISP)"> 💉 IDE/ISP</label>
                         </div>
@@ -26020,7 +26029,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.57.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.57.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

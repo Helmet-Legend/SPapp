@@ -2119,6 +2119,40 @@ body.dark-mode #resultat-ia {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(106, 27, 154, 0.4);
 }
+
+/* Véhicules du générateur de manœuvre : clic répété pour ajouter une quantité */
+.ia-veh-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 15px;
+    background: var(--t-s2, #f5f5f5);
+    border: 2px solid var(--t-line, #ddd);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.95em;
+    color: var(--t-ink, #000);
+}
+.ia-veh-btn:hover { border-color: #c22727; }
+.ia-veh-btn:not([data-count="0"]) {
+    background: #c22727; color: #fff; border-color: #c22727; font-weight: 600;
+}
+.ia-veh-badge {
+    display: none;
+    align-items: center; justify-content: center;
+    min-width: 20px; height: 20px; padding: 0 4px;
+    border-radius: 10px; background: rgba(255,255,255,0.3);
+    font-size: 0.85em; font-weight: 700;
+}
+.ia-veh-btn:not([data-count="0"]) .ia-veh-badge { display: inline-flex; }
+
+/* Sections repliables du générateur de manœuvre (véhicules, lieu, matériel) */
+.ia-section-repliable { cursor: default; }
+.ia-section-repliable > summary { cursor: pointer; list-style: none; }
+.ia-section-repliable > summary::-webkit-details-marker { display: none; }
+.ia-section-repliable > summary::after { content: '▾'; float: right; transition: transform 0.2s; }
+.ia-section-repliable[open] > summary::after { transform: rotate(180deg); }
 #btn-generer:disabled {
     background: var(--t-s2, #ccc);
     cursor: not-allowed;
