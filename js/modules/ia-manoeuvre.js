@@ -6,6 +6,9 @@
  * l'endpoint comme un accès libre à l'IA.
  */
 
+// Texte brut (markdown) du dernier scénario généré avec succès : réutilisé pour le PDF
+let dernierScenarioBrut = '';
+
 // Collecter les valeurs cochées
 function getCheckedValues(name) {
     const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
@@ -229,6 +232,7 @@ async function genererManoeuvre() {
         if (!texteComplet.trim()) {
             throw new Error('Aucune réponse générée par l\'IA');
         }
+        dernierScenarioBrut = texteComplet;
         iaEnregistrerGeneration();
         statsEvenement('generation');
 
@@ -279,127 +283,215 @@ function copierScenario() {
     });
 }
 
-// Télécharger le scénario en PDF
-function telechargerPDF() {
+// Couleurs du PDF, alignées sur l'identité Vulcain (--t-accent)
+const PDF_ROUGE = [215, 38, 61];
+const PDF_ENCRE = [26, 26, 26];
+const PDF_GRIS = [110, 110, 110];
+const PDF_FOND_CLAIR = [250, 236, 238];
+
+let logoFlammeBase64 = null;
+async function chargerLogoPDF() {
+    if (logoFlammeBase64) return logoFlammeBase64;
+    try {
+        const reponse = await fetch('images/pdf/flamme-logo.png');
+        const blob = await reponse.blob();
+        logoFlammeBase64 = await new Promise((resolve, reject) => {
+            const lecteur = new FileReader();
+            lecteur.onload = () => resolve(lecteur.result);
+            lecteur.onerror = reject;
+            lecteur.readAsDataURL(blob);
+        });
+    } catch (e) { logoFlammeBase64 = false; }
+    return logoFlammeBase64;
+}
+
+// Découpe un mot en tokens {texte, gras} à partir des marqueurs **gras**
+function pdfTokeniser(ligne) {
+    const tokens = [];
+    ligne.split(/(\*\*.*?\*\*)/g).forEach(segment => {
+        if (!segment) return;
+        const gras = segment.startsWith('**') && segment.endsWith('**');
+        const texte = gras ? segment.slice(2, -2) : segment;
+        texte.split(/(\s+)/).forEach(mot => { if (mot) tokens.push({ texte: mot, gras }); });
+    });
+    return tokens;
+}
+
+// Écrit un paragraphe avec gestion du **gras** et retour à la ligne automatique.
+// Retourne la position Y après écriture (gère aussi les sauts de page).
+function pdfEcrireParagraphe(doc, ligne, x, y, maxWidth, options = {}) {
+    const { pageWidth, pageHeight, margin, interligne = 5, taille = 10, prefixe = '', indentSuite = 0, couleur = PDF_ENCRE } = options;
+    doc.setFontSize(taille);
+    doc.setTextColor(...couleur);
+    const tokens = pdfTokeniser(ligne);
+    const espace = doc.getStringUnitWidth(' ') * taille / doc.internal.scaleFactor;
+    let cursorX = x + (prefixe ? doc.getStringUnitWidth(prefixe) * taille / doc.internal.scaleFactor + 1 : 0);
+    let premiereLigne = true;
+    if (prefixe) { doc.setFont('helvetica', 'bold'); doc.text(prefixe, x, y); }
+
+    tokens.forEach(({ texte, gras }) => {
+        doc.setFont('helvetica', gras ? 'bold' : 'normal');
+        const largeurMot = doc.getStringUnitWidth(texte) * taille / doc.internal.scaleFactor;
+        const limiteX = pageWidth - margin;
+        if (cursorX + largeurMot > limiteX && texte.trim()) {
+            y += interligne;
+            if (y > pageHeight - margin) { doc.addPage(); y = margin; }
+            cursorX = x + indentSuite;
+            premiereLigne = false;
+        }
+        if (texte.trim()) {
+            doc.text(texte, cursorX, y);
+            cursorX += largeurMot;
+        } else {
+            cursorX += espace;
+        }
+    });
+    return y;
+}
+
+function pdfSautDePage(doc, y, margin, pageHeight, besoin = 10) {
+    if (y > pageHeight - margin - besoin) { doc.addPage(); return margin; }
+    return y;
+}
+
+// Télécharger le scénario en PDF, mis en forme avec l'identité visuelle Vulcain
+async function telechargerPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
-    
-    // Récupérer le contenu brut (sans HTML)
-    const contenuHTML = document.getElementById('scenario-contenu');
-    const contenuTexte = contenuHTML.innerText;
-    
-    // Collecter les paramètres du scénario
+    const logo = await chargerLogoPDF();
+
     const types = getCheckedValues('type');
-    const vehicules = getCheckedValues('vehicule');
+    const vehicules = getVehiculeValues();
+    const lieux = getCheckedValues('lieu');
     const duree = document.getElementById('duree-manoeuvre').value;
     const niveau = document.getElementById('niveau-manoeuvre').value;
-    
-    // Configuration PDF
+
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
-    const margin = 20;
-    const maxWidth = pageWidth - (margin * 2);
-    let yPosition = margin;
-    
-    // En-tête avec logo et titre
-    doc.setFillColor(106, 27, 154); // Violet Vulcain
-    doc.rect(0, 0, pageWidth, 35, 'F');
-    
-    doc.setTextColor(255, 255, 255);
-    doc.setFontSize(20);
-    doc.setFont('helvetica', 'bold');
-    doc.text('🚒 Vulcain', margin, 15);
-    
-    doc.setFontSize(12);
-    doc.setFont('helvetica', 'normal');
-    doc.text('Générateur de Scénarios d\'Entraînement', margin, 25);
-    
-    yPosition = 45;
-    doc.setTextColor(0, 0, 0);
-    
-    // Informations du scénario
-    doc.setFillColor(243, 229, 245);
-    doc.rect(margin, yPosition, maxWidth, 25, 'F');
-    
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'bold');
-    yPosition += 8;
-    doc.text(`Type: ${types.join(', ')}`, margin + 5, yPosition);
-    yPosition += 6;
-    doc.setFont('helvetica', 'normal');
-    doc.text(`Véhicules: ${vehicules.length > 0 ? vehicules.join(', ') : 'Non spécifié'}`, margin + 5, yPosition);
-    yPosition += 6;
-    doc.text(`Durée: ${duree} | Niveau: ${niveau}`, margin + 5, yPosition);
-    
-    yPosition += 15;
-    
-    // Ligne de séparation
-    doc.setDrawColor(142, 36, 170);
-    doc.setLineWidth(0.5);
-    doc.line(margin, yPosition, pageWidth - margin, yPosition);
-    yPosition += 10;
-    
-    // Contenu du scénario
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'normal');
-    
-    // Découper le texte en lignes qui tiennent dans la page
-    const lignes = doc.splitTextToSize(contenuTexte, maxWidth);
-    
-    for (let i = 0; i < lignes.length; i++) {
-        // Vérifier si on doit ajouter une nouvelle page
-        if (yPosition > pageHeight - margin) {
-            doc.addPage();
-            yPosition = margin;
-        }
-        
-        const ligne = lignes[i];
-        
-        // Détecter les titres (lignes en majuscules ou avec emojis)
-        if (ligne.match(/^[📋🎯📖👥⏱️🔄✅⚠️📦]/)) {
-            doc.setFont('helvetica', 'bold');
-            doc.setFontSize(11);
-            doc.setTextColor(106, 27, 154);
-            yPosition += 3;
-        } else if (ligne === ligne.toUpperCase() && ligne.length < 50 && ligne.trim().length > 0) {
-            doc.setFont('helvetica', 'bold');
-            doc.setFontSize(10);
-            doc.setTextColor(74, 20, 140);
-        } else {
-            doc.setFont('helvetica', 'normal');
-            doc.setFontSize(10);
-            doc.setTextColor(0, 0, 0);
-        }
-        
-        doc.text(ligne, margin, yPosition);
-        yPosition += 5;
+    const margin = 18;
+    const maxWidth = pageWidth - margin * 2;
+
+    // ---- En-tête : logo + wordmark Vulcain ----
+    const hauteurEntete = 30;
+    if (logo) {
+        const largeurLogo = 11, hauteurLogo = 14;
+        doc.addImage(logo, 'PNG', margin, 9, largeurLogo, hauteurLogo);
     }
-    
-    // Pied de page sur toutes les pages
+    const xTitre = logo ? margin + 16 : margin;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(22);
+    doc.setTextColor(...PDF_ENCRE);
+    doc.text('VUL', xTitre, 20);
+    const largeurVul = doc.getStringUnitWidth('VUL') * 22 / doc.internal.scaleFactor;
+    doc.setTextColor(...PDF_ROUGE);
+    doc.text('CAIN', xTitre + largeurVul, 20);
+    const largeurCain = doc.getStringUnitWidth('CAIN') * 22 / doc.internal.scaleFactor;
+
+    // Liseré tricolore sous le mot VULCAIN (fin liseré gris pour détacher le blanc du fond de page)
+    const largeurMot = largeurVul + largeurCain;
+    const yListere = 21.3, hListere = 1.6, largeurBande = largeurMot / 3;
+    doc.setDrawColor(200, 200, 200);
+    doc.setLineWidth(0.15);
+    doc.rect(xTitre, yListere, largeurMot, hListere, 'S');
+    doc.setFillColor(0, 85, 164);
+    doc.rect(xTitre, yListere, largeurBande, hListere, 'F');
+    doc.setFillColor(239, 65, 53);
+    doc.rect(xTitre + largeurBande * 2, yListere, largeurMot - largeurBande * 2, hListere, 'F');
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.setTextColor(...PDF_GRIS);
+    doc.text("Générateur de scénarios d'entraînement — Le mémo du baroudeur", xTitre, 27.5);
+
+    doc.setDrawColor(...PDF_ROUGE);
+    doc.setLineWidth(0.8);
+    doc.line(0, hauteurEntete, pageWidth, hauteurEntete);
+
+    let yPosition = hauteurEntete + 10;
+
+    // ---- Bandeau des paramètres du scénario ----
+    const lignesInfos = [
+        `Type : ${types.join(', ')}`,
+        `Véhicules : ${vehicules.length > 0 ? vehicules.join(', ') : 'Non spécifié'}`,
+        `Lieu : ${lieux.length > 0 ? lieux.join(', ') : 'Non spécifié'}`,
+        `Durée : ${duree}  ·  Niveau : ${niveau}`
+    ];
+    const hauteurBandeau = lignesInfos.length * 5.5 + 6;
+    doc.setFillColor(...PDF_FOND_CLAIR);
+    doc.roundedRect(margin, yPosition, maxWidth, hauteurBandeau, 2, 2, 'F');
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9.5);
+    doc.setTextColor(...PDF_ENCRE);
+    let yInfo = yPosition + 7;
+    lignesInfos.forEach(l => { doc.text(l, margin + 5, yInfo); yInfo += 5.5; });
+    yPosition += hauteurBandeau + 10;
+
+    // ---- Corps du scénario (markdown → mise en page) ----
+    const texteBrut = dernierScenarioBrut || document.getElementById('scenario-contenu').innerText;
+    const lignesSource = texteBrut.replace(/\r\n/g, '\n').split('\n');
+
+    lignesSource.forEach(ligneBrute => {
+        const ligne = ligneBrute.trim();
+        if (!ligne) { yPosition += 3; return; }
+
+        yPosition = pdfSautDePage(doc, yPosition, margin, pageHeight, 14);
+
+        let m;
+        if ((m = ligne.match(/^#{1,3}\s*(.*)$/))) {
+            const titre = m[1].replace(/[📋🎯📖👥⏱️🔄✅⚠️📦]\s*/g, '').trim();
+            yPosition += 4;
+            yPosition = pdfSautDePage(doc, yPosition, margin, pageHeight, 14);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(13);
+            doc.setTextColor(...PDF_ROUGE);
+            doc.text(titre, margin, yPosition);
+            yPosition += 2;
+            doc.setDrawColor(230, 200, 203);
+            doc.setLineWidth(0.3);
+            doc.line(margin, yPosition, pageWidth - margin, yPosition);
+            yPosition += 6;
+        } else if ((m = ligne.match(/^-\s+(.*)$/))) {
+            yPosition = pdfEcrireParagraphe(doc, m[1], margin, yPosition, maxWidth, {
+                pageWidth, pageHeight, margin, prefixe: '•', indentSuite: 4
+            });
+            yPosition += 5.5;
+        } else if ((m = ligne.match(/^(\d+)\.\s+(.*)$/))) {
+            yPosition = pdfEcrireParagraphe(doc, m[2], margin, yPosition, maxWidth, {
+                pageWidth, pageHeight, margin, prefixe: m[1] + '.', indentSuite: 6
+            });
+            yPosition += 5.5;
+        } else {
+            yPosition = pdfEcrireParagraphe(doc, ligne, margin, yPosition, maxWidth, { pageWidth, pageHeight, margin });
+            yPosition += 5.5;
+        }
+    });
+
+    // ---- Pied de page sur toutes les pages ----
     const totalPages = doc.internal.getNumberOfPages();
     for (let i = 1; i <= totalPages; i++) {
         doc.setPage(i);
+        doc.setDrawColor(...PDF_ROUGE);
+        doc.setLineWidth(0.4);
+        doc.line(margin, pageHeight - 14, pageWidth - margin, pageHeight - 14);
         doc.setFontSize(8);
-        doc.setTextColor(128, 128, 128);
-        doc.setFont('helvetica', 'italic');
+        doc.setTextColor(...PDF_GRIS);
+        doc.setFont('helvetica', 'normal');
         doc.text(
-            `Vulcain v${APP_VERSION} - Scénario généré le ${new Date().toLocaleDateString('fr-FR')} - Page ${i}/${totalPages}`,
+            `Vulcain v${APP_VERSION} · Scénario généré le ${new Date().toLocaleDateString('fr-FR')} · Page ${i}/${totalPages}`,
             pageWidth / 2,
-            pageHeight - 10,
+            pageHeight - 9,
             { align: 'center' }
         );
     }
-    
+
     // Générer le nom du fichier
     const dateStr = new Date().toISOString().split('T')[0];
     const typeStr = types[0] ? types[0].replace(/\s+/g, '_') : 'Scenario';
     const filename = `Scenario_${typeStr}_${dateStr}.pdf`;
-    
-    // Télécharger le PDF
+
     doc.save(filename);
     statsEvenement('pdf');
 
-    // Confirmation
     setTimeout(() => {
         alert(`✅ PDF téléchargé : ${filename}`);
     }, 100);
