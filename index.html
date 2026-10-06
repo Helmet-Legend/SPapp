@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.63.2">
+    <meta name="version" content="1.63.3">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.63.2</span><br>
+                        Vulcain v<span class="app-version">1.63.3</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -3254,56 +3254,25 @@
         <div class="result-box" style="background: var(--bg-card); border: 2px solid #FF9800;">
             <h3 style="color: light-dark(#945800, #ff9800);">🔥 Sélectionnez la classe de feu</h3>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
-                
-                <!-- Classe A -->
-                <div class="fire-class-card" onclick="selectionnerClasseFeu('A')" style="background: linear-gradient(135deg, #8B4513 0%, #654321 100%); color: #ffffff; cursor: pointer; padding: 25px; border-radius: 12px; text-align: center; border: 3px solid #8B4513; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(139,69,19,0.4);">
-                    <div style="font-size: 3.5em; margin-bottom: 10px;">🪵</div>
-                    <div style="font-size: 1.5em; font-weight: bold; color: #ffffff; margin-bottom: 8px;">Classe A</div>
-                    <div style="font-size: 1em; color: #FFD700; font-weight: 600;">Feux secs</div>
-                    <div style="font-size: 0.9em; color: #ffffff; margin-top: 8px; opacity: 0.9;">Bois, papier, tissu, carton</div>
-                </div>
-
-                <!-- Classe B -->
-                <div class="fire-class-card" onclick="selectionnerClasseFeu('B')" style="background: linear-gradient(135deg, #ad2f00 0%, #bb1133 100%); color: #ffffff; cursor: pointer; padding: 25px; border-radius: 12px; text-align: center; border: 3px solid #FF4500; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255,69,0,0.4);">
-                    <div style="font-size: 3.5em; margin-bottom: 10px;">🛢️</div>
-                    <div style="font-size: 1.5em; font-weight: bold; color: #ffffff; margin-bottom: 8px;">Classe B</div>
-                    <div style="font-size: 1em; color: #FFD700; font-weight: 600;">Feux gras</div>
-                    <div style="font-size: 0.9em; color: #ffffff; margin-top: 8px; opacity: 0.9;">Liquides inflammables</div>
-                </div>
-
-                <!-- Classe C -->
-                <div class="fire-class-card" onclick="selectionnerClasseFeu('C')" style="background: linear-gradient(135deg, #1E90FF 0%, #4169E1 100%); color: #101318; cursor: pointer; padding: 25px; border-radius: 12px; text-align: center; border: 3px solid #1E90FF; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(30,144,255,0.4);">
-                    <div style="font-size: 3.5em; margin-bottom: 10px;">💨</div>
-                    <div style="font-size: 1.5em; font-weight: bold; color: #101318; margin-bottom: 8px;">Classe C</div>
-                    <div style="font-size: 1em; color: #0b1a0c; font-weight: 600;">Feux de gaz</div>
-                    <div style="font-size: 0.9em; color: #101318; margin-top: 8px; opacity: 0.9;">Butane, propane, GPL</div>
-                </div>
-
-                <!-- Classe D -->
-                <div class="fire-class-card" onclick="selectionnerClasseFeu('D')" style="background: linear-gradient(135deg, light-dark(#C0C0C0, #353639) 0%, light-dark(#cccccc, #26282a) 100%); cursor: pointer; padding: 25px; border-radius: 12px; text-align: center; border: 3px solid var(--t-line, #C0C0C0); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(192,192,192,0.4);">
-                    <div style="font-size: 3.5em; margin-bottom: 10px;">⚙️</div>
-                    <div style="font-size: 1.5em; font-weight: bold; color: var(--t-ink, #212121); margin-bottom: 8px;">Classe D</div>
-                    <div style="font-size: 1em; color: light-dark(#756300, #ffd700); font-weight: 600;">Feux de métaux</div>
-                    <div style="font-size: 0.9em; color: var(--t-ink, #212121); margin-top: 8px; opacity: 0.9;">Magnésium, aluminium</div>
-                </div>
-
-                <!-- Classe F -->
-                <div class="fire-class-card" onclick="selectionnerClasseFeu('F')" style="background: linear-gradient(135deg, #8f4e00 0%, #bc1d00 100%); color: #ffffff; cursor: pointer; padding: 25px; border-radius: 12px; text-align: center; border: 3px solid #FF8C00; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255,140,0,0.4);">
-                    <div style="font-size: 3.5em; margin-bottom: 10px;">🍳</div>
-                    <div style="font-size: 1.5em; font-weight: bold; color: #ffffff; margin-bottom: 8px;">Classe F</div>
-                    <div style="font-size: 1em; color: #FFD700; font-weight: 600;">Feux d'huiles</div>
-                    <div style="font-size: 0.9em; color: #ffffff; margin-top: 8px; opacity: 0.9;">Huiles de cuisson</div>
-                </div>
-
-                <!-- Électrique -->
-                <div class="fire-class-card" onclick="selectionnerClasseFeu('elect')" style="background: linear-gradient(135deg, light-dark(#FFD700, #403a16) 0%, light-dark(#ffdb99, #392d17) 100%); cursor: pointer; padding: 25px; border-radius: 12px; text-align: center; border: 3px solid light-dark(#FFD700, #7f6e0f); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255,215,0,0.4);">
-                    <div style="font-size: 3.5em; margin-bottom: 10px;">⚡</div>
-                    <div style="font-size: 1.5em; font-weight: bold; color: var(--t-ink, #000000); margin-bottom: 8px;">Électrique</div>
-                    <div style="font-size: 1em; color: light-dark(#cc0000, #ff6b6b); font-weight: 600;">Sous tension</div>
-                    <div style="font-size: 0.9em; color: var(--t-ink, #000000); margin-top: 8px; opacity: 0.9;">Équipements électriques</div>
-                </div>
-
+            <div class="classes-feu-grille">
+                <button type="button" class="fire-class-card fire-class-banniere" onclick="selectionnerClasseFeu('A')">
+                    <img src="images/extincteurs/classe-a.webp" alt="Classe A, feux secs : bois, papier, tissu, carton" width="1000" height="246" loading="lazy">
+                </button>
+                <button type="button" class="fire-class-card fire-class-banniere" onclick="selectionnerClasseFeu('B')">
+                    <img src="images/extincteurs/classe-b.webp" alt="Classe B, feux gras : liquides inflammables" width="1000" height="246" loading="lazy">
+                </button>
+                <button type="button" class="fire-class-card fire-class-banniere" onclick="selectionnerClasseFeu('C')">
+                    <img src="images/extincteurs/classe-c.webp" alt="Classe C, feux de gaz : butane, propane, GPL" width="1000" height="246" loading="lazy">
+                </button>
+                <button type="button" class="fire-class-card fire-class-banniere" onclick="selectionnerClasseFeu('D')">
+                    <img src="images/extincteurs/classe-d.webp" alt="Classe D, feux de métaux : magnésium, aluminium" width="1000" height="246" loading="lazy">
+                </button>
+                <button type="button" class="fire-class-card fire-class-banniere" onclick="selectionnerClasseFeu('F')">
+                    <img src="images/extincteurs/classe-f.webp" alt="Classe F, feux d'huiles : huiles de cuisson" width="1000" height="246" loading="lazy">
+                </button>
+                <button type="button" class="fire-class-card fire-class-banniere" onclick="selectionnerClasseFeu('elect')">
+                    <img src="images/extincteurs/electrique.webp" alt="Électrique, sous tension : équipements électriques" width="1000" height="246" loading="lazy">
+                </button>
             </div>
         </div>
 
@@ -26819,7 +26788,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.63.2</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.63.3</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
