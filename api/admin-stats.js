@@ -12,6 +12,8 @@ const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_R
 const CLE_ADMIN = process.env.PUSH_ADMIN_KEY || '';
 const TYPES = ['ouverture', 'generation', 'pdf'];
 const JOURS = 30;
+const CLE_VUES = 'vulcain:stats:vues';
+const TOP_FICHES = 10;
 
 function cleValide(fournie) {
     if (!CLE_ADMIN || typeof fournie !== 'string') return false;
@@ -57,7 +59,15 @@ export default async function handler(req, res) {
             resultat[type] = { serie, total: serie.reduce((s, p) => s + p.total, 0) };
         });
 
-        return res.status(200).json({ ok: true, jours: JOURS, stats: resultat });
+        let topFiches = [];
+        try {
+            const [brutVues] = await redis([['HGETALL', CLE_VUES]]);
+            const paires = [];
+            for (let i = 0; brutVues && i < brutVues.length; i += 2) paires.push({ fiche: brutVues[i], vues: Number(brutVues[i + 1]) || 0 });
+            topFiches = paires.sort((a, b) => b.vues - a.vues).slice(0, TOP_FICHES);
+        } catch (e) { /* popularité indisponible : on renvoie quand même le reste */ }
+
+        return res.status(200).json({ ok: true, jours: JOURS, stats: resultat, topFiches });
     } catch (e) {
         return res.status(502).json({ erreur: 'Lecture impossible' });
     }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.58.1">
+    <meta name="version" content="1.59.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.58.1</span><br>
+                        Vulcain v<span class="app-version">1.59.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -10773,12 +10773,18 @@
                     <li>Tu disposes de <strong>2 générations par 24 h</strong>.</li>
                     <li>Chaque génération redevient disponible <strong>24 h après son utilisation</strong> : pas besoin d'attendre minuit.</li>
                     <li>Une génération qui échoue (erreur, coupure réseau) n'est <strong>pas décomptée</strong>.</li>
-                    <li>Pense à <strong>copier ou télécharger en PDF</strong> ton scénario : il n'est pas conservé.</li>
-                    <li>Pourquoi ? Chaque scénario est rédigé par une IA payante : la limite garde le générateur gratuit pour tous.</li>
+                    <li>Les 5 derniers scénarios sont gardés <strong>sur cet appareil uniquement</strong> (ci-dessous) : pense quand même à copier ou télécharger en PDF ceux que tu veux garder ailleurs.</li>
+                    <li>Pourquoi la limite ? Chaque scénario est rédigé par une IA payante : elle garde le générateur gratuit pour tous.</li>
                 </ul>
             </details>
         </div>
-        
+
+        <!-- Historique local (sur cet appareil) -->
+        <details id="ia-historique-bloc" class="ia-compteur" style="margin-top: 15px; display: none;">
+            <summary style="cursor: pointer; font-weight: 600;">🕘 Scénarios récents (sur cet appareil)</summary>
+            <div id="ia-historique-liste" style="margin-top: 10px; display: grid; gap: 8px;"></div>
+        </details>
+
         <!-- Formulaire de configuration -->
         <div style="display: grid; gap: 20px;">
             
@@ -10966,6 +10972,9 @@
                     <div style="display: flex; gap: 10px;">
                         <button onclick="copierScenario()" style="padding: 8px 15px; background: #6A1B9A; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
                             📋 Copier
+                        </button>
+                        <button id="btn-partager-scenario" onclick="partagerScenario()" hidden style="padding: 8px 15px; background: #00838F; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
+                            📤 Partager
                         </button>
                         <button onclick="telechargerPDF()" style="padding: 8px 15px; background: #D32F2F; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
                             📥 PDF
@@ -26044,7 +26053,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.58.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.59.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

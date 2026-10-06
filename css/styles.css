@@ -2204,5 +2204,20 @@ body.dark-mode #resultat-ia {
 .ia-dash-barre.ia-dash-bleu { fill: light-dark(#2a78d6, #3987e5); }
 .ia-dash-barre.ia-dash-orange { fill: light-dark(#eb6834, #d95926); }
 .ia-dash-barre.ia-dash-aqua { fill: light-dark(#1baf7a, #199e70); }
+.ia-dash-carte-large { grid-column: 1 / -1; }
+.ia-dash-fiches-liste { display: grid; gap: 2px; }
+.ia-dash-fiche-ligne {
+    display: grid;
+    grid-template-columns: 24px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--t-line, #eee);
+    font-size: 0.92em;
+}
+.ia-dash-fiche-ligne:last-child { border-bottom: none; }
+.ia-dash-fiche-rang { font-weight: 800; color: var(--text-secondary); text-align: center; }
+.ia-dash-fiche-titre { color: var(--t-ink, #000); }
+.ia-dash-fiche-vues { font-weight: 700; color: var(--text-secondary); }
 
 /* Navigation, en-tête, pied de page et habillages clair / sombre : voir css/theme.css */

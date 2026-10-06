@@ -9,6 +9,60 @@
 // Texte brut (markdown) du dernier scénario généré avec succès : réutilisé pour le PDF
 let dernierScenarioBrut = '';
 
+// ---- Historique local des scénarios (localStorage, 5 derniers, cet appareil uniquement) ----
+const IA_HISTORIQUE_CLE = 'vulcain.ia.historique';
+const IA_HISTORIQUE_MAX = 5;
+
+function iaHistoriqueLire() {
+    try { return JSON.parse(localStorage.getItem(IA_HISTORIQUE_CLE) || '[]'); } catch (e) { return []; }
+}
+
+function iaHistoriqueEnregistrer(types, texteBrut) {
+    try {
+        const entree = { date: Date.now(), types, texte: texteBrut };
+        const liste = [entree, ...iaHistoriqueLire()].slice(0, IA_HISTORIQUE_MAX);
+        localStorage.setItem(IA_HISTORIQUE_CLE, JSON.stringify(liste));
+    } catch (e) { /* stockage indisponible (quota, navigation privée) */ }
+    iaHistoriqueAfficher();
+}
+
+function iaHistoriqueAfficher() {
+    const bloc = document.getElementById('ia-historique-bloc');
+    const liste = document.getElementById('ia-historique-liste');
+    if (!bloc || !liste) return;
+    const entrees = iaHistoriqueLire();
+    bloc.style.display = entrees.length ? 'block' : 'none';
+    if (entrees.length) bloc.open = true;
+    liste.innerHTML = entrees.map((e, i) => {
+        const date = new Date(e.date).toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+        const titre = (e.types || []).join(', ') || 'Scénario';
+        return `<div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 10px; background: var(--t-s1); border-radius: 8px;">` +
+            `<span><strong>${echapperAttribut(titre)}</strong><br><small>${date}</small></span>` +
+            `<button type="button" onclick="iaHistoriqueOuvrir(${i})" style="white-space: nowrap;">Revoir</button>` +
+            `</div>`;
+    }).join('');
+}
+
+function iaHistoriqueOuvrir(index) {
+    const entree = iaHistoriqueLire()[index];
+    if (!entree) return;
+    dernierScenarioBrut = entree.texte;
+    document.getElementById('scenario-contenu').innerHTML = formatScenario(entree.texte);
+    const resultatDiv = document.getElementById('resultat-ia');
+    resultatDiv.style.display = 'block';
+    const btnPartager = document.getElementById('btn-partager-scenario');
+    if (btnPartager) btnPartager.hidden = !navigator.share;
+    resultatDiv.scrollIntoView({ behavior: 'smooth' });
+}
+
+function echapperAttribut(texte) {
+    const d = document.createElement('div');
+    d.textContent = String(texte || '');
+    return d.innerHTML;
+}
+
+document.addEventListener('DOMContentLoaded', iaHistoriqueAfficher);
+
 // Collecter les valeurs cochées
 function getCheckedValues(name) {
     const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
@@ -234,7 +288,10 @@ async function genererManoeuvre() {
         }
         dernierScenarioBrut = texteComplet;
         iaEnregistrerGeneration();
+        iaHistoriqueEnregistrer(parametres.types, texteComplet);
         statsEvenement('generation');
+        const btnPartager = document.getElementById('btn-partager-scenario');
+        if (btnPartager) btnPartager.hidden = !navigator.share;
 
     } catch (error) {
         console.error('Erreur:', error);
@@ -280,6 +337,15 @@ function copierScenario() {
         alert('✅ Scénario copié dans le presse-papier !');
     }).catch(err => {
         console.error('Erreur copie:', err);
+    });
+}
+
+// Partage natif (SMS, mail, messagerie...) via l'API Web Share, si disponible
+function partagerScenario() {
+    if (!navigator.share) return;
+    const contenu = document.getElementById('scenario-contenu').innerText;
+    navigator.share({ title: 'Scénario de manœuvre Vulcain', text: contenu }).catch(err => {
+        if (err && err.name !== 'AbortError') console.error('Erreur partage:', err);
     });
 }
 
