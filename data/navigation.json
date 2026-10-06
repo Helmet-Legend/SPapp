@@ -4726,6 +4726,75 @@
     "sdis 34",
     "hérault"
    ]
+  },
+  {
+   "id": "fod-18-bouteilles",
+   "titre": "FOD n°18 – Bouteilles de gaz",
+   "domaine": "sdis34",
+   "theme": "FOD – Fiches opérationnelles départementales",
+   "type": "fiche",
+   "motsCles": [
+    "fod",
+    "bouteille",
+    "gaz",
+    "gpl",
+    "butane",
+    "propane",
+    "acétylène",
+    "acetylene",
+    "bleve",
+    "éclatement",
+    "gaz comprimé",
+    "refroidissement",
+    "caméra thermique",
+    "explosimétrie",
+    "camping-car",
+    "jet torche"
+   ]
+  },
+  {
+   "id": "fod-22-photovoltaique",
+   "titre": "FOD n°22 – Panneaux photovoltaïques",
+   "domaine": "sdis34",
+   "theme": "FOD – Fiches opérationnelles départementales",
+   "type": "fiche",
+   "motsCles": [
+    "fod",
+    "photovoltaïque",
+    "photovoltaique",
+    "ppv",
+    "panneau solaire",
+    "onduleur",
+    "courant continu",
+    "enedis",
+    "lspcc",
+    "toiture",
+    "laisser brûler",
+    "centrale solaire",
+    "ombrière"
+   ]
+  },
+  {
+   "id": "fod-24-odp",
+   "titre": "FOD n°24 – Ouverture de porte",
+   "domaine": "sdis34",
+   "theme": "FOD – Fiches opérationnelles départementales",
+   "type": "fiche",
+   "motsCles": [
+    "fod",
+    "odp",
+    "ouverture de porte",
+    "état de nécessité",
+    "décès",
+    "obstacle médico-légal",
+    "avis de passage",
+    "daaf",
+    "forces de l'ordre",
+    "dir 90",
+    "certificat de décès",
+    "effraction",
+    "fenêtre"
+   ]
   }
  ]
 }
