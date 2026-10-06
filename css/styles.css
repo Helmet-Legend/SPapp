@@ -2221,3 +2221,8 @@ body.dark-mode #resultat-ia {
 .ia-dash-fiche-vues { font-weight: 700; color: var(--text-secondary); }
 
 /* Navigation, en-tête, pied de page et habillages clair / sombre : voir css/theme.css */
+
+/* FOD : niveaux de vigilance (jaune / orange / rouge), contrastes validés clair et sombre */
+.fod-n1 { background: light-dark(#fff3a8, #5c5200); color: light-dark(#1a1a1a, #fff3a8); font-weight: 700; }
+.fod-n2 { background: light-dark(#ffd199, #6b3300); color: light-dark(#1a1a1a, #ffd199); font-weight: 700; }
+.fod-n3 { background: light-dark(#f5b5b5, #6b1010); color: light-dark(#1a1a1a, #ffc9c9); font-weight: 700; }

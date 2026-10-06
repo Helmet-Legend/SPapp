@@ -142,6 +142,16 @@
     "COD 2 – Conduite tout-terrain",
     "COD 6 – Moyens élévateurs aériens (MEA)"
    ]
+  },
+  {
+   "id": "sdis34",
+   "titre": "FOD / NOD – SDIS 34",
+   "icone": "📑",
+   "picto": "clipboard",
+   "couleur": "#3F51B5",
+   "themes": [
+    "FOD – Fiches opérationnelles départementales"
+   ]
   }
  ],
  "pages": [
@@ -4685,6 +4695,36 @@
     "aspirateur à eau",
     "crue",
     "dégât des eaux"
+   ]
+  },
+  {
+   "id": "fod-vu-sdi",
+   "titre": "FOD VU-SDI n°001 – Violences urbaines / situation dégradée",
+   "domaine": "sdis34",
+   "theme": "FOD – Fiches opérationnelles départementales",
+   "type": "fiche",
+   "motsCles": [
+    "fod",
+    "violences urbaines",
+    "vu",
+    "situation dégradée",
+    "émeutes",
+    "zsp",
+    "crm",
+    "niveau de vigilance",
+    "jaune",
+    "orange",
+    "rouge",
+    "police",
+    "gendarmerie",
+    "cic",
+    "cog",
+    "agression",
+    "embuscade",
+    "droit de retrait",
+    "recouverture",
+    "sdis 34",
+    "hérault"
    ]
   }
  ]
