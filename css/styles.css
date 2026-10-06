@@ -2249,3 +2249,13 @@ body.dark-mode #resultat-ia {
 .menu-banniere:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35); }
 .menu-banniere:active { transform: scale(0.99); }
 .menu-banniere:focus-visible { outline: 3px solid var(--t-accent, #d7263d); outline-offset: 3px; }
+
+/* Schémas illustrés sombres (légende intégrée à l'image) : pas de cadre blanc, largeur contenue sur grand écran */
+.rd-fig.illustre { background: #0d0e10; padding: 0; overflow: hidden; border-radius: 14px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.rd-fig.illustre img { border-radius: 0; }
+
+/* Extincteurs : classes de feu en boutons illustrés (même mise en avant au survol et à la sélection que les anciennes cartes) */
+.classes-feu-grille { display: grid; grid-template-columns: 1fr; gap: 12px; max-width: 720px; margin: 20px auto 0; }
+.fire-class-banniere { display: block; width: 100%; margin: 0; padding: 0; border: 0; border-radius: 14px; overflow: hidden; background: #0d0e10; cursor: pointer; line-height: 0; transition: all 0.3s ease; -webkit-tap-highlight-color: transparent; }
+.fire-class-banniere img { display: block; width: 100%; height: auto; }
+.fire-class-banniere:focus-visible { outline: 3px solid var(--t-accent, #d7263d); outline-offset: 3px; }
