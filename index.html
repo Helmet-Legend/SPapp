@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.63.0">
+    <meta name="version" content="1.63.1">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.63.0</span><br>
+                        Vulcain v<span class="app-version">1.63.1</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -346,22 +346,13 @@
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2>💥 Risques GAZ</h2>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
-            <div class="fire-icon" onclick="showModule('explosimetrie')" style="min-height: 200px; display: flex; flex-direction: column; justify-content: center; cursor: pointer;">
-                <div class="emoji" style="font-size: 4em;">💥</div>
-                <div class="label" style="font-size: 1.3em; margin-bottom: 10px;">Explosimétrie</div>
-                <div style="font-size: 0.95em; color: var(--text-secondary); padding: 0 15px;">
-                    Interprétation des valeurs explosimètre et correction LIE
-                </div>
-            </div>
-            
-            <div class="fire-icon" onclick="showModule('bouteilles-gaz-menu')" style="min-height: 200px; display: flex; flex-direction: column; justify-content: center; cursor: pointer;">
-                <div class="emoji" style="font-size: 4em;">💨</div>
-                <div class="label" style="font-size: 1.3em; margin-bottom: 10px;">Bouteilles de Gaz</div>
-                <div style="font-size: 0.95em; color: var(--text-secondary); padding: 0 15px;">
-                    Identification et procédures de refroidissement
-                </div>
-            </div>
+        <div class="menu-bannieres">
+            <button type="button" class="menu-banniere" onclick="showModule('explosimetrie')">
+                <img src="images/gaz-menu/explosimetrie.webp" alt="01 – Explosimétrie : interprétation des valeurs explosimètre et correction LIE" width="1200" height="244" loading="lazy">
+            </button>
+            <button type="button" class="menu-banniere" onclick="showModule('bouteilles-gaz-menu')">
+                <img src="images/gaz-menu/bouteilles-gaz.webp" alt="02 – Bouteilles de gaz : identification et procédures de refroidissement" width="1200" height="247" loading="lazy">
+            </button>
         </div>
     </div>
 
@@ -26830,7 +26821,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.63.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.63.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
