@@ -2241,3 +2241,11 @@ body.dark-mode #resultat-ia {
 .fod-branches b.tag { display: inline-block; margin-right: 6px; padding: 0 8px; border-radius: 4px; font-size: 0.85em; background: light-dark(#ffffff, #000000); color: light-dark(#1a1a1a, #ffffff); }
 .fod-cote-a-cote { display: grid; grid-template-columns: 1fr; gap: 10px; }
 @media (min-width: 720px) { .fod-branches { grid-template-columns: 1fr 1fr; } .fod-cote-a-cote { grid-template-columns: 1fr 1fr; } }
+
+/* Menus à bannières illustrées (le texte est dans l'image : alt et clavier assurés par le bouton) */
+.menu-bannieres { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 860px; margin: 24px auto 0; }
+.menu-banniere { display: block; width: 100%; margin: 0; padding: 0; border: 0; border-radius: 16px; overflow: hidden; background: #0d0e10; cursor: pointer; line-height: 0; transition: transform 0.15s ease, box-shadow 0.15s ease; -webkit-tap-highlight-color: transparent; }
+.menu-banniere img { display: block; width: 100%; height: auto; }
+.menu-banniere:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35); }
+.menu-banniere:active { transform: scale(0.99); }
+.menu-banniere:focus-visible { outline: 3px solid var(--t-accent, #d7263d); outline-offset: 3px; }
