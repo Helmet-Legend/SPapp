@@ -47,6 +47,34 @@ var AdminStats = (function () {
             '</div>';
     }
 
+    // Titre lisible d'une fiche à partir du DOM déjà chargé (pas de dépendance au registre)
+    function titreFiche(id) {
+        var module = document.getElementById(id);
+        var titre = module && module.querySelector('h2');
+        return titre ? titre.textContent.trim() : id;
+    }
+
+    function topFichesHTML(topFiches) {
+        if (!topFiches || !topFiches.length) return '';
+        var lignes = topFiches.map(function (f, i) {
+            return '<div class="ia-dash-fiche-ligne">' +
+                '<span class="ia-dash-fiche-rang">' + (i + 1) + '</span>' +
+                '<span class="ia-dash-fiche-titre">' + echapper(titreFiche(f.fiche)) + '</span>' +
+                '<span class="ia-dash-fiche-vues">' + f.vues + '</span>' +
+                '</div>';
+        }).join('');
+        return '<div class="ia-dash-carte ia-dash-carte-large">' +
+            '<div class="ia-dash-tete"><span class="ia-dash-icone">⭐</span><span>Fiches les plus consultées</span></div>' +
+            '<div class="ia-dash-fiches-liste">' + lignes + '</div>' +
+            '</div>';
+    }
+
+    function echapper(s) {
+        var d = document.createElement('div');
+        d.textContent = String(s || '');
+        return d.innerHTML;
+    }
+
     async function charger() {
         var cle = document.getElementById('statsCleAdmin').value.trim();
         var retour = document.getElementById('statsRetour');
@@ -60,7 +88,7 @@ var AdminStats = (function () {
             if (!r.ok) { retour.textContent = b.erreur || ('Erreur ' + r.status); return; }
             if (document.getElementById('statsMemoriser').checked) { try { localStorage.setItem(CLE_ADMIN, JSON.stringify(cle)); } catch (e) {} }
             retour.textContent = '';
-            cartes.innerHTML = CARTES.map(function (def) { return carteHTML(def, b.stats[def.type]); }).join('');
+            cartes.innerHTML = CARTES.map(function (def) { return carteHTML(def, b.stats[def.type]); }).join('') + topFichesHTML(b.topFiches);
         } catch (e) {
             retour.textContent = 'Réseau indisponible.';
         }

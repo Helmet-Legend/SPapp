@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.58.1 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.59.0 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -45,15 +45,24 @@ let appConfig = {};
 // ==================== INITIALISATION ====================
 // Compteur d'usage anonyme (tableau de bord administrateur) : un total par jour
 // et par type d'événement, aucune donnée personnelle. Échec silencieux.
-function statsEvenement(type) {
+function statsEvenement(type, extra) {
     try {
         fetch('/api/stats-evenement', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ type }),
+            body: JSON.stringify(Object.assign({ type }, extra)),
             keepalive: true
         }).catch(() => {});
     } catch (e) { /* tant pis */ }
+}
+
+// Vues de fiches (popularité, tableau de bord administrateur) : une seule fois par fiche
+// et par session, pour ne pas gonfler les compteurs à chaque clic de navigation.
+var vuesEnvoyeesCetteSession = new Set();
+function statsVueFiche(moduleName) {
+    if (moduleName === 'home' || vuesEnvoyeesCetteSession.has(moduleName)) return;
+    vuesEnvoyeesCetteSession.add(moduleName);
+    statsEvenement('vue', { fiche: moduleName });
 }
 
 async function initApp() {
@@ -140,7 +149,8 @@ function showModule(moduleName) {
     if (module) {
         module.classList.add('active');
         window.scrollTo(0, 0);
-        
+        statsVueFiche(moduleName);
+
         if (moduleName === 'distance-calc') calculateDistanceCalc();
         if (moduleName === 'abaque') calculateAbaqueAll();
         if (moduleName === 'ari') calculerAutonomieARI();
@@ -150,7 +160,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.58.1';
+var APP_VERSION = '1.59.0';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1397,7 +1407,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.58.1 COMPLET
+// FIN DU FICHIER - Vulcain v1.59.0 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
