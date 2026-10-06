@@ -2259,3 +2259,12 @@ body.dark-mode #resultat-ia {
 .fire-class-banniere { display: block; width: 100%; margin: 0; padding: 0; border: 0; border-radius: 14px; overflow: hidden; background: #0d0e10; cursor: pointer; line-height: 0; transition: all 0.3s ease; -webkit-tap-highlight-color: transparent; }
 .fire-class-banniere img { display: block; width: 100%; height: auto; }
 .fire-class-banniere:focus-visible { outline: 3px solid var(--t-accent, #d7263d); outline-offset: 3px; }
+
+/* NOD : zonage NRBC en trois bandes (exclusion / contrôlée / soutien) */
+.nod-zones { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 10px 0; }
+.nod-zone { display: grid; gap: 4px; padding: 10px 12px; border-radius: 10px; border-left: 8px solid; }
+.nod-zone > b { font-size: 1.02em; }
+.nod-zone-1 { background: light-dark(#fbd9d9, #4a1414); border-color: #d7263d; color: light-dark(#1a1a1a, #ffd6d6); }
+.nod-zone-2 { background: light-dark(#ffe6c7, #4d2c06); border-color: #f08a00; color: light-dark(#1a1a1a, #ffe0b8); }
+.nod-zone-3 { background: light-dark(#d6f0d9, #14391a); border-color: #2e9e4a; color: light-dark(#1a1a1a, #d6f0d9); }
+@media (min-width: 720px) { .nod-zones { grid-template-columns: 1fr 1fr 1fr; } }

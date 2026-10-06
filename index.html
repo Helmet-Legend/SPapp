@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.63.3">
+    <meta name="version" content="1.64.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.63.3</span><br>
+                        Vulcain v<span class="app-version">1.64.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -18519,6 +18519,9 @@ Je fais : extinction.</p>
 
         <p class="rd-source">📚 Fiche opérationnelle départementale FOD n°22 « Photovoltaïque », SDIS 34 (Groupement action opérationnelle, service Opération), 08/2022. Synthèse reformulée ; elle renvoie au GDO « Interventions sur les éléments photovoltaïques » (2017).</p>
         <p class="jsp-liens">
+            <button class="sal-lien" onclick="showModule('fod-gaffe-isolante')">🪝 Gaffe isolante 20 000 V : mise en œuvre →</button>
+        </p>
+        <p class="jsp-liens">
             📄 <a class="rd-pdf" href="docs/sdis34/FOD-22-Photovoltaique-2022.pdf" target="_blank" rel="noopener">FOD n°22 – Panneaux photovoltaïques (PDF)</a>
         </p>
     </div>
@@ -18637,6 +18640,477 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Fiche opérationnelle départementale F.O.D n°24 « Ouverture de porte », SDIS 34 (GCO, service Opération), 10/2025. Synthèse reformulée.</p>
         <p class="jsp-liens">
             📄 <a class="rd-pdf" href="docs/sdis34/FOD-24-Ouverture-de-porte-2025.pdf" target="_blank" rel="noopener">FOD n°24 – Ouverture de porte (PDF)</a>
+        </p>
+    </div>
+
+    <div id="fod-gaffe-isolante" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34 · FOD</span>
+        <h2>🪝 Gaffe isolante 20 000 V</h2>
+        <p style="text-align: center;">Mise en œuvre de la <strong>gaffe isolante 20 000 volts</strong> pour les missions liées aux panneaux photovoltaïques ou sur composant électrique (05/2011).</p>
+        <div class="rd-alerte"><strong>Principe de précaution avant tout.</strong> La gaffe isolante est la solution la plus efficace en environnement photovoltaïque, mais toutes les opérations se déroulent dans le respect du principe de précaution. Usage <strong>exclusivement</strong> dans le cadre des missions définies à la formation du service Prévision du SDIS 34.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Isolante jusqu'à 20 000 V</strong>, y compris en condition extrême d'humidité et replié.</li>
+                <li><strong>Réservée</strong> aux interventions liées aux installations photovoltaïques (et composants électriques).</li>
+                <li><strong>Elle complète les gaffes bois</strong>, qui restent dans les engins : dégarnissage et toute action hors présence d'un danger électrique.</li>
+                <li>Dotation des centres de secours en cours (2011), en appui de la note opérationnelle sur les panneaux photovoltaïques.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1 · Caractéristiques du matériel</h3>
+            <table class="rd-table">
+                <tr><th>Caractéristique</th><th>Valeur</th></tr>
+                <tr><td>Type</td><td>Gaffe extensible, corps en fibre de verre (Ø 3,8 cm)</td></tr>
+                <tr><td>Isolation électrique</td><td><strong>20 000 V</strong>, y compris en condition extrême d'humidité et replié</td></tr>
+                <tr><td>Normes (corps)</td><td>IEC 61235 et IEC 60855</td></tr>
+                <tr><td>Extrémité</td><td>Acier, verrouillable à toutes les hauteurs</td></tr>
+                <tr><td>Longueur</td><td>2,20 m repliée · <strong>3,85 m</strong> dépliée</td></tr>
+                <tr><td>Poids</td><td>3 kg</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 · Gaffe isolante ou gaffe bois ?</h3>
+            <div class="fod-cote-a-cote">
+                <div class="rd-astuce"><strong>🪝 Gaffe isolante 20 000 V</strong><br>Interventions liées aux installations photovoltaïques ou composant électrique, selon la formation du service Prévision.</div>
+                <div class="rd-astuce"><strong>🪵 Gaffe bois</strong><br>Opérations de dégarnissage et toute action hors présence de danger électrique. Reste en place dans les engins.</div>
+            </div>
+        </div>
+
+        <p class="jsp-liens">
+            <button class="sal-lien" onclick="showModule('fod-22-photovoltaique')">☀️ FOD n°22 – Panneaux photovoltaïques →</button>
+        </p>
+        <p class="rd-source">📚 Fiche opérationnelle départementale « Mise en œuvre gaffe isolante », SDIS 34 (Groupement gestion des risques, service Opérations – Prévision technique), 05/2011. Synthèse reformulée.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/sdis34/FOD-Gaffe-isolante-2011.pdf" target="_blank" rel="noopener">Gaffe isolante 20 000 V (PDF)</a>
+        </p>
+    </div>
+
+    <div id="nod-002-vea" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34 · NOD</span>
+        <h2>🔋 NOD n°002 – Secours routier : véhicule à énergie alternative</h2>
+        <p style="text-align: center;">Méthodologie en secours routier sur <strong>véhicule à énergie alternative (VEA)</strong> : prise d'appel, engagement, sécurisation, désincarcération (01/2015).</p>
+        <div class="rd-alerte"><strong>Câbles orange = haute tension (jusqu'à 1 000 V, 300 A).</strong> Ne pas les toucher ni les découper, ne <strong>jamais</strong> découper la batterie de traction. Surveiller la batterie en permanence : un choc peut provoquer un <strong>emballement thermique</strong> (gaz toxiques, incendie).</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Détecter tôt</strong> : dès la prise d'appel, rechercher la nature de la propulsion (GPL, GNV, électrique, hybride HEV), puis confirmer sur place par les indicateurs extérieurs et les <strong>FAD / ERG</strong>.</li>
+                <li><strong>Départ renforcé</strong> si notion de VEA : <strong>+ 1 FPTL + 1 VLCG</strong> (et caméra thermique selon le CODIS).</li>
+                <li><strong>Zone de danger : 5 m</strong> autour du véhicule. Balisage, protection incendie, EPI pour tous.</li>
+                <li><strong>Immobiliser</strong> (clé, calage), puis <strong>isoler l'énergie</strong> : borne (–) de la batterie 12/24 V et retrait du <strong>Plug Service</strong> si possible.</li>
+                <li><strong>Découper uniquement dans des zones exemptes de risques</strong> (câbles orange, prétensionneurs, airbags) après avoir dégarni et dessiné les zones de découpe.</li>
+                <li>Véhicule immergé : risque d'électrocution <strong>faible</strong>, identique à un véhicule classique.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1 · Les risques</h3>
+            <table class="rd-table">
+                <tr><th>Risque</th><th>À retenir</th></tr>
+                <tr><td>⚡ Électrique</td><td>Courant continu, batterie de traction (≥ 300 A, jusqu'à 1 000 V) : électrisation si section d'un câble orange</td></tr>
+                <tr><td>⚙️ Mécanique</td><td>Systèmes pyrotechniques (passifs et actifs) pouvant se déclencher après le choc</td></tr>
+                <tr><td>☣️ Toxique</td><td>Emballement thermique de la batterie : gaz toxiques</td></tr>
+                <tr><td>🔥 Thermique</td><td>Brûlures ; emballement possible après le choc, y compris plus tard (stockage, remorquage)</td></tr>
+                <tr><td>💥 Explosif</td><td>Risque faible</td></tr>
+            </table>
+            <p>Un choc ou la compression des cellules d'une batterie peut conduire à un emballement thermique : <strong>surveillance permanente</strong> pendant l'intervention, précautions pour le transport et le stockage du véhicule par les dépanneurs.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 · Prise d'appel (CTA-CODIS)</h3>
+            <p>Pour tout accident de circulation, l'opérateur cherche à savoir s'il s'agit d'un VEA.</p>
+            <div class="fod-cote-a-cote">
+                <div class="rd-astuce"><strong>Identifier</strong><ul>
+                    <li>Type de véhicule : VL, PL, transport en commun</li>
+                    <li>Propulsion : <strong>GPL, GNV, électrique, hybride HEV</strong></li>
+                    <li>Immatriculation et marque (FAD / ERG, désactivation du Plug Service)</li>
+                    <li>Signes extérieurs visibles, à faire décrire au requérant</li>
+                </ul></div>
+                <div class="rd-astuce"><strong>Contacter le CIC / COG, dans tous les cas</strong><ul>
+                    <li>Donner l'immatriculation pour connaître la carburation</li>
+                    <li>Si l'appel vient du CIC / COG : demander les renseignements sur les véhicules</li>
+                    <li>Eux seuls disposent de la liste des dépanneurs agréés UTE C 18-550 pour les VEA</li>
+                </ul></div>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 · Engagement des moyens</h3>
+            <table class="rd-table">
+                <tr><th>Code sinistre</th><th>Départ</th><th>Moyens</th></tr>
+                <tr><td>AVP VL / PL / TC / autre (A105 / A106)</td><td>Aggravé, avec notion de VEA</td><td>Moyens proposés <strong>+ 1 FPTL* + 1 VLCG</strong></td></tr>
+            </table>
+            <ul>
+                <li>* FPTL ou FPT. Si l'engagement élémentaire propose déjà un FPTSR : ne pas ajouter de 2<sup>e</sup> FPT.</li>
+                <li>AVP suivi de feu (A107) : engager si besoin une <strong>caméra thermique</strong>.</li>
+                <li>Dès que le CODIS apprend qu'un VEA est en cause : prévenir par radio les moyens en transit et renforcer le départ.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 · Rôle du COS et EPI</h3>
+            <ul>
+                <li>Analyser et observer pour identifier les risques liés aux énergies alternatives.</li>
+                <li><strong>Zone de danger</strong> : tenue de feu (casque F2 ; veste de feu si besoin pour les personnels sanitaires).</li>
+                <li><strong>Désincarcération</strong> : tenue de feu complète, visière oculaire baissée, sur-pantalon.</li>
+                <li><strong>Retrait du Plug Service</strong> : gants isolants 1 000 V, casque F1 avec visière oculaire et écran facial baissés.</li>
+                <li><strong>Gestion du verre</strong> (pare-brise, vitres) : masque FFP1 ou FFP2 pour intervenants et impliqués (poussières de silice, particules de verre).</li>
+                <li>Informer SAMU, forces de l'ordre et dépanneurs des dangers potentiels ; tenir compte de l'avis médical pour l'extraction.</li>
+                <li>Alléger les tenues dès que possible (fortes chaleurs) et surveiller l'état physique des personnels.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>5 · Sur les lieux</h3>
+            <ol class="fod-flux">
+                <li><b>1. Sécuriser la zone d'intervention</b>Balisage en attendant les forces de l'ordre, éviter le sur-accident. Protection incendie : rester attentif aux signes d'éclosion (emballement des batteries). Protection des personnels et partenaires (EPI). <strong>Zone de danger : 5 m</strong> autour du véhicule ; zone d'intervention et zone de dépôt des structures. Neutraliser les dispositifs pyrotechniques et gérer les énergies.</li>
+                <li><b>2. Sécuriser le véhicule (règle des 5 « I »)</b>
+                    <ul>
+                        <li><strong>Identifier</strong> : logo et propulsion, FAD / ERG, questionner le propriétaire, transmettre l'immatriculation aux forces de l'ordre.</li>
+                        <li><strong>Inspecter</strong> : intégrité des câbles (câble orange sectionné, batterie endommagée) avant de toucher le véhicule ; fuites, odeurs de gaz (GNV, GPL).</li>
+                        <li><strong>Interdire</strong> : toucher les câbles orange ; actions mécaniques (section, compression) sur les passages de câbles, faisceaux électriques et conduites GPL / GNV avant mise hors tension.</li>
+                        <li><strong>Immobiliser</strong> : caler, arrêter le moteur (clé), calage de sécurité.</li>
+                        <li><strong>Isoler</strong> : prioriser la gestion des énergies ; débrancher la batterie (–) 12 V ou 24 V, retirer le Plug Service si possible, à défaut l'ensemble des fusibles.</li>
+                    </ul>
+                </li>
+                <li><b>3. Sécuriser les techniques de désincarcération</b>Dégarnir pour repérer faisceaux, câbles orange, systèmes pyrotechniques, prétensionneurs. <strong>Dessiner les zones de découpe</strong> (charge graphique spécifique du chef d'agrès : zone dangereuse). Découper selon la méthode tactique du COS, avec les FAD / ERG si besoin, <strong>uniquement dans des zones exemptes de risques</strong>.</li>
+            </ol>
+            <div class="fod-cote-a-cote">
+                <div class="rd-astuce"><strong>Rupture d'enveloppe de batterie</strong><br>Fuite d'électrolyte liquide : la traiter comme un épandage de produit dangereux, en gardant à l'esprit qu'un emballement thermique n'est pas exclu.</div>
+                <div class="rd-astuce"><strong>Véhicule immergé</strong><br>Entièrement ou partiellement dans l'eau : risque d'électrocution faible, identique à un véhicule à carburation classique.</div>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>6 · Fin d'intervention</h3>
+            <ul>
+                <li>Débriefing : points favorables et perfectibles, difficultés, matériels utilisés.</li>
+                <li>Signaler au chef de CIS toute détérioration de matériel.</li>
+                <li>Opération particulière ou difficile : <strong>RETEX</strong> au service Opérations du GGR (<strong>operation@sdis34.fr</strong>).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>7 · Annexes</h3>
+            <details class="jsp-cours">
+                <summary>Plug Service et FAD</summary>
+                <ul>
+                    <li>Le retrait du <strong>Plug Service</strong> est un préalable systématique quand la désincarcération exige des découpes dans des zones à risque électrique ou quand des câbles orange sont exposés ou endommagés.</li>
+                    <li>Son retrait <strong>ne garantit pas</strong> l'isolation électrique de la batterie de servitude.</li>
+                    <li>Actions mécaniques sur les passages de câbles et faisceaux : à proscrire. Si une découpe est nécessaire, repérer tout câble haute tension pour éviter court-circuit, étincelles ou surchauffe. Les <strong>FAD</strong> permettent de localiser ces zones.</li>
+                    <li>Exemple de FAD (Renault Fluence Z.E.) : batterie lithium-ion 400 V ; ne pas toucher ni découper les câbles orange 400 V ; ne <strong>jamais</strong> découper la batterie de traction ; après extinction d'un incendie, <strong>noyer la batterie</strong> par les orifices prévus dans le dossier de la banquette arrière.</li>
+                </ul>
+            </details>
+            <details class="jsp-cours">
+                <summary>Tableau d'aide pour le secours routier (annexe 2)</summary>
+                <table class="rd-table">
+                    <tr><th></th><th>Hybride / électrique</th><th>GNV</th><th>GPL</th><th>Essence / gazole</th></tr>
+                    <tr><td><strong>Identifier</strong><br>observer, questionner, rechercher le type d'énergie</td><td>Logo, marque, câbles orange, type de batterie, bi-motorisation, absence de pot, carte grise</td><td>Réservoir, thermofusible, orifice de remplissage, carte grise ; questionner le propriétaire</td><td>Réservoir, soupape, orifice de remplissage, carte grise ; questionner le propriétaire</td><td>En l'absence de signe des autres carburations : carte grise, questionner le propriétaire</td></tr>
+                    <tr><td><strong>Inspecter</strong><br>sans toucher</td><td>Câble HT orange, connexions, batteries</td><td>Fuite (odeur, explosimétrie), tubulure endommagée, réservoir</td><td>Fuite (odeur, explosimétrie), tubulure endommagée, réservoirs</td><td>Fuite, réservoir endommagé</td></tr>
+                    <tr><td><strong>Interdire</strong><br>toute action sur les vecteurs d'énergie</td><td>Sectionner câbles HT et tuyaux carburant, retirer le sectionneur, toucher les câbles HT sans gants 1 000 V, source d'ignition</td><td>Sectionner les tuyaux GNV, source d'ignition</td><td>Sectionner les tuyaux GPL, danger brûlures, vaporisation GPL (–30 °C), source d'ignition</td><td>Sectionner les tuyaux de carburant</td></tr>
+                    <tr><td><strong>Immobiliser</strong></td><td colspan="4">Arrêter le moteur et caler le véhicule : mise à l'arrêt du moteur (procédure MAM), calage ; bouton Start Key, frein de parc (hybride / électrique)</td></tr>
+                    <tr><td><strong>Isoler</strong><br>neutraliser la source d'énergie</td><td colspan="4">Batterie 12 V ou 24 V (borne –) <strong>ou</strong> retirer tous les fusibles</td></tr>
+                    <tr><td></td><td>HT : débrancher le câble d'alimentation si branché à une borne rechargeable ; neutraliser par les actions sur la BT, ou actionner l'interrupteur de type switch (on/off) s'il est facilement accessible et identifiable</td><td colspan="2">Bus : arrêt d'urgence à gauche du siège conducteur (gaz + électricité). VL : fermer la vanne d'un quart de tour si accessible</td><td>Pas d'action possible</td></tr>
+                </table>
+                <p><strong>Intervenir</strong> (fuite de produit ou détérioration du stockage d'énergie) :</p>
+                <table class="rd-table">
+                    <tr><th>Étape</th><th>Conduite à tenir</th></tr>
+                    <tr><td><strong>Dégarnir + FAD</strong></td><td>Localiser les organes dangereux et zones renforcées : prétensionneurs et airbags (tous) ; câbles orange et supercondensateurs (hybride / électrique) ; tuyaux de gaz (GNV, GPL)</td></tr>
+                    <tr><td><strong>Dessiner</strong></td><td>Identifier les zones de danger et les zones de découpe (charge graphique)</td></tr>
+                    <tr><td><strong>Découper</strong></td><td>Selon l'ordre graphique</td></tr>
+                    <tr><td><strong>Dégager</strong></td><td>Dégagement de la victime</td></tr>
+                    <tr><td><strong>Protection du personnel</strong></td><td>Équipement des intervenants. Hybride / électrique : ARI capelé, périmètre de sécurité 50 m, gants 1 000 V si besoin de toucher un câble HT, éviter tout contact avec l'électrolyte. GNV / GPL : minimum de personnel, intervention dos au vent. Essence / gazole : intervention classique</td></tr>
+                    <tr><td><strong>Protection population, environnement</strong></td><td>Protéger les victimes du danger : périmètre de sécurité adapté, mise à l'abri, dégagement d'urgence ; explosimétrie (HF…) pour hybride / électrique et gaz</td></tr>
+                    <tr><td><strong>Action sur le produit</strong></td><td>Adapter le mode d'action : ventilation si local clos ou semi-clos, ou rideau d'eau si besoin ; danger : flux des fumées (parkings souterrains). Hybride / électrique : rétention et récupération, neutralisant ; urgence absolue : dilution / déplacement, absorption / déplacement. Gaz : bouchon de glace, écrasement de tuyau adapté à l'enjeu</td></tr>
+                </table>
+                <div class="rd-alerte">Véhicule hybride totalement immergé : suivre la <strong>règle des « 6 i »</strong> après l’avoir sorti de l’eau (formulation de la note). Malgré ces consignes, le risque d'émanation de produit toxique ou de décharge électrique ne peut être écarté à 100 % : <strong>prendre le maximum de précautions</strong>. Contact avec l'électrolyte : rincer à grande eau et retirer immédiatement les vêtements.</div>
+            </details>
+            <details class="jsp-cours">
+                <summary>Glossaire</summary>
+                <table class="rd-table">
+                    <tr><td><strong>CIC / COG</strong></td><td>Centre d'information et de commandement (police) / centre opérationnel de la gendarmerie</td></tr>
+                    <tr><td><strong>ERG</strong></td><td>Emergency Rescue Guide</td></tr>
+                    <tr><td><strong>FAD</strong></td><td>Fiche d'aide à la désincarcération</td></tr>
+                    <tr><td><strong>GNV / GPL</strong></td><td>Gaz naturel véhicule / gaz de pétrole liquéfié</td></tr>
+                    <tr><td><strong>HEV</strong></td><td>Hybrid Electric Vehicle</td></tr>
+                    <tr><td><strong>NIO</strong></td><td>Note d'information opérationnelle</td></tr>
+                    <tr><td><strong>RETEX</strong></td><td>Retour d'expérience</td></tr>
+                    <tr><td><strong>SMT</strong></td><td>Groupe d'étude secours des moyens de transport du SDIS 34</td></tr>
+                    <tr><td><strong>VEA</strong></td><td>Véhicule à énergie alternative</td></tr>
+                    <tr><td><strong>ZI</strong></td><td>Zone d'intervention</td></tr>
+                </table>
+            </details>
+        </div>
+
+        <p class="jsp-liens">
+            <button class="sal-lien" onclick="showModule('gouv-vehicules')">🔋 Guide opérationnel : les véhicules (VE / hybrides, GPL, GNV) →</button>
+        </p>
+        <p class="rd-source">📚 Note opérationnelle départementale NOD n°002 « Méthodologie en secours routier sur véhicule à énergie alternative (VEA) », SDIS 34 (Groupement gestion des risques, service Opérations et groupe de travail SMT), 01/2015, validée DDSIS. Références : NIO n°616 du 26/06/2012, FAD / ERG du ministère de l'Intérieur. Synthèse reformulée.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/sdis34/NOD-002-Secours-routier-VEA-2015.pdf" target="_blank" rel="noopener">NOD n°002 – Secours routier VEA (PDF)</a>
+        </p>
+    </div>
+
+    <div id="nod-004-attentats" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34 · NOD</span>
+        <h2>🚨 NOD n°004 – Organisation face aux attentats (plan ALPHA)</h2>
+        <p style="text-align: center;">Aide à la décision pour le CTA-CODIS, les intervenants et la chaîne de commandement face à un attentat (armes de guerre, explosifs, agents NRBC).</p>
+        <div class="rd-alerte"><strong>Version provisoire n°2 (mise à jour 04/2016).</strong> Document de référence à vérifier auprès du service Opérations du SDIS 34 avant toute application. <strong>N'intervenir que lorsque la zone est sécurisée par les forces de l'ordre</strong> : risque de sur-attentat.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Détecter</strong> dès l'alerte ou l'arrivée une scène d'attentat, évaluer le contexte NRBC (pathologie des victimes, levée de doute).</li>
+                <li><strong>Déclencher le plan ALPHA</strong> (code sinistre « ATTENTAT MULTIPLES VICTIMES »), pour <strong>chaque site</strong> en cas d'attentats multiples ; <strong>+ 1 GINC</strong> si explosif ou incendie.</li>
+                <li><strong>Rejoindre le CRM</strong> fixé avec les forces de l'ordre (zone de soutien), personnels à terre <strong>uniquement sur ordre</strong>.</li>
+                <li><strong>Attendre la sécurisation de la zone d'exclusion Police</strong> avant tout engagement.</li>
+                <li><strong>Triage et gestes de l'avant</strong> au PRV : arrêt des hémorragies, positions d'attente, catégorisation « start-triage ».</li>
+                <li>COS identifiable (chasuble « COS »), <strong>seul interlocuteur des secours</strong>, ne pas exposer le personnel.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1 · Risques sociétaux</h3>
+            <ul>
+                <li>Un ou plusieurs sites, phénomènes de masse et de panique, réseaux de transport en heure de pointe.</li>
+                <li><strong>Sur-attentat</strong> sur le site ou à proximité.</li>
+                <li>Victimes éparpillées (« nids de victimes »), engorgement spontané des hôpitaux proches.</li>
+                <li>Blessures par balles (hémorragies graves), blasts, paniques nécessitant une médicalisation importante ; besoin de chirurgie très rapide des extrêmes urgences (EU).</li>
+                <li>Risque de contamination : protection respiratoire et cutanée des sauveteurs, décontamination des impliqués avant toute autre action (modules DECONTA et PRV).</li>
+                <li>Impact psychologique sur les secouristes : soutien et suivi médical (« defusing »).</li>
+            </ul>
+            <p>Le plan NOVI classique (ACEL) n'est plus adapté : trop d'urgences absolues pour confier chacune à une équipe de réanimation préhospitalière. D'où un <strong>triage de type médecine de guerre</strong> sur le chantier ou au PRV, et l'évacuation directe des EU vers les hôpitaux. Le SDIS 34 engage simultanément, sur plusieurs sites, moyens sanitaires, moyens NRBC et commandement : le <strong>plan ALPHA</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 · Principes d'intervention</h3>
+            <ol>
+                <li>Détecter rapidement la scène d'attentat et évaluer le contexte NRBC.</li>
+                <li>Déclencher les moyens adaptés sous forme de modules préconstitués (plan ALPHA).</li>
+                <li>N'intervenir que lorsque la zone est sécurisée par les forces de l'ordre.</li>
+                <li>Se protéger : fusillade, explosifs, NRBCE, sur-attentat (bouclage, zone d'exclusion, CRM commun avec les forces de l'ordre).</li>
+                <li>Prendre en charge le plus grand nombre de victimes au PRV (valides / non valides, start-triage, UA / UR).</li>
+                <li>Organiser la réponse pour les nombreuses victimes hémorragiques, criblées ou blastées, puis évacuer rapidement les EU.</li>
+                <li>Renforcer par des renforts extra-départementaux via le CODIS / COZ.</li>
+            </ol>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 · Prise d'alerte (CTA-CODIS)</h3>
+            <p>L'opérateur interprète le contexte, qualifie au plus vite l'intervention en attentat (ou écarte cette notion) et rend compte immédiatement.</p>
+            <ol class="fod-flux">
+                <li><b>Origine de l'appel</b>CIC / COG ou public.</li>
+                <li><b>Lieu et contexte</b>Lieu fréquenté (centre commercial, gare, salle de spectacle, hôpital…), transport collectif, site sensible ? Tirs par arme à feu, rafales ? Explosion ou autre bruit ?</li>
+                <li><b>Victimes</b>Nombre de personnes impliquées important ? Estimation du nombre de victimes. Mêmes symptômes : panique, chutes brutales, convulsions, vomissements, écoulements (yeux, nez, salive), problèmes visuels ou ventilatoires, sensation de brûlure ou d'irritation, hémorragies.</li>
+                <li><b>Indices NRBC</b>Fumée, nuage coloré ? Liquide répandu ou projeté (flaque, brouillard, couleur, aspect) ? Odeur particulière (ail, savon, poisson, géranium, peinture, moutarde, amande amère, camphre) ou absence d'odeur ?</li>
+                <li class="fod-question"><b>Après validation du contexte attentat ?</b>
+                    <div class="fod-branches">
+                        <div class="oui"><b class="tag">OUI</b> Engagement du <strong>plan ALPHA</strong></div>
+                        <div class="non"><b class="tag">NON</b> Autre code sinistre (victime par arme à feu, alerte à la bombe, prise d'otage, braquage…)</div>
+                    </div>
+                </li>
+            </ol>
+            <div class="rd-astuce"><strong>Consignes aux requérants</strong><ul>
+                <li>Se mettre à l'abri, se protéger, rester à l'écart de la zone, regrouper les impliqués à l'extérieur.</li>
+                <li>Prodiguer les gestes de premiers secours en cas d'hémorragie.</li>
+                <li><strong>Suspicion de produit toxique</strong> : ne pas toucher au produit, se protéger les voies respiratoires, limiter le contact avec les victimes, ne pas quitter les lieux (se regrouper et attendre les secours), <strong>ne pas conduire de victimes directement à l'hôpital</strong>, se débarrasser des vêtements en contact avec le produit.</li>
+            </ul></div>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 · Engagement des moyens</h3>
+            <table class="rd-table">
+                <tr><th>Situation</th><th>Départ</th></tr>
+                <tr><td>Attentat (code « ATTENTAT MULTIPLES VICTIMES », départ élémentaire)</td><td><strong>PLAN ALPHA</strong></td></tr>
+                <tr><td>Attentat à l'explosif ou générant un incendie</td><td><strong>PLAN ALPHA + 1 GINC</strong> (GINC = 1 VLCG + 2 FPT + 1 EPS)</td></tr>
+                <tr><td>Attentats sur plusieurs sites distincts</td><td>Code « ATTENTAT MULTIPLES VICTIMES » déclenché <strong>pour chaque site</strong></td></tr>
+            </table>
+            <p><strong>Plan ALPHA = module NOVI 1<sup>er</sup> échelon + module d'appui NRBC reconnaissance.</strong></p>
+        </div>
+
+        <div class="rd-section">
+            <h3>5 · Composition du plan ALPHA</h3>
+            <p>Module ORSEC NOVI 1<sup>er</sup> échelon : VLCS COS, groupe Ramassage, groupe PMA / Tri, groupe Évacuation, échelon DZ, groupe Commandement 1<sup>er</sup> échelon (niveau colonne). Effectifs : officiers / sous-officiers / hommes du rang.</p>
+            <table class="rd-table">
+                <tr><th>Groupe</th><th>Moyens</th><th>Effectif</th><th>Capacité</th></tr>
+                <tr><td><strong>GRAM</strong><br>Ramassage</td><td>1 VLCC, 1 VLCG, 1 FPT(L)*, 3 VSAV*, 1 VLSM**, 1 VASAP</td><td>3 / 4 / 15 = <strong>22</strong></td><td>Aborder et trier environ 15 victimes ; 1 malle start-triage (45 victimes) ; start-triage et médicalisation de l'avant ; 50 brancards « catastrophe »</td></tr>
+                <tr><td><strong>GPMA</strong><br>Poste médical avancé / tri</td><td>1 VLCC, 1 VLCG, 1 FPT(L)*, 2 CPCE + CEPMA, 1 ROXY + 1 VLTT, 2 VLSM**, X VLSMUR</td><td>4 / 3 / 12 = <strong>19 + X</strong> médecins SMUR</td><td>Traiter 15 à 30 victimes ; 2 structures et matériels PMA ; 2 médecins SDIS dont 1 médecin Tri-PMA ; 1 réserve d'oxygène</td></tr>
+                <tr><td><strong>GEVAC</strong><br>Évacuation</td><td>1 VLCG, 3 VSAV*, 1 VTP, 1 VLSM</td><td>2 / 4 / 8 = <strong>14</strong></td><td>Évacuer environ 15 victimes (max. 3 UA ou 6 UR par VSAV)</td></tr>
+                <tr><td><strong>GCOL</strong><br>Commandement 1<sup>er</sup> échelon</td><td>1 VLCC, 3 VLCGD***, 1 VPCC</td><td>4 / 1 / 1 = <strong>6</strong></td><td>1 chef de colonne 1<sup>er</sup> COS ; chefs de groupe départementaux : officier moyens, officier renseignements, CRM</td></tr>
+                <tr><td><strong>COS</strong></td><td>1 VLCS</td><td>1 / 0 / 0 = <strong>1</strong></td><td>1 chef de site</td></tr>
+                <tr><td><strong>DZ</strong><br>Échelon DZ</td><td>1 VLCG, 1 FPT(L)</td><td>1 / 1 / 5 = <strong>7</strong></td><td>1 chef de groupe, assistance DZ</td></tr>
+            </table>
+            <ul>
+                <li>* Équipés des EPI NRBC. Pour le GPMA, si possible engager le FPT(L) du CIS support du CEPMA.</li>
+                <li>** Le nombre de VLSM est adapté à l'événement, avec médecins et infirmiers selon les disponibilités (minimum 3 pour le GPMA), complétés par les moyens SAMU / SMUR.</li>
+                <li>*** Chefs de groupe départementaux EST et OUEST en priorité.</li>
+                <li>Transport de victimes : recours possible aux associations agréées de sécurité civile.</li>
+            </ul>
+            <h4>Module d'appui NRBC reconnaissance (1<sup>er</sup> échelon)</h4>
+            <table class="rd-table">
+                <tr><th>Unité</th><th>Moyens</th><th>Effectif</th><th>Rôle</th></tr>
+                <tr><td><strong>RCH</strong><br>Risque chimique</td><td>1 VL CT astreinte, 1 VRCH*</td><td>1 / 1 / 2 = <strong>4</strong></td><td>1 chef CMIC (RCH3), 3 chefs d'équipe ou équipiers (RCH1 ou RCH2) ; mise en œuvre des matériels de reconnaissance</td></tr>
+                <tr><td><strong>RAD</strong><br>Risque radiologique</td><td>1 VL CT astreinte, 1 VRAD*</td><td>1 / 1 / 2 = <strong>4</strong></td><td>1 chef CMIR (RAD3), 3 chefs d'équipe (RAD2) ; mise en œuvre des matériels de reconnaissance</td></tr>
+            </table>
+            <p>* 1 VRCH / 1 VRAD (équipe de reconnaissance) pour effectuer la <strong>levée de doute</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>6 · Montée en puissance</h3>
+            <details class="jsp-cours">
+                <summary>Plan ORSEC NOVI : 2<sup>e</sup> échelon</summary>
+                <ul>
+                    <li><strong>GRAM</strong> : X groupes, à déterminer selon le dimensionnement de l'événement (aborder et trier X fois 15 victimes), moyens équipés des EPI NRBC.</li>
+                    <li><strong>GPMA / MRI</strong> : 1<sup>er</sup> échelon + 2 CEPMA + 2 CEPMA (traiter 30 à 45 victimes).</li>
+                    <li><strong>GEVAC</strong> : X groupes (évacuer X fois 15 victimes).</li>
+                    <li><strong>Commandement 2<sup>e</sup> échelon (site)</strong> : 1 VLCS (chef de site COS), 1 VL chef PCS, 1 VL officier anticipation (technicien SSIC / TRANS), 3 VLCGD (chefs de groupe départementaux : moyens, renseignements, CRM), 1 VLSSIC, 1 VPCS.</li>
+                </ul>
+            </details>
+            <details class="jsp-cours">
+                <summary>Plan ORSEC NRBC : module d'appui intervention</summary>
+                <ul>
+                    <li><strong>DECONTA</strong> : groupe PRV (1 VLCG et 1 FPT avec EPI NRBC, 1 VPRV = VTU + lot PRV) et groupe DECONTA (1 VL CT d'astreinte, 1 CPCE + 1 CEDECONT).</li>
+                    <li><strong>RCH 2<sup>e</sup> échelon</strong> : RCH 1<sup>er</sup> échelon + 1 VRCH (équipe d'intervention) ou CMIC + CPCE, 1 FPT ou CCGC, 1 CPCE + CEVAR, 1 SSO.</li>
+                    <li><strong>RAD 2<sup>e</sup> échelon</strong> : RAD 1<sup>er</sup> échelon + X VTP(L) (transport des RAD2).</li>
+                </ul>
+            </details>
+            <details class="jsp-cours">
+                <summary>Actions du CODIS / CTA (déclenchement)</summary>
+                <ul>
+                    <li>Contacter le CIC (COG) pour convenir d'un <strong>CRM</strong>.</li>
+                    <li>Informer le directeur de permanence, le médecin-chef, toute la chaîne de commandement d'astreinte ; associer le médecin régulateur hospitalier.</li>
+                    <li>Informer les CIS par messagerie ICAD pour rappel des personnels.</li>
+                    <li>Engager le médecin d'astreinte départemental / DSM et l'infirmier coordinateur des moyens sanitaires (plan de rappel).</li>
+                    <li>Activer la bande d'alerte pré-enregistrée sur la ligne 18 / 112, la salle de débordement + 1 chef de salle TRI appels.</li>
+                    <li>Activer le PCRR selon le plan de rappel des cadres : 1 chef de site, 1 chef de colonne / officier CODIS, 1 CTD NRBC, CMIC ou CMIR, 2 chefs de groupe, 2 opérateurs, 1 astreinte du service Alerte et communication opérationnelle.</li>
+                    <li>Activer la cellule Communication (réseaux sociaux).</li>
+                    <li>Engager un chef de groupe départemental et un officier GOCS au COD (si activé), un chef de groupe départemental au CIC.</li>
+                    <li>Informer le COZ par compte rendu immédiat et demander un <strong>renfort extra-départemental attentat</strong> selon le plan zonal (message EMIZ, annexe 3 de la NOD).</li>
+                </ul>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>7 · Mémento du COS et des engins</h3>
+            <div class="rd-alerte">Risques : rafales d'armes automatiques, explosifs, <strong>sur-attentat</strong>, dispersion de matière chimique ou radiologique (contamination, toxique de guerre), impact psychologique sur les intervenants.</div>
+            <div class="fod-cote-a-cote">
+                <div class="rd-astuce"><strong>Le COS doit</strong><ul>
+                    <li>Être identifiable (chasuble « COS »)</li>
+                    <li>Ne pas exposer son personnel</li>
+                    <li>Rester le seul interlocuteur des secours</li>
+                    <li>Surveiller l'état physique et moral des personnels confrontés aux violences</li>
+                </ul></div>
+                <div class="rd-astuce"><strong>En route (C/A, chef de groupe)</strong><ul>
+                    <li>Privilégier un itinéraire efficace</li>
+                    <li>Demander au CODIS le point de RDV ou CRM défini avec les forces de l'ordre, et un canal tactique chantier</li>
+                    <li>Chef de groupe engagé si possible avec un conducteur (1/0/1)</li>
+                </ul></div>
+            </div>
+            <h4>Dès l'arrivée, pour tout engin</h4>
+            <ul>
+                <li>Se rendre au <strong>CRM</strong> fixé par les forces de l'ordre, en zone de soutien et dans le périmètre de sécurité ; y stationner tous les engins.</li>
+                <li>Personnels à terre <strong>uniquement sur ordre</strong>.</li>
+                <li>Point de situation avec le responsable des forces de l'ordre (COP police ou COG gendarmerie).</li>
+                <li>Informer le CODIS par radio (message flash) : position, situation, renforts demandés (CdG, CCF, PN, GN, SMUR…), point d'engagement des renforts ; confirmer l'activation du plan ALPHA.</li>
+                <li>Établir et garantir le contact radio avec tous les intervenants ; s'assurer que la zone est sous contrôle des forces de l'ordre.</li>
+                <li><strong>Attendre la sécurisation de la zone d'exclusion Police</strong> avant tout engagement du personnel.</li>
+                <li>Identifier une ou plusieurs zones de <strong>PRV</strong> ; distribuer les kits « start-triage » aux personnels dédiés.</li>
+                <li>Si les victimes sont nombreuses : limiter les actions aux <strong>gestes de secours de l'avant</strong> (arrêt d'hémorragie, positions d'attente, catégorisation start-triage).</li>
+            </ul>
+            <h4>Contexte NRBC</h4>
+            <ul>
+                <li>Évaluer la zone d'exclusion ; notion de sas de décontamination d'urgence (premiers intervenants, PN, GN…).</li>
+                <li>Les premiers intervenants contaminés restent en zone de danger et suivent le flux des autres victimes.</li>
+                <li>Reconnaissances <strong>uniquement sous EPI</strong>. Regrouper victimes et impliqués, faire décrire les symptômes, s'inquiéter du sur-attentat.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>8 · Zonage NRBC en cas d'attentat</h3>
+            <div class="nod-zones">
+                <div class="nod-zone nod-zone-1"><b>1 · Zone d'exclusion</b><span>Contaminée ou contaminable, <strong>tenue de protection obligatoire</strong>.</span><span>Danger immédiat : rayon de <strong>100 m</strong> autour du point d'attentat.</span><span>Danger sous le vent : <strong>500 m</strong> en ciel ouvert, angle d'ouverture de <strong>40°</strong>.</span></div>
+                <div class="nod-zone nod-zone-2"><b>2 · Zone contrôlée</b><span>Bande entre exclusion et soutien : <strong>PRV</strong> et structure de décontamination installés d'emblée.</span><span>Port de la tenue de protection obligatoire en amont de la décontamination.</span></div>
+                <div class="nod-zone nod-zone-3"><b>3 · Zone de soutien</b><span>Opposée au vent : accueille les services de secours (PMA, PRE, centre d'accueil des impliqués).</span></div>
+            </div>
+            <p>À l'intérieur d'un bâtiment, ces zones peuvent être ramenées au local touché et à tout ou partie du bâtiment.</p>
+            <table class="rd-table">
+                <tr><td><strong>PRV</strong></td><td>Point de regroupement des victimes symptomatiques</td></tr>
+                <tr><td><strong>PRI</strong></td><td>Point de regroupement des personnes impliquées</td></tr>
+                <tr><td><strong>PRD</strong></td><td>Point de regroupement des personnes décédées</td></tr>
+                <tr><td><strong>PRE</strong></td><td>Point de répartition des évacuations</td></tr>
+                <tr><td><strong>PMA</strong></td><td>Poste médical avancé</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>9 · Annexes : matériels spécifiques</h3>
+            <details class="jsp-cours">
+                <summary>Malettes « start-triage » et kits hémorragie</summary>
+                <ul>
+                    <li>Dans l'armement des VLCG : <strong>3 kits par VL chef de groupe</strong> (capacité 45 personnes) des CIS Agde, Béziers, Lunel, Montpellier Paillade, Montpellier Montaubérou, Sète.</li>
+                    <li>Kits « hémo » : prise en charge de <strong>15 victimes</strong> blessées par arme à feu dans les premières minutes (start-triage). Contenu : 5 pansements, 5 bandes larges, 1 sac DASRI, 1 flacon de Dakin, 5 paires de gants, 3 feuilles d'essuie-mains, 2 kits ABC complets, 1 garrot tourniquet, 1 pansement hémostatique, 1 bande hémostatique.</li>
+                </ul>
+            </details>
+            <details class="jsp-cours">
+                <summary>VASAP et kits « Exacyl »</summary>
+                <ul>
+                    <li>2 VASAP (véhicule d'appui secours à personnes) : CIS de <strong>Florensac</strong> et <strong>La Grande Motte</strong>.</li>
+                    <li>Armement : 50 brancards type PMA, 5 portes-brancards, 5 mailles de 10 sets d'injection « Exacyl » 10 ml (cathéters, seringue, perfuseur 3 voies, Tegaderm, NaCl 0,9 % 100 ml, rappel de dose).</li>
+                </ul>
+            </details>
+            <details class="jsp-cours">
+                <summary>Postes médicaux avancés (PMA)</summary>
+                <p>Composés de 4 modules : Lodève (1 module PMA + tente PC interservices), Saint-Étienne-d'Albagnan (1 module), Cournonterral (1 module), Agde (1 module PMA + tente de raccordement).</p>
+            </details>
+            <details class="jsp-cours">
+                <summary>Moyens NRBCE</summary>
+                <ul>
+                    <li><strong>EPI NRBC</strong> : près de 300 pour les primo-intervenants (TLD deux pièces avec sur-bottes, masque à cartouche filtrante, gants). Affectés en complément dans les VSAV, FPT, VLSM, VLCG (garde) et VLCGD (astreinte départementale), VLCC Est / Centre / Ouest / Nord / Sud, VRCH, CMIC, VRAD. Dotation prioritaire : CIS urbains (Agde, Béziers, Lunel, Montpellier, Sète, Lodève), puis CIS périphériques, CIS 12 h, CIS participant aux DPS.</li>
+                    <li><strong>Cellule DECONTA</strong> : UMD + 1 AP2C au CIS Sète ; MDE au CIS Frontignan ; 2 AP2C au CMIC de Sète.</li>
+                    <li><strong>Lot PRV</strong> : CSP Sète.</li>
+                    <li><strong>CMIC</strong> : capacité départementale 2 CMIC (2 cellules reconnaissance, 2 cellules intervention) ; RCH3 d'astreinte départementale ; implantations VRCH Montpellier Paillade, CMIC Sète, VRCH Béziers, VRCH Lodève.</li>
+                    <li><strong>CMIR</strong> : 1 CMIR (1 cellule reconnaissance et intervention) ; RAD3 d'astreinte départementale ; implantation VRAD Montpellier Montaubérou.</li>
+                </ul>
+            </details>
+            <details class="jsp-cours">
+                <summary>Références et glossaire</summary>
+                <ul>
+                    <li>Circulaires 700 (chimique), 750 (colis suspect), 800 (radiologique) ; instruction ministérielle n°25/2015 du 12/11/2015.</li>
+                    <li>ORSEC départemental (dispositions générales et spécifiques NOVI) ; ORSEC zonal (dispositions générales et spécifiques NRBC).</li>
+                    <li>NOGGR n°2016-131 (répartition et utilisation des malles « start-triage » et kits hémorragie), NMR 2016-1090 EMIZ Sud (message de commandement du COZ du 29/02/2016), NOD VU-SDI SDIS 34 n°001 (12/2015).</li>
+                </ul>
+                <table class="rd-table">
+                    <tr><td><strong>CDAU</strong></td><td>Centre départemental des appels d'urgence</td></tr>
+                    <tr><td><strong>CIC / COG</strong></td><td>Centre d'information et de commandement / centre d'opérations de la gendarmerie</td></tr>
+                    <tr><td><strong>CODIS</strong></td><td>Centre opérationnel départemental d'incendie et de secours</td></tr>
+                    <tr><td><strong>COP / COG</strong></td><td>Commandant des opérations de police / de gendarmerie</td></tr>
+                    <tr><td><strong>CRM</strong></td><td>Centre de rassemblement des moyens</td></tr>
+                    <tr><td><strong>GCOL / GSITE</strong></td><td>Groupe commandement 1<sup>er</sup> échelon niveau colonne / 2<sup>e</sup> échelon niveau site</td></tr>
+                    <tr><td><strong>GN / PN</strong></td><td>Gendarmerie nationale / Police nationale</td></tr>
+                    <tr><td><strong>ROXY</strong></td><td>Remorque oxygène</td></tr>
+                    <tr><td><strong>SSO</strong></td><td>Soutien sanitaire opérationnel</td></tr>
+                    <tr><td><strong>VASAP</strong></td><td>Véhicule d'appui secours à personnes</td></tr>
+                    <tr><td><strong>VPRV</strong></td><td>Véhicule PRV (décontamination)</td></tr>
+                    <tr><td><strong>VLCG / VLCC / VLCS</strong></td><td>Véhicule de liaison chef de groupe / chef de colonne / chef de site</td></tr>
+                </table>
+            </details>
+        </div>
+
+        <p class="jsp-liens">
+            <button class="sal-lien" onclick="showModule('fod-vu-sdi')">🔥 FOD VU-SDI : violences urbaines →</button>
+            <button class="sal-lien" onclick="showModule('nrbc-prv')">☣️ NRBC : PRV et décontamination →</button>
+            <button class="sal-lien" onclick="showModule('nrbc-cadre')">☣️ NRBC : cadre d'intervention →</button>
+        </p>
+        <p class="rd-source">📚 Note opérationnelle départementale NOD n°004 « Organisation face aux attentats », version provisoire n°2, MAJ 04/2016, SDIS 34 (Groupement gestion des risques, service Opération), validation DDSIS. Synthèse reformulée ; l'annexe 3 (formulaire de demande de renforts au COZ) est à consulter dans le PDF.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/sdis34/NOD-004-Attentats-V2-provisoire-2016.pdf" target="_blank" rel="noopener">NOD n°004 – Attentats, version provisoire n°2 (PDF)</a>
         </p>
     </div>
 
@@ -26788,7 +27262,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.63.3</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.64.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
