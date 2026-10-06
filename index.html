@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.59.0">
+    <meta name="version" content="1.60.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.59.0</span><br>
+                        Vulcain v<span class="app-version">1.60.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -10617,6 +10617,7 @@
         <div class="rd-tuiles">
             <button onclick="showModule('sav-securite')"><b>🦺 Sécurité et aptitude</b><span>Engagement, refus, hélicoptère, tests annuels</span></button>
             <button onclick="showModule('sav-formation')"><b>📚 Formations</b><span>SAV 1 eau vive au SDIS 34, SAV 2, SAV 3, FMPA, équipement, équivalences</span></button>
+            <button onclick="showModule('sav-eauvive')"><b>🌊 Eaux intérieures & inondations</b><span>Zonage, nœuds, lecture du courant, manœuvres S1 à S6</span></button>
             <button onclick="showModule('pse-8')"><b>🌊 Noyade (PSE)</b><span>Conduite à tenir secouriste</span></button>
         </div>
 
@@ -10744,7 +10745,118 @@
         <p class="rd-source">📚 GNR Sauvetage aquatique, chapitres 4 à 6 ; RIOFE SAV SDIS 34 (2021).</p>
     </div>
 
+    <div id="sav-eauvive" class="module" style="--jsp: #00838F;">
+        <button class="back-btn" onclick="showModule('sav-menu')">← Sauvetage aquatique</button>
+        <span class="rd-tampon rd-tampon-national">Recueil zonal</span>
+        <h2>🌊 Techniques eaux intérieures et inondations</h2>
+        <p style="text-align: center;">Techniques de <strong>sauvetage en eau-vive, forts courants et inondations</strong> : zonage, nœuds, lecture du courant, manœuvres S1 à S6, cas particuliers (glace, surfaces mouvantes).</p>
+        <div class="rd-alerte">Document destiné aux <strong>sauveteurs aquatiques spécialisés eau-vive</strong> (SAV 1 module eau vive au moins) ou aux <strong>plongeurs formés forts courants</strong> (SAL 1 au moins). Pour un équipage non spécialiste confronté à une inondation, seule la section « Primo-intervenants » ci-dessous s'applique : ne jamais improviser une manœuvre d'eau-vive sans formation.</div>
 
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Zonage à 3 couleurs</strong> (comme les procédures gaz renforcées ou NRBC) : zone non inondée / zone inondée à courant faible à nul (&lt; 1 m/s) / zone inondée à fort courant (&gt; 1 m/s). Le <strong>COS</strong> est responsable du zonage, après avis du conseiller technique ou du chef d'unité.</li>
+                <li><strong>Primo-intervenant non spécialiste</strong> : « Ne vous engagez pas sans mesurer le risque. » Alléger l'équipement au maximum, éviter cordages et LSPCC (risque de noyade du sauveteur), identifier une zone de récupération en aval, utiliser la position de la <strong>tortue</strong> si l'engagement est inévitable.</li>
+                <li><strong>Règle d'or des cordages</strong> : qui dit corde dit couteau sur soi. <strong>Ne jamais s'attacher à une corde</strong>, sauveteur comme victime, sans système de dégagement rapide — éviter les nœuds largables, car mouillés ils ne le sont plus.</li>
+                <li><strong>Dispositif ORSEC zonal inondation</strong> (zone Sud, depuis le 30 novembre 2012) : <strong>GSEV</strong> (groupe sauvetage en eaux vives), <strong>GAI</strong> (groupe assistance inondations), <strong>GPI</strong> (groupe polyvalent inondations).</li>
+                <li><strong>6 manœuvres codifiées S1 à S6</strong> (langage commun de la zone Sud), du simple lancer de corde au sauvetage par l'amont dans un rappel.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1 · Sécuriser les primo-intervenants</h3>
+            <p>Pour les équipages non spécialistes confrontés à une inondation, certains SDIS constituent des <strong>lots embarqués</strong> complétant la tenue de pluie : gilet de flottabilité (permanente ou à percussion), corde flottante de sauvetage, housse étanche pour radio portative. En phénomène majeur, préférer les chaussures d'intervention aux bottes, cuissardes ou waders.</p>
+            <div class="rd-alerte"><strong>Rappel sécurité LSPCC</strong> : en 2002, un sapeur-pompier est décédé lors d'une manœuvre de sauvetage liée à l'emploi d'un LSPCC en inondation. Depuis, les formations « risques locaux inondation » traitent largement le risque des cordages en crue.</div>
+            <p>En prompt secours (VSAV), si l'immersion est décidée par le chef d'agrès, la tenue du binôme engagé doit être allégée au maximum pour l'aisance de déplacement ; certains équipements du véhicule (matelas à dépression, attelle demi-gonflée) peuvent servir de support flottant improvisé pour la victime.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 · Équipement du sauveteur aquatique</h3>
+            <table class="rd-table">
+                <tr><th>Combinaison</th><th>Usage</th></tr>
+                <tr><td><strong>Sèche</strong> (PVC enduit)</td><td>Dotation collective, eaux très froides (&lt; 10 °C), portée avec sous-vêtements thermiques</td></tr>
+                <tr><td><strong>Humide</strong> (monopièce néoprène 5 mm)</td><td>Dotation individuelle, eaux tempérées (≥ 10 °C)</td></tr>
+            </table>
+            <p>Complété par palmes-masque-tuba, chaussures d'intervention aquatique (antidérapantes, pare-pierre), casque, corde de sécurité et couteau pour la pratique eau-vive. Le gilet NEV (type à percussion, cartouche CO2 manuelle, flottabilité 150 N, poignée de halage, sifflet) complète la tenue de base.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 · Embarcations et engins</h3>
+            <table class="rd-table">
+                <tr><th>Engin</th><th>Caractéristiques</th></tr>
+                <tr><td><strong>BLR</strong> (bateau léger de reconnaissance)</td><td>Tirant d'eau faible, 6 pers., très stable mais peu puissant, inadapté au fort courant — idéal pour déplacer et mettre en sécurité des sinistrés en zone calme</td></tr>
+                <tr><td><strong>Jetski / motomarine</strong></td><td>Tirant d'eau faible, 2-3 pers., s'affranchit du fort courant, turbine vulnérable aux eaux chargées de graviers, peu stable à faible vitesse mais très maniable — adapté aux sauvetages difficiles</td></tr>
+                <tr><td><strong>BLS</strong> (bateau léger de sauvetage, rigide ou gonflable)</td><td>Tirant d'eau moyen, 3-6 pers., s'affranchit du fort courant, très stable — version gonflable transportable dans un VLHR/pickup, gonflage à l'ARI 300 b ou aux servitudes CCF</td></tr>
+                <tr><td><strong>ENDR</strong> (traîneau/raft gonflable à déploiement rapide)</td><td>Tirant d'eau très faible, conditionné en sac, gonflé à la pompe à bras/ARI, 2-3 pers., remorqué ou tiré par les sauveteurs</td></tr>
+            </table>
+            <div class="rd-alerte">Risque de blessure par l'hélice : prévoir garrot tourniquet (modèle plastique, positionné sur la barre franche ou le capot moteur) et cage de protection d'hélice.</div>
+            <p><strong>Véhicules routiers</strong> : le <strong>VLHR</strong> (châssis long + snorkel + galerie) emporte l'unité SAV et son matériel ; le <strong>CTU/VPL</strong> apporte la logistique et des échelles à main (version HR à privilégier, vulnérable sinon aux hauteurs d'eau dépassant les roues) ; le <strong>CCF</strong>, très courant en zone Sud, reste délicat et risqué à conduire en zone inondée (vague créée pouvant endommager un batardeau). Le franchissement se fait en <strong>guidage par sondage</strong> (gaffe, rame, branche), binôme balayant 1 m de part et d'autre, progression par pas de 20 m maximum, tout obstacle signalé et balisé.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 · Nœuds et ancrages</h3>
+            <table class="rd-table">
+                <tr><th>Nœud</th><th>Fonction</th></tr>
+                <tr><td>Cabestan / demi-cabestan</td><td>S'amarrer ; freiner un cordage ; frappé sur poteau ou pilier en 2 demi-clés</td></tr>
+                <tr><td>Chaise / chaise double</td><td>Créer une boucle (amarrage) ; la double sert au sauvetage en excavation</td></tr>
+                <tr><td>Huit double / papillon</td><td>Créer une boucle pour un mousqueton ; le papillon permet aussi d'isoler un point faible de la corde ou de créer une poignée</td></tr>
+                <tr><td>Pêcheur double</td><td>Fabriquer un prussik avec un bout ; assembler deux cordes</td></tr>
+                <tr><td>Passabloc (ou papsabloc)</td><td>Tendre une corde, mettre en place une ligne de sécurité ; montable au mousqueton seul par un sauveteur isolé</td></tr>
+                <tr><td>Nœud français / prussik</td><td>Mordent sous tension et glissent une fois libérés — transfert de charge ou frein dans un système mécanique (moufflage)</td></tr>
+            </table>
+            <p><strong>Ancrages</strong> : points naturels (arbres, rochers) ou artificiels (engins, poteaux, mobilier urbain). Une corde autour d'un arbre doit faire au moins 3 tours pour ne pas tendre le nœud. Le <strong>moufflage (Z-drag)</strong>, avec poulies ou mousquetons en variante eau-vive, permet de démultiplier la traction pour dégager une embarcation ou un corps coincés par le courant.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>5 · Lecture du courant et dangers</h3>
+            <p>Dangers types identifiés en amont d'un obstacle : <strong>syphon</strong> (aspiration sous un objet immergé), <strong>embâcles</strong> et <strong>grilles</strong> (coincement), <strong>ligne d'ébullition</strong> (retour d'eau marquant un rappel). En aval d'un obstacle : <strong>rappel</strong> (recirculation dangereuse), <strong>cravate</strong> (corps plié autour d'un obstacle par le courant), <strong>contre-courant</strong> (zone exploitable pour progresser ou se reposer), <strong>drossage</strong> (plaquage contre un obstacle).</p>
+            <p><strong>Position de sécurité (nage défensive)</strong> : la meilleure défense reste l'évitement par la terre ou la nage. En position de sécurité, le sauveteur repousse les obstacles avec les jambes ; la position d'attaque (plus risquée, exposée à la cravate) ne sert qu'à franchir un obstacle inévitable, la vitesse de déplacement augmentant alors les chances de franchissement. Un sauveteur pris dans un rappel doit chercher l'air au niveau de la ligne d'ébullition puis l'« eau dure » au fond, moins chargée d'air, qui l'expulsera vers l'aval.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>6 · Manœuvres codifiées S1 à S6</h3>
+            <table class="rd-table">
+                <tr><th>Manœuvre</th><th>Objectif</th></tr>
+                <tr><td><strong>S1</strong></td><td>Progression pédestre dans le courant — recherche des contre-courants, appuis stabilisés (branche, bâton, rame), traversées par étapes avec rotation des équipiers</td></tr>
+                <tr><td><strong>S2</strong></td><td>Sauvetage d'une personne emportée par le courant — lancer de corde (technique des boucles ou du « spaghetti »), pendulaire, bouée de sauvetage</td></tr>
+                <tr><td><strong>S3</strong></td><td>Sauvetage d'une personne emportée par le courant — sauveteur encordé</td></tr>
+                <tr><td><strong>S4</strong></td><td>Sauvetage d'une victime sur un point isolé — victimes sécurisées par gilet-victime (gonflage buccal ou percuté selon l'urgence)</td></tr>
+                <tr><td><strong>S5</strong></td><td>Sauvetage de plusieurs victimes sur un point isolé — reprise des étapes de S4 autant que nécessaire</td></tr>
+                <tr><td><strong>S6</strong></td><td>Sauvetage par l'amont — création d'un contre-courant pour limiter la pression de l'eau sur la victime, sauveteur encordé largable, planche ou flotteur en appui</td></tr>
+            </table>
+            <p><strong>Traversée avec ligne guide</strong> (liée à S4/S5) : le sauveteur dérive le long d'une corde flottante reliée par le leash largable de son gilet. La réussite dépend de l'angle entre le cordage et l'axe du courant : plus l'angle et la tension sont importants, plus la sécurité augmente — mais plus la corde déployée est longue, plus le risque de coincement croît.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>7 · Manœuvres au flotteur et brancardage</h3>
+            <p>Le flotteur permet d'économiser l'engagement de sauveteurs : récupérer une victime dans le courant ou dans un rappel par lancer puis pendulaire sans immersion, ou mettre en sécurité une victime par l'amont (variante S6) sans immerger de sauveteur. Si l'immersion d'un sauveteur est nécessaire, celui-ci conditionne la victime entre lui et le flotteur.</p>
+            <p><strong>Brancardage dans le courant</strong> : la planche BAXTRAP, à flottabilité positive, se glisse sous la victime (purge dévissée pour l'alourdir si besoin) ; 1 à 2 gilets d'intervention ou des flotteurs supplémentaires peuvent renforcer sa flottabilité. Procédure non réversible une fois la victime conditionnée — vérifier avant de remplir.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>8 · Rappel large ou étroit</h3>
+            <p>Devant un rappel jugé dangereux (bande d'ébullition épaisse, ferraillage/obstacles immergés invisibles, violence, profondeur, récurrence d'accidents), l'<strong>immersion de sauveteur est à proscrire</strong> : privilégier les techniques sèches depuis la berge ou par hélicoptère. Si la mort de la victime ne fait aucun doute, gaffes et grappins sont préférables à l'immersion.</p>
+            <table class="rd-table">
+                <tr><th>Configuration</th><th>Réponse</th></tr>
+                <tr><td><strong>Rappel étroit</strong> (cours d'eau &lt; 30 m)</td><td>Cordes et flotteur depuis la berge ; sans immersion si victime consciente, avec immersion si inconsciente</td></tr>
+                <tr><td><strong>Rappel large</strong> (&gt; 40 m, victime inaccessible depuis une berge)</td><td>Embarcation (BLR/BLS) à 10 m maxi de la ligne d'ébullition avec SEV encordé, ou 3 sauveteurs immergés en progression à la palme, ou hélicoptère (sauveteur SAVHELI, treuillage à la sangle). Recours au <strong>GRIMP</strong> possible pour une approche par point haut ou une tyrolienne à grande portée.</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>9 · Cas particuliers</h3>
+            <ul>
+                <li><strong>Sauvetage sur glace</strong> : ne jamais faire confiance à l'épaisseur de la glace. Progression à plat ventre, toujours encordé à un équipier sur un point sûr, en répartissant la charge pour diminuer la pression sur la surface (matelas à dépression, flotteurs, paddleboard). Engagement réservé à une formation adaptée (risques locaux, FMA, stage glace).</li>
+                <li><strong>Surfaces mouvantes</strong> (sables mouvants, vase, silos à céréales, boues, lac vidangé, station d'épuration) : moyens de secours de proximité (bouée + corde) ou improvisés (porte dégondée, planches, palettes, bottes de paille) ; principe identique au sauvetage sur glace — répartir la charge pour diminuer la pression de surface ; possibilité de diluer la boue à la lance (à l'écart du cheminement du sauveteur).</li>
+                <li><strong>Mise à l'eau par saut</strong> : réservée à une urgence vitale justifiée. Profondeur du bassin de réception connue et contrôlée visuellement, <strong>supérieure au ¼ de la hauteur de saut + 2 m</strong> (ex. 4,50 m pour un saut de 10 m) ; au-delà de 10 m, préférer une autre technique de mise à l'eau. Prévoir une « sonnette » en point haut pour guider les sauveteurs immergés, et la mise à l'eau d'un second sauveteur PMT + bouée tube par un accès plus sûr.</li>
+            </ul>
+        </div>
+
+        <p class="rd-source">📚 Recueil zonal de partage d'expériences à l'usage des conseillers techniques « Interventions en milieu aquatique » — Sauvetage en eaux intérieures (zone Sud, version 2020), fondé notamment sur le guide des techniques professionnelles d'intervention en forts courants du SDIS 34/ECASC et les techniques nord-américaines de swiftwater rescue. Document réservé aux spécialistes SAV eau-vive / SAL forts courants ; synthèse résumée.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/suap/Sauvetage-Eaux-Interieures.pdf" target="_blank" rel="noopener">Recueil zonal – Sauvetage en eaux intérieures (PDF)</a>
+        </p>
+    </div>
 
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
 
@@ -12885,6 +12997,7 @@ Je fais : extinction.</p>
         <h2>☢️ NRBC / CMIC – Risques chimiques, biologiques</h2>
         <p style="text-align: center;">Doctrine des <strong>cellules mobiles d'intervention chimique et biologique</strong> (CMIC — guide national de référence « Risques chimiques et biologiques », DDSC, mars 2006) et guide de mise en œuvre d'un <strong>point de regroupement des victimes</strong> (PRV) lors d'un événement NRBC (SGDSN, validé le 8 mars 2021).</p>
         <div class="rd-alerte">Cette fiche couvre l'<strong>organisation opérationnelle</strong> (missions, zonage, méthodologie CMIC, organisation du PRV, moyens, antidotes) — elle ne remplace pas les fiches ORSEC NRBC départementales ni la formation RCH1 à RCH4 requise pour intervenir.</div>
+        <p class="jsp-liens">☢️ <button onclick="showModule('nrbc-cadre')">Cadre interservices d'une intervention NRBC-E (acteurs, zonage, catégories de victimes) →</button></p>
 
         <div class="rd-section">
             <h3>📌 À retenir</h3>
@@ -13070,6 +13183,90 @@ Je fais : extinction.</p>
         <p class="jsp-liens">
             📄 <a class="rd-pdf" href="docs/risques/GNR-RCH-1.pdf" target="_blank" rel="noopener">Guide national de référence « Risques chimiques et biologiques » (PDF)</a><br>
             📄 <a class="rd-pdf" href="docs/risques/Guide-PRV-NRBC-SGDSN-2021.pdf" target="_blank" rel="noopener">Guide PRV NRBC – SGDSN 2021 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="nrbc-cadre" class="module">
+        <button class="back-btn" onclick="showModule('nrbc-prv')">← NRBC / CMIC</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>☢️ Cadre interservices d'une intervention NRBC-E</h2>
+        <p style="text-align: center;">Vision globale d'une intervention à caractère <strong>NRBC-E</strong> (Nucléaire, Radiologique, Biologique, Chimique, Explosion) : cadre juridique, acteurs et chaîne de commandement, zonage, catégories de victimes — le socle commun avant les volets techniques CMIC et PRV.</p>
+        <div class="rd-alerte">Cette fiche présente le <strong>cadre interservices</strong> d'un évènement NRBC-E (attentat notamment). Pour la méthodologie opérationnelle CMIC, le zonage détaillé et la prise en charge des victimes, voir <button class="sal-lien" onclick="showModule('nrbc-prv')">☢️ NRBC / CMIC</button>.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>NRBC-E</strong> : Nucléaire, Radiologique, Biologique, Chimique, Explosion — l'explosion est prise en compte comme <strong>phénomène initial de dispersion</strong> (une bombe peut disperser des matières radioactives, biologiques ou chimiques pour contaminer le maximum de personnes).</li>
+                <li><strong>Chaîne de commandement interservices</strong> : DOS (maire ou préfet) ↔ COS (sapeurs-pompiers), COPG (police/gendarmerie) et COPJ (police judiciaire) sous l'autorité du DOS ; DSM (médecin) pour les secours médicaux. Le DOS est en relation étroite avec le procureur de la République.</li>
+                <li><strong>Zonage à 3 zones</strong> : <strong>exclusion</strong> (la plus dangereuse, majorité des victimes, « zone sale »), <strong>contrôlée</strong> (prise en charge d'urgence des victimes, potentiellement contaminée, « zone sale »), <strong>soutien</strong> (« zone propre », moyens sanitaires principaux). Correspond au zonage réflexe CMIC/PRV.</li>
+                <li><strong>3 catégories de victimes</strong> : impliqués (pas de symptôme apparent, présents sur zone), symptomatiques valides (symptômes, autonomes), symptomatiques invalides (symptômes, nécessitent un brancard).</li>
+                <li>Engagement en zone contaminée/contaminable et sortie via un <strong>sas interservices</strong> dédié ; tenues obligatoires en zones d'exclusion et contrôlée (tenue corps, gants, masque à cartouche filtrante).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1 · La menace NRBC-E</h3>
+            <table class="rd-table">
+                <tr><th>Lettre</th><th>Évènement type</th></tr>
+                <tr><td><strong>N – Nucléaire</strong></td><td>Attentat mettant en jeu une arme à dégagement d'énergie nucléaire</td></tr>
+                <tr><td><strong>R – Radiologique</strong></td><td>Attentat mettant en œuvre des éléments radioactifs (« bombe sale »)</td></tr>
+                <tr><td><strong>B – Biologique</strong></td><td>Dispersion d'un agent biologique (virus, bactérie, toxine)</td></tr>
+                <tr><td><strong>C – Chimique</strong></td><td>Dispersion de produits chimiques : toxiques de guerre (sarin…) ou industriels (chlore…)</td></tr>
+                <tr><td><strong>E – Explosion</strong></td><td>Phénomène initial de dispersion, y compris pour contaminer via une bombe</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 · Cadre juridique et doctrine</h3>
+            <p>Le <strong>plan gouvernemental NRBC</strong> (classé confidentiel défense) constitue la boîte à outils nationale pour une crise NRBC. Il est décliné en <strong>plan zonal NRBC</strong> (également classifié), puis traduit opérationnellement en <strong>ordre zonal d'opération RBC</strong> (OZO RBC).</p>
+            <table class="rd-table">
+                <tr><th>Texte</th><th>Objet</th></tr>
+                <tr><td>Circulaire n°007 du 8 octobre 2009</td><td>Dispositif interministériel face à la menace ou l'exécution d'actes de terrorisme NRBC</td></tr>
+                <tr><td>Circulaire n°700 du 7 novembre 2008</td><td>Doctrine nationale d'emploi des moyens de secours et de soins face à une action terroriste chimique</td></tr>
+                <tr><td>Circulaire n°747 du 30 octobre 2009</td><td>Doctrine de l'État pour la prévention et la réponse au terrorisme NRBC-E</td></tr>
+                <tr><td>Circulaire n°750 du 18 février 2011</td><td>Découverte de plis, colis, contenants et substances suspectés NRBC</td></tr>
+                <tr><td>Circulaire n°800 du 18 février 2011</td><td>Doctrine nationale d'emploi des moyens de secours face à une action terroriste radioactive</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 · Les intervenants</h3>
+            <p>Une intervention NRBC-E revêt un caractère <strong>interservices</strong> : sécurité civile (sapeurs-pompiers, démineurs, unités de sécurité civile), santé (SAMU, hôpitaux), forces de l'ordre (police, gendarmerie), forces armées, justice (enquête, police judiciaire, police technique et scientifique pour les constatations sur zone), préfecture, et d'autres services publics ou opérateurs privés en appui.</p>
+            <table class="rd-table">
+                <tr><th>Fonction</th><th>Tenue par</th></tr>
+                <tr><td><strong>DOS</strong> – Directeur des opérations de secours</td><td>Maire ou préfet</td></tr>
+                <tr><td><strong>COS</strong> – Commandant des opérations de secours</td><td>Officier sapeur-pompier</td></tr>
+                <tr><td><strong>COPG</strong> – Commandant des opérations de police et de gendarmerie</td><td>Officier de police ou de gendarmerie nationale (compétence territoriale)</td></tr>
+                <tr><td><strong>COPJ</strong> – Commandant des opérations de police judiciaire</td><td>Officier de police judiciaire</td></tr>
+                <tr><td><strong>DSM</strong> – Directeur des secours médicaux</td><td>Médecin</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 · Zonage, protection et victimes</h3>
+            <table class="rd-table">
+                <tr><th>Zone</th><th>Caractéristique</th></tr>
+                <tr><td><strong>Exclusion</strong></td><td>La plus dangereuse, englobe la zone la plus touchée, majorité des victimes, zone contaminée (« sale »)</td></tr>
+                <tr><td><strong>Contrôlée</strong></td><td>Entre exclusion et soutien, prise en charge d'urgence des victimes, potentiellement contaminée (« sale »)</td></tr>
+                <tr><td><strong>Soutien</strong></td><td>Zone propre, moyens sanitaires principaux de prise en charge</td></tr>
+            </table>
+            <p>Chaque intervenant engagé en zone dangereuse s'équipe d'une tenue adaptée au risque, de gants et d'un masque à cartouche filtrante — obligatoires en zones d'exclusion et contrôlée. L'engagement et la sortie de zone contaminée passent par un <strong>sas interservices</strong> dédié.</p>
+            <table class="rd-table">
+                <tr><th>Catégorie de victime</th><th>État</th></tr>
+                <tr><td><strong>Impliqué</strong></td><td>Pas de symptôme apparent, présent dans la zone au moment de l'évènement ; symptômes ou troubles psychologiques possibles en différé</td></tr>
+                <tr><td><strong>Symptomatique valide</strong></td><td>Symptômes physiques (blessures, toux, difficultés respiratoires, troubles neurologiques…), se déplace de façon autonome</td></tr>
+                <tr><td><strong>Symptomatique invalide</strong></td><td>Mêmes symptômes, ne peut se déplacer seul — nécessite un brancard</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>5 · Missions menées en zone sale</h3>
+            <p>Les services engagés en zone d'exclusion et zone contrôlée mènent de nombreuses actions : analyse de la zone d'intervention, prise en charge des victimes (extraction de la zone dangereuse, décontamination, prise en charge médicale), neutralisation des auteurs, sécurisation de la zone, maintien de l'ordre, enquête judiciaire.</p>
+        </div>
+
+        <p class="rd-source">📚 Document de préparation à l'entraînement zonal NRBC-E (zone Sud-Est), synthèse résumée.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/risques/Presentation-NRBC-E-CEZ.pdf" target="_blank" rel="noopener">Présentation NRBC-E et centre d'entraînement zonal (PDF)</a>
         </p>
     </div>
 
@@ -26053,7 +26250,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.59.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.60.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
