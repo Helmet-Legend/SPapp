@@ -3,6 +3,45 @@
  */
 // Restauré depuis js/app.js (version antérieure au commit 4c28be7 du 17/02/2026).
 
+// ---- Habillage commun des documents imprimables, aligné sur le PDF du générateur de manœuvre ----
+// (même logo, même wordmark bicolore, même liseré tricolore, mêmes couleurs PDF_ROUGE/PDF_GRIS)
+const VULCAIN_DOC_CSS = `
+    body { font-family: Arial, sans-serif; padding: 20px; color: #1A1A1A; }
+    .vulcain-entete { display: flex; align-items: center; gap: 14px; border-bottom: 3px solid #D7263D; padding-bottom: 12px; margin-bottom: 20px; }
+    .vulcain-logo { width: 32px; height: 41px; object-fit: contain; }
+    .vulcain-wordmark { font-size: 1.9em; font-weight: bold; line-height: 1; }
+    .vulcain-wordmark .vul { color: #1A1A1A; }
+    .vulcain-wordmark .cain { color: #D7263D; }
+    .vulcain-liseret { height: 3px; width: 130px; margin: 5px 0 6px; border: 1px solid #ccc; background:
+        linear-gradient(to right, #0055A4 0%, #0055A4 33.33%, #ffffff 33.33%, #ffffff 66.66%, #EF4135 66.66%, #EF4135 100%); }
+    .vulcain-sous-titre { font-size: 1.15em; color: #6E6E6E; }
+    .section { margin: 15px 0; padding: 10px; border-left: 4px solid #D7263D; background: #f5f5f5; }
+    .label { font-weight: bold; color: #D7263D; }
+    .content { white-space: pre-wrap; margin-top: 5px; }
+    .vulcain-pied { margin-top: 30px; padding-top: 10px; border-top: 2px solid #D7263D; text-align: center; font-size: 0.85em; color: #6E6E6E; }
+    @media print {
+        .no-print { display: none; }
+    }
+`;
+
+function enteteVulcainHTML(sousTitre) {
+    return `
+        <div class="vulcain-entete">
+            <img class="vulcain-logo" src="images/pdf/flamme-logo.png" alt="" onerror="this.style.display='none'">
+            <div>
+                <div class="vulcain-wordmark"><span class="vul">VUL</span><span class="cain">CAIN</span></div>
+                <div class="vulcain-liseret"></div>
+                <div class="vulcain-sous-titre">${sousTitre}</div>
+            </div>
+        </div>
+        <p><em>Généré le ${new Date().toLocaleString('fr-FR')}</em></p>
+    `;
+}
+
+function piedVulcainHTML() {
+    return `<div class="vulcain-pied">Vulcain v${APP_VERSION} · Outil d'aide à la décision opérationnelle · Par les pompiers, pour les pompiers 🚒</div>`;
+}
+
 function printPatracDR() {
     const printWindow = window.open('', '', 'width=800,height=600');
     const data = {
@@ -33,24 +72,15 @@ function printPatracDR() {
         <head>
             <title>PATRAC DR - Ordre Préparatoire</title>
             <style>
-                body { font-family: Arial, sans-serif; padding: 20px; }
-                h1 { color: #c41e3a; border-bottom: 3px solid #c41e3a; padding-bottom: 10px; font-size: 2.2em; }
+                ${VULCAIN_DOC_CSS}
                 h2 { color: #8b0000; margin-top: 20px; }
-                .section { margin: 15px 0; padding: 10px; border-left: 4px solid #c41e3a; background: #f5f5f5; }
-                .info-detachement { background: linear-gradient(135deg, rgba(196,30,58,0.1) 0%, rgba(196,30,58,0.05) 100%); border: 3px solid #c41e3a; padding: 20px; margin: 20px 0; border-radius: 10px; }
+                .info-detachement { background: linear-gradient(135deg, rgba(215,38,61,0.1) 0%, rgba(215,38,61,0.05) 100%); border: 3px solid #D7263D; padding: 20px; margin: 20px 0; border-radius: 10px; }
                 .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
-                .label { font-weight: bold; color: #c41e3a; }
-                .content { white-space: pre-wrap; margin-top: 5px; }
-                .footer { margin-top: 30px; text-align: center; font-size: 0.9em; color: #666; }
-                @media print {
-                    .no-print { display: none; }
-                }
             </style>
         </head>
         <body>
-            <h1>📋 PATRAC DR - Ordre Préparatoire</h1>
-            <p><em>Généré le ${new Date().toLocaleString('fr-FR')}</em></p>
-            
+            ${enteteVulcainHTML('📋 PATRAC DR &ndash; Ordre Préparatoire')}
+
             ${(data.infoNom || data.infoDate || data.infoMission || data.infoZone || data.infoDuree) ? `
             <div class="info-detachement">
                 <h2 style="text-align: center; font-size: 1.8em; margin-top: 0;">📋 INFORMATIONS SUR LE DÉTACHEMENT</h2>
@@ -117,11 +147,8 @@ function printPatracDR() {
                 </div>
             </div>
             
-            <div class="footer">
-                Vulcain v${APP_VERSION} - Outil d'aide à la décision opérationnelle<br>
-                Par les pompiers, pour les pompiers 🚒
-            </div>
-            
+            ${piedVulcainHTML()}
+
             <div class="no-print" style="text-align: center; margin-top: 30px;">
                 <p style="color: var(--t-muted, #666); font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
                 <button onclick="window.print()" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">🖨️ Imprimer / Enregistrer PDF</button>
@@ -513,21 +540,12 @@ function printDPIF() {
         <head>
             <title>DPIF - Ordre de Mouvement</title>
             <style>
-                body { font-family: Arial, sans-serif; padding: 20px; }
-                h1 { color: #c41e3a; border-bottom: 3px solid #c41e3a; padding-bottom: 10px; }
-                .section { margin: 15px 0; padding: 10px; border-left: 4px solid #c41e3a; background: #f5f5f5; }
-                .label { font-weight: bold; color: #c41e3a; }
-                .content { white-space: pre-wrap; margin-top: 5px; }
-                .footer { margin-top: 30px; text-align: center; font-size: 0.9em; color: #666; }
-                @media print {
-                    .no-print { display: none; }
-                }
+                ${VULCAIN_DOC_CSS}
             </style>
         </head>
         <body>
-            <h1>🗺️ DPIF - Ordre de Mouvement</h1>
-            <p><em>Généré le ${new Date().toLocaleString('fr-FR')}</em></p>
-            
+            ${enteteVulcainHTML('🗺️ DPIF &ndash; Ordre de Mouvement')}
+
             <div class="section">
                 <div class="label">D - Direction générale à suivre:</div>
                 <div class="content">${data.direction || 'Non renseigné'}</div>
@@ -557,11 +575,8 @@ function printDPIF() {
                 </div>
             </div>
             
-            <div class="footer">
-                Vulcain - Outil d'aide à la décision opérationnelle<br>
-                Par les pompiers, pour les pompiers 🚒
-            </div>
-            
+            ${piedVulcainHTML()}
+
             <div class="no-print" style="text-align: center; margin-top: 30px;">
                 <p style="color: var(--t-muted, #666); font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
                 <button onclick="window.print()" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">🖨️ Imprimer / Enregistrer PDF</button>
@@ -601,21 +616,12 @@ function printSMES() {
         <head>
             <title>SMES - Chef d'agrès/Équipe</title>
             <style>
-                body { font-family: Arial, sans-serif; padding: 20px; }
-                h1 { color: #c41e3a; border-bottom: 3px solid #c41e3a; padding-bottom: 10px; }
-                .section { margin: 15px 0; padding: 10px; border-left: 4px solid #c41e3a; background: #f5f5f5; }
-                .label { font-weight: bold; color: #c41e3a; }
-                .content { white-space: pre-wrap; margin-top: 5px; }
-                .footer { margin-top: 30px; text-align: center; font-size: 0.9em; color: #666; }
-                @media print {
-                    .no-print { display: none; }
-                }
+                ${VULCAIN_DOC_CSS}
             </style>
         </head>
         <body>
-            <h1>🔴 SMES - Chef d'agrès / Équipe</h1>
-            <p><em>Généré le ${new Date().toLocaleString('fr-FR')}</em></p>
-            
+            ${enteteVulcainHTML('🔴 SMES &ndash; Chef d\'agrès / Équipe')}
+
             <div class="section">
                 <div class="label">S - Situation:</div>
                 <div class="content">${data.situation || 'Non renseigné'}</div>
@@ -636,11 +642,8 @@ function printSMES() {
                 <div class="content">${data.securite || 'Non renseigné'}</div>
             </div>
             
-            <div class="footer">
-                Vulcain - Outil d'aide à la décision opérationnelle<br>
-                Par les pompiers, pour les pompiers 🚒
-            </div>
-            
+            ${piedVulcainHTML()}
+
             <div class="no-print" style="text-align: center; margin-top: 30px;">
                 <p style="color: var(--t-muted, #666); font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
                 <button onclick="window.print()" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">🖨️ Imprimer / Enregistrer PDF</button>
@@ -676,21 +679,12 @@ function printSOIEC() {
         <head>
             <title>SOIEC - Chef de Groupe</title>
             <style>
-                body { font-family: Arial, sans-serif; padding: 20px; }
-                h1 { color: #c41e3a; border-bottom: 3px solid #c41e3a; padding-bottom: 10px; }
-                .section { margin: 15px 0; padding: 10px; border-left: 4px solid #c41e3a; background: #f5f5f5; }
-                .label { font-weight: bold; color: #c41e3a; }
-                .content { white-space: pre-wrap; margin-top: 5px; }
-                .footer { margin-top: 30px; text-align: center; font-size: 0.9em; color: #666; }
-                @media print {
-                    .no-print { display: none; }
-                }
+                ${VULCAIN_DOC_CSS}
             </style>
         </head>
         <body>
-            <h1>🟠 SOIEC - Chef de Groupe</h1>
-            <p><em>Généré le ${new Date().toLocaleString('fr-FR')}</em></p>
-            
+            ${enteteVulcainHTML('🟠 SOIEC &ndash; Chef de Groupe')}
+
             <div class="section">
                 <div class="label">S - Situation:</div>
                 <div class="content">${data.situation || 'Non renseigné'}</div>
@@ -716,11 +710,8 @@ function printSOIEC() {
                 <div class="content">${data.commandement || 'Non renseigné'}</div>
             </div>
             
-            <div class="footer">
-                Vulcain - Outil d'aide à la décision opérationnelle<br>
-                Par les pompiers, pour les pompiers 🚒
-            </div>
-            
+            ${piedVulcainHTML()}
+
             <div class="no-print" style="text-align: center; margin-top: 30px;">
                 <p style="color: var(--t-muted, #666); font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
                 <button onclick="window.print()" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">🖨️ Imprimer / Enregistrer PDF</button>
@@ -759,21 +750,12 @@ function printSAOIECL() {
         <head>
             <title>SAOIECL - Chef de Colonne/Site</title>
             <style>
-                body { font-family: Arial, sans-serif; padding: 20px; }
-                h1 { color: #c41e3a; border-bottom: 3px solid #c41e3a; padding-bottom: 10px; }
-                .section { margin: 15px 0; padding: 10px; border-left: 4px solid #c41e3a; background: #f5f5f5; }
-                .label { font-weight: bold; color: #c41e3a; }
-                .content { white-space: pre-wrap; margin-top: 5px; }
-                .footer { margin-top: 30px; text-align: center; font-size: 0.9em; color: #666; }
-                @media print {
-                    .no-print { display: none; }
-                }
+                ${VULCAIN_DOC_CSS}
             </style>
         </head>
         <body>
-            <h1>👨‍🚒 SAOIECL - Chef de Colonne / Site</h1>
-            <p><em>Généré le ${new Date().toLocaleString('fr-FR')}</em></p>
-            
+            ${enteteVulcainHTML('👨‍🚒 SAOIECL &ndash; Chef de Colonne / Site')}
+
             <div class="section">
                 <div class="label">S - Situation:</div>
                 <div class="content">${data.situation || 'Non renseigné'}</div>
@@ -809,11 +791,8 @@ function printSAOIECL() {
                 <div class="content">${data.commandement || 'Non renseigné'}</div>
             </div>
             
-            <div class="footer">
-                Vulcain - Outil d'aide à la décision opérationnelle<br>
-                Par les pompiers, pour les pompiers 🚒
-            </div>
-            
+            ${piedVulcainHTML()}
+
             <div class="no-print" style="text-align: center; margin-top: 30px;">
                 <p style="color: var(--t-muted, #666); font-size: 0.9em; margin-bottom: 15px;">💡 Cliquez sur "Imprimer" puis choisissez "Enregistrer en PDF" pour sauvegarder le document</p>
                 <button onclick="window.print()" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">🖨️ Imprimer / Enregistrer PDF</button>
