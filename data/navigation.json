@@ -150,7 +150,8 @@
    "picto": "clipboard",
    "couleur": "#3F51B5",
    "themes": [
-    "FOD – Fiches opérationnelles départementales"
+    "FOD – Fiches opérationnelles départementales",
+    "NOD – Notes opérationnelles départementales"
    ]
   }
  ],
@@ -4794,6 +4795,74 @@
     "certificat de décès",
     "effraction",
     "fenêtre"
+   ]
+  },
+  {
+   "id": "fod-gaffe-isolante",
+   "titre": "Gaffe isolante 20 000 V",
+   "domaine": "sdis34",
+   "theme": "FOD – Fiches opérationnelles départementales",
+   "type": "fiche",
+   "motsCles": [
+    "fod",
+    "gaffe isolante",
+    "gaffe",
+    "20000 volts",
+    "photovoltaïque",
+    "photovoltaique",
+    "électrique",
+    "isolant",
+    "fibre de verre",
+    "ppv"
+   ]
+  },
+  {
+   "id": "nod-002-vea",
+   "titre": "NOD n°002 – Secours routier : véhicule à énergie alternative",
+   "domaine": "sdis34",
+   "theme": "NOD – Notes opérationnelles départementales",
+   "type": "fiche",
+   "motsCles": [
+    "nod",
+    "vea",
+    "véhicule électrique",
+    "hybride",
+    "gpl",
+    "gnv",
+    "batterie de traction",
+    "câble orange",
+    "plug service",
+    "fad",
+    "erg",
+    "désincarcération",
+    "secours routier",
+    "avp",
+    "emballement thermique"
+   ]
+  },
+  {
+   "id": "nod-004-attentats",
+   "titre": "NOD n°004 – Organisation face aux attentats (plan ALPHA)",
+   "domaine": "sdis34",
+   "theme": "NOD – Notes opérationnelles départementales",
+   "type": "fiche",
+   "motsCles": [
+    "nod",
+    "attentat",
+    "attentats",
+    "plan alpha",
+    "terrorisme",
+    "novi",
+    "nrbc",
+    "start-triage",
+    "prv",
+    "sur-attentat",
+    "zone d'exclusion",
+    "crm",
+    "gram",
+    "gpma",
+    "gevac",
+    "vigipirate"
    ]
   }
  ]
