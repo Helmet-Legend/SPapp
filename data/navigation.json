@@ -2272,6 +2272,27 @@
    ]
   },
   {
+   "id": "nrbc-cadre",
+   "titre": "Cadre interservices d'une intervention NRBC-E",
+   "domaine": "risques",
+   "theme": "NRBC",
+   "type": "fiche",
+   "motsCles": [
+    "nrbc-e",
+    "cez",
+    "dos",
+    "cos",
+    "copg",
+    "copj",
+    "dsm",
+    "zonage",
+    "impliqué",
+    "symptomatique",
+    "attentat",
+    "interservices"
+   ]
+  },
+  {
    "id": "distances",
    "titre": "Distances de Sécurité",
    "domaine": "risques",
@@ -2970,6 +2991,36 @@
     "formation",
     "équivalence",
     "présélection"
+   ]
+  },
+  {
+   "id": "sav-eauvive",
+   "titre": "Techniques eaux intérieures et inondations",
+   "domaine": "specialites",
+   "theme": "Sauvetage aquatique – SAV",
+   "type": "fiche",
+   "motsCles": [
+    "eau vive",
+    "inondation",
+    "crue",
+    "fort courant",
+    "zonage",
+    "noeud",
+    "rappel",
+    "siphon",
+    "cravate",
+    "manoeuvre",
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "gsev",
+    "gai",
+    "gpi",
+    "glace",
+    "sables mouvants"
    ]
   },
   {
