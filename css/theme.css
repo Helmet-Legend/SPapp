@@ -152,7 +152,7 @@ html { scroll-padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
     margin: 0 auto;
     padding: calc(12px + env(safe-area-inset-top, 0px)) 4px 12px;
 }
-.app-brand { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.app-brand { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .app-brand small {
     color: var(--t-muted);
     font-size: 12px;

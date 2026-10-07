@@ -27,7 +27,12 @@ const Navigation = (function() {
     let ongletActif = 'accueil';
     let ongletOrigine = 'accueil';
     let recherche = '';
-    let ouverts = lire(CLE_OUVERTS, {});
+    // Les menus ouverts survivent à un changement d'appli, mais pas à la fermeture
+    // de l'app : sessionStorage est vidé quand la PWA est fermée, donc l'accueil
+    // repart avec tous les volets fermés au lancement suivant.
+    let ouverts = {};
+    try { localStorage.removeItem(CLE_OUVERTS); } catch (e) { /* ignoré */ }
+    try { ouverts = JSON.parse(sessionStorage.getItem(CLE_OUVERTS) || '{}') || {}; } catch (e) { ouverts = {}; }
 
     // ---------- Stockage local (peut être indisponible : navigation privée…) ----------
     function lire(cle, defaut) {
@@ -311,7 +316,7 @@ const Navigation = (function() {
         const ouvrir = !ouverts[cle];
         if (ouvrir) Object.keys(ouverts).forEach(k => { if (k !== cle && memeNiveau(k)) delete ouverts[k]; });
         ouverts[cle] = ouvrir;
-        ecrire(CLE_OUVERTS, ouverts);
+        try { sessionStorage.setItem(CLE_OUVERTS, JSON.stringify(ouverts)); } catch (e) { /* ignoré */ }
     }
 
     // Les menus fermés au-dessus décalent la page : on ramène le titre ouvert à l'écran
@@ -350,6 +355,23 @@ const Navigation = (function() {
         };
     }
 
+    // Un appui sur le logo Vulcain ramène à l'accueil
+    function brancherLogo() {
+        const logo = document.getElementById('appBrand');
+        if (!logo) return;
+        const retour = () => {
+            const reglages = document.getElementById('reglagesModal');
+            if (typeof fermerReglages === 'function' && reglages && !reglages.hidden) fermerReglages();
+            const apropos = document.getElementById('aboutModal');
+            if (apropos && apropos.classList.contains('active') && typeof toggleAbout === 'function') toggleAbout();
+            allerOnglet('accueil');
+        };
+        logo.addEventListener('click', retour);
+        logo.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); retour(); }
+        });
+    }
+
     async function init() {
         const conteneur = document.getElementById('navHome');
         if (!conteneur) return;
@@ -376,6 +398,7 @@ const Navigation = (function() {
             if (zone) zone.innerHTML = resultatsChercher();
         });
         document.addEventListener('click', surClicGlobal);
+        brancherLogo();
         brancherShowModule();
         history.replaceState({ module: 'home', onglet: 'accueil' }, '');
         window.addEventListener('popstate', surRetourHistorique);
