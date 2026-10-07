@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.64.1">
+    <meta name="version" content="1.65.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.64.1</span><br>
+                        Vulcain v<span class="app-version">1.65.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -18520,6 +18520,7 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Fiche opérationnelle départementale FOD n°22 « Photovoltaïque », SDIS 34 (Groupement action opérationnelle, service Opération), 08/2022. Synthèse reformulée ; elle renvoie au GDO « Interventions sur les éléments photovoltaïques » (2017).</p>
         <p class="jsp-liens">
             <button class="sal-lien" onclick="showModule('fod-gaffe-isolante')">🪝 Gaffe isolante 20 000 V : mise en œuvre →</button>
+            <button class="sal-lien" onclick="showModule('gdo-photovoltaique')">☀️ GDO national : éléments photovoltaïques →</button>
         </p>
         <p class="jsp-liens">
             📄 <a class="rd-pdf" href="docs/sdis34/FOD-22-Photovoltaique-2022.pdf" target="_blank" rel="noopener">FOD n°22 – Panneaux photovoltaïques (PDF)</a>
@@ -19099,6 +19100,409 @@ Je fais : extinction.</p>
             <button class="sal-lien" onclick="showModule('nrbc-cadre')">☣️ NRBC : cadre d'intervention →</button>
         </p>
         <p class="rd-source">📚 Note opérationnelle départementale NOD n°004 « Organisation face aux attentats », version provisoire n°2, MAJ 04/2016, SDIS 34 (Groupement gestion des risques, service Opération), validation DDSIS. Synthèse reformulée, sans les annexes sur les implantations de moyens NRBC ni le formulaire de demande de renforts au COZ.</p>
+    </div>
+
+    <div id="gdo-photovoltaique" class="module" style="--jsp: #F59E0B;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>☀️ GDO – Interventions en présence d'éléments photovoltaïques</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle (V2-2017, DGSCGC) : principe du photovoltaïque, panneaux en toiture, centrales au sol et chaussées PV, conduite à tenir de la prise d'appel au désengagement.</p>
+        <div class="rd-alerte"><strong>Un panneau exposé à la lumière produit toujours de l'électricité.</strong> Sauf à occulter tous les panneaux, il est impossible de couper cette alimentation en amont de l'onduleur (partie DC). Les câbles entre panneaux et onduleur restent sous tension en journée, <strong>même disjoncteurs actionnés</strong> : aucun détecteur ne garantit l'absence de tension.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>EPI obligatoires</strong>, valise électro-secours selon le COS, tous les intervenants prévenus du risque électrique.</li>
+                <li><strong>Coupure d'urgence avant toute attaque</strong> : côté <strong>AC</strong> d'abord (AGCP), puis côté <strong>DC</strong> (coupure du champ PV, batterie). Le risque reste permanent en amont de l'onduleur.</li>
+                <li><strong>Agents extincteurs</strong> : eau, poudre, CO₂, eau pulvérisée sont efficaces. <strong>Jet droit proscrit</strong> ; jet diffusé d'attaque à plus de <strong>5 m</strong>, tests par légère ouverture et fermeture de la lance. Prudence avec les eaux de ruissellement.</li>
+                <li><strong>Aucun contact</strong> de l'échelle ou de la nacelle avec les panneaux. Panneaux verre très glissants en toiture.</li>
+                <li><strong>Éclairage</strong> : un projecteur puissant et direct peut générer une tension dangereuse ; projecteurs à plus de <strong>5 m</strong>.</li>
+                <li><strong>Déblai</strong> avec EPI (gants, lunettes, manches longues) et protection respiratoire, de préférence <strong>de nuit</strong>, seulement après sécurisation par un électricien spécialisé PV.</li>
+                <li><strong>Désengagement</strong> seulement quand plus aucun risque de blessure, de choc électrique, d'échauffement ni d'arc électrique (nouvelle mise à feu).</li>
+                <li>Installations solaires <strong>thermiques</strong> : pas de risque électrique, mais EPI et protection contre les chutes.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Principe et composants d'une installation</summary>
+            <div class="rd-section">
+                <p>Le rayonnement solaire est converti en tension continue de quelques dizaines de volts par module, dans des cellules en silicium (cristallin, ou couches minces plus rares). Les modules sont protégés par un verre en face avant et un polymère ou un second verre à l'arrière.</p>
+                <table class="rd-table">
+                    <tr><th>Composant</th><th>Rôle</th></tr>
+                    <tr><td><strong>Chaîne PV</strong></td><td>Modules en série (tension plus élevée)</td></tr>
+                    <tr><td><strong>Champ</strong></td><td>Chaînes en dérivation (intensité plus élevée)</td></tr>
+                    <tr><td><strong>Boîte de jonction / coffret DC</strong></td><td>Regroupe les chaînes ; le conducteur sortant alimente l'onduleur</td></tr>
+                    <tr><td><strong>Onduleur</strong></td><td>Transforme le courant continu en alternatif</td></tr>
+                    <tr><td><strong>Coffret AC</strong></td><td>Regroupe les câbles des onduleurs, avec boîtier de coupure d'urgence</td></tr>
+                    <tr><td><strong>AGCP</strong></td><td>Appareil général de commande et de protection (fonction de coupure)</td></tr>
+                    <tr><td><strong>Tableau divisionnaire / TGBT</strong></td><td>Distribution électrique ; le TGBT concentre la production vers le réseau</td></tr>
+                    <tr><td><strong>Tracker</strong></td><td>Structure motorisée qui suit le soleil</td></tr>
+                </table>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Les formes du photovoltaïque</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Toitures et façades</strong> : maisons (quelques kWc, 15 à 20 m² environ, intégrés en remplacement des tuiles), bâtiments tertiaires, industriels ou agricoles (dizaines à centaines de kWc, plusieurs milliers de m²), couvertures de parkings.</li>
+                    <li><strong>Centrales solaires au sol</strong> : plusieurs MWc à plusieurs dizaines de MW, électricité injectée en totalité sur le réseau haute tension, structures fixes ou trackers.</li>
+                    <li><strong>Chaussée photovoltaïque</strong> : dalles d'environ 1 cm collées sur la chaussée, branchées en série par 3. <strong>Courant continu, 60 V maximum, 8,5 A maximum</strong> (sous le seuil de danger pour les intervenants). Revêtement en carreaux jointés avec vernis à granulat verrier abrasif. Mêmes principes pour certaines bornes de recharge de véhicules.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Prévision, appel et engagement</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Prévision</strong> : recensement des installations ; ETARE pour les grandes installations et centrales (coordonnées du gestionnaire ou de l'exploitant) ; recensement des SPV travaillant dans l'installation ou la maintenance PV (ressource technique pour le COS).</li>
+                    <li><strong>Prise d'appel</strong> : le CTA sollicite le service gestionnaire ou l'exploitant. Moyens selon le règlement opérationnel, renforcés selon la situation ou la demande du COS.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Reconnaissance et sauvetage</summary>
+            <div class="rd-section">
+                <h3>Signalétique réglementaire</h3>
+                <ul>
+                    <li>Plan schématique de l'installation près de l'AGCP de production ; marquage des onduleurs et des organes de coupure ; signalétique informant les secours des dispositions retenues.</li>
+                    <li>Locaux techniques onduleurs signalés sur les plans du bâtiment destinés aux secours.</li>
+                    <li><strong>Pictogramme PV</strong> : à l'extérieur du bâtiment à l'accès des secours, sur le plan du bâtiment, aux accès des locaux techniques, et sur les câbles DC <strong>tous les 5 m</strong>. Également sur câbles, coffrets et onduleurs.</li>
+                </ul>
+                <h3>Organes de coupure</h3>
+                <p>Sectionnement et coupure d'urgence côté <strong>DC</strong> (coffret DC) et côté <strong>AC</strong> (coffret AC et AGCP). Le dispositif d'isolement de la partie DC <strong>n'est pas obligatoire</strong>.</p>
+                <h3>Chaussée PV : où couper ?</h3>
+                <table class="rd-table">
+                    <tr><th>Situation</th><th>Coupure d'urgence</th></tr>
+                    <tr><td>Événement hors chaussée, sans atteinte des installations verticales sur muret ni de la chaussée</td><td>Pas de coupure d'urgence</td></tr>
+                    <tr><td>Événement sur la chaussée avec délabrement, muret intact</td><td>Au <strong>coffret AC</strong></td></tr>
+                    <tr><td>Événement sur la chaussée avec dommages aux installations verticales sur muret</td><td>Coffret AC s'il est intact, sinon <strong>tableau divisionnaire</strong> de rattachement</td></tr>
+                </table>
+                <p>Les organes de coupure se trouvent aussi dans le « mur de sécurité » de la chaussée PV. Revêtement dégradé : abrasions cutanées chez les victimes, risque de percement des matelas à dépression lors du relevage.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Établissements, attaque, protection</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Hors sol</strong> : nacelles et échelles jamais en contact avec les panneaux (dégâts et électrisation).</li>
+                    <li><strong>Sur chaussée PV</strong> : mise en station de moyens élévateurs aériens (sur cales ou directement) sans restriction constatée aux essais ; dépose de berces : éviter le roulage sur rouleaux métalliques (fissures du revêtement) et la mise au sol sur un panneau PV ; lance-canon : pieds à pointes tungstène, sinon ripage important.</li>
+                    <li><strong>Attaque</strong> : avant toute intervention incendie, coupure d'urgence ; ensuite extinction des dalles ou panneaux en combustion.</li>
+                    <li><strong>Protection des intervenants</strong> : 1) couper les parties AC (AGCP, et source autonome le cas échéant) ; 2) identifier la sécurisation côté DC : coupure du champ PV et de la batterie éventuelle (extinction du voyant d'état).</li>
+                    <li><strong>Protection des installations</strong> (second temps, mais le plus tôt possible) : limiter les dégâts des eaux d'extinction, de la chaleur et des fumées, protéger des intempéries.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6 · Déblai, surveillance, gestionnaire, autres opérations</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Après combustion prolongée</strong> : les panneaux se décollent de leur trame, laissant des éléments verriers et circuits imprimés sous forme de débris fins et coupants.</li>
+                    <li>Déblai : exposition du personnel aux organes PV dégradés la plus réduite possible ; avis d'un technicien, d'un agent ENEDIS ou de l'exploitant ; de préférence la nuit.</li>
+                    <li><strong>Chaussée PV</strong> : toute intervention nécessite le service gestionnaire ou l'exploitant des routes ; le CTA le sollicite dès la confirmation des lieux, le COS prend contact dès son arrivée.</li>
+                    <li><strong>Autres installations</strong> : informer l'exploitant et demander son intervention technique ; en sa présence, d'autres coupures peuvent limiter les désordres.</li>
+                    <li><strong>Hors feu</strong> (fuite d'eau, matériaux menaçant de chuter, personne blessée ou électrisée, nid d'hyménoptères…) : même prudence, EPI, valise électro-secours, coupure d'urgence.</li>
+                </ul>
+            </div>
+        </details>
+
+        <div class="rd-section">
+            <h3>🧭 Marche à suivre</h3>
+            <ol class="fod-flux">
+                <li><b>Appel</b>Renseignements, EPI et valise électro-secours, contact avec le service gestionnaire.</li>
+                <li><b>Mise en sécurité de la zone</b>Recherche de la signalétique et du plan d'intervention ; coupures d'urgence ; projecteurs à plus de 5 m ; aucun contact des moyens aériens avec les panneaux ; chaussée PV : attention au revêtement.</li>
+                <li><b>Phase d'attaque</b>Consignes du COS ; jet diffusé à plus de 5 m ; eaux de ruissellement ; lance-canon hors chaussée PV (ripage).</li>
+                <li><b>Phase de déblai</b>De nuit si possible, avec EPI ; aucun contact avec câbles et éléments PV ; technicien présent si démontage indispensable ; attention aux chutes de composants en hauteur.</li>
+                <li><b>Désengagement</b>Contact avec le propriétaire, le gestionnaire ou l'exploitant de la route ; plus de risque électrique ; plus de risque de nouvelle mise à feu.</li>
+            </ol>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>Lexique</summary>
+            <table class="rd-table">
+                <tr><td><strong>AC / DC</strong></td><td>Courant alternatif / courant continu</td></tr>
+                <tr><td><strong>AGCP</strong></td><td>Appareil général de commande et de protection</td></tr>
+                <tr><td><strong>ETARE</strong></td><td>Plan d'établissement répertorié</td></tr>
+                <tr><td><strong>LSPCC</strong></td><td>Lot de sauvetage et de protection contre les chutes</td></tr>
+                <tr><td><strong>PV / PPV</strong></td><td>Photovoltaïque / panneau photovoltaïque</td></tr>
+                <tr><td><strong>Wc, kWc, MWc</strong></td><td>Watt-crête (puissance maximale en conditions standard) ; × 1 000 ; × 1 000 000</td></tr>
+            </table>
+        </details>
+
+        <p class="jsp-liens">
+            <button class="sal-lien" onclick="showModule('fod-22-photovoltaique')">☀️ FOD n°22 – Panneaux photovoltaïques (SDIS 34) →</button>
+            <button class="sal-lien" onclick="showModule('fod-gaffe-isolante')">🪝 Gaffe isolante 20 000 V →</button>
+        </p>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Interventions en présence d'éléments photovoltaïques », GDO V2-2017, DGSCGC/DSP/SDDRH/BDFE du 01/09/2017. Il abroge le GDO « Chaussée photovoltaïque » (21/02/2017) et la NIO du 09/06/2011. Document de doctrine sans portée réglementaire. Synthèse reformulée.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/risques/GDO-Photovoltaique-2017.pdf" target="_blank" rel="noopener">GDO Photovoltaïque 2017 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="eoliennes" class="module" style="--jsp: #0EA5E9;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🌬️ GDO – Interventions dans les éoliennes</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle (DGSCGC, 12/2018) : connaissance du milieu éolien, description d'un aérogénérateur, acteurs, prise d'appel, secours à personne, incendie, opérations diverses.</p>
+        <div class="rd-alerte"><strong>Ici l'improvisation n'a pas sa place.</strong> Mise en sécurité de l'éolienne avec l'exploitant, <strong>rotor consigné mécaniquement</strong> avant tout moyen aérien (hélicoptère, drone) ou accès dans le rotor, <strong>antichute et casque permanents</strong>, zonage matérialisé qui reste en place après le départ des secours.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Gabarit terrestre</strong> : 0,7 à 4 MW, rotor de 50 à 150 m, mât de 50 à 130 m, hauteur totale 100 à 200 m. Rotor de 35 à 55 t.</li>
+                <li><strong>Électricité</strong> : sortie de génératrice 600 à 700 V, transformée en <strong>20 000 V</strong> injectés au réseau. Le transformateur peut être dans la nacelle, en pied de mât ou à l'extérieur.</li>
+                <li><strong>Prise d'appel</strong> : localisation (commune, parc, numéro d'éolienne), problématique, nature du requérant, facteurs aggravants ; <strong>contact rapide avec l'exploitant</strong> pour mise en sécurité à distance et venue d'un technicien. GRIMP ou renfort zonal à anticiper.</li>
+                <li><strong>Secours à personne</strong> : COS avec zonage au pied (chutes de matériel par la trappe), <strong>liaison radio permanente</strong> avec les équipes dans l'éolienne, évacuation selon les techniques de secours en milieu périlleux, choix des personnels selon l'effort physique.</li>
+                <li><strong>Feu en hauteur</strong> : accès limité aux sauvetages de vie humaine (l'héliportage est plus sûr pour une nacelle) ; extinction limitée à la protection des autres cibles ; <strong>zonage supérieur à 1,2 × la hauteur du mât</strong>.</li>
+                <li><strong>Feu de transformateur, poste de livraison ou pied de mât</strong> : faire couper les fluides électriques au préalable ; le centre d'exploitation est l'interlocuteur principal.</li>
+                <li><strong>Fuite d'huile</strong> : plusieurs centaines de litres possibles ; stopper et absorber avec les techniques du risque chimique.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Connaissance du milieu</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Parc français</strong> : 13,6 GW au 31/03/2018, environ 1 700 parcs terrestres, 24 TWh par an (5 % de la consommation). Principales régions : Hauts-de-France, Grand Est, Occitanie, Bretagne.</li>
+                    <li><strong>Offshore</strong> : projets en cours (Fécamp, Saint-Brieuc, île d'Yeu, Noirmoutier), plus de 150 éoliennes ; éolienne flottante en test. Interventions en mer régies par la circulaire interministérielle du 04/05/2012 (contributions des SDIS aux opérations de recherche et de sauvetage en mer).</li>
+                    <li><strong>Petit éolien</strong> : au plus une dizaine de mètres, batteries 12 V et convertisseur 12/220 V. Éoliennes à axe vertical (Darrieus) ; éoliennes rabattables en outre-mer (cyclones).</li>
+                    <li><strong>Réglementation</strong> : parcs terrestres en ICPE, rubrique 2980 (autorisation si un mât ≥ 50 m ; sinon régime selon la puissance, 20 MW). Le SIS est consulté et peut prescrire : accès carrossable permanent, plan d'implantation, consignes de transmission d'alerte, dispositif antichute.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Description d'un aérogénérateur</summary>
+            <div class="rd-section">
+                <table class="rd-table">
+                    <tr><th>Partie</th><th>À connaître pour l'intervention</th></tr>
+                    <tr><td><strong>Voie d'accès, aire de travail</strong></td><td>Chemin carrossable viable pour les engins de secours ; l'aire de travail au pied reste en place et sert de stationnement</td></tr>
+                    <tr><td><strong>Fondations</strong></td><td>Un bloc de béton armé, superficielles ou sur pieux</td></tr>
+                    <tr><td><strong>Mât</strong></td><td>Acier et/ou béton, 50 à 130 m, base de 4 à 7 m de diamètre, plus de 100 t. <strong>Porte</strong> blindée ou non : forcement, clés du gestionnaire, ou boîte à clés en façade (clé SP normalisée, ouverture codée possible)</td></tr>
+                    <tr><td><strong>Pied de mât</strong></td><td>Transformateur (parfois ailleurs), armoires de contrôle-commande, batteries de secours, plan d'évacuation, <strong>arrêt d'urgence</strong> pour techniciens</td></tr>
+                    <tr><td><strong>Élévateur</strong></td><td>Treuil, 240 kg maximum et 2 personnes ; utilisation autonome par les secours non privilégiée (risque de blocage)</td></tr>
+                    <tr><td><strong>Échelle fixe</strong></td><td>Du bas jusqu'à la nacelle, avec antichute coulissant ; élévateur parfois guidé sur l'échelle : échanger au préalable avec l'exploitant. Équipements antichute à prescrire dans l'avis ICPE, contrôle à la charge de l'exploitant</td></tr>
+                    <tr><td><strong>Nacelle</strong></td><td>Volume fermé en composite, espace très réduit, ambiance thermique froide ou chaude ; ouverture dessus ou dessous pour auto-évacuation, treuil de matériel, évacuation d'une victime. Turbines synchrones 25 % du parc, asynchrones (multiplicateur) 75 %. Équipements sommitaux : anémomètre, capteurs météo, balisage lumineux, points d'ancrage</td></tr>
+                    <tr><td><strong>Rotor et moyeu</strong></td><td><strong>Consignation mécanique</strong> par un technicien à l'approche d'un moyen aérien et pour tout accès dans le rotor</td></tr>
+                    <tr><td><strong>Pales</strong></td><td>Composites (résines et fibres) dégageant des COV comme le <strong>styrène</strong> : protection respiratoire adaptée pour s'engager dans une pale</td></tr>
+                    <tr><td><strong>Électricité</strong></td><td>Basse à très haute tension (sortie de transformateur) ; réseaux enterrés jusqu'au poste de livraison, généralement 20 000 V</td></tr>
+                </table>
+                <p>Éoliennes prévues pour des vents de 4 à 30 m/s, arrêt automatique au-delà ; puissance nominale vers 14 m/s.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Les acteurs</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>DREAL</strong> : partenaire privilégié (législation ICPE, consultation du SIS).</li>
+                    <li><strong>Maître d'ouvrage, maître d'œuvre, développeur, turbinier</strong> (concepteur, fabricant et souvent monteur), <strong>coordonnateur SPS</strong>.</li>
+                    <li><strong>Centre d'exploitation</strong> : surveillance 24 h/24 par capteurs, télé-conduite, <strong>mise en sécurité électrique possible à distance</strong>.</li>
+                    <li><strong>Techniciens de maintenance</strong> : toujours en binôme, protection complète contre les chutes, formés SST et travail en hauteur, capables de s'auto-évacuer et d'évacuer une personne depuis la nacelle et le mât.</li>
+                    <li><strong>Exploitant du parc</strong> : pas forcément le propriétaire ; partenaire privilégié pour préparer les exercices.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Conduite des opérations</summary>
+            <div class="rd-section">
+                <h3>Scénarios possibles</h3>
+                <p>Victime(s) en hauteur (nacelle ou mât) ; feu d'une installation ; incendie menaçant une éolienne ; effondrement de structure ; projection ou chute de glace ou d'éléments ; pollution par fuite d'huile.</p>
+                <h3>Secours d'urgence à personne</h3>
+                <ul>
+                    <li>Éolienne mise en sécurité avec l'exploitant et <strong>stoppée mécaniquement</strong> à l'approche d'un hélicoptère ou d'un drone.</li>
+                    <li>Sans gestionnaire ni consignation mécanique, et si la situation l'exige, usage du drone toléré : zone de vol adaptée (collision, déplacements d'air).</li>
+                    <li>Communication avec les personnes en hauteur ; ascension avec les systèmes antichute mis à disposition ; <strong>protection contre les chutes systématique</strong> pour sauveteurs et victimes, <strong>casque en permanence</strong>.</li>
+                    <li>Zonage au pied : risque de chute de matériel de secours (mousqueton…) par la trappe.</li>
+                </ul>
+                <h3>Incendie</h3>
+                <ul>
+                    <li><strong>Feu en hauteur</strong> : voir « À retenir » ; zonage 1,2 × H actif <strong>même après le départ des secours</strong> ; secours et techniciens hors zone.</li>
+                    <li><strong>Éolienne exposée à un incendie</strong> (cultures, bois) : point sensible, techniques feux de forêts et d'espaces naturels ; mise en sécurité électrique si besoin.</li>
+                </ul>
+                <h3>Opérations diverses</h3>
+                <p>Chutes : rupture de mât, chute de pales, projection de glace. Zonage adapté, mise en sécurité électrique de l'éolienne, zonage matérialisé après le départ des secours.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Lexique</summary>
+            <table class="rd-table">
+                <tr><td><strong>Consignation mécanique</strong></td><td>Arrêt de l'installation et blocage physique de sa remise en service (rotor bloqué)</td></tr>
+                <tr><td><strong>Équipements sommitaux</strong></td><td>Équipements en hauteur de l'éolienne</td></tr>
+                <tr><td><strong>Onshore / offshore</strong></td><td>Dans les terres / en mer</td></tr>
+                <tr><td><strong>Styrène</strong></td><td>Monomère des plastiques, toxique et inflammable</td></tr>
+                <tr><td><strong>SST</strong></td><td>Sauveteur secouriste du travail</td></tr>
+            </table>
+        </details>
+
+        <p class="jsp-liens">
+            <button class="sal-lien" onclick="showModule('drones')">🚁 GDO – Drones : engagement des appareils télépilotés →</button>
+        </p>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Interventions dans les éoliennes », GDO DGSCGC/DSP/SDDRH/BDFE, décembre 2018. Document de doctrine sans portée réglementaire. Synthèse reformulée.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/specialites/GDO-Eoliennes-2019.pdf" target="_blank" rel="noopener">GDO Interventions dans les éoliennes (PDF)</a>
+        </p>
+    </div>
+
+    <div id="drones" class="module" style="--jsp: #6366F1;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🚁 GDO – Engagement des appareils télépilotés (drones)</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle (1<sup>re</sup> édition, DGSCGC, 09/2022), composante aérienne : cadre réglementaire, dangers, sécurité des intervenants, réponse opérationnelle, conduite des opérations.</p>
+        <div class="rd-alerte"><strong>Le drone est un moyen du COS, jamais un facteur de risque.</strong> Pas de survol de personnes ni de tiers, <strong>TOLA balisée</strong>, <strong>zone d'exclusion de tiers</strong> fixée pour toute la durée du vol, décollage seulement sur autorisation du COS. Le télépilote reste le seul décisionnaire pour accepter ou refuser le vol.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Hauteur maximale 120 m</strong> ; vol de nuit : la nuit aéronautique commence 30 min après le coucher du soleil et finit 30 min avant son lever ; <strong>notification préalable à la préfecture</strong> pour les vols en zone peuplée.</li>
+                <li><strong>Zone peuplée</strong> : à moins de 50 m d'une agglomération figurant sur les cartes aéronautiques, ou à moins de 150 m d'un rassemblement de personnes.</li>
+                <li><strong>Scénarios standard nationaux S1, S2, S3</strong> (en vigueur au moment de la parution, à abroger au plus tard le 31/12/2025 : nouveau cadre en préparation avec la DGAC).</li>
+                <li><strong>Dérogation</strong> en opération de secours non programmée, <strong>seulement si</strong> aucun risque de dommage aux autres aéronefs et si les circonstances le justifient ; elle engage pleinement la responsabilité du télépilote et du SIS.</li>
+                <li><strong>Mode automatique ≠ mode autonome</strong> : le télépilote doit pouvoir intervenir à tout moment ; le mode autonome est interdit en scénarios standard (sauf aéronefs captifs, sous conditions).</li>
+                <li><strong>Captation d'images</strong> : seulement pour la prévention des risques naturels ou technologiques, et le secours aux personnes et la lutte contre l'incendie ; <strong>jamais de captation de son</strong> ; streaming vidéo en mode permanent interdit.</li>
+                <li><strong>Drone interdit en atmosphère explosive</strong> ; prudence près des lignes électriques, relais, émetteurs, radars.</li>
+                <li><strong>Dépose plutôt que largage</strong> (le largage reste à haut risque).</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Cadre réglementaire</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Statut</strong> : drones d'aéronef d'État (DSAÉ) ou relevant de la DGAC. Le guide décrit surtout les obligations DGAC.</li>
+                    <li><strong>Espace aérien</strong> : souveraineté de l'État jusqu'à 12 NM des côtes ; aéronefs habités évoluent normalement au-dessus de 500 ft (environ 152 m), d'où la limite des 120 m.</li>
+                    <li><strong>Deux arrêtés du 3 décembre 2020</strong> : utilisation de l'espace aérien, et scénarios standard nationaux.</li>
+                    <li><strong>Hors scénario</strong> : autorisation d'exploitation DGAC/DSAÉ sur étude de sécurité <strong>SORA</strong> (ou PDRA) ; compter environ six mois.</li>
+                    <li><strong>Homologation</strong> : nécessaire en S1 au-delà de 25 kg, en S2 quel que soit le poids, en S3 au-delà de 2 kg.</li>
+                </ul>
+                <table class="rd-table">
+                    <tr><th>Scénario</th><th>Conditions (d'après le schéma du guide)</th></tr>
+                    <tr><td><strong>S3</strong></td><td>Zone peuplée, sans survol de tiers, drone en vue, d &lt; 100 m, m &lt; 8 kg, h &lt; 120 m</td></tr>
+                    <tr><td><strong>S1</strong></td><td>Hors zone peuplée, sans survol de tiers, drone en vue, d &lt; 200 m, m &lt; 25 kg, h &lt; 120 m</td></tr>
+                    <tr><td><strong>S2</strong></td><td>Hors zone peuplée, sans tiers au sol, drone hors vue, d &lt; 1 000 m (m &lt; 2 kg jusqu'à 120 m ; m &lt; 25 kg jusqu'à 50 m)</td></tr>
+                    <tr><td><strong>Nuit</strong></td><td>Possible pour S1 et S3</td></tr>
+                </table>
+                <p>Ne sont pas des « tiers » : les personnes impliquées dans le pilotage, les personnes en lien direct avec l'opération de secours <strong>informées des mesures d'urgence du COS</strong>, les personnes protégées par un dispositif de sécurité.</p>
+                <p><strong>Modes de pilotage</strong> : manuel, automatique (plan de vol), autonome, suivez-moi (follow-me), RTH (return to home), point d'intérêt. En scénarios standard, le télépilote ne peut pas être à bord d'un véhicule en déplacement (sauf bateau, sous conditions).</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2 · Exploitant, télépilote, données</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Exploitant (le SIS, personne morale)</strong> : enregistrement sur AlphaTango, déclaration initiale à la DSAC avant de débuter, assurance, MANEX (manuel d'exploitation), enregistrement des drones de 800 g et plus, aéronefs maintenus navigables, suivi des événements, déclaration de tout événement ayant mis en jeu la sécurité de tiers.</li>
+                    <li><strong>Télépilote</strong> : 18 ans révolus, formation théorique et stage pratique (organisme agréé DGAC), liste d'aptitude annuelle, carnet de vol (date, heure, jour ou nuit, mission ou entraînement, scénario, lieu, numéro d'enregistrement, durée). Préposé de l'exploitant.</li>
+                    <li><strong>Captation</strong> : analyse d'impact (AIPD) et engagement de conformité transmis à la CNIL, délégué à la protection des données dans le SIS, liste nominative des agents autorisés validée par le DDSIS. Déclaration des prises de vue (trisannuelle, 15 jours avant) ; <strong>imagerie thermique : autorisation préfectorale</strong> (3 ans maximum).</li>
+                    <li><strong>Protection des données</strong> : serveurs sécurisés, chiffrement, vider la carte mémoire sur un poste dédié dès l'atterrissage, trier et anonymiser, transférer en fin d'opération ; streaming sécurisé (https), serveur du SIS ou cloud hébergé en France, jamais de site vidéo grand public ; écrans de report hors de vue des badauds et journalistes.</li>
+                    <li><strong>Système de gestion de la sécurité</strong> : non imposé aux SDIS mais recommandé (DUERP, MANEX).</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3 · Dangers et sécurité des intervenants</summary>
+            <div class="rd-section">
+                <table class="rd-table">
+                    <tr><th>Danger</th><th>Parade</th></tr>
+                    <tr><td><strong>Collision</strong> (aéronef habité, autre drone, oiseaux, infrastructures, sol)</td><td>Ségrégation des espaces, zone d'évolution peu peuplée, zonage opérationnel, formation, drone avec parachute</td></tr>
+                    <tr><td><strong>Perte de liaison air-sol</strong>, prise de contrôle, intrusion</td><td>Batteries chargées, éviter les perturbations électromagnétiques (lignes HT), dispositif de chute sur zone dégagée, observateur visuel, <strong>RTH vérifié avant décollage</strong> et activé dès la perte de liaison vidéo</td></tr>
+                    <tr><td><strong>Cause matérielle</strong> (casse, hélice)</td><td>Ne pas utiliser un aéronef endommagé ou dont l'intégrité n'est pas garantie</td></tr>
+                    <tr><td><strong>Météo et magnétisme</strong></td><td>Vent, brouillard, précipitations, températures extrêmes (batteries), orages, tempêtes solaires (perte de GPS, « fly-away »)</td></tr>
+                    <tr><td><strong>Facteur humain</strong></td><td>Santé, fatigue, stress, alcool dans les 8 h avant le vol, effet tunnel</td></tr>
+                </table>
+                <ul>
+                    <li>Le COS s'assure que toute personne dans ou près de la zone d'évolution est <strong>informée</strong> d'un possible survol et porte les <strong>EPI</strong> adaptés (risque de chute du drone) ; <strong>guet-alerte</strong> ou dispositif sonore pour signaler la chute ; durée de survol réduite au strict nécessaire.</li>
+                    <li><strong>TOLA</strong> (aire de décollage et d'atterrissage) : en zone de soutien ou en zone contrôlée, validée par le COS, portée sur la SITAC ; <strong>diamètre minimum 5 m</strong> ; matérialisée (cône de Lubeck, rubalise…) ; de nuit balises lumineuses ou projecteurs ; limiter les feux de véhicules (capteurs optiques) ; anémomètre et manche à air utiles ; accès réservé au télépilote et aux personnes indispensables.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4 · Réponse opérationnelle et spécialité</summary>
+            <div class="rd-section">
+                <h3>Emplois du drone</h3>
+                <ul>
+                    <li><strong>Prévention</strong> : cartographie opérationnelle (SDACR, ETARE), modélisation 3D, évaluation de dommages.</li>
+                    <li><strong>Secours à personne</strong> : localisation de victimes (commencer par le dernier lieu connu, méthode, zones de vol), évaluation, guidage par coordonnées GPS, contact sonore et premier bilan visuel, transport de matériel (bouée, couverture de survie…).</li>
+                    <li><strong>Incendie</strong> : reconnaissance de zone (vue de masse, personnes menacées, accès), de secteur (sauvetages, limites, origine, efficacité du dispositif hydraulique) et spécialisée (mesures, fuites, imagerie thermique).</li>
+                </ul>
+                <h3>Équipe de spécialistes</h3>
+                <table class="rd-table">
+                    <tr><th>Emploi</th><th>Rôle</th></tr>
+                    <tr><td><strong>Télépilote</strong></td><td>Manœuvre les commandes, procédures normales et d'urgence ; peut intervenir seul pour un vol simple (destruction d'hyménoptères, reconnaissance simple) ; exploite et transmet les captations</td></tr>
+                    <tr><td><strong>Chef d'unité</strong> (2 à 3 équipiers, 2 drones simultanés maximum)</td><td>Exécution du vol en sécurité : coordination aérienne, surveillance de l'espace aérien, protection du télépilote, veille radio, protection des données ; briefing avant chaque vol ; <strong>décide du décollage</strong> après autorisation du COS ; rend compte de l'atterrissage et des incidents</td></tr>
+                    <tr><td><strong>Chef de section</strong> (3 unités maximum)</td><td>Interface avec le COS : analyse préalable (volume, scénario, restrictions), traduit les besoins en manœuvres, ségrégation entre unités ; conseiller technique du COS et interlocuteur des autorités aériennes</td></tr>
+                </table>
+                <p>Conditions d'exercice : aptitude médicale, FMPA à jour, inscription sur la <strong>liste d'aptitude opérationnelle</strong>. Spécialistes sous les ordres du COS, sans perturber l'engagement des intervenants. Sans spécialiste dans le département : renfort zonal à anticiper.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5 · Conduite des opérations</summary>
+            <div class="rd-section">
+                <h3>Zonage opérationnel</h3>
+                <p>Trois zones : <strong>exclusion (rouge)</strong>, <strong>contrôlée (orange)</strong>, <strong>soutien (verte)</strong>. Zonage réflexe de référence : exclusion de 50 m et zone contrôlée de 100 m. Le périmètre de sécurité est la limite extérieure de la zone de soutien.</p>
+                <p><strong>Zone d'exclusion de tiers</strong> (spécifique au drone) : temporaire, suit le parcours du drone ; à <strong>anticiper et fixer pour toute la durée du vol</strong>, avec une marge de sécurité de <strong>10 m de rayon minimum</strong> (type, masse, hauteur, vitesse, vent). Elle peut différer de la zone d'exclusion du zonage opérationnel.</p>
+                <h3>Étude de faisabilité</h3>
+                <ul>
+                    <li><strong>Météo</strong> : vent, turbulences, brouillard, précipitations, températures extrêmes, température radiante supérieure à 50 °C, orage (rédhibitoire, turbulences sévères jusqu'à 20 à 40 km), altitude et densité de l'air, indice Kp.</li>
+                    <li><strong>Espace aérien</strong> : cartes, NOTAM, zones peuplées, obstacles, zones P, R, D, routes, parcs naturels ; en déduire le scénario, les protocoles, la nécessité de déroger et la programmation du RTH.</li>
+                </ul>
+                <h3>Réalisation de la mission</h3>
+                <ol class="fod-flux">
+                    <li><b>Contact avec le COS</b>Nature de la mission, intentions, temps imparti, spécificités. Retour : résultats de l'étude, dérogations nécessaires, effets à obtenir, contraintes (fumées, agents toxiques ou radioactifs, risque d'explosion, survol de l'eau, autres moyens aériens), canal radio dédié, besoins humains et matériels.</li>
+                    <li><b>Validation avec le COS</b>Emplacement de la TOLA, zonage spécifique au drone, information des intervenants et du public, techniques, procédures.</li>
+                    <li><b>Information des personnes</b>Sauf urgence : dispositifs sonores, rubalise ou barrières, forces de l'ordre, information verbale lors des points de situation ; note d'information pour les sapeurs-pompiers.</li>
+                    <li><b>Préparation</b>Scénario de vol, procédure, navigation (cap et durée selon le vent), nombre de batteries, charges utiles, stratégie départ et arrivée.</li>
+                    <li><b>Autorisation de décoller</b>Protections embarquées vérifiées, zone d'exclusion de tiers marquée : le COS autorise le début du vol.</li>
+                    <li><b>Conduite du vol</b>Contrôle constant : détecter tout aéronef, <strong>céder le passage aux aéronefs habités</strong>, éviter le survol des intervenants, s'interdire le survol de tiers.</li>
+                    <li class="fod-question"><b>Après le vol</b>Compte rendu au COS, analyse des incidents, notification à la DGAC de tout événement de sécurité, bilan annuel (heures par scénario et problèmes rencontrés).</li>
+                </ol>
+                <p><strong>Procédures d'urgence</strong> : appliquer celles du MANEX ; maîtriser le mode de pilotage, l'enveloppe de vol, les limites du matériel et la procédure d'atterrissage d'urgence.</p>
+                <p><strong>Capacités opérationnelles</strong> : observation aérienne (imagerie visible ou thermique, cartographie, vigie) et emport de charge utile (éclairage, haut-parleur, messages, guidage, petit matériel, marquage d'objectifs, mesures). Le drone remplace un autre moyen seulement s'il n'y en a pas d'autre disponible, avec une balance bénéfice/risque favorable et une mise en œuvre rapide.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Zones aériennes réglementées</summary>
+            <table class="rd-table">
+                <tr><td><strong>CTR</strong></td><td>Zone contrôlée autour d'un aérodrome ou aéroport</td></tr>
+                <tr><td><strong>D</strong></td><td>Zone dangereuse : pénétration non interdite</td></tr>
+                <tr><td><strong>R, ZRT</strong></td><td>Réglementées (temporaires) : conditions de pénétration, zone active ou non</td></tr>
+                <tr><td><strong>P, ZIT</strong></td><td>Interdites (temporaires) : pénétration interdite ; la ZIT est ouverte par le préfet</td></tr>
+                <tr><td><strong>RMZ, TMZ</strong></td><td>Radio ou transpondeur obligatoire : accord préalable de l'organisme de contrôle ; le téléphone peut compenser l'absence de radio</td></tr>
+                <tr><td><strong>ZIPVA</strong></td><td>Interdites à la prise de vue aérienne (dont centres pénitentiaires)</td></tr>
+            </table>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Lexique</summary>
+            <table class="rd-table">
+                <tr><td><strong>MANEX</strong></td><td>Manuel d'exploitation</td></tr>
+                <tr><td><strong>NOTAM</strong></td><td>Notice to airmen, message aux navigants</td></tr>
+                <tr><td><strong>RTH</strong></td><td>Return to home</td></tr>
+                <tr><td><strong>SORA / PDRA</strong></td><td>Études de sécurité pour opérations hors scénarios standard</td></tr>
+                <tr><td><strong>TOLA</strong></td><td>Take-off / landing area</td></tr>
+                <tr><td><strong>UAS</strong></td><td>Unmanned aircraft system</td></tr>
+                <tr><td><strong>AIPD</strong></td><td>Analyse d'impact relative à la protection des données</td></tr>
+                <tr><td><strong>LAO / FMPA</strong></td><td>Liste d'aptitude opérationnelle / formation de maintien et perfectionnement des acquis</td></tr>
+            </table>
+        </details>
+
+        <p class="jsp-liens">
+            <button class="sal-lien" onclick="showModule('eoliennes')">🌬️ GDO – Interventions dans les éoliennes →</button>
+        </p>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Engagement des appareils télépilotés de lutte, d'appui et de secours », DGSCGC/DSP/SDDRH/BDFE, septembre 2022, 1<sup>re</sup> édition (composante aérienne). Les textes réglementaires cités évoluent : se référer aux versions en vigueur. Synthèse reformulée.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/specialites/GDO-Drones-aeriens-2022.pdf" target="_blank" rel="noopener">GDO Engagement des appareils télépilotés (PDF)</a>
+        </p>
     </div>
 
     <div id="cod1" class="module" style="--jsp: #0E7490;">
@@ -27249,7 +27653,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.64.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.65.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
