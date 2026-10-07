@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.68.0 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.68.1 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -160,7 +160,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.68.0';
+var APP_VERSION = '1.68.1';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1407,7 +1407,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.68.0 COMPLET
+// FIN DU FICHIER - Vulcain v1.68.1 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
@@ -1612,3 +1612,28 @@ function showSRSection(section) {
 }
 
 console.log('✅ Module Secours Routier (showSRSection) chargé');
+
+
+// ==================== SCHÉMAS AGRANDISSABLES ====================
+(function() {
+    function fermerZoom() {
+        var o = document.getElementById('zoomOverlay');
+        if (o) o.remove();
+    }
+    document.addEventListener('click', function(e) {
+        var img = e.target.closest && e.target.closest('img.zoomable');
+        if (!img) return;
+        fermerZoom();
+        var o = document.createElement('div');
+        o.id = 'zoomOverlay';
+        o.className = 'zoom-overlay';
+        o.setAttribute('role', 'dialog');
+        o.setAttribute('aria-label', 'Schéma agrandi');
+        o.innerHTML = '<div class="zoom-bar"><span>Faites glisser pour parcourir le schéma</span><button type="button" class="zoom-close">Fermer</button></div><div class="zoom-scroll"><img alt=""></div>';
+        o.querySelector('img').src = img.src;
+        o.querySelector('img').alt = img.alt || '';
+        o.querySelector('.zoom-close').addEventListener('click', fermerZoom);
+        document.body.appendChild(o);
+    });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') fermerZoom(); });
+})();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.68.0">
+    <meta name="version" content="1.68.1">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.68.0</span><br>
+                        Vulcain v<span class="app-version">1.68.1</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -11082,34 +11082,13 @@
         </p>
         
         <div class="nav-buttons">
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-materiels')">
-                <div>🎒</div>
-                <span class="nav-label">Matériels & Équipements</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-generalites')">
-                <div>📋</div>
-                <span class="nav-label">Généralités Opérationnelles</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-milieux')">
-                <div>🏢</div>
-                <span class="nav-label">Milieux d'Intervention</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-arbre')">
-                <div>🔀</div>
-                <span class="nav-label">Arbre Décisionnel</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-psc')">
-                <div>🅿️</div>
-                <span class="nav-label">Parc de Stationnement</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-complexe')">
-                <div>🏭</div>
-                <span class="nav-label">Milieu Complexe</span>
-            </div>
-            <div class="nav-btn" data-color="eld" onclick="showModule('eld-distance')">
-                <div>🚇</div>
-                <span class="nav-label">Grande Distance</span>
-            </div>
+            <button class="impm-tuile" onclick="showModule('eld-materiels')" aria-label="Matériels & Équipements"><img src="images/eld/tuile-materiels.webp" alt="" loading="lazy"></button>
+            <button class="impm-tuile" onclick="showModule('eld-generalites')" aria-label="Généralités Opérationnelles"><img src="images/eld/tuile-generalites.webp" alt="" loading="lazy"></button>
+            <button class="impm-tuile" onclick="showModule('eld-milieux')" aria-label="Milieux d'Intervention"><img src="images/eld/tuile-milieux.webp" alt="" loading="lazy"></button>
+            <button class="impm-tuile" onclick="showModule('eld-arbre')" aria-label="Arbre Décisionnel"><img src="images/eld/tuile-arbre.webp" alt="" loading="lazy"></button>
+            <button class="impm-tuile" onclick="showModule('eld-psc')" aria-label="Parc de Stationnement"><img src="images/eld/tuile-psc.webp" alt="" loading="lazy"></button>
+            <button class="impm-tuile" onclick="showModule('eld-complexe')" aria-label="Milieu Complexe"><img src="images/eld/tuile-complexe.webp" alt="" loading="lazy"></button>
+            <button class="impm-tuile" onclick="showModule('eld-distance')" aria-label="Grande Distance"><img src="images/eld/tuile-distance.webp" alt="" loading="lazy"></button>
         </div>
     </div>
 
@@ -22072,7 +22051,7 @@ Je fais : extinction.</p>
                 <tr><td>Tuyau plat PIL Ø 110 mm</td><td>1000 L/min</td><td>0,28 bar/hm</td><td>0,06 bar</td></tr>
             </table>
             <p><strong>Cas pratique résolu</strong> : établissement fractionné FPT (A) → division (B) via 80 m de Ø 70 mm à 1000 L/min, puis 2 lances : BC = 40 m Ø 45 à 500 L/min de plain-pied, BD = 60 m Ø 45 à 500 L/min + 15 m de dénivelé.</p>
-            <figure class="rd-fig"><img src="images/cod1/etablissement-2lances.jpg" alt="Schéma d'établissement fractionné en tronçons avec lances dissymétriques : FPT (A), ligne AB 80 m Ø 70 mm 1000 L/min vers division B, lance BC 40 m Ø 45 500 L/min de plain-pied, lance BD 60 m Ø 45 500 L/min plus 15 m de dénivelé" loading="lazy"><figcaption>Schéma d'établissement fractionné en tronçons avec lances dissymétriques</figcaption></figure>
+            <figure class="rd-fig"><img class="zoomable" src="images/cod1/etablissement-2lances.webp" alt="Schéma d'établissement fractionné en tronçons avec lances dissymétriques : FPT (A), ligne AB 80 m Ø 70 mm 1000 L/min vers division B, lance BC 40 m Ø 45 500 L/min de plain-pied, lance BD 60 m Ø 45 500 L/min plus 15 m de dénivelé" loading="lazy"><figcaption>Schéma d'établissement fractionné en tronçons avec lances dissymétriques <em>(touchez pour agrandir)</em></figcaption></figure>
             <ul>
                 <li>Branche BC (lance 1) : 2×20 m Ø45 à 500 L/min = 2 × 1,2 bar = 2,4 bars + 6,0 bars (pression lance) = <strong>8,4 bars</strong>.</li>
                 <li>Branche BD (lance 2, étage) : 3×20 m Ø45 à 500 L/min = 3 × 1,2 bar = 3,6 bars + 1,5 bar (dénivelé +15 m) + 6,0 bars (pression lance) = <strong>11,1 bars</strong> (branche prioritaire, la plus défavorable).</li>
@@ -30020,7 +29999,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.68.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.68.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
