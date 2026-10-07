@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.65.0">
+    <meta name="version" content="1.66.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.65.0</span><br>
+                        Vulcain v<span class="app-version">1.66.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -1903,6 +1903,7 @@
             </div>
         </div>
         <p class="jsp-liens" style="margin-bottom: 16px;">Véhicules électriques, hybrides, GPL, GNV → <button onclick="showModule('gouv-menu')">⚡ Guide GOUV SDIS 34 (fiches illustrées)</button></p>
+        <p class="jsp-liens" style="margin-bottom: 16px;">Doctrine nationale 2025 → <button onclick="showModule('gdo-routier-menu')">🛣️ GDO Opérations de secours en milieu routier</button></p>
 
         <!-- Section MGO -->
         <div id="sectionMGO" class="sr-section" style="display: block;">
@@ -16123,6 +16124,7 @@ Je fais : extinction.</p>
             <h3>Voir aussi</h3>
             <ul>
                 <li>MGO secours routier et charte graphique de découpe → <button onclick="showModule('secours')">Secours routier</button></li>
+                <li>Doctrine nationale 2025 (DGSCGC) → <button onclick="showModule('gdo-routier-menu')">GDO Opérations de secours en milieu routier</button></li>
                 <li>Électricité et distances de sécurité → <button onclick="showModule('electrique')">Lignes électriques</button> <button onclick="showModule('distances')">Distances</button></li>
                 <li>Gaz, BLEVE → <button onclick="showModule('bouteilles')">Bouteilles de gaz</button> <button onclick="showModule('explosimetrie')">Explosimétrie</button></li>
             </ul>
@@ -19502,6 +19504,1127 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Guide de doctrine opérationnelle « Engagement des appareils télépilotés de lutte, d'appui et de secours », DGSCGC/DSP/SDDRH/BDFE, septembre 2022, 1<sup>re</sup> édition (composante aérienne). Les textes réglementaires cités évoluent : se référer aux versions en vigueur. Synthèse reformulée.</p>
         <p class="jsp-liens">
             📄 <a class="rd-pdf" href="docs/specialites/GDO-Drones-aeriens-2022.pdf" target="_blank" rel="noopener">GDO Engagement des appareils télépilotés (PDF)</a>
+        </p>
+    </div>
+
+    <div id="gdo-routier-menu" class="module" style="--jsp: #F97316;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🛣️ GDO – Opérations de secours en milieu routier</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle de la DGSCGC (1<sup>re</sup> édition, juillet 2025), destiné aux primo-intervenants : infrastructures et ouvrages d'art, véhicules et nouvelles énergies, dangers, sécurité des intervenants, signalisation d'urgence, incendies de véhicules et secours routier.</p>
+        <div class="rd-alerte"><strong>Quatre réflexes</strong> : 1) <strong>sécuriser la zone</strong> (zonage, signalisation d'urgence, sur-accident) ; 2) <strong>identifier l'énergie du véhicule</strong> (logos, câbles orange, FAD) ; 3) <strong>sécuriser le véhicule</strong> (les 5 « i ») ; 4) <strong>dégarnir et marquer</strong> avant toute découpe.</div>
+        <div class="rd-tuiles">
+            <button onclick="showModule('gdo-routier-infra')"><b>🛣️ Réseau, ouvrages d'art, tunnels</b><span>Réseau routier, route, ponts, tunnels, stations de recharge, acteurs</span></button>
+            <button onclick="showModule('gdo-routier-vehicules')"><b>🚗 Véhicules et énergies</b><span>Structure, vitrages, sécurité active, passive et tertiaire, GPL, GNV, H₂, haute tension, TMD</span></button>
+            <button onclick="showModule('gdo-routier-risques')"><b>⚠️ Dangers et risques</b><span>Incendie (gaz, batteries, tunnels), mécanismes d'accident, victimes, fuites, charge transportée</span></button>
+            <button onclick="showModule('gdo-routier-securite')"><b>🦺 Sécurité des intervenants</b><span>Arrivée sur les lieux, zonage et signalisation d'urgence, désincarcération, outils</span></button>
+            <button onclick="showModule('gdo-routier-alerte')"><b>📞 Prise d'appel et engagement</b><span>Localisation, motif, spécificités routières et tunnels, conseils au requérant</span></button>
+            <button onclick="showModule('gdo-routier-incendies')"><b>🔥 Incendies de véhicules</b><span>VL, gaz, électriques et hybrides, poids lourds, bornes de recharge, tunnels</span></button>
+            <button onclick="showModule('gdo-routier-secours')"><b>🚑 Secours routier</b><span>Les 5 « i », lecture de l'accident, extraction, TMD, immersion, animaux</span></button>
+            <button onclick="showModule('gdo-routier-annexes')"><b>📎 Annexes</b><span>FAD et ERG, applications, énergies de la carte grise, EDPM, EES, schémas de signalisation</span></button>
+        </div>
+        <div class="rd-section">
+            <h3>Voir aussi</h3>
+            <ul>
+                <li>MGO et charte graphique de découpe → <button onclick="showModule('secours')">Secours routier</button></li>
+                <li>Véhicules à énergies alternatives (SDIS 34) → <button onclick="showModule('gouv-menu')">GOUV</button> <button onclick="showModule('nod-002-vea')">NOD n°002 VEA</button></li>
+                <li>Gaz, BLEVE, explosimétrie → <button onclick="showModule('risques-gaz-menu')">Risques GAZ</button></li>
+            </ul>
+        </div>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Opérations de secours en milieu routier », DGSCGC, juillet 2025 (abroge notamment les NIO « Feux de véhicule automobile » 1999 et « Interventions sur les véhicules électriques et hybrides » 2012 et 2016, et la NIO « Installations d'hydrogène » 2013).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/routier/GDO-Operations-milieu-routier-2025.pdf" target="_blank" rel="noopener">GDO Opérations de secours en milieu routier (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-routier-infra" class="module" style="--jsp: #F97316;">
+        <button class="back-btn" onclick="showModule('gdo-routier-menu')">← Retour GDO routier</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🛣️ Réseau, ouvrages d'art et tunnels</h2>
+        <p style="text-align: center;">Chapitre 1 du guide : le « milieu routier » (réseau public, ouvrages d'art, véhicules, installations de recharge) et les acteurs à connaître.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Milieu routier</strong> : le réseau routier public, les ouvrages d'art, les véhicules, les installations de recharge en énergie et leurs annexes (aires de repos, parkings à l'air libre).</li>
+                <li><strong>Autoroute</strong> : deux chaussées à sens unique séparées (TPC ou double glissière), bande d'arrêt d'urgence (BAU), bornes d'appel tous les <strong>2 km</strong>, refuges tous les 2 km en moyenne (tous les km sans BAU). Voies numérotées <strong>V1</strong> (droite, la plus lente) à <strong>V4</strong> (gauche).</li>
+                <li><strong>Accès de service et de secours</strong> : réservés aux exploitants, dépanneurs, secours et forces de l'ordre ; ouverture prévue par <strong>convention SIS / exploitant</strong> (arrêté du 13/07/2022 sur le réseau concédé).</li>
+                <li><strong>Tunnel</strong> : toute route sous un ouvrage de couverture créant un espace confiné. Connaître les tunnels de son secteur (équipements, ventilation, surveillance) conditionne la réussite de l'intervention.</li>
+                <li><strong>Binôme COS – exploitant</strong> : intentions du COS et conseils techniques de l'exploitant sont partagés dans toute opération partagée.</li>
+                <li>La <strong>police de la circulation</strong> relève des forces de l'ordre (police ou gendarmerie), jamais des sapeurs-pompiers.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Le réseau routier public</summary>
+            <div class="rd-section">
+                <p>Plus de <strong>1,1 million de km</strong> de voies en France (environ 700 000 km de voies communales, 380 000 km de routes départementales, 20 000 km de routes nationales et autoroutes). Chaque réseau se reconnaît à son cartouche :</p>
+                <table class="rd-table">
+                    <tr><th>Réseau</th><th>Cartouche</th><th>Gestionnaire</th></tr>
+                    <tr><td>National (autoroutes, routes nationales)</td><td>A ou N, blanc sur rouge</td><td>État (DIR) ou société concessionnaire</td></tr>
+                    <tr><td>Départemental</td><td>D, noir sur jaune</td><td>Conseil départemental</td></tr>
+                    <tr><td>Territorial</td><td>T, blanc sur bleu</td><td>Collectivités (Corse, outre-mer)</td></tr>
+                    <tr><td>Métropolitain</td><td>M, blanc sur bleu</td><td>Métropole</td></tr>
+                    <tr><td>Communal</td><td>C, noir sur blanc</td><td>Commune</td></tr>
+                </table>
+                <p>Hors réseau concédé, la gestion d'une même route peut être « tronçonnée » entre plusieurs entités (État, département, commune).</p>
+        <figure class="rd-fig">
+            <img src="images/routier/voies-autoroute.webp" alt="Schéma d'une autoroute avec voies V1 à V4, bande d'arrêt d'urgence et refuge" loading="lazy">
+            <figcaption>Numérotation des voies (V1 à V4), BAU et refuge tous les 2 km.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/echangeur.webp" alt="Schéma d'un échangeur autoroutier avec le vocabulaire de l'environnement routier" loading="lazy">
+            <figcaption>Vocabulaire de l'environnement routier : bretelles, voies d'insertion et de décélération, échangeur.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2 · La route et sa signalisation</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/route-coupe.webp" alt="Coupe d'une route avec chaussée, accotements, terre-plein central et fossé" loading="lazy">
+            <figcaption>Les parties d'une route : voies, bande d'arrêt d'urgence, bande dérasée, terre-plein central, berme, fossé.</figcaption>
+        </figure>
+                <ul>
+                    <li><strong>Signalisation</strong> : par panneaux, feux, marquage, balisage, bornage, dispositifs de fermeture. Permanente, <strong>temporaire</strong> (marquages jaunes) ou dynamique (panneaux à message variable).</li>
+                    <li><strong>Mobilier urbain</strong> : barrières, glissières, bornes, éclairage… certains éléments sont alimentés en électricité ou par panneaux solaires.</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/marquages.webp" alt="Types de marquages au sol : lignes de guidage, de rive et de dissuasion avec leurs longueurs" loading="lazy">
+            <figcaption>Marquages : ligne de guidage T1 (3 m / 10 m) et ligne de BAU T4 (39 m / 13 m), repères utiles pour poser la signalisation d'urgence.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3 · Les ouvrages d'art : ponts et viaducs</summary>
+            <div class="rd-section">
+                <p>Ponts, viaducs, tunnels, murs anti-bruit, auvents de péage, portiques. Un pont comprend des <strong>fondations</strong>, des <strong>appuis</strong> (culées, piles) et un <strong>tablier</strong>. Hauteur libre sous un pont d'autoroute : <strong>4,75 m</strong> (4,30 m ailleurs, sauf exception signalée).</p>
+        <figure class="rd-fig">
+            <img src="images/routier/pont-structure.webp" alt="Schéma d'un pont avec tablier, travée, pile, culée, portée et tirant d'air" loading="lazy">
+            <figcaption>Structure d'un pont : tablier, travée, pile, culée.</figcaption>
+        </figure>
+                <div class="fod-cote-a-cote">
+                    <div class="rd-astuce"><strong>À poutres</strong><br>Poutres droites, efforts de flexion, réaction verticale sur les appuis.</div>
+                    <div class="rd-astuce"><strong>En arc / à voûtes</strong><br>Compression et flexion, effort oblique sur les culées ; voûtes en maçonnerie, portées faibles.</div>
+                    <div class="rd-astuce"><strong>Suspendu</strong><br>Tablier fixé à des câbles porteurs sur pylônes, traction horizontale sur les appuis.</div>
+                    <div class="rd-astuce"><strong>À haubans</strong><br>Pylônes en compression, haubans inclinés en traction.</div>
+                </div>
+        <figure class="rd-fig">
+            <img src="images/routier/pont-poutres.webp" alt="Schéma d'un pont à poutres" loading="lazy">
+            <figcaption>Pont à poutres.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/pont-arc.webp" alt="Schéma d'un pont en arc" loading="lazy">
+            <figcaption>Pont en arc.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/pont-suspendu.webp" alt="Schéma d'un pont suspendu" loading="lazy">
+            <figcaption>Pont suspendu.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/pont-haubans.webp" alt="Schéma d'un pont à haubans" loading="lazy">
+            <figcaption>Pont à haubans.</figcaption>
+        </figure>
+                <p><strong>Ponts mobiles</strong> : tournant, basculant, levant. <strong>Accident sur un ouvrage d'art</strong> : sécurisation renforcée si l'ouvrage est endommagé ou si les conditions deviennent périlleuses (véhicule en équilibre sur une rambarde, menace de chute) ; mobiliser au besoin une expertise (ingénieur ponts et chaussées, expert en stabilité).</p>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>4 · Les tunnels</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Définition</strong> : route ou chaussée sous un ouvrage de couverture créant un <strong>espace confiné</strong> (code de la voirie routière, art. R118-1-1).</li>
+                    <li><strong>Réglementation selon la longueur</strong> : seuils de <strong>200 à 300 m</strong> (instruction technique, code de la voirie routière) et <strong>500 m</strong> (directive européenne 2004/54/CE sur le réseau transeuropéen). Tunnels transfrontaliers (Mont-Blanc, Fréjus, Somport, Tende) : réglementations spécifiques.</li>
+                    <li><strong>Types</strong> : monotube à circulation unidirectionnelle ou bidirectionnelle, bitube (chaque tube à sens unique). Duplex A86 : monotube unidirectionnel superposé (cas unique).</li>
+                    <li><strong>200 à 300 m</strong> : deux niches de sécurité avec poste d'appel d'urgence (PAU) et extincteurs ; point d'eau à chaque tête si urbain.</li>
+                    <li><strong>Plus de 300 m</strong> : classement et exigences de sécurité (ci-dessous).</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/tunnel-reglementation.webp" alt="Schéma des seuils de réglementation des tunnels selon la longueur" loading="lazy">
+            <figcaption>Réglementation applicable selon la longueur du tunnel.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/tunnel-monotube-uni.webp" alt="Tunnel monotube à circulation unidirectionnelle" loading="lazy">
+            <figcaption>Tunnel monotube unidirectionnel.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/tunnel-monotube-bi.webp" alt="Tunnel monotube à circulation bidirectionnelle" loading="lazy">
+            <figcaption>Tunnel monotube bidirectionnel.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/tunnel-bitube.webp" alt="Tunnel bitube" loading="lazy">
+            <figcaption>Tunnel bitube : un sens de circulation par tube.</figcaption>
+        </figure>
+                <table class="rd-table">
+                    <tr><th>Équipement</th><th>À savoir</th></tr>
+                    <tr><td><strong>Évacuation et protection des usagers</strong></td><td>Aménagements tous les <strong>200 à 400 m</strong> (abris, galeries, communications entre tubes), portes coupe-feu (verrou fusible condamnable de l'intérieur)</td></tr>
+                    <tr><td><strong>Niches de sécurité</strong></td><td>Tous les 150 à 200 m : PAU et extincteurs. <strong>Elles ne protègent ni les usagers ni les sapeurs-pompiers</strong> des effets d'un incendie</td></tr>
+                    <tr><td><strong>Niches incendie</strong></td><td>Tous les 200 m : prises d'eau. Réserve d'eau minimale <strong>120 m³</strong> ; hydrants de 60 m³/h à 6 bar tous les 200 à 250 m, deux utilisables simultanément</td></tr>
+                    <tr><td><strong>Pour les secours</strong></td><td>Passages d'un tube à l'autre, galeries de retournement, garages, aires de stationnement en tête, hélisurface (tunnels de plus de 3 000 m difficiles d'accès), alimentation électrique des secours</td></tr>
+                    <tr><td><strong>Ventilation et désenfumage</strong></td><td>Obligatoire au-delà de 300 m (urbain), 500 m (non urbain), 1 000 m (faible trafic). Longitudinale (ventilateurs de plafond, tunnels unidirectionnels) ou transversale / semi-transversale ; quelques minutes pour atteindre le débit nominal</td></tr>
+                    <tr><td><strong>Radiocommunications</strong></td><td>Retransmission obligatoire (urbain ≥ 500 m, non urbain ≥ 800 m, hors faible trafic) ; les PAU ne remplacent pas la continuité radio</td></tr>
+                    <tr><td><strong>Surveillance</strong></td><td>D1 permanence simple, D2 permanence avec moyen d'action, D3 surveillance humaine non permanente, D4 surveillance humaine permanente (PCC ou CES), obligatoire pour les tunnels urbains de plus de 1 000 m et non urbains de plus de 3 000 m à trafic non faible</td></tr>
+                </table>
+        <figure class="rd-fig">
+            <img src="images/routier/tunnel-equipements.webp" alt="Schéma de synthèse des équipements de sécurité d'un tunnel routier" loading="lazy">
+            <figcaption>Équipements d'un tunnel : niches de sécurité et incendie, garages, passage d'un tube à l'autre, alimentation électrique pour les secours.</figcaption>
+        </figure>
+                <p>Une <strong>caractérisation locale</strong> par le SIS (population exposée, dangerosité de l'atmosphère, contexte opérationnel, risques particuliers comme la présence de TMD) permet une lecture rapide de chaque ouvrage.</p>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>5 · Les installations de recharge en énergie</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Distribution de carburants</strong> : stations ICPE, détection de vapeurs d'hydrocarbures asservie à la ventilation d'urgence et à l'arrêt d'urgence des distributeurs, extinction automatique, auvent.</li>
+                    <li><strong>Recharge électrique (IRVE)</strong> : circuit d'alimentation, borne, <strong>arrêt d'urgence</strong> (sur la borne, déporté ou général), coffret de pilotage. Bornes AC (3 à 22 kW, 5 à 10 h pour 80 %), bornes DC « destination » (24 à 50 kW) et « itinérance » (50 à 350 kW, 30 à 60 min).</li>
+                    <li><strong>Hydrogène</strong> : aire de stockage (semi-remorques à 200 bar sans arrêt d'urgence, ou à 300 bar avec arrêt d'urgence et fusibles thermiques), compression et stockage tampon (550 ou 975 bar), distribution à 350 et/ou 700 bar. Borne d'appel d'urgence pompiers dans les stations H₂.</li>
+                    <li><strong>Gaz naturel</strong> : GNC (compression, stockage tampon en bouteilles de 80 L à 220-300 bar, distribution) ; GNL (cryogénique à –160 °C, réservoirs de 80 m³, phénomène de « boil off gas »).</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/station-service.webp" alt="Schéma d'une station-service avec cuves, volucompteurs et récupérateur de vapeurs" loading="lazy">
+            <figcaption>Station-service : cuves enterrées, îlot de distribution, récupérateur de vapeurs, events.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/superchargeurs.webp" alt="Bornes de recharge rapide pour véhicules électriques" loading="lazy">
+            <figcaption>Bornes de recharge rapide (superchargeurs).</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/station-h2.webp" alt="Schéma d'une station de recharge hydrogène avec électrolyseur, stockage, compression et distribution" loading="lazy">
+            <figcaption>Station hydrogène : électrolyseur, stockage intermédiaire, compression, distribution.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>6 · Les acteurs</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Centres de réception des alertes et centres opérationnels</strong> : CTA, CRRA, CIC, COG, CODIS, COD, COZ, COGIC.</li>
+                    <li><strong>Exploitant</strong> : protège les intervenants par la signalisation, informe les usagers (PMV, radio 107.7), organise la circulation avec les forces de l'ordre, l'enlèvement des véhicules, l'évacuation du fret, la remise en état des lieux.</li>
+                    <li><strong>État</strong> : DIR (exploitation et entretien du réseau non concédé), DREAL / DRIEAT, concessionnaires d'autoroute (ASF, Escota, Sanef, APRR, Cofiroute…).</li>
+                    <li><strong>Collectivités</strong> : communes (voies communales), conseils départementaux (routes départementales).</li>
+                    <li><strong>Forces de l'ordre</strong> : mise en sécurité, restrictions de circulation, aide à la progression, enquête, <strong>rétablissement de la circulation décidé avec le COS et après avis de l'exploitant</strong>.</li>
+                    <li><strong>Experts</strong> : CETU (tunnels), CNPS (ponts de secours), sociétés de dépannage et de manutention.</li>
+                </ul>
+
+            </div>
+        </details>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Opérations de secours en milieu routier », DGSCGC/DSP/SDDRH/BDFE, 1<sup>re</sup> édition, juillet 2025. Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas et photographies © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/routier/GDO-Operations-milieu-routier-2025.pdf" target="_blank" rel="noopener">GDO Opérations de secours en milieu routier (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-routier-vehicules" class="module" style="--jsp: #F97316;">
+        <button class="back-btn" onclick="showModule('gdo-routier-menu')">← Retour GDO routier</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🚗 Véhicules et énergies</h2>
+        <p style="text-align: center;">Chapitre 1 du guide : conception d'un véhicule, éléments de sécurité, motorisations (thermique, gaz, électrique, hydrogène, hybride), système haute tension, batteries et transport de matières dangereuses.</p>
+        <div class="rd-alerte"><strong>Identifier l'énergie dès l'appel.</strong> L'énergie figure à la rubrique <strong>P3</strong> de la carte grise (ou s'obtient auprès de la police ou de la gendarmerie avec l'immatriculation). Logos de carburant (E5, E10, B7, LPG, CNG, LNG, H₂) et <strong>câbles orange</strong> = haute tension. En cas de doute : <strong>FAD</strong> du véhicule.</div>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Trois zones</strong> d'un véhicule léger : avant et arrière <strong>déformables</strong>, habitacle <strong>cellule de survie</strong> renforcée (aciers HLE, THLE, UHLE jusqu'à 7 à 10 fois plus résistants qu'un acier doux : couper avec le cœur de l'outil, à faible vitesse).</li>
+                <li><strong>Airbags</strong> : l'ECU, alimenté par la batterie 12 V, est le seul à commander airbags et prétensionneurs. <strong>Couper le contact ou débrancher la batterie 12 V rend le système inerte</strong>. Si la batterie n'est pas débranchée, sectionner un faisceau avec les fils d'un générateur de gaz peut le déclencher (court-circuit).</li>
+                <li><strong>Gaz carburant</strong> : réservoirs GPL-c (≤ 10 bar, rempli à 80 %), GNC (200 à 250 bar), GNL (–160 °C), H₂ (350 ou 700 bar). Chaque réservoir a ses dispositifs de sécurité : soupape, thermo-fusible ou <strong>TPRD vers 110 °C</strong>.</li>
+                <li><strong>Haute tension</strong> : jusqu'à 800 V, composants et câbles <strong>orange</strong> ; coupée automatiquement au contact coupé, sur choc ou sur fuite haute tension. Certains constructeurs enveloppent les câbles d'une <strong>gaine noire</strong>.</li>
+                <li><strong>Rétrofit</strong> : un véhicule d'apparence thermique peut rouler à l'électricité ou à l'hydrogène (identification difficile, pas de FAD, pas de sécurité tertiaire).</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Types de véhicules et structure</summary>
+            <div class="rd-section">
+                <p>Classement par poids puis usage : <strong>VL</strong> (PTAC ≤ 3,5 t, au moins 4 roues), <strong>VUL</strong>, <strong>PL</strong> (PTAC &gt; 3,5 t, cabine avancée ou semi-avancée), véhicules de <strong>transport en commun</strong> (bus : station debout, pas de soute ; car : station assise, soute et parfois couchette ; BHNS / « Trambus »), cycles motorisés, remorques et caravanes (carte grise propre au-delà de 500 kg de PTAC), engins agricoles (jusqu'à 60 km/h) et de chantier (flux hydraulique sous pression), EDPM (annexes).</p>
+                <p>Les <strong>cabines de PL</strong> comportent une zone renforcée en H (traverse de tableau de bord), reliée par 4 fixations, et des renforts de plancher ; la <strong>plaque de tare</strong> renseigne sur la masse et le chargement.</p>
+        <figure class="rd-fig">
+            <img src="images/routier/vehicule-parties.webp" alt="Vocabulaire des parties d'un véhicule léger" loading="lazy">
+            <figcaption>Le vocabulaire de la carrosserie est commun à tous les véhicules.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/vehicule-cellule.webp" alt="Cellule de survie d'un véhicule : zones de déformation programmée à l'avant et à l'arrière" loading="lazy">
+            <figcaption>Cellule de survie protégeant les passagers entre deux zones de déformation programmée.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/vehicule-aciers.webp" alt="Structure d'un véhicule avec les types d'acier codés par couleur" loading="lazy">
+            <figcaption>Structure d'un véhicule : l'emplacement des zones renforcées figure sur la FAD.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2 · Les vitrages</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Verre trempé</strong> (vitres latérales, lunette arrière) : se brise en petits morceaux, moins blessant.</li>
+                    <li><strong>Verre feuilleté</strong> (pare-brise obligatoire, parfois toit ouvrant et vitres latérales) : deux verres collés par un film PVB, les éclats restent collés ; il demande une scie sabre ou manuelle.</li>
+                    <li><strong>Marquage ECE R43</strong> sur le vitrage : type de verre, fabricant, pays d'homologation (E1 Allemagne, E2 France, E3 Italie, E4 Pays-Bas, E6 Belgique, E9 Espagne, E11 Royaume-Uni), date de fabrication.</li>
+                    <li><strong>Masque FFP2 au minimum</strong> pour sauveteurs et victimes lors de la découpe des vitrages et des matériaux pouvant produire des poussières.</li>
+                    <li><strong>QR code</strong> constructeur (vitrages, trappe de carburant) : accès direct à la FAD par smartphone.</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/vitrage-lateral.webp" alt="Schéma des vitrages en verre trempé d'un véhicule : vitres de porte et lunette arrière" loading="lazy">
+            <figcaption>Verre trempé : vitres de porte et lunette arrière.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/vitrage-pare-brise.webp" alt="Schéma des vitrages en verre feuilleté d'un véhicule : pare-brise et vitres de porte" loading="lazy">
+            <figcaption>Verre feuilleté : pare-brise et, selon les modèles, vitres de porte.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/qr-code.webp" alt="QR code sur le pare-brise permettant d'ouvrir la FAD sur un smartphone" loading="lazy">
+            <figcaption>QR code sur le pare-brise : accès immédiat à la FAD.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3 · Les éléments de sécurité active, passive et tertiaire</summary>
+            <div class="rd-section">
+                <table class="rd-table">
+                    <tr><th>Type</th><th>Éléments</th></tr>
+                    <tr><td><strong>Active (primaire)</strong> : éviter l'accident</td><td>ABS, AFU, AEB (freinage automatique d'urgence), ESP, AFIL, régulateur et limiteur de vitesse, contrôle des angles morts</td></tr>
+                    <tr><td><strong>Passive (secondaire)</strong> : protéger les occupants</td><td>Ceintures avec <strong>prétensionneurs</strong> (à pyrotechnie) et limiteurs d'effort, <strong>airbags</strong> (se gonflent en moins de 30 ms, dès 25 km/h ; générateur pyrotechnique ou à gaz froid ; la fumée n'est pas un départ d'incendie), airbag piéton, airbag moto (reste gonflé une dizaine de secondes), capot actif, appuis-tête, arceaux, sièges</td></tr>
+                    <tr><td><strong>Tertiaire</strong> : aider les secours</td><td><strong>eCall</strong> (112 obligatoire sur les nouveaux modèles homologués après le 31/03/2018), QR code secours, <strong>trappe thermo-fusible / Fireman Access</strong> pour noyer la batterie HT, étiquette de mode d'isolement de l'énergie</td></tr>
+                </table>
+                <p>En cas de feu de véhicule, les générateurs de gaz se déclenchent de façon sécurisée vers <strong>180 à 220 °C</strong>.</p>
+        <figure class="rd-fig">
+            <img src="images/routier/ceintures.webp" alt="Schéma des ceintures de sécurité et des enrouleurs avec prétensionneurs" loading="lazy">
+            <figcaption>Ceintures de sécurité et enrouleurs : se référer à la FAD pour l'emplacement des prétensionneurs.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/airbags.webp" alt="Schéma de l'emplacement des airbags d'un véhicule" loading="lazy">
+            <figcaption>Les airbags : le nombre et le type dépendent du véhicule.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/capot-actif.webp" alt="Schéma d'un capot actif ou d'un airbag piéton avec capteur, générateur de gaz et piston" loading="lazy">
+            <figcaption>Capot actif : un piston relève l'arrière du capot pour limiter la gravité des blessures à la tête.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/ecall-schema.webp" alt="Schéma du fonctionnement de l'eCall 112 : plateforme, centre de réception des appels, assistance" loading="lazy">
+            <figcaption>eCall : appel automatique ou manuel avec transmission du MSD, filtrage de la plateforme, puis centre 112 ou assistance.</figcaption>
+        </figure>
+                <p>Le <strong>MSD</strong> transmis par l'eCall comprend : type d'appel (automatique ou manuel), date et heure, numéro VIN, <strong>type d'énergie</strong> (essence, diesel, GNC, GPL, électrique, hydrogène), position GPS, direction et deux dernières positions.</p>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>4 · Les motorisations</summary>
+            <div class="rd-section">
+                <h3>Thermique</h3>
+                <ul>
+                    <li><strong>Essence / gazole</strong> : batterie plomb 12 V ; logos E5, E10, E85, B7, B10, XTL.</li>
+                    <li><strong>GPL-c</strong> (propane et butane) : bi-carburation, réservoir métallique de 30 à 150 L (cylindrique, torique ou polyforme) souvent dans le coffre ou sous le châssis, orifice de remplissage à bille, <strong>polyvanne</strong> (limite à 80 %, limite le débit en cas de rupture, clapet anti-retour), soupape tarée à 27 bar, parfois thermo-fusible à 110 °C, deux électrovannes (fermées contact coupé).</li>
+                    <li><strong>GNV</strong> : GNC (97 % de méthane, odorisé, 200 à 250 bar, mono-carburation surtout pour les flottes de bus), GNL (–160 °C, ×600 en volume, saturé à environ –130 °C et 8 bar au moteur, soupapes à 16 et 24 bar). Sécurités : disque de rupture, fusible thermique (110 °C), TPRD, électrovanne, vanne manuelle. Sur la carte grise : « GN » pour GNC et GNL.</li>
+                    <li><strong>Moteur thermique à hydrogène</strong> (H2 sur la carte grise) : à ne pas confondre avec la pile à combustible.</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/gpl-schema.webp" alt="Schéma de principe d'un circuit GPL avec réservoir, polyvanne, électrovannes, détendeur et bloc moteur" loading="lazy">
+            <figcaption>Circuit GPL : réservoir, polyvanne, clapet anti-retour, soupape, électrovannes, détendeur.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/gpl-reservoir.webp" alt="Réservoir GPL torique dans l'emplacement de la roue de secours" loading="lazy">
+            <figcaption>Réservoir GPL torique, souvent à la place de la roue de secours.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/gpl-composants.webp" alt="Composants d'un véhicule GPL numérotés : orifice, réservoir, soupape, canalisation, détendeur, injection" loading="lazy">
+            <figcaption>Composants d'un véhicule GPL.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/gnc-composants.webp" alt="Équipements spécifiques d'un véhicule GNC : réservoirs, vanne manuelle, régulateur de pression" loading="lazy">
+            <figcaption>Équipements d'un véhicule GNC.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/gnl-reservoir.webp" alt="Réservoir cryogénique de GNL sur un poids lourd avec raccord de remplissage" loading="lazy">
+            <figcaption>Réservoir cryogénique de GNL d'un poids lourd.</figcaption>
+        </figure>
+                <h3>Électrique, pile à combustible, hybride</h3>
+                <ul>
+                    <li><strong>Électrique (EV)</strong> : deux tensions simultanées, basse tension pour les organes secondaires et <strong>haute tension continue</strong> pour la traction (distribution <strong>orange</strong>). Pas de pot d'échappement, trappe de charge ou logo spécifique. Les trolleybus (caténaire) n'ont pas de batterie de traction.</li>
+                    <li><strong>Pile à combustible (FCV)</strong> : électricité produite à bord, hydrogène à 350 ou 700 bar dans des réservoirs composites (arrière, sous les sièges, toit des bus), <strong>TPRD vers 110 °C</strong> avec rejet bruyant orienté vers le bas, détecteur d'H₂ qui coupe l'alimentation. Composants haute tension de 200 à 650 V. Carte grise : HH (pile), HE (pile rechargeable), H2 (moteur thermique H₂).</li>
+                    <li><strong>Hybride</strong> : micro-hybride 48 V (« mild hybrid »), hybride non rechargeable (HEV), hybride rechargeable (PHEV, 20 à 60 km d'autonomie électrique).</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/ve-composants.webp" alt="Véhicule électrique avec trappe de recharge et batterie haute tension" loading="lazy">
+            <figcaption>Véhicule électrique : trappe de recharge et batterie haute tension.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/pac-schema.webp" alt="Pile à combustible et cellule d'un véhicule à hydrogène" loading="lazy">
+            <figcaption>Pile à combustible et cellule.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/h2-reservoirs.webp" alt="Réservoirs d'hydrogène d'un véhicule léger avec dispositif de décompression et valve" loading="lazy">
+            <figcaption>Réservoirs d'hydrogène et dispositif de décompression (TPRD).</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/bus-h2.webp" alt="Implantation des composants d'un bus à hydrogène" loading="lazy">
+            <figcaption>Bus à hydrogène : pile à combustible, batteries HT, réservoirs sur le toit.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>5 · Le système haute tension</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/hybride-composants.webp" alt="Système haute tension d'un véhicule hybride avec batterie, câbles orange et plug service" loading="lazy">
+            <figcaption>Système haute tension d'un hybride : batterie HT, câbles orange, transmission, prise de recharge, plug service.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/composants-ht.webp" alt="Composants haute tension d'un véhicule électrique numérotés" loading="lazy">
+            <figcaption>Composants haute tension d'un véhicule électrique.</figcaption>
+        </figure>
+                <ul>
+                    <li><strong>Batterie HT</strong> : modules de cellules (souples, cylindriques ou prismatiques) dans un <strong>casing</strong> acier ou aluminium, installée dans le coffre, sous les sièges, la console ou le plancher. L'emplacement figure sur la FAD, ainsi que la <strong>trappe thermo-fusible</strong> éventuelle.</li>
+                    <li><strong>Technologies</strong> : lithium-ion (référence, remplacée vers 70 % de capacité après 8 à 10 ans), nickel-cadmium (interdit), Zebra « batterie chaude » (270 à 350 °C), nickel-métal hydrure, <strong>lithium-métal polymère</strong> (60 à 80 °C, feu violent, projections de métal en fusion, réaction violente à l'eau), batterie tout solide (prototype).</li>
+                    <li><strong>Autres composants</strong> : inverseur/convertisseur, convertisseur DC/DC (charge la batterie 12 V), transmission / boîte-pont (jusqu'à 650 V), compresseur de climatisation, chargeur embarqué, réchauffeur.</li>
+                    <li><strong>Charge</strong> : prise de charge, chargeur embarqué (AC vers DC), câbles orange.</li>
+                    <li>La caisse du véhicule est isolée des composants HT : <strong>elle peut être touchée sans danger</strong> en conditions normales.</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/batterie-li.webp" alt="Batterie lithium-ion d'un véhicule électrique avec ses modules" loading="lazy">
+            <figcaption>Batterie de traction lithium-ion (modules et casing).</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/cable-ht.webp" alt="Câble d'alimentation haute tension d'un véhicule hybride" loading="lazy">
+            <figcaption>Câble d'alimentation haute tension.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/gaine-noire.webp" alt="Câbles orange enveloppés d'une gaine noire dans un véhicule accidenté" loading="lazy">
+            <figcaption>Certains constructeurs enveloppent les câbles orange d'une gaine noire : identification plus difficile.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>6 · Le transport de matières dangereuses (TMD)</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Définition</strong> : une marchandise dangereuse présente des risques pour l'homme, les biens ou l'environnement. Transport routier régi par l'<strong>ADR</strong> et l'arrêté TMD.</li>
+                    <li><strong>Plaques oranges</strong> (40 × 30 cm) : <strong>code danger</strong> en haut (1<sup>er</sup> chiffre = danger principal, 2<sup>e</sup> et 3<sup>e</sup> = dangers secondaires ou intensification) et <strong>code ONU</strong> à 4 chiffres en bas ; plaque vierge pour colis ou matières différentes.</li>
+                    <li><strong>Chiffres</strong> : 1 explosibles, 2 gaz, 3 liquides inflammables, 4 solides inflammables, 5 comburants / peroxydes, 6 toxiques, 7 radioactifs, 8 corrosifs, 9 divers. Chiffre doublé = danger amplifié (sauf 22 gaz réfrigéré, 44 solide fondu, 99 transporté à chaud, 333 pyrophorique) ; <strong>X</strong> devant : réaction violente avec l'eau.</li>
+                    <li><strong>Exemptions</strong> : quantités limitées (marque QL), colis (plaque vierge + étiquette si &gt; 3 t d'une même classe). Dérogation : camion-citerne multi-cuves de carburants avec la seule plaque 33/1203.</li>
+                    <li><strong>Document de transport</strong> : n° ONU, désignation officielle, étiquettes, nombre de colis, quantité, destinataire, consignes écrites de sécurité. Étiquettes ADR et pictogrammes CLP (dangers physiques, pour la santé, pour l'environnement).</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/adr-etiquettes.webp" alt="Étiquettes de danger de l'ADR par classe" loading="lazy">
+            <figcaption>Étiquettes de danger de l'ADR.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/clp-pictogrammes.webp" alt="Pictogrammes du règlement CLP avec leur signification" loading="lazy">
+            <figcaption>Pictogrammes du règlement CLP.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Opérations de secours en milieu routier », DGSCGC/DSP/SDDRH/BDFE, 1<sup>re</sup> édition, juillet 2025. Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas et photographies © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/routier/GDO-Operations-milieu-routier-2025.pdf" target="_blank" rel="noopener">GDO Opérations de secours en milieu routier (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-routier-risques" class="module" style="--jsp: #F97316;">
+        <button class="back-btn" onclick="showModule('gdo-routier-menu')">← Retour GDO routier</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>⚠️ Dangers et risques</h2>
+        <p style="text-align: center;">Chapitre 2 du guide : incendie de véhicule (gaz, batteries haute tension, alliages, pneus…), incendie de tunnel, mécanismes d'accident, types de victimes et autres dangers.</p>
+        <div class="rd-alerte"><strong>Danger principal : l'utilisation d'un véhicule.</strong> Le risque dépend du comportement des usagers, du nombre et du type de véhicules, de la localisation, de la météo, d'une défaillance technique (désenfumage, ouvrage) et de facteurs aggravants (ligne électrique, climat social). <strong>Le sur-accident est un des principaux risques</strong> : balisage prioritaire.</div>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Gaz</strong> : deux risques, la <strong>torchère</strong> (jusqu'à 15 m) et la <strong>rupture du réservoir</strong> (BLEVE pour GPL-c et GNL : éclats jusqu'à 100 m, boule de feu de 30 m pendant 3 s, surpression jusqu'à 120 m pour 50 L de GPL ; effets létaux jusqu'à 750 m pour un poids lourd).</li>
+                <li><strong>Torchère</strong> : soupape sur véhicule sur ses roues = torchère gazeuse <strong>cyclée</strong> ; sur le toit = torchère liquide <strong>continue</strong> ; thermo-fusible ou TPRD = torchère <strong>continue</strong> (un réservoir GNC ou H₂ se vide en environ 3 minutes). Orientation en général –45° à +45° vers l'arrière. <strong>La flamme d'hydrogène est invisible de jour : utiliser la caméra thermique.</strong></li>
+                <li><strong>Batterie HT</strong> : emballement thermique en <strong>20 à 30 minutes</strong>, combustion de plusieurs heures, <strong>risque de réinflammation au-delà de 24 h</strong>, gaz toxiques (fluorure d'hydrogène, acide chlorhydrique).</li>
+                <li><strong>Alliages</strong> (aluminium, magnésium) : réaction violente à l'eau avec projection de métal en fusion. <strong>Pneus, vérins de capot et de coffre</strong> : effets missiles, parfois à retardement. <strong>Gaz toxiques</strong> (condensateurs, rétroviseurs électro-chromatiques, gaz frigorigènes).</li>
+                <li><strong>Tunnel</strong> : l'incendie de poids lourd est l'événement le plus redouté ; gaz = confinement et réflexion des effets sur les parois.</li>
+                <li><strong>La recherche du mécanisme de l'accident reste primordiale</strong> pour identifier les lésions, quel que soit l'état du véhicule.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Incendie : présence d'un gaz comme carburant</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/torchere.webp" alt="Torchère de gaz enflammée sur un véhicule" loading="lazy">
+            <figcaption>Torchère sur un véhicule gaz : le gaz s'enflamme en sortie de soupape, thermo-fusible ou TPRD.</figcaption>
+        </figure>
+                <ul>
+                    <li>Les dispositifs de sécurité des réservoirs de gaz naturel comprimé se déclenchent <strong>au-delà de 110 °C</strong>, après quelques minutes ; leur déclenchement est <strong>définitif</strong> (tout le gaz s'évacue) et ils empêchent l'éclatement. Le rejet est très bruyant.</li>
+                    <li><strong>Éclatement</strong> : exposition à la chaleur (BLEVE pour les gaz liquéfiés) ou choc mécanique. Des essais montrent que des lances à <strong>250 L/min</strong> en jet droit puis diffusé d'attaque ne fragilisent pas l'enveloppe.</li>
+                    <li><strong>Vigilance</strong> : bouteilles de gaz dans les camping-cars et utilitaires ; la présence de dispositifs de sécurité sur un réservoir GPL-c n'exclut pas totalement le risque.</li>
+                </ul>
+                <table class="rd-table">
+                    <tr><th>Situation (réservoir GPL-c)</th><th>Incidence</th><th>Risque</th></tr>
+                    <tr><td>Véhicule retourné ou couché</td><td>Soupape dans la phase liquide : pas de baisse de température après ouverture</td><td>BLEVE</td></tr>
+                    <tr><td>Manque de liquide dans le réservoir</td><td>Partie haute fragilisée : le réservoir s'ouvre avant la soupape</td><td>Rupture d'enveloppe*</td></tr>
+                    <tr><td>Réservoir cylindrique, débit de soupape insuffisant</td><td>La pression augmente sans ouvrir la soupape</td><td>Rupture d'enveloppe*</td></tr>
+                    <tr><td>Réservoir en espace clos (coffre, caisse d'utilitaire)</td><td>La torchère fait monter vite température et pression</td><td>Rupture d'enveloppe*</td></tr>
+                </table>
+                <p>* Effets thermiques du BLEVE, sans les effets mécaniques.</p>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2 · Incendie : batteries haute tension et autres dangers du véhicule</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/emballement-schema.webp" alt="Schéma des causes et de l'enchaînement de l'emballement thermique d'une batterie" loading="lazy">
+            <figcaption>Emballement thermique : choc, surcharge, court-circuit ou température élevée, réaction de la cathode, gaz et fumées, explosion.</figcaption>
+        </figure>
+                <p><strong>Signes d'un emballement thermique</strong> : crépitements, bruit de gaz sous pression proche d'une torchère, fumées plus épaisses, flammes plus claires et plus vives, élévation de température, feu entretenu, flux rayonné important. Un emballement est comparable à une <strong>fuite de gaz enflammée</strong>.</p>
+                <p>Batteries <strong>lithium-métal polymère (LMP)</strong> : feu violent, très fumigène, flammes colorées, projections de métal en fusion à plusieurs mètres, explosions en cas de projection d'eau.</p>
+        <figure class="rd-fig">
+            <img src="images/routier/explosion-vl.webp" alt="Incendie de véhicule en pleine rue avec projections" loading="lazy">
+            <figcaption>Véhicule en feu : projections et effets missiles possibles.</figcaption>
+        </figure>
+                <table class="rd-table">
+                    <tr><th>Danger</th><th>À retenir</th></tr>
+                    <tr><td><strong>Alliages</strong></td><td>Aluminium et magnésium (carters, jantes…) : réaction violente avec l'eau, projection de métaux en fusion</td></tr>
+                    <tr><td><strong>Ultra-capacités</strong> (« Start and stop »)</td><td>Écrasement : dégagement d'acétonitrile, gaz toxique et inflammable ; souvent dans l'aile avant gauche ou près du plancher</td></tr>
+                    <tr><td><strong>Pneumatiques</strong></td><td>Éclatement dangereux voire mortel (souffle, effets missiles), à retardement ou après extinction ; pyrolyse à 430 °C ; attention aux engins lourds</td></tr>
+                    <tr><td><strong>Vérins hydrauliques</strong></td><td>Projetés à grande vitesse en cas de feu ; éviter de les sectionner</td></tr>
+                    <tr><td><strong>Rétroviseurs électro-chromatiques</strong></td><td>Liquide électrolytique irritant (peau, yeux, voies respiratoires)</td></tr>
+                    <tr><td><strong>Systèmes d'extinction automatique</strong></td><td>Cartouche sous pression (argon…) sous une aile avant, sur bus et voitures</td></tr>
+                    <tr><td><strong>Matériaux</strong></td><td>Potentiel calorifique et concentration d'éléments chimiques en hausse sur les véhicules récents</td></tr>
+                </table>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3 · Incendies de tunnels</summary>
+            <div class="rd-section">
+                <p>Espace confiné : les conséquences sont aggravées. Puissance thermique : <strong>2 à 8 MW</strong> pour un VL, <strong>30 à 100 MW</strong> pour un poids lourd, <strong>200 MW</strong> pour un PL de matières dangereuses (20 à 40 m³/s de fumée pour un VL, 40 à 90 pour un PL, 90 à 300 pour un PL de TMD).</p>
+                <ul>
+                    <li><strong>Fumées</strong> : opaques et handicapantes, toxiques (toxicité croissante), chaleur (« effet de four » de 1 000 à 1 200 °C) pouvant détruire les équipements et faire chuter des objets fixés au plafond.</li>
+                    <li><strong>Vitesse d'évacuation des usagers</strong> : 3,6 km/h (cas courant), 1,8 km/h (visibilité dégradée), 1 km/h (absence de visibilité). Un « mur de fumées » peut dépasser 10 km/h (14,4 km/h au Mont-Blanc).</li>
+                    <li>Fumées sans courant d'air : couche plaquée sous la voûte, propagation symétrique à 1 à 2 m/s (jusqu'à 3 m/s pour un PL chargé, 4 m/s pour un PL de TMD) ; <strong>retour de nappe</strong> (backlayering) sous la vitesse critique ; la pente crée un effet cheminée.</li>
+                    <li>Auto-inflammation possible de véhicules jusqu'à plusieurs centaines de mètres.</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/fumees-sans-courant.webp" alt="Propagation symétrique des fumées dans un tunnel sans courant d'air longitudinal" loading="lazy">
+            <figcaption>Sans courant d'air ni pente : propagation symétrique des fumées.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/fumees-retour-nappe.webp" alt="Phénomène de retour de nappe des fumées dans un tunnel avec le positionnement d'un véhicule de secours" loading="lazy">
+            <figcaption>Retour de nappe : la couche de fumées revient vers le foyer et occupe tout l'espace du tunnel.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/fumees-pente.webp" alt="Comportement des fumées dans un tunnel en pente selon le sens et la force du courant d'air" loading="lazy">
+            <figcaption>Comportement des fumées en pente selon le courant d'air (a à d).</figcaption>
+        </figure>
+                <ul>
+                    <li><strong>Selon l'énergie</strong> : véhicules électriques et hybrides = difficulté à maîtriser l'incendie, eau nécessaire, évacuation de l'ouvrage retardée (risque de reprise de feu, réticence des dépanneurs) ; véhicules au gaz = réflexion des torchères et amplification des explosions par les parois, confinement du gaz en cas de fuite.</li>
+                    <li>Connaître l'<strong>heure de début</strong> de l'événement et l'énergie du véhicule ; vigilance aux <strong>effets domino</strong> (plusieurs énergies dans un même ouvrage).</li>
+                    <li>Dégâts à la structure : voûte fragilisée, dalle de ventilation, portes, sas, chute d'équipements.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>4 · Les accidents de la circulation</summary>
+            <div class="rd-section">
+                <p>En 2023 en France : 3 398 personnes tuées et 235 000 blessées dans 51 641 accidents.</p>
+                <table class="rd-table">
+                    <tr><th>Mécanisme</th><th>Indicateurs de gravité</th></tr>
+                    <tr><td><strong>Choc frontal</strong></td><td>Airbags frontaux, déformation des montants avant, intrusion d'une roue, victime coincée par le volant ou le tableau de bord</td></tr>
+                    <tr><td><strong>Choc latéral</strong></td><td>Le plus létal pour les passagers (hors enfants en siège auto) ; abord du côté opposé si possible ; airbags latéraux ou rideaux, déformation du montant central</td></tr>
+                    <tr><td><strong>Choc arrière</strong></td><td>Lésions cervicales, crâniennes ou dorsales ; environ 11,6 % des accidents corporels ; déformation possible même à faible vitesse</td></tr>
+                    <tr><td><strong>Retournement</strong></td><td>Pavillon intact ou déformé ; pas forcément une grande cinétique : rechercher tonneaux, éjection, airbags</td></tr>
+                    <tr><td><strong>Encastrement</strong></td><td>Sous un poids lourd sans barre anti-encastrement, contre un arbre ou un poteau ; stabilisation et décompression</td></tr>
+                    <tr><td><strong>Écrasement</strong></td><td>Calage particulier, plusieurs dispositifs de stabilisation</td></tr>
+                    <tr><td><strong>Sur-accident</strong></td><td>Carambolage typique des autoroutes ; prévention par le balisage</td></tr>
+                </table>
+        <figure class="rd-fig">
+            <img src="images/routier/choc-frontal.webp" alt="Véhicule accidenté après un choc frontal de nuit avec des sapeurs-pompiers qui prennent en charge les victimes" loading="lazy">
+            <figcaption>Choc frontal : déformation du compartiment moteur et des renforts de l'habitacle.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/choc-lateral.webp" alt="Véhicule accidenté après un choc latéral" loading="lazy">
+            <figcaption>Choc latéral : l'habitacle subit le plus de déformation.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/choc-arriere.webp" alt="Véhicule accidenté après un choc par l'arrière" loading="lazy">
+            <figcaption>Choc arrière : atteintes cervicales, crâniennes ou dorsales.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/retournement.webp" alt="Véhicule retourné sur le toit de nuit pris en charge par les secours" loading="lazy">
+            <figcaption>Retournement : rechercher des indicateurs de cinétique.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/encastrement.webp" alt="Véhicule encastré sous un poids lourd avec des sapeurs-pompiers en désincarcération" loading="lazy">
+            <figcaption>Encastrement sous un poids lourd.</figcaption>
+        </figure>
+                <h3>Les victimes</h3>
+                <ul>
+                    <li><strong>Automobilistes</strong> : <strong>accessibles</strong> (pourraient sortir seuls mais ne le peuvent pas à cause d'un traumatisme), <strong>incarcérés</strong> (déformation du véhicule nécessitant des outils de désincarcération, indépendamment de la gravité), <strong>éjectés</strong> (à associer à un critère de gravité).</li>
+                    <li><strong>Piétons</strong> : fractures des membres inférieurs ou du bassin à l'impact, puis chute souvent sur la tête (cervicales).</li>
+                    <li><strong>Deux-roues</strong> : surtout éjectés, parfois incarcérés ; fracture bilatérale des fémurs typique ; l'équipement de protection complexifie l'examen.</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/pieton.webp" alt="Silhouettes d'un adulte et d'un enfant entre deux véhicules illustrant la collision avec un piéton" loading="lazy">
+            <figcaption>Collision avec un piéton : la localisation des lésions dépend de la taille de la victime et du véhicule.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>5 · Les autres risques et dangers</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Fuite non enflammée sur un réservoir</strong> : danger lié au produit (inflammabilité, toxicité, densité, plage d'explosivité), à la localisation (coffre pire qu'à l'extérieur) et à l'environnement.</li>
+                    <li><strong>Déversement d'électrolyte</strong> : la batterie de traction est conçue pour résister aux chocs, mais une rupture d'enveloppe n'est pas exclue (électrolytes gélifiés ou secs sur certaines batteries).</li>
+                    <li><strong>Gaz frigorigène</strong> : certains sont très inflammables et toxiques en cas d'incendie (notamment sur les bus) ; conserver l'intégrité du circuit de climatisation (FAD).</li>
+                    <li><strong>Charge transportée</strong> : TMD (incendie, nuage toxique, explosion, corrosion, pollution des sols et des eaux), animaux, fret.</li>
+                    <li>Autres : chute de poteaux avec risque électrique, détérioration de coffret à gaz, feu de végétation.</li>
+                </ul>
+
+            </div>
+        </details>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Opérations de secours en milieu routier », DGSCGC/DSP/SDDRH/BDFE, 1<sup>re</sup> édition, juillet 2025. Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas et photographies © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/routier/GDO-Operations-milieu-routier-2025.pdf" target="_blank" rel="noopener">GDO Opérations de secours en milieu routier (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-routier-securite" class="module" style="--jsp: #F97316;">
+        <button class="back-btn" onclick="showModule('gdo-routier-menu')">← Retour GDO routier</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🦺 Sécurité des intervenants</h2>
+        <p style="text-align: center;">Chapitre 3 et chapitre 5 (zonage) du guide : protection des personnels, arrivée sur les lieux, zonage et signalisation temporaire d'urgence, désincarcération.</p>
+        <div class="rd-alerte"><strong>La régulation de la circulation incombe aux forces de l'ordre, pas aux sapeurs-pompiers.</strong> En revanche, la <strong>signalisation temporaire d'urgence</strong> est mise en place par le SIS pour sécuriser la zone, puis <strong>remplacée dans son intégralité et au plus vite</strong> par l'exploitant sur un réseau concédé ou routier.</div>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>EPI haute visibilité</strong> en complément des autres EPI. Descendre de l'engin <strong>côté opposé à la circulation</strong> après s'être assuré qu'elle le permet ; <strong>vigie (sonnette)</strong> face à la circulation ; déplacement seul de préférence <strong>derrière les glissières</strong>.</li>
+                <li><strong>Arrivée</strong> : réduire progressivement la vitesse, clignotants, avertisseurs lumineux maintenus, se placer du <strong>même côté</strong> que les engins déjà engagés, <strong>engins guidés</strong> en manœuvre, <strong>roues braquées</strong> à l'opposé du flux à l'arrêt.</li>
+                <li><strong>Zonage en trois zones</strong> : exclusion (rouge), contrôlée (orange), soutien (verte). Sur route : <strong>zone d'approche, zone tampon, zone de travail, zone de stationnement</strong>.</li>
+                <li><strong>Pas plus de 2 flèches lumineuses d'urgence (FLU) simultanées</strong> (gestionnaires et sapeurs-pompiers confondus).</li>
+                <li><strong>Feu de véhicule : zonage a priori de 50 m.</strong> Arrimage et stabilisation avant tout engagement dans un véhicule instable ; <strong>dégarnissage obligatoire</strong> avant toute désincarcération sur la zone travaillée.</li>
+                <li><strong>Désengagement</strong> coordonné, avec l'appui des forces de l'ordre ; retrait de la signalisation dans le sens inverse de la pose ; une fois l'opération finie, le code de la route s'applique sans dérogation.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Arrivée, zonage et signalisation d'urgence</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/signalisation-flu.webp" alt="Véhicule de secours avec flèche lumineuse d'urgence affichant ACCIDENT et un sapeur-pompier posant un panneau" loading="lazy">
+            <figcaption>Signalisation d'urgence : flèche lumineuse d'urgence et panneaux de danger.</figcaption>
+        </figure>
+                <p>Le zonage doit être <strong>visible, compréhensible, adapté au danger et sans équivoque</strong>. Il tient compte des caractéristiques de la voie (largeur, vitesse), de l'importance et de la durée de l'opération, de la visibilité (virages, bosses, brouillard, nuit), du trafic, de la météo et de la vitesse réelle des usagers.</p>
+        <figure class="rd-fig">
+            <img src="images/routier/zonage-routier-coupe.webp" alt="Schéma du zonage opérationnel sur route avec zone d'approche, zone tampon, zone de travail et zone de stationnement" loading="lazy">
+            <figcaption>Zonage routier : zone d'approche (pré-signalisation), zone tampon, zone de travail, zone de stationnement.</figcaption>
+        </figure>
+                <table class="rd-table">
+                    <tr><th>Zone</th><th>Rôle</th></tr>
+                    <tr><td><strong>Approche / pré-signalisation</strong></td><td>Avertir les usagers qu'ils arrivent sur une zone de danger ; s'arrête au début du biseau ou du stop-voie</td></tr>
+                    <tr><td><strong>Tampon</strong></td><td>Limiter le risque de sur-accident face à un véhicule qui n'aurait pas vu le dispositif ; longueur selon l'axe, la configuration, la météo, l'heure</td></tr>
+                    <tr><td><strong>Travail</strong></td><td>Quatre sphères : SSUAP (côté victime), secours routier (au plus près), incendie, commandement</td></tr>
+                    <tr><td><strong>Stationnement</strong></td><td>Tous les véhicules de l'intervention, en file indienne dans le sens de circulation ; seule zone qui peut s'agrandir. Possible en épi en cas de grande ampleur</td></tr>
+                </table>
+                <ul>
+                    <li><strong>Biseau</strong> (cônes de Lubeck régulièrement espacés) : uniquement sur voies à double sens. <strong>Stop-voie</strong> : ne doit pas inciter à emprunter le sens opposé sans arrêt. <strong>FLU</strong> : en remplacement ou en complément du biseau, uniquement sur chaussées séparées.</li>
+                    <li>L'ordre des zones peut être modifié selon l'intervention (écoulement de produit, vent pour les fumées) ; les zones de travail et de stationnement peuvent être interverties.</li>
+                    <li><strong>Moyens aériens</strong> : zone de poser suffisamment proche pour déplacer victimes et intervenants, suffisamment éloignée pour le souffle de l'hélicoptère.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2 · Le zonage opérationnel (rouge, orange, vert)</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/zonage-routier-orange.webp" alt="Zonage opérationnel sur la voie publique : espace de danger absolu, de risque élevé et de risque faible" loading="lazy">
+            <figcaption>Zonage sur la voie publique : danger absolu (rouge), risque élevé (orange), risque faible (vert).</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/zonage-reflexe.webp" alt="Exemple de zonage opérationnel réflexe sur une carte avec une zone d'exclusion de 50 m et une zone contrôlée de 100 m" loading="lazy">
+            <figcaption>Zonage réflexe à l'échelle : exclusion 50 m, zone contrôlée 100 m.</figcaption>
+        </figure>
+                <table class="rd-table">
+                    <tr><th>Zone</th><th>Niveau de risque</th><th>Qui y est ?</th></tr>
+                    <tr><td><strong>Exclusion</strong> (rouge)</td><td>Danger absolu</td><td>Accès après <strong>coupure de la circulation</strong> si nécessaire</td></tr>
+                    <tr><td><strong>Contrôlée</strong> (orange)</td><td>Risque élevé</td><td>Seulement quand c'est strictement nécessaire (premiers secours, désincarcération, commandement)</td></tr>
+                    <tr><td><strong>Soutien</strong> (verte)</td><td>Risque acceptable</td><td>Mise en sécurité des impliqués et des personnels en attente d'engagement</td></tr>
+                </table>
+                <ul>
+                    <li>Les limites extérieures du zonage forment le <strong>périmètre de sécurité</strong>. D'abord un périmètre « <strong>a priori</strong> » qui met en sécurité intervenants, victimes et tiers.</li>
+                    <li>Les zones sans port d'EPI sont placées sous le contrôle des <strong>forces de l'ordre</strong>. Points d'accès et de contrôle (entrées-sorties, EPI, matériels souillés).</li>
+                    <li>Le COS définit <strong>au moins un axe d'accès ou logistique</strong> en priorité.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3 · Lutte contre l'incendie : mesures de sécurité</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Avant un incendie</strong> : couper le contact et retirer la clé (mise sous tension intempestive) ; recouvrir hydrocarbures et fluides d'absorbant, de sable ou de terre (de façon ciblée, c'est la mission du gestionnaire).</li>
+                    <li>Placement des engins permettant d'établir à l'abri, selon les points d'eau ; utiliser tout écran (mur, véhicule) ; <strong>immobiliser</strong> le véhicule (risque de déplacement par destruction des freins).</li>
+                    <li><strong>Emballement thermique en milieu clos</strong> : forte solubilité de l'acide fluorhydrique gazeux dans l'eau ; imprégnation possible des tenues, d'où attention à la prise en charge des personnels et à la <strong>désorption</strong>.</li>
+                    <li>Un <strong>ventilateur</strong> peut dévier un panache pour ne pas gêner les automobilistes arrivant en sens inverse.</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/feu-vl.webp" alt="Équipe de sapeurs-pompiers attaquant un feu de véhicule depuis un écran de protection" loading="lazy">
+            <figcaption>Attaque d'un feu de véhicule : binôme en progression, protégé derrière un écran.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>4 · Les opérations de désincarcération</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>EPI</strong> selon le règlement départemental de port ; risques de matériaux coupants. <strong>Masque FFP2 minimum</strong> pour sauveteurs et victimes lors de la découpe des vitrages.</li>
+                    <li><strong>Arrimage</strong> : obligatoire dès qu'un véhicule peut glisser ou basculer ; point fixe très résistant (arbre, poteau ; <strong>lampadaires proscrits</strong>) ; engins possibles s'ils sont calés ; point d'arrimage du véhicule : berceau, triangle de roue. <strong>Aucun engagement dans un véhicule instable</strong> tant qu'il n'est pas stabilisé ou arrimé.</li>
+                    <li><strong>Stabilisation</strong> : liaison au sol et neutralisation des déséquilibres, surveillée en continu, sans retarder l'abordage. <strong>Immobilisation</strong> (non systématique) : neutraliser les effets des suspensions. Tenir compte des réservoirs de gaz et des batteries HT pour le calage.</li>
+                    <li><strong>Dégarnissage</strong> : retirer les plastiques pour repérer éléments de sécurité passive, renforts, câbles HT, générateurs de gaz ; <strong>FAD fortement conseillée ; obligatoire avant toute désincarcération</strong>.</li>
+                    <li><strong>Marquage</strong> : zones de découpe (chef d'agrès) et <strong>énergie</strong> sur le véhicule : <strong>ES</strong> essence, <strong>GO</strong> gazole, <strong>H²</strong> hydrogène, <strong>GPL – GNV – GNC</strong>, <strong>VE</strong> électrique, <strong>HY</strong> hybride (capot avant ou montant arrière gauche). <strong>Ne jamais inscrire l'état des victimes</strong> sur les véhicules.</li>
+                    <li><strong>Chantier</strong> : un parc à matériels, un parc à débris, un parc SSUAP.</li>
+                    <li><strong>Outils</strong> : se déplacer outil fermé, dirigé vers le bas ; se relayer ; ne jamais lutter contre la force d'un outil ; <strong>jamais les mains sur les mâchoires ou les lames</strong> ; ne pas se placer entre le véhicule et l'outil ; ne pas porter ni tirer l'outil par les flexibles ; attention aux packs batteries.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>5 · Rôle du COS</summary>
+            <div class="rd-section">
+                <p>Le COS suit en permanence la sécurité du personnel, échange avec gestionnaires du réseau et opérateurs d'énergie, évalue les risques (notamment structurels) avec les chefs de secteur, prépare un <strong>dispositif d'évacuation d'urgence</strong> et assure logistique et soutien santé. Après analyse de la balance bénéfice / risque, il établit son idée de manœuvre. <strong>En cas de péril imminent</strong>, il prend les mesures nécessaires à la protection de la population, des acteurs présents et des personnels.</p>
+
+            </div>
+        </details>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Opérations de secours en milieu routier », DGSCGC/DSP/SDDRH/BDFE, 1<sup>re</sup> édition, juillet 2025. Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas et photographies © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/routier/GDO-Operations-milieu-routier-2025.pdf" target="_blank" rel="noopener">GDO Opérations de secours en milieu routier (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-routier-alerte" class="module" style="--jsp: #F97316;">
+        <button class="back-btn" onclick="showModule('gdo-routier-menu')">← Retour GDO routier</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>📞 Prise d'appel et engagement</h2>
+        <p style="text-align: center;">Chapitre 4 du guide : éléments à recueillir, spécificités du milieu routier et des tunnels, conseils au requérant, engagement des secours.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Localisation précise</strong> : commune, adresse, direction, <strong>point kilométrique</strong>, sens de circulation, accès. Sans repère : localisation AML, PFLAU ou SMS ; l'appel peut venir d'un PSAP eCall.</li>
+                <li><strong>Énergie du véhicule et immatriculation</strong> : l'art. R330-3 du code de la route permet aux sapeurs-pompiers d'obtenir les informations de la carte grise pour sécuriser l'intervention.</li>
+                <li>Solliciter dès l'appel <strong>gendarmerie, police, SAMU, exploitant</strong> (services autoroutiers, DIR) sur autoroutes et axes à grande circulation.</li>
+                <li><strong>Facteurs aggravants</strong> : sur-accident, TMD, heure, météo, accessibilité, grand nombre de victimes, public sensible, difficultés de communication.</li>
+                <li>Si la <strong>spécialité</strong> n'existe pas dans le département : anticiper le <strong>renfort zonal</strong>.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Éléments à recueillir</summary>
+            <div class="rd-section">
+                <table class="rd-table">
+                    <tr><th>À recueillir</th><th>Détail</th></tr>
+                    <tr><td><strong>Lieu</strong></td><td>Numéro de téléphone du requérant, adresse de l'opération (différente de celle de l'appelant), site ou point remarquable, coordonnées GPS, PK</td></tr>
+                    <tr><td><strong>Problématique</strong></td><td>Nature, contexte, nombre de victimes et d'impliqués, type et gravité des atteintes (conscience), localisation (à l'abri ou exposées), posture (incarcérée ou non), difficultés d'accès</td></tr>
+                    <tr><td><strong>Requérant</strong></td><td>Professionnel du milieu, victime, témoin, tiers : sa qualité conditionne la fiabilité du renseignement</td></tr>
+                    <tr><td><strong>Facteurs aggravants</strong></td><td>Contexte (sur-accident), nombre de victimes, public sensible, météo et jour / nuit, transmissions, accessibilité, hydrogéologie</td></tr>
+                </table>
+                <h3>Tunnels</h3>
+                <ul>
+                    <li>Auprès de l'usager : <strong>nom du tunnel, sens de circulation, PK ou numéro d'abri, de garage</strong> ou autre repère.</li>
+                    <li>Appel de l'exploitant : prévoir <strong>deux temps</strong> (après travail préalable SDIS / exploitant) : 1) un départ rapide (nom, sens, scénario type) ; 2) un complément transmis par radio aux véhicules en transit : usagers dans l'ouvrage (tunnel, abris, niches, galeries), actions menées (fermeture), équipements en service (ventilation), sens du courant d'air et des fumées, congestion des accès.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2 · Conseils au requérant</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Périmètre de sécurité</strong> avec moyens de fortune ou jalonneurs en attendant les secours ; <strong>évacuer préventivement</strong> la zone à risque.</li>
+                    <li><strong>Gestes de premiers secours</strong> guidés ; en détresse vitale, <strong>contact permanent</strong> jusqu'à l'arrivée des primo-intervenants.</li>
+                    <li><strong>Photos</strong> pour figer « l'instant zéro » et mesurer l'évolution de la situation.</li>
+                </ul>
+                <table class="rd-table">
+                    <tr><th>Situation</th><th>Consignes au requérant</th></tr>
+                    <tr><td><strong>Circulation non neutralisée</strong></td><td>Gilet haute visibilité ; couper le contact et allumer les feux de détresse ; si possible, triangle de signalisation ; se faire aider des témoins pour sécuriser (torches, feux de croisement) ; <strong>péril imminent : dégagement d'urgence</strong> ; sinon se mettre en sécurité</td></tr>
+                    <tr><td><strong>Circulation neutralisée</strong></td><td>Gilet haute visibilité ; <strong>ne pas bouger la victime</strong> ; la rassurer et la couvrir ; si possible, gestes de secourisme guidés, a minima <strong>maintien de la tête</strong> ; péril imminent : dégagement d'urgence</td></tr>
+                    <tr><td><strong>Motard conscient</strong></td><td>Ne pas le bouger, <strong>ne pas retirer son casque</strong>, maintenir la tête, lui parler et le rassurer</td></tr>
+                    <tr><td><strong>Motard inconscient</strong></td><td><strong>Ne pas retirer le casque</strong> ; respiration visible ou buée sur la visière ? Oui : position latérale (sauf à plat ventre) ; non : sur le dos, massage cardiaque</td></tr>
+                </table>
+                <p><strong>Message type</strong> : « Les secours sont partis, en attendant nous allons débuter ensemble des gestes de premiers secours. Pouvez-vous mettre le haut-parleur de votre téléphone ? » (indiquer que les gestes sont simples et sans danger).</p>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3 · Engagement des secours et documents</summary>
+            <div class="rd-section">
+                <ul>
+                    <li>L'engagement est propre à chaque SIS et conforme à son <strong>règlement opérationnel</strong>.</li>
+                    <li>Le départ peut prévoir des <strong>équipes de spécialistes</strong> ou un partenaire public ou privé ; un <strong>contact préalable</strong> avec un cadre de la spécialité ou un partenaire permet de calibrer la réponse.</li>
+                    <li>Les <strong>primo-intervenants</strong> interviennent avec le matériel en dotation en attendant les moyens spécifiques (USAR, RCH…) et les autres services (SMUR, forces de l'ordre).</li>
+                    <li><strong>Plans tunnels</strong> : volume du 1<sup>er</sup> train de départ défini après étude du risque (caractéristiques et longueur, équipements, ventilation, défense extérieure contre l'incendie). Autres documents : conventions avec les gestionnaires, plans intempéries, dossier de viabilité hivernale (DOVH), FAD et guides d'intervention d'urgence.</li>
+                </ul>
+
+            </div>
+        </details>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Opérations de secours en milieu routier », DGSCGC/DSP/SDDRH/BDFE, 1<sup>re</sup> édition, juillet 2025. Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas et photographies © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/routier/GDO-Operations-milieu-routier-2025.pdf" target="_blank" rel="noopener">GDO Opérations de secours en milieu routier (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-routier-incendies" class="module" style="--jsp: #F97316;">
+        <button class="back-btn" onclick="showModule('gdo-routier-menu')">← Retour GDO routier</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🔥 Incendies de véhicules</h2>
+        <p style="text-align: center;">Chapitre 5 du guide : principe d'extinction, véhicules au gaz, véhicules électriques et hybrides, poids lourds, stations de recharge, autres feux et tunnels.</p>
+        <div class="rd-alerte"><strong>Principe général</strong> : action <strong>offensive sur l'habitacle</strong> couplée à un <strong>refroidissement massif et rapide de la source d'énergie</strong> (réservoir de carburant, réservoir de gaz sous pression, batterie HT). Lance à <strong>250 L/min minimum</strong>, binôme dans l'<strong>axe 3/4 avant</strong> du véhicule, à l'abri d'écrans (mobilier, murs, engins).</div>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Connaître l'énergie</strong> (lecture du véhicule, propriétaire, forces de l'ordre) avant de choisir le dispositif. En présence de victimes : dégagement en sécurité, dégagement d'urgence possible.</li>
+                <li><strong>Gaz</strong> : périmètre de sécurité dans l'axe du véhicule, <strong>ARI systématique</strong>, approche par l'avant <strong>hors de l'axe et des côtés</strong>, <strong>deux lances</strong> (jet droit pour rabattre les flammes, puis jet diffusé d'attaque dont une lance refroidit le réservoir). Avant de quitter : relevés explosimétriques.</li>
+                <li><strong>Électrique ou hybride</strong> : ne jamais toucher les éléments HT ; après extinction de l'habitacle, caméra thermique pour détecter une réélévation de température ; si la batterie est emballée, eau via la <strong>trappe thermo-fusible / Fireman Access</strong> si elle existe ; sinon eau dans le casing par les déformations ou la fonte de parties fusibles, <strong>jamais en créant une ouverture avec un outil de forcement</strong>.</li>
+                <li><strong>Si l'extinction de la batterie est inefficace, s'abstenir</strong> (temps de combustion, fumées, métal en fusion, eau, reprise de feu, pollution) : seules la sécurité des tiers et la protection de l'environnement sont recommandées. Petites mobilités (vélo, trottinette) : immersion possible.</li>
+                <li><strong>Après extinction</strong> : risque de réinflammation ; <strong>quarantaine sur sol inerte</strong> (lit de sable), informer forces de l'ordre et dépanneur de l'énergie et du risque ; transport en benne avec lit inerte plutôt qu'en benne d'immersion.</li>
+                <li><strong>Couverture d'extinction</strong> : seulement sur feu naissant ou véhicule conventionnel ; <strong>proscrite face à un emballement thermique</strong> (gaz inflammables et toxiques piégés).</li>
+                <li><strong>Laisser brûler</strong> est possible en l'absence d'enjeu ou si le risque pour le personnel est trop important (guet-apens, projectiles).</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Véhicules légers : principe et reconnaissance</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/feu-vl.webp" alt="Équipe de sapeurs-pompiers attaquant un feu de véhicule" loading="lazy">
+            <figcaption>Feu de véhicule : attaque en binôme, progression par l'avant.</figcaption>
+        </figure>
+                <ul>
+                    <li><strong>Reconnaissance</strong> : enjeux humains, matériels et économiques, tiers bâtimentaires, climat.</li>
+                    <li><strong>Moyens particuliers</strong> (remorque poudre, lance à mousse) si l'enveloppe du réservoir s'est rompue et que l'hydrocarbure se répand ; barrages (terre, tuyaux) ; services publics concernés en cas de risque de pollution.</li>
+                    <li><strong>Efficacité dès l'ouverture à distance</strong> des lances en jet droit.</li>
+                    <li><strong>Voirie en pente</strong> : protection en priorité en contrebas, véhicule calé le plus tôt possible.</li>
+                    <li>Isoler le véhicule en déplaçant les voisins ou en le recouvrant d'une couverture anti-feu si l'environnement est menacé.</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/couverture-extinction.webp" alt="Utilisation d'une couverture d'extinction sur un véhicule en feu sur une route" loading="lazy">
+            <figcaption>Couverture d'extinction sur un feu de voiture (réservée aux feux naissants et aux véhicules à énergie conventionnelle).</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2 · Véhicules au gaz (GPL, GNV, H₂)</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/gpl-apres-feu.webp" alt="Réservoir de gaz après un incendie de véhicule, arrosé par un jet d'eau" loading="lazy">
+            <figcaption>Réservoir de gaz après incendie : ouverture des dispositifs de sécurité et refroidissement.</figcaption>
+        </figure>
+                <ol>
+                    <li><strong>Délimiter un périmètre de sécurité</strong> (zones situées dans l'axe du véhicule en priorité).</li>
+                    <li><strong>ARI coiffé</strong> par tout le personnel d'attaque.</li>
+                    <li><strong>Approche par l'avant</strong>, hors de l'axe et des côtés.</li>
+                    <li><strong>Deux lances à eau</strong> si possible additivée : jet droit de loin pour rabattre les flammes, puis jet diffusé d'attaque en progressant, une lance refroidissant le réservoir.</li>
+                    <li>Anticiper la <strong>pérennité de l'alimentation hydraulique</strong>.</li>
+                    <li><strong>Abris de fortune</strong> pour le personnel (mur, véhicule, mobilier).</li>
+                </ol>
+                <p>Impossible d'établir deux lances simultanées : lance en jet droit à distance de jet, si possible protégé, pour une première action de refroidissement à l'intérieur du véhicule.</p>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3 · Véhicules électriques et hybrides</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Extinction de l'habitacle d'abord</strong>, puis surveillance de la batterie. La séquence illustrée par Renault Group : voiture embrasée depuis 30 min, extinction en débutant par l'habitacle, seule la batterie HT continue de brûler, finalisation de l'extinction à travers la trappe thermo-fusible.</li>
+                    <li><strong>Caméra thermique</strong> : indication à rechercher = <strong>absence d'augmentation de la température locale</strong> dans la zone de la batterie (utilisation parfois difficile à cause du casing, de la structure, du capot).</li>
+                    <li><strong>Consulter la FAD</strong> : préconisations et interdictions constructeur.</li>
+                    <li><strong>LMP</strong> : puissance très élevée sur environ 15 minutes ; se limiter à stopper les propagations en attendant la baisse d'intensité (réaction violente à l'eau).</li>
+                    <li>Trappe masquée ou obstruée par un aménagement du plancher (véhicule commercial) : ne pas l'ignorer.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>4 · Poids lourds, stations de recharge, autres incendies</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Poids lourds et transports en commun</strong> : attention à la rupture possible du réservoir de gazole ou d'essence pendant l'attaque ; capots de protection autour des réservoirs de gaz ou batteries (écran thermique, montée en pression retardée, mais refroidissement plus difficile). <strong>L'attaque de la cargaison ne fait pas oublier les risques liés au tracteur.</strong></li>
+                    <li><strong>Véhicule en charge</strong> : action identique, mais <strong>isoler le véhicule de la borne</strong> (arrêt d'urgence sur la borne ou déporté, ou coupure électrique générale). Sans confirmation de coupure, <strong>se limiter à protéger l'environnement</strong>. Les stations H₂ ont une <strong>borne d'appel pompiers</strong> (astreinte 24 h/24, arrêt d'urgence général : coupure gaz et électricité).</li>
+                    <li><strong>Autres feux</strong> : mobilier urbain (moyens limités) ; en période de troubles, <strong>attitude défensive</strong> possible (pas d'extinction, périmètre de sécurité, protection de l'environnement). Feux de végétation : même approche (accès, protection, partenaires, fumées).</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>5 · Incendies dans les tunnels</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/feu-tunnel.webp" alt="Fumées à l'entrée d'un tunnel routier lors d'un incendie" loading="lazy">
+            <figcaption>Incendie de véhicule dans un tunnel : la lutte contre le feu n'est pas l'objectif prioritaire.</figcaption>
+        </figure>
+                <blockquote>« La lutte contre le feu n'est pas l'objectif prioritaire. » Elle peut commencer rapidement si elle favorise l'évacuation aidée ; une fois les usagers évacués, elle limite les dommages aux biens dans un niveau de risque acceptable. En cas de sinistre exceptionnel, <strong>il vaut souvent mieux laisser l'incendie se dérouler</strong> (CETU).</blockquote>
+                <ul>
+                    <li><strong>Engagement</strong> : investir si possible au plus tôt par tous les accès disponibles, <strong>non enfumés en priorité</strong> (têtes, galeries, issues de secours, accès pompiers) ; d'abord en réflexe avec des véhicules à <strong>ARI par sapeur-pompier</strong>, puis sur ordre du COS. <strong>Solution de repli immédiate</strong> à chaque instant.</li>
+                    <li><strong>Information</strong> : échange CODIS – exploitant systématique (fermeture, ventilation) ; <strong>officier de liaison au PC exploitant</strong> ; tunnel binational : commandement général des opérations de secours (CGOS).</li>
+                    <li><strong>Contresens</strong> dans un tube congestionné (désenfumage maîtrisé, validé par l'exploitant et le COS) : voie de droite, feux de croisement, détresse et gyrophares, <strong>30 km/h</strong>, distance de sécurité de <strong>20 m</strong>. Progression dans le sens d'évacuation des fumées.</li>
+                    <li><strong>Auto-évacuation des usagers</strong> : principe fondamental, ils quittent leur véhicule sans attendre les pompiers. Reconnaissances de tout l'ouvrage au plus tôt (tube sinistré en priorité).</li>
+                    <li><strong>Désenfumage</strong> : mis en œuvre par l'exploitant, depuis le poste de contrôle ou le coffret manuel en tête, de préférence par un personnel formé, puis en concertation avec le COS. Sans installation : naturel ou mécanique avec les moyens du SIS.</li>
+                    <li><strong>Stratégie de lutte</strong> : nature des véhicules, durée du sinistre, dispositifs de sécurité déclenchés ; approche souvent par l'arrière (zone d'effet des torchères) ; réservoirs sur les toits de bus ; dans un bitube, accès possible par le tube non sinistré ; solution d'extraction d'un véhicule électrique ou hybride avec l'exploitant.</li>
+                    <li><strong>Communications</strong> : maîtrise parfaite ; postes de l'exploitant ou valise relais indépendant portable (RIP) en tête ; les PAU ne remplacent pas la continuité radio.</li>
+                    <li><strong>Remise en service</strong> : par l'exploitant après inspection de l'ouvrage ; le COS ne doit pas oublier la reprise rapide de la circulation (regroupement des usagers pour récupérer leurs véhicules).</li>
+                </ul>
+
+            </div>
+        </details>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Opérations de secours en milieu routier », DGSCGC/DSP/SDDRH/BDFE, 1<sup>re</sup> édition, juillet 2025. Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas et photographies © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/routier/GDO-Operations-milieu-routier-2025.pdf" target="_blank" rel="noopener">GDO Opérations de secours en milieu routier (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-routier-secours" class="module" style="--jsp: #F97316;">
+        <button class="back-btn" onclick="showModule('gdo-routier-menu')">← Retour GDO routier</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🚑 Secours routier</h2>
+        <p style="text-align: center;">Chapitre 5 du guide : marche générale des opérations de secours routier, les 5 « i », lecture de l'accident, extraction, matières dangereuses, immersion, naufragés de la route, animaux.</p>
+        <div class="rd-alerte"><strong>Cinq phases</strong> : <strong>1) sécurisation du site</strong> → <strong>2) sécurisation et stabilisation du véhicule</strong> → <strong>3) secours d'urgence aux personnes</strong> → <strong>4) sécurisation des techniques</strong> → <strong>5) sortie de la victime</strong>. Un élément nouveau important (aggravation soudaine, sur-accident) doit amener le COS à reconsidérer son idée de manœuvre.</div>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Les 5 « i »</strong> : <strong>I</strong>dentifier, <strong>I</strong>nspecter, <strong>I</strong>nterdire, <strong>I</strong>mmobiliser, <strong>I</strong>soler.</li>
+                <li><strong>Sans connaissance des préconisations de la FAD : pas de manipulation du service plug ni de la « boucle d'isolement ».</strong></li>
+                <li>Contact coupé = premier niveau de sécurité (relais HT ouverts, électrovannes gaz fermées). Isolement de la <strong>batterie 12 V</strong> après réflexion sur les mobilités nécessaires (sièges, vitres, colonne de direction, frein de stationnement, coffre).</li>
+                <li><strong>Priorité : traiter ce qui tue en premier</strong>, prise en charge la plus précoce possible, <strong>lecture de l'accident</strong> en complément du bilan primaire.</li>
+                <li><strong>Reformation</strong> (redonner du volume à la cellule de survie) à privilégier sur la découpe systématique de nombreuses parties du véhicule.</li>
+                <li>Toute solution d'extraction s'accompagne d'une <strong>solution de remplacement</strong> ; <strong>protéger la victime</strong> des projections (couverture, bouclier).</li>
+                <li>Actions techniques menées <strong>de la victime vers l'extérieur</strong> du cheminement d'extraction (libération des pieds, ouverture d'un hayon).</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Sécuriser le site et le véhicule (les 5 « i »)</summary>
+            <div class="rd-section">
+                <table class="rd-table">
+                    <tr><th>« i »</th><th>Action</th></tr>
+                    <tr><td><strong>Identifier</strong></td><td>Type de véhicule pour cibler la <strong>FAD</strong> et l'énergie ; en attendant, rechercher l'énergie (logos, câbles orange, réservoirs) pour prendre des mesures conservatoires. La lecture de la FAD est primordiale</td></tr>
+                    <tr><td><strong>Inspecter</strong></td><td>Fuite d'essence ou de gazole, problème de chargement, câble HT sectionné, fuite de GPL, batterie HT endommagée</td></tr>
+                    <tr><td><strong>Interdire</strong></td><td>Éviter de toucher, sectionner, déplacer ou comprimer toute <strong>source</strong> (réservoir, batterie HT) ou tout <strong>vecteur d'énergie</strong> (câble HT, tuyau GPL / GNC / GNL / H₂)</td></tr>
+                    <tr><td><strong>Immobiliser</strong></td><td>Arrêt du moteur (contact coupé), <strong>frein de parc</strong>, position « P », <strong>calage des roues</strong> (même pendant l'incendie en cas de forte pente), voire arrimage dans l'axe le plus menaçant. <strong>Smart key éloignée de 5 m</strong></td></tr>
+                    <tr><td><strong>Isoler</strong></td><td>Voir ci-dessus. Les FAD peuvent recommander une action complémentaire : service plug, boucle d'isolement, vannes pour GNC et GNL si accessibles</td></tr>
+                </table>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2 · Secours d'urgence aux personnes et lecture de l'accident</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/secours-victime.webp" alt="Prise en charge d'un blessé sur une route par des sapeurs-pompiers et une équipe médicale" loading="lazy">
+            <figcaption>Secours routier : la prise en charge suit les recommandations de premiers secours et les référentiels nationaux.</figcaption>
+        </figure>
+                <p>La <strong>lecture de l'accident</strong> guide les secouristes vers les lésions non visibles (hémorragies « à bas bruit »), aide à catégoriser les victimes et donne des critères communs avec la régulation médicale.</p>
+                <div class="fod-cote-a-cote">
+                    <div class="rd-astuce"><strong>Critères liés au véhicule</strong><ul>
+                        <li>Estimation de l'<strong>EES</strong> (vitesses d'impact et masses)</li>
+                        <li>Déformation : intrusion directe sur un occupant, taux de recouvrement</li>
+                        <li>Type et localisation du choc (ex. choc latéral opposé à la victime)</li>
+                        <li>Type d'obstacle (déformable ou non)</li>
+                        <li>Port et positionnement de la ceinture</li>
+                        <li>Action des airbags et prétensionneurs</li>
+                    </ul></div>
+                    <div class="rd-astuce"><strong>Critères liés aux victimes</strong><ul>
+                        <li>Âge et morphologie</li>
+                        <li>Position dans le véhicule et par rapport au choc</li>
+                        <li>Objets missiles</li>
+                        <li>Déplacements (chocs avec l'habitacle ou entre occupants, torsions)</li>
+                        <li>Sièges auto (adaptés, dos à la route)</li>
+                    </ul></div>
+                </div>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3 · Sécuriser les techniques et sortir la victime</summary>
+            <div class="rd-section">
+                <p>Contraintes à prendre en compte : accès à la victime, <strong>axe de sortie idéal</strong>, contraintes de temps, protection contre les risques environnementaux, techniques de désincarcération, multi-victimes, position du véhicule.</p>
+                <table class="rd-table">
+                    <tr><th>Sortie</th><th>Quand ?</th></tr>
+                    <tr><td><strong>Dégagement d'urgence</strong></td><td>Danger réel, vital, imminent et non contrôlable pour la victime</td></tr>
+                    <tr><td><strong>Extraction rapide</strong></td><td>Sortie dans les meilleurs délais : le <strong>délai</strong> prime sur le respect strict de l'axe tête-cou-tronc</td></tr>
+                    <tr><td><strong>Extraction améliorée</strong></td><td>Sortie dans les meilleures conditions sans menace vitale immédiate</td></tr>
+                </table>
+                <p>La stratégie d'extraction incombe au <strong>COS</strong>, qui s'appuie sur le <strong>médecin</strong> quand il est présent (qualité d'extraction, horizontalité stricte, immobilisation d'un membre) ; en son absence, il prépare les voies d'extraction.</p>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>4 · Autres opérations : TMD, fuites, immersion, naufragés</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/tmd-ct.webp" alt="Deux sapeurs-pompiers en tenue de protection chimique s'approchant d'un camion couché" loading="lazy">
+            <figcaption>TMD : renseignement immédiat sur le produit, calage, périmètre de sécurité, moyens adaptés.</figcaption>
+        </figure>
+                <ul>
+                    <li><strong>TMD</strong> : se renseigner immédiatement (conducteur, fiches produit, CODIS), caler le véhicule, <strong>périmètre de sécurité</strong>, moyens d'extinction autour du véhicule (pente, vent), protéger la zone voisine, barrages (terre, sable, tranchées), extinction adaptée, services techniques de la ville et de la voirie. <strong>Citerne</strong> non atteinte : l'arroser en jet diffusé ou la recouvrir de mousse.</li>
+                    <li><strong>Remorque d'hydrogène</strong> : ne pas intervenir en cas de fuite ou de feu, sauf dégagement de personne ; <strong>zone d'exclusion de 50 m</strong> ; imagerie thermique. Camion sur le flanc : le rejet du TPRD peut être horizontal vers les intervenants. Flamme de 10 m, distance à 3 kW/m² d'environ 15 m, distance à la LIE (4 %) de 20 m.</li>
+                    <li><strong>Fuites d'énergie</strong> (réservoir, tuyaux, électrolyte) : différentes d'un emballement thermique, qui impose un dégagement d'urgence. <strong>GNL</strong> : le contact avec l'eau peut vaporiser quasi instantanément le gaz (×600) : « explosion froide » (surpression sans combustion).</li>
+                    <li><strong>Véhicule immergé</strong> : la question de l'énergie n'est pas la priorité ; consulter la FAD avant le dégagement du véhicule (procédures constructeur).</li>
+                    <li><strong>Naufragés de la route</strong> : éviter d'engager des véhicules non catégorisés hors route, équipements hiver, conducteurs qualifiés, <strong>jamais de personnel seul en reconnaissance à pied</strong>.</li>
+                    <li><strong>Dégagement de la voie</strong> : ne pas s'impliquer en lieu et place des services compétents ; nettoyer la chaussée seulement en sécurité, <strong>ne jamais se prononcer sur la réouverture</strong> au trafic.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>5 · Opérations mettant en cause des animaux</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/animaux.webp" alt="Sapeurs-pompiers avec des bovins sortis d'un camion accidenté de nuit" loading="lazy">
+            <figcaption>Accident de transport d'animaux de rente : enclos autour du camion, vétérinaire, sortie par les portes arrière.</figcaption>
+        </figure>
+                <ul>
+                    <li><strong>Transport d'animaux à but lucratif</strong> : enclos autour du camion, relevage du véhicule si possible, sortie par les portes arrière ou des ouvertures créées, parcage (enclos, bâtiment, autre véhicule). Souvent coupure de l'axe dans les deux sens ; <strong>vétérinaire</strong> (SP, éleveur, DDPP), barrières, levage, USAR ou SMPM ; drones pour les animaux en divagation ; faire contacter le transporteur.</li>
+                    <li><strong>Animal de compagnie dans un véhicule accidenté</strong> : l'isoler dans le véhicule ou l'extraire pour permettre les actions SSUAP ; même domestique, il peut être dangereux ; premiers soins possibles avant le vétérinaire.</li>
+                    <li><strong>Animaux non domestiques</strong> (ours, fauves…) : un enclos ne suffit pas ; professionnels (animaliers, cirque) pour conseiller ; vétérinaire pour sédater ; moyens pour abattre les animaux non contrôlables (OFB, louveterie, forces de l'ordre, chasseurs désignés par le maire).</li>
+                    <li><strong>Collisions avec des animaux</strong> : plus de 40 000 par an avec la faune sauvage ; vétérinaire presque toujours nécessaire ; animal parfois incarcéré dans le véhicule, risque important pour la victime et le sapeur-pompier.</li>
+                </ul>
+
+            </div>
+        </details>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Opérations de secours en milieu routier », DGSCGC/DSP/SDDRH/BDFE, 1<sup>re</sup> édition, juillet 2025. Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas et photographies © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/routier/GDO-Operations-milieu-routier-2025.pdf" target="_blank" rel="noopener">GDO Opérations de secours en milieu routier (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-routier-annexes" class="module" style="--jsp: #F97316;">
+        <button class="back-btn" onclick="showModule('gdo-routier-menu')">← Retour GDO routier</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>📎 Annexes du guide routier</h2>
+        <p style="text-align: center;">FAD et ERG, applications mobiles, document Renault Group, énergies de la carte grise, EDPM, energy equivalent speed et schémas de signalisation d'urgence.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>FAD</strong> (fiche d'aide à la décision) : <strong>4 pages au maximum</strong>, rubriques par couleurs selon la norme <strong>ISO 17840</strong>.</li>
+                <li><strong>ERG</strong> (guides d'intervention d'urgence) : livrets constructeurs, plus détaillés, peu utilisables en intervention (support de formation).</li>
+                <li><strong>Rescue Code</strong> (gratuit, sans réseau, environ 3 600 FAD, QR codes de 3 × 3,5 cm sur pare-brise et lunette arrière) et <strong>Euro Rescue</strong> (environ 1 555 FAD, 22 langues, recherche par photo ou QR code, connexion nécessaire).</li>
+                <li><strong>Signalisation d'urgence</strong> : schémas de principe à adapter aux procédures du SIS en concertation avec les opérateurs de routes.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>A · FAD, ERG et applications</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/routier/fad-exemple.webp" alt="Exemple d'une fiche d'aide à la décision de quatre pages organisée en sections de couleur" loading="lazy">
+            <figcaption>FAD de quatre pages articulée autour des sections de la norme ISO 17840.</figcaption>
+        </figure>
+                <table class="rd-table">
+                    <tr><th>Section</th><th>Contenu</th></tr>
+                    <tr><td>1 · gris</td><td>Identification / reconnaissance</td></tr>
+                    <tr><td>2 · vert clair</td><td>Immobilisation / stabilisation / levage</td></tr>
+                    <tr><td>3 · jaune-orangé</td><td>Neutralisation des phénomènes dangereux directs / règles de sécurité</td></tr>
+                    <tr><td>4 · vert</td><td>Accès aux occupants</td></tr>
+                    <tr><td>5 · jaune</td><td>Énergie emmagasinée : liquides, gaz, solides</td></tr>
+                    <tr><td>6 · rouge</td><td>En cas d'incendie</td></tr>
+                    <tr><td>7 · bleu</td><td>En cas de submersion</td></tr>
+                    <tr><td>8 · orange clair</td><td>Remorquage / transport / stockage</td></tr>
+                    <tr><td>9 · bleu clair</td><td>Informations supplémentaires importantes</td></tr>
+                    <tr><td>10</td><td>Explication des pictogrammes utilisés</td></tr>
+                </table>
+        <figure class="rd-fig">
+            <img src="images/routier/fad-pictos.webp" alt="Tableau des symboles normalisés des FAD : airbag, générateur de gaz, prétensionneur, batterie HT, réservoirs, câbles" loading="lazy">
+            <figcaption>Symboles normalisés des FAD (énergies et équipements impactant les secours).</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/guides-erg.webp" alt="Exemples de guides d'intervention d'urgence de constructeurs automobiles" loading="lazy">
+            <figcaption>Guides d'intervention d'urgence (ERG) de constructeurs.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>B · Document Renault Group pour les SIS</summary>
+            <div class="rd-section">
+                <p>Document d'information <strong>Renault Group / SDIS 78</strong> (version du 08/03/2025) sur l'extinction des feux de véhicules <strong>100 % électriques ou hybrides rechargeables</strong> :</p>
+                <ul>
+                    <li>En utilisation normale, il n'y a pas de départ de feu spontané du véhicule ou de la batterie.</li>
+                    <li>Véhicules équipés du <strong>Fireman Access</strong> : une partie fusible sous l'effet de la chaleur, ou un orifice accessible par jet de lance, permet de noyer la batterie et d'obtenir une extinction rapide et définitive. L'emplacement figure sur la FAD (Rescue Sheet).</li>
+                    <li><strong>Emballement thermique</strong> : propagation incontrôlée entre cellules, en général <strong>20 à 30 minutes</strong> après le départ du feu ; signes annonciateurs : sifflement, crépitements, fumée par les évents.</li>
+                    <li>Consignes : contrôler la température de la batterie à la <strong>caméra thermique</strong> en plusieurs points, <strong>toutes les 10 minutes</strong> ; une élévation entre deux relevés indique une réaction en cours ; poursuivre le refroidissement par le Fireman Access ; <strong>une batterie HT emballée peut conserver une tension électrique</strong> ; <strong>ne pas percer ni chercher à ouvrir la batterie</strong>.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>C · Carte grise et EDPM</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Énergies de la carte grise</strong> (rubrique P3, arrêté du 10/07/2020) : codes de 2 caractères (ex. ES essence, GO gazole, EL électricité, GN gaz naturel, GP GPL, HH hydrogène pile à combustible, H2 moteur thermique hydrogène…). La table complète figure dans le guide.</li>
+                    <li><strong>EDPM</strong> (engins de déplacement personnel motorisés) : sans place assise, une seule personne, vitesse de 6 à 25 km/h : trottinettes électriques, gyropodes, mono-roues, hoverboards. Interdits aux moins de 14 ans depuis septembre 2023. Petites mobilités : immersion possible en cas d'incendie.</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/routier/edpm.webp" alt="Engins de déplacement personnel motorisés : trottinette, gyropode, mono-roue, hoverboard, skateboard électrique" loading="lazy">
+            <figcaption>Engins de déplacement personnel motorisés (EDPM).</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>D · Notion d'energy equivalent speed (EES)</summary>
+            <div class="rd-section">
+                <p>L'<strong>energy equivalent speed (EES)</strong> est la vitesse à laquelle il faudrait projeter un véhicule contre un obstacle fixe et indéformable pour observer les <strong>mêmes déformations</strong> que lors de l'accident. Elle permet de comparer les accidents entre eux et aux crash tests Euro NCAP. Elle est <strong>impossible à déterminer précisément sur le terrain</strong>, mais l'analyse de certains éléments oriente la stratégie :</p>
+        <figure class="rd-fig">
+            <img src="images/routier/ees-schema.webp" alt="Schéma de l'énergie de déformation équivalente : trois situations donnant une même EES de 60 km/h" loading="lazy">
+            <figcaption>Trois configurations différentes pour une même EES de 60 km/h.</figcaption>
+        </figure>
+                <ul>
+                    <li><strong>Zone d'intervention et circonstances</strong> : traces de freinage et de dérapage, positions finales des véhicules, témoignages.</li>
+                    <li><strong>Collision ou choc</strong> : on parle de « collision » quand deux véhicules interagissent (fronto-latérale par exemple), de « choc » (frontal, latéral, arrière) pour un seul véhicule.</li>
+                    <li><strong>Déformations permanentes</strong> : base la plus objective ; examiner montants et <strong>longerons</strong> (aucun, un, deux, ou la zone entre les longerons sollicitée).</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>E · Schémas de signalisation d'urgence</summary>
+            <div class="rd-section">
+                <p>Schémas de principe (Guillaume Vermeulen, SDIS 59), à adapter aux procédures du SIS avec les opérateurs de routes locaux. Le biseau et les cônes de Lubeck sont posés de façon régulière, le véhicule de secours protège le chantier, et la distance de freinage augmente fortement avec la vitesse (schéma ci-dessous).</p>
+        <figure class="rd-fig">
+            <img src="images/routier/freinage.webp" alt="Distance de freinage selon la vitesse par temps sec et par temps de pluie : 50, 80 et 130 km/h" loading="lazy">
+            <figcaption>Distance de freinage selon la vitesse et l'état de la chaussée : 25 m ou 38 m à 50 km/h, 64 m ou 96 m à 80 km/h, 169 m ou 254 m à 130 km/h.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/signal-bidirectionnelle.webp" alt="Schéma de signalisation d'urgence sur une route bidirectionnelle" loading="lazy">
+            <figcaption>Signalisation d'urgence sur une route bidirectionnelle.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/signal-voie-rapide.webp" alt="Schéma de signalisation d'urgence sur voie rapide" loading="lazy">
+            <figcaption>Signalisation d'urgence sur voie rapide.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/signal-stop.webp" alt="Schéma de signalisation d'urgence dans un croisement avec un stop" loading="lazy">
+            <figcaption>Signalisation d'urgence dans un croisement avec un stop.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/signal-rond-point-centre.webp" alt="Schéma de signalisation d'urgence sur un rond-point avec un accident au centre" loading="lazy">
+            <figcaption>Rond-point : accident au centre.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/signal-rond-point-ext.webp" alt="Schéma de signalisation d'urgence sur un rond-point avec un accident à l'extérieur" loading="lazy">
+            <figcaption>Rond-point : accident en extérieur.</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/routier/signal-virage.webp" alt="Schéma de signalisation d'urgence dans un virage" loading="lazy">
+            <figcaption>Signalisation d'urgence dans un virage.</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Opérations de secours en milieu routier », DGSCGC/DSP/SDDRH/BDFE, 1<sup>re</sup> édition, juillet 2025. Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas et photographies © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/routier/GDO-Operations-milieu-routier-2025.pdf" target="_blank" rel="noopener">GDO Opérations de secours en milieu routier (PDF, 8 Mo)</a>
         </p>
     </div>
 
@@ -27653,7 +28776,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.65.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.66.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

@@ -67,7 +67,8 @@
    "couleur": "#4C6FA3",
    "themes": [
     "Désincarcération",
-    "GOUV – Véhicules à énergies alternatives"
+    "GOUV – Véhicules à énergies alternatives",
+    "GDO – Opérations de secours en milieu routier"
    ]
   },
   {
@@ -4933,6 +4934,191 @@
     "rth",
     "imagerie thermique",
     "zone d'exclusion de tiers"
+   ]
+  },
+  {
+   "id": "gdo-routier-menu",
+   "titre": "GDO – Opérations de secours en milieu routier",
+   "domaine": "routier",
+   "theme": "GDO – Opérations de secours en milieu routier",
+   "type": "presentation",
+   "motsCles": [
+    "gdo",
+    "routier",
+    "milieu routier",
+    "doctrine",
+    "dgscgc",
+    "2025",
+    "accident de la route"
+   ]
+  },
+  {
+   "id": "gdo-routier-infra",
+   "titre": "GDO routier – Réseau, ouvrages d'art et tunnels",
+   "domaine": "routier",
+   "theme": "GDO – Opérations de secours en milieu routier",
+   "type": "fiche",
+   "motsCles": [
+    "réseau routier",
+    "autoroute",
+    "pont",
+    "viaduc",
+    "tunnel",
+    "niche de sécurité",
+    "désenfumage",
+    "station de recharge",
+    "bau",
+    "exploitant",
+    "dir"
+   ]
+  },
+  {
+   "id": "gdo-routier-vehicules",
+   "titre": "GDO routier – Véhicules et énergies",
+   "domaine": "routier",
+   "theme": "GDO – Opérations de secours en milieu routier",
+   "type": "fiche",
+   "motsCles": [
+    "véhicule",
+    "gpl",
+    "gnv",
+    "gnc",
+    "gnl",
+    "hydrogène",
+    "h2",
+    "batterie",
+    "haute tension",
+    "câble orange",
+    "airbag",
+    "prétensionneur",
+    "ecall",
+    "tmd",
+    "plaque orange",
+    "adr",
+    "rétrofit",
+    "tprd"
+   ]
+  },
+  {
+   "id": "gdo-routier-risques",
+   "titre": "GDO routier – Dangers et risques",
+   "domaine": "routier",
+   "theme": "GDO – Opérations de secours en milieu routier",
+   "type": "fiche",
+   "motsCles": [
+    "bleve",
+    "torchère",
+    "emballement thermique",
+    "batterie",
+    "incendie tunnel",
+    "fumées",
+    "choc frontal",
+    "choc latéral",
+    "sur-accident",
+    "victimes",
+    "alliage",
+    "pneu"
+   ]
+  },
+  {
+   "id": "gdo-routier-securite",
+   "titre": "GDO routier – Sécurité des intervenants",
+   "domaine": "routier",
+   "theme": "GDO – Opérations de secours en milieu routier",
+   "type": "fiche",
+   "motsCles": [
+    "zonage",
+    "signalisation d'urgence",
+    "flu",
+    "biseau",
+    "zone tampon",
+    "sur-accident",
+    "arrimage",
+    "stabilisation",
+    "dégarnissage",
+    "marquage",
+    "désengagement"
+   ]
+  },
+  {
+   "id": "gdo-routier-alerte",
+   "titre": "GDO routier – Prise d'appel et engagement",
+   "domaine": "routier",
+   "theme": "GDO – Opérations de secours en milieu routier",
+   "type": "fiche",
+   "motsCles": [
+    "prise d'appel",
+    "cta",
+    "localisation",
+    "point kilométrique",
+    "conseils au requérant",
+    "motard",
+    "casque",
+    "tunnel",
+    "ecall",
+    "premiers secours"
+   ]
+  },
+  {
+   "id": "gdo-routier-incendies",
+   "titre": "GDO routier – Incendies de véhicules",
+   "domaine": "routier",
+   "theme": "GDO – Opérations de secours en milieu routier",
+   "type": "fiche",
+   "motsCles": [
+    "feu de véhicule",
+    "feu de voiture",
+    "véhicule électrique",
+    "véhicule hybride",
+    "fireman access",
+    "trappe thermo-fusible",
+    "véhicule gaz",
+    "torchère",
+    "couverture d'extinction",
+    "borne de recharge",
+    "tunnel",
+    "quarantaine",
+    "lmp"
+   ]
+  },
+  {
+   "id": "gdo-routier-secours",
+   "titre": "GDO routier – Secours routier",
+   "domaine": "routier",
+   "theme": "GDO – Opérations de secours en milieu routier",
+   "type": "fiche",
+   "motsCles": [
+    "5 i",
+    "identifier inspecter interdire immobiliser isoler",
+    "lecture de l'accident",
+    "extraction",
+    "dégagement d'urgence",
+    "service plug",
+    "tmd",
+    "immersion",
+    "naufragés de la route",
+    "animaux"
+   ]
+  },
+  {
+   "id": "gdo-routier-annexes",
+   "titre": "GDO routier – Annexes (FAD, EES, signalisation)",
+   "domaine": "routier",
+   "theme": "GDO – Opérations de secours en milieu routier",
+   "type": "fiche",
+   "motsCles": [
+    "fad",
+    "erg",
+    "rescue code",
+    "euro rescue",
+    "iso 17840",
+    "edpm",
+    "trottinette",
+    "ees",
+    "energy equivalent speed",
+    "rond-point",
+    "virage",
+    "distance de freinage"
    ]
   }
  ]
