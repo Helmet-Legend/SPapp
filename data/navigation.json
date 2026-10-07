@@ -86,7 +86,9 @@
     "GDO – Navires & milieu maritime",
     "GDO – Interventions en présence d'ULM",
     "GDO – Interventions en milieu agricole",
-    "GDO – Interventions en milieux effondrés ou instables"
+    "GDO – Interventions en milieux effondrés ou instables",
+    "GDO – Interventions dans les éoliennes",
+    "GDO – Engagement des appareils télépilotés (drones)"
    ]
   },
   {
@@ -4863,6 +4865,74 @@
     "gpma",
     "gevac",
     "vigipirate"
+   ]
+  },
+  {
+   "id": "gdo-photovoltaique",
+   "titre": "GDO – Interventions en présence d'éléments photovoltaïques",
+   "domaine": "risques",
+   "theme": "Électricité",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "photovoltaïque",
+    "photovoltaique",
+    "ppv",
+    "panneau solaire",
+    "chaussée photovoltaïque",
+    "onduleur",
+    "coupure d'urgence",
+    "agcp",
+    "courant continu",
+    "centrale solaire",
+    "toiture",
+    "valise électro-secours"
+   ]
+  },
+  {
+   "id": "eoliennes",
+   "titre": "GDO – Interventions dans les éoliennes",
+   "domaine": "specialites",
+   "theme": "GDO – Interventions dans les éoliennes",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "éolienne",
+    "eolienne",
+    "aérogénérateur",
+    "nacelle",
+    "mât",
+    "pale",
+    "rotor",
+    "consignation",
+    "parc éolien",
+    "hauteur",
+    "grimp",
+    "styrène",
+    "transformateur"
+   ]
+  },
+  {
+   "id": "drones",
+   "titre": "GDO – Engagement des appareils télépilotés (drones)",
+   "domaine": "specialites",
+   "theme": "GDO – Engagement des appareils télépilotés (drones)",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "drone",
+    "drones",
+    "télépilote",
+    "telepilote",
+    "uas",
+    "tola",
+    "scénario s1 s2 s3",
+    "dgac",
+    "manex",
+    "captation",
+    "rth",
+    "imagerie thermique",
+    "zone d'exclusion de tiers"
    ]
   }
  ]
