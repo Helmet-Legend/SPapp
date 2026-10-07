@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.66.0">
+    <meta name="version" content="1.67.0">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.66.0</span><br>
+                        Vulcain v<span class="app-version">1.67.0</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -3787,6 +3787,13 @@
                 <div class="label" style="font-size: 1.4em; margin-bottom: 12px; font-weight: bold;">PENDANT Intervention</div>
                 <div style="font-size: 0.9em; opacity: 0.8;">SMES • SOIEC • SAOIECL</div>
                 <div style="font-size: 0.85em; opacity: 0.7; margin-top: 8px;">Ordres opérationnels</div>
+            </div>
+
+            <div class="fire-icon" onclick="showModule('gdo-cdt-menu')" style="min-height: 220px; display: flex; flex-direction: column; justify-content: center; cursor: pointer;">
+                <div class="emoji" style="font-size: 4.5em;">🎖️</div>
+                <div class="label" style="font-size: 1.4em; margin-bottom: 12px; font-weight: bold;">GDO Commandement</div>
+                <div style="font-size: 0.9em; opacity: 0.8;">Exercice du commandement</div>
+                <div style="font-size: 0.85em; opacity: 0.7; margin-top: 8px;">Doctrine nationale 2020</div>
             </div>
         </div>
     </div>
@@ -20628,6 +20635,807 @@ Je fais : extinction.</p>
         </p>
     </div>
 
+    <div id="gdo-cdt-menu" class="module" style="--jsp: #7C3AED;">
+        <button class="back-btn" onclick="showModule('commandement-menu')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🎖️ GDO – Exercice du commandement et conduite des opérations</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle de la DGSCGC (2<sup>e</sup> édition, 2020) : particularités d'une opération de secours, préparation, conduite sur le terrain et au centre opérationnel, outils du COS, sécurité des intervenants, désordres opérationnels et retour d'expérience.</p>
+        <div class="rd-alerte"><strong>Commander, c'est organiser et soutenir la réussite.</strong> Quatre principes à chaque échelon : <strong>4 subordonnés directs au maximum</strong>, <strong>n'ordonner qu'à ses subordonnés directs</strong>, <strong>contrôler l'exécution</strong>, <strong>rendre compte à son supérieur direct</strong>. Des ordres clairs, précis, concis, réalistes, adaptés.</div>
+        <div class="rd-tuiles">
+            <button onclick="showModule('gdo-cdt-avant')"><b>🧭 Avant l'opération</b><span>Particularités d'une opération, documents, chaîne de direction et de commandement, préparation, posture du chef</span></button>
+            <button onclick="showModule('gdo-cdt-pendant')"><b>⏱️ Pendant : cadre et centre opérationnel</b><span>Phases, décision, commander, prise d'appel, couverture, renforts, relèves</span></button>
+            <button onclick="showModule('gdo-cdt-terrain')"><b>🚒 Pendant : sur le terrain</b><span>Départ, arrivée, point de situation, raisonnement tactique, MGO, décision, ordres SMES / SOIEC / SAOIECL</span></button>
+            <button onclick="showModule('gdo-cdt-outils')"><b>🗺️ Outils du COS</b><span>PC de colonne et de site, SITAC et charte graphique, drones, OCT, sectorisation, anticipation, messages, ODL</span></button>
+            <button onclick="showModule('gdo-cdt-securite')"><b>🦺 Sécurité, désordres, médias</b><span>Rôle du COS, zonage, officier sécurité, agressions, scènes de crime, presse, réseaux sociaux</span></button>
+            <button onclick="showModule('gdo-cdt-apres')"><b>🔁 Après l'opération et annexes</b><span>Réhabilitation, défusing, rapport, PEX et RETEX, protocole drones, plans types</span></button>
+        </div>
+        <div class="rd-section">
+            <h3>Voir aussi</h3>
+            <ul>
+                <li>Ordres préparatoires → <button onclick="showModule('patrac-dr')">PATRAC DR</button> <button onclick="showModule('dpif')">DPIF</button></li>
+                <li>Ordres opérationnels → <button onclick="showModule('smes')">SMES</button> <button onclick="showModule('soiec')">SOIEC</button> <button onclick="showModule('saoiecl')">SAOIECL</button></li>
+                <li>Aéronefs télépilotés → <button onclick="showModule('drones')">GDO drones</button></li>
+            </ul>
+        </div>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Exercice du commandement et conduite des opérations », DGSCGC, 2<sup>e</sup> édition (15/05/2020, version 2.1 du 08/07/2020).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/commandement/GDO-Exercice-Commandement-Conduite-Operations-V2.pdf" target="_blank" rel="noopener">GDO Exercice du commandement et conduite des opérations (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-cdt-avant" class="module" style="--jsp: #7C3AED;">
+        <button class="back-btn" onclick="showModule('gdo-cdt-menu')">← Retour GDO commandement</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🧭 Avant l'opération</h2>
+        <p style="text-align: center;">Chapitres 1 et 2 du guide : ce qui caractérise une opération de secours, les documents et acteurs qui structurent la réponse, la préparation opérationnelle et la posture du chef.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Une opération de secours est</strong> complexe et dynamique, non prédictible, incertaine, vue de façon partielle, à forts enjeux (vies, biens, environnement), dans l'urgence et la détresse, avec exposition aux risques, et <strong>toujours singulière</strong> : se prémunir de toute routine.</li>
+                <li><strong>Chaîne de commandement</strong> : chef d'équipe (1 équipier), chef d'agrès (1 agrès, souvent premier COS), chef de groupe (2 à 4 agrès), chef de colonne (2 à 4 groupes), chef de site (plus d'une colonne).</li>
+                <li><strong>COS</strong> : met en œuvre tous les moyens publics et privés ; <strong>en cas de péril imminent</strong>, il prend les mesures de protection de la population et des personnels, puis en rend compte au DOS.</li>
+                <li><strong>Les fonctions de chef de détachement de spécialité et de COS doivent être dissociées.</strong></li>
+                <li><strong>Cinq piliers du commandement</strong> : la doctrine, le temps, l'espace, le commandement, la discipline.</li>
+                <li><strong>Préparation</strong> : vérification des matériels et EPI (état et fonctionnement, pas seulement présence), condition physique, entraînement régulier, connaissance du secteur, outils opérationnels.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Caractéristiques d'une opération de secours</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Complexité et dynamisme</strong> : de nombreuses variables (lieu, population, météo) qui évoluent seules ou du fait des actions de secours.</li>
+                    <li><strong>Non-prédictibilité</strong> du résultat des actions ; <strong>incertitude</strong> (informations absentes, inaccessibles, contrainte de temps) ; <strong>vision partielle</strong> du sinistre depuis le sol.</li>
+                    <li><strong>Enjeux capitaux</strong> : le discernement du COS ne doit pas être altéré par leur poids.</li>
+                    <li><strong>Urgence et détresse</strong> : garder la distance suffisante pour décider vite.</li>
+                    <li><strong>Exposition aux risques</strong> (feu, effondrement, toxicité, explosion) à garder à l'esprit en permanence.</li>
+                    <li><strong>Singularité</strong> : s'appuyer sur l'expérience, les PEX et RETEX, sans routine.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2 · Les documents qui structurent la réponse opérationnelle</summary>
+            <div class="rd-section">
+                <table class="rd-table">
+                    <tr><th>Document</th><th>Rôle</th></tr>
+                    <tr><td><strong>CoTRRiM</strong></td><td>Contrat territorial de réponse aux risques et aux effets des menaces : inventaire des risques et menaces, objectifs de sécurité, capacités mobilisables, ruptures capacitaires (préfets de département et de zone)</td></tr>
+                    <tr><td><strong>SDACR</strong></td><td>Analyse des risques et de leur couverture ; arrêté par le préfet après avis conforme du conseil d'administration ; révisable tous les 5 ans ; fonde le classement des centres (CSP, CS, CPI) et le règlement opérationnel</td></tr>
+                    <tr><td><strong>Pacte capacitaire</strong></td><td>Mise en commun à l'échelle de la zone des moyens spécialisés (circulaire du 10/12/2019)</td></tr>
+                    <tr><td><strong>Règlement opérationnel (RO)</strong></td><td>Organisation opérationnelle du SIS, s'impose à toutes les communes et à tous les acteurs du secours ; arrêté par le préfet</td></tr>
+                    <tr><td><strong>Doctrine</strong></td><td>GDO (raisonnement tactique du COS ; généraux, thématiques, spécifiques à un milieu), GTO (méthodes et techniques), PIO (éléments synthétiques sur une problématique nouvelle)</td></tr>
+                </table>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3 · Chaîne de direction, acteurs et centres opérationnels</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/commandement/chaine-direction.webp" alt="Schéma de la chaîne de direction des secours : maire, préfet de département, préfet de zone, COGIC, Union européenne" loading="lazy">
+            <figcaption>Chaîne de direction des secours : communal, départemental, zonal, national, européen.</figcaption>
+        </figure>
+                <ul>
+                    <li><strong>Maire / préfet = DOS</strong> (directeur des opérations de secours), la direction relève du représentant de l'État sur son territoire et évolue selon l'événement et sa planification.</li>
+                    <li><strong>PCC</strong> (poste de commandement communal, plan communal de sauvegarde), <strong>COD</strong> (centre opérationnel départemental, outil du préfet, avec un PCO possible près de l'événement), <strong>COZ</strong> (veille permanente, colonnes mobiles, répartition des moyens), <strong>COGIC</strong> (ministre de l'Intérieur, point d'entrée du mécanisme européen), <strong>CIC</strong> (Premier ministre), <strong>ERCC</strong> (Commission européenne).</li>
+                    <li><strong>Autres acteurs</strong> : forces de sécurité intérieure, SAMU et ARS, experts, moyens nationaux de la sécurité civile, associations agréées, opérateurs publics et privés, collaborateurs occasionnels. ORSEC organise la collaboration interservices.</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/commandement/chaine-alerte.webp" alt="Schéma de la chaîne de l'alerte : appel 112 ou 18, CTA, CIS, intervention, CODIS et autorités" loading="lazy">
+            <figcaption>De l'appel (18 / 112) à l'intervention : CTA, CIS, CODIS-SC et autorités.</figcaption>
+        </figure>
+                <ul>
+                    <li><strong>CTA</strong> : reçoit, authentifie, enregistre et traite les demandes du 18 et/ou 112 ; transmet l'alerte aux CIS ; alerte les services publics concernés ; transfère aux centres de police, gendarmerie ou CRRA 15.</li>
+                    <li><strong>CODIS</strong> : organe unique de coordination de l'activité opérationnelle, activé en permanence ; coordonne les opérations, répond aux demandes de renfort du COS, garantit la distribution des secours, rend compte aux autorités (événement SYNERGI, compte rendu immédiat).</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>4 · Chaîne de commandement métier et fonctions d'appui</summary>
+            <div class="rd-section">
+                <table class="rd-table">
+                    <tr><th>Fonction</th><th>Rôle</th></tr>
+                    <tr><td><strong>Chef d'équipe</strong></td><td>Dirige un équipier, sous l'autorité d'un chef d'agrès</td></tr>
+                    <tr><td><strong>Chef d'agrès</strong></td><td>Dirige un agrès ; peut commander une opération avec un agrès en plus du sien ; généralement premier COS ; adjoint possible d'un chef de groupe</td></tr>
+                    <tr><td><strong>Chef de groupe</strong></td><td>2 à 4 agrès ; chef de secteur sous un COS ; adjoint de chef de colonne ; officier « moyens » ou « renseignement » d'un PC</td></tr>
+                    <tr><td><strong>Chef de colonne</strong></td><td>2 à 4 groupes ; officier « action » ou « anticipation » d'un PC de site ; peut représenter sa hiérarchie dans une structure interservices</td></tr>
+                    <tr><td><strong>Chef de site</strong></td><td>Plus d'une colonne ; chef de PC de site ; prend le commandement sur toute intervention selon les circonstances</td></tr>
+                </table>
+                <ul>
+                    <li><strong>SSSM</strong> : médecins et infirmiers (soutien sanitaire, soins aux sapeurs-pompiers, conseil du COS, DSM en ORSEC NOVI), pharmaciens, vétérinaires, psychologues (expertise auprès du COS).</li>
+                    <li><strong>Spécialités</strong> : placées pour emploi sous l'autorité du COS ; le chef de détachement conseille, inscrit l'action dans l'idée de manœuvre générale, coordonne ses moyens et rend compte.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>5 · La préparation opérationnelle</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Vérification des matériels et EPI</strong> : état (propreté, tuyaux roulés, lance fermée) et bon fonctionnement, pas seulement présence.</li>
+                    <li><strong>Condition physique</strong> : force, endurance, souplesse, adresse, vitesse.</li>
+                    <li><strong>Entraînement</strong> : répétition des gestes, manœuvres d'ensemble, contextes différents, situations dégradées.</li>
+                    <li><strong>Connaissance du secteur</strong> : risques du territoire, infrastructures, DECI ; exercice du plan muet.</li>
+                    <li><strong>Outils</strong> : plans d'établissements répertoriés (ETARE), consignes opérationnelles, ordres d'opération (national, zonal, départemental), outils géomatiques et <strong>Copernicus</strong> (cartographie satellitaire gratuite en quelques heures, via le COZ).</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>6 · La posture du chef</summary>
+            <div class="rd-section">
+                <p>Un chef reste calme au milieu de la tempête. Qualités détaillées dans le guide :</p>
+                <ul>
+                    <li><strong>Sens de l'intérêt général</strong> : s'approprier l'action en cours, s'inscrire dans la continuité de son prédécesseur, pas d'action d'éclat.</li>
+                    <li><strong>Discernement</strong> : prendre du recul, éviter les biais cognitifs, dont l'<strong>effet tunnel</strong>.</li>
+                    <li><strong>Courage et responsabilité</strong> : s'engager, parfois renoncer, assumer ses décisions et reconnaître ses erreurs.</li>
+                    <li><strong>Intuition</strong>, <strong>confiance</strong> (supérieurs, subordonnés, partenaires ; le contrôle n'est pas de la défiance), <strong>cohésion</strong>, <strong>humilité</strong>, <strong>vigilance</strong> (jusqu'à la fin), <strong>sérénité</strong>.</li>
+                </ul>
+
+            </div>
+        </details>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Exercice du commandement et conduite des opérations », DGSCGC/DSP/SDDRH/BDFE, 2<sup>e</sup> édition (juin 2020, version 2.1 de juillet 2020). Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/commandement/GDO-Exercice-Commandement-Conduite-Operations-V2.pdf" target="_blank" rel="noopener">GDO Exercice du commandement et conduite des opérations (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-cdt-pendant" class="module" style="--jsp: #7C3AED;">
+        <button class="back-btn" onclick="showModule('gdo-cdt-menu')">← Retour GDO commandement</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>⏱️ Pendant l'opération : cadre et centre opérationnel</h2>
+        <p style="text-align: center;">Chapitre 3 du guide (1 à 4) : cadre spatio-temporel, phases d'une opération, activité décisionnelle, principes de commandement et conduite des opérations au centre opérationnel.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Trois phases</strong> : montée en puissance, stabilisation, sortie de l'opération. La sortie est <strong>aussi accidentogène</strong> que la montée en puissance (baisse d'attention).</li>
+                <li><strong>Zone d'intervention (ZI)</strong> : espace impacté directement ou indirectement par un sinistre, qui peut évoluer ; elle intègre le sinistre, les sources de risque, les cibles, les flux de dangers, les axes d'accès.</li>
+                <li><strong>Commander</strong> : organiser, assumer la responsabilité (elle ne se délègue pas), accepter de douter, entretenir la confiance avec le DOS, manager.</li>
+                <li><strong>Ordres</strong> : clairs, précis, concis, vocabulaire simple, réalistes, adaptés ; le chef fixe la « bulle de liberté d'action » du subordonné.</li>
+                <li><strong>Avant l'arrivée du 1<sup>er</sup> engin</strong>, la coordination reste au centre opérationnel (points d'engagement PT, PRM, zone de déploiement initiale).</li>
+                <li>La <strong>demande de renfort</strong> est justifiée, qualifiée et quantifiée, avec la <strong>notion d'effet à obtenir</strong>.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1 · Cadre spatio-temporel et activité décisionnelle du COS</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/commandement/phases-operation.webp" alt="Courbe de l'intensité d'un sinistre dans le temps avec les phases de montée en puissance, stabilisation et sortie de l'opération" loading="lazy">
+            <figcaption>Variation de la contribution des secours selon l'intensité du sinistre : montée en puissance, stabilisation, sortie.</figcaption>
+        </figure>
+                <table class="rd-table">
+                    <tr><th>Phase</th><th>Objectif</th><th>Actions attendues</th></tr>
+                    <tr><td><strong>Montée en puissance</strong></td><td>Première confrontation, rapport de force parfois défavorable : mobiliser des moyens suffisants en qualité et en quantité. Les orientations prises sont déterminantes</td><td>Mobilisation, évaluation, réactions immédiates, organisation du commandement, études des situations envisageables, zonage, sectorisation</td></tr>
+                    <tr><td><strong>Stabilisation</strong></td><td>Contenir le sinistre et envisager la sortie</td><td>Ajustement des moyens et de la mission, état des lieux, contrôle des actions, anticipation</td></tr>
+                    <tr><td><strong>Sortie</strong></td><td>Mesures d'accompagnement vers une situation sécurisée et désengagement progressif</td><td>Organisation du désengagement et des relèves, remise en condition des hommes et du matériel, transfert de la mission à d'autres partenaires</td></tr>
+                </table>
+                <p>À l'issue : <strong>retour à la normale</strong>, parfois très long (soutien à la population).</p>
+        <figure class="rd-fig">
+            <img src="images/commandement/boucle-decision.webp" alt="Boucle de gestion de l'activité décisionnelle du COS : prise d'information, analyse, décision, action, contrôle de l'action" loading="lazy">
+            <figcaption>Boucle de gestion de l'activité décisionnelle du COS : prise d'information, analyse, décision, action, contrôle.</figcaption>
+        </figure>
+                <p>Les trois premières étapes (information, analyse, décision) forment la partie « non visible » de l'opération ; elles se partagent aussi lors des points de situation pour faire émerger des décisions collectives.</p>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>2 · Commander en opération</summary>
+            <div class="rd-section">
+        <figure class="rd-fig">
+            <img src="images/commandement/commander-organiser-soutenir.webp" alt="Schéma triangulaire : commander, organiser, soutenir pour la réussite" loading="lazy">
+            <figcaption>Commander, c'est organiser et soutenir la réussite.</figcaption>
+        </figure>
+                <ul>
+                    <li><strong>4 principes à chaque échelon</strong> : au maximum 4 subordonnés ; n'ordonner qu'à ses subordonnés directs ; contrôler l'exécution ; rendre compte au supérieur direct.</li>
+                    <li><strong>Le niveau de commandement</strong> dépend de l'importance de l'événement, des difficultés, ou du dépassement des capacités du COS (nombre de problèmes, évolution défavorable, désordre opérationnel).</li>
+                    <li><strong>Le COS</strong> doit s'efforcer d'être calme, clair et précis ; organisé et rigoureux ; attentif aux personnels et aux tiers ; crédible et légitime ; décideur et fédérateur.</li>
+                    <li><strong>Conseiller technique du DOS</strong> : il décline en objectifs et en idées de manœuvre les orientations stratégiques de l'autorité, et vulgarise les éléments techniques.</li>
+                </ul>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>3 · Conduite des opérations au centre opérationnel</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Prise d'appel</strong> : permet de prendre les premières décisions sans avoir vu l'événement ; écoute active et repérage des signes de détresse ; premières actions favorables (gestes de premiers secours, fermeture d'une porte lors d'un incendie).</li>
+                    <li><strong>Traitement</strong> : pertinence de l'appel, localisation, engins adaptés envoyés à la bonne adresse dans des délais compatibles, conseils au requérant ; <strong>signaux faibles</strong> pour analyser « en aveugle ». Outils d'aide à la décision et conseillers techniques de spécialité.</li>
+                    <li><strong>Interconnexion des centres</strong> : en cas d'appel avec notion de <strong>fusillade, d'explosion ou d'attentat</strong>, croiser impérativement les informations entre les centres de réception d'appels (15, CORG, centre police-secours).</li>
+                    <li><strong>Couverture opérationnelle</strong> : maintien (renfort en personnels, glissement de véhicules non armés ou armés) ou renforcement ponctuel (météo défavorable, trouble de l'ordre public, rassemblement).</li>
+                    <li><strong>Renforts</strong> : à la demande d'un engin en transit, du COS, ou par anticipation du centre opérationnel ; départementaux, zonaux (demande au COZ), nationaux (le COZ auprès du COGIC), internationaux (MPCU).</li>
+                    <li><strong>Relèves</strong> : le COS et toute la chaîne de soutien (officier sécurité, SSSM, chef de secteur) décèlent les signes de situation dégradée et fixent leur fréquence ; de préférence des <strong>équipes</strong> et non des individus.</li>
+                </ul>
+
+            </div>
+        </details>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Exercice du commandement et conduite des opérations », DGSCGC/DSP/SDDRH/BDFE, 2<sup>e</sup> édition (juin 2020, version 2.1 de juillet 2020). Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/commandement/GDO-Exercice-Commandement-Conduite-Operations-V2.pdf" target="_blank" rel="noopener">GDO Exercice du commandement et conduite des opérations (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-cdt-terrain" class="module" style="--jsp: #7C3AED;">
+        <button class="back-btn" onclick="showModule('gdo-cdt-menu')">← Retour GDO commandement</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🚒 Pendant : sur le terrain</h2>
+        <p style="text-align: center;">Chapitre 3 (§5) du guide : de l'alerte à la décision, la méthode du COS sur le terrain.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li>Avant le départ, le COS recherche : <strong>adresse et nombre d'appels</strong>, lieu du sinistre et risques environnants, ressources disponibles et difficultés à prévoir. Il s'assure de la <strong>cohérence de l'envoi des secours</strong>.</li>
+                <li>À l'arrivée : <strong>réactions immédiates</strong> (action, renseignement, information) <strong>avant</strong> le raisonnement tactique.</li>
+                <li>Le <strong>point de situation</strong> est refait autant que besoin, et obligatoirement à l'arrivée d'un supérieur avant sa prise de commandement. <strong>La prise de COS se formalise</strong> aux personnels, au CODIS et aux acteurs présents (DOS, COPG, COIS…).</li>
+                <li>Le COS <strong>décide seul</strong>, mais s'appuie sur son équipe : posture <strong>horizontale</strong> pour analyser, posture <strong>verticale</strong> pour décider et ordonner.</li>
+                <li>Les ordres découlent de la décision : <strong>ordre initial</strong> (lancer les premières actions) puis <strong>ordres de conduite</strong> (actions suivantes selon l'évolution).</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>🚗 Avant le départ : ordres préparatoire et de mouvement</summary>
+            <div class="rd-section">
+                <p>Pour un déplacement de groupe ou de colonne, deux ordres sont rédigés.</p>
+                <p><strong>Ordre préparatoire — « PATRACDR »</strong></p>
+                <table class="rd-table">
+                    <tr><th>Lettre</th><th>Rubrique</th><th>Contenu</th></tr>
+                    <tr><td><b>P</b></td><td>Personnel</td><td>Nombre d'officiers / sous-officiers / hommes du rang ; liste nominative par engin lue avant le départ</td></tr>
+                    <tr><td><b>A</b></td><td>Armement</td><td>Véhicules et matériels du détachement</td></tr>
+                    <tr><td><b>T</b></td><td>Tenue</td><td>Tenue de feu ou spécialisée, paquetage, couchage</td></tr>
+                    <tr><td><b>R</b></td><td>Radio</td><td>Postes mobiles, affectation nominative des portatifs, chargeurs, batteries, communications à utiliser</td></tr>
+                    <tr><td><b>A</b></td><td>Alimentation</td><td>Rations, boissons, carburants ; <strong>autonomie de 24 h</strong> pour le détachement</td></tr>
+                    <tr><td><b>C</b></td><td>Commandement</td><td>Chef de détachement, adjoint, chefs d'agrès, chefs d'équipe</td></tr>
+                    <tr><td><b>D</b></td><td>Déroulement</td><td>Phases essentielles et durée prévisible de la mission</td></tr>
+                    <tr><td><b>R</b></td><td>Rendez-vous</td><td>Heure et lieu de rendez-vous des véhicules</td></tr>
+                </table>
+                <p><strong>Ordre de mouvement — « DPIF »</strong> : passage de consignes à tous les chefs d'agrès avant le départ.</p>
+                <table class="rd-table">
+                    <tr><th>Lettre</th><th>Rubrique</th><th>Contenu</th></tr>
+                    <tr><td><b>D</b></td><td>Direction générale</td><td>Orientation pour rejoindre un endroit</td></tr>
+                    <tr><td><b>P</b></td><td>Point à atteindre</td><td>Point précis où le groupe s'arrêtera</td></tr>
+                    <tr><td><b>I</b></td><td>Itinéraire</td><td>Déroulement géographique du déplacement</td></tr>
+                    <tr><td><b>F</b></td><td>Formation</td><td>Ordre de marche, intervalles, vitesse, signalisation, communications à veiller</td></tr>
+                </table>
+                <p>Le chef de colonne ou de groupe définit le type de formation : <strong>transit</strong> ou <strong>tactique</strong>.</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🛣️ Règles de conduite et de transit</summary>
+            <div class="rd-section">
+                <ul>
+                    <li>Les véhicules de secours sont des <strong>véhicules d'intérêt général prioritaires</strong>. Pour bénéficier de la priorité, utiliser <strong>conjointement</strong> avertisseurs sonores et lumineux (art. R415-12 du code de la route). Cette priorité ne doit jamais mettre en danger les sapeurs-pompiers ni les autres usagers.</li>
+                    <li><strong>Ceinture obligatoire</strong> à toutes les places pourvues ; feux de croisement allumés ; code de la route respecté ; avertisseur sonore seulement en cas de nécessité.</li>
+                    <li>Gyrophares : tous les engins du groupe ou de la colonne. <strong>Transit de nuit</strong> : seuls le <strong>premier et le dernier engin</strong> peuvent les activer (notamment sur autoroute).</li>
+                    <li>Tenue adaptée à la durée du transit et à la météo ; <strong>pauses et rotation des conducteurs</strong> lors des transits importants.</li>
+                    <li><strong>Transit supérieur à 3 heures</strong> : prévoir un temps de repos ou de reconditionnement avant l'engagement opérationnel.</li>
+                    <li>Les COS successifs tiennent compte des moyens engagés et des renforts demandés pendant le transit.</li>
+                    <li>Sur les lieux : avertisseurs lumineux <strong>maintenus allumés</strong> ; vitesse adaptée au véhicule et au terrain ; guidage <strong>face à l'engin</strong> pour tout mouvement isolé ou délicat, <strong>tour à tour</strong> pour un groupe constitué.</li>
+                </ul>
+                <div class="rd-alerte">Aux abords du sinistre, l'attention du conducteur peut être détournée (ampleur du sinistre, badauds) : ne jamais occulter les règles élémentaires de prudence, par exemple le franchissement d'un feu rouge à vitesse limitée.</div>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>📍 Arrivée sur les lieux et point de situation</summary>
+            <div class="rd-section">
+                <ul>
+                    <li>Le COS se fait une opinion <strong>aussi exacte que possible</strong> de la situation : il interroge les premiers intervenants et effectue sa reconnaissance.</li>
+                    <li>Les COS successifs fixent un point de rendez-vous et prennent contact avec le COS en titre.</li>
+                    <li><strong>Réactions immédiates</strong> (avant le raisonnement tactique) : action (sauvetages, mises en sécurité), renseignement, information.</li>
+                </ul>
+                <p><strong>Contenu du point de situation à un supérieur :</strong></p>
+                <ul>
+                    <li>la situation à l'arrivée du 1<sup>er</sup> détachement (pour expliquer des premières actions qui peuvent sembler incohérentes) ;</li>
+                    <li>les actions urgentes à mener et les actions immédiatement menées (objectifs du SOIEC rédigé) ;</li>
+                    <li>les résultats obtenus ;</li>
+                    <li>la situation tactique et l'OCT ;</li>
+                    <li>les messages de renseignement adressés au CODIS ;</li>
+                    <li>les actions envisagées.</li>
+                </ul>
+                <p>Le point de situation peut être interservices.</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🧠 Raisonnement tactique</summary>
+            <div class="rd-section">
+                <p>Méthode de réflexion utilisée dès le début de l'engagement : elle répond aux problématiques posées par l'enjeu opérationnel, structure le commandement et répartit les missions. Elle s'exprime en <strong>réactions immédiates</strong> et en <strong>ordres formalisés</strong>.</p>
+        <figure class="rd-fig">
+            <img src="images/commandement/questions-raisonnement.webp" alt="Questions du raisonnement tactique" loading="lazy">
+            <figcaption>Les questions du raisonnement tactique (à compléter par « malgré quoi ? » pour repérer les contraintes)</figcaption>
+        </figure>
+                <p><strong>Outils de renseignement :</strong> renseignement « terrain », drones, vidéoprotection des communes, caméras thermiques, reconnaissances aériennes. Transmettre ces informations au CODIS <strong>ne retire pas</strong> au COS ses prérogatives décisionnelles.</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🔬 Analyse systémique : source – flux – cible</summary>
+            <div class="rd-section">
+                <p>Complément du raisonnement tactique, issu de la lutte contre les risques chimiques : une vision globale de la situation à partir de la <strong>source</strong> du danger, du <strong>flux</strong> qui le propage et de la <strong>cible</strong> menacée.</p>
+        <figure class="rd-fig">
+            <img src="images/commandement/analyse-systemique.webp" alt="Analyse systémique source-flux-cible" loading="lazy">
+            <figcaption>Analyse systémique du COS (intervention à caractère chimique) © M. Robert, SDIS 85</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🧭 Marche générale des opérations (MGO)</summary>
+            <div class="rd-section">
+                <p>La MGO ne remplace pas la méthode de raisonnement tactique : elle garde en tête les phases de traitement, qui <strong>ne sont pas toujours chronologiques</strong>. Champs communs : reconnaissance ; sauvetages et mises en sécurité ; actions spécifiques au domaine ; protection ; reconditionnement.</p>
+                <table class="rd-table">
+                    <tr><th>Opération</th><th>Phases</th></tr>
+                    <tr><td>Secours routiers</td><td>Sécurisation du site → sécurisation du véhicule → secours aux personnes → sécurisation des techniques → sortie de la victime</td></tr>
+                    <tr><td>Lutte contre l'incendie</td><td>Reconnaissance → placement des engins → sauvetage et mise en sécurité → établissements → attaque → ventilation → protection → déblai → préservation des traces et indices → surveillance → remise en condition</td></tr>
+                    <tr><td>Sauvetage-déblaiement</td><td>Reconnaissance et évaluation générale de la zone → reconnaissance et évaluation du secteur → recherche et sauvetage des victimes légèrement ensevelies → recherche et sauvetage des victimes en profondeur → déblaiement généralisé, recherche des corps</td></tr>
+                </table>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>⚖️ Décision et balance bénéfice-risque</summary>
+            <div class="rd-section">
+                <ul>
+                    <li>Le COS décide seul, aidé de son équipe quand la situation est complexe : la <strong>performance décisionnelle</strong> vient plus de la qualité du partage d'information que des compétences individuelles.</li>
+                    <li><strong>Posture horizontale</strong> : faciliter l'analyse et la proposition, encourager le débat contradictoire, chercher le consensus, capter les oppositions pour sécuriser les décisions. Puis <strong>posture verticale</strong> : décider et formaliser par des ordres.</li>
+                    <li><strong>Balance bénéfice-risque</strong> : rapport entre les risques encourus ou générés par une action et ses bénéfices pour les personnes, les biens ou l'environnement. Questions : la prise de risque en vaut-elle la peine (« le jeu en vaut-il la chandelle ? » de l'officier sécurité) ? L'engagement des équipes est-il justifié ?</li>
+                </ul>
+        <figure class="rd-fig">
+            <img src="images/commandement/balance-benefice-risque.webp" alt="Balance bénéfice-risque" loading="lazy">
+            <figcaption>La balance bénéfice-risque © M. Robert, SDIS 85</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>📣 Ordres initiaux et ordres de conduite</summary>
+            <div class="rd-section">
+                <p>L'<strong>ordre initial</strong> lance les premières actions ; l'<strong>ordre de conduite</strong> lance les suivantes selon l'évolution. Ils s'expriment à la voix (terrain ou PC) ou par radio, et facilitent le point de situation avec le N+1, le compte-rendu au CODIS ou à une autorité. Trois outils, du plus concis au plus complet :</p>
+                <table class="rd-table">
+                    <tr><th>Outil</th><th>Pour qui</th><th>Rubriques</th></tr>
+                    <tr><td><b>SMES</b></td><td>Chef d'agrès, chef d'équipe</td><td>Situation – Mission – Exécution – Sécurité</td></tr>
+                    <tr><td><b>SOIEC</b></td><td>Chef de groupe</td><td>Situation – Objectif – Idée de manœuvre – Exécution – Commandement</td></tr>
+                    <tr><td><b>SAOIECL</b></td><td>Chef de colonne, chef de site</td><td>Situation – Anticipation – Objectif – Idée de manœuvre – Exécution – Commandement – Logistique</td></tr>
+                </table>
+                <p><strong>Du raisonnement tactique à l'ordre (SAOIECL) :</strong></p>
+                <table class="rd-table">
+                    <tr><th>Rubrique</th><th>Question</th><th>Formulation</th></tr>
+                    <tr><td>Situation</td><td>Qui ? Où ? Par où ?</td><td>« Nous sommes confrontés à… »</td></tr>
+                    <tr><td>Anticipation</td><td>Jusqu'où ? Contre quoi ?</td><td>« Je prévois… »</td></tr>
+                    <tr><td>Objectif</td><td>Quoi faire ?</td><td>« Nous devons… »</td></tr>
+                    <tr><td>Idée de manœuvre</td><td>Comment faire ?</td><td>« Je veux que… »</td></tr>
+                    <tr><td>Exécution</td><td>Avec quoi ?</td><td>« Vous faites… » (1 chef, 1 mission, des moyens, DTA)</td></tr>
+                    <tr><td>Logistique</td><td>Quels besoins ?</td><td>Matériels, hommes, soutien sanitaire</td></tr>
+                    <tr><td>Commandement</td><td>Quelles règles ?</td><td>Adjoint, transmissions, mesures de sécurité</td></tr>
+                </table>
+                <p>Ordre de conduite : mêmes rubriques, avec la <strong>nouvelle</strong> situation, les <strong>nouveaux</strong> buts et techniques, et la modification de la sectorisation.</p>
+            </div>
+        </details>
+        <div class="rd-section">
+            <h3>Voir aussi</h3>
+            <ul>
+                <li><button onclick="showModule('gdo-cdt-menu')">Sommaire du guide</button> <button onclick="showModule('smes')">SMES</button> <button onclick="showModule('soiec')">SOIEC</button> <button onclick="showModule('saoiecl')">SAOIECL</button></li>
+            </ul>
+        </div>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Exercice du commandement et conduite des opérations », DGSCGC/DSP/SDDRH/BDFE, 2<sup>e</sup> édition (juin 2020, version 2.1 de juillet 2020). Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/commandement/GDO-Exercice-Commandement-Conduite-Operations-V2.pdf" target="_blank" rel="noopener">GDO Exercice du commandement et conduite des opérations (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-cdt-outils" class="module" style="--jsp: #7C3AED;">
+        <button class="back-btn" onclick="showModule('gdo-cdt-menu')">← Retour GDO commandement</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🗺️ Outils du COS</h2>
+        <p style="text-align: center;">Chapitre 3 (§5.7 à 5.9) du guide : postes de commandement, situation tactique, transmissions, sectorisation, anticipation, messages et officier de liaison.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li>Un <strong>poste de commandement</strong> aide le COS à élaborer ses ordres : véhicule du chef de groupe (souvent le premier PC), <strong>PC de colonne</strong> (2 fonctions), <strong>PC de site</strong> (5 fonctions), ou structure fixe (POI, PPI).</li>
+                <li>La <strong>SITAC</strong> décrit zone d'intervention, moyens, actions et organisation du commandement. Elle repose sur une charte graphique commune.</li>
+                <li>À chaque opération, un <strong>OCT</strong> est mis en place : chaque niveau hiérarchique peut joindre le niveau supérieur et inférieur. Il est exprimé <strong>en même temps que l'ordre initial</strong>.</li>
+                <li><strong>Sectorisation</strong> formalisée au niveau colonne : un chef par secteur, idéalement d'un niveau immédiatement inférieur à celui du COS.</li>
+                <li><strong>Anticipation</strong> : l'affaire de tous les COS (réflexe, court terme) ; la réfléchie (« avoir un coup d'avance ») est conduite par un chef de colonne.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>🏢 Postes de commandement</summary>
+            <div class="rd-section">
+                <p>Un PC est un ensemble de moyens à disposition du COS pour l'aider à élaborer ses ordres. Pour les opérations importantes, un véhicule PC plus conséquent est engagé.</p>
+                <p><strong>PC de colonne (PCC)</strong> — deux fonctions, modulables selon les compétences :</p>
+                <table class="rd-table">
+                    <tr><th>Officier</th><th>Missions</th></tr>
+                    <tr><td><b>Renseignements</b></td><td>Rechercher le renseignement ; analyser la zone d'intervention, le sinistre, les actions et moyens engagés pour établir la <strong>SITAC</strong> et l'ordre graphique de l'instant T à T+ΔT ; transmettre les ordres du COS aux chefs de secteurs ; transmettre le compte-rendu au CODIS ; préparer la communication extérieure</td></tr>
+                    <tr><td><b>Moyens</b></td><td>Proposer au COS le positionnement du PCC et du point de transit (PT) et l'implantation des fonctions support ; organiser et gérer les moyens puis le soutien logistique ; rédiger et tenir à jour l'<strong>OCT</strong></td></tr>
+                </table>
+        <figure class="rd-fig">
+            <img src="images/commandement/pc-colonne.webp" alt="Organisation possible d'un PC de colonne" loading="lazy">
+            <figcaption>Organisation possible d'un PC de colonne © ENSOSP</figcaption>
+        </figure>
+                <p><strong>PC de site (PCS)</strong> — cinq fonctions, modulables :</p>
+                <table class="rd-table">
+                    <tr><th>Fonction</th><th>Missions</th></tr>
+                    <tr><td><b>Chef du PC de site</b></td><td>Adjoint attitré du COS ; coordonne les acteurs du PC et optimise les synergies</td></tr>
+                    <tr><td><b>Renseignements</b></td><td>Recherche de renseignements, comptes rendus, préparation de la communication extérieure</td></tr>
+                    <tr><td><b>Moyens</b></td><td>Organisation et engagement des moyens, soutien logistique, coordination des relèves ; organisation des transmissions (spécialiste, mise en place de l'OCT)</td></tr>
+                    <tr><td><b>Action</b></td><td>Analyse de la ZI, établissement de la SITAC et de l'ordre graphique ; relation avec les chefs de secteur (remontées et ordres)</td></tr>
+                    <tr><td><b>Anticipation</b></td><td>Prévoir les évolutions possibles du sinistre, préparer la décision des autorités et proposer leur planification</td></tr>
+                </table>
+        <figure class="rd-fig">
+            <img src="images/commandement/pc-site.webp" alt="Organisation possible d'un PC de site" loading="lazy">
+            <figcaption>Organisation possible d'un PC de site © ENSOSP</figcaption>
+        </figure>
+                <p><strong>MAGeC</strong> (module d'appui à la gestion de crise) : version compacte du COGIC embarquée sur semi-remorque, mise à disposition des autorités lors d'une crise de grande ampleur ou d'un grand événement ; <strong>opérationnel en moins d'une heure</strong> sur place.</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>✏️ Situation tactique (SITAC) et charte graphique</summary>
+            <div class="rd-section">
+                <p>La SITAC est un schéma décrivant, pour une opération donnée, la zone d'intervention et ses caractéristiques, les moyens engagés ou prévus, les actions effectuées ou prévues et l'organisation du commandement. Un tracé peut représenter une situation présente ou future, ou une action relative à un ordre. Elle permet de <strong>partager sa vision</strong> avec subordonnés, autorités ou tout autre opérateur, et facilite la compréhension des risques, des enjeux et des actions.</p>
+        <figure class="rd-fig">
+            <img src="images/commandement/sitac-exemple.webp" alt="Exemple de SITAC" loading="lazy">
+            <figcaption>Exemple de SITAC © ENSOSP</figcaption>
+        </figure>
+                <p>La <strong>charte graphique</strong> uniformise les symboles pour schématiser les informations principales tout en conservant la réactivité imposée par l'urgence.</p>
+        <figure class="rd-fig">
+            <img src="images/commandement/charte-1.webp" alt="Charte graphique GOC, page 1" loading="lazy">
+            <figcaption>Charte graphique GOC (annexe B du guide), 1/2</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/commandement/charte-2.webp" alt="Charte graphique GOC, page 2" loading="lazy">
+            <figcaption>Charte graphique GOC (annexe B du guide), 2/2</figcaption>
+        </figure>
+                <p><strong>Croquis opérationnel</strong> : permet de comprendre l'évolution d'une problématique en regardant « à travers les murs » ; peut être intégré à la SITAC, aux PEX et RETEX.</p>
+        <figure class="rd-fig">
+            <img src="images/commandement/croquis-escalier.webp" alt="Croquis opérationnel d'un escalier" loading="lazy">
+            <figcaption>Croquis opérationnel © M. Robert, SDIS 85</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/commandement/croquis-fenetre.webp" alt="Croquis opérationnel d'une façade" loading="lazy">
+            <figcaption>Croquis opérationnel © M. Robert, SDIS 85</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🚁 Aéronefs télépilotés (drones)</summary>
+            <div class="rd-section">
+                <p>Un « œil déporté » pour le COS. <strong>Trois champs d'application</strong>, dix cas d'usage : pré-opérationnel (cartographie, plans d'ERP, formation, communication) ; opérationnel (reconnaissance, évaluation initiale, appui des intervenants) ; post-opérationnel (évaluation des dégâts, RETEX, recherche des causes et circonstances des incendies).</p>
+                <ul>
+                    <li><strong>Capteurs</strong> : optiques, thermiques, lidar, multispectral, hyperspectral, acoustique, détection chimique ou radiologique ; images HD horodatées et géoréférencées.</li>
+                    <li><strong>Apports</strong> : localiser et délimiter les zones à risques, identifier les enjeux (personnes menacées, disparus, victimes en terrain difficile), repérer des voies d'accès ; piloter la stratégie (coordonner, mesurer les effets, décider des bascules d'efforts, surveiller, détecter les menaces résiduelles, anticiper les impacts hors ZI, rendre compte, alimenter le RETEX).</li>
+                    <li>Emploi possible comme moyen de transport (bouées de sauvetage, relais radio sur point haut).</li>
+                </ul>
+                <p><strong>Cadre dérogatoire</strong> (art. 10 de l'arrêté du 17 décembre 2015) : pour les missions de secours, sauvetage ou sécurité civile, les aéronefs télépilotés de l'État (ou affrétés/loués par lui) ou engagés sous la direction du préfet peuvent déroger à la réglementation lorsque les circonstances le justifient. <strong>Vol de nuit</strong> et <strong>hauteur supérieure à 150 m</strong> : accordés par le préfet après avis de l'aviation civile et de la défense, avec mesures de compatibilité avec les autres aéronefs. Le préfet peut délivrer une <strong>autorisation permanente</strong> de vol en agglomération pour les interventions réelles (entraînements planifiés).</p>
+                <p><strong>Engagement sur la zone d'intervention :</strong></p>
+                <ul>
+                    <li>Seuls les personnels <strong>formés et inscrits au manuel d'activités particulières</strong> du SIS participent.</li>
+                    <li>Dès son arrivée, le télépilote prend contact avec le COS et se place sous son commandement ; il reste responsable de la mise en œuvre et du respect de la réglementation.</li>
+                    <li>Pour les grandes interventions, un <strong>OLAT</strong> (officier de liaison aéroterrestre) conseille le COS et est <strong>l'unique interlocuteur</strong> du télépilote.</li>
+                </ul>
+                <div class="rd-alerte"><strong>Interdiction formelle</strong> de faire voler un drone en présence de tout aéronef avec humain à bord (sécurité civile, SAMU, gendarmerie…). En présence d'un officier AERO, aucun engagement sans sa validation.</div>
+                <p>Voir la fiche <button class="sal-lien" onclick="showModule('drones')">GDO drones</button>.</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>📻 Ordres de transmissions (OCT / OPT)</summary>
+            <div class="rd-section">
+                <p>L'organisation des communications d'un SIS est définie par l'<strong>OBDSIC</strong> (ordre de base départemental). L'ordre de transmission est soit conçu sur l'intervention (<strong>OCT</strong>, ordre complémentaire de transmission), soit planifié (<strong>OPT</strong>, ordre particulier de transmission, annexé aux dispositions ORSEC, plans d'urgence, plans d'ERP, grands rassemblements ; il devient la base de l'OCT si l'événement tourne à l'opération de secours).</p>
+                <table class="rd-table">
+                    <tr><th>Liaison</th><th>Entre</th></tr>
+                    <tr><td>COS / CO</td><td>Infrastructure</td></tr>
+                    <tr><td>Tactique niveau 1</td><td>COS, poste de commandement et chefs de secteurs</td></tr>
+                    <tr><td>Tactique niveau 2</td><td>Chefs de secteurs et chefs de sous-secteurs</td></tr>
+                    <tr><td>Tactique niveau 3</td><td>Chef de sous-secteur et chefs de groupes d'intervention</td></tr>
+                    <tr><td>Tactique niveau 4</td><td>Chefs d'agrès d'un même groupe d'intervention</td></tr>
+                </table>
+        <figure class="rd-fig">
+            <img src="images/commandement/oct-secteurs.webp" alt="Exemple d'OCT sur une opération de niveau site" loading="lazy">
+            <figcaption>Exemple d'OCT sur une opération de niveau « site » © ENSOSP</figcaption>
+        </figure>
+                <p>D'autres liaisons peuvent être créées (chefs d'agrès / équipes, moyens aériens).</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🧩 Sectorisation</summary>
+            <div class="rd-section">
+                <ul>
+                    <li>La hiérarchisation du commandement est le principe de base. Selon l'importance ou la complexité, le COS <strong>sectorise</strong> l'intervention, formalisée au niveau du commandement de colonne et reportée sur tous ses outils (OI, OCT, SITAC…).</li>
+                    <li>Répartition des moyens et missions par secteur, sous l'autorité d'un chef (idéalement un niveau sous le COS). <strong>L'interface entre secteurs est fine et sans discontinuité.</strong></li>
+                    <li><strong>Sectorisation géographique</strong> : découpage de la ZI en aires ; le chef coordonne missions et moyens de tout type sur l'espace concerné.</li>
+                    <li><strong>Sectorisation fonctionnelle</strong> : missions valables sur toute la ZI, affectées par thématique (alimentation, incendie, secours à personne…) ; compétence non limitée dans l'espace mais avec un effet attendu.</li>
+                </ul>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🔭 Anticipation</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Anticipation réflexe</strong> : conduite par tous les COS ; évolution à court terme (propagation d'un sinistre) sur les <strong>enjeux prioritaires</strong>.</li>
+                    <li><strong>Anticipation réfléchie</strong> : enjeux secondaires et plus lointains ; « avoir un coup d'avance » sur l'événement et les moyens nécessaires. Conduite au profit du COS par un chef de colonne (avec un conseiller technique de spécialité si besoin) pour les événements dimensionnants (grand feu, risque technologique, opération longue, retour à la vie normale).</li>
+                </ul>
+                <p><strong>Démarche :</strong> prise en compte de l'événement → analyse contextuelle (ZI, sinistre, météo) → analyse systémique (incendies, risque technologique) → évaluation de la situation → détermination des actions de phase réfléchie et de retour à la normale.</p>
+                <p><strong>Trois tableaux</strong> pour formaliser et partager :</p>
+        <figure class="rd-fig">
+            <img src="images/commandement/tableau-situations.webp" alt="Tableau des situations envisageables" loading="lazy">
+            <figcaption>Tableau des situations envisageables : conséquences à moyen et long terme, pour que le COS fixe ses objectifs</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/commandement/tableau-idees.webp" alt="Tableau des idées de manœuvre" loading="lazy">
+            <figcaption>Tableau des idées de manœuvre : avantages et inconvénients pour chaque objectif</figcaption>
+        </figure>
+        <figure class="rd-fig">
+            <img src="images/commandement/tableau-manoeuvre.webp" alt="Tableau des tâches à accomplir" loading="lazy">
+            <figcaption>Tableau des tâches à accomplir pour chaque idée de manœuvre retenue</figcaption>
+        </figure>
+                <p>Pour chaque tâche, préciser <strong>où, quand et par qui</strong> : d'où une balance <strong>moyens nécessaires / moyens disponibles</strong> ; vérifier la compatibilité temporelle et matérielle des actions.</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>💬 Remontée d'information : les messages</summary>
+            <div class="rd-section">
+                <p>Les messages informent l'autorité de la situation, des actions et des difficultés. Familles :</p>
+                <table class="rd-table">
+                    <tr><th>Message</th><th>Rôle</th></tr>
+                    <tr><td>Statut</td><td>État opérationnel du moyen : départ, présent sur les lieux, disponible ou non</td></tr>
+                    <tr><td>Ambiance</td><td>Transmis <strong>le plus tôt possible</strong> : vision globale au CO ; la prise de commandement peut y être intégrée</td></tr>
+                    <tr><td>Commandement</td><td>Permet à tous d'identifier sans ambiguïté qui est COS</td></tr>
+                    <tr><td>Urgence</td><td>Prend la priorité des transmissions en cas de mise en danger ; peut s'associer au <strong>signal de repli</strong> en cas de risque imminent</td></tr>
+                    <tr><td>Compte-rendu</td><td>Situation, évolutions possibles, actions entreprises, besoins supplémentaires (normé, jusqu'à l'échelon national)</td></tr>
+                </table>
+                <div class="fod-cote-a-cote">
+                    <div><b>Message d'ambiance</b><br>Je suis…<br>Je vois…<br>Je demande…</div>
+                    <div><b>Message de compte-rendu</b><br>Je suis…<br>Je vois…<br>Je prévois…<br>Je fais…<br>Je demande…</div>
+                </div>
+                <p>Le COS informe régulièrement son CO et peut compléter par image ou audio. Selon les critères nationaux, les informations sont intégrées au <strong>portail ORSEC</strong> (événement SYNERGI) pour être partagées avec COD, COZ et COGIC. Tout chef de corps peut adresser un <strong>compte rendu immédiat</strong> directement au COGIC. Vocabulaire radio conforme à l'OBNSIC.</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🤝 Officier de liaison (ODL)</summary>
+            <div class="rd-section">
+                <p>Cadre qui joue l'<strong>interprète</strong> entre son SIS et une ou plusieurs parties prenantes ; point de contact privilégié du COS, il prévoit les moyens de communication et assure sans délai les échanges.</p>
+                <p><strong>Sollicité notamment pour :</strong> déclenchement d'un POI, accueil et suivi des renforts zonaux et extra-zonaux, activation d'un COD, activation du PCO d'une préfecture, tuerie de masse (ORSEC NOVI), cellule de crise (inter)ministérielle.</p>
+                <p><strong>Aptitudes recherchées :</strong> expérience opérationnelle et capacité de conseil ; langage opérationnel commun ; connaissance précise des capacités du SIS et des renforts possibles ; maîtrise d'ORSEC NOVI et de la doctrine tuerie de masse, et du rôle du COS ; réactivité pour prioriser l'information ; connaissance des doctrines PN et GN et des rôles du COPG et du COIS ; <strong>secret, discrétion et réserve professionnels</strong>.</p>
+            </div>
+        </details>
+        <div class="rd-section">
+            <h3>Voir aussi</h3>
+            <ul>
+                <li><button onclick="showModule('gdo-cdt-menu')">Sommaire du guide</button> <button onclick="showModule('smes')">SMES</button> <button onclick="showModule('soiec')">SOIEC</button> <button onclick="showModule('saoiecl')">SAOIECL</button></li>
+            </ul>
+        </div>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Exercice du commandement et conduite des opérations », DGSCGC/DSP/SDDRH/BDFE, 2<sup>e</sup> édition (juin 2020, version 2.1 de juillet 2020). Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/commandement/GDO-Exercice-Commandement-Conduite-Operations-V2.pdf" target="_blank" rel="noopener">GDO Exercice du commandement et conduite des opérations (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-cdt-securite" class="module" style="--jsp: #7C3AED;">
+        <button class="back-btn" onclick="showModule('gdo-cdt-menu')">← Retour GDO commandement</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🦺 Sécurité, désordres, médias</h2>
+        <p style="text-align: center;">Chapitre 3 (§6 à 9) du guide : responsabilité du COS, zonage, officier sécurité, désordres opérationnels, médias et réseaux sociaux.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>La sécurité des personnels engagés est de la pleine responsabilité du COS</strong> ; elle est aussi l'affaire de chaque intervenant.</li>
+                <li><strong>Zonage</strong> mis en place au plus tôt : zone d'exclusion (rouge), zone contrôlée (orange), zone de soutien (verte), éventuellement zone « public » au-delà.</li>
+                <li><strong>Officier sécurité</strong> : conseiller technique du COS, 4 axes (humain, technique, organisationnel, environnemental). Danger grave et imminent : mesures immédiates puis compte rendu sans délai au COS.</li>
+                <li>Face à une agression physique, <strong>la fuite est souvent la meilleure protection</strong> ; dépôt de plainte systématique.</li>
+                <li>Scène de crime : <strong>porter secours en priorité</strong>, tout en préservant la possibilité d'enquêter.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>🛡️ Rôle du COS en matière de sécurité</summary>
+            <div class="rd-section">
+                <p>Le COS doit :</p>
+                <ul>
+                    <li>assurer la sécurité de tous les personnels engagés (sapeurs-pompiers, agents d'autres services…) ;</li>
+                    <li>limiter au strict minimum l'engagement des personnels, surtout si les actions sont difficiles ou dangereuses ;</li>
+                    <li>définir les <strong>EPI</strong> et faire vérifier leur port ;</li>
+                    <li>définir les règles de sécurité et faire vérifier leur exécution ;</li>
+                    <li>mettre à disposition une <strong>zone de réhabilitation</strong> si nécessaire ;</li>
+                    <li>rester en contact avec le <strong>SSSM</strong> pour le soutien sanitaire ;</li>
+                    <li>prévoir la <strong>relève</strong> des personnels.</li>
+                </ul>
+                <p>Le port des EPI génère lui-même des contraintes (stress thermique, champ de vision réduit, épuisement) à prendre en compte.</p>
+        <figure class="rd-fig">
+            <img src="images/commandement/zonage-volumique.webp" alt="Analyse volumique des 6 faces de la zone d'intervention" loading="lazy">
+            <figcaption>Analyse volumique des 6 faces de la zone d'intervention © d'après le rapport Pourny</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🟥🟧🟩 Zonage opérationnel</summary>
+            <div class="rd-section">
+                <p>Un ou plusieurs <strong>périmètres de sécurité « a priori »</strong>, mis en place au plus tôt, limitent les risques pour tiers, impliqués et intervenants ; ils s'affinent avec la montée en puissance.</p>
+                <table class="rd-table">
+                    <tr><th>Zone</th><th>Définition</th><th>Caractéristiques</th></tr>
+                    <tr><td><b style="color:#DC2626">Exclusion (rouge)</b></td><td>Intervenants directement exposés aux risques</td><td>Accès strictement restreint aux équipes disposant des EPI adaptés ; nombre et missions des personnels connus du COS et des chefs ; une partie peut être interdite par le COS ; apparaît et disparaît au fil de l'opération ; drones et robots à privilégier pour agir et renseigner</td></tr>
+                    <tr><td><b style="color:#F97316">Contrôlée (orange)</b></td><td>Zone tampon d'où l'engagement vers la zone d'exclusion est coordonné</td><td>Enregistrement et engagement des binômes avec moyens de suivi adaptés (risques chimiques, reconnaissances longues dans parkings couverts)</td></tr>
+                    <tr><td><b style="color:#16A34A">Soutien (verte)</b></td><td>Entités de commandement, soutien et reconditionnement</td><td>À l'écart de tout danger pour les intervenants</td></tr>
+                    <tr><td><b>Public</b></td><td>Personnes sans mission liée à l'intervention</td><td>Au-delà de la zone de soutien ; aucune restriction opérationnelle</td></tr>
+                </table>
+                <p><strong>Points d'accès et de contrôle</strong> (équivalent d'un sas) : gestion des entrées/sorties des intervenants, des matériels souillés, contrôle des actions menées.</p>
+                <p>Dispositif incomplet ? Appliquer les principes : identifier la zone d'exclusion et son ou ses points de pénétration, une zone pour les matériels et équipements souillés, et l'emplacement d'un <strong>PRV</strong> pour les victimes.</p>
+        <figure class="rd-fig">
+            <img src="images/commandement/zonage-exemple.webp" alt="Exemple de zonage en opération" loading="lazy">
+            <figcaption>Exemple de zonage en opération © S. Coconnier, SDIS 49</figcaption>
+        </figure>
+
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🦺 Officier sécurité</summary>
+            <div class="rd-section">
+                <p>Conseiller technique du COS pour la <strong>sécurité globale</strong>, au même niveau qu'un conseiller technique de spécialité. Il prend en compte la sécurité dès qu'il connaît les objectifs du COS et l'organise selon <strong>quatre axes</strong> :</p>
+                <table class="rd-table">
+                    <tr><th>Axe</th><th>Points de vigilance</th></tr>
+                    <tr><td><b>Humain</b><br>soutien sanitaire et logistique</td><td>Engagement et gestion des équipes de reconnaissance ; zone d'abri et de repos ; eau et alimentation ; lien avec le SSSM ; effectif compatible avec l'opération ; extraire les personnels inutiles</td></tr>
+                    <tr><td><b>Technique</b><br>matériel et EPI</td><td>Port des EPI (LSPCC, ARI…) ; pertinence du stationnement des engins par rapport aux structures ; balisage de la ZI et des périmètres</td></tr>
+                    <tr><td><b>Organisationnel</b><br>doctrines et règlements</td><td>Positionnement tactique des binômes ; relèves ; règles de sécurité lors des déblais ; application des règlements ; cellule communication (images pour formation et RETEX) ; participe ou pilote le RETEX</td></tr>
+                    <tr><td><b>Environnemental</b><br>climat, structure du bâtiment</td><td>Zones à risque (effondrement, explosion, émanation, électricité) ; respect des zones d'exclusion et périmètres ; prise en compte du <strong>suraccident</strong> ; périmètre ou sas à matérialiser ; <strong>danger grave et imminent</strong> : mesures de préservation immédiates, compte rendu sans délai au COS</td></tr>
+                </table>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>⚠️ Désordres opérationnels (7.1 à 7.9)</summary>
+            <div class="rd-section">
+                <p>Événements non souhaités agissant sur l'organisation et la conduite de l'opération : organisationnels, humains ou techniques.</p>
+                <p><strong>Retard dans la progression des secours</strong></p>
+                <ul>
+                    <li>Accident d'un véhicule de secours, embouteillage, barrière SNCF, météo : si le chef d'agrès ne peut arriver dans des délais raisonnables, il demande l'engagement d'<strong>un autre vecteur</strong> en précisant au CO le secteur routier à éviter.</li>
+                    <li>Le message consigné sur la <strong>main courante</strong> du CO justifiera le retard en cas de contentieux.</li>
+                    <li>Obstacle ou gêne à la progression (stationnement illicite, attroupement) : prendre les dispositions pour accomplir la mission et faire remonter au CODIS pour un éventuel dépôt de plainte.</li>
+                    <li>Autre situation de secours rencontrée en route : prendre les mesures (demande de secours, personnel laissé sur place) puis reprendre la mission initiale.</li>
+                </ul>
+                <p><strong>Agressions</strong></p>
+                <ul>
+                    <li>Outrages et menaces : le COS évalue le risque d'accomplir la mission en totalité ; si trop élevé, premières mesures de sauvegarde et <strong>demande simultanée des forces de l'ordre</strong>.</li>
+                    <li>Agression physique : <strong>la fuite est privilégiée</strong> à la logique d'affrontement. Dépôt de plainte systématique pour éviter la banalisation. Protection fonctionnelle de l'agent (art. 11 loi 83-634 du 13 juillet 1983).</li>
+                </ul>
+                <p><strong>Violences urbaines</strong> : réponse préparée avec les forces de sécurité : renforcement des secours, points de rendez-vous, méthodes d'extinction permettant une extraction rapide, règles d'engagement favorisant le <strong>sens du départ</strong>, renforcement des matériels (filmage des vitres), entraînements communs.</p>
+                <p><strong>Accident ou décès en service commandé</strong></p>
+                <ul>
+                    <li>À anticiper (directives locales, exercices). <strong>Effet tunnel</strong> : montée d'adrénaline, baisse des performances et champ de vision rétréci.</li>
+                    <li>Le CO reprend la main selon cinq principes : <strong>soutenir</strong> (renfort pour remplacer les intervenants impactés), <strong>relever</strong> (consignes et valorisation des premiers gestes), <strong>regrouper</strong> (lieu protecteur, autorité reconnue, psychologue ou SSSM), <strong>désamorcer</strong> (échange libre puis rendez-vous pour un débriefing), <strong>garantir un retour au domicile en sécurité</strong>, pas trop tôt.</li>
+                    <li>Le chef reste au côté de ses hommes et est garant de l'information transmise.</li>
+                </ul>
+                <p><strong>Dégradation majeure du dispositif</strong> : les secours ne peuvent plus poursuivre leur mission ; risque de basculer en situation de crise. Le CO reprend la main et envoie les moyens pour traiter l'opération et prendre en compte les sapeurs-pompiers impactés.</p>
+                <p><strong>Scènes de crime</strong></p>
+                <ul>
+                    <li>Règle : <strong>secours en priorité</strong>, en ménageant les investigations. Le COS veille à : un <strong>cheminement unique</strong>, un balisage, un personnel strictement nécessaire, mémoriser l'état des accès à l'arrivée (porte forcée, ouverte), prendre des photos si besoin.</li>
+                    <li><strong>Proscrit</strong> : fumer, boire, manger, se gratter les cheveux, cracher, jeter un objet ; toucher ou déplacer une personne en décès manifeste ou des objets ; encombrer la zone ; aérer les locaux.</li>
+                </ul>
+                <p><strong>Découvertes diverses</strong> (maltraitance, radicalisation, travail dissimulé, culture de produits illicites) : article 40 du code de procédure pénale, avis sans délai au procureur ; le COS demande les forces de l'ordre et/ou renseigne le SAMU sans perdre de vue la mission.</p>
+                <p><strong>Personnalités impliquées</strong> : devoir de discrétion renforcé, le COS adapte sa remontée d'information.</p>
+                <p><strong>Contexte sensible</strong> (prison, lieu de culte, zone hostile, climat de tension) : appel des forces de l'ordre ; le COS peut décider de <strong>quitter les lieux</strong> pour prendre en charge la victime dans un lieu sécurisé si la situation le permet.</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🎤 Médias sur opération</summary>
+            <div class="rd-section">
+                <ul>
+                    <li>Parler à la presse, c'est parler au public, prouver qu'on n'a rien à cacher, renforcer sa crédibilité.</li>
+                    <li>DOS présent : partager <strong>en amont</strong> avec lui la limite des propos.</li>
+                    <li>Se limiter à l'aspect <strong>purement technique</strong>, sans évoquer l'origine possible du sinistre ni spéculer. Vulgariser : 1) premiers éléments circonstanciels, 2) bilan connu, 3) action valorisée des sapeurs-pompiers, <strong>sans pronostic</strong>, 4) consignes et conseils au public.</li>
+                    <li>Le COS ne peut pas à la fois diriger les secours et guider les journalistes : <strong>officier communication</strong> (cellule renseignements du PCC/PCS). En interservices, le DOS décline la stratégie de communication de crise.</li>
+                </ul>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>📱 Médias sociaux en gestion d'urgence (MSGU)</summary>
+            <div class="rd-section">
+                <p>Récupérer messages, photos et vidéos des profils publics (Facebook, X, Instagram, YouTube, Waze…) pour mieux se représenter la situation, et informer le public (conseils, démenti des fausses informations).</p>
+                <ul>
+                    <li>Sauver des vies (géolocalisation, prévention, détection de personnes sinistrées ou disparues), accéder plus vite à l'information.</li>
+                    <li>Relayer la communication des autorités, couper court aux rumeurs, dialoguer avec les citoyens et en faire des acteurs de leur sécurité.</li>
+                    <li>Réduire les appels non urgents au CTA saturé.</li>
+                </ul>
+            </div>
+        </details>
+        <div class="rd-section">
+            <h3>Voir aussi</h3>
+            <ul>
+                <li><button onclick="showModule('gdo-cdt-menu')">Sommaire du guide</button> <button onclick="showModule('smes')">SMES</button> <button onclick="showModule('soiec')">SOIEC</button> <button onclick="showModule('saoiecl')">SAOIECL</button></li>
+            </ul>
+        </div>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Exercice du commandement et conduite des opérations », DGSCGC/DSP/SDDRH/BDFE, 2<sup>e</sup> édition (juin 2020, version 2.1 de juillet 2020). Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/commandement/GDO-Exercice-Commandement-Conduite-Operations-V2.pdf" target="_blank" rel="noopener">GDO Exercice du commandement et conduite des opérations (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
+    <div id="gdo-cdt-apres" class="module" style="--jsp: #7C3AED;">
+        <button class="back-btn" onclick="showModule('gdo-cdt-menu')">← Retour GDO commandement</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🔁 Après l'opération et annexes</h2>
+        <p style="text-align: center;">Chapitre 4 et annexes du guide : réflexivité, réhabilitation, rapport, récompenses, PEX et RETEX, protocole drones, plans types.</p>
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li>Le rôle du COS <strong>se poursuit après l'opération</strong> : accompagnement et bienveillance envers ses personnels.</li>
+                <li><strong>Défusing</strong> : dans les 3 jours, idéalement 3 à 8 h après ; volontaires, même intervention, groupe de 4 à 10. <strong>Débriefing psychologique</strong> : animé par un professionnel de santé formé.</li>
+                <li><strong>Rapport d'intervention</strong> : COS, chefs de secteur et chaque chef d'agrès.</li>
+                <li><strong>PEX</strong> : factuel, <strong>4 pages maximum</strong>. <strong>RETEX</strong> : démarche structurée, <strong>non disciplinaire</strong> : comprendre la situation, pas désigner un responsable.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>🔍 Réflexivité opérationnelle</summary>
+            <div class="rd-section">
+                <p>Utiliser <em>in situ</em>, à l'issue de l'opération, les outils d'analyse les plus simples pour entrer dans l'amélioration continue et l'ancrage des bonnes pratiques. Une simple <strong>explication à chaud</strong>, le calme revenu, permet les premiers réajustements techniques et d'envisager des mises en situation ou ateliers ciblés. C'est aussi une forme de compagnonnage entre générations, une acculturation au PEX/RETEX et un indicateur de prévention des risques psychosociaux.</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🛌 Réhabilitation des personnels</summary>
+            <div class="rd-section">
+                <p><strong>Physique</strong> : selon le contexte et l'intensité de l'engagement, le COS ou l'encadrement du CIS met les personnels au repos au retour ; l'intelligence de situation guide les actions à la caserne (remise en condition du matériel et des engins).</p>
+                <p><strong>Psychologique</strong> : deux formats.</p>
+                <table class="rd-table">
+                    <tr><th></th><th>Défusing</th><th>Débriefing psychologique</th></tr>
+                    <tr><td><b>Quand</b></td><td>Dans les 3 jours, idéalement 3 à 8 h après</td><td>Intervention psychologique précoce</td></tr>
+                    <tr><td><b>Qui anime</b></td><td>Personnel formé</td><td>Professionnel de santé formé</td></tr>
+                    <tr><td><b>Participants</b></td><td>Volontaires, même intervention, se connaissant ; 4 à 10 en groupe</td><td>Individuel ou collectif</td></tr>
+                    <tr><td><b>Objectif</b></td><td>Diminuer les réactions, normaliser, partager les ressentis, soutien mutuel (sans forcer à parler), lutter contre le repli ; évaluer l'intérêt d'un débriefing</td><td>Réduire les réactions au traumatisme, reconstruire l'histoire et lui donner du sens, dépister les personnels déstabilisés, renforcer l'équipe</td></tr>
+                    <tr><td><b>Phases</b></td><td>Introduction, exploration, information</td><td>Introduction, exploration, clôture (modèle IPPI des CUMP)</td></tr>
+                </table>
+                <p>Le défusing privilégie la convivialité sur le travail psychologique. Le soutien est aussi essentiel pour les équipes des centres opérationnels.</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>📝 Rapport d'intervention et récompenses</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Rapport d'intervention</strong> : le COS, les chefs de secteur et chaque chef d'agrès en rédigent un pour clôturer l'opération. Dématérialisés, ils alimentent les tableaux de bord, les indicateurs opérationnels et les statistiques nationales.</li>
+                    <li><strong>Récompenses</strong> : lettres de félicitations, médaille pour actes de courage et de dévouement, citation. Les COS et chefs de détachement signalent les actions méritantes, <strong>avec discernement et équité</strong>.</li>
+                </ul>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>📚 PEX et RETEX</summary>
+            <div class="rd-section">
+                <p><strong>PEX (partage d'expérience)</strong> : compte rendu succinct d'une intervention (faits, difficultés, enseignements), <strong>factuel</strong>, illustré de schémas et d'images, <strong>4 pages maximum</strong>. Thèmes : gestion opérationnelle, emploi d'une technique ou d'un outil, sécurité des intervenants, valorisation d'une bonne pratique. Banque nationale sur le <strong>PNRS</strong> (ENSOSP).</p>
+                <p><strong>RETEX (retour d'expérience)</strong> : démarche structurée pour partager et apprendre a posteriori : partager la connaissance, permettre à chacun de s'exprimer, objectiver les décisions, identifier difficultés et bonnes pratiques, observer les dimensions techniques, humaines et organisationnelles, capitaliser, renforcer les liens avec les partenaires, instituer une organisation apprenante, montrer la transparence du service public.</p>
+                <p><strong>Trois piliers de la posture du cadre :</strong> respect des <strong>individus</strong> (chaque acteur est une source, liberté de parole, restitution des enseignements), des <strong>organisations</strong> (cohésion, actions transversales, cadre réglementaire), des <strong>informations</strong> (règles de partage et de diffusion, traitement croisé et objectivé).</p>
+                <p><strong>Principes :</strong> intérêt général, confiance et proposition ; <strong>comprendre la situation et non désigner un responsable</strong> ; esprit critique constructif et objectif ; démarche <strong>non disciplinaire</strong> ; perspective interservices et de sécurité globale.</p>
+                <div class="fod-cote-a-cote">
+                    <div><b>Plan type d'un PEX</b><br>1. Contexte opérationnel (date, heure, nature, lieu, moyens, situation à l'arrivée, premières actions et objectifs du COS, message du 1<sup>er</sup> chef de groupe)<br>2. Situation opérationnelle (problématiques ; photos et schémas)<br>3. Éléments favorables et défavorables<br>4. Ce qu'il faut retenir (enseignements, recommandations)<br>5. Documentation (GDO, GTO, notes, fiches réflexes)</div>
+                    <div><b>Plan type d'un RETEX</b><br>1. Sommaire<br>2. Objectifs<br>3. Informations générales (rappels techniques ou réglementaires, contexte)<br>4. Données (nature, sources, méthodes de collecte)<br>5. Présentation de la situation (contexte, ZI, éléments favorables/défavorables, chronologie, situation initiale, actions et moyens, problématiques)<br>6. Analyse (risques, pratiques, justification, argumentation, résultat)<br>7. Enseignements (bonnes pratiques, axes d'amélioration, propositions, plan d'action)<br>8. Annexes</div>
+                </div>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🚁 Annexe C : protocole préfet / SDIS pour les drones</summary>
+            <div class="rd-section">
+                <p>Modèle de protocole entre le préfet et le directeur du SDIS fixant le cadre dérogatoire (arrêtés du 17 décembre 2015 et du 30 mars 2017). Il ne s'applique qu'à une <strong>situation opérationnelle non programmable</strong>, sans augmenter le risque de collision ni de dommages.</p>
+                <table class="rd-table">
+                    <tr><th>Cas</th><th>Conditions</th></tr>
+                    <tr><td><b>Vol en zone peuplée</b></td><td>Pas de préavis de 5 jours ouvrables, <strong>sous réserve d'une notification avant le vol</strong> aux services préfectoraux de protection civile, à l'aviation civile (navigation aérienne), à la police et/ou la gendarmerie ; hauteur inférieure à 50 m (150 m si masse &lt; 2 kg)</td></tr>
+                    <tr><td><b>Vol de nuit</b></td><td>Attestation de conception <strong>scénario S2</strong> ; localisation lumineuse à 360° visible à au moins <strong>100 m</strong> ; hauteur <strong>≤ 50 m</strong> ; à distance des plateformes de décollage ou d'atterrissage (ou accord de l'autorité en espace contrôlé)</td></tr>
+                    <tr><td><b>Hors vue, zone non peuplée, &lt; 1 000 m</b></td><td>Sans notification préalable si le télépilote peut s'assurer de l'absence d'autres aéronefs grâce à un <strong>observateur en liaison permanente</strong></td></tr>
+                    <tr><td><b>Hors vue, zone non peuplée, 1 000 à 5 000 m</b></td><td>Hauteur 150 m ; attestation de conception <strong>scénario S4</strong> ; manuel d'activités particulières à jour ; dossier « laisser-passer » préalable ; <strong>ségrégation spatio-temporelle</strong> (zone interdite ou réglementée temporaire) ; absence de personnes au sol sur la zone de vol ; télépilote titulaire de l'aptitude (&lt; 2 kg) ou du complément de formation aéronautique (&gt; 2 kg)</td></tr>
+                </table>
+                <p>Le protocole peut être suspendu sans préavis si la sécurité aérienne est engagée ; tout incident fait l'objet d'un compte rendu aux signataires.</p>
+            </div>
+        </details>
+        <details class="jsp-cours">
+            <summary>🔤 Annexe A : abréviations utiles</summary>
+            <div class="rd-section">
+                <p><b>CoTRRiM</b> contrat territorial de réponse aux risques et menaces · <b>COIS</b> commandant des opérations des interventions spéciales · <b>COPG</b> commandant des opérations de police et de gendarmerie · <b>DOS</b> directeur des opérations de secours (maire ou préfet) · <b>GDO / GTO</b> guide de doctrine / de techniques opérationnelles · <b>MAGeC</b> module d'appui de gestion de crise · <b>OBDSIC / OBNSIC</b> ordre de base départemental / national des SIC · <b>OCT / OPT</b> ordre complémentaire / particulier de transmission · <b>OI</b> ordre initial · <b>OLAT</b> officier de liaison aéroterrestre · <b>PCC / PCS / PCO</b> poste de commandement de colonne / de site / opérationnel · <b>PEX / RETEX</b> partage / retour d'expérience · <b>PRM</b> point de rassemblement des moyens · <b>PT</b> point de transit · <b>RT</b> raisonnement tactique · <b>SDACR</b> schéma départemental d'analyse et de couverture des risques · <b>SITAC</b> situation tactique · <b>ZI</b> zone d'intervention</p>
+            </div>
+        </details>
+        <div class="rd-section">
+            <h3>Voir aussi</h3>
+            <ul>
+                <li><button onclick="showModule('gdo-cdt-menu')">Sommaire du guide</button> <button onclick="showModule('smes')">SMES</button> <button onclick="showModule('soiec')">SOIEC</button> <button onclick="showModule('saoiecl')">SAOIECL</button></li>
+            </ul>
+        </div>
+        <p class="rd-source">📚 Guide de doctrine opérationnelle « Exercice du commandement et conduite des opérations », DGSCGC/DSP/SDDRH/BDFE, 2<sup>e</sup> édition (juin 2020, version 2.1 de juillet 2020). Document de doctrine sans portée réglementaire. Synthèse reformulée ; schémas © DGSCGC et auteurs cités dans le guide (utilisation des illustrations soumise à l'autorisation de l'auteur).</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/commandement/GDO-Exercice-Commandement-Conduite-Operations-V2.pdf" target="_blank" rel="noopener">GDO Exercice du commandement et conduite des opérations (PDF, 8 Mo)</a>
+        </p>
+    </div>
+
     <div id="cod1" class="module" style="--jsp: #0E7490;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
@@ -28776,7 +29584,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.66.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.67.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

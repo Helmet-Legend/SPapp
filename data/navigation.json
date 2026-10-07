@@ -100,7 +100,8 @@
    "couleur": "#8347C2",
    "themes": [
     "Avant l'intervention",
-    "Pendant l'intervention"
+    "Pendant l'intervention",
+    "GDO – Exercice du commandement et conduite des opérations"
    ]
   },
   {
@@ -5119,6 +5120,153 @@
     "rond-point",
     "virage",
     "distance de freinage"
+   ]
+  },
+  {
+   "id": "gdo-cdt-menu",
+   "titre": "GDO – Exercice du commandement et conduite des opérations",
+   "domaine": "commandement",
+   "theme": "GDO – Exercice du commandement et conduite des opérations",
+   "type": "presentation",
+   "motsCles": [
+    "gdo",
+    "commandement",
+    "cos",
+    "doctrine",
+    "dgscgc",
+    "2020"
+   ]
+  },
+  {
+   "id": "gdo-cdt-avant",
+   "titre": "GDO Commandement – Avant l'opération",
+   "domaine": "commandement",
+   "theme": "GDO – Exercice du commandement et conduite des opérations",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "commandement",
+    "cos",
+    "doctrine",
+    "dgscgc",
+    "2020",
+    "chaîne de commandement",
+    "cotrrim",
+    "sdacr",
+    "préparation",
+    "posture du chef"
+   ]
+  },
+  {
+   "id": "gdo-cdt-pendant",
+   "titre": "GDO Commandement – Pendant : cadre et centre opérationnel",
+   "domaine": "commandement",
+   "theme": "GDO – Exercice du commandement et conduite des opérations",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "commandement",
+    "cos",
+    "doctrine",
+    "dgscgc",
+    "2020",
+    "phases",
+    "boucle décisionnelle",
+    "prise d'appel",
+    "relève",
+    "renfort"
+   ]
+  },
+  {
+   "id": "gdo-cdt-terrain",
+   "titre": "GDO Commandement – Pendant : sur le terrain",
+   "domaine": "commandement",
+   "theme": "GDO – Exercice du commandement et conduite des opérations",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "commandement",
+    "cos",
+    "doctrine",
+    "dgscgc",
+    "2020",
+    "raisonnement tactique",
+    "mgo",
+    "point de situation",
+    "balance bénéfice-risque",
+    "smes",
+    "soiec",
+    "saoiecl",
+    "patracdr",
+    "dpif"
+   ]
+  },
+  {
+   "id": "gdo-cdt-outils",
+   "titre": "GDO Commandement – Outils du COS",
+   "domaine": "commandement",
+   "theme": "GDO – Exercice du commandement et conduite des opérations",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "commandement",
+    "cos",
+    "doctrine",
+    "dgscgc",
+    "2020",
+    "sitac",
+    "pc de colonne",
+    "pc de site",
+    "oct",
+    "sectorisation",
+    "anticipation",
+    "odl",
+    "message d'ambiance",
+    "drone",
+    "magec"
+   ]
+  },
+  {
+   "id": "gdo-cdt-securite",
+   "titre": "GDO Commandement – Sécurité, désordres, médias",
+   "domaine": "commandement",
+   "theme": "GDO – Exercice du commandement et conduite des opérations",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "commandement",
+    "cos",
+    "doctrine",
+    "dgscgc",
+    "2020",
+    "zonage",
+    "officier sécurité",
+    "agression",
+    "scène de crime",
+    "presse",
+    "msgu"
+   ]
+  },
+  {
+   "id": "gdo-cdt-apres",
+   "titre": "GDO Commandement – Après l'opération et annexes",
+   "domaine": "commandement",
+   "theme": "GDO – Exercice du commandement et conduite des opérations",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "commandement",
+    "cos",
+    "doctrine",
+    "dgscgc",
+    "2020",
+    "défusing",
+    "débriefing",
+    "pex",
+    "retex",
+    "rapport",
+    "réhabilitation",
+    "protocole drones"
    ]
   }
  ]
