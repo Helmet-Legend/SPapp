@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.67.0">
+    <meta name="version" content="1.67.1">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -84,7 +84,7 @@
     <div class="accueil-fond" aria-hidden="true"></div>
 
     <header class="app-header">
-        <div class="app-brand">
+        <div class="app-brand" id="appBrand" role="button" tabindex="0" aria-label="Retour à l'accueil">
             <div class="app-brand-corps">
                 <span class="app-brand-drapeau" aria-hidden="true"></span>
                 <span class="app-brand-organisme">Sapeurs<br>Pompiers<br>France</span>
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.67.0</span><br>
+                        Vulcain v<span class="app-version">1.67.1</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -24258,53 +24258,21 @@ Je demande : ….</p>
         <p style="text-align: center; margin-bottom: 25px; color: var(--text-secondary);">Interventions en Milieu Périlleux et Montagne - Secours en hauteur, profondeur et milieux hostiles</p>
         <p class="jsp-liens" style="text-align: center;">Techniques des unités SMPM : <button class="sal-lien" onclick="showModule('smpm-menu')">🧗 GTO SMPM 2021</button></p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-top: 20px;">
-            <button onclick="showModule('impm-milieux')" style="background: linear-gradient(135deg, #5D4037 0%, #6D4C41 100%); border: 3px solid #6D4C41; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🏔️</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Les 4 Milieux</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Vue d'ensemble</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('impm-milieux')" aria-label="Les 4 Milieux : Vue d'ensemble"><img src="images/impm/tuile-milieux.webp" alt="" width="322" height="312" loading="lazy"></button>
             
-            <button onclick="showModule('impm-souterrain')" style="background: linear-gradient(135deg, #424242 0%, #616161 100%); border: 3px solid #616161; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🕳️</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Souterrain</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Grottes, Mines</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('impm-souterrain')" aria-label="Souterrain : Grottes, Mines"><img src="images/impm/tuile-souterrain.webp" alt="" width="322" height="312" loading="lazy"></button>
             
-            <button onclick="showModule('impm-canyon')" style="background: linear-gradient(135deg, #0277BD 0%, #027bbd 100%); border: 3px solid #0288D1; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🌊</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Canyon</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Eau vive, Gorges</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('impm-canyon')" aria-label="Canyon : Eau vive, Gorges"><img src="images/impm/tuile-canyon.webp" alt="" width="322" height="312" loading="lazy"></button>
             
-            <button onclick="showModule('impm-montagne')" style="background: linear-gradient(135deg, #455A64 0%, #546E7A 100%); border: 3px solid #546E7A; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🏔️</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Montagne</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Haute montagne</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('impm-montagne')" aria-label="Montagne : Haute montagne"><img src="images/impm/tuile-montagne.webp" alt="" width="322" height="312" loading="lazy"></button>
             
-            <button onclick="showModule('impm-risques')" style="background: linear-gradient(135deg, #C62828 0%, #e32c27 100%); border: 3px solid #E53935; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">⚠️</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Risques</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Sécurité, EPI</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('impm-risques')" aria-label="Risques : Sécurité, EPI"><img src="images/impm/tuile-risques.webp" alt="" width="322" height="312" loading="lazy"></button>
             
-            <button onclick="showModule('impm-acteurs')" style="background: linear-gradient(135deg, #6A1B9A 0%, #7B1FA2 100%); border: 3px solid #7B1FA2; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">👥</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Acteurs</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Partenaires</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('impm-acteurs')" aria-label="Acteurs : Partenaires"><img src="images/impm/tuile-acteurs.webp" alt="" width="322" height="312" loading="lazy"></button>
             
-            <button onclick="showModule('impm-organisation')" style="background: linear-gradient(135deg, #b85d00 0%, #a86400 100%); border: 3px solid #FF9800; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">📋</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Organisation</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Équipes, Rôles</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('impm-organisation')" aria-label="Organisation : Équipes, Rôles"><img src="images/impm/tuile-organisation.webp" alt="" width="322" height="312" loading="lazy"></button>
             
-            <button onclick="showModule('impm-conduite')" style="background: linear-gradient(135deg, #283593 0%, #3949AB 100%); border: 3px solid #3949AB; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🎯</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Conduite OPS</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">MGO, Zonage</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('impm-conduite')" aria-label="Conduite OPS : MGO, Zonage"><img src="images/impm/tuile-conduite.webp" alt="" width="322" height="312" loading="lazy"></button>
         </div>
         
         <div class="warning-box" style="margin-top: 25px; background: rgba(93, 64, 55, 0.1); border: 2px solid #5D4037;">
@@ -29584,7 +29552,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.67.0</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.67.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

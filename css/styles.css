@@ -2268,3 +2268,8 @@ body.dark-mode #resultat-ia {
 .nod-zone-2 { background: light-dark(#ffe6c7, #4d2c06); border-color: #f08a00; color: light-dark(#1a1a1a, #ffe0b8); }
 .nod-zone-3 { background: light-dark(#d6f0d9, #14391a); border-color: #2e9e4a; color: light-dark(#1a1a1a, #d6f0d9); }
 @media (min-width: 720px) { .nod-zones { grid-template-columns: 1fr 1fr 1fr; } }
+
+/* Boutons photo du menu IMPM (visuel fourni, texte intégré à l'image) */
+.impm-tuile { padding: 0; border: 0; background: none; border-radius: 14px; cursor: pointer; line-height: 0; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,.25); transition: transform .15s, box-shadow .15s; }
+.impm-tuile img { width: 100%; height: auto; display: block; }
+.impm-tuile:active { transform: scale(.97); }
