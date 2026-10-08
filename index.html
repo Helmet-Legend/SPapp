@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.68.4">
+    <meta name="version" content="1.68.5">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.68.4</span><br>
+                        Vulcain v<span class="app-version">1.68.5</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -5186,50 +5186,17 @@
             <h3 style="color: light-dark(#b33f00, #ff7124); margin-bottom: 20px; border-bottom: 2px solid #FF9800; padding-bottom: 10px;">🛡️ Protection Individuelle</h3>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
-                <div style="background: var(--t-s1, #fff); padding: 12px; border-radius: 8px; text-align: center; border: 2px solid var(--t-line, #E0E0E0);">
-                    <div style="font-size: 1.5em;">🪖</div>
-                    <span style="font-size: 0.85em;">Casque type B + Bavolet</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px; border-radius: 8px; text-align: center; border: 2px solid var(--t-line, #E0E0E0);">
-                    <div style="font-size: 1.5em;">🧥</div>
-                    <span style="font-size: 0.85em;">Veste textile</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px; border-radius: 8px; text-align: center; border: 2px solid var(--t-line, #E0E0E0);">
-                    <div style="font-size: 1.5em;">👖</div>
-                    <span style="font-size: 0.85em;">Surpantalon textile</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px; border-radius: 8px; text-align: center; border: 2px solid var(--t-line, #E0E0E0);">
-                    <div style="font-size: 1.5em;">🧤</div>
-                    <span style="font-size: 0.85em;">Gants type C</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px; border-radius: 8px; text-align: center; border: 2px solid var(--t-line, #E0E0E0);">
-                    <div style="font-size: 1.5em;">👢</div>
-                    <span style="font-size: 0.85em;">Chaussant type C</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px; border-radius: 8px; text-align: center; border: 2px solid var(--t-line, #E0E0E0);">
-                    <div style="font-size: 1.5em;">🎭</div>
-                    <span style="font-size: 0.85em;">Cagoule protection</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px; border-radius: 8px; text-align: center; border: 2px solid var(--t-line, #E0E0E0);">
-                    <div style="font-size: 1.5em;">🫁</div>
-                    <span style="font-size: 0.85em;">ARI + accessoires</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px; border-radius: 8px; text-align: center; border: 2px solid var(--t-line, #E0E0E0);">
-                    <div style="font-size: 1.5em;">🔦</div>
-                    <span style="font-size: 0.85em;">Moyen éclairage</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px; border-radius: 8px; text-align: center; border: 2px solid var(--t-line, #E0E0E0);">
-                    <div style="font-size: 1.5em;">📻</div>
-                    <span style="font-size: 0.85em;">ERP N5</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px; border-radius: 8px; text-align: center; border: 2px solid var(--t-line, #E0E0E0);">
-                    <div style="font-size: 1.5em;">🪢</div>
-                    <span style="font-size: 0.85em;">SIM (Sangle)</span>
-                </div>
-                <div style="background: var(--t-s1, #fff); padding: 12px; border-radius: 8px; text-align: center; border: 2px solid var(--t-line, #E0E0E0);">
-                    <div style="font-size: 1.5em;">✂️</div>
-                    <span style="font-size: 0.85em;">Seccoise</span>
-                </div>
+                <div class="photo-tuile" role="img" aria-label="Casque type B + Bavolet"><img src="images/rdmi/ppi-casque.webp" alt="" loading="lazy"></div>
+                <div class="photo-tuile" role="img" aria-label="Veste textile"><img src="images/rdmi/ppi-veste.webp" alt="" loading="lazy"></div>
+                <div class="photo-tuile" role="img" aria-label="Surpantalon textile"><img src="images/rdmi/ppi-surpantalon.webp" alt="" loading="lazy"></div>
+                <div class="photo-tuile" role="img" aria-label="Gants type C"><img src="images/rdmi/ppi-gants.webp" alt="" loading="lazy"></div>
+                <div class="photo-tuile" role="img" aria-label="Chaussant type C"><img src="images/rdmi/ppi-chaussant.webp" alt="" loading="lazy"></div>
+                <div class="photo-tuile" role="img" aria-label="Cagoule protection"><img src="images/rdmi/ppi-cagoule.webp" alt="" loading="lazy"></div>
+                <div class="photo-tuile" role="img" aria-label="ARI + accessoires"><img src="images/rdmi/ppi-ari.webp" alt="" loading="lazy"></div>
+                <div class="photo-tuile" role="img" aria-label="Moyen éclairage"><img src="images/rdmi/ppi-eclairage.webp" alt="" loading="lazy"></div>
+                <div class="photo-tuile" role="img" aria-label="ERP N°5"><img src="images/rdmi/ppi-erp.webp" alt="" loading="lazy"></div>
+                <div class="photo-tuile" role="img" aria-label="SIM (Sangle)"><img src="images/rdmi/ppi-sim.webp" alt="" loading="lazy"></div>
+                <div class="photo-tuile" role="img" aria-label="Secoise"><img src="images/rdmi/ppi-secoise.webp" alt="" loading="lazy"></div>
             </div>
         </div>
         
@@ -29951,7 +29918,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.68.4</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.68.5</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
