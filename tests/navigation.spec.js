@@ -32,7 +32,7 @@ test('un seul menu ouvert à la fois', async ({ app }) => {
 });
 
 test('chaque fiche du registre s\'ouvre depuis les menus', async ({ app }) => {
-    test.setTimeout(600000);   // parcourt les ~220 fiches une par une
+    test.setTimeout(1200000);   // parcourt toutes les fiches une par une (la liste grossit à chaque ajout)
     const pages = registre.pages.filter(p => p.type !== 'menu');
     for (const p of pages) {
         await app.evaluate(() => Navigation.allerOnglet('accueil'));
