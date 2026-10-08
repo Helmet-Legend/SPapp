@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.68.3">
+    <meta name="version" content="1.68.4">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.68.3</span><br>
+                        Vulcain v<span class="app-version">1.68.4</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -4457,59 +4457,23 @@
         <p style="text-align: center; margin-bottom: 25px; color: var(--text-secondary);">Référentiel Départemental des Manœuvres Incendie - Conforme GDO</p>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-top: 20px;">
-            <button onclick="showModule('rdmi-habitations')" style="background: linear-gradient(135deg, #5D4037 0%, #795548 100%); border: 3px solid #795548; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🏢</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Familles Habitation</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">1ère à 4ème + IGH</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('rdmi-habitations')" aria-label="Familles Habitation : 1ère à 4ème + IGH"><img src="images/rdmi/tuile-habitations.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('rdmi-pei')" style="background: linear-gradient(135deg, #D32F2F 0%, #e51b0d 100%); border: 3px solid #F44336; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🔴</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Points d'Eau</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">PEI, Couleurs, Débits</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('rdmi-pei')" aria-label="Points d'Eau : PEI, Couleurs, Débits"><img src="images/rdmi/tuile-pei.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('rdmi-hydraulique')" style="background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%); border: 3px solid #1976D2; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">💧</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Hydraulique</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Pertes de charge</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('rdmi-hydraulique')" aria-label="Hydraulique : Pertes de charge"><img src="images/rdmi/tuile-hydraulique.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('rdmi-binomes')" style="background: linear-gradient(135deg, #c25400 0%, #a86400 100%); border: 3px solid #FF9800; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">👷</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Binômes</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Armement & Rôles</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('rdmi-binomes')" aria-label="Binômes : Armement & Rôles"><img src="images/rdmi/tuile-binomes.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('rdmi-smes')" style="background: linear-gradient(135deg, #7B1FA2 0%, #9C27B0 100%); border: 3px solid #9C27B0; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🎯</div>
-                <div style="font-size: 1.1em; font-weight: 700;">SMES</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Raisonnement tactique</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('rdmi-smes')" aria-label="SMES : Raisonnement tactique"><img src="images/rdmi/tuile-smes.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('rdmi-etablissements')" style="background: linear-gradient(135deg, #2E7D32 0%, #39843c 100%); border: 3px solid #4CAF50; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🔧</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Établissements</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">ETB & Procédures</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('rdmi-etablissements')" aria-label="Établissements : ETB & Procédures"><img src="images/rdmi/tuile-etablissements.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('rdmi-mgo')" style="background: linear-gradient(135deg, #00838F 0%, #007f8e 100%); border: 3px solid #00ACC1; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">📋</div>
-                <div style="font-size: 1.1em; font-weight: 700;">MGO</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Marche Générale Opé</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('rdmi-mgo')" aria-label="MGO : Marche Générale Opé"><img src="images/rdmi/tuile-mgo.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('rdmi-zones')" style="background: linear-gradient(135deg, #C62828 0%, #e32c27 100%); border: 3px solid #E53935; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">🚧</div>
-                <div style="font-size: 1.1em; font-weight: 700;">Zones</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">Exclusion, Contrôle</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('rdmi-zones')" aria-label="Zones : Exclusion, Contrôle"><img src="images/rdmi/tuile-zones.webp" alt="" loading="lazy"></button>
 
-            <button onclick="showModule('deci-34')" style="background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%); border: 3px solid #1E88E5; padding: 20px 15px; border-radius: 14px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff;">
-                <div style="font-size: 2.8em; margin-bottom: 8px;">💧</div>
-                <div style="font-size: 1.1em; font-weight: 700;">DECI Hérault</div>
-                <div style="font-size: 0.8em; opacity: 0.9; margin-top: 4px;">RDDECI 2017</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('deci-34')" aria-label="DECI Hérault : RDDECI 2017"><img src="images/rdmi/tuile-deci.webp" alt="" loading="lazy"></button>
         </div>
         
         <div class="warning-box" style="margin-top: 25px; background: rgba(211, 47, 47, 0.1); border: 2px solid #D32F2F;">
@@ -29987,7 +29951,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.68.3</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.68.4</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
