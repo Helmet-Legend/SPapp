@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.68.2">
+    <meta name="version" content="1.68.3">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.68.2</span><br>
+                        Vulcain v<span class="app-version">1.68.3</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -26203,40 +26203,19 @@ Je demande : ….</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-top: 25px;">
-            <button onclick="showModule('mousses-definition')" style="background: linear-gradient(135deg, #007f8e 0%, #187f8c 100%); color: #ffffff; border: 3px solid #00ACC1; padding: 18px 12px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.5em; margin-bottom: 8px;">💧</div>
-                <div style="font-size: 1em; font-weight: 700; color: #fff; text-align: center;">DÉFINITION<br>& TYPES</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('mousses-definition')" aria-label="DÉFINITION & TYPES"><img src="images/mousses/tuile-definition.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('mousses-action')" style="background: linear-gradient(135deg, #00808e 0%, #007f8e 100%); color: #ffffff; border: 3px solid #0097A7; padding: 18px 12px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.5em; margin-bottom: 8px;">🛡️</div>
-                <div style="font-size: 1em; font-weight: 700; color: #fff; text-align: center;">MODES<br>D'ACTION</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('mousses-action')" aria-label="MODES D'ACTION"><img src="images/mousses/tuile-action.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('mousses-emulseurs')" style="background: linear-gradient(135deg, #00838F 0%, #00808e 100%); color: #ffffff; border: 3px solid #00838F; padding: 18px 12px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.5em; margin-bottom: 8px;">🧪</div>
-                <div style="font-size: 1em; font-weight: 700; color: #fff; text-align: center;">ÉMULSEURS</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('mousses-emulseurs')" aria-label="ÉMULSEURS"><img src="images/mousses/tuile-emulseurs.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('mousses-taux')" style="background: linear-gradient(135deg, #006064 0%, #00838F 100%); color: #ffffff; border: 3px solid #006064; padding: 18px 12px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.5em; margin-bottom: 8px;">📊</div>
-                <div style="font-size: 1em; font-weight: 700; color: #fff; text-align: center;">TAUX &<br>CALCULS</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('mousses-taux')" aria-label="TAUX & CALCULS"><img src="images/mousses/tuile-taux.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('mousses-materiel')" style="background: linear-gradient(135deg, #004D40 0%, #00695C 100%); color: #ffffff; border: 3px solid #004D40; padding: 18px 12px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.5em; margin-bottom: 8px;">🔧</div>
-                <div style="font-size: 1em; font-weight: 700; color: #fff; text-align: center;">MATÉRIEL<br>& LANCES</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('mousses-materiel')" aria-label="MATÉRIEL & LANCES"><img src="images/mousses/tuile-materiel.webp" alt="" loading="lazy"></button>
             
-            <button onclick="showModule('mousses-schema')" style="background: linear-gradient(135deg, #37474F 0%, #546E7A 100%); color: #ffffff; border: 3px solid #37474F; padding: 18px 12px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.5em; margin-bottom: 8px;">📐</div>
-                <div style="font-size: 1em; font-weight: 700; color: #fff; text-align: center;">SCHÉMA<br>SYNTHÈSE</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('mousses-schema')" aria-label="SCHÉMA SYNTHÈSE"><img src="images/mousses/tuile-schema.webp" alt="" loading="lazy"></button>
 
-            <button onclick="showModule('mousses-lif')" style="background: linear-gradient(135deg, #8a3b00 0%, #a14700 100%); color: #ffffff; border: 3px solid #E65100; padding: 18px 12px; border-radius: 12px; cursor: pointer; transition: all 0.3s; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 2.5em; margin-bottom: 8px;">🛢️</div>
-                <div style="font-size: 1em; font-weight: 700; color: #fff; text-align: center;">LIQUIDES<br>INFLAMMABLES</div>
-            </button>
+            <button class="impm-tuile" onclick="showModule('mousses-lif')" aria-label="LIQUIDES INFLAMMABLES"><img src="images/mousses/tuile-lif.webp" alt="" loading="lazy"></button>
         </div>
     </div>
 
@@ -30008,7 +29987,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.68.2</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.68.3</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
