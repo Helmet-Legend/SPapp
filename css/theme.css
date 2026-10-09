@@ -713,6 +713,8 @@ html[data-theme] .rd-tuiles button b { display: block; font-size: 1.02em; }
 html[data-theme] .rd-tuiles button span { display: block; color: var(--t-muted); font-size: .85em; margin-top: 3px; }
 html[data-theme] .rd-table { width: 100%; border-collapse: collapse; margin: 10px 0; background: var(--t-s1); }
 html[data-theme] .rd-table th, html[data-theme] .rd-table td { border: 1px solid var(--t-line); padding: 8px; text-align: left; }
+html[data-theme] .rd-table th { background: color-mix(in srgb, var(--t-accent) 16%, var(--t-s1)); background-image: none; color: var(--t-ink); font-size: .95em; font-weight: 700; }
+html[data-theme] .rd-table th[colspan] { text-align: center; }
 html[data-theme] .rd-message { font-family: ui-monospace, Menlo, Consolas, monospace; white-space: pre-wrap; background: var(--t-s1); border: 2px solid var(--t-accent); border-radius: 12px; padding: 14px; font-size: 1.05em; line-height: 1.6; }
 html[data-theme] .rd-champ { display: grid; gap: 4px; margin: 10px 0; }
 html[data-theme] .rd-champ label { font-weight: 700; }
