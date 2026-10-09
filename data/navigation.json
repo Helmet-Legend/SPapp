@@ -5268,6 +5268,121 @@
     "réhabilitation",
     "protocole drones"
    ]
+  },
+  {
+   "id": "rdmi-etb-gen",
+   "titre": "Généralités sur les établissements",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "rdmi",
+    "manœuvres incendie",
+    "établissement",
+    "tuyaux",
+    "conditionnement",
+    "sens d'établissement",
+    "écheveau"
+   ]
+  },
+  {
+   "id": "rdmi-procedures",
+   "titre": "Procédures opérationnelles (pliage, établissement)",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "rdmi",
+    "manœuvres incendie",
+    "établissement",
+    "pliage",
+    "écheveau Z",
+    "écheveau O",
+    "caisse",
+    "commande",
+    "sangle SIM"
+   ]
+  },
+  {
+   "id": "rdmi-etb-ldt",
+   "titre": "ETB 1 et 2 – LDT et prises d'eau",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "rdmi",
+    "manœuvres incendie",
+    "établissement",
+    "LDT",
+    "prise d'eau",
+    "dévidoir"
+   ]
+  },
+  {
+   "id": "rdmi-etb-lance",
+   "titre": "ETB 3.1 à 3.10 – Lances LDV et lignes d'attaque",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "rdmi",
+    "manœuvres incendie",
+    "établissement",
+    "LDV 40",
+    "LDV 65",
+    "ligne d'attaque",
+    "échelle à coulisse",
+    "colonne sèche"
+   ]
+  },
+  {
+   "id": "rdmi-etb-mea",
+   "titre": "ETB 3.11 à 3.14 – Établissements sur MEA",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "rdmi",
+    "manœuvres incendie",
+    "établissement",
+    "MEA",
+    "structure extensible",
+    "panier de secours",
+    "lance canon"
+   ]
+  },
+  {
+   "id": "rdmi-etb-alim",
+   "titre": "ETB 4 – Alimentation de l'engin-pompe",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "rdmi",
+    "manœuvres incendie",
+    "établissement",
+    "alimentation",
+    "poteau incendie",
+    "aspiration",
+    "division"
+   ]
+  },
+  {
+   "id": "rdmi-etb-spec",
+   "titre": "ETB 5 et 6 – Lances spéciales et prolongements",
+   "domaine": "incendie",
+   "theme": "RDMI – Manœuvres incendie",
+   "type": "fiche",
+   "motsCles": [
+    "rdmi",
+    "manœuvres incendie",
+    "établissement",
+    "lance canon 65",
+    "LRM",
+    "mousse",
+    "injecteur",
+    "prolongement"
+   ]
   }
  ]
 }
