@@ -24,7 +24,8 @@ test('la position GPS renseigne le carreau DFCI (point de référence : GD82E1.4
     await app.evaluate(() => showModule('fdf-ambiance'));
     await app.click('#fdf-ambiance .amb-gps button');
     await expect(app.locator('#amb-gps-etat')).toContainText('GD82E1.4');
-    await expect(app.locator('#amb-apercu')).toContainText('DFCI GD82E1.4');
+    await expect(app.locator('#amb-apercu')).toContainText('Carreau DFCI GD82E1.4.');
+    await expect(app.locator('#amb-apercu')).toContainText('Coordonnées GPS 43.39510 N, 3.42630 E.');
 });
 
 test('le calcul du carreau DFCI retrouve les points de référence', async ({ app }) => {
