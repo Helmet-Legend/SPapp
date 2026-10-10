@@ -290,3 +290,16 @@ test('explosimètre : un gaz moins inflammable que l\'étalon n\'est jamais corr
     await app.click('#btnGaz-monoxyde');
     await expect(app.locator('#valeurCorrigee')).toHaveText('20.0 % LIE');
 });
+
+test('pertes de charge : le calcul détaillé et le calcul rapide donnent la même perte pour 20 m de tuyau', async ({ app }) => {
+    await app.evaluate(() => showModule('pertes'));
+    const ecarts = await app.evaluate(() => {
+        const cas = [[45, 250], [45, 500], [70, 500], [70, 1000], [70, 2000], [110, 1000], [110, 2000]];
+        return cas.map(([d, q]) => {
+            const detaille = calculerPerteTroncon({ diametre: d, debit: q, longueur: 20 });
+            const rapide = pdcPertePour20m(d, q);
+            return { d, q, ecart: Math.abs(detaille - rapide) };
+        }).filter(c => c.ecart > 0.005);
+    });
+    expect(ecarts).toEqual([]);
+});
