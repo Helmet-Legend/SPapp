@@ -26,3 +26,8 @@ test('la position GPS renseigne le carreau DFCI (point de référence : GD82E1.4
     await expect(app.locator('#amb-gps-etat')).toContainText('GD82E1.4');
     await expect(app.locator('#amb-apercu')).toContainText('DFCI GD82E1.4');
 });
+
+test('le calcul du carreau DFCI retrouve les points de référence', async ({ app }) => {
+    const codes = await app.evaluate(() => [[43.3951, 3.4263], [44.671124, 1.27723]].map(([la, lo]) => carreauDFCI(la, lo).code));
+    expect(codes).toEqual(['GD82E1.4', 'FE06H1.2']);
+});

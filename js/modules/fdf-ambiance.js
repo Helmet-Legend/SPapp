@@ -29,7 +29,7 @@
         return { x: 600000 + r * Math.sin(th), y: 2400000 + r0 - r * Math.cos(th) };
     }
     function carreauDFCI(lat, lon) {
-        var L = 'ABCDEFGHKLMNPQRSTUVWXYZ';
+        var L = 'ABCDEFGHKLMN';
         var c = wgs84VersLambert2e(lat, lon);
         var cx = Math.floor(c.x / 100000), cy = Math.floor((c.y - 1700000) / 100000);
         if (cx < 0 || cx >= L.length || cy < 0 || cy >= L.length) return null;
@@ -54,6 +54,7 @@
     var maj = function (t) { return t.charAt(0).toUpperCase() + t.slice(1); };
     var DIRECTIONS = { N: 'Nord', NE: 'Nord-Est', E: 'Est', SE: 'Sud-Est', S: 'Sud', SO: 'Sud-Ouest', O: 'Ouest', NO: 'Nord-Ouest' };
 
+    window.carreauDFCI = carreauDFCI;
     function codeDFCI() {
         var c100 = val('dfci-100').toUpperCase().replace(/[^A-Z]/g, '');
         if (c100.length !== 2) return '';
