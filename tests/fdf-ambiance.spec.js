@@ -23,13 +23,14 @@ test('le message d\'ambiance se rédige dans l\'ordre du canevas', async ({ app 
     await app.fill('#amb-front', '150');
     await app.check('input[value="habitation isolée"]');
     await app.fill('#amb-sensible-dist', '500');
-    await app.selectOption('#amb-terrestre', 'un GIFF');
-    await app.selectOption('#amb-aerien', 'un appui aérien HBE sur zone');
+    await app.check('input[name="amb-demande"][value="renfort terrestre"]');
+    await app.check('input[name="amb-demande"][value="renfort aérien"]');
+    await app.check('input[name="amb-demande"][value="commandement"]');
     await app.fill('#amb-demande-autre', 'Gendarmerie pour boucler un axe');
     const msg = await app.textContent('#amb-apercu');
     const ordre = ['Carreau DFCI GD82E1.4.', 'Commune de Saint-Thibéry.', 'Lieu-dit La Rouquette.', 'Au sud du château.', 'Feu de sous-bois.', 'Végétation : pinède.', 'Propagation rapide.',
         'Vent de Nord-Ouest, force soutenue.', 'Relief montant.', 'Surface brûlée 5000 m².', 'Surface menacée 2 hectares.', 'Longueur du front de feu 150 m.',
-        'Point sensible : habitation isolée, à 500 mètres.', 'Je demande : Un GIFF et un appui aérien HBE sur zone.', 'Autre : Gendarmerie pour boucler un axe.',
+        'Point sensible : habitation isolée, à 500 mètres.', 'Je demande : Renfort terrestre, renfort aérien et commandement.', 'Autre : Gendarmerie pour boucler un axe.',
         'Je poursuis la reconnaissance.', 'Je prends l\'appellation COS Saint-Thibéry.'];
     let pos = -1;
     for (const e of ordre) { const i = msg.indexOf(e); expect(i, e).toBeGreaterThan(pos); pos = i; }
