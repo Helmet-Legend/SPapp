@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.4">
+    <meta name="version" content="1.69.5">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.4</span><br>
+                        Vulcain v<span class="app-version">1.69.5</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -10523,6 +10523,7 @@
         <div class="rd-tuiles">
             <button onclick="showModule('sal-preparation')"><b>🗺️ Préparer et planifier</b><span>Analyse de risque, environnement, briefing, fiches de sécurité, SAOIEC</span></button>
             <button onclick="showModule('sal-deroulement')"><b>⬇️ Déroulement</b><span>Immersion, remontée, après la plongée, avion et altitude, hygiène de vie</span></button>
+            <button onclick="showModule('sal-physique')"><b>⚛️ Fondements physiques</b><span>Pression, Boyle, Archimède, Dalton, Henry, Gay-Lussac, optique, acoustique</span></button>
             <button onclick="showModule('sal-securite')"><b>🦺 Limites et sécurité</b><span>Durées, facteurs de nuisance, eau froide, droit de refus</span></button>
         </div>
 
@@ -11637,6 +11638,147 @@
             </ul>
         </div>
         <p class="rd-source">📚 Cours « Mécanique et physiopathologie des accidents de désaturation (ADD) » (contenu pédagogique fourni). À valider par le référent plongée avant tout usage opérationnel.</p>
+    </div>
+
+    <div id="sal-physique" class="module" style="--jsp: #0277BD;">
+        <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon">Cours pédagogique</span>
+        <h2>⚛️ Fondements physiques du milieu subaquatique</h2>
+        <p style="text-align: center;">Le corps du plongeur et l'équipement respiratoire subissent des contraintes <strong>mécaniques, thermodynamiques et biochimiques</strong>, dictées par la densité de l'eau et le comportement des gaz sous pression. Sept lois à maîtriser.</p>
+        <div class="rd-alerte">Les conséquences médicales sont détaillées dans <button class="sal-lien" onclick="showModule('sal-barotraumatismes')">🫁 barotraumatismes</button>, <button class="sal-lien" onclick="showModule('sal-add')">🫧 accidents de désaturation</button> et <button class="sal-lien" onclick="showModule('sal-essoufflement')">😮‍💨 essoufflement</button>.</div>
+
+        <div class="rd-section">
+            <h3>I. La pression absolue et le poids des fluides</h3>
+            <p>L'élément central de la physique de la plongée est la <strong>pression absolue (P<sub>abs</sub>)</strong>, somme des pressions exercées sur l'organisme.</p>
+            <div class="rd-astuce"><strong>P<sub>abs</sub> = P<sub>atm</sub> + P<sub>hydro</sub></strong></div>
+            <ul>
+                <li><strong>Pression atmosphérique (P<sub>atm</sub>)</strong> : poids de l'air au-dessus de la surface, environ <strong>1 bar</strong> au niveau de la mer.</li>
+                <li><strong>Pression hydrostatique (P<sub>hydro</sub>)</strong> : poids de la colonne d'eau au-dessus du plongeur. L'eau étant environ <strong>800 fois plus dense</strong> que l'air, la pression augmente de <strong>1 bar tous les 10 m</strong> d'eau de mer.</li>
+            </ul>
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/sal/phy-pression.webp" alt="Pression absolue en fonction de la profondeur : 1 bar en surface, +1 bar tous les 10 mètres" loading="lazy"></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>II. Boyle-Mariotte : la mécanique des gaz</h3>
+            <p>À <strong>température constante</strong>, le volume d'une masse de gaz est <strong>inversement proportionnel</strong> à la pression absolue qu'il subit.</p>
+            <div class="rd-astuce"><strong>P × V = constante</strong>, soit P₁ × V₁ = P₂ × V₂.</div>
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/sal/phy-boyle.webp" alt="Loi de Boyle-Mariotte : variation du volume de gaz avec la profondeur, exemples concrets" loading="lazy"></figure>
+            <ul>
+                <li><strong>Conséquences physiologiques</strong> : c'est la loi responsable de <strong>tous les barotraumatismes</strong>. Les cavités closes (oreilles, sinus, poumons) subissent ces variations. La variation de volume est <strong>bien plus marquée</strong> dans les <strong>10 premiers mètres</strong> (le volume double à la remontée).</li>
+                <li><strong>Conséquences matérielles</strong> : à - 30 m (P<sub>abs</sub> = 4 bars), l'air des poumons ou du gilet est <strong>4 fois plus dense</strong> qu'en surface. Le travail ventilatoire augmente et la flottabilité change.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>III. Archimède : flottabilité et équilibre</h3>
+            <p>Tout corps plongé dans un fluide subit une <strong>poussée verticale, dirigée de bas en haut</strong>, égale au <strong>poids du volume de fluide déplacé</strong>.</p>
+            <div class="rd-astuce"><strong>Poids apparent = poids réel − poussée d'Archimède</strong></div>
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/sal/phy-archimede.webp" alt="Principe d’Archimède : flottabilité positive, neutre et négative" loading="lazy"></figure>
+            <table class="rd-table">
+                <tbody>
+                    <tr><th>Flottabilité</th><th>Condition</th><th>Le plongeur</th></tr>
+                    <tr><td><strong>Positive</strong></td><td>Poids réel &lt; poussée</td><td>remonte</td></tr>
+                    <tr><td><strong>Neutre</strong></td><td>Poids réel = poussée</td><td>est en équilibre instable</td></tr>
+                    <tr><td><strong>Négative</strong></td><td>Poids réel &gt; poussée</td><td>coule</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte"><strong>Couplage avec Boyle-Mariotte</strong> : la combinaison en néoprène s'écrase sous la pression, le volume d'eau déplacé diminue, donc la poussée aussi. À la descente, le plongeur devient de plus en plus « lourd ».</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>IV. Dalton : pressions partielles et toxicité des gaz</h3>
+            <p>Dans un mélange comme l'air (environ 21 % d'oxygène, 79 % d'azote), la pression totale est la <strong>somme des pressions que chaque gaz exercerait seul</strong> dans le volume total.</p>
+            <div class="rd-astuce"><strong>Pp = P<sub>abs</sub> × f<sub>gaz</sub></strong> (f = fraction volumique du gaz)</div>
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/sal/phy-dalton-air.webp" alt="Composition de l’air : 78 % d’azote, 21 % d’oxygène, 1 % d’autres gaz" loading="lazy"></figure>
+            <p>La toxicité d'un gaz ne dépend pas de son <strong>pourcentage</strong> dans le mélange mais du <strong>nombre de molécules présentes</strong>, donc de sa <strong>pression partielle</strong>.</p>
+            <table class="rd-table">
+                <tbody>
+                    <tr><th>Profondeur</th><th>P<sub>abs</sub> (bars)</th><th>PpO₂ (bars)</th><th>PpN₂ (bars)</th></tr>
+                    <tr><td>0 m</td><td>1</td><td>0,21</td><td>0,79</td></tr>
+                    <tr><td>10 m</td><td>2</td><td>0,42</td><td>1,58</td></tr>
+                    <tr><td>20 m</td><td>3</td><td>0,63</td><td>2,37</td></tr>
+                    <tr><td>30 m</td><td>4</td><td>0,84</td><td>3,16</td></tr>
+                    <tr><td>40 m</td><td>5</td><td>1,05</td><td>3,95</td></tr>
+                    <tr><td>50 m</td><td>6</td><td>1,26</td><td>4,74</td></tr>
+                    <tr><td>60 m</td><td>7</td><td>1,47</td><td>5,53</td></tr>
+                    <tr><td><strong>70 m</strong></td><td>8</td><td><strong>1,68</strong></td><td>6,32</td></tr>
+                </tbody>
+            </table>
+            <p class="rd-source">Plongée à l'air : 21 % d'O₂, 79 % de N₂.</p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>Toxicité de l'oxygène : effet Paul Bert</summary>
+            <div class="rd-section">
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/sal/phy-dalton-o2.webp" alt="Toxicité de l’oxygène : effet Paul Bert" loading="lazy"></figure>
+                <p>Quand la <strong>PpO₂ dépasse 1,6 bar</strong>, l'oxygène devient toxique pour le <strong>système nerveux central</strong> (convulsions). À l'air, ce seuil est atteint vers <strong>66 à 70 m</strong>.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Narcose à l'azote : loi de Meyer-Overton</summary>
+            <div class="rd-section">
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/sal/phy-dalton-n2.webp" alt="Narcose à l’azote : loi de Meyer-Overton" loading="lazy"></figure>
+                <p>Le pouvoir narcotique de l'azote <strong>augmente avec sa PpN₂</strong> : c'est l'<strong>ivresse des profondeurs</strong>, dès <strong>30 m</strong> (PpN₂ ≈ 3,2 bars) : euphorie, troubles du jugement, ralentissement.</p>
+            </div>
+        </details>
+
+        <div class="rd-section">
+            <h3>V. Henry : dissolution et saturation</h3>
+            <p>À température constante, la quantité d'un gaz dissous dans un liquide est <strong>proportionnelle à la pression partielle</strong> qu'exerce ce gaz au-dessus du liquide.</p>
+            <div class="rd-astuce"><strong>C = k × Pp</strong> : C = concentration dissoute, k = constante (température), Pp = pression partielle.</div>
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/sal/phy-henry.webp" alt="Loi de Henry : échanges gazeux entre l’alvéole et le capillaire" loading="lazy"></figure>
+            <ul>
+                <li><strong>Le gradient</strong> : la différence entre la pression partielle alvéolaire d'un gaz et sa tension dans le sang et les tissus <strong>détermine le sens des échanges</strong>.</li>
+                <li>Cette loi dicte la <strong>saturation</strong> (à la descente) et la <strong>désaturation</strong> (à la remontée) en azote.</li>
+                <li>Si la remontée est trop rapide : sursaturation critique, <strong>bulles</strong>, accident de désaturation (ADD).</li>
+            </ul>
+<figure class="rd-fig plein"><img class="zoomable" src="images/sal/phy-henry-graph.webp" alt="Cinétique de saturation et de désaturation, exemple théorique de modèle de décompression" loading="lazy"></figure>
+            <p class="rd-source">Exemple théorique : les périodes varient selon les modèles et les individus.</p>
+<figure class="rd-fig plein"><img class="zoomable" src="images/sal/phy-henry-conseq.webp" alt="Conséquences physiologiques : saturation, désaturation, sursaturation" loading="lazy"></figure>
+            <p>Détails : <button class="sal-lien" onclick="showModule('sal-add')">🫧 accidents de désaturation</button>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>VI. Gay-Lussac (ou Amontons) : pression et température</h3>
+            <p>À <strong>volume constant</strong>, la pression d'un gaz est <strong>proportionnelle à sa température</strong> (en kelvins), comme dans une bouteille de plongée.</p>
+            <div class="rd-astuce"><strong>P / T = constante</strong> : la pression augmente avec la température.</div>
+<figure class="rd-fig plein"><img class="zoomable" src="images/sal/phy-gaylussac.webp" alt="Loi de Gay-Lussac : échauffement au gonflage, refroidissement dans l’eau, exemple d’un bloc de 12 L" loading="lazy"></figure>
+            <ul>
+                <li><strong>Gonflage rapide</strong> : la friction moléculaire échauffe l'air, la pression lue au manomètre est <strong>temporairement plus haute</strong>.</li>
+                <li><strong>Refroidissement dans l'eau</strong> : la pression de la bouteille <strong>chute</strong>.</li>
+                <li>Exemple d'un bloc de 12 L gonflé à 200 bar à 20 °C : <strong>± 10 °C ≈ ± 7 bar</strong>, soit environ 0,7 bar par °C, ou <strong>1 bar par °C en première approche</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>VII. Optique et acoustique</h3>
+            <p>L'eau modifie profondément la propagation de la lumière et du son.</p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>Optique : réfraction et absorption des couleurs</summary>
+            <div class="rd-section">
+<figure class="rd-fig plein"><img class="zoomable" src="images/sal/phy-optique.webp" alt="Réfraction : objets plus gros et plus proches ; disparition progressive des couleurs avec la profondeur" loading="lazy"></figure>
+                <ul>
+                    <li><strong>Réfraction</strong> : la lumière passe de l'eau (milieu dense) à l'air du masque (moins dense) et est déviée. Les objets paraissent environ <strong>33 % plus grands</strong> et <strong>25 % plus proches</strong>.</li>
+                    <li><strong>Absorption sélective</strong> : disparition du <strong>rouge vers 5 m</strong>, de l'<strong>orange vers 10 m</strong>, du <strong>jaune vers 20 m</strong>, le vert est atténué vers 30 m, le <strong>bleu persiste</strong> le plus longtemps.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Acoustique : propagation du son</summary>
+            <div class="rd-section">
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/sal/phy-acoustique.webp" alt="Acoustique : propagation du son sous l’eau" loading="lazy"></figure>
+                <ul>
+                    <li>Le son se propage à environ <strong>1 500 m/s</strong> dans l'eau, soit <strong>4,5 fois plus vite</strong> que dans l'air (environ 340 m/s).</li>
+                    <li>Le cerveau ne peut plus analyser le <strong>décalage entre les deux oreilles</strong> : <strong>pas de stéréophonie</strong>.</li>
+                    <li>Il est <strong>impossible de localiser l'origine d'un son</strong> sous l'eau.</li>
+                </ul>
+            </div>
+        </details>
+        <p class="rd-source">📚 Cours « Fondements physiques de l'environnement subaquatique » (contenu pédagogique fourni). À valider par le référent plongée avant tout usage opérationnel.</p>
     </div>
 
     <div id="sal-accidents" class="module" style="--jsp: #C62828;">
@@ -31334,7 +31476,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.4</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.5</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
