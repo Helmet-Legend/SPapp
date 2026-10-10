@@ -421,7 +421,20 @@ function pdfSautDePage(doc, y, margin, pageHeight, besoin = 10) {
 }
 
 // Télécharger le scénario en PDF, mis en forme avec l'identité visuelle Vulcain
+function chargerJsPDF() {
+    if (window.jspdf) return Promise.resolve();
+    return new Promise((resolve, reject) => {
+        const sc = document.createElement('script');
+        sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+        sc.onload = resolve;
+        sc.onerror = () => reject(new Error('jsPDF indisponible'));
+        document.head.appendChild(sc);
+    });
+}
+
 async function telechargerPDF() {
+    try { await chargerJsPDF(); }
+    catch (e) { alert('Export PDF indisponible : connexion requise pour charger la bibliothèque.'); return; }
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     const logo = await chargerLogoPDF();
