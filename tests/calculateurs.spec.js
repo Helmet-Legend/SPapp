@@ -9,7 +9,7 @@ test('temps de trajet : 110 km à 90 km/h = 1h 13min', async ({ app }) => {
     await expect(app.locator('#trajet-vitesse-display')).toHaveText('90 km/h');
 });
 
-test('explosimètre : propane lu 25 % sur un appareil étalonné méthane = 10,5 % LIE', async ({ app }) => {
+test('explosimètre : propane lu 25 % sur un appareil étalonné méthane = au moins 59,5 % LIE (estimation prudente)', async ({ app }) => {
     await app.evaluate(() => showModule('explosimetrie'));
     await expect(app.locator('#gazPresentsGrid button').first()).toBeVisible();
     await app.selectOption('#gazEtalon', 'methane');
@@ -17,7 +17,7 @@ test('explosimètre : propane lu 25 % sur un appareil étalonné méthane = 10,5
     await app.click('#btnGaz-propane');
     await app.click('button[onclick="adjustValeurExplo(5)"]');
     await expect(app.locator('#valeurExplo')).toHaveValue('25');
-    await expect(app.locator('#valeurCorrigee')).toHaveText('10.5 % LIE');
+    await expect(app.locator('#valeurCorrigee')).toHaveText('59.5 % LIE');
 });
 
 test('explosimètre : la recherche filtre les gaz', async ({ app }) => {
@@ -280,4 +280,13 @@ test('facteur de chute LSPCC : hauteur 0 = facteur 0,00 optimal ; hauteur > 2 ×
     await expect(app.locator('#lspcc-resultat')).toContainText('FACTEUR OPTIMAL');
     await app.fill('#lspcc-hauteur', '5');
     await expect(app.locator('#lspcc-resultat')).toContainText('incohérentes');
+});
+
+test('explosimètre : un gaz moins inflammable que l\'étalon n\'est jamais corrigé à la baisse (CO lu 20 % = 20 %)', async ({ app }) => {
+    await app.evaluate(() => showModule('explosimetrie'));
+    await expect(app.locator('#gazPresentsGrid button').first()).toBeVisible();
+    await app.selectOption('#gazEtalon', 'methane');
+    await app.fill('#valeurExplo', '20');
+    await app.click('#btnGaz-monoxyde');
+    await expect(app.locator('#valeurCorrigee')).toHaveText('20.0 % LIE');
 });
