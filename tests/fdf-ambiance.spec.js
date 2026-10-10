@@ -3,7 +3,7 @@ const { test, expect } = require('./outils');
 
 const ouvrir = (app) => app.evaluate(() => showModule('fdf-ambiance'));
 
-test('le message d\'ambiance se rédige dans l\'ordre du canevas', async ({ app }) => {
+test('le message d\'ambiance est prérédigé dans l\'ordre du canevas', async ({ app }) => {
     await ouvrir(app);
     await app.fill('#amb-indicatif', 'CCF Saint-Thibéry');
     await app.fill('#amb-codis', '34');
@@ -13,25 +13,29 @@ test('le message d\'ambiance se rédige dans l\'ordre du canevas', async ({ app 
     await app.fill('#amb-repere', 'au sud du château');
     await app.fill('#amb-feu', 'feu de sous-bois');
     await app.selectOption('#amb-vegetation', 'Pinède');
-    await app.selectOption('#amb-propagation', 'rapide');
+    await app.selectOption('#amb-surf-brulee-p', 'environ 5 000 m²');
+    await app.selectOption('#amb-propagation', 'très rapide, feu virulent');
     await app.selectOption('#amb-vent-dir', 'NO');
     await app.selectOption('#amb-vent-force', 'soutenue');
     await app.selectOption('#amb-relief', 'montant');
-    await app.fill('#amb-surf-brulee', '5000');
-    await app.fill('#amb-surf-menacee', '2');
-    await app.selectOption('#amb-surf-menacee-u', 'hectares');
-    await app.fill('#amb-front', '150');
+    await app.selectOption('#amb-acces', 'Accès difficile');
+    await app.fill('#amb-piste', 'DFCI 32');
+    await app.selectOption('#amb-surf-menacee-p', 'environ 1 hectare');
+    await app.selectOption('#amb-front-p', 'environ 200 m');
     await app.check('input[value="habitation isolée"]');
-    await app.fill('#amb-sensible-dist', '500');
-    await app.check('input[name="amb-demande"][value="renfort terrestre"]');
-    await app.check('input[name="amb-demande"][value="renfort aérien"]');
+    await app.selectOption('#amb-sensible-dist-p', '__autre');
+    await app.fill('#amb-sensible-dist', '450 mètres');
+    await app.check('input[name="amb-demande"][value="terrestre"]');
+    await app.check('input[name="amb-demande"][value="aérien"]');
     await app.check('input[name="amb-demande"][value="commandement"]');
     await app.fill('#amb-demande-autre', 'Gendarmerie pour boucler un axe');
     const msg = await app.textContent('#amb-apercu');
-    const ordre = ['Carreau DFCI GD82E1.4.', 'Commune de Saint-Thibéry.', 'Lieu-dit La Rouquette.', 'Au sud du château.', 'Feu de sous-bois.', 'Végétation : pinède.', 'Propagation rapide.',
-        'Vent de Nord-Ouest, force soutenue.', 'Relief montant.', 'Surface brûlée 5000 m².', 'Surface menacée 2 hectares.', 'Longueur du front de feu 150 m.',
-        'Point sensible : habitation isolée, à 500 mètres.', 'Je demande : Renfort terrestre, renfort aérien et commandement.', 'Autre : Gendarmerie pour boucler un axe.',
-        'Je poursuis la reconnaissance.', 'Je prends l\'appellation COS Saint-Thibéry.'];
+    const ordre = ['De CCF Saint-Thibéry pour CODIS 34', 'Je suis au carreau DFCI GD82E1.4,', 'sur la commune de Saint-Thibéry, au lieu-dit La Rouquette.',
+        'Au sud du château.', 'Je vois un feu de sous-bois en pinède.', 'La surface brûlée est estimée à environ 5 000 m².',
+        'Le feu est virulent, avec une propagation très rapide.', 'Le vent est de Nord-Ouest, de force soutenue.', 'Le relief est montant.',
+        'Accès difficile par la piste DFCI 32.', 'La surface menacée est estimée à environ 1 hectare.', 'Le front de feu mesure environ 200 m.',
+        'Point sensible : habitation isolée, à 450 mètres.', 'Je demande des renforts terrestres, des moyens aériens et un commandement.',
+        'Autre : Gendarmerie pour boucler un axe.', 'Je poursuis la reconnaissance.', 'Je prends l\'appellation COS Saint-Thibéry.', 'Fin de message.'];
     let pos = -1;
     for (const e of ordre) { const i = msg.indexOf(e); expect(i, e).toBeGreaterThan(pos); pos = i; }
     expect(msg).not.toContain('carrossable');
@@ -45,7 +49,7 @@ test('la position GPS renseigne le point DFCI et le GPS (référence : GD82E1.4)
     await app.click('#fdf-ambiance .amb-gps button');
     await expect(app.locator('#amb-dfci')).toHaveValue('GD82E1.4');
     await expect(app.locator('#amb-gps')).toHaveValue('43.39510 N, 3.42630 E');
-    await expect(app.locator('#amb-apercu')).toContainText('Carreau DFCI GD82E1.4. Coordonnées GPS 43.39510 N, 3.42630 E.');
+    await expect(app.locator('#amb-apercu')).toContainText('Je suis au carreau DFCI GD82E1.4, aux coordonnées GPS 43.39510 N, 3.42630 E.');
 });
 
 test('saisir le DFCI calcule le GPS, et inversement', async ({ app }) => {

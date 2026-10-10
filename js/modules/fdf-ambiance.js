@@ -97,52 +97,68 @@
     window.lireDFCI = lireDFCI;
 
     var $ = function (id) { return document.getElementById('amb-' + id); };
-    var val = function (id) { var e = $(id); return e ? e.value.trim() : ''; };
+    var val = function (id) {
+        var p = $(id + '-p'), e = $(id);
+        if (p && p.value !== '__autre') return p.value;
+        return e ? e.value.trim() : '';
+    };
     var coche = function (nom) {
         return Array.prototype.map.call(document.querySelectorAll('#fdf-ambiance input[name="amb-' + nom + '"]:checked'), function (e) { return e.value; });
     };
     var liste = function (a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' et ' + a[a.length - 1]; };
     var maj = function (t) { return t.charAt(0).toUpperCase() + t.slice(1); };
     var DIRECTIONS = { N: 'Nord', NE: 'Nord-Est', E: 'Est', SE: 'Sud-Est', S: 'Sud', SO: 'Sud-Ouest', O: 'Ouest', NO: 'Nord-Ouest' };
-    var surface = function (id, libelle) {
-        return val(id) ? libelle + ' ' + val(id) + ' ' + (val(id + '-u') || 'm²') + '.' : '';
-    };
+    var VEGETATION = { 'Broussailles': 'dans des broussailles', 'Feuillus': 'dans des feuillus', 'Résineux': 'dans des résineux', 'Pinède': 'en pinède',
+        'Garrigue': 'en garrigue', 'Chaumes': 'dans des chaumes', 'Végétation mixte': 'en végétation mixte' };
+    var PROPAGATION = { 'stationnaire': 'Le feu est stationnaire.', 'lente': 'La propagation est lente.', 'rapide': 'La propagation est rapide.',
+        'très rapide, feu virulent': 'Le feu est virulent, avec une propagation très rapide.' };
+    var RELIEF = { 'plat': 'Le relief est plat.', 'montant': 'Le relief est montant.', 'descendant': 'Le relief est descendant.',
+        'en versant': 'Le feu est en versant.', 'en fond de vallon': 'Le feu est en fond de vallon.' };
 
     function messageAmbiance() {
         var je = [], vois = [], demande = [], p;
         var d = lireDFCI(val('dfci'));
-        if (d) je.push('Carreau DFCI ' + formatDFCI(d) + '.');
-        if (val('gps')) je.push('Coordonnées GPS ' + val('gps') + '.');
-        if (val('commune')) je.push('Commune de ' + val('commune') + '.');
-        if (val('lieudit')) je.push('Lieu-dit ' + val('lieudit') + '.');
+        var pos = [];
+        if (d) pos.push('au carreau DFCI ' + formatDFCI(d));
+        if (val('gps')) pos.push('aux coordonnées GPS ' + val('gps'));
+        if (val('commune')) pos.push('sur la commune de ' + val('commune'));
+        if (val('lieudit')) pos.push('au lieu-dit ' + val('lieudit'));
+        if (pos.length) je.push('Je suis ' + pos.join(', ') + '.');
         if (val('repere')) je.push(maj(val('repere')) + '.');
 
-        if (val('feu')) vois.push(maj(val('feu')) + '.');
-        if (val('vegetation')) vois.push('Végétation : ' + val('vegetation').toLowerCase() + '.');
-        if (val('propagation')) vois.push('Propagation ' + val('propagation') + '.');
-        if (val('vent-dir') || val('vent-force')) {
-            var vent = 'Vent' + (val('vent-dir') ? ' de ' + DIRECTIONS[val('vent-dir')] : '') + (val('vent-force') ? ', force ' + val('vent-force') : '');
-            vois.push(vent + '.');
+        var feu = val('feu'), veg = VEGETATION[val('vegetation')] || '';
+        if (feu || veg) {
+            var nom = feu ? (/^(un |une )?feu\b/i.test(feu) ? feu.replace(/^(un |une )/i, '') : 'feu ' + feu) : 'feu';
+            vois.push('Je vois un ' + nom.charAt(0).toLowerCase() + nom.slice(1) + (veg ? ' ' + veg : '') + '.');
         }
-        if (val('relief')) vois.push('Relief ' + val('relief') + '.');
-        if (val('acces')) vois.push(val('acces') + (val('piste') ? ', ' + val('piste') : '') + '.');
-        else if (val('piste')) vois.push('Accès : ' + val('piste') + '.');
-        if ((p = surface('surf-brulee', 'Surface brûlée'))) vois.push(p);
-        if ((p = surface('surf-menacee', 'Surface menacée'))) vois.push(p);
-        if (val('front')) vois.push('Longueur du front de feu ' + val('front') + ' ' + (val('front-u') || 'm') + '.');
+        if (val('surf-brulee')) vois.push('La surface brûlée est estimée à ' + val('surf-brulee') + '.');
+        if (PROPAGATION[val('propagation')]) vois.push(PROPAGATION[val('propagation')]);
+        var dir = val('vent-dir') ? DIRECTIONS[val('vent-dir')] : '', fv = val('vent-force');
+        if (fv === 'nulle') vois.push('Le vent est nul.');
+        else if (fv === 'tourbillonnante') vois.push('Le vent est tourbillonnant' + (dir ? ', dominante ' + dir : '') + '.');
+        else if (dir || fv) vois.push('Le vent est ' + (dir ? 'de ' + dir : '') + (dir && fv ? ', ' : '') + (fv ? 'de force ' + fv : '') + '.');
+        if (RELIEF[val('relief')]) vois.push(RELIEF[val('relief')]);
+        if (val('acces')) {
+            var pi = val('piste');
+            vois.push(val('acces') + (pi ? ' par ' + (/^(la|le|les|l'|une?)\s/i.test(pi) ? pi : (/^piste/i.test(pi) ? 'la ' + pi : 'la piste ' + pi)) : '') + '.');
+        } else if (val('piste')) vois.push('Accès par ' + val('piste') + '.');
+        if (val('surf-menacee')) vois.push('La surface menacée est estimée à ' + val('surf-menacee') + '.');
+        if (val('front')) vois.push('Le front de feu mesure ' + val('front') + '.');
         var sens = coche('sensible');
         if (val('sensible-autre')) sens.push(val('sensible-autre'));
-        if (sens.length) vois.push('Point sensible : ' + liste(sens) + (val('sensible-dist') ? ', à ' + val('sensible-dist') + ' mètres' : '') + '.');
+        if (sens.length) vois.push('Point sensible : ' + liste(sens) + (val('sensible-dist') ? ', à ' + val('sensible-dist') : '') + '.');
 
-        demande = coche('demande');
+        var NOMS = { 'terrestre': 'des renforts terrestres', 'aérien': 'des moyens aériens', 'commandement': 'un commandement' };
+        demande = coche('demande').map(function (c) { return NOMS[c]; });
         var lignes = ['De ' + (val('indicatif') || 'CCF …') + ' pour CODIS ' + (val('codis') || '…') + ', pour un premier message d\'ambiance.', ''];
-        lignes.push('Je suis : ' + (je.join(' ') || '…'));
-        lignes.push('Je vois : ' + (vois.join(' ') || '…'));
-        var dem = demande.length ? 'Je demande : ' + maj(liste(demande)) + '.' : 'Je demande : …';
+        lignes.push(je.join(' ') || 'Je suis …');
+        lignes.push(vois.join(' ') || 'Je vois …');
+        var dem = demande.length ? 'Je demande ' + liste(demande) + '.' : 'Je demande …';
         if (val('demande-autre')) dem += ' Autre : ' + val('demande-autre') + '.';
         lignes.push(dem);
         lignes.push('Je poursuis la reconnaissance.');
         lignes.push('Je prends l\'appellation COS ' + (val('commune') || '…') + '.');
+        lignes.push('Fin de message.');
         return lignes.join('\n');
     }
 
@@ -193,6 +209,7 @@
     window.effacerAmbianceFDF = function () {
         document.querySelectorAll('#fdf-ambiance input, #fdf-ambiance select, #fdf-ambiance textarea').forEach(function (e) {
             if (e.type === 'checkbox') e.checked = false; else e.value = '';
+            if (e.hasAttribute && e.hasAttribute('data-preset')) $(e.getAttribute('data-preset')).hidden = true;
         });
         etat('');
         majAmbianceFDF();
@@ -204,7 +221,11 @@
         $('dfci').addEventListener('input', depuisDFCI);
         $('gps').addEventListener('input', depuisGPS);
         m.addEventListener('input', majAmbianceFDF);
-        m.addEventListener('change', majAmbianceFDF);
+        m.addEventListener('change', function (e) {
+            var id = e.target.getAttribute && e.target.getAttribute('data-preset');
+            if (id) { var champ = $(id); champ.hidden = e.target.value !== '__autre'; if (champ.hidden) champ.value = ''; }
+            majAmbianceFDF();
+        });
         majAmbianceFDF();
     });
 })();
