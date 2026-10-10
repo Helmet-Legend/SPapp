@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.16">
+    <meta name="version" content="1.69.18">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -241,7 +241,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.16</span><br>
+                        Vulcain v<span class="app-version">1.69.18</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -20223,6 +20223,98 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Cours « Opérations diverses et SUAP : interventions impliquant des animaux de compagnie » (contenu pédagogique fourni), corrigé et complété (équipe cynotechnique, muselière, gants, obligations après morsure, SDIS 34) et mis en cohérence avec PSE 8 et la fiche NAC. À valider par un vétérinaire.</p>
     </div>
 
+    <div id="hygiene-fumees" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon">Cours pédagogique</span>
+        <h2>🧼 Hygiène opérationnelle : les toxiques de la fumée</h2>
+        <p style="text-align: center;">Les feux de bois et de matériaux naturels ont laissé place à la combustion de plastiques, colles et polymères. La fumée est aujourd'hui un <strong>mélange chimique dangereux tout de suite</strong> et <strong>cancérogène à long terme</strong>. Se protéger ne s'arrête pas à l'ARI.</p>
+
+        <figure class="rd-fig plein etroite"><img class="zoomable" src="images/hygiene/hyg-entete.webp" alt="Sapeur-pompier en ARI devant un incendie : un feu sans flamme n'est pas un feu sans danger, la fumée tue" loading="lazy"></figure>
+
+        <div class="rd-alerte"><strong>Un feu sans flammes n'est pas un feu sans danger.</strong> Pendant le déblai et la surveillance, les braises continuent de dégager du CO et des cyanures : <strong>le masque ne se retire qu'après mesure et décision du COS</strong>. Procédures de nettoyage et de déshabillage : <button class="sal-lien" onclick="showModule('rdeb-apres')">🧼 RDEB : après l'engagement</button>.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li>Les toxiques entrent par <strong>trois portes</strong> : les poumons, la <strong>peau</strong> et la <strong>bouche</strong>.</li>
+                <li>La <strong>peau</strong> absorbe : suies, chaleur et sueur augmentent le passage. Les zones fines (cou, mâchoire, aisselles, aine) sont les plus exposées.</li>
+                <li>Les gestes qui protègent : <strong>nettoyer à chaud, se laver les mains et le visage avant de boire ou de manger, ne pas fumer sur les lieux, se doucher au retour</strong>.</li>
+                <li>L'exposition professionnelle de sapeur-pompier est classée <strong>cancérogène pour l'homme</strong> (groupe 1) par le CIRC (évaluation de 2022).</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1. Les toxiques de la fumée</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/hygiene/hyg-toxiques.webp" alt="Gaz de combustion (CO, CO₂, cyanures, oxydes d'azote) et particules fines (suies, cendres, fibres minérales)" loading="lazy"></figure>
+
+                <table class="rd-table">
+                    <tbody>
+                        <tr><th>Toxique</th><th>D'où vient-il ?</th><th>Effet</th></tr>
+                        <tr><td><strong>Monoxyde de carbone (CO)</strong></td><td>Combustion incomplète de presque tout. Gaz inodore et incolore.</td><td>Asphyxiant du sang : il se fixe sur l'hémoglobine avec une affinité environ <strong>200 à 250 fois supérieure</strong> à celle de l'oxygène, et empêche le transport de l'oxygène vers les organes.</td></tr>
+                        <tr><td><strong>Cyanures (acide cyanhydrique, HCN)</strong></td><td>Combustion de matériaux contenant de l'azote : mousses de polyuréthane (matelas, canapés), laine, soie, polyamides (nylon), plastiques acryliques.</td><td>Asphyxiant des cellules : le sang transporte l'oxygène mais les cellules ne peuvent plus l'utiliser. Associé au CO, les deux toxiques se <strong>potentialisent</strong> : c'est ce qui rend les victimes de fumées d'incendie si vite inconscientes.</td></tr>
+                        <tr><td><strong>Dioxyde de carbone (CO₂)</strong></td><td>Toute combustion.</td><td><strong>Asphyxiant simple</strong> (il chasse l'oxygène) et non irritant : à forte concentration, gêne respiratoire puis perte de connaissance.</td></tr>
+                        <tr><td><strong>Oxydes d'azote (NOx)</strong></td><td>Combustion à haute température.</td><td>Irritants : lésions pulmonaires.</td></tr>
+                        <tr><td><strong>Suies et particules fines</strong></td><td>Carbone et particules ultrafines.</td><td>Pénètrent jusqu'aux alvéoles et passent dans le sang ; <strong>transportent d'autres toxiques</strong> (HAP, métaux lourds).</td></tr>
+                        <tr><td><strong>Cendres, poussières, fibres minérales</strong> (laine de verre, laine de roche)</td><td>Isolants et matériaux détruits.</td><td>Irritent la peau, les yeux et les voies respiratoires.</td></tr>
+                        <tr><td><strong>Gaz irritants</strong> (acide chlorhydrique issu du PVC, acroléine…)</td><td>PVC et autres plastiques.</td><td>Brûlent les yeux et les voies respiratoires.</td></tr>
+                        <tr><td><strong>HAP et COV</strong></td><td>Suies : composés lourds et goudronneux.</td><td>Dont certains sont des <strong>cancérogènes avérés</strong> (benzo[a]pyrène, benzène). Ils se déposent sur la tenue et sur la peau.</td></tr>
+                    </tbody>
+                </table>
+                <div class="rd-astuce">HAP : hydrocarbures aromatiques polycycliques. COV : composés organiques volatils.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2. Les voies d'absorption</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/hygiene/hyg-voies.webp" alt="Les trois voies d'absorption : respiratoire, cutanée, digestive" loading="lazy"></figure>
+
+                <ul>
+                    <li><strong>Respiratoire</strong> : la voie la plus rapide vers le sang. L'ARI est porté pendant l'attaque. <strong>Le danger survient souvent au déblai et à la surveillance</strong> : l'absence de flammes donne une fausse impression de sécurité et incite à retirer le masque alors que les braises dégagent encore du CO et des cyanures.</li>
+                    <li><strong>Cutanée</strong> (la menace discrète) : la peau n'est pas une barrière totale. La <strong>chaleur et l'effort</strong> font transpirer et augmentent la circulation cutanée, ce qui favorise le passage des toxiques. Les suies se déposent sur la peau, dans les ouvertures de la tenue (col, cagoule) et sont aussi retenues par le tissu de la tenue, qui peut les relâcher ensuite. Zones les plus exposées : <strong>cou, mâchoire, aisselles, aine</strong>.</li>
+                    <li><strong>Digestive</strong> : par transfert manuel. Boire, manger ou fumer avec les mains souillées, ou sans s'être lavé le visage, fait passer les suies vers le tube digestif.</li>
+                </ul>
+                <p>Les niveaux d'exposition et le nettoyage de la tenue sont détaillés dans <button class="sal-lien" onclick="showModule('rdeb-apres')">🧼 RDEB : après l'engagement</button> (niveaux « Je sais », « Je sens », « Je vois »).</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3. Les conséquences sur la santé</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/hygiene/hyg-consequences.webp" alt="Effets immédiats et effets à long terme de l'exposition aux fumées" loading="lazy"><figcaption>Les cancers nommés sur l'infographie ne sont pas tous retenus par le CIRC : preuves suffisantes pour le mésothéliome et la vessie seulement, preuves limitées pour prostate, testicule, mélanome, lymphome non hodgkinien et côlon (le poumon n'est pas cité dans le résumé du CIRC).</figcaption></figure>
+
+                <table class="rd-table">
+                    <tbody>
+                        <tr><td><strong>Effets immédiats</strong></td><td>Maux de tête après l'intervention, nausées, vertiges, fatigue extrême, jusqu'au <strong>malaise</strong>, à la syncope ou à l'arrêt cardiaque en intervention.</td></tr>
+                        <tr><td><strong>Effets à long terme</strong></td><td>L'accumulation des toxiques au fil des années augmente les risques de <strong>cancers</strong> et de <strong>maladies cardiovasculaires</strong>. Le CIRC (OMS) classe l'exposition professionnelle de sapeur-pompier comme <strong>cancérogène pour l'homme</strong> (groupe 1, 2022). Les preuves sont les plus solides pour le <strong>mésothéliome</strong> et le <strong>cancer de la vessie</strong>, et plus limitées pour d'autres localisations (prostate, testicule, mélanome, lymphome, côlon).</td></tr>
+                    </tbody>
+                </table>
+                <div class="rd-alerte"><strong>Mal de tête, nausées ou vertiges après un feu :</strong> ne pas attendre que ça passe. Le signaler au chef d'agrès et au SSSM, car cela peut être une intoxication au CO.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4. Les bons gestes</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/hygiene/hyg-gestes.webp" alt="Bons gestes avant, pendant et après l'engagement" loading="lazy"></figure>
+
+                <table class="rd-table">
+                    <tbody>
+                        <tr><th>Quand</th><th>Geste</th></tr>
+                        <tr><td><strong>Pendant</strong></td><td>ARI mis <strong>avant</strong> d'entrer et gardé tant que le COS n'a pas levé le port du masque après mesure. Ne pas se toucher le visage avec des gants souillés.</td></tr>
+                        <tr><td><strong>À la sortie</strong></td><td><strong>Déshabillage soigneux</strong> (cagoule retirée de l'arrière vers l'avant, en évitant la face), avec gants jetables. <strong>Lingettes corporelles</strong> sur le visage, le cou, les mains et les zones exposées. Tenue souillée dans un <strong>sac</strong> selon le niveau d'exposition.</td></tr>
+                        <tr><td><strong>Avant de boire ou de manger</strong></td><td><strong>Se laver les mains et le visage</strong>. Ne pas fumer ni vapoter sur les lieux.</td></tr>
+                        <tr><td><strong>Au retour au CIS</strong></td><td><strong>Douche impérative</strong>, tenue propre fournie, nettoyage de l'engin si souillure importante. Ne pas rapporter la tenue souillée chez soi.</td></tr>
+                        <tr><td><strong>Dans le temps</strong></td><td>Demander au SSSM le <strong>suivi de ses expositions</strong>, et signaler tout symptôme.</td></tr>
+                    </tbody>
+                </table>
+                <div class="rd-astuce">Le lot DECOPI (lingettes, gants jetables, demi-masques P3, sacs, brosses) est décrit dans <button class="sal-lien" onclick="showModule('rdeb-apres')">🧼 RDEB : après l'engagement</button>.</div>
+            </div>
+        </details>
+        <p class="rd-source">📚 Cours « Hygiène opérationnelle : l'absorption des particules toxiques (HAP, CO, cyanures) » (contenu pédagogique fourni), corrigé (origine des cyanures, cancérogénicité des HAP, classement du CIRC, voies cutanées) et mis en cohérence avec RDEB « Après l'engagement » (SDIS 34). À valider par le SSSM.</p>
+    </div>
+
     <div id="ascenseurs" class="module" style="--jsp: #6D28D9;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
@@ -31811,7 +31903,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.16</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.18</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
