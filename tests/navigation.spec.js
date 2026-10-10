@@ -31,18 +31,36 @@ test('un seul menu ouvert à la fois', async ({ app }) => {
     await expect(app.locator('#navHome .nav-acc-head[aria-expanded="true"]')).toHaveCount(0);
 });
 
-test('chaque fiche du registre s\'ouvre depuis les menus', async ({ app }) => {
-    test.setTimeout(1200000);   // parcourt toutes les fiches une par une (la liste grossit à chaque ajout)
+// Parcours de toutes les fiches depuis les menus. La boucle tourne dans la page elle-même
+// (mêmes clics sur les menus, sans passer par les vérifications d'affichage de Playwright, bien plus lentes
+// sur cette page volumineuse) : environ 30 secondes au lieu de 15 minutes.
+test('chaque fiche du registre s\'ouvre depuis les menus @long', async ({ app }) => {
+    test.setTimeout(300000);
     const pages = registre.pages.filter(p => p.type !== 'menu');
-    for (const p of pages) {
-        await app.evaluate(() => Navigation.allerOnglet('accueil'));
-        const domaineOuvert = await app.getAttribute(`[data-domaine="${p.domaine}"]`, 'aria-expanded');
-        if (domaineOuvert !== 'true') await app.click(`[data-domaine="${p.domaine}"]`);
-        const feuille = app.locator(`.nav-leaf[data-page="${p.id}"]`);
-        if (!(await feuille.isVisible())) await app.click(`[data-theme="${p.domaine}|${p.theme}"]`);
-        await feuille.click({ timeout: 5000 }).catch(e => { throw new Error(`Fiche ${p.id} : ${e.message}`); });
-        expect(await ecranActif(app), p.id).toBe(p.id);
-    }
+    const echecs = await app.evaluate(async lot => {
+        const pause = () => new Promise(r => setTimeout(r, 0));
+        const echecs = [];
+        for (const p of lot) {
+            Navigation.allerOnglet('accueil');
+            await pause();
+            const domaine = document.querySelector(`[data-domaine="${p.domaine}"]`);
+            if (!domaine) { echecs.push(`${p.id} : menu du domaine ${p.domaine} introuvable`); continue; }
+            if (domaine.getAttribute('aria-expanded') !== 'true') { domaine.click(); await pause(); }
+            let feuille = document.querySelector(`.nav-leaf[data-page="${p.id}"]`);
+            if (!feuille || feuille.offsetParent === null) {
+                const theme = document.querySelector(`[data-theme="${p.domaine}|${p.theme}"]`);
+                if (theme) { theme.click(); await pause(); }
+                feuille = document.querySelector(`.nav-leaf[data-page="${p.id}"]`);
+            }
+            if (!feuille || feuille.offsetParent === null) { echecs.push(`${p.id} : fiche absente ou masquée dans le menu`); continue; }
+            feuille.click();
+            await pause();
+            const actif = document.querySelector('.module.active')?.id;
+            if (actif !== p.id) echecs.push(`${p.id} : l'écran ouvert est « ${actif} »`);
+        }
+        return echecs;
+    }, pages);
+    expect(echecs).toEqual([]);
 });
 
 test('onglet Calculs : tous les calculateurs', async ({ app }) => {

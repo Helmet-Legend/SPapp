@@ -12,6 +12,9 @@ const scenarios = {
 
 function textesPeuLisibles([id, seuil]) {
     const parse = c => {
+        // color-mix() est rendu « color(srgb 0.97 0.86 0.88) » : composantes entre 0 et 1
+        const srgb = c && c.match(/^color\(srgb\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)(?:\s*\/\s*([\d.]+))?\)/);
+        if (srgb) return { r: +srgb[1] * 255, g: +srgb[2] * 255, b: +srgb[3] * 255, a: srgb[4] === undefined ? 1 : +srgb[4] };
         const m = c && c.match(/[\d.]+/g);
         if (!m || m.length < 3) return null;
         return { r: +m[0], g: +m[1], b: +m[2], a: m[3] === undefined ? 1 : +m[3] };
@@ -48,20 +51,25 @@ function textesPeuLisibles([id, seuil]) {
     return mauvais;
 }
 
+// Chaque thème est parcouru en lots qui tournent en parallèle (mêmes vérifications, temps total divisé).
+const LOTS = 6;
 for (const nom of ['clair', 'sombre']) {
-    test(`thème ${nom} : le contenu de toutes les fiches est lisible`, async ({ page }) => {
-        test.setTimeout(300000);
-        await page.addInitScript(t => localStorage.setItem('deciops.theme', t), nom);
-        await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
-        await page.goto('/index.html');
-        await expect.poll(() => page.evaluate(() => typeof tmdDatabase !== 'undefined' && tmdDatabase.length)).toBeGreaterThan(0);
-        const ids = await page.evaluate(() => [...document.querySelectorAll('.module')].map(m => m.id).filter(i => i !== 'home'));
-        const mauvais = [];
-        for (const id of ids) {
-            await page.evaluate(i => showModule(i), id);
-            if (scenarios[id]) await page.evaluate(scenarios[id]);
-            mauvais.push(...await page.evaluate(textesPeuLisibles, [id, SEUIL]));
-        }
-        expect(mauvais).toEqual([]);
-    });
+    for (let k = 0; k < LOTS; k++) {
+        test(`thème ${nom} : le contenu de toutes les fiches est lisible @long (lot ${k + 1}/${LOTS})`, async ({ page }) => {
+            test.setTimeout(300000);
+            await page.addInitScript(t => localStorage.setItem('deciops.theme', t), nom);
+            await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
+            await page.goto('/index.html');
+            await expect.poll(() => page.evaluate(() => typeof tmdDatabase !== 'undefined' && tmdDatabase.length), { timeout: 30000 }).toBeGreaterThan(0);
+            const tous = await page.evaluate(() => [...document.querySelectorAll('.module')].map(m => m.id).filter(i => i !== 'home'));
+            const ids = tous.filter((_, i) => i % LOTS === k);
+            const mauvais = [];
+            for (const id of ids) {
+                await page.evaluate(i => showModule(i), id);
+                if (scenarios[id]) await page.evaluate(scenarios[id]);
+                mauvais.push(...await page.evaluate(textesPeuLisibles, [id, SEUIL]));
+            }
+            expect(mauvais).toEqual([]);
+        });
+    }
 }
