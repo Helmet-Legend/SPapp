@@ -2219,7 +2219,7 @@
    "titre": "Message d'ambiance FDF (formulaire)",
    "domaine": "fdf",
    "theme": "GTO – Techniques opérationnelles",
-   "type": "ordre",
+   "type": "calculateur",
    "motsCles": [
     "message d'ambiance",
     "ambiance",
