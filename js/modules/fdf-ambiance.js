@@ -134,7 +134,7 @@
         if (val('sensible-autre')) sens.push(val('sensible-autre'));
         if (sens.length) vois.push('Point sensible : ' + liste(sens) + (val('sensible-dist') ? ', à ' + val('sensible-dist') + ' mètres' : '') + '.');
 
-        ['terrestre', 'aerien', 'cmdt'].forEach(function (id) { if (val(id)) demande.push(val(id)); });
+        demande = coche('demande');
         var lignes = ['De ' + (val('indicatif') || 'CCF …') + ' pour CODIS ' + (val('codis') || '…') + ', pour un premier message d\'ambiance.', ''];
         lignes.push('Je suis : ' + (je.join(' ') || '…'));
         lignes.push('Je vois : ' + (vois.join(' ') || '…'));
