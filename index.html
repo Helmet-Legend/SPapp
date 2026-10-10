@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.2">
+    <meta name="version" content="1.69.3">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.2</span><br>
+                        Vulcain v<span class="app-version">1.69.3</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -10536,6 +10536,7 @@
         <div class="rd-tuiles">
             <button onclick="showModule('sal-rattrapage')"><b>🔁 Plongée non conforme</b><span>Paliers interrompus, remontée rapide ou lente, panne d'air, perte d'un plongeur, « Que fait-on si ? »</span></button>
             <button onclick="showModule('sal-essoufflement')"><b>😮‍💨 Essoufflement</b><span>Hypercapnie, cercle vicieux, causes, effets, que faire, fiche réflexe</span></button>
+            <button onclick="showModule('sal-barotraumatismes')"><b>🫁 Barotraumatismes</b><span>Boyle-Mariotte, oreille, vertige alternobarique, surpression pulmonaire, EGA</span></button>
             <button onclick="showModule('sal-accidents')"><b>🚨 Accident de plongée</b><span>Alerte, oxygène, hydratation, RCP, transfert, caisson, décès</span></button>
         </div>
 
@@ -11370,6 +11371,136 @@
             </table>
         </div>
         <p class="rd-source">📚 Cours « L'essoufflement en plongée » (contenu pédagogique fourni). La fiche réflexe est une synthèse du chapitre. À valider par le référent plongée avant tout usage opérationnel.</p>
+    </div>
+
+    <div id="sal-barotraumatismes" class="module" style="--jsp: #0277BD;">
+        <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon">Cours pédagogique</span>
+        <h2>🫁 Barotraumatismes : mécanique et physiopathologie</h2>
+        <p style="text-align: center;">Les altérations du corps liées aux <strong>variations de pression</strong>. Pour le SAL engagé en conditions dégradées et pour le chef d'unité, comprendre ces mécanismes permet d'<strong>évaluer la dangerosité du milieu</strong>. Conduite à tenir : <button class="sal-lien" onclick="showModule('sal-accidents')">🚨 accident de plongée</button>.</p>
+
+        <div class="rd-section">
+            <h3>I. Les gaz et la loi de Boyle-Mariotte</h3>
+            <p>Toutes les lésions barotraumatiques découlent d'une contrainte physique : à température constante, le <strong>volume d'un gaz est inversement proportionnel à la pression absolue</strong>.</p>
+            <div class="rd-astuce"><strong>P × V = constante</strong></div>
+            <p>La donnée la plus critique est le <strong>gradient de variation de volume</strong> : la variation relative du volume d'air dans les cavités du corps n'est <strong>pas linéaire</strong>, elle est la plus forte près de la surface.</p>
+            <table class="rd-table">
+                <tbody>
+                    <tr><th>Profondeur</th><th>Pression absolue</th><th>Volume d'un gaz (cavité fermée)</th></tr>
+                    <tr><td>Surface (0 m)</td><td>1 bar</td><td><strong>100 %</strong> (1 L)</td></tr>
+                    <tr><td>- 10 m</td><td>2 bars</td><td><strong>50 %</strong> (0,5 L)</td></tr>
+                    <tr><td>- 20 m</td><td>3 bars</td><td><strong>33 %</strong> (0,33 L)</td></tr>
+                    <tr><td>- 30 m</td><td>4 bars</td><td><strong>25 %</strong> (0,25 L)</td></tr>
+                    <tr><td>- 40 m</td><td>5 bars</td><td><strong>20 %</strong> (0,2 L)</td></tr>
+                </tbody>
+            </table>
+            <figure class="rd-fig plein"><img class="zoomable" src="images/sal/baro-boyle.webp" alt="Courbe du volume relatif de gaz en fonction de la profondeur" loading="lazy"><figcaption>Le volume chute surtout dans les 10 premiers mètres.</figcaption></figure>
+            <ul>
+                <li><strong>De 0 à - 10 m</strong> : la pression double (1 à 2 bars), le volume est réduit de moitié, soit <strong>50 %</strong> de variation.</li>
+                <li><strong>De - 30 à - 40 m</strong> : la pression passe de 4 à 5 bars, la réduction n'est plus que de <strong>20 %</strong>.</li>
+            </ul>
+            <div class="rd-alerte">Les missions de sauvetage ou de recherche se déroulent souvent dans les <strong>10 premiers mètres</strong> : c'est là que le corps du SAL subit les déformations mécaniques (écrasement ou dilatation) <strong>les plus brutales</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>II. La sphère ORL</h3>
+            <p>Les atteintes ORL viennent de l'incapacité à <strong>équilibrer les pressions</strong> entre le milieu aquatique et les cavités aériennes du crâne, accentuée par les <strong>descentes rapides</strong> fréquentes en intervention.</p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>Oreille moyenne et interne : mécanisme à la descente</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/sal/baro-orl-descente.webp" alt="Oreille moyenne : équilibre, descente sans équilibrage, forçage" loading="lazy"></figure>
+                <ol>
+                    <li><strong>Équilibre (surface)</strong> : la pression est équilibrée des deux côtés du tympan.</li>
+                    <li><strong>Descente sans équilibrage</strong> : si la trompe d'Eustache reste fermée, la pression hydrostatique repousse violemment le tympan vers l'intérieur de l'oreille moyenne.</li>
+                    <li><strong>Forçage</strong> : tenter d'ouvrir la trompe en forçant génère une violente <strong>hyperpression intrathoracique</strong>, transmise par le liquide céphalo-rachidien jusqu'à l'oreille interne. Elle peut rompre la membrane de la <strong>fenêtre ronde</strong> (le plus souvent) ou de la <strong>fenêtre ovale</strong> (« coup de piston » de l'étrier).</li>
+                </ol>
+                <div class="rd-alerte">Le tissu cède : <strong>déchirure de la membrane (fistule périlymphatique)</strong>. Les liquides de l'oreille interne fuient : <strong>atteinte brutale de l'audition et de l'équilibre</strong> (perte d'audition, vertiges), parfois durable.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Vertige alternobarique : à la remontée</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/sal/baro-orl-vertige.webp" alt="Vertige alternobarique : stimulation asymétrique des canaux semi-circulaires" loading="lazy"></figure>
+                <p>Trouble <strong>purement mécanique</strong> qui survient le plus souvent à la <strong>remontée</strong>.</p>
+                <ul>
+                    <li>L'air se dilate et s'échappe d'une trompe d'Eustache <strong>plus vite que de l'autre</strong> : la trompe encore fermée retient l'air.</li>
+                    <li>Il se crée un <strong>différentiel de pression</strong> important entre les deux oreilles moyennes.</li>
+                    <li>Cette asymétrie stimule d'un seul côté les <strong>canaux semi-circulaires</strong> (centre de l'équilibre) : le cerveau reçoit des informations spatiales contradictoires.</li>
+                </ul>
+                <table class="rd-table">
+                    <tbody>
+                        <tr><th>Signes évocateurs</th></tr>
+                        <tr><td>Vertige rotatoire brutal, sévère</td></tr>
+                        <tr><td>Nausées, vomissements</td></tr>
+                        <tr><td>Désorientation</td></tr>
+                        <tr><td>Perte d'équilibre</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <div class="rd-section">
+            <h3>III. La surpression pulmonaire (SP)</h3>
+            <p>Traumatisme mécanique de <strong>distension tissulaire</strong>. Elle survient quand l'air des alvéoles, qui se dilate à la remontée (baisse de la pression hydrostatique), <strong>ne peut pas s'échapper</strong> par les voies aériennes : blocage glottique réflexe, effort intense, spasme.</p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>Le mécanisme lésionnel</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/sal/baro-sp-mecanisme.webp" alt="Mécanisme lésionnel de la surpression pulmonaire en 4 temps" loading="lazy"></figure>
+                <ol>
+                    <li><strong>Situation normale (en profondeur)</strong> : les alvéoles sont comprimées par la pression ambiante.</li>
+                    <li><strong>Remontée</strong> : l'air alvéolaire se dilate lors de la baisse de pression.</li>
+                    <li><strong>Blocage des voies aériennes</strong> : si l'air ne peut s'échapper, la pression intrapulmonaire augmente et devient supérieure à la pression ambiante.</li>
+                    <li><strong>Rupture des alvéoles</strong> : lorsque le différentiel dépasse la limite de résistance élastique des tissus (de l'ordre de <strong>0,1 bar</strong> de surpression relative, soit environ 1 m d'eau), la paroi des alvéoles se déchire.</li>
+                </ol>
+            </div>
+        </details>
+
+        <div class="rd-section">
+            <h3>Les 3 voies de l'air extravasé</h3>
+            <p>L'air sous pression quitte les alvéoles par trois voies, donc <strong>trois pathologies cumulables</strong>.</p>
+            <figure class="rd-fig plein"><img class="zoomable" src="images/sal/baro-sp-voies.webp" alt="Les 3 voies de l'air extravasé : pneumothorax, emphysème médiastinal, embolie gazeuse artérielle" loading="lazy"></figure>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1. Pneumothorax (atteinte pleurale)</summary>
+            <div class="rd-section">
+                <ul>
+                    <li>L'air passe dans la <strong>cavité pleurale</strong> (espace virtuel entre les poumons et la cage thoracique).</li>
+                    <li>Ce gaz annule la pression négative de la plèvre : le poumon s'affaisse (<strong>collapsus pulmonaire</strong>).</li>
+                    <li><strong>Diminution majeure de la capacité respiratoire.</strong></li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2. Emphysème médiastinal (atteinte tissulaire)</summary>
+            <div class="rd-section">
+                <ul>
+                    <li>L'air fuse le long des <strong>gaines périvasculaires</strong> et remonte le long de la trachée vers le <strong>médiastin</strong> (espace central du thorax).</li>
+                    <li>Le gaz s'accumule à la base du cou et <strong>peut comprimer les organes adjacents</strong> : vaisseaux, nerfs vocaux.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3. Embolie gazeuse artérielle, EGA (atteinte vasculaire et neurologique)</summary>
+            <div class="rd-section">
+                <div class="rd-alerte">C'est la conséquence <strong>hémodynamique la plus grave</strong>.</div>
+                <ol>
+                    <li>L'air effracte les <strong>capillaires pulmonaires</strong>.</li>
+                    <li>Les bulles rejoignent les veines pulmonaires, entrent dans l'<strong>oreillette gauche</strong>, puis le <strong>ventricule gauche</strong>.</li>
+                    <li>Elles sont propulsées dans la circulation artérielle générale (<strong>aorte</strong>).</li>
+                    <li>Le plongeur étant <strong>vertical à la remontée</strong>, les bulles migrent préférentiellement vers les <strong>artères carotides</strong> et le système artériel cérébral.</li>
+                    <li>Elles y provoquent des <strong>obstructions mécaniques</strong> des artères (embolies gazeuses) : les zones cérébrales sont privées d'oxygène, avec des lésions neurologiques massives et fulgurantes (<strong>AVC ischémique d'origine gazeuse</strong>).</li>
+                </ol>
+            </div>
+        </details>
+        <p class="rd-source">📚 Cours « Mécanique et physiopathologie des barotraumatismes en milieu opérationnel » (contenu pédagogique fourni). À valider par le référent plongée avant tout usage opérationnel.</p>
     </div>
 
     <div id="sal-accidents" class="module" style="--jsp: #C62828;">
@@ -31067,7 +31198,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.2</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.3</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
