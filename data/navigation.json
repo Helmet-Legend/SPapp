@@ -2908,6 +2908,26 @@
    ]
   },
   {
+   "id": "sal-barotraumatismes",
+   "titre": "Barotraumatismes",
+   "domaine": "specialites",
+   "theme": "Plongée – SAL",
+   "type": "fiche",
+   "motsCles": [
+    "barotraumatisme",
+    "boyle-mariotte",
+    "surpression pulmonaire",
+    "pneumothorax",
+    "emphysème",
+    "embolie gazeuse",
+    "ega",
+    "vertige alternobarique",
+    "oreille",
+    "orl",
+    "trompe d'eustache"
+   ]
+  },
+  {
    "id": "sal-accidents",
    "titre": "Accident de plongée",
    "domaine": "specialites",
