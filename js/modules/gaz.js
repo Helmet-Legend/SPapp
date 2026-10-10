@@ -1,5 +1,5 @@
 /**
- * Vulcain - Explosimétrie : correction des valeurs selon le gaz d'étalonnage
+ * Vulcain - Explosimétrie : estimation prudente selon le gaz d'étalonnage
  * Données : data/gaz.json (chargé par js/app.js dans gazDatabase)
  */
 // Restauré depuis js/app.js (version antérieure au commit 4c28be7 du 17/02/2026),
@@ -162,27 +162,36 @@ function selectionnerGaz(key) {
     calculerCorrectionGaz();
 }
 
-// Calculer la correction pour le gaz sélectionné
+// Hypothèse prudente : un explosimètre indique des % de la LIE du gaz d'étalonnage. Pour un autre gaz, la réponse
+// dépend du capteur (facteurs du constructeur) et la valeur lue peut SOUS-estimer le danger. Sans ces facteurs,
+// on majore : LIE étalon ÷ LIE du gaz présent (réponse identique par % de volume), jamais moins que la valeur lue.
+function facteurPrudent(lieEtalon, liePresent) {
+    return Math.max(1, lieEtalon / liePresent);
+}
+
+// Calculer l'estimation prudente pour le gaz sélectionné
 function calculerCorrectionGaz() {
     if (!gazSelectionne) return;
-    
+
     const gazEtalon = document.getElementById('gazEtalon').value;
     const valeurAffichee = parseFloat(document.getElementById('valeurExplo').value);
-    
+
     const lieEtalon = gazDatabase[gazEtalon].lie;
     const liePresent = gazDatabase[gazSelectionne].lie;
-    
-    const facteur = liePresent / lieEtalon;
+
+    const facteur = facteurPrudent(lieEtalon, liePresent);
     const valeurCorrigee = valeurAffichee * facteur;
-    
+
     // Afficher les résultats
     const resultDiv = document.getElementById('resultCorrection');
     if (resultDiv) {
         resultDiv.style.display = 'block';
-        
+
         document.getElementById('gazPresentNom').textContent = gazDatabase[gazSelectionne].nom;
-        document.getElementById('valeurCorrigee').textContent = valeurCorrigee.toFixed(1) + ' % LIE';
-        
+        document.getElementById('valeurCorrigee').textContent = valeurCorrigee > 100
+            ? '> 100 % LIE'
+            : valeurCorrigee.toFixed(1) + ' % LIE';
+
         document.getElementById('detailEtalon').textContent = gazDatabase[gazEtalon].nom;
         document.getElementById('detailLieEtalon').textContent = lieEtalon + ' %';
         document.getElementById('detailGazPresent').textContent = gazDatabase[gazSelectionne].nom;
@@ -230,7 +239,7 @@ function updateTableauCorrections() {
         for (const key of gazList) {
             if (gazDatabase[key]) {
                 const gaz = gazDatabase[key];
-                const facteur = gaz.lie / lieEtalon;
+                const facteur = facteurPrudent(lieEtalon, gaz.lie);
                 const isEtalon = key === gazEtalon;
                 
                 html += `
@@ -241,7 +250,7 @@ function updateTableauCorrections() {
                         <td style="color: ${isEtalon ? 'light-dark(#9e5e00, #ff9800)' : 'inherit'};">${gaz.formule}</td>
                         <td style="text-align: center; color: light-dark(#945800, #ff9800); font-weight: ${isEtalon ? 'bold' : 'normal'};">${gaz.lie}</td>
                         <td style="text-align: center; font-weight: bold; color: ${isEtalon ? 'light-dark(#9e5e00, #ff9800)' : 'light-dark(#2e7d32, #6fcf76)'};">${facteur.toFixed(3)}</td>
-                        <td style="font-size: 0.9em; color: var(--text-secondary);">Valeur × ${facteur.toFixed(3)}</td>
+                        <td style="font-size: 0.9em; color: var(--text-secondary);">${facteur === 1 ? 'Valeur lue (pas de réduction)' : 'Valeur × ' + facteur.toFixed(3)}</td>
                     </tr>
                 `;
             }

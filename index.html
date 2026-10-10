@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.7">
+    <meta name="version" content="1.69.8">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.7</span><br>
+                        Vulcain v<span class="app-version">1.69.8</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -3115,8 +3115,8 @@
 
         <div class="alert-box" style="background: rgba(76, 175, 80, 0.15); border-left-color: #4CAF50; border: 2px solid #4CAF50;">
             💡 <strong>Principe :</strong><br>
-            Les explosimètres sont étalonnés avec un gaz de référence (souvent le méthane ou le pentane).<br>
-            Pour mesurer d'autres gaz, il faut appliquer un <strong>facteur de correction</strong> basé sur les LIE respectives.
+            Un explosimètre indique des % de la LIE du <strong>gaz d'étalonnage</strong> (souvent le méthane ou le pentane). Pour un autre gaz, la réponse du capteur diffère et la valeur lue peut <strong>sous-estimer</strong> le danger.<br>
+            Sans les facteurs du constructeur, Vulcain donne une <strong>estimation prudente</strong> (LIE étalon ÷ LIE du gaz présent, jamais moins que la valeur lue). <strong>Si vous connaissez les facteurs de réponse de votre appareil, utilisez-les.</strong>
         </div>
 
         <div class="result-box" style="border: 3px solid #FF9800; background: var(--t-s1, #FFFFFF);">
@@ -3178,12 +3178,12 @@
         </div>
 
         <div id="resultCorrection" class="result-box" aria-live="polite" style="display: none; background: var(--t-s1, #FFFFFF); border: 4px solid #4CAF50; box-shadow: 0 8px 30px rgba(76, 175, 80, 0.3);">
-            <h3 style="color: light-dark(#327334, #4caf50); font-size: 1.8em; text-align: center;">✅ Résultat de la correction</h3>
+            <h3 style="color: light-dark(#327334, #4caf50); font-size: 1.8em; text-align: center;">⚠️ Estimation prudente</h3>
             
             <div style="background: linear-gradient(135deg, var(--t-s2, #E8F5E9) 0%, light-dark(#C8E6C9, #363d3a) 100%); padding: 30px; border-radius: 16px; text-align: center; margin: 25px 0; border: 4px solid #4CAF50; box-shadow: 0 4px 20px rgba(76, 175, 80, 0.2);">
                 <div style="font-size: 1.4em; color: light-dark(#1b5e20, #34b53e); margin-bottom: 15px; font-weight: 600;">Gaz présent : <span id="gazPresentNom" style="color: light-dark(#a84900, #ff7205); font-weight: bold; font-size: 1.2em;"></span></div>
                 <div style="font-size: 5em; font-weight: bold; color: light-dark(#2a722e, #41b147); text-shadow: 2px 2px 4px rgba(0,0,0,0.1);" id="valeurCorrigee">0 % LIE</div>
-                <div style="font-size: 1.2em; color: light-dark(#2c7130, #46b34b); margin-top: 15px; font-weight: 600;">Valeur réelle dans l'atmosphère</div>
+                <div style="font-size: 1.2em; color: light-dark(#2c7130, #46b34b); margin-top: 15px; font-weight: 600;">Au moins cette valeur : ne jamais descendre sous la valeur lue</div>
             </div>
 
             <div style="background: var(--t-s1, #FFF); padding: 25px; border-radius: 12px; margin-bottom: 20px; border: 2px solid var(--t-line, #E0E0E0);">
@@ -3216,7 +3216,7 @@
         </div>
 
         <div class="result-box" style="background: var(--t-s1, #FFFFFF); border: 2px solid #9E9E9E;">
-            <h3 style="color: var(--t-ink, #424242);">📋 Tableau de référence - Facteurs de correction</h3>
+            <h3 style="color: var(--t-ink, #424242);">📋 Tableau de référence - Facteurs prudents</h3>
             <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 1.05em;">Facteurs calculés depuis le gaz d'étalonnage sélectionné</p>
             <div style="overflow-x: auto;">
                 <table id="tableauFacteurs">
@@ -31476,7 +31476,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.7</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.8</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
