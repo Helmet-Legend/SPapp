@@ -117,6 +117,8 @@
         if (val('lieudit')) je.push('Lieu-dit ' + val('lieudit') + '.');
         if (val('repere')) je.push(maj(val('repere')) + '.');
 
+        if (val('feu')) vois.push(maj(val('feu')) + '.');
+        if (val('vegetation')) vois.push('Végétation : ' + val('vegetation').toLowerCase() + '.');
         if (val('propagation')) vois.push('Propagation ' + val('propagation') + '.');
         if (val('vent-dir') || val('vent-force')) {
             var vent = 'Vent' + (val('vent-dir') ? ' de ' + DIRECTIONS[val('vent-dir')] : '') + (val('vent-force') ? ', force ' + val('vent-force') : '');

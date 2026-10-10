@@ -11,6 +11,8 @@ test('le message d\'ambiance se rédige dans l\'ordre du canevas', async ({ app 
     await app.fill('#amb-commune', 'Saint-Thibéry');
     await app.fill('#amb-lieudit', 'La Rouquette');
     await app.fill('#amb-repere', 'au sud du château');
+    await app.fill('#amb-feu', 'feu de sous-bois');
+    await app.selectOption('#amb-vegetation', 'Pinède');
     await app.selectOption('#amb-propagation', 'rapide');
     await app.selectOption('#amb-vent-dir', 'NO');
     await app.selectOption('#amb-vent-force', 'soutenue');
@@ -25,7 +27,7 @@ test('le message d\'ambiance se rédige dans l\'ordre du canevas', async ({ app 
     await app.selectOption('#amb-aerien', 'un appui aérien HBE sur zone');
     await app.fill('#amb-demande-autre', 'Gendarmerie pour boucler un axe');
     const msg = await app.textContent('#amb-apercu');
-    const ordre = ['Carreau DFCI GD82E1.4.', 'Commune de Saint-Thibéry.', 'Lieu-dit La Rouquette.', 'Au sud du château.', 'Propagation rapide.',
+    const ordre = ['Carreau DFCI GD82E1.4.', 'Commune de Saint-Thibéry.', 'Lieu-dit La Rouquette.', 'Au sud du château.', 'Feu de sous-bois.', 'Végétation : pinède.', 'Propagation rapide.',
         'Vent de Nord-Ouest, force soutenue.', 'Relief montant.', 'Surface brûlée 5000 m².', 'Surface menacée 2 hectares.', 'Longueur du front de feu 150 m.',
         'Point sensible : habitation isolée, à 500 mètres.', 'Je demande : Un GIFF et un appui aérien HBE sur zone.', 'Autre : Gendarmerie pour boucler un axe.',
         'Je poursuis la reconnaissance.', 'Je prends l\'appellation COS Saint-Thibéry.'];
