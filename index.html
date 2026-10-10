@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.3">
+    <meta name="version" content="1.69.4">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.3</span><br>
+                        Vulcain v<span class="app-version">1.69.4</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -10537,6 +10537,7 @@
             <button onclick="showModule('sal-rattrapage')"><b>🔁 Plongée non conforme</b><span>Paliers interrompus, remontée rapide ou lente, panne d'air, perte d'un plongeur, « Que fait-on si ? »</span></button>
             <button onclick="showModule('sal-essoufflement')"><b>😮‍💨 Essoufflement</b><span>Hypercapnie, cercle vicieux, causes, effets, que faire, fiche réflexe</span></button>
             <button onclick="showModule('sal-barotraumatismes')"><b>🫁 Barotraumatismes</b><span>Boyle-Mariotte, oreille, vertige alternobarique, surpression pulmonaire, EGA</span></button>
+            <button onclick="showModule('sal-add')"><b>🫧 Accidents de désaturation</b><span>Loi de Henry, compartiments, bulles, mécanismes, type I et II</span></button>
             <button onclick="showModule('sal-accidents')"><b>🚨 Accident de plongée</b><span>Alerte, oxygène, hydratation, RCP, transfert, caisson, décès</span></button>
         </div>
 
@@ -11501,6 +11502,141 @@
             </div>
         </details>
         <p class="rd-source">📚 Cours « Mécanique et physiopathologie des barotraumatismes en milieu opérationnel » (contenu pédagogique fourni). À valider par le référent plongée avant tout usage opérationnel.</p>
+    </div>
+
+    <div id="sal-add" class="module" style="--jsp: #C62828;">
+        <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon">Cours pédagogique</span>
+        <h2>🫧 Accidents de désaturation (ADD) : mécanique et physiopathologie</h2>
+        <p style="text-align: center;">La dynamique des <strong>gaz dissous</strong> et les altérations liées à la <strong>désaturation tissulaire</strong>. Pour le SAL et le chef d'unité, comprendre la cinétique des gaz inertes est fondamental pour connaître les <strong>limites physiologiques</strong> du corps lors d'interventions prolongées ou répétées.</p>
+        <div class="rd-alerte">Cette fiche explique le mécanisme. Pour la conduite à tenir : <button class="sal-lien" onclick="showModule('sal-accidents')">🚨 accident de plongée</button>. Pour les paliers : <button class="sal-lien" onclick="showModule('sal-tables')">📊 tables MT 2012</button>.</div>
+
+        <div class="rd-section">
+            <h3>I. La loi de Henry et la dissolution des gaz</h3>
+            <p>Tout part de la <strong>loi de Henry</strong> : à température constante, la quantité de gaz dissous dans un liquide est <strong>proportionnelle à la pression</strong> que ce gaz exerce sur le liquide.</p>
+            <div class="rd-astuce"><strong>C = k × P</strong> : C = concentration dissoute, k = constante (dépend de la température), P = pression partielle du gaz.</div>
+            <p>En plongée à l'air, l'oxygène est consommé par le métabolisme, mais l'<strong>azote</strong> (gaz inerte) <strong>s'accumule</strong>.</p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1. À la descente et au fond : la saturation</summary>
+            <div class="rd-section">
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/sal/add-descente.webp" alt="À la descente : absorption de l’azote" loading="lazy"></figure>
+                <ul>
+                    <li>La pression ambiante augmente : la <strong>pression partielle d'azote (PpN₂)</strong> dans les poumons devient supérieure à celle du sang, puis à celle des tissus.</li>
+                    <li>Par <strong>diffusion</strong>, l'azote franchit la barrière alvéolo-capillaire, se dissout dans le sang et <strong>charge progressivement tous les tissus</strong>.</li>
+                    <li>L'équilibre final, où la tension d'azote tissulaire (TN₂) égale la PpN₂ inspirée, est la <strong>saturation</strong>.</li>
+                </ul>
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/sal/add-fond.webp" alt="Au fond : saturation progressive" loading="lazy"></figure>
+                <p>Chaque tissu se charge à une <strong>vitesse différente</strong>, selon sa perfusion et sa solubilité.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2. À la remontée : la désaturation</summary>
+            <div class="rd-section">
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/sal/add-remontee.webp" alt="À la remontée : élimination de l’azote" loading="lazy"></figure>
+                <ul>
+                    <li>La pression ambiante diminue : la PpN₂ alvéolaire <strong>chute sous la tension d'azote des tissus</strong>. Le gradient s'inverse.</li>
+                    <li>Les tissus rejettent l'azote dans le sang, qui le transporte jusqu'aux poumons pour être <strong>expiré</strong>.</li>
+                </ul>
+            </div>
+        </details>
+
+        <div class="rd-section">
+            <h3>II. Cinétique tissulaire : compartiments et périodes</h3>
+            <p>Tous les organes ne se chargent ni ne se déchargent à la même vitesse. Deux facteurs en décident : la <strong>perfusion sanguine</strong> (débit) et la <strong>solubilité</strong> de l'azote. L'azote est <strong>lipophile</strong> : forte affinité pour les tissus graisseux et nerveux.</p>
+            <p>On modélise le corps en <strong>compartiments</strong>, caractérisés par leur <strong>période</strong> : le temps nécessaire à un tissu pour s'imprégner de la <strong>moitié</strong> de la quantité d'azote manquante pour atteindre sa saturation.</p>
+            <table class="rd-table">
+                <tbody>
+                    <tr><th>Compartiment</th><th>Période (exemples)</th><th>Tissus</th></tr>
+                    <tr><td><strong>Rapide</strong></td><td>5 à 10 min</td><td>Tissus bien perfusés : sang, certains organes. Saturent et désaturent très vite.</td></tr>
+                    <tr><td><strong>Intermédiaire</strong></td><td>20 à 40 min</td><td>Muscles, peau, reins. Irrigation moyenne.</td></tr>
+                    <tr><td><strong>Lent</strong></td><td>60 à 120 min et plus</td><td>Tissus peu perfusés et riches en lipides : graisse, cartilage, ligaments, os, système nerveux. Stockent beaucoup d'azote, saturent et désaturent très lentement.</td></tr>
+                </tbody>
+            </table>
+            <p class="rd-source">Périodes indicatives issues de modèles (Haldane, Bühlmann…) : elles varient selon l'individu, l'âge, la condition physique et la température.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>III. La sursaturation critique et la formation des bulles</h3>
+            <p>À la remontée, les tissus sont en <strong>sursaturation</strong> : leur tension en azote dépasse la pression ambiante. C'est un état instable mais <strong>physiologique</strong>, tant qu'il reste sous un certain seuil.</p>
+            <p>Si la baisse de pression est <strong>trop rapide</strong> par rapport à l'évacuation de l'azote par les poumons, le gradient dépasse le seuil de tolérance (<strong>coefficient de sursaturation critique</strong>). Le gaz n'a plus le temps de rester dissous : il repasse brutalement à l'état gazeux.</p>
+<figure class="rd-fig plein"><img class="zoomable" src="images/sal/add-bulles.webp" alt="Sursaturation et formation des bulles : équilibre au fond, sursaturation, nucléation, croissance et migration" loading="lazy"></figure>
+            <div class="rd-alerte">Ce changement de phase, du dissous au gazeux, est le <strong>déclencheur de l'accident de désaturation</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>IV. Les mécanismes lésionnels des bulles</h3>
+            <p>Contrairement aux barotraumatismes, où l'air ambiant est injecté dans les tissus, l'ADD est une <strong>maladie endogène</strong>. La bulle provoque deux types de désordres.</p>
+<figure class="rd-fig plein"><img class="zoomable" src="images/sal/add-lesions.webp" alt="Mécanismes lésionnels : effets mécaniques et réactions biologiques" loading="lazy"></figure>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>A. L'agression mécanique</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Extravasculaire</strong> : une bulle formée dans un tissu (par exemple la moelle épinière) <strong>comprime les fibres nerveuses</strong> et dilacère la structure cellulaire.</li>
+                    <li><strong>Intravasculaire</strong> : les bulles qui circulent dans les capillaires finissent par se coincer et <strong>bloquent le flux sanguin</strong>. L'<strong>ischémie</strong> (privation d'oxygène) des tissus en aval peut aller jusqu'à la <strong>nécrose</strong>.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>B. L'agression biochimique : la « maladie de la bulle »</summary>
+            <div class="rd-section">
+                <p>Le corps ne reconnaît pas la paroi gazeuse de la bulle et l'identifie comme un <strong>corps étranger</strong>. Réaction immunitaire et hématologique immédiate :</p>
+                <ul>
+                    <li><strong>Agrégation plaquettaire</strong> autour de la bulle.</li>
+                    <li><strong>Activation de la coagulation</strong> et réaction inflammatoire.</li>
+                    <li><strong>Fuite de plasma</strong> vers les tissus (œdème) et lésion de l'endothélium.</li>
+                </ul>
+                <div class="rd-alerte">Ce processus épaissit le sang, <strong>aggrave l'ischémie initiale</strong> et fait durer l'atteinte des tissus.</div>
+            </div>
+        </details>
+
+        <div class="rd-section">
+            <h3>V. Cibles physiologiques et typologie (type I et II)</h3>
+            <p>La <strong>localisation des bulles</strong> détermine la gravité.</p>
+<figure class="rd-fig plein"><img class="zoomable" src="images/sal/add-cibles.webp" alt="Type I : atteintes ostéo-articulaires et cutanées. Type II : moelle épinière, cerveau, oreille interne, poumon" loading="lazy"></figure>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>Type I : atteintes ostéo-articulaires et cutanées</summary>
+            <div class="rd-section">
+                <p>Classification historique « type I ».</p>
+                <ul>
+                    <li><strong>Articulations</strong> (genoux, coudes, épaules), riches en tissus longs (cartilage, liquide synovial) : la dilatation des bulles comprime les terminaisons nerveuses locales, d'où des <strong>douleurs articulaires vives</strong> (les « bends »).</li>
+                    <li><strong>Peau et lymphatiques</strong> : marbrures, démangeaisons, éruptions cutanées, œdème localisé.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Type II : atteintes neurologiques, vestibulaires et pulmonaires</summary>
+            <div class="rd-section">
+                <p>Classification historique « type II ».</p>
+                <table class="rd-table">
+                    <tbody>
+                        <tr><td><strong>Moelle épinière</strong></td><td>La lésion <strong>typique de la plongée autonome</strong>. Riche en myéline (graisse), donc saturée en azote, avec une circulation veineuse lente : les bulles s'y forment massivement. Lésions <strong>ischémiques et compressives</strong> des faisceaux moteurs et sensitifs (<strong>paraplégie</strong>).</td></tr>
+                        <tr><td><strong>Cerveau</strong></td><td>Bulles qui traversent le filtre pulmonaire (souvent par un <strong>foramen ovale perméable</strong>, FOP) et gagnent la circulation artérielle cérébrale : zones d'<strong>infarctus</strong>.</td></tr>
+                        <tr><td><strong>Oreille interne</strong></td><td>Bulles dans les liquides de l'oreille interne : atteinte de la cochlée et des canaux semi-circulaires (<strong>surdité, vertiges sévères, troubles de l'équilibre</strong>).</td></tr>
+                        <tr><td><strong>Poumon</strong><br>« chokes », rare</td><td>Un dégazage veineux massif <strong>sature l'artère pulmonaire</strong>. Le cœur droit n'arrive plus à pomper le sang à travers des poumons remplis de bulles : <strong>détresse respiratoire</strong> et défaillance cardiaque droite (grave).</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <div class="rd-section">
+            <h3>À retenir</h3>
+            <ul>
+                <li>L'ADD est une <strong>maladie endogène</strong> liée à la formation de bulles de gaz inerte (principalement l'azote).</li>
+                <li>Tous les tissus ne se chargent ni ne se déchargent à la <strong>même vitesse</strong>.</li>
+                <li>Sa survenue dépend de <strong>nombreux facteurs</strong> : profil de plongée, vitesse de remontée, charge en gaz, type de tissu, conditions individuelles (âge, forme physique, hydratation…), foramen ovale perméable éventuel, température.</li>
+                <li>Les mécanismes sont multiples et peuvent <strong>se combiner</strong>. La gravité ne dépend pas uniquement de la localisation (type I ou II).</li>
+            </ul>
+        </div>
+        <p class="rd-source">📚 Cours « Mécanique et physiopathologie des accidents de désaturation (ADD) » (contenu pédagogique fourni). À valider par le référent plongée avant tout usage opérationnel.</p>
     </div>
 
     <div id="sal-accidents" class="module" style="--jsp: #C62828;">
@@ -31198,7 +31334,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.3</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.4</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
