@@ -1511,6 +1511,34 @@
    ]
   },
   {
+   "id": "hygiene-fumees",
+   "titre": "Hygiène opérationnelle : toxiques de la fumée",
+   "domaine": "incendie",
+   "theme": "Protection & matériels",
+   "type": "fiche",
+   "motsCles": [
+    "hygiène",
+    "fumée",
+    "toxiques",
+    "cancer",
+    "cancérogène",
+    "circ",
+    "hap",
+    "hydrocarbures aromatiques",
+    "cov",
+    "monoxyde de carbone",
+    "co",
+    "cyanure",
+    "hcn",
+    "suies",
+    "absorption cutanée",
+    "décontamination",
+    "douche",
+    "déblai",
+    "tenue"
+   ]
+  },
+  {
    "id": "echelles-menu",
    "titre": "Présentation",
    "domaine": "incendie",
