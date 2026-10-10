@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.14">
+    <meta name="version" content="1.69.15">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.14</span><br>
+                        Vulcain v<span class="app-version">1.69.15</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -20128,6 +20128,100 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Cours « Opérations diverses : interventions sur les nouveaux animaux de compagnie » (contenu pédagogique fourni), corrigé et complété (morsures, vipères, oiseaux, incendie, cadre d'intervention) et mis en cohérence avec la fiche PSE 8. Le SDIS 34 n'a pas d'équipe spécialisée : la fiche prévoit donc de sécuriser et de demander un appui extérieur via le CODIS. À valider par un vétérinaire et à compléter avec la liste des partenaires que tient le CODIS.</p>
     </div>
 
+    <div id="animaux-compagnie" class="module" style="--jsp: #E27C0C;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon">Cours pédagogique</span>
+        <h2>🐕 Chiens et chats : interventions avec un animal de compagnie</h2>
+        <p style="text-align: center;">Plus d'un foyer français sur deux possède un animal de compagnie (selon les enquêtes), surtout des chiens et des chats. L'animal peut être <strong>victime</strong> (incendie, accident) ou un <strong>obstacle</strong> lors d'un secours à personne.</p>
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/animaux/ani-entete.webp" alt="Un chien et un chat : même un animal docile peut devenir imprévisible" loading="lazy"></figure>
+
+        <div class="rd-alerte"><strong>Même l'animal le plus docile peut mordre ou griffer sous l'effet du stress ou de la douleur.</strong> Ne pas le fixer, ne pas lui tourner le dos, ne pas chercher à le caresser. Personne mordue : laver la plaie, <strong>15</strong> si elle est grave, et voir <button class="sal-lien" onclick="showModule('pse-8')">🌊 PSE 8 : piqûres et morsures</button>. Autre animal que chien ou chat : <button class="sal-lien" onclick="showModule('nac')">🐍 NAC</button>.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li>Tout animal peut devenir dangereux en situation de <strong>stress ou de douleur</strong>.</li>
+                <li><strong>Sécuriser la zone</strong> et séparer l'animal de la victime.</li>
+                <li><strong>Protéger ses mains et son visage</strong>.</li>
+                <li>Le sauvetage d'un animal ne doit <strong>jamais compromettre la sécurité du personnel</strong> ni passer avant le sauvetage d'une victime humaine.</li>
+                <li>Ne pas hésiter à demander un appui (vétérinaire, fourrière, forces de l'ordre) via le CODIS.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1. Chiens, chats : typologie et risques</summary>
+            <div class="rd-section">
+<figure class="rd-fig plein"><img class="zoomable" src="images/animaux/ani-typologie.webp" alt="Chiens et chats : comportements à risque" loading="lazy"></figure>
+                <ul>
+                    <li><strong>Chiens</strong> : toutes races confondues. Les risques sont plus importants avec les <strong>chiens de catégorie</strong> et les molossoïdes. Fort instinct de protection de leur maître.</li>
+                    <li><strong>Chats</strong> : très sensibles au stress, fuite ou agressivité brutale, <strong>griffures profondes</strong> (membres, visage), difficiles à contenir.</li>
+                </ul>
+<figure class="rd-fig plein"><img class="zoomable" src="images/animaux/ani-risques.webp" alt="Principaux risques pour les intervenants : traumatique, infectieux, entrave opérationnelle" loading="lazy"></figure>
+                <ul>
+                    <li><strong>Traumatique</strong> : morsures (déchirures musculaires, lésions tendineuses) et griffures profondes.</li>
+                    <li><strong>Infectieux</strong> : la flore buccale des chiens et des chats est très pathogène (pasteurelles, streptocoques). Penser au <strong>tétanos</strong> (vaccination à jour). Rage : risque faible en France, à envisager pour un animal errant, importé ou non vacciné.</li>
+                    <li><strong>Entrave opérationnelle</strong> : un animal paniqué peut empêcher l'accès à la victime, retarder la prise en charge médicale ou l'évacuation, et mettre en danger l'équipage et les tiers.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2. Secours à personne : l'animal protège son maître</summary>
+            <div class="rd-section">
+                <p>C'est le cas le plus fréquent : le chien monte la garde autour de son maître inconscient ou blessé.</p>
+<figure class="rd-fig plein"><img class="zoomable" src="images/animaux/ani-securiser.webp" alt="Sécuriser la zone, faire isoler l’animal, attitude de l’intervenant" loading="lazy"></figure>
+                <ol>
+                    <li><strong>Sécuriser la zone</strong> : séparer l'animal de la victime <strong>avant</strong> de l'approcher, et évaluer son comportement à distance. Prévoir une voie de dégagement. En cas d'urgence vitale, on ne perd pas de temps : se protéger et demander du renfort.</li>
+                    <li><strong>Faire isoler l'animal</strong> par les proches, les voisins ou les forces de l'ordre, dans une pièce fermée. Vérifier la fermeture (porte, fenêtre, portail). <strong>Chien guide ou d'assistance</strong> : très éduqué, demander d'abord à la victime ou à l'entourage avant de le séparer.</li>
+                    <li><strong>Attitude</strong> : ne jamais fixer l'animal dans les yeux (perçu comme un défi), gestes lents et calmes, voix posée, éviter les mouvements brusques, ne pas l'acculer dans un coin.</li>
+                </ol>
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/animaux/ani-interdits.webp" alt="À ne pas faire : s’approcher, crier, fixer, caresser, tourner le dos, acculer" loading="lazy"></figure>
+                <div class="rd-alerte"><strong>Si l'animal reste dangereux, on ne tente pas de le capturer.</strong> Demander un appui via le CODIS : forces de l'ordre, fourrière ou vétérinaire. Le SDIS 34 n'a pas d'équipe spécialisée dans ce domaine.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3. L'animal est la victime : incendie, accident, intoxication</summary>
+            <div class="rd-section">
+                <p>La douleur et le stress renforcent l'agressivité de l'animal.</p>
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/animaux/ani-victime.webp" alt="Un sapeur-pompier porte un chat sauvé d’un incendie" loading="lazy"></figure>
+<figure class="rd-fig plein"><img class="zoomable" src="images/animaux/ani-situations.webp" alt="Approche d’un animal blessé, sauvetage en incendie, autres situations, règle absolue" loading="lazy"></figure>
+                <ul>
+                    <li><strong>Animal blessé</strong> : se protéger le visage et les mains (gants d'intervention ou gants renforcés : ils protègent en partie des morsures mais pas toujours), approche lente et de côté, surveiller les signes de douleur et d'agressivité.</li>
+                    <li><strong>Incendie</strong> : si le véhicule en dispose, utiliser un <strong>masque à oxygène pour animaux</strong> (plusieurs tailles), administrer de l'oxygène, limiter le stress, surveiller la température (risque d'hyperthermie).</li>
+                    <li><strong>Accident de la circulation</strong> : immobiliser si possible, éviter toute manipulation inutile, attention aux fractures et à la douleur. <strong>Toxiques</strong> : contacter un vétérinaire.</li>
+                </ul>
+                <div class="rd-alerte"><strong>Règle absolue</strong> : le sauvetage d'un animal ne doit jamais compromettre la sécurité du personnel ni passer avant le sauvetage d'une victime humaine.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4. Contention de fortune : seulement en dernier recours</summary>
+            <div class="rd-section">
+                <p>À utiliser uniquement si nécessaire, et en attendant un appui.</p>
+<figure class="rd-fig plein etroite"><img class="zoomable" src="images/animaux/ani-chat.webp" alt="Le chat paniqué : couverture, obscurité, caisse de transport" loading="lazy"></figure>
+                <ul>
+                    <li><strong>Chat paniqué</strong> : le couvrir d'une couverture épaisse (ou d'une veste de feu à défaut) pour neutraliser les griffes, le laisser dans l'obscurité pour l'apaiser, puis le placer dans une caisse de transport rigide et aérée. <strong>Ne pas serrer</strong>, laisser l'animal respirer, et ne pas le couvrir s'il a des difficultés à respirer après des fumées.</li>
+                    <li><strong>Chien mordeur</strong> : une muselière de fortune (bande extensible ou sangle : boucle autour du museau, croisement dessous, nœud derrière les oreilles) est <strong>risquée</strong> car elle oblige à approcher les mains de la gueule. À réserver à un animal <strong>blessé et calme</strong> ou tenu par son propriétaire, jamais à un chien agressif inconnu.</li>
+                    <li><strong>Ne pas poser de muselière</strong> à un animal qui vomit, qui a du mal à respirer ou qui a chaud (museau court, hyperthermie).</li>
+                </ul>
+                <div class="rd-astuce"><strong>Appui</strong> : le chef d'agrès demande au CODIS un avis ou un renfort : <strong>vétérinaire</strong> (sapeur-pompier si le SDIS en dispose, ou de garde), <strong>fourrière</strong>, <strong>forces de l'ordre</strong> pour un chien dangereux. À solliciter si l'animal est classé dangereux, agressif ou gravement blessé. Les <strong>équipes cynotechniques</strong> sont des équipes de recherche : elles ne capturent pas d'animaux.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5. Après l'intervention</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Morsure</strong> : toute morsure par un chien ou un chat doit être déclarée à la <strong>mairie</strong>. L'animal mordeur est placé sous <strong>surveillance vétérinaire</strong>. Le propriétaire en est informé.</li>
+                    <li><strong>Que devient l'animal ?</strong> Ne pas le laisser seul : le confier au propriétaire, à un proche ou à un voisin. En dernier recours, la mairie (fourrière) est compétente.</li>
+                    <li>Après une morsure ou une griffure : laver, désinfecter, <strong>vérifier le tétanos</strong>, signaler à l'encadrement (accident de service).</li>
+                </ul>
+            </div>
+        </details>
+        <p class="rd-source">📚 Cours « Opérations diverses et SUAP : interventions impliquant des animaux de compagnie » (contenu pédagogique fourni), corrigé et complété (équipe cynotechnique, muselière, gants, obligations après morsure, SDIS 34) et mis en cohérence avec PSE 8 et la fiche NAC. À valider par un vétérinaire.</p>
+    </div>
+
     <div id="ascenseurs" class="module" style="--jsp: #6D28D9;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
@@ -31716,7 +31810,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.14</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.15</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

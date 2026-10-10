@@ -4820,6 +4820,30 @@
    ]
   },
   {
+   "id": "animaux-compagnie",
+   "titre": "Chiens et chats : animaux de compagnie",
+   "domaine": "risques",
+   "theme": "Opérations diverses",
+   "type": "fiche",
+   "motsCles": [
+    "chien",
+    "chat",
+    "animal de compagnie",
+    "morsure",
+    "griffure",
+    "chien de catégorie",
+    "muselière",
+    "contention",
+    "suap",
+    "pasteurellose",
+    "tétanos",
+    "rage",
+    "fourrière",
+    "animal victime",
+    "masque à oxygène animal"
+   ]
+  },
+  {
    "id": "fod-vu-sdi",
    "titre": "FOD VU-SDI n°001 – Violences urbaines / situation dégradée",
    "domaine": "sdis34",
