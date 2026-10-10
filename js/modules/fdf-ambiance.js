@@ -150,7 +150,7 @@
 
         var NOMS = { 'terrestre': 'des renforts terrestres', 'aérien': 'des moyens aériens', 'commandement': 'un commandement' };
         demande = coche('demande').map(function (c) { return NOMS[c]; });
-        var lignes = ['De ' + (val('indicatif') || 'CCF …') + ' pour CODIS ' + (val('codis') || '…') + ', pour un premier message d\'ambiance.', ''];
+        var lignes = ['CODIS ' + (val('codis') || '…') + ' de ' + (val('indicatif') || 'CCF …') + ', pour un premier message d\'ambiance.', ''];
         lignes.push(je.join(' ') || 'Je suis …');
         lignes.push(vois.join(' ') || 'Je vois …');
         var dem = demande.length ? 'Je demande ' + liste(demande) + '.' : 'Je demande …';
