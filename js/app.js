@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.69.5 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.69.6 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -160,7 +160,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.69.5';
+var APP_VERSION = '1.69.6';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -885,8 +885,9 @@ function calculateEpuisement() {
     
     if (debitTotal > 0) {
         var tempsMinutes = volumeLitres / debitTotal;
-        var heures = Math.floor(tempsMinutes / 60);
-        var minutes = Math.ceil(tempsMinutes % 60);
+        var totalMinutes = Math.ceil(tempsMinutes);
+        var heures = Math.floor(totalMinutes / 60);
+        var minutes = totalMinutes % 60;
         
         setTextContent('tempsTotalEpuis', heures > 0 ? heures + 'h ' + minutes + 'min' : minutes + ' min');
         
@@ -1127,33 +1128,6 @@ function calculateSurfaceCalc() {
     }
 }
 
-// ═══════════════════════════════════════════════════════════════════════
-// MODULE LSPCC
-// ═══════════════════════════════════════════════════════════════════════
-
-function calculateFacteurChute() {
-    var hauteurChute = parseFloat(document.getElementById('hauteurChute')?.value || 0);
-    var longueurCorde = parseFloat(document.getElementById('longueurCorde')?.value || 1);
-    if (longueurCorde <= 0) { alert('La longueur de corde doit être supérieure à 0'); return; }
-    
-    var facteur = hauteurChute / longueurCorde;
-    var tirantAir = hauteurChute + (longueurCorde * 0.3);
-    
-    var niveau, couleur;
-    if (facteur <= 0.3) { niveau = 'FAIBLE'; couleur = '#4CAF50'; }
-    else if (facteur <= 1) { niveau = 'MODÉRÉ'; couleur = '#FF9800'; }
-    else if (facteur <= 2) { niveau = 'ÉLEVÉ'; couleur = '#ff6600'; }
-    else { niveau = 'CRITIQUE'; couleur = '#ff0000'; }
-    
-    var resultDiv = document.getElementById('facteurChuteResult');
-    if (resultDiv) {
-        resultDiv.innerHTML = '<div class="result-box"><div class="info-card" style="border-color:' + couleur + ';">' +
-            '<div class="label">Facteur de chute</div><div class="value" style="color:' + couleur + ';font-size:3em;">' + facteur.toFixed(2) + '</div>' +
-            '<div style="margin-top:10px;padding:8px;background:' + couleur + ';border-radius:8px;color:white;font-weight:bold;">Risque ' + niveau + '</div></div>' +
-            '<div class="result-item" style="margin-top:15px;"><span>Tirant d\'air :</span><span class="result-value">' + tirantAir.toFixed(1) + ' m</span></div></div>';
-    }
-}
-
 // Module PATRAC : voir js/modules/commandement.js
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -1249,102 +1223,6 @@ function showBouteille(type) {
     if (btn) { btn.style.opacity = '1'; btn.style.transform = 'scale(1.05)'; }
 }
 
-function calculateRefroidissement() {
-    var nbBouteilles = parseInt(document.getElementById('nbBouteilles')?.value || 1);
-    var typeBouteille = document.getElementById('typeBouteille')?.value || '13kg';
-    
-    var debitRecommande = 0, dureeMin = 0;
-    if (typeBouteille === '6kg') { debitRecommande = 150 * nbBouteilles; dureeMin = 15; }
-    else if (typeBouteille === '13kg') { debitRecommande = 250 * nbBouteilles; dureeMin = 20; }
-    else if (typeBouteille === '35kg') { debitRecommande = 500 * nbBouteilles; dureeMin = 30; }
-    else { debitRecommande = 250 * nbBouteilles; dureeMin = 20; }
-    
-    var volumeEau = debitRecommande * dureeMin;
-    
-    var resultDiv = document.getElementById('refroidissementResult');
-    if (resultDiv) {
-        resultDiv.innerHTML = '<div class="result-box"><h3>Besoins en refroidissement</h3>' +
-            '<div class="result-item"><span>Nombre de bouteilles :</span><span class="result-value">' + nbBouteilles + '</span></div>' +
-            '<div class="result-item"><span>Type :</span><span class="result-value">' + typeBouteille + '</span></div>' +
-            '<div class="info-card" style="margin-top:15px;"><div class="label">Débit recommandé</div><div class="value">' + debitRecommande + ' L/min</div></div>' +
-            '<div class="result-item" style="margin-top:10px;"><span>Durée minimale :</span><span class="result-value">' + dureeMin + ' min</span></div>' +
-            '<div class="result-item"><span>Volume d\'eau nécessaire :</span><span class="result-value">' + volumeEau + ' L</span></div></div>';
-    }
-}
-
-// ═══════════════════════════════════════════════════════════════════════
-// MODULE EXTINCTEURS
-// ═══════════════════════════════════════════════════════════════════════
-
-function calculateExtincteurs() {
-    var surface = parseFloat(document.getElementById('ext-surface')?.value || 0);
-    var risque = document.getElementById('ext-risque')?.value || 'normal';
-    
-    var surfaceParExtincteur = 200, distanceMax = 25;
-    if (risque === 'faible') { surfaceParExtincteur = 300; distanceMax = 30; }
-    else if (risque === 'important') { surfaceParExtincteur = 150; distanceMax = 20; }
-    
-    var nbExtincteurs = Math.ceil(surface / surfaceParExtincteur);
-    
-    var resultDiv = document.getElementById('ext-result');
-    if (resultDiv) {
-        resultDiv.innerHTML = '<div class="result-box"><h3>Besoins en extincteurs</h3>' +
-            '<div class="result-item"><span>Surface à protéger :</span><span class="result-value">' + surface + ' m²</span></div>' +
-            '<div class="result-item"><span>Niveau de risque :</span><span class="result-value">' + risque + '</span></div>' +
-            '<div class="info-card" style="margin-top:15px;"><div class="label">Nombre d\'extincteurs</div><div class="value">' + nbExtincteurs + '</div></div>' +
-            '<div class="result-item" style="margin-top:10px;"><span>Distance max entre extincteurs :</span><span class="result-value">' + distanceMax + ' m</span></div></div>';
-    }
-}
-
-// ═══════════════════════════════════════════════════════════════════════
-// MODULE DISTANCES SIMPLES
-// ═══════════════════════════════════════════════════════════════════════
-
-function calculateDistances() {
-    var type = document.getElementById('dist-type')?.value || 'gpl';
-    var quantite = parseFloat(document.getElementById('dist-quantite')?.value || 0);
-    
-    var distance = 0, message = '';
-    if (type === 'gpl') {
-        if (quantite < 6) distance = 25;
-        else if (quantite < 50) distance = 50;
-        else distance = 100;
-        message = 'Distance pour citerne GPL';
-    } else if (type === 'hydrocarbure') {
-        distance = Math.max(50, quantite * 0.5);
-        message = 'Distance pour hydrocarbures';
-    } else if (type === 'chlore') {
-        distance = Math.max(100, quantite * 2);
-        message = 'Distance pour chlore (gaz toxique)';
-    } else if (type === 'ammoniac') {
-        distance = Math.max(100, quantite * 1.5);
-        message = 'Distance pour ammoniac';
-    }
-    
-    var resultDiv = document.getElementById('dist-result');
-    if (resultDiv) {
-        resultDiv.innerHTML = '<div class="result-box"><h3>' + message + '</h3>' +
-            '<div class="info-card"><div class="label">Périmètre de sécurité</div><div class="value">' + distance.toFixed(0) + ' m</div></div>' +
-            '<div class="danger-box" style="margin-top:20px;"><strong>⚠️ Consignes :</strong>' +
-            '<ul style="margin-left:20px;margin-top:10px;"><li>Établir le périmètre immédiatement</li>' +
-            '<li>Évacuer la zone</li><li>ARI obligatoire pour approche</li></ul></div></div>';
-    }
-}
-
-function calculateElectricLine() {
-    var tension = document.getElementById('tensionLine')?.value || 'bt';
-    var resultElement = document.getElementById('electricLineResult');
-    
-    var distance = 5, description = '';
-    if (tension === 'bt') { distance = 5; description = 'Basse Tension'; }
-    else if (tension === 'hta') { distance = 5; description = 'Haute Tension A'; }
-    else if (tension === 'htb') { distance = 5; description = 'Haute Tension B'; }
-    
-    if (resultElement) {
-        resultElement.innerHTML = '<div class="result-item"><span>' + description + '</span><span class="result-value">' + distance + ' m</span></div>';
-    }
-}
-
 // ═══════════════════════════════════════════════════════════════════════
 // MODULE PLEIN ÉCRAN
 // ═══════════════════════════════════════════════════════════════════════
@@ -1407,7 +1285,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.69.5 COMPLET
+// FIN DU FICHIER - Vulcain v1.69.6 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

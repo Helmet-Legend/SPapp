@@ -257,3 +257,27 @@ test('épuisement de volume : 10×5 m, 50 cm d\'eau, 1 pompe 30 m³/h = 50 min',
     await expect(app.locator('#tempsTotalEpuis')).toHaveText('50 min');
     await expect(app.locator('#detailMateriel')).toContainText('500 L/min');
 });
+
+test('temps de trajet : pas de « 60min » (179,9 km à 90 km/h = 2h 0min)', async ({ app }) => {
+    await app.evaluate(() => showModule('distance-calc'));
+    await app.fill('#trajet-distance', '179.9');
+    await app.click('button[onclick="selectVitesse(90)"]');
+    await expect(app.locator('#trajet-temps')).toHaveText('2h 0min');
+});
+
+test('épuisement : 119,5 min s\'affiche 2h 0min, pas 1h 60min', async ({ app }) => {
+    await app.evaluate(() => showModule('epuisement'));
+    await app.fill('#hauteur', '59.75');
+    await app.evaluate(() => modifierQuantite('mat15', 1));
+    await expect(app.locator('#tempsTotalEpuis')).toHaveText('2h 0min');
+});
+
+test('facteur de chute LSPCC : hauteur 0 = facteur 0,00 optimal ; hauteur > 2 × corde refusée', async ({ app }) => {
+    await app.evaluate(() => showModule('lspcc-calculateur'));
+    await app.fill('#lspcc-corde', '2');
+    await app.fill('#lspcc-hauteur', '0');
+    await expect(app.locator('#lspcc-resultat')).toContainText('0.00');
+    await expect(app.locator('#lspcc-resultat')).toContainText('FACTEUR OPTIMAL');
+    await app.fill('#lspcc-hauteur', '5');
+    await expect(app.locator('#lspcc-resultat')).toContainText('incohérentes');
+});

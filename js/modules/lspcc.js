@@ -7,8 +7,12 @@ function calculerFacteurChute() {
     const corde = parseFloat(document.getElementById('lspcc-corde').value);
     const resultat = document.getElementById('lspcc-resultat');
 
-    if (!hauteur || !corde || corde <= 0) {
+    if (isNaN(hauteur) || isNaN(corde) || hauteur < 0 || corde <= 0) {
         resultat.innerHTML = '<p style="color: var(--t-muted, #9E9E9E); font-style: italic;">Entrez les valeurs pour calculer le facteur de chute</p>';
+        return;
+    }
+    if (hauteur > 2 * corde) {
+        resultat.innerHTML = '<p style="color: #C62828; font-weight: 700;">⛔ Valeurs incohérentes : la hauteur de chute ne peut pas dépasser 2 fois la longueur de corde (facteur maximal : 2). Vérifier les mesures.</p>';
         return;
     }
 

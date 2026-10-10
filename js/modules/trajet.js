@@ -38,8 +38,9 @@ function calculateTrajet() {
     const tempsHeures = distance / vitesseSelectionnee;
     
     // Conversion en heures et minutes
-    const heures = Math.floor(tempsHeures);
-    const minutes = Math.round((tempsHeures - heures) * 60);
+    const totalMinutes = Math.round(tempsHeures * 60);
+    const heures = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
     
     // Affichage du temps
     let tempsTexte = '';
