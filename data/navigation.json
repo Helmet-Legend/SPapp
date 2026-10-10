@@ -42,8 +42,18 @@
     "Gaz",
     "Électricité",
     "Périmètres",
-    "NRBC",
-    "Opérations diverses"
+    "NRBC"
+   ]
+  },
+  {
+   "id": "operations-diverses",
+   "titre": "Opérations diverses",
+   "icone": "🛠️",
+   "picto": "grid",
+   "couleur": "#0891B2",
+   "themes": [
+    "Animaux",
+    "Interventions techniques"
    ]
   },
   {
@@ -4755,8 +4765,8 @@
   {
    "id": "ascenseurs",
    "titre": "Personne bloquée dans un ascenseur",
-   "domaine": "risques",
-   "theme": "Opérations diverses",
+   "domaine": "operations-diverses",
+   "theme": "Interventions techniques",
    "type": "fiche",
    "motsCles": [
     "ascenseur",
@@ -4773,8 +4783,8 @@
   {
    "id": "materiel-epuisement",
    "titre": "Matériel d'épuisement et d'assèchement",
-   "domaine": "risques",
-   "theme": "Opérations diverses",
+   "domaine": "operations-diverses",
+   "theme": "Interventions techniques",
    "type": "fiche",
    "motsCles": [
     "épuisement",
@@ -4793,8 +4803,8 @@
   {
    "id": "nac",
    "titre": "Nouveaux animaux de compagnie (NAC)",
-   "domaine": "risques",
-   "theme": "Opérations diverses",
+   "domaine": "operations-diverses",
+   "theme": "Animaux",
    "type": "fiche",
    "motsCles": [
     "nac",
@@ -4822,8 +4832,8 @@
   {
    "id": "animaux-compagnie",
    "titre": "Chiens et chats : animaux de compagnie",
-   "domaine": "risques",
-   "theme": "Opérations diverses",
+   "domaine": "operations-diverses",
+   "theme": "Animaux",
    "type": "fiche",
    "motsCles": [
     "chien",
