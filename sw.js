@@ -1,5 +1,5 @@
-// Vulcain Service Worker v1.69.19
-const CACHE_NAME = 'vulcain-v1.69.19';
+// Vulcain Service Worker v1.69.20
+const CACHE_NAME = 'vulcain-v1.69.20';
 const urlsToCache = [
   './',
   './index.html',
@@ -26,6 +26,7 @@ const urlsToCache = [
   './js/modules/rdeb.js',
   './js/modules/pertes-rapide.js',
   './js/modules/wallace.js',
+  './js/modules/fdf-ambiance.js',
   './images/accueil/accueil-nuit.webp',
   './images/accueil/accueil-jour.webp',
   './images/rdlspcc/abordage-schemas.jpg',

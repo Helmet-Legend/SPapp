@@ -1043,3 +1043,18 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
 .rd-cartes-photo button { padding: 0; border: none; border-radius: 14px; overflow: hidden; cursor: pointer; background: none; line-height: 0; }
 .rd-cartes-photo img { width: 100%; height: auto; display: block; border-radius: 14px; }
 .reglages-panel { max-height: 100dvh; overflow-y: auto; }
+
+/* Message d'ambiance FDF (formulaire) */
+#fdf-ambiance .amb-champ { margin: 0 0 12px; }
+#fdf-ambiance .amb-champ > label { display: block; font-weight: 600; margin-bottom: 4px; }
+#fdf-ambiance input[type="text"], #fdf-ambiance input[type="number"], #fdf-ambiance select, #fdf-ambiance textarea { width: 100%; padding: 10px; border-radius: 8px; box-sizing: border-box; font: inherit; }
+#fdf-ambiance .amb-ligne { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; align-items: end; }
+#fdf-ambiance .amb-dfci { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+#fdf-ambiance .amb-dfci input { text-transform: uppercase; text-align: center; }
+#fdf-ambiance .amb-gps { display: flex; flex-wrap: wrap; gap: 8px; }
+#fdf-ambiance .amb-gps input { flex: 1 1 160px; min-width: 0; width: auto; }
+#fdf-ambiance .amb-gps button { white-space: nowrap; }
+#fdf-ambiance .amb-cases { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 6px 0; }
+#fdf-ambiance .amb-cases label { display: flex; align-items: center; gap: 6px; font-weight: 500; }
+#fdf-ambiance small { display: block; margin-top: 4px; opacity: .8; }
+#fdf-ambiance .amb-apercu { white-space: pre-wrap; word-break: break-word; font: inherit; line-height: 1.5; padding: 14px; border-radius: 10px; border: 1px solid var(--t-line, #8884); background: var(--t-s2, transparent); }

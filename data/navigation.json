@@ -2215,6 +2215,30 @@
    ]
   },
   {
+   "id": "fdf-ambiance",
+   "titre": "Message d'ambiance FDF (formulaire)",
+   "domaine": "fdf",
+   "theme": "GTO – Techniques opérationnelles",
+   "type": "ordre",
+   "motsCles": [
+    "message d'ambiance",
+    "ambiance",
+    "je suis",
+    "je vois",
+    "je fais",
+    "je demande",
+    "formulaire",
+    "dfci",
+    "carreau",
+    "gps",
+    "giff",
+    "hbe",
+    "codis",
+    "feu de forêt",
+    "radio"
+   ]
+  },
+  {
    "id": "tmd",
    "titre": "Transport de Matières Dangereuses",
    "domaine": "risques",
