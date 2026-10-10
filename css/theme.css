@@ -1049,8 +1049,8 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
 #fdf-ambiance .amb-champ > label { display: block; font-weight: 600; margin-bottom: 4px; }
 #fdf-ambiance input[type="text"], #fdf-ambiance input[type="number"], #fdf-ambiance select, #fdf-ambiance textarea { width: 100%; padding: 10px; border-radius: 8px; box-sizing: border-box; font: inherit; }
 #fdf-ambiance .amb-ligne { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; align-items: end; }
-#fdf-ambiance .amb-dfci { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-#fdf-ambiance .amb-dfci input { text-transform: uppercase; text-align: center; }
+#fdf-ambiance .amb-ligne2 { grid-template-columns: 2fr 1fr; }
+#fdf-ambiance #amb-dfci { text-transform: uppercase; }
 #fdf-ambiance .amb-gps { display: flex; flex-wrap: wrap; gap: 8px; }
 #fdf-ambiance .amb-gps input { flex: 1 1 160px; min-width: 0; width: auto; }
 #fdf-ambiance .amb-gps button { white-space: nowrap; }
