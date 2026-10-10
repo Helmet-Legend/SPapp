@@ -4791,6 +4791,35 @@
    ]
   },
   {
+   "id": "nac",
+   "titre": "Nouveaux animaux de compagnie (NAC)",
+   "domaine": "risques",
+   "theme": "Opérations diverses",
+   "type": "fiche",
+   "motsCles": [
+    "nac",
+    "animaux",
+    "serpent",
+    "reptile",
+    "morsure",
+    "envenimation",
+    "venin",
+    "constricteur",
+    "python",
+    "boa",
+    "mygale",
+    "scorpion",
+    "furet",
+    "iguane",
+    "varan",
+    "salmonellose",
+    "zoonose",
+    "capture",
+    "centre antipoison",
+    "vipère"
+   ]
+  },
+  {
    "id": "fod-vu-sdi",
    "titre": "FOD VU-SDI n°001 – Violences urbaines / situation dégradée",
    "domaine": "sdis34",
