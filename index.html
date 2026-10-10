@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.10">
+    <meta name="version" content="1.69.11">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.10</span><br>
+                        Vulcain v<span class="app-version">1.69.11</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -2610,6 +2610,7 @@
             <div style="text-align: center; margin-top: 20px;">
                 <div style="font-size: 3em; color: light-dark(#327334, #4caf50); font-weight: bold;" id="tempsTotalEpuis">-- min</div>
             </div>
+            <p class="rd-source" style="text-align: center;">Temps minimal calculé avec le débit nominal des pompes. Le débit réel baisse avec la hauteur d'aspiration, les pertes de charge et le colmatage.</p>
         </div>
 
         <!-- Mesures de sécurité -->
@@ -11303,6 +11304,7 @@
         </div>
 
         <div class="rd-alerte"><strong>⚠️ Outil d'aide.</strong> En opération, la décompression est arrêtée par le <strong>directeur de plongée</strong> sur les <strong>tables officielles</strong>, qui restent obligatoires même avec un ordinateur de plongée.</div>
+        <p class="rd-source">📚 Tables MT 2012 du ministère du Travail (arrêté du 30/10/2012), reproduites à l'annexe II du référentiel SAL (DGSCGC, 12/03/2014). Les lignes incohérentes du référentiel sont signalées telles qu'imprimées.</p>
     </div>
 
     <div id="sal-rattrapage" class="module" style="--jsp: #0277BD;">
@@ -22656,7 +22658,7 @@ Je fais : extinction.</p>
                 <p>Schémas de principe (Guillaume Vermeulen, SDIS 59), à adapter aux procédures du SIS avec les opérateurs de routes locaux. Le biseau et les cônes de Lubeck sont posés de façon régulière, le véhicule de secours protège le chantier, et la distance de freinage augmente fortement avec la vitesse (schéma ci-dessous).</p>
         <figure class="rd-fig">
             <img src="images/routier/freinage.webp" alt="Distance de freinage selon la vitesse par temps sec et par temps de pluie : 50, 80 et 130 km/h" loading="lazy">
-            <figcaption>Distance de freinage selon la vitesse et l'état de la chaussée : 25 m ou 38 m à 50 km/h, 64 m ou 96 m à 80 km/h, 169 m ou 254 m à 130 km/h.</figcaption>
+            <figcaption>Distance de freinage selon la vitesse et l'état de la chaussée : 25 m ou 38 m à 50 km/h, 64 m ou 96 m à 80 km/h, 169 m ou 254 m à 130 km/h. Ordre de grandeur : règle pratique (V/10)² mètres sur chaussée sèche, majorée de 50 % sur chaussée mouillée, <strong>hors temps de réaction</strong>.</figcaption>
         </figure>
         <figure class="rd-fig">
             <img src="images/routier/signal-bidirectionnelle.webp" alt="Schéma de signalisation d'urgence sur une route bidirectionnelle" loading="lazy">
@@ -31596,7 +31598,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.10</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.11</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

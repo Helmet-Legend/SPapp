@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.69.10 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.69.11 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -160,7 +160,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.69.10';
+var APP_VERSION = '1.69.11';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -554,7 +554,7 @@ function calculerPerteTroncon(troncon) {
     var K, debitRef;
     if (troncon.diametre === 45) { K = 1.2; debitRef = 500; }
     else if (troncon.diametre === 70) { K = 0.11; debitRef = 500; }
-    else if (troncon.diametre === 110) { K = 0.056; debitRef = 1000; }
+    else if (troncon.diametre === 110) { K = 0.06; debitRef = 1000; }
     else { K = 0.11; debitRef = 500; }
     return K * Math.pow(troncon.debit / debitRef, 2) * (troncon.longueur / 20);
 }
@@ -1285,7 +1285,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.69.10 COMPLET
+// FIN DU FICHIER - Vulcain v1.69.11 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
