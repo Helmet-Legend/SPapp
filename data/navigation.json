@@ -2928,6 +2928,31 @@
    ]
   },
   {
+   "id": "sal-add",
+   "titre": "Accidents de désaturation (ADD)",
+   "domaine": "specialites",
+   "theme": "Plongée – SAL",
+   "type": "fiche",
+   "motsCles": [
+    "add",
+    "désaturation",
+    "décompression",
+    "loi de henry",
+    "azote",
+    "compartiment",
+    "période",
+    "bulles",
+    "sursaturation",
+    "bends",
+    "chokes",
+    "foramen ovale",
+    "foramen ovale perméable",
+    "fop",
+    "type 1",
+    "type 2"
+   ]
+  },
+  {
    "id": "sal-accidents",
    "titre": "Accident de plongée",
    "domaine": "specialites",
