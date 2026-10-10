@@ -69,11 +69,11 @@
         if (val('commune')) lieu.push('sur la commune de ' + val('commune'));
         if (val('lieudit')) lieu.push('lieu-dit ' + val('lieudit'));
         if (val('repere')) lieu.push(val('repere'));
-        var dfci = codeDFCI();
-        if (dfci) lieu.push('carreau DFCI ' + dfci);
-        var gps = val('gps');
-        if (gps) lieu.push('coordonnées GPS ' + gps);
         if (lieu.length) je.push(lieu.join(', ') + '.');
+        var dfci = codeDFCI();
+        if (dfci) je.push('Carreau DFCI ' + dfci + '.');
+        var gps = val('gps');
+        if (gps) je.push('Coordonnées GPS ' + gps + '.');
         var acces = val('acces');
         if (acces) je.push(acces + (val('piste') ? ' par ' + val('piste') : '') + '.');
         else if (val('piste')) je.push('Accès par ' + val('piste') + '.');
