@@ -101,7 +101,8 @@
    "themes": [
     "Avant l'intervention",
     "Pendant l'intervention",
-    "GDO – Exercice du commandement et conduite des opérations"
+    "GDO – Exercice du commandement et conduite des opérations",
+    "Santé & soutien psychologique"
    ]
   },
   {
@@ -5207,6 +5208,34 @@
     "rond-point",
     "virage",
     "distance de freinage"
+   ]
+  },
+  {
+   "id": "sante-psy",
+   "titre": "Soutien psychologique en intervention",
+   "domaine": "commandement",
+   "theme": "Santé & soutien psychologique",
+   "type": "fiche",
+   "motsCles": [
+    "stress",
+    "psychologique",
+    "psychologue",
+    "traumatisme",
+    "ept",
+    "espt",
+    "tspt",
+    "stress post-traumatique",
+    "defusing",
+    "défusing",
+    "déchoquage",
+    "débriefing",
+    "sssm",
+    "isp",
+    "cump",
+    "suicide",
+    "3114",
+    "veille entre pairs",
+    "santé mentale"
    ]
   },
   {
