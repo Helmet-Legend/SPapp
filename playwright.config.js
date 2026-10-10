@@ -5,6 +5,8 @@ module.exports = defineConfig({
     testDir: './tests',
     timeout: 60000,
     fullyParallel: true,
+    // 4 navigateurs en parallèle en local (autant que de coeurs) ; sur GitHub, selon la machine disponible
+    workers: process.env.CI ? undefined : 4,
     forbidOnly: !!process.env.CI,
     retries: 0,
     reporter: process.env.CI ? [['list'], ['github'], ['html', { open: 'never' }]] : 'list',

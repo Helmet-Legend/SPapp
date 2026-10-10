@@ -29,14 +29,23 @@ test('chaque bouton appelle une fonction qui existe', async ({ app }) => {
     expect(manquantes).toEqual([]);
 });
 
-test('chaque écran s\'ouvre sans erreur', async ({ app }) => {
-    test.setTimeout(900000);   // parcourt les ~230 écrans un par un
+// Ouverture de chaque écran. La boucle tourne dans la page (même appel showModule, vérification directe
+// de l'écran actif) : bien plus rapide que des vérifications Playwright répétées sur cette page volumineuse.
+test('chaque écran s\'ouvre sans erreur @long', async ({ app }) => {
+    test.setTimeout(300000);
     const ids = await app.evaluate(() => [...document.querySelectorAll('.module')].map(m => m.id));
     expect(ids.length).toBeGreaterThan(90);
-    for (const id of ids) {
-        await app.evaluate(i => showModule(i), id);
-        await expect(app.locator(`#${id}`), `écran ${id}`).toHaveClass(/active/);
-    }
+    const echecs = await app.evaluate(async liste => {
+        const pause = () => new Promise(r => setTimeout(r, 0));
+        const echecs = [];
+        for (const id of liste) {
+            showModule(id);
+            await pause();
+            if (!document.getElementById(id).classList.contains('active')) echecs.push(id);
+        }
+        return echecs;
+    }, ids);
+    expect(echecs, 'écrans qui ne s\'ouvrent pas').toEqual([]);
     expect(app.erreurs).toEqual([]);
 });
 
