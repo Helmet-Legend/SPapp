@@ -2891,6 +2891,23 @@
    ]
   },
   {
+   "id": "sal-essoufflement",
+   "titre": "Essoufflement en plongée",
+   "domaine": "specialites",
+   "theme": "Plongée – SAL",
+   "type": "fiche",
+   "motsCles": [
+    "essoufflement",
+    "hypercapnie",
+    "co2",
+    "soif d'air",
+    "panique",
+    "expiration",
+    "détendeur",
+    "cercle vicieux"
+   ]
+  },
+  {
    "id": "sal-accidents",
    "titre": "Accident de plongée",
    "domaine": "specialites",
