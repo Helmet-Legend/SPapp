@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.1">
+    <meta name="version" content="1.69.2">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.1</span><br>
+                        Vulcain v<span class="app-version">1.69.2</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -10535,6 +10535,7 @@
         <h3 class="sal-groupe">Incidents et accidents</h3>
         <div class="rd-tuiles">
             <button onclick="showModule('sal-rattrapage')"><b>🔁 Plongée non conforme</b><span>Paliers interrompus, remontée rapide ou lente, panne d'air, perte d'un plongeur, « Que fait-on si ? »</span></button>
+            <button onclick="showModule('sal-essoufflement')"><b>😮‍💨 Essoufflement</b><span>Hypercapnie, cercle vicieux, causes, effets, que faire, fiche réflexe</span></button>
             <button onclick="showModule('sal-accidents')"><b>🚨 Accident de plongée</b><span>Alerte, oxygène, hydratation, RCP, transfert, caisson, décès</span></button>
         </div>
 
@@ -11277,6 +11278,98 @@
             </table>
         </details>
         <p class="rd-source">📚 Annexe II, chapitre XI.8 (arbres de décision n° 1 et 2, tableaux 3 à 5).</p>
+    </div>
+
+    <div id="sal-essoufflement" class="module" style="--jsp: #0277BD;">
+        <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
+        <span class="rd-tampon">Cours pédagogique</span>
+        <h2>😮‍💨 L'essoufflement en plongée</h2>
+        <p style="text-align: center;">L'un des incidents les plus redoutés <strong>et</strong> les plus courants. Un cercle vicieux respiratoire qui, s'il n'est pas maîtrisé vite, mène à la panique.</p>
+
+        <div class="rd-alerte">Au premier signe : <strong>STOP, on arrête tout effort</strong>, on signale, on <strong>expire à fond</strong>, et on remonte de quelques mètres avec le guide. Voir aussi <button class="sal-lien" onclick="showModule('sal-rattrapage')">🔁 plongée non conforme</button> et <button class="sal-lien" onclick="showModule('sal-accidents')">🚨 accident de plongée</button>.</div>
+
+        <div class="rd-section">
+            <h3>Le piège de l'hypercapnie</h3>
+            <p>L'essoufflement n'est <strong>pas</strong> un manque d'oxygène (hypoxie) mais une <strong>accumulation de dioxyde de carbone (CO₂)</strong> : l'<strong>hypercapnie</strong>.</p>
+            <p>En surface, le rythme respiratoire est dicté par le taux de CO₂ dans le sang : s'il monte, le cerveau ordonne de respirer plus vite pour l'évacuer. Sous l'eau, ce mécanisme est entravé. L'air est <strong>plus dense avec la profondeur</strong>, ce qui rend le travail des muscles respiratoires beaucoup plus difficile. Si le plongeur ne force pas son expiration, le CO₂ stagne ; le cerveau ordonne alors d'inspirer encore plus, ce qui encombre les poumons de gaz vicié.</p>
+            <div class="rd-astuce">C'est un problème de <strong>« vidange »</strong> : les poumons sont pleins d'air chargé de CO₂ que le plongeur n'arrive plus à expulser.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le cercle vicieux</h3>
+            <ol>
+                <li><strong>Déclencheur</strong> : effort physique (courant, palmage), froid, stress, matériel défectueux.</li>
+                <li><strong>Mauvaise ventilation</strong> : respiration haletante, superficielle ou bloquée.</li>
+                <li><strong>Hypercapnie</strong> : le CO₂ s'accumule dans les poumons et le sang.</li>
+                <li><strong>Fausse alerte du cerveau</strong> : sensation de manque d'air extrême (la « soif d'air »).</li>
+                <li><strong>Réaction réflexe inadaptée</strong> : accélération de la respiration, le plongeur essaie de remplir des poumons déjà pleins d'air vicié.</li>
+                <li><strong>Aggravation</strong> : fatigue rapide des muscles respiratoires face à la densité de l'air sous pression.</li>
+                <li><strong>Point critique</strong> : la panique s'installe, avec un risque majeur d'<strong>arrachage du détendeur</strong> et de <strong>remontée incontrôlée</strong>.</li>
+            </ol>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>Les causes : rarement une seule</summary>
+            <div class="rd-section">
+                <p>L'incident résulte le plus souvent d'une <strong>combinaison</strong> de facteurs.</p>
+                <table class="rd-table">
+                    <tbody>
+                        <tr><td><strong>Comportementaux</strong></td><td>Palmage excessif (lutter contre un courant, suivre un binôme trop rapide) ; mauvaise technique ventilatoire (respiration superficielle, apnée volontaire pour économiser l'air).</td></tr>
+                        <tr><td><strong>Environnementaux</strong></td><td>Profondeur (air plus dense, plus difficile à brasser) ; froid (muscles contractés, métabolisme accéléré) ; manque de visibilité, source d'angoisse.</td></tr>
+                        <tr><td><strong>Matériels</strong></td><td>Détendeur mal réglé demandant un effort inspiratoire excessif ; combinaison en néoprène trop serrée comprimant la cage thoracique ; surlestage obligeant à palmer constamment.</td></tr>
+                        <tr><td><strong>Physiologiques et psychologiques</strong></td><td>Mauvaise condition physique, anxiété, fatigue avant la mise à l'eau.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>Les effets : de l'inconfort à la panique</summary>
+            <div class="rd-section">
+                <p>Progressif, mais l'escalade peut être <strong>foudroyante</strong>.</p>
+                <table class="rd-table">
+                    <tbody>
+                        <tr><td><strong>Primaires</strong><br>phase d'alerte</td><td>Soif d'air ; rythme ventilatoire qui s'accélère ; respiration bruyante dans le détendeur ; maux de tête, sueurs, vertiges.</td></tr>
+                        <tr><td><strong>Secondaires</strong><br>l'emballement</td><td>Champ visuel qui se rétrécit ; le plongeur se focalise sur sa survie immédiate ; tachycardie.</td></tr>
+                        <tr><td><strong>Critique</strong><br>la panique</td><td>Convaincu que son détendeur ne fournit plus d'air, le plongeur peut arracher son embout, rejeter son masque et entamer une remontée fulgurante, avec risque de <strong>surpression pulmonaire</strong> ou d'<strong>accident de décompression</strong>.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <div class="rd-section">
+            <h3>Que faire : la règle d'or</h3>
+            <p>Si vous ou votre binôme débutez un essoufflement : <strong>arrêt immédiat de tout effort</strong>.</p>
+            <ol>
+                <li><strong>Stop</strong> : arrêtez de palmer. Stabilisez-vous ou accrochez-vous à un rocher (sans l'abîmer).</li>
+                <li><strong>Signalez-le</strong> : signe « Je suis essoufflé », mouvement de va-et-vient de la main sur la poitrine.</li>
+                <li><strong>Expirez</strong> : soufflez consciemment, profondément et longuement dans le détendeur. Rentrez le ventre pour chasser l'air vicié. Pensez <strong>« je me vide »</strong> plutôt que « je me remplis ».</li>
+                <li><strong>Remontez légèrement</strong> : avec l'aide du guide, de quelques mètres. La baisse de la pression ambiante rend l'air moins dense et facilite la respiration.</li>
+            </ol>
+        </div>
+
+        <div class="rd-section">
+            <h3>Prévention</h3>
+            <ul>
+                <li>Bonne <strong>condition physique</strong>.</li>
+                <li><strong>Entretenir</strong> son matériel, vérifier le <strong>réglage du détendeur</strong>.</li>
+                <li>Vérifier son <strong>lestage</strong> (éviter le surlestage) et ne pas se comprimer la cage thoracique.</li>
+                <li>Toujours une respiration <strong>lente et profonde</strong> sous l'eau, jamais d'apnée pour économiser l'air.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Fiche réflexe</h3>
+            <table class="rd-table">
+                <tbody>
+                    <tr><th>Étape</th><th>Signes</th><th>Action</th></tr>
+                    <tr><td><strong>Alerte</strong></td><td>Soif d'air, rythme qui s'accélère, respiration bruyante, maux de tête, sueurs, vertiges</td><td><strong>Stop</strong> : plus d'effort, se stabiliser. <strong>Signaler</strong>.</td></tr>
+                    <tr><td><strong>Emballement</strong></td><td>Champ visuel rétréci, tachycardie, focalisation sur sa survie</td><td><strong>Expirer</strong> longuement, ventre rentré (« je me vide »). Remonter de quelques mètres avec le guide.</td></tr>
+                    <tr><td><strong>Panique</strong></td><td>Conviction de ne plus avoir d'air, embout arraché, masque rejeté</td><td>À éviter en agissant dès l'alerte : risque de remontée fulgurante, de surpression pulmonaire et d'accident de décompression.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="rd-source">📚 Cours « L'essoufflement en plongée » (contenu pédagogique fourni). La fiche réflexe est une synthèse du chapitre. À valider par le référent plongée avant tout usage opérationnel.</p>
     </div>
 
     <div id="sal-accidents" class="module" style="--jsp: #C62828;">
@@ -30974,7 +31067,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.1</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.2</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
