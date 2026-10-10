@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.11">
+    <meta name="version" content="1.69.14">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.11</span><br>
+                        Vulcain v<span class="app-version">1.69.14</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -20010,6 +20010,124 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Synthèse de documents de formation conducteur MEA (COD 6), de textes réglementaires (code de la route, code du travail) et des normes NF S 61-554, NF EN 14044, XP S 61-552, NF EN 1777 et NF S 61-550/A1. Reformulée et recoupée ; les performances précises restent propres à chaque engin — se référer à sa notice constructeur et à son inclinomètre.</p>
     </div>
 
+    <div id="nac" class="module" style="--jsp: #E27C0C;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon">Cours pédagogique</span>
+        <h2>🐍 Nouveaux animaux de compagnie (NAC)</h2>
+        <figure class="rd-fig plein etroite"><img class="zoomable" src="images/nac/nac-entete.webp" alt="Reptiles, mygale et furet : quelques nouveaux animaux de compagnie" loading="lazy"></figure>
+        <p style="text-align: center;">Reptiles, arachnides, mammifères exotiques, oiseaux : la méconnaissance de ces espèces expose à des risques précis (morsures, envenimations, constriction, infections). <strong>La règle d'or : la prudence et les spécialistes.</strong></p>
+
+        <div class="rd-alerte"><strong>Tant que l'animal n'est pas identifié par un spécialiste, on le considère comme dangereux.</strong> Ne jamais le saisir à mains nues ni avec les gants de feu, qui ne protègent ni de la constriction ni de certaines morsures ou venins. Ne pas chercher à le tuer. Personne mordue ou envenimée : <strong>15</strong>, et voir <button class="sal-lien" onclick="showModule('pse-8')">🌊 PSE 8 : piqûres et morsures</button>.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li>L'équipage n'a pas vocation à capturer un NAC dangereux : son rôle est de <strong>figer la situation</strong> en attendant les spécialistes.</li>
+                <li>On intervient surtout quand l'animal <strong>met des personnes en danger</strong>. Pour un animal sans danger, la mairie, la fourrière ou un vétérinaire sont compétents.</li>
+                <li>Un animal <strong>stressé</strong> devient plus agressif : calme, pas de gestes brusques, pas de cris.</li>
+                <li>Un NAC capturé <strong>ne se relâche jamais</strong> dans la nature.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1. Quels animaux ? Typologie et niveau de risque</summary>
+            <div class="rd-section">
+                <p>Le terme « NAC » regroupe tout ce qui s'éloigne du chien et du chat.</p>
+                <figure class="rd-fig plein"><img class="zoomable" src="images/nac/nac-reptiles.webp" alt="Reptiles : ophidiens, sauriens, chéloniens" loading="lazy"></figure>
+                <figure class="rd-fig plein"><img class="zoomable" src="images/nac/nac-autres.webp" alt="Arthropodes, mammifères exotiques et amphibiens" loading="lazy"></figure>
+                <table class="rd-table">
+                    <tbody>
+                        <tr><th>Famille</th><th>Exemples</th><th>Risque principal</th></tr>
+                        <tr><td><strong>Reptiles</strong></td><td>Serpents (pythons, boas, espèces venimeuses), lézards (iguanes, varans, caméléons), tortues, crocodiliens.</td><td>Morsure, constriction (grands serpents), venin, salmonelles.</td></tr>
+                        <tr><td><strong>Arachnides et insectes</strong></td><td>Mygales, scorpions, insectes exotiques.</td><td>Piqûre ou morsure, venin, poils urticants.</td></tr>
+                        <tr><td><strong>Mammifères exotiques</strong></td><td>Furets (vifs et mordeurs), chinchillas, octodons, cochons nains, parfois primates détenus illégalement.</td><td>Morsure, griffure, infection. Très variable : un primate ou un furet n'ont rien à voir avec un chinchilla.</td></tr>
+                        <tr><td><strong>Oiseaux</strong></td><td>Perroquets, rapaces.</td><td>Morsure ou coup de bec puissant, griffes, maladies transmissibles (psittacose).</td></tr>
+                        <tr><td><strong>Amphibiens</strong></td><td>Grenouilles venimeuses (dendrobates).</td><td>Toxine de la peau : le danger vient du <strong>contact</strong> avec les muqueuses ou une plaie, pas d'une morsure.</td></tr>
+                    </tbody>
+                </table>
+                <div class="rd-astuce">Les serpents <strong>indigènes</strong> (vipères) restent à l'origine de la plupart des morsures en France. Les consignes de ce chapitre valent aussi pour eux.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2. Les risques pour les intervenants</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/nac/nac-risques.webp" alt="Risque toxique (envenimation) et risque infectieux (zoonoses)" loading="lazy"></figure>
+                <ul>
+                    <li><strong>Traumatique</strong> : morsures profondes (iguanes, varans, furets), griffures qui s'infectent, <strong>constriction</strong> par un grand serpent constricteur. Un grand boa ou python (surtout au-delà de 3 m) peut mettre en danger un adulte : on ne l'approche <strong>jamais seul</strong>.</li>
+                    <li><strong>Toxique (envenimation)</strong> : morsure d'un serpent venimeux (venin neurotoxique, hémotoxique ou nécrosant) ou piqûre d'arachnide. Le pronostic vital de l'intervenant peut être engagé.</li>
+                    <li><strong>Infectieux (zoonoses)</strong> : transmission par contact, morsure ou griffure. La <strong>salmonellose</strong> est très fréquente chez les reptiles. Les oiseaux peuvent transmettre la psittacose. Penser au <strong>tétanos</strong> (vaccination à jour).</li>
+                </ul>
+                <div class="rd-astuce">Hygiène : gants jetables, ne pas se toucher le visage, se laver les mains ou se les désinfecter après l'intervention, laver le matériel touché.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3. Conduite à tenir du chef d'agrès : figer la situation</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/nac/nac-cat.webp" alt="Reconnaissance à distance, sécurisation du périmètre, recueil d’informations" loading="lazy"></figure>
+                <ol>
+                    <li><strong>Reconnaissance à distance.</strong> Ne jamais tenter d'attraper l'animal. Si possible, prendre une <strong>photo à distance</strong> (sans s'approcher) pour aider le spécialiste à l'identifier.</li>
+                    <li><strong>Faire évacuer la pièce</strong> par les occupants, enfants et autres animaux compris.</li>
+                    <li><strong>Confinement passif</strong> : fermer les portes et les fenêtres, colmater le dessous des portes (serpillières humides par exemple), pour que l'animal ne puisse pas s'échapper.</li>
+                    <li><strong>Recueil d'informations</strong> auprès du propriétaire s'il est là : espèce exacte, agressivité, venimeux ou non, nombre d'animaux, autorisation de détention.</li>
+                    <li><strong>Renforts</strong> : demander au CODIS un <strong>avis ou un appui spécialisé</strong> : vétérinaire, parc animalier, fourrière ou clinique vétérinaire partenaire. <strong>Le SDIS 34 n'a pas d'équipe spécialisée</strong> : sans spécialiste disponible, on maintient la sécurisation et on ne capture pas.</li>
+                </ol>
+                <div class="rd-alerte">Sans spécialiste, <strong>on ne capture pas</strong> : on évacue, on confine, on surveille à distance et on attend l'appui demandé via le CODIS. La capture ne se tente qu'en dernier recours, si une vie est en danger immédiat et que le confinement est impossible.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4. La capture : réservée aux spécialistes</summary>
+            <div class="rd-section">
+                <p>Elle se fait avec un matériel adapté, que le SDIS 34 ne possède pas en propre : il est apporté par le spécialiste. Si le confinement est impossible et qu'une vie est en danger immédiat, seuls des personnels formés la tentent.</p>
+                <figure class="rd-fig plein etroite"><img class="zoomable" src="images/nac/nac-capture.webp" alt="Matériel de capture adapté et limitation du stress de l’animal" loading="lazy"></figure>
+                <ul>
+                    <li><strong>Matériel</strong> : pinces à serpents, crochets herpétologiques, gants de cuir renforcés (manchettes), filets, boîtes de transport rigides, sombres et aérées.</li>
+                    <li><strong>Confinement de fortune</strong> pour un <strong>petit animal sans danger</strong> : le recouvrir d'un seau, d'une poubelle ou d'un carton solide, puis glisser une plaque rigide dessous. Cette technique n'est <strong>pas adaptée</strong> à un serpent venimeux ni à un grand reptile.</li>
+                    <li><strong>Stress et température</strong> : les reptiles sont ectothermes, donc sensibles aux variations de température et au stress. Pas de gestes brusques, pas de cris, pas de chaleur ou de froid brutal.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5. Si quelqu'un est mordu ou envenimé</summary>
+            <div class="rd-section">
+                <p>Détail : <button class="sal-lien" onclick="showModule('pse-8')">🌊 PSE 8 : piqûres et morsures</button>.</p>
+                <ul>
+                    <li><strong>Alerter le 15</strong> sans attendre. Serpent exotique : le <strong>centre antipoison</strong> ou le SAMU guide la suite.</li>
+                    <li><strong>Allonger et calmer</strong> la victime, <strong>ne pas bouger le membre</strong>, retirer bagues et bracelets.</li>
+                    <li>Laver à l'eau ou au sérum, sans frotter ; pansement ; surveiller.</li>
+                    <li><strong>Jamais d'aspiration</strong> (bouche ou aspi-venin), <strong>jamais de garrot</strong> ni d'incision.</li>
+                    <li>Noter l'<strong>heure</strong> de la morsure et l'animal en cause (photo à distance).</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6. Incendie et NAC</summary>
+            <div class="rd-section">
+                <ul>
+                    <li><strong>Terrariums</strong> : chauffage électrique et lampes chauffantes peuvent provoquer un incendie. Couper l'alimentation électrique dans les règles.</li>
+                    <li><strong>Animaux à sauver</strong> lors d'un incendie : demander au propriétaire où ils se trouvent et combien il y en a. Ne pas ouvrir les terrariums de serpents ou d'espèces dangereuses : prévenir les spécialistes.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>7. Cadre légal et suites de l'intervention</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein etroite"><img class="zoomable" src="images/nac/nac-legal.webp" alt="Légalité, traçabilité et prise en charge" loading="lazy"></figure>
+                <ul>
+                    <li><strong>Détention réglementée</strong> : de nombreuses espèces exigent un certificat de capacité et/ou une autorisation préfectorale. Certains propriétaires détiennent des espèces dangereuses ou protégées de façon illégale : le signaler à la hiérarchie, sans conflit sur place.</li>
+                    <li><strong>Traçabilité</strong> : un NAC capturé errant sur la voie publique ne doit <strong>jamais être relâché</strong> (risque pour la faune locale, ou mort de l'animal). Il est confié à une structure habilitée (fourrière, parc animalier partenaire, clinique vétérinaire) désignée par le CTA ou le vétérinaire de garde.</li>
+                    <li><strong>Animal sans danger pour les personnes</strong> : renvoyer vers la mairie, la fourrière ou un vétérinaire.</li>
+                </ul>
+            </div>
+        </details>
+        <p class="rd-source">📚 Cours « Opérations diverses : interventions sur les nouveaux animaux de compagnie » (contenu pédagogique fourni), corrigé et complété (morsures, vipères, oiseaux, incendie, cadre d'intervention) et mis en cohérence avec la fiche PSE 8. Le SDIS 34 n'a pas d'équipe spécialisée : la fiche prévoit donc de sécuriser et de demander un appui extérieur via le CODIS. À valider par un vétérinaire et à compléter avec la liste des partenaires que tient le CODIS.</p>
+    </div>
+
     <div id="ascenseurs" class="module" style="--jsp: #6D28D9;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
@@ -31598,7 +31716,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.11</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.14</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
