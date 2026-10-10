@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.8">
+    <meta name="version" content="1.69.10">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -240,7 +240,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.8</span><br>
+                        Vulcain v<span class="app-version">1.69.10</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -3795,7 +3795,127 @@
                 <div style="font-size: 0.9em; opacity: 0.8;">Exercice du commandement</div>
                 <div style="font-size: 0.85em; opacity: 0.7; margin-top: 8px;">Doctrine nationale 2020</div>
             </div>
+
+            <div class="fire-icon" onclick="showModule('sante-psy')" style="min-height: 220px; display: flex; flex-direction: column; justify-content: center; cursor: pointer;">
+                <div class="emoji" style="font-size: 4.5em;">💜</div>
+                <div class="label" style="font-size: 1.4em; margin-bottom: 12px; font-weight: bold;">Santé &amp; soutien psychologique</div>
+                <div style="font-size: 0.9em; opacity: 0.8;">Stress • EPT • défusing • SSSM</div>
+                <div style="font-size: 0.85em; opacity: 0.7; margin-top: 8px;">Veille entre pairs</div>
+            </div>
         </div>
+    </div>
+
+    <div id="sante-psy" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('commandement-menu')">← Commandement</button>
+        <span class="rd-tampon">Cours pédagogique</span>
+        <h2>💜 Santé et sécurité : le soutien psychologique en intervention</h2>
+        <p style="text-align: center;">Le risque psychologique fait partie de l'engagement. Comme l'EPI protège le corps, la <strong>préparation et le soutien psychologique</strong> protègent la santé mentale des intervenants. Demander de l'aide est un acte de <strong>lucidité</strong>, pas de faiblesse.</p>
+
+        <div class="rd-alerte"><strong>Urgence, idées suicidaires ou détresse grave :</strong> appeler le <strong>15</strong> ou le <strong>112</strong>. Le <strong>3114</strong> (numéro national de prévention du suicide, gratuit, 24 h/24) est ouvert à tous, y compris aux collègues inquiets pour un camarade. Ne jamais laisser seule une personne en danger.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li>La <strong>majorité</strong> des personnes exposées à un événement difficile <strong>récupèrent d'elles-mêmes</strong>. Les réactions des premiers jours (sommeil perturbé, images qui reviennent, irritabilité) sont fréquentes et normales.</li>
+                <li>On s'inquiète quand elles <strong>durent plus d'un mois</strong>, s'aggravent, ou gênent le travail et la vie de famille : consulter le <strong>SSSM</strong>.</li>
+                <li>L'aide est <strong>proposée, jamais imposée</strong>, et les échanges avec le SSSM sont <strong>confidentiels</strong> (secret médical).</li>
+                <li>Les collègues sont le <strong>premier maillon</strong> de la détection.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>1. Comprendre le stress opérationnel</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/sante/psy-stress.webp" alt="Comprendre le stress opérationnel : danger perçu, adrénaline, cortisol, mode combat ou fuite" loading="lazy"></figure>
+                <p>Le stress est une <strong>alarme physiologique naturelle</strong>. Face au danger, le système nerveux sympathique libère de l'<strong>adrénaline</strong> (effet en quelques secondes) puis du <strong>cortisol</strong> (effet plus lent) : hypervigilance, cœur qui s'accélère, concentration extrême. C'est le mode « combat ou fuite ». Chez certains, la réaction peut aussi être une <strong>sidération</strong> : le corps se fige.</p>
+                <p>Lors d'un <strong>événement potentiellement traumatisant (EPT)</strong>, l'intensité de la scène peut dépasser les capacités de traitement du cerveau (notamment l'amygdale et l'hippocampe) : l'événement n'est pas « digéré » normalement et peut laisser une trace psychologique.</p>
+                <div class="rd-astuce">Un événement n'est pas traumatisant par sa seule nature : cela dépend aussi de la manière dont il est vécu, de l'histoire personnelle et du contexte. Un EPT <strong>ne laisse pas toujours de trace</strong>. Tout le monde ne réagit pas de la même façon au même événement, et cela ne dit rien du courage ou de la compétence.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>2. Les événements potentiellement traumatisants (EPT)</summary>
+            <div class="rd-section">
+                <p>Certaines interventions sont reconnues comme <strong>particulièrement traumatogènes</strong> :</p>
+                <figure class="rd-fig plein"><img class="zoomable" src="images/sante/psy-ept.webp" alt="Les événements potentiellement traumatisants : victimes vulnérables, proximité affective, scènes à fort impact, atteinte à l’intégrité physique, impuissance" loading="lazy"></figure>
+                <table class="rd-table">
+                    <tbody>
+                        <tr><td><strong>Victimes vulnérables</strong></td><td>Nourrissons, enfants, femmes enceintes, personnes âgées.</td></tr>
+                        <tr><td><strong>Proximité affective</strong></td><td>Secours à un collègue, une connaissance, ou une victime qui rappelle un proche du secouriste.</td></tr>
+                        <tr><td><strong>Scènes à fort impact visuel ou olfactif</strong></td><td>Nombreuses victimes (plan NOVI), blessures très délabrantes, corps calcinés, suicides violents.</td></tr>
+                        <tr><td><strong>Atteinte à l'intégrité physique</strong></td><td>Agression, effondrement, explosion, ou le fait de frôler la mort (presque-accident).</td></tr>
+                        <tr><td><strong>Impuissance opérationnelle</strong></td><td>Impossible d'extraire une victime consciente coincée, ou manque de moyens face à l'ampleur du sinistre.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>3. Repérer les signaux : réactions normales ou trouble de stress post-traumatique</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/sante/psy-signaux.webp" alt="Signaux d’alerte : reviviscences, évitement, humeur et pensées, hyperactivation" loading="lazy"></figure>
+                <p>La culture de l'invulnérabilité (le « syndrome de Superman » en caserne) pousse à cacher ses difficultés. Les signaux peuvent apparaître <strong>tout de suite ou des mois plus tard</strong>.</p>
+                <table class="rd-table">
+                    <tbody>
+                        <tr><td><strong>Reviviscences</strong></td><td>Flash-backs incontrôlables, cauchemars répétés, scène qui ressurgit à cause d'une odeur de brûlé ou d'un bruit de désincarcération.</td></tr>
+                        <tr><td><strong>Évitement</strong></td><td>Refus d'un itinéraire ou d'un type d'opération, isolement vis-à-vis de la garde.</td></tr>
+                        <tr><td><strong>Humeur et pensées</strong></td><td>Perte d'empathie, cynisme excessif face aux victimes, irritabilité, culpabilité.</td></tr>
+                        <tr><td><strong>Hyperactivation</strong></td><td>Insomnie, sursauts fréquents, difficulté de concentration, conduites addictives (alcool, médicaments).</td></tr>
+                    </tbody>
+                </table>
+                <div class="rd-alerte">Ces signes sont <strong>normaux les premiers jours</strong>. On parle de <strong>trouble de stress post-traumatique</strong> (TSPT, aussi appelé ESPT) quand ils persistent <strong>plus d'un mois</strong> ou gênent la vie quotidienne. Dépression, idées noires et conduites addictives sont aussi à prendre au sérieux : en parler au SSSM.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>4. La chaîne de soutien, de l'intervention au SSSM</summary>
+            <div class="rd-section">
+                <p>La prise en charge est <strong>graduée</strong> et associe toute la chaîne de commandement et le <strong>Service de santé et de secours médical (SSSM)</strong>.</p>
+                <figure class="rd-fig plein"><img class="zoomable" src="images/sante/psy-chaine.webp" alt="La chaîne de soutien en cinq étapes, du retour au calme à l’événement majeur" loading="lazy"></figure>
+                <table class="rd-table">
+                    <tbody>
+                        <tr><th>Étape</th><th>Quand, qui, pour quoi</th></tr>
+                        <tr><td><strong>1. Retour au calme</strong></td><td>Sur les lieux ou en fin d'intervention, par le <strong>chef d'agrès ou le COS</strong>. Pas d'analyse psychologique : mise à l'abri des regards, réhydratation, réassurance, baisse de la pression opérationnelle. Tour d'horizon bref : <strong>faits</strong> (que s'est-il passé ?), <strong>ressenti</strong> (comment chacun se sent ?), <strong>besoins</strong> (informations, réassurance), sans forcer à raconter.</td></tr>
+                        <tr><td><strong>2. Défusing</strong></td><td>Dans les <strong>3 jours, idéalement 3 à 8 h après</strong>, animé par un personnel formé. Réservé aux <strong>volontaires</strong> ayant vécu la même intervention, en groupe de <strong>4 à 10</strong>, séance courte (<strong>30 à 45 min</strong>). Objectif : normaliser les réactions, partager les ressentis, soutien mutuel, sans forcer à parler.</td></tr>
+                        <tr><td><strong>3. Débriefing opérationnel</strong></td><td>De retour au CIS. On retrace la chronologie technique et les difficultés. Occasion d'observer les comportements de l'équipage. Ce n'est <strong>pas</strong> un débriefing psychologique.</td></tr>
+                        <tr><td><strong>4. Soutien du SSSM</strong></td><td>Psychologue ou infirmier sapeur-pompier (ISP) formé : entretiens individuels ou collectifs, le plus souvent <strong>à distance de l'événement</strong>, quelques jours après. Il peut être <strong>proposé par la hiérarchie</strong>, mais l'agent peut aussi y aller <strong>de lui-même</strong>. Échanges <strong>confidentiels</strong>.</td></tr>
+                        <tr><td><strong>Événement majeur</strong></td><td>Nombreuses victimes ou événement exceptionnel : <strong>cellule d'urgence médico-psychologique (CUMP)</strong>, demandée par le COS via le SAMU.</td></tr>
+                    </tbody>
+                </table>
+                <div class="rd-astuce">Le <strong>débriefing psychologique systématique et obligatoire</strong> n'a pas montré de bénéfice pour prévenir les troubles, et peut même gêner certaines personnes. Le soutien doit être <strong>proposé et volontaire</strong>.</div>
+                <p>Voir aussi la fiche <button class="sal-lien" onclick="showModule('gdo-cdt-apres')">🔁 GDO commandement : après l'opération</button>.</p>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>5. Le rôle de l'équipage : la veille entre pairs</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/sante/psy-pairs.webp" alt="La veille entre pairs : observer, briser le tabou, écouter, encourager à consulter, respecter la confidentialité" loading="lazy"></figure>
+                <p>L'équipier et le binôme sont le <strong>premier maillon de la détection</strong>. La prévention repose sur la cohésion du groupe.</p>
+                <ul>
+                    <li><strong>Ne pas juger</strong> : une intervention banale pour l'un peut en heurter un autre.</li>
+                    <li><strong>Observer les ruptures</strong> : un collègue jovial qui devient silencieux, ou s'isole sans cesse au foyer.</li>
+                    <li><strong>Briser le tabou</strong> : poser la question avec bienveillance (« Comment tu te sens depuis cette inter ? »), <strong>écouter sans juger</strong> (laisser parler, ne pas minimiser, ne pas forcer), éviter les « ça va aller » ou « t'inquiète ».</li>
+                    <li><strong>Ne pas jouer les thérapeutes</strong> : notre rôle est d'alerter et d'accompagner, pas de faire une prise en charge.</li>
+                    <li><strong>Encourager à consulter</strong> le SSSM ou son médecin. Prévenir la hiérarchie <strong>avec l'accord du collègue</strong>, sauf <strong>danger immédiat</strong> (idées suicidaires : 15, 112 ou 3114).</li>
+                </ul>
+                <div class="rd-astuce">Un sapeur-pompier qui <strong>verbalise une difficulté</strong> fait preuve de lucidité : il protège sa propre sécurité et la fiabilité de son équipe pour les départs suivants.</div>
+            </div>
+        </details>
+
+        <details class="jsp-cours">
+            <summary>6. Après un événement difficile : les bons réflexes</summary>
+            <div class="rd-section">
+                <figure class="rd-fig plein"><img class="zoomable" src="images/sante/psy-apres.webp" alt="Après un événement difficile : prendre soin de soi, échanger, éviter les conduites à risque, déclarer si besoin" loading="lazy"></figure>
+                <ul>
+                    <li><strong>Prendre soin de soi</strong> : dormir, manger, bouger, rester en contact avec ses proches, éviter l'alcool et les médicaments pour « tenir ».</li>
+                    <li><strong>Ne pas rester seul</strong> avec ce qu'on a vu.</li>
+                    <li><strong>Déclarer l'événement</strong> à son encadrement et au SSSM (accident de service) : cela permet de reconnaître d'éventuelles séquelles comme liées au service.</li>
+                    <li><strong>Consulter</strong> si les signes persistent plus d'un mois ou s'aggravent.</li>
+                </ul>
+            </div>
+        </details>
+        <p class="rd-source">📚 Cours « Santé et sécurité : le soutien psychologique en intervention » (contenu pédagogique fourni), complété et mis en cohérence avec le GDO « Exercice du commandement et conduite des opérations » (défusing, débriefing psychologique). À valider par le SSSM avant tout usage opérationnel.</p>
     </div>
 
     <!-- MODULE SOUS-MENU AVANT INTERVENTION -->
@@ -31476,7 +31596,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.8</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.10</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
