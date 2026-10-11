@@ -45,7 +45,7 @@
         var dir = val('vent-dir') ? DIRECTIONS[val('vent-dir')] : '', fv = val('vent-force');
         if (fv === 'nulle') vois.push('Le vent est nul.');
         else if (fv === 'tourbillonnante') vois.push('Le vent est tourbillonnant' + (dir ? ', dominante ' + dir : '') + '.');
-        else if (dir || fv) vois.push('Le vent est ' + (dir ? 'de ' + dir : '') + (dir && fv ? ', ' : '') + (fv ? 'de force ' + fv : '') + '.');
+        else if (dir || fv) vois.push('Le vent est ' + (dir ? (/^[EO]/.test(dir) ? 'd\'' : 'de ') + dir : '') + (dir && fv ? ', ' : '') + (fv ? 'de force ' + fv : '') + '.');
         if (RELIEF[val('relief')]) vois.push(RELIEF[val('relief')]);
         if (val('acces')) {
             var pi = val('piste');
@@ -82,6 +82,20 @@
         if (zone) zone.hidden = !g;
         if (carte) carte.hidden = !g;
     }
+
+    // Vent prévu au point (prévision) : préremplit direction et force, modifiables ; note = valeurs détaillées
+    window.ventPrevuAmbianceFDF = async function () {
+        var note = $('vent-note'), g = lireGPS(val('gps'));
+        if (!g) { note.textContent = 'Renseignez d\'abord le point (DFCI ou GPS).'; return; }
+        note.textContent = 'Chargement du vent prévu…';
+        try {
+            var m = await Meteo.lire(g.lat, g.lon);
+            $('vent-dir').value = m.dir.code;
+            $('vent-force').value = m.force;
+            note.textContent = 'Prévision à ' + m.heure + ' : vent ' + m.vent + ' km/h de ' + m.dir.nom + ', rafales ' + m.rafales + ' km/h, humidité ' + m.hum + ' %, ' + m.temp + ' °C. À confirmer par l\'observation.';
+            majAmbianceFDF();
+        } catch (e) { note.textContent = 'Vent prévu indisponible (réseau ou service) : saisissez-le à la main.'; }
+    };
 
     window.voirCarteDFCIAmbiance = function () {
         var g = lireGPS(val('gps'));

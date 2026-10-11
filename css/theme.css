@@ -1152,3 +1152,19 @@ body.cd-plein-actif .app-header, body.cd-plein-actif .app-stripe, body.cd-plein-
 #carte-dfci .cd-actions button { font-size: .8em; white-space: nowrap; }
 #carte-dfci.cd-plein .cd-carte { height: calc(100dvh - 200px); }
 #carte-dfci .cd-info small { display: block; text-align: center; margin: 0 0 4px; }
+
+/* Météo au point */
+.met-carte { margin: 10px 0; padding: 10px; border: 1px solid var(--t-line); border-radius: 12px; background: var(--t-s2); color: var(--t-ink); }
+.met-carte[hidden] { display: none; }
+.met-vent { display: flex; align-items: center; gap: 12px; font-size: 1.05em; }
+.met-fleche { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: var(--t-accent); color: #fff; font-size: 1.8em; font-weight: 800; flex: 0 0 48px; }
+.met-vent small, .met-grille small { color: var(--t-muted); }
+.met-grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 10px 0; text-align: center; }
+.met-grille div { background: var(--t-s1); border-radius: 10px; padding: 6px 2px; display: flex; flex-direction: column; }
+.met-grille b { font-size: 1.15em; }
+.met-table { width: 100%; border-collapse: collapse; font-size: .85em; margin: 6px 0; }
+.met-table th, .met-table td { padding: 3px 4px; text-align: center; border-bottom: 1px solid var(--t-line); }
+.met-note { display: block; color: var(--t-muted); font-size: .78em; line-height: 1.35; }
+#fdf-ambiance .amb-vent-prevu { width: 100%; margin: 6px 0 2px; }
+#fdf-ambiance .amb-vent-note { display: block; margin: 0 0 8px; color: var(--t-muted); }
+.met-table th { background: transparent; color: var(--t-muted); font-weight: 600; border-bottom: 1px solid var(--t-line); }
