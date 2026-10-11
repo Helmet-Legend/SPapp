@@ -176,7 +176,7 @@ var CarteDFCI = (function () {
     function versLocalisation() {
         if (!repere) return;
         showModule('localisation');
-        var g = document.getElementById('loc-gps');
+        var g = document.getElementById('loc-saisie');
         if (g) { g.value = Geo.formatGPS(repere.lat, repere.lon); g.dispatchEvent(new Event('input', { bubbles: true })); }
     }
     function ouvrirMaps() { if (repere) window.open('https://www.google.com/maps?q=' + repere.lat.toFixed(6) + ',' + repere.lon.toFixed(6), '_blank', 'noopener'); }

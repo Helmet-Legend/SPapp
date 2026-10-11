@@ -65,8 +65,8 @@ test('toucher la carte donne le carreau du point touché', async ({ app }) => {
 
 test('depuis « Se localiser » : voir le point sur la carte DFCI', async ({ app }) => {
     await app.evaluate(() => showModule('localisation'));
-    await app.fill('#loc-gps', '43.3951, 3.4263');
-    await app.click('#localisation .loc-actions >> text=Voir sur la carte DFCI');
+    await app.fill('#loc-saisie', '43.3951, 3.4263');
+    await app.click('#loc-barre >> text=Carte');
     expect(await ecranActif(app)).toBe('carte-dfci');
     await expect(app.locator('#cd-i-dfci')).toHaveText('GD82E1.4');
 });

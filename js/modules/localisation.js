@@ -1,38 +1,106 @@
 /**
- * Vulcain - Outil « Se localiser » : position, carreau DFCI, coordonnées GPS (DD / DMS / DMD) et adresse.
+ * Vulcain - Outil « Se localiser » : un seul champ (carreau DFCI, coordonnées GPS DD / DMS / DMD ou adresse, détecté automatiquement),
+ * ma position, mini-carte, météo au point, adresse la plus proche, derniers points.
  * Hors ligne : GPS <-> DFCI <-> formats (js/modules/geo-dfci.js).
- * En ligne uniquement, et seulement quand on appuie sur le bouton : recherche d'adresse et adresse la plus proche
- * (géocodage de l'IGN, Géoplateforme ; secours : Base Adresse Nationale). Rien n'est enregistré.
+ * En ligne : adresse (sur demande), météo Open-Meteo (dès qu'un point est affiché), fond de la mini-carte IGN.
+ * Seuls les 5 derniers points sont gardés, sur l'appareil.
  */
 var Localisation = (function () {
     var SERVICES = [
         { recherche: 'https://data.geopf.fr/geocodage/search', inverse: 'https://data.geopf.fr/geocodage/reverse' },
         { recherche: 'https://api-adresse.data.gouv.fr/search/', inverse: 'https://api-adresse.data.gouv.fr/reverse/' }
     ];
+    var CLE_RECENTS = 'vulcain-loc-recents', CLE_FOND = 'vulcain-carte-fond';
+    var FONDS = {
+        plan: { nom: 'Plan IGN', url: 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&FORMAT=image/png' },
+        photo: { nom: 'Photo aérienne', url: 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&FORMAT=image/jpeg' },
+        aucun: { nom: 'Sans fond', url: null }
+    };
     var point = null; // { lat, lon, precision, adresse, commune }
+    var mini = null, miniCouche = null, miniMarqueur = null;
+    var jetonMeteo = 0, minuterieMeteo = null, minuterieRecent = null;
     var $ = function (id) { return document.getElementById('loc-' + id); };
-    var valeur = function (id) { var e = $(id); return e ? e.value.trim() : ''; };
     var echapper = function (t) { var d = document.createElement('div'); d.textContent = String(t == null ? '' : t); return d.innerHTML; };
 
     function etat(texte) { var e = $('etat'); if (e) e.textContent = texte || ''; }
+    function erreur(on) { $('saisie').classList.toggle('loc-erreur', !!on); }
+    function notifier(t) { if (window.showNotification) showNotification(t); }
+
+    // ---------- Stockage local (facultatif) ----------
+    function lireRecents() { try { var r = JSON.parse(localStorage.getItem(CLE_RECENTS) || '[]'); return Array.isArray(r) ? r.slice(0, 5) : []; } catch (e) { return []; } }
+    function ecrireRecents(r) { try { localStorage.setItem(CLE_RECENTS, JSON.stringify(r)); } catch (e) { /* stockage indisponible */ } }
+    function lireFond() { try { var f = localStorage.getItem(CLE_FOND); return FONDS[f] ? f : 'plan'; } catch (e) { return 'plan'; } }
+    function noterRecent() {
+        if (!point) return;
+        var c = Geo.carreauDFCI(point.lat, point.lon);
+        if (!c) return;
+        var liste = lireRecents().filter(function (r) { return r.code !== c.code; });
+        liste.unshift({ code: c.code, lat: point.lat, lon: point.lon, commune: point.commune || '' });
+        ecrireRecents(liste.slice(0, 5));
+        afficherRecents();
+    }
+    function afficherRecents() {
+        var z = $('recents'), liste = lireRecents();
+        z.hidden = !liste.length;
+        z.innerHTML = liste.length ? '<small class="loc-titre">Récents</small>' + liste.map(function (r, i) {
+            return '<button type="button" data-recent="' + i + '"><b>' + echapper(r.code) + '</b><span>' + echapper(r.commune || '') + '</span></button>';
+        }).join('') : '';
+    }
+
+    // ---------- Mini-carte (fond IGN facultatif, sans interaction) ----------
+    function majMini() {
+        if (typeof L === 'undefined' || !point) return;
+        var conteneur = $('mini-carte');
+        if (!mini) {
+            mini = L.map(conteneur, { zoomControl: false, attributionControl: false, dragging: false, touchZoom: false, scrollWheelZoom: false, doubleClickZoom: false, boxZoom: false, keyboard: false, tap: false });
+            appliquerFondMini();
+        }
+        mini.invalidateSize();
+        mini.setView([point.lat, point.lon], 14);
+        if (miniMarqueur) miniMarqueur.setLatLng([point.lat, point.lon]);
+        else miniMarqueur = L.circleMarker([point.lat, point.lon], { radius: 9, color: '#fff', weight: 3, fillColor: '#D7263D', fillOpacity: 1, interactive: false }).addTo(mini);
+    }
+    function appliquerFondMini() {
+        if (!mini) return;
+        if (miniCouche) { mini.removeLayer(miniCouche); miniCouche = null; }
+        var f = FONDS[lireFond()];
+        if (f.url) { miniCouche = L.tileLayer(f.url, { maxZoom: 18, crossOrigin: true }); miniCouche.addTo(mini); }
+    }
+    function majLibelleFond() { var e = $('fond'); if (e) e.textContent = '🌐 Fond de la mini-carte : ' + FONDS[lireFond()].nom; }
+    function changerFond() {
+        var ordre = ['plan', 'photo', 'aucun'], suivant = ordre[(ordre.indexOf(lireFond()) + 1) % ordre.length];
+        try { localStorage.setItem(CLE_FOND, suivant); } catch (e) { /* stockage indisponible */ }
+        majLibelleFond();
+        appliquerFondMini();
+    }
 
     // ---------- Affichage ----------
     function afficher(sauf) {
         var res = $('resultat');
-        if (!point) { res.hidden = true; return; }
+        $('vide').hidden = !!point;
+        res.hidden = !point;
+        $('barre').hidden = !point;
+        if (!point) return;
         var f = Geo.formats(point.lat, point.lon), c = Geo.carreauDFCI(point.lat, point.lon);
-        if (sauf !== 'dfci') $('dfci').value = c ? c.code : '';
-        if (sauf !== 'gps') $('gps').value = Geo.formatGPS(point.lat, point.lon);
-        res.hidden = false;
+        if (sauf !== 'saisie') $('saisie').value = c ? c.code : Geo.formatGPS(point.lat, point.lon);
         $('r-dfci').textContent = c ? c.code : 'Hors carroyage DFCI';
-        $('r-formats').innerHTML = ['dd', 'dms', 'dmd'].map(function (k) { return '<div><b>' + k.toUpperCase() + '</b> ' + f[k] + '</div>'; }).join('');
-        $('r-adresse').innerHTML = point.adresse ? '<div><b>Adresse</b> ' + echapper(point.adresse) + '</div>' : '';
+        $('r-sous').textContent = c ? 'Zone ' + c.code.slice(-1) + ' du carreau de 2 km' + (point.commune ? ' · ' + point.commune : '') : 'Le point est hors de la zone couverte par le carroyage DFCI.';
+        $('r-formats').innerHTML = [['dd', 'DD'], ['dms', 'DMS'], ['dmd', 'DMD']].map(function (k) {
+            return '<div class="loc-format"><b>' + k[1] + '</b><code>' + f[k[0]] + '</code><button type="button" data-copie="' + k[0] + '" aria-label="Copier le format ' + k[1] + '">⧉</button></div>';
+        }).join('');
+        $('r-adresse').innerHTML = point.adresse ? echapper(point.adresse) : '<small>Ouvrez pour la chercher (la position est envoyée à l\'IGN).</small>';
         $('r-precision').textContent = point.precision ? 'Précision GPS ± ' + Math.round(point.precision) + ' m' : '';
+        majMini();
     }
 
     function definir(lat, lon, extra, sauf) {
         point = Object.assign({ lat: lat, lon: lon, precision: null, adresse: '', commune: '' }, extra || {});
+        erreur(false);
         afficher(sauf);
+        clearTimeout(minuterieMeteo);
+        minuterieMeteo = setTimeout(chargerMeteo, 600);
+        clearTimeout(minuterieRecent);
+        minuterieRecent = setTimeout(noterRecent, 2000);
     }
 
     function texteCopie() {
@@ -42,20 +110,35 @@ var Localisation = (function () {
             'https://www.google.com/maps?q=' + point.lat.toFixed(6) + ',' + point.lon.toFixed(6)].filter(Boolean).join('\n');
     }
 
-    // ---------- Saisies (hors ligne) ----------
-    function depuisDFCI() {
-        var d = Geo.lireDFCI(valeur('dfci'));
-        if (!d) { etat(valeur('dfci') ? 'Carreau DFCI incomplet ou invalide (exemple : GD82E1.4).' : ''); return; }
-        var g = Geo.dfciVersGPS(d);
-        definir(g.lat, g.lon, null, 'dfci');
-        etat('Position déduite du carreau ' + Geo.formatDFCI(d) + ' (' + (d.zone ? 'centre de la zone ' + d.zone : 'centre du carreau de 2 km') + ').');
+    // ---------- Saisie unique : DFCI, GPS ou adresse ----------
+    function nature(t) {
+        if (/^[A-Za-z]{2}\d/.test(t)) return 'dfci';
+        if (/\d/.test(t) && !/[^\d\s.,°'′’"″”\-+NSEWOnsewo]/.test(t)) return 'gps';
+        return 'adresse';
     }
 
-    function depuisGPS() {
-        var g = Geo.lireGPS(valeur('gps'));
-        if (!g) { etat(valeur('gps') ? 'Coordonnées non reconnues (exemples : 43.39480 N, 3.42654 E ou 43°23\'41" N 3°25\'36" E).' : ''); return; }
-        definir(g.lat, g.lon, null, 'gps');
-        etat('');
+    function saisir() {
+        var t = $('saisie').value.trim();
+        $('chercher').hidden = true;
+        $('adresses').innerHTML = '';
+        if (!t) { erreur(false); etat(''); point = null; afficher(); return; }
+        var n = nature(t);
+        if (n === 'dfci') {
+            var d = Geo.lireDFCI(t);
+            if (!d) { erreur(true); etat('Carreau non reconnu : 2 lettres (A–N), 2 chiffres pairs, une lettre, un chiffre. Exemple : GD82E1.4'); return; }
+            var g = Geo.dfciVersGPS(d);
+            definir(g.lat, g.lon, null, 'saisie');
+            etat('Position déduite du carreau ' + Geo.formatDFCI(d) + ' (' + (d.zone ? 'centre de la zone ' + d.zone : 'centre du carreau de 2 km') + ').');
+        } else if (n === 'gps') {
+            var p = Geo.lireGPS(t);
+            if (!p) { erreur(t.length > 5); etat(t.length > 5 ? 'Coordonnées non reconnues. Exemples : 43.39480 N, 3.42654 E ou 43°23\'41" N 3°25\'36" E' : ''); return; }
+            definir(p.lat, p.lon, null, 'saisie');
+            etat('');
+        } else {
+            erreur(false);
+            if (t.length >= 3) { $('chercher').hidden = false; etat('Adresse : appuyez sur Entrée ou sur « Chercher cette adresse ».'); }
+            else etat('');
+        }
     }
 
     function maPosition() {
@@ -86,7 +169,7 @@ var Localisation = (function () {
     }
 
     async function chercherAdresse() {
-        var q = valeur('adresse');
+        var q = $('saisie').value.trim();
         var liste = $('adresses');
         if (q.length < 3) { etat('Saisissez au moins 3 caractères.'); return; }
         liste.innerHTML = '';
@@ -97,14 +180,16 @@ var Localisation = (function () {
             if (!f.length) { etat('Aucune adresse trouvée.'); return; }
             etat(f.length + ' adresse' + (f.length > 1 ? 's' : '') + ' : choisissez la bonne.');
             liste.innerHTML = f.map(function (x, i) {
-                return '<button type="button" class="loc-adresse" data-i="' + i + '">' + echapper(x.properties.label) + '</button>';
+                var p = x.properties || {};
+                return '<button type="button" class="loc-adresse" data-i="' + i + '">' + echapper(p.name || p.label) + '<small>' + echapper((p.postcode ? p.postcode + ' ' : '') + (p.city || '')) + '</small></button>';
             }).join('');
             liste.onclick = function (e) {
                 var bt = e.target.closest('.loc-adresse');
                 if (!bt) return;
                 var x = f[Number(bt.dataset.i)];
-                definir(x.geometry.coordinates[1], x.geometry.coordinates[0], { adresse: x.properties.label, commune: x.properties.city || '' });
+                $('chercher').hidden = true;
                 liste.innerHTML = '';
+                definir(x.geometry.coordinates[1], x.geometry.coordinates[0], { adresse: x.properties.label, commune: x.properties.city || '' }, 'saisie');
                 etat('Adresse placée sur la carte DFCI.');
             };
         } catch (e) {
@@ -120,29 +205,48 @@ var Localisation = (function () {
             var x = b && b.features && b.features[0];
             if (!x) { etat('Aucune adresse proche de ce point.'); return; }
             point.adresse = x.properties.label; point.commune = x.properties.city || '';
-            afficher();
+            afficher('saisie');
             etat('Adresse la plus proche trouvée.');
         } catch (e) {
             etat('Adresse indisponible (réseau ou service).');
         }
     }
 
+    // ---------- Météo (automatique, dès qu'un point est affiché) ----------
+    async function chargerMeteo() {
+        if (!point) return;
+        var zone = $('meteo'), tag = $('meteo-etat'), jeton = ++jetonMeteo, p = point;
+        if (navigator.onLine === false) { zone.innerHTML = '<small>Hors ligne : météo indisponible.</small>'; tag.textContent = 'hors ligne'; return; }
+        tag.textContent = 'chargement…';
+        zone.innerHTML = '<small>Chargement de la météo…</small>';
+        try {
+            var d = await Meteo.lire(p.lat, p.lon);
+            if (jeton !== jetonMeteo) return;
+            zone.innerHTML = Meteo.resume(d) + '<details class="loc-prevision"><summary>Prévision des heures suivantes</summary>' + Meteo.detail(d) + '</details>';
+            tag.textContent = 'modèle, ' + d.heure;
+        } catch (e) {
+            if (jeton !== jetonMeteo) return;
+            zone.innerHTML = '<small>Météo indisponible (réseau ou service). Le reste de l\'outil fonctionne sans.</small>';
+            tag.textContent = 'indisponible';
+        }
+    }
+
     // ---------- Actions ----------
     function ouvrirCarte() {
+        fermerMenu();
         if (point) window.open('https://www.google.com/maps?q=' + point.lat.toFixed(6) + ',' + point.lon.toFixed(6), '_blank', 'noopener');
     }
     function voirCarteDFCI() { if (point && typeof CarteDFCI !== 'undefined') CarteDFCI.voir(point.lat, point.lon); }
-    async function meteo() {
-        if (!point) return;
-        var zone = $('meteo');
-        zone.hidden = false; zone.innerHTML = '<small>Chargement de la météo…</small>';
-        try { zone.innerHTML = Meteo.html(await Meteo.lire(point.lat, point.lon)); }
-        catch (e) { zone.innerHTML = '<small>Météo indisponible (réseau ou service). Le reste de l\'outil fonctionne sans.</small>'; }
-    }
     function copier() {
-        if (point && navigator.clipboard) navigator.clipboard.writeText(texteCopie()).then(function () { if (window.showNotification) showNotification('Position copiée !'); });
+        if (point && navigator.clipboard) navigator.clipboard.writeText(texteCopie()).then(function () { notifier('Position copiée !'); });
+    }
+    function copierFormat(k) {
+        if (!point || !navigator.clipboard) return;
+        var f = Geo.formats(point.lat, point.lon);
+        navigator.clipboard.writeText(f[k]).then(function () { notifier('Copié : ' + f[k]); });
     }
     function partager() {
+        fermerMenu();
         if (!point) return;
         if (navigator.share) navigator.share({ title: 'Ma position', text: texteCopie() }).catch(function () {});
         else copier();
@@ -150,6 +254,7 @@ var Localisation = (function () {
     function versAmbiance() {
         if (!point) return;
         var c = Geo.carreauDFCI(point.lat, point.lon);
+        noterRecent();
         showModule('fdf-ambiance');
         var set = function (id, v) { var e = document.getElementById('amb-' + id); if (e && v) { e.value = v; e.dispatchEvent(new Event('input', { bubbles: true })); } };
         set('gps', Geo.formatGPS(point.lat, point.lon));
@@ -158,21 +263,46 @@ var Localisation = (function () {
         if (commune && !commune.value && point.commune) set('commune', point.commune);
     }
     function effacer() {
+        fermerMenu();
         point = null;
-        ['dfci', 'gps', 'adresse'].forEach(function (id) { $(id).value = ''; });
+        jetonMeteo++;
+        $('saisie').value = '';
         $('adresses').innerHTML = '';
+        $('chercher').hidden = true;
+        erreur(false);
         etat('');
         afficher();
     }
 
+    // ---------- Menu ⋯ ----------
+    function fermerMenu() { var m = $('menu'); if (m) { m.hidden = true; $('menu-btn').setAttribute('aria-expanded', 'false'); } }
+    function menu() { var m = $('menu'), ouvert = m.hidden; m.hidden = !ouvert; $('menu-btn').setAttribute('aria-expanded', ouvert ? 'true' : 'false'); }
+
+    function majHorsLigne() { var b = $('hors-ligne'); if (b) b.hidden = navigator.onLine !== false; }
+
     document.addEventListener('DOMContentLoaded', function () {
         var m = document.getElementById('localisation');
         if (!m) return;
-        $('dfci').addEventListener('input', depuisDFCI);
-        $('gps').addEventListener('input', depuisGPS);
-        $('adresse').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); chercherAdresse(); } });
+        $('saisie').addEventListener('input', saisir);
+        $('saisie').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (nature($('saisie').value.trim()) === 'adresse') chercherAdresse(); } });
+        m.addEventListener('click', function (e) {
+            var ex = e.target.closest('[data-exemple]');
+            if (ex) { $('saisie').value = ex.dataset.exemple; saisir(); return; }
+            var cp = e.target.closest('[data-copie]');
+            if (cp) { copierFormat(cp.dataset.copie); return; }
+            var rc = e.target.closest('[data-recent]');
+            if (rc) { var r = lireRecents()[Number(rc.dataset.recent)]; if (r) definir(r.lat, r.lon, { commune: r.commune || '' }); return; }
+            if (!e.target.closest('.loc-entete')) fermerMenu();
+        });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermerMenu(); });
+        $('adresse-bloc').addEventListener('toggle', function () { if (this.open && point && !point.adresse) adresseProche(); });
+        window.addEventListener('online', majHorsLigne);
+        window.addEventListener('offline', majHorsLigne);
+        majHorsLigne();
+        majLibelleFond();
+        afficherRecents();
     });
 
-    return { maPosition: maPosition, chercherAdresse: chercherAdresse, adresseProche: adresseProche, ouvrirCarte: ouvrirCarte, meteo: meteo, voirCarteDFCI: voirCarteDFCI,
-        copier: copier, partager: partager, versAmbiance: versAmbiance, effacer: effacer };
+    return { maPosition: maPosition, chercherAdresse: chercherAdresse, adresseProche: adresseProche, ouvrirCarte: ouvrirCarte, voirCarteDFCI: voirCarteDFCI,
+        meteo: chargerMeteo, copier: copier, partager: partager, versAmbiance: versAmbiance, effacer: effacer, menu: menu, changerFond: changerFond };
 })();
