@@ -132,6 +132,13 @@ var Localisation = (function () {
         if (point) window.open('https://www.google.com/maps?q=' + point.lat.toFixed(6) + ',' + point.lon.toFixed(6), '_blank', 'noopener');
     }
     function voirCarteDFCI() { if (point && typeof CarteDFCI !== 'undefined') CarteDFCI.voir(point.lat, point.lon); }
+    async function meteo() {
+        if (!point) return;
+        var zone = $('meteo');
+        zone.hidden = false; zone.innerHTML = '<small>Chargement de la météo…</small>';
+        try { zone.innerHTML = Meteo.html(await Meteo.lire(point.lat, point.lon)); }
+        catch (e) { zone.innerHTML = '<small>Météo indisponible (réseau ou service). Le reste de l\'outil fonctionne sans.</small>'; }
+    }
     function copier() {
         if (point && navigator.clipboard) navigator.clipboard.writeText(texteCopie()).then(function () { if (window.showNotification) showNotification('Position copiée !'); });
     }
@@ -166,6 +173,6 @@ var Localisation = (function () {
         $('adresse').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); chercherAdresse(); } });
     });
 
-    return { maPosition: maPosition, chercherAdresse: chercherAdresse, adresseProche: adresseProche, ouvrirCarte: ouvrirCarte, voirCarteDFCI: voirCarteDFCI,
+    return { maPosition: maPosition, chercherAdresse: chercherAdresse, adresseProche: adresseProche, ouvrirCarte: ouvrirCarte, meteo: meteo, voirCarteDFCI: voirCarteDFCI,
         copier: copier, partager: partager, versAmbiance: versAmbiance, effacer: effacer };
 })();
