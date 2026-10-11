@@ -30,7 +30,7 @@ test('le message d\'ambiance est prérédigé dans l\'ordre du canevas', async (
     await app.check('input[name="amb-demande"][value="commandement"]');
     await app.fill('#amb-demande-autre', 'Gendarmerie pour boucler un axe');
     const msg = await app.textContent('#amb-apercu');
-    const ordre = ['De CCF Saint-Thibéry pour CODIS 34', 'Je suis au carreau DFCI GD82E1.4,', 'sur la commune de Saint-Thibéry, au lieu-dit La Rouquette.',
+    const ordre = ['CODIS 34 de CCF Saint-Thibéry', 'Je suis au carreau DFCI GD82E1.4,', 'sur la commune de Saint-Thibéry, au lieu-dit La Rouquette.',
         'Au sud du château.', 'Je vois un feu de sous-bois en pinède.', 'La surface brûlée est estimée à environ 5 000 m².',
         'Le feu est virulent, avec une propagation très rapide.', 'Le vent est de Nord-Ouest, de force soutenue.', 'Le relief est montant.',
         'Accès difficile par la piste DFCI 32.', 'La surface menacée est estimée à environ 1 hectare.', 'Le front de feu mesure environ 200 m.',
