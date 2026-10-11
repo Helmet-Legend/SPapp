@@ -19,22 +19,23 @@ test('conversion du vent : direction d\'où il souffle et force du message d\'am
 test('« Se localiser » : météo au point avec vent, humidité et prévision des heures suivantes', async ({ app }) => {
     await app.route('https://api.open-meteo.com/**', r => r.fulfill({ status: 200, contentType: 'application/json', body: reponse(38.2, 312) }));
     await app.evaluate(() => showModule('localisation'));
-    await app.fill('#loc-gps', '43.3951, 3.4263');
-    await app.click('#localisation .loc-actions >> text=Météo au point');
+    await app.fill('#loc-saisie', '43.3951, 3.4263');
     const carte = app.locator('#loc-meteo');
-    await expect(carte).toContainText('38 km/h');
-    await expect(carte).toContainText('Nord-Ouest');
+    await expect(carte).toContainText('Vent de Nord-Ouest · 38 km/h');
     await expect(carte).toContainText('force « soutenue »');
-    await expect(carte).toContainText('31 %');
+    await expect(carte).toContainText('HR 31 %');
+    await app.click('#loc-meteo .loc-prevision summary');
     await expect(carte).toContainText('pas une mesure');
     await expect(carte.locator('tbody tr')).toHaveCount(6);
+    await expect(carte.locator('.met-fort').first()).toContainText('⚠');
+    await expect(carte).toContainText('Rafales supérieures à 40 km/h');
 });
 
 test('« Se localiser » : météo indisponible, message clair', async ({ app }) => {
     await app.evaluate(() => showModule('localisation'));
-    await app.fill('#loc-gps', '43.3951, 3.4263');
-    await app.click('#localisation .loc-actions >> text=Météo au point');
+    await app.fill('#loc-saisie', '43.3951, 3.4263');
     await expect(app.locator('#loc-meteo')).toContainText('Météo indisponible');
+    await expect(app.locator('#loc-r-dfci')).toHaveText('GD82E1.4');
 });
 
 test('message d\'ambiance : le vent prévu préremplit direction et force, modifiables', async ({ app }) => {

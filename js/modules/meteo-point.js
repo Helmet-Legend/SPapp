@@ -60,5 +60,22 @@ var Meteo = (function () {
             '<small class="met-note">Prévision modélisée à ' + d.heure + ' (Open-Meteo, modèles Météo-France), pas une mesure : à confirmer par l\'observation sur place.</small>';
     }
 
-    return { lire: lire, direction: direction, force: force, html: html };
+    // Version compacte pour « Se localiser » : une ligne lisible + pastilles, détail (prévision) en dessous
+    var SEUIL_RAFALES = 40;
+    function resume(d) {
+        return '<div class="met-vent">' + fleche(d.degres) + '<div><b>Vent de ' + d.dir.nom + ' · ' + d.vent + ' km/h</b><br><small>rafales ' + d.rafales + ' km/h · force « ' + d.force + ' »</small></div></div>' +
+            '<div class="met-pastilles"><span>' + d.temp + ' °C</span><span>HR ' + d.hum + ' %</span><span>' + d.pluie + ' mm</span></div>';
+    }
+    function detail(d) {
+        var lignes = d.prochaines.map(function (h) {
+            var fort = h.rafales > SEUIL_RAFALES;
+            return '<tr><td>' + h.heure + '</td><td>' + h.dir + ' ' + h.vent + '</td><td' + (fort ? ' class="met-fort"' : '') + '>' + h.rafales + (fort ? ' ⚠' : '') + '</td><td>' + h.hum + ' %</td></tr>';
+        }).join('');
+        var alerte = d.prochaines.some(function (h) { return h.rafales > SEUIL_RAFALES; });
+        return (lignes ? '<table class="met-table"><thead><tr><th>Heure</th><th>Vent (km/h)</th><th>Rafales</th><th>Hum.</th></tr></thead><tbody>' + lignes + '</tbody></table>' : '') +
+            (alerte ? '<small class="met-note met-note-alerte">⚠ Rafales supérieures à ' + SEUIL_RAFALES + ' km/h prévues : risque de propagation.</small>' : '') +
+            '<small class="met-note">Prévision modélisée à ' + d.heure + ' (Open-Meteo, modèles Météo-France), pas une mesure : à confirmer par l\'observation sur place.</small>';
+    }
+
+    return { lire: lire, direction: direction, force: force, html: html, resume: resume, detail: detail };
 })();

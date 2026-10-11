@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.40">
+    <meta name="version" content="1.69.41">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -277,7 +277,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.40</span><br>
+                        Vulcain v<span class="app-version">1.69.41</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -308,7 +308,7 @@
                 <strong>Formulaire de contact</strong> : le message et le contact facultatif (email/téléphone) que vous saisissez sont envoyés à notre serveur et conservés pour pouvoir vous répondre, jusqu'à 500 messages conservés en rotation. Base légale : intérêt légitime (traiter les signalements des utilisateurs).<br><br>
                 <strong>Notifications push</strong> : si vous les activez, votre navigateur génère un identifiant d'abonnement (endpoint + clés de chiffrement) transmis à notre serveur pour pouvoir vous notifier. Base légale : consentement (activation explicite dans Réglages). Désactivable à tout moment.<br><br>
                 <strong>Outil « Se localiser »</strong> : le calcul GPS / carreau DFCI se fait sur l'appareil. La recherche d'adresse et « adresse la plus proche » envoient le texte saisi ou la position au service de géocodage de l'IGN (Géoplateforme), uniquement quand vous appuyez sur le bouton ; rien n'est conservé par Vulcain.<br><br>
-                <strong>Météo au point</strong> : sur votre demande (bouton), la position est envoyée à Open-Meteo, service de prévisions météo, pour obtenir le vent, la température et l'humidité. Aucun identifiant n'est transmis par Vulcain et rien n'est conservé ; il s'agit d'une prévision, à confirmer par l'observation.<br><br>
+                <strong>Météo au point</strong> : dès qu'un point est affiché dans « Se localiser » (ou sur demande dans le message d'ambiance), la position est envoyée à Open-Meteo, service de prévisions météo, pour obtenir le vent, la température et l'humidité. Aucun identifiant n'est transmis par Vulcain et rien n'est conservé ; il s'agit d'une prévision, à confirmer par l'observation.<br><br>
                 <strong>Carte DFCI</strong> : la grille est calculée sur l'appareil. Si vous affichez un fond de carte (Plan IGN ou photo aérienne), votre navigateur télécharge les images de carte auprès de la Géoplateforme de l'IGN, qui voit donc les zones affichées ; aucun identifiant n'est transmis par Vulcain et rien n'est conservé.<br><br>
                 <strong>Générateur de manœuvre IA</strong> : les paramètres du formulaire (type d'intervention, véhicules, consignes) sont transmis à l'API Claude d'Anthropic pour générer le scénario. Aucune donnée d'identification n'est envoyée avec.<br><br>
                 <strong>Vos droits</strong> : accès, rectification et suppression des données vous concernant, à exercer via le formulaire de contact (À propos).
@@ -20290,36 +20290,67 @@ Je fais : extinction.</p>
     </div>
 
     <div id="localisation" class="module" style="--jsp: #0EA5E9;">
-        <button class="back-btn" onclick="showModule('home')">← Retour</button>
-        <h2>📍 Se localiser</h2>
-        <p style="text-align: center;">Position, <strong>carreau DFCI</strong>, <strong>coordonnées GPS</strong> et <strong>adresse</strong> : saisissez l'un, les autres se calculent. Hors ligne pour le GPS et le DFCI.</p>
-        <div class="rd-section loc-form">
-            <button type="button" class="loc-ma-position" onclick="Localisation.maPosition()">📍 Ma position</button>
-            <label class="loc-champ">Carreau DFCI<input type="text" id="loc-dfci" placeholder="GD82E1.4" autocapitalize="characters" autocomplete="off" spellcheck="false"></label>
-            <label class="loc-champ">Coordonnées GPS (DD, DMS ou DMD)<input type="text" id="loc-gps" placeholder="43.39480 N, 3.42654 E ou 43°23'41&quot; N 3°25'36&quot; E" autocomplete="off"></label>
-            <label class="loc-champ">Adresse (réseau nécessaire)<span class="loc-ligne"><input type="text" id="loc-adresse" placeholder="12 rue de la République, Béziers" autocomplete="off"><button type="button" class="secondary" onclick="Localisation.chercherAdresse()">🔎 Chercher</button></span></label>
-            <div id="loc-adresses" class="loc-adresses"></div>
-            <p id="loc-etat" class="loc-etat" aria-live="polite"></p>
-        </div>
-        <div id="loc-resultat" class="rd-section loc-resultat" hidden>
-            <div class="loc-dfci" id="loc-r-dfci"></div>
-            <div id="loc-r-formats" class="amb-formats"></div>
-            <div id="loc-r-adresse" class="loc-adresse-ligne"></div>
-            <div id="loc-meteo" class="met-carte" hidden aria-live="polite"></div>
-            <small id="loc-r-precision"></small>
-            <div class="loc-actions">
-                <button type="button" onclick="Localisation.voirCarteDFCI()">🗺️ Voir sur la carte DFCI</button>
-                <button type="button" onclick="Localisation.ouvrirCarte()">🗺️ Ouvrir dans Maps</button>
-                <button type="button" onclick="Localisation.adresseProche()">🏠 Adresse la plus proche</button>
-                <button type="button" onclick="Localisation.meteo()">🌤️ Météo au point</button>
-                <button type="button" onclick="Localisation.copier()">📋 Copier</button>
-                <button type="button" onclick="Localisation.partager()">📤 Partager</button>
-                <button type="button" onclick="Localisation.versAmbiance()">📻 Utiliser dans le message d'ambiance</button>
-                <button type="button" class="secondary" onclick="Localisation.effacer()">🗑️ Effacer</button>
+        <div class="loc-entete">
+            <button class="back-btn" onclick="showModule('home')">← Retour</button>
+            <h2>📍 Se localiser</h2>
+            <button type="button" class="loc-menu-btn" id="loc-menu-btn" onclick="Localisation.menu()" aria-label="Plus d'actions" aria-haspopup="true" aria-expanded="false">⋯</button>
+            <div id="loc-menu" class="loc-menu" hidden role="menu">
+                <button type="button" role="menuitem" onclick="Localisation.ouvrirCarte()">🗺️ Ouvrir dans Maps</button>
+                <button type="button" role="menuitem" onclick="Localisation.partager()">📤 Partager</button>
+                <button type="button" role="menuitem" onclick="Localisation.changerFond()" id="loc-fond">🌐 Fond de la mini-carte : Plan IGN</button>
+                <button type="button" role="menuitem" onclick="Localisation.effacer()">🗑️ Effacer</button>
             </div>
         </div>
-        <div class="rd-astuce">Le carreau DFCI est calculé sur le téléphone (Lambert II étendu) : à <strong>contrôler sur la carte</strong>. La recherche d'adresse envoie le texte saisi au service de géocodage de l'IGN, seulement quand vous appuyez sur « Chercher » ou « Adresse la plus proche ».</div>
-        <p class="rd-source">📚 Carroyage DFCI : 100 km (2 lettres), 20 km (2 chiffres pairs), 2 km (lettre + chiffre), zone 1 à 5. Adresses : Géoplateforme de l'IGN (secours : Base Adresse Nationale). Rien n'est enregistré.</p>
+        <div class="loc-saisie">
+            <span class="loc-ligne">
+                <input type="text" id="loc-saisie" placeholder="DFCI, GPS ou adresse" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Carreau DFCI, coordonnées GPS ou adresse">
+                <button type="button" class="loc-ma-position" onclick="Localisation.maPosition()" aria-label="Ma position">📍</button>
+            </span>
+            <p class="loc-aide" id="loc-aide">Un seul champ : carreau DFCI, GPS (DD/DMS/DMD) ou adresse, détecté automatiquement.</p>
+            <button type="button" id="loc-chercher" class="loc-chercher" onclick="Localisation.chercherAdresse()" hidden>🔎 Chercher cette adresse</button>
+            <p id="loc-etat" class="loc-etat" aria-live="polite"></p>
+            <p id="loc-hors-ligne" class="loc-bandeau" hidden>📡 Hors ligne : le DFCI et le GPS restent disponibles. Adresse, météo et fond de carte sont indisponibles.</p>
+            <div id="loc-adresses" class="loc-adresses"></div>
+        </div>
+        <div id="loc-vide" class="loc-vide">
+            <div class="loc-vide-pin" aria-hidden="true">📍</div>
+            <p>Appuyez sur 📍 pour votre position, ou saisissez un point.</p>
+            <div class="loc-exemples" aria-label="Exemples">
+                <button type="button" data-exemple="GD82E1.4">GD82E1.4</button>
+                <button type="button" data-exemple="43.3948, 3.4265">43.3948, 3.4265</button>
+                <button type="button" data-exemple="12 rue de la République, Béziers">12 rue de la République, Béziers</button>
+            </div>
+            <small>Le DFCI et le GPS fonctionnent hors ligne. Seules l'adresse et la météo demandent du réseau.</small>
+            <div id="loc-recents" class="loc-recents" hidden></div>
+        </div>
+        <div id="loc-resultat" class="loc-resultat" hidden>
+            <section class="loc-carte-dfci" aria-label="Carreau DFCI">
+                <small class="loc-titre">Carreau DFCI</small>
+                <div class="loc-dfci" id="loc-r-dfci"></div>
+                <small id="loc-r-sous" class="loc-sous"></small>
+                <button type="button" class="loc-mini" onclick="Localisation.voirCarteDFCI()" aria-label="Ouvrir la carte DFCI">
+                    <span id="loc-mini-carte" class="loc-mini-carte"></span>
+                    <span class="loc-mini-badge">Carte DFCI ⤢</span>
+                </button>
+            </section>
+            <section class="loc-formats" id="loc-r-formats" aria-label="Coordonnées"></section>
+            <details class="loc-bloc" id="loc-meteo-bloc" open>
+                <summary><span>🌤️ Météo au point</span><span class="loc-bloc-etat" id="loc-meteo-etat">…</span></summary>
+                <div id="loc-meteo" class="met-carte" aria-live="polite"></div>
+            </details>
+            <details class="loc-bloc" id="loc-adresse-bloc">
+                <summary><span>🏠 Adresse la plus proche</span></summary>
+                <div id="loc-r-adresse" class="loc-adresse-ligne"><small>Ouvrez pour la chercher (la position est envoyée à l'IGN).</small></div>
+            </details>
+            <p class="loc-controle">⚠ Carreau calculé sur le téléphone : à contrôler sur la carte.</p>
+            <small id="loc-r-precision" class="loc-sous"></small>
+        </div>
+        <div id="loc-barre" class="loc-barre" hidden>
+            <button type="button" onclick="Localisation.voirCarteDFCI()"><span aria-hidden="true">🗺️</span>Carte</button>
+            <button type="button" onclick="Localisation.copier()"><span aria-hidden="true">📋</span>Tout copier</button>
+            <button type="button" class="loc-principal" onclick="Localisation.versAmbiance()"><span aria-hidden="true">📻</span>Vers message d'ambiance</button>
+        </div>
+        <p class="rd-source">📚 Carroyage DFCI : 100 km (2 lettres), 20 km (2 chiffres pairs), 2 km (lettre + chiffre), zone 1 à 5. Adresses : Géoplateforme de l'IGN (secours : Base Adresse Nationale). Les derniers points (5 au maximum) restent seulement sur cet appareil.</p>
     </div>
 
     <div id="carte-dfci" class="module" style="--jsp: #E0313F;">
@@ -32037,7 +32068,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.40</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.41</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
