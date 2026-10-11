@@ -1,6 +1,6 @@
 {
-  "version": "1.50.0",
-  "titre": "Vulcain 1.50.0",
-  "texte": "Nouveau calculateur interactif Wallace : tapez les zones brûlées, la surface cutanée brûlée (SCB) se calcule automatiquement avec alerte de gravité, dans Secours à personne › Brûlures.",
-  "fiche": "suap-wallace-calc"
+  "version": "1.69.43",
+  "titre": "Vulcain 1.69.43 : Se localiser",
+  "texte": "Un seul champ pour votre position : carreau DFCI, GPS ou adresse. Avec la météo au point, la carte DFCI et le vent prévu dans le message d'ambiance FDF.",
+  "fiche": "localisation"
 }
