@@ -2,6 +2,11 @@
 const { test: base, expect } = require('@playwright/test');
 
 const test = base.extend({
+    // Message de bienvenue déjà vu pour tous les tests : il ne masque pas les écrans testés
+    page: async ({ page }, use) => {
+        await page.addInitScript(() => { try { localStorage.setItem('vulcain-bienvenue', '1'); } catch (e) { /* ignoré */ } });
+        await use(page);
+    },
     // Page Vulcain chargée, navigation prête, erreurs JavaScript collectées dans page.erreurs
     app: async ({ page }, use) => {
         page.erreurs = [];
