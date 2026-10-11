@@ -85,8 +85,10 @@ var Localisation = (function () {
         if (sauf !== 'saisie') $('saisie').value = c ? c.code : Geo.formatGPS(point.lat, point.lon);
         $('r-dfci').textContent = c ? c.code : 'Hors carroyage DFCI';
         $('r-sous').textContent = c ? 'Zone ' + c.code.slice(-1) + ' du carreau de 2 km' + (point.commune ? ' · ' + point.commune : '') : 'Le point est hors de la zone couverte par le carroyage DFCI.';
-        $('r-formats').innerHTML = [['dd', 'DD'], ['dms', 'DMS'], ['dmd', 'DMD']].map(function (k) {
-            return '<div class="loc-format"><b>' + k[1] + '</b><code>' + f[k[0]] + '</code><button type="button" data-copie="' + k[0] + '" aria-label="Copier le format ' + k[1] + '">⧉</button></div>';
+        $('r-formats').innerHTML = [['dd', 'DD', 'Degrés décimaux'], ['dms', 'DMS', 'Degrés, minutes, secondes'], ['dmd', 'DMD', 'Degrés, minutes décimales']].map(function (k) {
+            var v = f[k[0]].split(', ');
+            return '<div class="loc-format"><div class="loc-format-texte"><small>' + k[2] + ' · ' + k[1] + '</small><code><i>LAT</i>' + v[0] + '<br><i>LON</i>' + v[1] + '</code></div>' +
+                '<button type="button" data-copie="' + k[0] + '" aria-label="Copier le format ' + k[1] + '"><span aria-hidden="true">⧉</span> Copier</button></div>';
         }).join('');
         $('r-adresse').innerHTML = point.adresse ? echapper(point.adresse) : '<small>Ouvrez pour la chercher (la position est envoyée à l\'IGN).</small>';
         $('r-precision').textContent = point.precision ? 'Précision GPS ± ' + Math.round(point.precision) + ' m' : '';
@@ -240,10 +242,15 @@ var Localisation = (function () {
     function copier() {
         if (point && navigator.clipboard) navigator.clipboard.writeText(texteCopie()).then(function () { notifier('Position copiée !'); });
     }
-    function copierFormat(k) {
+    function copierFormat(k, bouton) {
         if (!point || !navigator.clipboard) return;
         var f = Geo.formats(point.lat, point.lon);
-        navigator.clipboard.writeText(f[k]).then(function () { notifier('Copié : ' + f[k]); });
+        navigator.clipboard.writeText(f[k]).then(function () {
+            notifier('Copié : ' + f[k]);
+            if (!bouton) return;
+            bouton.classList.add('loc-copie-ok'); bouton.textContent = '✓ Copié';
+            setTimeout(function () { bouton.classList.remove('loc-copie-ok'); bouton.innerHTML = '<span aria-hidden="true">⧉</span> Copier'; }, 1500);
+        });
     }
     function partager() {
         fermerMenu();
@@ -289,7 +296,7 @@ var Localisation = (function () {
             var ex = e.target.closest('[data-exemple]');
             if (ex) { $('saisie').value = ex.dataset.exemple; saisir(); return; }
             var cp = e.target.closest('[data-copie]');
-            if (cp) { copierFormat(cp.dataset.copie); return; }
+            if (cp) { copierFormat(cp.dataset.copie, cp); return; }
             var rc = e.target.closest('[data-recent]');
             if (rc) { var r = lireRecents()[Number(rc.dataset.recent)]; if (r) definir(r.lat, r.lon, { commune: r.commune || '' }); return; }
             if (!e.target.closest('.loc-entete')) fermerMenu();

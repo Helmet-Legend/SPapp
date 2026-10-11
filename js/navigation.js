@@ -58,8 +58,8 @@ const Navigation = (function() {
     function icone(nom, classe) {
         return `<svg class="ico${classe ? ' ' + classe : ''}" aria-hidden="true"><use href="#i-${nom}"/></svg>`;
     }
-    function pictoDomaine(d) {
-        return `<span class="nav-picto" style="--c:${d.couleur}">${icone(d.picto || 'info')}</span>`;
+    function pictoDomaine(d, picto) {
+        return `<span class="nav-picto" style="--c:${d.couleur}">${icone(picto || d.picto || 'info')}</span>`;
     }
     // Pastille de couleur d'un sous-menu (ex. couleur de l'année de JSP)
     function pastilleTheme(d, theme) {
@@ -77,7 +77,7 @@ const Navigation = (function() {
         const d = domaine(page.domaine);
         const titre = page.type === 'presentation' ? `Présentation : ${page.theme}` : page.titre;
         return `<button class="nav-row" data-page="${page.id}" style="--c:${d.couleur}">
-            ${pictoDomaine(d)}
+            ${pictoDomaine(d, page.picto)}
             <span class="nav-row-text"><b>${surligner ? surligne(titre, surligner) : esc(titre)}</b>
             <small>${esc(d.titre)}${page.theme ? ' › ' + esc(page.theme) : ''}</small></span>
             ${icone('chev', 'nav-chev')}</button>`;

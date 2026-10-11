@@ -186,7 +186,7 @@ var CarteDFCI = (function () {
         m.classList.toggle('cd-plein');
         var plein = m.classList.contains('cd-plein');
         document.body.classList.toggle('cd-plein-actif', plein);
-        $('plein').textContent = plein ? '✕' : '⤢';
+        $('plein').textContent = plein ? '✕ Quitter le plein écran' : '⤢ Plein écran';
         setTimeout(function () { if (carte) { carte.invalidateSize(); dessiner(); } }, 60);
     }
     function fermerInfo() { $('info').hidden = true; if (marqueur) { carte.removeLayer(marqueur); marqueur = null; } if (cercle) { carte.removeLayer(cercle); cercle = null; } }
