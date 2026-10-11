@@ -3988,6 +3988,29 @@
    ]
   },
   {
+   "id": "localisation",
+   "titre": "Se localiser (DFCI, GPS, adresse)",
+   "domaine": "outils",
+   "theme": "Calculs pratiques",
+   "type": "calculateur",
+   "motsCles": [
+    "localisation",
+    "position",
+    "gps",
+    "dfci",
+    "carreau",
+    "coordonnées",
+    "adresse",
+    "dd",
+    "dms",
+    "dmd",
+    "latitude",
+    "longitude",
+    "où suis-je",
+    "carte"
+   ]
+  },
+  {
    "id": "epuisement",
    "titre": "Calcul Épuisement de Volume",
    "domaine": "outils",
