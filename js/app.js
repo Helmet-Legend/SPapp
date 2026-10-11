@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.69.31 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.69.33 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -67,7 +67,16 @@ function statsVueFiche(moduleName) {
 
 async function initApp() {
     console.log('🚒 Vulcain v' + APP_VERSION + ' - Initialisation...');
-    statsEvenement('ouverture');
+    // Profil d'ouverture, anonyme : application installée ou navigateur, thème, version, nouveau ou déjà venu
+    var dejaVenu = false;
+    try { dejaVenu = !!localStorage.getItem('vulcain-vu'); localStorage.setItem('vulcain-vu', '1'); } catch (e) { /* stockage indisponible */ }
+    var installee = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+    statsEvenement('ouverture', {
+        mode: installee ? 'application' : 'navigateur',
+        theme: document.documentElement.dataset.theme === 'clair' ? 'clair' : 'sombre',
+        version: APP_VERSION,
+        visiteur: dejaVenu ? 'retour' : 'nouveau'
+    });
     try {
         const data = await DataLoader.loadAll();
         tmdDatabase = data.tmd || [];
@@ -160,7 +169,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.69.31';
+var APP_VERSION = '1.69.33';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1285,7 +1294,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.69.31 COMPLET
+// FIN DU FICHIER - Vulcain v1.69.33 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 

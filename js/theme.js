@@ -65,6 +65,7 @@ function ouvrirReglages() {
     const fenetre = document.getElementById('reglagesModal');
     if (!fenetre) return;
     Theme.appliquer();
+    if (typeof AdminAcces !== 'undefined') AdminAcces.majLiensReglages();
     fenetre.hidden = false;
     fenetre.querySelector('[aria-checked="true"]')?.focus();
 }

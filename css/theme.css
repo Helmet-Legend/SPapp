@@ -1064,3 +1064,27 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
 #bienvenueModal .bienvenue-bloc p { margin: 4px 0 0; font-size: .92em; line-height: 1.45; color: var(--t-muted); }
 #bienvenueModal .bienvenue-ok { width: 100%; min-height: 46px; font-weight: 700; }
 #bienvenueModal .bienvenue-liens { display: flex; justify-content: space-between; gap: 12px; }
+.nav-tabbar button[hidden] { display: none; }
+
+/* Tableau de bord administrateur : tuiles, barres, listes */
+.adm-maj { margin: 0 0 10px; font-size: .85em; color: var(--t-muted); text-align: center; }
+.adm-tuiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0 0 15px; grid-column: 1 / -1; }
+.adm-tuile { background: var(--t-s1, #fff); border: 1px solid var(--t-line, #ddd); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 2px; }
+.adm-tuile b { font-size: 1.6em; font-weight: 800; color: var(--t-ink); line-height: 1.1; }
+.adm-tuile span { font-size: .85em; color: var(--t-ink); font-weight: 600; }
+.adm-tuile small { font-size: .78em; color: var(--t-muted); }
+.adm-barres { display: grid; gap: 7px; }
+.adm-barre-ligne { display: grid; grid-template-columns: minmax(70px, 38%) 1fr auto; align-items: center; gap: 8px; font-size: .9em; }
+.adm-barre-lib { color: var(--t-ink); overflow-wrap: anywhere; }
+.adm-barre-piste { height: 10px; background: var(--t-s2, #eee); border-radius: 5px; overflow: hidden; }
+.adm-barre-piste i { display: block; height: 100%; background: light-dark(#2a78d6, #3987e5); border-radius: 5px; }
+.adm-barre-val { font-weight: 700; color: var(--t-ink); white-space: nowrap; }
+.adm-barre-val small { font-weight: 500; color: var(--t-muted); }
+.adm-vide { margin: 4px 0 0; font-size: .9em; color: var(--t-muted); }
+.adm-axe { display: flex; justify-content: space-between; font-size: .75em; color: var(--t-muted); margin-top: 2px; }
+.adm-details summary { cursor: pointer; font-weight: 600; color: var(--t-ink); }
+.adm-liste { margin: 8px 0 0; padding-left: 18px; font-size: .88em; color: var(--t-ink); max-height: 320px; overflow: auto; }
+.adm-liste small { color: var(--t-muted); }
+.adm-lien { margin-top: 6px; }
+#statsCartes { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+#adminDeverrouillage[hidden], .reglages-admin[hidden] { display: none !important; }

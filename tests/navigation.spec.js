@@ -126,6 +126,7 @@ test('la fenêtre À propos s\'ouvre et affiche la version', async ({ app }) => 
 });
 
 test('Réglages : section Notifications et écran d\'envoi administrateur', async ({ app }) => {
+    await app.evaluate(() => localStorage.setItem('vulcain-push-admin', JSON.stringify('cle-de-test')));
     await app.click('#reglagesBtn');
     await expect(app.locator('[data-push-type="nouveautes"]')).toHaveAttribute('aria-checked', 'true');
     await expect(app.locator('[data-push-type="messages"]')).toHaveAttribute('aria-checked', 'true');

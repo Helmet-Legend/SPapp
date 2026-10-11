@@ -146,6 +146,20 @@ const Navigation = (function() {
         return scores.sort((a, b) => b[0] - a[0]).map(s => s[1]);
     }
 
+    // Mots cherchés (anonymes, agrégés côté serveur) : permet de repérer les contenus qui manquent.
+    // Envoyé quand la saisie s'arrête, une seule fois par mot et par session.
+    let minuterieRecherche = null;
+    const recherchesEnvoyees = new Set();
+    function noterRecherche(texte) {
+        clearTimeout(minuterieRecherche);
+        const t = normaliser(texte.trim());
+        if (t.length < 3 || recherchesEnvoyees.has(t)) return;
+        minuterieRecherche = setTimeout(() => {
+            recherchesEnvoyees.add(t);
+            if (typeof statsEvenement === 'function') statsEvenement('recherche', { terme: t, resultats: resultats(texte).length });
+        }, 1500);
+    }
+
     function vueChercher() {
         return `<label class="nav-search" for="navSearchInput">${icone('search')}
             <input id="navSearchInput" type="search" value="${esc(recherche)}" placeholder="Fiche, matériel, produit, n° ONU…" autocomplete="off" enterkeyhint="search"></label>
@@ -176,7 +190,29 @@ const Navigation = (function() {
             : '<div class="nav-empty">Aucun favori. Ouvrez une fiche et touchez ☆ en haut de l\'écran.</div>';
     }
 
-    const VUES = { accueil: vueAccueil, calculs: vueCalculs, chercher: vueChercher, favoris: vueFavoris };
+    // ---------- Onglet Admin : visible seulement si la clé administrateur est mémorisée sur cet appareil ----------
+    // La vraie protection reste côté serveur : chaque écran admin envoie la clé, qui est contrôlée à chaque appel.
+    const CLE_ADMIN = 'vulcain-push-admin';
+    function cleAdminMemorisee() {
+        try { const v = localStorage.getItem(CLE_ADMIN); return !!v && JSON.parse(v) !== ''; } catch (e) { return false; }
+    }
+    function majOngletAdmin() {
+        const b = document.getElementById('navOngletAdmin');
+        if (b) b.hidden = !cleAdminMemorisee();
+    }
+    function vueAdmin() {
+        const rang = (action, picto, titre, detail) => `<button class="nav-row" data-admin="${action}">
+            <span class="nav-picto" style="--c:#6D28D9">${icone(picto)}</span>
+            <span class="nav-row-text"><b>${titre}</b><small>${detail}</small></span>${icone('chev', 'nav-chev')}</button>`;
+        return '<div class="nav-label">Administration · clé mémorisée sur cet appareil</div>'
+            + rang('dashboard', 'sigma', 'Tableau de bord', 'Ouvertures, générations IA, PDF (30 jours)')
+            + rang('messages', 'message', 'Messages reçus', 'Bugs et idées envoyés par les utilisateurs')
+            + rang('notification', 'bell', 'Envoyer une notification', 'Message à tous les appareils abonnés')
+            + '<button class="nav-row nav-admin-verrou" data-admin="verrouiller"><span class="nav-picto" style="--c:#B91C1C">' + icone('close') + '</span>'
+            + '<span class="nav-row-text"><b>Verrouiller</b><small>Efface la clé de cet appareil et masque l\'onglet</small></span></button>';
+    }
+
+    const VUES = { accueil: vueAccueil, calculs: vueCalculs, chercher: vueChercher, favoris: vueFavoris, admin: vueAdmin };
 
     function rendreAccueil(garderFocus) {
         const conteneur = document.getElementById('navHome');
@@ -190,6 +226,7 @@ const Navigation = (function() {
     }
 
     function rendreOnglets() {
+        majOngletAdmin();
         const surAccueil = !!document.getElementById('home')?.classList.contains('active');
         const actif = surAccueil ? ongletActif : ongletOrigine;
         // Fond photo seulement sur l'onglet Accueil de l'écran d'accueil
@@ -332,6 +369,16 @@ const Navigation = (function() {
         if (!b) return;
         if (b.dataset.onglet) { allerOnglet(b.dataset.onglet); }
         else if (b.dataset.favori) { basculerFavori(b.dataset.favori); }
+        else if (b.dataset.admin) {
+            const a = b.dataset.admin;
+            if (a === 'dashboard') ouvrirTableauDeBord();
+            else if (a === 'messages') ouvrirMessagesRecus();
+            else if (a === 'notification') ouvrirEnvoiNotification();
+            else if (a === 'verrouiller') {
+                try { localStorage.removeItem(CLE_ADMIN); } catch (err) { /* stockage indisponible */ }
+                allerOnglet('accueil');
+            }
+        }
         else if (b.dataset.ongletRetour) {
             if (b.dataset.domaineOuvrir && !ouverts[b.dataset.domaineOuvrir]) basculer(b.dataset.domaineOuvrir, cle => !cle.includes('|'));
             allerOnglet(b.dataset.ongletRetour);
@@ -343,6 +390,7 @@ const Navigation = (function() {
         const original = window.showModule;
         window.showModule = function(nom) {
             original(nom);
+            majOngletAdmin();
             if (nom === 'home') {
                 ongletActif = ongletOrigine;
                 rendreAccueil();
@@ -396,6 +444,7 @@ const Navigation = (function() {
             recherche = e.target.value;
             const zone = document.getElementById('navSearchResults');
             if (zone) zone.innerHTML = resultatsChercher();
+            noterRecherche(recherche);
         });
         document.addEventListener('click', surClicGlobal);
         brancherLogo();
@@ -408,7 +457,8 @@ const Navigation = (function() {
 
     document.addEventListener('DOMContentLoaded', init);
     return {
-        allerOnglet, ouvrirPage,
+        allerOnglet, ouvrirPage, majOngletAdmin,
+        pages: () => registre.pages,
         domaines: () => registre.domaines,
         nombrePages: () => registre.pages.length
     };
