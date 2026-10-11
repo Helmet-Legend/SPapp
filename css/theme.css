@@ -1088,3 +1088,23 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
 .adm-lien { margin-top: 6px; }
 #statsCartes { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 #adminDeverrouillage[hidden], .reglages-admin[hidden] { display: none !important; }
+#fdf-ambiance .amb-formats { margin: 8px 0; padding: 8px 10px; border-radius: 10px; background: var(--t-s2); border: 1px solid var(--t-line); font-size: .88em; line-height: 1.5; color: var(--t-ink); }
+#fdf-ambiance .amb-formats[hidden], #fdf-ambiance .amb-carte[hidden] { display: none; }
+#fdf-ambiance .amb-formats b { display: inline-block; min-width: 2.6em; color: var(--t-muted); }
+#fdf-ambiance .amb-carte { width: 100%; margin: 4px 0 8px; }
+
+/* Outil « Se localiser » */
+#localisation .loc-form { display: grid; gap: 12px; }
+#localisation .loc-champ { display: grid; gap: 4px; font-weight: 600; }
+#localisation input[type="text"] { width: 100%; padding: 10px; border-radius: 8px; box-sizing: border-box; font: inherit; }
+#localisation .loc-ligne { display: flex; flex-wrap: wrap; gap: 8px; }
+#localisation .loc-ligne input { flex: 1 1 180px; min-width: 0; }
+#localisation .loc-ma-position { min-height: 52px; font-weight: 800; font-size: 1.05em; }
+#localisation .loc-etat { margin: 0; font-size: .88em; color: var(--t-muted); min-height: 1.2em; }
+#localisation .loc-adresses { display: grid; gap: 6px; }
+#localisation .loc-adresse { text-align: left; padding: 10px; border-radius: 10px; font-weight: 500; }
+#localisation .loc-resultat[hidden] { display: none; }
+#localisation .loc-dfci { font-size: 2em; font-weight: 800; letter-spacing: .02em; color: var(--t-ink); text-align: center; margin-bottom: 6px; }
+#localisation .loc-adresse-ligne { margin: 6px 0; font-size: .9em; color: var(--t-ink); }
+#localisation .loc-adresse-ligne b { color: var(--t-muted); margin-right: 6px; }
+#localisation .loc-actions { display: grid; gap: 8px; margin-top: 10px; }

@@ -85,3 +85,27 @@ test('le calcul du carreau DFCI retrouve les points de référence et fait l\'al
     expect(r.codes).toEqual(['GD82E1.4', 'FE06H1.2', 'KD02L4.5', 'KD08K9.5', 'EF26E5.4']);
     expect(r.retour).toEqual(['GD82E1.5', 'GD82E1.1', 'GD82E1.2', 'GD82E1.3', 'GD82E1.4', 'GD82E1.5']);
 });
+
+test('le GPS se saisit aussi en degrés-minutes-secondes ou minutes décimales, avec les trois écritures', async ({ app }) => {
+    const lus = await app.evaluate(() => [
+        lireGPS('43°23\'50" N 3°26\'32" E'),
+        lireGPS('43° 23,833\' N, 3° 26,5\' E'),
+        lireGPS('48°01\'28" N 3°25\'13" O'),
+        lireGPS('43.3972, 3.4421'),
+    ]);
+    expect(lus[0].lat).toBeCloseTo(43.39722, 4);
+    expect(lus[0].lon).toBeCloseTo(3.44222, 4);
+    expect(lus[1].lat).toBeCloseTo(43.39722, 3);
+    expect(lus[1].lon).toBeCloseTo(3.44167, 3);
+    expect(lus[2].lon).toBeLessThan(0);
+    expect(lus[3].lat).toBeCloseTo(43.3972, 4);
+    await app.evaluate(() => showModule('fdf-ambiance'));
+    await app.fill('#amb-gps', '43°23\'50" N 3°26\'32" E');
+    await expect(app.locator('#amb-dfci')).toHaveValue('GD82E1.3');
+    const formats = app.locator('#amb-formats');
+    await expect(formats).toBeVisible();
+    await expect(formats).toContainText('43° 23\' 50" N');
+    await expect(formats).toContainText('43° 23,833\' N');
+    await expect(app.locator('#amb-carte')).toBeVisible();
+    await expect(app.locator('#amb-apercu')).toContainText('aux coordonnées GPS 43.39722 N, 3.44222 E');
+});
