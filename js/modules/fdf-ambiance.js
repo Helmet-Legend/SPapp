@@ -83,6 +83,11 @@
         if (carte) carte.hidden = !g;
     }
 
+    window.voirCarteDFCIAmbiance = function () {
+        var g = lireGPS(val('gps'));
+        if (g && typeof CarteDFCI !== 'undefined') CarteDFCI.voir(g.lat, g.lon);
+    };
+
     window.ouvrirCarteAmbianceFDF = function () {
         var g = lireGPS(val('gps'));
         if (!g) return;

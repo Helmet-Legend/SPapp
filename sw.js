@@ -1,5 +1,5 @@
-// Vulcain Service Worker v1.69.35
-const CACHE_NAME = 'vulcain-v1.69.35';
+// Vulcain Service Worker v1.69.38
+const CACHE_NAME = 'vulcain-v1.69.38';
 const urlsToCache = [
   './',
   './index.html',
@@ -26,9 +26,12 @@ const urlsToCache = [
   './js/modules/rdeb.js',
   './js/modules/pertes-rapide.js',
   './js/modules/wallace.js',
+  './vendor/leaflet/leaflet.js',
+  './vendor/leaflet/leaflet.css',
   './js/modules/geo-dfci.js',
   './js/modules/fdf-ambiance.js',
   './js/modules/localisation.js',
+  './js/modules/carte-dfci.js',
   './images/accueil/accueil-nuit.webp',
   './images/accueil/accueil-jour.webp',
   './images/rdlspcc/abordage-schemas.jpg',

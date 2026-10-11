@@ -131,6 +131,7 @@ var Geo = (function () {
 
     return {
         carreauDFCI: carreauDFCI, dfciVersGPS: dfciVersGPS, lireDFCI: lireDFCI, formatDFCI: formatDFCI,
-        lireGPS: lireGPS, formatGPS: formatGPS, formats: formats
+        lireGPS: lireGPS, formatGPS: formatGPS, formats: formats,
+        lambert2eVersWgs84: lambert2eVersWgs84, wgs84VersLambert2e: wgs84VersLambert2e
     };
 })();

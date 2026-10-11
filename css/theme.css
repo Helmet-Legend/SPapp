@@ -1108,3 +1108,47 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
 #localisation .loc-adresse-ligne { margin: 6px 0; font-size: .9em; color: var(--t-ink); }
 #localisation .loc-adresse-ligne b { color: var(--t-muted); margin-right: 6px; }
 #localisation .loc-actions { display: grid; gap: 8px; margin-top: 10px; }
+
+/* Carte DFCI */
+#carte-dfci .cd-barre { display: flex; gap: 8px; margin: 8px 0; }
+#carte-dfci .cd-recherche { flex: 1; display: flex; gap: 6px; min-width: 0; }
+#carte-dfci .cd-recherche input { flex: 1; min-width: 0; padding: 10px; border-radius: 8px; font: inherit; box-sizing: border-box; }
+#carte-dfci .cd-barre button { min-width: 48px; min-height: 44px; }
+#carte-dfci .cd-fonds { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 6px; }
+#carte-dfci .cd-fonds button { min-height: 36px; padding: 4px 12px; border-radius: 999px; font-size: .85em; }
+#carte-dfci .cd-fonds button[aria-pressed="true"] { background: var(--t-accent); color: #fff; border-color: transparent; }
+#carte-dfci .cd-niveau { margin-left: auto; font-size: .8em; color: var(--t-muted); }
+#carte-dfci .cd-etat, #carte-dfci .cd-alerte { margin: 4px 0; font-size: .85em; color: var(--t-muted); min-height: 0; }
+#carte-dfci .cd-alerte { color: var(--t-ink); background: var(--t-s2); border: 1px solid var(--t-line); border-radius: 8px; padding: 6px 10px; }
+#carte-dfci .cd-alerte[hidden], #carte-dfci .cd-info[hidden] { display: none; }
+#carte-dfci .cd-conteneur { position: relative; }
+#carte-dfci .cd-carte { height: calc(100vh - 300px); height: calc(100dvh - 300px); min-height: 320px; border-radius: 12px; overflow: hidden; border: 1px solid var(--t-line); background: light-dark(#e8edf2, #1b2027); z-index: 0; }
+#carte-dfci .cd-info { position: absolute; left: 8px; right: 8px; bottom: 8px; z-index: 1000; background: var(--t-s1); color: var(--t-ink); border: 1px solid var(--t-line); border-radius: 14px; padding: 12px; box-shadow: 0 6px 24px rgba(0,0,0,.35); }
+#carte-dfci .cd-dfci { font-size: 1.8em; font-weight: 800; text-align: center; letter-spacing: .02em; }
+#carte-dfci .cd-fermer { position: absolute; top: 6px; right: 6px; min-width: 36px; min-height: 36px; border-radius: 50%; }
+#carte-dfci .cd-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+#carte-dfci .cd-actions button { min-height: 40px; font-size: .85em; }
+.cd-etiquette { pointer-events: none; }
+.cd-etiquette span { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; font-weight: 800; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 5px #fff; color: #1b1b1b; }
+.cd-etiquette.cd-n-100km span { font-size: 26px; color: #B3202D; }
+.cd-etiquette.cd-n-20km span { font-size: 20px; color: #B45309; }
+.cd-etiquette.cd-n-2km span { font-size: 15px; color: #0C5A8A; }
+.cd-etiquette.cd-zone span { font-size: 15px; opacity: .85; }
+#carte-dfci .cd-dd { text-align: center; font-size: .95em; margin-bottom: 2px; }
+#carte-dfci .cd-ecritures { font-size: .85em; margin: 2px 0; }
+#carte-dfci .cd-ecritures summary { cursor: pointer; color: var(--t-muted); }
+#carte-dfci .cd-dfci { font-size: 1.6em; }
+#carte-dfci .cd-info { padding: 8px 10px; }
+#carte-dfci .cd-actions { grid-template-columns: repeat(4, 1fr); gap: 4px; }
+#carte-dfci .cd-actions button { min-height: 38px; font-size: .75em; padding: 2px 4px; line-height: 1.15; }
+#carte-dfci .cd-carte { height: calc(100dvh - 275px); }
+/* Plein écran */
+body.cd-plein-actif .app-header, body.cd-plein-actif .app-stripe, body.cd-plein-actif .nav-tabbar, body.cd-plein-actif .nav-crumbs, body.cd-plein-actif footer { display: none !important; }
+#carte-dfci.cd-plein { position: fixed; inset: 0; z-index: 9500; background: var(--t-bg, var(--t-s1)); padding: 8px; overflow: hidden; margin: 0; max-width: none; display: block; }
+#carte-dfci.cd-plein > h2, #carte-dfci.cd-plein > .rd-source, #carte-dfci.cd-plein > .back-btn, #carte-dfci.cd-plein .nav-crumbs { display: none; }
+#carte-dfci.cd-plein .cd-carte { height: calc(100dvh - 118px); }
+#carte-dfci .cd-fonds button { background: var(--t-s2); color: var(--t-ink); border: 1px solid var(--t-line); }
+#carte-dfci .cd-fonds button[aria-pressed="true"] { background: var(--t-accent); color: #fff; border-color: transparent; }
+#carte-dfci .cd-actions button { font-size: .8em; white-space: nowrap; }
+#carte-dfci.cd-plein .cd-carte { height: calc(100dvh - 200px); }
+#carte-dfci .cd-info small { display: block; text-align: center; margin: 0 0 4px; }

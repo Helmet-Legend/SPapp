@@ -4011,6 +4011,25 @@
    ]
   },
   {
+   "id": "carte-dfci",
+   "titre": "Carte DFCI (grille et carreaux)",
+   "domaine": "outils",
+   "theme": "Calculs pratiques",
+   "type": "calculateur",
+   "motsCles": [
+    "carte",
+    "dfci",
+    "carroyage",
+    "carreau",
+    "grille",
+    "plan ign",
+    "photo aérienne",
+    "localisation",
+    "gps",
+    "zone"
+   ]
+  },
+  {
    "id": "epuisement",
    "titre": "Calcul Épuisement de Volume",
    "domaine": "outils",
