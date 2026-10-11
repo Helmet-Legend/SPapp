@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.30">
+    <meta name="version" content="1.69.31">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -119,6 +119,34 @@
             <button class="reglages-lien" onclick="ouvrirEnvoiNotification()">Envoyer une notification (administrateur)</button>
             <button class="reglages-lien" onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien" onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
+            <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
+        </div>
+    </div>
+
+    <!-- Message de bienvenue (une seule fois, puis « Revoir » dans Réglages) -->
+    <div id="bienvenueModal" class="reglages-modal" hidden>
+        <div class="reglages-panel" role="dialog" aria-modal="true" aria-labelledby="bienvenueTitre">
+            <div class="reglages-tete">
+                <h2 id="bienvenueTitre">Bienvenue sur Vulcain</h2>
+                <button class="app-header-btn" onclick="fermerBienvenue()" aria-label="Fermer"><svg class="ico"><use href="#i-close"/></svg></button>
+            </div>
+            <div class="bienvenue-bloc">
+                <b>🌗 Thème clair ou sombre</b>
+                <p>Choisissez l'apparence qui vous convient (clair en journée, sombre de nuit, ou automatique) dans les <b>Réglages</b> ⚙, rubrique « Apparence ».</p>
+            </div>
+            <div class="bienvenue-bloc">
+                <b>✉️ Une erreur, une idée ?</b>
+                <p>Un formulaire de contact est disponible dans <b>À propos</b> ⓘ : signalez un bug ou écrivez-nous directement.</p>
+            </div>
+            <div class="bienvenue-bloc">
+                <b>💬 Votre avis compte</b>
+                <p>Dites-nous ce que vous pensez de l'<b>ergonomie</b>, du <b>contenu</b> des fiches, et quels <b>dossiers</b> vous aimeriez voir ajoutés. L'app s'améliore grâce à vos retours.</p>
+            </div>
+            <button class="bienvenue-ok" onclick="fermerBienvenue()">J'ai compris</button>
+            <div class="bienvenue-liens">
+                <button class="reglages-lien" onclick="fermerBienvenue(); ouvrirReglages()">Choisir mon thème</button>
+                <button class="reglages-lien" onclick="fermerBienvenue(); toggleAbout()">Écrire à l'équipe</button>
+            </div>
         </div>
     </div>
 
@@ -240,7 +268,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.30</span><br>
+                        Vulcain v<span class="app-version">1.69.31</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -31925,7 +31953,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.30</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.31</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.69.30 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.69.31 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -160,7 +160,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.69.30';
+var APP_VERSION = '1.69.31';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1285,7 +1285,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.69.30 COMPLET
+// FIN DU FICHIER - Vulcain v1.69.31 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
@@ -1515,3 +1515,29 @@ console.log('✅ Module Secours Routier (showSRSection) chargé');
     });
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') fermerZoom(); });
 })();
+
+// ==================== MESSAGE DE BIENVENUE ====================
+// Affiché une seule fois par version du message (changer BIENVENUE_ID pour le réafficher à tous).
+var BIENVENUE_ID = '1';
+
+function ouvrirBienvenue() {
+    var fenetre = document.getElementById('bienvenueModal');
+    if (!fenetre) return;
+    fenetre.hidden = false;
+    var ok = fenetre.querySelector('.bienvenue-ok');
+    if (ok) ok.focus();
+}
+
+function fermerBienvenue() {
+    var fenetre = document.getElementById('bienvenueModal');
+    if (fenetre) fenetre.hidden = true;
+    try { localStorage.setItem('vulcain-bienvenue', BIENVENUE_ID); } catch (e) { /* stockage indisponible : le message reviendra */ }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var vu = null;
+    try { vu = localStorage.getItem('vulcain-bienvenue'); } catch (e) { vu = null; }
+    if (vu !== BIENVENUE_ID) setTimeout(ouvrirBienvenue, 700);
+    var fenetre = document.getElementById('bienvenueModal');
+    if (fenetre) fenetre.addEventListener('click', function(e) { if (e.target === fenetre) fermerBienvenue(); });
+});

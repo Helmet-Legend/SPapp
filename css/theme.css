@@ -1058,3 +1058,9 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
 #fdf-ambiance .amb-cases label { display: flex; align-items: center; gap: 6px; font-weight: 500; }
 #fdf-ambiance small { display: block; margin-top: 4px; opacity: .8; }
 #fdf-ambiance .amb-apercu { white-space: pre-wrap; word-break: break-word; font: inherit; line-height: 1.5; padding: 14px; border-radius: 10px; border: 1px solid var(--t-line, #8884); background: var(--t-s2, transparent); }
+
+/* Message de bienvenue */
+#bienvenueModal .bienvenue-bloc { background: var(--t-s2); border: 1px solid var(--t-line); border-radius: 12px; padding: 10px 12px; }
+#bienvenueModal .bienvenue-bloc p { margin: 4px 0 0; font-size: .92em; line-height: 1.45; color: var(--t-muted); }
+#bienvenueModal .bienvenue-ok { width: 100%; min-height: 46px; font-weight: 700; }
+#bienvenueModal .bienvenue-liens { display: flex; justify-content: space-between; gap: 12px; }
