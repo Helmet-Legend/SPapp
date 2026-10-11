@@ -14,6 +14,12 @@ test('l\'outil est dans la liste des calculateurs et s\'ouvre', async ({ app }) 
     await expect(app.locator('#loc-barre')).toBeHidden();
 });
 
+test('dans la liste des calculs : boussole pour « Se localiser », carte pour « Carte DFCI »', async ({ app }) => {
+    await app.click('[data-onglet="calculs"]');
+    await expect(app.locator('#navHome [data-page="localisation"] .nav-picto use')).toHaveAttribute('href', '#i-compass');
+    await expect(app.locator('#navHome [data-page="carte-dfci"] .nav-picto use')).toHaveAttribute('href', '#i-map');
+});
+
 test('champ unique : un GPS (DMS) donne le DFCI et les trois écritures, et inversement', async ({ app }) => {
     await ouvrir(app);
     await app.fill('#loc-saisie', '43°23\'50" N 3°26\'32" E');
@@ -23,7 +29,8 @@ test('champ unique : un GPS (DMS) donne le DFCI et les trois écritures, et inve
     await expect(app.locator('#loc-vide')).toBeHidden();
     await app.fill('#loc-saisie', 'hd02d1.2');
     await expect(app.locator('#loc-r-dfci')).toHaveText('HD02D1.2');
-    await expect(app.locator('#loc-r-formats')).toContainText(/43\.40\d+° N, 3\.66\d+° E/);
+    await expect(app.locator("#loc-r-formats")).toContainText(/43\.40\d+° N/);
+    await expect(app.locator("#loc-r-formats")).toContainText(/3\.66\d+° E/);
 });
 
 test('saisie invalide : message clair, bordure rouge, aucun résultat', async ({ app }) => {
@@ -85,7 +92,11 @@ test('copie par format, copie de tout et exemples cliquables', async ({ app }) =
     await ouvrir(app);
     await app.click('[data-exemple="GD82E1.4"]');
     await expect(app.locator('#loc-r-dfci')).toHaveText('GD82E1.4');
+    await expect(app.locator('#loc-r-formats')).toContainText('Degrés, minutes décimales · DMD');
+    await expect(app.locator('#loc-r-formats')).toContainText('LAT');
+    await expect(app.locator('[data-copie="dms"]')).toHaveText('⧉ Copier');
     await app.click('[data-copie="dms"]');
+    await expect(app.locator('[data-copie="dms"]')).toHaveText('✓ Copié');
     expect(await app.evaluate(() => navigator.clipboard.readText())).toMatch(/^43° \d+' \d+" N, 3° \d+' \d+" E$/);
     await app.click('#loc-barre >> text=Tout copier');
     const t = await app.evaluate(() => navigator.clipboard.readText());

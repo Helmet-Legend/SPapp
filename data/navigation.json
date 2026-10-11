@@ -3989,6 +3989,7 @@
   },
   {
    "id": "localisation",
+   "picto": "compass",
    "titre": "Se localiser (DFCI, GPS, adresse)",
    "domaine": "outils",
    "theme": "Calculs pratiques",
@@ -4012,6 +4013,7 @@
   },
   {
    "id": "carte-dfci",
+   "picto": "map",
    "titre": "Carte DFCI (grille et carreaux)",
    "domaine": "outils",
    "theme": "Calculs pratiques",

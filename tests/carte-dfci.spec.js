@@ -83,8 +83,11 @@ test('sans réseau : la grille reste là et un message prévient pour le fond', 
 test('plein écran : la carte occupe l\'écran, on peut en sortir', async ({ app }) => {
     await ouvrir(app);
     const avant = await app.locator('#cd-carte').boundingBox();
+    await expect(app.locator('#cd-plein')).toHaveText('⤢ Plein écran');
+    await expect(app.locator('#carte-dfci .cd-loc')).toHaveText('📍 Ma position');
     await app.click('#cd-plein');
     await expect(app.locator('#carte-dfci.cd-plein')).toBeVisible();
+    await expect(app.locator('#cd-plein')).toContainText('Quitter');
     const plein = await app.locator('#cd-carte').boundingBox();
     expect(plein.height).toBeGreaterThan(avant.height);
     await app.click('#cd-plein');
