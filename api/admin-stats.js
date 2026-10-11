@@ -2,7 +2,9 @@
 // GET, Authorization: Bearer <PUSH_ADMIN_KEY> — réservé à l'administrateur
 // (même clé que les notifications push, pour ne pas multiplier les secrets).
 //
-// Renvoie, pour chaque type d'événement, les 30 derniers jours { jour, total }.
+// Renvoie : pour chaque type d'événement, les 30 derniers jours { jour, total } ; les vues par fiche ;
+// le profil d'ouverture (mode, thème, versions, nouveaux/retours, heures) ; les recherches (fréquentes
+// et sans résultat) ; le nombre d'abonnés aux notifications et de messages reçus. Aucune donnée personnelle.
 
 import crypto from 'crypto';
 import { origineAutorisee, redis } from './_push-commun.js';
@@ -13,7 +15,18 @@ const CLE_ADMIN = process.env.PUSH_ADMIN_KEY || '';
 const TYPES = ['ouverture', 'generation', 'pdf'];
 const JOURS = 30;
 const CLE_VUES = 'vulcain:stats:vues';
-const TOP_FICHES = 10;
+const TOP_FICHES = 40;
+const CLE_RECHERCHES = 'vulcain:stats:recherches';
+const CLE_RECHERCHES_VIDES = 'vulcain:stats:recherches-vides';
+const CLE_ABONNEMENTS = 'vulcain:push:abonnements';
+const CLE_MESSAGES = 'vulcain:contact:messages';
+const TOP_RECHERCHES = 25;
+
+function paires(brut) {
+    const r = [];
+    for (let i = 0; brut && i < brut.length; i += 2) r.push([brut[i], Number(brut[i + 1]) || 0]);
+    return r;
+}
 
 function cleValide(fournie) {
     if (!CLE_ADMIN || typeof fournie !== 'string') return false;
@@ -59,15 +72,41 @@ export default async function handler(req, res) {
             resultat[type] = { serie, total: serie.reduce((s, p) => s + p.total, 0) };
         });
 
-        let topFiches = [];
+        let topFiches = [], vues = {};
         try {
             const [brutVues] = await redis([['HGETALL', CLE_VUES]]);
-            const paires = [];
-            for (let i = 0; brutVues && i < brutVues.length; i += 2) paires.push({ fiche: brutVues[i], vues: Number(brutVues[i + 1]) || 0 });
-            topFiches = paires.sort((a, b) => b.vues - a.vues).slice(0, TOP_FICHES);
+            const liste = paires(brutVues).map(([fiche, n]) => ({ fiche, vues: n }));
+            liste.forEach(f => { vues[f.fiche] = f.vues; });
+            topFiches = liste.sort((a, b) => b.vues - a.vues).slice(0, TOP_FICHES);
         } catch (e) { /* popularité indisponible : on renvoie quand même le reste */ }
 
-        return res.status(200).json({ ok: true, jours: JOURS, stats: resultat, topFiches });
+        // Profil d'ouverture sur 30 jours, recherches, abonnés, messages : chaque bloc est facultatif
+        const profil = { mode: {}, theme: {}, version: {}, visiteur: {}, heure: Array(24).fill(0) };
+        let recherches = [], recherchesVides = [], abonnes = null, messages = null;
+        try {
+            const resultats = await redis([
+                ...jours.map(jour => ['HGETALL', `vulcain:stats:profil:${jour}`]),
+                ['HGETALL', CLE_RECHERCHES], ['HGETALL', CLE_RECHERCHES_VIDES],
+                ['HGETALL', CLE_ABONNEMENTS], ['LLEN', CLE_MESSAGES]
+            ]);
+            jours.forEach((jour, i) => paires(resultats[i]).forEach(([champ, n]) => {
+                const [genre, valeur] = champ.split(':');
+                if (genre === 'heure') profil.heure[Number(valeur)] = (profil.heure[Number(valeur)] || 0) + n;
+                else if (profil[genre]) profil[genre][valeur] = (profil[genre][valeur] || 0) + n;
+            }));
+            const top = brut => paires(brut).sort((a, b) => b[1] - a[1]).slice(0, TOP_RECHERCHES).map(([terme, n]) => ({ terme, n }));
+            recherches = top(resultats[jours.length]);
+            recherchesVides = top(resultats[jours.length + 1]);
+            const ab = { total: 0, nouveautes: 0, messages: 0, contact: 0 };
+            paires(resultats[jours.length + 2]).forEach(([, valeur]) => {
+                ab.total++;
+                try { (JSON.parse(valeur).types || []).forEach(t => { if (t in ab) ab[t]++; }); } catch (e) { /* ignoré */ }
+            });
+            abonnes = ab;
+            messages = Number(resultats[jours.length + 3]) || 0;
+        } catch (e) { /* le reste des statistiques reste disponible */ }
+
+        return res.status(200).json({ ok: true, jours: JOURS, genere: new Date().toISOString(), stats: resultat, topFiches, vues, profil, recherches, recherchesVides, abonnes, messages });
     } catch (e) {
         return res.status(502).json({ erreur: 'Lecture impossible' });
     }
