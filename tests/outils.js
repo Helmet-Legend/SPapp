@@ -2,6 +2,11 @@
 const { test: base, expect } = require('@playwright/test');
 
 const test = base.extend({
+    // Message de bienvenue déjà vu pour tous les tests : il ne masque pas les écrans testés
+    page: async ({ page }, use) => {
+        await page.addInitScript(() => { try { localStorage.setItem('vulcain-bienvenue', '1'); } catch (e) { /* ignoré */ } });
+        await use(page);
+    },
     // Page Vulcain chargée, navigation prête, erreurs JavaScript collectées dans page.erreurs
     app: async ({ page }, use) => {
         page.erreurs = [];
@@ -12,8 +17,6 @@ const test = base.extend({
         page.on('dialog', d => d.accept());
         // Pas d'Internet pendant les tests : CDN, polices… sont coupés pour des résultats stables
         await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
-        // Message de bienvenue déjà vu : il ne masque pas les écrans testés
-        await page.addInitScript(() => { try { localStorage.setItem('vulcain-bienvenue', '1'); } catch (e) { /* ignoré */ } });
         await page.goto('/index.html');
         await expect(page.locator('#navHome .nav-acc').first()).toBeVisible();
         await use(page);
