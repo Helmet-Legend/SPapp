@@ -9,7 +9,7 @@
 const Theme = (function() {
     const CLE = 'deciops.theme';   // clé gardée de l'ancien nom : les préférences restent
     const PAR_DEFAUT = 'sombre';
-    const COULEUR_BARRE = { clair: '#F3F4F6', sombre: '#0D0E10' };
+    const COULEUR_BARRE = { clair: '#F3F4F6', sombre: '#080E15' };
     const sombreSysteme = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 
     function lirePreference() {
