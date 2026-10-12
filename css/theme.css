@@ -1496,3 +1496,5 @@ html[data-theme] .rd-tuiles:not(.jsp-annees) button::after { content: "›"; pos
 html[data-theme] .rd-tuiles button b { font-size: 1.05em; }
 .nav-crumbs nav button { flex: none; overflow: visible; }
 .nav-crumbs nav span:not([aria-hidden]) { flex: 1 1 0; }
+/* Titres qui ont leur propre couleur (Mousses, SUAP…) : le liseré de gauche reprend cette couleur */
+html[data-theme] .module > h2[style*="border-bottom"] { border-left-color: currentColor; }
