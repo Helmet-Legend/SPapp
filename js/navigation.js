@@ -73,6 +73,8 @@ const Navigation = (function() {
         const t = TYPES[type] || TYPES.fiche;
         return `<span class="nav-type ${t.classe}">${t.court}</span>`;
     }
+    // Pastille de type affichée à droite des lignes de recherche, de favoris et de récents
+    const LIBELLE_TYPE = { calculateur: 'CALCUL', fiche: 'FICHE', ordre: 'ORDRE', presentation: 'INFO' };
     function ligne(page, surligner) {
         const d = domaine(page.domaine);
         const titre = page.type === 'presentation' ? `Présentation : ${page.theme}` : page.titre;
@@ -80,7 +82,7 @@ const Navigation = (function() {
             ${pictoDomaine(d, page.picto)}
             <span class="nav-row-text"><b>${surligner ? surligne(titre, surligner) : esc(titre)}</b>
             <small>${esc(d.titre)}${page.theme ? ' › ' + esc(page.theme) : ''}</small></span>
-            ${icone('chev', 'nav-chev')}</button>`;
+            <span class="nav-tag">${LIBELLE_TYPE[page.type] || 'FICHE'}</span></button>`;
     }
     function surligne(texte, q) {
         const i = normaliser(texte).indexOf(normaliser(q.trim()));
@@ -222,8 +224,9 @@ const Navigation = (function() {
         }, 1500);
     }
 
+    const SUGGESTIONS = ['TMD', 'GPS', 'ARI', 'Plongée', 'Mousse', 'Gaz', 'Échelle'];
     function vueChercher() {
-        return `<label class="nav-search" for="navSearchInput">${icone('search')}
+        return `<div class="vue-titre"><h3>Rechercher</h3></div><label class="nav-search" for="navSearchInput">${icone('search')}
             <input id="navSearchInput" type="search" value="${esc(recherche)}" placeholder="Fiche, matériel, produit, n° ONU…" autocomplete="off" enterkeyhint="search"></label>
             <div id="navSearchResults">${resultatsChercher()}</div>`;
     }
@@ -232,9 +235,10 @@ const Navigation = (function() {
         const q = recherche.trim();
         if (q.length < 2) {
             const rec = recents();
-            return rec.length
-                ? '<div class="nav-label">Consultés récemment</div>' + rec.map(id => ligne(parId[id])).join('')
-                : '<div class="nav-empty">Tapez au moins deux lettres : nom de fiche, matériel, produit ou numéro ONU.</div>';
+            return '<div class="nav-label nav-sect"><i></i>Suggestions</div><div class="nav-suggest">'
+                + SUGGESTIONS.map(t => `<button type="button" data-suggest="${esc(t)}">${esc(t)}</button>`).join('') + '</div>'
+                + '<div class="nav-aide">Tapez au moins deux lettres : nom de fiche, matériel, produit ou numéro ONU.</div>'
+                + (rec.length ? '<div class="nav-label nav-sect"><i></i>Consultés récemment<span>' + rec.length + '</span></div>' + rec.map(id => ligne(parId[id])).join('') : '');
         }
         const res = resultats(q);
         const risques = domaine('risques');
@@ -247,9 +251,12 @@ const Navigation = (function() {
 
     function vueFavoris() {
         const fav = favoris();
-        return fav.length
-            ? '<div class="nav-label">Vos favoris</div>' + fav.map(id => ligne(parId[id])).join('')
-            : '<div class="nav-empty">Aucun favori. Ouvrez une fiche et touchez ☆ en haut de l\'écran.</div>';
+        if (!fav.length) {
+            return `<div class="vue-titre"><h3>Favoris</h3></div><div class="nav-vide"><div class="nav-vide-etoile">${icone('star')}</div>
+                <b>Aucun favori</b><p>Ouvrez une fiche ou un calcul et touchez l'étoile en haut de l'écran : il apparaîtra ici.</p>
+                <button type="button" class="nav-vide-btn" data-onglet="calculs">Voir les calculs</button></div>`;
+        }
+        return `<div class="vue-titre"><h3>Favoris</h3><span class="nav-nb">${fav.length}</span></div>` + fav.map(id => ligne(parId[id])).join('');
     }
 
     // ---------- Onglet Admin : visible seulement si la clé administrateur est mémorisée sur cet appareil ----------
@@ -395,7 +402,15 @@ const Navigation = (function() {
         const b = e.target.closest('button');
         if (!b) return;
         const d = b.dataset;
-        if (d.fam) { filtreFamille = d.fam; rendreAccueil(); }
+        if (d.suggest) {
+            recherche = d.suggest;
+            const champ = document.getElementById('navSearchInput');
+            const zone = document.getElementById('navSearchResults');
+            if (champ) { champ.value = recherche; champ.focus(); }
+            if (zone) zone.innerHTML = resultatsChercher();
+            noterRecherche(recherche);
+        }
+        else if (d.fam) { filtreFamille = d.fam; rendreAccueil(); }
         else if (d.page) { ouvrirPage(d.page); }
         else if (d.tmd) { chercherTMD(d.tmd); }
         else if (d.domaine) {
