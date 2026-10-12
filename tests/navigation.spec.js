@@ -66,7 +66,9 @@ test('chaque fiche du registre s\'ouvre depuis les menus @long', async ({ app })
 test('onglet Calculs : tous les calculateurs', async ({ app }) => {
     await app.click('[data-onglet="calculs"]');
     const attendus = registre.pages.filter(p => p.type === 'calculateur').length;
-    await expect(app.locator('#navHome .nav-row')).toHaveCount(attendus);
+    // « Tous » : les 4 outils de Terrain en tuiles, puis les autres en cartes : chaque calcul apparaît une fois
+    await expect(app.locator('#navHome .calc-tuile, #navHome .calc-carte')).toHaveCount(attendus);
+    await expect(app.locator('#navHome .calc-titre span')).toHaveText(attendus + ' outils');
 });
 
 test('recherche par titre, mot-clé et texte de la fiche', async ({ app }) => {

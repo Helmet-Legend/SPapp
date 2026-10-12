@@ -1301,3 +1301,65 @@ body.cd-plein-actif .app-header, body.cd-plein-actif .app-stripe, body.cd-plein-
 #fdf-ambiance .amb-vent-prevu { width: 100%; margin: 6px 0 2px; }
 #fdf-ambiance .amb-vent-note { display: block; margin: 0 0 8px; color: var(--t-muted); }
 .met-table th { background: transparent; color: var(--t-muted); font-weight: 600; border-bottom: 1px solid var(--t-line); }
+
+/* ---------- Onglet Calculs (kit UI Vulcain 34) : Terrain en tête, familles, cartes avec photo ---------- */
+.calc-vue, .acces-rapide, .nav-home .acces-btn { --f-inc: #D61F38; --f-fdf: #15803D; --f-risk: #B45309; --f-suap: #0E7C86; --f-spe: #1565C0; --f-out: #5B6676; }
+html[data-theme="sombre"] .calc-vue, html[data-theme="sombre"] .acces-rapide, html[data-theme="sombre"] .acces-btn { --f-inc: #FF3048; --f-fdf: #22C55E; --f-risk: #F59E0B; --f-suap: #18C7C2; --f-spe: #168BFF; --f-out: #AAB4C4; }
+.fam-inc { --k: var(--f-inc); } .fam-fdf { --k: var(--f-fdf); } .fam-risk { --k: var(--f-risk); }
+.fam-suap { --k: var(--f-suap); } .fam-spe { --k: var(--f-spe); } .fam-out { --k: var(--f-out); }
+.calc-titre { display: flex; align-items: center; gap: 8px; margin: 8px 2px 10px; }
+.calc-titre i { width: 4px; height: 20px; border-radius: 2px; background: var(--t-accent); }
+.calc-titre h3 { margin: 0; font-size: 1.15em; letter-spacing: .06em; text-transform: uppercase; }
+.calc-titre span { margin-left: auto; font-size: .72em; letter-spacing: .14em; text-transform: uppercase; color: var(--t-muted); }
+.calc-rech { display: flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 12px; margin-bottom: 10px; border-radius: 14px; background: var(--t-s1); border: 1px solid var(--t-line); color: var(--t-ink); }
+.calc-rech:focus-within { border-color: var(--t-accent); }
+.calc-rech .ico { width: 20px; height: 20px; flex: none; }
+.calc-rech input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--t-ink); font: inherit; font-size: 16px; padding: 11px 0; outline: none; }
+.calc-label { display: block; margin: 6px 2px; font-size: .72em; letter-spacing: .1em; text-transform: uppercase; color: var(--t-muted); }
+.calc-recents { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+.nav-home .calc-recents button { display: flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 12px 0 9px; border-radius: 999px; background: var(--t-s1); color: var(--t-ink); border: 1px solid var(--t-line); font-size: .85em; font-weight: 700; box-shadow: none; }
+.calc-recents .ico { width: 18px; height: 18px; }
+.calc-sec { display: flex; align-items: center; gap: 8px; margin: 16px 2px 8px; font-size: .75em; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--t-muted); }
+.calc-sec i { flex: 1; height: 1px; background: var(--t-line); }
+.calc-sec b { padding: 1px 9px; border-radius: 999px; background: var(--t-s2); color: var(--t-ink); font-size: .95em; }
+.nav-home .calc-filtres { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 4px; scrollbar-width: none; }
+.nav-home .calc-filtres::-webkit-scrollbar { display: none; }
+.nav-home .calc-filtre { flex: none; display: flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 14px; border-radius: 999px; background: var(--t-s1); color: var(--t-ink); border: 1px solid var(--t-line); font-weight: 700; font-size: .85em; box-shadow: none; }
+.nav-home .calc-filtre i { width: 9px; height: 9px; border-radius: 50%; background: var(--k); }
+.nav-home .calc-filtre[aria-pressed="true"] { background: var(--t-ink); color: var(--t-page, var(--t-s1)); border-color: var(--t-ink); }
+.nav-home .calc-carte, .nav-home .calc-tuile { position: relative; display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; overflow: hidden; background: var(--t-s1); color: var(--t-ink); border: 1px solid var(--t-line); font: inherit; box-shadow: none; }
+.nav-home .calc-carte::before, .nav-home .calc-tuile::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--k, var(--t-muted)); }
+.calc-photo { position: absolute; right: 0; top: 0; bottom: 0; width: 40%; background-size: cover; background-position: center; opacity: .95; pointer-events: none; -webkit-mask-image: linear-gradient(90deg, transparent 10%, #000 70%); mask-image: linear-gradient(90deg, transparent 10%, #000 70%); }
+.calc-ic { position: relative; z-index: 1; flex: none; display: grid; place-items: center; border-radius: 14px; color: var(--k, var(--t-muted)); background: color-mix(in srgb, var(--k, var(--t-muted)) 14%, var(--t-s1)); border: 1px solid color-mix(in srgb, var(--k, var(--t-muted)) 35%, var(--t-line)); }
+.calc-tx { position: relative; z-index: 1; flex: 1; min-width: 0; }
+.calc-tx b { display: block; line-height: 1.2; font-weight: 700; overflow-wrap: anywhere; }
+.calc-tx small { display: block; margin-top: 3px; color: var(--t-muted); line-height: 1.25; }
+.calc-tx small em { font-style: normal; font-weight: 700; color: var(--t-ink); }
+.nav-home .calc-carte { min-height: 84px; margin-bottom: 10px; padding: 10px 12px 10px 16px; border-radius: 18px; }
+.nav-home .calc-carte .calc-ic { width: 52px; height: 52px; }
+.nav-home .calc-carte .calc-ic .ico { width: 30px; height: 30px; }
+.nav-home .calc-carte .calc-tx b { font-size: 1em; }
+.nav-home .calc-carte .calc-tx small { font-size: .8em; }
+.calc-ch { position: relative; z-index: 1; flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: color-mix(in srgb, var(--t-page, var(--t-s1)) 72%, transparent); border: 1px solid var(--t-line); }
+.calc-ch .ico { width: 18px; height: 18px; }
+.nav-home .calc-tuiles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.nav-home .calc-tuile { flex-direction: column; align-items: flex-start; gap: 10px; min-height: 104px; padding: 12px 12px 12px 16px; border-radius: 18px; }
+.nav-home .calc-tuile.grande { grid-column: span 2; flex-direction: row; align-items: center; min-height: 84px; }
+.nav-home .calc-tuile .calc-ic { width: 44px; height: 44px; border-radius: 12px; }
+.nav-home .calc-tuile .calc-ic .ico { width: 26px; height: 26px; }
+.nav-home .calc-tuile .calc-tx b { font-size: .95em; }
+.nav-home .calc-tuile .calc-tx small { font-size: .75em; }
+.nav-home .calc-tuile:not(.grande) .calc-photo { width: 70%; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 70%), linear-gradient(0deg, transparent 12%, #000 68%); mask-image: linear-gradient(90deg, transparent 0, #000 70%), linear-gradient(0deg, transparent 12%, #000 68%); -webkit-mask-composite: source-in; mask-composite: intersect; opacity: .85; }
+.calc-nb { position: absolute; right: 10px; top: 10px; z-index: 2; min-width: 22px; padding: 1px 8px; border-radius: 999px; background: var(--t-s2); color: var(--t-ink); font-size: .75em; font-weight: 700; text-align: center; }
+.calc-vide { text-align: center; padding: 28px 14px; border: 1px dashed var(--t-line); border-radius: 18px; color: var(--t-muted); }
+.calc-vide b { display: block; color: var(--t-ink); margin-bottom: 4px; }
+.acces-rapide { margin-bottom: 8px; }
+.acces-rapide-liste { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.nav-home .acces-btn { display: grid; justify-items: center; gap: 6px; min-height: 76px; padding: 10px 4px; border-radius: 16px; background: var(--t-s1); color: var(--t-ink); border: 1px solid var(--t-line); font-weight: 700; font-size: .8em; text-align: center; box-shadow: none; }
+.nav-home .acces-btn .calc-ic { width: 38px; height: 38px; border-radius: 12px; }
+.nav-home .acces-btn .calc-ic .ico { width: 24px; height: 24px; }
+@media (hover: hover) { .nav-home .calc-carte:hover, .nav-home .calc-tuile:hover, .nav-home .acces-btn:hover { border-color: var(--k, var(--t-accent)); } }
+.nav-home .calc-carte:focus-visible, .nav-home .calc-tuile:focus-visible, .nav-home .acces-btn:focus-visible, .nav-home .calc-filtre:focus-visible { outline: 2px solid var(--t-accent); outline-offset: 2px; }
+.nav-home .calc-carte .calc-tx { padding-right: 10px; }
+.nav-home .calc-carte .calc-tx b, .nav-home .calc-carte .calc-tx small { max-width: 66%; }
+.nav-home .calc-carte .calc-tx b { text-shadow: 0 0 6px var(--t-s1); }

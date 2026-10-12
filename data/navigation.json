@@ -141,6 +141,7 @@
    "picto": "calc",
    "couleur": "#6B7280",
    "themes": [
+    "Localisation et carte",
     "Calculs pratiques",
     "Préparation",
     "Administration"
@@ -185,7 +186,11 @@
     "incendie",
     "débit",
     "extinction"
-   ]
+   ],
+   "court": "Puissance du feu",
+   "sous": "Extinction",
+   "kit": "fire",
+   "photo": "images/calculs/fire.webp"
   },
   {
    "id": "pertes",
@@ -206,7 +211,11 @@
     "dénivelé",
     "jonction",
     "calcul rapide"
-   ]
+   ],
+   "court": "Pertes de charge",
+   "sous": "Lance, tuyaux",
+   "kit": "hose",
+   "photo": "images/calculs/pertes.webp"
   },
   {
    "id": "emulseur",
@@ -214,7 +223,11 @@
    "domaine": "incendie",
    "theme": "Calculs incendie",
    "type": "calculateur",
-   "motsCles": []
+   "motsCles": [],
+   "court": "Additif",
+   "sous": "Taux d'application",
+   "kit": "additive",
+   "photo": "images/calculs/emulseur.webp"
   },
   {
    "id": "mousses-menu",
@@ -1328,7 +1341,11 @@
     "bouteille",
     "pression",
     "consommation"
-   ]
+   ],
+   "court": "Autonomie ARI",
+   "sous": "Appareil respiratoire",
+   "kit": "ari",
+   "photo": "images/calculs/ari.webp"
   },
   {
    "id": "extincteurs",
@@ -1842,7 +1859,11 @@
     "trabaud",
     "vent",
     "vitesse de propagation"
-   ]
+   ],
+   "court": "Règle des 3 %",
+   "sous": "Vitesse de propagation",
+   "kit": "forest",
+   "photo": "images/calculs/feu-foret.webp"
   },
   {
    "id": "gdo-acteurs",
@@ -2236,7 +2257,13 @@
     "codis",
     "feu de forêt",
     "radio"
-   ]
+   ],
+   "court": "Message d'ambiance",
+   "sous": "Formulaire feux de forêts",
+   "kit": "message",
+   "photo": "images/calculs/fdf-ambiance.webp",
+   "terrain": 4,
+   "grande": true
   },
   {
    "id": "tmd",
@@ -2298,7 +2325,11 @@
     "gaz",
     "explosif",
     "atmosphère"
-   ]
+   ],
+   "court": "Explosimétrie",
+   "sous": "Correction des valeurs",
+   "kit": "gas",
+   "photo": "images/calculs/explosimetrie.webp"
   },
   {
    "id": "bouteilles",
@@ -2493,7 +2524,11 @@
     "surface cutanée brûlée",
     "scb",
     "calculateur"
-   ]
+   ],
+   "court": "Wallace",
+   "sous": "Surface brûlée",
+   "kit": "aid",
+   "photo": "images/calculs/suap-wallace-calc.webp"
   },
   {
    "id": "suap-trauma",
@@ -2959,7 +2994,11 @@
     "successive",
     "nitrox",
     "altitude"
-   ]
+   ],
+   "court": "Paliers MT 2012",
+   "sous": "Plongée",
+   "kit": "dive",
+   "photo": "images/calculs/sal-calculateur.webp"
   },
   {
    "id": "sal-rattrapage",
@@ -3699,7 +3738,11 @@
    "domaine": "specialites",
    "theme": "LSPCC – Lot de sauvetage",
    "type": "calculateur",
-   "motsCles": []
+   "motsCles": [],
+   "court": "Facteur de chute",
+   "sous": "Lot de sauvetage",
+   "kit": "fall",
+   "photo": "images/calculs/lspcc-calculateur.webp"
   },
   {
    "id": "lspcc-fmo",
@@ -3963,7 +4006,11 @@
    "domaine": "outils",
    "theme": "Calculs pratiques",
    "type": "calculateur",
-   "motsCles": []
+   "motsCles": [],
+   "court": "Convertisseur",
+   "sous": "Unités",
+   "kit": "swap",
+   "photo": "images/calculs/convertisseur.webp"
   },
   {
    "id": "abaque",
@@ -3971,7 +4018,11 @@
    "domaine": "outils",
    "theme": "Calculs pratiques",
    "type": "calculateur",
-   "motsCles": []
+   "motsCles": [],
+   "court": "Abaque de charges",
+   "sous": "Charges",
+   "kit": "scale",
+   "photo": "images/calculs/abaque.webp"
   },
   {
    "id": "distance-calc",
@@ -3985,14 +4036,18 @@
     "périmètre",
     "surface",
     "pythagore"
-   ]
+   ],
+   "court": "Temps de trajet",
+   "sous": "Distance, durée",
+   "kit": "clock",
+   "photo": "images/calculs/distance-calc.webp"
   },
   {
    "id": "localisation",
    "picto": "compass",
    "titre": "Se localiser (DFCI, GPS, adresse)",
    "domaine": "outils",
-   "theme": "Calculs pratiques",
+   "theme": "Localisation et carte",
    "type": "calculateur",
    "motsCles": [
     "localisation",
@@ -4009,14 +4064,20 @@
     "longitude",
     "où suis-je",
     "carte"
-   ]
+   ],
+   "court": "Se localiser",
+   "sous": "DFCI, GPS, adresse, météo",
+   "kit": "compass",
+   "photo": "images/calculs/localisation.webp",
+   "terrain": 1,
+   "grande": true
   },
   {
    "id": "mes-points",
    "picto": "pin",
    "titre": "Mes points (positions enregistrées)",
    "domaine": "outils",
-   "theme": "Calculs pratiques",
+   "theme": "Localisation et carte",
    "type": "calculateur",
    "motsCles": [
     "points",
@@ -4031,14 +4092,19 @@
     "cap",
     "coordonnées",
     "favoris"
-   ]
+   ],
+   "court": "Mes points",
+   "sous": "Positions enregistrées",
+   "kit": "pin",
+   "photo": "images/calculs/mes-points.webp",
+   "terrain": 2
   },
   {
    "id": "carte-dfci",
    "picto": "map",
    "titre": "Carte DFCI (grille et carreaux)",
    "domaine": "outils",
-   "theme": "Calculs pratiques",
+   "theme": "Localisation et carte",
    "type": "calculateur",
    "motsCles": [
     "carte",
@@ -4051,7 +4117,12 @@
     "localisation",
     "gps",
     "zone"
-   ]
+   ],
+   "court": "Carte DFCI",
+   "sous": "Grille et carreaux",
+   "kit": "map",
+   "photo": "images/calculs/carte-dfci.webp",
+   "terrain": 3
   },
   {
    "id": "epuisement",
@@ -4066,7 +4137,11 @@
     "débit",
     "volume",
     "temps"
-   ]
+   ],
+   "court": "Épuisement de volume",
+   "sous": "Débit, durée",
+   "kit": "drop",
+   "photo": "images/calculs/epuisement.webp"
   },
   {
    "id": "ia-manoeuvre",
@@ -4082,7 +4157,11 @@
     "scenario",
     "entrainement",
     "générateur"
-   ]
+   ],
+   "court": "Manœuvre IA",
+   "sous": "Générateur",
+   "kit": "spark",
+   "photo": "images/calculs/ia-manoeuvre.webp"
   },
   {
    "id": "jsp1-menu",

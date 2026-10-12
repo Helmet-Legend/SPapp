@@ -91,7 +91,12 @@ const Navigation = (function() {
 
     // ---------- Vues de l'écran d'accueil ----------
     function vueAccueil() {
-        return registre.domaines.map(d => {
+        const rapide = `<div class="acces-rapide"><div class="calc-titre"><i></i><h3>Accès rapide</h3><span>Terrain</span></div><div class="acces-rapide-liste">`
+            + ['localisation', 'mes-points', 'carte-dfci'].filter(id => parId[id]).map(id => {
+                const p = parId[id], f = familleDe(p);
+                return `<button type="button" class="acces-btn fam-${f.id}" data-page="${id}"><span class="calc-ic">${icone('k-' + p.kit)}</span>${esc(p.court)}</button>`;
+            }).join('') + '</div></div>';
+        return rapide + registre.domaines.map(d => {
             const ouvert = !!ouverts[d.id];
             const nb = registre.pages.filter(p => p.domaine === d.id && p.type !== 'menu' && p.type !== 'presentation').length;
             let html = `<div class="nav-acc" style="--c:${d.couleur}">
@@ -123,9 +128,64 @@ const Navigation = (function() {
         }).join('');
     }
 
+    // ---------- Onglet Calculs : Terrain en tête, puis les calculs par famille (palette du kit UI) ----------
+    const FAMILLES = {
+        incendie: { id: 'inc', court: 'Incendie' }, fdf: { id: 'fdf', court: 'FDF' }, risques: { id: 'risk', court: 'Risques' },
+        sap: { id: 'suap', court: 'SUAP' }, specialites: { id: 'spe', court: 'Spécialités' }, outils: { id: 'out', court: 'Outils' }
+    };
+    const ORDRE_FAMILLES = ['inc', 'fdf', 'risk', 'suap', 'spe', 'out'];
+    let filtreFamille = 'tout';
+    let rechercheCalculs = '';
+
+    function familleDe(p) { return FAMILLES[p.domaine] || FAMILLES.outils; }
+    function calculateurs() { return registre.pages.filter(p => p.type === 'calculateur'); }
+    function imageCalcul(p) {
+        return p.photo ? `<span class="calc-photo" style="background-image:url('${esc(p.photo)}')" aria-hidden="true"></span>` : '';
+    }
+    function carteCalcul(p) {
+        const f = familleDe(p), d = domaine(p.domaine);
+        return `<button type="button" class="calc-carte fam-${f.id}" data-page="${p.id}">${imageCalcul(p)}
+            <span class="calc-ic">${icone('k-' + (p.kit || 'calc'))}</span>
+            <span class="calc-tx"><b>${esc(p.titre)}</b><small><em>${esc(d.titre)}</em> · ${esc(p.theme || '')}</small></span>
+            <span class="calc-ch">${icone('chev')}</span></button>`;
+    }
+    function tuileCalcul(p) {
+        const f = familleDe(p);
+        let nb = '';
+        if (p.id === 'mes-points' && typeof MesPoints !== 'undefined' && MesPoints.nombre()) nb = `<span class="calc-nb" aria-label="${MesPoints.nombre()} enregistrés">${MesPoints.nombre()}</span>`;
+        return `<button type="button" class="calc-tuile fam-${f.id}${p.grande ? ' grande' : ''}" data-page="${p.id}">${imageCalcul(p)}
+            <span class="calc-ic">${icone('k-' + (p.kit || 'calc'))}</span>
+            <span class="calc-tx"><b>${esc(p.court || p.titre)}</b><small>${esc(p.sous || '')}</small></span>${nb}</button>`;
+    }
+    function correspondCalcul(p, q) {
+        if (!q) return true;
+        const d = domaine(p.domaine);
+        return normaliser([p.titre, p.court, p.sous, p.theme, d.titre].concat(p.motsCles || []).join(' ')).includes(q);
+    }
     function vueCalculs() {
-        const calcs = registre.pages.filter(p => p.type === 'calculateur');
-        return `<div class="nav-label">${calcs.length} calculateurs</div>` + calcs.map(p => ligne(p)).join('');
+        const tous = calculateurs();
+        const q = normaliser(rechercheCalculs.trim());
+        const recents7 = recents().filter(id => parId[id] && parId[id].type === 'calculateur').slice(0, 3);
+        let html = `<div class="calc-vue">
+            <div class="calc-titre"><i></i><h3>Calculateurs</h3><span>${tous.length} outils</span></div>
+            <label class="calc-rech">${icone('search')}<input id="calcRecherche" type="search" value="${esc(rechercheCalculs)}" placeholder="Rechercher un calcul" autocomplete="off" aria-label="Rechercher un calcul"></label>`;
+        if (!q && filtreFamille === 'tout') {
+            if (recents7.length) {
+                html += '<span class="calc-label">Récents</span><div class="calc-recents">'
+                    + recents7.map(id => `<button type="button" data-page="${id}">${icone('hist')}${esc(parId[id].court || parId[id].titre)}</button>`).join('') + '</div>';
+            }
+            const terrain = tous.filter(p => p.terrain).sort((a, b) => a.terrain - b.terrain);
+            html += `<div class="calc-sec"><span>Terrain</span><i></i><b>${terrain.length}</b></div><div class="calc-tuiles">${terrain.map(tuileCalcul).join('')}</div>`;
+        }
+        const liste = tous.filter(p => (filtreFamille === 'tout' || familleDe(p).id === filtreFamille) && correspondCalcul(p, q)
+            && (q || filtreFamille !== 'tout' || !p.terrain));
+        html += `<div class="calc-sec"><span>${q || filtreFamille !== 'tout' ? 'Résultats' : 'Toutes les familles'}</span><i></i><b>${liste.length}</b></div>
+            <div class="calc-filtres" role="group" aria-label="Filtrer par famille">`
+            + [['tout', 'Tous']].concat(ORDRE_FAMILLES.map(id => [id, Object.values(FAMILLES).find(f => f.id === id).court]))
+                .map(([id, nom]) => `<button type="button" class="calc-filtre fam-${id}" data-fam="${id}" aria-pressed="${filtreFamille === id}">${id === 'tout' ? '' : '<i></i>'}${nom}</button>`).join('')
+            + '</div><div id="calcListe">' + (liste.length ? liste.map(carteCalcul).join('')
+                : `<div class="calc-vide"><b>Aucun calcul ne correspond</b>Aucun résultat pour « ${esc(rechercheCalculs.trim())} ». Essayez « feu », « GPS » ou « plongée ».</div>`) + '</div></div>';
+        return html;
     }
 
     function resultats(q) {
@@ -333,7 +393,8 @@ const Navigation = (function() {
         const b = e.target.closest('button');
         if (!b) return;
         const d = b.dataset;
-        if (d.page) { ouvrirPage(d.page); }
+        if (d.fam) { filtreFamille = d.fam; rendreAccueil(); }
+        else if (d.page) { ouvrirPage(d.page); }
         else if (d.tmd) { chercherTMD(d.tmd); }
         else if (d.domaine) {
             basculer(d.domaine, cle => !cle.includes('|'));
@@ -440,6 +501,14 @@ const Navigation = (function() {
         });
         conteneur.addEventListener('click', surClic);
         conteneur.addEventListener('input', e => {
+            if (e.target.id === 'calcRecherche') {
+                rechercheCalculs = e.target.value;
+                const pos = e.target.selectionStart;
+                rendreAccueil(false);
+                const champ = document.getElementById('calcRecherche');
+                if (champ) { champ.focus(); champ.setSelectionRange(pos, pos); }
+                return;
+            }
             if (e.target.id !== 'navSearchInput') return;
             recherche = e.target.value;
             const zone = document.getElementById('navSearchResults');
