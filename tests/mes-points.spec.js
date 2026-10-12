@@ -196,7 +196,7 @@ test('accès : menu ⋯ de Se localiser, liste des calculs avec l\'icône éping
     await app.click('#loc-menu >> text=Mes points');
     expect(await ecranActif(app)).toBe('mes-points');
     await app.click('[data-onglet="calculs"]');
-    await expect(app.locator('#navHome [data-page="mes-points"] .nav-picto use')).toHaveAttribute('href', '#i-pin');
+    await expect(app.locator('#navHome [data-page="mes-points"] .calc-ic use')).toHaveAttribute('href', '#i-k-pin');
     await app.click('#navHome [data-page="mes-points"]');
     expect(await ecranActif(app)).toBe('mes-points');
 });

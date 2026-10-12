@@ -14,10 +14,10 @@ test('l\'outil est dans la liste des calculateurs et s\'ouvre', async ({ app }) 
     await expect(app.locator('#loc-barre')).toBeHidden();
 });
 
-test('dans la liste des calculs : boussole pour « Se localiser », carte pour « Carte DFCI »', async ({ app }) => {
+test('dans l\'onglet Calculs : boussole pour « Se localiser », carte pour « Carte DFCI »', async ({ app }) => {
     await app.click('[data-onglet="calculs"]');
-    await expect(app.locator('#navHome [data-page="localisation"] .nav-picto use')).toHaveAttribute('href', '#i-compass');
-    await expect(app.locator('#navHome [data-page="carte-dfci"] .nav-picto use')).toHaveAttribute('href', '#i-map');
+    await expect(app.locator('#navHome [data-page="localisation"] .calc-ic use')).toHaveAttribute('href', '#i-k-compass');
+    await expect(app.locator('#navHome [data-page="carte-dfci"] .calc-ic use')).toHaveAttribute('href', '#i-k-map');
 });
 
 test('champ unique : un GPS (DMS) donne le DFCI et les trois écritures, et inversement', async ({ app }) => {

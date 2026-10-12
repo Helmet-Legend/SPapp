@@ -1,5 +1,5 @@
-// Vulcain Service Worker v1.69.45
-const CACHE_NAME = 'vulcain-v1.69.45';
+// Vulcain Service Worker v1.69.46
+const CACHE_NAME = 'vulcain-v1.69.46';
 const urlsToCache = [
   './',
   './index.html',
@@ -34,6 +34,24 @@ const urlsToCache = [
   './js/modules/mes-points.js',
   './js/modules/localisation.js',
   './js/modules/carte-dfci.js',
+  './images/calculs/abaque.webp',
+  './images/calculs/ari.webp',
+  './images/calculs/carte-dfci.webp',
+  './images/calculs/convertisseur.webp',
+  './images/calculs/distance-calc.webp',
+  './images/calculs/emulseur.webp',
+  './images/calculs/epuisement.webp',
+  './images/calculs/explosimetrie.webp',
+  './images/calculs/fdf-ambiance.webp',
+  './images/calculs/feu-foret.webp',
+  './images/calculs/fire.webp',
+  './images/calculs/ia-manoeuvre.webp',
+  './images/calculs/localisation.webp',
+  './images/calculs/lspcc-calculateur.webp',
+  './images/calculs/mes-points.webp',
+  './images/calculs/pertes.webp',
+  './images/calculs/sal-calculateur.webp',
+  './images/calculs/suap-wallace-calc.webp',
   './images/accueil/accueil-nuit.webp',
   './images/accueil/accueil-jour.webp',
   './images/rdlspcc/abordage-schemas.jpg',
