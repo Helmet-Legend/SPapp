@@ -237,6 +237,28 @@ var MesPoints = (function () {
         notifier('Point supprimé');
     }
 
+    // ---------- Feuille d'enregistrement (partagée : Se localiser, Carte DFCI) ----------
+    var aEnregistrer = null;
+    function demander(lat, lon, nomSuggere) {
+        var f = document.getElementById('loc-feuille');
+        if (!f) return;
+        var c = Geo.carreauDFCI(lat, lon), fm = Geo.formats(lat, lon);
+        aEnregistrer = { lat: lat, lon: lon };
+        document.getElementById('loc-nom').value = nomSuggere || nomParDefaut();
+        document.getElementById('loc-note').value = '';
+        document.getElementById('loc-feuille-resume').textContent = fm.dmd + (c ? ' · ' + c.code : ' · hors carroyage DFCI');
+        f.hidden = false;
+        var n = document.getElementById('loc-nom'); n.focus(); n.select();
+    }
+    function fermerFeuille() { var f = document.getElementById('loc-feuille'); if (f) f.hidden = true; aEnregistrer = null; }
+    function validerFeuille() {
+        if (!aEnregistrer) return;
+        var p = ajouter({ nom: document.getElementById('loc-nom').value, note: document.getElementById('loc-note').value, lat: aEnregistrer.lat, lon: aEnregistrer.lon });
+        fermerFeuille();
+        if (p) notifier('Point enregistré : ' + p.nom);
+    }
+    function ouvrirFicheDepuis(id) { ouvertId = id; enModif = false; showModule('mes-points'); }
+
     // ---------- Menu ⋯ et ouverture ----------
     function fermerMenu() { var m = $('menu'); if (m) { m.hidden = true; $('menu-btn').setAttribute('aria-expanded', 'false'); } }
     function menu() { var m = $('menu'), ouvert = m.hidden; m.hidden = !ouvert; $('menu-btn').setAttribute('aria-expanded', ouvert ? 'true' : 'false'); }
@@ -255,12 +277,12 @@ var MesPoints = (function () {
             if (cp) { copierFormat(cp.dataset.copie); return; }
             if (!e.target.closest('.mp-entete')) fermerMenu();
         });
-        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermerMenu(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { fermerMenu(); fermerFeuille(); } });
         afficher();
     });
 
     return { liste: liste, nombre: nombre, ajouter: ajouter, supprimer: supprimer, modifier: modifier, distanceCap: distanceCap, texteDistance: texteDistance,
         gpx: gpx, lireGPX: lireGPX, importer: importer, exporter: exporter, choisirFichier: choisirFichier, maPosition: maPosition, ouvrir: ouvrir, menu: menu,
         retourListe: retourListe, copierTout: copierTout, voirCarte: voirCarte, ouvrirMaps: ouvrirMaps, versLocalisation: versLocalisation,
-        modifierOuvrir: modifierOuvrir, modifierAnnuler: modifierAnnuler, modifierValider: modifierValider, supprimerCourant: supprimerCourant, nomParDefaut: nomParDefaut };
+        demander: demander, fermerFeuille: fermerFeuille, validerFeuille: validerFeuille, ouvrirFiche: ouvrirFicheDepuis, texteCopie: texteCopie, modifierOuvrir: modifierOuvrir, modifierAnnuler: modifierAnnuler, modifierValider: modifierValider, supprimerCourant: supprimerCourant, nomParDefaut: nomParDefaut };
 })();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.44">
+    <meta name="version" content="1.69.45">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -129,6 +129,18 @@
     </div>
 
     <!-- Message de bienvenue (une seule fois, puis « Revoir » dans Réglages) -->
+    <div id="loc-feuille" class="loc-feuille" hidden>
+        <div class="loc-feuille-fond" onclick="MesPoints.fermerFeuille()"></div>
+        <div class="loc-feuille-corps" role="dialog" aria-modal="true" aria-labelledby="loc-feuille-titre">
+            <h3 id="loc-feuille-titre">⭐ Enregistrer ce point</h3>
+            <label>Nom (modifiable)<input type="text" id="loc-nom" maxlength="120" autocomplete="off"></label>
+            <label>Note (facultatif)<textarea id="loc-note" rows="2" maxlength="500" placeholder="Ex. fond 18 m, accès par le chemin nord…"></textarea></label>
+            <p id="loc-feuille-resume" class="loc-sous"></p>
+            <button type="button" class="loc-valider" onclick="MesPoints.validerFeuille()">Enregistrer</button>
+            <button type="button" class="loc-annuler" onclick="MesPoints.fermerFeuille()">Annuler</button>
+        </div>
+    </div>
+
     <div id="bienvenueModal" class="reglages-modal" hidden>
         <div class="reglages-panel" role="dialog" aria-modal="true" aria-labelledby="bienvenueTitre">
             <div class="reglages-tete">
@@ -280,7 +292,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.44</span><br>
+                        Vulcain v<span class="app-version">1.69.45</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -20353,17 +20365,6 @@ Je fais : extinction.</p>
             <p class="loc-controle">⚠ Carreau calculé sur le téléphone : à contrôler sur la carte.</p>
             <small id="loc-r-precision" class="loc-sous"></small>
         </div>
-        <div id="loc-feuille" class="loc-feuille" hidden>
-            <div class="loc-feuille-fond" onclick="Localisation.fermerFeuille()"></div>
-            <div class="loc-feuille-corps" role="dialog" aria-modal="true" aria-labelledby="loc-feuille-titre">
-                <h3 id="loc-feuille-titre">⭐ Enregistrer ce point</h3>
-                <label>Nom (modifiable)<input type="text" id="loc-nom" maxlength="120" autocomplete="off"></label>
-                <label>Note (facultatif)<textarea id="loc-note" rows="2" maxlength="500" placeholder="Ex. fond 18 m, accès par le chemin nord…"></textarea></label>
-                <p id="loc-feuille-resume" class="loc-sous"></p>
-                <button type="button" class="loc-valider" onclick="Localisation.validerFeuille()">Enregistrer</button>
-                <button type="button" class="loc-annuler" onclick="Localisation.fermerFeuille()">Annuler</button>
-            </div>
-        </div>
         <div id="loc-barre" class="loc-barre" hidden>
             <button type="button" onclick="Localisation.voirCarteDFCI()"><span aria-hidden="true">🗺️</span>Carte</button>
             <button type="button" onclick="Localisation.copier()"><span aria-hidden="true">📋</span>Tout copier</button>
@@ -20442,15 +20443,28 @@ Je fais : extinction.</p>
         <p id="cd-alerte-fond" class="cd-alerte" hidden>Fond de carte indisponible (pas de réseau ?). La grille DFCI reste utilisable.</p>
         <div class="cd-conteneur">
             <div id="cd-carte" class="cd-carte" role="application" aria-label="Carte du carroyage DFCI"></div>
+            <button type="button" id="cd-pastille" class="cd-pastille" onclick="CarteDFCI.voirMesPoints()" hidden></button>
+            <div id="cd-point" class="cd-info cd-point" hidden>
+                <button type="button" class="cd-fermer" onclick="CarteDFCI.fermerPoint()" aria-label="Fermer">✕</button>
+                <div class="cd-point-nom" id="cd-p-nom"></div>
+                <small id="cd-p-coord"></small>
+                <small id="cd-p-note"></small>
+                <div class="cd-actions cd-actions-3">
+                    <button type="button" onclick="CarteDFCI.copierPoint()">📋 Copier</button>
+                    <button type="button" onclick="CarteDFCI.fichePoint()">📄 Fiche</button>
+                    <button type="button" onclick="CarteDFCI.mapsPoint()">🧭 Maps</button>
+                </div>
+            </div>
             <div id="cd-info" class="cd-info" hidden>
                 <button type="button" class="cd-fermer" onclick="CarteDFCI.fermerInfo()" aria-label="Fermer">✕</button>
                 <div class="cd-dfci" id="cd-i-dfci"></div>
                 <div id="cd-i-dd" class="cd-dd"></div>
                 <details class="cd-ecritures"><summary>Autres écritures</summary><div id="cd-i-formats" class="amb-formats"></div></details>
                 <small id="cd-i-precision"></small>
+                <button type="button" class="cd-enregistrer" onclick="CarteDFCI.enregistrer()"><span aria-hidden="true">⭐</span> Enregistrer ce point</button>
                 <div class="cd-actions">
                     <button type="button" onclick="CarteDFCI.copier()">📋 Copier</button>
-                    <button type="button" onclick="CarteDFCI.versAmbiance()">📻 Ambiance</button>
+                    <button type="button" onclick="CarteDFCI.versAmbiance()" title="Envoyer ce point vers le message d'ambiance" aria-label="Envoyer ce point vers le message d'ambiance">📻 Message</button>
                     <button type="button" onclick="CarteDFCI.versLocalisation()">📍 Localiser</button>
                     <button type="button" onclick="CarteDFCI.ouvrirMaps()">🧭 Maps</button>
                 </div>
@@ -32139,7 +32153,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.44</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.45</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
