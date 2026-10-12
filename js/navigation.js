@@ -96,11 +96,13 @@ const Navigation = (function() {
                 const p = parId[id], f = familleDe(p);
                 return `<button type="button" class="acces-btn fam-${f.id}" data-page="${id}"><span class="calc-ic">${icone('k-' + p.kit)}</span>${esc(p.court)}</button>`;
             }).join('') + '</div></div>';
-        return rapide + registre.domaines.map(d => {
+        const titreDomaines = `<div class="calc-titre acc-titre"><i></i><h3>Domaines opérationnels</h3><span>${registre.domaines.length}</span></div>`;
+        return rapide + titreDomaines + registre.domaines.map(d => {
             const ouvert = !!ouverts[d.id];
             const nb = registre.pages.filter(p => p.domaine === d.id && p.type !== 'menu' && p.type !== 'presentation').length;
             let html = `<div class="nav-acc" style="--c:${d.couleur}">
                 <button class="nav-acc-head" data-domaine="${d.id}" aria-expanded="${ouvert}">
+                    <span class="nav-acc-photo" style="background-image:url('images/accueil/dom-${esc(d.id)}.jpeg')" aria-hidden="true"></span>
                     ${pictoDomaine(d)}
                     <span class="nav-acc-title">${esc(d.titre)}</span>
                     <span class="nav-count">${nb}</span>

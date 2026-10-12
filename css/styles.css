@@ -84,7 +84,7 @@
         }
 
         .header {
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            background: linear-gradient(135deg, var(--fill-red, var(--primary-red)) 0%, var(--fill-red-dark, var(--primary-red-dark)) 100%);
             padding: 16px 20px;
             text-align: center;
             border-radius: 14px;
@@ -186,7 +186,7 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            background: var(--primary-red);
+            background: var(--fill-red, var(--primary-red));
             border: none;
             color: white;
             width: 40px;
@@ -199,7 +199,7 @@
         }
 
         .about-close:hover {
-            background: var(--primary-red-dark);
+            background: var(--fill-red-dark, var(--primary-red-dark));
             transform: rotate(90deg);
         }
 
@@ -612,14 +612,14 @@
         }
 
         .module::-webkit-scrollbar-thumb {
-            background: var(--primary-red);
+            background: var(--fill-red, var(--primary-red));
             border-radius: 12px;
             border: 3px solid var(--bg-main);
             min-height: 50px;
         }
 
         .module::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-red-dark);
+            background: var(--fill-red-dark, var(--primary-red-dark));
         }
 
         .module.active {
@@ -741,7 +741,7 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            background: var(--primary-red);
+            background: var(--fill-red, var(--primary-red));
             border: none;
             padding: 10px 12px;
             border-radius: 10px;
@@ -756,7 +756,7 @@
         }
 
         .fullscreen-btn:hover {
-            background: var(--primary-red-dark);
+            background: var(--fill-red-dark, var(--primary-red-dark));
             transform: scale(1.05);
             box-shadow: var(--shadow-md);
         }
@@ -835,7 +835,7 @@
         }
 
         button {
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            background: linear-gradient(135deg, var(--fill-red, var(--primary-red)) 0%, var(--fill-red-dark, var(--primary-red-dark)) 100%);
             color: white;
             border: none;
             padding: 16px 24px;
@@ -853,7 +853,7 @@
         }
 
         button:hover {
-            background: linear-gradient(135deg, var(--primary-red-light) 0%, var(--primary-red) 100%);
+            background: linear-gradient(135deg, var(--fill-red-light, var(--primary-red-light)) 0%, var(--fill-red, var(--primary-red)) 100%);
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
         }
@@ -1214,7 +1214,7 @@
         }
 
         th {
-            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            background: linear-gradient(135deg, var(--fill-red, var(--primary-red)) 0%, var(--fill-red-dark, var(--primary-red-dark)) 100%);
             font-weight: bold;
             color: #FFFFFF;
             font-size: 1em;

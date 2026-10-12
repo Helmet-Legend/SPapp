@@ -1,5 +1,5 @@
-// Vulcain Service Worker v1.69.46
-const CACHE_NAME = 'vulcain-v1.69.46';
+// Vulcain Service Worker v1.69.48
+const CACHE_NAME = 'vulcain-v1.69.48';
 const urlsToCache = [
   './',
   './index.html',
@@ -34,6 +34,18 @@ const urlsToCache = [
   './js/modules/mes-points.js',
   './js/modules/localisation.js',
   './js/modules/carte-dfci.js',
+  './images/accueil/dom-commandement.jpeg',
+  './images/accueil/dom-conduite.jpeg',
+  './images/accueil/dom-fdf.jpeg',
+  './images/accueil/dom-incendie.jpeg',
+  './images/accueil/dom-jsp.jpeg',
+  './images/accueil/dom-operations-diverses.jpeg',
+  './images/accueil/dom-outils.jpeg',
+  './images/accueil/dom-risques.jpeg',
+  './images/accueil/dom-routier.jpeg',
+  './images/accueil/dom-sap.jpeg',
+  './images/accueil/dom-sdis34.jpeg',
+  './images/accueil/dom-specialites.jpeg',
   './images/calculs/abaque.webp',
   './images/calculs/ari.webp',
   './images/calculs/carte-dfci.webp',
