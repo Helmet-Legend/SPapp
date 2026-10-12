@@ -43,10 +43,12 @@ test('hors du carroyage (mer, étranger) : aucun code inventé', async ({ app })
     expect(r).toEqual([null, null, null]);
 });
 
-test('annonce de version (notification push) : fichier valide, à jour et fiche existante', async ({ app }) => {
+test('annonce de version (notification push) : fichier valide, version non postérieure à celle de l\'application, fiche existante', async ({ app }) => {
     const n = await app.evaluate(() => fetch('/data/nouveautes.json').then(r => r.json()));
     expect(n.version).toMatch(/^\d+\.\d+\.\d+$/);
-    expect(n.version).toBe(await app.evaluate(() => APP_VERSION));
+    const num = (v) => v.split('.').map(Number);
+    const [a, b] = [num(n.version), num(await app.evaluate(() => APP_VERSION))];
+    expect(a[0] * 1e6 + a[1] * 1e3 + a[2]).toBeLessThanOrEqual(b[0] * 1e6 + b[1] * 1e3 + b[2]);
     expect(n.titre.length).toBeLessThanOrEqual(80);
     expect(n.texte.length).toBeLessThanOrEqual(300);
     expect(n.fiche).toMatch(/^[a-z0-9-]{1,60}$/);

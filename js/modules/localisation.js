@@ -83,8 +83,15 @@ var Localisation = (function () {
         if (!point) return;
         var f = Geo.formats(point.lat, point.lon), c = Geo.carreauDFCI(point.lat, point.lon);
         if (sauf !== 'saisie') $('saisie').value = c ? c.code : Geo.formatGPS(point.lat, point.lon);
-        $('r-dfci').textContent = c ? c.code : 'Hors carroyage DFCI';
-        $('r-sous').textContent = c ? 'Zone ' + c.code.slice(-1) + ' du carreau de 2 km' + (point.commune ? ' · ' + point.commune : '') : 'Le point est hors de la zone couverte par le carroyage DFCI.';
+        var dmd = f.dmd.split(', ');
+        $('r-titre').textContent = c ? 'Carreau DFCI' : 'Position';
+        $('r-dfci').classList.toggle('loc-dfci-mer', !c);
+        if (c) $('r-dfci').textContent = c.code;
+        else $('r-dfci').innerHTML = dmd.map(function (v) { return '<span>' + v + '</span>'; }).join('');
+        $('r-sous').textContent = c ? 'Zone ' + c.code.slice(-1) + ' du carreau de 2 km' + (point.commune ? ' · ' + point.commune : '') : '🌊 Hors carroyage DFCI : en mer ou hors de France, le carreau DFCI ne s\'applique pas.';
+        var amb = $('btn-ambiance'); if (amb) amb.hidden = !c;
+        $('barre').classList.toggle('loc-barre-2', !c);
+        majNbPoints();
         $('r-formats').innerHTML = [['dd', 'DD', 'Degrés décimaux'], ['dms', 'DMS', 'Degrés, minutes, secondes'], ['dmd', 'DMD', 'Degrés, minutes décimales']].map(function (k) {
             var v = f[k[0]].split(', ');
             return '<div class="loc-format"><div class="loc-format-texte"><small>' + k[2] + ' · ' + k[1] + '</small><code><i>LAT</i>' + v[0] + '<br><i>LON</i>' + v[1] + '</code></div>' +
@@ -110,6 +117,31 @@ var Localisation = (function () {
         var f = Geo.formats(point.lat, point.lon), c = Geo.carreauDFCI(point.lat, point.lon);
         return ['Localisation (Vulcain)', c ? 'DFCI : ' + c.code : '', 'DD : ' + f.dd, 'DMS : ' + f.dms, 'DMD : ' + f.dmd, point.adresse ? 'Adresse : ' + point.adresse : '',
             'https://www.google.com/maps?q=' + point.lat.toFixed(6) + ',' + point.lon.toFixed(6)].filter(Boolean).join('\n');
+    }
+
+    // ---------- Mes points ----------
+    function majNbPoints() {
+        var b = $('nb-points'), n = (typeof MesPoints !== 'undefined') ? MesPoints.nombre() : 0;
+        if (!b) return;
+        b.hidden = !n;
+        b.textContent = n + ' enregistré' + (n > 1 ? 's' : '') + ' ›';
+    }
+    function enregistrer() {
+        if (!point) return;
+        var c = Geo.carreauDFCI(point.lat, point.lon), f = Geo.formats(point.lat, point.lon);
+        $('nom').value = point.adresse || MesPoints.nomParDefaut();
+        $('note').value = '';
+        $('feuille-resume').textContent = f.dmd + (c ? ' · ' + c.code : ' · hors carroyage DFCI');
+        $('feuille').hidden = false;
+        $('nom').focus(); $('nom').select();
+    }
+    function fermerFeuille() { $('feuille').hidden = true; }
+    function validerFeuille() {
+        if (!point) return;
+        var p = MesPoints.ajouter({ nom: $('nom').value, note: $('note').value, lat: point.lat, lon: point.lon });
+        fermerFeuille();
+        if (p) { notifier('Point enregistré : ' + p.nom); etat('Point « ' + p.nom + ' » enregistré dans Mes points.'); }
+        majNbPoints();
     }
 
     // ---------- Saisie unique : DFCI, GPS ou adresse ----------
@@ -291,6 +323,9 @@ var Localisation = (function () {
         var m = document.getElementById('localisation');
         if (!m) return;
         $('saisie').addEventListener('input', saisir);
+        document.addEventListener('mes-points-change', majNbPoints);
+        majNbPoints();
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermerFeuille(); });
         $('saisie').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (nature($('saisie').value.trim()) === 'adresse') chercherAdresse(); } });
         m.addEventListener('click', function (e) {
             var ex = e.target.closest('[data-exemple]');
@@ -311,5 +346,6 @@ var Localisation = (function () {
     });
 
     return { maPosition: maPosition, chercherAdresse: chercherAdresse, adresseProche: adresseProche, ouvrirCarte: ouvrirCarte, voirCarteDFCI: voirCarteDFCI,
-        meteo: chargerMeteo, copier: copier, partager: partager, versAmbiance: versAmbiance, effacer: effacer, menu: menu, changerFond: changerFond };
+        meteo: chargerMeteo, copier: copier, partager: partager, versAmbiance: versAmbiance, effacer: effacer, menu: menu, changerFond: changerFond,
+        enregistrer: enregistrer, fermerFeuille: fermerFeuille, validerFeuille: validerFeuille };
 })();
