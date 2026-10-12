@@ -38,6 +38,7 @@ const ECRANS = [
     ['accueil', async (p) => {}],
     ['calculs', async (p) => { await p.click('[data-onglet="calculs"]'); }],
     ['domaine ouvert', async (p) => { await p.click('[data-onglet="accueil"]'); await p.click('[data-domaine="incendie"]'); }],
+    ['boussole', async (p) => { await p.evaluate(() => { showModule('boussole'); Boussole.mesure({ cap: 40, inclinaison: 5, champ: 46 }); Boussole.figer(); }); }],
     ['se localiser', async (p) => { await p.evaluate(() => showModule('localisation')); await p.fill('#loc-saisie', '43.3951, 3.4263'); }],
     ['mes points', async (p) => { await p.evaluate(() => { MesPoints.ajouter({ nom: 'Citerne nord', lat: 43.3951, lon: 3.4263, note: 'Accès par la gauche' }); MesPoints.ouvrir(); }); }],
     ['carte dfci', async (p) => { await p.evaluate(() => showModule('carte-dfci')); }],
