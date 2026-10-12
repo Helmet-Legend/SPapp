@@ -127,21 +127,7 @@ var Localisation = (function () {
         b.textContent = n + ' enregistré' + (n > 1 ? 's' : '') + ' ›';
     }
     function enregistrer() {
-        if (!point) return;
-        var c = Geo.carreauDFCI(point.lat, point.lon), f = Geo.formats(point.lat, point.lon);
-        $('nom').value = point.adresse || MesPoints.nomParDefaut();
-        $('note').value = '';
-        $('feuille-resume').textContent = f.dmd + (c ? ' · ' + c.code : ' · hors carroyage DFCI');
-        $('feuille').hidden = false;
-        $('nom').focus(); $('nom').select();
-    }
-    function fermerFeuille() { $('feuille').hidden = true; }
-    function validerFeuille() {
-        if (!point) return;
-        var p = MesPoints.ajouter({ nom: $('nom').value, note: $('note').value, lat: point.lat, lon: point.lon });
-        fermerFeuille();
-        if (p) { notifier('Point enregistré : ' + p.nom); etat('Point « ' + p.nom + ' » enregistré dans Mes points.'); }
-        majNbPoints();
+        if (point) MesPoints.demander(point.lat, point.lon, point.adresse);
     }
 
     // ---------- Saisie unique : DFCI, GPS ou adresse ----------
@@ -325,7 +311,6 @@ var Localisation = (function () {
         $('saisie').addEventListener('input', saisir);
         document.addEventListener('mes-points-change', majNbPoints);
         majNbPoints();
-        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermerFeuille(); });
         $('saisie').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (nature($('saisie').value.trim()) === 'adresse') chercherAdresse(); } });
         m.addEventListener('click', function (e) {
             var ex = e.target.closest('[data-exemple]');
@@ -347,5 +332,5 @@ var Localisation = (function () {
 
     return { maPosition: maPosition, chercherAdresse: chercherAdresse, adresseProche: adresseProche, ouvrirCarte: ouvrirCarte, voirCarteDFCI: voirCarteDFCI,
         meteo: chargerMeteo, copier: copier, partager: partager, versAmbiance: versAmbiance, effacer: effacer, menu: menu, changerFond: changerFond,
-        enregistrer: enregistrer, fermerFeuille: fermerFeuille, validerFeuille: validerFeuille };
+        enregistrer: enregistrer };
 })();

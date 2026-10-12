@@ -17,6 +17,7 @@ var CarteDFCI = (function () {
     ];
     var Y0 = 1700000;
 
+    var groupePoints = null, pointOuvert = null;
     var carte = null, groupeGrille = null, groupeEtiquettes = null, couche = null, marqueur = null, cercle = null, repere = null;
     var fondActif = 'plan', erreursTuiles = 0, tuilesChargees = 0, derniereEtat = { niveau: '', lignes: 0, etiquettes: 0 };
     var $ = function (id) { return document.getElementById('cd-' + id); };
@@ -126,6 +127,7 @@ var CarteDFCI = (function () {
         if (options.precision) cercle = L.circle([lat, lon], { radius: options.precision, color: '#22A6F2', weight: 1, fillOpacity: .12, interactive: false }).addTo(carte);
         repere = { lat: lat, lon: lon };
         var d = Geo.carreauDFCI(lat, lon), f = Geo.formats(lat, lon);
+        fermerPoint();
         $('info').hidden = false;
         $('i-dfci').textContent = d ? d.code : 'Hors carroyage DFCI';
         $('i-dd').textContent = f.dd;
@@ -191,6 +193,48 @@ var CarteDFCI = (function () {
     }
     function fermerInfo() { $('info').hidden = true; if (marqueur) { carte.removeLayer(marqueur); marqueur = null; } if (cercle) { carte.removeLayer(cercle); cercle = null; } }
 
+    // ---------- Points enregistrés (Mes points) : repères ⭐ ----------
+    var echapper = function (t) { var d = document.createElement('div'); d.textContent = String(t == null ? '' : t); return d.innerHTML; };
+    function majPoints() {
+        if (!carte || typeof MesPoints === 'undefined') return;
+        if (!groupePoints) groupePoints = L.layerGroup().addTo(carte);
+        groupePoints.clearLayers();
+        var liste = MesPoints.liste(), etiquettes = carte.getZoom() >= 12;
+        liste.forEach(function (p) {
+            var icone = L.divIcon({ className: 'cd-point-marqueur', iconSize: [30, 30], iconAnchor: [15, 15],
+                html: '<span class="cd-etoile" aria-hidden="true">⭐</span>' + (etiquettes ? '<span class="cd-etiquette">' + echapper(p.nom) + '</span>' : '') });
+            L.marker([p.lat, p.lon], { icon: icone, title: p.nom, keyboard: true, riseOnHover: true }).on('click', function () { ouvrirPoint(p.id); }).addTo(groupePoints);
+        });
+        var b = $('pastille');
+        b.hidden = !liste.length;
+        b.textContent = '⭐ ' + liste.length + ' point' + (liste.length > 1 ? 's' : '') + ' enregistré' + (liste.length > 1 ? 's' : '');
+        if (pointOuvert && !liste.some(function (p) { return p.id === pointOuvert; })) fermerPoint();
+    }
+    function ouvrirPoint(id) {
+        var p = MesPoints.liste().find(function (x) { return x.id === id; });
+        if (!p) return;
+        fermerInfo();
+        pointOuvert = id;
+        var c = Geo.carreauDFCI(p.lat, p.lon);
+        $('p-nom').textContent = '⭐ ' + p.nom;
+        $('p-coord').textContent = Geo.formats(p.lat, p.lon).dmd + (c ? ' · DFCI ' + c.code : ' · hors carroyage DFCI');
+        $('p-note').textContent = p.note || ''; $('p-note').hidden = !p.note;
+        $('point').hidden = false;
+    }
+    function fermerPoint() { pointOuvert = null; $('point').hidden = true; }
+    function pointCourant() { return pointOuvert && MesPoints.liste().find(function (x) { return x.id === pointOuvert; }); }
+    function copierPoint() { var p = pointCourant(); if (p && navigator.clipboard) navigator.clipboard.writeText(MesPoints.texteCopie(p)).then(function () { if (window.showNotification) showNotification('Point copié !'); }); }
+    function fichePoint() { if (pointOuvert) MesPoints.ouvrirFiche(pointOuvert); }
+    function mapsPoint() { var p = pointCourant(); if (p) window.open('https://www.google.com/maps?q=' + p.lat.toFixed(6) + ',' + p.lon.toFixed(6), '_blank', 'noopener'); }
+    // La pastille « N points enregistrés » cadre la carte sur tous les points
+    function voirMesPoints() {
+        var liste = MesPoints.liste();
+        if (!carte || !liste.length) return;
+        if (liste.length === 1) { carte.setView([liste[0].lat, liste[0].lon], Math.max(carte.getZoom(), 14), { animate: false }); return; }
+        carte.fitBounds(L.latLngBounds(liste.map(function (p) { return [p.lat, p.lon]; })), { padding: [40, 40], maxZoom: 15, animate: false });
+    }
+    function enregistrer() { if (repere && typeof MesPoints !== 'undefined') MesPoints.demander(repere.lat, repere.lon); }
+
     // ---------- Initialisation (au premier affichage) ----------
     function initCarte() {
         if (carte) { carte.invalidateSize(); dessiner(); return; }
@@ -202,9 +246,11 @@ var CarteDFCI = (function () {
         groupeEtiquettes = L.layerGroup().addTo(carte);
         carte.setView([43.5, 3.5], 8);
         carte.on('moveend zoomend', dessiner);
+        carte.on('zoomend', majPoints);
         carte.on('click', function (e) { placer(e.latlng.lat, e.latlng.lng); });
         appliquerFond(lireFond());
         dessiner();
+        majPoints();
     }
 
     function voir(lat, lon, zoom) {
@@ -217,10 +263,11 @@ var CarteDFCI = (function () {
         var m = document.getElementById('carte-dfci');
         if (!m) return;
         new MutationObserver(function () { if (m.classList.contains('active')) setTimeout(initCarte, 30); }).observe(m, { attributes: true, attributeFilter: ['class'] });
+        document.addEventListener('mes-points-change', majPoints);
         $('recherche').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); chercher(); } });
         m.querySelectorAll('[data-fond]').forEach(function (b) { b.addEventListener('click', function () { if (carte) appliquerFond(b.dataset.fond); }); });
     });
 
     return { chercher: chercher, maPosition: maPosition, copier: copier, versAmbiance: versAmbiance, versLocalisation: versLocalisation,
-        ouvrirMaps: ouvrirMaps, fermerInfo: fermerInfo, pleinEcran: pleinEcran, voir: voir, etat: function () { return derniereEtat; }, carte: function () { return carte; } };
+        ouvrirMaps: ouvrirMaps, fermerInfo: fermerInfo, pleinEcran: pleinEcran, voir: voir, enregistrer: enregistrer, fermerPoint: fermerPoint, copierPoint: copierPoint, fichePoint: fichePoint, mapsPoint: mapsPoint, voirMesPoints: voirMesPoints, etat: function () { return derniereEtat; }, carte: function () { return carte; } };
 })();

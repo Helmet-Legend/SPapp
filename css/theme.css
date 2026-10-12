@@ -1161,15 +1161,15 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
 #localisation .loc-dfci.loc-dfci-mer { font-size: 1.6em; line-height: 1.3; }
 #localisation .loc-dfci.loc-dfci-mer span { display: block; }
 #localisation .loc-barre.loc-barre-2 { grid-template-columns: 1fr 1fr; }
-#localisation .loc-feuille[hidden] { display: none; }
-#localisation .loc-feuille { position: fixed; inset: 0; z-index: 9600; }
-#localisation .loc-feuille-fond { position: absolute; inset: 0; background: rgba(0,0,0,.55); }
-#localisation .loc-feuille-corps { position: absolute; left: 0; right: 0; bottom: 0; display: grid; gap: 8px; padding: 16px 14px calc(18px + env(safe-area-inset-bottom, 0px)); background: var(--t-s1); color: var(--t-ink); border-radius: 22px 22px 0 0; }
-#localisation .loc-feuille-corps h3 { margin: 0; }
-#localisation .loc-feuille-corps label { display: grid; gap: 4px; font-size: .85em; color: var(--t-muted); }
-#localisation .loc-feuille-corps input, #localisation .loc-feuille-corps textarea { font: inherit; font-size: 16px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--t-line); background: var(--t-s2); color: var(--t-ink); box-sizing: border-box; width: 100%; }
-#localisation .loc-valider { min-height: 50px; border-radius: 12px; font-weight: 800; }
-#localisation .loc-annuler { min-height: 46px; border-radius: 12px; background: var(--t-s2); color: var(--t-ink); border: 1px solid var(--t-line); box-shadow: none; }
+#loc-feuille[hidden] { display: none; }
+#loc-feuille { position: fixed; inset: 0; z-index: 9600; }
+#loc-feuille .loc-feuille-fond { position: absolute; inset: 0; background: rgba(0,0,0,.55); }
+#loc-feuille .loc-feuille-corps { position: absolute; left: 0; right: 0; bottom: 0; display: grid; gap: 8px; padding: 16px 14px calc(18px + env(safe-area-inset-bottom, 0px)); background: var(--t-s1); color: var(--t-ink); border-radius: 22px 22px 0 0; }
+#loc-feuille .loc-feuille-corps h3 { margin: 0; }
+#loc-feuille .loc-feuille-corps label { display: grid; gap: 4px; font-size: .85em; color: var(--t-muted); }
+#loc-feuille .loc-feuille-corps input, #loc-feuille .loc-feuille-corps textarea { font: inherit; font-size: 16px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--t-line); background: var(--t-s2); color: var(--t-ink); box-sizing: border-box; width: 100%; }
+#loc-feuille .loc-valider { min-height: 50px; border-radius: 12px; font-weight: 800; }
+#loc-feuille .loc-annuler { min-height: 46px; border-radius: 12px; background: var(--t-s2); color: var(--t-ink); border: 1px solid var(--t-line); box-shadow: none; }
 #localisation .loc-controle { margin: 4px 2px; font-size: .82em; color: var(--t-muted); }
 #localisation .loc-barre[hidden] { display: none; }
 #localisation .loc-barre { position: fixed; left: 0; right: 0; bottom: calc(76px + env(safe-area-inset-bottom, 0px)); z-index: 8900; display: grid; grid-template-columns: 1fr 1fr 1.7fr; gap: 8px; padding: 10px 14px; background: var(--t-s1); border-top: 1px solid var(--t-line); }
@@ -1230,6 +1230,17 @@ html[data-theme="sombre"] #mes-points .mp-pastille.mp-mer { background: #0c2a3a;
 #mes-points .mp-modif input, #mes-points .mp-modif textarea { font: inherit; font-size: 16px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--t-line); background: var(--t-s2); color: var(--t-ink); box-sizing: border-box; width: 100%; }
 
 /* Carte DFCI */
+#carte-dfci .cd-enregistrer { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; margin-top: 8px; border-radius: 14px; background: var(--t-s2); color: var(--t-ink); border: 2px solid #F5B800; font-weight: 800; box-shadow: none; }
+#carte-dfci .cd-pastille { position: absolute; top: 10px; left: 56px; z-index: 900; min-height: 38px; padding: 4px 14px; border-radius: 999px; background: var(--t-s1); color: var(--t-ink); border: 1px solid var(--t-line); font-size: .8em; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+#carte-dfci .cd-pastille[hidden] { display: none; }
+#carte-dfci .cd-point[hidden] { display: none; }
+#carte-dfci .cd-point-nom { font-size: 1.1em; font-weight: 800; text-align: center; padding: 0 36px; overflow-wrap: anywhere; }
+#carte-dfci .cd-point small[hidden] { display: none; }
+#carte-dfci .cd-point small { padding: 0 36px; overflow-wrap: anywhere; }
+#carte-dfci .cd-actions.cd-actions-3 { grid-template-columns: repeat(3, 1fr); }
+.cd-point-marqueur { background: none; border: 0; }
+.cd-point-marqueur .cd-etoile { display: block; font-size: 26px; line-height: 30px; text-align: center; filter: drop-shadow(0 1px 2px rgba(0,0,0,.6)); }
+.cd-point-marqueur .cd-etiquette { position: absolute; left: 28px; top: 6px; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 1px 6px; border-radius: 6px; background: rgba(255,255,255,.9); color: #111; font-size: 11px; font-weight: 700; pointer-events: none; }
 #carte-dfci .cd-barre { display: flex; gap: 8px; margin: 8px 0; }
 #carte-dfci .cd-recherche { flex: 1; display: flex; gap: 6px; min-width: 0; }
 #carte-dfci .cd-recherche input { flex: 1; min-width: 0; padding: 10px; border-radius: 8px; font: inherit; box-sizing: border-box; }
