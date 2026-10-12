@@ -1498,3 +1498,38 @@ html[data-theme] .rd-tuiles button b { font-size: 1.05em; }
 .nav-crumbs nav span:not([aria-hidden]) { flex: 1 1 0; }
 /* Titres qui ont leur propre couleur (Mousses, SUAP…) : le liseré de gauche reprend cette couleur */
 html[data-theme] .module > h2[style*="border-bottom"] { border-left-color: currentColor; }
+
+/* ---------- Refonte graphique : calculateurs (Pertes de charge, ARI, Puissance du feu, Additif, Règle des 3 %, Explosimétrie) ----------
+   Habillage seulement : les formules, champs, unités, images et valeurs par défaut sont ceux de l'application. */
+html[data-theme] .calc-refonte { counter-reset: etape; }
+html[data-theme] .calc-refonte .result-box { background: var(--t-s1); border: 1px solid var(--t-line); border-radius: 18px; padding: 14px; }
+html[data-theme] .calc-refonte .result-box > h3:first-child { display: flex; align-items: center; gap: 10px; counter-increment: etape;
+    font-family: var(--t-display); font-weight: var(--t-display-weight); text-transform: var(--t-display-case); letter-spacing: var(--t-display-spacing); font-size: 1.2em; }
+html[data-theme] .calc-refonte .result-box > h3:first-child::before { content: counter(etape); flex: none; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--fill-red, var(--t-accent-bg)); color: #fff; display: grid; place-items: center; font: 700 14px var(--t-font); letter-spacing: 0; }
+html[data-theme] .calc-refonte label { font-weight: 700; color: var(--t-muted); }
+html[data-theme] .calc-refonte input[type="number"], html[data-theme] .calc-refonte input[type="time"], html[data-theme] .calc-refonte select {
+    min-height: 56px; border-radius: 14px; border: 1.5px solid var(--t-line); background: var(--t-s2); color: var(--t-ink); font-weight: 700; }
+html[data-theme] .calc-refonte input:focus, html[data-theme] .calc-refonte select:focus { border-color: var(--t-accent); }
+/* Boutons de choix et d'ajustement (± 5, bouteille, diamètre, débit, pression…) : même style, sélection en rouge */
+html[data-theme] .calc-refonte .form-group button:not([class*="rd-"]):not(.nav-fav) {
+    min-height: 48px; border-radius: 14px; border: 1.5px solid var(--t-line); box-shadow: none; transform: none;
+    font-weight: 700; font-size: 1em; padding: 8px 12px; }
+html[data-theme] .calc-refonte .form-group button[style*="gradient"]:not([class*="rd-"]) { background: var(--t-s2) !important; color: var(--t-ink) !important; border: 1.5px solid var(--t-line) !important; box-shadow: none !important; }
+html[data-theme] .calc-refonte .form-group button[style*="FFD700"]:not([class*="rd-"]) { background: var(--fill-red, #D7263D) !important; color: #fff !important; border-color: transparent !important; transform: none !important; }
+/* Barre fixe : le résultat reste visible pendant la saisie */
+.calc-dock { position: fixed; z-index: 8990; left: 12px; right: 12px; bottom: calc(88px + env(safe-area-inset-bottom, 0px)); max-width: 560px; margin: 0 auto;
+    display: flex; align-items: center; gap: 12px; padding: 8px 10px 8px 16px; border-radius: 18px; border: 1px solid var(--t-line);
+    background: color-mix(in srgb, var(--t-s1) 94%, transparent); box-shadow: 0 8px 24px rgba(0, 0, 0, .3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.calc-dock[hidden] { display: none; }
+.calc-dock-texte { flex: 1; min-width: 0; }
+.calc-dock small { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--t-muted); }
+.calc-dock b { display: block; font-family: var(--t-display); font-weight: 700; font-size: 1.6em; line-height: 1.1; color: var(--t-ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.calc-dock .calc-dock-copier { min-height: 44px; border-radius: 12px; border: 0; background: var(--fill-red, #D7263D); color: #fff; font-weight: 700; padding: 0 16px; cursor: pointer; }
+body.calc-dock-actif .module.active { padding-bottom: 100px; }
+.calc-dock.long b { font-size: 1.05em; line-height: 1.2; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+html[data-theme] .calc-refonte .form-group button:not([class*="rd-"]):not([aria-pressed]):not(.nav-fav):not([style*="gradient"]) { background: var(--t-s2); color: var(--t-ink); }
+html[data-theme] .calc-refonte .form-group button[aria-pressed="true"]:not([class*="rd-"]):not([style*="gradient"]) { background: var(--fill-red, #D7263D); color: #fff; border-color: transparent; }
+/* Rangée − / valeur / + : tient dans la largeur d'un téléphone */
+html[data-theme] .calc-refonte .form-group > div[style*="flex"] > input[type="number"] { min-width: 0 !important; flex: 1 1 0 !important; padding-inline: 4px; }
+html[data-theme] .calc-refonte .form-group > div[style*="flex"] > button { flex: none; min-width: 44px; padding-inline: 6px !important; }
