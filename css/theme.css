@@ -1427,3 +1427,44 @@ html[data-theme="clair"] .nav-tabbar button[aria-current="page"] { background: v
 html[data-theme="clair"] .nav-tabbar button[aria-current="page"] .ico { color: #FFFFFF; }
 html[data-theme="clair"] body.accueil-photo .nav-home > .calc-titre,
 html[data-theme="clair"] body.accueil-photo .nav-home > .acces-rapide > .calc-titre { background: var(--t-s1); color: var(--t-ink); border-radius: 12px; padding: 6px 10px; }
+
+/* ---------- Boussole ---------- */
+#boussole .bou-entete { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+#boussole .bou-entete h2 { margin: 0; font-size: 1.25em; }
+#boussole .bou-nord { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; background: var(--t-s2); border-radius: 14px; margin-bottom: 12px; }
+#boussole .bou-nord button { min-height: 44px; border: 0; border-radius: 11px; background: transparent; color: var(--t-muted); font-weight: 700; box-shadow: none; }
+#boussole .bou-nord button[aria-pressed="true"] { background: var(--t-s1); color: var(--t-ink); box-shadow: 0 1px 3px rgba(0, 0, 0, .25); }
+#boussole .bou-carte { background: var(--t-s1); border: 1px solid var(--t-line); border-radius: 20px; padding: 14px; margin-bottom: 12px; text-align: center; }
+#boussole .bou-cap { font-family: var(--t-display, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: 56px; line-height: 1; letter-spacing: .02em; color: var(--t-ink); }
+#boussole .bou-cap small { font-size: 22px; color: var(--t-muted); }
+#boussole .bou-dir { font-weight: 700; color: var(--t-accent); letter-spacing: .12em; margin: 2px 0 0; min-height: 1.4em; }
+#boussole .bou-ref { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--t-muted); margin: 0 0 10px; }
+#boussole .bou-cadran-zone { position: relative; width: min(300px, 100%); aspect-ratio: 1; margin: 0 auto; }
+#boussole .bou-repere { position: absolute; left: 50%; top: -6px; margin-left: -9px; width: 0; height: 0; z-index: 2;
+    border-left: 9px solid transparent; border-right: 9px solid transparent; border-top: 18px solid var(--t-accent); }
+#boussole .bou-cadran { position: absolute; inset: 0; width: 100%; height: 100%; transition: transform .12s linear; }
+#boussole .bou-fond { fill: var(--t-s2); stroke: var(--t-line); stroke-width: 2; }
+#boussole .bou-grad { stroke: var(--t-muted); stroke-width: 1.5; }
+#boussole .bou-grad-m { stroke-width: 3; }
+#boussole .bou-lettre { font: 700 26px 'Barlow Condensed', sans-serif; fill: var(--t-ink); }
+#boussole .bou-n { font-size: 32px; fill: var(--t-accent); }
+#boussole .bou-decl { font-size: 12.5px; color: var(--t-muted); margin: 12px 2px 0; }
+#boussole .bou-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+#boussole .bou-actions button, #boussole .bou-releve-actions button { min-height: 48px; border-radius: 14px; border: 1px solid var(--t-line); background: var(--t-s1); color: var(--t-ink); font-weight: 700; box-shadow: none; padding: 0 12px; }
+#boussole .bou-actions button:disabled { opacity: .5; }
+#boussole .bou-actions .bou-principal { grid-column: 1 / -1; background: var(--fill-red, #D7263D); border: 0; color: #fff; }
+#boussole .bou-refus, #boussole .bou-etalon, #boussole .bou-releve { background: var(--t-s1); border: 1px solid var(--t-line); border-radius: 16px; padding: 12px 14px; margin: 0 0 12px; font-size: .92em; }
+#boussole .bou-etalon p, #boussole .bou-releve p { margin: 4px 0 0; }
+#boussole .bou-releve { text-align: center; }
+#boussole .bou-releve > b { display: block; font: 700 30px var(--t-display, 'Barlow Condensed', sans-serif); }
+#boussole .bou-releve-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+#boussole .bou-indicateurs { display: grid; gap: 8px; margin-bottom: 12px; }
+#boussole .bou-ind { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border-radius: 14px; background: var(--t-s2); font-size: .92em; }
+#boussole .bou-ind i { flex: none; width: 12px; height: 12px; border-radius: 50%; background: var(--t-muted); }
+#boussole .bou-ind b { display: block; color: var(--t-ink); }
+#boussole .bou-ind span { color: var(--t-muted); font-size: .9em; }
+#boussole .bou-bon i { background: light-dark(#15803D, #4ADE80); }
+#boussole .bou-moyen i { background: light-dark(#B45309, #FFAA24); }
+#boussole .bou-mauvais i { background: light-dark(#B91C1C, #FF6B6B); }
+#boussole[data-niveau="mauvais"] .bou-carte { border-color: light-dark(#B91C1C, #FF6B6B); }
+#boussole[data-niveau="moyen"] .bou-carte { border-color: light-dark(#B45309, #FFAA24); }

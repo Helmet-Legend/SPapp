@@ -4125,6 +4125,26 @@
    "terrain": 3
   },
   {
+   "id": "boussole",
+   "picto": "compass",
+   "titre": "Boussole (cap, nord vrai)",
+   "domaine": "outils",
+   "theme": "Localisation et carte",
+   "type": "fiche",
+   "motsCles": [
+    "boussole",
+    "compas",
+    "cap",
+    "nord",
+    "azimut",
+    "orientation",
+    "déclinaison",
+    "gisement",
+    "direction",
+    "contre-azimut"
+   ]
+  },
+  {
    "id": "epuisement",
    "titre": "Calcul Épuisement de Volume",
    "domaine": "outils",

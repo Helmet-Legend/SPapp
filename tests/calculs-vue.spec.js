@@ -98,7 +98,7 @@ test('accueil : accès rapide Terrain (3 outils) au-dessus des domaines, domaine
     await expect(app.locator('#navHome [data-theme="outils|Localisation et carte"]')).toBeVisible();
     await expect(app.locator('#navHome [data-theme="outils|Calculs pratiques"]')).toBeVisible();
     await app.click('[data-theme="outils|Localisation et carte"]');
-    await expect(app.locator('#navHome .nav-leaf')).toHaveCount(3);
+    await expect(app.locator('#navHome .nav-leaf')).toHaveCount(4);
 });
 
 test('thème clair et sombre : le texte des cartes reste lisible', async ({ app }) => {

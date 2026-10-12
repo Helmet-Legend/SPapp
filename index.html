@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.48">
+    <meta name="version" content="1.69.49">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -312,7 +312,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.48</span><br>
+                        Vulcain v<span class="app-version">1.69.49</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -20331,6 +20331,7 @@ Je fais : extinction.</p>
             <button type="button" class="loc-menu-btn" id="loc-menu-btn" onclick="Localisation.menu()" aria-label="Plus d'actions" aria-haspopup="true" aria-expanded="false">⋯</button>
             <div id="loc-menu" class="loc-menu" hidden role="menu">
                 <button type="button" role="menuitem" onclick="MesPoints.ouvrir()">⭐ Mes points</button>
+                <button type="button" role="menuitem" onclick="Boussole.ouvrir()">🧭 Boussole</button>
                 <button type="button" role="menuitem" onclick="Localisation.ouvrirCarte()">🗺️ Ouvrir dans Maps</button>
                 <button type="button" role="menuitem" onclick="Localisation.partager()">📤 Partager</button>
                 <button type="button" role="menuitem" onclick="Localisation.changerFond()" id="loc-fond">🌐 Fond de la mini-carte : Plan IGN</button>
@@ -20391,6 +20392,55 @@ Je fais : extinction.</p>
             <button type="button" class="loc-principal" id="loc-btn-ambiance" onclick="Localisation.versAmbiance()"><span aria-hidden="true">📻</span>Vers message d'ambiance</button>
         </div>
         <p class="rd-source">📚 Carroyage DFCI : 100 km (2 lettres), 20 km (2 chiffres pairs), 2 km (lettre + chiffre), zone 1 à 5. Adresses : Géoplateforme de l'IGN (secours : Base Adresse Nationale). Les 5 derniers points consultés et les points que vous enregistrez (« Mes points ») restent seulement sur cet appareil.</p>
+    </div>
+
+    <div id="boussole" class="module" style="--jsp: #278BFF;" data-niveau="attente">
+        <div class="bou-entete">
+            <button class="back-btn" onclick="showModule('home')">← Retour</button>
+            <h2>🧭 Boussole</h2>
+        </div>
+        <div class="bou-nord" role="group" aria-label="Référence du nord">
+            <button type="button" id="bou-nord-vrai" aria-pressed="true" onclick="Boussole.choisirNord(true)">Nord vrai (carte)</button>
+            <button type="button" id="bou-nord-mag" aria-pressed="false" onclick="Boussole.choisirNord(false)">Nord magnétique</button>
+        </div>
+        <div class="bou-carte">
+            <div class="bou-cap" id="bou-cap" aria-live="off">--<small>°</small></div>
+            <div class="bou-dir" id="bou-dir"></div>
+            <div class="bou-ref" id="bou-ref">Nord vrai (carte)</div>
+            <div class="bou-cadran-zone">
+                <div class="bou-repere" aria-hidden="true"></div>
+                <svg class="bou-cadran" id="bou-cadran" viewBox="-150 -150 300 300" role="img" aria-label="Cadran de la boussole : le nord est marqué N en rouge">
+                    <circle r="144" class="bou-fond"/>
+                    <g id="bou-graduations"></g>
+                    <text y="-100" text-anchor="middle" class="bou-lettre bou-n">N</text>
+                    <text y="112" text-anchor="middle" class="bou-lettre">S</text>
+                    <text x="104" y="9" text-anchor="middle" class="bou-lettre">E</text>
+                    <text x="-104" y="9" text-anchor="middle" class="bou-lettre">O</text>
+                </svg>
+            </div>
+            <p class="bou-decl" id="bou-decl"></p>
+        </div>
+        <div class="bou-actions">
+            <button type="button" class="bou-principal" id="bou-activer" onclick="Boussole.activer()">Activer la boussole</button>
+            <button type="button" id="bou-figer" onclick="Boussole.figer()">Figer le cap</button>
+            <button type="button" onclick="Boussole.etalonner()">Étalonner</button>
+        </div>
+        <p class="bou-refus" id="bou-refus" hidden>Autorisation refusée. Réglages › Safari › Mouvement et orientation : activez l'accès, puis rouvrez la boussole.</p>
+        <div class="bou-etalon" id="bou-etalon" hidden>
+            <b>Étalonner le capteur</b>
+            <p>Éloignez-vous du métal et des câbles, puis dessinez lentement un « 8 » dans l'air avec le téléphone, en le faisant pivoter sur tous ses axes, pendant 10 secondes.</p>
+        </div>
+        <div class="bou-releve" id="bou-releve" hidden>
+            <small>Cap relevé</small>
+            <b id="bou-releve-cap"></b>
+            <p>Contre-azimut <b id="bou-releve-retour"></b> · <span id="bou-releve-ref"></span></p>
+            <div class="bou-releve-actions">
+                <button type="button" onclick="Boussole.copier()">Copier</button>
+                <button type="button" id="bou-releve-point" onclick="Boussole.enregistrerPoint()">Enregistrer ma position</button>
+            </div>
+        </div>
+        <div class="bou-indicateurs" id="bou-indicateurs" aria-live="polite"></div>
+        <p class="rd-source">📚 Cap en degrés (0 = nord, sens horaire). Le capteur du téléphone mesure le nord magnétique ; le nord vrai (celui des cartes) s'obtient en ajoutant la déclinaison, calculée hors ligne avec le modèle WMM 2025 d'après votre position. Aucun capteur de téléphone n'est parfait : tenez l'appareil à plat, loin du métal, et surveillez les indicateurs. Pour une décision critique, recoupez avec une boussole mécanique.</p>
     </div>
 
     <div id="mes-points" class="module" style="--jsp: #F5B800;">
@@ -32173,7 +32223,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.48</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.49</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
@@ -32203,6 +32253,8 @@ Je demande : ….</p>
     <script src="js/modules/geo-dfci.js"></script>
     <script src="js/modules/fdf-ambiance.js"></script>
     <script src="js/modules/meteo-point.js"></script>
+    <script src="js/modules/declinaison.js"></script>
+    <script src="js/modules/boussole.js"></script>
     <script src="js/modules/mes-points.js"></script>
     <script src="js/modules/localisation.js"></script>
     <script src="js/modules/carte-dfci.js"></script>
