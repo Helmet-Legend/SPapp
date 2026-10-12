@@ -50,3 +50,51 @@ test('Copier : le résultat de la barre est copié sans erreur', async ({ app })
     await app.click('.calc-dock-copier');
     expect(app.erreurs).toEqual([]);
 });
+
+// ---------- Les 9 autres calculateurs ----------
+const saisir = (app, id, v) => app.evaluate(([i, val]) => { const e = document.getElementById(i); e.value = val; e.dispatchEvent(new Event('input', { bubbles: true })); e.dispatchEvent(new Event('change', { bubbles: true })); }, [id, v]);
+
+test('Abaque, Temps de trajet, Épuisement, Facteur de chute : barre fixe avec le résultat', async ({ app }) => {
+    await app.evaluate(() => showModule('abaque'));
+    for (const [i, v] of [['abaque-longueur', '10'], ['abaque-largeur', '5'], ['abaque-hauteur', '2']]) await saisir(app, i, v);
+    await expect(dock(app)).toContainText('100.000 m³');
+    await app.evaluate(() => showModule('distance-calc'));
+    await saisir(app, 'trajet-distance', '30');
+    await expect(dock(app)).toContainText('36min');
+    await app.evaluate(() => showModule('epuisement'));
+    for (const [i, v] of [['longueur', '10'], ['largeur', '5'], ['hauteur', '2']]) await saisir(app, i, v);
+    await expect(dock(app)).toContainText('1000 L');
+    await app.evaluate(() => showModule('lspcc-calculateur'));
+    await saisir(app, 'lspcc-hauteur', '3'); await saisir(app, 'lspcc-corde', '10');
+    await expect(dock(app)).toContainText('0.30');
+});
+
+test('Paliers MT 2012 : barre fixe, calcul inchangé', async ({ app }) => {
+    await app.evaluate(() => showModule('sal-calculateur'));
+    await saisir(app, 'calc-profondeur', '28'); await saisir(app, 'calc-temps', '25');
+    await expect(dock(app)).toContainText('Paliers');
+    await expect(app.locator('#calc-resultat')).toContainText('3 m');
+});
+
+test('Convertisseur : la barre rappelle « valeur unité = valeur unité »', async ({ app }) => {
+    await app.evaluate(() => showModule('convertisseur'));
+    // L'appli referme la zone juste après l'ouverture de l'écran : on rouvre jusqu'à ce qu'elle tienne
+    await expect(async () => {
+        await app.evaluate(() => selectQuickConvert('pression'));
+        await expect(app.locator('#conversionZone')).toBeVisible({ timeout: 500 });
+    }).toPass({ timeout: 8000 });
+    await saisir(app, 'value1', '10');
+    await expect(dock(app).locator('b')).toHaveText(/^10 bar = 145\.04 psi$/);
+    await saisir(app, 'value1', '');
+    await expect(dock(app)).toBeHidden();
+});
+
+test('Wallace : pas de barre tant qu\'aucune zone n\'est brûlée ; formulaires (message d\'ambiance, IA) sans barre', async ({ app }) => {
+    await app.evaluate(() => showModule('suap-wallace-calc'));
+    await expect(dock(app)).toBeHidden();
+    await app.evaluate(() => showModule('fdf-ambiance'));
+    await expect(dock(app)).toBeHidden();
+    await app.evaluate(() => showModule('ia-manoeuvre'));
+    await expect(dock(app)).toBeHidden();
+    expect(app.erreurs).toEqual([]);
+});
