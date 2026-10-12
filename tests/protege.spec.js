@@ -1,4 +1,5 @@
-// Contenu protégé : photos et schémas à l'intérieur des dossiers (GTO, GDO, RDMI, fiches pédagogiques…) et documents.
+// Contenu protégé : photos et schémas à l'intérieur des dossiers (GTO, GDO, RDMI, fiches pédagogiques…), documents,
+// et images de boutons déjà refaites (photos des 18 calculs et des 12 domaines).
 // Une refonte graphique ne doit en modifier aucun octet. Une image ajoutée est acceptée ; une image modifiée ou supprimée fait échouer le test.
 const { test, expect } = require('@playwright/test');
 const crypto = require('crypto');
@@ -8,7 +9,7 @@ const path = require('path');
 const racine = path.join(__dirname, '..');
 const manifeste = JSON.parse(fs.readFileSync(path.join(__dirname, 'protege.manifest.json'), 'utf8'));
 
-test('le contenu protégé (photos des dossiers, documents) est strictement inchangé', () => {
+test('le contenu protégé (photos des dossiers, documents, images de boutons) est strictement inchangé', () => {
     const modifies = [], absents = [];
     for (const [f, h] of Object.entries(manifeste.fichiers)) {
         const p = path.join(racine, f);
@@ -24,4 +25,11 @@ test('les images des dossiers ne passent pas par le style de l\'interface (pas d
     // Les nouvelles règles de l'interface ne ciblent jamais les images de contenu (.rd-fig, .rd-photo, .module img)
     const nouveau = css.slice(css.indexOf('Onglet Calculs (kit UI Vulcain 34)'));
     expect(nouveau).not.toMatch(/\.rd-(fig|photo|img)|\.module\s+img|\bimg\s*\{[^}]*(filter|object-fit|border-radius)/);
+});
+
+test('les images de boutons refaites sont bien protégées (18 calculs, 12 domaines)', () => {
+    const f = Object.keys(manifeste.fichiers);
+    expect(f.filter(x => /^images\/calculs\/.+\.webp$/.test(x)).length).toBe(18);
+    expect(f.filter(x => /^images\/accueil\/dom-.+\.jpeg$/.test(x)).length).toBe(12);
+    expect(f).toContain('images/accueil/dom-sap.jpeg');
 });

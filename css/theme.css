@@ -1576,3 +1576,49 @@ html[data-theme] .calc-refonte .form-group > div[style*="flex"] > button { flex:
     .nav-home #calcListe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: stretch; }
     .nav-home #calcListe .calc-carte { margin: 0; }
 }
+
+/* ---------- Refonte graphique : Chercher, Favoris, Réglages ---------- */
+.vue-titre { display: flex; align-items: center; gap: 10px; margin: 2px 2px 10px; }
+.vue-titre h3 { margin: 0; font-family: var(--t-display); font-weight: var(--t-display-weight); text-transform: uppercase; letter-spacing: .05em; font-size: 1.7em; line-height: 1; }
+.nav-nb { padding: 2px 10px; border-radius: 999px; background: var(--t-s2); border: 1px solid var(--t-line); font-size: 12px; font-weight: 700; }
+/* Lignes de résultats : barre de couleur du domaine + pastille de type */
+.nav-home .nav-row { position: relative; border-radius: 16px; min-height: 64px; }
+html[data-theme="clair"] .nav-home .nav-row { box-shadow: inset 5px 0 0 var(--c), var(--t-shadow); }
+.nav-tag { flex: none; padding: 3px 9px; border-radius: 999px; background: var(--t-s2); border: 1px solid var(--t-line); color: var(--t-ink); font-size: 10.5px; font-weight: 700; letter-spacing: .08em; }
+/* Rubriques (Suggestions, Consultés récemment) */
+.nav-label.nav-sect { display: flex; align-items: center; gap: 8px; margin: 10px 2px 2px; padding: 0; font-family: var(--t-display); font-weight: 700; font-size: 1.15em; letter-spacing: .06em; text-transform: uppercase; color: var(--t-ink); }
+.nav-label.nav-sect i { width: 4px; height: 18px; border-radius: 2px; background: var(--fill-red, var(--t-accent)); }
+.nav-label.nav-sect span { margin-left: auto; font: 600 11px var(--t-font); letter-spacing: .12em; color: var(--t-muted); }
+.nav-suggest { display: flex; flex-wrap: wrap; gap: 8px; }
+.nav-home .nav-suggest button { min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--t-line); background: var(--t-s1); color: var(--t-ink); font-weight: 700; box-shadow: none; }
+.nav-aide { color: var(--t-muted); font-size: .85em; padding: 0 2px; }
+/* Favoris vides */
+.nav-vide { text-align: center; padding: 34px 18px; }
+.nav-vide-etoile { width: 84px; height: 84px; margin: 0 auto 12px; border-radius: 50%; display: grid; place-items: center; color: var(--t-accent);
+    background: color-mix(in srgb, var(--fill-red, var(--t-accent)) 14%, var(--t-s1)); border: 1px solid color-mix(in srgb, var(--fill-red, var(--t-accent)) 40%, var(--t-line)); }
+.nav-vide-etoile .ico { width: 42px; height: 42px; }
+.nav-vide b { display: block; font-family: var(--t-display); font-weight: var(--t-display-weight); font-size: 1.5em; text-transform: uppercase; letter-spacing: .04em; }
+.nav-vide p { color: var(--t-muted); margin: 6px 0 16px; }
+.nav-home .nav-vide-btn { min-height: 48px; padding: 0 22px; border-radius: 14px; background: var(--fill-red, var(--t-accent-bg)); color: #fff; font-weight: 700; text-align: center; }
+/* Réglages : thèmes en 3 cartes avec aperçu, notifications en interrupteurs */
+.reglages-choix[role="radiogroup"] { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.reglages-modal .reglages-choix[role="radiogroup"] button { flex-direction: column; align-items: stretch; gap: 8px; min-height: 0; padding: 8px 8px 10px; text-align: center; border-radius: 16px; }
+.reglages-choix[role="radiogroup"] button .ico { display: none; }
+.reglages-choix[role="radiogroup"] button span { align-items: center; }
+.reglages-choix[role="radiogroup"] button small { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.reglages-aperu { display: block; height: 58px; border-radius: 10px; border: 1px solid var(--t-line); position: relative; overflow: hidden; }
+.reglages-aperu::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: 8px; height: 14px; border-radius: 5px; background: #D7263D; }
+.aperu-auto { background: linear-gradient(90deg, #EEF1F5 50%, #080E15 50%); }
+.aperu-clair { background: #EEF1F5; }
+.aperu-sombre { background: #080E15; }
+.aperu-sombre::after { background: #E01B36; }
+.reglages-modal .reglages-choix[role="radiogroup"] button[aria-checked="true"] { box-shadow: 0 0 0 2px color-mix(in srgb, var(--t-accent) 40%, transparent); }
+.reglages-modal .reglages-choix button[role="switch"] { border-radius: 16px; }
+.reglages-modal .reglages-choix button[role="switch"] > span { flex: 1; }
+.reglages-modal .reglages-choix button[role="switch"][aria-checked="true"] { background: var(--t-s2); border-color: var(--t-line); }
+.reglages-inter { flex: none; width: 50px; height: 30px; border-radius: 999px; background: var(--t-s1); border: 1px solid var(--t-line); position: relative; transition: background .15s; }
+.reglages-inter::after { content: ""; position: absolute; left: 3px; top: 3px; width: 22px; height: 22px; border-radius: 50%; background: var(--t-muted); transition: left .15s, background .15s; }
+[role="switch"][aria-checked="true"] .reglages-inter { background: var(--fill-red, var(--t-accent-bg)); border-color: transparent; }
+[role="switch"][aria-checked="true"] .reglages-inter::after { left: 23px; background: #fff; }
+@media (prefers-reduced-motion: reduce) { .reglages-inter, .reglages-inter::after { transition: none; } }
+.reglages-version { margin: 4px 0 0; text-align: center; font-size: .78em; color: var(--t-muted); }
