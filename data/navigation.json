@@ -4012,6 +4012,28 @@
    ]
   },
   {
+   "id": "mes-points",
+   "picto": "pin",
+   "titre": "Mes points (positions enregistrées)",
+   "domaine": "outils",
+   "theme": "Calculs pratiques",
+   "type": "calculateur",
+   "motsCles": [
+    "points",
+    "enregistrer",
+    "marquer",
+    "waypoint",
+    "gpx",
+    "position",
+    "mer",
+    "mouillage",
+    "distance",
+    "cap",
+    "coordonnées",
+    "favoris"
+   ]
+  },
+  {
    "id": "carte-dfci",
    "picto": "map",
    "titre": "Carte DFCI (grille et carreaux)",

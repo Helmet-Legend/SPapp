@@ -1,5 +1,5 @@
-// Vulcain Service Worker v1.69.43
-const CACHE_NAME = 'vulcain-v1.69.43';
+// Vulcain Service Worker v1.69.44
+const CACHE_NAME = 'vulcain-v1.69.44';
 const urlsToCache = [
   './',
   './index.html',
@@ -31,6 +31,7 @@ const urlsToCache = [
   './js/modules/geo-dfci.js',
   './js/modules/fdf-ambiance.js',
   './js/modules/meteo-point.js',
+  './js/modules/mes-points.js',
   './js/modules/localisation.js',
   './js/modules/carte-dfci.js',
   './images/accueil/accueil-nuit.webp',

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.43">
+    <meta name="version" content="1.69.44">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -53,6 +53,7 @@
         <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
         <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
         <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
         <symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 7V4H6l6 8-6 8h12v-3"/></symbol>
         <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z"/></symbol>
         <symbol id="i-map" viewBox="0 0 24 24"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></symbol>
@@ -279,7 +280,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.43</span><br>
+                        Vulcain v<span class="app-version">1.69.44</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -20297,6 +20298,7 @@ Je fais : extinction.</p>
             <h2>📍 Se localiser</h2>
             <button type="button" class="loc-menu-btn" id="loc-menu-btn" onclick="Localisation.menu()" aria-label="Plus d'actions" aria-haspopup="true" aria-expanded="false">⋯</button>
             <div id="loc-menu" class="loc-menu" hidden role="menu">
+                <button type="button" role="menuitem" onclick="MesPoints.ouvrir()">⭐ Mes points</button>
                 <button type="button" role="menuitem" onclick="Localisation.ouvrirCarte()">🗺️ Ouvrir dans Maps</button>
                 <button type="button" role="menuitem" onclick="Localisation.partager()">📤 Partager</button>
                 <button type="button" role="menuitem" onclick="Localisation.changerFond()" id="loc-fond">🌐 Fond de la mini-carte : Plan IGN</button>
@@ -20327,9 +20329,13 @@ Je fais : extinction.</p>
         </div>
         <div id="loc-resultat" class="loc-resultat" hidden>
             <section class="loc-carte-dfci" aria-label="Carreau DFCI">
-                <small class="loc-titre">Carreau DFCI</small>
+                <small class="loc-titre" id="loc-r-titre">Carreau DFCI</small>
                 <div class="loc-dfci" id="loc-r-dfci"></div>
                 <small id="loc-r-sous" class="loc-sous"></small>
+                <div class="loc-enreg">
+                    <button type="button" class="loc-enregistrer" onclick="Localisation.enregistrer()"><span aria-hidden="true">⭐</span> Enregistrer ce point</button>
+                    <button type="button" class="loc-nb-points" id="loc-nb-points" onclick="MesPoints.ouvrir()" hidden></button>
+                </div>
                 <button type="button" class="loc-mini" onclick="Localisation.voirCarteDFCI()" aria-label="Ouvrir la carte DFCI">
                     <span id="loc-mini-carte" class="loc-mini-carte"></span>
                     <span class="loc-mini-badge">Carte DFCI ⤢</span>
@@ -20347,12 +20353,73 @@ Je fais : extinction.</p>
             <p class="loc-controle">⚠ Carreau calculé sur le téléphone : à contrôler sur la carte.</p>
             <small id="loc-r-precision" class="loc-sous"></small>
         </div>
+        <div id="loc-feuille" class="loc-feuille" hidden>
+            <div class="loc-feuille-fond" onclick="Localisation.fermerFeuille()"></div>
+            <div class="loc-feuille-corps" role="dialog" aria-modal="true" aria-labelledby="loc-feuille-titre">
+                <h3 id="loc-feuille-titre">⭐ Enregistrer ce point</h3>
+                <label>Nom (modifiable)<input type="text" id="loc-nom" maxlength="120" autocomplete="off"></label>
+                <label>Note (facultatif)<textarea id="loc-note" rows="2" maxlength="500" placeholder="Ex. fond 18 m, accès par le chemin nord…"></textarea></label>
+                <p id="loc-feuille-resume" class="loc-sous"></p>
+                <button type="button" class="loc-valider" onclick="Localisation.validerFeuille()">Enregistrer</button>
+                <button type="button" class="loc-annuler" onclick="Localisation.fermerFeuille()">Annuler</button>
+            </div>
+        </div>
         <div id="loc-barre" class="loc-barre" hidden>
             <button type="button" onclick="Localisation.voirCarteDFCI()"><span aria-hidden="true">🗺️</span>Carte</button>
             <button type="button" onclick="Localisation.copier()"><span aria-hidden="true">📋</span>Tout copier</button>
-            <button type="button" class="loc-principal" onclick="Localisation.versAmbiance()"><span aria-hidden="true">📻</span>Vers message d'ambiance</button>
+            <button type="button" class="loc-principal" id="loc-btn-ambiance" onclick="Localisation.versAmbiance()"><span aria-hidden="true">📻</span>Vers message d'ambiance</button>
         </div>
-        <p class="rd-source">📚 Carroyage DFCI : 100 km (2 lettres), 20 km (2 chiffres pairs), 2 km (lettre + chiffre), zone 1 à 5. Adresses : Géoplateforme de l'IGN (secours : Base Adresse Nationale). Les derniers points (5 au maximum) restent seulement sur cet appareil.</p>
+        <p class="rd-source">📚 Carroyage DFCI : 100 km (2 lettres), 20 km (2 chiffres pairs), 2 km (lettre + chiffre), zone 1 à 5. Adresses : Géoplateforme de l'IGN (secours : Base Adresse Nationale). Les 5 derniers points consultés et les points que vous enregistrez (« Mes points ») restent seulement sur cet appareil.</p>
+    </div>
+
+    <div id="mes-points" class="module" style="--jsp: #F5B800;">
+        <div class="mp-entete">
+            <button class="back-btn" onclick="showModule('home')">← Retour</button>
+            <h2>⭐ Mes points <span class="mp-nb" id="mp-compteur">0</span></h2>
+            <button type="button" class="mp-menu-btn" id="mp-menu-btn" onclick="MesPoints.menu()" aria-label="Plus d'actions" aria-haspopup="true" aria-expanded="false">⋯</button>
+            <div id="mp-menu" class="mp-menu" hidden role="menu">
+                <button type="button" role="menuitem" onclick="MesPoints.exporter()">⬇ Exporter (GPX)</button>
+                <button type="button" role="menuitem" onclick="MesPoints.choisirFichier()">⬆ Importer (GPX)</button>
+                <button type="button" role="menuitem" onclick="MesPoints.maPosition()">📍 Distances depuis ma position</button>
+            </div>
+            <input type="file" id="mp-import" accept=".gpx,application/gpx+xml,text/xml,application/xml" hidden>
+        </div>
+        <div id="mp-vue-liste">
+            <p id="mp-etat" class="mp-etat" aria-live="polite"></p>
+            <div id="mp-outils" class="mp-outils" hidden>
+                <input type="search" id="mp-recherche" placeholder="Rechercher un point (nom, note, carreau)" autocomplete="off" aria-label="Rechercher un point">
+            </div>
+            <div id="mp-vide" class="mp-vide">
+                <div class="mp-vide-pin" aria-hidden="true">⭐</div>
+                <p>Aucun point enregistré.</p>
+                <small>Dans « Se localiser », appuyez sur « Enregistrer ce point » pour garder une position (nom libre, coordonnées, carreau DFCI). Les points restent sur cet appareil et fonctionnent sans réseau, y compris en mer.</small>
+                <button type="button" class="mp-secondaire" onclick="showModule('localisation')">📍 Aller à Se localiser</button>
+            </div>
+            <div id="mp-liste" class="mp-liste"></div>
+            <p class="rd-source">📚 Distances en milles nautiques (NM) et kilomètres, cap vrai (par rapport au nord géographique), calculés sur le téléphone. Export GPX : lisible par la plupart des applications de navigation. Les points ne quittent pas l'appareil : pensez à les exporter pour les sauvegarder.</p>
+        </div>
+        <div id="mp-vue-fiche" hidden>
+            <button type="button" class="mp-retour" onclick="MesPoints.retourListe()">← Tous mes points</button>
+            <h3 id="mp-f-nom" class="mp-f-nom"></h3>
+            <div id="mp-f-pastille" class="mp-f-pastille"></div>
+            <div id="mp-f-dfci" class="mp-f-dfci" hidden></div>
+            <div id="mp-f-dist" class="mp-f-dist"></div>
+            <p id="mp-f-note" class="mp-f-note" hidden></p>
+            <section id="mp-f-formats" class="mp-formats" aria-label="Coordonnées"></section>
+            <div id="mp-modif" class="mp-modif" hidden>
+                <label>Nom<input type="text" id="mp-m-nom" maxlength="120" autocomplete="off"></label>
+                <label>Note (facultatif)<textarea id="mp-m-note" rows="3" maxlength="500"></textarea></label>
+                <div class="mp-actions-2"><button type="button" class="mp-principal" onclick="MesPoints.modifierValider()">Enregistrer</button><button type="button" onclick="MesPoints.modifierAnnuler()">Annuler</button></div>
+            </div>
+            <div class="mp-actions-2">
+                <button type="button" onclick="MesPoints.copierTout()">📋 Tout copier</button>
+                <button type="button" onclick="MesPoints.voirCarte()">🗺️ Voir sur la carte</button>
+                <button type="button" onclick="MesPoints.ouvrirMaps()">🧭 Ouvrir dans Maps</button>
+                <button type="button" onclick="MesPoints.versLocalisation()">📍 Dans Se localiser</button>
+                <button type="button" onclick="MesPoints.modifierOuvrir()">✏️ Renommer / note</button>
+                <button type="button" id="mp-btn-suppr" onclick="MesPoints.supprimerCourant()">🗑️ Supprimer</button>
+            </div>
+        </div>
     </div>
 
     <div id="carte-dfci" class="module" style="--jsp: #E0313F;">
@@ -32072,7 +32139,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.43</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.44</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
@@ -32102,6 +32169,7 @@ Je demande : ….</p>
     <script src="js/modules/geo-dfci.js"></script>
     <script src="js/modules/fdf-ambiance.js"></script>
     <script src="js/modules/meteo-point.js"></script>
+    <script src="js/modules/mes-points.js"></script>
     <script src="js/modules/localisation.js"></script>
     <script src="js/modules/carte-dfci.js"></script>
     <script src="js/navigation.js"></script>
