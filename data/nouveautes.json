@@ -1,6 +1,6 @@
 {
-  "version": "1.69.43",
-  "titre": "Vulcain 1.69.43 : Se localiser",
-  "texte": "Un seul champ pour votre position : carreau DFCI, GPS ou adresse. Avec la météo au point, la carte DFCI et le vent prévu dans le message d'ambiance FDF.",
-  "fiche": "localisation"
+  "version": "1.69.56",
+  "titre": "Vulcain 1.69.56 : nouveau design et boussole",
+  "texte": "Nouveau look sur tout le site : accueil en cartes photo, fiches et calculateurs repensés, résultat toujours visible, version grand écran. Et une boussole avec nord vrai dans Outils.",
+  "fiche": "boussole"
 }
