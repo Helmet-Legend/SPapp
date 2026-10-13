@@ -1622,3 +1622,26 @@ html[data-theme="clair"] .nav-home .nav-row { box-shadow: inset 5px 0 0 var(--c)
 [role="switch"][aria-checked="true"] .reglages-inter::after { left: 23px; background: #fff; }
 @media (prefers-reduced-motion: reduce) { .reglages-inter, .reglages-inter::after { transition: none; } }
 .reglages-version { margin: 4px 0 0; text-align: center; font-size: .78em; color: var(--t-muted); }
+
+/* ---------- Vision globale de la plongée (calculateur de paliers) ---------- */
+html[data-theme] .sal-vision { border-left: 5px solid var(--jsp, var(--t-accent)); }
+html[data-theme] .sal-immersion { display: flex; flex-direction: column; gap: 6px; font-weight: 700; }
+.sal-immersion-ligne { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+html[data-theme] .sal-immersion input { font-size: 1.3em; min-height: 56px; padding: 0 12px; border-radius: 14px; border: 1.5px solid var(--t-line); background: var(--t-s2); color: var(--t-ink); text-align: center; width: 100%; box-sizing: border-box; font-weight: 700; }
+html[data-theme] .sal-immersion-ligne button { min-height: 56px; padding: 0 16px; border-radius: 14px; border: 1px solid var(--t-line); background: var(--t-s2); color: var(--t-ink); font-weight: 700; box-shadow: none; }
+.sal-vision-tuiles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+.sal-vision-tuile { background: var(--t-s2); border: 1px solid var(--t-line); border-radius: 14px; padding: 10px 12px; }
+.sal-vision-tuile span { display: block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--t-muted); font-weight: 700; }
+.sal-vision-tuile b { display: block; font-family: var(--t-display); font-weight: 700; font-size: 1.9em; line-height: 1.1; color: var(--t-ink); }
+.sal-vision-sortie { background: color-mix(in srgb, var(--fill-red, #D7263D) 16%, var(--t-s1)); border-color: color-mix(in srgb, var(--fill-red, #D7263D) 50%, var(--t-line)); }
+.sal-chrono { list-style: none; margin: 0; padding: 0; }
+.sal-chrono li { position: relative; display: flex; gap: 12px; padding: 0 0 14px; }
+.sal-chrono li:last-child { padding-bottom: 0; }
+.sal-chrono li::before { content: ""; position: absolute; left: 66px; top: 22px; bottom: -2px; width: 2px; background: var(--t-line); }
+.sal-chrono li:last-child::before { display: none; }
+.sal-h { flex: none; width: 58px; font-family: var(--t-display); font-weight: 700; font-size: 1.3em; color: var(--t-ink); }
+.sal-pt { flex: none; width: 12px; height: 12px; border-radius: 50%; margin-top: 7px; background: var(--jsp, var(--t-accent)); }
+.sal-chrono li:last-child .sal-pt { background: light-dark(#15803D, #4ADE80); }
+.sal-t b { display: block; font-size: .98em; color: var(--t-ink); }
+.sal-t small { display: block; color: var(--t-muted); font-size: .85em; }
+.sal-dock-texte { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

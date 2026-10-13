@@ -72,7 +72,7 @@ test('Abaque, Temps de trajet, Épuisement, Facteur de chute : barre fixe avec l
 test('Paliers MT 2012 : barre fixe, calcul inchangé', async ({ app }) => {
     await app.evaluate(() => showModule('sal-calculateur'));
     await saisir(app, 'calc-profondeur', '28'); await saisir(app, 'calc-temps', '25');
-    await expect(dock(app)).toContainText('Paliers');
+    await expect(dock(app)).toContainText('7 min 15 s');
     await expect(app.locator('#calc-resultat')).toContainText('3 m');
 });
 
