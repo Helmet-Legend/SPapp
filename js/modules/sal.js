@@ -62,7 +62,13 @@ function valeur(id) {
     return el ? el.value : '';
 }
 
+// Le calcul des paliers ne change pas. Il est enveloppé pour mettre ensuite à jour la vision globale (heures).
 async function calculerPaliers() {
+    derniereDecompression = null;
+    try { await calculerPaliersTable(); } finally { majVisionGlobale(); }
+}
+
+async function calculerPaliersTable() {
     await loadTablesMT2012();
 
     const profondeur = parseFloat(String(valeur('calc-profondeur')).replace(',', '.'));
@@ -138,6 +144,7 @@ async function calculerPaliers() {
     if (pTable < 12) {
         const sp = sansPalierMT2012(tablesMT2012, pTable, tTable, colonneSansPalier);
         if (sp && sp.ok) {
+            derniereDecompression = { temps, partiel: true };
             resultat.innerHTML = `<div class="sal-res sal-res-ok"><strong>✅ Sans palier</strong>${listeEtapes}
                 <p>À ${sp.prof} m, le temps sans palier est ${sp.max === 'illimité' ? 'illimité' : sp.max + ' min'} (intervalle ${tablesMT2012.sansPalier.intervalles[colonneSansPalier]} avant la plongée).</p>
                 ${successive ? '<p><strong>Palier de sécurité : 3 min à 3 m</strong> (plongée successive sans palier).</p>' : ''}${noteSuccessive}</div>`;
@@ -175,6 +182,7 @@ async function calculerPaliers() {
         : (securite ? '<strong>✅ Sans palier obligatoire</strong><p><strong>Palier de sécurité : 3 min à 3 m</strong> (plongée successive).</p>'
                     : '<strong>✅ Remontée sans palier</strong>');
 
+    derniereDecompression = { temps, rem: enMinutes(l.remontee), total: enMinutes(l.total), paliers: liste, sans: !liste.length };
     resultat.innerHTML = `<div class="sal-res ${liste.length ? 'sal-res-paliers' : 'sal-res-ok'}">
             ${corps}
             ${etapesFinales}
@@ -186,6 +194,87 @@ async function calculerPaliers() {
             ${l.alerte ? `<p class="sal-res-info">⚠️ Ligne signalée : ${l.alerte}. Vérifier sur la table papier.</p>` : ''}
             ${suite}
         </div>`;
+}
+
+// ---------- Vision globale de la plongée : heures déduites du résultat des paliers ----------
+// Rien n'est recalculé : durées de remontée et de décompression lues dans la table (ligne utilisée par le calculateur).
+// Début de remontée = immersion + temps de plongée ; parachute = début de remontée + 1 min (comprise dans la remontée) ;
+// début de la déco = arrivée au 1er palier ; sortie = début de remontée + total de la table.
+let derniereDecompression = null;   // { temps, rem, total, paliers: [[nom, min]], sans, partiel }
+
+function enMinutes(mmss) {
+    const [m, sec] = String(mmss).split(':');
+    return Number(m) + (sec ? Number(sec) / 60 : 0);
+}
+function hhmmEnMinutes(h) {
+    const m = /^(\d{1,2}):(\d{2})$/.exec(h || '');
+    return m ? Number(m[1]) * 60 + Number(m[2]) : null;
+}
+// « au plus tôt » : minute supérieure (jamais une sortie annoncée trop tôt) ; « arrivée » : minute entière écoulée
+function heureTexte(min, auPlusTot) {
+    const v = auPlusTot ? Math.ceil(min - 1e-9) : Math.floor(min + 1e-9);
+    const j = ((v % 1440) + 1440) % 1440;
+    return String(Math.floor(j / 60)).padStart(2, '0') + ':' + String(j % 60).padStart(2, '0') + (v >= 1440 ? ' (lendemain)' : '');
+}
+function dureeTexte(min) {
+    let m = Math.floor(min + 1e-9), sec = Math.round((min - m) * 60);
+    if (sec === 60) { m += 1; sec = 0; }
+    return m + ' min' + (sec ? ' ' + String(sec).padStart(2, '0') + ' s' : '');
+}
+function salImmersionMaintenant() {
+    const champ = document.getElementById('sal-immersion');
+    if (!champ) return;
+    const d = new Date();
+    champ.value = String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+    majVisionGlobale();
+}
+
+function majVisionGlobale() {
+    const zone = document.getElementById('sal-vision-resultat');
+    const aide = document.getElementById('sal-vision-aide');
+    const dock = document.getElementById('sal-dock');
+    if (!zone || !aide) return;
+    const d = derniereDecompression;
+    const h0 = hhmmEnMinutes(valeur('sal-immersion'));
+    zone.innerHTML = '';
+    if (dock) dock.textContent = '';
+    if (!d) { aide.textContent = 'Calculez d\'abord les paliers : profondeur et temps de plongée.'; return; }
+    if (dock && !d.partiel) dock.textContent = d.sans ? 'Sans palier' : dureeTexte(d.total);
+    if (h0 === null) { aide.textContent = 'Saisissez l\'heure d\'immersion : tous les horaires de la plongée s\'affichent ici.'; return; }
+    aide.textContent = '';
+
+    const depart = h0 + d.temps;
+    const parachute = depart + 1;
+    const tuile = (titre, v, cls) => `<div class="sal-vision-tuile${cls ? ' ' + cls : ''}"><span>${titre}</span><b>${v}</b></div>`;
+    const etape = (h, titre, detail, cls) => `<li${cls ? ` class="${cls}"` : ''}><span class="sal-h">${h}</span><span class="sal-pt"></span><span class="sal-t"><b>${titre}</b><small>${detail}</small></span></li>`;
+    let tuiles = tuile('Début de la remontée', heureTexte(depart)) + tuile('Parachute (début + 1 min)', heureTexte(parachute));
+    let etapes = etape(heureTexte(h0), 'Immersion', 'Départ de la surface')
+        + etape(heureTexte(depart), 'Début de la remontée', `${d.temps} min après l'immersion`)
+        + etape(heureTexte(parachute), 'Envoi du parachute', 'En général 1 min après la fin de la plongée, comprise dans la remontée');
+
+    if (d.partiel) {
+        zone.innerHTML = `<div class="sal-vision-tuiles">${tuiles}</div><ul class="sal-chrono">${etapes}</ul>
+            <p class="sal-res-info">Plongée sans palier à moins de 12 m : la table « sans palier » ne donne pas de durée de remontée (9 à 15 m/min). Prévoir le palier de sécurité de 3 min à 3 m.</p>`;
+        return;
+    }
+    const sortie = depart + d.total;
+    if (d.sans) {
+        tuiles += tuile('Début de la déco', 'Sans palier') + tuile('Sortie de la palanquée (au plus tôt)', heureTexte(sortie, true), 'sal-vision-sortie');
+        etapes += etape(heureTexte(depart + d.rem), 'Arrivée en surface, sans palier', `Remontée ${dureeTexte(d.rem)} (table)`);
+    } else {
+        tuiles += tuile('Début de la déco · 1er palier ' + d.paliers[0][0], heureTexte(depart + d.rem)) + tuile('Sortie de la palanquée (au plus tôt)', heureTexte(sortie, true), 'sal-vision-sortie');
+        let t = depart + d.rem;
+        etapes += etape(heureTexte(t), `Début de la déco : 1er palier à ${d.paliers[0][0]}`, `Remontée ${dureeTexte(d.rem)} (table)`);
+        d.paliers.forEach(([nom, min], i) => {
+            etapes += etape(heureTexte(t), `Palier à ${nom}`, `${min} min${i === d.paliers.length - 1 ? ' (la dernière minute sert à rejoindre la surface)' : ''}`);
+            t += min;
+        });
+    }
+    etapes += etape(heureTexte(sortie, true), 'Sortie de l\'eau (au plus tôt)', `Décompression totale : ${d.sans ? dureeTexte(d.total) + ', sans palier' : dureeTexte(d.total)}`, 'sal-fin');
+    if (dock) dock.textContent = (d.sans ? 'Sans palier' : dureeTexte(d.total)) + ' · sortie ' + heureTexte(sortie, true);
+    zone.innerHTML = `<div class="sal-vision-tuiles">${tuiles}</div><ul class="sal-chrono">${etapes}</ul>
+        ${d.sans ? '<p class="sal-res-info">Sans palier obligatoire : la fiche Tables conseille quand même un palier de sécurité de 3 min à 3 m.</p>' : ''}
+        <p class="sal-res-info">Estimation d\'après les tables MT 2012. Le directeur de plongée et l\'ordinateur de plongée font foi.</p>`;
 }
 
 // Tableaux de référence complets, construits depuis les données (une seule source)

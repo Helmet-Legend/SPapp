@@ -13,7 +13,7 @@ var CalcUI = (function () {
         'feu-foret': [['Résultat', 'feu-foret-result']],
         explosimetrie: [['Valeur corrigée', 'valeurCorrigee']],
         'suap-wallace-calc': [['Surface cutanée brûlée', 'wallaceTotalPct']],
-        'sal-calculateur': [['Paliers MT 2012', 'calc-resultat']],
+        'sal-calculateur': [['Décompression', 'sal-dock']],
         'lspcc-calculateur': [['Facteur de chute', 'lspcc-resultat']],
         convertisseur: [['Conversion', conversion]],
         abaque: [['Volume', 'abaque-volume-display']],
