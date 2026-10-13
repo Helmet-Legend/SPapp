@@ -54,3 +54,21 @@ test('chiffres clés du guide : poids des échelles, portées EPS, distances él
     const sau = await texte('gtosms-sauveteur');
     for (const x of ['nelar', 'minimum de 4 pompiers', '55 minutes', 'nance drill', 'denver drill']) expect(sau).toContain(x);
 });
+
+test('photos et schémas du guide : 131 figures, toutes chargées, légendées', async ({ app }) => {
+    test.setTimeout(240000);
+    let total = 0;
+    for (const id of IDS) {
+        await app.evaluate((i) => showModule(i), id);
+        const n = await app.evaluate((i) => {
+            const imgs = [...document.querySelectorAll(`#${i} figure.rd-fig img`)];
+            imgs.forEach(e => { e.loading = 'eager'; });
+            return imgs.length;
+        }, id);
+        total += n;
+        await expect.poll(() => app.evaluate((i) => [...document.querySelectorAll(`#${i} figure.rd-fig img`)].every(e => e.complete && e.naturalWidth > 0), id), { timeout: 30000 }).toBe(true);
+        const vides = await app.evaluate((i) => [...document.querySelectorAll(`#${i} figure.rd-fig figcaption`)].filter(c => !c.textContent.trim()).length, id);
+        expect(vides).toBe(0);
+    }
+    expect(total).toBe(131);
+});
