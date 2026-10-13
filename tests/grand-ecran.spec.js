@@ -75,3 +75,8 @@ test('téléphone : disposition inchangée (onglets en bas, pas de barre latéra
     const header = await rect(app, '.app-header');
     expect(header.width).toBeGreaterThan(300);
 });
+
+test('accueil : photos des domaines agrandies en hauteur (120 px sur téléphone)', async ({ app }) => {
+    const h = await app.locator('#navHome > .nav-acc .nav-acc-photo').first().evaluate(e => Math.round(e.getBoundingClientRect().height));
+    expect(h).toBe(120);
+});

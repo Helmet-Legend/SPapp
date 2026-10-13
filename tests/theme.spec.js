@@ -131,7 +131,8 @@ for (const nom of ['clair', 'sombre']) {
             });
             return out;
         });
-        expect(cibles.length).toBeGreaterThan(5);
+        // Cartes de domaines hautes (photos agrandies) : moins de textes tiennent sur le premier écran ; le logo et le premier domaine suffisent
+        expect(cibles.length).toBeGreaterThan(2);
         await page.addStyleTag({ content: '*{color:transparent!important;text-shadow:none!important} svg{visibility:hidden}' });
         await page.waitForTimeout(200);
         const png = (await page.screenshot()).toString('base64');
