@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.61">
+    <meta name="version" content="1.69.62">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -145,7 +145,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.61 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.62 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -313,7 +313,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.61</span><br>
+                        Vulcain v<span class="app-version">1.69.62</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -27617,6 +27617,581 @@ Je fais : extinction.</p>
         <p class="rd-source">GDO Protection et sauvegarde du patrimoine culturel 2026, chapitre 4 et annexes.</p>
     </div>
 
+    <!-- ============ GDO Interventions à bord des bateaux en eaux intérieures (DGSCGC, 30 octobre 2018) ============ -->
+    <div id="gdoeaux-menu" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🚢 GDO Bateaux en eaux intérieures – 2018</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle DGSCGC du <strong>30 octobre 2018</strong> : connaissance du milieu fluvial et lacustre, des ouvrages, des bateaux et des acteurs, puis conduite des opérations à bord des bateaux.</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gdoeaux-milieu')"><b>1 · L'environnement fluvial</b><span>Sept bassins, 8 500 km de voies navigables, zones 1 à 4 et R, rectangle de navigation, lacs</span></button>
+            <button onclick="showModule('gdoeaux-ouvrages')"><b>1 · Les ouvrages</b><span>Ports, écluses, barrages, ponts, tunnels-canaux, ascenseurs à bateaux, hydroliennes</span></button>
+            <button onclick="showModule('gdoeaux-bateaux')"><b>1 · Les bateaux</b><span>Gabarits, coque, compartimentage, signalisation TMD, marchandises, passagers, plaisance</span></button>
+            <button onclick="showModule('gdoeaux-acteurs')"><b>1 · Acteurs, cartes, transmissions</b><span>Préfet de bassin, DREAL, DDT(M), VNF, brigades, CAF, CNBA, ECDIS, AIS</span></button>
+            <button onclick="showModule('gdoeaux-commerce')"><b>1 · Commerce et réglementation</b><span>Acteurs du transport, documents de transport, avis à la batellerie, documents de bord</span></button>
+            <button onclick="showModule('gdoeaux-planif')"><b>2 · Scénarios, planification, appel</b><span>ORSEC zonale Sud-Est, chef d'incident fluvial, atlas fluvial, prise d'appel</span></button>
+            <button onclick="showModule('gdoeaux-mesures')"><b>2 · Analyse et sauvetage</b><span>Analyse de la zone, sauvetage à quai, en infrastructure, à flots, échoué, coulé</span></button>
+            <button onclick="showModule('gdoeaux-sinistres')"><b>2 · Pollution, stabilité, sinistres</b><span>Pollutions, stabilité, sécurité de la zone, incendie, voie d'eau, avarie</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'essentiel</h3>
+            <ul>
+                <li>Objectifs du COS : <strong>limiter le nombre de victimes</strong>, <strong>limiter la propagation</strong>, <strong>préserver les biens</strong> (bateau et infrastructures), <strong>éviter les pollutions</strong>.</li>
+                <li>Conditions d'intervention très particulières : <strong>accessibilité restreinte</strong>, <strong>conductivité thermique élevée</strong>, <strong>mouvement du bateau</strong>, remous. La plupart des bateaux sont en <strong>acier</strong> : le feu se propage surtout par <strong>conduction thermique</strong>.</li>
+                <li>L'analyse de la zone se construit <strong>avec le capitaine du bateau</strong> : position, capacité à manœuvrer, installations du bord, stabilité, environnement immédiat.</li>
+                <li>Le trafic fluvial est <strong>interrompu</strong> (avis à la batellerie avec VNF, et par VHF dans l'attente), avec des <strong>vigies en amont et en aval</strong>. Gilet de sauvetage impératif pour les non-spécialistes.</li>
+                <li>Un bateau peut être déplacé d'office, mais le secteur fluvial <strong>n'est pas organisé</strong> pour cela : moyens privés (pousseur), à anticiper.</li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Avertissement du guide</strong>
+            <p>Document de doctrine sans portée réglementaire, élaboré par un groupe d'experts. Il ne propose ni dispositif type, ni stratégie de lutte détaillée, ni technique opérationnelle. Il ne traite pas des attentats et prises d'otages, qui relèvent de la <strong>note de doctrine « tuerie de masse »</strong> du 16 novembre 2017.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Déjà dans Vulcain (non dupliqué ici)</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('ibnb')">⚓ GDO Interventions à bord des navires (IBNB)</button>
+                <button class="sal-lien" onclick="showModule('sav-eauvive')">🌊 SAV : eaux intérieures et inondations</button>
+                <button class="sal-lien" onclick="showModule('sav-menu')">🏊 Sauvetage aquatique – SAV</button>
+                <button class="sal-lien" onclick="showModule('gdoinc-menu')">🏢 GDO Incendies de structures</button>
+                <button class="sal-lien" onclick="showModule('vent-menu')">🌬️ Ventilation opérationnelle</button>
+            </p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique du guide (extrait)</summary>
+            <ul>
+                <li><strong>Bief</strong> : section de cours d'eau entre deux écluses. <strong>Amont</strong> : d'où vient le courant ; <strong>aval</strong> : vers où il descend. <strong>Bâbord</strong> : côté gauche en regardant vers l'avant.</li>
+                <li><strong>Bajoyer</strong> : paroi latérale d'une écluse. <strong>Alternat</strong> : zone de navigation alternée, souvent réglée par des feux.</li>
+                <li><strong>Hauteur libre</strong> : distance entre l'eau et la partie basse d'un ouvrage. <strong>Franc-bord</strong> : distance entre l'eau et le pont, au milieu du bateau. <strong>Tirant d'air</strong> : hauteur du bateau au-dessus de l'eau.</li>
+                <li><strong>Œuvres vives</strong> : parties immergées ; <strong>œuvres mortes</strong> : parties émergées. <strong>Carène</strong> : partie immergée de la coque.</li>
+                <li><strong>Fluviomaritime</strong> : bateau pouvant naviguer en mer et en eaux intérieures. <strong>Lège</strong> : sans chargement.</li>
+                <li><strong>Déplacement d'office</strong> : déplacement d'autorité d'un bateau en péril imminent quand son propriétaire est dans l'incapacité de le faire.</li>
+                <li><strong>PK</strong> : point kilométrique. <strong>PHEN</strong> : plus hautes eaux navigables. <strong>CROSS</strong> : centre régional opérationnel de surveillance et de sauvetage. <strong>CIN</strong> : numéro unique d'identification.</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Bateaux-eaux-interieures-2018.pdf" target="_blank" rel="noopener">GDO complet (PDF, 97 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Interventions à bord des bateaux en eaux intérieures », DGSCGC/DSP/SDDRH/BDFE, 30 octobre 2018. Texte repris et résumé ; schémas et photos non reproduits.</p>
+    </div>
+
+    <div id="gdoeaux-milieu" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdoeaux-menu')">← GDO Bateaux eaux intérieures</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🌊 L'environnement fluvial</h2>
+
+        <div class="rd-section">
+            <h3>Sept bassins</h3>
+            <ul>
+                <li>En métropole : <strong>Rhône-Méditerranée, Corse, Rhin-Meuse, Loire-Bretagne, Seine-Normandie, Adour-Garonne, Artois-Picardie</strong>. Ils correspondent aux quatre grands fleuves (Rhône, Loire, Seine, Garonne), plus la Somme et le Rhin. Cinq autres bassins en outre-mer.</li>
+                <li>À chaque bassin : un <strong>Comité de bassin</strong> (« Parlement de l'eau », adopte pour 5 ans le <strong>SDAGE</strong>) et une <strong>Agence de l'eau</strong> (organe exécutif, redevances). Sous-bassins : commission locale de l'eau et <strong>SAGE</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les voies navigables</h3>
+            <ul>
+                <li><strong>8 500 km</strong> de voies navigables, classées de <strong>0 à 6</strong> selon le gabarit des bateaux. Le réseau est essentiellement de <strong>classe 1</strong> (gabarit « Freycinet », rivières et canaux).</li>
+                <li><strong>VNF</strong> gère <strong>80 %</strong> du réseau. 1 800 km sont gérés par d'autres concessionnaires (EDF sur la Mayenne, <strong>CNR</strong> sur le Rhône, collectivités et syndicats comme pour le canal du Nivernais).</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Ouvrages du réseau</th><th>Nombre</th></tr></thead>
+                <tbody>
+                    <tr><td>Barrages de navigation</td><td>environ <strong>400</strong></td></tr>
+                    <tr><td>Franchissements de chute (écluses, échelles d'écluses, ascenseurs, pentes d'eau)</td><td><strong>1 799</strong></td></tr>
+                    <tr><td>Ouvrages de décharge (déversoir, siphon, vanne)</td><td>637</td></tr>
+                    <tr><td>Portes de garde</td><td>83</td></tr>
+                    <tr><td>Systèmes alimentaires (barrage-réservoir, rigole, station de pompage, contournement d'écluse)</td><td>389</td></tr>
+                    <tr><td>Tunnels-canaux</td><td>28</td></tr>
+                    <tr><td>Ponts-canaux</td><td>125</td></tr>
+                    <tr><td>Ouvrages de franchissement (pont, aqueduc)</td><td>806</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Limites fluviales et maritimes</h3>
+            <p>Limites généralement fixées au <strong>premier obstacle</strong> rencontré (décret du 31 juillet 1959) :</p>
+            <ul>
+                <li><strong>Rhône</strong> : en aval du pont de Trinquetaille à Arles.</li>
+                <li><strong>Loire</strong> : en aval du pont Haudaudine (bras de la Madeleine) et du pont de Pornic (bras de Pirmil).</li>
+                <li><strong>Garonne</strong> : en aval du pont de pierre à Bordeaux.</li>
+                <li><strong>Seine</strong> : en aval du pont Jeanne-d'Arc à Rouen.</li>
+            </ul>
+            <p>Les navires de mer de gabarit compatible peuvent naviguer en amont sous conditions : ils sont alors dits <strong>fluviomaritimes</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les zones de navigation</h3>
+            <table class="rd-table">
+                <thead><tr><th>Zone</th><th>Caractère</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1 et 2</strong></td><td>Caractère <strong>fluviomaritime</strong> (prescriptions renforcées pour les titres de navigation)</td></tr>
+                    <tr><td><strong>3</strong></td><td>Navigation commerciale de fret, y compris les grands lacs (prescriptions allégées)</td></tr>
+                    <tr><td><strong>4</strong></td><td>Reste du réseau national (prescriptions allégées)</td></tr>
+                    <tr><td><strong>R</strong></td><td><strong>Rhin</strong> : convention révisée pour la navigation du Rhin</td></tr>
+                </tbody>
+            </table>
+            <p>Classement des eaux intérieures : <strong>arrêté du 16 décembre 2010</strong>.</p>
+            <h3>Rectangle de navigation</h3>
+            <p>Zone que le bateau doit traverser. Sa <strong>base</strong> est le chenal de navigation (hauteur d'eau suffisante sous la coque) ; sous un pont ou dans un souterrain, sa <strong>hauteur</strong> est la <strong>hauteur libre</strong>, qui garantit une garde suffisante pour le passage.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Lacs et grands plans d'eau</h3>
+            <ul>
+                <li>Une considération particulière, <strong>surtout en été</strong> : sports nautiques (ski, paddle, canoë, aviron) et plaisance sont des vecteurs d'accidents.</li>
+                <li>Lacs naturels (Annecy, Le Bourget) et lacs artificiels (<strong>Serre-Ponçon, Éguzon, Vassivière</strong>), souvent des retenues hydroélectriques, plus justement des barrages.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Bateaux-eaux-interieures-2018.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 97 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Bateaux en eaux intérieures 2018, chapitre 1 section I.</p>
+    </div>
+
+    <div id="gdoeaux-ouvrages" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdoeaux-menu')">← GDO Bateaux eaux intérieures</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🔒 Les ouvrages</h2>
+
+        <div class="rd-section">
+            <h3>Ports, haltes et ports de plaisance</h3>
+            <ul>
+                <li><strong>Ports fluviaux</strong> : équipements importants (bateaux de passage et permanents, services, installations industrielles). Ports de commerce hors grands ports maritimes : collectivités, gestion souvent concédée aux CCI. Bateaux le plus souvent <strong>à flanc de quai</strong>, parfois <strong>à couple</strong> ; appontements avec <strong>ducs-d'Albe</strong> (pilotis).</li>
+                <li><strong>Poste d'attente</strong> : ducs-d'Albe en amont et en aval d'un ouvrage, en attente d'éclusage ou d'autorisation de passage en alternat.</li>
+                <li>Les bateaux transportant (ou ayant transporté) des <strong>matières dangereuses</strong> stationnent sur des <strong>appontements TMD</strong> ; les <strong>bateaux à passagers (BAP)</strong> sur des appontements dédiés. Les deux sont réglementés par <strong>arrêté préfectoral</strong>, avec une signalisation de police spécifique.</li>
+                <li><strong>Haltes</strong> : petits équipements (souvent un ponton), 48 h maximum, services de base. <strong>Escales fluviales</strong> : bateaux de passagers, moins d'une journée.</li>
+                <li><strong>Ports de plaisance</strong> : lacs, grands plans d'eau, fleuves ; mêmes problématiques.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Problématiques et risques</th></tr></thead>
+                <tbody>
+                    <tr><td>Accès restreint des secours sur les bateaux ; regroupement de bateaux amarrés ou non à couple ; stockages de matières dangereuses ; postes de chargement, déchargement et dépotage ; naufrage, voie d'eau, perte de chargement, collision, incendie.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Crues et alimentation en eau</strong>
+                <p>Pendant une crue, le <strong>type d'amarrage</strong> peut provoquer l'<strong>échouage</strong> du bateau à la décrue. L'alimentation en eau des engins d'incendie est à anticiper compte tenu de la <strong>hauteur des berges</strong>.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Écluses et échelles d'écluses</h3>
+            <ul>
+                <li>Elles permettent le passage de l'amont vers l'aval et inversement. Sur rivières et fleuves, l'écluse jouxte un barrage (passage d'un bief à l'autre) ; <strong>en pleine voie sur les canaux</strong>.</li>
+                <li><strong>Accidents fréquents</strong> : chute de personnes (bateau ou bord du sas), <strong>écrasement entre le bateau et les bajoyers</strong>, chute du bateau resté amarré lors de la vidange du sas, voie d'eau.</li>
+                <li><strong>Hauteur de chute</strong> : plus de 20 m parfois, comme l'<strong>écluse de Bollène (22 m)</strong> : évacuation massive difficile pour des bateaux coincés en partie basse.</li>
+                <li>Les accès sont parfois <strong>difficiles à localiser</strong> (lieux isolés, accès compliqués depuis la route).</li>
+                <li><strong>Échelle d'écluses</strong> : écluses placées à la suite pour franchir de grandes chutes.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Barrages utiles à la navigation</h3>
+            <ul>
+                <li>Ils régulent le niveau d'eau des biefs : <strong>barrages à clapet</strong> (le plus courant et le plus récent), <strong>à hausse</strong> (premier modèle mécanique), <strong>à vannes</strong> (vannes secteur manœuvrées par de puissants moteurs, vannes toit à deux segments mobiles relevés par l'eau d'amont), cylindre, aiguille.</li>
+                <li>Risques pour les bateaux : <strong>collision avec les barrages</strong> (conséquences sur le cours d'eau et la navigation, risque de noyade). Les <strong>contre-courants en aval</strong> peuvent plaquer les bateaux contre les barrages.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Ponts, tunnels, ascenseurs, hydroliennes</h3>
+            <table class="rd-table">
+                <thead><tr><th>Ouvrage</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Ponts et passerelles</strong></td><td>Collision avec les <strong>piles</strong> (poupe et proue peuvent se trouver sous deux ponts différents) ou avec le <strong>tablier</strong> si le tirant d'air est important (crues). Un pont heurté peut être dégradé : <strong>informer immédiatement le gestionnaire de la voie portée</strong> (État, département, commune, SNCF) pour contrôle, jusqu'à l'interdiction de franchissement.</td></tr>
+                    <tr><td><strong>Tunnels-canaux</strong></td><td>Tunnel creusé pour faire passer un canal sous un obstacle. Plans d'intervention et de sécurité possibles ; exercices réguliers (tunnels de <strong>Savoyeux</strong> et <strong>Saint-Albin</strong> sur la Saône, <strong>Tarragnoz</strong> sur le Doubs). Difficultés d'accès à anticiper en cas d'avarie ou d'incendie.</td></tr>
+                    <tr><td><strong>Ponts-canaux</strong></td><td>Permettent à un canal de franchir une vallée, ou donnent accès par l'amont à un ascenseur à bateaux. Accès des secours à anticiper.</td></tr>
+                    <tr><td><strong>Ascenseurs à bateaux</strong></td><td>Le bateau est levé ou abaissé dans un <strong>bac rempli d'eau</strong> : grandes différences de niveau, consommation d'eau infime. Risques : <strong>déraillement du bac</strong>, incendie, accès restreint.</td></tr>
+                    <tr><td><strong>Hydroliennes fluviales</strong></td><td>Générateur entraîné par le courant, installé dans la veine d'eau (souvent sur des secteurs difficiles, hauts fonds), avec réseau de câbles et poste électrique en rive. Peuvent <strong>entraver la navigation des bateaux de secours</strong> et l'engagement des spécialistes nautiques. Scénarios : victime ou sauveteur <strong>bloqué sous l'hydrolienne</strong>, victime sur l'hydrolienne, <strong>dérive</strong> avec arrachement de câble enterré, incendie.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Bateaux-eaux-interieures-2018.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 97 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Bateaux en eaux intérieures 2018, chapitre 1 section II.</p>
+    </div>
+
+    <div id="gdoeaux-bateaux" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdoeaux-menu')">← GDO Bateaux eaux intérieures</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🛳️ Les bateaux</h2>
+
+        <div class="rd-section">
+            <h3>Les familles de bateaux</h3>
+            <ul>
+                <li><strong>Commerce</strong> : marchandises générales (automoteurs, pousseurs, barges), <strong>matières dangereuses</strong> (automoteurs citernes, pousseurs et barges citernes), bacs.</li>
+                <li><strong>Passagers, ERP, plaisance</strong> : croisière, excursions, navettes, bateau-bus ; ERP à vocation d'hôtel, de restauration, de spectacle ; bateaux-logements ; plaisance (location, sports, pêche) ; engins de sport (paddle, canoë, aviron, joutes, fly-board).</li>
+                <li><strong>Service public</strong> : contrôle (douanes, police, gendarmerie), secours, service.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Règles de construction</h3>
+            <table class="rd-table">
+                <thead><tr><th>Gabarit</th><th>Tonnage</th><th>Longueur</th><th>Classe</th></tr></thead>
+                <tbody>
+                    <tr><td>Plaisance, petits bateaux de commerce</td><td>moins de 250 t</td><td></td><td>0</td></tr>
+                    <tr><td><strong>Petit gabarit</strong></td><td>250 à 400 t</td><td>L ≤ 38,5 m (Freycinet)</td><td>1 et 2</td></tr>
+                    <tr><td><strong>Intermédiaire</strong></td><td>400 à 1 000 t</td><td>38,5 m &lt; L &lt; 90 m</td><td>3 et 4</td></tr>
+                    <tr><td><strong>Grand gabarit</strong></td><td>1 000 à 5 000 t</td><td>L ≥ 90 m</td><td>5, 6 et 7</td></tr>
+                </tbody>
+            </table>
+            <p>Classification des transports, pas des sports nautiques. 1 tonneau (tx) = 2,83 m³. Les bateaux de commerce sont construits sous le contrôle d'<strong>experts agréés</strong> (visites techniques, expertises obligatoires à flots et à sec) ; TMD et paquebots fluviaux par une <strong>société de classification</strong>.</p>
+            <ul>
+                <li><strong>Coque</strong> : flottabilité, étanchéité, résistance, en <strong>acier</strong>. <strong>Double coque</strong> sur les modèles récents (bouclier en cas de collision ou d'échouage, peut servir de ballast).</li>
+                <li><strong>Ponts</strong> : comparables à des étages. Les <strong>bateaux TMD n'ont qu'un pont unique</strong> ; les bateaux à passagers 2 à 3 ponts (le pont supérieur ouvert est le « pont soleil »). Le pont principal (franc-bord) est le pont étanche le plus élevé.</li>
+                <li><strong>Compartimentage</strong> : tranches verticales et ponts horizontaux pour s'opposer à l'extension d'un sinistre ou garder le bateau à flots. Cofferdams sur les bateaux de marchandises. <strong>Cloisons étanches</strong> (rigidité, ralentissent l'incendie, compartiments étanches à l'eau) et <strong>cloisonnement incendie</strong> (freiner la propagation, protéger les locaux d'habitation, faciliter l'évacuation).</li>
+                <li><strong>Portes</strong> à charnière (étanches, acier) ou à glissières ; panneaux de pont. <strong>Mousses isolantes</strong> souvent inflammables et exposées à la conduction thermique.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Bateaux en acier : conduction thermique</strong>
+                <p>La grande majorité des bateaux est en acier. En cas de feu, la propagation se fait surtout par <strong>conduction thermique</strong>, en plus de la convection (voir le GDO incendies de structures).</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Signalisation et sécurité à bord</h3>
+            <table class="rd-table">
+                <thead><tr><th>Transport de matières dangereuses</th><th>Signification</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1 cône ou feu bleu</strong></td><td>Matières inflammables</td></tr>
+                    <tr><td><strong>2 cônes ou feux</strong></td><td>Matières dangereuses pour la santé</td></tr>
+                    <tr><td><strong>3 cônes ou feux</strong></td><td>Matières explosibles</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>Équipements : extinction fixe, mobile et extincteurs, <strong>électropompes incendie</strong>, pompes d'assèchement, détection incendie, matériels de sauvetage (bouées, gilets, bateaux d'évacuation), apparaux de manœuvre.</li>
+                <li><strong>Plan de bateau (fire safety plan)</strong> : zones pour personnes à mobilité réduite, voies de repli, issues, aires de rassemblement, moyens de sauvetage, extincteurs et installations d'extinction, alarme.</li>
+                <li>Règles plus rigoureuses pour les professionnels que pour les plaisanciers ; équipages formés à leur activité, donc <strong>complémentaires</strong> des secours.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Bateaux de marchandises</h3>
+            <ul>
+                <li><strong>Marchandises</strong> : matières dangereuses (méthanol, huiles végétales, benzène, produits pétroliers, gaz comme chlorure de vinyle et butane, fuels lourds, engrais à base de nitrate d'ammonium, tourteaux), voitures, ciment, charbon, céréales, fer, containers (certains avec matières dangereuses en fond de cale, <strong>manifeste de chargement</strong> à bord), colis spéciaux. Plusieurs dizaines de milliers de tonnes de matières dangereuses chaque semaine.</li>
+                <li><strong>Personnel de bord restreint</strong>, parfois étranger, au langage « métier » méconnu des sapeurs-pompiers, <strong>peu formé au risque incendie</strong> ; EPI feu ou ARICO rares. Certaines entreprises ont des <strong>fiches réflexes</strong>. Le plan de construction n'est pas obligatoire à bord.</li>
+                <li><strong>Barges</strong> : contenants compartimentés de <strong>2 000 à 4 500 t</strong>, récentes en double coque. Barges citernes TMD et pousseurs TMD : <strong>agrément ADN obligatoire</strong>. Notion de <strong>feu de masse</strong> (charbon, déchets).</li>
+                <li><strong>Pousseurs</strong> : puissamment motorisés, souvent des pompes incendie, parfois extinction automatique. Risques incendie et pollution : environ <strong>40 m³ de gazole non routier</strong>, 6 à 8 m³ d'huile, 3 à 6 m³ d'eau huileuse.</li>
+                <li><strong>Automoteurs</strong> : capacité d'emport et motorisation en un seul dispositif. <strong>Convoi</strong> : barge et pousseur (ou remorqueur).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Bateaux de passagers</h3>
+            <table class="rd-table">
+                <thead><tr><th>Type</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Paquebots de croisière avec cabines</strong></td><td>230 passagers en moyenne (équipage inclus), sur le Rhin, le Rhône, la Seine et la Garonne. 2 ponts + pont inférieur sous la flottaison. Cloisonnement, sprinklers, transfert horizontal ou vertical des passagers. <strong>Accès aux 2/3 de la longueur</strong>, rien à l'avant ni à l'arrière. <strong>Pas d'obligation de moyens d'évacuation</strong> ; gilets souvent en cabines. Clientèle souvent âgée.</td></tr>
+                    <tr><td><strong>Excursions, navettes, bateaux-bus</strong></td><td>5 à 150 passagers, jusqu'à 300, parfois 1 200. Souvent un seul pont, <strong>pas de transfert possible</strong> : c'est le cas qui peut obliger à <strong>évacuer vite</strong> ou à récupérer des dizaines de personnes mises à l'eau. Le commandant ne connaît pas toujours le nombre exact de passagers.</td></tr>
+                    <tr><td><strong>Établissements flottants (EF)</strong></td><td>ERP à quai (arrêté du 25 juin 1980), types L, M, N, P et hôtels. Voie engin obligatoire sauf bateau-pompe sur le bief. Reliés à la rive par <strong>deux passerelles d'une unité de passage</strong> (ou une de deux UP et un autre dégagement). Défense par extincteurs et RIA.</td></tr>
+                    <tr><td><strong>Bacs</strong></td><td>Bateau à fond plat qui traverse un cours d'eau, personnes ou véhicules (Seine, Loire, Gironde, Charente, Rhône, Rhin).</td></tr>
+                </tbody>
+            </table>
+            <table class="rd-table">
+                <thead><tr><th>Longueur du bateau de croisière</th><th>Passagers (hors équipage)</th></tr></thead>
+                <tbody>
+                    <tr><td>135 m</td><td>130 à 200</td></tr>
+                    <tr><td>100 à 130 m</td><td>120 à 180</td></tr>
+                    <tr><td>80 à 90 m</td><td>50</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Plaisance et énergies alternatives</h3>
+            <ul>
+                <li><strong>Bateaux-logements</strong> : type Freycinet (38,50 m sur 5,05 m, jusqu'à 200 m habitables) ; bateaux hollandais et belges (klippers, tjalks, luxemotors, 16 à 25 m, environ 100 m²) ; pontons aménagés. Propriétaires pas toujours compétents en navigation ; bateau parfois <strong>désarmé</strong>.</li>
+                <li><strong>Location sans permis</strong> : coches de plaisance de 15 m maximum, certificat de conduite provisoire, navigants peu expérimentés. Interdit sur certaines voies (Rhône).</li>
+                <li><strong>Bateaux de sport</strong> : jusqu'à plus de 600 cv ; <strong>permis obligatoire au-delà de 6 cv</strong>. <strong>Hydroptères</strong> : coque en l'air sur des foils, jusqu'à <strong>50 km/h</strong> ; risques incendie et collision.</li>
+                <li><strong>Énergies alternatives</strong> : panneaux photovoltaïques, carburation à l'hydrogène.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Bateaux-eaux-interieures-2018.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 97 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Bateaux en eaux intérieures 2018, chapitre 1 section III.</p>
+    </div>
+
+    <div id="gdoeaux-acteurs" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdoeaux-menu')">← GDO Bateaux eaux intérieures</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🤝 Acteurs, cartes, transmissions</h2>
+        <p>Les parties prenantes que les SIS et les zones de défense doivent <strong>rencontrer dans leur préparation opérationnelle</strong>.</p>
+
+        <div class="rd-section">
+            <h3>Autorités et partenaires institutionnels</h3>
+            <table class="rd-table">
+                <thead><tr><th>Acteur</th><th>Rôle</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Préfet coordonnateur de bassin</strong></td><td>Préfet de la région où siège le comité de bassin. Anime la politique de l'État sur la police et la gestion de l'eau, approuve le SDAGE, arrête les plans de gestion des risques d'inondation. Assisté d'un délégué de bassin.</td></tr>
+                    <tr><td><strong>DREAL</strong></td><td>Prévention des risques naturels, ressources en eau, aménagements fluviaux. Délégué de bassin : volet inondations et prévision des crues.</td></tr>
+                    <tr><td><strong>DDT(M)</strong></td><td>Permis de conduire des bateaux de plaisance, titres de navigation, appui au préfet en police de la navigation. <strong>En crise, conseiller technique du préfet</strong> : coordination des gestionnaires de réseaux, <strong>titre provisoire de navigation</strong>, entreprises de travaux publics et de transport, <strong>réquisitions</strong>, protection des milieux naturels.</td></tr>
+                    <tr><td><strong>VNF</strong> (Voies navigables de France)</td><td>Gestion des voies d'eau et des ports publics fluviaux, <strong>police domaniale</strong>, règlements particuliers de police, <strong>avis à la batellerie</strong> (gratuits, par mail), appui technique lors des accidents de navigation.</td></tr>
+                    <tr><td><strong>Brigades</strong> (police, gendarmerie, parfois police municipale)</td><td>En crise : actes de police de navigation (constat, <strong>immobilisation et levée</strong>), plan de circulation, <strong>accès prioritaire pour les secours et axe d'évacuation</strong>, police administrative et judiciaire, information des familles après accord du procureur. <strong>Brigades fluviales</strong> (fleuves, rivières, canaux), <strong>nautiques</strong> (lacs), <strong>mixtes et côtières</strong>, étrangères aux frontières.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Partenaires publics ou privés</h3>
+            <ul>
+                <li><strong>CAF</strong> (comité des armateurs fluviaux) : entreprises de transport fluvial, représentation auprès des pouvoirs publics, pilote la représentation institutionnelle du secteur (PROVOIDEAU).</li>
+                <li><strong>CNBA</strong> (chambre nationale de la batellerie artisanale) : établissement public, artisans bateliers (6 salariés maximum), registre de la batellerie artisanale, conseil, formation, information.</li>
+                <li><strong>Ports intérieurs</strong> : ports autonomes de <strong>Paris</strong> et de <strong>Strasbourg</strong>, ports fluviomaritimes (Rouen), ports sur le domaine confié à VNF, ports dans le périmètre de la <strong>CNR</strong> (Compagnie nationale du Rhône).</li>
+                <li><strong>CCNR</strong> : commission centrale pour la navigation du Rhin.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Cartographie et transmission de l'information</h3>
+            <table class="rd-table">
+                <thead><tr><th>Outil</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>ECDIS intérieur</strong></td><td>Affichage électronique de cartes de navigation intérieure ; base des services d'information fluviale (RIS), dont l'AIS intérieur.</td></tr>
+                    <tr><td><strong>AIS</strong></td><td>Messages courts de bateau à bateau ou à station terrestre : identification, nom, dimensions, <strong>position, course, vitesse</strong>, données de voyage. <strong>Obligatoire uniquement sur le réseau à grand gabarit de VNF</strong>, pour les bateaux de commerce (marchandises et passagers) et la grande plaisance de <strong>20 m et plus</strong>. Aussi obligatoire sur le Rhin et la Moselle internationale.</td></tr>
+                    <tr><td><strong>Applications AIS gratuites</strong> (ex. MarineTraffic)</td><td>Type de bateau, position GPS, vitesse, route. Les bassins de la <strong>Seine</strong> et du <strong>Rhin</strong> fournissent des données exploitables pour les SIS.</td></tr>
+                </tbody>
+            </table>
+            <p><strong>Itinéraires où l'AIS est imposé</strong> : voies du Nord-Pas-de-Calais, Seine-Yonne aval, Oise et canal du Nord, Moselle, Rhône-Saône à grand gabarit, canal du Rhône à Sète, Garonne et voies girondines, canal du Rhône au Rhin (branche sud, bief de Niffer).</p>
+            <p>Compatibles avec les équivalents maritimes et d'autres moyens : <strong>VHF</strong>, téléphone (GSM), sonorisation et porte-voix aux écluses.</p>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Bateaux-eaux-interieures-2018.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 97 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Bateaux en eaux intérieures 2018, chapitre 1 sections V et VI.</p>
+    </div>
+
+    <div id="gdoeaux-commerce" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdoeaux-menu')">← GDO Bateaux eaux intérieures</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>📜 Commerce et réglementation</h2>
+
+        <div class="rd-section">
+            <h3>L'organisation commerciale</h3>
+            <ul>
+                <li>Depuis la <strong>libéralisation du transport fluvial</strong> (1<sup>er</sup> janvier 2000), les bateliers peuvent passer par des intermédiaires de fret, travailler en indépendants avec les chargeurs, ou se regrouper (coopératives : <strong>SCAT</strong> sur la Seine et le Nord-Sud, <strong>Navisudest</strong> sur le Rhône-Saône, <strong>Navisco</strong> sur la Saône et le Rhin). Les <strong>armateurs fluviaux</strong> ont leurs propres cales et sous-traitent parfois à des artisans.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Acteur</th><th>Définition</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Donneur d'ordre</strong></td><td>Client qui confie ses marchandises au batelier, à la compagnie ou à l'affréteur.</td></tr>
+                    <tr><td><strong>Chargeur et manutentionnaire</strong></td><td>Le chargeur charge le bateau et rédige les documents de transport.</td></tr>
+                    <tr><td><strong>Destinataire</strong></td><td>Celui dont le nom figure sur le bordereau d'expédition.</td></tr>
+                    <tr><td><strong>Courtier de fret</strong></td><td>Met en rapport donneurs d'ordre et transporteurs en vue d'un contrat de transport.</td></tr>
+                    <tr><td><strong>Commissionnaire de transport</strong></td><td>Organise et fait exécuter sous sa responsabilité le déplacement des marchandises ; obligation de résultat.</td></tr>
+                    <tr><td><strong>Armateur fluvial</strong></td><td>Transporteur qui possède sa flotte.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-astuce">
+                <p><strong>Les deux interlocuteurs les plus importants du COS</strong> : l'<strong>expéditeur</strong> (responsable de sa cargaison pendant le transport) et le <strong>transporteur</strong> (responsable du bon état de son bateau).</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les documents de transport</h3>
+            <ul>
+                <li><strong>Connaissement</strong> : prouve le contrat de transport et constate la prise en charge des marchandises ; titre de propriété transmis par endossement.</li>
+                <li><strong>Lettre de voiture</strong> : constate le contrat, remise au transporteur après chargement. Nom et adresse de l'expéditeur et du destinataire, nature de la marchandise… <strong>Important pour les secours : elle comporte le nom de l'expéditeur</strong>.</li>
+                <li><strong>Déclaration (manifeste) de chargement</strong> : liste des marchandises (expéditeur, destinataire, marques et numéros, emballages, quantité, désignation). Sert aussi à percevoir les péages. <strong>VNF propose une e-déclaration</strong> qui alimente automatiquement l'ECDIS. Pour les passagers : manifeste passagers.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le contexte réglementaire</h3>
+            <ul>
+                <li><strong>Règlement général de police (RGP)</strong> de la navigation intérieure, et <strong>règlements particuliers de police (RPP)</strong>, par exemple la traversée de Paris.</li>
+                <li><strong>Avis à la batellerie</strong> : aide à la navigation, non obligatoire, absent de certains bassins. L'<strong>avis n° 1</strong> donne chaque année : présentation de la voie d'eau, acteurs, horaires, obligations, <strong>information des secours en cas d'accident</strong>, <strong>zones d'écopage pour Canadairs</strong>, AIS, plaisance, VHF, <strong>fiche réflexe en cas d'accident</strong>, consignes par tronçon. D'autres avis suivent en cours d'année (crue, accident, indisponibilité d'une écluse).</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Restrictions de navigation en période de crue (RNPC, ex-PHEN)</th><th>Effet</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Degré 1</strong></td><td>Navigation libre</td></tr>
+                    <tr><td><strong>Degré 2</strong></td><td>Interdiction pour les plaisanciers et les bateaux avec passagers à bord</td></tr>
+                    <tr><td><strong>Degré 3</strong></td><td>Navigation totalement interdite</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li><strong>Règlements intérieurs</strong> des ports et des communes (limite de durée de stationnement).</li>
+                <li><strong>Documents de bord</strong> : titre de navigation (« carte grise ») pour les bateaux de moins de 20 m, <strong>certificat communautaire</strong> au-dessus de 20 m, documents TMD, déclaration de chargement, manuel du propriétaire (plaisance).</li>
+                <li><strong>Équipage</strong> : pilote avec <strong>certificat de capacité</strong> ; <strong>attestation spéciale passagers (ASP)</strong> obligatoire pour les bateaux à passagers (1 titulaire jusqu'à 50 personnes, 2 au-delà).</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Bateaux-eaux-interieures-2018.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 97 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Bateaux en eaux intérieures 2018, chapitre 1 sections VII et VIII.</p>
+    </div>
+
+    <div id="gdoeaux-planif" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdoeaux-menu')">← GDO Bateaux eaux intérieures</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>📋 Scénarios, planification, appel</h2>
+
+        <div class="rd-section">
+            <h3>Scénarios possibles</h3>
+            <p>Les <strong>incendies</strong> et les <strong>collisions</strong> sont les plus courants.</p>
+            <table class="rd-table">
+                <thead><tr><th>Protection</th><th>Problématiques</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Des personnes</strong></td><td>Victimes sur le bateau ou à l'eau.</td></tr>
+                    <tr><td><strong>Des biens</strong></td><td>Propagation à tout le bateau, puis à d'autres bateaux ou installations proches (ponton), <strong>rupture des amarres</strong> et dérive, voie d'eau, atteinte à la structure d'un ouvrage.</td></tr>
+                    <tr><td><strong>De l'environnement</strong></td><td>Pollution aquatique (carburant, matières dangereuses, <strong>eau d'extinction</strong>), pollution atmosphérique, perte de chargement (containers).</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>La planification : l'exemple de la zone Sud-Est</h3>
+            <ul>
+                <li>Les dispositions <strong>ORSEC</strong> départementales ou zonales peuvent comporter un <strong>volet risque fluvial</strong>. Le préfet de la zone de défense Sud-Est a approuvé le <strong>15 décembre 2015</strong> un <strong>plan zonal de réponse à un accident de navigation fluviale</strong> sur le réseau Rhône-Saône.</li>
+                <li>Il vise : <strong>évacuation de passagers</strong>, <strong>sauvetage d'un nombre élevé de victimes dans l'eau</strong>, traitement d'une <strong>pollution</strong> touchant les riverains, conséquences économiques de l'arrêt de la circulation fluviale.</li>
+                <li>Il évalue les moyens existants et nécessaires, et fixe la <strong>direction et la coordination</strong> des secours sur le réseau.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Élément du plan</th><th>Principe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Direction des opérations</strong></td><td>Quand les deux berges d'un tronçon sont dans deux départements, le préfet de zone peut coordonner (art. L742-3 du CSI). Pour chaque bief : le <strong>préfet chargé de la coordination des opérations (PCCO)</strong> est celui du département qui a le <strong>plus long linéaire de berges</strong> ; le <strong>COS</strong> est assuré selon la même répartition (<strong>unicité du commandement</strong>).</td></tr>
+                    <tr><td><strong>Atlas fluvial commun</strong></td><td>Annexé à l'ORSEC. Recense ouvrages (écluses, barrages), <strong>rampes de mise à l'eau</strong>, zones de débarquement et d'embarquement, emplacements prévisionnels de <strong>CRM, PRV et PMA</strong> (NOVI).</td></tr>
+                    <tr><td><strong>Chef d'incident fluvial (CIF) et chef d'incident principal (CIP)</strong></td><td>Fonctions créées pour faciliter et sécuriser l'intervention des SIS sur le réseau fluvial et minimiser l'impact sur la régularité de la navigation.</td></tr>
+                    <tr><td><strong>Liaison COS - conducteur du bateau</strong></td><td>Assurée par les <strong>forces de l'ordre</strong> (art. R4241-39 du code des transports), par <strong>VNF</strong> si le bateau est échoué, coulé, menace de couler ou ne peut manœuvrer (art. A4241-24), et par VNF ou le concessionnaire dans une écluse (art. A4241-53-30).</td></tr>
+                    <tr><td><strong>Déplacement d'office d'un bateau</strong></td><td>Le secteur fluvial <strong>n'est pas organisé</strong> pour cela (pas de dépannage ni de fourrière comme sur route) : il faut un pousseur puissant, relevant d'entreprises privées pas forcément disponibles. En l'absence d'arrêté ou de circulaire, une <strong>doctrine interservices</strong> d'aide à la décision est préconisée.</td></tr>
+                    <tr><td><strong>Déclinaison en SIS</strong></td><td><strong>Ordre zonal d'opérations</strong> : mobilisation zonale de moyens pour tout événement impliquant des bateaux ou nécessitant des moyens nautiques (première intention, montée en puissance, renfort extra-départemental, dispositif prévisionnel de secours, exercices).</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>La prise d'appel et l'envoi des secours</h3>
+            <ul>
+                <li><strong>Localisation</strong> : commune, accès, <strong>point kilométrique, bief</strong>. La géolocalisation des ouvrages hydrauliques aide à les situer.</li>
+                <li><strong>Problématique</strong> : type de sinistre, nombre de personnes en difficulté, pathologies, localisation.</li>
+                <li><strong>Requérant</strong> : témoin, <strong>capitaine du bateau</strong>, <strong>éclusier</strong> ; lui donner des consignes avant l'arrivée des secours.</li>
+                <li><strong>Accès à la situation</strong> : bateau à quai, en route, amarré à couple.</li>
+                <li><strong>Facteurs aggravants</strong> : nombreux appels, <strong>matières dangereuses</strong>, heure, contexte.</li>
+                <li>Équipes spécialisées possibles au départ ; sinon, anticiper le <strong>renfort zonal</strong>.</li>
+            </ul>
+            <p><strong>Conseils aux témoins</strong> : se tenir à distance, gestes de premiers secours, <strong>repérer l'endroit où une victime a coulé</strong>, baliser, guider les secours. <strong>Bateau en route : privilégier sa mise à quai</strong> dans un lieu qui ne met pas d'autres cibles en péril.</p>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Bateaux-eaux-interieures-2018.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 97 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Bateaux en eaux intérieures 2018, chapitre 2 sections I à III.</p>
+    </div>
+
+    <div id="gdoeaux-mesures" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdoeaux-menu')">← GDO Bateaux eaux intérieures</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🛟 Analyse et sauvetage</h2>
+
+        <div class="rd-section">
+            <h3>Les mesures opérationnelles</h3>
+            <p>Objectifs globaux du COS : <strong>limiter le nombre et l'aggravation des victimes</strong>, <strong>limiter la propagation</strong>, <strong>préserver les biens</strong>, <strong>éviter les pollutions</strong>. Conditions très particulières : accessibilité restreinte, conductivité thermique élevée, mouvement du bateau, remous. Les actions (sauvetage et mise en sécurité, lutte contre le sinistre, lutte contre les pollutions, stabilité du bateau, sécurité de la zone) sont <strong>successives ou simultanées</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Analyse de la zone d'intervention</h3>
+            <p>Phase <strong>primordiale</strong>, construite <strong>avec le capitaine du bateau</strong>, pour rapprocher le sinistre des moyens et dimensionner les renforts :</p>
+            <ul>
+                <li>nature et dimension de la problématique ;</li>
+                <li><strong>position du bateau</strong> : à quai, à flots, échoué, coulé ;</li>
+                <li><strong>capacité à manœuvrer</strong> : propulsion, appareil à gouverner, ancres, apparaux ;</li>
+                <li>disponibilité des <strong>installations électriques</strong> et équipements (électropompe incendie, moyens d'épuisement fixes) ;</li>
+                <li><strong>stabilité</strong> : état de l'amarrage, déplacement, gîte, moyens de correction ;</li>
+                <li>moyens de secours du bord ;</li>
+                <li>environnement immédiat : infrastructures, autres bateaux, plan d'eau, zone portuaire, cale sèche, écluses.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sauvetage et mise en sécurité</h3>
+            <ul>
+                <li>Réflexion <strong>partagée avec le capitaine</strong>. Les sauvetages peuvent être <strong>concomitants</strong> à la lutte contre le sinistre.</li>
+                <li><strong>En cas d'incendie</strong> : mettre les personnes à l'abri des fumées par <strong>transfert vertical ou horizontal</strong>. Dans tous les cas, <strong>décompte</strong> vers une <strong>zone de débarquement</strong> servant de point de rassemblement des impliqués et des victimes.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Position du bateau</th><th>Conduite</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>À quai</strong></td><td><strong>Évacuation complète à privilégier</strong>. Si le personnel de bord agit déjà, concertation avec le capitaine dès la prise de contact.</td></tr>
+                    <tr><td><strong>Dans une infrastructure</strong> (écluse, tunnel)</td><td>Déterminer s'il y a un enjeu humain nécessitant une évacuation immédiate. Moyens : configuration des lieux (<strong>modification de la hauteur d'eau d'une écluse</strong>), moyens des SIS (moyens aériens, lot de sauvetage et de protection contre les chutes, techniques de milieux périlleux), <strong>déplacement du bateau</strong> (tunnels), éloignement par mise à l'eau.</td></tr>
+                    <tr><td><strong>À flots</strong></td><td>Selon la manœuvrabilité : dispositions constructives du bateau (croisière), <strong>transbordement</strong> vers un autre bateau, <strong>échouage volontaire</strong> idéalement dans une zone accessible aux secours, éloignement par mise à l'eau.</td></tr>
+                    <tr><td><strong>Échoué</strong></td><td>Sans accessibilité : évacuation par mise à l'eau, avec une attention particulière au <strong>dispositif de récupération</strong>. Si le bateau reste accessible : mêmes moyens qu'à flots, en veillant à la <strong>stabilité pendant l'évacuation</strong>.</td></tr>
+                    <tr><td><strong>Coulé ou renversé</strong></td><td>Récupérer les personnes en surface, mener les recherches dans le bateau avec les techniques de <strong>sauvetage subaquatique en surface non libre</strong>. Pour les personnes tombées à l'eau : sauvetage aquatique et subaquatique, avec vigilance près des <strong>ouvrages d'art</strong>.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Bateaux-eaux-interieures-2018.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 97 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Bateaux en eaux intérieures 2018, chapitre 2 section IV §§ 1 et 2.</p>
+    </div>
+
+    <div id="gdoeaux-sinistres" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdoeaux-menu')">← GDO Bateaux eaux intérieures</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🔥 Pollution, stabilité, sinistres</h2>
+
+        <div class="rd-section">
+            <h3>Lutte contre les pollutions</h3>
+            <ul>
+                <li>Les <strong>eaux d'extinction</strong> et les combustibles liquides à bord sont des sources de pollution. <strong>Agir sur le flux</strong> est la principale parade ; <strong>barrages flottants</strong> conseillés ; techniques de lutte contre les risques chimiques et les pollutions.</li>
+                <li>Le COS identifie les <strong>cibles en aval</strong> : points de captage, zones de baignade.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Stabilité du bateau</h3>
+            <div class="rd-alerte">
+                <strong>Eaux d'extinction et voie d'eau : néfastes pour la stabilité</strong>
+                <p>Observer la stabilité <strong>dès le début</strong> de l'intervention. <strong>Pomper au plus tôt</strong>, avec les moyens du bateau ou des secours. Assurer et si besoin <strong>renforcer l'amarrage ou l'ancrage</strong>.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sécurité de la zone d'intervention</h3>
+            <ul>
+                <li>Sécurité du personnel prioritaire : <strong>dispositif dédié à la surveillance du site</strong>, <strong>spécialistes du risque aquatique</strong>, <strong>gilet de sauvetage impératif</strong> pour les non-spécialistes.</li>
+                <li><strong>Vigies en amont et en aval</strong> du sinistre pour signaler l'arrivée d'autres bateaux ; éclairage de nuit.</li>
+                <li><strong>Interrompre le trafic</strong> administrativement (<strong>avis à la batellerie avec VNF</strong>) et matériellement : le concessionnaire informe les bateaux du bief et les invite à stationner. <strong>Dans l'attente</strong>, demander par <strong>VHF</strong> à tous les bateaux du bief de se mettre en stationnement, avec l'appui des forces de l'ordre.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'incendie</h3>
+            <ul>
+                <li>Bateau <strong>à couple</strong> : manœuvres pour le <strong>désaccoupler</strong> des autres bateaux, ce qui demande un savoir-faire et une préparation à la gestion des amarres.</li>
+                <li>Prendre en compte systématiquement la <strong>propagation par conduction thermique</strong> : en parallèle de l'extinction, <strong>refroidir la coque, le pont et les amarres</strong> qui peuvent fondre ou brûler.</li>
+                <li>Matérialiser un <strong>point de pénétration</strong> ; suivi des personnels engagés ; <strong>binôme de sécurité</strong> dès que possible, éventuel <strong>binôme de soutien</strong> pour le cheminement des tuyaux.</li>
+                <li>Cheminement simple : engagement classique avec protection respiratoire. <strong>Cheminement long et complexe</strong> (traversées verticales multiples) : adapter les règles d'engagement, techniques d'<strong>engagement de longue durée</strong> ou <strong>spécialistes d'intervention à bord des navires et bateaux</strong>.</li>
+                <li><strong>Soutien sanitaire opérationnel et relève régulière systématiques</strong> (conditions éprouvantes).</li>
+                <li><strong>Ventilation opérationnelle</strong> en appui, à condition d'avoir un entrant et un sortant cohérents.</li>
+                <li><strong>Épuisement des eaux d'extinction concomitant à l'extinction</strong>, à débit équivalent, nécessaire même si le bateau est sur cale (risque de rupture).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>La voie d'eau</h3>
+            <ul>
+                <li>Après ouverture d'un ou plusieurs points de pénétration : <strong>action directe sur l'origine</strong> quand c'est possible (fermeture d'une <strong>vanne de sectionnement</strong>) ; obturer par l'intérieur avec des <strong>moyens de fortune</strong> (coussin, matelas) et une <strong>planche</strong> pour assurer la rigidité.</li>
+                <li>Matériau polymérisant ou <strong>kit de colmatage</strong> pour limiter la voie d'eau le temps de rallier le port le plus proche.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Débit entrant</th><th>Conduite</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Supérieur</strong> à la capacité d'épuisement</td><td><strong>Confiner le local</strong> sinistré et <strong>renforcer les cloisons</strong> (épontillage) du local et des locaux contigus.</td></tr>
+                    <tr><td><strong>Inférieur</strong> à la capacité de pompage</td><td>Mesures d'<strong>épuisement ou d'assèchement</strong>. Évaluer la capacité par <strong>marquage</strong> qui suit le niveau d'eau du local envahi.</td></tr>
+                </tbody>
+            </table>
+            <p>Les moyens de pompage du bord peuvent concourir. Les <strong>plongeurs</strong> peuvent obturer depuis l'extérieur, de façon dissociée du point de pénétration ; dans la coque, techniques de <strong>surface non libre</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le bateau en avarie</h3>
+            <ul>
+                <li>Réflexion partagée avec le capitaine ; <strong>solidarité entre bateaux</strong> possible.</li>
+                <li>Actions conservatoires des SIS : <strong>poussage ou remorquage</strong> vers une zone d'abri pour éviter collisions avec d'autres bateaux et ouvrages.</li>
+            </ul>
+            <div class="rd-astuce">
+                <p><strong>Règles de remorquage</strong> : multiplier les points d'accroche pour limiter les efforts, remorquer à <strong>faible vitesse</strong>, répartir la charge (passagers) vers l'<strong>arrière</strong>. Les sociétés spécialisées restent privilégiées.</p>
+            </div>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Bateaux-eaux-interieures-2018.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 97 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Bateaux en eaux intérieures 2018, chapitre 2 section IV §§ 3 à 6.</p>
+    </div>
+
     <!-- ============ GTO Ventilation opérationnelle (DGSCGC, 2019) ============ -->
     <div id="vent-menu" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -34329,7 +34904,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.61</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.62</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
