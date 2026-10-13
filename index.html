@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.60">
+    <meta name="version" content="1.69.61">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -145,7 +145,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.60 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.61 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -313,7 +313,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.60</span><br>
+                        Vulcain v<span class="app-version">1.69.61</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -27120,6 +27120,503 @@ Je fais : extinction.</p>
         <p class="rd-source">GDO Préparation et soutien de l'intervenant 2026, chapitre 4 et annexe C.</p>
     </div>
 
+    <!-- ============ GDO Protection et sauvegarde du patrimoine culturel (DGSCGC, juin 2026) ============ -->
+    <div id="gdopat-menu" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🏛️ GDO Patrimoine culturel – 2026</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle DGSCGC de <strong>juin 2026</strong> (1<sup>re</sup> édition) : identifier les enjeux patrimoniaux, organiser la sauvegarde des biens culturels et protéger les bâtiments d'intérêt patrimonial.</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gdopat-biens')"><b>1 · Les biens culturels</b><span>Définition, types de biens, critères d'intérêt, particularités des bâtiments anciens</span></button>
+            <button onclick="showModule('gdopat-vulnerabilite')"><b>1 · Vulnérabilité et planification</b><span>Incendie, eau, mouvements de terrain, nitrate de cellulose, travaux, ORSEC G8, PSBC, ETARE</span></button>
+            <button onclick="showModule('gdopat-acteurs')"><b>1 · Les acteurs du patrimoine</b><span>Préfecture, DRAC, ABF, conservateurs, clergé, Bouclier Bleu France, AFPS</span></button>
+            <button onclick="showModule('gdopat-avant')"><b>2 · Avant l'opération</b><span>Recensement des enjeux, accessibilité et force portante, mesures de prévention</span></button>
+            <button onclick="showModule('gdopat-sauvegarde')"><b>3 · Organiser la sauvegarde</b><span>Principes, reconnaissance, secteur dédié, 3 zones, point de regroupement des œuvres, 3 niveaux de réponse</span></button>
+            <button onclick="showModule('gdopat-sinistres')"><b>3 · Incendie et inondation</b><span>La part du feu, usage de l'eau, voûtes, beffrois, reconnaissance avant épuisement</span></button>
+            <button onclick="showModule('gdopat-apres')"><b>4 · Après l'opération</b><span>Réflexivité, PEX et RETEX, mémoire des sinistres, annexes</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'essentiel</h3>
+            <ul>
+                <li>La sauvegarde du patrimoine culturel repose sur <strong>deux principes</strong> : l'<strong>évacuation des biens</strong> et la <strong>protection sur place</strong> des biens non déplaçables.</li>
+                <li>La protection des biens culturels s'intègre à la <strong>marche générale des opérations</strong>, sous l'autorité du COS. Ce n'est <strong>pas une spécialité opérationnelle</strong>.</li>
+                <li>Les œuvres extraites sont rassemblées, protégées, surveillées et recensées à un <strong>point de regroupement des œuvres (PRO)</strong>, <strong>en dehors de la zone d'exclusion</strong>.</li>
+                <li>Le COS s'appuie sur le <strong>plan de sauvegarde des biens culturels (PSBC)</strong> de l'établissement, sur le plan <strong>ETARE</strong> du SIS et sur des <strong>experts</strong> du patrimoine.</li>
+                <li>L'évacuation des biens vers un centre de traitement et leur prise en charge <strong>ne sont pas des missions des SIS</strong> : ils peuvent être <strong>force concourante</strong>.</li>
+                <li>Un sinistre touche le patrimoine culturel <strong>en moyenne tous les 8 jours</strong>, surtout par incendie et dégâts d'eau.</li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Avertissement du guide</strong>
+            <p>Document de doctrine sans portée réglementaire stricte, <strong>référence adaptable</strong> aux situations rencontrées. Il complète le <strong>guide ORSEC G8</strong> (protection du patrimoine culturel, 2025), les PSBC à la charge des exploitants et les dispositions ORSEC des préfectures.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Déjà dans Vulcain (non dupliqué ici)</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('gdoinc-menu')">🏢 GDO Incendies de structures</button>
+                <button class="sal-lien" onclick="showModule('effondres')">🏚️ Milieux effondrés ou instables</button>
+                <button class="sal-lien" onclick="showModule('gdosout-menu')">🫶 Préparation et soutien de l'intervenant</button>
+                <button class="sal-lien" onclick="showModule('gdoinc-mgo')">Marche générale des opérations</button>
+            </p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique du guide</summary>
+            <ul>
+                <li><strong>PSBC</strong> : plan de sauvegarde des biens culturels, plan interne de l'établissement (parfois confidentiel). <strong>ETARE</strong> : plan d'établissement répertorié du SIS.</li>
+                <li><strong>PRO</strong> : point de regroupement des œuvres. <strong>Petite noria</strong> : zone d'exclusion vers PRO ; <strong>grande noria</strong> : PRO vers zone de traitement.</li>
+                <li><strong>DRAC</strong> : direction régionale des affaires culturelles. <strong>CRMH</strong> : conservation régionale des monuments historiques. <strong>UDAP</strong> : unité départementale de l'architecture et du patrimoine. <strong>ABF</strong> : architecte des bâtiments de France. <strong>ACMH</strong> : architecte en chef des monuments historiques. <strong>CAOA</strong> : conservateur des antiquités et objets d'art.</li>
+                <li><strong>MISSA</strong> : mission sécurité, sûreté et audit du ministère de la culture. <strong>C2RMF</strong> : centre de recherche et de restauration des musées de France.</li>
+                <li><strong>BBF</strong> : Bouclier Bleu France. <strong>AFPS</strong> : association française de génie parasismique. <strong>AASC</strong> : association agréée de sécurité civile.</li>
+                <li><strong>Fonds patrimoniaux</strong> : documents anciens, rares ou précieux faisant l'objet de soins particuliers. <strong>Affectataire</strong> : bénéficiaire et utilisateur d'un bien dont il n'est généralement pas propriétaire (clergé pour les lieux de culte antérieurs à 1905).</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/GDO-Protection-sauvegarde-patrimoine-culturel-2026.pdf" target="_blank" rel="noopener">GDO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Protection et sauvegarde du patrimoine culturel », DGSCGC/DSP/SDDRH/BDFE, juin 2026, 1<sup>re</sup> édition. Texte repris et résumé ; schémas et photos non reproduits.</p>
+    </div>
+
+    <div id="gdopat-biens" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdopat-menu')">← GDO Patrimoine</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🏛️ Les biens culturels</h2>
+
+        <div class="rd-section">
+            <h3>Définition</h3>
+            <ul>
+                <li>Pour l'UNESCO, le patrimoine culturel regroupe artefacts, monuments, groupes de bâtiments, sites et musées distingués par leurs valeurs symbolique, historique, artistique, esthétique, ethnologique, scientifique et sociale.</li>
+                <li>Il comprend le patrimoine <strong>matériel</strong> (mobilier, immobilier, immergé) et le patrimoine <strong>immatériel</strong>. En situation de crise, le patrimoine immatériel est complexe à prendre en compte : <strong>l'effort porte sur le patrimoine matériel</strong>.</li>
+                <li>Un <strong>bien culturel</strong> est un objet, un site, un bâtiment, un paysage ou une pratique d'importance historique, artistique, archéologique, architecturale, ethnologique ou scientifique. Le code du patrimoine (articles L1 et L111-1) vise les biens immobiliers ou mobiliers, publics ou privés, d'intérêt historique, artistique, archéologique, esthétique, scientifique ou technique.</li>
+                <li>On distingue le <strong>patrimoine mobilier</strong> (le contenu) et <strong>immobilier</strong> (le contenant).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les biens que l'on trouve sur un territoire</h3>
+            <ul>
+                <li>Bâtiments et objets <strong>protégés au titre des monuments historiques</strong> (inscrits ou classés).</li>
+                <li>Villes, villages et quartiers classés en <strong>sites patrimoniaux remarquables</strong> ; sites du <strong>patrimoine mondial UNESCO</strong>.</li>
+                <li><strong>Musées</strong> de toute nature, y compris leurs réserves ; <strong>bibliothèques patrimoniales</strong> ; galeries d'art ; <strong>archives</strong> (nationales, départementales, communales, hospitalières) ; dépôts archéologiques et collections non accessibles au public.</li>
+                <li><strong>Bâtiments cultuels anciens</strong> (cathédrales, églises, chapelles, basiliques, synagogues, temples, mosquées) ; manoirs, châteaux, jardins remarquables ; bâtiments administratifs remarquables (hôtels de ville, palais de justice, préfectures).</li>
+                <li>Ateliers des artisans et industries du patrimoine (label « entreprises du patrimoine vivant ») ; sites archéologiques.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Repères chiffrés (fin 2024)</th><th></th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Immeubles protégés (monuments historiques)</strong></td><td><strong>45 223</strong> (14 333 classés, 30 890 inscrits)</td></tr>
+                    <tr><td><strong>Objets mobiliers protégés</strong></td><td>Environ <strong>300 000</strong> (plus de 135 000 classés, environ 150 000 inscrits)</td></tr>
+                    <tr><td><strong>Sites patrimoniaux remarquables</strong></td><td>Plus de <strong>1 000</strong></td></tr>
+                    <tr><td><strong>Musées de France</strong></td><td>Environ <strong>1 220</strong> (dont 61 musées nationaux)</td></tr>
+                    <tr><td><strong>Services d'archives publics</strong> / <strong>bibliothèques patrimoniales</strong></td><td>Environ <strong>800</strong> / près de <strong>500</strong></td></tr>
+                </tbody>
+            </table>
+            <p>Les <strong>biens classés trésors nationaux</strong> ne peuvent être exportés, sauf exceptions du code du patrimoine.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les critères d'intérêt d'un bien</h3>
+            <p>Utilisés par l'UNESCO, par les institutions nationales (monuments historiques) et par les responsables scientifiques des collections. Ils permettent de <strong>prioriser</strong> les biens dans le PSBC.</p>
+            <ul>
+                <li><strong>Intérêt historique</strong>, <strong>artistique</strong>, <strong>archéologique</strong>, <strong>architectural</strong>, <strong>ethnologique</strong>, <strong>scientifique et technique</strong>.</li>
+                <li><strong>Authenticité et intégrité</strong> : caractéristiques originales, modifications mineures seulement.</li>
+                <li><strong>Rareté</strong> : un bien rare ou unique voit sa valeur augmenter.</li>
+                <li><strong>Représentativité</strong> d'un type de patrimoine, d'une période ou d'une région.</li>
+                <li><strong>Valeur sociale ou spirituelle</strong> pour une communauté.</li>
+            </ul>
+            <div class="rd-astuce">
+                <p>Prendre la mesure de la valeur d'un bien n'est pas évident sans être spécialiste : <strong>il est recommandé de s'appuyer sur des experts</strong>.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les particularités constructives des bâtiments patrimoniaux</h3>
+            <ul>
+                <li>Époques, aménagements et réaménagements sur plusieurs siècles : certaines caractéristiques sortent des standards actuels. Par <strong>non-rétroactivité des textes</strong>, la réglementation ne s'applique qu'aux parties modifiées (sauf dispositions administratives, comme le contrôle des installations techniques).</li>
+                <li>Certains bâtiments ne sont <strong>pas modifiables sans autorisation</strong> ; les travaux sont exécutés sous le <strong>contrôle scientifique et technique</strong> de l'État (DRAC).</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>On y retrouve souvent</th><th>Conséquence</th></tr></thead>
+                <tbody>
+                    <tr><td>Matériaux et techniques anciens, toitures sans entretien régulier</td><td>Plus vulnérables aux sinistres</td></tr>
+                    <tr><td>Structures <strong>masquées</strong> par maçonnerie, enduits ou hourdis (métal, ossatures bois)</td><td>Résistance mécanique pouvant être inefficace en cas d'incendie</td></tr>
+                    <tr><td>Grands volumes, <strong>recoupements rares</strong>, notamment dans les combles</td><td>Propagation rapide</td></tr>
+                    <tr><td><strong>Verrières</strong> (parfois confondues avec du zinc quand elles sont empoussiérées), cours intérieures</td><td>Risque de chute, d'erreur de lecture de la toiture</td></tr>
+                    <tr><td><strong>Planchers et charpentes en bois</strong></td><td>Fort potentiel calorifique</td></tr>
+                    <tr><td>Matériaux, éléments mobiliers ou décoratifs <strong>fragiles à l'eau d'extinction</strong></td><td>Dégâts des eaux</td></tr>
+                    <tr><td>Accessibilité souvent difficile ; systèmes de sécurité incendie discrets (colonne sèche cachée dans une descente d'eaux pluviales)</td><td>À repérer à l'avance</td></tr>
+                </tbody>
+            </table>
+            <p>Les bâtiments anciens peuvent souffrir de problèmes structurels dus à l'âge et au manque de moyens d'entretien. Le contrôle scientifique et technique est coordonné au sein de la DRAC par la <strong>CRMH</strong>, avec l'<strong>UDAP</strong>, dirigée par l'<strong>architecte des bâtiments de France (ABF)</strong>.</p>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/GDO-Protection-sauvegarde-patrimoine-culturel-2026.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Protection et sauvegarde du patrimoine culturel 2026, chapitre 1 § 1.</p>
+    </div>
+
+    <div id="gdopat-vulnerabilite" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdopat-menu')">← GDO Patrimoine</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>⚠️ Vulnérabilité et planification</h2>
+
+        <div class="rd-section">
+            <h3>Une vulnérabilité réelle</h3>
+            <ul>
+                <li>Toutes les régions sont touchées : en moyenne <strong>un sinistre tous les 8 jours</strong> impactant le patrimoine culturel, soit environ 6 par région et par an. Principaux sinistres : <strong>incendies</strong> et <strong>dégâts d'eau</strong> (pluies torrentielles, événements météo).</li>
+                <li>Sur 87 sinistres recensés en 2021-2022 par le Bouclier Bleu France, <strong>63 % sont des incendies</strong>.</li>
+                <li>Bâtiments les plus touchés : <strong>lieux de culte (44 %)</strong>, <strong>musées (18 %)</strong>, <strong>manoirs et châteaux (14 %)</strong>. Les incendies d'<strong>origine malveillante</strong> augmentent.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les risques</h3>
+            <table class="rd-table">
+                <thead><tr><th>Risque</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Incendie</strong></td><td>Cause la plus fréquente de sinistre. Grands volumes, absence de recoupements et de moyens de ventilation : développement rapide. Les œuvres sont exposées aux <strong>flux thermiques</strong>, aux <strong>fumées</strong> et aux <strong>eaux d'extinction</strong>. DECI parfois insuffisante ou déficiente.</td></tr>
+                    <tr><td><strong>Intempéries</strong></td><td>Eau et humidité (exposition directe), vents (murs, toitures, échafaudages). Une inondation ou une fuite endommage structures, décors, fonds et collections ; l'<strong>eau de mer</strong> endommage de façon spécifique.</td></tr>
+                    <tr><td><strong>Mouvements de terrain</strong></td><td>Séismes, glissements, cavités souterraines : failles dans le sol ou les structures porteuses. Vigilance sur les éléments en élévation (<strong>tours, flèches, clochers</strong>). Sols argileux (gonflement, retrait), anciens marais, pilotis en bois immergés, <strong>anciennes carrières et tunnels</strong> : effondrement de voies au passage de poids lourds ou à la stabilisation de <strong>MEA</strong>. Attaques biologiques (moisissures, mérule) : affaiblissement des structures.</td></tr>
+                    <tr><td><strong>Collections</strong></td><td><strong>Nitrate de cellulose</strong> (bobines de films, photographies, objets du début du XX<sup>e</sup> siècle) : hautement inflammable, difficile à maîtriser, <strong>fumées toxiques</strong>. Spécimens naturalisés et objets traités contre les infestations : <strong>arsenic, mercure, biocides</strong>, qui élèvent le taux de polluants à la combustion. Certaines matières minérales faiblement radioactives. Émanations toxiques et corrosives : risques chimiques accrus pour les intervenants.</td></tr>
+                    <tr><td><strong>Travaux</strong></td><td>Phases critiques : impossible d'évacuer tous les biens. Accessibilité réduite, bases de vie, échafaudages, matières dangereuses, bouteilles de gaz, charges d'outils électroportatifs, stockages, moyens de secours condamnés, zones d'exclusion sanitaires (<strong>plomb, amiante</strong>).</td></tr>
+                    <tr><td><strong>Exogènes</strong></td><td>Feux de végétation et d'espace naturel se propageant à des édifices isolés (<strong>débroussaillement</strong>), mobilier urbain, containers de déchets, stockages de matériaux près des biens.</td></tr>
+                </tbody>
+            </table>
+            <p>Ces risques doivent de préférence être <strong>signalés dans les plans de sauvegarde</strong> et les intervenants sensibilisés lors de leurs visites.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>La planification spécifique</h3>
+            <p>Elle relève des personnes publiques ou privées propriétaires ou responsables de la conservation, des SIS et des communes et intercommunalités.</p>
+            <table class="rd-table">
+                <thead><tr><th>Document</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Dispositions ORSEC</strong> (art. R741-8 du CSI), <strong>guide G8</strong></td><td>Planification « chapeau » interservices sous l'égide du préfet. Deux axes : <strong>mesures permanentes</strong> de préservation et de prévention, et <strong>mesures d'anticipation et d'organisation interservices</strong> en urgence.</td></tr>
+                    <tr><td><strong>PSBC</strong> (plan de sauvegarde des biens culturels)</td><td>Fait par la personne chargée de la conservation directe. <strong>Plan interne</strong>, parfois confidentiel, qui ne porte ni sur tous les biens ni sur tout l'établissement. Il organise le <strong>recensement, la localisation et la priorisation</strong> des biens à évacuer ou à protéger sur place, avec les modalités de mise en œuvre. Précédé d'une <strong>analyse des risques</strong>. Les SIS peuvent accompagner l'exploitant (risques, consignes dans des fiches mission, zones dangereuses et de repli des œuvres). Exercices périodiques recommandés ; mise à jour sous la responsabilité de l'exploitant. Doit intégrer le risque inondation.</td></tr>
+                    <tr><td><strong>PPCI</strong> (plan de protection contre les inondations, Île-de-France)</td><td>Établissements culturels en zone inondable, <strong>crues à cinétique lente, prévision à 72 h</strong> : mesures activées avant l'événement.</td></tr>
+                    <tr><td><strong>ETARE</strong> (plan d'établissement répertorié du SIS)</td><td>Voies d'accès, <strong>forces portantes</strong> ou limitations de charge, recoupements, lieu où récupérer le <strong>PSBC imprimé</strong>, éléments ou zones à protéger en priorité, moyens de secours présents, <strong>PRO possibles</strong>, matériel de protection fourni (bâches, échelles, caisses, outillage), vulnérabilités (structures métalliques, cavités). Peut s'étendre aux îlots bâtimentaires historiques.</td></tr>
+                    <tr><td><strong>PCS / PICS</strong> (plans communaux et intercommunaux de sauvegarde)</td><td>Plans polyvalents sous l'autorité du maire ou du président. Peuvent prédéterminer des <strong>sites de stockage des biens évacués</strong>, des moyens humains et matériels. Le patrimoine culturel du territoire doit y être identifié.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Ne pas confondre ETARE et PSBC</strong>
+                <p>Le <strong>plan ETARE</strong> est destiné aux services d'incendie et de secours ; le <strong>PSBC</strong> est destiné à l'exploitant.</p>
+            </div>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/GDO-Protection-sauvegarde-patrimoine-culturel-2026.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Protection et sauvegarde du patrimoine culturel 2026, chapitre 1 §§ 2 et 3.</p>
+    </div>
+
+    <div id="gdopat-acteurs" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdopat-menu')">← GDO Patrimoine</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🤝 Les acteurs du patrimoine</h2>
+        <p>Les premiers acteurs sont ceux chargés de la protection ou de la conservation du patrimoine <strong>en situation normale</strong>. Ils sont essentiels pour conseiller le SIS dans son analyse des risques comme dans ses missions opérationnelles.</p>
+
+        <div class="rd-section">
+            <h3>Sécurité civile et gestion de crise</h3>
+            <table class="rd-table">
+                <thead><tr><th>Acteur</th><th>Rôle</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Préfet et maires</strong></td><td>Directeurs des opérations de secours. La préfecture (SIDPC) coordonne les réponses aux urgences (ORSEC, PCS), y compris pour le patrimoine.</td></tr>
+                    <tr><td><strong>SIS</strong></td><td>Rôle majeur dans la prévention et la protection en cas d'incendie, de dégâts des eaux ou de catastrophe. Accompagne la rédaction des PSBC. Peut disposer de <strong>cadres référents</strong> pour la protection du patrimoine et de <strong>sapeurs-pompiers volontaires « experts »</strong> issus des acteurs patrimoniaux.</td></tr>
+                    <tr><td><strong>Bouclier Bleu France</strong></td><td>Association agréée de sécurité civile (depuis 2024), agrément national de type A. Concours aux missions des SIS dans les conditions du règlement opérationnel ; mobilisable dès l'activation de l'<strong>ORSEC protection du patrimoine culturel</strong>. <strong>Astreinte téléphonique 24 h / 24, 7 j / 7 : 09 80 80 15 15</strong>.</td></tr>
+                    <tr><td><strong>AFPS</strong> (génie parasismique)</td><td>AASC depuis 2025. Cellule « urgence » qui conseille sur la protection des biens et des structures. Mobilisée à la demande du directeur des opérations de secours, <strong>sous l'autorité du COS</strong>.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les partenaires institutionnels</h3>
+            <table class="rd-table">
+                <thead><tr><th>Acteur</th><th>Rôle</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Ministère de la culture</strong> (DGPA, MISSA)</td><td>Travaille étroitement avec les SIS sur la prévention et la prévision opérationnelle. <strong>Trois officiers de sapeurs-pompiers</strong> de la mission sécurité, sûreté et audit se consacrent à la protection des biens culturels.</td></tr>
+                    <tr><td><strong>DRAC</strong> et <strong>UDAP</strong></td><td>Interlocuteurs principaux. Conseillent, inventorient, accompagnent les mesures de sauvegarde. Le directeur ou son adjoint est référent sécurité-sûreté : il intervient dans la chaîne d'alerte et fait l'interface avec l'administration centrale et le corps préfectoral. Pôle patrimoine et architecture : CRMH, service régional de l'archéologie, service de l'architecture, conseillers musées et archives.</td></tr>
+                    <tr><td><strong>ABF</strong></td><td>Sous l'autorité de la DRAC, au sein de l'UDAP. Pour les <strong>87 cathédrales propriétés de l'État</strong>, l'ABF est le <strong>référent unique de sécurité</strong>.</td></tr>
+                    <tr><td><strong>ACMH</strong></td><td>Architectes spécialisés du ministère : maîtrise d'œuvre des travaux sur les monuments de l'État, surveillance, conseil et expertise sur les autres.</td></tr>
+                    <tr><td><strong>CAOA</strong> (conservateurs des antiquités et objets d'art)</td><td>Niveau départemental, objets classés ou inscrits. En cas de sinistre : <strong>identification des objets, conditionnement, déplacement</strong>.</td></tr>
+                    <tr><td><strong>Régions et départements</strong></td><td>Propriétaires de monuments ou de collections (archives, musées) ; archives départementales ; services archéologiques mobilisables <strong>après le sinistre</strong> (recherche d'objets dans les déblais).</td></tr>
+                    <tr><td><strong>Communes</strong></td><td>Propriétaires majoritaires (églises, mairies, bibliothèques, musées municipaux), souvent premières confrontées à la crise. Peuvent mettre à disposition des <strong>locaux de stockage</strong> (zone de repli et zone de traitement).</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Responsables, affectataires, experts, associations</h3>
+            <ul>
+                <li><strong>Responsables d'établissements, conservateurs, régisseurs, propriétaires</strong> (publics et privés) : impliqués au premier chef. Le responsable sécurité est naturellement associé à l'anticipation et à l'action en urgence.</li>
+                <li><strong>Lieux de culte</strong> : le <strong>clergé catholique est affectataire</strong> des lieux de culte antérieurs à 1905 ; le <strong>diocèse</strong> est propriétaire des édifices postérieurs à 1905 (un diocèse correspond le plus souvent à un département). L'évêque s'entoure de la <strong>commission diocésaine d'art sacré (CDAS)</strong>. Autres cultes : consistoires des temples et synagogues, associations pour les mosquées. La base de données <strong>Mérimée</strong> permet d'identifier plus de 30 000 églises catholiques (12 161 classées).</li>
+                <li><strong>Acteurs scientifiques et techniques</strong> : conservateurs et personnels scientifiques (conservation préventive, procédures d'urgence), <strong>experts bâtimentaires</strong> (architectes) capables d'évaluer la fragilisation d'un bâti sinistré, bureaux d'étude spécialisés, laboratoires nationaux ou universitaires.</li>
+                <li><strong>Associations et bénévoles</strong> : sauvegarde de l'art français, vieilles maisons françaises, demeure historique, fondation du patrimoine : sensibilisation, alerte, collecte de fonds.</li>
+                <li>Au niveau des <strong>zones de défense et de sécurité</strong> : recensement des ressources rares (experts, entreprises spécialisées) avec les DRAC, voire une « DRAC correspondant de zone ».</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>🌍 Acteurs internationaux (annexe B)</summary>
+            <ul>
+                <li><strong>UNESCO</strong> : agence de l'ONU, protection du patrimoine culturel et naturel.</li>
+                <li><strong>ICOM</strong> : réseau international de professionnels des musées (ICOM France).</li>
+                <li><strong>ICCROM</strong> : centre international d'études pour la conservation et la restauration des biens culturels.</li>
+                <li><strong>ICOMOS</strong> : ONG de conservation des monuments et sites, conseille l'UNESCO pour le patrimoine mondial.</li>
+                <li><strong>Blue Shield International</strong> : bouclier bleu international (protocole de La Haye de 1954), relayé en France par le Bouclier Bleu France.</li>
+            </ul>
+        </details>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/GDO-Protection-sauvegarde-patrimoine-culturel-2026.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Protection et sauvegarde du patrimoine culturel 2026, chapitre 1 § 4 et annexe B.</p>
+    </div>
+
+    <div id="gdopat-avant" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdopat-menu')">← GDO Patrimoine</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🗺️ Avant l'opération</h2>
+        <p>L'efficacité du dispositif repose sur une <strong>appropriation</strong> des actions par tous les acteurs. Elles sont anticipées et planifiées autant que possible.</p>
+
+        <div class="rd-section">
+            <h3>Recensement et analyse des risques</h3>
+            <p>Les unités opérationnelles prennent connaissance des enjeux patrimoniaux de leur secteur par :</p>
+            <ul>
+                <li>les <strong>visites de secteur</strong> et la connaissance des risques particuliers (monuments historiques, galeries d'exposition, marchands d'art, collectionneurs) ;</li>
+                <li>l'élaboration des plans <strong>ETARE</strong> ;</li>
+                <li>l'accompagnement des gestionnaires de biens culturels dans leurs <strong>PSBC</strong> ;</li>
+                <li>les échanges avec les acteurs du patrimoine et la consultation des bases du ministère de la culture (<strong>POP</strong>, plateforme ouverte du patrimoine, atlas des patrimoines).</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Source des aléas et cartes de risques</th></tr></thead>
+                <tbody>
+                    <tr><td>Géorisques ; préfecture (SIDPC) : DDRM, DICRIM, ORSEC (dont patrimoine culturel si réalisé) ; <strong>BRGM</strong> (cavités : carrières, tunnels) ; <strong>IGN</strong> (cartes d'inondation) ; syndicats de bassins (petits cours d'eau) ; statistiques opérationnelles, SDACR et CoTRRiM ; <strong>Copernicus</strong> (analyse satellitaire).</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>La démarche s'étend aux <strong>îlots anciens</strong> à l'architecture imbriquée : propagations rapides, effondrements en chaîne, accès limités, cavités souterraines, ossatures bois ou métalliques. Certains sont bâtis sur des cavités (villes fortifiées) ou d'anciens marais aux fondations immergées : <strong>l'écoulement des eaux d'extinction, ou leur assèchement</strong>, peut créer des désordres structurels.</li>
+                <li>La connaissance des <strong>recoupements</strong> et des structures porteuses aide à identifier zones protégées et zones d'appui pour l'attaque d'un incendie.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Accessibilité et voies de desserte</h3>
+            <ul>
+                <li>Les bâtiments d'intérêt patrimonial sont souvent desservis par des voies contraintes, parfois <strong>inaccessibles aux moyens conventionnels</strong>. Accès pour engins et personnels (voies engins et échelles, ponts, chemins de ronde, passerelles sous combles) sans garantie de sécurité ou mal entretenus.</li>
+                <li>Lors des formations et exercices, vérifier auprès des exploitants et services de prévention que <strong>forces portantes et dégagements</strong> ont été contrôlés. À défaut : <strong>signalétique adaptée</strong> et report des données sur les plans d'intervention.</li>
+                <li>Les sites accueillent souvent des événements et des <strong>structures provisoires démontables</strong>, obstacles potentiels. L'<strong>arrêté du 25 juillet 2022</strong> impose des voies d'accès aux secours et une <strong>étude de sol</strong> (cavités, forces portantes). Sur les grands enjeux, le SIS ou les sous-commissions ERP peuvent s'en appuyer pour demander une étude cartographiant voies échelles et espaces libres pour la <strong>mise en station des MEA</strong>.</li>
+                <li>Un <strong>volet accessibilité MEA</strong>, identifiant sans ambiguïté voies et espaces accessibles ou interdits, est une grande plus-value dans un plan d'intervention.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Force portante non garantie</strong>
+                <p>Le COS évalue la nécessité d'engager des moyens dans ces espaces <strong>au regard des enjeux</strong>.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Mesures de prévention qui facilitent l'action</h3>
+            <p>Elles incombent en priorité aux exploitants et propriétaires, avec des contrôles possibles par les commissions de sécurité (ERP), y compris en chantier.</p>
+            <ul>
+                <li>Accès dédiés et protégés ; <strong>tours d'incendie</strong> ; éclairages de sécurité par blocs autonomes dans les combles et sous-sols ; <strong>recoupements coupe-feu</strong> ; moyens de secours adaptés à l'exploitation normale et aux travaux.</li>
+                <li>Dispositifs pour les sapeurs-pompiers : baies accessibles et <strong>colonnes sèches sur échafaudage</strong>, tuyaux et lances à demeure en partie haute des édifices, établissements relais fixes.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/GDO-Protection-sauvegarde-patrimoine-culturel-2026.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Protection et sauvegarde du patrimoine culturel 2026, chapitre 2.</p>
+    </div>
+
+    <div id="gdopat-sauvegarde" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdopat-menu')">← GDO Patrimoine</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>📦 Organiser la sauvegarde</h2>
+        <p>L'atteinte des biens culturels (incendie, inondation, tempête) est souvent <strong>extrêmement rapide et d'ampleur</strong>. Elle demande une organisation adaptée et parfaitement sectorisée. Certaines interventions justifient un <strong>secteur soutien de l'intervenant précoce</strong>.</p>
+
+        <div class="rd-section">
+            <h3>Les principes opérationnels</h3>
+            <div class="rd-astuce">
+                <p><strong>Deux principes fondamentaux</strong> : l'<strong>évacuation des biens</strong> et la <strong>protection sur place</strong> des biens non déplaçables.</p>
+            </div>
+            <ul>
+                <li>L'organisation s'adapte à la taille et au type d'édifice, à la nature du sinistre, à la quantité et à la nature des biens menacés, à leur intérêt, à la disponibilité du personnel du site et à l'existence ou non d'un <strong>PSBC</strong>.</li>
+                <li>Elle s'intègre à la gestion globale du sinistre, <strong>sous l'autorité du COS</strong>, avec les opportunités de la MGO, parfois <strong>avant même l'attaque</strong>.</li>
+                <li><strong>Primo-intervenants</strong> : non spécialistes, mais capables d'analyser leur environnement. Leurs limites d'engagement dépendent des <strong>conditions environnementales</strong> (propagation, menace d'effondrement), de leurs <strong>capacités</strong> et de leurs <strong>moyens</strong>.</li>
+                <li>Ils peuvent s'appuyer sur un <strong>expert en préservation du patrimoine</strong>, conseiller technique du COS : expert sapeur-pompier, personnel compétent, <strong>Bouclier Bleu France</strong> ou <strong>AFPS</strong> (structures). En cas de travaux, mobiliser le maître d'œuvre et les entreprises.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>La reconnaissance spécifique</h3>
+            <ul>
+                <li>Engager des éléments de reconnaissance pour <strong>évaluer les enjeux patrimoniaux</strong> et définir les priorités, si possible avec un expert, avec une vigilance sur la nature et la conception des structures.</li>
+                <li>Le COS contacte dès que possible une <strong>personne référente</strong> (conservateur, responsable patrimonial, architecte, propriétaire) et identifie les services ou entreprises susceptibles de l'appuyer.</li>
+                <li>Elle permet aussi d'identifier les <strong>matériels spécifiques</strong> et les <strong>équipes spécialisées</strong> nécessaires.</li>
+                <li>Les plans d'urgence (<strong>ETARE</strong>, <strong>PSBC</strong>) facilitent l'identification des risques (structures métalliques, couverture en plomb, recoupements) et de l'emplacement des biens à protéger en priorité.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Un secteur fonctionnel dédié</h3>
+            <p>Le COS peut créer un <strong>secteur dédié à la protection du patrimoine</strong>. Son chef :</p>
+            <ul>
+                <li>évalue les moyens humains et matériels d'évacuation et de protection et demande les renforts au COS ;</li>
+                <li>propose l'évolution du dimensionnement de son secteur ;</li>
+                <li><strong>priorise les missions</strong> en s'appuyant sur le PSBC et / ou le conseiller technique ;</li>
+                <li>propose et organise un <strong>PRO</strong> s'il n'est pas planifié, et en organise la <strong>sécurisation</strong> avec les forces de sécurité publique ;</li>
+                <li><strong>liste les œuvres</strong> extraites ou protégées en zone d'exclusion.</li>
+            </ul>
+            <p>Ses moyens assurent la prise en charge des biens par les primo-intervenants et / ou des spécialistes (membres du Bouclier Bleu, personnels de l'établissement, agents de la DRAC). La protection <strong>multisite</strong> (inondations) peut demander <strong>plusieurs PRO</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les trois zones</h3>
+            <table class="rd-table">
+                <thead><tr><th>Zone</th><th>Contenu</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Zone d'exclusion</strong></td><td>Biens à évacuer ou à protéger et patrimoine bâti à sauvegarder. Équipes en EPI, au plus près du sinistre : lutte contre ses effets et sauvegarde dès que possible, avec le <strong>PSBC</strong> et le plan <strong>ETARE</strong>. Plusieurs périodes de construction peuvent coexister : appui des <strong>experts bâtimentaires USAR</strong> ou d'un expert du patrimoine (ACMH) pour définir la zone. Quand elle est suffisamment sécurisée, le COS peut y autoriser les responsables de l'établissement et les personnes compétentes pour <strong>guider l'évacuation</strong>.</td></tr>
+                    <tr><td><strong>Zone contrôlée</strong></td><td>Zone tampon qui contrôle l'engagement des personnels et matériels. On y regroupe les biens, comme les victimes, avant prise en charge : un ou plusieurs <strong>PRO</strong>. Les professionnels du patrimoine y interviennent principalement.</td></tr>
+                    <tr><td><strong>Zone de soutien</strong></td><td><strong>Zone de traitement</strong>, en zone de soutien ou hors du périmètre de sécurité. Les biens y sont <strong>stabilisés, inventoriés, photographiés et protégés</strong> pour un stockage ou transfert sécurisé : zone de calme propice à la traçabilité. Utilisée sur un temps plus long que le PRO.</td></tr>
+                </tbody>
+            </table>
+            <p>Le transit entre zones est assuré par des <strong>norias logistiques</strong> (petite noria : zone d'exclusion vers PRO ; grande noria : PRO vers zone de traitement, selon le guide ORSEC G8).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le point de regroupement des œuvres (PRO)</h3>
+            <p>Un PRO fonctionnel doit, dans la mesure du possible :</p>
+            <ul>
+                <li>être situé <strong>à proximité immédiate</strong> de la zone sinistrée ;</li>
+                <li>être <strong>protégé</strong> des flux thermiques, fumées, météo, montée des eaux ;</li>
+                <li>être propre, sain et facilement accessible ;</li>
+                <li>être <strong>dimensionné</strong> pour stocker temporairement les biens et faire un premier tri ;</li>
+                <li>disposer d'un espace de <strong>secrétariat</strong> (enregistrement des arrivées et départs) ;</li>
+                <li>être facilement sécurisable (cour, jardin, annexe) et faire l'objet d'une <strong>surveillance constante</strong>, avec les forces de l'ordre s'il est dans l'espace public.</li>
+            </ul>
+            <p>En urgence, à défaut d'alternative, un <strong>véhicule ou une structure modulable</strong> (VTU, berce) peut servir de PRO provisoire.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'engagement de spécialistes</h3>
+            <ul>
+                <li>La protection du patrimoine culturel s'inscrit dans la MGO : <strong>ce n'est pas une spécialité opérationnelle</strong>. Certains SIS dédient des moyens et des personnels formés au démontage, au conditionnement et au transport de biens.</li>
+                <li>Certains biens demandent des <strong>moyens lourds</strong> de manutention. Les bâtiments touchés peuvent être déstabilisés plus vite : <strong>USAR</strong> (stabilisation, conseil sur la stabilité) ; <strong>SMPM</strong> (travaux en hauteur, sécurisation des accès, évacuation).</li>
+                <li>La réponse peut prévoir au départ des équipes spécialisées, un <strong>officier sécurité</strong>, une chaîne de commandement dédiée au secteur sauvegarde et des experts de la conservation. Un contact préalable avec un spécialiste du patrimoine permet de calibrer.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Niveau</th><th>Réponse</th><th>Exemple de moyens</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1</strong></td><td>Experts pour évaluation</td><td>Expert SPV, agent de la DRAC, réservistes du Bouclier Bleu France</td></tr>
+                    <tr><td><strong>2</strong></td><td>Experts + groupe dédié à la protection</td><td>1 groupe protection</td></tr>
+                    <tr><td><strong>3</strong></td><td>Experts, groupe dédié et équipes spécialisées</td><td>1 groupe protection, groupes supplémentaires, unité et CU USAR, chef de colonne</td></tr>
+                </tbody>
+            </table>
+            <p>Sans référent ou expert en préservation du patrimoine dans le SIS, le <strong>renfort zonal</strong> est à anticiper. Les partenaires (DRAC, services techniques des collectivités, forces de l'ordre) peuvent être sollicités dès l'appel.</p>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/GDO-Protection-sauvegarde-patrimoine-culturel-2026.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Protection et sauvegarde du patrimoine culturel 2026, chapitre 3 §§ 1 à 3.</p>
+    </div>
+
+    <div id="gdopat-sinistres" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdopat-menu')">← GDO Patrimoine</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🔥 Incendie et inondation</h2>
+
+        <div class="rd-section">
+            <h3>Lutte contre l'incendie</h3>
+            <p>L'incendie se distingue par sa <strong>cinétique</strong>, qui laisse moins de temps pour sauvegarder les biens. En cas d'événement climatique annoncé, la protection peut s'anticiper par la mise en œuvre du <strong>PSBC</strong>.</p>
+            <ul>
+                <li>Les bâtiments patrimoniaux exposent les intervenants à de nombreux risques : <strong>chutes</strong> de hauteur ou en excavation, <strong>effondrement</strong> de structures, cheminées, voûtes ou planchers, risques sanitaires des matériaux (<strong>plomb, amiante</strong>).</li>
+                <li><strong>Limiter au strict minimum</strong> la circulation et la mise en station des engins près des édifices et zones de danger (chutes de matériaux, entraînement par les eaux, bouteilles de gaz sur édifices en travaux, cavités).</li>
+                <li>Engager les <strong>moyens aériens seulement si la force portante est garantie</strong> (anciennes carrières, tunnels, fouilles).</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Premier facteur de dégradation des biens : les fumées</strong>
+                <p>Veiller autant que possible au <strong>compartimentage</strong> et à la <strong>ventilation</strong> des locaux pour faciliter la protection.</p>
+            </div>
+            <h3>Il est parfois judicieux de…</h3>
+            <ul>
+                <li><strong>Faire « la part du feu »</strong> sur les parties déjà en embrasement généralisé : laisser brûler le bois pour que la chute des charpentes n'endommage pas les <strong>voûtes</strong>, les tours ou les <strong>beffrois</strong>.</li>
+                <li><strong>Créer des ouvertures</strong> pour évacuer fumées et gaz chauds avec des outils spécialisés (scies à chaîne diamant ou tungstène) en cas de couverture multicouche.</li>
+                <li><strong>Limiter l'eau</strong> pour ne pas surcharger voûtes et plafonds (une grande partie ruisselle et s'infiltre) : attendre que le feu baisse faute de combustible.</li>
+                <li><strong>Sauvegarder le ou les beffrois</strong> pour éviter toute chute des cloches.</li>
+                <li>Établir une <strong>stratégie de défense des points sensibles</strong> ; <strong>couvrir</strong> les biens qui ne peuvent être évacués.</li>
+                <li>S'appuyer sur les experts (SPV, ABF, ACMH).</li>
+                <li>Prudence avec les <strong>jets bâton</strong> près des <strong>vitraux</strong> et des baies.</li>
+                <li>Engager des <strong>drones ou robots</strong>, y compris lors de l'attaque initiale (aide au COS).</li>
+            </ul>
+            <p>Vigilance sur le traitement des <strong>déblais</strong> : ils peuvent contenir des <strong>vestiges remarquables</strong> à traiter, conserver ou restaurer, comme pour la préservation des traces et indices. Les services d'archéologie peuvent être mobilisés par les DRAC après sinistre.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Inondation</h3>
+            <ul>
+                <li><strong>Risques pour les intervenants</strong> : glissades, chutes, noyade, instabilité des structures, électrisation, pollution chimique ou biologique de l'eau, objets immergés tranchants. Les matériaux saturés d'eau (planchers, rayonnages) augmentent le risque d'effondrement ou de basculement.</li>
+                <li>La dégradation des œuvres dépend de la <strong>qualité de l'eau</strong> (claire, polluée, salée) et du <strong>temps d'immersion</strong>. Remontées de nappe, crues et submersions marines n'ont pas les mêmes effets : micro-organismes, hydrocarbures, sels, avec altérations irréversibles (corrosion, développement fongique, cristallisation saline).</li>
+                <li>Phénomènes courants : <strong>basculement de rayonnages</strong> sous la poussée de l'eau, <strong>dispersion des collections</strong> (objets déplacés, emportés, mélangés), dégradation rapide des matériaux sensibles (plâtre, papier, bois, textiles).</li>
+                <li>Cinétique généralement <strong>plus lente</strong> qu'un incendie : possibilité d'anticiper et d'organiser la sauvegarde, sous réserve de sécurité.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Ne pas engager d'épuisement sans reconnaissance préalable</strong>
+                <p>Vérifier l'absence d'objets ou documents immergés ou flottants <strong>avant de mettre en œuvre les pompes</strong> (risque d'aspiration et de destruction).</p>
+            </div>
+            <table class="rd-table">
+                <thead><tr><th>En cas d'intervention, il convient de…</th></tr></thead>
+                <tbody>
+                    <tr><td>Reconnaître minutieusement les volumes inondés (visuel, perche, caméra).</td></tr>
+                    <tr><td><strong>Stabiliser</strong> les mobiliers de stockage (rayonnages, vitrines).</td></tr>
+                    <tr><td><strong>Limiter les mouvements d'eau</strong> qui aggravent la dispersion ou la dégradation.</td></tr>
+                    <tr><td><strong>Mettre hors d'eau en priorité</strong> les biens accessibles (rehaussement, déplacement), en <strong>hiérarchisant</strong> avec les responsables du site.</td></tr>
+                    <tr><td>Créer une <strong>zone de regroupement et de tri</strong> des objets sinistrés ; limiter les manipulations des œuvres fragilisées.</td></tr>
+                    <tr><td>Signaler et baliser les zones à risque (effondrement, pollution, courant).</td></tr>
+                    <tr><td>S'appuyer sur les experts (conservateurs, restaurateurs, services patrimoniaux).</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/GDO-Protection-sauvegarde-patrimoine-culturel-2026.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Protection et sauvegarde du patrimoine culturel 2026, chapitre 3 §§ 4 et 5. Voir aussi le GDO « lutte contre l'incendie » cité par le guide.</p>
+    </div>
+
+    <div id="gdopat-apres" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdopat-menu')">← GDO Patrimoine</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🧾 Après l'opération</h2>
+
+        <div class="rd-section">
+            <h3>La réflexivité opérationnelle multi-acteurs</h3>
+            <ul>
+                <li>Les opérations sur le patrimoine mobilisent de multiples acteurs et parfois des techniques ou matériels spécifiques. Le COS peut exploiter le contexte à l'issue de l'opération comme <strong>support pédagogique</strong> pour tous.</li>
+                <li>Une simple <strong>explication à chaud</strong>, le calme revenu, permet de réaliser les premiers réajustements techniques et d'envisager des actions plus élaborées (mises en situation spécifiques, ateliers pédagogiques).</li>
+                <li>L'analyse des causes, des modalités de survenue et de propagation, des effets et des conséquences <strong>affine la compréhension du risque</strong>. C'est une forme de <strong>compagnonnage</strong> entre générations.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Partage et retour d'expérience</h3>
+            <table class="rd-table">
+                <thead><tr><th>Production</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>PEX</strong> (partage d'expérience)</td><td>Rend compte <strong>succinctement</strong> d'une intervention : faits, difficultés rencontrées, enseignements. Reste <strong>factuel</strong>, appuyé par schémas et images.</td></tr>
+                    <tr><td><strong>RETEX</strong> (retour d'expérience)</td><td>Démarche <strong>structurée</strong>, d'une intervention ou d'un exercice : partager la connaissance, permettre à chacun de s'exprimer, objectiver les décisions, identifier difficultés et bonnes pratiques, observer les composantes techniques, humaines et organisationnelles, capitaliser, renforcer les liens avec les partenaires, instituer une culture d'organisation apprenante, montrer la transparence du service public.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>La mémoire des sinistres</h3>
+            <p>Le projet « <strong>mémoire de sinistre</strong> » du Bouclier Bleu France constitue une <strong>base de données des sinistres</strong> touchant le patrimoine culturel en France (lieux patrimoniaux, espace public), pour une analyse croisée, une cartographie et le progrès de la sauvegarde préventive. Les SIS peuvent y contribuer, et l'utiliser pour leur SDACR et les plans ETARE de bâtiments similaires.</p>
+            <div class="rd-astuce">
+                <p>L'évacuation des biens vers un centre de traitement <strong>n'entre pas dans les missions des SIS</strong>, mais le contexte peut les amener à être <strong>force concourante</strong>. Intervenir sur des sites patrimoniaux permet de <strong>s'acculturer</strong> à la problématique.</p>
+            </div>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📚 Références du guide (annexe C)</summary>
+            <ul>
+                <li><em>Plan de sauvegarde des biens culturels – Manuel PSBC</em>, ministère de la Culture et C2RMF, 2022 (60 pages).</li>
+                <li><em>Le risque d'incendie dans les bâtiments d'intérêt patrimonial</em>, colloque international des 13 et 14 avril 2023, Fondation Renault (181 pages).</li>
+                <li><em>Patrimoine culturel sinistré en France, bilan 2023-2024</em>, Bouclier Bleu France, 2026 (19 pages).</li>
+                <li><em>Guide ORSEC G8, disposition générale ORSEC protection du patrimoine culturel</em>, ministères de l'Intérieur et de la Culture, 2025 (45 pages).</li>
+            </ul>
+        </details>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/GDO-Protection-sauvegarde-patrimoine-culturel-2026.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Protection et sauvegarde du patrimoine culturel 2026, chapitre 4 et annexes.</p>
+    </div>
+
     <!-- ============ GTO Ventilation opérationnelle (DGSCGC, 2019) ============ -->
     <div id="vent-menu" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -33832,7 +34329,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.60</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.61</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
