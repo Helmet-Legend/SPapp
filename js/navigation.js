@@ -69,13 +69,27 @@ const Navigation = (function() {
     function pagesDuTheme(d, theme) {
         return registre.pages.filter(p => p.domaine === d.id && p.theme === theme && p.type !== 'menu');
     }
+    // Un type absent de TYPES est affiché comme une fiche : on le signale une fois en console
+    const typesSignales = new Set();
+    function signalerType(type) {
+        if (TYPES[type] || typesSignales.has(type)) return;
+        typesSignales.add(type);
+        console.warn('Navigation : type de page inconnu « ' + type + ' », affiché comme une fiche.');
+    }
+    // Icône « kit » d'un calcul : repli sur l'icône générique si le symbole n'existe pas
+    function iconeKit(p) {
+        const nom = 'k-' + (p.kit || 'calc');
+        return icone(document.getElementById('i-' + nom) ? nom : 'info');
+    }
     function badge(type) {
+        signalerType(type);
         const t = TYPES[type] || TYPES.fiche;
         return `<span class="nav-type ${t.classe}">${t.court}</span>`;
     }
     // Pastille de type affichée à droite des lignes de recherche, de favoris et de récents
     const LIBELLE_TYPE = { calculateur: 'CALCUL', fiche: 'FICHE', ordre: 'ORDRE', presentation: 'INFO' };
     function ligne(page, surligner) {
+        signalerType(page.type);
         const d = domaine(page.domaine);
         const titre = page.type === 'presentation' ? `Présentation : ${page.theme}` : page.titre;
         return `<button class="nav-row" data-page="${page.id}" style="--c:${d.couleur}">
@@ -96,7 +110,7 @@ const Navigation = (function() {
         const rapide = `<div class="acces-rapide"><div class="calc-titre"><i></i><h3>Accès rapide</h3><span>Terrain</span></div><div class="acces-rapide-liste">`
             + ['localisation', 'mes-points', 'carte-dfci'].filter(id => parId[id]).map(id => {
                 const p = parId[id], f = familleDe(p);
-                return `<button type="button" class="acces-btn fam-${f.id}" data-page="${id}"><span class="calc-ic">${icone('k-' + p.kit)}</span>${esc(p.court)}</button>`;
+                return `<button type="button" class="acces-btn fam-${f.id}" data-page="${id}"><span class="calc-ic">${iconeKit(p)}</span>${esc(p.court)}</button>`;
             }).join('') + '</div></div>';
         const titreDomaines = `<div class="calc-titre acc-titre"><i></i><h3>Domaines opérationnels</h3><span>${registre.domaines.length}</span></div>`;
         return rapide + titreDomaines + registre.domaines.map(d => {
@@ -149,7 +163,7 @@ const Navigation = (function() {
     function carteCalcul(p) {
         const f = familleDe(p), d = domaine(p.domaine);
         return `<button type="button" class="calc-carte fam-${f.id}" data-page="${p.id}">${imageCalcul(p)}
-            <span class="calc-ic">${icone('k-' + (p.kit || 'calc'))}</span>
+            <span class="calc-ic">${iconeKit(p)}</span>
             <span class="calc-tx"><b>${esc(p.titre)}</b><small><em>${esc(d.titre)}</em> · ${esc(p.theme || '')}</small></span>
             <span class="calc-ch">${icone('chev')}</span></button>`;
     }
@@ -158,7 +172,7 @@ const Navigation = (function() {
         let nb = '';
         if (p.id === 'mes-points' && typeof MesPoints !== 'undefined' && MesPoints.nombre()) nb = `<span class="calc-nb" aria-label="${MesPoints.nombre()} enregistrés">${MesPoints.nombre()}</span>`;
         return `<button type="button" class="calc-tuile fam-${f.id}${p.grande ? ' grande' : ''}" data-page="${p.id}">${imageCalcul(p)}
-            <span class="calc-ic">${icone('k-' + (p.kit || 'calc'))}</span>
+            <span class="calc-ic">${iconeKit(p)}</span>
             <span class="calc-tx"><b>${esc(p.court || p.titre)}</b><small>${esc(p.sous || '')}</small></span>${nb}</button>`;
     }
     function correspondCalcul(p, q) {
@@ -498,24 +512,88 @@ const Navigation = (function() {
         });
     }
 
+    // ---------- Chargement et validation du registre ----------
+    const MESSAGES_ERREUR = {
+        reseau: 'Impossible de charger le menu : vérifiez votre connexion, puis réessayez.',
+        http: 'Le menu est momentanément indisponible. Réessayez dans un instant.',
+        json: 'Le menu n\'a pas pu être lu. Réessayez ; si le problème continue, signalez-le depuis « À propos ».',
+        structure: 'Le menu est incomplet et ne peut pas s\'afficher. Réessayez ; si le problème continue, signalez-le depuis « À propos ».'
+    };
+    function erreurChargement(genre, cause) {
+        const e = new Error('Registre de navigation : ' + genre + (cause ? ' (' + cause.message + ')' : ''));
+        e.genre = genre;
+        return e;
+    }
+    async function chargerRegistre() {
+        let reponse;
+        try { reponse = await fetch('data/navigation.json'); }
+        catch (e) { throw erreurChargement('reseau', e); }
+        if (!reponse.ok) throw erreurChargement('http', new Error('HTTP ' + reponse.status));
+        try { return await reponse.json(); }
+        catch (e) { throw erreurChargement('json', e); }
+    }
+    // Vérifie la structure et écarte les entrées inutilisables au lieu de bloquer toute l'appli.
+    // Rien n'est corrigé en silence : chaque écart est signalé en console. Le script
+    // scripts/valider-navigation.js est le contrôle strict à lancer avant de publier.
+    function validerRegistre(brut) {
+        if (!brut || typeof brut !== 'object' || !Array.isArray(brut.domaines) || !Array.isArray(brut.pages)) {
+            throw erreurChargement('structure', new Error('« domaines » et « pages » doivent être des tableaux'));
+        }
+        const alertes = [], erreurs = [];
+        const texte = v => typeof v === 'string' && v.trim() !== '';
+        const domaines = [], idsDomaines = new Set();
+        brut.domaines.forEach((d, i) => {
+            if (!d || !texte(d.id) || !texte(d.titre)) { alertes.push('domaine #' + (i + 1) + ' ignoré : « id » ou « titre » absent'); return; }
+            if (idsDomaines.has(d.id)) { erreurs.push('domaine en double « ' + d.id + ' » : la seconde entrée est ignorée'); return; }
+            idsDomaines.add(d.id);
+            domaines.push(Object.assign({}, d, { themes: Array.isArray(d.themes) ? d.themes : [], couleur: texte(d.couleur) ? d.couleur : '#6B7280' }));
+        });
+        const pages = [], ids = new Set();
+        brut.pages.forEach((p, i) => {
+            if (!p || !texte(p.id) || !texte(p.titre)) { alertes.push('page #' + (i + 1) + ' ignorée : « id » ou « titre » absent'); return; }
+            if (ids.has(p.id)) { erreurs.push('identifiant de page en double « ' + p.id + ' » : la seconde entrée est ignorée'); return; }
+            if (!idsDomaines.has(p.domaine)) { alertes.push('page « ' + p.id + ' » ignorée : domaine inconnu « ' + p.domaine + ' »'); return; }
+            ids.add(p.id);
+            const page = (p.motsCles === undefined || Array.isArray(p.motsCles)) ? p : Object.assign({}, p, { motsCles: [] });
+            if (page !== p) alertes.push('page « ' + p.id + ' » : « motsCles » n\'est pas un tableau, ignoré');
+            pages.push(page);
+        });
+        erreurs.forEach(m => console.error('Navigation : ' + m));
+        alertes.forEach(m => console.warn('Navigation : ' + m));
+        return Object.assign({}, brut, { domaines, pages });
+    }
+    function afficherErreur(conteneur, genre) {
+        conteneur.innerHTML = '<div class="nav-empty"><p>' + (MESSAGES_ERREUR[genre] || MESSAGES_ERREUR.http)
+            + '</p><button type="button" class="nav-vide-btn" data-reessayer>Réessayer</button></div>';
+        const bouton = conteneur.querySelector('[data-reessayer]');
+        if (bouton) bouton.addEventListener('click', () => {
+            conteneur.innerHTML = '<div class="nav-empty">Chargement du menu…</div>';
+            init();
+        });
+    }
+
+    let demarre = false;
     async function init() {
         const conteneur = document.getElementById('navHome');
-        if (!conteneur) return;
+        if (!conteneur || demarre) return;
         try {
-            const reponse = await fetch('data/navigation.json');
-            if (!reponse.ok) throw new Error('HTTP ' + reponse.status);
-            registre = await reponse.json();
+            registre = validerRegistre(await chargerRegistre());
         } catch (e) {
             console.error('Navigation : registre indisponible', e);
-            conteneur.innerHTML = '<div class="nav-empty">Menu indisponible : rechargez la page une fois connecté.</div>';
+            registre = { domaines: [], pages: [] };
+            afficherErreur(conteneur, e && e.genre ? e.genre : 'structure');
             return;
         }
+        demarre = true;
         parId = {};
         registre.pages.forEach(p => {
             parId[p.id] = p;
             const module = document.getElementById(p.id);
             if (module) texteDesPages[p.id] = normaliser(module.textContent.replace(/\s+/g, ' '));
         });
+        // Bilan de diagnostic : pages du registre sans écran HTML (introuvables dans le DOM, donc non indexées dans la recherche)
+        const sansEcran = registre.pages.filter(p => !document.getElementById(p.id)).map(p => p.id);
+        if (sansEcran.length) console.warn('Navigation : ' + sansEcran.length + ' page(s) du registre sans écran HTML : ' + sansEcran.join(', '));
         conteneur.addEventListener('click', surClic);
         conteneur.addEventListener('input', e => {
             if (e.target.id === 'calcRecherche') {

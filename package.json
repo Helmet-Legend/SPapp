@@ -1,6 +1,6 @@
 {
   "name": "vulcain",
-  "version": "1.69.66",
+  "version": "1.69.67",
   "description": "Outil d'aide à la décision opérationnelle pour sapeurs-pompiers",
   "main": "index.html",
   "scripts": {
@@ -8,7 +8,8 @@
     "deploy": "vercel --prod",
     "test": "playwright test",
     "test:rapide": "playwright test --grep-invert @long",
-    "test:auto": "node scripts/test-auto.js"
+    "test:auto": "node scripts/test-auto.js",
+    "valider:nav": "node scripts/valider-navigation.js"
   },
   "keywords": [
     "pompiers",
