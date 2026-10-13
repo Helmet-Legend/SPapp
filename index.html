@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.63">
+    <meta name="version" content="1.69.64">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -145,7 +145,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.63 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.64 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -313,7 +313,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.63</span><br>
+                        Vulcain v<span class="app-version">1.69.64</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -28681,6 +28681,857 @@ Je fais : extinction.</p>
         <p class="rd-source">GTO Sauvegarde opérationnelle 2024, chapitre 3 § 3 et annexes A à C.</p>
     </div>
 
+    <!-- ============ GTO Sauvetages et mises en sécurité (DGSCGC, novembre 2020) ============ -->
+    <div id="gtosms-menu" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🪜 GTO Sauvetages et mises en sécurité – 2020</h2>
+        <p style="text-align: center;">Guide de techniques opérationnelles DGSCGC de <strong>novembre 2020</strong> (1<sup>re</sup> édition, version 1.1) : les matériels, la préparation, les techniques de <strong>sauvetage</strong> et de <strong>mise en sécurité</strong> d'une victime, le sauvetage du sauveteur et l'après-intervention.</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gtosms-echelles')"><b>1 · Échelles à mains</b><span>Types et poids, crochets, coulisse 2 plans, piétage, itinéraire de secours, amarrage, échelle 3 plans</span></button>
+            <button onclick="showModule('gtosms-mea')"><b>2 · Moyens élévateurs aériens</b><span>ER, EP, EPS, EPC, BEAA, terminologie, sol, lignes électriques, météo, positions de travail, EPI</span></button>
+            <button onclick="showModule('gtosms-lspcc')"><b>3 · Lot de sauvetage (LSPCC)</b><span>Composition des lots engin et échelle, contrôles avant et après emploi, causes de réforme</span></button>
+            <button onclick="showModule('gtosms-materiels')"><b>4 · Autres matériels</b><span>Matelas de sauvetage, planche de sauvetage, civière bariatrique, matériel électro-secours</span></button>
+            <button onclick="showModule('gtosms-preparer')"><b>5 · Préparer les sauvetages</b><span>Sauvetage ou mise en sécurité, confinement ou évacuation, facteurs de décision, consignes du CTA</span></button>
+            <button onclick="showModule('gtosms-lspcc-technique')"><b>6 · Techniques avec le LSPCC</b><span>Facteur de chute, ancrage, amarrage, nœuds, harnais, descente par l'extérieur, puits, évolution</span></button>
+            <button onclick="showModule('gtosms-echelles-technique')"><b>7 · Échelles, MEA et PMR</b><span>Victime valide ou invalide sur crochets, coulisse, panier de secours, fauteuil, bariatrique</span></button>
+            <button onclick="showModule('gtosms-sauveteur')"><b>8 · Sauveteur et après</b><span>Sauvetage du sauveteur, remise en condition, reconditionnement, PEX et RETEX</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'essentiel</h3>
+            <ul>
+                <li><strong>Sauvetage</strong> : soustraire une personne à un danger imminent qui, sans aide extérieure, serait vouée à une mort certaine. <strong>Mise en sécurité</strong> : protéger d'une menace plus ou moins différée, par un déplacement accompagné ou un confinement.</li>
+                <li><strong>Seuls les sauvetages ou mises en sécurité de personnes peuvent justifier une prise de risque réfléchie.</strong> On passe d'abord par les <strong>communications existantes</strong> ; si elles sont impraticables, on passe par l'extérieur (MEA, échelles à coulisse ou à crochets, LSPCC).</li>
+                <li>Le <strong>LSPCC est une alternative</strong> quand les moyens plus sûrs sont impossibles ou que l'urgence l'impose : c'est le <strong>COS</strong> qui valide son emploi ou appelle une équipe spécialisée (SMPM).</li>
+                <li><strong>Facteur de chute</strong> : supérieur à 1 interdit, égal à 1 à éviter. Mousquetons <strong>vissés</strong>, huit descendeur <strong>toujours en point fixe</strong>.</li>
+                <li>La <strong>décision d'évacuer</strong> relève du <strong>DOS</strong>, sur proposition du COS. Le confinement reste la règle pour les structures en dur lors des feux de forêts.</li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Avertissement du guide</strong>
+            <p>Ces techniques demandent une <strong>bonne condition physique et un entraînement régulier</strong>. En formation ou en entraînement, elles ne se réalisent qu'avec des <strong>matériels adaptés</strong> (LSPCC obligatoire) et, pour la victime, <strong>un mannequin</strong>. Les photographies du guide ne recommandent aucun matériel en particulier.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Déjà dans Vulcain (non dupliqué ici)</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('echelles-menu')">🪜 Échelles portables</button>
+                <button class="sal-lien" onclick="showModule('echelles-proc-coulisse2')">Procédure échelle à coulisse 2 plans</button>
+                <button class="sal-lien" onclick="showModule('echelles-proc-coulisse3')">Procédure échelle à coulisse 3 plans</button>
+                <button class="sal-lien" onclick="showModule('echelles-proc-crochets')">Procédure échelle à crochets</button>
+                <button class="sal-lien" onclick="showModule('cod6')">🪜 COD 6 – Moyens élévateurs aériens</button>
+                <button class="sal-lien" onclick="showModule('lspcc-menu')">🪢 LSPCC – Lot de sauvetage</button>
+                <button class="sal-lien" onclick="showModule('lspcc-noeuds')">Nœuds du LSPCC</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-menu')">🛟 RDSMES – Sauvetages & sauvegarde (SDIS 34)</button>
+                <button class="sal-lien" onclick="showModule('gtosauv-menu')">🆘 GTO Sauvegarde opérationnelle</button>
+                <button class="sal-lien" onclick="showModule('smpm-menu')">🧗 GTO Secours en milieu périlleux</button>
+                <button class="sal-lien" onclick="showModule('gtomv')">😷 GTO Engagement en milieu vicié</button>
+                <button class="sal-lien" onclick="showModule('halligan')">🔧 Halligan Tool</button>
+                <button class="sal-lien" onclick="showModule('sante-psy')">Santé psychologique du sapeur-pompier</button>
+            </p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique du guide</summary>
+            <ul>
+                <li><strong>LSPCC</strong> : lot de sauvetage et de protection contre les chutes. <strong>MEA</strong> : moyen élévateur aérien. <strong>BEAA</strong> : bras élévateur aérien automobile. <strong>CBEA</strong> : camion bras élévateur articulé.</li>
+                <li><strong>EP</strong> : échelle sur porteur. <strong>EPS</strong> : échelle pivotante à mouvements séquentiels. <strong>EPC</strong> : à mouvements combinés. <strong>ER</strong> : échelle remorquable.</li>
+                <li><strong>CSLMT</strong> : ceinturon de sécurité avec longe de maintien au travail. <strong>EAS</strong> : espace d'attente sécurisé. <strong>PMR</strong> : personne à mobilité réduite.</li>
+                <li><strong>Fc</strong> : facteur de chute. <strong>PLS</strong> : position latérale de sécurité. <strong>SMPM</strong> : secours en milieu périlleux et montagne. <strong>LAAR</strong> : lot d'assistance en air respirable.</li>
+                <li><strong>PEX</strong> : partage d'expérience. <strong>RETEX</strong> : retour d'expérience. <strong>CTA</strong> : centre de traitement de l'alerte. <strong>DOS</strong> : directeur des opérations de secours.</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvetages-mises-en-securite-2020.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 142 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Sauvetages et mises en sécurité », DGSCGC/DSP/SDDRH/BDFE, novembre 2020, 1<sup>re</sup> édition, version 1.1. Texte repris et résumé ; schémas et photos non reproduits.</p>
+    </div>
+
+    <div id="gtosms-echelles" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosms-menu')">← GTO Sauvetages</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🪜 Échelles à mains</h2>
+
+        <div class="rd-section">
+            <h3>Les quatre familles</h3>
+            <table class="rd-table">
+                <thead><tr><th>Type</th><th>Longueur repliée → déployée</th><th>Poids</th><th>Manœuvre</th><th>Utilisation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>À crochets</strong></td><td>4,25 m</td><td><strong>8 kg</strong></td><td rowspan="2">Individuelle</td><td rowspan="2">Reconnaissances, sauvetages</td></tr>
+                    <tr><td><strong>À crochets pliable</strong></td><td>2,40 → 4,25 m</td><td><strong>9 kg</strong></td></tr>
+                    <tr><td><strong>Coulisse petit modèle</strong></td><td>3,60 → 5,60 m</td><td><strong>20 kg</strong></td><td>Une équipe</td><td>Reconnaissances</td></tr>
+                    <tr><td><strong>Coulisse grand modèle</strong></td><td>5 → 9 m</td><td><strong>33 kg</strong></td><td>Une équipe</td><td>Sauvetages, établissements</td></tr>
+                    <tr><td><strong>Coulisse 3 plans</strong></td><td>5,60 → 14,30 m</td><td><strong>75 kg</strong></td><td>Deux équipes</td><td>Niveaux hors de portée des 2 plans</td></tr>
+                </tbody>
+            </table>
+            <p>Les échelles à coulisse 2 plans atteignent le <strong>1<sup>er</sup> et le 2<sup>e</sup> étage</strong> ; la 3 plans accède au <strong>4<sup>e</sup> étage</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Échelle à crochets</h3>
+            <ul>
+                <li>Pour progresser <strong>en façade par l'extérieur, d'étage en étage</strong>, vers des niveaux inaccessibles aux échelles à coulisse ou aériennes. Utilisée quand les escaliers sont <strong>absolument impraticables</strong>, qu'aucune autre échelle ne passe (cour intérieure, impasse, passage étroit) ou que les limites d'une autre échelle sont atteintes (prolongement).</li>
+                <li>Constituée de deux montants reliés par des échelons, de deux crochets en prolongement des montants et d'une entretoise.</li>
+                <li><strong>S'utilise en binôme mais se manipule seule</strong> ; suspendue par ses crochets ou en appui sur les pointes ; supporte <strong>un sapeur-pompier</strong>, exceptionnellement accompagné d'une autre personne lors d'un sauvetage ; <strong>testée avant</strong> l'engagement (traction).</li>
+                <li>Manœuvres décrites pour les droitiers : épaule, présentation à terre, dressage crochets à l'extérieur, montée main sur main, <strong>rotation en croisant les bras</strong> dans les étages, engagement du torse derrière les crochets puis une jambe après l'autre. L'équipier maintient le bas de l'échelle. Posée à terre, <strong>crochets vers le ciel ou contre le sol</strong> pour éviter les accidents.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Échelle à coulisse 2 plans</h3>
+            <ul>
+                <li>Deux plans qui coulissent, un <strong>trait</strong> pour la déployer et la replier, un <strong>parachute</strong> qui la maintient, deux pieds. Pour les sauvetages, les reconnaissances, les établissements, ou comme <strong>itinéraire de secours</strong>.</li>
+                <li><strong>Précautions</strong> : une personne par plan (sauf sauvetage) ; pieds sur un plan horizontal stable ; parachutes correctement positionnés ; mains sur les montants au déploiement et au reploiement. L'échelle peut être posée au ras de l'ouvrant, à côté, ou dépasser du rebord (aide à la victime).</li>
+                <li>Manœuvre du grand modèle : le chef dresse l'échelle par rebonds, libère le trait, <strong>déploie, bloque les parachutes</strong>, puis calcule le piétage. Montée <strong>en cadence et sans saccade</strong>, bras droit et jambe gauche puis l'inverse. <strong>Jamais les deux pieds sur le même échelon.</strong> Ordres : « Attention pour épauler », « Épaulez ». Réalisable par un seul homme si nécessaire.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Piétage</strong>
+                <p>Le pied de l'échelle est éloigné du mur d'environ <strong>1/3 de la longueur développée</strong>. Repères : un pas par étage, le test du coude, ou les bras tendus. Prudent d'<strong>amarrer la partie supérieure</strong> à un point solide.</p>
+            </div>
+            <table class="rd-table">
+                <thead><tr><th>Déplacement rapide, seul</th><th>Quand</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Reploiement, transport, déploiement</strong></td><td>Distance relativement importante</td></tr>
+                    <tr><td><strong>Port</strong> (échelle déployée portée)</td><td>Courte distance (quelques mètres, sol non accidenté), même hauteur. Une main basse porte, l'autre haute guide.</td></tr>
+                    <tr><td><strong>Rotation</strong> sur la façade</td><td>Courte distance, même hauteur, les extrémités des montants restant au contact du bâti</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Itinéraire de secours et trait</h3>
+            <ul>
+                <li>Une échelle peut être <strong>itinéraire de secours</strong> : mise en œuvre rapide pour aider un sapeur-pompier en difficulté qui se manifeste à un autre ouvrant, ou pour descendre une victime invalide ; utile en sauvetages multiples. Réalisable par <strong>un seul sapeur-pompier</strong> : retourner l'échelle <strong>grand plan vers le bas</strong>, augmenter le piétage (pente moins raide, haut de l'échelle juste sous le rebord), amarrer ou caler, <strong>vérifier l'engagement des parachutes</strong> une fois retournée. Pieds en butée sur un équipement fixe si possible.</li>
+                <li>Piétage en itinéraire de secours : <strong>4 grands pas</strong> depuis la façade pour le 1<sup>er</sup> étage, <strong>5</strong> pour le 2<sup>e</sup>.</li>
+                <li>Risques : chutes de matériaux d'une façade endommagée ; échelle déjà utilisée comme itinéraire de repli par un binôme ; terrain encombré ou accidenté.</li>
+                <li><strong>Attacher le trait</strong> pour faciliter la manipulation, éviter de s'entraver, éviter qu'il se bloque, ou bloquer les plans si les parachutes sont mal verrouillés. En sauvetages multiples, <strong>ne pas l'attacher</strong> : le placer pour ne pas gêner. Le nœud proposé se libère en tirant sur le brin libre.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Amarrage et blocage</h3>
+            <ul>
+                <li><strong>Par le haut</strong> : avec une sangle à tuyau, ou une sangle et un connecteur du LSPCC.</li>
+                <li><strong>Au niveau du sol</strong> : contre un élément de maçonnerie ; au moyen d'une hache ou d'une grande pince et d'une commande (<strong>cabestan</strong>) ; au moyen d'un Halligan Tool et d'une sangle multifonction (boucle ou connecteur dans le pointeau).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Échelle à coulisse 3 plans avec arcs-boutants</h3>
+            <ul>
+                <li>Quand les niveaux sont inaccessibles aux 2 plans et aux MEA (courette intérieure). Manœuvrée par <strong>deux binômes</strong> sous un chef d'agrès. Les arcs-boutants assurent l'équilibre et limitent le flambage.</li>
+                <li><strong>Précautions</strong> : deux binômes minimum ; pieds sur plan horizontal stable ; pied d'échelle respecté ; <strong>parachutes verrouillés et cordes amarrées aux échelons</strong> ; mains sur les montants. Aucune partie du corps dans le prolongement des arcs-boutants. Les équipiers travaillent <strong>en miroir</strong> et regardent en permanence le haut de l'agrès.</li>
+                <li>Piétage : <strong>1/3 de la longueur développée</strong>, soit entre <strong>2 m et 5 m</strong>.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Commandement</th><th>Action</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Attention pour lever, Levez, Epaulez</strong></td><td>Les binômes se positionnent (sabots / poulies), se redressent jambes fléchies et dos droit, portent sur l'épaule. Déplacements : « En avant, en arrière, tournez à droite (gauche), halte ». Pour poser : « Attention pour poser, posez ».</td></tr>
+                    <tr><td><strong>Dressez</strong></td><td>Échelle posée parallèlement à la façade, petit plan côté façade, arcs-boutants attachés. Le chef aux sabots monte sur le dernier échelon et se met en arrière pour caler ; l'autre chef et les équipiers avancent main sur main.</td></tr>
+                    <tr><td><strong>Pivotez à droite / à gauche</strong></td><td>Échelle en équilibre sur le sabot pivot, petit plan vers la façade.</td></tr>
+                    <tr><td><strong>Développez</strong></td><td>Équipiers : détachent les arcs-boutants, s'écartent à mi-distance mur-échelle et maintiennent à la verticale. 1<sup>er</sup> chef : 2<sup>e</sup> plan sur au moins 3 m, verrouille les parachutes, amarre le trait à un échelon, puis 3<sup>e</sup> plan. <strong>Phase la plus délicate</strong> : impossible de rattraper une échelle qui perd l'équilibre ; les sabots ne décollent pas, l'échelle ne vrille pas.</td></tr>
+                    <tr><td><strong>Appuyez</strong></td><td>Les équipiers reculent progressivement, règlent les arcs-boutants et les maintiennent au pied ; le 1<sup>er</sup> chef empêche le glissement.</td></tr>
+                    <tr><td><strong>Reployez / Abaissez</strong></td><td>Manœuvre inverse : redressement à la verticale, dégagement des parachutes, trait filé dans la main, arcs-boutants remis en place, goupille replacée ; puis abaissement en reculant.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('echelles-menu')">🪜 Échelles portables</button>
+                <button class="sal-lien" onclick="showModule('echelles-coulisses')">Échelles à coulisse</button>
+                <button class="sal-lien" onclick="showModule('echelles-crochets')">Échelles à crochets</button>
+                <button class="sal-lien" onclick="showModule('echelles-securite')">Sécurité des échelles</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvetages-mises-en-securite-2020.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 142 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Sauvetages et mises en sécurité », DGSCGC, novembre 2020, chapitre 1 §1. Texte résumé ; schémas non reproduits.</p>
+    </div>
+
+    <div id="gtosms-mea" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosms-menu')">← GTO Sauvetages</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🚒 Moyens élévateurs aériens</h2>
+
+        <div class="rd-section">
+            <h3>Les engins</h3>
+            <table class="rd-table">
+                <thead><tr><th>Engin</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>ER</strong> – échelle remorquable (NF S 61-554)</td><td>Quasiment plus utilisée par les SIS.</td></tr>
+                    <tr><td><strong>EP</strong> – échelle sur porteur (NF S 61-554)</td><td>Porteur automobile et structure extensible sur un bâti, parfois motorisée. Surtout en centre-ville pour les immeubles anciens.</td></tr>
+                    <tr><td><strong>EPS</strong> – mouvements séquentiels (NF EN 14044)</td><td>Un moteur fournit l'énergie ; les mouvements ne sont <strong>pas simultanés</strong>.</td></tr>
+                    <tr><td><strong>EPC</strong> – mouvements combinés (NF EN 14043)</td><td>Mouvements combinés dans un temps déterminé. Comme les EPS, peut avoir un 1<sup>er</sup> plan à balancier avec <strong>panier de secours</strong>.</td></tr>
+                    <tr><td><strong>BEAA / CBEA</strong> (NF EN 1777, NF S 61-550/A1)</td><td>Bras élévateurs articulés et/ou télescopiques.</td></tr>
+                </tbody>
+            </table>
+            <table class="rd-table">
+                <thead><tr><th>Atteintes maximales normalisées</th><th>Hauteur verticale</th><th>Portée</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>EPS 18 m</strong></td><td>18 m</td><td>3 m</td></tr>
+                    <tr><td><strong>EPS 24 m</strong></td><td>23,5 m</td><td>6 m</td></tr>
+                    <tr><td><strong>EPS 30 m</strong></td><td>28 m</td><td>10 m</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Terminologie commune</h3>
+            <ul>
+                <li><strong>Hauteur (H)</strong> : du sol au dernier échelon de la structure extensible. <strong>Longueur développée (L)</strong> : entre les points extrêmes de l'échelle développée. <strong>Portée théorique (P)</strong> : du dernier échelon du premier plan (ou du panier) au point le plus saillant du véhicule.</li>
+                <li><strong>Angle de dressage</strong> : entre l'axe du dernier plan (inférieur) et l'horizontale.</li>
+                <li><strong>Zone limite d'utilisation libre</strong> : mouvement à la charge maximale autorisée, extrémité non en appui. <strong>Zone d'utilisation en appui</strong> : mouvement sans charge, extrémité au contact du point atteint avant d'appliquer la charge.</li>
+                <li><strong>Charge par personne</strong> : masse supposée de <strong>90 kg</strong>. <strong>Panier de secours</strong> : plate-forme ou nacelle, selon la fixation sur le premier plan.</li>
+                <li><strong>Polygone de sustentation</strong> : figure dessinée par les 4 stabilisateurs et les roues avant. La résultante des forces doit toujours passer à l'intérieur. Quand la stabilisation diffère d'un côté à l'autre, les performances s'adaptent au polygone défini.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'environnement de l'échelle</h3>
+            <p>Une <strong>reconnaissance 3D</strong> (6 faces) vérifie que l'espace est libre pour la mise en station, la stabilité et tous les mouvements. Matérialiser l'espace de la tourelle avec des <strong>cônes de Lubeck</strong>.</p>
+            <table class="rd-table">
+                <thead><tr><th>Sol</th><th>Exemples</th><th>Conduite</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Stable</strong></td><td>Route, parking, béton armé, voie échelle (poids lourds admis)</td><td>Toujours recommandé de stabiliser l'échelle.</td></tr>
+                    <tr><td><strong>Instable</strong></td><td>Trottoir, chemin de terre ou de calcaire</td><td>Stabiliser avec les <strong>cales</strong> qui agrandissent la surface portante.</td></tr>
+                    <tr><td><strong>Interdit</strong></td><td>Plaque d'égout, bordure de trottoir, cave sous trottoir, parking sur dalle inférieure à 15 t</td><td><strong>Formellement interdit</strong> de stabiliser.</td></tr>
+                </tbody>
+            </table>
+            <p>Les échelles pèsent en moyenne <strong>16 t</strong>, les BEA <strong>18 à 26 t</strong>. PTAC limité par la norme : <strong>16 t</strong> (30 m), <strong>14 t</strong> (24 m), <strong>13 t</strong> (18 m).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Dangers aériens</h3>
+            <ul>
+                <li><strong>Heurt</strong> du panier ou de la structure sur un obstacle (balcons, surplombs, cheminées, antennes, arbres) : chute possible des manipulateurs et victimes.</li>
+                <li><strong>Électrisation, même sans contact</strong> en forte tension (arc, ionisation par pluie, brouillard, fumées). Rechercher les câbles avant de positionner l'échelle ; repérer le type de poteau pour déterminer le réseau.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Ligne</th><th>Distance de sécurité minimale</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>BT</strong> (240/400 V)</td><td><strong>1 m</strong></td></tr>
+                    <tr><td><strong>Tramway</strong> (ligne de contact) / <strong>caténaires SNCF</strong></td><td><strong>3 m</strong></td></tr>
+                    <tr><td><strong>HTA</strong> (1 000 à 20 000 V)</td><td><strong>3 m</strong></td></tr>
+                    <tr><td><strong>HTB</strong> (> 50 000 V)</td><td><strong>5 m</strong></td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Distance à augmenter</strong>
+                <p>S'il pleut ou si une lance est établie à proximité. Si possible, <strong>changer l'emplacement</strong> pour un espace très largement dégagé de toute ligne haute tension.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Météo</h3>
+            <ul>
+                <li><strong>Vent</strong> : se référer à l'<strong>abaque des vents</strong> du constructeur ; rafales, façades « abritantes » et effet de vortex trompent l'estimation. Écarter toute prise de risque inutile (balance dangers / enjeux).</li>
+                <li><strong>Foudre</strong> : danger incontrôlable d'électrisation, même raisonnement. <strong>Brouillard</strong> : réduit la vision de l'extrémité de la structure ou du bras.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Positions de travail</h3>
+            <p>Faire travailler la structure du côté où la stabilisation est maximale.</p>
+            <table class="rd-table">
+                <thead><tr><th>Position</th><th>Avantages</th><th>Inconvénients</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Axe avant</strong></td><td>Stationnement en marche avant, pas de pivotement</td><td>Portée diminuée (longueur cabine-tourelle) ; pas d'angle de dressage &lt; 20° (sauf dernier plan articulé) ; chute de gravats sur la cabine</td></tr>
+                    <tr><td><strong>Axe arrière</strong></td><td>Portée maximale ; pas de chute d'objets sur la cabine</td><td>Stationnement en marche arrière ; temps de pivotement maximal</td></tr>
+                    <tr><td><strong>Pivotement à 90°</strong></td><td>Portée maximale si stabilisation maximale ; temps de pivotement moyen</td><td>Position de l'atteinte nominale à la certification</td></tr>
+                    <tr><td><strong>45° (défavorable)</strong></td><td>—</td><td>Temps de pivotement variable ; travail sur <strong>un seul stabilisateur</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Dispositifs de sécurité obligatoires</h3>
+            <p>Les sapeurs-pompiers dans le panier de secours doivent <strong>obligatoirement être amarrés</strong>.</p>
+            <table class="rd-table">
+                <thead><tr><th>Configuration</th><th>EPI préconisé</th></tr></thead>
+                <tbody>
+                    <tr><td>MEA sans panier, ou avec panier et sans action postée (lance…) ni ouverture de porte</td><td><strong>CSLMT</strong> : ceinturon de sécurité avec longe de maintien au travail</td></tr>
+                    <tr><td>Avec panier et missions avec <strong>possibilité de sortie du panier</strong> ou de la nacelle (ouverture de porte)</td><td><strong>Harnais de protection contre les chutes</strong> et dispositif absorbeur d'énergie</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('cod6')">🪜 COD 6 – Moyens élévateurs aériens</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-mea')">MEA – RDSMES (SDIS 34)</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvetages-mises-en-securite-2020.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 142 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Sauvetages et mises en sécurité », DGSCGC, novembre 2020, chapitre 1 §2. Texte résumé ; schémas non reproduits.</p>
+    </div>
+
+    <div id="gtosms-lspcc" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosms-menu')">← GTO Sauvetages</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🪢 Lot de sauvetage et de protection contre les chutes</h2>
+
+        <div class="rd-section">
+            <h3>Emplois et limites</h3>
+            <ul>
+                <li><strong>Emplois</strong> : sauvetage ou mise en sécurité par l'extérieur ; reconnaissance d'appartement ; puits, fosses ou excavations ; abordage et sécurisation d'une victime en péril ; déplacement d'une victime inconsciente ou invalide ; évolution avec risque de chute.</li>
+                <li><strong>Limites</strong> : matériel insuffisant ou situation relevant d'une équipe spécialisée ; état de la victime nécessitant une prise en charge spécifique.</li>
+                <li>Composé principalement d'<strong>EPI de catégorie III</strong>, normalisés, soumis à contrôle et suivi stricts. <strong>Au moindre doute sur l'intégrité : mettre de côté immédiatement</strong> et rendre compte à la personne compétente.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Composition des lots</h3>
+            <table class="rd-table">
+                <thead><tr><th>Matériel</th><th>Lot engin (sac jaune citron)</th><th>Lot échelle (sac bleu)</th><th>Résistance à la rupture</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Corde statique</strong> Ø 12 à 13 mm (NF EN 1891)</td><td>1 × 30 m minimum</td><td>1 × 60 m minimum</td><td>3 000 daN</td></tr>
+                    <tr><td><strong>Anneaux cousus bleus</strong> 80 cm, largeur 18 à 25 mm (NF EN 566)</td><td>3</td><td>6</td><td>2 000 daN</td></tr>
+                    <tr><td><strong>Anneaux cousus rouges</strong> 150 cm (NF EN 566, NF EN 795)</td><td>3</td><td>3</td><td>2 000 daN</td></tr>
+                    <tr><td><strong>Poulie</strong> (NF EN 12278), gorge 12 à 13 mm</td><td>1, joue fixe ou mobile</td><td>1, joue fixe</td><td>2 000 daN</td></tr>
+                    <tr><td><strong>Descendeur « huit »</strong> (NF EN 341, type 2, classe A)</td><td>1</td><td>1</td><td>2 000 daN</td></tr>
+                    <tr><td><strong>Connecteurs</strong> (NF EN 362)</td><td>6 à vis + 1 à verrouillage automatique</td><td>9 à vis + 1 à verrouillage automatique</td><td>2 000 daN (grand axe), 750 daN (petit axe)</td></tr>
+                    <tr><td><strong>Harnais cuissard</strong> avec connecteur rapide (NF EN 1497)</td><td>1</td><td>2</td><td>2 000 daN</td></tr>
+                    <tr><td><strong>Triangle d'évacuation</strong> à bretelles et anneau dorsal (NF EN 1498)</td><td>1</td><td>1 (option recommandée)</td><td>2 000 daN</td></tr>
+                    <tr><td><strong>Commande</strong> Ø 7 mm, 30 m minimum</td><td>1 (option)</td><td>1 (option)</td><td>—</td></tr>
+                    <tr><td><strong>Cordelettes</strong> (option)</td><td>2</td><td>2</td><td>—</td></tr>
+                    <tr><td><strong>Protecteur de corde</strong> (option)</td><td>1 (tuyau déclassé)</td><td>1 (tuyau déclassé)</td><td>—</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les agrès</h3>
+            <ul>
+                <li><strong>Sac</strong> : rangement, portable à dos ; exceptionnellement, en situation dégradée, il peut servir de protection de corde.</li>
+                <li><strong>Corde</strong> : gaine + âme, chaque extrémité terminée par un <strong>huit double</strong> avec gaine thermorétractable ou sertissage indémontable. Vigilance sur le <strong>brin dormant</strong> (arêtes vives, matériaux corrosifs de type béton aggloméré). <strong>Protections de corde systématiques</strong> ; soigner le conditionnement pour le déroulement.</li>
+                <li><strong>Frein de charge</strong> : régule la descente par friction et assure lors des progressions avec risque de chute.</li>
+                <li><strong>Anneaux cousus</strong> : amarrages ; aussi nœud autobloquant pour la remontée, dispositif de traction d'un sauveteur, amarrage de matériel. Sensibles à l'abrasion, protéger les angles saillants.</li>
+                <li><strong>Connecteurs</strong> : efforts <strong>uniquement dans le grand axe</strong> ; vis fermée et verrouillée à la main sans forcer ; jamais en appui sur un angle (résistance nulle).</li>
+                <li><strong>Poulie</strong> : renvoi (fixe) ou mouflage (mobile), divise le poids de la charge par deux ; les efforts ne doivent pas la « vriller ».</li>
+                <li><strong>Harnais</strong> : sur la victime comme sur le sauveteur. Fermeture par un connecteur adapté ; l'anneau dorsal est un point d'amarrage, comme les attaches sternales.</li>
+                <li><strong>Triangle d'évacuation</strong> : évacuation rapide à la montée ou à la descente ; en urgence absolue (incendie…), il peut équiper une victime inconsciente. <strong>Mousqueton à verrouillage automatique</strong> à l'encordement sternal ; attaches adaptées à la corpulence mais symétriques.</li>
+                <li><strong>Cordelettes</strong> : poignées de préhension par nœud autobloquant, 50 à 60 cm, <strong>trois tours minimum</strong> brins parallèles ; jamais pour des amarrages.</li>
+                <li><strong>Protection de corde</strong> : segment de tuyau (par exemple 110 mm souple sec non plastifié, perforé aux extrémités pour cordelettes). La corde ou l'anneau doit toucher la <strong>face toilée</strong> : la paroi interne lisse chauffe vite et fait fondre les fibres.</li>
+                <li><strong>Commande</strong> : écarter la victime de la façade ; sert aussi à hisser du matériel, ou d'« appareil de mesure » pour estimer une hauteur.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Contrôle et entretien</h3>
+            <table class="rd-table">
+                <thead><tr><th>Moment</th><th>Gestes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Avant l'emploi</strong></td><td>Vérification régulière de tout le contenu (contrôles quotidiens ou fréquence du SIS si lots scellés). <strong>Tactile</strong> : corps étrangers dans les fibres, écrasement de l'âme, abrasion ou usure de la gaine. <strong>Visuel</strong> : fissures ou cassures des pièces métalliques, usures ou souillures des fibres et coutures.</td></tr>
+                    <tr><td><strong>Après l'emploi</strong></td><td>Mêmes vérifications. Corde souillée : <strong>eau douce à 30 °C maximum, sans détergent</strong>, séchage à plat et à l'ombre. À la remise dans le sac, <strong>retourner la corde</strong>.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Réformes immédiates à examiner</strong>
+                <p>L'amortissement d'une chute, <strong>quelle que soit la hauteur</strong>, peut entraîner après contrôle la réforme de la corde, du harnais ou des anneaux. Attention en cas d'atmosphère ou de produit corrosif, de <strong>brûlure ou fonte</strong> de la corde, de <strong>coupure ou usure de la gaine</strong> laissant voir l'âme, de réduction de diamètre, de perte de souplesse localisée ou de <strong>hernie de l'âme</strong>.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('lspcc-menu')">🪢 LSPCC – Lot de sauvetage</button>
+                <button class="sal-lien" onclick="showModule('lspcc-materiels')">Matériels du LSPCC</button>
+                <button class="sal-lien" onclick="showModule('lspcc-entretien')">Entretien du LSPCC</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvetages-mises-en-securite-2020.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 142 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Sauvetages et mises en sécurité », DGSCGC, novembre 2020, chapitre 1 §3 et annexes B et C. Texte résumé.</p>
+    </div>
+
+    <div id="gtosms-materiels" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosms-menu')">← GTO Sauvetages</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🛟 Autres matériels de sauvetage</h2>
+
+        <div class="rd-section">
+            <h3>Matelas de sauvetage (coussin de saut)</h3>
+            <ul>
+                <li>Pour une personne <strong>menaçant de se jeter</strong> d'une hauteur ou une victime sans autre itinéraire de repli. Composé d'un matelas et d'une <strong>bouteille d'air</strong> (parfois pré-équipée).</li>
+                <li>Une fois sorti de la housse, ouvrir la bouteille : gonflage de <strong>40 secondes à quelques minutes</strong> selon le volume. Ossature de boudins d'air et enveloppe à évents : c'est la <strong>surpression à l'impact</strong>, évacuée par des évents sous-dimensionnés, qui amortit la chute.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Règles</strong>
+                <p>Placer le matelas à l'aplomb de la victime <strong>seulement une fois complètement gonflé</strong>. Le mettre en œuvre <strong>à bonne distance</strong> de la zone de réception pour que la victime ne saute pas avant. Respecter la <strong>hauteur maximale de saut</strong> donnée par le constructeur.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Planche de sauvetage</h3>
+            <ul>
+                <li>Sauvetage rapide d'une victime ou d'un sapeur-pompier devenu victime ; elle glisse sur tous les sols, <strong>escaliers et échelles</strong> ; adaptée au milieu confiné.</li>
+                <li>Permet : cheminements longs en espaces confinés ; conditionnement <strong>sur le dos ou sur le ventre si porteur d'un ARI</strong> ; évacuation horizontale et oblique ; dégagement facilité ; portage de matériel pour reconnaissances.</li>
+                <li><strong>Ce n'est pas un conditionnement d'immobilisation</strong> de secourisme. Conditionnement relativement rapide (<strong>environ 1 min 20</strong>) mais la <strong>poignée d'extraction de l'ARI</strong> reste la technique à privilégier pour soustraire la victime d'un danger immédiat.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Civière bariatrique</h3>
+            <p>Évacue une personne <strong>lourdement médicalisée et/ou de forte corpulence</strong>, généralement par l'extérieur, soit par des techniques du <strong>SMPM</strong>, soit avec une échelle aérienne dotée d'un équipement adapté.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Matériel électro-secours</h3>
+            <p>Communément « matériel isolant » : opérer en sécurité en présence de courants <strong>jusqu'à 25 000 V</strong>, par exemple pour dégager une victime électrisée encore en contact avec un élément sous tension. Composition principale : <strong>tabouret isolant</strong>, chaussons ou bottes en caoutchouc, gants en caoutchouc, <strong>perche isolante</strong> (souvent démontable en trois éléments), <strong>pince coupante à poignées isolantes</strong>. Description et emploi : notice du constructeur.</p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvetages-mises-en-securite-2020.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 142 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Sauvetages et mises en sécurité », DGSCGC, novembre 2020, chapitre 1 §4. Texte résumé.</p>
+    </div>
+
+    <div id="gtosms-preparer" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosms-menu')">← GTO Sauvetages</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🧭 Préparer les sauvetages et mises en sécurité</h2>
+
+        <div class="rd-section">
+            <h3>Sauvetage ou mise en sécurité</h3>
+            <table class="rd-table">
+                <thead><tr><th>Notion</th><th>Définition</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Sauvetage</strong></td><td>Soustraire une personne à un danger imminent qui, sans aide extérieure, serait vouée à une mort certaine. <strong>Par les communications existantes</strong> de préférence (les plus rapides, commodes et sûres) ; sinon par l'extérieur : MEA, échelles à coulisse ou à crochets, lots de sauvetage ou tout matériel adapté.</td></tr>
+                    <tr><td><strong>Mise en sécurité</strong></td><td>Protéger d'une menace plus ou moins différée, par un déplacement commandé et accompagné vers une zone sécurisée, ou à défaut un <strong>confinement</strong> sur place. Un simple changement de local, de compartiment ou d'étage peut suffire. Les personnes dépendantes (PMR, victimes psychologiquement faibles) consomment délais et personnels.</td></tr>
+                </tbody>
+            </table>
+            <p><strong>Seuls les sauvetages ou mises en sécurité de personnes peuvent justifier une prise de risque réfléchie.</strong> Ils sont menés en même temps que les autres actions de la marche générale des opérations.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Confinement ou évacuation</h3>
+            <table class="rd-table">
+                <thead><tr><th>Procédure</th><th>Avantages</th><th>Inconvénients</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Évacuation</strong> : déplacer les personnes hors de la zone de danger</td><td>—</td><td>Délais de mise en œuvre importants ; moyens conséquents (humains, matériels, logistique, lieu d'accueil) ; <strong>exposition potentielle</strong> pendant l'évacuation</td></tr>
+                    <tr><td><strong>Confinement</strong> : laisser les personnes à l'abri sur place</td><td>Réalisation rapide ; pas d'exposition directe au danger</td><td>Respect de la consigne difficile dans la durée ; isolement des personnes ; personnes présentes dans la zone de danger</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>L'évacuation doit être <strong>cadrée et accompagnée</strong> pour éviter la panique ; elle s'appuie parfois sur les règlements de sécurité (transfert horizontal en ERP de type J et U, évacuation du seul compartiment sinistré en IGH).</li>
+                <li>Le COS peut retenir le <strong>confinement</strong> quand le trajet d'évacuation fait prendre un risque trop important. <strong>Feux de forêts et d'espaces naturels</strong> : le confinement reste la règle pour les structures en dur, l'évacuation limitée et accompagnée l'exception.</li>
+                <li><strong>La décision d'évacuer relève du DOS</strong>, sur proposition du COS, avec anticipation (quand, comment, par où, pour aller où). Elle peut être confiée aux forces de l'ordre. En péril imminent, le COS prend les mesures de protection de la population et de sécurité des personnels et en rend compte au DOS (art. L 1424-4 du CGCT).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Décider : les questions</h3>
+            <ul>
+                <li>Quels sont les <strong>enjeux</strong> ? Quelle est la mission, est-elle réalisable ? Quel est mon degré d'exposition (ou celui de mon personnel) ? Appuyer la décision sur l'<strong>analyse bénéfices / risques</strong>.</li>
+                <li>Chaque intervenant est <strong>acteur de sa propre sécurité</strong> : analyser, mesurer, évaluer, répondre, et ne s'exposer que lorsque c'est strictement nécessaire.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Facteur</th><th>Ce qu'on analyse</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Environnement</strong></td><td>Lieu (naturel / urbain, ERP / habitation), conditions astro-météorologiques (jour / nuit, température, pluie, vent), <strong>cheminement d'accès</strong> à la victime (chute, noyade, suraccident) qui dimensionne le matériel et le personnel.</td></tr>
+                    <tr><td><strong>Victime</strong></td><td>Comportement (coopérante, passive, stressée, paniquée, calme) ; état physique (valide, invalide, consciente, inconsciente).</td></tr>
+                    <tr><td><strong>Sauveteur et matériel</strong></td><td>Compétences techniques, ressources physiques et mentales (fatigue, stress, affect), connaissance des doctrines, entraînement, <strong>disponibilité immédiate du matériel adapté</strong>.</td></tr>
+                    <tr><td><strong>Temps</strong></td><td>Degré d'urgence (lié au contexte) et <strong>cinétique</strong> de l'événement (situation figée ou évolutive).</td></tr>
+                </tbody>
+            </table>
+            <p>Le COS agit selon les moyens sur la <strong>source</strong> (coupure de gaz, attaque du foyer), sur le <strong>flux de danger</strong> (désenfumage d'une cage d'escalier, moyen hydraulique) et/ou sur la <strong>cible</strong> (évacuation, confinement).</p>
+            <div class="rd-astuce">
+                <p>Choisir le moyen qui <strong>expose le moins possible le sauveteur et la victime</strong>. Le risque pris ne doit jamais se prolonger en intensité et en durée. Garder un lien de confiance et de réconfort avec la victime. <strong>Descendre systématiquement les échelles</strong> par le conducteur et les mettre en attente fait gagner du temps.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'opérateur du CTA, premier acteur des sauvetages</h3>
+            <p>Il joue un rôle capital dans la rapidité de l'envoi, la précision des informations et les conseils. <strong>Contact permanent</strong> avec le requérant au moins jusqu'à l'arrivée des primo-intervenants. Message type SUAP : « Les secours sont partis, en attendant nous allons débuter ensemble des gestes de premiers secours. Pouvez-vous mettre le haut-parleur ? »</p>
+            <table class="rd-table">
+                <thead><tr><th>Situation</th><th>Consignes au requérant</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Arrêt cardiaque</strong></td><td>Victime sur le dos ; à genoux à hauteur de la poitrine ; <strong>deux mains</strong> l'une sur l'autre au centre (une seule main pour l'enfant), bras tendus ; comprimer fort et relâcher en comptant. <strong>Nourrisson</strong> : sur une table, une main sur la tête, <strong>deux doigts</strong> au centre. DAE visible : le faire mettre en œuvre. Le témoin est pris en charge par le chef d'agrès VSAV.</td></tr>
+                    <tr><td><strong>Inconscient qui respire</strong></td><td>Mettre sur le côté (une main sur l'épaule, une sur le bassin, genou du dessus plié), ouvrir la bouche, couvrir, garder la main sur le ventre. Nourrisson : à califourchon sur l'avant-bras, tête inclinée vers le sol.</td></tr>
+                    <tr><td><strong>Hémorragie</strong></td><td>Appuyer directement sur la plaie (linge propre), allonger et couvrir. Corps étranger : ne pas le retirer ; <strong>garrot</strong> avec un lien large au-dessus de la plaie. Saignement de nez : moucher, appuyer sur les deux narines <strong>au moins 10 minutes</strong>, tête en avant.</td></tr>
+                    <tr><td><strong>Étouffement</strong></td><td>Adulte : <strong>5 claques</strong> dans le dos entre les omoplates, puis 5 compressions sous le nombril (poings l'un sur l'autre, derrière la victime). Nourrisson : sur la cuisse sur le ventre, 5 claques ; sinon sur le dos, 2 doigts au centre de la poitrine, au moins 5 fois.</td></tr>
+                </tbody>
+            </table>
+            <table class="rd-table">
+                <thead><tr><th>Incendie</th><th>Consignes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Témoin non concerné</strong></td><td>Garder le contact visuel ou vocal avec les victimes et les rassurer ; mettre en œuvre une échelle ou un matériel permettant d'évacuer ; <strong>accueillir et guider</strong> les secours.</td></tr>
+                    <tr><td><strong>Maison de plain-pied</strong></td><td>Peut sortir : fermer les portes de la pièce sinistrée, tout le monde dehors, regroupement à l'entrée du terrain. Ne peut pas sortir : pièce à l'opposé du sinistre, porte fermée, <strong>linge humide au bas de la porte</strong>, se manifester aux fenêtres.</td></tr>
+                    <tr><td><strong>Feu d'appartement</strong></td><td>Peut sortir : fermer les portes, évacuer, <strong>prévenir les voisins</strong>, regroupement au bas de l'immeuble. Sinon : mêmes consignes de mise à l'abri.</td></tr>
+                    <tr><td><strong>Feu de cage d'escalier</strong></td><td><strong>N'évacuez pas dans une cage enfumée</strong>, pas d'ascenseur ; fermer la porte d'entrée, linge humide au bas, se manifester aux fenêtres.</td></tr>
+                    <tr><td><strong>ERP</strong> (service de sécurité)</td><td>Évacuation totale ou partielle (IGH), transfert horizontal (types U et J), <strong>espaces d'attente sécurisés</strong>, regroupement à l'abri, accueil des secours. L'opérateur fait remonter au COS le nombre et l'emplacement des victimes.</td></tr>
+                </tbody>
+            </table>
+            <table class="rd-table">
+                <thead><tr><th>Secours routier</th><th>Consignes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Circulation non neutralisée</strong></td><td>Gilet haute visibilité ; couper le contact, feux de détresse ; triangle si possible ; se faire aider pour sécuriser ; en péril imminent, dégagement d'urgence ; sinon se mettre en sécurité.</td></tr>
+                    <tr><td><strong>Circulation neutralisée</strong></td><td>Gilet ; <strong>ne pas bouger la victime</strong>, la rassurer et la couvrir ; gestes de secourisme guidés ; a minima maintenir la tête.</td></tr>
+                    <tr><td><strong>Motard</strong></td><td><strong>Ne pas retirer le casque.</strong> Conscient : ne pas bouger, maintien de tête. Inconscient : chercher des signes de respiration (buée sur la visière) ; si oui, sur le côté (sauf à plat ventre) ; si non, sur le dos et massage cardiaque.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('gdoinc-menu')">GDO Incendies de structures</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-menu')">🛟 RDSMES – Sauvetages & sauvegarde</button>
+                <button class="sal-lien" onclick="showModule('suap-menu')">Secours d'urgence aux personnes</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvetages-mises-en-securite-2020.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 142 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Sauvetages et mises en sécurité », DGSCGC, novembre 2020, chapitre 2. Texte résumé.</p>
+    </div>
+
+    <div id="gtosms-lspcc-technique" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosms-menu')">← GTO Sauvetages</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🪢 Techniques avec le LSPCC</h2>
+
+        <div class="rd-section">
+            <h3>Mise en sécurité d'une personne valide et dégagements d'urgence</h3>
+            <ul>
+                <li><strong>Personne valide</strong> : le sapeur-pompier accompagne, aide et conseille ; la victime déplacée <strong>n'est jamais laissée seule</strong>. Par les communications existantes ; en cas d'impraticabilité ou de mises en sécurité multiples, privilégier les <strong>MEA</strong>. Aides : porte-voix, ventilation (fermer la porte du local sinistré, ventilation opérationnelle, tirer-lâcher, stoppeur de fumée), assistance respiratoire (masque d'évacuation / cagoule de fuite, masque araignée, masque de l'ARI du sauveteur partagé en mode dégradé).</li>
+                <li><strong>Dégagement d'urgence</strong> = sauvetage sans matériel, pour déplacer en quelques secondes la victime jusqu'à un lieu sûr. <strong>Uniquement si le danger est réel, immédiat, vital et non contrôlable.</strong> Sans matériel : traction par les poignets ou les chevilles, sortie de véhicule, traction avec équipier-relais (« porter pompier »). Avec matériel : plan dur ou équivalent, grande sangle du lot de sauvetage (sangle nouée aux poignets si le trajet est restreint).</li>
+                <li>Techniques d'aide : la victime marche, « porter à dos », dans les bras, « porter pompier », à 4 mains ou « chaise ».</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Notions de risques et de forces</h3>
+            <table class="rd-table">
+                <thead><tr><th>Notion</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Facteur de chute (Fc)</strong></td><td>Rapport entre la <strong>hauteur de chute (H)</strong> et la <strong>longueur de corde (L)</strong> qui amortit la chute. <strong>Supérieur à 1 : interdit. Égal à 1 : à éviter.</strong></td></tr>
+                    <tr><td><strong>Effet pendulaire</strong></td><td>Si l'utilisateur n'est pas exactement sous l'ancrage : la vitesse pendulaire peut équivaloir à une vitesse de chute, lésions par collision graves.</td></tr>
+                    <tr><td><strong>Syndrome de suspension</strong> (du harnais)</td><td>Pronostic vital engagé à très court terme : suspension inerte et prolongée, baisse puis arrêt du retour veineux, perte de connaissance et défaillance multiviscérale en quelques minutes. <strong>Symptômes</strong> : étourdissement, vertige, malaise, tremblements, angoisse, troubles visuels, nausées. <strong>Facteurs aggravants</strong> : stress, compression des membres, mauvaise régulation thermique, alcool, toxiques. <strong>Conduite</strong> : dégager le plus vite, gestes de secours selon l'état, surveiller (aggravation rapide et brutale après dégagement), avis médical précoce.</td></tr>
+                    <tr><td><strong>Frottements</strong></td><td>Sur une corde en mouvement, répartis sur toute la corde ; surveiller corde sur corde. Prévoir une traction facile et sûre si la charge est à remonter.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Exercices</strong>
+                <p>Lors des exercices et manœuvres, <strong>un mannequin</strong> est obligatoirement utilisé pour simuler la victime.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le système : ancrage, amarrage, dispositif, charge, équipier</h3>
+            <ul>
+                <li><strong>Ancrage (point fixe)</strong> : <em>naturel</em> (arbre, rocher), <em>structurel</em> (poutre, pilier, rambarde d'escalier, colonne sèche, échelle aérienne, fourgon, mobilier urbain), <em>artificiel</em> (échelle à main, outil de forcement, étais). <strong>Dans le doute, multiplier les ancrages.</strong></li>
+                <li><strong>Véhicule comme ancrage</strong> si : moteur arrêté et clé retirée ; une vitesse engagée ; frein de parc serré ; roues calées.</li>
+                <li><strong>Point fixe sur un sauveteur</strong> : en l'absence d'ancrage ou si l'urgence rend tout amarrage impossible, l'équipier sert de point fixe (rapidité).</li>
+                <li><strong>Amarrage</strong> : connexion entre ancrage(s) et dispositif par agrès textiles et/ou métalliques ; a minima <strong>un connecteur et un anneau cousu</strong>. Avec plusieurs ancrages, répartir l'effort ; angle entre les deux anneaux <strong>90° maximum</strong>. La résistance d'un anneau change selon son positionnement et est <strong>réduite par un nœud</strong>. Le mousqueton ne travaille <strong>jamais en porte-à-faux</strong>.</li>
+                <li><strong>Dispositif</strong> : assemblage d'agrès connectés aux ancrages pour déplacer une charge. <strong>Charge</strong> : victime, sauveteur, animal ou objet. <strong>Équipier</strong> : sapeur-pompier qualifié et entraîné.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>École des nœuds</h3>
+            <p>Un nœud <strong>réduit la résistance</strong> de la corde.</p>
+            <ul>
+                <li><strong>Huit double</strong> (extrémités de corde) ; <strong>nœud français</strong> autobloquant (cordelette ou sangle) ; <strong>tête d'alouette</strong> (diminue la résistance à la rupture de l'anneau, respecter le sens de travail) ; <strong>clé d'arrêt</strong> sur le huit descendeur.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Règles de mise en œuvre</h3>
+            <ul>
+                <li>Chercher la technique <strong>la plus simple et la plus sûre</strong> : parfois descendre la victime de quelques mètres suffit. Prévoir un <strong>parc à matériel</strong>.</li>
+                <li>Pas de matériel sur un sol jonché de débris ; <strong>mousquetons vissés</strong>, sens de vissage vers le bas si possible ; <strong>huit descendeur toujours en point fixe</strong> ; un mousqueton pour relier deux anneaux cousus ; éviter de marcher sur les textiles.</li>
+                <li><strong>La mise au vide est une phase critique</strong> : sécuriser le frein de charge en anticipant le mou (passage de balcon). Victime inconsciente : portée si possible par 2 sauveteurs <strong>pieds en avant, face vers le sol</strong>.</li>
+                <li>Charge en tension : <strong>vérifier</strong> avant de poursuivre (comportement des amarrages, agrès, frottements) et <strong>tester le frein de charge sur quelques centimètres</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sauvetage au moyen du harnais</h3>
+            <p>Pour prendre en compte une victime inconsciente et la descendre par le parc d'une échelle aérienne sans panier ou par une échelle à coulisse : mettre la victime en <strong>PLS</strong>, harnais au sol parallèle dans son dos ; la replacer à plat dos sur le harnais ; jambes dans les <strong>sangles inférieures (bleues)</strong>, bras dans les <strong>sangles supérieures (rouges)</strong> ; serrer ; relier les sangles supérieures par un connecteur de sécurité si possible ; le sauveteur, dos contre la victime, engage ses bras dans les sangles supérieures, se retourne à quatre pattes (victime sur le dos) puis <strong>se relève avec les cuisses</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sauvetage ou mise en sécurité par l'extérieur</h3>
+            <ul>
+                <li>Si l'urgence rend tout amarrage impossible, l'<strong>équipier sert de point fixe</strong> : harnais équipé du descendeur, allongé, jambes à 90° contre le mur, il contrôle la descente. Le chef d'agrès participe alors à la mise au vide.</li>
+                <li>La hauteur entre le frein de charge et le point d'appui au passage dans le vide doit être <strong>supérieure ou égale à 20 cm</strong>.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Binôme 1</th><th>Binôme 2</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Chef d'équipe</strong> : se munit d'un lot de sauvetage ; se rend au lieu désigné ; choisit un ou deux points fixes ; réalise l'amarrage ; installe le dispositif après avoir <strong>estimé la hauteur</strong> ; relie le harnais ou le triangle de la victime à la corde ; vérifie la fermeture de tous les mousquetons ; veille au frein de charge et aide à l'engagement.<br><strong>Équipier</strong> : se munit d'une commande ; va chercher la victime et l'approche de l'endroit choisi ; équipe la victime du triangle ou du harnais ; accroche la commande à l'anneau dorsal.</td><td><strong>Chef d'équipe</strong> : reçoit l'autre extrémité de la commande ; écarte la victime de la façade ; contrôle et régule la descente.<br><strong>Équipier</strong> : réceptionne la victime.</td></tr>
+                </tbody>
+            </table>
+            <p>Le chef d'agrès désigne le personnel, indique le lieu de sauvetage et fixe les moyens d'accès.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Puits, fosses et excavations</h3>
+            <ul>
+                <li>Deux binômes : <strong>sauvetage</strong> (descente) et <strong>remontée</strong>. Le binôme de sauvetage s'équipe du harnais, choisit les points fixes, amarre la corde de descente et le frein de charge, installe une poulie reliée à son harnais, s'engage dans la descente avec l'équipement préparé, équipe la victime du triangle d'évacuation et se fait remonter en même temps ou après elle.</li>
+                <li>Le binôme de remontée prépare un dispositif de remontée (<strong>mouflage</strong>), fait filer la corde, remonte la victime, la réceptionne, puis remonte le chef du binôme de sauvetage.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Atmosphère</strong>
+                <p>Le <strong>port de l'ARI est obligatoire</strong> si l'on redoute une atmosphère viciée dans l'excavation ; contrôle préalable au <strong>détecteur de gaz</strong>.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Ouvertures de portes et évolution</h3>
+            <ul>
+                <li><strong>Ouvertures de portes</strong> (personne ne répondant pas, victime) : le LSPCC permet d'accéder à un étage depuis l'étage supérieur quand la façade est inaccessible aux MEA. Le sauveteur peut rester amarré durant la reconnaissance succincte de la première pièce ; en l'absence de risque, après avoir <strong>informé l'équipier chargé de l'assurance</strong>, il se désolidarise, fixe le mousqueton de la corde sur un point d'attache et poursuit.</li>
+                <li><strong>Évolution</strong> : corde <strong>la plus tendue possible</strong> ; l'assureur reste attentif et reprend le mou ; <strong>jamais de facteur de chute &gt; 1</strong> : les points d'amarrage sont toujours au-dessus ou au même niveau que l'axe de déplacement. Le chef s'équipe du harnais, de sangles et mousquetons, réalise des amarrages intermédiaires ; l'équipier amarre le huit descendeur et assure. Les anneaux et mousquetons sont récupérés au retour.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('lspcc-menu')">🪢 LSPCC – Lot de sauvetage</button>
+                <button class="sal-lien" onclick="showModule('lspcc-techniques')">Techniques du LSPCC</button>
+                <button class="sal-lien" onclick="showModule('lspcc-securisation')">Sécurisation LSPCC</button>
+                <button class="sal-lien" onclick="showModule('lspcc-noeuds')">Nœuds du LSPCC</button>
+                <button class="sal-lien" onclick="showModule('smpm-menu')">🧗 GTO Secours en milieu périlleux</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvetages-mises-en-securite-2020.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 142 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Sauvetages et mises en sécurité », DGSCGC, novembre 2020, chapitre 3 §1 à 3. Texte résumé ; schémas non reproduits.</p>
+    </div>
+
+    <div id="gtosms-echelles-technique" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosms-menu')">← GTO Sauvetages</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🪜 Échelles, MEA et personnes à mobilité réduite</h2>
+
+        <div class="rd-section">
+            <h3>Échelle à crochets</h3>
+            <ul>
+                <li>Toujours <strong>suspendue par ses crochets</strong>, jamais appuyée ou posée sur les pieds des montants ; <strong>un seul homme</strong>. Anticiper les réactions de la victime (se précipiter sur l'échelle, sauter) et un trouble de conscience ; s'assurer que le sauveteur est apte à mener la mission.</li>
+                <li><strong>Atteindre la victime</strong> : déterminer le point à atteindre, évaluer le cheminement, monter de <strong>balcon en balcon</strong> ou de <strong>rebord de fenêtre en rebord de fenêtre</strong>, étage par étage.</li>
+                <li><strong>Échelle sur une seule pointe</strong> (une pointe passe dans le vide) : ne pas sauter ni se rattraper à la façade. <strong>Il est plus dangereux de quitter l'échelle que de terminer la progression</strong> sur une seule pointe.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Victime</th><th>Conduite</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Valide, descend seule</strong></td><td>Tenir l'échelle contre les oscillations, rassurer, sécuriser la descente des niveaux inférieurs, demander si d'autres personnes restent, conseiller de se coller à l'échelle.</td></tr>
+                    <tr><td><strong>Valide, ne descend pas seule</strong></td><td>Un sapeur-pompier monte, aborde et rassure, aide au franchissement du vide et à l'engagement sur les échelons ; le second maintient fermement l'échelle. <strong>Une personne par plan</strong> autant que possible. LSPCC si la descente est impossible.</td></tr>
+                    <tr><td><strong>Invalide ou inconsciente</strong></td><td>Dispositif de descente au LSPCC, le plus souvent avec le <strong>sauveteur en point fixe</strong> (ou échelle à crochets 2 plans dans l'encadrement d'une porte). Attention au port de l'ARI ; la <strong>commande</strong> peut hisser le LSPCC ou du matériel (lance, ARI) dans un second temps.</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li><strong>Prolongement d'une échelle à coulisse</strong> : le binôme dresse l'échelle à coulisse, le chef d'équipe monte, <strong>crochète une jambe</strong>, dresse l'échelle à crochets, l'accroche, réalise une <strong>traction pour tester</strong> puis poursuit. Le prolongement d'un MEA est possible si son inclinaison ou son déploiement n'est plus possible ou sans balancier. Une échelle à crochets sur le faîtage d'une toiture facilite sauvetage et progression ; un cheminement créé est maintenu comme accès secondaire ou itinéraire de repli.</li>
+                <li><strong>Échelle à crochets en point d'ancrage</strong> : uniquement en mode dégradé, en l'absence d'autre point fixe.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Échelle à coulisse 2 plans</h3>
+            <p><strong>Victime valide</strong> : le sapeur-pompier choisit entre quatre positions.</p>
+            <table class="rd-table">
+                <thead><tr><th>Position de l'échelle</th><th>Intérêt</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Dépassant le rebord</strong> de la fenêtre ou du toit</td><td>Confort au passage dans le vide, la victime s'aide des montants. <strong>À privilégier.</strong></td></tr>
+                    <tr><td><strong>Sans dépasser</strong> le rebord</td><td>Plus grande surface de transfert (tout le cadre de la fenêtre ou de la baie).</td></tr>
+                    <tr><td><strong>Aux pieds d'une victime suspendue</strong></td><td>Soulage la victime ; si possible une autre échelle à côté pour qu'elle lâche plus facilement le rebord.</td></tr>
+                    <tr><td><strong>En appui à côté de l'ouvrant</strong></td><td>Justifiée par des conditions ou une configuration particulières.</td></tr>
+                </tbody>
+            </table>
+            <p>Si la victime descend avec facilité : la guider (contact physique et verbal), la protéger d'une chute en l'entourant des bras, l'aider à placer les pieds. Veiller à la stabilité en anticipant un mouvement latéral. Attention au <strong>passage au vide</strong>.</p>
+            <table class="rd-table">
+                <thead><tr><th>Victime invalide ou inconsciente</th><th>Technique</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>À trois sapeurs-pompiers</strong></td><td>Le binôme près de la victime s'approche de l'ouvrant, <strong>jambes perpendiculaires au mur sous l'ouvrant</strong>, la saisit sous les épaules et à la ceinture ; le sapeur-pompier sur l'échelle tient les chevilles. Action coordonnée : victime levée, jambes passées au-dessus du rebord, <strong>genoux sur les épaules</strong> du personnel sur l'échelle ; elle est placée <strong>dos contre les échelons</strong> et descendue. Un 4<sup>e</sup> peut aider à la réception.</td></tr>
+                    <tr><td><strong>À deux sapeurs-pompiers</strong></td><td>Celui à côté de la victime, jambes à l'équerre dos au sol, la saisit sous les aisselles, lui fait passer l'ouvrant et aide à sa dépose ; celui sur l'échelle saisit les chevilles, place les genoux sur ses épaules et la fait <strong>glisser dos contre les échelons</strong>. Attention au franchissement des parachutes, du trait, d'équipements sur échelon.</td></tr>
+                </tbody>
+            </table>
+            <p>En position <strong>itinéraire de secours</strong>, l'échelle est maintenue, calée ou amarrée.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Cas particuliers des échelles à mains</h3>
+            <ul>
+                <li><strong>Sur le toit d'un engin</strong> : surface <strong>horizontale</strong> de <strong>résistance suffisante</strong>, engin sécurisé (frein de parc, calage). Pied ajusté et appuyé, calé contre une installation fixe de l'engin et bloqué par un équipier qui <strong>garde la vue sur le haut de l'échelle</strong>. Risque de chute du toit.</li>
+                <li><strong>Victime en excavation</strong> (menace d'incendie, éboulement) : vérifier que la profondeur est compatible avec la longueur partiellement déployée ; descendre l'échelle à l'écart de la victime, <strong>pieds et grand plan en avant</strong>, sans faire chuter de débris. Le COS vérifie la stabilité des rebords et de l'échelle (sol, appui, parachutes engagés). <strong>Bloquer les plans avec le trait ou une sangle</strong> pour éviter un déploiement intempestif.</li>
+                <li><strong>Victime valide réfugiée en hauteur</strong>, de l'autre côté d'un vide : vérifier que l'appui des extrémités est possible et sûr. Échelle <strong>uniquement totalement reployée</strong>, dressée à la verticale (si possible en butée), abaissée au moyen d'une commande ou du trait, grand plan vers le bas. Un sapeur-pompier bloque l'extrémité, le second s'engage à la rencontre de la victime, la sécurise, l'aide ; elle peut <strong>ramper</strong> pour gagner en stabilité. En extrême urgence et si son état le permet, elle s'engage seule pendant que le premier bloque l'extrémité.</li>
+                <li><strong>Point d'ancrage en surplomb</strong> : échelle uniquement reployée. <strong>Désolidariser les 2 plans</strong> : deux échelles distinctes, une personne par plan au maximum.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>MEA ou échelle 3 plans</h3>
+            <p>La 3 plans relève des techniques du MEA <strong>sans panier de secours</strong>.</p>
+            <table class="rd-table">
+                <thead><tr><th>Cas</th><th>Conduite</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Avec panier – victime valide</strong></td><td>Positionner le panier <strong>en appui face à l'ouvrant</strong>, au même niveau, pour créer une continuité (vide minimal, sentiment de sécurité). Flux thermique ou fumée épaisse : arrivée <strong>par en-dessous de l'ouvrant</strong>. Assister la descente du rebord vers le panier.</td></tr>
+                    <tr><td><strong>Avec panier – victime suspendue</strong></td><td>Elle peut lâcher à tout moment : approcher en <strong>« léchant » la façade de bas en haut</strong> si le MEA le permet, pour limiter les effets d'une chute ; pieds en appui sur le garde-corps, elle descend sur le panier.</td></tr>
+                    <tr><td><strong>Avec panier – victime invalide</strong></td><td>Panier en appui ; la victime est saisie (sous les aisselles), passe le rebord et est déposée en amortissant sur le panier ; <strong>gestes de 1<sup>ers</sup> secours dès qu'elle est dans le panier</strong>. Variante jambes en avant.</td></tr>
+                    <tr><td><strong>Sans panier – victime valide</strong></td><td>Trois accompagnements : encadrer en anticipant une chute vers l'arrière ; descente seule avec facilité (maintien au niveau des lombaires) ; aider à placer les pieds sur les échelons.</td></tr>
+                    <tr><td><strong>Sans panier – victime invalide</strong></td><td>Passage au vide identique aux échelles à coulisse ; utilisation du <strong>harnais du LSPCC</strong>.</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li><strong>Avant ces utilisations particulières</strong> : évaluer l'urgence et les capacités du matériel, vérifier qu'un autre accès ne serait pas plus efficace ou moins risqué. <strong>Se conformer strictement aux préconisations du constructeur</strong> (capacités réelles, nombre de personnes, angle d'inclinaison).</li>
+                <li><strong>Point d'ancrage</strong> avec un MEA sans panier : facilite le maintien d'une victime exposée à un <strong>enlisement</strong> et limite les frottements d'un dispositif LSPCC-SMPM sur les rebords d'une excavation.</li>
+                <li><strong>Victime en contrebas</strong> (MEA avec panier) : station au point le plus judicieux selon l'inclinaison de l'ensemble extensible ; un ou deux sapeurs-pompiers descendus depuis le panier au contact de la victime ; maintien d'une victime en équilibre instable ; confort d'évacuation sur relief accidenté ou lors d'inondations. Terrain incertain : rester sur le panier et prendre en charge depuis celui-ci.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Interdit</strong>
+                <p>Il est <strong>interdit de déverrouiller les dispositifs de sécurité</strong> pour éviter une bascule du véhicule.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Personnes à mobilité réduite et bariatrique</h3>
+            <ul>
+                <li>Mise en sécurité d'une victime invalide dans un <strong>espace d'attente sécurisé</strong>, évacuée par les communications existantes quand la situation le permet : effort physique important, techniques parfois inadaptées au poids ou à la pathologie. <strong>Verrouiller les roues du fauteuil</strong> dans la cage d'escalier ; rassurer et expliquer le déroulement ; adapter la posture pour limiter les troubles musculo-squelettiques.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Technique</th><th>Principe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>« Porter »</strong></td><td>Fauteuil au nez de la première marche, roues verrouillées ; la victime passe ses bras autour des personnels ; chaque membre du binôme se saisit les poignets ; descente prudente.</td></tr>
+                    <tr><td><strong>« Fauteuil »</strong></td><td>La victime laisse ses mains à l'intérieur ; l'équipier face à la victime saisit le <strong>cadre du fauteuil derrière les mollets</strong> ; descente prudente du fauteuil.</td></tr>
+                    <tr><td><strong>« Chaise d'évacuation »</strong></td><td>Prendre en charge et rassurer, positionner la victime, ajuster et verrouiller les sangles, poser la chaise sur le nez de marche, vérifier le verrouillage du dispositif de descente ; un équipier assure la descente.</td></tr>
+                    <tr><td><strong>« Plan dur, sangle araignée »</strong></td><td>Fauteuil près du plan ; un équipier soulève la victime à la ceinture ; elle est allongée et sécurisée par la sangle araignée (ou sangles de brancard selon la corpulence) ; <strong>tête d'alouette à chaque extrémité</strong> du plan avec les anneaux cousus ; descente en contrôlant trajectoire et vitesse avec les anneaux.</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li><strong>Bariatrique</strong> : intervention délicate aux moyens importants, par des <strong>techniques spécifiques d'unités spécialisées (SMPM)</strong> ou par un <strong>MEA doté d'une civière bariatrique</strong>. En cas d'incendie, dans l'attente, mettre la victime en sécurité dans un espace d'attente sécurisé. Les deux techniques exigent formation, entraînement et matériel adapté.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('echelles-menu')">🪜 Échelles portables</button>
+                <button class="sal-lien" onclick="showModule('echelles-commandement')">Échelles et commandement</button>
+                <button class="sal-lien" onclick="showModule('cod6')">🪜 COD 6 – Moyens élévateurs aériens</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-mea')">MEA – RDSMES (SDIS 34)</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvetages-mises-en-securite-2020.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 142 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Sauvetages et mises en sécurité », DGSCGC, novembre 2020, chapitre 3 §4 à 7. Texte résumé ; schémas non reproduits.</p>
+    </div>
+
+    <div id="gtosms-sauveteur" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosms-menu')">← GTO Sauvetages</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🆘 Sauvetage du sauveteur et après les sauvetages</h2>
+
+        <div class="rd-section">
+            <h3>Particularités</h3>
+            <p>Les techniques d'<strong>auto-sauvetage</strong> sont dans le GTO Engagement en milieu vicié. Le sauvetage d'un sapeur-pompier impose de prendre en compte :</p>
+            <ul>
+                <li><strong>L'anticipation</strong> : prévoir dès que possible des <strong>itinéraires de repli et/ou de secours</strong> pour extraire un équipier ou un binôme.</li>
+                <li><strong>La gestion de l'affect</strong> : stress et empathie peuvent prendre le pas sur les procédures ; le COS en tient compte dans la gestion de son personnel et l'accompagnement psychologique.</li>
+                <li><strong>Une « victime particulière »</strong> : ARI, tenue de feu, ceinturon, localisation et formation imposent des techniques spécifiques.</li>
+                <li><strong>Le remplacement des équipes</strong> : l'accident a des conséquences sur tout le dispositif (sidération, réactions inappropriées) ; relever tout ou partie du personnel, le mettre au repos, avec suivi psychologique individuel et collectif.</li>
+                <li><strong>Le renfort « secours »</strong> : mission très consommatrice en moyens tout en assurant la continuité de l'intervention ; engagement immédiat d'un renfort « secours » par le <strong>CODIS</strong> selon les renseignements du COS.</li>
+                <li><strong>Espaces d'attente sécurisés (EAS)</strong> : zones de mise à l'abri des flammes, fumée et chaleur pour le public qui ne peut pas utiliser les dégagements (PMR) ; utilisables aussi par les sapeurs-pompiers en situation dégradée pour attendre une aide extérieure. Dans les tunnels : abris de secours.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Abordage du sauveteur</h3>
+            <p>Première étape de prise en charge d'un équipier blessé ou inconscient ; elle donne un premier bilan avant le déplacement.</p>
+            <table class="rd-table">
+                <thead><tr><th>Geste</th><th>Détail</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Retourner</strong> le sauveteur</td><td>S'il est allongé sur le ventre.</td></tr>
+                    <tr><td><strong>Stopper l'alarme</strong> du détecteur d'immobilité</td><td>Pour entendre l'équipier ou passer un message de détresse.</td></tr>
+                    <tr><td><strong>Conscience</strong></td><td>Appel verbal, puis saisir les mains pour détecter un signe de conscience.</td></tr>
+                    <tr><td><strong>Air dans le masque</strong></td><td>Pause ventilatoire pour écouter la respiration, ou appui sur la SAD pour déclencher un débit continu.</td></tr>
+                    <tr><td><strong>Manomètre</strong></td><td>La pression restante donne le <strong>degré d'urgence</strong> (autonomie en air de la victime en plus de l'extraction).</td></tr>
+                    <tr><td><strong>Assister en air</strong></td><td>Entre équipiers ou avec un <strong>LAAR</strong>.</td></tr>
+                    <tr><td><strong>Packaging</strong></td><td>Sangle ventrale de l'ARI passée sous la cuisse, bretelles dorsales serrées : le harnais de l'ARI fait corps avec la victime (cheminement complexe : virages, escaliers, longue distance).</td></tr>
+                    <tr><td><strong>Changer de direction</strong></td><td>Relever les jambes à 90° en saisissant les chevilles, saisir une bretelle dorsale et pivoter le tout à 180°.</td></tr>
+                    <tr><td><strong>Retirer le harnais de l'ARI</strong></td><td>Si plus d'air et assistance impossible, passage étroit, ou extraction par un ouvrant vers l'air libre.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sauvetage par un équipier</h3>
+            <ul>
+                <li>Si un dégagement d'urgence n'est pas possible ou si l'équipier n'est pas visible : <strong>évaluer et stabiliser</strong> (conscience : appui bref sur le by-pass ; respiration : bruits, buée dans le masque, mouvement ; équipements : flexibles, pression), puis lancer le message <strong>« URGENT – URGENT – URGENT »</strong> et <strong>NELAR</strong> (Nom, Engin d'affectation, Localisation, Air restant, Renfort).</li>
+                <li><strong>Traction au sol sans matériel</strong> (après packaging) par le dossard de l'ARI. <strong>Choisir le côté de saisie pour ne pas fermer le robinet</strong> pendant la traction. <strong>Conversion du dossard en harnais</strong> : desserrer les bretelles et abaisser le dossard au maximum, passer la jambe genou plié par-dessus l'épaule, détacher la sangle ventrale, l'attacher dans l'entrecuisse, resserrer toutes les sangles.</li>
+                <li><strong>Trois variantes</strong> : à la tête dans l'axe, saisir les deux bretelles (asseoir l'équipier ou engager une main dans la bretelle) ; à la tête, saisir les deux poignets ; aux pieds dans l'axe, saisir les chevilles (un avant-bras dessus, un dessous). Se relever et utiliser le poids du corps pour tracter vers l'arrière, <strong>en travaillant avec les cuisses</strong>.</li>
+                <li><strong>Traction avec une sangle</strong> (amovible ou intégrée aux EPI) : asseoir l'équipier, passer la sangle au-dessus de son dossard et les extrémités sous ses propres aisselles, former une boucle sous les bretelles dorsales, réunir par un mousqueton, se relever. <strong>Dans un escalier</strong>, à la montée comme à la descente : saisir le haut des bretelles, installer en position assise dos aux escaliers, marche arrière ou avant en cherchant des appuis des mains.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Dégagements avec des tuyaux</h3>
+            <ul>
+                <li><strong>Évacuation par l'extérieur</strong> (binôme avec un moyen hydraulique, danger imminent) : <strong>amarrer le tuyau</strong> au préalable ; le sapeur-pompier descend mains croisées sur le tuyau au niveau de la tête, pieds croisés ; l'équipier reste en haut pour assurer. Tuyau vide : nœud simple en amont de l'amarrage ; ne pas l'attacher au niveau du <strong>raccord</strong>.</li>
+                <li><strong>Remontée d'un équipier tombé dans une excavation avec sa lance</strong> (dernier recours, équipier conscient et valide) : créer une ganse jusqu'à lui ; il s'installe à cheval sur le tuyau, bras côté lance ; le chef de binôme à la lance bloque le tuyau à la boucle avec ses pieds ; traction du tuyau pendant que l'équipier lève les fesses. Une sangle avec nœud français peut offrir une prise.</li>
+                <li><strong>Nance Drill</strong> (origine : accident du 25 juillet 1987, Columbus, Ohio) : dégager un pompier conscient ou inconscient depuis un niveau supérieur à travers un trou. Serrer la sangle ventrale de l'ARI sous la cuisse ; placer la <strong>boucle du tuyau en eau sous le robinet de l'ARI</strong> ; amarrer la sangle par devant sur les deux brins du tuyau en la passant dans une bretelle dorsale ; tirer de façon coordonnée sur chaque brin. Un sauveteur doit descendre réaliser les amarrages ; <strong>minimum de 4 pompiers</strong>.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Enseignement</strong>
+                <p>Ces techniques ne s'enseignent qu'<strong>en présence d'un formateur désigné</strong> et avec le LSPCC.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sauvetage par un binôme</h3>
+            <table class="rd-table">
+                <thead><tr><th>Technique</th><th>Principe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Halligan tool</strong></td><td>Manche engagé dans les bretelles du dossard : traction avec un support rigide, très efficace dans un escalier.</td></tr>
+                    <tr><td><strong>Traction parallèle</strong></td><td>Les deux sauveteurs à la tête de part et d'autre, chacun une bretelle (main gauche à gauche, droite à droite). L'équipier restant peut aider ou ouvrir la voie.</td></tr>
+                    <tr><td><strong>Tirer-pousser</strong></td><td>Le 1<sup>er</sup> à la tête dans l'axe, une main dans une sangle de bretelle, dit « Prêt » ; le 2<sup>e</sup> à l'arrière lève la jambe, épaule dans le creux du genou, pousse sur la cuisse au signal « Go ». <strong>Utilisable en position basse</strong> (structure basse, plafond de fumées).</td></tr>
+                    <tr><td><strong>Échelle à coulisse, pieds en avant</strong> (3 sauveteurs, ARI retiré)</td><td>Deux sauveteurs à l'intérieur posent la victime sur le bord de la fenêtre ; celui sur l'échelle saisit les jambes, les pose sur ses épaules et descend en tenant les montants.</td></tr>
+                    <tr><td><strong>Échelle à coulisse, tête en avant</strong> (2 sauveteurs)</td><td>Victime posée sur le bord, placée en travers de l'échelle ; le sauveteur passe une main sous l'aisselle et l'autre entre les cuisses, contrôle en tenant les montants.</td></tr>
+                    <tr><td><strong>Escalier</strong></td><td>Monter : un saisit les bretelles supérieures de l'ARI, un autre sous les genoux. Descendre : face contre le sol, chacun une bretelle ; escalier étroit : victime sur son profil gauche, l'un retient, l'autre guide.</td></tr>
+                    <tr><td><strong>Denver Drill</strong> (milieu confiné)</td><td>Origine : mort du pompier Mark Langvardt (Denver, 28 septembre 1992), extrait 55 minutes plus tard d'un couloir de 70 cm donnant sur une fenêtre de 40 cm. Le 1<sup>er</sup> entre par la fenêtre, retourne la victime, l'assoit dos à la fenêtre ; le 2<sup>e</sup> s'assoit dos au mur, la victime entre ses jambes, bretelles dorsales resserrées ; le 1<sup>er</sup> pousse, le 2<sup>e</sup> pousse vers le haut (mains en poing) ; la victime est posée sur le rebord, tournée face vers le bas, réceptionnée par un MEA ou une échelle à coulisse.</td></tr>
+                    <tr><td><strong>Planche de sauvetage</strong></td><td>Sur cheminements longs ou accidentés, sans perdre de temps. Brancard souple, barquette ou brancard cuillère possibles.</td></tr>
+                    <tr><td><strong>Brancard souple</strong></td><td>Sauveteur roulé en <strong>PLS</strong> sur le brancard ; anneaux cousus rouges en tête d'alouette dans l'anse du milieu puis dans la hanse opposée du haut ; mousqueton aux pieds pour envelopper les membres inférieurs ; traction aux anneaux, la victime reste en PLS. Rapide, peu de matériel.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-astuce">
+                <p>Maintenir fermement les prises et l'équilibre ; <strong>gainer la sangle abdominale</strong> pour garder le dos droit ; prudence avec la hache ou le Halligan ; vérifier les obstacles dangereux (trous, matériaux coupants).</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Après les sauvetages</h3>
+            <p>Rendre les secours disponibles aussi vite que possible ; selon l'intensité de l'engagement, le COS ou l'encadrement du CIS met le personnel au repos.</p>
+            <table class="rd-table">
+                <thead><tr><th>Domaine</th><th>Consignes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Remise en condition du personnel</strong></td><td><strong>Hydratation</strong> (compense les pertes, favorise la récupération, limite les blessures ; boire avant et après l'effort) ; <strong>hygiène</strong> corporelle, nettoyage ou échange des vêtements ; <strong>débriefing ou défusing</strong> ; <strong>repos</strong> physiologique selon l'intensité et la durée.</td></tr>
+                    <tr><td><strong>Reconditionnement du matériel</strong></td><td>Sous protection adaptée : nettoyer, vérifier l'état et l'intégrité, <strong>retirer tout matériel agressé chimiquement ou thermiquement ou déformé</strong> (réparations par une personne compétente), rendre compte des mouvements et indisponibilités, ranger aux emplacements d'origine.</td></tr>
+                    <tr><td><strong>PEX et RETEX</strong></td><td><strong>PEX</strong> : plus rapide, rend compte des faits, difficultés et enseignements. <strong>RETEX</strong> : plus complet, fait progresser doctrines et techniques. Les sauvetages sont éprouvants et riches d'enseignements.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('gtosauv-menu')">🆘 GTO Sauvegarde opérationnelle</button>
+                <button class="sal-lien" onclick="showModule('gtosauv-equipier')">Sauvetage par un équipier</button>
+                <button class="sal-lien" onclick="showModule('gtosauv-binome')">Sauvetage par un binôme</button>
+                <button class="sal-lien" onclick="showModule('gtosauv-dernier')">Dernier recours et annexes</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-menu')">🛟 RDSMES – Sauvetages & sauvegarde</button>
+                <button class="sal-lien" onclick="showModule('gtomv')">😷 GTO Engagement en milieu vicié</button>
+                <button class="sal-lien" onclick="showModule('hygiene-fumees')">Hygiène et fumées</button>
+                <button class="sal-lien" onclick="showModule('sante-psy')">Santé psychologique du sapeur-pompier</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvetages-mises-en-securite-2020.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 142 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Sauvetages et mises en sécurité », DGSCGC, novembre 2020, chapitres 4 et 5. Texte résumé ; schémas non reproduits.</p>
+    </div>
+
     <!-- ============ GTO Ventilation opérationnelle (DGSCGC, 2019) ============ -->
     <div id="vent-menu" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -35393,7 +36244,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.63</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.64</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
