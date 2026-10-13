@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.58">
+    <meta name="version" content="1.69.59">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -145,7 +145,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.58 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.59 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -313,7 +313,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.58</span><br>
+                        Vulcain v<span class="app-version">1.69.59</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -25525,6 +25525,543 @@ Je fais : extinction.</p>
         <p class="rd-source">GDO Incendies de structures 2018, chap. 3 section III.</p>
     </div>
 
+    <!-- ============ GDO Interventions dans les silos (DGSCGC, septembre 2019) ============ -->
+    <div id="gdosilo-menu" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🌾 GDO Interventions dans les silos – 2019</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle DGSCGC de <strong>septembre 2019</strong> : connaissance du milieu et des risques, conduite des opérations d'incendie, explosion et secours d'urgence à personne.</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gdosilo-milieu')"><b>1 · Connaître le milieu</b><span>Stockages à plat et verticaux, produits, activité du grain, séchoirs, transporteurs, rubrique 2160</span></button>
+            <button onclick="showModule('gdosilo-phenomenes')"><b>1 · Phénomènes et risques</b><span>Explosion de poussières, auto-échauffement, feu de surface, gaz, ensevelissement, asphyxie</span></button>
+            <button onclick="showModule('gdosilo-premieres')"><b>2 · Appel et premières actions</b><span>Périmètres réflexes 25 m / 50 m, coupure des flux, questions à l'exploitant, reconnaissance</span></button>
+            <button onclick="showModule('gdosilo-extinction')"><b>2 · Eau, mousse, inertage</b><span>Ce que l'on peut faire, ce qu'il faut éviter, conditions et précautions de l'inertage</span></button>
+            <button onclick="showModule('gdosilo-vidange')"><b>2 · Vidange et types de feux</b><span>Accès de vidange, feu à cœur, feu de surface, séchoirs, organes de manutention</span></button>
+            <button onclick="showModule('gdosilo-secours')"><b>2 · Explosions et secours à personne</b><span>Metz 1982, Blaye 1998, personnes ensevelies, malaise dans un silo</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'essentiel</h3>
+            <ul>
+                <li>Un feu dans un silo demande <strong>3 actions globales</strong>, sans hiérarchie : <strong>arrêter les flux</strong> (matière, poussières, ventilation), <strong>isoler</strong> les parties hautes et basses, <strong>couper les énergies</strong> de la cellule sinistrée avec l'exploitant.</li>
+                <li>Deux règles à ne jamais perdre de vue sur un feu à cœur : <strong>pas d'eau directement dans le grain</strong> et <strong>pas de poussière en suspension</strong>.</li>
+                <li>L'extinction complète d'un feu à cœur passe par la <strong>vidange totale</strong> de la cellule : c'est la phase la plus longue et la plus délicate. Choix tactique <strong>partagé entre le COS et l'exploitant</strong>.</li>
+                <li>Périmètre d'exclusion réflexe : <strong>25 m</strong> pour un silo plat, <strong>50 m</strong> pour un silo vertical, puis <strong>1,5 × la hauteur</strong> de l'installation.</li>
+                <li>Une personne enfoncée jusqu'aux genoux dans du grain en mouvement ne peut pratiquement plus se dégager seule : <strong>spécialistes milieux périlleux ou sauvetage-déblaiement</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Avertissement du guide</strong>
+            <p>Document de doctrine rédigé par un groupe de travail de SIS, de partenaires et de générateurs de risques, <strong>sans portée réglementaire</strong>. Il ne propose ni dispositif type, ni stratégie de lutte détaillée, ni technique opérationnelle : il donne un <strong>champ des possibles</strong> à adapter à chaque site.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Déjà dans Vulcain (non dupliqué ici)</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('gdoinc-menu')">🏢 GDO Incendies de structures</button>
+                <button class="sal-lien" onclick="showModule('rdeb-menu')">🫁 RDEB – Engagement des binômes</button>
+                <button class="sal-lien" onclick="showModule('mousses-menu')">🫧 Mousses</button>
+                <button class="sal-lien" onclick="showModule('emulseur')">Taux d'application additif</button>
+                <button class="sal-lien" onclick="showModule('rdeb-annexes')">CO et H₂S (RDEB annexes)</button>
+            </p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique du guide</summary>
+            <ul>
+                <li><strong>Ensilage / désilage</strong> : mise en stockage d'une matière / retrait de la matière de son stockage.</li>
+                <li><strong>Cellule</strong> : accumulateur de matière. Fermée si elle est surmontée d'un plancher, ouverte si elle communique avec l'espace sur cellule.</li>
+                <li><strong>As de carreau</strong> : capacité située entre 4 cellules rondes (½ as de carreau : entre 2 cellules et une paroi).</li>
+                <li><strong>Boisseau</strong> : capacité de stockage provisoire avant expédition.</li>
+                <li><strong>Angle de talutage</strong> : angle de la pente du tas d'une matière déversée, propre à chaque matière.</li>
+                <li><strong>Redler</strong> : transporteur à chaîne (nom commercial) ; <strong>élévateur</strong> : transport vertical par godets.</li>
+                <li><strong>Voûte / cheminée</strong> : le grain agglomère une voûte qui peut céder d'un coup ; ou un conduit vide se forme dans la masse.</li>
+                <li><strong>Coproduit</strong> : matière créée au cours du processus de fabrication d'un produit (sciure, copeaux…).</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Interventions-Silos.pdf" target="_blank" rel="noopener">GDO complet (PDF, 68 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Interventions dans les silos », DGSCGC/DSP/SDDRH/BDFE, septembre 2019. Texte repris et résumé ; schémas et photos non reproduits.</p>
+    </div>
+
+    <div id="gdosilo-milieu" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdosilo-menu')">← GDO Silos</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🌾 Connaître le milieu</h2>
+
+        <div class="rd-section">
+            <h3>Les familles de stockage</h3>
+            <p>Le type de structure compte pour l'analyse du sinistre, mais il ne donne <strong>ni la nature de la matière stockée, ni sa quantité</strong>.</p>
+            <table class="rd-table">
+                <thead><tr><th>Famille</th><th>Types</th><th>Repères</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>À plat (horizontaux)</strong></td><td>Silos couloirs, stockages à plat couverts, silos boudins, silos taupinières (andain)</td><td>Hauteur inférieure à 10 m. Parois béton ou métal. 100 à 10 000 t pour les stockages à plat couverts. Désilage au tractopelle.</td></tr>
+                    <tr><td><strong>Verticaux</strong></td><td>Silos comble, béton « cathédrale », cylindriques métalliques, dômes</td><td>Majoritairement non hermétiques. Comble : 40 m max. Cathédrale : 60 m max. Cylindrique métallique : 30 m de diamètre et 20 m de haut max. Dôme : voûte 25 m, diamètre 45 m max.</td></tr>
+                    <tr><td><strong>Autres</strong></td><td>Bacs, silos de chaufferies bois (granulés, copeaux)</td><td>De quelques m³ à plusieurs dizaines. Pas de circuit de traitement de la matière.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les produits stockés</h3>
+            <ul>
+                <li><strong>Agroalimentaires</strong> : céréales (blé, orge, maïs, seigle, avoine, sorgho, triticale, riz), oléagineux (colza, tournesol, soja), protéagineux (pois, féveroles, lupins), graminées fourragères, produits déshydratés, farines, sucres.</li>
+                <li><strong>Autres</strong> : produits chimiques, cendres, matériaux de construction (sable, ciment, plâtre), bois (sciure, granulés, copeaux), déchets de produits manufacturés, engrais, granulés plastiques.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'activité vitale du grain</h3>
+            <p>Le grain reste vivant après récolte. Trois manifestations :</p>
+            <table class="rd-table">
+                <thead><tr><th>Phénomène</th><th>Condition</th><th>Effet</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Respiration (oxydation)</strong></td><td>Présence d'oxygène (couches superficielles, entrées d'air)</td><td>Amidon + O₂ → eau + CO₂ + <strong>chaleur</strong>. La production de chaleur <strong>double</strong> pour +5 °C ou +2 % d'humidité.</td></tr>
+                    <tr><td><strong>Fermentation anaérobie</strong></td><td>Absence d'oxygène (zones où il est déjà consommé)</td><td>Amidon → CO₂ + alcool + chaleur (moins qu'en respiration). Moisissures possibles.</td></tr>
+                    <tr><td><strong>Germination</strong></td><td>Humidité et température suffisantes</td><td>Altération grave et <strong>irréversible</strong> du grain.</td></tr>
+                </tbody>
+            </table>
+            <p>La conservation exige donc une surveillance constante, en particulier de la <strong>température</strong> (sondes de silothermométrie, ventilation).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les équipements d'un site silo</h3>
+            <p>Fonctions : stockage, transport, séchage, nettoyage et tri, dépoussiérage (filtres, cyclones), aide à la conservation. En opération, se procurer <strong>le plan de l'installation et la procédure d'intervention</strong> pour repérer les circuits de flux de matière.</p>
+            <table class="rd-table">
+                <thead><tr><th>Équipement</th><th>À savoir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Transporteur à bande</strong> (tapis, convoyeuse)</td><td>Matière souvent à l'air libre. <strong>Sous tension en fonctionnement</strong> : rupture possible en cas d'incendie.</td></tr>
+                    <tr><td><strong>Transporteur à chaîne (Redler)</strong></td><td>Chaîne à racleurs dans une enceinte fermée : la matière n'est pas visible.</td></tr>
+                    <tr><td><strong>Transporteur à vis</strong></td><td>Matières pulvérulentes ; vis sans fin aussi utilisée pour l'extraction en fond de cellule.</td></tr>
+                    <tr><td><strong>Transporteur à air comprimé</strong></td><td>Poudres et granulés, par aspiration ou soufflage.</td></tr>
+                    <tr><td><strong>Élévateur à godets</strong></td><td>Transport vertical. <strong>L'un des équipements les plus dangereux</strong> au regard de l'explosion de poussières. Dispositifs de protection en tête et en pied.</td></tr>
+                    <tr><td><strong>Distributeur pendulaire</strong></td><td>Oriente les flux vers différents circuits ; en général en partie haute.</td></tr>
+                    <tr><td><strong>Capteurs de niveau</strong></td><td>Exploitation des capacités des cellules.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Les accidents sont fréquents avec les équipements de transport</strong>
+                <p>Comprendre leur mode de fonctionnement avant toute reconnaissance.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les installations de séchage</h3>
+            <ul>
+                <li><strong>Séchoir à colonne</strong> : chauffage direct en veine d'air, <strong>brûleur à flamme nue</strong> dans la colonne. Le grain descend entre des dièdres d'air chaud. 1, 2 ou 3 étages. Structure autoporteuse, accolée ou non au silo.</li>
+                <li><strong>Séchage en recirculation</strong> (versions mobiles) : le grain descend par gravité sur des trémies parcourues d'air chaud.</li>
+                <li><strong>Séchage en continu à convoyeur</strong> : lit de matière sur un tapis traversé par la chaleur.</li>
+                <li><strong>Cellules sécheuses</strong> (fermes) : séchage en toit (faux plafond perforé, ventilateur-brûleur, vidange automatique vers le niveau inférieur) ou séchage en pied de cellule.</li>
+                <li>Alimentation <strong>fioul ou gaz</strong> (gaz de ville, ou cuve GPL propane / butane) : réseau et cuves à prendre en compte pour les <strong>effets dominos</strong>.</li>
+                <li>Isolation en bardage métallique isolant : à <strong>dégarnir</strong> en cas de sinistre important pour atteindre la structure métallique.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Points de vigilance sur un séchoir</strong>
+                <p>Transport de <strong>particules incandescentes</strong> et risque de <strong>ruine</strong> de l'installation, généralement métallique.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le volet réglementaire</h3>
+            <p>Les silos relèvent principalement de la <strong>rubrique 2160</strong> des installations classées (ICPE). Autres rubriques selon le produit ou l'activité (ex. 2225 sucreries, 2260 broyage, concassage, criblage).</p>
+            <table class="rd-table">
+                <thead><tr><th>Volume total de stockage</th><th>Silos plats</th><th>Autres installations</th></tr></thead>
+                <tbody>
+                    <tr><td>Moins de 5 000 m³</td><td>Sans objet</td><td>Sans objet</td></tr>
+                    <tr><td>5 000 à 15 000 m³</td><td>Déclaration avec contrôle périodique</td><td>Déclaration avec contrôle périodique</td></tr>
+                    <tr><td>Plus de 15 000 m³</td><td>Enregistrement</td><td>Autorisation</td></tr>
+                </tbody>
+            </table>
+            <p>Le SIS peut être <strong>consulté</strong> lors d'une demande d'autorisation. Il accède aux fiches de données de sécurité, zones dangereuses, volumes, étude de dangers (consultables en <strong>DREAL</strong>, DRIEE en Île-de-France) et peut prescrire : procédures d'intervention, accessibilité, accueil des secours, <strong>colonnes sèches</strong>, conditions d'<strong>inertage</strong>, zones d'épandage, DECI.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les partenaires</h3>
+            <ul>
+                <li><strong>DREAL</strong> : partenaire privilégié lors des consultations, recommandations organisationnelles et techniques.</li>
+                <li><strong>L'exploitant</strong> : recense les parties de l'installation à risque (incendie, atmosphères explosives, émanations toxiques), tient un <strong>plan général</strong> signalant ces zones. Interlocuteur et référent technique.</li>
+                <li><strong>Le surveillant de l'exploitation</strong> : nommé par l'exploitant, formé aux risques, connaît circuits et produits entreposés.</li>
+                <li>Les interventions sont <strong>de longue durée</strong> : la disponibilité de ces partenaires est nécessaire tout au long. Rencontres et exercices en commun en amont.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Interventions-Silos.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Interventions dans les silos 2019, chap. 1 sections 1 à 3.</p>
+    </div>
+
+    <div id="gdosilo-phenomenes" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdosilo-menu')">← GDO Silos</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>💥 Phénomènes et risques</h2>
+
+        <div class="rd-section">
+            <h3>Les phénomènes thermiques redoutés</h3>
+            <table class="rd-table">
+                <thead><tr><th>Phénomène</th><th>Conditions</th><th>Effets et signes</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Explosion de poussières</strong></td><td>Hexagone d'explosion : triangle du feu + <strong>poussières combustibles en suspension</strong> (diamètre inférieur à 500 µm, voire 1 000 µm) + <strong>nuage dans son domaine d'explosivité</strong> + <strong>confinement</strong></td><td>Front de flamme, rayonnement intense, <strong>onde de surpression</strong>, rupture des contenants, projection de fragments. Explosion <strong>primaire puis secondaire</strong> (soulèvement des poussières).</td></tr>
+                    <tr><td><strong>Auto-échauffement</strong></td><td>Production de chaleur supérieure à sa dissipation. Durée (souvent quelques jours), humidité, température et taille du stockage aggravent le risque.</td><td>Sans flamme : CO, CO₂, alcools. Hausse de température limitée les premières heures, <strong>difficilement décelable à la caméra thermique</strong> sans sonde.</td></tr>
+                    <tr><td><strong>Feu de surface</strong></td><td>Combustible + comburant (O₂ ou substances oxydantes comme ammonitrates, peroxydes) + source d'ignition externe</td><td>Flammes visibles, rayonnement intense, fumées, gaz de pyrolyse, perte de résistance des structures métalliques. Rapidement détecté.</td></tr>
+                    <tr><td><strong>Explosion de gaz inflammables</strong></td><td>Gaz entre LIE et LSE + comburant + ignition. Gaz issus de la fermentation, pyrolyse, désorption, action de l'eau sur poudres métalliques chaudes, réaction du gaz à l'eau.</td><td>Méthane, éthylène, CO, hexane, dihydrogène, COV, goudrons. Risques toxique et d'anoxie en plus. Explosion primaire de gaz → <strong>explosion secondaire de poussières</strong>.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Explosion de poussières : refermer les portes de découplage</strong>
+            <p>La surpression est canalisée par des <strong>surfaces soufflables (évents)</strong> et des parois de découplage résistantes. Lors des reconnaissances, <strong>refermer ces portes après chaque passage</strong>. La portée des effets dépend de la nature des poussières, de l'homogénéité du mélange, du confinement et du type de structure.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Auto-échauffement : ce qui le génère et ce qu'il révèle</h3>
+            <ul>
+                <li><strong>Mécanismes de chaleur</strong> : oxydation chimique lente (charbon, bois), activité biologique comme la fermentation (souvent si l'humidité dépasse 15 %), condensation d'humidité sur un matériau sec.</li>
+                <li>La respiration du grain réchauffe le grain, ce qui l'accélère : <strong>réaction en chaîne</strong> si la chaleur n'est pas évacuée. L'oxygène devient vite le facteur limitant, puis la fermentation prend le relais avec moins de chaleur.</li>
+                <li><strong>Structures fermées ou matériaux peu poreux</strong> : le feu est limité par le manque d'oxygène. La position du point chaud dépend de son accès à l'oxygène. <strong>La combustion peut repartir à la vidange ou à l'ouverture d'une trappe de visite.</strong></li>
+                <li>Un feu couvant <strong>sèche les poudres</strong> et fait migrer l'humidité en partie haute : <strong>forte condensation sur les parois du ciel gazeux</strong> = indicateur.</li>
+                <li>Dès <strong>200 °C</strong> : gaz de pyrolyse, goudrons ou composés lourds visibles sur les parois.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Feu de surface : cas particuliers</h3>
+            <ul>
+                <li>Sucres et polymères à bas point de fusion (PEHD, PS, PVC) : l'incendie se développe surtout avec de la matière <strong>liquide</strong>, assimilable à un <strong>feu d'hydrocarbure</strong>.</li>
+                <li>Oléagineux (colza, tournesol, soja) : comportement identique à un feu d'hydrocarbures, d'où l'intérêt de la mousse.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le risque bâtimentaire</h3>
+            <ul>
+                <li>La rigidité et la résistance d'une structure <strong>acier diminuent</strong> avec la température.</li>
+                <li>Surcharge, sur-remplissage, eau en excès ou explosion : <strong>rupture des parois</strong>, projection de fragments et <strong>ensevelissement</strong> des personnes aux alentours. Distances selon la géométrie du silo et l'angle de talutage du grain.</li>
+                <li>Fissures fréquentes sur les structures béton : elles doivent <strong>éveiller l'attention du COS</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le bois et ses coproduits</h3>
+            <ul>
+                <li>Connaître la <strong>taille des particules</strong> (sciure fine, copeaux moyens, plaquettes grosses) et le <strong>niveau de transformation</strong> : 1<sup>re</sup> = bois brut, 2<sup>e</sup> = traité (colle, vernis, solvant), 3<sup>e</sup> = produits finis.</li>
+                <li>Plus la transformation est élevée, plus la dégradation thermique libère de <strong>gaz toxiques</strong>, notamment l'<strong>acide cyanhydrique</strong> (bois de 2<sup>e</sup> et 3<sup>e</sup> transformation).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les risques pour les personnes</h3>
+            <table class="rd-table">
+                <thead><tr><th>Risque</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Grain en mouvement</strong></td><td>Écoulement libre dès qu'une vis de vidange démarre ou qu'une trappe s'ouvre. Effet de sables mouvants : <strong>enfoncé aux genoux, il est pratiquement impossible de se dégager seul</strong>. Aussi en trémie, benne de camion, entrepôt.</td></tr>
+                    <tr><td><strong>Agglomération</strong></td><td>Grain échauffé ou humide : colonne qui s'écroule, <strong>pont de grains (effet voûte)</strong> qui cède brutalement.</td></tr>
+                    <tr><td><strong>Glissement</strong></td><td>Pile plus haute qu'une personne. Pente supérieure à l'angle de repos du grain : risque accru.</td></tr>
+                    <tr><td><strong>Pièces en mouvement</strong></td><td>Vis balais, vis de plancher, bandes transporteuses (sous tension, rupture possible en incendie).</td></tr>
+                    <tr><td><strong>Asphyxie</strong></td><td>CO₂ de la pyrolyse ou de la combustion, ou <strong>azote injecté lors de l'intervention</strong>.</td></tr>
+                    <tr><td><strong>Toxique</strong></td><td>Monoxyde de carbone, acide cyanhydrique.</td></tr>
+                    <tr><td><strong>Biologique</strong></td><td>Stations d'épuration, boues séchées : l'eau « réveille » le milieu de culture (levures, moisissures, bactéries) et libère des gaz de fermentation (CO₂, CO, méthane, H₂). <strong>Prévoir une zone de décontamination des tenues.</strong></td></tr>
+                    <tr><td><strong>Particules</strong></td><td>Poussières fines en suspension à la vidange ou à la rupture : <strong>masque FFP2 ou FFP3</strong>. Poussières alvéolaires : diamètre inférieur à 10 µm.</td></tr>
+                    <tr><td><strong>Énergies</strong></td><td>Électricité omniprésente, mais nécessaire à la gestion du sinistre.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Interventions-Silos.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Interventions dans les silos 2019, chap. 1 section 1 §§ 5 à 9.</p>
+    </div>
+
+    <div id="gdosilo-premieres" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdosilo-menu')">← GDO Silos</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🚒 Appel et premières actions</h2>
+
+        <div class="rd-section">
+            <h3>Le traitement de l'appel</h3>
+            <ul>
+                <li><strong>Localisation</strong> : commune, accès pour atteindre le sinistre. La géolocalisation en amont des sites aide à la planification.</li>
+                <li><strong>Problématique</strong> : type de sinistre, nombre de personnes en difficulté, pathologie, localisation.</li>
+                <li><strong>Requérant</strong> : témoin, surveillant du site, exploitant. Lui donner des consignes avant l'arrivée des secours.</li>
+                <li><strong>Facteurs aggravants</strong> : nombreux appels, heure, contexte.</li>
+                <li>Prévoir <strong>dès le départ</strong> les équipes spécialisées (milieux périlleux, sauvetage-déblaiement, risque chimique). Si la spécialité n'existe pas localement, <strong>anticiper le renfort zonal</strong>.</li>
+                <li>Conseils aux témoins : se tenir à distance, gestes de premiers secours si possible, <strong>baliser</strong> pour protéger les tiers, guider les secours.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les 3 actions globales</h3>
+            <p>Simultanées ou successives, sans hiérarchie :</p>
+            <ul>
+                <li><strong>Arrêter les flux</strong> de produit (matière, poussières, ventilation).</li>
+                <li><strong>Isoler</strong> les parties hautes et basses des installations pour éviter la propagation.</li>
+                <li><strong>Couper les énergies</strong> de la cellule sinistrée, de façon concertée avec l'exploitant.</li>
+            </ul>
+            <p>L'exploitant veille à n'arrêter que les circuits inutiles : les <strong>automates et l'air comprimé</strong> utiles à l'intervention ne sont pas coupés systématiquement. Il fait l'état des lieux de la nature, de la quantité et de la durée de stockage des produits.</p>
+            <p>Pour les opérations de lutte, la marche générale du <strong>GDO incendies de structures</strong> reste le cadre. Les silos ajoutent des principes particuliers.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Périmètres de sécurité réflexes</h3>
+            <table class="rd-table">
+                <thead><tr><th>Ouvrage</th><th>Zone d'exclusion (minimum)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Silo plat</strong></td><td><strong>25 m</strong></td></tr>
+                    <tr><td><strong>Silo vertical</strong></td><td><strong>50 m</strong></td></tr>
+                </tbody>
+            </table>
+            <p>Valeurs a minima, à réévaluer par le COS. Dans une phase plus réfléchie : <strong>1,5 × la hauteur de l'installation</strong>, ou les distances d'un plan d'aide à l'intervention du site. Les zones contrôlée et de soutien sont ensuite définies selon le contexte.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Prise de renseignements avec l'exploitant</h3>
+            <ul>
+                <li>Nature du produit, quantité concernée, capacité de la cellule.</li>
+                <li>Situation actuelle : relevés thermométriques, évacuations, nombre de personnes (dont entreprises extérieures).</li>
+                <li>Depuis combien de temps le sinistre a débuté, opérations en cours (manutention, ventilation), circonstances.</li>
+                <li>Historique du stockage depuis l'ensilage.</li>
+                <li>Actions de lutte réalisées ou en cours.</li>
+                <li>Moyens d'observation, de mesure ou de prélèvement disponibles sur le silo.</li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Coupure de l'électricité : partielle seulement</strong>
+            <p>Il est <strong>impératif de conserver</strong> les possibilités de manutention, l'éclairage du site, la thermométrie et les automatismes.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>La coupure des flux, avec l'exploitant</h3>
+            <table class="rd-table">
+                <thead><tr><th>Flux</th><th>Objectif</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Manutention</strong></td><td>Ne plus alimenter la cellule impactée en produit et ne pas en soutirer.</td></tr>
+                    <tr><td><strong>Aspiration des poussières</strong></td><td>Couper le circuit et le <strong>désolidariser physiquement</strong> du reste des installations.</td></tr>
+                    <tr><td><strong>Ventilation de conservation</strong></td><td>Ne plus alimenter la cellule en air frais.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>La reconnaissance sur le site</h3>
+            <ul>
+                <li>Si possible <strong>avec l'exploitant</strong>.</li>
+                <li>Cheminements intérieurs avec <strong>tenue textile</strong>, <strong>moyens de détection</strong> et protection respiratoire adaptée (poussières, fumées).</li>
+                <li>L'<strong>appareil respiratoire isolant</strong> offre le spectre de protection le plus large, notamment en lutte contre l'incendie.</li>
+                <li>Refermer les portes de découplage après chaque passage.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Interventions-Silos.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Interventions dans les silos 2019, chap. 2 sections 1 et 2 §§ 1-2.</p>
+    </div>
+
+    <div id="gdosilo-extinction" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdosilo-menu')">← GDO Silos</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🫧 Eau, mousse, inertage</h2>
+        <p>L'intervention conduit généralement à la <strong>vidange de la cellule</strong>, réalisée sous protection hydraulique et avec des moyens d'extinction. Trois solutions : <strong>eau, mousse, inertage</strong>.</p>
+
+        <div class="rd-section">
+            <h3>L'eau</h3>
+            <div class="rd-alerte">
+                <strong>Un excès d'eau est un problème majeur, voire irréversible</strong>
+                <p>Le grain gonfle au contact de l'eau : poids accru en cellule et <strong>risque d'éclatement du silo</strong>, manutention difficile, inertage délicat, <strong>prise en masse</strong> du grain qui rend la vidange impossible.</p>
+            </div>
+            <ul>
+                <li><strong>Usages</strong> : fixer les poussières, maîtriser un début d'incendie, protéger les structures voisines, les équipements menacés (manutention) et la structure porteuse.</li>
+                <li>Sur le grain : seulement pour un <strong>feu directement accessible</strong>, en <strong>très faible quantité</strong> et en <strong>jet diffusé</strong>.</li>
+                <li><strong>Feu à cœur : l'eau est a priori à proscrire pour l'extinction.</strong></li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>La mousse</h3>
+            <p>Elle crée un <strong>tapis isolant</strong> entre le combustible et l'air, évite l'arrivée d'air et la mise en suspension des fines poussières.</p>
+            <ul>
+                <li><strong>Emplois</strong> : fixer les particules fines en haut de cellule (surtout lors de mouvements de grain), maîtriser un feu de surface, limiter la formation de mélanges explosifs.</li>
+                <li><strong>Moyen foisonnement à privilégier</strong>. Le bas foisonnement consomme beaucoup d'eau ; le haut foisonnement est trop léger pour progresser dans les cellules.</li>
+                <li>Déposer la mousse à la surface du grain, <strong>répartie uniformément</strong> pour ne pas lever les poussières, et <strong>entretenir le tapis</strong> pendant toute l'intervention.</li>
+                <li>Émulseurs synthétiques <strong>multi-foisonnements sans fluor (FFF)</strong> : mousse stable et homogène, adaptée. Les <strong>mouillants-moussants</strong> conviennent aussi (mélange depuis la pompe de l'engin).</li>
+                <li>À privilégier pour un feu de surface d'<strong>oléagineux</strong>.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Contraintes de la mousse</strong>
+                <ul>
+                    <li>Hauteur des installations : pertes de charge.</li>
+                    <li>Projection difficile selon le diamètre de la cellule.</li>
+                    <li>Tenue de la mousse dans le temps.</li>
+                    <li><strong>Détection des gaz limitée</strong> par le tapis isolant.</li>
+                    <li>Ajout de poids (eau) et possible prise en masse du produit.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'inertage</h3>
+            <p>Injection d'un gaz inerte (<strong>CO₂ ou diazote</strong>) pour faire baisser le taux d'oxygène : réduit la combustion et prévient l'explosion. Très long à mettre en place (acheminement des camions, dispositif).</p>
+            <table class="rd-table">
+                <thead><tr><th>Convient pour</th><th>Ne convient pas pour</th></tr></thead>
+                <tbody>
+                    <tr><td>Céréales, luzerne, produits oléo-protéagineux</td><td><strong>Sucre, farine, amidon</strong> (absence de porosité)</td></tr>
+                </tbody>
+            </table>
+            <p><strong>Optimal si :</strong> feu à cœur (point chaud supérieur à <strong>60 °C</strong> pour les céréales) <strong>et</strong> cellule fermée et étanche. Pour lutter contre un feu à cœur, taux d'oxygène si possible <strong>inférieur à 8 %</strong>.</p>
+            <ul>
+                <li>Points d'injection facilement accessibles, masse entière balayée.</li>
+                <li>Injecter en <strong>deux points</strong> : dans le <strong>ciel du silo</strong> (éviter l'explosion de gaz inflammables ; de la mousse peut être injectée à la place) et à la <strong>base</strong> (balayer la masse).</li>
+                <li>Injection <strong>régulière</strong> pour ne pas lever les poussières. L'opération peut durer <strong>plusieurs jours</strong>.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Précautions pendant l'inertage</strong>
+                <ul>
+                    <li>EPI adaptés. <strong>Ne pas s'introduire dans les cellules.</strong></li>
+                    <li><strong>Ne pas ouvrir d'orifices</strong> pour éviter les arrivées d'air.</li>
+                    <li><strong>Oxymètre</strong> à proximité immédiate des intervenants.</li>
+                    <li>Ne pas injecter de gaz à l'état liquide (électricité statique, givrage, expansion rapide) : le <strong>réchauffeur</strong> le transforme en vapeur.</li>
+                    <li>Surveiller le ciel de la cellule : <strong>température, taux de CO</strong> (évolution de l'incendie) et <strong>O₂</strong> (efficacité de l'inertage), et évacuer ces gaz sans risque pour le personnel.</li>
+                </ul>
+            </div>
+            <div class="rd-section">
+                <h3>À anticiper</h3>
+                <ul>
+                    <li>Plus le volume est grand, plus la quantité de gaz est importante. Plus les parois sont poreuses, plus les pertes sont fortes. Plus le grain est chaud, plus la technique est adaptée.</li>
+                    <li>Échange préalable avec le <strong>fournisseur de gaz</strong> : type de gaz, livraison rapide d'une quantité suffisante, pressions d'alimentation, raccords, longueur de tuyaux.</li>
+                    <li><strong>De l'eau mise en amont</strong> peut compromettre l'inertage (prise en masse).</li>
+                    <li><strong>Contraintes</strong> : délai d'approvisionnement, mise en œuvre et maintien du réchauffeur, capacité des camions (de l'ordre de <strong>30 m³</strong>), risque cryogénique (brûlure par le froid), asphyxie, électricité statique, longueur de tuyaux.</li>
+                </ul>
+            </div>
+            <div class="rd-astuce">
+                <p><strong>L'inertage ne doit pas être mis en œuvre systématiquement.</strong></p>
+            </div>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Interventions-Silos.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Interventions dans les silos 2019, chap. 2 section 2 § 3.</p>
+    </div>
+
+    <div id="gdosilo-vidange" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdosilo-menu')">← GDO Silos</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🔥 Vidange et types de feux</h2>
+
+        <div class="rd-section">
+            <h3>La vidange : phase la plus longue et la plus délicate</h3>
+            <ul>
+                <li>Silo plat ou tas extérieur : engin de manutention (risque pour le manutentionnaire et le matériel, <strong>protection complète</strong>).</li>
+                <li>Silo vertical : acheminer la matière vers l'extérieur (goulottes, transporteurs, appareils de manutention). On peut aussi vidanger les <strong>capacités adjacentes</strong> pour empêcher la propagation par conduction.</li>
+                <li>Faire la <strong>différence entre un échauffement normal contrôlable et un auto-échauffement irréversible</strong> qui mène à l'auto-inflammation. La température est la clé de lecture, selon la matière. Si les installations de conservation ne maîtrisent pas le phénomène, la vidange est mise en œuvre.</li>
+                <li>La vidange est un <strong>choix tactique partagé</strong> entre le responsable des installations et le COS. L'exploitant anticipe les <strong>matériels de transport</strong> vers un autre lieu de stockage.</li>
+                <li>Elle se fait <strong>sous atmosphère appauvrie en oxygène</strong> ou en maintenant un <strong>tapis de mousse</strong>. Chute de poussières des parois et mise en suspension : risque d'explosion en présence d'une source d'inflammation.</li>
+                <li>Vitesse de manutention <strong>maîtrisée</strong>, circuit de vidange <strong>le plus court possible</strong>.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Conditions de la vidange</strong>
+                <ul>
+                    <li>État de la matière et détection (caméra thermique, détecteur d'air) permettant de penser le risque d'explosion minimisé.</li>
+                    <li><strong>Réseau de mesures surveillé en permanence</strong> : dialogue COS - exploitant.</li>
+                    <li>Surveillance visuelle du produit en sortie ; arrosage en <strong>jet diffusé</strong> si le risque d'incendie demeure. Les particules extraites peuvent s'enflammer au contact de l'air.</li>
+                    <li>Vérifier visuellement avant de parler de silo « <strong>vide ou vidangé</strong> » : les <strong>voûtes et cheminées</strong> peuvent rompre et lever des poussières. Intervention de professionnels du milieu avec outils spécifiques.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les trois accès de vidange</h3>
+            <table class="rd-table">
+                <thead><tr><th>Accès</th><th>Méthode</th><th>Risques pour l'infrastructure</th><th>Risques pour les intervenants</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Le long du silo (1)</strong></td><td>Accès par découpe ou carottage si pas de trappe de visite. Surface limitée. <strong>Vidange non intégrale</strong> (jusqu'au niveau de l'accès).</td><td>Effets de voûte et de cheminée, déséquilibre de la structure</td><td>Exposition lors de la percée, effet de poussée du grain, ruine de la structure, chute de hauteur, flash thermique</td></tr>
+                    <tr><td><strong>En partie basse (2)</strong></td><td>Même accès créé. <strong>Vidange intégrale.</strong></td><td>Effets de voûte et de cheminée, déséquilibre de la structure</td><td>Idem (1)</td></tr>
+                    <tr><td><strong>Système de manutention (3)</strong></td><td>Succession de précautions : la matière incandescente retourne dans le dispositif existant. <strong>Dernier recours.</strong></td><td>Propagation des points chauds, effet de voûte, incendie ou explosion aux filtres (si non isolés physiquement)</td><td>Accumulation de gaz de combustion, explosion de gaz</td></tr>
+                </tbody>
+            </table>
+            <p>Toute ouverture dans une paroi demande une <strong>note de calcul de structure</strong>. La vidange doit être <strong>complète</strong> jusqu'à extraction de la masse incandescente.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Vidange par le système de manutention</h3>
+            <ul>
+                <li>À envisager en <strong>dernier recours</strong>. Points de surveillance armés de dispositifs d'extinction adaptés, choisis avec le responsable d'exploitation.</li>
+                <li>Lieux possibles : <strong>partie haute de la cellule</strong> (mousse moyen foisonnement), <strong>bas de la cellule</strong> (extraction), <strong>pied</strong> et <strong>tête de l'élévateur</strong>, <strong>sortie du système de manutention</strong>.</li>
+                <li>Lances à main en <strong>jet diffusé</strong> pour ne pas relever les poussières.</li>
+                <li>Ne pas interrompre la continuité de la vidange et du transport.</li>
+                <li>Les systèmes de manutention restent <strong>actifs</strong> : attention aux accessoires flottants happés par un mécanisme, en plus des EPI de lutte contre les feux de structures.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les types de feux</h3>
+            <table class="rd-table">
+                <thead><tr><th>Cas</th><th>Conduite</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Feu à cœur</strong></td><td>Cinétique lente : large réflexion et planification après les actions réflexes. COS et exploitant définissent la stratégie d'extinction. <strong>Pas d'eau dans le stockage, pas de poussière en suspension.</strong> L'extinction complète passe par la <strong>vidange totale</strong>. Retour d'expérience : créer un <strong>secteur dédié à la vidange</strong>. Vigilance permanente sur la sécurité des personnels.</td></tr>
+                    <tr><td><strong>Feu de surface</strong></td><td>Conduite très proche du feu à cœur, mais facilitée par la <strong>visibilité</strong> du sinistre et l'efficacité d'une extinction directe à l'<strong>eau pulvérisée ou à la mousse</strong>.</td></tr>
+                    <tr><td><strong>Feu de séchoir</strong></td><td><strong>40 % des feux</strong> dans les installations. Mêmes principes, avec les générateurs de chaleur (gaz, fioul) : mise en sécurité de la distribution des fluides, surveillance de la température du grain en zone de séchage, action sur les flux de matière entrants et sortants.</td></tr>
+                    <tr><td><strong>Colonnes d'air chaud ou usé</strong></td><td>Arrêter les brûleurs et <strong>vidanger le séchoir le plus vite possible</strong> pour accéder en sécurité aux trappes et portes de visite.</td></tr>
+                    <tr><td><strong>Colonne de séchage</strong></td><td><strong>Vidange à l'extérieur impérative</strong> : éteindre le produit incandescent au fur et à mesure. Sinon, méthode du feu à cœur avec <strong>refroidissement du séchoir</strong> (sa résistance métallique chute). Séchoir entièrement en feu et impossible à vidanger : <strong>noyage massif</strong>, points d'attaque et de vidange percés dans les tôles. Toute découpe validée avec l'exploitant. Surveiller la température de la cellule de grain sec.</td></tr>
+                    <tr><td><strong>Organes de manutention</strong></td><td>Risque local et <strong>propagation rapide</strong> (équipements en mouvement). <strong>Faire stopper au plus vite la bande transporteuse</strong>, notamment vers les stockages. Équipements sous tension : risque de rupture, donc les <strong>faire détendre</strong> avec le responsable d'exploitation.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Interventions-Silos.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Interventions dans les silos 2019, chap. 2 section 2 §§ 4 à 7.</p>
+    </div>
+
+    <div id="gdosilo-secours" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdosilo-menu')">← GDO Silos</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🚑 Explosions et secours à personne</h2>
+
+        <div class="rd-section">
+            <h3>Les explosions de silos</h3>
+            <ul>
+                <li>Selon le contexte, notamment en cas d'effondrement : <strong>marche générale des opérations de lutte contre les feux de structures</strong>, complétée par les actions en <strong>milieux effondrés</strong> avec les équipes spécialisées.</li>
+                <li>Événements majeurs de référence : <strong>Metz en 1982 (12 décès)</strong> et <strong>Blaye en 1998 (11 décès)</strong>.</li>
+                <li>Outre les dégâts sur le site, effets observés <strong>jusqu'à 200 m</strong> (projections de matériaux, bris de vitres).</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Actions essentielles issues des retours d'expérience</strong>
+                <ul>
+                    <li><strong>Contrôler les accès</strong> au site par des points d'engagement.</li>
+                    <li><strong>Limiter le nombre de sauveteurs</strong> au juste besoin.</li>
+                    <li>Définir les <strong>lieux de stockage des déblais</strong> et les accès pour les noria de chargement et de déchargement.</li>
+                    <li><strong>Contrôler en continu la stabilité</strong> des structures résiduelles par des points de visée croisés tenus par des géomètres.</li>
+                    <li>Disposer de <strong>matériels de pompage</strong> pour les matières stockées.</li>
+                    <li>Mettre en place un <strong>soutien sanitaire opérationnel</strong>.</li>
+                    <li>Anticiper la <strong>longue durée</strong> de l'opération.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Personnes ensevelies visibles</h3>
+            <p>En complément des primo-intervenants : engagement de <strong>spécialistes en milieu périlleux et / ou sauvetage-déblaiement</strong>.</p>
+            <ul>
+                <li><strong>Sécuriser victime et sauveteurs</strong> : protection individuelle contre les chutes, les voies respiratoires et les yeux, <strong>pour les sauveteurs comme pour la victime</strong>. Vigilance sur l'effet de voûte.</li>
+                <li><strong>Stabiliser la zone de travail</strong> avec des structures planes posées sur le grain : les sauveteurs évoluent sans s'enfoncer, sans piéger davantage la victime.</li>
+                <li><strong>Coffrer autour de la victime</strong> à mesure que le grain est retiré : espace stabilisé qui permet le dégagement. Extraction du grain tout en coffrant, avec des seaux ou un moyen d'aspiration adapté (ex. vis de déblaiement).</li>
+                <li><strong>Retirer la victime</strong> avec les techniques adaptées. Avec les spécialistes, le COS choisit le <strong>point de sortie</strong> le plus approprié.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Personnes ensevelies non visibles</h3>
+            <p>Techniques de <strong>sauvetage-déblaiement</strong>. Options de dégagement :</p>
+            <ul>
+                <li>Évacuer les matières <strong>par le haut</strong> jusqu'à découvrir la victime.</li>
+                <li><strong>Vidange douce</strong> de la cellule par gravité, <strong>sans outils saillants de désilage</strong>.</li>
+                <li><strong>Création d'une ouverture</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Malaise dans un silo</h3>
+            <ul>
+                <li>Risque principal : l'<strong>anoxie</strong>, notamment par le CO₂ ou d'autres gaz toxiques.</li>
+                <li><strong>Extraction rapide</strong> de la victime et <strong>recherche des causes</strong> possibles.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Interventions-Silos.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Interventions dans les silos 2019, chap. 2 sections 3 et 4.</p>
+    </div>
+
     <!-- ============ GTO Ventilation opérationnelle (DGSCGC, 2019) ============ -->
     <div id="vent-menu" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -32237,7 +32774,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.58</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.59</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
