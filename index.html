@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.62">
+    <meta name="version" content="1.69.63">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -145,7 +145,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.62 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.63 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -313,7 +313,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.62</span><br>
+                        Vulcain v<span class="app-version">1.69.63</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -28192,6 +28192,495 @@ Je fais : extinction.</p>
         <p class="rd-source">GDO Bateaux en eaux intérieures 2018, chapitre 2 section IV §§ 3 à 6.</p>
     </div>
 
+    <!-- ============ GTO Sauvegarde opérationnelle (DGSCGC, février 2024) ============ -->
+    <div id="gtosauv-menu" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🆘 GTO Sauvegarde opérationnelle – 2024</h2>
+        <p style="text-align: center;">Guide de techniques opérationnelles DGSCGC de <strong>février 2024</strong> (1<sup>re</sup> édition) : se préserver, s'extraire d'un danger réel et immédiat (<strong>auto-sauvetage</strong>) et soustraire un équipier (<strong>sauvetage du sauveteur</strong>) lors de la lutte contre les incendies.</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gtosauv-principes')"><b>1 · Principes et environnement</b><span>Règle des minimums, façadage, itinéraires de repli et de secours, balises, EAS, signal d'évacuation</span></button>
+            <button onclick="showModule('gtosauv-auto')"><b>2 · Auto-sauvetage</b><span>Message de détresse NELAR, attente des secours, fils et câbles, passage étroit, retrait de l'ARI</span></button>
+            <button onclick="showModule('gtosauv-air')"><b>2 · Air et évacuation de dernier recours</b><span>Consommation, respirations, sifflet, assistance respiratoire, fuite d'air, bail-out, tuyau</span></button>
+            <button onclick="showModule('gtosauv-equipier')"><b>3 · Sauvetage par un équipier</b><span>Évaluation, abordage, packaging, retrait du harnais, tractions avec ou sans sangle</span></button>
+            <button onclick="showModule('gtosauv-binome')"><b>3 · Sauvetage par un binôme</b><span>Halligan, traction parallèle, tirer-pousser, escalier, Denver Drill, planche de sauvetage</span></button>
+            <button onclick="showModule('gtosauv-dernier')"><b>3 · Dernier recours et annexes</b><span>Échelle à coulisse, excavation avec la lance, Nance Drill, déshabillage d'un sauveteur inconscient</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'essentiel</h3>
+            <ul>
+                <li><strong>Trois règles de base</strong> : éviter de se retrouver dans une situation où il faut être récupéré ; <strong>toujours connaître son itinéraire de repli</strong> ; <strong>toujours connaître son itinéraire de secours</strong>.</li>
+                <li><strong>Règle des minimums</strong> : minimum de personnels (un <strong>binôme de sécurité pour un binôme engagé</strong>), minimum de temps, minimum de risque.</li>
+                <li>Détresse : <strong>« URGENT, URGENT, URGENT »</strong> puis <strong>NELAR</strong> (nom, engin, localisation, autonomie, renfort). Attente des secours : <strong>AAALEERTER</strong>.</li>
+                <li>Le sapeur-pompier en difficulté est <strong>une victime particulière</strong> : EPI, ARI et localisation imposent des techniques spécifiques. Le <strong>binôme de sauvetage a une mission exclusive et prioritaire</strong>.</li>
+                <li>Le signal d'évacuation d'urgence est déclenché sur ordre du COS, de l'officier sécurité ou d'un chef de secteur. <strong>Le réengagement se fait sur ordre du COS.</strong></li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Avertissement du guide</strong>
+            <p>Ce guide est un <strong>état de l'art</strong>, non applicable en l'état : chaque SIS décline les techniques choisies selon son territoire, ses équipements, ses ressources et ses compétences. Les techniques de dernier recours demandent un <strong>enseignement encadré par des personnels formés</strong>, avec des <strong>dispositifs de protection contre les chutes</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Déjà dans Vulcain (non dupliqué ici)</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('rdsmes-menu')">🪜 RDSMES SDIS 34 – Sauvetages & sauvegarde</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-autosauvetage')">Auto-sauvetage (SDIS 34)</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-detresse')">Message & appel de détresse (SDIS 34)</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-sauveteur')">Sauvetage de sauveteur (SDIS 34)</button>
+                <button class="sal-lien" onclick="showModule('rdsmes-derniers-recours')">Derniers recours (SDIS 34)</button>
+                <button class="sal-lien" onclick="showModule('rdeb-menu')">🫁 RDEB – Engagement des binômes</button>
+                <button class="sal-lien" onclick="showModule('gtomv')">GTO Engagement en milieu vicié</button>
+                <button class="sal-lien" onclick="showModule('halligan')">🔧 Halligan Tool</button>
+            </p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique du guide</summary>
+            <ul>
+                <li><strong>NELAR</strong> : message de détresse (Nom, Engin, Localisation, Autonomie, Renfort). <strong>AAALEERTER</strong> : actions dans l'attente des secours.</li>
+                <li><strong>EAS</strong> : espace d'attente sécurisé. <strong>SAD</strong> : soupape à la demande. <strong>BAT</strong> : binôme d'attaque. <strong>MEA</strong> : moyen élévateur aérien.</li>
+                <li><strong>Façadage</strong> : identification des façades A, B, C, D. <strong>Packaging</strong> : conversion du dossard d'ARI en harnais pour faciliter l'extraction. <strong>Auto-packaging</strong> : le sauveteur le fait lui-même.</li>
+                <li><strong>3T</strong> : la tactique, la technique et l'outil (« Tool »).</li>
+                <li><strong>Bail-out</strong> : évacuation d'un volume par une fenêtre sur une échelle à coulisse en itinéraire de secours.</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvegarde-operationnelle-2024.pdf" target="_blank" rel="noopener">GTO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GTO « Sauvegarde opérationnelle », DGSCGC/DSP/SDDRH/BDFE, février 2024, 1<sup>re</sup> édition. Texte repris et résumé ; schémas et photos non reproduits.</p>
+    </div>
+
+    <div id="gtosauv-principes" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosauv-menu')">← GTO Sauvegarde</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🧭 Principes et environnement</h2>
+
+        <div class="rd-section">
+            <h3>Pourquoi la sauvegarde opérationnelle</h3>
+            <ul>
+                <li>Ensemble de notions, de comportements et de techniques pour <strong>éviter de se mettre en danger</strong>, <strong>s'extraire seul</strong> d'un péril imminent ou <strong>se mettre en condition d'attendre les secours</strong>. Trois axes : préparation <strong>physique</strong>, <strong>opérationnelle</strong> et <strong>mentale</strong>.</li>
+                <li>Tous les intervenants (COS, binôme engagé, binôme de sécurité) développent une <strong>culture de l'évaluation du risque</strong>.</li>
+                <li><strong>Situations menaçantes</strong> : évolution du sinistre (phénomènes thermiques, explosion, effondrement) ; évolution de l'état des intervenants (<strong>dissociation involontaire du binôme</strong>, désorientation, piégeage dans des fils ou câbles, blessure, malaise) ; dégradation des matériels (<strong>rupture d'air</strong>, perte de la radio, fuite ou rupture d'un établissement).</li>
+            </ul>
+            <div class="rd-astuce">
+                <p><strong>« Vous survivrez peut-être si vous violez une de ces règles, mais si vous violez les trois, vos chances de survie vont s'effondrer »</strong> (John Norman, Fire Department of New York). Les trois règles : ne pas avoir besoin d'être récupéré, connaître son itinéraire de repli, connaître son itinéraire de secours.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>La règle des minimums</h3>
+            <table class="rd-table">
+                <thead><tr><th>Minimum</th><th>Principe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>De personnels</strong></td><td>Minimum de personnels en zone d'exclusion, avec <strong>un binôme de sécurité pour un binôme engagé</strong>, dès que possible. C'est un <strong>premier échelon sécuritaire</strong> : extraire un sapeur-pompier inconscient demande bien plus de deux personnes.</td></tr>
+                    <tr><td><strong>De temps</strong></td><td>La durée d'engagement dépend de l'air emporté et de la consommation du porteur : <strong>100 L/min</strong> pour simplifier, mais très variable (du simple au triple selon l'effort, la condition physique, le stress, le contrôle croisé). <strong>Mieux vaut changer des bouteilles à moitié pleines que rester piégé à trois mètres de la sortie.</strong></td></tr>
+                    <tr><td><strong>De risque</strong></td><td>Risque clairement <strong>identifié et mesuré avant l'engagement</strong>, pour adapter techniques d'investigation et matériel embarqué.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'articulation de la zone opérationnelle</h3>
+            <p>Le COS met en place tous les dispositifs qui augmentent la sécurité (liste non exhaustive) :</p>
+            <ul>
+                <li>les zonages, le <strong>port des EPI</strong> adaptés par tout le personnel ;</li>
+                <li>une <strong>dénomination commune</strong> des façades, niveaux et itinéraires ; des <strong>communications tactiques</strong> ;</li>
+                <li>un <strong>tableau de gestion des personnels</strong> et un contrôle des points de pénétration ; des <strong>parcs à matériel de proximité</strong> adaptés aux risques ;</li>
+                <li>une <strong>procédure d'évacuation d'urgence</strong> et un signal d'alarme d'évacuation ;</li>
+                <li>l'identification des <strong>itinéraires de secours par balises lumineuses</strong> ; le <strong>déverrouillage des accès</strong> ; l'éclairage de nuit des façades et zones de travail ;</li>
+                <li>une <strong>zone de réhabilitation</strong> du personnel.</li>
+            </ul>
+            <p>La désignation d'un <strong>officier de sécurité</strong> dès la montée en puissance aide le COS à gérer le désordre opérationnel.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le façadage</h3>
+            <p>La <strong>façade A</strong> est la façade d'accès principal. Les autres, <strong>B, C, D</strong>, se nomment en faisant le tour du bâtiment <strong>dans le sens des aiguilles d'une montre</strong>. Après la première sectorisation : 4 façades, 4 secteurs, 4 angles et le centre de la structure. Le COS veille à ce que ces appellations soient partagées lors des points de situation.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les itinéraires</h3>
+            <table class="rd-table">
+                <thead><tr><th>Itinéraire</th><th>Définition</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>De repli</strong></td><td>Chemin d'accès normal emprunté par les binômes pour entrer. Reconnu, <strong>libéré de toute entrave</strong>, à utiliser en priorité. Permet de se replier avec les moyens hydrauliques.</td></tr>
+                    <tr><td><strong>De secours</strong></td><td>Se substitue au premier s'il n'est plus praticable, trop complexe ou trop éloigné. À <strong>anticiper</strong> : <strong>échelles à mains au 1<sup>er</sup> et 2<sup>e</sup> étage</strong>, <strong>moyens élévateurs aériens à partir du 3<sup>e</sup></strong> ou déverrouillage des accès. Matériel et personnel <strong>dédiés</strong>, mise en place anticipée et continue ; extraction rapide d'une équipe ou d'une victime face à un danger immédiat.</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>Information <strong>en permanence</strong> entre intérieur et extérieur : les binômes sont avisés de la localisation exacte des itinéraires de secours (niveau, façade, particularités).</li>
+                <li>Sans itinéraire praticable, le binôme cherche une <strong>zone de mise à l'abri</strong> (pièce, escalier encloisonné, couloir, EAS dans un ERP).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Matérialisation des itinéraires et moyens de secours</h3>
+            <ul>
+                <li><strong>Balises lumineuses</strong> : au plus près du sol (visibles sous le plafond de fumée), à l'intérieur du volume au plus près de l'ouvrant où le binôme s'engage, ou suspendues par une cordelette à un échelon d'échelle. <strong>Balises rouges</strong> : zone de danger (plancher effondré, pignon menaçant). <strong>Balises vertes</strong> : accès, cheminement, itinéraire de repli ou de secours, zone protégée.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Ne jamais les disposer en ligne dans un volume enfumé</strong>
+                <p>Ces balises ne servent qu'à déterminer des <strong>issues</strong>. En ligne, l'« effet Petit Poucet » peut devenir dangereux et ne plus indiquer la bonne sortie.</p>
+            </div>
+            <ul>
+                <li><strong>Échelle à coulisse en itinéraire de secours</strong> : mise en place rapide (un seul sapeur-pompier) pour assister un équipier qui se manifeste à un autre ouvrant, ou descendre une victime invalide. Retourner l'échelle, grand plan vers la façade ; vérifier les parachutes ; <strong>augmenter le piétage</strong> pour une pente moins raide, haut de l'échelle juste sous le rebord ; caler ou amarrer ; <strong>balise verte en partie haute à l'intérieur</strong>.</li>
+                <li><strong>Moyen élévateur aérien</strong> : positionnement très anticipé, mise en station précoce pour un balayage judicieux de la superstructure ; <strong>uniquement dévolu à cette fonction</strong>, avec une <strong>veille de l'échelier</strong>.</li>
+                <li><strong>Espaces d'attente sécurisés (EAS)</strong> : zones de mise à l'abri des flammes, fumées et chaleur pour le public qui ne peut évacuer (personnes à mobilité réduite), souvent dans les étages d'ERP, avec balisage spécifique. Protégés d'un feu venant de l'extérieur : les sapeurs-pompiers peuvent s'y <strong>réfugier et attendre une aide extérieure</strong> en situation dégradée. Dans les tunnels : abris de secours.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le signal d'évacuation d'urgence</h3>
+            <p>Alerte sans délai tous les personnels engagés d'un <strong>danger imminent</strong> ou d'un accident touchant des personnels. Déclenché sur ordre du <strong>COS</strong>, de l'<strong>officier sécurité</strong> ou d'un <strong>chef de secteur</strong>. Objectifs : évacuer la zone d'exclusion, <strong>empêcher tout auto-engagement</strong>, prendre en charge les personnels touchés, remplacer les engins impactés, stabiliser l'intervention, assurer un retour à la normale.</p>
+            <table class="rd-table">
+                <thead><tr><th>Moyen</th><th>Forme</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>À la voix</strong></td><td>« Évacuation, Évacuation, Évacuation »</td></tr>
+                    <tr><td><strong>Par radio</strong></td><td>« Évacuation, Évacuation, Évacuation »</td></tr>
+                    <tr><td><strong>Signal sonore</strong></td><td>Deux tons, corne de brume. Défini par le SIS ; par exemple tous les avertisseurs deux tons <strong>en continu pendant au moins 30 secondes</strong>.</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>Dès le signal : <strong>se retirer sans délai</strong> du bâtiment ou de la zone pour rejoindre le <strong>point de rassemblement des intervenants</strong> défini par le chef d'agrès ou le COS, où un <strong>comptage</strong> est réalisé. Chaque chef d'agrès rend compte de son équipage au COS ou au chef de secteur.</li>
+                <li>Le point de rassemblement, proche de l'accès au sinistre, réunit aussi les matériels nécessaires au soutien direct, utile quand l'accès est loin des engins.</li>
+                <li><strong>Le réengagement s'effectue sur ordre du COS.</strong></li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvegarde-operationnelle-2024.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GTO Sauvegarde opérationnelle 2024, chapitre 1.</p>
+    </div>
+
+    <div id="gtosauv-auto" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosauv-menu')">← GTO Sauvegarde</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🛡️ Auto-sauvetage</h2>
+        <p>Connaissances, comportements et techniques pour <strong>éviter de se mettre en danger</strong>, <strong>s'extraire d'une situation de péril imminent</strong> ou <strong>faciliter sa localisation</strong> pendant l'attente des secours. Il demande de la lucidité et beaucoup de sang-froid.</p>
+
+        <div class="rd-section">
+            <h3>L'événement imprévu : le point rapide</h3>
+            <p>Explosion, effondrement… le sapeur-pompier ou le binôme se pose ces questions, et les <strong>réévalue régulièrement</strong> :</p>
+            <ul>
+                <li>Quel est le problème ? Suis-je blessé ? L'environnement est-il stable ou peut-il se dégrader ? L'air est-il respirable ?</li>
+                <li>Quelle est mon <strong>autonomie en air</strong> ? Ai-je encore ma lance à proximité ? Ai-je besoin d'assistance ?</li>
+                <li>Suis-je en contact visuel ou physique avec mon binôme ? Si je suis désorienté, suis-je en contact avec une <strong>ligne de vie</strong> (ligne guide ou tuyau) ?</li>
+                <li>Ma radio fonctionne-t-elle ? Puis-je signaler mon problème ?</li>
+            </ul>
+            <p>Puis deux options : <strong>tenter une évacuation</strong> (effort intense) ou <strong>se mettre en condition d'attendre les secours</strong> (économie d'air).</p>
+            <p>Avant de franchir un obstacle, évaluer ses <strong>dimensions</strong>, sa <strong>nature</strong>, sa <strong>solidité</strong> et la <strong>stabilité de la structure après l'obstacle</strong> (trou, plancher instable).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le message de détresse : NELAR</h3>
+            <p>Dès qu'une situation met la sécurité en jeu, ou dont on ne peut s'extraire seul : appel de détresse par radio (touche <strong>SOS</strong> du terminal ANTARES) :</p>
+            <div class="rd-alerte">
+                <strong>« URGENT, URGENT, URGENT »</strong>
+            </div>
+            <table class="rd-table">
+                <thead><tr><th>Lettre</th><th>Contenu</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>N</strong></td><td>Nom de celui qui passe le message</td></tr>
+                    <tr><td><strong>E</strong></td><td>Engin d'affectation</td></tr>
+                    <tr><td><strong>L</strong></td><td>Localisation</td></tr>
+                    <tr><td><strong>A</strong></td><td>Autonomie restante, ou à défaut la pression restante dans chaque bouteille</td></tr>
+                    <tr><td><strong>R</strong></td><td>Renfort nécessaire (qui, avec quoi) ou pas</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-astuce">
+                <p><strong>Exemple du guide</strong> : « URGENT-URGENT-URGENT. Je suis le Sergent X, chef BAT du FPT Sens, je suis dans l'escalier face C au 1<sup>er</sup> étage, j'ai perdu mon équipier. Il me reste 50 bars, je tente une évacuation et je demande le binôme de sécurité avec une réserve d'air. »</p>
+                <p>Le message est <strong>répété par celui qui l'a reçu</strong> (COS, officier sécurité, chef d'agrès) : la demande est prise en compte et le stress de la victime diminue.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'attente des secours : AAALEERTER</h3>
+            <p>Actions pour se signaler, se positionner et optimiser son air, à partir du moment où le message de détresse est lancé :</p>
+            <table class="rd-table">
+                <thead><tr><th>Action</th><th>Ce qu'il faut faire</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Air</strong></td><td>Contrôler la pression restante au manomètre.</td></tr>
+                    <tr><td><strong>Alerte</strong></td><td>Passer le message avec NELAR.</td></tr>
+                    <tr><td><strong>Alarme</strong></td><td>Une fois la détresse radio faite et répondue, déclencher la <strong>balise sonore</strong> de l'ARI.</td></tr>
+                    <tr><td><strong>Éclairer</strong></td><td>Allumer le projecteur pour se signaler.</td></tr>
+                    <tr><td><strong>Économiser l'air</strong></td><td>Contrôler sa respiration avec l'une des 4 méthodes.</td></tr>
+                    <tr><td><strong>Rester près du sol</strong></td><td>Position basse, au contact d'un mur : air frais, meilleure visibilité.</td></tr>
+                    <tr><td><strong>Taper</strong></td><td>Faire du bruit en tapant avec un outil sur une surface métallique si possible.</td></tr>
+                    <tr><td><strong>Explorer</strong> (l'environnement immédiat)</td><td>Balayer le sol pour retrouver le tuyau, le mur pour retrouver un ouvrant.</td></tr>
+                    <tr><td><strong>Remonter</strong> (la cagoule)</td><td>Plus d'air (et pas de prise sur l'ARI de l'équipier) : <strong>retirer la SAD</strong>, remonter le bas de la cagoule sur le masque pour filtrer la fumée, respirer au plus près du sol.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Retirer la soupape à la demande : dernier recours</strong>
+                <p>Cela expose le porteur à un risque d'<strong>intoxication par les fumées</strong>. La cagoule filtre de façon relative face à la densité des fumées.</p>
+            </div>
+            <ul>
+                <li>Sauf circonstances exceptionnelles, <strong>le binôme reste indissociable</strong>.</li>
+                <li>La conscience peut se dégrader : avant de la perdre, <strong>orienter son projecteur vers l'arrivée présumée des secours</strong> et faire son <strong>auto-packaging</strong> (sangle ventrale passée sous la cuisse) pour préparer l'extraction.</li>
+                <li>Enchaînement du guide : échec de l'extraction réflexe, analyse de la situation, pas d'extraction possible, procédure AAALEERTER, auto-packaging, envoi de l'équipe de sauvetage.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Fils, câbles et passages étroits</h3>
+            <p>Techniques ultimes, <strong>strictement réservées à l'auto-sauvetage</strong>, jamais intégrées à la progression opérationnelle normale.</p>
+            <table class="rd-table">
+                <thead><tr><th>Technique</th><th>Principe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Fils ou câbles</strong> (effondrement de plafond ou de cloison)</td><td>Être <strong>le plus lisse possible</strong> (pas d'accroche sur tenue ou équipement), <strong>passer dessous</strong> près du sol, s'aider des bras ou d'un outil (manche de hache, pince coupe-câble).</td></tr>
+                    <tr><td><strong>Passage en avant</strong></td><td>Franchit une trouée en gardant la marche en avant, <strong>sans desserrer les sangles</strong>. Tester la stabilité du plancher.</td></tr>
+                    <tr><td><strong>Passage sur le dos</strong></td><td>Engage d'abord la bouteille d'air ; mieux pour les personnes corpulentes. Reconnaissance préalable de la fiabilité du nouveau volume.</td></tr>
+                    <tr><td><strong>Profil réduit</strong></td><td>Garde la marche en avant ; position des bras et des épaules, desserrage de certaines sangles selon le gabarit.</td></tr>
+                    <tr><td><strong>Retrait de l'ARI</strong></td><td>En <strong>dernier recours</strong>, si les autres techniques échouent. Le rééquipement est compliqué (noir, confinement, stress). Attention à la longueur du flexible et au poids de l'ARI ; méthode « veste » ou par-dessus la tête. <strong>Risque de fermeture de la bouteille par frottement avec le sol.</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvegarde-operationnelle-2024.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GTO Sauvegarde opérationnelle 2024, chapitre 2 §§ 1 à 4. Voir aussi les pages SDIS 34 (RDSMES).</p>
+    </div>
+
+    <div id="gtosauv-air" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosauv-menu')">← GTO Sauvegarde</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🫁 Air et évacuation de dernier recours</h2>
+
+        <div class="rd-section">
+            <h3>Économiser l'air</h3>
+            <table class="rd-table">
+                <thead><tr><th>Effort</th><th>Consommation</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Très intense</strong></td><td>jusqu'à <strong>135 L/min</strong></td></tr>
+                    <tr><td><strong>Intense</strong></td><td>jusqu'à <strong>90 ou 100 L/min</strong></td></tr>
+                    <tr><td><strong>Modéré</strong></td><td><strong>40 à 70 L/min</strong></td></tr>
+                    <tr><td><strong>Mode « économie d'air »</strong></td><td>jusqu'à <strong>10 L/min</strong></td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>Lors d'un effort important ou d'un malaise : <strong>pauses en position de récupération</strong>, la plus économe possible (assis jambes sur les côtés, ou allongé sur le flanc).</li>
+                <li>Les techniques de respiration stabilisent l'état émotionnel, évitent la panique et réduisent les effets du stress. Utilisables dès que l'ARI est coiffé, ou en cas de mal-être. <strong>Les avoir testées avant</strong> pour choisir celle qui convient, et <strong>s'entraîner régulièrement</strong>, avec et sans ARI.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Technique</th><th>Cycle</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Le saut d'une respiration</strong></td><td>Inspirer profondément ; retenir jusqu'au seuil limite ; expirer lentement ; recommencer.</td></tr>
+                    <tr><td><strong>L'intervalle respiratoire</strong></td><td>Inspirer 5 s ; retenir 5 s ; expirer 5 s ; retenir 5 s ; recommencer.</td></tr>
+                    <tr><td><strong>La méthode Reilly</strong></td><td>Inspirer normalement ; expirer lentement en faisant un bourdonnement ; recommencer.</td></tr>
+                    <tr><td><strong>La méthode 2/4</strong></td><td>Inspirer 2 s ; expirer 4 s ; recommencer.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>L'impact du sifflet</strong>
+                <p>À <strong>50 bars</strong>, le sifflet de fin de charge se déclenche. Il consomme <strong>4 à 7 L/min</strong> selon les modèles : à prendre en compte pour économiser l'air en attente de secours.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Assistance respiratoire et fuite d'air</h3>
+            <ul>
+                <li><strong>Assister un sapeur-pompier en difficulté avec son ARI</strong> : prise accessoire de l'ARI d'un équipier ; cagoule respiratoire ; changement de dossard ou de masque ; lot d'assistance respiratoire.</li>
+                <li><strong>Fuite d'air</strong> (bris de partie faciale, tuyau, détendeur) : <strong>contrôler le débit avec le robinet de la bouteille</strong>. Ce n'est pas une technique d'économie d'air, seulement un palliatif de bris d'équipement.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Ouverture - inspiration - fermeture du robinet</th></tr></thead>
+                <tbody>
+                    <tr><td>1. Ouvrir le robinet d'<strong>un quart de tour seulement</strong> et inspirer.</td></tr>
+                    <tr><td>2. Fermer le robinet et retenir sa respiration jusqu'au seuil limite.</td></tr>
+                    <tr><td>3. Expirer lentement. 4. Recommencer le cycle.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'évacuation d'urgence de dernier recours</h3>
+            <div class="rd-alerte">
+                <strong>Formalisation et encadrement</strong>
+                <p>L'emploi de ces techniques au sein du SIS doit être <strong>formalisé</strong>. Leur enseignement est encadré par des personnels formés, avec des <strong>dispositifs de protection contre les chutes</strong>.</p>
+            </div>
+            <h3>Le « bail-out » : évacuer un volume par une fenêtre</h3>
+            <ul>
+                <li>Évacuer un volume embrasé en <strong>tenue de feu complète</strong>, limiter l'exposition au flux thermique, <strong>réduire le temps d'évacuation</strong>.</li>
+                <li>L'<strong>échelle à coulisse</strong>, amarrée ou calée, est en <strong>itinéraire de secours</strong>, <strong>pied d'échelle augmenté</strong> pour évacuer vite les personnels pris dans un phénomène thermique. Les moyens élévateurs aériens peuvent servir une fois les sauvetages terminés.</li>
+                <li>En attendant l'échelle, le sapeur-pompier pris dans un embrasement peut adopter une <strong>position d'attente sur le rebord de la fenêtre</strong>.</li>
+            </ul>
+            <h3>L'évacuation par l'extérieur au moyen d'un tuyau</h3>
+            <ul>
+                <li>Pour un binôme avec un moyen hydraulique, face à un danger imminent : s'extraire par l'extérieur grâce au tuyau, <strong>préalablement amarré</strong>.</li>
+                <li>Le sapeur-pompier descend les <strong>mains croisées sur le tuyau</strong> au niveau de la tête et les <strong>pieds croisés</strong> pour glisser. L'équipier reste en haut pour assurer le tuyau et suivre la descente, puis l'assure depuis le sol.</li>
+                <li>Tuyau vide : un <strong>nœud simple en amont de l'amarrage</strong>. Veiller à la place du raccord : <strong>ne pas attacher le tuyau au niveau du raccord</strong>.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvegarde-operationnelle-2024.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GTO Sauvegarde opérationnelle 2024, chapitre 2 §§ 5 et 6.</p>
+    </div>
+
+    <div id="gtosauv-equipier" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosauv-menu')">← GTO Sauvegarde</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🤜 Sauvetage par un équipier</h2>
+
+        <div class="rd-section">
+            <h3>Paramètres propres au sauvetage de sauveteur</h3>
+            <table class="rd-table">
+                <thead><tr><th>Paramètre</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>L'anticipation</strong></td><td>Prévoir dès que possible des <strong>itinéraires de repli et/ou de secours</strong> pour extraire un équipier ou un binôme d'un péril imminent.</td></tr>
+                    <tr><td><strong>Une « victime particulière »</strong></td><td>Équipé (ARI, tenue de feu, ceinturon), localisé en zone dangereuse : sa prise en charge et son extraction demandent des techniques et procédures spécifiques.</td></tr>
+                    <tr><td><strong>L'affect et la continuité</strong></td><td>Sauver un collègue est éprouvant : stress, empathie, <strong>sidération ou auto-engagements</strong>. Le COS en tient compte, peut <strong>relever tout ou partie du personnel</strong> et assurer un soutien psychologique individuel et collectif.</td></tr>
+                    <tr><td><strong>Le renfort secours</strong></td><td>Mission exigeante en moyens humains et matériels, tout en maintenant l'intervention en cours. Le <strong>CODIS</strong> peut engager immédiatement un renfort « secours ».</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Le binôme de sauvetage a une mission exclusive et prioritaire</strong>
+                <p>Elle ne peut <strong>en aucun cas</strong> être couplée à une reconnaissance ou à une attaque. Le personnel est en possession de toutes ses capacités physiques et mentales, le chef d'agrès s'assure qu'il peut agir sans se mettre en danger, il emporte les <strong>outils</strong> (sangles d'extraction, barre Halligan, caméra thermique, gaffe) et sa <strong>capacité en air est maximale</strong>, jamais sous la pression d'engagement de <strong>270 bar</strong> (effort, assistance en air de la victime).</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Évaluer et stabiliser un équipier en difficulté</h3>
+            <p>Difficulté technique, physiologique ou psychologique pouvant mettre le binôme en danger. Le sauveteur :</p>
+            <ul>
+                <li>évalue la situation, l'origine du problème et le <strong>risque de sur-accident</strong> (électrique, effondrement) ;</li>
+                <li>évalue la <strong>conscience</strong> (appui bref sur le by-pass) et la <strong>respiration</strong> (bruits, buée dans le masque, mouvements) ;</li>
+                <li>vérifie les équipements (flexibles, pression) ;</li>
+                <li><strong>lance un message de détresse</strong> avec NELAR.</li>
+            </ul>
+            <h3>L'abordage</h3>
+            <p>Première étape de prise en charge d'un équipier blessé ou inconscient : <strong>rapide bilan secouriste</strong>, <strong>assistance en air</strong> si besoin (flexible de transmission d'air d'un ARI à l'autre, ou lot d'assistance en air respirable) et <strong>packaging</strong> pour faciliter l'extraction.</p>
+            <h3>Packaging et retrait du harnais</h3>
+            <ul>
+                <li><strong>Conversion du dossard d'ARI en harnais (packaging)</strong> : facilite l'évacuation et la traction.</li>
+                <li><strong>Retrait du harnais de l'ARI</strong> : allège l'ensemble. Possible quand il n'y a <strong>plus d'air dans la bouteille</strong> et que l'assistance est impossible, qu'il faut franchir des <strong>passages étroits</strong>, ou pour une extraction par un ouvrant donnant sur l'air libre.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les tractions au sol par un équipier</h3>
+            <table class="rd-table">
+                <thead><tr><th>Technique</th><th>Principe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Sans matériel</strong></td><td>Après le packaging, l'équipier tracte son binôme <strong>directement par le dossard de l'ARI</strong>, vers la sortie si cela facilite le contact avec le binôme de renfort. Choisir le côté de saisie (en général <strong>le côté gauche</strong>) pour éviter de fermer le robinet de la bouteille.</td></tr>
+                    <tr><td><strong>Avec une sangle</strong></td><td>Meilleure préhension, distance idéale pour se déplacer. Sangles de différentes longueurs, accessoires (poignées, came à griffe, connecteur) ; <strong>plusieurs sangles</strong> possibles pour aller plus vite. Sangle amovible ou intégrée aux EPI (tenue de feu, ARI). Utilisation à maîtriser.</td></tr>
+                    <tr><td><strong>Dans un escalier avec sangle</strong></td><td>Évacuer un équipier en changeant d'étage quand l'un des deux est en <strong>danger immédiat</strong> et dans l'incapacité de se mouvoir. <strong>Les mains restent libres</strong> : suivre la ligne guide, parler à la radio, porter un outil, s'aider de la rampe.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvegarde-operationnelle-2024.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GTO Sauvegarde opérationnelle 2024, chapitre 3, introduction et § 1.</p>
+    </div>
+
+    <div id="gtosauv-binome" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosauv-menu')">← GTO Sauvegarde</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🤝 Sauvetage par un binôme</h2>
+
+        <div class="rd-section">
+            <h3>Les techniques de traction</h3>
+            <table class="rd-table">
+                <thead><tr><th>Technique</th><th>Principe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Avec la hache Halligan</strong></td><td>Le <strong>manche de la hache</strong> est engagé dans les bretelles du dossard : traction avec un support rigide. <strong>Packaging nécessaire.</strong> Très efficace dans la montée ou la descente d'un escalier.</td></tr>
+                    <tr><td><strong>Traction parallèle</strong></td><td>Le binôme sauveteur se place <strong>en parallèle au niveau de la tête</strong> de la victime. L'équipier restant du binôme en danger peut aider à extraire la victime ou ouvrir la voie au binôme de sauvetage.</td></tr>
+                    <tr><td><strong>« Tirer-pousser »</strong> (push and pull)</td><td>Dans un environnement étroit (couloir) où deux sauveteurs ne peuvent se tenir côte à côte : <strong>l'un tire, l'autre pousse</strong>, d'un mouvement coordonné, la victime se déplaçant comme un seul bloc. Packaging nécessaire.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'évacuation par l'escalier</h3>
+            <ul>
+                <li><strong>Pour monter</strong> : un sauveteur saisit le dossard de l'ARI, un deuxième se place <strong>sous les genoux</strong> du pompier en difficulté.</li>
+                <li><strong>Pour descendre</strong> : la victime a la face contre le sol ; les deux sauveteurs saisissent le dossard de l'ARI.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le « Denver Drill »</h3>
+            <ul>
+                <li>Demande un <strong>engagement physique important</strong> : le COS tient compte du choix du personnel et de sa <strong>capacité en air</strong>. Réalisée à <strong>trois sauveteurs</strong>, dont deux dans le volume où se trouve la victime. Demande un <strong>entraînement régulier</strong>.</li>
+                <li><strong>Origine</strong> : le 28 septembre 1992, le pompier Mark Langvardt, du service d'incendie de Denver (États-Unis), est retrouvé inconscient dans un couloir de <strong>70 cm de large</strong> donnant sur une fenêtre de <strong>40 cm</strong> ; les sauveteurs n'ont pu l'extraire que <strong>55 minutes</strong> plus tard. Impossible de se placer de chaque côté pour le soulever. Denver a depuis proposé une manœuvre pour extraire un pompier en milieu confiné.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'évacuation avec du matériel de transport</h3>
+            <ul>
+                <li>Un binôme de sauvetage extrait facilement un sapeur-pompier impacté, notamment sur de <strong>longues distances</strong> ou des cheminements accidentés.</li>
+                <li>La <strong>planche de sauvetage</strong> glisse sur tous les sols, escaliers et échelles ; adaptée aux <strong>milieux confinés</strong> (navires, silos, sites industriels, tunnels). Justifiée pour un cheminement <strong>long et complexe</strong> (gravats, virages, différences de niveau). Une fois conditionnée, la victime est dirigeable dans toutes les directions.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvegarde-operationnelle-2024.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GTO Sauvegarde opérationnelle 2024, chapitre 3 § 2.</p>
+    </div>
+
+    <div id="gtosauv-dernier" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gtosauv-menu')">← GTO Sauvegarde</button>
+        <span class="rd-tampon rd-tampon-national">Technique nationale</span>
+        <h2>🪜 Dernier recours et annexes</h2>
+        <div class="rd-alerte">
+            <strong>Formalisation, formateur désigné et protection contre les chutes</strong>
+            <p>L'emploi de ces techniques doit être <strong>formalisé</strong> dans le SIS. Leur enseignement est encadré par des personnels formés, <strong>en présence d'un formateur désigné</strong>, avec le <strong>lot de sauvetage et de protection contre les chutes</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Évacuation sur une échelle à coulisse</h3>
+            <p>À <strong>trois sauveteurs</strong> : deux dans le volume amènent le sapeur-pompier au bord de la fenêtre et le positionnent sur l'échelle ; un sauveteur sur l'échelle accompagne la descente. L'échelle est en <strong>itinéraire de secours</strong>.</p>
+            <table class="rd-table">
+                <thead><tr><th>Technique</th><th>Principe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Pieds en avant</strong></td><td>Le sauveteur sur l'échelle pose les <strong>jambes de la victime sur ses épaules</strong> et descend en tenant les montants. <strong>L'ARI de l'équipier à descendre est retiré au préalable.</strong></td></tr>
+                    <tr><td><strong>Descente latérale</strong></td><td>La victime est placée sur le bord de la fenêtre puis engagée sur l'échelle, <strong>pied d'échelle augmenté</strong>. Elle se retrouve en « banane » sur les montants et <strong>glisse jusqu'en bas en gardant son ARI et son masque</strong>.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Remonter un équipier tombé dans une excavation avec sa lance</h3>
+            <ul>
+                <li>Pour un coéquipier <strong>conscient et valide</strong> tombé dans une excavation ; peut maintenir une <strong>protection hydraulique</strong>.</li>
+                <li>Le tuyau est descendu en créant une <strong>ganse</strong> jusqu'au sapeur-pompier, puis la remontée se fait <strong>à la force des bras</strong>. Si nécessaire, une sangle avec un <strong>nœud français autobloquant</strong> améliore la prise en main.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le « Nance Drill »</h3>
+            <ul>
+                <li><strong>Origine</strong> : le 25 juillet 1987, lors d'un feu de magasin de chaussures à Columbus (Ohio), le pompier John W. Nance (51 ans) chute de <strong>4 mètres</strong> à travers un trou du plancher, se retrouve conscient et piégé au sous-sol. Les conditions thermiques se dégradent et il meurt d'<strong>asphyxie</strong>. Le RETEX a permis de développer des techniques rapides de dégagement depuis un niveau supérieur, à travers un trou.</li>
+                <li><strong>Principe</strong> : un <strong>tuyau en eau sous pression</strong> forme une boucle envoyée par le trou jusqu'à la victime munie de son ARI, qu'elle enveloppe. L'ensemble tuyau-victime peut être sécurisé avec une sangle de sauvetage ; <strong>un sauveteur descend au niveau de la victime</strong> pour réaliser les amarrages.</li>
+                <li>Dégage un sapeur-pompier <strong>inconscient</strong> avec seulement un tuyau, une sangle et des « bras ». <strong>Minimum de 4 pompiers</strong> pour remonter dans de bonnes conditions.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Annexe B : déshabiller un sauveteur inconscient en tenue de feu</h3>
+            <p>À <strong>deux sauveteurs au minimum</strong>, déshabillage en <strong>une trentaine de secondes</strong>. Un sauveteur à la tête (T), un entre les jambes (J).</p>
+            <table class="rd-table">
+                <thead><tr><th>Qui</th><th>Action</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>J</strong></td><td>Retire la <strong>sangle ventrale</strong>.</td></tr>
+                    <tr><td><strong>T</strong></td><td>Retire le <strong>casque</strong>.</td></tr>
+                    <tr><td><strong>J</strong></td><td>Retire les <strong>gants</strong> et dégage les pouces des ganses en tirant sur les manches.</td></tr>
+                    <tr><td><strong>T</strong></td><td>Desserre les bretelles ; retire le masque en <strong>coupant la SAD</strong>, puis la cagoule.</td></tr>
+                    <tr><td><strong>J</strong></td><td>Ouvre la veste par l'<strong>ouverture rapide de la glissière</strong>.</td></tr>
+                    <tr><td><strong>T</strong></td><td>Attrape fermement les manches, les positionne vers l'arrière et annonce « <strong>prêt</strong> ».</td></tr>
+                    <tr><td><strong>J</strong></td><td>Attrape le bas des jambes du pantalon ; à « prêt », <strong>tire en arrière en reculant</strong>.</td></tr>
+                </tbody>
+            </table>
+            <p>En résumé : allonger la victime au sol, retirer le masque de l'ARI et le casque, ouvrir la veste et la ceinture ventrale de l'ARI, <strong>retirer la veste et l'ARI en tirant sur les jambes</strong>.</p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📚 Références du guide (annexe C)</summary>
+            <ul>
+                <li><em>Sauvetage de sauveteur</em>, Benjamin Belleuvre, Carlo Zaglia, 2018 (150 pages).</li>
+                <li><em>Préparation mentale opérationnelle</em>, Thierry Guilbert, Carlo Zaglia, 2020 (144 pages).</li>
+                <li><em>Matériels et techniques de sauvetage</em>, France Sélection, 1991 ; <em>Manuel d'emploi des engins de première intervention, tome 1</em>, BSPP, 1997.</li>
+            </ul>
+        </details>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GTO-Sauvegarde-operationnelle-2024.pdf" target="_blank" rel="noopener">Télécharger le GTO complet (PDF, 52 pages, avec schémas)</a></p>
+        <p class="rd-source">GTO Sauvegarde opérationnelle 2024, chapitre 3 § 3 et annexes A à C.</p>
+    </div>
+
     <!-- ============ GTO Ventilation opérationnelle (DGSCGC, 2019) ============ -->
     <div id="vent-menu" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -34904,7 +35393,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.62</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.63</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
