@@ -99,6 +99,7 @@
     "GDO – Interventions en présence d'ULM",
     "GDO – Interventions en milieu agricole",
     "GDO – Interventions en milieux effondrés ou instables",
+    "GDO – Engagement des équipes cynotechniques",
     "GDO – Interventions dans les éoliennes",
     "GDO – Engagement des appareils télépilotés (drones)"
    ]
@@ -113,6 +114,7 @@
     "Avant l'intervention",
     "Pendant l'intervention",
     "GDO – Exercice du commandement et conduite des opérations",
+    "GDO – Préparation et soutien de l'intervenant",
     "Santé & soutien psychologique"
    ]
   },
@@ -4150,6 +4152,165 @@
    ]
   },
   {
+   "id": "gdocyno-menu",
+   "titre": "Présentation",
+   "domaine": "specialites",
+   "theme": "GDO – Engagement des équipes cynotechniques",
+   "type": "presentation",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "cynotechnie",
+    "cynotechnique",
+    "chien",
+    "binôme",
+    "conducteur",
+    "maître-chien",
+    "recherche"
+   ]
+  },
+  {
+   "id": "gdocyno-binome",
+   "titre": "Le binôme et les techniques",
+   "domaine": "specialites",
+   "theme": "GDO – Engagement des équipes cynotechniques",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "pistage",
+    "questage",
+    "quête",
+    "jalon",
+    "foyer d'odeurs",
+    "cône d'effluves",
+    "chenil",
+    "plateau technique",
+    "indice",
+    "rcci",
+    "produits accélérateurs",
+    "harnais",
+    "grelot"
+   ]
+  },
+  {
+   "id": "gdocyno-risques",
+   "titre": "Risques et sécurité",
+   "domaine": "specialites",
+   "theme": "GDO – Engagement des équipes cynotechniques",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "morsure",
+    "coup de chaleur",
+    "hypothermie",
+    "coussinets",
+    "accompagnant",
+    "vétérinaire",
+    "secourisme canin",
+    "nettoyage du chien",
+    "zoonose"
+   ]
+  },
+  {
+   "id": "gdocyno-specialite",
+   "titre": "Spécialité, appel et engagement",
+   "domaine": "specialites",
+   "theme": "GDO – Engagement des équipes cynotechniques",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "unité cynotechnique",
+    "section cynotechnique",
+    "chef d'unité",
+    "chef de section",
+    "lao",
+    "fmpa",
+    "référent",
+    "prise d'appel",
+    "pflau",
+    "aml"
+   ]
+  },
+  {
+   "id": "gdocyno-conduite",
+   "titre": "Conduite des opérations",
+   "domaine": "specialites",
+   "theme": "GDO – Engagement des équipes cynotechniques",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "zonage",
+    "étude de faisabilité",
+    "sectorisation",
+    "cos",
+    "prc",
+    "prmc",
+    "compte rendu",
+    "débriefing",
+    "point de rassemblement"
+   ]
+  },
+  {
+   "id": "gdocyno-recherche",
+   "titre": "Ensevelis et victimes potentielles",
+   "domaine": "specialites",
+   "theme": "GDO – Engagement des équipes cynotechniques",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "ensevelis",
+    "décombres",
+    "marquage",
+    "détente",
+    "30 minutes",
+    "secteur primaire",
+    "200 m",
+    "500 m",
+    "point zéro",
+    "personne disparue",
+    "cor",
+    "géolocalisation"
+   ]
+  },
+  {
+   "id": "gdocyno-special",
+   "titre": "Immergées, neige, grande envergure",
+   "domaine": "specialites",
+   "theme": "GDO – Engagement des équipes cynotechniques",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "immergée",
+    "rvim",
+    "rivière",
+    "mer",
+    "lac",
+    "étang",
+    "lapage",
+    "neige",
+    "avalanche",
+    "envergure",
+    "hélitreuillage",
+    "étranger",
+    "12 équipes",
+    "matériel",
+    "fiche de renseignements"
+   ]
+  },
+  {
    "id": "patrac-dr",
    "titre": "PATRAC DR - Ordre Préparatoire",
    "domaine": "commandement",
@@ -5705,6 +5866,165 @@
     "3114",
     "veille entre pairs",
     "santé mentale"
+   ]
+  },
+  {
+   "id": "gdosout-menu",
+   "titre": "Présentation",
+   "domaine": "commandement",
+   "theme": "GDO – Préparation et soutien de l'intervenant",
+   "type": "presentation",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "soutien de l'intervenant",
+    "préparation",
+    "reconditionnement",
+    "sso",
+    "santé",
+    "sécurité"
+   ]
+  },
+  {
+   "id": "gdosout-preparer",
+   "titre": "Préparer l'intervenant",
+   "domaine": "commandement",
+   "theme": "GDO – Préparation et soutien de l'intervenant",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "état de forme",
+    "sommeil",
+    "sieste",
+    "alimentation",
+    "hydratation",
+    "alcool",
+    "stupéfiants",
+    "médicaments",
+    "pictogramme",
+    "activité physique",
+    "eap",
+    "drill",
+    "préparation mentale",
+    "epi",
+    "canicule",
+    "grand froid",
+    "vigilance météo-france",
+    "inventaires"
+   ]
+  },
+  {
+   "id": "gdosout-acteurs",
+   "titre": "Acteurs et montée en puissance",
+   "domaine": "commandement",
+   "theme": "GDO – Préparation et soutien de l'intervenant",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "officier sécurité",
+    "chef d'agrès",
+    "cos",
+    "secteur soutien",
+    "professionnel de santé",
+    "centre opérationnel",
+    "droit de retrait",
+    "montée en puissance",
+    "coéquipier blessé",
+    "relève de l'équipage"
+   ]
+  },
+  {
+   "id": "gdosout-sanitaire",
+   "titre": "Soutien sanitaire et ravitaillement",
+   "domaine": "commandement",
+   "theme": "GDO – Préparation et soutien de l'intervenant",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "sso",
+    "zone de soins",
+    "pisu",
+    "ravitaillement",
+    "niveau 1",
+    "niveau 2",
+    "niveau 3",
+    "guide d'achat",
+    "vêtements secs",
+    "décontamination",
+    "traçabilité",
+    "fiche médico-infirmière"
+   ]
+  },
+  {
+   "id": "gdosout-releves",
+   "titre": "Relèves et colonnes de renfort",
+   "domaine": "commandement",
+   "theme": "GDO – Préparation et soutien de l'intervenant",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "relève",
+    "durée d'engagement",
+    "20 minutes",
+    "5 heures",
+    "colonne de renfort",
+    "autonomie",
+    "24 heures",
+    "binôme médecin infirmier"
+   ]
+  },
+  {
+   "id": "gdosout-outils",
+   "titre": "Outils d'aide à la décision",
+   "domaine": "commandement",
+   "theme": "GDO – Préparation et soutien de l'intervenant",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "matrice sso",
+    "score",
+    "heat index",
+    "indice de chaleur",
+    "refroidissement éolien",
+    "ire",
+    "cotation",
+    "pauses",
+    "temps de récupération",
+    "sdis 54"
+   ]
+  },
+  {
+   "id": "gdosout-apres",
+   "titre": "Après l'opération",
+   "domaine": "commandement",
+   "theme": "GDO – Préparation et soutien de l'intervenant",
+   "type": "fiche",
+   "motsCles": [
+    "gdo",
+    "doctrine",
+    "dgscgc",
+    "zone de soutien",
+    "marche en avant",
+    "blessé",
+    "reconditionnement",
+    "blessure mentale",
+    "usp",
+    "signaux faibles",
+    "retex à chaud",
+    "reprise d'activité",
+    "suivi médical",
+    "reconnaissance"
    ]
   },
   {

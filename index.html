@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.59">
+    <meta name="version" content="1.69.60">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -145,7 +145,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.59 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.60 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -313,7 +313,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.59</span><br>
+                        Vulcain v<span class="app-version">1.69.60</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -26062,6 +26062,1064 @@ Je fais : extinction.</p>
         <p class="rd-source">GDO Interventions dans les silos 2019, chap. 2 sections 3 et 4.</p>
     </div>
 
+    <!-- ============ GDO Engagement des équipes cynotechniques (DGSCGC, novembre 2022) ============ -->
+    <div id="gdocyno-menu" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🐕 GDO Équipes cynotechniques – 2022</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle DGSCGC de <strong>novembre 2022</strong> (1<sup>re</sup> édition) : binôme cynotechnique, risques, construction de la réponse, conduite des opérations de recherche.</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gdocyno-binome')"><b>1 · Le binôme et les techniques</b><span>Conducteur, chien, pistage, trois types de quête, matériel, plateaux d'entraînement</span></button>
+            <button onclick="showModule('gdocyno-risques')"><b>2 · Risques et sécurité</b><span>Morsure, chaleur, froid, décombres, accompagnant, soutien vétérinaire, nettoyage du chien</span></button>
+            <button onclick="showModule('gdocyno-specialite')"><b>3 · Spécialité, appel et engagement</b><span>Binôme, unité, section, emplois, conditions d'exercice, prise d'appel</span></button>
+            <button onclick="showModule('gdocyno-conduite')"><b>4 · Conduite des opérations</b><span>Zonage, étude de faisabilité, contact avec le COS, fin de mission, débriefing</span></button>
+            <button onclick="showModule('gdocyno-recherche')"><b>5 · Ensevelis et victimes potentielles</b><span>Prise de renseignements, détente, engagement, marquage, secteurs de recherche</span></button>
+            <button onclick="showModule('gdocyno-special')"><b>6 · Immergées, neige, grande envergure</b><span>Rivière, mer, lac, manteau neigeux, opérations exceptionnelles, annexes matériel et fiches</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'essentiel</h3>
+            <ul>
+                <li>Le chien <strong>travaille seul</strong> pour déterminer le plus précisément possible où se trouve la victime. Il la <strong>localise, se fixe et signale</strong> sa présence (aboiements, grattages).</li>
+                <li>Trois méthodes : la <strong>recherche en décombres</strong>, le <strong>pistage</strong> (odeur résiduelle au sol) et le <strong>questage</strong> (odeur permanente, cône d'effluves).</li>
+                <li>Un binôme cynotechnique est <strong>toujours suivi par un accompagnant</strong> pendant la recherche, qui prévient d'un danger et assure la liaison radio.</li>
+                <li>Toute recherche demande <strong>au minimum une unité cynotechnique</strong> (2 ou 3 binômes, au moins 2 chiens et 2 conducteurs distincts).</li>
+                <li>Le <strong>COS valide l'idée de manœuvre</strong> avant l'engagement. Après un marquage, une <strong>seconde équipe confirme</strong> avant d'engager le déblaiement.</li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Avertissement du guide</strong>
+            <p>Document de doctrine sans portée réglementaire stricte : il guide l'action et ne propose ni dispositif type, ni stratégie détaillée. Il s'adresse <strong>prioritairement aux primo-intervenants</strong> et abroge les documents opérationnels qu'il regroupe.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Déjà dans Vulcain (non dupliqué ici)</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('effondres')">🏚️ Interventions en milieux effondrés ou instables</button>
+                <button class="sal-lien" onclick="showModule('gdosout-menu')">🫶 Préparation et soutien de l'intervenant</button>
+            </p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique du guide</summary>
+            <ul>
+                <li><strong>COR</strong> : commandant des opérations de recherche (forces de l'ordre). <strong>COS</strong> : commandant des opérations de secours.</li>
+                <li><strong>Binôme / unité / section cynotechnique</strong> : un conducteur et son chien ; 2 ou 3 binômes engageables ensemble ; plusieurs unités.</li>
+                <li><strong>Foyer d'odeurs</strong> : point d'où remontent les effluves d'une victime ensevelie à la surface des décombres.</li>
+                <li><strong>Cône d'effluves</strong> : panache d'odeurs déplacé par le vent depuis une victime.</li>
+                <li><strong>LAO</strong> : liste d'aptitude opérationnelle. <strong>FMPA</strong> : formation de maintien et de perfectionnement des acquis.</li>
+                <li><strong>PRMC</strong> : point de rassemblement des moyens cynotechniques. <strong>RVIM</strong> : recherche de victime immergée. <strong>RPAI</strong> : recherche de produits accélérateurs d'incendie.</li>
+                <li><strong>USAR</strong> : unité de sauvetage d'appui et de recherche. <strong>SMPM</strong> : secours en milieu périlleux et montagne. <strong>SSO</strong> : soutien sanitaire opérationnel.</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Engagement-des-equipes-cynotechniques.pdf" target="_blank" rel="noopener">GDO complet (PDF, 72 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Engagement des équipes cynotechniques », DGSCGC/DSP/SDDRH/BDFE, novembre 2022, 1<sup>re</sup> édition. Texte repris et résumé ; schémas et photos non reproduits.</p>
+    </div>
+
+    <div id="gdocyno-binome" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdocyno-menu')">← GDO Cynotechnie</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🐕 Le binôme et les techniques</h2>
+
+        <div class="rd-section">
+            <h3>Ce que fait une équipe cynotechnique</h3>
+            <ul>
+                <li>Sous l'autorité du COS, le chien augmente la probabilité de <strong>localiser rapidement</strong> des personnes incapables de répondre aux appels, <strong>lève le doute</strong> sur une présence de victime et <strong>suit un itinéraire</strong> en l'absence d'indice visible.</li>
+                <li><strong>Recherche de personnes disparues</strong> : mission des forces de l'ordre, pas directement des SIS. Le concours des sapeurs-pompiers s'obtient par convention ou réquisition.</li>
+                <li>Il peut y avoir une 1<sup>re</sup> phase de recherche sous un <strong>COR</strong>, puis, une fois la personne découverte, une 2<sup>e</sup> phase de secours sous un <strong>COS</strong> (gratuité).</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th></th><th>Moins de 24 heures</th><th>Plus de 24 heures</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Nature</strong></td><td>Recherche de victimes potentielles : <strong>opération de secours</strong></td><td>Recherche de personnes disparues : <strong>opération de recherche</strong></td></tr>
+                    <tr><td><strong>Engagement</strong></td><td>SIS, avec contact impératif du CIC ou du CORG des forces de l'ordre</td><td>Forces de l'ordre, avec le concours du SIS</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Recherche de produits accélérateurs d'incendie</strong>
+                <p>Toujours sur réquisition des forces de l'ordre ou à la demande du service (RCCI), après formation spécifique. Le binôme n'est engagé <strong>qu'une fois l'investigation terminée</strong> pour ne pas détériorer traces et indices, et <strong>après validation du chef d'enquête judiciaire</strong>.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le conducteur et le chien</h3>
+            <ul>
+                <li><strong>Conducteur</strong> : complicité très étroite avec son chien, observation des moindres signes et réactions. Le chien qui a une totale confiance ira partout où on le lui demande.</li>
+                <li><strong>Qualités physiques du chien</strong> : taille moyenne, relativement léger, résistant, endurant, énergique, rustique.</li>
+                <li><strong>Qualités sensorielles</strong> : capacités olfactives très développées. <strong>Qualités de caractère</strong> : courageux, fidèle, sociable, attentif, vigilant, équilibré nerveusement.</li>
+                <li>Sur une opération longue, le chien n'aura peut-être plus la force d'aboyer ou de gratter : un <strong>coup de fouet</strong> ou un <strong>regard</strong> peut signifier qu'il a trouvé.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les techniques de travail</h3>
+            <table class="rd-table">
+                <thead><tr><th>Technique</th><th>Principe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Pistage</strong></td><td>Le chien suit des <strong>odeurs résiduelles déposées au sol</strong>. Les molécules disparaissent avec le temps : intervenir le plus vite possible. Il faut une <strong>odeur de référence</strong> (un linge) et un <strong>point de départ ou de passage</strong>. Le chien évolue libre ou en longe ; s'il trouve un objet porteur de l'odeur (indice), il le marque (assis, couché ou debout).</td></tr>
+                    <tr><td><strong>Questage</strong></td><td>Le chien <strong>cherche toutes les odeurs humaines</strong> d'un secteur, en recherche libre. La victime émet en permanence des effluves que le vent déplace (cône d'effluves) : le chien remonte jusqu'au plus fort de l'émission, se fixe et marque.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Ne jamais toucher l'indice</strong>
+                <p>Ni le chien, ni le conducteur. <strong>Seules les forces de l'ordre</strong> donnent l'accord de le prélever.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les trois formes de quête</h3>
+            <p>Le chien en quête porte un <strong>harnais d'identification</strong> et un <strong>grelot</strong> (si possible un suivi GPS) ; de nuit, collier ou bâton lumineux. Points de vigilance : jalons ou cartographie, évoluer <strong>face au vent</strong>, déborder les limites du secteur, sociabilité parfaite des chiens, moyen radio.</p>
+            <table class="rd-table">
+                <thead><tr><th>Quête</th><th>Délimitation du secteur</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Isolée, secteur cartographié</strong></td><td>Points remarquables sur carte ou waypoints GPS</td><td>Le conducteur part avec carte et GPS, limites reportées dessus. Vérifier les batteries du GPS avant le départ. Secteurs limités selon relief, végétation et météo.</td></tr>
+                    <tr><td><strong>Isolée, secteur jalonné</strong></td><td>Personnel « jalon » qui marque les limites latérales</td><td>Jalon en gilet haute visibilité, radio, boussole, rubalise, en ligne droite suivant un <strong>azimut prédéfini</strong>. Il reste en ligne de vue du conducteur.</td></tr>
+                    <tr><td><strong>Groupée, secteur jalonné</strong></td><td>Jalonnage ou planimétrie sur carte</td><td>Plusieurs binômes en <strong>lignes espacées d'une centaine de mètres</strong>. Sociabilité parfaite et contrôle total des chiens, capacité des équipes à ce travail.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le matériel</h3>
+            <ul>
+                <li>Chaque unité dispose au minimum d'un <strong>EPI pour chacun de ses membres</strong> et d'un équipement collectif de base. Paquetage fonctionnel, sans surcharge, adapté à la météo.</li>
+                <li>Le conducteur porte les documents du chien : <strong>carnet de santé</strong>, <strong>certificat de vaccination antirabique</strong>, <strong>carte d'identification</strong> (tatouage).</li>
+                <li><strong>Structure d'accueil des chiens</strong> : abritée des vents dominants, aux normes d'hygiène et de confort, à l'abri de la vue des passants, des bruits et des véhicules. Selon le nombre de chiens, déclaration à la DDPP et conformité ICPE possibles.</li>
+                <li><strong>Transport</strong> : caisse dans laquelle le chien peut se tenir debout et se retourner, ventilation suffisante en partie haute et basse (voire climatisation), réserve d'eau, matériel rangé en bacs.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les plateaux techniques d'entraînement</h3>
+            <table class="rd-table">
+                <thead><tr><th>Plateau</th><th>Caractéristiques</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Personnes ensevelies</strong></td><td>Plus de <strong>500 m²</strong> de décombres en deux zones d'évolution. Au moins <strong>3 personnes</strong> cachées et <strong>10 caches</strong>. Bruits parasites intenses (groupe électrogène, tronçonneuse…), nourriture fraîche ou avariée, odeurs parasites (parfum, essence…), vêtements portés par un tiers, caches en hauteur, un ou plusieurs vides.</td></tr>
+                    <tr><td><strong>Victimes potentielles</strong></td><td><strong>200 m de front</strong> et <strong>600 à 1 000 m de profondeur</strong>. Routes, cours d'eau, végétation variée, partie semi-urbaine et carrefours. La victime est placée par l'extérieur du terrain pour ne pas laisser de traces au sol.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les acteurs</h3>
+            <p>La gestion des interventions fait appel à : centres opérationnels (CODIS, COD, COZ, COGIC, CROSS), services de l'État (SIDPC, DREAL, ARS…), collectivités, forces de sécurité, partenaires de santé, armées, techniciens et experts publics ou privés. Le COS est chargé de la <strong>coordination de tous les moyens</strong> mobilisés.</p>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Engagement-des-equipes-cynotechniques.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 72 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Engagement des équipes cynotechniques 2022, chapitre 1.</p>
+    </div>
+
+    <div id="gdocyno-risques" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdocyno-menu')">← GDO Cynotechnie</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>⚠️ Risques et sécurité</h2>
+
+        <div class="rd-section">
+            <h3>Les risques pour les personnels</h3>
+            <ul>
+                <li><strong>Morsure</strong> : risque inhérent au travail avec des chiens. Elle ne doit être qu'<strong>accidentelle</strong> (bagarre entre congénères, coup de dent involontaire lors de la prise de l'objet de récompense) mais elle est quasi inévitable dans une carrière.</li>
+                <li>Les chiens <strong>instables ou potentiellement mordeurs</strong> sont systématiquement exclus du cursus de formation, y compris lors des contrôles d'aptitude si le problème apparaît plus tard.</li>
+                <li>Autres accidents : <strong>circulation</strong> (chien qui traverse une voie hors du contrôle de son conducteur), <strong>transferts de contamination</strong> biologique surtout (zoonoses), plus rarement radiologique ou chimique.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les risques pour les animaux</h3>
+            <p>Les conditions météo sont le <strong>premier facteur de risque</strong> : les chiens n'ont pas les mêmes capacités d'homéostasie que les humains.</p>
+            <table class="rd-table">
+                <thead><tr><th>Situation</th><th>Risques</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Excès de chaleur</strong></td><td>Coup de chaleur, déshydratation, dessèchement de la muqueuse pituitaire</td></tr>
+                    <tr><td><strong>Froid intense</strong></td><td>Déshydratation, hypothermie, gerçures voire brûlures des coussinets et des espaces interdigitaux</td></tr>
+                    <tr><td><strong>Travail en décombres</strong></td><td>Coupures (verre), abrasion des coussinets, brûlures (support chaud si incendie concomitant, ou chimiques), perforation (barres de fer), intoxications et difficultés respiratoires (fumées, poussières), irritations des yeux et de l'appareil respiratoire</td></tr>
+                    <tr><td><strong>Projection à l'étranger</strong></td><td>Écarts de température dangereux au départ et à l'arrivée ; pathologies locales. S'informer en amont pour <strong>prévenir</strong> (vaccins, prophylaxie), <strong>traiter sur place</strong> et <strong>anticiper le retour</strong> (quarantaine, traitement si malades).</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>La sécurité des intervenants</h3>
+            <p>Elle repose sur la connaissance de la doctrine, la formation et les <strong>EPI</strong> adaptés. Le COS veille à :</p>
+            <ul>
+                <li>suivre la situation en matière de sécurité du personnel engagé ;</li>
+                <li>élaborer un <strong>dispositif tactique d'évacuation d'urgence</strong> ;</li>
+                <li>assurer logistique et <strong>soutien médical et vétérinaire</strong> ;</li>
+                <li>rester en contact avec les chefs de secteur (risques structurels notamment) ;</li>
+                <li>échanger avec les services engagés (gaz, électricité, experts, exploitant).</li>
+            </ul>
+            <p>Après analyse <strong>bénéfice / risque</strong>, il fixe son idée de manœuvre selon équipes, matériel, risques et enjeux.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le binôme et son accompagnant</h3>
+            <div class="rd-alerte">
+                <strong>Un binôme cynotechnique est toujours suivi par un accompagnant</strong>
+                <ul>
+                    <li><strong>Prévenir le conducteur d'un danger</strong> : celui-ci est concentré sur son chien.</li>
+                    <li>Assurer la <strong>liaison radio</strong> avec le COS si nécessaire.</li>
+                    <li>Aller à la rencontre d'autres secours en cas de découverte d'une victime.</li>
+                </ul>
+            </div>
+            <ul>
+                <li>Le conducteur est <strong>responsable de la sécurité de son animal</strong> : il n'envoie son chien que sur des zones reconnues et exemptes de danger, et peut le tenir <strong>en longe</strong> sur des zones critiques.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le soutien sanitaire</h3>
+            <ul>
+                <li>Tout conducteur a suivi des cours de <strong>secourisme canin</strong> et peut donner les premiers soins à son chien.</li>
+                <li>Selon l'analyse du risque, le chef de détachement peut demander un <strong>SSO vétérinaire</strong>. À défaut, une structure de soins vétérinaires est contactée à l'avance.</li>
+                <li>Objectif : <strong>continuité de la réponse cynotechnique</strong> même en cas d'accident sur un chien. Contrôle quotidien (fatigue, blessures, alimentation, toxiques, récupération) et prise en charge immédiate des blessures.</li>
+                <li>Missions d'envergure : <strong>au moins un vétérinaire sapeur-pompier</strong>, qui prend aussi en charge les animaux domestiques et sauvages impliqués. Le soutien est dimensionné selon l'étendue des recherches.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Nettoyer le chien après la recherche</h3>
+            <p>Au niveau du véhicule, s'il dispose d'une réserve d'eau avec douchette sous pression :</p>
+            <ul>
+                <li>protection oculaire de l'animal ;</li>
+                <li>rinçage abondant à l'eau claire ;</li>
+                <li>lavage au savon adapté au chien, en insistant sur les <strong>coussinets</strong> ;</li>
+                <li>rinçage sous pression dans les <strong>espaces interdigitaux</strong> ;</li>
+                <li>nettoyage des yeux au sérum physiologique, des oreilles à la lingette ;</li>
+                <li>séchage selon la température extérieure.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Engagement-des-equipes-cynotechniques.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 72 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Engagement des équipes cynotechniques 2022, chapitres 2 et 3.</p>
+    </div>
+
+    <div id="gdocyno-specialite" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdocyno-menu')">← GDO Cynotechnie</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🧭 Spécialité, appel et engagement</h2>
+
+        <div class="rd-section">
+            <h3>Situations envisageables</h3>
+            <ul>
+                <li><strong>Victimes potentielles</strong> : prompt secours, détresse vitale, péril imminent.</li>
+                <li><strong>Victimes ensevelies</strong> : explosion, effondrement de structure ou de tranchée, glissement de terrain, catastrophe naturelle (inondation, cyclone, séisme, avalanche).</li>
+                <li><strong>Victimes immergées</strong>.</li>
+                <li>RCCI : certains chiens recherchent des <strong>produits accélérateurs d'incendie</strong>. Les moyens peuvent aussi être mis à disposition de la police ou de la gendarmerie pour des personnes disparues.</li>
+                <li>Les primo-intervenants agissent avec le matériel de leur engin en attendant les moyens spécifiques ou les spécialistes. Dans le doute, le COS peut faire appel à un <strong>cadre de la spécialité</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Binôme, unité, section</h3>
+            <table class="rd-table">
+                <thead><tr><th>Structure</th><th>Composition</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Binôme</strong></td><td>Un conducteur et son chien. Un conducteur avec plusieurs chiens opérationnels compte pour <strong>un seul binôme</strong>.</td></tr>
+                    <tr><td><strong>Unité</strong></td><td><strong>2 ou 3 binômes</strong> engageables simultanément, au minimum 2 chiens opérationnels avec 2 conducteurs distincts. Dirigée par un chef d'unité ou un chef de section (avec ou sans son chien).</td></tr>
+                    <tr><td><strong>Section</strong></td><td>Plusieurs unités engageables simultanément, dirigée par un chef de section.</td></tr>
+                </tbody>
+            </table>
+            <p>Le <strong>travail sous manteau neigeux</strong> ne demande pas de formation complémentaire. Il ne faut pas le confondre avec la recherche de victimes sous avalanche, qui exige le <strong>brevet « avalanche »</strong> d'un organisme agréé.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les trois emplois</h3>
+            <table class="rd-table">
+                <thead><tr><th>Emploi</th><th>Rôle</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Conducteur cynotechnique (équipier)</strong></td><td>Intervient en binôme ou en unité constituée sous l'autorité d'un chef d'unité et / ou du COS. Assure l'entretien du chien et son éducation.</td></tr>
+                    <tr><td><strong>Chef d'unité</strong></td><td>Conseille le COS, dirige une unité (3 binômes maximum), coordonne l'engagement et peut s'intégrer dans un dispositif complexe.</td></tr>
+                    <tr><td><strong>Chef de section</strong></td><td>Conseille le COS, peut diriger plusieurs unités, coordonner l'aspect technique d'une opération et intégrer un poste de commandement ou une salle opérationnelle.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Conditions d'exercice</h3>
+            <p>Pour participer à une opération, conducteurs et chiens sont :</p>
+            <ul>
+                <li>titulaires de la <strong>formation de spécialité</strong> nécessaire à l'emploi ;</li>
+                <li>inscrits sur une <strong>liste d'aptitude opérationnelle (LAO)</strong> ;</li>
+                <li>à jour de la <strong>FMPA</strong> (conducteur) et du <strong>contrôle d'aptitude</strong> (chien) ;</li>
+                <li><strong>aptes médicalement</strong>.</li>
+            </ul>
+            <p>Les spécialistes sont sous les ordres du COS et s'intègrent à son idée de manœuvre sans perturber l'engagement des autres intervenants.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le référent de la spécialité</h3>
+            <p>Sous l'autorité du directeur départemental, le référent départemental :</p>
+            <ul>
+                <li>propose une organisation conforme au règlement opérationnel, au SDACR et au COTTRiM ;</li>
+                <li>participe à la déclinaison départementale de la doctrine ;</li>
+                <li>exprime les besoins de formation, d'équipement et de maintien en condition opérationnelle ;</li>
+                <li>propose la <strong>liste d'aptitude opérationnelle</strong> et contribue aux demandes d'agrément et aux référentiels internes ;</li>
+                <li>veille, avec la sous-direction santé, à la <strong>santé et à la sécurité des personnels et des animaux</strong> ;</li>
+                <li>assure une veille réglementaire et technique. Des référents zonaux et nationaux peuvent être désignés.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Documents opérationnels</h3>
+            <p>SDACR, règlement opérationnel, dispositions ORSEC, ordres d'opération, COTTRiM, pacte capacitaire, doctrine départementale, atlas spécifiques (topographie, consignes, SIG), plans ETARE, POI et PPI. Productions complémentaires possibles : <strong>convention avec les forces de sécurité</strong> et <strong>convention entre le SIS et le conducteur cynotechnique</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>La prise d'appel et l'engagement</h3>
+            <table class="rd-table">
+                <thead><tr><th>Élément à recueillir</th><th>Détail</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Localisation</strong></td><td>N° de téléphone du requérant, adresse (qui peut différer de celle de l'appelant), sites et points remarquables, <strong>coordonnées GPS</strong>. Si le requérant ne sait pas où il est : <strong>AML</strong>, plateforme de localisation d'appels d'urgence (<strong>PFLAU</strong>) ou SMS. Victime inconsciente ou téléphone hors d'usage : opérateurs et services partenaires.</td></tr>
+                    <tr><td><strong>Problématique</strong></td><td>Nature de l'intervention, contexte (milieu, situation de la victime, accès), nombre de victimes et d'impliqués, type et gravité des atteintes, localisation, abri ou exposition au danger.</td></tr>
+                    <tr><td><strong>Qualité du requérant</strong></td><td>Professionnel du milieu, victime, témoin ou tiers : son niveau d'implication conditionne sa qualité de jugement.</td></tr>
+                    <tr><td><strong>Facteurs aggravants</strong></td><td>Sur-accident, grand nombre de victimes, public sensible (enfants, personnes âgées, handicap), météo et jour / nuit, difficultés de communication, hydrogéologie, accessibilité et délais.</td></tr>
+                </tbody>
+            </table>
+            <p>Une intervention de nuit en plein hiver ne demande pas les mêmes moyens que la même en été en plein jour. Une localisation précise permet d'<strong>anticiper l'engagement direct de spécialistes</strong> (accès difficile, zone inondée). Si la spécialité n'existe pas dans le département, le <strong>renfort zonal</strong> est à anticiper. Un contact préalable avec un cadre de la spécialité permet de calibrer la réponse.</p>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Engagement-des-equipes-cynotechniques.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 72 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Engagement des équipes cynotechniques 2022, chapitre 4.</p>
+    </div>
+
+    <div id="gdocyno-conduite" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdocyno-menu')">← GDO Cynotechnie</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🚒 Conduite des opérations</h2>
+
+        <div class="rd-section">
+            <h3>Principes et marche générale</h3>
+            <ul>
+                <li>Protection des <strong>personnes et des animaux</strong>, préservation des biens, protection de l'environnement.</li>
+                <li>Les phases de la MGO du GDO « Exercice du commandement » s'appliquent en totalité ou en partie : reconnaissances, sauvetages et mises en sécurité, actions face au sinistre, protection, remise en condition du personnel et du matériel. La chronologie n'est pas toujours respectable : <strong>tout élément nouveau important</strong> doit faire reconsidérer l'idée de manœuvre.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le zonage opérationnel</h3>
+            <ul>
+                <li>Les limites extérieures de la <strong>zone de soutien</strong> constituent le périmètre de sécurité. La zone accessible au public est au-delà, non matérialisée.</li>
+                <li>Dans un premier temps : un périmètre de sécurité <strong>« a priori »</strong> limitant l'accès à la zone de danger principal, mettant en sécurité intervenants, victimes et tiers.</li>
+                <li>Les zones sans EPI sont sous le contrôle des <strong>forces de l'ordre</strong>.</li>
+                <li>Points d'accès et de contrôle : entrées et sorties des intervenants, contrôle des EPI, gestion des matériels souillés, contrôle des actions.</li>
+                <li>Le COS fixe les contours effectifs selon effets dominos, configuration et capacité à tenir le périmètre. <strong>Au moins un axe d'accès et / ou logistique</strong> est une priorité.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Étude de faisabilité de la mission</h3>
+            <p>Elle s'assure que les conditions sont réunies pour réaliser la mission en sécurité pour les personnes et les chiens, et dans le respect des exigences réglementaires.</p>
+            <table class="rd-table">
+                <thead><tr><th>Étape</th><th>Contenu</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Analyse de la zone</strong></td><td>Effondrements, nivellement, planimétrie, risques pour conducteurs et chiens. Elle <strong>définit le choix des moyens</strong> et le type d'odeurs recherchées (permanentes ou résiduelles). En effondrement, elle est faite avec le <strong>chef de section USAR</strong>. Le chef de détachement apprécie faisabilité, durée prévisible, contraintes et risques particuliers. Reconnaissance à pied, par route ou par air.</td></tr>
+                    <tr><td><strong>Sectorisation</strong></td><td>Par le COS, le chef de secteur ou le chef de détachement. Critères : objectifs du COS, ampleur du sinistre, difficultés de franchissement, météo, nature de l'effondrement, sécurité du site.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>La réalisation de la mission</h3>
+            <ul>
+                <li>Toute recherche engage <strong>au minimum une unité cynotechnique</strong>. Le chef de détachement définit un <strong>point de rassemblement</strong> (PRMC) où les chiens peuvent se détendre avant et se reposer après.</li>
+                <li>La mission et ses limites sont fixées par le COS, qui désigne le responsable de l'ensemble des conducteurs.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Prise de contact avec le COS</th><th></th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Il demande</strong></td><td>La nature de la mission, ses intentions, le temps imparti, les spécificités.</td></tr>
+                    <tr><td><strong>Il expose</strong></td><td>Les résultats de l'étude de faisabilité, les dérogations indispensables, les effets souhaités (points chauds, guidage des équipes, localisation d'une victime), les contraintes (fumées abondantes, agents toxiques, corrosifs ou radioactifs, risque d'explosion, coordination avec drones ou hélicoptère), une demande de canal radio dédié ou d'intégration à l'ordre complémentaire de transmission, les besoins humains et matériels.</td></tr>
+                    <tr><td><strong>Il propose et fait valider</strong></td><td>Le zonage propre à la spécialité, l'information des intervenants et du public, les techniques utilisées, les procédures et protocoles.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-alerte">
+                <strong>Le COS valide l'idée de manœuvre avant l'engagement</strong>
+                <p>Chaque binôme est accompagné d'une personne qui assure sa sécurité (sapeur-pompier, force de l'ordre, personnel communal, chasseur… <strong>autre que la famille</strong>). La méthode (recherche en décombres, pistage, questage, parfois simultanés) résulte de l'analyse, de la reconnaissance et de la sectorisation.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Fin de l'opération et débriefing</h3>
+            <p>Le conducteur retire son chien de la zone si :</p>
+            <ul>
+                <li>un <strong>risque nouveau</strong> survient ;</li>
+                <li>la zone dédiée a été <strong>entièrement couverte</strong> ;</li>
+                <li>la <strong>fatigue</strong> du chien ne lui permet plus la mission ;</li>
+                <li>le chien est <strong>blessé</strong>.</li>
+            </ul>
+            <p>Compte rendu <strong>obligatoire</strong> en fin de mission (il peut être fait en cours) : difficultés rencontrées, comportements olfactifs du chien, dangers particuliers, secteurs non explorables ou non exploités.</p>
+            <p><strong>Débriefing</strong> après chaque intervention par le chef de détachement : résultats, dispositions prises, procédures de sécurité, influence de l'environnement, choix des méthodes, difficultés, transmissions, organisation et rapports avec les autorités, documentation, réaction face à l'imprévu, qualité de l'entraînement, enseignements pour la formation.</p>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Engagement-des-equipes-cynotechniques.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 72 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Engagement des équipes cynotechniques 2022, chapitre 5 sections 1 et 2.</p>
+    </div>
+
+    <div id="gdocyno-recherche" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdocyno-menu')">← GDO Cynotechnie</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🏚️ Ensevelis et victimes potentielles</h2>
+
+        <div class="rd-section">
+            <h3>Victimes ensevelies : la mission d'origine</h3>
+            <p>La localisation de victimes ensevelies dans un milieu effondré ou instable est la <strong>mission originelle</strong> des équipes cynotechniques des SIS.</p>
+            <h3>Prise de renseignements</h3>
+            <ul>
+                <li>Auprès du COS, du chef de secteur ou du chef de détachement USAR.</li>
+                <li><strong>Sinistre</strong> : origine et nature, type de bâtiment, météo, relief, date et heure.</li>
+                <li><strong>Victimes</strong> : nombre potentiel, emplacement supposé, déjà évacuées ou dégagées, lieux de survie possibles.</li>
+                <li><strong>Dangers</strong> : fluides, NRBC, zones dangereuses recensées, lieux de dépôt des décombres, autres moyens de détection (géophonie…).</li>
+                <li>À reporter sur un plan ou un croquis, avec la <strong>fiche de renseignements</strong> (annexe).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'engagement en décombres</h3>
+            <ul>
+                <li>Les chiens au repos (<strong>ombre et gamelle d'eau</strong>) restent sous la <strong>surveillance constante</strong> d'au moins un conducteur.</li>
+                <li>Le chien travaille <strong>après détente, sans harnachement</strong> et autant que possible <strong>à jeun</strong>. Si des risques de chute sont identifiés, le chef de détachement peut imposer un harnais longé.</li>
+                <li><strong>Détente de chaque chien : 3 à 6 minutes</strong>, à l'écart du site. Il est ensuite présenté en laisse au chef de détachement (ou au COS si une seule équipe) puis la mission démarre dans la foulée.</li>
+                <li><strong>Travail individuel : 30 minutes en moyenne maximum</strong>, sans période de repos.</li>
+                <li>Un conducteur peut être engagé <strong>seul</strong> en attendant les renforts, seulement avec l'autorisation du COS et en cas d'urgence.</li>
+                <li>Le conducteur garde le <strong>contact visuel ou auditif</strong> avec son chien si la stabilité des décombres le permet, et fait passer son chien en priorité sur les zones les plus difficiles à franchir.</li>
+                <li>Le chef de détachement veille à ce que le <strong>strict minimum</strong> de personnels autres que cynotechniques œuvre sur les secteurs, assure la complémentarité avec les autres moyens de détection et <strong>n'engage pas trop tôt</strong> lorsque subsistent des risques importants.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le marquage</h3>
+            <ul>
+                <li>La victime émet en permanence des effluves : le <strong>foyer d'odeurs</strong>. Le chien le remonte, se fixe et marque (aboiements, grattages).</li>
+                <li>Le conducteur repère avec précision le lieu marqué, sauf zone dangereuse.</li>
+                <li>Après retrait du chien, une <strong>seconde équipe confirme le marquage</strong> avant de rendre compte au COS et avant d'engager les équipes de déblaiement (quand c'est compatible avec l'urgence).</li>
+                <li>Les binômes explorent <strong>tout le secteur attribué, y compris parties hautes et souterraines</strong>.</li>
+                <li>Compte rendu au COS : existence, nombre et localisation des marquages, difficultés et problèmes sur les chiens. Les équipes restent à disposition ; les conducteurs examinent leurs chiens (pattes, coussinets, yeux).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Victimes potentielles</h3>
+            <p>Opération de secours dirigée par un COS. Hors secours, la recherche de personnes disparues relève des forces de l'ordre (COR) et les équipes apportent leur concours.</p>
+            <table class="rd-table">
+                <thead><tr><th>Prise de renseignements (COS ou COR)</th></tr></thead>
+                <tbody>
+                    <tr><td>Date et heure de l'événement ; identité (surnom éventuel) avec une photo récente ; signes particuliers ; circonstances de la disparition ; dernier témoin et dernier lieu où elle a été vue ; <strong>tenue vestimentaire</strong> ; antécédents médicaux et traitements en cours ; <strong>numéro de mobile</strong> (géolocalisation, appels réguliers) ; dangers sur la zone de recherche.</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>Le chef de détachement s'informe des autres moyens cynotechniques et demande au COS ou au COR le <strong>gel des lieux</strong> pour que les chiens travaillent dans un environnement le moins pollué possible.</li>
+                <li>Avant l'engagement, le chien est <strong>détendu</strong> (aspect général, échauffement musculaire) et son équipement vérifié. Il porte toujours un <strong>harnais d'identification avec grelot</strong> en questage.</li>
+                <li>Le conducteur commence si possible son secteur <strong>face au vent</strong>.</li>
+                <li>Méthodes : pistage ou questage selon les moyens (le pistage quand le délai est compatible avec la notion de secours).</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Secteur autour du point zéro (lieu de disparition ou dernier indice)</th><th>Rayon</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Primaire</strong></td><td>Point zéro et <strong>200 m</strong></td></tr>
+                    <tr><td><strong>Secondaire</strong></td><td><strong>500 m</strong></td></tr>
+                    <tr><td><strong>Approfondi</strong></td><td>Au-delà de <strong>500 m</strong></td></tr>
+                </tbody>
+            </table>
+            <p>Les rayons peuvent varier selon le type de recherche. Autres critères de sectorisation : situation géographique (urbain, périurbain, rural), végétation, relief, géolocalisation du mobile de la victime, météo.</p>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Engagement-des-equipes-cynotechniques.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 72 pages, avec schémas)</a></p>
+        <p class="rd-source">GDO Engagement des équipes cynotechniques 2022, chapitre 5 sections 3 et 4.</p>
+    </div>
+
+    <div id="gdocyno-special" class="module" style="--jsp: #2B6FD1;">
+        <button class="back-btn" onclick="showModule('gdocyno-menu')">← GDO Cynotechnie</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🌊 Immergées, neige, grande envergure</h2>
+
+        <div class="rd-section">
+            <h3>Victimes immergées</h3>
+            <ul>
+                <li>Engagement <strong>précoce et simultané avec les équipes nautiques</strong> : zone de recherche plus précise (point de mise à l'eau), prise en compte des pollutions odorantes et de la dérive éventuelle d'un corps.</li>
+                <li><strong>Renseignements</strong> : date, heure, lieu et circonstances de la disparition, température de l'eau, flux d'air et courants, dangers, mise à l'eau ou non de palanquées avant les chiens, spécialistes nautiques et embarcations.</li>
+                <li><strong>Équipement</strong> : le conducteur porte son <strong>gilet de flottaison</strong> ; le chien un <strong>harnais de flottaison</strong>, éventuellement avec une longe flottante.</li>
+                <li>Un <strong>accompagnant</strong> suit le binôme en bord de berge pendant toute la recherche. En embarcation, un conducteur d'embarcation et un personnel nautique assurent la sécurité et le binôme respecte les consignes de bord.</li>
+                <li>Recherche à <strong>très faible allure</strong>, selon un schéma arrêté par le conducteur d'après le courant d'air et le courant d'eau.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>En rivière ou en fleuve : quatre cas</h3>
+            <p>Depuis une embarcation, en <strong>quadrillant par allers-retours d'une rive à l'autre</strong> (le quadrillage peut être dirigé par un autre que le conducteur).</p>
+            <table class="rd-table">
+                <thead><tr><th>Cas</th><th>Ce que fait le chien</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>À contre-courant, contre le vent</strong></td><td>On remonte face au vent vers le dernier lieu où la victime a été vue. Le chien <strong>entre dans le cône d'effluves</strong> ; quand il perd l'odeur, le bateau a dépassé le corps.</td></tr>
+                    <tr><td><strong>À contre-courant, dans le sens du vent</strong></td><td>Le vent éloigne l'effluve : le chien <strong>ne marque qu'après avoir dépassé la victime</strong>, l'alerte peut être soudaine.</td></tr>
+                    <tr><td><strong>Dans le sens du courant, contre le vent</strong></td><td>Départ <strong>en amont</strong> du dernier lieu connu. Le chien marque à l'entrée dans le cône et cesse une fois le corps dépassé.</td></tr>
+                    <tr><td><strong>Dans le sens du courant et du vent</strong></td><td>Proche du contre-courant dans le sens du vent : marquage soudain une fois la victime dépassée, de plus en plus faible en s'éloignant.</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li><strong>En mer</strong> : travail depuis la rive délicat (rochers escarpés, galets). En embarcation, tenir compte des <strong>vagues</strong>, de la profondeur, de la houle et du vent fort.</li>
+                <li><strong>En lac ou étang</strong> : surface découpée en secteurs, étude préalable des systèmes karstiques et des courants du fond, chien face au vent. Signes de détection : « <strong>lapage de l'eau</strong> », aboiements, coups de fouet, excitation soudaine, envie de se jeter à l'eau.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Manteau neigeux</h3>
+            <p>Selon le SDACR, les équipes contribuent à la localisation sous manteau neigeux, avec les conditions d'engagement des victimes ensevelies. Ce n'est <strong>pas la recherche sous avalanche</strong>, qui exige le brevet « avalanche ».</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Opérations d'envergure ou exceptionnelles</h3>
+            <ul>
+                <li>Zones d'intervention multimodales (pluies torrentielles, crues, glissements) ; travail pendant <strong>plusieurs jours</strong> dans des conditions éprouvantes pour hommes et chiens.</li>
+                <li><strong>Coordinateur</strong> : un chef de section expérimenté, interface entre le poste de commandement et les moyens cynotechniques. Dans une cellule « milieux effondrés » : évaluation des moyens, <strong>gestion des relèves</strong>, répartition des responsables de secteur, remontée d'informations, bilans journaliers.</li>
+                <li><strong>Responsable de secteur de recherche</strong> (chef de section) : redécoupe son secteur en chantiers, répartit les unités, gère la logistique, rend compte au coordinateur.</li>
+                <li><strong>Sécurité</strong> : fatigue et perte d'attention. Cycles travail / repos répartis et <strong>tracés</strong>, turn-over logique pour assurer la continuité des recherches et le repos d'un effectif. Soutien des autres spécialistes (SMPM, USAR, nautique).</li>
+                <li><strong>Déplacements</strong> : route (caisse, benne de pick-up, camion plateau), embarcations (pneumatique, semi-rigide, rigide), héliportage ou hélitreuillage. Chien <strong>muselé</strong> hors caisse, donc accoutumance parfaite à la muselière.</li>
+                <li><strong>Franchissements</strong> : rappel, tyrolienne, traversée de cours d'eau par la méthode « tortue », techniques coordonnées par d'autres équipes spécialisées. Entraînements communs en préparation.</li>
+                <li><strong>Difficultés</strong> : gros décombres ou embâcles, pollutions olfactives (cadavres d'animaux), travail en groupe (sociabilité), fatigue physique et morale.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Engagements à l'étranger</h3>
+            <ul>
+                <li>Détachement cynotechnique de recherche en catastrophe, composition fixée par la <strong>DGSCGC</strong>, jusqu'à <strong>12 équipes</strong>, accompagné d'un <strong>vétérinaire de sécurité civile</strong>.</li>
+                <li>Éléments spécifiques : paquetage d'équipe spécifique, <strong>réserve de nourriture sèche pour 10 jours</strong> et <strong>réserve d'eau pour 2 jours</strong>, reconnaissance préalable complète des zones, liaison avec les équipes d'autres pays, hébergement des hommes et des chiens sur site.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Annexe : matériel et équipement</h3>
+            <table class="rd-table">
+                <thead><tr><th>Catégorie</th><th>Liste</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Conducteur</strong></td><td>Tenue adaptée, chaussants type C1, chaussants de marche, chaussants type canyoning, ensemble imperméable, gants de protection, casque type A avec lunettes, lampe frontale, gilet de flottaison, harnais avec interface hélicoptère, sac à dos</td></tr>
+                    <tr><td><strong>Chien</strong></td><td>Collier plat, collier chaînette, laisse multi-usage, muselière, chaîne d'attache et piquet, gamelles souple et inox, harnais d'identification avec grelot et lumière, harnais de pistage, de flottaison et d'hélitreuillage, longe de pistage, longe flottante, bottines de protection</td></tr>
+                    <tr><td><strong>Collectif</strong></td><td>Groupe électrogène portable avec projecteur, réservoir de carburant, tente, matelas, duvet, réserve d'eau pour le conducteur et le chien, rations 24 heures, aliments du chien, trousse de secours conducteur et chien</td></tr>
+                </tbody>
+            </table>
+            <p>Le PDF contient en annexe C deux <strong>fiches de renseignements cynotechniques à remplir</strong> (recherche de personnes ensevelies, recherche de victimes potentielles).</p>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/specialites/GDO-Engagement-des-equipes-cynotechniques.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 72 pages, avec schémas et fiches à remplir)</a></p>
+        <p class="rd-source">GDO Engagement des équipes cynotechniques 2022, chapitre 5 sections 5 à 8 et annexes A à C.</p>
+    </div>
+
+    <!-- ============ GDO Préparation et soutien de l'intervenant en opération (DGSCGC, février 2026) ============ -->
+    <div id="gdosout-menu" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🫶 GDO Préparation et soutien de l'intervenant – 2026</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle DGSCGC de <strong>février 2026</strong> (1<sup>re</sup> édition) : préparer le sapeur-pompier, le soutenir pendant l'opération, le reconditionner après.</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gdosout-preparer')"><b>1 · Préparer l'intervenant</b><span>Santé, état de forme, sommeil, alimentation, alcool, médicaments, sport, EPI, chaleur et froid</span></button>
+            <button onclick="showModule('gdosout-acteurs')"><b>2 · Acteurs et montée en puissance</b><span>Du sapeur-pompier au centre opérationnel, officier sécurité, secteur soutien, premiers intervenants</span></button>
+            <button onclick="showModule('gdosout-sanitaire')"><b>3 · Soutien sanitaire et ravitaillement</b><span>SSO, zone de soins, protocoles, 3 niveaux de ravitaillement, vêtements secs, repos</span></button>
+            <button onclick="showModule('gdosout-releves')"><b>4 · Relèves et colonnes de renfort</b><span>Durées d'engagement, relèves anticipées, autonomie 24 h, soutien sanitaire de colonne</span></button>
+            <button onclick="showModule('gdosout-outils')"><b>5 · Outils d'aide à la décision</b><span>Matrice SSO, indice de chaleur, refroidissement éolien, cotation des pauses</span></button>
+            <button onclick="showModule('gdosout-apres')"><b>6 · Après l'opération</b><span>Zone de soutien, blessé en opération, reconditionnement, blessure mentale, USP, reprise d'activité</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'essentiel</h3>
+            <ul>
+                <li>Le soutien de l'intervenant est un <strong>continuum</strong> : il commence avant la garde ou l'astreinte, occupe une part de l'intervention et se poursuit jusqu'au reconditionnement physique et psychique.</li>
+                <li>Il repose sur <strong>trois piliers liés</strong> : la <strong>sécurité</strong> (COS, officier sécurité), le <strong>soutien sanitaire</strong> et le <strong>reconditionnement</strong>.</li>
+                <li>Mieux l'intervenant est préparé, moins il est blessé et plus son soutien peut être <strong>temporisé</strong>.</li>
+                <li>Le sapeur-pompier est le <strong>premier acteur de sa santé</strong> et de celle de ses collègues : s'auto-évaluer, signaler, et savoir renoncer.</li>
+                <li>Les sapeurs-pompiers ne sont <strong>pas soumis au droit de retrait</strong> en opération : l'analyse bénéfice / risque permet au COS d'ordonner un repli.</li>
+                <li>Le soutien sanitaire est engagé <strong>a priori</strong> dans certains cas pré-identifiés, sans attendre la demande du COS.</li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Avertissement du guide</strong>
+            <p>Document de doctrine sans portée réglementaire stricte, <strong>référence adaptable</strong> aux situations rencontrées. Les aspects de préparation physique et de formation y sont évoqués mais <strong>non développés</strong>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Déjà dans Vulcain (non dupliqué ici)</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('sante-psy')">🧠 Soutien psychologique en intervention</button>
+                <button class="sal-lien" onclick="showModule('hygiene-fumees')">🌫️ Hygiène opérationnelle : toxiques de la fumée</button>
+                <button class="sal-lien" onclick="showModule('gdocyno-risques')">🐕 Soutien vétérinaire (GDO cynotechnique)</button>
+            </p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique du guide</summary>
+            <ul>
+                <li><strong>SSO</strong> : soutien sanitaire opérationnel. <strong>USP</strong> : unité de soutien psychologique. <strong>SDS</strong> : sous-direction santé.</li>
+                <li><strong>EAP</strong> : encadrement des activités physiques. <strong>SSQVS</strong> : plan santé, sécurité et qualité de vie en service.</li>
+                <li><strong>FMPA</strong> : formation de maintien et de perfectionnement des acquis. <strong>RETEX</strong> : retour d'expérience.</li>
+                <li><strong>PISU</strong> : protocoles infirmiers de soins d'urgence. <strong>VSM</strong> : véhicule de soutien (liaison infirmier / médical). <strong>ISP / MSP</strong> : infirmier / médecin sapeur-pompier.</li>
+                <li><strong>Heat index (HI)</strong> : indice de chaleur. <strong>IRE</strong> : indice de refroidissement éolien.</li>
+                <li><strong>Reconditionnement</strong> : remise en condition du personnel pour le réengagement (le terme « réhabilitation » est jugé inapproprié).</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/SOUTIEN-DE-L-INTERVENANT-2026.02.06.pdf" target="_blank" rel="noopener">GDO complet (PDF, 68 pages, avec schémas et grilles)</a></p>
+        <p class="rd-source">Source : GDO « Préparation et soutien de l'intervenant en opération », DGSCGC/DSP/SDDRH/BDFE, février 2026, 1<sup>re</sup> édition. Texte repris et résumé ; schémas et photos non reproduits.</p>
+    </div>
+
+    <div id="gdosout-preparer" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdosout-menu')">← GDO Soutien</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🏃 Préparer l'intervenant</h2>
+
+        <div class="rd-section">
+            <h3>Le SIS, acteur de la santé et de la sécurité</h3>
+            <ul>
+                <li>L'autorité d'emploi doit assurer la <strong>sécurité et protéger la santé physique et mentale</strong> des agents : prévention des risques, information, formation, évaluation des risques professionnels. Le <strong>soutien sanitaire en opération</strong> découle de cette obligation de sécurité.</li>
+                <li>Le sapeur-pompier, professionnel ou volontaire, prend soin de sa santé, veille à sa sécurité et à celle des autres, et respecte les consignes.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Prévention</th><th>Individuelle</th><th>Collective</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Primaire</strong> (agir en amont)</td><td>Information, formation, entraînement, conseil médical</td><td>Procédures, évaluation et réduction des risques</td></tr>
+                    <tr><td><strong>Secondaire</strong> (dépistage et suivi)</td><td>Surveillance de l'état de santé</td><td>Surveillance du milieu de travail</td></tr>
+                    <tr><td><strong>Tertiaire</strong> (limiter les conséquences)</td><td>Soins d'urgence, maintien dans l'activité</td><td>RETEX, enquête accident, organisation des secours, évolution des matériels</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Santé, forme et santé psychique</h3>
+            <ul>
+                <li><strong>État de santé</strong> : le SIS adapte les missions à l'aptitude médicale, mais l'agent a la <strong>responsabilité première</strong> de ne pas s'engager sur des missions pour lesquelles il sait ne pas avoir l'aptitude requise.</li>
+                <li><strong>État de forme</strong> : auto-évaluation. Indicateurs : douleur à la cheville ou au genou, maux de tête, état grippal, <strong>fatigue anormale</strong>, effets secondaires d'un traitement, préoccupation psychique (cauchemars, soucis privés). Questions à se poser : est-ce raisonnable ? ai-je assez de réserve pour tenir ? dois-je consulter ?</li>
+                <li>« Je savais que ce n'était pas raisonnable » a déjà contribué à des accidents. Il faut <strong>parfois savoir renoncer</strong> à l'activité opérationnelle. L'encadrement peut décider une <strong>relève, même contre le gré de l'agent</strong>, ou aménager sa mission.</li>
+                <li><strong>Santé psychique</strong> : l'exposition répétée à des contraintes émotionnelles expose à stress, psychotraumatismes, usure et épuisement. L'encadrement connaît les <strong>premiers secours psychologiques</strong>, les outils de régulation, les ressources de la SDS et les modalités d'appel des <strong>USP</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Hygiène de vie</h3>
+            <table class="rd-table">
+                <thead><tr><th>Sujet</th><th>Repères du guide</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Alimentation</strong></td><td>Équilibrée, à heures régulières si possible, <strong>suffisamment énergétique</strong> pour un effort prolongé (l'activité peut décaler le repas). Féculents, protéines en quantité limitée, laitage, fruits et légumes. Éviter compléments alimentaires, sodas et alcool ; produits bruts et de saison ; s'aider du Nutri-Score.</td></tr>
+                    <tr><td><strong>Hydratation</strong></td><td>Au moins <strong>1,5 litre d'eau par jour</strong> hors eau des repas. Négliger l'hydratation entraîne fatigue, maux de tête, baisse des performances.</td></tr>
+                    <tr><td><strong>Sommeil</strong></td><td>Temps de récupération. Une dette altère temps de réaction, concentration, mémorisation, orientation, recul émotionnel. <strong>Crucial avant une garde ou une astreinte.</strong> Arrêter toute activité physique <strong>1 h avant le coucher</strong>, éviter la lumière bleue des écrans, ne pas résister à l'envie de dormir.</td></tr>
+                    <tr><td><strong>Sieste</strong></td><td>De midi à 15 h, lieu calme et sombre, <strong>20 à 30 minutes maximum</strong> (prévoir une alarme). En cas de grosse dette : 1 h 30 pour un cycle complet.</td></tr>
+                    <tr><td><strong>Alcool, stupéfiants, dopants</strong></td><td>Consommation festive ou dopante <strong>totalement proscrite</strong>. Les stupéfiants (illégaux) doivent être <strong>absents du sang et des urines</strong> d'un sapeur-pompier mobilisable. Boissons énergisantes déconseillées (tachycardie, troubles psycho-comportementaux, digestifs, musculaires).</td></tr>
+                    <tr><td><strong>Médicaments</strong></td><td>À prendre sur avis médical, sauf traitements chroniques compatibles avec l'aptitude. Certains diminuent la vigilance. Les pictogrammes <strong>triangle + voiture jaune, orange ou rouge</strong> incitent à demander conseil au médecin de sapeurs-pompiers : orange et rouge <strong>obligent</strong> à cet avis. En cas d'addiction, s'adresser aux professionnels de santé du SIS, tenus au secret médical.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Activité physique raisonnée</h3>
+            <ul>
+                <li>30 minutes de marche rapide par jour, 5 jours par semaine, c'est un minimum de santé mais <strong>insuffisant</strong> pour les missions : cardio-respiratoire, vitesse, coordination, équilibre, souplesse, puissance et endurance musculaires, force.</li>
+                <li>Pendant une <strong>garde ou une astreinte</strong>, les séances sont encadrées et <strong>non intensives</strong> pour préserver le potentiel opérationnel. Les <strong>EAP</strong> conçoivent les programmes.</li>
+                <li>Le sport en groupe soude l'équipe, mais l'émulation ne doit pas devenir <strong>performance à tout prix</strong> (épuisement, bigorexie). Ces pratiques occasionnent <strong>la plus grande part des accidents de service</strong>, surtout en sport collectif.</li>
+                <li>Un sapeur-pompier blessé grève sévèrement le potentiel opérationnel d'une unité.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Préparation opérationnelle</h3>
+            <ul>
+                <li><strong>Inventaires et vérifications</strong> à la prise de garde : prioritaires sur toutes les activités. Anomalies signalées sans délai, jusqu'à la <strong>mise hors service</strong> du matériel ou de l'engin.</li>
+                <li>À ne pas négliger : baisse de pression récurrente d'une bouteille d'ARI, pile ou batterie d'éclairage, cône de Lubeck manquant, organe de sécurité défaillant, gilet haute visibilité absent, coffre qui ne ferme plus, commande ou corde érodée, sac de prompt secours incomplet, lot de ravitaillement incomplet, péremption dépassée, contrôle technique non fait, feu stop hors service.</li>
+                <li><strong>Mises en situation</strong> (FMPA) au plus proche de la réalité tout en garantissant la sécurité (mannequin obligatoire pour les sauvetages) : le sapeur-pompier ne doit pas découvrir ces contraintes en opération. La capacité physique est à <strong>décorréler de l'aptitude médicale</strong> ; l'encadrement signale une incapacité physique.</li>
+                <li><strong>Automatismes (« drill »)</strong> : revêtir la tenue de feu, capeler l'ARI, mettre en œuvre une échelle à coulisse. Mieux vaut s'habiller très vite par réflexe que rattraper les secondes par une vitesse excessive sur la route.</li>
+                <li><strong>Préparation mentale</strong> : gérer son stress, prendre confiance, se concentrer, atteindre les objectifs du COS, prévenir l'<strong>effet tunnel</strong>. Triptyque : préparation opérationnelle, physique et mentale.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>EPI et climat</h3>
+            <ul>
+                <li>Les EPI sont fournis <strong>gratuitement</strong> par l'employeur, qui informe, sélectionne, forme, fait contrôler et entretenir, vérifie l'usage et met les notices à disposition. Le sapeur-pompier porte les EPI adaptés selon son enseignement, les notices et les ordres. Les effets portés sont ceux fournis par le service.</li>
+                <li><strong>Tenue en caserne par forte chaleur</strong> : le SIS peut définir une tenue adaptée sans dégrader la protection, sans perte de temps opérationnel, avec uniformité, en se protégeant des UV. <strong>Aucune dérogation au règlement d'habillement en opération.</strong></li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Vigilance Météo-France</th><th>Exemples de mesures</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Jaune</strong></td><td>Aménager l'emploi du temps, sport aux périodes fraîches, manœuvres sans tenue de feu, tenue « période chaude », réduire le sport sauf activité nautique, bouteilles d'eau dans les engins.</td></tr>
+                    <tr><td><strong>Orange</strong></td><td>Remplacer la manœuvre de la garde par une activité en salle, s'assurer que les personnels boivent <strong>au moins 1,5 L / jour</strong>, packs d'eau dans les engins et en réserve, remiser systématiquement les engins.</td></tr>
+                    <tr><td><strong>Rouge</strong></td><td>Supprimer le sport (sauf nautique ou non intensif : étirements, préparation mentale), limiter l'activité aux interventions, contrôle des agrès et administratif, <strong>rotations</strong> sur les engins les plus sollicités, périodes de mise au repos, anticiper les relèves et la logistique de soutien dès les feux.</td></tr>
+                </tbody>
+            </table>
+            <p><strong>Grand froid</strong> : adapter la conduite (verglas, brouillard), envisager de passer de l'<strong>astreinte à la garde</strong> en cas de météo dégradée, préparer le matériel de chaînage, superposer les couches (bonnet, parka), adapter la formation (pas de brûlage en simulateur : gel des eaux d'extinction).</p>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/SOUTIEN-DE-L-INTERVENANT-2026.02.06.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec schémas et grilles)</a></p>
+        <p class="rd-source">GDO Préparation et soutien de l'intervenant 2026, chapitres 1 et 2.</p>
+    </div>
+
+    <div id="gdosout-acteurs" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdosout-menu')">← GDO Soutien</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🧑‍🚒 Acteurs et montée en puissance</h2>
+
+        <div class="rd-section">
+            <h3>Principes pendant l'opération</h3>
+            <ul>
+                <li>La sécurité repose sur la formation, la doctrine, les <strong>EPI</strong> et le respect des consignes.</li>
+                <li>Le COS veille à : suivi permanent de la sécurité, <strong>dispositif d'évacuation d'urgence</strong>, soutien sanitaire, logistique de soutien matériel et de l'intervenant, contact avec les chefs de secteur, échanges avec gaz, électricité, experts et exploitants, <strong>état psychique</strong> des personnels exposés à des événements traumatisants.</li>
+                <li>La dynamique ne doit pas faire oublier les règles élémentaires : ne pas <strong>capeler l'ARI</strong> alors que des toxiques se diffusent en nuages invisibles, même à l'air libre ; ne pas s'approcher d'un feu pour « observer » sans protection. Le défaut d'emploi des ARI ou des dispositifs antichute est source de <strong>nombreux accidents</strong> (RETEX).</li>
+                <li>S'auto-évaluer et <strong>signaler ses troubles sans crainte du regard des collègues</strong> ; respecter les temps de repos pour éviter l'épuisement.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Qui fait quoi</h3>
+            <table class="rd-table">
+                <thead><tr><th>Acteur</th><th>Rôle</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Sapeur-pompier</strong></td><td>Premier acteur de sa sécurité et de celle des collègues. <strong>Ne pas faire semblant de ne rien voir</strong> par crainte du jugement : quand la sécurité est en jeu, il faut le dire.</td></tr>
+                    <tr><td><strong>Chef d'agrès</strong></td><td>Premier COS : responsable de la santé, de la sécurité et du soutien de son équipage, vigilance active.</td></tr>
+                    <tr><td><strong>COS</strong></td><td>Double responsabilité : lutte contre le sinistre et protection du public et des intervenants. Limite l'engagement au strict nécessaire, vérifie que le soutien sanitaire est dimensionné, <strong>prévient les partenaires</strong> engagés en zone d'exclusion des dangers et situations traumatisantes, évalue le besoin de renforcer les professionnels de santé (intoxiqués, tri…).</td></tr>
+                    <tr><td><strong>Officier sécurité</strong></td><td>Sous les ordres du COS : repère les dangers, vérifie leur prise en compte, rappelle et fait appliquer les règles. Conseiller technique, <strong>sans interférer</strong> avec le commandement. <strong>En cas de danger grave ou imminent, il ordonne le retrait</strong> de personnels sans validation du COS, et en rend compte immédiatement. En son absence, un agent « sonnette » peut surveiller une situation à risque (mur menaçant ruine, circulation).</td></tr>
+                    <tr><td><strong>Chef du secteur soutien</strong></td><td>Coordonne tous les acteurs du soutien, organise la zone de soutien, demande les renforts, propose le <strong>désengagement progressif</strong>. L'officier sécurité peut lui être rattaché.</td></tr>
+                    <tr><td><strong>Professionnel de santé</strong></td><td>Organise le soutien sanitaire des intervenants, rend compte de leur état physique et des points de vigilance (intoxications légères, coups de chaleur, déshydratation, fatigue excessive, risque de blessure mentale) ; peut prodiguer les soins.</td></tr>
+                    <tr><td><strong>Centre opérationnel</strong></td><td>Identifie les besoins <strong>a priori</strong> et déclenche les moyens, sans attendre l'incident. Assure le suivi et la remontée d'informations : en cas de blessure, <strong>fiabilité et précision</strong> essentielles (catégorisation rigoureuse, notamment « urgence absolue » au COGIC).</td></tr>
+                </tbody>
+            </table>
+            <p>Éviter si possible les <strong>relèves simultanées</strong> des fonctions de sécurité pour assurer leur continuité.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Les trois piliers</h3>
+            <ul>
+                <li><strong>La sécurité</strong> : supervisée par les COS successifs, conseillés par l'officier sécurité ou les chefs d'unité et de section des spécialités.</li>
+                <li><strong>Le soutien sanitaire</strong>, appuyé par la sous-direction santé.</li>
+                <li><strong>Le reconditionnement</strong> des personnels pour le réengagement.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>La montée en puissance</h3>
+            <ul>
+                <li>Le soutien <strong>ne s'improvise pas</strong> : procédures identifiées et programmées, en amont des opérations et des exercices.</li>
+                <li>Le CO engage le soutien sanitaire <strong>a priori</strong> dans certains cas pré-identifiés (nombreux engins et intervenants, incendie d'entrepôt, sauvetage-déblaiement, risque technologique). Intégrer le SSO à certains trains de départ est un facteur d'efficacité. Le COS adapte ensuite : montée en puissance progressive ou désengagement.</li>
+                <li>Éléments à prendre en compte : nature du sinistre, évolution et étendue prévisibles, nombre de personnels, <strong>horaire de début</strong> et durée prévisible, météo (température, vitesse de l'air, hygrométrie, canicule, grand froid), topographie, éloignement des structures de soin, risques particuliers (violence urbaine), impact psychologique potentiel, <strong>sollicitation antérieure</strong> des intervenants.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Premiers intervenants : un coéquipier blessé</h3>
+            <ul>
+                <li>Un accident en opération déstabilise d'autant plus qu'il touche un intervenant : les indemnes peuvent perdre repères et moyens.</li>
+                <li>Mêmes règles que pour toute victime : <strong>mettre en sécurité, gestes secouristes de sauvegarde, demander des renforts</strong>.</li>
+                <li>Une équipe doit pouvoir faire face à la blessure ou au malaise de l'un des siens <strong>de manière autonome</strong> avant l'arrivée d'un moyen SSUAP dédié. À entraîner régulièrement (manœuvres incendie, spécialités, stages de conduite).</li>
+                <li>Accident grave : <strong>relever dès que possible l'ensemble de l'équipage</strong> de l'engin touché, même si son état ne semble pas l'exiger, avec un rapide retour d'expérience à chaud en informant l'USP. Même démarche pour une intervention au profit d'un camarade hors service.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/SOUTIEN-DE-L-INTERVENANT-2026.02.06.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec schémas et grilles)</a></p>
+        <p class="rd-source">GDO Préparation et soutien de l'intervenant 2026, chapitre 3 sections 1 et 2.1-2.2.</p>
+    </div>
+
+    <div id="gdosout-sanitaire" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdosout-menu')">← GDO Soutien</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🩺 Soutien sanitaire et ravitaillement</h2>
+
+        <div class="rd-section">
+            <h3>Le soutien sanitaire en opération (SSO)</h3>
+            <ul>
+                <li>Au-delà du soutien des premiers intervenants (notamment tout VSAV engagé), il assure le soutien <strong>médical, paramédical et psychologique</strong> des sapeurs-pompiers et, le cas échéant, vétérinaire pour les animaux du SIS. Assuré par les professionnels de santé, psychothérapeutes et psychologues des SIS.</li>
+                <li><strong>Échelons possibles</strong> : véhicule de liaison infirmier ou médical, véhicule dédié au SSO armé de sapeurs-pompiers dont des personnels de santé, zone de prise en charge et de soins, permanence de réponse médicale à distance. Un premier échelon peut être un <strong>VSAV seul</strong>, le deuxième y associe un infirmier de proximité.</li>
+                <li>Il est déclenché <strong>précocement</strong> pour être présent dès la reconnaissance et l'attaque, quand le risque de blessure grave est prégnant.</li>
+                <li>La mission de soutien sanitaire est <strong>exclusive</strong> pour les personnels qui en sont chargés.</li>
+            </ul>
+            <p><strong>Ce qu'il prend en charge</strong> : traumatismes (chutes, fractures, entorses, écrasements, plaies), blast, brûlures, intoxications (fumées, produits), <strong>coup de chaleur d'exercice</strong>, céphalées, douleurs thoraciques, syndromes coronariens, arrêt cardiaque, hypothermie, entorses et petites plaies, conjonctivite, corps étranger oculaire, déshydratation, stress de forte intensité, pathologies de médecine générale.</p>
+            <p><strong>Protocoles recommandés</strong> (en complément des PISU) : surveillance du personnel engagé et <strong>règles médicales de réengagement</strong>, coup de chaleur d'exercice et épuisement à la chaleur, céphalées après exposition à la chaleur, réhydratation, lésions oculaires, intoxication aiguë aux fumées, accident de plongée, antalgie per-os, troubles digestifs, traumatologie bénigne.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>La zone de soins opérationnelle</h3>
+            <ul>
+                <li>Située en <strong>zone sécurisée</strong>, identifiée et facilement repérable.</li>
+                <li>Organisée avec un <strong>secrétariat</strong>, un secteur <strong>accueil - bilan - soins légers</strong> et un secteur <strong>soins lourds isolé des regards</strong>. Peut être renforcée par un médecin du SIS.</li>
+                <li><strong>Permanence téléphonique des médecins du SIS</strong> : conseils à distance, prescription des actes réalisables par les sapeurs-pompiers, décision de <strong>laisser sur place</strong>, de retour à l'unité ou d'<strong>évacuation</strong> via la régulation du SAMU, déplacement sur les lieux.</li>
+                <li>Recours à tout moment au <strong>soutien psychologique</strong> et à un <strong>vétérinaire</strong> du SIS (animal en difficulté).</li>
+                <li><strong>Traçabilité</strong> : relevé nominatif (heure, nature des soins) pour les petits soins, versé au dossier médical ; <strong>fiche médico-infirmière d'intervention</strong> individuelle transmise au service d'admission en cas d'hospitalisation ; relevé de l'intervention de soutien psychologique.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le ravitaillement alimentaire</h3>
+            <div class="rd-astuce">
+                <p><strong>Le ravitaillement se fait toujours en zone de soutien</strong>, quel que soit son niveau.</p>
+            </div>
+            <table class="rd-table">
+                <thead><tr><th>Niveau</th><th>Usage</th><th>Contenu</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1</strong></td><td>Réhydratation sur interventions courantes, premiers temps</td><td>Bouteilles d'eau (de 0,5 L de préférence, eau minérale si possible pour les sels) à raison de <strong>1,5 L par membre d'équipage</strong>, barres de céréales. Dans les engins-pompes et malles de ravitaillement en caserne.</td></tr>
+                    <tr><td><strong>2</strong></td><td>Véhicules d'appui, offre variée pour éviter la lassitude</td><td>Eau gazeuse et minérale, café, chocolat, thé et soupe lyophilisés, biscuits peu périssables, compotes, plats de pâtes et pommes de terre déshydratées…</td></tr>
+                    <tr><td><strong>3</strong></td><td>Opérations multiples ou importantes, grandes amplitudes</td><td>Cantines mobiles (SIS soumis aux feux de forêts), <strong>kits alimentaires complets</strong>, <strong>convention avec un ou deux prestataires</strong> (grande surface) et <strong>guide d'achat préétabli</strong>.</td></tr>
+                </tbody>
+            </table>
+            <table class="rd-table">
+                <thead><tr><th>Guide d'achat (exemple) pour</th><th>10 pers.</th><th>20</th><th>30</th><th>40</th><th>50</th></tr></thead>
+                <tbody>
+                    <tr><td>Baguettes</td><td>8</td><td>16</td><td>24</td><td>32</td><td>40</td></tr>
+                    <tr><td>Pain de mie (paquets de 20 tranches)</td><td>4</td><td>8</td><td>12</td><td>12</td><td>20</td></tr>
+                    <tr><td>Tranches de jambon ou blanc de poulet</td><td>20</td><td>40</td><td>60</td><td>80</td><td>100</td></tr>
+                    <tr><td>Boisson (litres)</td><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td></tr>
+                    <tr><td>Bananes</td><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td></tr>
+                    <tr><td>Pommes ou oranges</td><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td></tr>
+                    <tr><td>Gruyère (kg)</td><td>0,5</td><td>1</td><td>1,5</td><td>2</td><td>2,5</td></tr>
+                </tbody>
+            </table>
+            <p>Les missions d'appui valorisent les personnels des véhicules d'appui et les réservistes.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Logistique et reconditionnement sur place</h3>
+            <ul>
+                <li>Après l'attaque, les vêtements sont <strong>trempés de transpiration</strong> et le corps se refroidit au retour de la zone d'exclusion : prévoir des <strong>vêtements secs</strong> de plusieurs tailles.</li>
+                <li><strong>Zones de repos</strong> tempérées avec de quoi s'allonger, ambiance sonore et lumineuse propice, <strong>toilettes hommes et femmes</strong>, vestiaires (salle communale, gymnase).</li>
+                <li>Matériels de <strong>décontamination</strong> (fumées d'incendie) désormais à disposition dans <strong>tous les engins d'incendie</strong>.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/SOUTIEN-DE-L-INTERVENANT-2026.02.06.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec schémas et grilles)</a></p>
+        <p class="rd-source">GDO Préparation et soutien de l'intervenant 2026, chapitre 3 sections 2.3 à 2.5.</p>
+    </div>
+
+    <div id="gdosout-releves" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdosout-menu')">← GDO Soutien</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🔄 Relèves et colonnes de renfort</h2>
+
+        <div class="rd-section">
+            <h3>Les relèves</h3>
+            <ul>
+                <li>Remplacer les personnels engagés par des agents de <strong>même compétence et qualification</strong>, sans interrompre la mission.</li>
+                <li>Elles s'<strong>anticipent</strong> : elles interviennent d'ordinaire quand la fatigue ou le stress se font sentir. Ce n'est <strong>pas lorsqu'on constate la fatigue</strong> qu'il faut les demander.</li>
+                <li>Elles demandent du temps : recensement des personnels, regroupement, transit, passage de consignes.</li>
+                <li>Elles <strong>ne doivent pas faire baisser la vigilance</strong> sur la sécurité ni créer de discontinuité dans l'action de secours.</li>
+                <li>Elles peuvent aussi concerner le secteur soutien, les centres opérationnels et le commandement. Chaque SIS définit ses règles pour guider COS et centres opérationnels.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Nature de la mission (exemple)</th><th>Durée maximale d'engagement</th><th>Reconditionnement</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Attaque initiale sous ARI</strong> ou <strong>reconnaissance sous scaphandre RCH</strong></td><td><strong>20 minutes</strong></td><td><strong>15 minutes</strong> (sauf si la situation opérationnelle impose de le raccourcir), puis retour sur le site</td></tr>
+                    <tr><td><strong>Opérations de longue durée</strong></td><td><strong>5 heures en journée</strong>, <strong>4 heures la nuit</strong></td><td>Après <strong>contrôle de l'agent</strong> par le personnel chargé du soutien sanitaire</td></tr>
+                </tbody>
+            </table>
+            <p>Ces durées peuvent être <strong>réduites</strong> selon la pénibilité, le travail restant, la température, les intempéries et l'heure des repas. Un soutien précoce et complet permet au COS d'adapter temps d'engagement et nombre de relèves.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Colonnes de renfort extra-départementales</h3>
+            <ul>
+                <li>Engagements éprouvants (conditions spartiates, rudesse des missions), surtout en catastrophe naturelle (tempêtes, feux de forêts, inondations, plus rarement séismes).</li>
+                <li>La colonne est <strong>autonome les premiers jours</strong> pour ne pas être une charge logistique pour le service accueillant : <strong>eau et nourriture pour 24 heures</strong>, premiers soins d'urgence, soutien sanitaire et reconditionnement.</li>
+                <li><strong>Véhicule de soutien</strong> : matériel pour blessures légères (ampoules, brûlures légères, maux de tête ou de ventre, piqûres), aménagement d'une <strong>zone de récupération</strong>, matériel d'hygiène (douche, sanitaires, lavage des mains).</li>
+                <li><strong>Soutien logistique</strong> : zone de vie (hygiène, nourriture, couchage) en transit, sur le terrain ou au repos, autonomie mécanique, minimum de réserve d'EPI.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Soutien sanitaire de colonne</th><th></th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Missions</strong></td><td>Soigner par actes médicaux ou paramédicaux (éviter de mobiliser des sapeurs-pompiers pour accompagner un collègue en consultation), prise en charge initiale des pathologies graves y compris liées au <strong>stress thermique</strong>, soutien psychologique, conseil sanitaire et d'hygiène au chef de détachement, soutien d'un chantier ou secteur, soins aux populations secourues.</td></tr>
+                    <tr><td><strong>Composition conseillée</strong></td><td>Un <strong>binôme médecin - infirmier</strong>, dont l'un au moins a une pratique opérationnelle régulière en SSUAP. À défaut de médecin, un infirmier formé aux PISU, qui peut joindre en permanence un médecin de son SIS d'origine.</td></tr>
+                    <tr><td><strong>Moyens</strong></td><td>Vecteur dédié tous chemins, <strong>identification sans équivoque</strong>, EPI adaptés, radio et cartographie, matériel et médicaments adaptés, <strong>médicaments préservés de la chaleur</strong> (stationnement à l'ombre).</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>Intégré au groupe de commandement de la colonne, il est associé aux briefings. Le chef de détachement <strong>annonce au département receveur</strong> les capacités sanitaires ; le département receveur organise leur prise en compte par son centre opérationnel et sa sous-direction santé.</li>
+                <li><strong>Traçabilité</strong> : main courante de tous les soins (date, heure, nom, département, CIS, motif, soins) et fiche bilan médico-infirmier individuelle si la prise en charge est lourde ou en cas d'évacuation. Au retour, dossiers archivés ; ceux des agents d'autres départements sont transmis aux médecins-chefs concernés <strong>sous pli confidentiel</strong>.</li>
+            </ul>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/SOUTIEN-DE-L-INTERVENANT-2026.02.06.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec schémas et grilles)</a></p>
+        <p class="rd-source">GDO Préparation et soutien de l'intervenant 2026, chapitre 3 sections 2.6 et 2.7.</p>
+    </div>
+
+    <div id="gdosout-outils" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdosout-menu')">← GDO Soutien</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>📊 Outils d'aide à la décision</h2>
+
+        <div class="rd-section">
+            <h3>Engager le soutien sanitaire</h3>
+            <p>Les outils combinent la <strong>criticité de l'opération</strong>, le <strong>nombre de sapeurs-pompiers engagés</strong> et les conditions environnementales. Deux paramètres majeurs, pris séparément pour un engagement réflexe :</p>
+            <ul>
+                <li><strong>La criticité</strong> liée à la nature de l'opération.</li>
+                <li><strong>L'effectif prévisible engagé</strong> : il accroît l'occurrence d'accident sans justifier à lui seul le dimensionnement.</li>
+            </ul>
+            <p>Deux paramètres secondaires, combinés aux premiers : la <strong>durée prévisible</strong> et les <strong>contraintes extérieures</strong> (astro-météo, contexte, risques sociétaux, topographie, port d'EPI, superficie de la zone d'intervention, éloignement des CIS ou secteurs médicalisés). Ils conduisent à un engagement réfléchi a posteriori ou à fixer le niveau dès l'alerte.</p>
+            <p>Exemple de matrice du guide : on <strong>additionne les scores</strong> de cinq critères, puis on lit l'engagement du SSO.</p>
+            <table class="rd-table">
+                <thead><tr><th>Critère</th><th>Scores</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Danger particulier</strong></td><td>Non : 0 · Potentiel : 1 · <strong>Avéré : 4</strong></td></tr>
+                    <tr><td><strong>Conditions particulières</strong></td><td>Nuit : 1 · Forte chaleur : 2 · Verglas ou neige : 2 · Risque sociétal : 1 · Plus de 30 min d'un centre hospitalier : 1</td></tr>
+                    <tr><td><strong>Durée prévisible</strong></td><td>Moins de 2 h : 0 · 2 à 4 h : 1 · 4 à 8 h : 2 · Plus de 8 h : 3</td></tr>
+                    <tr><td><strong>Nombre de sapeurs-pompiers engagés</strong></td><td>Moins de 10 : 0 · 11 à 20 : 1 · 21 à 50 : 2 · Plus de 50 : 3</td></tr>
+                    <tr><td><strong>Engagement d'une spécialité</strong></td><td>SD, SAL, SNL : 2 · Autre : 0</td></tr>
+                </tbody>
+            </table>
+            <table class="rd-table">
+                <thead><tr><th>Score total</th><th>Engagement du SSO</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>0 à 2</strong></td><td>Pas de SSO</td></tr>
+                    <tr><td><strong>3 à 4</strong></td><td>VSAV</td></tr>
+                    <tr><td><strong>5 à 7</strong></td><td>VSAV (relayé par un véhicule dédié SSO si engagé) + ISP protocolisé + VSM</td></tr>
+                    <tr><td><strong>8 à 10</strong></td><td>VSAV + véhicule dédié + ISP protocolisé + VSM</td></tr>
+                    <tr><td><strong>Plus de 10</strong></td><td>VSAV + véhicule dédié SSO + ISP protocolisé + VSM + <strong>MSP</strong> (médecin)</td></tr>
+                </tbody>
+            </table>
+            <p>Exemples de danger particulier avéré : feu de sous-sol, feu en présence de matières dangereuses, intervention RCH, feu d'établissement industriel, feu avec risque d'explosion ou après explosion, <strong>feu de silo</strong>, secours en milieu périlleux ou souterrain, feu avéré d'habitation collective.</p>
+            <div class="rd-alerte">
+                <strong>Engagement systématique du soutien sanitaire</strong>
+                <ul>
+                    <li>Quand les procédures de la spécialité le préconisent ou l'imposent.</li>
+                    <li>Quand la planification opérationnelle le prévoit (plan d'établissement répertorié, plan de secours, ordres d'opérations).</li>
+                    <li>Quand la criticité seule le justifie : feu de sous-sol, feu avéré d'établissement industriel, intervention USAR, secours en site souterrain, accident ou feu de TMD, contamination NRBCe.</li>
+                </ul>
+                <p>Il reste justifié même si des moyens SSUAP, médicalisés ou non, sont présents mais dédiés aux victimes du sinistre.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'indicateur de chaleur (Heat index)</h3>
+            <p>Mis au point en 1985 par le service météorologique américain. On croise la <strong>température de l'air (°C, à l'ombre)</strong> avec l'<strong>humidité relative (%)</strong> : le résultat est le « ressenti ».</p>
+            <div class="rd-alerte">
+                <strong>Conditions de validité</strong>
+                <p>Indice établi pour un temps <strong>nuageux</strong> (mesures à l'ombre) et un vent léger. <strong>Ajouter 15</strong> à l'indice pour un travail en plein soleil.</p>
+            </div>
+            <table class="rd-table">
+                <thead><tr><th>Niveau de la grille</th><th>Effets</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Vert</strong></td><td>Fatigue</td></tr>
+                    <tr><td><strong>Jaune</strong></td><td>Coup de soleil, crampes musculaires, épuisement physique</td></tr>
+                    <tr><td><strong>Orange</strong></td><td>Épuisement général, coup de chaleur possible</td></tr>
+                    <tr><td><strong>Rouge</strong></td><td>Risque élevé de coup de chaleur</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-astuce">
+                <p><strong>Exemple du guide</strong> : feu d'une casse automobile en plein été, 34 °C, 45 % d'humidité : 37, plus 15 en plein soleil, soit un score de <strong>52</strong>. Dans ce cas, la logistique eau est à prendre en compte <strong>dès l'appel</strong>.</p>
+            </div>
+            <p>Utilisable <strong>a priori</strong> en prévention primaire (CODIS, chefs de centre, officiers de garde, sur les prévisions du jour). La grille complète est dans le PDF.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>L'indice de refroidissement éolien</h3>
+            <p>Même principe avec la <strong>température (°C)</strong> et la <strong>vitesse du vent (km/h)</strong>, pour l'ambiance thermique froide.</p>
+            <div class="rd-alerte">
+                <strong>Dès que la température ambiante, à l'abri du vent, est inférieure à 5 °C</strong>
+                <p>La vigilance s'impose : une exposition au froid, prolongée ou non, a des effets directs sur la santé.</p>
+            </div>
+            <div class="rd-astuce">
+                <p><strong>Exemple du guide</strong> : feu d'habitation en plein hiver, -20 °C et vent de 50 km/h : score de <strong>-35 °C</strong>. Risque croissant entre -25 et -40 °C : la peau exposée peut geler en <strong>10 à 30 minutes</strong>. Surveiller engourdissement ou blanchissement du visage et des extrémités ; risque d'hypothermie pour des expositions longues sans protection adaptée.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Gérer les temps de récupération (grille de cotation du SDIS 54)</h3>
+            <p>Trois critères objectifs : la <strong>météo</strong>, la <strong>durée</strong> et l'<strong>horaire</strong>. Chacun reçoit une cotation de 1 à 4 ; la somme donne un niveau de risque et des temps de récupération.</p>
+            <table class="rd-table">
+                <thead><tr><th>Critère</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Contrainte thermique : chaleur (HI)</strong></td><td>HI ≤ 32 (risque faible)</td><td>33 ≤ HI &lt; 40 (modéré)</td><td>40 ≤ HI &lt; 51 (élevé)</td><td>HI ≥ 51 (majeur)</td></tr>
+                    <tr><td><strong>…ou froid (IRE)</strong></td><td>Risque faible</td><td>-10 à -25 (modéré)</td><td>-25 à -43 (élevé)</td><td>Au-delà de -43 (majeur)</td></tr>
+                    <tr><td><strong>Durée de l'intervention</strong></td><td>Moins de 1 h</td><td>1 à 4 h</td><td>4 à 8 h (longue durée)</td><td>Plus de 8 h (très longue durée)</td></tr>
+                    <tr><td><strong>Horaire</strong></td><td>Le matin ou juste avant le repas de midi</td><td>L'après-midi ou juste avant le repas du soir</td><td>Entre 20 h et 24 h</td><td>Entre 0 h et 6 h</td></tr>
+                </tbody>
+            </table>
+            <table class="rd-table">
+                <thead><tr><th>Total</th><th>Niveau</th><th>Pauses à envisager</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>3</strong></td><td>I</td><td>Une pause de <strong>5 à 15 minutes toutes les 3 à 4 heures</strong></td></tr>
+                    <tr><td><strong>4 à 6</strong></td><td>II</td><td>Une pause d'<strong>une quinzaine de minutes toutes les 1 à 2 heures</strong></td></tr>
+                    <tr><td><strong>7 à 9</strong></td><td>III</td><td><strong>Une pause de 15 minutes en zone de soutien toutes les heures</strong></td></tr>
+                    <tr><td><strong>10 à 12</strong></td><td>IV</td><td><strong>Une pause de 30 minutes en zone de soutien</strong> à l'issue de la phase de travail, puis relève ou changement de poste</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/SOUTIEN-DE-L-INTERVENANT-2026.02.06.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec les grilles Heat index et refroidissement éolien)</a></p>
+        <p class="rd-source">GDO Préparation et soutien de l'intervenant 2026, chapitre 3 section 3. Grilles chiffrées complètes (Heat index, refroidissement éolien) non reproduites : voir le PDF.</p>
+    </div>
+
+    <div id="gdosout-apres" class="module" style="--jsp: #8347C2;">
+        <button class="back-btn" onclick="showModule('gdosout-menu')">← GDO Soutien</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🛌 Après l'opération</h2>
+
+        <div class="rd-section">
+            <h3>La zone de logistique et de soutien</h3>
+            <ul>
+                <li>Installée en <strong>zone de soutien</strong> : activité <strong>sans EPI de lutte</strong>, mais assez proche pour un accès aisé. Idéalement près du poste de commandement <strong>sans y être accolée</strong>, dans des locaux tempérés, éclairés, avec sanitaires, clairement identifiée.</li>
+                <li><strong>Fonctions</strong> : secrétariat d'accueil, déshabillage accompagné, <strong>capacité de décontamination</strong> (hygiène), ravitaillement hydrique et alimentaire, zone de soins.</li>
+                <li>Opérations courantes : une zone réduite, matérialisée par une <strong>bâche de couleur et des cônes de Lubeck</strong>.</li>
+            </ul>
+            <div class="rd-section">
+                <h3>Marche en avant du sapeur-pompier</h3>
+                <ul>
+                    <li><strong>Enregistré</strong> à son entrée dans la zone.</li>
+                    <li><strong>Questionné rapidement</strong> sur son état de forme.</li>
+                    <li>Dirigé vers la <strong>dépose tenue</strong>, puis la zone d'<strong>hygiène</strong> et de ravitaillement, ou vers la <strong>zone de soins</strong>.</li>
+                    <li>Repos d'<strong>une trentaine de minutes</strong>, rapide <strong>bilan secouriste</strong>, puis reprise de ses EPI (ou d'autres propres) pour rejoindre la zone d'intervention, ou orientation vers la zone de soins.</li>
+                </ul>
+            </div>
+            <p>La <strong>zone de soins</strong> accueille plusieurs sapeurs-pompiers (bilan, repos surveillé, refroidissement, petits soins) et au moins un blessé plus grave, permet le déshabillage hors de la vue du public et l'isolement d'un agent pour un examen complet. <strong>Passer par la zone de soins ne fait pas compter l'agent comme malade ou blessé</strong> ; les actions sont tracées.</p>
+            <p><strong>Matériels</strong> : malles prêtes à charger, véhicule dédié au SSO, véhicule d'appui et de soutien, véhicule de reconditionnement, moyens de logistique alimentaire maintenant la liaison chaude ou froide.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Un sapeur-pompier blessé en opération</h3>
+            <ul>
+                <li>Éviter les prises en charge « <strong>sauvages</strong> » soumises à l'émotion : <strong>discipline et respect du rôle de chacun</strong>, en particulier du responsable de l'intervention SSUAP.</li>
+                <li>Informer la chaîne hiérarchique au plus vite, dans le respect du <strong>secret professionnel</strong> ; <strong>relever dès que possible les personnels impliqués</strong>. Transport par un vecteur du SIS privilégié pour les évacuations.</li>
+                <li><strong>Autres intervenants</strong> (forces de l'ordre, secouristes, radio-amateurs, agents communaux) : prise en charge la plus précoce possible, idéalement dans une filière dédiée avec remontée d'information au COS et à leur hiérarchie. Le soutien sanitaire au profit d'autres forces (gendarmerie, police, déminage) se prépare en amont, éventuellement par convention.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Reconditionnement physique</h3>
+            <ul>
+                <li>Mettre au repos au retour d'intervention, prévoir un temps de <strong>confort de base</strong> (se laver, manger, s'hydrater).</li>
+                <li>Après un effort intense : restaurer l'énergie, hydrater, rétablir l'équilibre physique. L'intelligence de situation guide la remise en condition du personnel, du matériel et des engins.</li>
+                <li>Vigilance sur la <strong>fatigue des personnels qui reprennent la route</strong> vers leur domicile : un temps de repos peut être imposé avant de partir.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Reconditionnement psychologique et blessure mentale</h3>
+            <p>Le soutien post-intervention a un rôle bénéfique pour intégrer l'événement (retour d'expérience à chaud). Il est assuré par des professionnels formés (psychothérapeutes, psychologues, professionnels de santé), constitués en <strong>USP</strong>. L'encadrement (COS, chef de centre) a un rôle déterminant.</p>
+            <table class="rd-table">
+                <thead><tr><th>Contextes dits critiques</th><th>Réactions à repérer</th></tr></thead>
+                <tbody>
+                    <tr><td>
+                        <ul>
+                            <li>Opérations impliquant des <strong>proches</strong> (famille, collègues, amis)</li>
+                            <li>Enfants en détresse ou décédés</li>
+                            <li>Contextes de violence, morts d'origine humaine (homicide, féminicide, infanticide…) ou par négligence (accidents de la route ou du travail)</li>
+                            <li>Événements exceptionnels (nombreuses victimes, attentats, catastrophes)</li>
+                            <li>Situations d'<strong>impuissance</strong> ou de sentiment d'échec, menace perçue pour son intégrité</li>
+                        </ul>
+                    </td><td>
+                        <ul>
+                            <li>Manifestations émotionnelles intenses pendant ou juste après</li>
+                            <li>Perte de capacité ou de réflexes dans l'action</li>
+                            <li>Réactions inadaptées à la situation</li>
+                            <li>Réactions physiques inattendues (malaise)</li>
+                            <li>Tension inhabituelle dans l'équipe : isolement, silences prolongés, regards fuyants ou au contraire agitation, flot de paroles, excitation, colère, désarroi, abattement</li>
+                        </ul>
+                    </td></tr>
+                </tbody>
+            </table>
+            <p>Les <strong>équipes des centres opérationnels</strong>, la chaîne de commandement et les personnels de la SDS ne doivent pas être oubliés.</p>
+            <p><strong>Collaboration avec l'USP</strong> : informer l'unité d'une exposition à un événement critique, identifier le besoin d'aide au reconditionnement, solliciter un psychothérapeute ou psychologue au titre du <strong>conseil en santé mentale</strong>, la tenir informée des évolutions. Les sapeurs-pompiers connaissent le risque et le soutien du service (par exemple un numéro de téléphone contact diffusé).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Posture managériale, reconnaissance, suivi médical</h3>
+            <ul>
+                <li><strong>Manager</strong> : informer la chaîne de commandement, <strong>reconnaître le caractère critique</strong> de l'intervention, expliquer que des réactions inhabituelles sont possibles, repérer les changements de comportement, encourager l'accès au soutien, ajuster la charge de travail voire <strong>démobiliser</strong> au retour, respecter la confidentialité et limiter les rumeurs, préserver des médias, réunir l'équipe pour un retour d'expérience technique, appliquer les recommandations de l'USP.</li>
+                <li><strong>Reconnaissance</strong> : à bon escient et sans excès, <strong>décorrélée du bilan humain et matériel</strong>, graduée (du remerciement à la récompense). Elle n'élude pas le retour d'expérience, même en cas de dysfonctionnements.</li>
+                <li><strong>Suivi médical</strong> : le sens de l'aptitude est la <strong>préservation de la santé</strong> du sapeur-pompier. Médecins, infirmiers, psychothérapeutes et psychologues des SIS sont un recours pour aider, orienter et éventuellement adapter l'aptitude, pour que le sapeur-pompier puisse poursuivre ses missions.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Annexe : programme de reprise d'activité après un arrêt</h3>
+            <p>Selon la durée et la cause de l'arrêt, un programme d'accompagnement global (physique, technique, mental) est construit par la filière <strong>EAP</strong>, la <strong>sous-direction santé</strong> et l'encadrement. Exemple tiré du SIS du Haut-Rhin : diagnostic, <strong>réathlétisation</strong> (6 h), parcours opérationnel fonctionnel (2 h), prise en compte des besoins de formation (8 h) et objectifs de FMPA, avec en <strong>fil rouge</strong> la préservation du potentiel mental. Adaptable en 4 heures selon les besoins et la disponibilité de l'agent. Détail dans le PDF (annexe C).</p>
+        </div>
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/commandement/SOUTIEN-DE-L-INTERVENANT-2026.02.06.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 68 pages, avec schémas et grilles)</a></p>
+        <p class="rd-source">GDO Préparation et soutien de l'intervenant 2026, chapitre 4 et annexe C.</p>
+    </div>
+
     <!-- ============ GTO Ventilation opérationnelle (DGSCGC, 2019) ============ -->
     <div id="vent-menu" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -32774,7 +33832,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.59</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.60</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
