@@ -2289,3 +2289,6 @@ img.zoomable { cursor: zoom-in; }
 /* Photos et schémas des guides : plusieurs figures côte à côte */
 .rd-figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin: 12px 0; align-items: start; }
 .rd-figs .rd-fig { margin: 0; }
+/* Tableaux larges : défilement horizontal sur mobile */
+.rd-tablescroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 8px 0; }
+.rd-tablescroll .rd-table { min-width: 560px; margin: 0; }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.64">
+    <meta name="version" content="1.69.65">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -145,7 +145,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.64 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.65 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -313,7 +313,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.64</span><br>
+                        Vulcain v<span class="app-version">1.69.65</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -29737,6 +29737,680 @@ Je fais : extinction.</p>
         <p class="rd-source">Source : GTO « Sauvetages et mises en sécurité », DGSCGC, novembre 2020, chapitres 4 et 5. Texte résumé ; photos et schémas du guide (© DGSCGC et services cités).</p>
     </div>
 
+    <!-- ============ GDO Prévention des risques liés à la toxicité des fumées (DGSCGC, septembre 2020) ============ -->
+    <div id="gdotox-menu" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🌫️ GDO Toxicité des fumées – 2020</h2>
+        <p style="text-align: center;">Guide de doctrine opérationnelle DGSCGC de <strong>septembre 2020</strong> (2<sup>e</sup> édition) : comprendre ce que contient la fumée, comment elle s'accroche à la tenue et à la peau, et comment <strong>limiter l'exposition</strong> avant, pendant et après l'opération.</p>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-013_1.webp" alt="Les fumées d'incendie, blanches, grises ou noires, sont dangereuses pour la santé" loading="lazy"><figcaption>Les fumées d'incendie, blanches, grises ou noires, sont dangereuses pour la santé</figcaption></figure>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('gdotox-fumees')"><b>1 · Les fumées d'incendie</b><span>Ce qu'elles contiennent, COV et HAP, feux de forêts, effets de chaque toxique</span></button>
+            <button onclick="showModule('gdotox-exposition')"><b>2 · Exposition et désorption</b><span>Directe ou croisée, absorption, adsorption, désorption, voies de pénétration, appréciation du risque</span></button>
+            <button onclick="showModule('gdotox-centre')"><b>3 · Le centre de secours</b><span>Circuit sale-propre, vestiaires froids et chauds, zones, formateurs avec feux réels</span></button>
+            <button onclick="showModule('gdotox-cagoule')"><b>4 · Cagoule filtrante et EPI</b><span>Ce qu'elle protège, ce qu'elle ne filtre pas, EPI de catégorie 3, masque sur peau rasée</span></button>
+            <button onclick="showModule('gdotox-operation')"><b>5 · Pendant l'opération</b><span>ALARA, zonage, soutien sanitaire, nettoyage des tenues et des matériels, prise en charge massive</span></button>
+            <button onclick="showModule('gdotox-apres')"><b>6 · Après l'opération</b><span>Eau froide puis douche, reconditionnement, séchage et désorption, grilles d'appréciation</span></button>
+        </div>
+
+        <div class="rd-section">
+            <h3>📌 L'essentiel en 6 idées</h3>
+            <ul>
+                <li><strong>La fumée est un cocktail</strong> propre à chaque sinistre : gaz, vapeurs, suies et particules fines. Sa composition est complexe à identifier.</li>
+                <li><strong>La tenue et le matériel retiennent la pollution</strong> (absorption et adsorption) puis la <strong>relâchent</strong> plus tard (désorption) : au repos, dans le véhicule, au centre.</li>
+                <li><strong>Quatre portes d'entrée</strong> : inhalation, ingestion, peau, yeux. Les deux dernières sont souvent oubliées.</li>
+                <li><strong>Principe du « juste besoin »</strong> : exposer le moins possible, comme le principe ALARA (<em>as low as reasonably achievable</em>).</li>
+                <li><strong>Trois temps</strong> : avant (prévention, centre propre), pendant (zonage, protections, nettoyage sur place), après (eau froide, douche, séchage).</li>
+                <li><strong>Chacun est responsable de sa propre santé et de celle des autres.</strong> On ne valorise plus le « héros » couvert de suie.</li>
+            </ul>
+        </div>
+
+        <div class="rd-alerte">
+            <strong>Avertissement du guide</strong>
+            <p>Dans l'état actuel des connaissances, <strong>seule une appréciation du risque est possible</strong> pour les particules résiduelles de fumées : la <strong>fréquence</strong>, la <strong>durée</strong> et l'<strong>intensité</strong> de l'exposition sont à confronter à la situation. Le COS adapte les mesures à l'urgence et au contexte.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔗 Déjà dans Vulcain (non dupliqué ici)</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('hygiene-fumees')">🧼 Hygiène opérationnelle : les toxiques de la fumée</button>
+                <button class="sal-lien" onclick="showModule('rdeb-apres')">RDEB : après l'engagement</button>
+                <button class="sal-lien" onclick="showModule('rdeb-menu')">🫁 RDEB – Engagement des binômes</button>
+                <button class="sal-lien" onclick="showModule('gtomv')">😷 GTO Engagement en milieu vicié</button>
+                <button class="sal-lien" onclick="showModule('gdoinc-menu')">🏢 GDO Incendies de structures</button>
+                <button class="sal-lien" onclick="showModule('gdosout-menu')">🫶 GDO Préparation et soutien de l'intervenant</button>
+                <button class="sal-lien" onclick="showModule('sante-psy')">Santé et soutien psychologique</button>
+            </p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>📖 Lexique du guide</summary>
+            <ul>
+                <li><strong>COV</strong> : composés organiques volatils. <strong>HAP</strong> : hydrocarbures aromatiques polycycliques, molécules de benzène fusionnées présentes dans les suies.</li>
+                <li><strong>Absorption</strong> : la pollution pénètre <em>dans</em> un milieu. <strong>Adsorption</strong> : elle se fixe <em>sur</em> une surface. <strong>Désorption</strong> : elle est relâchée ensuite.</li>
+                <li><strong>ALARA</strong> : aussi bas que raisonnablement possible. <strong>CIS</strong> : centre d'incendie et de secours. <strong>SSSM</strong> : service de santé et de secours médical.</li>
+                <li><strong>EPI</strong> : équipement de protection individuelle. <strong>CNRACL</strong> : caisse nationale de retraites des agents des collectivités locales, partenaire du référentiel de la cagoule.</li>
+                <li><strong>Marche en avant</strong> : on circule toujours du sale vers le propre, sans retour en arrière.</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Prevention-risque-toxicite-fumees-2eme-edition.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 56 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Prévention des risques liés à la toxicité des fumées », DGSCGC/DSP/SDDRH/BDFE, septembre 2020, 2<sup>e</sup> édition. Texte repris et résumé ; photos et schémas du guide (© DGSCGC et services cités).</p>
+    </div>
+
+    <div id="gdotox-fumees" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdotox-menu')">← GDO Toxicité des fumées</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🌫️ Les fumées d'incendie</h2>
+
+        <div class="rd-section">
+            <h3>🔥 D'où vient la fumée</h3>
+            <p>La combustion exige <strong>trois éléments</strong> : un <strong>combustible</strong>, une <strong>énergie d'activation</strong> et un <strong>comburant</strong> (le plus souvent le dioxygène). Elle génère des flux de dangers, surtout <strong>thermique</strong> et <strong>toxique</strong> : produits de combustion et de pyrolyse sous forme de gaz, de vapeurs, de suies.</p>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-014_1.webp" alt="Triangle du feu, combustion incomplète et complète : la nature du combustible et la teneur en comburant changent les produits émis" loading="lazy"><figcaption>Triangle du feu, combustion incomplète et complète : la nature du combustible et la teneur en comburant changent les produits émis</figcaption></figure>
+            <div class="rd-astuce">
+                <p>La fumée peut être <strong>blanche</strong> (riche en aérosols ou en vapeur d'eau), <strong>grise</strong> (aérosols et particules solides) ou <strong>noire</strong> (grosses particules solides). Quelle que soit la couleur, <strong>elle est dangereuse pour la santé</strong>.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>🏢 Incendies de structures : les produits de combustion</h3>
+            <p>Les substances toxiques les plus fréquemment émises :</p>
+            <table class="rd-table">
+                <thead><tr><th>Famille</th><th>Substances citées par le guide</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Gaz asphyxiants et irritants</strong></td><td>Dioxyde et monoxyde de carbone, monoxyde et dioxyde d'azote, dioxyde de soufre, sulfure d'hydrogène, sulfure de carbone, ammoniac, cyanure d'hydrogène</td></tr>
+                    <tr><td><strong>Halogénés</strong></td><td>Fluorure, bromure et chlorure d'hydrogène</td></tr>
+                    <tr><td><strong>Aldéhydes et acides</strong></td><td>Formaldéhyde, acroléine, acétaldéhyde, acide formique, furfural</td></tr>
+                    <tr><td><strong>Composés aromatiques</strong></td><td>Benzène, toluène, xylène, styrène, éthylbenzène, cumène, phénol, chlorobenzène, benzonitrile, 1,3,5-triméthylbenzène, propylbenzène, 1-éthyl-4-méthylbenzène</td></tr>
+                    <tr><td><strong>Autres</strong></td><td>Acrylonitrile</td></tr>
+                </tbody>
+            </table>
+            <p>Ces composés se classent en deux catégories :</p>
+            <table class="rd-table">
+                <thead><tr><th>Catégorie</th><th>Définition</th><th>Ce qu'il faut retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Organiques</strong></td><td>Squelette carboné, avec hydrogène, oxygène, azote…</td><td><strong>Peu solubles dans l'eau.</strong> Certains sont <strong>volatils</strong> (COV), sous forme moléculaire ou de particules en suspension. Les suies contiennent des <strong>HAP</strong> (benzène fusionné), qui font partie des COV.</td></tr>
+                    <tr><td><strong>Minéraux (inorganiques)</strong></td><td>Métaux et dérivés, corps simples, composés simples du carbone (CO, carbonates)</td><td><strong>Réagissent</strong> avec les composants biologiques : acide-base (acides, ammoniac), oxydo-réduction (SO₂, sulfures, oxydes d'azote), complexation (CO, HCN).</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-figs">
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-015_2.webp" alt="La suie, avec les HAP au centre, piège de nombreux toxiques à sa surface" loading="lazy"><figcaption>La suie, avec les HAP au centre, piège de nombreux toxiques à sa surface</figcaption></figure>
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-015_1.webp" alt="Dimension des particules : plus elles sont fines, plus elles pénètrent profondément" loading="lazy"><figcaption>Dimension des particules : plus elles sont fines, plus elles pénètrent profondément</figcaption></figure>
+            </div>
+            <div class="rd-astuce">
+                <p>Les HAP viennent surtout de la <strong>pyrolyse</strong> de matières organiques (combustibles fossiles, bois) et des <strong>imbrûlés</strong>. Tout composé peut être absorbé, inhalé ou passer dans la structure des vêtements ; <strong>l'adsorption est sélective</strong> : certains composés se fixent sur les cheveux, les fibres techniques ou le coton, d'autres sur le caoutchouc, le cirage ou la graisse.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>🌲 Feux de forêts et d'espaces naturels</h3>
+            <p>Le combustible végétal est un <strong>biopolymère complexe</strong> : cellulose, lignine, hémicellulose, composés extractibles (cire, terpènes, composés phénoliques), matières minérales qui donnent les cendres. Les émissions dépendent de sa composition chimique et des conditions de combustion.</p>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-017_1.webp" alt="Combustion d'un végétal : séchage, pyrolyse, flammes, oxydation" loading="lazy"><figcaption>Combustion d'un végétal : séchage, pyrolyse, flammes, oxydation</figcaption></figure>
+            <table class="rd-table">
+                <thead><tr><th>Phase</th><th>Ce qui se passe</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1. Stress du végétal</strong></td><td>L'eau des feuilles et des espaces intercellulaires s'évapore, ainsi que certains COV.</td></tr>
+                    <tr><td><strong>2. Émission des produits de pyrolyse</strong></td><td>Gaz libérés. <strong>Jusqu'à 280 °C ils ne sont pas inflammables</strong> et le processus est endothermique. Gaz combustibles (CO, méthane) et non combustible (CO₂), goudrons.</td></tr>
+                    <tr><td><strong>3. Inflammation des produits de pyrolyse</strong></td><td><strong>De 280 °C à environ 500 °C</strong> : mélange avec l'oxygène et inflammation, processus exothermique. La chaleur des flammes accélère la combustion.</td></tr>
+                    <tr><td><strong>4. Combustion des résidus charbonneux</strong></td><td>Il reste des résidus charbonneux, dont la combustion produit les cendres.</td></tr>
+                </tbody>
+            </table>
+            <p>La composition des fumées varie selon le combustible, sa géométrie, son humidité et la météo. Substances majoritaires : <strong>CO₂ et CO, COV et semi-volatils, méthane, ammoniac, oxydes d'azote, hydrocarbures aromatiques (benzène, toluène), suies</strong>. Ces suies ont les mêmes caractéristiques que celles des incendies de structures.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>☠️ Effets de chaque agent</h3>
+            <table class="rd-table">
+                <thead><tr><th>Agent</th><th>Type d'atteinte ou d'effet</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Monoxyde de carbone</strong></td><td>Hypoxie générale du système nerveux central et du cœur</td></tr>
+                    <tr><td><strong>Dioxyde de carbone</strong></td><td>Narcose</td></tr>
+                    <tr><td><strong>Acide cyanhydrique</strong></td><td>Asphyxie</td></tr>
+                    <tr><td><strong>Oxydes d'azote</strong> (vapeurs nitreuses NO + NO₂)</td><td>Pulmonaire et sur l'hémoglobine</td></tr>
+                    <tr><td><strong>Isocyanates</strong></td><td>Pulmonaire, oculaire, cutanée</td></tr>
+                    <tr><td><strong>Ammoniac</strong></td><td>Pulmonaire, oculaire</td></tr>
+                    <tr><td><strong>Toxiques halogénés</strong> : acide chlorhydrique, acide fluorhydrique, phosgène</td><td>Irritations des muqueuses ; atteinte pulmonaire ; atteinte oculaire ; irritation nasale, pulmonaire et oculaire (le tableau du guide ne rattache pas chaque effet à un agent précis : voir le PDF page 21)</td></tr>
+                    <tr><td><strong>Oxydes de soufre</strong></td><td>Pulmonaire et sur l'hémoglobine</td></tr>
+                </tbody>
+            </table>
+            <p>On distingue les <strong>effets aigus</strong>, ressentis en minutes, heures ou jours (hypoxie, irritations pulmonaire, cutanée et oculaire, asphyxie), des <strong>effets chroniques</strong>, qui n'apparaissent qu'après une exposition longue, régulière ou répétée (semaines, mois, années).</p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>🧠 Vérifie-toi</summary>
+            <ul>
+                <li><strong>Quelle est la différence entre COV et HAP ?</strong> Les HAP sont des molécules de benzène fusionnées, présentes dans les suies, et font partie de l'ensemble des COV.</li>
+                <li><strong>À quelle température les produits de pyrolyse d'un végétal commencent-ils à s'enflammer ?</strong> À partir de 280 °C, jusqu'à environ 500 °C. En dessous, ils ne sont pas inflammables.</li>
+                <li><strong>Les gaz de combustion sont-ils tous solubles dans l'eau ?</strong> Non : les composés organiques le sont peu.</li>
+            </ul>
+        </details>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('hygiene-fumees')">🧼 Hygiène opérationnelle : les toxiques de la fumée</button>
+                <button class="sal-lien" onclick="showModule('gdoinc-menu')">🏢 GDO Incendies de structures</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Prevention-risque-toxicite-fumees-2eme-edition.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 56 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Prévention des risques liés à la toxicité des fumées », DGSCGC, septembre 2020, chapitre 1 §1. Texte résumé ; photos et schémas du guide (© DGSCGC et services cités).</p>
+    </div>
+
+    <div id="gdotox-exposition" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdotox-menu')">← GDO Toxicité des fumées</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🧪 Exposition et désorption</h2>
+
+        <div class="rd-section">
+            <h3>👥 Exposition directe ou croisée</h3>
+            <table class="rd-table">
+                <thead><tr><th>Exposition</th><th>Définition</th><th>Exemples</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Directe</strong></td><td>Les polluants entrent par une voie d'absorption de l'organisme, sans vecteur intermédiaire.</td><td>Inhaler de la fumée ; inhaler poussières et particules au déshabillage et après le déblai jusqu'au retour au CIS ; manger avec des mains ou des gants pleins de suie.</td></tr>
+                    <tr><td><strong>Indirecte (croisée)</strong></td><td>Une personne initialement isolée de la zone « sale » s'expose par un vecteur pollué.</td><td>Aider au déshabillage ; ranger du matériel souillé.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>🧽 Absorption, adsorption, désorption</h3>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-020_1.webp" alt="Pendant l'incendie, la tenue absorbe les toxiques et les suies se déposent ; ensuite ils s'évaporent ou se détachent" loading="lazy"><figcaption>Pendant l'incendie, la tenue absorbe les toxiques et les suies se déposent ; ensuite ils s'évaporent ou se détachent</figcaption></figure>
+            <table class="rd-table">
+                <thead><tr><th>Phénomène</th><th>Principe</th><th>Dans l'intervention</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Absorption</strong></td><td>Un composé <strong>pénètre dans</strong> un milieu gazeux, liquide ou solide (mécanique, physico-chimique…).</td><td>Suie dans les vêtements ; toxiques dans les voies aériennes des intervenants et des victimes ; diffusion de certains toxiques dans le sang par la peau.</td></tr>
+                    <tr><td><strong>Adsorption</strong></td><td>Un composé <strong>se fixe sur</strong> une surface solide. Dépend de la nature des composés et de la surface, de la température, de l'hygrométrie, de la pression.</td><td>Toxiques à la surface des suies ; rétention sur les fibres textiles et les cheveux ; efficacité des masques à cartouche (charbon actif).</td></tr>
+                    <tr><td><strong>Désorption</strong></td><td>Phénomène <strong>inverse</strong>, immédiat ou à plus long terme selon la volatilité et la température.</td><td>Les toxiques les plus volatils sont rapidement désorbés ; les produits non volatils restent sur la surface.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-figs">
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-019_1.webp" alt="Adsorption : des polluants se fixent sur la surface d'un matériau solide poreux" loading="lazy"><figcaption>Adsorption : des polluants se fixent sur la surface d'un matériau solide poreux</figcaption></figure>
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-019_2.webp" alt="Désorption : ils sont relâchés ensuite par la même surface" loading="lazy"><figcaption>Désorption : ils sont relâchés ensuite par la même surface</figcaption></figure>
+            </div>
+            <div class="rd-alerte">
+                <strong>Les HAP piègent d'autres toxiques</strong>
+                <p>En raison de leur taille, les HAP peuvent être absorbés, mais ils ont aussi un <strong>fort pouvoir d'adsorption</strong> : de nombreux toxiques y sont piégés puis désorbés. La phase de diffusion est <strong>peu prévisible</strong> (relargage mécanique ou physico-chimique, selon température et pression).</p>
+            </div>
+            <p>Les EPI offrent une bonne barrière thermique, mais comme tout matériel de lutte, ils sont <strong>exposés aux fumées</strong> et aux produits de dégradation.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🚪 Les quatre voies de pénétration</h3>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-020_3.webp" alt="Les voies de pénétration : oculaire, aérienne, cutanée, pulmonaire" loading="lazy"><figcaption>Les voies de pénétration : oculaire, aérienne, cutanée, pulmonaire</figcaption></figure>
+            <table class="rd-table">
+                <thead><tr><th>Voie</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Inhalation</strong></td><td>La plus connue. <strong>Plus les particules sont fines, plus elles pénètrent profondément</strong> dans l'appareil pulmonaire.</td></tr>
+                    <tr><td><strong>Ingestion</strong></td><td>Lors des phases de repos : s'hydrater, se restaurer.</td></tr>
+                    <tr><td><strong>Percutanée</strong></td><td>Transporte des molécules et particules vers le sang.</td></tr>
+                    <tr><td><strong>Oculaire</strong></td><td>Idem. Ces deux dernières voies sont <strong>souvent ignorées</strong>, alors qu'elles sont souvent privilégiées hors de la phase d'attaque : reconditionnement du matériel, restauration, hydratation.</td></tr>
+                </tbody>
+            </table>
+            <h4>Ce qui favorise le passage par la peau</h4>
+            <ul>
+                <li>La <strong>température</strong> : une élévation de la température corporelle augmente le taux d'absorption.</li>
+                <li>L'<strong>humidité de la peau</strong> : elle augmente considérablement le temps de rétention des contaminants et la possibilité de leur absorption.</li>
+                <li>Le <strong>micro-climat</strong> créé par la transpiration sous les EPI.</li>
+                <li>Les <strong>zones de contact</strong> : le visage et le cou, où la peau est la plus fine.</li>
+            </ul>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-021_1.webp" alt="En rouge, les zones où la peau est la plus fine et donc les plus sensibles" loading="lazy"><figcaption>En rouge, les zones où la peau est la plus fine et donc les plus sensibles</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>🎯 Apprécier le risque</h3>
+            <p>Le risque est la <strong>probabilité qu'une personne subisse un préjudice</strong> ou des effets nocifs en cas d'exposition à un danger. Il s'apprécie lors des <strong>formations avec feux réels</strong> et des <strong>opérations de lutte contre l'incendie</strong>, sur trois facteurs :</p>
+            <div class="rd-tuiles">
+                <button type="button"><b>⏱️ Durée</b><span>combien de temps</span></button>
+                <button type="button"><b>🔁 Fréquence</b><span>combien de fois</span></button>
+                <button type="button"><b>💥 Intensité</b><span>quelle concentration, quel contact</span></button>
+            </div>
+            <div class="rd-figs">
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-022_1.webp" alt="Le risque dépend de l'intensité, de la fréquence et de la durée de l'exposition" loading="lazy"><figcaption>Le risque dépend de l'intensité, de la fréquence et de la durée de l'exposition</figcaption></figure>
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-022_2.webp" alt="Les effets toxiques dépendent aussi de la génétique, des polluants, des interactions, des voies d'absorption et du nombre d'expositions" loading="lazy"><figcaption>Les effets toxiques dépendent aussi de la génétique, des polluants, des interactions, des voies d'absorption et du nombre d'expositions</figcaption></figure>
+            </div>
+            <p>Le COS confronte ces trois facteurs à la situation et adapte les mesures à l'urgence ou au contexte. Une prise en compte exhaustive des risques permet l'adéquation des axes de prévention.</p>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>🧠 Vérifie-toi</summary>
+            <ul>
+                <li><strong>Aider un collègue à se déshabiller : exposition directe ou croisée ?</strong> Croisée : on s'expose par un vecteur pollué.</li>
+                <li><strong>Quelle voie est privilégiée au moment de boire ou manger après le feu ?</strong> L'ingestion, par des mains ou un visage souillés.</li>
+                <li><strong>Pourquoi les HAP posent-ils un problème particulier ?</strong> Ils absorbent et surtout adsorbent d'autres toxiques, qui sont ensuite relâchés.</li>
+            </ul>
+        </details>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('hygiene-fumees')">🧼 Hygiène opérationnelle : les toxiques de la fumée</button>
+                <button class="sal-lien" onclick="showModule('rdeb-apres')">RDEB : après l'engagement</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Prevention-risque-toxicite-fumees-2eme-edition.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 56 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Prévention des risques liés à la toxicité des fumées », DGSCGC, septembre 2020, chapitre 1 §2 et 3. Texte résumé ; photos et schémas du guide (© DGSCGC et services cités).</p>
+    </div>
+
+    <div id="gdotox-centre" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdotox-menu')">← GDO Toxicité des fumées</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🏠 Le centre de secours</h2>
+
+        <div class="rd-section">
+            <h3>🧑‍🚒 Faire évoluer la culture</h3>
+            <ul>
+                <li>Les sapeurs-pompiers sont sensibilisés et formés sur : les <strong>risques encourus</strong> ; l'<strong>utilisation et l'entretien</strong> des moyens de protection ; les <strong>règles d'hygiène</strong> (lavage des mains, du visage, douche).</li>
+                <li>Ces règles s'enseignent <strong>dès les formations initiales</strong>. Au-delà des obligations de l'employeur, <strong>chaque sapeur-pompier est responsable de sa propre sécurité et de sa santé</strong>, et de celle de ses collègues.</li>
+                <li>Il ne faut plus valoriser l'image du sapeur-pompier « héros » couvert de suie, sur la peau et les vêtements de protection, ni dans les services ni dans la communication.</li>
+            </ul>
+            <div class="rd-figs">
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-024_1.webp" alt="Exemples de campagnes de sensibilisation : « La suie n'est pas une médaille d'honneur »" loading="lazy"><figcaption>Exemples de campagnes de sensibilisation : « La suie n'est pas une médaille d'honneur »</figcaption></figure>
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-025_1.webp" alt="Affiche : passage par le vestiaire de feu obligatoire au retour d'intervention" loading="lazy"><figcaption>Affiche : passage par le vestiaire de feu obligatoire au retour d'intervention</figcaption></figure>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>🚦 Le circuit « sale-propre »</h3>
+            <p>Ce n'est pas qu'un sens de circulation : c'est l'ensemble des <strong>procédures, règlements, dispositifs techniques et éléments de formation</strong> qui permettent de :</p>
+            <ul>
+                <li><strong>sensibiliser</strong> le personnel pour qu'il devienne acteur du processus et le <strong>former</strong> à identifier et gérer le risque ;</li>
+                <li>prévoir des <strong>stockages adaptés</strong> pour ne pas mélanger propre et sale, effets personnels et effets de service ;</li>
+                <li><strong>limiter au strict minimum</strong> le contact avec des équipements souillés (un équipement « souillé » l'est par une substance nocive ; ce qui est seulement sali par la sueur ou la boue ne l'est pas) ;</li>
+                <li>mettre en place un <strong>circuit de nettoyage</strong> de tous les équipements souillés, pris en charge par l'employeur.</li>
+            </ul>
+            <table class="rd-table">
+                <thead><tr><th>Vestiaire</th><th>Rôle</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>❄️ Froid</strong></td><td>Pour tout le personnel qui se change. Un compartiment pour les <strong>vêtements personnels ou la tenue de service</strong> (avec lesquels on rentre au domicile) et un pour les <strong>vêtements portés en activité</strong>, susceptibles d'être souillés.</td></tr>
+                    <tr><td><strong>🔥 Chaud</strong></td><td>Reçoit les <strong>EPI potentiellement « sales » mais non souillés</strong>.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>🧭 Une organisation possible</h3>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-026_1.webp" alt="Circuit au retour d'intervention : de l'aire de lavage aux vestiaires chauds et froids, de la zone sale vers la zone propre" loading="lazy"><figcaption>Circuit au retour d'intervention : de l'aire de lavage aux vestiaires chauds et froids, de la zone sale vers la zone propre</figcaption></figure>
+            <ol>
+                <li>Un <strong>vestiaire froid</strong> avec assez d'armoires pour séparer le linge qui rentre au domicile de celui qui reste au casernement.</li>
+                <li>Un <strong>stockage des tenues de feu</strong> idéalement <strong>en dépression</strong>, pour évacuer les contaminants volatils ou particulaires vers l'extérieur.</li>
+                <li>Un <strong>vestiaire chaud</strong> : stockage des EPI pendant la garde, traitement des EPI souillés au retour (nettoyage et séchage), avec une <strong>console d'entretien des EPI</strong>.</li>
+                <li>Un <strong>circuit sale-propre</strong> au retour : déshabillage, traitement des équipements. Idéalement : <strong>lave-bottes</strong>, puis <strong>bacs à linge sale</strong> près des machines à laver, puis <strong>douches</strong>.</li>
+                <li>Une zone <strong>« in » et « out »</strong> pour la logistique, afin de déposer les EPI de retour de la laverie externe.</li>
+            </ol>
+            <p>Zones matérialisées par des <strong>circuits et couleurs différents</strong> (noir et blanc, rouge et bleu, rouge-orange-vert…) et un <strong>affichage</strong> pour les utilisateurs.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🏚️ Dans un centre existant</h3>
+            <p>On change la destination de locaux pour respecter la <strong>marche en avant</strong>, en tenant compte des surfaces et de la configuration. Des <strong>zones intermédiaires « semi-propres »</strong> sont possibles. Le type de chaussant s'associe au zonage :</p>
+            <table class="rd-table">
+                <thead><tr><th>Zone</th><th>Lieu</th><th>Chaussant</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>🔴 Sale</strong></td><td>Remise, aires de dépôt et de lavage des véhicules et matériels souillés</td><td>Bottes d'intervention</td></tr>
+                    <tr><td><strong>🟠 Semi-propre</strong></td><td>Espaces administratifs, magasins et ateliers, espaces de déshabillage</td><td>Chaussures de protection</td></tr>
+                    <tr><td><strong>🟢 Propre</strong></td><td>Locaux de repos, de restauration, de vie</td><td>Chaussures de sport</td></tr>
+                </tbody>
+            </table>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-027_1.webp" alt="Aménagements dans des centres existants : vestiaires, affichage des zones, armoires séparées" loading="lazy"><figcaption>Aménagements dans des centres existants : vestiaires, affichage des zones, armoires séparées</figcaption></figure>
+            <div class="rd-astuce">
+                <p>Associer les personnels à la réflexion sur le changement de destination des locaux favorise leur <strong>adhésion</strong> aux bonnes pratiques.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>🎓 Les formateurs avec feux réels</h3>
+            <p>Les simulateurs fonctionnent le plus souvent avec des combustibles de classe A. Leur <strong>durée et fréquence d'exposition</strong> sont plus importantes : préconisations supplémentaires.</p>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-033_1.webp" alt="Séance de formation avec feu réel : protections respiratoire, cutanée et oculaire" loading="lazy"><figcaption>Séance de formation avec feu réel : protections respiratoire, cutanée et oculaire</figcaption></figure>
+            <table class="rd-table">
+                <thead><tr><th>Préconisation</th><th>Détail</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Formateurs autorisés</strong></td><td>Établir une <strong>liste</strong> de formateurs autorisés à utiliser les simulateurs.</td></tr>
+                    <tr><td><strong>Suivi médical renforcé</strong></td><td>Périodicité <strong>annuelle</strong>, examens complémentaires si besoin.</td></tr>
+                    <tr><td><strong>Carnet de suivi</strong></td><td>Toutes les activités de brûlage (passage en caisson, outils à taille réduite…), avec le <strong>temps d'exposition</strong> aux fumées et au flux thermique.</td></tr>
+                    <tr><td><strong>Protections</strong></td><td>Respiratoire, cutanée et oculaire pendant la <strong>préparation</strong> des outils ou lieux avant brûlage et pendant le <strong>déblai</strong>.</td></tr>
+                    <tr><td><strong>Combustibles</strong></td><td><strong>Bois traité</strong> (palette, cagette) ou <strong>aggloméré</strong> (OSB, MDF…) : proscrit.</td></tr>
+                    <tr><td><strong>Rythme</strong></td><td>Limiter la durée des séances et des phases d'exposition ; <strong>espacer de 24 heures</strong> par exemple les séances exposantes (effet cumulatif) ; inciter les formateurs fumeurs à arrêter.</td></tr>
+                </tbody>
+            </table>
+            <p>Pour les formateurs <strong>comme pour les stagiaires</strong> : protection respiratoire, cutanée (gants compris) et oculaire lors des répétitions en caisson ; entretien d'explication <strong>après avoir retiré les EPI</strong>, parties de peau souillées nettoyées (lingettes ou eau froide savonneuse), à distance de la zone de brûlage ; <strong>EPI dédiés</strong>. Mesures valables aussi pour l'observation sur maquettes de type boîtes à feu.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🧹 Au quotidien, avant l'intervention</h3>
+            <ul>
+                <li><strong>Nettoyage périodique des casiers</strong> avec EPI adaptés (gants à usage unique, masque FFP3 si nécessaire).</li>
+                <li><strong>Nettoyage périodique de la cabine</strong> des véhicules incendie ; vérification des véhicules <strong>avec des gants</strong>.</li>
+                <li>Une <strong>odeur de fumée persistante</strong> dans les locaux ou les engins doit déclencher un nettoyage.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>🧠 Vérifie-toi</summary>
+            <ul>
+                <li><strong>Que contient le vestiaire chaud ?</strong> Les EPI potentiellement sales mais non souillés, avec la console d'entretien.</li>
+                <li><strong>Quel chaussant en zone propre ?</strong> Des chaussures de sport.</li>
+                <li><strong>Quel intervalle minimal conseillé entre deux séances exposantes de formateur ?</strong> Autant que possible 24 heures.</li>
+            </ul>
+        </details>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Prevention-risque-toxicite-fumees-2eme-edition.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 56 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Prévention des risques liés à la toxicité des fumées », DGSCGC, septembre 2020, chapitre 2 §1, 2, 4 et 5. Texte résumé ; photos et schémas du guide (© DGSCGC et services cités).</p>
+    </div>
+
+    <div id="gdotox-cagoule" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdotox-menu')">← GDO Toxicité des fumées</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🧢 Cagoule filtrante et EPI</h2>
+
+        <div class="rd-section">
+            <h3>🛡️ La cagoule de protection filtrante</h3>
+            <p>Depuis 2018, la DGSCGC et la <strong>CNRACL</strong> travaillent sur une cagoule de protection filtrante ; un <strong>référentiel technique</strong> est paru en décembre 2019. Elle est configurée pour les <strong>feux de structures, d'espaces naturels</strong> et les activités associées et complémentaires.</p>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-028_2.webp" alt="Vue d'ensemble de la cagoule de protection filtrante" loading="lazy"><figcaption>Vue d'ensemble de la cagoule de protection filtrante</figcaption></figure>
+            <table class="rd-table">
+                <thead><tr><th>Opération</th><th>Exposition</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Feux de structures, feux en extérieur</strong> (associée si besoin à l'ARI)</td><td>Tout feu de bâtiment où l'utilisateur s'expose à un risque thermique, d'explosion, aux suies ou aux particules fines. Tout feu extérieur (voitures, poubelles, chantiers mobiles, poids lourds…) avec risque thermique, suies et particules fines.</td></tr>
+                    <tr><td><strong>Feux de forêts et d'espaces naturels</strong></td><td>Feux extérieurs de végétations, récoltes sur pied, friches, feuillus, résineux, chablis : risque thermique, suies, particules fines.</td></tr>
+                    <tr><td><strong>Activités associées et complémentaires</strong> (associée si besoin à l'ARI)</td><td><strong>Associées</strong> : opérations avec risque d'inhalation de particules fines ou autres, parfois toxiques. <strong>Complémentaires</strong> : déblais et surveillance (feux de structures), brûlages dirigés, noyages (feux d'espaces naturels).</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>🎯 Ce qu'elle protège</h3>
+            <ul>
+                <li><strong>Effets mécaniques et thermiques</strong> : protection de la tête, du cou, des épaules et du jabot, hors zone oculaire ; protège aussi des branches et autres éléments.</li>
+                <li><strong>Chaleur</strong> : prévient les risques de brûlures liés à une exposition plus ou moins prolongée.</li>
+                <li><strong>Suies et particules fines</strong> : prévient la pollution, <strong>en dehors des phases nécessitant l'ARI</strong>.</li>
+            </ul>
+            <div class="rd-alerte">
+                <strong>Elle ne filtre pas les gaz</strong>
+                <p>La cagoule filtre les <strong>suies et particules fines</strong>, pas les gaz. Elle ne remplace pas l'appareil respiratoire isolant quand celui-ci est nécessaire.</p>
+            </div>
+            <p>Elle permet de porter un <strong>dispositif de protection oculaire ou un masque ARI</strong> sans modifier leurs performances, sans gêner les autres équipements ni le fonctionnement des interfaces ; l'utilisateur garde la liberté de mouvement de la tête et du cou.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🧩 Trois configurations</h3>
+            <div class="rd-figs">
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-030_1.webp" alt="Feu de structure : cagoule avec masque ARI" loading="lazy"><figcaption>Feu de structure : cagoule avec masque ARI</figcaption></figure>
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-030_2.webp" alt="Filtration avec lunettes de protection" loading="lazy"><figcaption>Filtration avec lunettes de protection</figcaption></figure>
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-031_1.webp" alt="Feux de forêts : configuration avec masque de fuite" loading="lazy"><figcaption>Feux de forêts : configuration avec masque de fuite</figcaption></figure>
+            </div>
+            <p class="rd-source" style="border:0;margin-top:6px">Voir aussi le GTO Engagement en milieu vicié pour les configurations avec ARI.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>📜 Les exigences réglementaires</h3>
+            <ul>
+                <li>Le <strong>règlement européen 2016/425</strong> du 9 mars 2016 fixe les exigences de conception et de fabrication des EPI. Trois catégories de risques ; la <strong>catégorie 3</strong> concerne les risques de <strong>mort ou de dommages irréversibles</strong> : les <strong>ARI (NF EN 137) et leurs masques (NF EN 136)</strong> en font partie.</li>
+                <li>Le fabricant établit la documentation technique ; un <strong>organisme notifié</strong> évalue la conformité et délivre un <strong>certificat CE de type</strong> ; le fabricant appose le <strong>marquage CE</strong> et assume la conformité.</li>
+                <li>La <strong>notice du fabricant</strong> fait partie des exigences et accompagne le produit.</li>
+            </ul>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-032_2.webp" alt="Pilosité faciale et étanchéité du masque" loading="lazy"><figcaption>Pilosité faciale et étanchéité du masque</figcaption></figure>
+            <div class="rd-alerte">
+                <strong>Masque sur peau rasée</strong>
+                <p>Les notices d'ARI et de masque demandent de vérifier qu'aucun cheveu n'est coincé entre le masque et le visage et que l'étanchéité n'est pas affectée par <strong>une barbe, des favoris ou des branches de lunettes</strong>. Pour garantir l'étanchéité et prévenir les fuites, <strong>le masque de protection respiratoire d'un ARI doit être porté sur une peau rasée</strong>.</p>
+            </div>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>🧠 Vérifie-toi</summary>
+            <ul>
+                <li><strong>La cagoule filtrante arrête-t-elle le monoxyde de carbone ?</strong> Non, elle ne filtre pas les gaz.</li>
+                <li><strong>Pour quelles opérations ?</strong> Feux de structures, feux extérieurs, feux de forêts et d'espaces naturels, activités associées et complémentaires (déblai, surveillance, brûlage dirigé, noyage).</li>
+                <li><strong>De quelle catégorie d'EPI relève l'ARI ?</strong> De la catégorie 3.</li>
+            </ul>
+        </details>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('gtomv')">😷 GTO Engagement en milieu vicié</button>
+                <button class="sal-lien" onclick="showModule('rdeb-ari')">RDEB : l'ARI</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Prevention-risque-toxicite-fumees-2eme-edition.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 56 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Prévention des risques liés à la toxicité des fumées », DGSCGC, septembre 2020, chapitre 2 §3. Texte résumé ; photos et schémas du guide (© DGSCGC et services cités).</p>
+    </div>
+
+    <div id="gdotox-operation" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdotox-menu')">← GDO Toxicité des fumées</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🚒 Pendant l'opération</h2>
+
+        <div class="rd-section">
+            <h3>⚖️ Le principe du « juste besoin »</h3>
+            <p>Le principe <strong>ALARA</strong> (<em>as low as reasonably achievable</em>, aussi bas que raisonnablement possible), utilisé pour les risques radiologiques, se transpose à la lutte contre l'incendie. Tous les COS, du chef d'agrès au chef de site, intègrent <strong>l'exposition limitée</strong> des personnels dans leurs idées de manœuvre.</p>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-034_1.webp" alt="Réfléchir à chaque étape pour diminuer l'exposition inutile : avant, pendant, après l'incendie" loading="lazy"><figcaption>Réfléchir à chaque étape pour diminuer l'exposition inutile : avant, pendant, après l'incendie</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>🛑 L'arrivée sur les lieux</h3>
+            <ul>
+                <li>Stationner les engins <strong>vitres et ventilations fermées</strong>, même hors de la zone d'exposition aux fumées.</li>
+                <li>Veiller au <strong>port complet des EPI</strong> : veste et pantalon textiles, cagoule, effets chaussants adaptés, gants de protection incendie, casque, protection respiratoire.</li>
+                <li><strong>Contrôle croisé</strong> du bon positionnement des EPI avant l'engagement, avec attention aux <strong>jonctions</strong> entre équipements.</li>
+                <li><strong>Au-delà de la phase d'attaque</strong>, le port d'une protection respiratoire, cutanée et oculaire adaptée est <strong>obligatoire</strong> : en particulier pendant le <strong>déblai</strong> et le <strong>dégarnissage</strong>.</li>
+            </ul>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-035_1.webp" alt="Déblai : protection respiratoire, cutanée et oculaire obligatoire au-delà de l'attaque" loading="lazy"><figcaption>Déblai : protection respiratoire, cutanée et oculaire obligatoire au-delà de l'attaque</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>🗺️ Le zonage et le soutien sanitaire</h3>
+            <ul>
+                <li>Le zonage « toxicité des fumées » peut être mis en place <strong>après les premières réactions immédiates</strong> : rubalise, balises lumineuses, panneaux, désignation d'un contrôleur.</li>
+                <li>Le COS <strong>fait respecter le port des protections</strong> dans toutes les zones, de la reconnaissance au déblai, et <strong>limite l'accès</strong> aux personnes strictement nécessaires. Il peut ajuster le port des EPI selon son analyse, <strong>sauf en zone d'exclusion : ARI en permanence jusqu'à la fin de l'opération</strong>.</li>
+                <li><strong>Vigilance maintenue</strong> pendant les opérations de protection (assèchement, bâchage, déplacement de mobilier) ou de consolidation (étaiement, reconnaissance structurelle).</li>
+                <li>Le COS peut <strong>renforcer la protection</strong> dans les pièces fortement exposées : suies en forte quantité sur les parois, odeurs fortes, poussières visibles en suspension.</li>
+            </ul>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-037_1.webp" alt="Exemple de zonage en opération : zone exclusive, zone sale, zone de soutien, parcs de matériel" loading="lazy"><figcaption>Exemple de zonage en opération : zone exclusive, zone sale, zone de soutien, parcs de matériel</figcaption></figure>
+            <h4>La zone de soutien sanitaire et de réhabilitation</h4>
+            <ul>
+                <li>Pour les opérations importantes : sectorisation fonctionnelle complémentaire, avec <strong>marche en avant</strong>.</li>
+                <li><strong>Après retrait des EPI</strong>, nettoyer le visage, le cou et les mains avec des <strong>lingettes ou de l'eau froide et du savon</strong> avant de s'hydrater et de se restaurer. Laver les yeux et la bouche, se moucher.</li>
+                <li>Prévoir un <strong>espace dédié au nettoyage</strong> dans la zone de soutien.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>♻️ Les phases de pollution et de désorption</h3>
+            <p>Les transferts de toxiques sont possibles pendant :</p>
+            <p style="text-align:center"><strong>repos et soutien sanitaire</strong> → <strong>déblai</strong> → <strong>nettoyage sur site</strong> → <strong>transit vers le CIS</strong> → <strong>reconditionnement au CIS</strong></p>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-038_1.webp" alt="Cycle d'une intervention : nettoyage de l'engin, port de l'ARI, séparation des EPI pollués au retour" loading="lazy"><figcaption>Cycle d'une intervention : nettoyage de l'engin, port de l'ARI, séparation des EPI pollués au retour</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>🧥 Nettoyer les tenues sur les lieux</h3>
+            <p>Le COS choisit selon son appréciation des risques parmi <strong>4 options</strong> : nettoyage inutile, souillure <strong>superficielle</strong>, <strong>moyenne</strong> ou <strong>importante</strong>. Le nettoyage maximal sur place limite le transfert dans le véhicule et l'exposition. Il s'appuie sur une <strong>zone de réhabilitation</strong> installée <strong>en dehors du panache</strong> (zone orange sur feu de structure, hors zone brûlée sur feu d'espace naturel).</p>
+            <p>Le <strong>conducteur de l'engin-pompe</strong> peut faire fonction de logisticien : <strong>parc de matériels propres</strong>, <strong>parc de matériels souillés</strong>, <strong>zone de nettoyage</strong> des intervenants et des matériels ; il fournit les matériels demandés pour éviter le transfert de polluants dans le véhicule.</p>
+            <div class="rd-tablescroll"><table class="rd-table">
+                <thead><tr><th>Exposition</th><th>Souillure</th><th>Sur place</th><th>Pendant le retour</th><th>Au CIS</th></tr></thead>
+                <tbody>
+                    <tr><td>Pas d'exposition</td><td>⚪ <strong>Sans objet</strong></td><td>Nettoyage non nécessaire</td><td>Cabine de l'engin</td><td>Vestiaires</td></tr>
+                    <tr><td>Exposition courte à un panache à l'air libre</td><td>🟢 <strong>Superficiel</strong></td><td>Aération de la veste à l'extérieur de la cabine ; bottes et casque : brossage à l'eau</td><td>Cabine de l'engin incendie</td><td>Vestiaires, nettoyage de la cagoule</td></tr>
+                    <tr><td>Attaque extérieure au contact des fumées, feux de VL ou de poubelles, déblai, reconnaissance de faible durée en milieu enfumé</td><td>🟠 <strong>Moyen</strong></td><td>Veste, surpantalon, gants : <strong>brossage à sec</strong>, puis aération hors cabine ; bottes et casque : brossage à l'eau</td><td>Hors de la cabine si possible</td><td>Veste et surpantalon : aération naturelle à l'extérieur des vestiaires, nettoyage de la cagoule</td></tr>
+                    <tr><td>Attaque dans un volume en feu, reconnaissance de longue durée en milieu enfumé, ou EPI avec traces visibles après brossage</td><td>🔴 <strong>Important</strong></td><td><strong>Isoler la tenue</strong></td><td>Hors de la cabine si possible</td><td>Remplacement selon la procédure du SIS</td></tr>
+                </tbody>
+            </table></div>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-040_1.webp" alt="Logigramme du guide : nettoyage des tenues de feu sur les lieux de l'intervention" loading="lazy"><figcaption>Logigramme du guide : nettoyage des tenues de feu sur les lieux de l'intervention</figcaption></figure>
+            <div class="rd-alerte">
+                <strong>Déshabillage</strong>
+                <p>Le déshabillage de personnels aux tenues souillées se fait <strong>en amont de la zone de soutien</strong>, par des sapeurs-pompiers protégés (FFP2, FFP3, cagoule filtrante, masque à cartouche filtrante ou ARI), avec protection oculaire et cutanée adaptée et <strong>gants à usage unique</strong>. <strong>Lavage systématique des mains et des effets chaussants</strong> avant de réintégrer le véhicule.</p>
+            </div>
+            <p class="rd-source" style="border:0">Si la tenue de service et d'intervention est portée sous la tenue de feu, une odeur éventuelle impose de la nettoyer. La souillure n'est pas le <strong>seul</strong> critère de pollution d'un EPI.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>🔧 Nettoyer les matériels sur les lieux</h3>
+            <div class="rd-tablescroll"><table class="rd-table">
+                <thead><tr><th>Critère observable</th><th>Sur place</th><th>Pendant le retour</th><th>Au CIS</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Traces visibles de souillures</strong> (taches grasses, suies…)</td><td rowspan="3">Nettoyage du matériel <strong>par brossage à l'eau</strong></td><td rowspan="3">Emplacement d'origine du véhicule, ou, sur demande du COS, dans un <strong>VTU</strong> si les conditions ne permettent pas le nettoyage sur place (nombreux matériels souillés, conditions climatiques défavorables)</td><td rowspan="3">Vérification et nettoyage <strong>au jet ou à la haute pression</strong> (sauf ARI), puis brossage à l'eau savonneuse si nécessaire</td></tr>
+                    <tr><td>Matériel <strong>exposé aux eaux d'extinction</strong></td></tr>
+                    <tr><td>Matériel <strong>exposé aux fumées</strong></td></tr>
+                    <tr><td>Aucun des trois</td><td colspan="3">Matériel non souillé</td></tr>
+                </tbody>
+            </table></div>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-041_1.webp" alt="Logigramme du guide : nettoyage des matériels sur les lieux de l'intervention" loading="lazy"><figcaption>Logigramme du guide : nettoyage des matériels sur les lieux de l'intervention</figcaption></figure>
+            <h4>Avant de regagner le CIS</h4>
+            <ul>
+                <li><strong>Gants</strong> pour manipuler et nettoyer les outils et agrès.</li>
+                <li><strong>Laver les matériels sur place</strong>, tuyaux compris, avant de les ranger dans l'engin.</li>
+                <li>Utiliser un <strong>VTU</strong> s'il y a beaucoup de matériel souillé (volume facile à nettoyer ; isolation entre l'espace de conduite et de stockage).</li>
+                <li><strong>Protéger l'intérieur des engins</strong> avec de la polyane ou une bâche si on doit nettoyer les EPI au CIS.</li>
+                <li>Mettre à l'écart les EPI et matériels restés souillés (sacs spécifiques, bacs étanches, espaces dédiés).</li>
+            </ul>
+            <div class="rd-figs">
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-042_1.webp" alt="EPI souillés isolés dans des sacs" loading="lazy"><figcaption>EPI souillés isolés dans des sacs</figcaption></figure>
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-044_1.webp" alt="Infographie SDMIS : protégez-vous, nettoyez sur place, lavez-vous, séparez, nettoyez l'engin, douchez-vous" loading="lazy"><figcaption>Infographie SDMIS : protégez-vous, nettoyez sur place, lavez-vous, séparez, nettoyez l'engin, douchez-vous</figcaption></figure>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>🏭 Prise en charge massive d'EPI et de matériels souillés</h3>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-043_1.webp" alt="Opération d'ampleur : eaux d'extinction et matériels en grand nombre" loading="lazy"><figcaption>Opération d'ampleur : eaux d'extinction et matériels en grand nombre</figcaption></figure>
+            <p>Certaines opérations dépassent la logistique habituelle (ampleur, durée, actions spécifiques). Problèmes possibles : <strong>beaucoup de tenues et matériels souillés</strong>, protocole de nettoyage industriel à adapter, <strong>matériels et tenues isolés</strong> le temps d'analyses, <strong>véhicules incapables de reprendre la route</strong> (pneumatiques dégradés).</p>
+            <ul>
+                <li>Le <strong>COS initie</strong> une démarche de <strong>retour à la normale</strong>, sans désordre organisationnel, en s'appuyant sur l'analyse des <strong>services techniques et logistiques</strong> (même opération en cours).</li>
+                <li>Un <strong>secteur fonctionnel dédié</strong>, confié à un cadre connaissant la logistique, la sécurité et la gestion des EPI. Opération longue : bien <strong>transmettre les consignes</strong> et les risques.</li>
+                <li>Pollution par un <strong>produit particulier</strong> : chercher des solutions avec l'exploitant pour un reconditionnement sur site adapté.</li>
+                <li><strong>Entraide inter-SIS</strong> : machines à laver spécifiques, mise à disposition temporaire d'EPI (intérêt de standardiser les effets), matériels opérationnels (par exemple un lance-canon portable).</li>
+                <li><strong>Répertorier tous les intervenants exposés</strong> et en informer le <strong>SSSM</strong>.</li>
+            </ul>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>🧠 Vérifie-toi</summary>
+            <ul>
+                <li><strong>Quand l'ARI peut-il être retiré en zone d'exclusion ?</strong> Jamais avant la fin de l'opération : le port y est permanent.</li>
+                <li><strong>Une tenue « importante » : que fait-on ?</strong> On l'isole, hors de la cabine si possible, et on la remplace selon la procédure du SIS.</li>
+                <li><strong>Avec quoi se nettoie-t-on avant de boire ou manger ?</strong> Lingettes ou eau froide et savon : visage, cou, mains.</li>
+            </ul>
+        </details>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('rdeb-apres')">RDEB : après l'engagement</button>
+                <button class="sal-lien" onclick="showModule('gdosout-sanitaire')">GDO Soutien : soutien sanitaire</button>
+                <button class="sal-lien" onclick="showModule('hygiene-fumees')">🧼 Hygiène opérationnelle : les toxiques de la fumée</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Prevention-risque-toxicite-fumees-2eme-edition.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 56 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Prévention des risques liés à la toxicité des fumées », DGSCGC, septembre 2020, chapitre 3. Logigrammes reproduits en tableaux. Texte résumé ; photos et schémas du guide (© DGSCGC et services cités).</p>
+    </div>
+
+    <div id="gdotox-apres" class="module" style="--jsp: #E0313F;">
+        <button class="back-btn" onclick="showModule('gdotox-menu')">← GDO Toxicité des fumées</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>🚿 Après l'opération</h2>
+
+        <div class="rd-section">
+            <h3>👤 Les mesures pour les personnels</h3>
+            <p>De retour au CIS, et après le reconditionnement des engins, le risque de <strong>pollution croisée</strong> persiste. Les consignes, dans l'ordre :</p>
+            <ol>
+                <li><strong>Limiter les déplacements</strong> dans le CIS.</li>
+                <li><strong>Retirer les salissures de suie sur la peau avec de l'eau savonneuse froide</strong> : l'eau froide limite l'ouverture des pores et donc l'intoxication par voie cutanée.</li>
+                <li><strong>Prendre très rapidement une douche</strong>, en insistant sur les <strong>zones de liaison entre EPI</strong> et les zones où la protection est la plus fine, <strong>le cou notamment</strong>. <strong>Ne pas oublier de brosser les ongles.</strong></li>
+                <li><strong>Changer les effets portés en intervention</strong> (polos, sous-vêtements…) avant de poursuivre la garde, et <strong>nettoyer</strong> polos, sous-vêtements et cagoule de feu.</li>
+                <li><strong>Boire de façon soutenue.</strong></li>
+            </ol>
+            <div class="rd-alerte">
+                <strong>Jamais avant la douche</strong>
+                <p>En aucun cas le personnel de retour d'intervention ne rejoint les <strong>espaces de vie</strong> avant d'avoir pris sa douche.</p>
+            </div>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-046_1.webp" alt="Reconditionnement de l'engin avec protection cutanée, respiratoire et oculaire" loading="lazy"><figcaption>Reconditionnement de l'engin avec protection cutanée, respiratoire et oculaire</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>🧰 Les mesures pour les matériels</h3>
+            <ul>
+                <li>Le personnel qui nettoie dispose de <strong>protections cutanée, oculaire et respiratoire</strong> (FFP3, combinaison papier par exemple), <strong>manches baissées</strong>, <strong>gants à usage unique</strong>.</li>
+                <li><strong>Laisser les engins dehors, vitres et portes ouvertes</strong> pendant le reconditionnement ; sinon, laisser les portes de remise ouvertes pour aérer.</li>
+                <li>Attention aux <strong>filtres</strong> (moteur, climatisation) si le vent a pu tourner sur la zone d'intervention.</li>
+                <li>Des <strong>nettoyages périodiques des engins d'incendie</strong> peuvent être instaurés, à l'instar des VSAV.</li>
+                <li>Un <strong>circuit de reconditionnement</strong> sans lien entre la zone de stockage des matériels souillés et celle des matériels propres ; une <strong>zone ventilée</strong> pour nettoyer les tenues de feu ; des <strong>modalités de stockage</strong> des EPI et matériels souillés en attente ; <strong>ne pas stocker la tenue de feu avec le reste du vestiaire</strong> ; un <strong>circuit d'élimination</strong> des lingettes et gants à usage unique.</li>
+                <li>Les tenues sont nettoyées selon les dispositions du service et les <strong>préconisations des fabricants</strong>.</li>
+            </ul>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-044_2.webp" alt="Rangement de matériels dans des bacs étiquetés à l'intérieur d'un engin" loading="lazy"><figcaption>Rangement de matériels dans des bacs étiquetés à l'intérieur d'un engin</figcaption></figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>🌬️ La désorption et le séchage</h3>
+            <p>Les EPI, isolés en sacs ou dans les coffres pendant le retour, peuvent être <strong>humides</strong> (transpiration, eaux d'extinction, météo, eau savonneuse). Il faut les <strong>sécher</strong> avant leur prise en charge par la laverie interne ou externe, ou avant de les ranger au CIS.</p>
+            <div class="rd-figs">
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-047_1.webp" alt="Portant de désorption des équipements à l'air libre" loading="lazy"><figcaption>Portant de désorption des équipements à l'air libre</figcaption></figure>
+                <figure class="rd-fig"><img src="images/gdotox/gdotox-048_1.webp" alt="Armoires séchantes dans une remise" loading="lazy"><figcaption>Armoires séchantes dans une remise</figcaption></figure>
+            </div>
+            <table class="rd-table">
+                <thead><tr><th>Solution</th><th>À retenir</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>À l'air libre</strong></td><td>La lumière du soleil et les oxydants naturels (ozone, radicaux hydroxyles) poursuivent la <strong>désorption des toxiques les plus volatils</strong> ; la chaleur l'accentue et dégrade chimiquement certains polluants. Une exposition prolongée au soleil (UV) n'est pas toujours possible ni recommandée selon l'usure, la nature et la teinte du matériau.</td></tr>
+                    <tr><td><strong>Pièce chauffée et ventilée dédiée</strong></td><td>Espace de <strong>relargage</strong> en <strong>zone sale</strong>, <strong>sans passage</strong>, avec <strong>évacuation de l'air vers l'extérieur</strong>.</td></tr>
+                    <tr><td><strong>Armoire de séchage</strong></td><td>Simple et efficace ; la température plus élevée favorise la désorption. Hors lieu de passage ; l'air potentiellement vicié est <strong>filtré, évacué vers l'extérieur</strong> ou rejeté dans un espace très largement ventilé.</td></tr>
+                </tbody>
+            </table>
+            <div class="rd-astuce">
+                <p>À l'air libre, la désorption d'une tenue peut durer <strong>plus de 48 heures</strong>. <strong>L'absence d'odeur</strong> avant de ranger la tenue au lieu de stockage est un critère minimal.</p>
+            </div>
+        </div>
+
+        <div class="rd-section">
+            <h3>🧮 Les outils d'appréciation des risques (annexe B)</h3>
+            <p>Deux grilles du guide croisent <strong>phase</strong>, <strong>public cible</strong> et <strong>risque</strong>.</p>
+            <div class="rd-tablescroll"><table class="rd-table">
+                <thead><tr><th>Lutte contre l'incendie</th><th>Phase</th><th>Cibles</th><th>Risque</th></tr></thead>
+                <tbody>
+                    <tr><td rowspan="7"><strong>Zone d'intervention</strong></td><td>Reconnaissance</td><td>Chef d'agrès, binômes</td><td rowspan="5">Intoxication</td></tr>
+                    <tr><td>Sauvetage</td><td>Binômes</td></tr>
+                    <tr><td>Établissement, alimentation</td><td>Binômes</td></tr>
+                    <tr><td>Attaque</td><td>Binômes</td></tr>
+                    <tr><td>Protection</td><td>Binômes</td></tr>
+                    <tr><td>Déblai</td><td>Binômes</td><td>Intoxication</td></tr>
+                    <tr><td>Surveillance</td><td>Agents désignés</td><td>Intoxication</td></tr>
+                    <tr><td rowspan="3"><strong>Centre d'incendie et de secours</strong></td><td>Reconditionnement</td><td>Totalité de l'équipage</td><td>Exposition aux particules résiduelles d'incendie</td></tr>
+                    <tr><td>Réarmement</td><td>Totalité de l'équipage et personnel de garde</td><td>Exposition aux particules résiduelles d'incendie</td></tr>
+                    <tr><td>Retour dans les locaux de vie</td><td>Personnel de garde</td><td>Désorption et rémanence des produits de combustion</td></tr>
+                </tbody>
+            </table></div>
+            <div class="rd-tablescroll"><table class="rd-table">
+                <thead><tr><th>Formation</th><th>Phases</th><th>Cibles</th><th>Risque</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Caisson d'observation de développement du feu / caisson d'attaque</strong></td><td>Mise en œuvre (nettoyage de la zone, préparation de la charge combustible, vérification des EPI), allumage, observation et analyse, récupération des ensembles de protection, reconditionnement, réarmement, retour dans les locaux de vie</td><td>Personnel affecté, formateurs avec tenues dédiées, cadre sécurité, soutien sanitaire, laverie, personnel du centre</td><td>Intoxication ; exposition aux particules résiduelles ; désorption et rémanence</td></tr>
+                    <tr><td><strong>Maison à feu (CEPARI)</strong></td><td>Configuration du parcours, mise en route, reconnaissance complète, tour des points feux, remplissage des machines à fumée, vérification des EPI et organes de sécurité, exercices et scénarios, exécution, retour à la normale, ventilation mécanique par secteur, reconditionnement, réarmement</td><td>Personnel affecté, formateur avec tenues dédiées, superviseur, cadre sécurité, stagiaires, personnel du centre</td><td>Intoxication du formateur non protégé s'il pénètre dans la maison à feu pendant la manœuvre ; exposition aux particules résiduelles ; désorption et rémanence</td></tr>
+                </tbody>
+            </table></div>
+            <figure class="rd-fig"><img src="images/gdotox/gdotox-045_1.webp" alt="Un centre d'incendie et de secours : lieu de reconditionnement, de séchage et de vie" loading="lazy"><figcaption>Un centre d'incendie et de secours : lieu de reconditionnement, de séchage et de vie</figcaption></figure>
+        </div>
+
+        <details class="jsp-cours">
+            <summary>🧠 Vérifie-toi</summary>
+            <ul>
+                <li><strong>Pourquoi l'eau froide pour se nettoyer au retour ?</strong> Elle limite l'ouverture des pores et l'intoxication par voie cutanée.</li>
+                <li><strong>Quel critère minimal avant de ranger une tenue séchée ?</strong> L'absence d'odeur.</li>
+                <li><strong>Où installer un espace de relargage des tenues ?</strong> En zone sale, hors passage, avec évacuation de l'air vers l'extérieur.</li>
+            </ul>
+        </details>
+
+        <div class="rd-section">
+            <h3>🔗 Voir aussi</h3>
+            <p class="jsp-liens">
+                <button class="sal-lien" onclick="showModule('rdeb-apres')">RDEB : après l'engagement</button>
+                <button class="sal-lien" onclick="showModule('hygiene-fumees')">🧼 Hygiène opérationnelle : les toxiques de la fumée</button>
+                <button class="sal-lien" onclick="showModule('gdosout-apres')">GDO Soutien : après l'opération</button>
+            </p>
+        </div>
+
+        <p class="jsp-liens">📄 <a class="rd-pdf" href="docs/incendie/GDO-Prevention-risque-toxicite-fumees-2eme-edition.pdf" target="_blank" rel="noopener">Télécharger le GDO complet (PDF, 56 pages, avec schémas)</a></p>
+        <p class="rd-source">Source : GDO « Prévention des risques liés à la toxicité des fumées », DGSCGC, septembre 2020, chapitre 4 et annexe B. Texte résumé ; photos et schémas du guide (© DGSCGC et services cités).</p>
+    </div>
+
     <!-- ============ GTO Ventilation opérationnelle (DGSCGC, 2019) ============ -->
     <div id="vent-menu" class="module" style="--jsp: #E0313F;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
@@ -36449,7 +37123,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.64</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.65</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
