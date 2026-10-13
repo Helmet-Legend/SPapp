@@ -2285,3 +2285,7 @@ img.zoomable { cursor: zoom-in; }
 /* Vignettes photo non cliquables (visuel fourni, texte intégré à l'image) */
 .photo-tuile { border-radius: 12px; overflow: hidden; line-height: 0; box-shadow: 0 3px 10px rgba(0,0,0,.25); }
 .photo-tuile img { width: 100%; height: auto; display: block; }
+
+/* Photos et schémas des guides : plusieurs figures côte à côte */
+.rd-figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin: 12px 0; align-items: start; }
+.rd-figs .rd-fig { margin: 0; }
