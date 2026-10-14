@@ -54,6 +54,25 @@ const Navigation = (function() {
     function normaliser(texte) {
         return String(texte).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
     }
+    // Normalisation propre à la recherche : sans accents ni majuscules, ligatures œ/æ dépliées,
+    // apostrophes, tirets et ponctuation remplacés par des espaces. Appliquée de la même façon
+    // à l'index et à la requête ; le contenu affiché des fiches n'est jamais modifié.
+    function normaliserRecherche(texte) {
+        return normaliser(texte).replace(/œ/g, 'oe').replace(/æ/g, 'ae')
+            .replace(/[^a-z0-9]+/g, ' ').trim();
+    }
+    // Mots très courants ignorés quand la requête contient d'autres mots (« feu de forêt » = « feu forêt »)
+    const MOTS_VIDES = new Set(['de', 'du', 'des', 'd', 'la', 'le', 'les', 'l', 'un', 'une', 'et', 'en', 'au', 'aux', 'a',
+        'ou', 'sur', 'dans', 'par', 'pour', 'avec', 'sans', 'est', 'qui', 'que', 'qu', 'se', 's', 'ce', 'ces']);
+    function motsDeLaRecherche(q) {
+        const mots = normaliserRecherche(q).split(' ').filter(Boolean);
+        return { mots, utiles: mots.filter(m => !MOTS_VIDES.has(m)) };
+    }
+    // Un mot court (acronyme : ARI, GPS, TMD…) doit commencer un mot ; un mot plus long peut être n'importe où
+    // (« mousse » trouve « mousses »), sinon « ARI » trouverait « particulier ».
+    function contientMot(texte, mot) {
+        return mot.length <= 3 ? (' ' + texte).includes(' ' + mot) : texte.includes(mot);
+    }
     function domaine(id) { return registre.domaines.find(d => d.id === id); }
     function icone(nom, classe) {
         return `<svg class="ico${classe ? ' ' + classe : ''}" aria-hidden="true"><use href="#i-${nom}"/></svg>`;
@@ -99,10 +118,20 @@ const Navigation = (function() {
             <span class="nav-tag">${LIBELLE_TYPE[page.type] || 'FICHE'}</span></button>`;
     }
     function surligne(texte, q) {
-        const i = normaliser(texte).indexOf(normaliser(q.trim()));
-        if (i < 0 || !q.trim()) return esc(texte);
-        const n = q.trim().length;
-        return esc(texte.slice(0, i)) + '<mark>' + esc(texte.slice(i, i + n)) + '</mark>' + esc(texte.slice(i + n));
+        const { mots, utiles } = motsDeLaRecherche(q);
+        const cherches = utiles.length ? utiles : mots;
+        const nt = normaliser(texte);   // même longueur que le texte affiché
+        const plages = [];
+        cherches.forEach(m => {
+            for (let i = nt.indexOf(m); i >= 0 && m; i = nt.indexOf(m, i + m.length)) plages.push([i, i + m.length]);
+        });
+        if (!plages.length) return esc(texte);
+        plages.sort((x, y) => x[0] - y[0]);
+        const fusion = [plages[0].slice()];
+        plages.slice(1).forEach(([d, f]) => { const dern = fusion[fusion.length - 1]; if (d <= dern[1]) dern[1] = Math.max(dern[1], f); else fusion.push([d, f]); });
+        let html = '', pos = 0;
+        fusion.forEach(([d, f]) => { html += esc(texte.slice(pos, d)) + '<mark>' + esc(texte.slice(d, f)) + '</mark>'; pos = f; });
+        return html + esc(texte.slice(pos));
     }
 
     // ---------- Vues de l'écran d'accueil ----------
@@ -178,7 +207,9 @@ const Navigation = (function() {
     function correspondCalcul(p, q) {
         if (!q) return true;
         const d = domaine(p.domaine);
-        return normaliser([p.titre, p.court, p.sous, p.theme, d.titre].concat(p.motsCles || []).join(' ')).includes(q);
+        const { mots, utiles } = motsDeLaRecherche(q);
+        const foin = normaliserRecherche([p.titre, p.court, p.sous, p.theme, d.titre].concat(p.motsCles || []).join(' '));
+        return (utiles.length ? utiles : mots).every(m => contientMot(foin, m));
     }
     function vueCalculs() {
         const tous = calculateurs();
@@ -206,20 +237,48 @@ const Navigation = (function() {
         return html;
     }
 
-    function resultats(q) {
-        const nq = normaliser(q.trim());
-        if (nq.length < 2) return [];
-        const scores = [];
+    // Index de recherche : titre, mots-clés, thème et domaine normalisés une fois pour toutes
+    let indexRecherche = {};
+    function indexerRecherche() {
+        indexRecherche = {};
         registre.pages.forEach(p => {
             if (p.type === 'menu') return;
-            const titre = normaliser(p.type === 'presentation' ? p.theme : p.titre);
-            const autres = normaliser([p.theme, domaine(p.domaine).titre].concat(p.motsCles || []).join(' '));
+            indexRecherche[p.id] = {
+                titre: normaliserRecherche(p.type === 'presentation' ? p.theme : p.titre),
+                motsCles: normaliserRecherche((p.motsCles || []).join(' ')),
+                contexte: normaliserRecherche([p.theme, domaine(p.domaine).titre].join(' '))
+            };
+        });
+    }
+    // Recherche : tous les mots utiles de la requête doivent être trouvés, dans le titre, les mots-clés,
+    // le thème ou le domaine, ou le texte de la fiche. Poids par mot : titre 60, mots-clés 30, thème/domaine 20, texte 5.
+    // Bonus si la requête commence le titre (+100) ou apparaît telle quelle dans le titre (+40) ; +25 pour une expression
+    // de plusieurs mots présente telle quelle dans les mots-clés ou le thème. À score égal, l'ordre du registre est conservé.
+    function resultats(q) {
+        const phrase = normaliserRecherche(q);
+        if (phrase.length < 2) return [];
+        const { utiles } = motsDeLaRecherche(q);
+        if (!utiles.length) return [];   // uniquement des mots très courants : rien de précis à chercher
+        const scores = [];
+        registre.pages.forEach(p => {
+            const ix = indexRecherche[p.id];
+            if (!ix) return;
+            const texte = texteDesPages[p.id] || '';
             let score = 0;
-            if (titre.startsWith(nq)) score = 4;
-            else if (titre.includes(nq)) score = 3;
-            else if (autres.includes(nq)) score = 2;
-            else if ((texteDesPages[p.id] || '').includes(nq)) score = 1;
-            if (score) scores.push([score, p]);
+            for (const m of utiles) {
+                if (contientMot(ix.titre, m)) score += 60;
+                else if (contientMot(ix.motsCles, m)) score += 30;
+                else if (contientMot(ix.contexte, m)) score += 20;
+                else if (contientMot(texte, m)) score += 5;
+                else { score = 0; break; }   // un mot absent partout : la page ne correspond pas
+            }
+            if (!score) return;
+            const sansMotsVides = utiles.join(' ');
+            if (ix.titre.startsWith(phrase) || ix.titre.startsWith(sansMotsVides)) score += 100;
+            else if (ix.titre.includes(phrase) || ix.titre.includes(sansMotsVides)) score += 40;
+            // Expression de plusieurs mots déclarée telle quelle dans les mots-clés ou le thème : pertinence en plus
+            if (utiles.length > 1 && (ix.motsCles.includes(phrase) || ix.motsCles.includes(sansMotsVides) || ix.contexte.includes(phrase))) score += 25;
+            scores.push([score, p]);
         });
         return scores.sort((a, b) => b[0] - a[0]).map(s => s[1]);
     }
@@ -589,8 +648,9 @@ const Navigation = (function() {
         registre.pages.forEach(p => {
             parId[p.id] = p;
             const module = document.getElementById(p.id);
-            if (module) texteDesPages[p.id] = normaliser(module.textContent.replace(/\s+/g, ' '));
+            if (module) texteDesPages[p.id] = normaliserRecherche(module.textContent);
         });
+        indexerRecherche();
         // Bilan de diagnostic : pages du registre sans écran HTML (introuvables dans le DOM, donc non indexées dans la recherche)
         const sansEcran = registre.pages.filter(p => !document.getElementById(p.id)).map(p => p.id);
         if (sansEcran.length) console.warn('Navigation : ' + sansEcran.length + ' page(s) du registre sans écran HTML : ' + sansEcran.join(', '));
