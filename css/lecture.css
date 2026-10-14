@@ -145,3 +145,29 @@ html[data-theme] .module.lecture .jsp-liens .sal-lien { padding: 6px 14px; }
 
 /* Sections repérées par la navigation dans les pages à anciennes boîtes (leur aspect ne change pas) */
 .module.lecture .lec-ancre { scroll-margin-top: 56px; }
+
+/* ───────── Anciennes boîtes de contenu (Mousses, SUAP, ELD, IMPM…) ─────────
+   Seules les boîtes extérieures changent (les anciens styles sont écrits dans les pages, d'où !important).
+   Les blocs colorés à l'intérieur gardent leurs couleurs : elles portent parfois du sens. */
+html[data-theme] .module.lecture-bandeau { counter-reset: lec-rub; }
+html[data-theme] .module.lecture-bandeau .lec-boite {
+    background: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important;
+    padding: 0 !important; margin: 22px 0 8px !important;
+}
+html[data-theme] .module.lecture-bandeau .lec-boite > h3.lec-bt, html[data-theme] .module.lecture-bandeau .lec-boite > h4.lec-bt {
+    display: flex !important; align-items: center; gap: 10px; margin: 0 0 10px !important; padding: 0 !important; border: 0 !important;
+    color: var(--t-ink) !important; font-size: 1.45em !important; line-height: 1.1; text-align: left !important;
+    font-family: var(--t-display); font-weight: var(--t-display-weight); text-transform: var(--t-display-case); letter-spacing: var(--t-display-spacing);
+}
+.module.lecture-bandeau .lec-boite > .lec-bt::before {
+    counter-increment: lec-rub; content: counter(lec-rub, decimal-leading-zero); color: var(--t-accent); font-size: 1.35em; line-height: 1;
+}
+.module.lecture-bandeau .lec-boite > .lec-bt::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--t-line2), transparent); }
+html[data-theme] .module.lecture-bandeau .lec-alerte {
+    border: 0 !important; border-left: 5px solid var(--lec-2) !important; border-radius: 14px !important; box-shadow: none !important;
+    background: color-mix(in srgb, var(--lec-2) 13%, var(--t-s1)) !important; color: var(--t-ink) !important; padding: 12px 14px !important; margin: 12px 0 !important;
+}
+html[data-theme] .module.lecture-bandeau .lec-carte {
+    background: var(--t-s1) !important; border: 1px solid var(--t-line) !important; border-radius: 14px !important; box-shadow: none !important;
+    color: var(--t-ink) !important; padding: 12px 14px !important; margin: 10px 0 !important;
+}
