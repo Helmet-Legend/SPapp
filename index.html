@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.69">
+    <meta name="version" content="1.69.70">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -145,7 +145,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.69 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.70 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -313,7 +313,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.69</span><br>
+                        Vulcain v<span class="app-version">1.69.70</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -374,7 +374,7 @@
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2>🔢 Aide Calculs Opérationnels</h2>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 20px; margin-top: 30px;">
             <div class="fire-icon" onclick="showModule('convertisseur')" style="min-height: 200px; display: flex; flex-direction: column; justify-content: center; cursor: pointer;">
                 <div class="emoji" style="font-size: 4em;">🔄</div>
                 <div class="label" style="font-size: 1.3em; margin-bottom: 10px;">Convertisseur</div>
@@ -899,7 +899,7 @@
         <div class="result-box" style="margin-bottom: 20px;">
             <h3 style="color: var(--warning); margin-bottom: 15px; font-weight: 700; border-bottom: 1px solid var(--border-light); padding-bottom: 10px;">🔍 Recherche avancée</h3>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 15px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 15px; margin-bottom: 15px;">
                 <div class="form-group" style="margin: 0;">
                     <label>🔢 Numéro ONU :</label>
                     <input type="text" id="searchONU" placeholder="Ex: 1203, 1830" oninput="searchTMD()" style="font-weight: bold; font-size: 1.1em;">
@@ -2139,7 +2139,7 @@
                 <div style="background: linear-gradient(135deg, light-dark(#E3F2FD, #3b3f44) 0%, light-dark(#BBDEFB, #343c43) 100%); padding: 20px; border-radius: 12px; border: 2px solid #42A5F5;">
                     <h4 style="color: light-dark(#1565c0, #5da1ed); font-size: 1.3em; margin-bottom: 15px; text-align: center; font-weight: 700;">👤 PHASE 5 : SORTIE DE LA VICTIME</h4>
                     
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 15px;">
                         <!-- Dégagement urgence -->
                         <div class="mgo-step" style="background: var(--bg-card); border-left: 5px solid #ff0000;">
                             <strong style="font-size: 1.1em; color: light-dark(#c02929, #e47f7f);">🔴 Dégagement d'urgence</strong><br>
@@ -2218,7 +2218,7 @@
                     </div>
 
                     <!-- Les 3 distances -->
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 25px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px; margin-top: 25px;">
                         
                         <!-- 30 cm - Airbags latéraux -->
                         <div style="background: var(--t-s1, #FFFFFF); padding: 25px; border-radius: 12px; border: 4px solid #FF9800; text-align: center; box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);">
@@ -2481,7 +2481,7 @@
                         respectent le plan de désincarcération reconnu et projeté.
                     </p>
 
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 25px;">
                         <!-- Limites de coupe -->
                         <div style="background: #000; padding: 25px; border-radius: 10px; border: 3px solid #ff0000;">
                             <div style="text-align: center; margin-bottom: 20px;">
@@ -3070,7 +3070,7 @@
             <h3 style="color: light-dark(#006e8a, #00ccff); text-align: center; font-size: 1.8em; margin-bottom: 25px;">⚡ COMPARAISON RAPIDE</h3>
             
             <!-- Cartes comparatives -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px;">
                 
                 <!-- Carte HTB -->
                 <div style="background: var(--t-s1, #FFFFFF); border: 4px solid #ff0000; border-radius: 15px; padding: 25px; box-shadow: 0 8px 20px rgba(255,0,0,0.2); transition: transform 0.3s;">
@@ -3376,7 +3376,7 @@
         <h2>💨 Bouteilles de Gaz</h2>
         <p class="jsp-liens">📋 <button onclick="showModule('fod-18-bouteilles')">FOD n°18 – Bouteilles de gaz : conduite à tenir du COS, logigrammes GPL, gaz comprimé et acétylène →</button></p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr)); gap: 20px; margin: 20px 0;">
             <button class="action-btn" onclick="showBouteillesSection('identification')" style="font-size: 1.3em; padding: 20px;
             padding: clamp(15px, 3vw, 30px);">
                 🔍 Identification du Risque
@@ -3464,7 +3464,7 @@
             <h3 style="color: light-dark(#006e8a, #00ccff); border-bottom: 2px solid light-dark(#00ccff, #0c6982); padding-bottom: 10px; margin-bottom: 20px;">💧 PROCÉDURE DE REFROIDISSEMENT</h3>
             
             <!-- Sélection du type de bouteille avec pop-ups -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr)); gap: 20px; margin-bottom: 30px;">
                 <button class="action-btn" onclick="ouvrirPopupRefroidissement('standard')" style="font-size: 1.1em; padding: 20px; background: linear-gradient(135deg, #003366 0%, #0055aa 100%); color: #ffffff; border: 3px solid light-dark(#00ccff, #0c6982);">
                     🔵 Bouteilles Standard<br>
                     <span style="font-size: 0.8em; opacity: 0.9;">(GPL, Oxygène, Azote, etc.)</span><br>
@@ -3860,7 +3860,7 @@
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2>📋 Commandement Opérationnel</h2>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 25px; margin-top: 30px;">
             <div class="fire-icon" onclick="showModule('avant-intervention-menu')" style="min-height: 220px; display: flex; flex-direction: column; justify-content: center; cursor: pointer;">
                 <div class="emoji" style="font-size: 4.5em;">📝</div>
                 <div class="label" style="font-size: 1.4em; margin-bottom: 12px; font-weight: bold;">AVANT Intervention</div>
@@ -4009,7 +4009,7 @@
         <button class="back-btn" onclick="showModule('commandement-menu')">← Retour</button>
         <h2>📝 Ordres Préparatoires - Avant Intervention</h2>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 25px; margin-top: 30px;">
             <div class="fire-icon" onclick="showModule('patrac-dr')" style="min-height: 200px; display: flex; flex-direction: column; justify-content: center; cursor: pointer;">
                 <div class="emoji" style="font-size: 4em;">📋</div>
                 <div class="label" style="font-size: 1.3em; margin-bottom: 10px; font-weight: bold;">PATRAC DR</div>
@@ -4038,7 +4038,7 @@
         <button class="back-btn" onclick="showModule('commandement-menu')">← Retour</button>
         <h2>🚨 Ordres Opérationnels - Pendant Intervention</h2>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 30px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 25px; margin-top: 30px;">
             <div class="fire-icon" onclick="showModule('smes')" style="min-height: 180px; display: flex; flex-direction: column; justify-content: center; cursor: pointer;">
                 <div class="emoji" style="font-size: 3.5em;">⚠️</div>
                 <div class="label" style="font-size: 1.3em; margin-bottom: 10px; font-weight: bold;">SMES</div>
@@ -4081,7 +4081,7 @@
             <div class="form-group" style="margin-bottom: 30px; padding: 25px; background: linear-gradient(135deg, rgba(196,30,58,0.15) 0%, rgba(196,30,58,0.08) 100%); border-radius: 12px; border: 3px solid var(--primary-red);">
                 <h3 style="color: var(--primary-red); margin-bottom: 20px; text-align: center; font-size: 1.5em;">📋 INFORMATIONS SUR LE DÉTACHEMENT</h3>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr)); gap: 15px; margin-bottom: 15px;">
                     <div>
                         <label style="display: block; margin-bottom: 8px; font-weight: 600;">Nom du détachement :</label>
                         <input type="text" id="patrac-info-nom" placeholder="Ex: Détachement BMPM Alpha" style="width: 100%; padding: 12px; font-size: 1.1em; font-weight: bold;">
@@ -4097,7 +4097,7 @@
                     <textarea id="patrac-info-mission" rows="3" placeholder="Ex: Renfort feux de forêt secteur Var, mission de surveillance et intervention..." style="width: 100%; padding: 12px; font-size: 1em;"></textarea>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr)); gap: 15px;">
                     <div>
                         <label style="display: block; margin-bottom: 8px; font-weight: 600;">Zone d'intervention :</label>
                         <input type="text" id="patrac-info-zone" placeholder="Ex: Département 83 - Var" style="width: 100%; padding: 12px;">
@@ -10036,7 +10036,7 @@
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
             <h3 style="color: light-dark(#b33f00, #ff7124); margin-bottom: 20px; border-bottom: 2px solid #FF9800; padding-bottom: 10px;">📊 Règle des 9 de Wallace</h3>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px;">
                 <!-- Adulte -->
                 <div style="background: linear-gradient(135deg, light-dark(#FFF3E0, #403f3e) 0%, light-dark(#FFE0B2, #403c36) 100%); padding: 20px; border-radius: 12px; border: 2px solid #FF9800;">
                     <h4 style="color: light-dark(#b33f00, #ff7124); text-align: center; margin-bottom: 15px;">🧑 ADULTE</h4>
@@ -10209,7 +10209,7 @@
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
             <h3 style="color: light-dark(#1565c0, #5da1ed); margin-bottom: 20px; border-bottom: 2px solid #1976D2; padding-bottom: 10px;">😣 Échelle Verbale Simple (EVS) - Douleur</h3>
             
-            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; text-align: center;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 10px; text-align: center;">
                 <div style="background: light-dark(#A5D6A7, #303a34); color: var(--t-ink, #000); padding: 15px 8px; border-radius: 10px; border: 2px solid #4CAF50;">
                     <div style="font-size: 2em; color: light-dark(#327334, #4caf50); font-weight: 700;">0</div>
                     <div style="font-size: 0.85em; margin-top: 5px;">Pas de douleur</div>
@@ -10342,7 +10342,7 @@
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
             <h3 style="color: light-dark(#5d4037, #b99488); margin-bottom: 20px; border-bottom: 2px solid #795548; padding-bottom: 10px;">💓 Pouls Périphériques (Trauma membre inf.)</h3>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 15px;">
                 <div style="background: var(--t-s1, #fff); padding: 20px; border-radius: 12px; border: 3px solid #4CAF50;">
                     <h4 style="color: light-dark(#2a722e, #41b147); margin-bottom: 10px;">Pouls PÉDIEUX</h4>
                     <p style="margin: 0; line-height: 1.8;">Face dorsale du pied, ligne du tibia vers les 2 premiers orteils.<br>2-3 doigts, légère pression, 10 sec max.</p>
@@ -10423,7 +10423,7 @@
     </p>
 
     <!-- BLOC MATÉRIEL ET ÉQUIPIERS -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 25px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 15px; margin-bottom: 25px;">
         <div style="background: linear-gradient(135deg, light-dark(#E1F5FE, #3b4044) 0%, light-dark(#B3E5FC, #323d44) 100%); padding: 20px; border-radius: 12px; border-left: 5px solid #0288D1;">
             <h3 style="color: light-dark(#01579b, #2da2fe); margin-bottom: 12px;">👤 Nombre d'équipiers</h3>
             <p style="font-size: 2em; font-weight: 700; color: light-dark(#026aa9, #0aa2fc); margin: 0;">1 Équipier</p>
@@ -10652,7 +10652,7 @@
     <div style="background: linear-gradient(135deg, light-dark(#FFF9C4, #404139) 0%, light-dark(#FFF59D, #404032) 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #F9A825;">
         <h3 style="color: light-dark(#9f4e07, #f57f17); margin-bottom: 15px;">📊 Comparaison Tracés</h3>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 15px;">
             <div style="background: var(--t-s1, #fff); padding: 20px; border-radius: 8px; border: 3px solid #4CAF50;">
                 <h4 style="color: light-dark(#2a722e, #41b147); text-align: center; margin-bottom: 10px;">✅ Tracé Normal</h4>
                 <p style="text-align: center; color: var(--t-muted, #666); line-height: 1.6;">
@@ -12840,7 +12840,7 @@
             <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
                 <div style="flex: 1; min-width: 200px;">
                     <p><strong>Code couleur :</strong></p>
-                    <div style="display: flex; gap: 10px; margin: 10px 0;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0;">
                         <span style="background: #39843c; color: white; padding: 5px 15px; border-radius: 20px;">🟢 Entrée/Sortie</span>
                         <span style="background: #0b76cc; color: white; padding: 5px 15px; border-radius: 20px;">🔵 Changement direction</span>
                         <span style="background: #e51b0d; color: white; padding: 5px 15px; border-radius: 20px;">🔴 Sinistre/Danger</span>
@@ -13017,7 +13017,7 @@
         <!-- FAST BOARD & RIT PACK -->
         <div class="result-card" style="margin-top: 15px;">
             <h3 style="color: light-dark(#a84800, #ff7005);">🛷 Matériel de Sauvetage</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 15px;">
                 <div style="background: var(--bg-elevated); padding: 15px; border-radius: 8px;">
                     <h4>FAST BOARD</h4>
                     <p>Dimensions : <strong>115 × 45 × 10 cm</strong></p>
@@ -32529,7 +32529,7 @@ Je demande : ….</p>
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
             <h3 style="color: light-dark(#c22727, #e57e7e);">🦺 Sécurité des Intervenants</h3>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr)); gap: 15px;">
                 <!-- Primo-intervenants -->
                 <div style="background: linear-gradient(135deg, light-dark(#E3F2FD, #3b3f44) 0%, light-dark(#BBDEFB, #343c43) 100%); padding: 20px; border-radius: 12px; border-left: 6px solid #1976D2;">
                     <h4 style="color: light-dark(#1565c0, #5da1ed); margin-top: 0;">👨‍🚒 Primo-intervenants</h4>
@@ -33540,7 +33540,7 @@ Je demande : ….</p>
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
             <h3 style="color: light-dark(#00707b, #00adbd); margin-bottom: 15px; border-bottom: 2px solid #00ACC1; padding-bottom: 10px;">🔬 Les 2 Types de Mousses</h3>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px;">
                 <!-- Mousse Chimique -->
                 <div style="background: linear-gradient(135deg, var(--t-s2, #FFEBEE) 0%, light-dark(#FFCDD2, #40393c) 100%); padding: 20px; border-radius: 12px; border: 3px solid #EF5350;">
                     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
@@ -33725,7 +33725,7 @@ Je demande : ….</p>
             </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; margin-top: 20px;">
             <!-- Émulseurs Synthétiques -->
             <div class="result-box" style="background: linear-gradient(135deg, var(--t-s2, #E8F5E9) 0%, light-dark(#C8E6C9, #363d3a) 100%); border: 3px solid #4CAF50;">
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
@@ -33935,7 +33935,7 @@ Je demande : ….</p>
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 20px;">
             <h3 style="color: light-dark(#004d40, #00b395); margin-bottom: 15px; border-bottom: 2px solid #00695C; padding-bottom: 10px;">💉 Les Injecteurs (Proportionneurs)</h3>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 15px;">
                 <div style="background: linear-gradient(135deg, var(--t-s2, #E0F2F1) 0%, light-dark(#B2DFDB, #323c3e) 100%); padding: 15px; border-radius: 10px;">
                     <strong style="color: light-dark(#004d40, #00b395);">🎯 Rôle :</strong>
                     <p style="margin: 10px 0 0 0; font-size: 0.95em;">Incorporer à l'eau une quantité déterminée d'émulseur pour obtenir une <strong>solution moussante convenablement dosée</strong>.</p>
@@ -34005,7 +34005,7 @@ Je demande : ….</p>
         </div>
 
         <!-- Générateurs Moyen et Haut Foisonnement -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px; margin-top: 20px;">
             <!-- Moyen Foisonnement -->
             <div class="result-box" style="background: linear-gradient(135deg, light-dark(#FFF8E1, #40403f) 0%, light-dark(#FFECB3, #403e36) 100%); border: 3px solid #FFA000;">
                 <h3 style="color: light-dark(#b33f00, #ff7124); margin-bottom: 15px;">🟡 Générateurs Moyen Foisonnement</h3>
@@ -37123,7 +37123,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.69</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.70</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

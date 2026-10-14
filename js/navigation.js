@@ -631,6 +631,28 @@ const Navigation = (function() {
         });
     }
 
+    // Tableaux : un tableau plus large que l'écran défile dans son propre cadre, au lieu d'élargir tout l'écran.
+    // Seule la structure change (un cadre autour du tableau) : le contenu des fiches n'est pas modifié.
+    // Tant qu'il reste du tableau à découvrir sur la droite, le bord droit du cadre est estompé (indice de défilement).
+    function majIndiceTableau(cadre) {
+        cadre.classList.toggle('rd-tablescroll-suite', cadre.scrollWidth - cadre.clientWidth - cadre.scrollLeft > 2);
+    }
+    function envelopperTableaux(ecransExclus) {
+        const observateur = 'ResizeObserver' in window ? new ResizeObserver(entrees => entrees.forEach(e => majIndiceTableau(e.target))) : null;
+        document.querySelectorAll('.module table').forEach(t => {
+            const module = t.closest('.module');
+            if (module && ecransExclus.has(module.id)) return;   // les calculateurs gardent leur structure d'origine
+            const parent = t.parentElement;
+            if (!parent || parent.classList.contains('rd-tablescroll') || parent.classList.contains('rd-tablescroll-auto')) return;
+            const cadre = document.createElement('div');
+            cadre.className = 'rd-tablescroll-auto';
+            parent.insertBefore(cadre, t);
+            cadre.appendChild(t);
+            cadre.addEventListener('scroll', () => majIndiceTableau(cadre), { passive: true });
+            if (observateur) observateur.observe(cadre);   // recalculé dès que le cadre devient visible (fiche ouverte, détail déplié)
+        });
+    }
+
     let demarre = false;
     async function init() {
         const conteneur = document.getElementById('navHome');
@@ -644,6 +666,7 @@ const Navigation = (function() {
             return;
         }
         demarre = true;
+        envelopperTableaux(new Set(registre.pages.filter(p => p.type === 'calculateur').map(p => p.id)));
         parId = {};
         registre.pages.forEach(p => {
             parId[p.id] = p;
