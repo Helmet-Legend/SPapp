@@ -90,3 +90,17 @@ test('un tableau large devient des cartes : tout reste visible à 375 px, sans d
     expect(r.page).toBeLessThanOrEqual(0);
     await expect(carte.locator('td[data-label="Particularités"]').first()).toBeVisible();
 });
+
+test('pages JSP : le style de lecture s\'applique et la navigation ouvre le cours choisi', async ({ app }) => {
+    await app.evaluate(() => showModule('jsp1-incendie'));
+    const m = app.locator('#jsp1-incendie');
+    await expect(m).toHaveClass(/lecture/);
+    const cours = await m.locator('details.jsp-cours').count();
+    expect(cours).toBeGreaterThanOrEqual(5);
+    await expect(m.locator('.lec-nav button')).toHaveCount(cours);
+    await expect(m.locator('details.jsp-cours').nth(3)).not.toHaveJSProperty('open', true);
+    await m.locator('.lec-nav button').nth(3).click();
+    await expect(m.locator('details.jsp-cours').nth(3)).toHaveJSProperty('open', true);
+    // Le bandeau de couleur de l'année et les cours restent à leur place
+    await expect(m.locator('.jsp-bandeau')).toBeVisible();
+});
