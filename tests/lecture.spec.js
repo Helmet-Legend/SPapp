@@ -40,7 +40,7 @@ test('aucun chapitre ne change : même HTML, mêmes textes, images, schémas, bo
         });
         return sortie;
     }, IDS);
-    expect(bilan.eligibles).toBeGreaterThan(150);
+    expect(bilan.eligibles).toBeGreaterThan(250);
     expect(bilan.ecarts).toEqual([]);
 });
 

@@ -10,17 +10,27 @@
  * Interrupteur : localStorage « vulcain-lecture » = « off » rétablit l'ancien aspect.
  */
 const Lecture = (function () {
-    // Éléments d'autres familles de pages (calculateurs, cartes, formulaires…) : ces pages gardent leur aspect
-    const ETRANGERS = '.result-box, .result-card, .info-card, .warning-box, .alert-box, .distance-section, .jsp-bandeau, '
-        + '.rd-tuiles, .sal-saisie, .sal-res-info, .sal-groupe, .calc-ui, input, select, textarea, canvas';
+    // Pages interactives (formulaires, calculs, cartes) et familles à identité propre : elles gardent leur aspect
+    const INTERACTIF = 'input, select, textarea, canvas, .calc-ui, .sal-saisie, .distance-section';
+    const A_PART = '.jsp-bandeau, .sal-groupe';
+    // Anciennes boîtes de contenu, très colorées en ligne : elles reçoivent le bandeau et la navigation seulement
+    const ANCIEN = '.result-box, .result-card, .info-card, .warning-box, .alert-box, .sal-res-info';
+    const BLOCS = '.rd-section, .result-box, .result-card, .info-card';
     const ROMAIN = /^\s*[IVXL]+\s*[.)]\s/;
 
     function actif() {
         try { return localStorage.getItem('vulcain-lecture') !== 'off'; } catch (e) { return true; }
     }
 
+    // « complet » : style de lecture entier ; « bandeau » : bandeau photo et navigation ; null : page inchangée
+    function niveau(module) {
+        if (!module || module.querySelector(INTERACTIF) || module.querySelector(A_PART)) return null;
+        if (module.querySelector(ANCIEN)) return 'bandeau';
+        return module.querySelector('.rd-section, .rd-tampon, .rd-alerte, .jsp-cours, .rd-tuiles') ? 'complet' : null;
+    }
+
     function eligible(module) {
-        return !!module && !!module.querySelector('.rd-section, .rd-tampon') && !module.querySelector(ETRANGERS);
+        return niveau(module) !== null;
     }
 
     function domaineDe(id) {
@@ -60,15 +70,18 @@ const Lecture = (function () {
         });
     }
 
-    // Rubriques : le premier h3 de chaque bloc est un titre de section (numéroté par la feuille de style)
-    function rubriques(module) {
+    // Rubriques : le premier titre de chaque bloc est un titre de section (numéroté par la feuille de style en mode complet)
+    function rubriques(module, mode) {
         const entetes = [];
-        module.querySelectorAll('.rd-section').forEach(s => {
-            const h = s.querySelector(':scope > h3');
+        const blocs = Array.from(module.querySelectorAll(mode === 'complet' ? '.rd-section' : BLOCS))
+            .filter(b => !b.parentElement.closest(BLOCS));
+        blocs.forEach(s => {
+            const h = Array.from(s.children).find(c => /^H[2-4]$/.test(c.tagName));
             if (!h) return;
-            s.classList.add('lec-section');
-            if (ROMAIN.test(h.textContent)) h.classList.add('lec-romain');
-            entetes.push({ section: s, titre: h.textContent.replace(/\s*\(.*$/, '').replace(ROMAIN, '').trim() || h.textContent.trim() });
+            s.classList.add(mode === 'complet' ? 'lec-section' : 'lec-ancre');
+            if (mode === 'complet' && ROMAIN.test(h.textContent)) h.classList.add('lec-romain');
+            const titre = h.textContent.replace(/\s*\(.*$/, '').replace(ROMAIN, '').replace(/^[^\p{L}\p{N}]+/u, '').trim();
+            entetes.push({ section: s, titre: titre || h.textContent.trim() });
         });
         return entetes;
     }
@@ -107,19 +120,21 @@ const Lecture = (function () {
     function appliquer(module, force) {
         if (!module || module.dataset.lecture) return;
         if (!force && !actif()) return;
-        if (!eligible(module)) { module.dataset.lecture = 'non'; return; }
+        const mode = niveau(module);
+        if (!mode) { module.dataset.lecture = 'non'; return; }
         module.dataset.lecture = 'oui';
         module.classList.add('lecture');
+        if (mode === 'bandeau') module.classList.add('lecture-bandeau');
         const d = domaineDe(module.id);
         if (d) module.setAttribute('data-lec-domaine', d);
-        listes(module);
-        tableaux(module);
-        barre(module, rubriques(module));
+        if (mode === 'complet') { listes(module); tableaux(module); }
+        barre(module, rubriques(module, mode));
     }
 
     return {
         appliquer,
         eligible,
+        niveau,
         // Pour les tests : applique sans tenir compte de l'interrupteur
         forcer: module => appliquer(module, true)
     };
