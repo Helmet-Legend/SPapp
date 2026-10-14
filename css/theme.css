@@ -1566,8 +1566,8 @@ html[data-theme] .calc-refonte .form-group > div[style*="flex"] > button { flex:
     html body.accueil-photo .accueil-fond { position: absolute; top: 16px; bottom: auto; left: calc(var(--lateral) + 16px); right: 16px; width: auto; max-width: none; height: 270px; transform: none; border-radius: 18px; }
     html body.accueil-photo .accueil-fond::before { -webkit-mask-image: none; mask-image: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
     html body.accueil-photo .accueil-fond::after { background: linear-gradient(180deg, rgba(8, 14, 21, .05) 0%, rgba(8, 14, 21, .15) 60%, rgba(8, 14, 21, .55) 100%); }
-    html body.accueil-photo .hero-recherche { top: 224px; left: calc(var(--lateral) + 32px); right: 32px; transform: none; width: auto; max-width: 720px; }
-    html body.accueil-photo #home { margin-top: 306px; }
+    html body.accueil-photo .hero-recherche { top: 298px; left: calc(var(--lateral) + 16px); right: 16px; transform: none; width: auto; max-width: 720px; }
+    html body.accueil-photo #home { margin-top: 372px; }
     body.accueil-photo .app-footer { position: relative; z-index: 1; }
     /* Domaines et calculs : grilles plus larges */
     .nav-home[data-vue="accueil"] { grid-template-columns: repeat(4, 1fr); }

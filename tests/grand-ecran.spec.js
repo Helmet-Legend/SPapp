@@ -41,13 +41,15 @@ test.describe('ordinateur 1280 × 800', () => {
         expect(await debordement(app)).toBeLessThanOrEqual(0);
     });
 
-    test('accueil : bannière photo, recherche dessus, domaines sur 4 colonnes', async ({ app }) => {
+    test('accueil : bannière photo, recherche sous la photo (elle ne la masque pas), domaines sur 4 colonnes', async ({ app }) => {
         const fond = await rect(app, '.accueil-fond');
         expect(fond.height).toBeLessThan(320);
         expect(fond.x).toBeGreaterThanOrEqual(232);
         const rech = await rect(app, '.hero-recherche');
-        expect(rech.y).toBeGreaterThan(fond.y);
-        expect(rech.y + rech.height).toBeLessThanOrEqual(fond.y + fond.height + 1);
+        expect(rech.y).toBeGreaterThanOrEqual(fond.y + fond.height);      // aucun recouvrement de la photo
+        expect(rech.y - (fond.y + fond.height)).toBeLessThan(40);        // mais juste en dessous
+        const premiere = await rect(app, '#navHome > *');
+        expect(premiere.y).toBeGreaterThanOrEqual(rech.y + rech.height);  // le contenu commence sous la barre
         const hautes = await app.locator('#navHome > .nav-acc').evaluateAll(cs => cs.slice(0, 8).map(c => Math.round(c.getBoundingClientRect().top)));
         expect(new Set(hautes.slice(0, 4)).size).toBe(1);   // 4 cartes sur la première ligne
         expect(hautes[4]).toBeGreaterThan(hautes[0]);

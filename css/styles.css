@@ -2318,7 +2318,7 @@ img.zoomable { cursor: zoom-in; }
 
 /* Choix : pastilles (la case reste présente pour le clavier et les lecteurs d'écran) */
 #ia-manoeuvre .ia-checkbox { position: relative; gap: 6px; padding: 10px 14px; border: 1.5px solid var(--t-line) !important; border-radius: 999px; background: var(--t-input, var(--t-s2)) !important; color: var(--t-ink) !important; font-weight: 700; font-size: .9rem; }
-#ia-manoeuvre .ia-checkbox input[type="checkbox"] { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; pointer-events: none; }
+#ia-manoeuvre .ia-checkbox input[type="checkbox"] { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
 #ia-manoeuvre .ia-checkbox:has(input:checked) { background: var(--t-accent-soft) !important; border-color: var(--t-accent) !important; color: var(--t-accent) !important; }
 #ia-manoeuvre .ia-checkbox:has(input:checked)::before { content: "✓"; font-weight: 800; }
 #ia-manoeuvre .ia-checkbox:has(input:focus-visible) { outline: 3px solid var(--t-accent); outline-offset: 2px; }
@@ -2355,3 +2355,6 @@ html[data-theme="clair"] #ia-manoeuvre .ia-barre { bottom: calc(96px + env(safe-
 
 /* Le défilement reste celui de la page, pour que la barre « Générer » reste collée en bas */
 #ia-manoeuvre.calc-refonte { overflow: clip; }
+
+/* Un champ amené à l'écran (clavier, défilement) ne reste pas caché derrière la barre « Générer » */
+#ia-manoeuvre label, #ia-manoeuvre input, #ia-manoeuvre select, #ia-manoeuvre textarea, #ia-manoeuvre .ia-veh-btn, #ia-manoeuvre summary { scroll-margin-bottom: 230px; }
