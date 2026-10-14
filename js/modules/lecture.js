@@ -10,9 +10,9 @@
  * Interrupteur : localStorage « vulcain-lecture » = « off » rétablit l'ancien aspect.
  */
 const Lecture = (function () {
-    // Pages interactives (formulaires, calculs, cartes) et familles à identité propre : elles gardent leur aspect
+    // Pages interactives (formulaires, calculs, cartes) et menus à groupes SAL : ils gardent leur aspect
     const INTERACTIF = 'input, select, textarea, canvas, .calc-ui, .sal-saisie, .distance-section';
-    const A_PART = '.jsp-bandeau, .sal-groupe';
+    const A_PART = '.sal-groupe';
     // Anciennes boîtes de contenu, très colorées en ligne : elles reçoivent le bandeau et la navigation seulement
     const ANCIEN = '.result-box, .result-card, .info-card, .warning-box, .alert-box, .sal-res-info';
     const BLOCS = '.rd-section, .result-box, .result-card, .info-card';
@@ -73,13 +73,16 @@ const Lecture = (function () {
     // Rubriques : le premier titre de chaque bloc est un titre de section (numéroté par la feuille de style en mode complet)
     function rubriques(module, mode) {
         const entetes = [];
-        const blocs = Array.from(module.querySelectorAll(mode === 'complet' ? '.rd-section' : BLOCS))
+        // Pages sans rubriques (cours JSP) : chaque cours repliable est une section de la navigation
+        const sections = module.querySelectorAll('.rd-section');
+        const blocs = Array.from(mode === 'complet' ? (sections.length ? sections : module.querySelectorAll('details.jsp-cours')) : module.querySelectorAll(BLOCS))
             .filter(b => !b.parentElement.closest(BLOCS));
         blocs.forEach(s => {
-            const h = Array.from(s.children).find(c => /^H[2-4]$/.test(c.tagName));
+            const cours = s.tagName === 'DETAILS';
+            const h = Array.from(s.children).find(c => (cours ? c.tagName === 'SUMMARY' : /^H[2-4]$/.test(c.tagName)));
             if (!h) return;
-            s.classList.add(mode === 'complet' ? 'lec-section' : 'lec-ancre');
-            if (mode === 'complet' && ROMAIN.test(h.textContent)) h.classList.add('lec-romain');
+            s.classList.add(mode === 'complet' && !cours ? 'lec-section' : 'lec-ancre');
+            if (mode === 'complet' && !cours && ROMAIN.test(h.textContent)) h.classList.add('lec-romain');
             const titre = h.textContent.replace(/\s*\(.*$/, '').replace(ROMAIN, '').replace(/^[^\p{L}\p{N}]+/u, '').trim();
             entetes.push({ section: s, titre: titre || h.textContent.trim() });
         });
@@ -96,7 +99,10 @@ const Lecture = (function () {
             const b = document.createElement('button');
             b.type = 'button';
             b.textContent = e.titre;
-            b.addEventListener('click', () => e.section.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+            b.addEventListener('click', () => {
+                if (e.section.tagName === 'DETAILS') e.section.open = true;
+                e.section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
             nav.appendChild(b);
             return b;
         });
