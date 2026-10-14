@@ -1,0 +1,144 @@
+/* ───────── Style de lecture des chapitres (GTO, GDO, fiches) ─────────
+   Habillage seulement : le contenu des chapitres n'est jamais modifié (voir js/modules/lecture.js).
+   S'applique aux écrans marqués .lecture ; les couleurs viennent des variables du thème (clair et sombre). */
+
+html[data-theme] .module.lecture {
+    --lec-1: light-dark(#C62828, #FF7A89);
+    --lec-2: light-dark(#B26A00, #F5A623);
+    --lec-3: light-dark(#1565C0, #7BB6FF);
+    --lec-4: light-dark(#1B7F4B, #7BE0A8);
+    --lec-5: light-dark(#7B1FA2, #C792EA);
+    --lec-6: light-dark(#00796B, #4FD8C4);
+    counter-reset: lec-rub;
+}
+
+/* Photos des bandeaux : celles des cartes de domaines de l'accueil */
+html[data-theme] .module.lecture[data-lec-domaine="incendie"] { --lec-hero: url(../images/accueil/dom-incendie.jpeg); }
+html[data-theme] .module.lecture[data-lec-domaine="fdf"] { --lec-hero: url(../images/accueil/dom-fdf.jpeg); }
+html[data-theme] .module.lecture[data-lec-domaine="risques"] { --lec-hero: url(../images/accueil/dom-risques.jpeg); }
+html[data-theme] .module.lecture[data-lec-domaine="operations-diverses"] { --lec-hero: url(../images/accueil/dom-operations-diverses.jpeg); }
+html[data-theme] .module.lecture[data-lec-domaine="sap"] { --lec-hero: url(../images/accueil/dom-sap.jpeg); }
+html[data-theme] .module.lecture[data-lec-domaine="routier"] { --lec-hero: url(../images/accueil/dom-routier.jpeg); }
+html[data-theme] .module.lecture[data-lec-domaine="specialites"] { --lec-hero: url(../images/accueil/dom-specialites.jpeg); }
+html[data-theme] .module.lecture[data-lec-domaine="commandement"] { --lec-hero: url(../images/accueil/dom-commandement.jpeg); }
+html[data-theme] .module.lecture[data-lec-domaine="jsp"] { --lec-hero: url(../images/accueil/dom-jsp.jpeg); }
+html[data-theme] .module.lecture[data-lec-domaine="outils"] { --lec-hero: url(../images/accueil/dom-outils.jpeg); }
+html[data-theme] .module.lecture[data-lec-domaine="conduite"] { --lec-hero: url(../images/accueil/dom-conduite.jpeg); }
+html[data-theme] .module.lecture[data-lec-domaine="sdis34"] { --lec-hero: url(../images/accueil/dom-sdis34.jpeg); }
+
+/* Titre du chapitre : bandeau photo */
+html[data-theme] .module.lecture > h2 {
+    margin: 4px 0 14px; padding: 76px 16px 14px; border: 1px solid var(--t-line); border-radius: 18px;
+    color: #FFFFFF; text-shadow: 0 2px 10px rgba(0, 0, 0, .55);
+    background-color: #0A0C11;
+    background-image: linear-gradient(180deg, rgba(10, 12, 17, .15), rgba(10, 12, 17, .92)), var(--lec-hero, linear-gradient(#0A0C11, #0A0C11));
+    background-size: cover; background-position: center 22%;
+    font-family: var(--t-display); font-weight: var(--t-display-weight); letter-spacing: var(--t-display-spacing); line-height: 1.1;
+}
+
+/* Navigation par sections */
+html[data-theme] .module.lecture .lec-nav {
+    position: sticky; top: 0; z-index: 6; display: flex; gap: 7px; overflow-x: auto; padding: 8px 2px;
+    background: var(--t-page); border-bottom: 1px solid var(--t-line); scrollbar-width: none;
+}
+.module.lecture .lec-nav::-webkit-scrollbar { display: none; }
+html[data-theme] .module.lecture .lec-nav button {
+    flex: none; font: inherit; font-size: 13px; font-weight: 600; color: var(--t-ink); background: var(--t-s1);
+    border: 1px solid var(--t-line2); border-radius: 999px; padding: 7px 13px; cursor: pointer; white-space: nowrap;
+}
+html[data-theme] .module.lecture .lec-nav button[aria-current="true"] { background: var(--t-accent-bg); border-color: var(--t-accent-bg); color: var(--t-accent-ink); }
+.module.lecture .lec-nav button:focus-visible { outline: 2px solid var(--t-accent); outline-offset: 2px; }
+
+/* Rubriques : numéro, titre en capitales, filet */
+html[data-theme] .module.lecture .rd-section.lec-section {
+    background: none; border: 0; border-radius: 0; padding: 0; margin: 22px 0 8px; scroll-margin-top: 56px;
+}
+html[data-theme] .module.lecture .rd-section.lec-section > h3:first-child {
+    display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-size: 1.45em; line-height: 1.1;
+    font-family: var(--t-display); font-weight: var(--t-display-weight); text-transform: var(--t-display-case); letter-spacing: var(--t-display-spacing);
+}
+.module.lecture .rd-section.lec-section > h3:first-child::before {
+    counter-increment: lec-rub; content: counter(lec-rub, decimal-leading-zero);
+    color: var(--t-accent); font-size: 1.35em; line-height: 1;
+}
+.module.lecture .rd-section.lec-section > h3.lec-romain::before { display: none; }
+.module.lecture .rd-section.lec-section > h3:first-child::after {
+    content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--t-line2), transparent);
+}
+html[data-theme] .module.lecture .rd-section h3:not(:first-child) {
+    margin: 16px 0 6px; font-size: 1.1em; color: var(--lec-1);
+    font-family: var(--t-display); text-transform: var(--t-display-case); letter-spacing: var(--t-display-spacing);
+}
+
+/* Listes de définitions : une carte par terme */
+.module.lecture ul.lec-defs { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 7px; }
+html[data-theme] .module.lecture ul.lec-defs > li {
+    margin: 0; padding: 9px 13px; background: var(--t-s1); border: 1px solid var(--t-line); border-left: 4px solid var(--lec-1); border-radius: 12px;
+}
+html[data-theme] .module.lecture ul.lec-defs > li:nth-child(6n+2) { border-left-color: var(--lec-2); }
+html[data-theme] .module.lecture ul.lec-defs > li:nth-child(6n+3) { border-left-color: var(--lec-3); }
+html[data-theme] .module.lecture ul.lec-defs > li:nth-child(6n+4) { border-left-color: var(--lec-4); }
+html[data-theme] .module.lecture ul.lec-defs > li:nth-child(6n+5) { border-left-color: var(--lec-5); }
+html[data-theme] .module.lecture ul.lec-defs > li:nth-child(6n) { border-left-color: var(--lec-6); }
+.module.lecture ul.lec-defs > li > strong:first-child { color: var(--lec-1); }
+.module.lecture ul.lec-defs > li:nth-child(6n+2) > strong:first-child { color: var(--lec-2); }
+.module.lecture ul.lec-defs > li:nth-child(6n+3) > strong:first-child { color: var(--lec-3); }
+.module.lecture ul.lec-defs > li:nth-child(6n+4) > strong:first-child { color: var(--lec-4); }
+.module.lecture ul.lec-defs > li:nth-child(6n+5) > strong:first-child { color: var(--lec-5); }
+.module.lecture ul.lec-defs > li:nth-child(6n) > strong:first-child { color: var(--lec-6); }
+
+/* Autres listes : losanges rouges */
+.module.lecture ul.lec-bl { list-style: none; margin: 8px 0; padding: 0; }
+.module.lecture ul.lec-bl > li { position: relative; margin: 6px 0; padding-left: 20px; }
+.module.lecture ul.lec-bl > li::before {
+    content: ""; position: absolute; left: 3px; top: .62em; width: 7px; height: 7px; background: var(--t-accent); transform: rotate(45deg);
+}
+
+/* Listes numérotées : étapes reliées */
+.module.lecture ol.lec-steps { list-style: none; margin: 10px 0; padding: 0; counter-reset: lec-etape; }
+.module.lecture ol.lec-steps > li { position: relative; margin: 0; padding: 0 0 12px 46px; counter-increment: lec-etape; min-height: 32px; }
+.module.lecture ol.lec-steps > li::before {
+    content: counter(lec-etape); position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%;
+    display: grid; place-items: center; background: var(--t-accent-bg); color: var(--t-accent-ink); font-weight: 700;
+}
+.module.lecture ol.lec-steps > li:not(:last-child)::after {
+    content: ""; position: absolute; left: 15px; top: 36px; bottom: 2px; width: 2px; background: color-mix(in srgb, var(--t-accent) 45%, transparent);
+}
+
+/* Tableaux simples : une carte par ligne (les intitulés de colonnes restent lisibles) */
+html[data-theme] .module.lecture table.lec-cards { display: block; width: 100%; background: none; border: 0; margin: 8px 0; }
+html[data-theme] .module.lecture table.lec-cards th, html[data-theme] .module.lecture table.lec-cards td { border: 0; padding: 0; text-align: left; }
+.module.lecture table.lec-cards thead { display: block; }
+.module.lecture table.lec-cards thead tr, .module.lecture table.lec-cards tbody tr:has(> th) {
+    display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0 0 6px; padding: 0; background: none; border: 0;
+}
+html[data-theme] .module.lecture table.lec-cards th {
+    background: none; color: var(--t-muted); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+}
+.module.lecture table.lec-cards tbody { display: grid; gap: 7px; }
+html[data-theme] .module.lecture table.lec-cards tbody tr:not(:has(> th)) {
+    --lec-k: var(--lec-1); display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; padding: 10px 13px;
+    background: var(--t-s1); border: 1px solid var(--t-line); border-top: 3px solid var(--lec-k); border-radius: 14px;
+}
+.module.lecture table.lec-cards tbody tr:nth-child(6n+2) { --lec-k: var(--lec-2); }
+.module.lecture table.lec-cards tbody tr:nth-child(6n+3) { --lec-k: var(--lec-3); }
+.module.lecture table.lec-cards tbody tr:nth-child(6n+4) { --lec-k: var(--lec-4); }
+.module.lecture table.lec-cards tbody tr:nth-child(6n+5) { --lec-k: var(--lec-5); }
+.module.lecture table.lec-cards tbody tr:nth-child(6n) { --lec-k: var(--lec-6); }
+.module.lecture table.lec-cards td { display: block; min-width: 0; overflow-wrap: anywhere; }
+.module.lecture table.lec-cards td:first-child { grid-column: 1 / -1; font-weight: 700; color: var(--lec-k); }
+.module.lecture table.lec-cards.lec-deux tbody tr { grid-template-columns: 1fr; }
+.module.lecture table.lec-cards td[data-label]::before {
+    content: attr(data-label); display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--t-muted);
+}
+@media (max-width: 420px) {
+    html[data-theme] .module.lecture table.lec-cards tbody tr:not(:has(> th)) { grid-template-columns: 1fr; }
+}
+
+/* Tableaux complexes (cellules fusionnées…) : conservés, avec un habillage plus doux */
+html[data-theme] .module.lecture table.lec-table { border-radius: 12px; }
+
+/* Encadrés et panneaux repliables */
+html[data-theme] .module.lecture .rd-alerte, html[data-theme] .module.lecture .rd-astuce { border-radius: 14px; padding: 12px 14px; }
+html[data-theme] .module.lecture .jsp-cours > summary { font-family: var(--t-display); font-size: 1.1em; letter-spacing: var(--t-display-spacing); }
+html[data-theme] .module.lecture .jsp-liens .sal-lien { padding: 6px 14px; }

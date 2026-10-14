@@ -56,6 +56,8 @@ test('tous les tableaux des fiches sont dans un cadre à défilement (sauf les c
 test('un tableau plus large que l\'écran défile dans son cadre, avec indice de défilement', async ({ app }) => {
     await app.setViewportSize({ width: 375, height: 800 });
     await sansAnimation(app);
+    // Style de lecture coupé : on teste ici le cadre à défilement des tableaux qui restent des tableaux
+    await app.evaluate(() => localStorage.setItem('vulcain-lecture', 'off'));
     await app.evaluate(() => { showModule('ulm'); document.querySelectorAll('#ulm details').forEach(d => { d.open = true; }); });
     const cadre = app.locator('#ulm .rd-tablescroll-auto', { has: app.locator('th', { hasText: 'Particularités' }) }).first();
     await cadre.scrollIntoViewIfNeeded();
