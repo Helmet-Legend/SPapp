@@ -103,6 +103,7 @@ function iaReinitialiser() {
     document.getElementById('niveau-manoeuvre').value = 'Perfectionnement';
     document.getElementById('consignes-particulieres').value = '';
     document.getElementById('resultat-ia').style.display = 'none';
+    iaMajRecap();
 }
 
 // Limite : 2 générations par 24 h sur cet appareil (le serveur applique aussi la limite)
@@ -575,3 +576,24 @@ async function telechargerPDF() {
         alert(`✅ PDF téléchargé : ${filename}`);
     }, 100);
 }
+
+// Résumé du choix affiché au-dessus du bouton « Générer »
+function iaMajRecap() {
+    const zone = document.getElementById('ia-recap');
+    if (!zone) return;
+    const types = getCheckedValues('type').map(t => t.replace(/^FDF Feu de forêt$/, 'FDF').replace(/^Moyens aériens EPA$/, 'Moyens aériens'));
+    const engins = Array.from(document.querySelectorAll('.ia-veh-btn')).reduce((n, b) => n + (parseInt(b.dataset.count, 10) || 0), 0);
+    const duree = document.getElementById('duree-manoeuvre');
+    const puces = [];
+    if (types.length) puces.push(types.join(' + '));
+    if (engins) puces.push(engins + (engins > 1 ? ' engins' : ' engin'));
+    puces.push(document.getElementById('nb-personnel').value + ' SP');
+    if (duree) puces.push(duree.selectedOptions[0].textContent);
+    zone.replaceChildren(...puces.map(t => Object.assign(document.createElement('span'), { textContent: t })));
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const module = document.getElementById('ia-manoeuvre');
+    if (!module) return;
+    ['change', 'input', 'click'].forEach(evt => module.addEventListener(evt, () => setTimeout(iaMajRecap, 0)));
+    iaMajRecap();
+});

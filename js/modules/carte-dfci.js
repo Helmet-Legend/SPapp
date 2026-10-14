@@ -26,6 +26,16 @@ var CarteDFCI = (function () {
     function ecrireFond(f) { try { localStorage.setItem(CLE_FOND, f); } catch (e) { /* stockage indisponible */ } }
 
     // ---------- Fond de carte ----------
+    // Une tuile en échec (réseau, serveur occupé) est redemandée jusqu'à 2 fois : sans cela elle reste un carré vide.
+    function redemanderTuile(img) {
+        var essais = parseInt(img.dataset.essais, 10) || 0;
+        if (essais >= 2) return;
+        img.dataset.essais = essais + 1;
+        var base = img.dataset.base || (img.dataset.base = img.src);
+        setTimeout(function () {
+            if (img.isConnected) img.src = base + (base.indexOf('?') >= 0 ? '&' : '?') + 'essai=' + (essais + 1);
+        }, 1000 * (essais + 1));
+    }
     function appliquerFond(id) {
         fondActif = id; ecrireFond(id);
         if (couche) { carte.removeLayer(couche); couche = null; }
@@ -33,11 +43,12 @@ var CarteDFCI = (function () {
         $('alerte-fond').hidden = true;
         var f = FONDS[id];
         if (f.url) {
-            couche = L.tileLayer(f.url, { maxZoom: f.max, maxNativeZoom: f.max, attribution: '© IGN', crossOrigin: true });
+            couche = L.tileLayer(f.url, { maxZoom: f.max, maxNativeZoom: f.max, attribution: '© IGN' });
             couche.on('tileload', function () { tuilesChargees++; $('alerte-fond').hidden = true; });
-            couche.on('tileerror', function () {
+            couche.on('tileerror', function (e) {
                 erreursTuiles++;
                 if (erreursTuiles >= 3 && !tuilesChargees) $('alerte-fond').hidden = false;
+                redemanderTuile(e.tile);
             });
             couche.addTo(carte);
             couche.bringToBack();

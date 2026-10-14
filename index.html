@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.70">
+    <meta name="version" content="1.69.72">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -145,7 +145,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.70 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.72 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -313,7 +313,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.70</span><br>
+                        Vulcain v<span class="app-version">1.69.72</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -12539,9 +12539,14 @@
     
     <div id="ia-manoeuvre" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
-        <h2 style="color: light-dark(#6a1b9a, #c383e9); border-bottom: 3px solid #8E24AA;">🤖 Générateur de Manœuvre IA</h2>
-        <p style="text-align: center; margin-bottom: 10px; color: var(--text-secondary);">Créez des scénarios d'entraînement personnalisés grâce à l'intelligence artificielle</p>
-        <p style="text-align: center; margin-bottom: 20px;"><button type="button" onclick="iaReinitialiser()">🔄 Réinitialiser le formulaire</button></p>
+        <header class="ia-hero">
+            <div class="ia-hero-ph" aria-hidden="true"></div>
+            <div class="ia-hero-in">
+                <div class="ia-hero-titre"><span class="ia-hero-robot" aria-hidden="true">🤖</span><h2>Générateur<br>de manœuvre <em>IA</em></h2></div>
+                <p>Crée des scénarios d'entraînement personnalisés grâce à l'intelligence artificielle.</p>
+                <button type="button" class="ia-hero-reset" onclick="iaReinitialiser()">🔄 Réinitialiser le formulaire</button>
+            </div>
+        </header>
 
         <!-- Compteur de générations (2 par 24 h) -->
         <div id="ia-compteur" class="ia-compteur" aria-live="polite">
@@ -12673,7 +12678,7 @@
             </details>
             
             <!-- Personnel -->
-            <div class="result-box" style="background: var(--bg-elevated);">
+            <div class="result-box ia-perso" style="background: var(--bg-elevated);">
                 <h3 style="color: light-dark(#2a722e, #41b147); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
                     <span style="font-size: 1.3em;">👥</span> Personnel
                 </h3>
@@ -12740,11 +12745,14 @@
             </div>
         </div>
         
-        <!-- Bouton Générer -->
+        <!-- Bouton Générer (barre fixe avec le résumé du choix) -->
+        <div class="ia-barre">
+        <div id="ia-recap" class="ia-recap" aria-live="polite"></div>
         <button id="btn-generer" onclick="genererManoeuvre()" style="width: 100%; margin-top: 25px; padding: 20px; font-size: 1.3em; font-weight: 700; background: linear-gradient(135deg, #6A1B9A 0%, #8E24AA 100%); color: #fff; border: none; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 15px rgba(106, 27, 154, 0.3);">
             <span>🤖</span> GÉNÉRER LE SCÉNARIO
         </button>
         <p id="ia-quota" style="text-align: center; margin: 10px 0 0; font-weight: 600;"></p>
+        </div>
         
         <!-- Zone de résultat -->
         <div id="resultat-ia" style="margin-top: 25px; display: none;">
@@ -12769,8 +12777,9 @@
             </div>
         </div>
         
-        <div class="warning-box" style="margin-top: 20px; background: rgba(106, 27, 154, 0.1); border: 2px solid #8E24AA;">
-            <strong style="color: light-dark(#6a1b9a, #c383e9);">💡 Conseil :</strong> Le scénario généré est une base de travail. Adaptez-le selon vos contraintes locales et validez-le avec votre hiérarchie avant mise en œuvre.
+        <div class="ia-equipe" aria-hidden="true"></div>
+        <div class="warning-box ia-conseil" style="margin-top: 20px;">
+            <strong>💡 Conseil :</strong> Le scénario généré est une base de travail. Adaptez-le selon vos contraintes locales et validez-le avec votre hiérarchie avant mise en œuvre.
         </div>
     </div>
 
@@ -37123,7 +37132,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.70</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.72</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

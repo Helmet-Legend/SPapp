@@ -168,3 +168,31 @@ test('carte en plein écran : la feuille d\'enregistrement passe au-dessus de la
     await expect(app.locator('#loc-feuille')).toBeHidden();
     expect(await app.evaluate(() => MesPoints.nombre())).toBe(0);
 });
+
+// Tuiles IGN : le serveur peut refuser ou ne pas répondre sur certaines tuiles ; elles doivent être redemandées
+test('fond de carte : une tuile en échec est redemandée et s\'affiche, sans mode CORS', async ({ app }) => {
+    const PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==', 'base64');
+    const demandes = {};
+    // Réponse sans en-tête CORS (cas d'une réponse de cache ou d'erreur du serveur) ; la 1re demande de chaque tuile échoue
+    await app.route(url => url.href.startsWith('https://data.geopf.fr/wmts'), r => {
+        const u = new URL(r.request().url());
+        const cle = [u.searchParams.get('TILEMATRIX'), u.searchParams.get('TILECOL'), u.searchParams.get('TILEROW')].join('/');
+        demandes[cle] = (demandes[cle] || 0) + 1;
+        if (!u.searchParams.has('essai')) return r.fulfill({ status: 429, body: 'trop de demandes' });
+        return r.fulfill({ status: 200, contentType: 'image/png', body: PNG });
+    });
+    await ouvrir(app);
+    await app.evaluate(() => CarteDFCI.carte().setView([43.3951, 3.4263], 15, { animate: false }));
+    await expect.poll(() => app.evaluate(() => {
+        const t = [...document.querySelectorAll('#cd-carte .leaflet-tile')];
+        return t.length > 0 && t.every(i => i.classList.contains('leaflet-tile-loaded'));
+    }), { timeout: 10000 }).toBe(true);
+    expect(await app.evaluate(() => document.querySelectorAll('#cd-carte .leaflet-tile[crossorigin]').length)).toBe(0);
+    // Toute tuile encore affichée a été redemandée (les tuiles du premier affichage, quittées en zoomant, n'ont pas à l'être)
+    const affichees = await app.evaluate(() => [...document.querySelectorAll('#cd-carte .leaflet-tile')].map(i => {
+        const u = new URL(i.src);
+        return [u.searchParams.get('TILEMATRIX'), u.searchParams.get('TILECOL'), u.searchParams.get('TILEROW')].join('/');
+    }));
+    expect(affichees.length).toBeGreaterThan(0);
+    expect(affichees.every(cle => demandes[cle] >= 2)).toBe(true);
+});
