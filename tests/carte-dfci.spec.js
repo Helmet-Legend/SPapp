@@ -188,5 +188,11 @@ test('fond de carte : une tuile en échec est redemandée et s\'affiche, sans mo
         return t.length > 0 && t.every(i => i.classList.contains('leaflet-tile-loaded'));
     }), { timeout: 10000 }).toBe(true);
     expect(await app.evaluate(() => document.querySelectorAll('#cd-carte .leaflet-tile[crossorigin]').length)).toBe(0);
-    expect(Object.values(demandes).every(n => n >= 2)).toBe(true);
+    // Toute tuile encore affichée a été redemandée (les tuiles du premier affichage, quittées en zoomant, n'ont pas à l'être)
+    const affichees = await app.evaluate(() => [...document.querySelectorAll('#cd-carte .leaflet-tile')].map(i => {
+        const u = new URL(i.src);
+        return [u.searchParams.get('TILEMATRIX'), u.searchParams.get('TILECOL'), u.searchParams.get('TILEROW')].join('/');
+    }));
+    expect(affichees.length).toBeGreaterThan(0);
+    expect(affichees.every(cle => demandes[cle] >= 2)).toBe(true);
 });
