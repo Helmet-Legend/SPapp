@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.69.77 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.69.78 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -165,12 +165,13 @@ function showModule(moduleName) {
         if (moduleName === 'abaque') calculateAbaqueAll();
         if (moduleName === 'ari') calculerAutonomieARI();
         if (moduleName === 'sal-calculateur' && window.afficherTablesMT2012) afficherTablesMT2012();
+        if (moduleName === 'sal-calculateur' && window.Palanquees) Palanquees.ouvrir();
         if (moduleName === 'sal-tables' && window.afficherTablesAnnexes) afficherTablesAnnexes();
     }
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.69.77';
+var APP_VERSION = '1.69.78';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -1302,7 +1303,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.69.77 COMPLET
+// FIN DU FICHIER - Vulcain v1.69.78 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
