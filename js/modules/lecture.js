@@ -40,9 +40,19 @@ const Lecture = (function () {
     }
 
     // Liste dont chaque point commence par un terme en gras : cartes de définition
+    // Bloc au texte clair sur fond foncé posé en style direct : la liste y garde son aspect d'origine
+    const TEXTE_CLAIR = /gradient|[^-]color\s*:\s*(#fff\b|#ffffff|white|rgb\(\s*255)/i;
+    function surFondFonce(l, module) {
+        for (let a = l.parentElement; a && a !== module; a = a.parentElement) {
+            if (TEXTE_CLAIR.test(a.getAttribute('style') || '')) return true;
+        }
+        return false;
+    }
     function listes(module) {
+        const bandeau = module.classList.contains('lecture-bandeau');
         module.querySelectorAll('ul, ol').forEach(l => {
             if (l.closest('.nav-crumbs, .lec-nav')) return;
+            if (bandeau && surFondFonce(l, module)) return;
             const points = Array.from(l.children).filter(li => li.tagName === 'LI');
             if (!points.length) return;
             if (l.tagName === 'OL') { l.classList.add('lec-steps'); return; }
@@ -89,6 +99,18 @@ const Lecture = (function () {
         return entetes;
     }
 
+    // Anciennes boîtes de contenu : seule la boîte extérieure est restylée ; les blocs colorés à l'intérieur ne changent pas
+    const RACINES = '.result-box, .info-card, .result-card, .warning-box, .alert-box, .rd-section';
+    function boites(module) {
+        Array.from(module.querySelectorAll(RACINES)).filter(e => !e.parentElement.closest(RACINES)).forEach(e => {
+            if (e.matches('.warning-box, .alert-box')) { e.classList.add('lec-alerte'); return; }
+            if (e.matches('.info-card, .result-card')) { e.classList.add('lec-carte'); return; }
+            e.classList.add('lec-boite');
+            const h = Array.from(e.children).find(c => /^H[2-4]$/.test(c.tagName));
+            if (h) h.classList.add('lec-bt');
+        });
+    }
+
     function barre(module, entetes) {
         if (entetes.length < 3) return;
         const nav = document.createElement('nav');
@@ -133,7 +155,7 @@ const Lecture = (function () {
         if (mode === 'bandeau') module.classList.add('lecture-bandeau');
         const d = domaineDe(module.id);
         if (d) module.setAttribute('data-lec-domaine', d);
-        if (mode === 'complet') { listes(module); tableaux(module); }
+        if (mode === 'complet') { listes(module); tableaux(module); } else { boites(module); listes(module); tableaux(module); }
         barre(module, rubriques(module, mode));
     }
 

@@ -98,3 +98,18 @@ test('Wallace : pas de barre tant qu\'aucune zone n\'est brûlée ; formulaires 
     await expect(dock(app)).toBeHidden();
     expect(app.erreurs).toEqual([]);
 });
+
+test('ARI : le volume de bouteille choisi reste en surbrillance (6 L par défaut)', async ({ app }) => {
+    await app.evaluate(() => showModule('ari'));
+    const actif = () => app.evaluate(() => ['btnBout6', 'btnBout7', 'btnBout9'].filter(i => document.getElementById(i).classList.contains('choix-actif')));
+    expect(await actif()).toEqual(['btnBout6']);
+    await app.locator('#btnBout7').click();
+    expect(await actif()).toEqual(['btnBout7']);
+    // La sélection est visible : fond rouge, les autres boutons restent neutres
+    const fonds = await app.evaluate(() => ['btnBout6', 'btnBout7', 'btnBout9'].map(i => getComputedStyle(document.getElementById(i)).backgroundColor));
+    expect(fonds[1]).not.toBe(fonds[0]);
+    expect(fonds[0]).toBe(fonds[2]);
+    await app.locator('#btnBout9').click();
+    expect(await actif()).toEqual(['btnBout9']);
+    expect(await app.locator('#volumeARI').inputValue()).toBe('9');
+});
