@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * Vulcain v1.69.76 - Outil d'aide à la décision opérationnelle
+ * Vulcain v1.69.77 - Outil d'aide à la décision opérationnelle
  * ═══════════════════════════════════════════════════════════════════════
  * Copyright (c) 2025-2026 - Helmet Legend
  * Version COMPLÈTE avec tous les modules fonctionnels
@@ -170,7 +170,7 @@ function showModule(moduleName) {
 }
 
 // ==================== À PROPOS ====================
-var APP_VERSION = '1.69.76';
+var APP_VERSION = '1.69.77';
 
 function toggleAbout() {
     var modal = document.getElementById('aboutModal');
@@ -661,6 +661,11 @@ function setBouteilleARI(volume) {
     highlightButton(['btnBout6', 'btnBout7', 'btnBout9'], volume === 6 ? 'btnBout6' : volume === 7.2 ? 'btnBout7' : 'btnBout9');
     calculerAutonomieARI();
 }
+
+// Volume par défaut (6 L) : le bouton est déjà marqué comme choisi à l'ouverture
+document.addEventListener('DOMContentLoaded', function() {
+    highlightButton(['btnBout6', 'btnBout7', 'btnBout9'], 'btnBout6');
+});
 
 function adjustPressionARI(delta) { adjustInputValue('pressionARI', delta, 0, 300); calculerAutonomieARI(); }
 function adjustConsoARI(delta) { adjustInputValue('consoARI', delta, 10, 150); calculerAutonomieARI(); }
@@ -1193,6 +1198,8 @@ function highlightButton(allIds, activeId) {
     allIds.forEach(function(id) {
         var btn = document.getElementById(id);
         if (btn) {
+            btn.classList.toggle('choix-actif', id === activeId);
+            btn.setAttribute('aria-pressed', id === activeId ? 'true' : 'false');
             if (id === activeId) {
                 btn.style.border = '5px solid #FFD700';
                 btn.style.boxShadow = '0 0 20px rgba(255, 215, 0, 0.8)';
@@ -1295,7 +1302,7 @@ function showFamilleHab(famille) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// FIN DU FICHIER - Vulcain v1.69.76 COMPLET
+// FIN DU FICHIER - Vulcain v1.69.77 COMPLET
 // ═══════════════════════════════════════════════════════════════════════
 console.log('🚒 Vulcain v' + APP_VERSION + ' - Tous les modules chargés avec succès');
 
