@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.77">
+    <meta name="version" content="1.69.78">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -146,7 +146,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.77 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.78 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -314,7 +314,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.77</span><br>
+                        Vulcain v<span class="app-version">1.69.78</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -11311,6 +11311,20 @@
         <h2>🧮 Calculateur de paliers MT 2012</h2>
         <p style="text-align: center;">Tables du ministère du Travail MT 2012 (arrêté du 30/10/2012) reprises dans l'annexe II du référentiel. Intervalle de 12 h avant la plongée, sauf plongée successive.</p>
 
+        <div class="rd-section pal-barre" id="pal-barre">
+            <h3>👥 Palanquées</h3>
+            <div id="pal-onglets" class="pal-onglets" role="tablist" aria-label="Palanquées"></div>
+            <div class="sal-saisie pal-nomligne">
+                <label>✏️ Nom de la palanquée
+                    <input type="text" id="pal-nom" maxlength="24" autocomplete="off" aria-label="Nom de la palanquée">
+                </label>
+            </div>
+            <div class="pal-actions">
+                <button type="button" id="pal-dupliquer">Dupliquer</button>
+                <button type="button" id="pal-supprimer" class="pal-danger">Supprimer</button>
+            </div>
+        </div>
+
         <div class="rd-section">
             <div class="sal-saisie">
                 <label>📏 Profondeur maximale (m)
@@ -11382,6 +11396,13 @@
             <p class="sal-res-info" id="sal-vision-aide">Calculez d'abord les paliers : profondeur et temps de plongée.</p>
             <div id="sal-vision-resultat" aria-live="polite"></div>
             <span id="sal-dock" class="sal-dock-texte" aria-hidden="true"></span>
+        </div>
+
+        <div class="rd-section pal-synthese" id="pal-synthese" hidden>
+            <h3>🕐 Qui sort, et quand</h3>
+            <div id="pal-lignes" class="pal-lignes" aria-live="polite"></div>
+            <p class="sal-res-info">Palanquées classées par heure de sortie au plus tôt. Appuyer sur une ligne pour ouvrir la palanquée. Réglages conservés sur cet appareil seulement.</p>
+            <button type="button" id="pal-effacer" class="pal-danger">Tout effacer</button>
         </div>
 
         <div class="rd-section">
@@ -37133,7 +37154,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.77</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.78</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
@@ -37149,6 +37170,7 @@ Je demande : ….</p>
     <!-- Scripts JavaScript externes -->
     <script src="js/data-loader.js"></script>
     <script src="js/modules/sal.js"></script>
+    <script src="js/modules/palanquees.js"></script>
     <script src="js/app.js"></script>
     <script src="js/modules/gaz.js"></script>
     <script src="js/modules/bouteilles.js"></script>

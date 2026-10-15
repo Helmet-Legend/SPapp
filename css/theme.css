@@ -1646,3 +1646,35 @@ html[data-theme] .sal-immersion-ligne button { min-height: 56px; padding: 0 16px
 .sal-t b { display: block; font-size: .98em; color: var(--t-ink); }
 .sal-t small { display: block; color: var(--t-muted); font-size: .85em; }
 .sal-dock-texte { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Calculateur de paliers : plusieurs palanquées (onglets, synthèse « qui sort, et quand ») ---------- */
+html[data-theme] .pal-synthese[hidden] { display: none !important; }
+html[data-theme] .pal-onglets { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 10px; scrollbar-width: thin; }
+html[data-theme] .pal-onglet { flex: none; min-height: 48px; padding: 8px 16px; border-radius: 14px; border: 1.5px solid var(--t-line); background: var(--t-s2); color: var(--t-ink);
+    display: flex; align-items: baseline; gap: 8px; font: inherit; font-weight: 800; cursor: pointer; }
+html[data-theme] .pal-onglet small { font-weight: 600; color: var(--t-muted); }
+html[data-theme] .pal-onglet.actif { background: var(--pc, #D7263D); border-color: transparent; color: #fff; }
+html[data-theme] .pal-onglet.actif small { color: rgba(255, 255, 255, .85); }
+html[data-theme] .pal-onglet:not(.actif):not(.pal-plus) { border-left: 5px solid var(--pc, var(--t-line)); }
+html[data-theme] .pal-plus { border-style: dashed; color: var(--t-muted); }
+html[data-theme] .pal-onglet:disabled { opacity: .45; cursor: not-allowed; }
+html[data-theme] .pal-nomligne { grid-template-columns: 1fr; margin-top: 4px; }
+html[data-theme] .pal-nomligne input { text-align: left; font-size: 1em; }
+html[data-theme] .pal-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+html[data-theme] .pal-actions button, html[data-theme] .pal-synthese > button { margin: 0; min-height: 48px; border-radius: 14px; border: 1.5px solid var(--t-line); background: var(--t-s2); color: var(--t-ink); font: inherit; font-weight: 700; cursor: pointer; padding: 8px 12px; }
+html[data-theme] .pal-actions button:disabled { opacity: .45; cursor: not-allowed; }
+html[data-theme] .pal-danger { color: #E4636F; }
+html[data-theme] .pal-synthese > button { width: 100%; margin-top: 8px; }
+html[data-theme] .pal-lignes { display: grid; gap: 8px; }
+html[data-theme] .pal-ligne { display: grid; grid-template-columns: 44px 1fr auto; gap: 10px; align-items: center; text-align: left; width: 100%; padding: 12px; border-radius: 14px;
+    border: 1.5px solid var(--t-line); background: var(--t-s2); color: var(--t-ink); font: inherit; cursor: pointer; }
+html[data-theme] .pal-ligne.prochaine { border-color: #D7263D; box-shadow: 0 0 0 1px #D7263D inset; }
+html[data-theme] .pal-pastille { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-weight: 900; color: #fff; }
+html[data-theme] .pal-t1 { font-weight: 500; }
+html[data-theme] .pal-t1 b { font-weight: 800; }
+html[data-theme] .pal-texte { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+html[data-theme] .pal-texte small, html[data-theme] .pal-sortie small { color: var(--t-muted); font-size: .8em; font-weight: 500; }
+html[data-theme] .pal-sortie { text-align: right; display: flex; flex-direction: column; gap: 2px; }
+html[data-theme] .pal-sortie b { font-size: 1.5em; line-height: 1; font-variant-numeric: tabular-nums; }
+html[data-theme] .pal-badge { align-self: flex-start; margin-top: 4px; font-style: normal; font-size: .7em; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; background: #D7263D; color: #fff; border-radius: 999px; padding: 2px 8px; }
+@media (max-width: 380px) { html[data-theme] .pal-ligne { grid-template-columns: 38px 1fr; } html[data-theme] .pal-sortie { grid-column: 2; text-align: left; } html[data-theme] .pal-pastille { width: 38px; height: 38px; } }
