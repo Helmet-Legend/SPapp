@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.78">
+    <meta name="version" content="1.69.79">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -146,7 +146,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.78 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.79 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -314,7 +314,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.78</span><br>
+                        Vulcain v<span class="app-version">1.69.79</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -464,6 +464,7 @@
     <div id="fire" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2>🔥 Calcul de Puissance du Feu / Extinction</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Puissance totale</b> (MW) = somme, pour chaque type de source, de (nombre × puissance unitaire)</li><li>Puissances unitaires : fenêtre <b>2 MW</b> · porte <b>4 MW</b> · baie vitrée <b>8,4 MW</b> · porte de garage <b>11 MW</b> · porte d'entrepôt <b>36 MW</b></li><li><b>Débit nécessaire</b> (L/min) = (puissance totale ÷ 1,4) × 100</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> une fenêtre et une porte : 2 + 4 = 6 MW ; débit = (6 ÷ 1,4) × 100 = <b>429 L/min</b>.</p></div></details>
         
         <div class="fire-icons">
             <div class="fire-icon" onclick="addFire('fenetre')" style="--fire-border: #4CAF50;">
@@ -560,6 +561,7 @@
     <div id="emulseur" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2>🫧 Taux d'application additif</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Calcul direct</b> : débit de solution (L/min) = surface (m²) × taux d'application (L/min/m²)</li><li>Volume de solution (L) = débit de solution × durée (min)</li><li>Volume d'émulseur (L) = volume de solution × concentration (%) ÷ 100 · volume d'eau = solution − émulseur · bidons de 20 L = émulseur ÷ 20, arrondi au supérieur</li><li><b>Calcul inverse</b> : volume de solution (L) = stock d'émulseur ÷ (concentration ÷ 100) · débit (L/min) = volume ÷ durée · surface réalisable (m²) = débit ÷ taux d'application</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> 100 m² à 10 L/min/m² pendant 20 min : 1 000 L/min, soit 20 000 L de solution ; à 3 % : <b>600 L d'émulseur</b> (30 bidons de 20 L).</p></div></details>
 
         <div class="result-box">
             <h3>🎯 Mode de calcul</h3>
@@ -676,6 +678,7 @@
     <div id="pertes" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2>🔧 Calcul des Pertes de Charge</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Perte pour 20 m de tuyau</b> (bar) = perte de référence × (débit ÷ débit de référence)²</li><li>Références : Ø45 = 1,2 bar à 500 L/min · Ø70 = 0,44 bar à 1 000 L/min · Ø110 = 0,24 bar à 2 000 L/min. Ø25 : valeurs du tableau seulement (1,7 bar à 58 L/min, 2,2 bar à 150 L/min)</li><li><b>Pertes des tuyaux</b> (bar) = nombre de tuyaux de 20 m × perte pour 20 m (en calcul complet : perte × longueur ÷ 20)</li><li><b>Dénivelé</b> (bar) = dénivelé saisi (m) ÷ 10 : un dénivelé positif s'ajoute, un dénivelé négatif se retranche</li><li><b>Pièces de jonction</b> : 1 bar par pièce</li><li><b>Pression à la pompe</b> (bar) = pression à la lance + pertes des tuyaux + dénivelé + jonctions</li><li><b>Calcul complet</b> : pression à la pompe = pertes de l'alimentation (débit total des lances, plus son dénivelé) + pression la plus élevée demandée par une lance (pression lance + pertes + dénivelé) + jonctions</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> Ø45 à 500 L/min, 3 tuyaux, pas de dénivelé, 6 bar à la lance : 1,2 × 3 = 3,6 bar de pertes ; 6 + 3,6 = <b>9,6 bar</b>.</p></div></details>
 
         <div class="result-box" id="pdcRapide">
             <h3>⚡ Calcul rapide – un établissement</h3>
@@ -990,6 +993,7 @@
     <div id="ari" class="module">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <h2>🫁 Calcul Autonomie ARI</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Volume d'air total</b> (L) = pression (bar) × volume de la bouteille (L)</li><li><b>Autonomie totale</b> (min) = volume d'air ÷ consommation (L/min)</li><li><b>Mi-temps</b> (min) = autonomie totale ÷ 2</li><li><b>Pression utilisable</b> (bar) = pression − pression de sécurité</li><li><b>Temps au sifflet</b> (min) = pression utilisable × volume ÷ consommation</li><li><b>Autonomie d'engagement</b> (min) = (pression − 50 bar) × volume ÷ débit, arrondie à la minute (1 min au moins). En « survie » (débit de 10 L/min ou moins) : pression totale × volume ÷ débit</li><li><b>Heure de sortie prévisible</b> = heure d'entrée + autonomie d'engagement</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> 300 bar, bouteille de 9 L, 100 L/min : 300 × 9 ÷ 100 = <b>27 min</b> ; au sifflet avec 55 bar de sécurité : (300 − 55) × 9 ÷ 100 = <b>22 min</b>.</p></div></details>
 
         <div class="result-box">
             <h3>⚙️ Paramètres de calcul</h3>
@@ -2563,6 +2567,7 @@
     <div id="epuisement" class="module">
         <button class="back-btn" onclick="showModule('aide-calculs-menu')">← Retour</button>
         <h2>💧 Calcul Épuisement de Volume</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Surface</b> (m²) : rectangle = longueur × largeur · carré = côté² · cercle = π × (diamètre ÷ 2)²</li><li><b>Volume</b> (m³) = surface × hauteur d'eau (saisie en cm ou en m, convertie en m) · en litres = volume × 1 000</li><li><b>Débit total</b> (L/min) = 250 × nombre de pompes de 15 m³/h + 500 × de 30 m³/h + 1 000 × de 60 m³/h + 1 500 × de 90 m³/h</li><li><b>Temps d'épuisement</b> (min) = volume (L) ÷ débit total, arrondi à la minute supérieure</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> bassin de 10 m × 5 m, 0,5 m d'eau : 25 m³ = 25 000 L ; avec une pompe de 30 m³/h (500 L/min) : 25 000 ÷ 500 = <b>50 min</b>.</p></div></details>
 
         <div class="form-group">
             <label>Forme du volume :</label>
@@ -3199,6 +3204,7 @@
     <div id="explosimetrie" class="module" style="background: var(--t-s2, #F5F7FA);">
         <button class="back-btn" onclick="showModule('risques-gaz-menu')">← Retour</button>
         <h2>💥 Explosimétrie - Correction des Valeurs</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Facteur</b> = LIE du gaz d'étalonnage ÷ LIE du gaz présent, au minimum 1</li><li><b>Valeur corrigée</b> (% LIE) = valeur affichée × facteur ; au-delà de 100, elle est affichée « > 100 % LIE »</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> appareil étalonné au méthane (LIE 5 %), gaz présent propane (LIE 2,1 %) : facteur 5 ÷ 2,1 = 2,38 ; lecture de 20 % → 20 × 2,38 = <b>47,6 % LIE</b>.</p><p class="calc-formule-note">Estimation prudente : à défaut des facteurs de réponse du constructeur, la valeur lue peut sous-estimer le danger pour un autre gaz que celui de l'étalonnage.</p></div></details>
 
         <div class="alert-box" style="background: rgba(76, 175, 80, 0.15); border-left-color: #4CAF50; border: 2px solid #4CAF50;">
             💡 <strong>Principe :</strong><br>
@@ -3724,6 +3730,7 @@
     <div id="feu-foret" class="module">
         <button class="back-btn" onclick="showModule('gdo-menu')">← Retour GDO</button>
         <h2>🌲 Feux de Forêt - Règle des 3%</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Vitesse de propagation</b> (km/h) = vitesse du vent (km/h) × facteur ÷ 100</li><li><b>Facteur</b> : 3 % (règle des 3 %) ; si une humidité relative est choisie, valeur de la table de Trabaud (GDO feux de forêts § 2.3.3) selon l'humidité et la vitesse du vent</li><li><b>Vitesse</b> (m/min) = vitesse (km/h) × 1 000 ÷ 60</li><li><b>Distance parcourue</b> (m) = vitesse (m/min) × durée (min), affichée pour 15, 30, 45, 60 et 120 min</li><li><b>Niveau de risque</b> selon la vitesse : moins de 10 m/min faible · moins de 20 modéré · moins de 35 élevé · sinon critique</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> vent de 30 km/h, règle des 3 % : 30 × 3 ÷ 100 = 0,9 km/h = <b>15 m/min</b> ; en 30 min : 15 × 30 = <b>450 m</b>.</p></div></details>
         
         <div class="alert-box" style="background: rgba(0,170,255,0.15); border-left-color: #00aaff; margin-bottom: 25px;">
             <strong>📖 Règle des 3% :</strong> La vitesse de propagation du feu est approximativement égale à <strong>3% de la vitesse du vent</strong>.<br>
@@ -3775,6 +3782,7 @@
     <div id="convertisseur" class="module">
         <button class="back-btn" onclick="showModule('aide-calculs-menu')">← Retour</button>
         <h2>🔄 Convertisseur d'Unités</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Valeur convertie</b> = valeur ÷ coefficient de l'unité de départ × coefficient de l'unité d'arrivée</li><li>Le coefficient d'une unité est le nombre de ces unités contenues dans l'unité de base : 1 bar, 1 L/min, 1 L, 1 m ou 1 km/h (par exemple 1 bar = 14,5038 psi)</li><li><b>Températures</b> : °F = °C × 9 ÷ 5 + 32 · K = °C + 273,15</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> 10 bar en psi : 10 ÷ 1 × 14,5038 = <b>145,04 psi</b>.</p></div></details>
         
         <!-- CONVERSIONS RAPIDES -->
         <div style="background: var(--bg-card); padding: 20px; border-radius: 15px; border: 2px solid var(--primary-red); margin-bottom: 25px;">
@@ -4511,6 +4519,7 @@
     <div id="abaque" class="module">
         <button class="back-btn" onclick="showModule('aide-calculs-menu')">← Retour</button>
         <h2>⚖️ Abaque - Calcul de Charges</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Volume</b> (m³) = longueur × largeur × hauteur (m)</li><li><b>Masse</b> (kg) = volume (m³) × densité du matériau (kg/m³) ; affichée en tonnes à partir de 1 000 kg</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> 2 m × 2 m × 1 m = 4 m³ ; de l'eau (1 000 kg/m³) : 4 × 1 000 = <b>4 000 kg</b>, soit 4 tonnes.</p></div></details>
         
         <div class="info-box" style="margin-bottom: 20px;">
             <strong>💡 Fonctionnement :</strong> Entrez les dimensions, le poids de chaque matériau s'affiche automatiquement
@@ -4556,6 +4565,7 @@
     <div id="distance-calc" class="module">
         <button class="back-btn" onclick="showModule('aide-calculs-menu')">← Retour</button>
         <h2>🚒 Calcul Temps de Trajet</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Temps de trajet</b> (h) = distance (km) ÷ vitesse moyenne (km/h)</li><li><b>En minutes</b> = temps (h) × 60, arrondi à la minute</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> 110 km à 90 km/h : 110 ÷ 90 = 1,22 h, soit <b>1 h 13 min</b>.</p></div></details>
         
         <div class="info-box" style="margin-bottom: 25px;">
             <strong>💡 Calculateur de temps de trajet :</strong> Estimez le temps nécessaire pour atteindre un point d'intervention en fonction de la distance et de la vitesse moyenne.
@@ -10129,6 +10139,7 @@
     <div id="suap-wallace-calc" class="module">
         <button class="back-btn" onclick="showModule('suap-brulures')">← Retour Brûlures</button>
         <h2 style="color: light-dark(#945800, #ff9800); border-bottom: 3px solid #FF9800;">📐 Calculateur Wallace</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Surface cutanée brûlée (SCB)</b> (%) = somme des pourcentages des zones brûlées + 1 % par main de la victime, plafonnée à 100 %</li><li>Adulte : tête 9 · tronc avant 18 · tronc arrière 18 · chaque bras 9 · chaque jambe 18 · périnée 1</li><li>Enfant : tête 17 · tronc avant 18 · tronc arrière 18 · chaque bras 9 · chaque jambe 14</li><li><b>Seuil de gravité</b> : SCB supérieure à 20 % chez l'adulte, à 10 % chez l'enfant</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> adulte, tête et bras gauche brûlés : 9 + 9 = <b>18 %</b>, sous le seuil de 20 %.</p></div></details>
         <p style="text-align: center;">Touchez les zones brûlées : le pourcentage de surface cutanée brûlée (SCB) se calcule tout seul.</p>
 
         <div class="result-box" style="background: var(--bg-elevated); margin-top: 15px;">
@@ -11309,6 +11320,7 @@
     <div id="sal-calculateur" class="module" style="--jsp: #0277BD;">
         <button class="back-btn" onclick="showModule('sal-menu')">← Plongée</button>
         <h2>🧮 Calculateur de paliers MT 2012</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Paliers</b> : lus dans les tables MT 2012 (Air Standard ou Air/Oxy 6 m) à la ligne de profondeur et de temps immédiatement supérieurs</li><li><b>Nitrox</b> ou <b>altitude</b> : profondeur équivalente lue dans la table correspondante (une seule des deux options à la fois)</li><li><b>Plongée successive</b> : temps équivalent = temps de plongée + majoration lue dans la table des successives (profondeur et intervalle de surface)</li><li><b>Début de la remontée</b> = heure d'immersion + temps de plongée ; parachute = début de la remontée + 1 min</li><li><b>Sortie au plus tôt</b> = début de la remontée + total de décompression de la table (remontée au premier palier + paliers)</li><li><b>Moins de 12 m</b> : table « sans palier » (temps sans palier selon la profondeur) ; aucune durée de remontée n'y figure, donc pas d'heure de sortie calculée</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> 30 m, 25 min, immersion à 10 h 00 : début de la remontée 10 h 25 ; total de décompression 7 min 15 s ; sortie au plus tôt <b>10 h 33</b>.</p><p class="calc-formule-note">Outil d'aide : la décompression est arrêtée par le directeur de plongée sur les tables officielles.</p></div></details>
         <p style="text-align: center;">Tables du ministère du Travail MT 2012 (arrêté du 30/10/2012) reprises dans l'annexe II du référentiel. Intervalle de 12 h avant la plongée, sauf plongée successive.</p>
 
         <div class="rd-section pal-barre" id="pal-barre">
@@ -35854,6 +35866,7 @@ Je demande : ….</p>
     <div id="lspcc-calculateur" class="module">
         <button class="back-btn" onclick="showModule('lspcc-menu')">← Retour</button>
         <h2 style="color: light-dark(#c22727, #e57e7e); border-bottom: 3px solid #C62828;">🔢 Calculateur Facteur de Chute</h2>
+        <details class="calc-formule"><summary>📐 Formules</summary><div class="calc-formule-corps"><ul><li><b>Facteur de chute</b> = hauteur de chute (m) ÷ longueur de corde (m)</li><li>Facteur de 0,3 ou moins : optimal · jusqu'à 1 : à éviter · au-delà de 1 : interdit</li><li>La hauteur de chute ne peut pas dépasser 2 fois la longueur de corde (valeurs incohérentes sinon)</li></ul><p class="calc-formule-ex"><strong>Exemple :</strong> 3 m de chute avec 10 m de corde : 3 ÷ 10 = <b>0,30</b>, facteur optimal.</p></div></details>
         
         <div style="background: linear-gradient(135deg, var(--t-s2, #FFEBEE) 0%, light-dark(#FFCDD2, #40393c) 100%); padding: 20px; border-radius: 12px; margin-bottom: 20px;">
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
@@ -37154,7 +37167,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.78</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.79</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
