@@ -303,3 +303,21 @@ test('pertes de charge : le calcul détaillé et le calcul rapide donnent la mê
     });
     expect(ecarts).toEqual([]);
 });
+
+test('explosimètre : la LSE s\'affiche sur les boutons, dans le détail et dans le tableau', async ({ app }) => {
+    await app.evaluate(() => showModule('explosimetrie'));
+    await expect(app.locator('#btnGaz-methane')).toContainText('LSE: 15 %');
+    await app.click('#btnGaz-propane');
+    await expect(app.locator('#detailLsePresent')).toContainText('9,5 %');
+    await expect(app.locator('#tableauFacteurs thead')).toContainText('LSE');
+    await expect(app.locator('#bodyTableauFacteurs tr', { hasText: 'Propane' }).first().locator('td')).toHaveCount(6);
+    await expect(app.locator('#bodyTableauFacteurs td[colspan]').first()).toHaveAttribute('colspan', '6');
+});
+
+test('données des gaz : chaque LSE est supérieure à la LIE, ou absente avec sa raison', async ({ app }) => {
+    const anomalies = await app.evaluate(async () => {
+        const gaz = await (await fetch('data/gaz.json')).json();
+        return Object.entries(gaz).filter(([k, g]) => g.lse == null ? !g.lseNote : !(g.lse > g.lie && g.lse <= 100)).map(([k]) => k);
+    });
+    expect(anomalies).toEqual([]);
+});

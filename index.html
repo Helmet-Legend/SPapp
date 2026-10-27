@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.79">
+    <meta name="version" content="1.69.80">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -146,7 +146,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.79 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.80 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -314,7 +314,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.79</span><br>
+                        Vulcain v<span class="app-version">1.69.80</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -3298,6 +3298,10 @@
                     <span class="result-value" id="detailLiePresent" style="font-size: 1.1em;">-</span>
                 </div>
                 <div class="result-item" style="background: var(--t-s2, #F5F5F5); padding: 15px; border-radius: 8px; margin: 12px 0;">
+                    <span style="font-weight: 600;">LSE gaz présent :</span>
+                    <span class="result-value" id="detailLsePresent" style="font-size: 1.1em;">-</span>
+                </div>
+                <div class="result-item" style="background: var(--t-s2, #F5F5F5); padding: 15px; border-radius: 8px; margin: 12px 0;">
                     <span style="font-weight: 600;">Facteur de correction :</span>
                     <span class="result-value" id="detailFacteur" style="font-size: 1.1em;">-</span>
                 </div>
@@ -3318,6 +3322,7 @@
                             <th>Gaz</th>
                             <th>Formule</th>
                             <th>LIE (%vol)</th>
+                            <th>LSE (%vol)</th>
                             <th>Facteur</th>
                             <th>Calcul</th>
                         </tr>
@@ -3327,6 +3332,11 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <div class="alert-box">
+            <strong>À propos de la LSE :</strong> au-dessus de la LSE (limite supérieure d'explosivité), le mélange est trop riche pour brûler, mais il redevient explosif dès qu'il se dilue dans l'air. Un local « saturé » reste donc dangereux à l'ouverture.<br>
+            Les valeurs varient selon les sources (méthode d'essai, température). « ≈ » signale une valeur qui diverge d'une source à l'autre, « n.c. » une valeur non trouvée. Le détail du gaz sélectionné (ci-dessus) donne l'écart constaté. En cas de doute, se reporter à la fiche de données de sécurité du produit.
         </div>
 
         <div class="warning-box">
@@ -37167,7 +37177,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.79</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.80</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
