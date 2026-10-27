@@ -61,7 +61,7 @@ function remplirGazPresents() {
                                    align-items: center;">
                         <div style="font-size: 1.2em; font-weight: bold; color: var(--text-light); margin-bottom: 8px; text-align: center;">${gaz.nom}</div>
                         <div style="font-size: 1em; color: light-dark(#945800, #ff9800); margin-bottom: 8px;">${gaz.formule}</div>
-                        <div style="font-size: 0.9em; color: var(--text-secondary);">LIE: ${gaz.lie}%</div>
+                        <div style="font-size: 0.9em; color: var(--text-secondary);">LIE: ${gaz.lie}% · LSE: ${texteLse(gaz)}</div>
                     </button>
                 `;
             }
@@ -141,6 +141,12 @@ function filterGazButtons() {
     });
 }
 
+// LSE (limite supérieure d'explosivité) : « n.c. » quand aucune source consultée ne la donne ; « ≈ » quand les sources divergent
+function texteLse(gaz) {
+    if (gaz.lse == null) return 'n.c.';
+    return (gaz.lseNote && gaz.lseNote.indexOf('selon') !== -1 ? '≈ ' : '') + String(gaz.lse).replace('.', ',') + ' %';
+}
+
 // Sélectionner un gaz et calculer
 function selectionnerGaz(key) {
     gazSelectionne = key;
@@ -196,6 +202,8 @@ function calculerCorrectionGaz() {
         document.getElementById('detailLieEtalon').textContent = lieEtalon + ' %';
         document.getElementById('detailGazPresent').textContent = gazDatabase[gazSelectionne].nom;
         document.getElementById('detailLiePresent').textContent = liePresent + ' %';
+        const gazP = gazDatabase[gazSelectionne];
+        document.getElementById('detailLsePresent').textContent = texteLse(gazP) + (gazP.lseNote ? ' (' + gazP.lseNote + ')' : '');
         document.getElementById('detailFacteur').textContent = facteur.toFixed(3);
         document.getElementById('detailValeurAffichee').textContent = valeurAffichee + ' % LIE';
     }
@@ -229,7 +237,7 @@ function updateTableauCorrections() {
         // Ligne de titre de catégorie
         html += `
             <tr style="background: rgba(0,204,255,0.2);">
-                <td colspan="5" style="font-weight: bold; color: light-dark(#006e8a, #00ccff); padding: 12px; text-align: left; border-top: 2px solid light-dark(#00ccff, #0c6982);">
+                <td colspan="6" style="font-weight: bold; color: light-dark(#006e8a, #00ccff); padding: 12px; text-align: left; border-top: 2px solid light-dark(#00ccff, #0c6982);">
                     ${categorie}
                 </td>
             </tr>
@@ -249,6 +257,7 @@ function updateTableauCorrections() {
                         </td>
                         <td style="color: ${isEtalon ? 'light-dark(#9e5e00, #ff9800)' : 'inherit'};">${gaz.formule}</td>
                         <td style="text-align: center; color: light-dark(#945800, #ff9800); font-weight: ${isEtalon ? 'bold' : 'normal'};">${gaz.lie}</td>
+                        <td style="text-align: center;"${gaz.lseNote ? ' title="' + gaz.lseNote + '"' : ''}>${texteLse(gaz)}</td>
                         <td style="text-align: center; font-weight: bold; color: ${isEtalon ? 'light-dark(#9e5e00, #ff9800)' : 'light-dark(#2e7d32, #6fcf76)'};">${facteur.toFixed(3)}</td>
                         <td style="font-size: 0.9em; color: var(--text-secondary);">${facteur === 1 ? 'Valeur lue (pas de réduction)' : 'Valeur × ' + facteur.toFixed(3)}</td>
                     </tr>

@@ -2,211 +2,284 @@
   "methane": {
     "nom": "Méthane",
     "formule": "CH₄",
-    "lie": 5.0
+    "lie": 5.0,
+    "lse": 15
   },
   "ethane": {
     "nom": "Éthane",
     "formule": "C₂H₆",
-    "lie": 3.0
+    "lie": 3.0,
+    "lse": 12.4,
+    "lseNote": "12,4 à 12,5 selon les sources"
   },
   "propane": {
     "nom": "Propane",
     "formule": "C₃H₈",
-    "lie": 2.1
+    "lie": 2.1,
+    "lse": 9.5,
+    "lseNote": "9,5 à 10,1 selon les sources"
   },
   "butane": {
     "nom": "Butane",
     "formule": "C₄H₁₀",
-    "lie": 1.8
+    "lie": 1.8,
+    "lse": 8.4,
+    "lseNote": "8,4 à 9,3 selon les sources"
   },
   "isobutane": {
     "nom": "Isobutane",
     "formule": "C₄H₁₀",
-    "lie": 1.8
+    "lie": 1.8,
+    "lse": 8.4
   },
   "pentane": {
     "nom": "Pentane",
     "formule": "C₅H₁₂",
-    "lie": 1.4
+    "lie": 1.4,
+    "lse": 7.8
   },
   "hexane": {
     "nom": "Hexane",
     "formule": "C₆H₁₄",
-    "lie": 1.2
+    "lie": 1.2,
+    "lse": 7.4
   },
   "heptane": {
     "nom": "Heptane",
     "formule": "C₇H₁₆",
-    "lie": 1.05
+    "lie": 1.05,
+    "lse": 6.7
   },
   "octane": {
     "nom": "Octane",
     "formule": "C₈H₁₈",
-    "lie": 1.0
+    "lie": 1.0,
+    "lse": 6.5
   },
   "nonane": {
     "nom": "Nonane",
     "formule": "C₉H₂₀",
-    "lie": 0.85
+    "lie": 0.85,
+    "lse": 5.6,
+    "lseNote": "2,9 à 5,6 selon les fiches"
   },
   "decane": {
     "nom": "Décane",
     "formule": "C₁₀H₂₂",
-    "lie": 0.75
+    "lie": 0.75,
+    "lse": 5.4,
+    "lseNote": "2,6 à 5,4 selon les fiches"
   },
   "dodecane": {
     "nom": "Dodécane",
     "formule": "C₁₂H₂₆",
-    "lie": 0.6
+    "lie": 0.6,
+    "lse": null,
+    "lseNote": "valeur non trouvée dans les sources consultées"
   },
   "ethylene": {
     "nom": "Éthylène",
     "formule": "C₂H₄",
-    "lie": 2.7
+    "lie": 2.7,
+    "lse": 36,
+    "lseNote": "28,6 à 36 selon les sources"
   },
   "propylene": {
     "nom": "Propylène",
     "formule": "C₃H₆",
-    "lie": 2.0
+    "lie": 2.0,
+    "lse": 11.1,
+    "lseNote": "11 à 11,1 selon les sources"
   },
   "butene": {
     "nom": "Butène",
     "formule": "C₄H₈",
-    "lie": 1.6
+    "lie": 1.6,
+    "lse": 10,
+    "lseNote": "9,65 à 10 selon les sources"
   },
   "benzene": {
     "nom": "Benzène",
     "formule": "C₆H₆",
-    "lie": 1.2
+    "lie": 1.2,
+    "lse": 7.8,
+    "lseNote": "7,8 à 7,9 selon les sources"
   },
   "toluene": {
     "nom": "Toluène",
     "formule": "C₇H₈",
-    "lie": 1.1
+    "lie": 1.1,
+    "lse": 7.1,
+    "lseNote": "6,75 à 7,1 selon les sources"
   },
   "xylene": {
     "nom": "Xylène",
     "formule": "C₈H₁₀",
-    "lie": 1.0
+    "lie": 1.0,
+    "lse": 7.0,
+    "lseNote": "6,7 à 7,0 selon l'isomère"
   },
   "styrene": {
     "nom": "Styrène",
     "formule": "C₈H₈",
-    "lie": 1.1
+    "lie": 1.1,
+    "lse": 6.1,
+    "lseNote": "6,1 à 6,8 selon les sources"
   },
   "acetylene": {
     "nom": "Acétylène",
     "formule": "C₂H₂",
-    "lie": 2.5
+    "lie": 2.5,
+    "lse": 100
   },
   "essence": {
     "nom": "Essence (mélange)",
     "formule": "C₄-C₁₂",
-    "lie": 1.4
+    "lie": 1.4,
+    "lse": 7.5,
+    "lseNote": "valeur de la doctrine ENSOSP ; varie avec la composition"
   },
   "diesel": {
     "nom": "Diesel/Gazole",
     "formule": "C₁₀-C₂₂",
-    "lie": 0.6
+    "lie": 0.6,
+    "lse": 6.5,
+    "lseNote": "6,5 à 13,5 selon les sources"
   },
   "kerosene": {
     "nom": "Kérosène",
     "formule": "C₉-C₁₆",
-    "lie": 0.7
+    "lie": 0.7,
+    "lse": 4.9,
+    "lseNote": "varie avec la composition"
   },
   "gpl": {
     "nom": "GPL (Butane/Propane)",
     "formule": "C₃-C₄",
-    "lie": 1.8
+    "lie": 1.8,
+    "lse": 9.5,
+    "lseNote": "mélange propane/butane"
   },
   "gnr": {
     "nom": "GNR (Gaz Naturel)",
     "formule": "CH₄ + C₂H₆",
-    "lie": 4.5
+    "lie": 4.5,
+    "lse": 15,
+    "lseNote": "valeur du méthane"
   },
   "gnl": {
     "nom": "GNL (Gaz Naturel Liquéfié)",
     "formule": "CH₄",
-    "lie": 5.0
+    "lie": 5.0,
+    "lse": 15,
+    "lseNote": "valeur du méthane"
   },
   "gnv": {
     "nom": "GNV (Gaz Naturel Véhicule)",
     "formule": "CH₄",
-    "lie": 5.0
+    "lie": 5.0,
+    "lse": 15,
+    "lseNote": "valeur du méthane"
   },
   "gpl_auto": {
     "nom": "GPL Auto",
     "formule": "C₃H₈/C₄H₁₀",
-    "lie": 1.9
+    "lie": 1.9,
+    "lse": 9.5,
+    "lseNote": "mélange : valeur du GPL"
   },
   "methanol": {
     "nom": "Méthanol",
     "formule": "CH₃OH",
-    "lie": 6.7
+    "lie": 6.7,
+    "lse": 36
   },
   "ethanol": {
     "nom": "Éthanol",
     "formule": "C₂H₅OH",
-    "lie": 3.3
+    "lie": 3.3,
+    "lse": 19
   },
   "propanol": {
     "nom": "Propanol",
     "formule": "C₃H₇OH",
-    "lie": 2.1
+    "lie": 2.1,
+    "lse": null,
+    "lseNote": "valeur non trouvée dans les sources consultées"
   },
   "butanol": {
     "nom": "Butanol",
     "formule": "C₄H₉OH",
-    "lie": 1.4
+    "lie": 1.4,
+    "lse": 11.2,
+    "lseNote": "11 à 12 selon les sources"
   },
   "ether": {
     "nom": "Éther diéthylique",
     "formule": "C₄H₁₀O",
-    "lie": 1.9
+    "lie": 1.9,
+    "lse": 36,
+    "lseNote": "36 à 48 selon les sources"
   },
   "mtbe": {
     "nom": "MTBE (additif essence)",
     "formule": "C₅H₁₂O",
-    "lie": 1.5
+    "lie": 1.5,
+    "lse": null,
+    "lseNote": "valeur non trouvée dans les sources consultées"
   },
   "acetone": {
     "nom": "Acétone",
     "formule": "C₃H₆O",
-    "lie": 2.5
+    "lie": 2.5,
+    "lse": 12.8,
+    "lseNote": "12,8 à 13 selon les sources"
   },
   "mek": {
     "nom": "MEK (Butanone)",
     "formule": "C₄H₈O",
-    "lie": 1.8
+    "lie": 1.8,
+    "lse": 11.5,
+    "lseNote": "10 à 11,5 selon les sources"
   },
   "hydrogene": {
     "nom": "Hydrogène",
     "formule": "H₂",
-    "lie": 4.0
+    "lie": 4.0,
+    "lse": 75
   },
   "monoxyde": {
     "nom": "Monoxyde de carbone",
     "formule": "CO",
-    "lie": 12.5
+    "lie": 12.5,
+    "lse": 74,
+    "lseNote": "74 à 75 selon les sources"
   },
   "ammoniac": {
     "nom": "Ammoniac",
     "formule": "NH₃",
-    "lie": 15.0
+    "lie": 15.0,
+    "lse": 28,
+    "lseNote": "27 à 28 selon les sources"
   },
   "propane_oxy": {
     "nom": "Oxyde de propylène",
     "formule": "C₃H₆O",
-    "lie": 2.3
+    "lie": 2.3,
+    "lse": 36,
+    "lseNote": "36 à 37 selon les sources"
   },
   "butadiene": {
     "nom": "Butadiène",
     "formule": "C₄H₆",
-    "lie": 2.0
+    "lie": 2.0,
+    "lse": 12
   },
   "isoprene": {
     "nom": "Isoprène",
     "formule": "C₅H₈",
-    "lie": 1.5
+    "lie": 1.5,
+    "lse": null,
+    "lseNote": "valeur non trouvée dans les sources consultées"
   }
 }
