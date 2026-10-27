@@ -16,13 +16,13 @@
     "nom": "Propane",
     "formule": "C₃H₈",
     "lie": 2.1,
-    "lse": 9.5,
-    "lseNote": "9,5 à 10,1 selon les sources"
+    "lse": 9.3,
+    "lseNote": "9,3 à 10,1 selon les sources"
   },
   "butane": {
     "nom": "Butane",
     "formule": "C₄H₁₀",
-    "lie": 1.8,
+    "lie": 1.9,
     "lse": 8.4,
     "lseNote": "8,4 à 9,3 selon les sources"
   },
@@ -35,7 +35,7 @@
   "pentane": {
     "nom": "Pentane",
     "formule": "C₅H₁₂",
-    "lie": 1.4,
+    "lie": 1.5,
     "lse": 7.8
   },
   "hexane": {
@@ -135,9 +135,9 @@
   "essence": {
     "nom": "Essence (mélange)",
     "formule": "C₄-C₁₂",
-    "lie": 1.4,
-    "lse": 7.5,
-    "lseNote": "valeur de la doctrine ENSOSP ; varie avec la composition"
+    "lie": 1.6,
+    "lse": 7.6,
+    "lseNote": "7,5 à 7,6 selon les sources"
   },
   "diesel": {
     "nom": "Diesel/Gazole",
@@ -252,7 +252,7 @@
     "nom": "Monoxyde de carbone",
     "formule": "CO",
     "lie": 12.5,
-    "lse": 74,
+    "lse": 74.2,
     "lseNote": "74 à 75 selon les sources"
   },
   "ammoniac": {

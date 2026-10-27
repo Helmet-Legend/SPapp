@@ -308,7 +308,7 @@ test('explosimètre : la LSE s\'affiche sur les boutons, dans le détail et dans
     await app.evaluate(() => showModule('explosimetrie'));
     await expect(app.locator('#btnGaz-methane')).toContainText('LSE: 15 %');
     await app.click('#btnGaz-propane');
-    await expect(app.locator('#detailLsePresent')).toContainText('9,5 %');
+    await expect(app.locator('#detailLsePresent')).toContainText('9,3 %');
     await expect(app.locator('#tableauFacteurs thead')).toContainText('LSE');
     await expect(app.locator('#bodyTableauFacteurs tr', { hasText: 'Propane' }).first().locator('td')).toHaveCount(6);
     await expect(app.locator('#bodyTableauFacteurs td[colspan]').first()).toHaveAttribute('colspan', '6');

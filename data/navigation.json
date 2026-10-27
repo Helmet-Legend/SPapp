@@ -3199,6 +3199,27 @@
    "photo": "images/calculs/explosimetrie.webp"
   },
   {
+   "id": "cours-explosimetrie",
+   "titre": "Cours d'explosimétrie",
+   "domaine": "risques",
+   "theme": "Gaz",
+   "type": "fiche",
+   "motsCles": [
+    "explosimètre",
+    "explosimétrie",
+    "cours",
+    "LIE",
+    "LSE",
+    "explosivité",
+    "déflagration",
+    "détonation",
+    "altair",
+    "dräger",
+    "étalon",
+    "gaz"
+   ]
+  },
+  {
    "id": "bouteilles",
    "titre": "Bouteilles de Gaz",
    "domaine": "risques",
