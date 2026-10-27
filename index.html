@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.81">
+    <meta name="version" content="1.69.82">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -146,7 +146,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.81 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.82 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -314,7 +314,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.81</span><br>
+                        Vulcain v<span class="app-version">1.69.82</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -3519,6 +3519,148 @@
     </div>
 
 
+
+    <!-- Module Cours sur les pièces de jonction -->
+    <div id="cours-pieces-jonction" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <h2>🔩 Les pièces de jonction</h2>
+        <p style="text-align: center;">Les six catégories de pièces de jonction : raccords, retenues, coudes d'alimentation, vannes, divisions, collecteurs. Synthèse de deux documents, avec un quiz.</p>
+        <div class="rd-alerte">Quand les deux documents diffèrent (listes de raccords de réduction et de divisions, matériaux), la page l'indique. Pour le matériel de son service, se référer aux notes et fiches de celui-ci.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Six catégories</strong> : raccords, retenues, coudes d'alimentation, vannes, divisions, collecteurs d'alimentation.</li>
+                <li>Un <strong>raccord = deux demi-raccords</strong>. Symétriques : <strong>DSP</strong> (Ø 40 et 65) ou <strong>AR</strong>. Asymétriques : <strong>GFR</strong> (gros filet rond), <strong>Keyser</strong>.</li>
+                <li>Montage d'un raccord symétrique : <strong>joints présents</strong>, verrous non saillants, <strong>tenons joint contre joint</strong>, viroles tournées jusqu'à l'<strong>encliquetage</strong>, serrage à la clé si besoin.</li>
+                <li>Une pièce est désignée par les <strong>diamètres nominaux de ses demi-raccords</strong>.</li>
+                <li>Retenue : <strong>BI → engin</strong>. Division : <strong>un établissement → plusieurs</strong>. Collecteur : <strong>1 ou 2 établissements de 70 → engin ou colonne sèche de 100</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1 · Généralités</h3>
+            <p>Pour relier les différents éléments d'un <strong>établissement</strong> (suite de plusieurs tuyaux permettant l'acheminement de l'eau) entre eux, les sapeurs-pompiers utilisent des <strong>pièces de jonction</strong>. Elles permettent aussi de relier certains accessoires, dits <strong>accessoires hydrauliques</strong>, à d'autres éléments hydrauliques.</p>
+            <p>Elles sont en <strong>bronze</strong>, en <strong>aluminium</strong> ou en <strong>alliage léger</strong> (le cours ADMJSP ajoute le <strong>plastique</strong>).</p>
+            <table class="rd-table">
+                <tr><th>Catégorie</th><th>Rôle</th></tr>
+                <tr><td>Raccords</td><td>assembler les tuyaux entre eux ou les brancher sur une prise d'eau, une pièce de jonction ou un accessoire</td></tr>
+                <tr><td>Retenues</td><td>alimenter les engins d'incendie par les bouches d'incendie</td></tr>
+                <tr><td>Coudes d'alimentation</td><td>alimenter un engin ou un établissement directement sur une bouche d'incendie</td></tr>
+                <tr><td>Vannes</td><td>alimenter un établissement avant que le porte-lance soit sécurisé, ou le vidanger</td></tr>
+                <tr><td>Divisions</td><td>transformer un établissement en plusieurs</td></tr>
+                <tr><td>Collecteurs d'alimentation</td><td>alimenter un engin ou une colonne sèche par un ou deux établissements</td></tr>
+            </table>
+            <p class="rd-source">📚 Cours « Les pièces de jonction », UV JSP 1 module INC, version 2 (ADMJSP / SDMIS) ; « Les pièces de jonction », ressources à distance incendie, SDIS 63, version 2019-03.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 · Les raccords</h3>
+            <p>Un raccord se compose de <strong>deux demi-raccords</strong>. Il permet d'assembler entre eux les tuyaux ou de brancher un tuyau sur une prise d'eau, une pièce de jonction ou un accessoire hydraulique. Les raccords sont <strong>normalisés</strong> et désignés par leur <strong>type</strong> et leur <strong>diamètre intérieur</strong>.</p>
+            <p>Nomenclature d'un demi-raccord symétrique : <strong>joint</strong>, <strong>tenons</strong>, <strong>virole à molettes</strong>, <strong>verrou</strong>.</p>
+            <p>Quatre familles (SDIS 63) : raccord <strong>symétrique</strong>, <strong>asymétrique</strong>, <strong>intermédiaire</strong>, de <strong>réduction</strong>.</p>
+            <h4>Raccords symétriques</h4>
+            <ul>
+                <li><strong>DSP</strong> (Dubois Spécial Paris), de Ø 40 et Ø 65 : ils équipent la majorité des tuyaux d'extinction de Ø 45 et 70.</li>
+                <li><strong>AR</strong> (Aspiration-Refoulement), auto-étanches : destinés aux tuyaux d'alimentation et d'aspiration de Ø 45, 70, 110 et 150. Leur virole et leurs verrous forment une « vague » qui assure un <strong>serrage progressif</strong>.</li>
+            </ul>
+            <h4>Assembler deux demi-raccords</h4>
+            <ol>
+                <li>Prendre un demi-raccord dans chaque main et <strong>vérifier la présence des joints</strong>.</li>
+                <li>Veiller à ce que les <strong>verrous ne fassent pas saillie</strong>.</li>
+                <li><strong>Emboîter les tenons</strong>, joint contre joint.</li>
+                <li><strong>Tourner les viroles</strong> en vissant avec les deux mains jusqu'à l'<strong>encliquetage</strong>.</li>
+                <li>Compléter le serrage à la <strong>clé tricoise</strong> ou à la <strong>polycoise</strong> si nécessaire.</li>
+            </ol>
+            <h4>Raccords asymétriques</h4>
+            <ul>
+                <li><strong>GFR</strong> (Gros Filet Rond), ou <strong>raccords à vis</strong> : un demi-raccord <strong>mâle</strong> (douille à rebord saillant) et un demi-raccord <strong>femelle</strong> (gorge et système de fixation). Ils équipent les tuyaux de la LDT (ADMJSP). Serrage à la <strong>clé tricoise</strong>.</li>
+                <li><strong>Demi-raccord Keyser</strong> (ADMJSP) : se positionne sur une <strong>douille à rebord saillant</strong> ; le verrouillage se fait en serrant la <strong>vis papillon</strong>. Vérifier le bon état et la bonne mise en place du joint.</li>
+            </ul>
+            <h4>Raccords intermédiaires</h4>
+            <p>Ils réunissent deux tuyaux ou deux pièces de jonction, ou deux tuyaux de <strong>même diamètre mais de types différents</strong> (DSP / GFR). Ils comportent deux demi-raccords différents, de diamètres identiques. Il existe plusieurs modèles non réglementés.</p>
+            <h4>Raccords de réduction</h4>
+            <p>Ils permettent d'assembler un tuyau sur une prise d'eau, une pièce de jonction ou un accessoire hydraulique de <strong>diamètre différent</strong>.</p>
+            <table class="rd-table">
+                <tr><th>SDIS 63</th><th>ADMJSP / SDMIS</th></tr>
+                <tr><td>100 / 65</td><td>symétrique aspiration de 100 et symétrique DSP de 65</td></tr>
+                <tr><td>100 / 40</td><td>—</td></tr>
+                <tr><td>65 / 40</td><td>symétrique GUILLEMIN ou DSP de 65 et symétrique GUILLEMIN ou DSP de 40</td></tr>
+                <tr><td>40 / 20 (DSP / GFR)</td><td>symétrique DSP de 40 et symétrique GUILLEMIN de 40</td></tr>
+            </table>
+            <p class="rd-source">Les deux listes ne se recouvrent pas exactement : la correspondance du tableau est indicative.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 · Les retenues</h3>
+            <p>Elles permettent l'<strong>alimentation des engins d'incendie par les bouches d'incendie (BI)</strong>. Elles sont composées d'un demi-raccord de <strong>100 mm</strong> de type <strong>Keyser</strong>, qui se positionne sur la douille à rebords saillants de la bouche d'incendie, et de <strong>deux ouvertures de 65 mm</strong> qui s'ouvrent et se ferment par des <strong>vannes à robinet</strong> (ADMJSP). Deux types : <strong>100 / 2 x 65</strong> et <strong>100 / 2 x 40</strong> (SDIS 63).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 · Les coudes d'alimentation</h3>
+            <p>Ils alimentent les <strong>engins d'incendie</strong> par les bouches d'incendie, ou un <strong>établissement de tuyaux</strong> directement sur ces prises d'eau. Ils sont désignés par les diamètres nominaux des demi-raccords qui les équipent.</p>
+            <ul>
+                <li>Coude <strong>100 mm</strong> : un demi-raccord de 100 mm de type Keyser, qui se positionne sur la douille à rebords saillants de la bouche d'incendie, et un demi-raccord de 100 mm.</li>
+                <li>Coudes <strong>65 mm</strong>, <strong>40 mm</strong> et <strong>100 / 65 mm</strong>.</li>
+                <li>Coude pour <strong>bouche d'arrosage</strong> (ADMJSP) : un demi-raccord <strong>GFR de 40 mm</strong> qui se positionne sur la sortie de la bouche d'arrosage et un demi-raccord de 40 mm. Les bouches d'arrosage peuvent, dans certains cas, permettre de faire le <strong>plein d'eau de l'engin</strong> ; elles sont considérées comme des <strong>points d'eau accessoires</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>5 · Les vannes</h3>
+            <p>Elles permettent d'<strong>alimenter un établissement</strong> avant que le porte-lance ne soit sécurisé, et de réaliser la <strong>vidange</strong> d'un établissement vertical, rampant, ou d'une colonne sèche.</p>
+            <table class="rd-table">
+                <tr><th>Vanne</th><th>Particularité</th></tr>
+                <tr><td>Ø 100 mm</td><td>—</td></tr>
+                <tr><td>Ø 65 mm, à purge</td><td>vanne de <strong>pied d'échelle</strong> (robinet de purge, entrée de l'eau d'un côté)</td></tr>
+                <tr><td>Ø 40 mm</td><td>vanne d'arrêt ; vanne « sac d'attaque » au FDF (ADMJSP)</td></tr>
+                <tr><td>Ø 20 mm</td><td>—</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>6 · Les divisions</h3>
+            <p>Elles permettent de <strong>transformer un établissement en plusieurs</strong>. Elles sont désignées par les diamètres nominaux des demi-raccords qui les équipent. Une division alimente <strong>une ligne d'alimentation</strong> ou <strong>une ligne d'attaque</strong>.</p>
+            <table class="rd-table">
+                <tr><th>SDIS 63</th><th>ADMJSP / SDMIS</th></tr>
+                <tr><td>40 / 2 x 20 (GFR)</td><td>—</td></tr>
+                <tr><td>65 / 2 x 40</td><td>65 / 2 x 40</td></tr>
+                <tr><td>65 / 3 x 40</td><td>—</td></tr>
+                <tr><td>Mixte 65 / 1 x 65 / 2 x 40</td><td>65 x 65 et 2 x 40, dite <strong>division mixte</strong></td></tr>
+                <tr><td>100 / 2 x 65</td><td>100 et 2 x 65</td></tr>
+                <tr><td>100 / 3 x 65</td><td>100 et 3 x 65</td></tr>
+                <tr><td>Mixte 100 / 1 x 100 / 2 x 65</td><td>100 x 100 et 2 x 65</td></tr>
+                <tr><td>150 / 2 x 100</td><td>150 et 2 x 100</td></tr>
+            </table>
+            <ul>
+                <li><strong>Alimentation</strong> : très généralement une <strong>division mixte 65 – 65 / 2 x 40</strong>. Elle alimente la ligne d'attaque, elle-même raccordée sur une ligne de Ø 70 établie à partir d'un <strong>dévidoir mobile</strong> (200 m) ou de 40 tuyaux roulés sur eux-mêmes (ADMJSP).</li>
+                <li><strong>Attaque dans les étages</strong> : la division (généralement 65 / 2 x 40) sert à <strong>prolonger un établissement</strong> avec des tuyaux de Ø 70, à partir d'une division d'alimentation positionnée en bas (ADMJSP).</li>
+                <li>Elle permet de bénéficier d'une <strong>nouvelle prise d'eau au plus près de la zone à traiter</strong> (remplacement d'une colonne sèche défectueuse, multiplication des actions de lutte).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>7 · Les collecteurs d'alimentation</h3>
+            <p>Ils servent à alimenter par <strong>un ou deux établissements de 70</strong> un <strong>engin</strong> ou une <strong>colonne sèche de 100</strong>. Ils peuvent être équipés, ou non, de <strong>clapets</strong> permettant de ne raccorder qu'une seule entrée. Ils sont désignés par les diamètres nominaux des demi-raccords qui les équipent : <strong>2 x 65 / 100</strong> et <strong>2 x 100 / 100</strong>.</p>
+            <p><strong>Feux de forêts (SDIS 63)</strong> : le <strong>collecteur de refoulement</strong> alimente un établissement de <strong>45 mm</strong> sur de longues distances à partir de CCF, afin d'assurer par alternance la permanence de l'eau à la lance.</p>
+            <p class="rd-source">Lecture des désignations : le premier nombre est le diamètre du demi-raccord d'alimentation, la suite donne les sorties. Cette convention est déduite des exemples des documents, elle n'y est pas énoncée.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>8 · Quiz</h3>
+            <p>Touche une question pour voir la réponse.</p>
+            <details><summary>1. Combien y a-t-il de catégories de pièces de jonction ?</summary><p><strong>Six</strong> : raccords, retenues, coudes d'alimentation, vannes, divisions, collecteurs d'alimentation.</p></details>
+            <details><summary>2. De quoi se compose un raccord ?</summary><p>De <strong>deux demi-raccords</strong>.</p></details>
+            <details><summary>3. Que signifie DSP ?</summary><p><strong>Dubois Spécial Paris</strong> : raccord symétrique de Ø 40 et 65, qui équipe la majorité des tuyaux d'extinction de Ø 45 et 70.</p></details>
+            <details><summary>4. Que signifie GFR ?</summary><p><strong>Gros Filet Rond</strong> : raccord à vis (mâle/femelle), serré à la clé tricoise.</p></details>
+            <details><summary>5. Comment assemble-t-on deux demi-raccords symétriques ?</summary><p>Vérifier les joints, veiller à ce que les verrous ne fassent pas saillie, emboîter les tenons joint contre joint, tourner les viroles jusqu'à l'encliquetage, compléter à la clé tricoise ou polycoise si nécessaire.</p></details>
+            <details><summary>6. À quoi sert un raccord intermédiaire ?</summary><p>À réunir deux tuyaux de <strong>même diamètre mais de types différents</strong> (DSP / GFR).</p></details>
+            <details><summary>7. Quel est le rôle d'une retenue ?</summary><p>Alimenter les engins d'incendie par les <strong>bouches d'incendie</strong>.</p></details>
+            <details><summary>8. Quel est le diamètre de la vanne de pied d'échelle ?</summary><p><strong>65 mm</strong>, à purge.</p></details>
+            <details><summary>9. Que permet une division ?</summary><p>De <strong>transformer un établissement en plusieurs</strong>.</p></details>
+            <details><summary>10. À quoi sert un collecteur d'alimentation ?</summary><p>À alimenter par <strong>1 ou 2 établissements de 70</strong> un engin ou une colonne sèche de 100.</p></details>
+        </div>
+    </div>
 
     <!-- Module Extincteurs -->
     <div id="extincteurs" class="module">
@@ -37347,7 +37489,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.81</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.82</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 

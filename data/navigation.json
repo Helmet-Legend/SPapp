@@ -2215,6 +2215,29 @@
    "photo": "images/calculs/ari.webp"
   },
   {
+   "id": "cours-pieces-jonction",
+   "titre": "Les pièces de jonction",
+   "domaine": "incendie",
+   "theme": "Protection & matériels",
+   "type": "fiche",
+   "motsCles": [
+    "pièces de jonction",
+    "raccord",
+    "demi-raccord",
+    "DSP",
+    "GFR",
+    "Keyser",
+    "retenue",
+    "coude",
+    "vanne",
+    "division",
+    "collecteur",
+    "tuyau",
+    "hydraulique",
+    "bouche d'incendie"
+   ]
+  },
+  {
    "id": "extincteurs",
    "titre": "Extincteurs",
    "domaine": "incendie",
