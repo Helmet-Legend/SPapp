@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.82">
+    <meta name="version" content="1.69.83">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -146,7 +146,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.82 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.83 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -314,7 +314,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.82</span><br>
+                        Vulcain v<span class="app-version">1.69.83</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -15282,6 +15282,175 @@ Je fais : extinction.</p>
         <p class="jsp-liens">
             📄 <a class="rd-pdf" href="docs/risques/Presentation-NRBC-E-CEZ.pdf" target="_blank" rel="noopener">Présentation NRBC-E et centre d'entraînement zonal (PDF)</a>
         </p>
+    </div>
+
+    <!-- Module GNR Risques radiologiques -->
+    <div id="gnr-risques-radiologiques" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-national">Doctrine nationale</span>
+        <h2>☢️ Risques radiologiques – GNR</h2>
+        <p style="text-align: center;">Guide national de référence « Risques radiologiques » : emplois, missions, CMIR et véhicule GEMINI, méthode opérationnelle, zonage, suivi et formation. Synthèse, avec un quiz.</p>
+        <div class="rd-alerte">Guide de <strong>novembre 2002</strong> (version consolidée du 20/12/2006) : organisations, matériels et textes cités ont pu évoluer. Se référer aux documents en vigueur dans son service. Le guide ne donne ni doses limites ni conduite détaillée par type de source.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Six emplois</strong> : équipier et chef d'équipe <strong>reconnaissance</strong> (RAD 1), équipier et chef d'équipe <strong>intervention</strong> (RAD 2), <strong>chef de CMIR</strong> (RAD 3), <strong>conseiller technique</strong> risques radiologiques.</li>
+                <li><strong>CMIR</strong> : chef de CMIR + équipe de reconnaissance (3) + équipe d'intervention (3). Véhicule <strong>CMIR-G (GEMINI)</strong> : contamination interne (thorax, thyroïde) et échantillons, <strong>toujours avec une CMIR</strong>.</li>
+                <li>En opération : <strong>film dosimètre et dosimètre électronique</strong> à lecture directe ; doses consignées après chaque intervention.</li>
+                <li><strong>Zonage réflexe a priori</strong> par le premier COS, affiné ensuite. Sans plan d'urgence : périmètre à partir de <strong>2,5 µGy/h</strong> et/ou d'une contamination surfacique.</li>
+                <li>Quatre zones : public, soutien général, soutien spécialisé, exclusion ; des <strong>sas</strong> pour entrer et sortir.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1 · Cadre et principes</h3>
+            <p>La doctrine des risques nucléaires (N) et radiologiques (R) tient compte de la directive européenne <strong>Euratom 96/29</strong> et s'appuie sur le décret n° 97-1225 du 26 décembre 1997. Deux groupes d'intervenants :</p>
+            <ul>
+                <li><strong>Premier groupe</strong> : équipes spécialisées constituées à l'avance pour une urgence radiologique, avec formation spécifique et matériels adaptés.</li>
+                <li><strong>Second groupe</strong> : personnels hors équipes spécialisées, intervenant dans le cadre de leurs missions, avec une information adaptée au risque.</li>
+            </ul>
+            <div class="rd-alerte">Les <strong>niveaux de référence</strong> d'exposition sont définis par décret. Pour des intervenants <strong>volontaires et informés</strong>, leur dépassement peut être admis <strong>exceptionnellement, pour sauver des vies humaines</strong>. Le référent désigné par le COS rappelle auparavant les effets biologiques de l'irradiation.</div>
+            <p class="rd-source">📚 GNR « Risques radiologiques », DDSC, sous-direction des sapeurs-pompiers, novembre 2002 (version consolidée du 20/12/2006). Synthèse reformulée.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 · Les six emplois</h3>
+            <table class="rd-table">
+                <tr><th>Emploi</th><th>Formation</th><th>Rôle</th></tr>
+                <tr><td>Équipier reconnaissance</td><td>RAD 1</td><td>exécute les tâches de reconnaissance sous l'autorité d'un chef d'équipe</td></tr>
+                <tr><td>Chef d'équipe reconnaissance</td><td>RAD 1 + GOC 1 au moins</td><td>commande les équipiers reconnaissance</td></tr>
+                <tr><td>Équipier intervention</td><td>RAD 2</td><td>exécute les tâches d'intervention ; peut mettre en œuvre le véhicule GEMINI et ceux de l'IRSN</td></tr>
+                <tr><td>Chef d'équipe intervention</td><td>RAD 2 + GOC 1 au moins</td><td>commande les équipiers intervention ; peut commander les personnels du véhicule GEMINI</td></tr>
+                <tr><td>Chef de la CMIR</td><td>RAD 3</td><td>commande les équipes de reconnaissance et d'intervention</td></tr>
+                <tr><td>Conseiller technique risques radiologiques</td><td>RAD 4 ; FOR 2 (départemental)</td><td>conseiller technique du COS sur opération ; départemental (chef de corps) ou zonal (chef d'état-major de zone)</td></tr>
+            </table>
+            <p>Les appellations « équipier reconnaissance », « équipier intervention » et « chef d'équipe reconnaissance » remplacent « équipier N », « équipier CMIR » et « chef d'équipe N ».</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 · Les missions</h3>
+            <p>Quand l'équipe de reconnaissance ou d'intervention agit, le <strong>chef de la CMIR de rattachement est alerté et/ou engagé</strong> et le <strong>CIRCOSC est informé</strong>. Avec plus d'une équipe, un chef de CMIR est engagé. Une équipe qui intervient isolément relève d'un COS au moins de niveau chef d'agrès incendie.</p>
+            <table class="rd-table">
+                <tr><th></th><th>Équipe de reconnaissance (1 chef RAD 1 + GOC 1, 2 équipiers RAD 1)</th><th>Équipe d'intervention (1 chef RAD 2 + GOC 1, 2 équipiers RAD 2)</th></tr>
+                <tr><td>Cadre général</td><td>s'intégrer au dispositif ; renseigner le COS ; rendre compte des doses reçues en cours et en fin d'opération (chef de CMIR ou COS, médecin-chef)</td><td>mêmes missions que la reconnaissance</td></tr>
+                <tr><td>Mesures conservatoires</td><td>délimiter et baliser une zone de sécurité autour de la source ; protéger les premiers intervenants</td><td>sas d'entrée et de sortie de zone* ; protection des intervenants ; mesures de sauvegarde pour la population ; contrôle des intervenants et décontamination succincte* ; contrôle externe des victimes avec d'autres services ; contrôle et décontamination succincte des matériels*</td></tr>
+                <tr><td>Qualification du risque</td><td>reconnaissances ; mesures d'irradiation ; suspicion de contamination de surface ; relevés de mesures</td><td>déterminer ou confirmer la nature du risque ; détecter la contamination atmosphérique*</td></tr>
+                <tr><td>Soutien</td><td>soutien logistique aux équipes d'intervention ; préparer leur arrivée</td><td>prélever des échantillons* ; contrôle de contamination des populations sous la responsabilité de l'IRSN*</td></tr>
+                <tr><td>Résolution</td><td>—</td><td>repérer l'origine des émissions ; limiter leurs effets* ; confiner la source si possible* ; limiter le transfert de contamination*</td></tr>
+            </table>
+            <p class="rd-source">* Ces missions imposent la présence du chef de la CMIR sur l'intervention.</p>
+            <ul>
+                <li><strong>Conseiller technique</strong> : en cas de plan d'urgence (PPI ou PSS), il installe et dirige la <strong>cellule mesures du PCO</strong> dans l'attente de l'ingénieur de l'IRSN, puis lui laisse la gestion technique des mesures et garde la gestion des équipes de mesures.</li>
+                <li><strong>Chef de corps</strong> : désigne les spécialistes chargés de la gestion des sources radioactives (formés « personne compétente en radioprotection » ou équivalent) ; sur les lieux, il est le COS pour les actions de sécurité civile. En cas de plan d'urgence nucléaire, le COS choisit le site du PCO selon la météorologie locale.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 · La CMIR et le véhicule GEMINI</h3>
+            <p><strong>Composition</strong> : 1 chef de CMIR (RAD 3), 1 équipe de reconnaissance et 1 équipe d'intervention (ou deux équipes d'intervention). La CMIR peut être constituée à partir de départements voisins (convention). Son engagement reste à l'initiative du chef de corps, de son représentant ou du COS ; elle est commandée par un chef de CMIR ou, à défaut, un conseiller technique.</p>
+            <table class="rd-table">
+                <tr><th>Matériel (extraits)</th><th>Chef CMIR</th><th>Éq. interv.</th><th>Éq. reco.</th><th>Total</th></tr>
+                <tr><td>Dosimètre photographique individuel</td><td>1</td><td>3</td><td>3</td><td>27 (dont 20 en réserve)</td></tr>
+                <tr><td>Dosimètre électronique à lecture directe, alarmes audibles</td><td>1</td><td>3</td><td>3</td><td>7</td></tr>
+                <tr><td>Combinaisons poussière / liquide</td><td>1</td><td>6</td><td>6</td><td>13 chacune</td></tr>
+                <tr><td>Masques filtrants</td><td>1</td><td>3</td><td>3</td><td>7</td></tr>
+                <tr><td>ARI à circuit ouvert</td><td>—</td><td>3</td><td>3</td><td>6</td></tr>
+                <tr><td>Piquets de balisage</td><td>—</td><td>20</td><td>20</td><td>40</td></tr>
+                <tr><td>Panneaux « irradiation », « contamination », « radioactivité »</td><td>—</td><td>10 de chaque</td><td>10 de chaque</td><td>20 de chaque</td></tr>
+                <tr><td>Radiamètre portatif</td><td>—</td><td>1</td><td>2</td><td>3</td></tr>
+                <tr><td>Radiamètre à télésonde (perche)</td><td>—</td><td>2</td><td>—</td><td>2</td></tr>
+                <tr><td>Polyradiamètre de terrain (sondes α, β, X, γ)</td><td>—</td><td>2</td><td>—</td><td>2</td></tr>
+            </table>
+            <p class="rd-source">Extrait de la dotation minimale ; le guide ajoute d'autres matériels (balise de prélèvements, châteaux de plomb, pinces à distance, etc.) et des matériels non obligatoires.</p>
+            <h4>Véhicule CMIR-G (GEMINI)</h4>
+            <ul>
+                <li>Véhicule <strong>anthropogammamétrique</strong> équipé par l'IRSN : 4 postes spectrométriques.</li>
+                <li>Mesure la <strong>contamination interne des victimes</strong> en rayonnement gamma (2 sondes : thorax et thyroïde) et l'<strong>activité d'échantillons</strong> (liquides, végétaux, terre, aliments).</li>
+                <li>Équipage de 3 (chef d'équipe et 2 équipiers CMIR-G, RAD 2 et RAD 2G). Il assure le <strong>tri</strong> de la population concernée, en orientant les cas douteux, sous contrôle d'un médecin, vers l'IRSN.</li>
+                <li>Mesures sur personnes : sous contrôle d'un médecin, résultats donnés par un médecin. Sur échantillons de matières consommables : résultats donnés par un vétérinaire ou des personnes habilitées.</li>
+                <li>Il intervient <strong>impérativement accompagné d'une CMIR</strong>, qui détermine le niveau de contamination externe des victimes.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>5 · Méthode opérationnelle (hors plan d'urgence)</h3>
+            <h4>1 · Recherche du renseignement (dès l'alerte)</h4>
+            <ul>
+                <li>S'informer : <strong>météo</strong> (vent, pression, hygrométrie, prévisions), <strong>type d'accident</strong> (feu, perte de source, accident de circulation…), <strong>sources</strong> (nom, activité, état, conditionnement), déroulement de l'intervention, moyen de transport des spécialistes.</li>
+                <li>Demander au COS : point de rendez-vous des renforts, itinéraires d'accès et de repli, personne ressource, services spécialisés présents.</li>
+                <li>Conseiller le COS sur les mesures de sécurité, préparer le matériel, choisir les tenues.</li>
+            </ul>
+            <h4>2 · Reconnaissance</h4>
+            <ul>
+                <li>Point de situation au COS et prise en compte de la mission ; reconnaissance générale de la zone.</li>
+                <li>Analyser : milieu, accès et repli, évolution possible de la météo, informations sur la source, nombre et état des victimes, incidents connexes. Contacter les responsables de l'établissement et les spécialistes présents.</li>
+                <li><strong>Contrôler</strong> : le port d'un dosimètre électronique et d'un film dosimètre ; la présence ou l'absence de contamination (personnels, matériels, air, environnement) et d'irradiation.</li>
+                <li>Adapter la protection individuelle, les matériels et les périmètres ; décontamination succincte ; rendre compte ; proposer les tâches ; demander des moyens adaptés (équipe d'intervention, chef de CMIR, conseiller technique).</li>
+            </ul>
+            <h4>3 · Conduite de l'opération</h4>
+            <ul>
+                <li>Sauvetages et mises en sécurité ; compléter les actions des premiers intervenants ; prendre en charge les victimes (contaminées, irradiées).</li>
+                <li>Affiner le balisage selon la radioactivité mesurée ; proposer <strong>évacuation</strong> ou <strong>mise à l'abri</strong> ; sas d'accès et de sortie de la zone contaminée.</li>
+                <li>Repérer la source (équipe d'intervention) ; agir sur la source (isolement sur site avec balisage, ou récupération par une société spécialisée) ; assurer la <strong>radioprotection des intervenants</strong>.</li>
+            </ul>
+            <h4>4 · Fin d'opération</h4>
+            <ul>
+                <li>Renseigner la hiérarchie ; informer le service de soutien sanitaire (suivi dosimétrique) ; faire conditionner puis reconditionner le matériel selon la contamination ; prendre les dispositions pour le stockage et la récupération des déchets.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>6 · Le zonage</h3>
+            <p>Le zonage tient compte de la nature et de l'état de la source, de la topographie, de la nature des bâtiments et de la météo locale.</p>
+            <table class="rd-table">
+                <tr><th>Zone</th><th>Rôle</th></tr>
+                <tr><td>Zone public</td><td>aucun risque pour les populations</td></tr>
+                <tr><td>Zone de soutien général</td><td>structures de prise en charge médicale et d'évacuation (aires de transit, postes médicaux avancés) et postes de commandement</td></tr>
+                <tr><td>Zone de soutien spécialisé</td><td>autour de la zone d'exclusion ; évolution des personnels qui soutiennent les équipes spécialisées</td></tr>
+                <tr><td>Zone d'exclusion</td><td>délimitée par le périmètre de sécurité radiologique, là où se trouve la source ; accès réservé aux spécialistes et aux personnes autorisées par le COS</td></tr>
+                <tr><td>Sas</td><td>passage obligé pour entrer ou sortir d'une zone</td></tr>
+            </table>
+            <ul>
+                <li><strong>Dans un premier temps</strong> : le premier COS met en place un <strong>zonage réflexe a priori</strong> : un périmètre de sécurité qui protège la santé des populations et délimite une zone de danger potentiel interdite au public, avec un ou plusieurs sas d'entrée et de sortie.</li>
+                <li><strong>Dans un deuxième temps</strong> : zonage plus précis à l'activation des structures spécialisées.</li>
+                <li>Sans plan d'urgence ou en phase post-accidentelle : le périmètre délimite une zone pouvant présenter un <strong>débit de dose égal ou supérieur à 2,5 µGy/h</strong> et/ou une <strong>contamination surfacique</strong>.</li>
+                <li><strong>Avec plan d'urgence</strong> : PPI, périmètres du plan en phase d'urgence ou concertée ; en post-accidentel, périmètres déterminés par le DOS après avis du COS et des experts (cartographie aérienne, mesures de terrain). PSS-TMR : zone de protection établie à partir des seuils et limites de la circulaire relative à ce plan.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>7 · Suivi, aptitude et formation</h3>
+            <ul>
+                <li>En opération, chaque spécialiste porte son <strong>film dosimètre</strong> et un <strong>dosimètre individuel électronique à lecture directe</strong>. Après chaque intervention, les doses sont consignées sur le <strong>carnet individuel de suivi médical</strong>, sous le contrôle du médecin-chef ou du médecin désigné.</li>
+                <li>Seuls les sapeurs-pompiers inscrits sur la <strong>liste annuelle départementale d'aptitude opérationnelle</strong> peuvent faire partie d'une CMIR ou d'une équipe. Elle est arrêtée chaque année par le <strong>préfet</strong>, sur proposition du chef de corps, et transmise au chef d'état-major de zone. Conditions : aptitude médicale (arrêté du 6 mai 2000) et participation au maintien des acquis.</li>
+                <li><strong>Maintien des acquis</strong> : annuel pour les équipes ; tous les 5 ans au plus pour les chefs de CMIR et les conseillers techniques (stage de 2 ou 3 jours en centre agréé pour ces derniers).</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>UV</th><th>Durée</th><th>Emploi</th></tr>
+                <tr><td>RAD 1</td><td>37 h</td><td>équipier reconnaissance (et chef d'équipe avec GOC 1)</td></tr>
+                <tr><td>RAD 2</td><td>42 h</td><td>équipier et chef d'équipe intervention</td></tr>
+                <tr><td>RAD 2G</td><td>36 h</td><td>mise en œuvre du véhicule GEMINI</td></tr>
+                <tr><td>RAD 3</td><td>80 h</td><td>chef de CMIR</td></tr>
+                <tr><td>RAD 4</td><td>71 h</td><td>conseiller technique</td></tr>
+            </table>
+            <p class="rd-source">Durées indicatives, hors temps de déplacement. L'admission en RAD 2 suppose RAD 1 et une mise à niveau en radioactivité et en mathématiques (puissances, racines carrées, règle de trois).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>8 · Quiz</h3>
+            <p>Touche une question pour voir la réponse.</p>
+            <details><summary>1. Combien d'emplois comprend le domaine des risques radiologiques ?</summary><p><strong>Six</strong> : équipier et chef d'équipe reconnaissance, équipier et chef d'équipe intervention, chef de la CMIR, conseiller technique.</p></details>
+            <details><summary>2. Que signifie CMIR ?</summary><p><strong>Cellule mobile d'intervention radiologique.</strong></p></details>
+            <details><summary>3. Quelle est la composition d'une équipe de reconnaissance ?</summary><p>1 chef d'équipe (RAD 1 et GOC 1) et 2 équipiers (RAD 1).</p></details>
+            <details><summary>4. Quels dosimètres porte chaque spécialiste en opération ?</summary><p>Un <strong>film dosimètre</strong> et un <strong>dosimètre électronique</strong> à lecture directe.</p></details>
+            <details><summary>5. Que fait le premier COS dès son arrivée ?</summary><p>Il met en place un <strong>zonage réflexe a priori</strong>, avec un périmètre de sécurité et un ou plusieurs sas.</p></details>
+            <details><summary>6. Quel seuil délimite le périmètre de sécurité hors plan d'urgence ?</summary><p>Un débit de dose égal ou supérieur à <strong>2,5 µGy/h</strong> et/ou une contamination surfacique.</p></details>
+            <details><summary>7. Un véhicule GEMINI peut-il intervenir seul ?</summary><p>Non : il intervient <strong>impérativement accompagné d'une CMIR</strong>, qui détermine la contamination externe des victimes.</p></details>
+            <details><summary>8. Qui dirige la cellule mesures du PCO en cas de plan d'urgence ?</summary><p>Le <strong>conseiller technique risques radiologiques</strong>, dans l'attente de l'ingénieur de l'IRSN.</p></details>
+            <details><summary>9. Qui arrête la liste annuelle départementale d'aptitude ?</summary><p>Le <strong>préfet</strong>, sur proposition du chef de corps.</p></details>
+            <details><summary>10. Que peut-il se produire pour des volontaires informés ?</summary><p>Le dépassement des niveaux de référence peut être admis <strong>exceptionnellement, pour sauver des vies humaines</strong>.</p></details>
+        </div>
     </div>
 
     <!-- ============ FDF – GDO Feux de forêts et d'espaces naturels (DGSCGC 2021) ============ -->
@@ -37489,7 +37658,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.82</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.83</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
