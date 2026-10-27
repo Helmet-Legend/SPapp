@@ -3313,6 +3313,30 @@
    ]
   },
   {
+   "id": "gnr-risques-radiologiques",
+   "titre": "GNR – Risques radiologiques (CMIR)",
+   "domaine": "risques",
+   "theme": "NRBC",
+   "type": "fiche",
+   "motsCles": [
+    "radiologique",
+    "radioactivité",
+    "CMIR",
+    "GEMINI",
+    "dosimètre",
+    "irradiation",
+    "contamination",
+    "RAD 1",
+    "RAD 2",
+    "zonage",
+    "source radioactive",
+    "IRSN",
+    "nucléaire",
+    "PPI",
+    "PSS-TMR"
+   ]
+  },
+  {
    "id": "distances",
    "titre": "Distances de Sécurité",
    "domaine": "risques",
