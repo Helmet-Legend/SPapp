@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.80">
+    <meta name="version" content="1.69.81">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -146,7 +146,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.80 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.81 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -314,7 +314,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.80</span><br>
+                        Vulcain v<span class="app-version">1.69.81</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -439,6 +439,176 @@
             <button type="button" class="menu-banniere" onclick="showModule('bouteilles-gaz-menu')">
                 <img src="images/gaz-menu/bouteilles-gaz.webp" alt="02 – Bouteilles de gaz : identification et procédures de refroidissement" width="1200" height="247" loading="lazy">
             </button>
+            <button type="button" class="menu-banniere" onclick="showModule('cours-explosimetrie')">
+                <img src="images/gaz-menu/cours-explosimetrie.webp" alt="03 – Cours d'explosimétrie : notions, appareils, emploi et quiz" width="1200" height="244" loading="lazy">
+            </button>
+        </div>
+    </div>
+
+    <!-- Module Cours d'explosimétrie -->
+    <div id="cours-explosimetrie" class="module">
+        <button class="back-btn" onclick="showModule('risques-gaz-menu')">← Retour</button>
+        <h2>📘 Cours d'explosimétrie</h2>
+        <p style="text-align: center;">Notions, effets d'une explosion, appareils en service, emploi en intervention, entretien. Synthèse de deux documents, avec un quiz.</p>
+        <div class="rd-alerte">Les seuils d'alarme et le gaz étalon dépendent de l'<strong>appareil</strong> : retenir ceux de l'explosimètre de son centre. Les deux documents décrivent deux appareils différents.</div>
+
+        <div class="rd-section">
+            <h3>📌 À retenir</h3>
+            <ul>
+                <li><strong>Explosif = entre la LIE et la LSE</strong>, ni plus, ni moins. Au-dessus de la LSE, <strong>ventiler fait repasser par la zone dangereuse</strong>.</li>
+                <li>L'explosimètre lit des <strong>% de la LIE du gaz étalon</strong>, de 0 à 100 %. Ce n'est pas un toximètre.</li>
+                <li>Altair 4X : étalon <strong>pentane</strong>, alarmes <strong>20 % et 60 % LIE</strong>. Dräger X-am 2500 : étalon <strong>méthane</strong>, alarmes <strong>10 % et 20 % LIE</strong>.</li>
+                <li>Allumer l'appareil <strong>en zone saine</strong>, ne pas boucher le capteur, rendre compte des relevés et quitter la zone si nécessaire.</li>
+                <li>Le méthane <strong>monte</strong> ; le propane et le butane <strong>restent en bas</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1 · Les notions de base</h3>
+            <p>Pour qu'une explosion soit possible, les trois éléments du triangle du feu (combustible, comburant, énergie d'activation) doivent se combiner <strong>dans de bonnes proportions</strong> : c'est la <strong>plage d'explosivité</strong>, bornée par la LIE et la LSE.</p>
+            <ul>
+                <li><strong>LIE</strong> (limite inférieure d'explosivité) : en dessous, la teneur en gaz est insuffisante pour que le mélange soit inflammable.</li>
+                <li><strong>LSE</strong> (limite supérieure d'explosivité) : au-dessus, il y a trop de gaz et pas assez de comburant pour que le mélange soit inflammable.</li>
+                <li><strong>Explosivité</strong> : le mélange air/gaz est entre la LIE et la LSE, une réaction d'oxydation violente est possible.</li>
+                <li><strong>Explosibilité</strong> : une atmosphère est explosible dès qu'un gaz inflammable est présent, mais elle n'est <strong>pas forcément explosive</strong> : elle ne l'est qu'entre la LIE et la LSE.</li>
+            </ul>
+            <div class="rd-alerte">Si l'on se trouve au-dessus de la LSE, la ventilation fait <strong>forcément</strong> repasser par la zone dangereuse.</div>
+            <table class="rd-table">
+                <tr><th>Gaz / vapeurs</th><th>LIE</th><th>LSE</th></tr>
+                <tr><td>Méthane (gaz de ville) CH₄</td><td>5 %</td><td>15 %</td></tr>
+                <tr><td>Propane C₃H₈</td><td>2,1 %</td><td>9,3 %</td></tr>
+                <tr><td>Butane C₄H₁₀</td><td>1,9 %</td><td>8,4 %</td></tr>
+                <tr><td>Pentane C₅H₁₂</td><td>1,5 %</td><td>7,8 %</td></tr>
+                <tr><td>Vapeurs d'essence</td><td>1,6 %</td><td>7,6 %</td></tr>
+                <tr><td>Monoxyde de carbone CO</td><td>12,5 %</td><td>74,2 %</td></tr>
+            </table>
+            <p class="rd-source">📚 Cours « L'explosimétrie », UV JSP 3 module INC, version 2 (ADMJSP / SDMIS).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2 · L'explosion et ses effets</h3>
+            <p>Une explosion est une <strong>combustion très vive</strong> qui se produit spontanément dans tout le mélange. On ne combat pas une explosion : on peut en connaître le mécanisme pour l'éviter.</p>
+            <table class="rd-table">
+                <tr><th></th><th>Déflagration</th><th>Détonation</th></tr>
+                <tr><td>Vitesse</td><td>inférieure à la vitesse du son</td><td>supérieure à la vitesse du son (flamme de l'ordre de 2 à 3 km/s)</td></tr>
+                <tr><td>Surpression</td><td>4 à 10 bars</td><td>30 à 1 000 bars</td></tr>
+                <tr><td>Exemples</td><td>pétard, explosion de gaz</td><td>tonnerre, explosif</td></tr>
+            </table>
+            <p>Quatre effets sont à prendre en compte :</p>
+            <ol>
+                <li><strong>Projection</strong> : les matériaux, et les intervenants, deviennent des projectiles.</li>
+                <li><strong>Mécanique</strong> : l'onde de choc et la surpression détruisent les bâtiments et leurs éléments (cloisons, portes, fenêtres). Sur les personnes : le <strong>blast</strong>, traumatisme causé par l'onde de choc.</li>
+                <li><strong>Thermique</strong> : brûlures importantes, graves et souvent irréversibles.</li>
+                <li><strong>Incendie</strong> : l'environnement peut s'enflammer.</li>
+            </ol>
+        </div>
+
+        <div class="rd-section">
+            <h3>3 · L'explosimètre</h3>
+            <p>Appareil portatif utilisé pour <strong>détecter la présence d'un gaz ou de vapeurs combustibles dans l'air, avant que le mélange ne devienne explosif</strong>. Il donne la concentration entre <strong>0 et 100 % de la LIE</strong> dans le volume analysé et déclenche des alarmes sonores et visuelles quand les seuils prédéterminés sont atteints.</p>
+            <div class="rd-alerte">L'explosimètre ne doit jamais être confondu avec le <strong>toximètre</strong>, qui détermine un taux de nocivité ou de toxicité de certains produits gazeux.</div>
+            <ul>
+                <li>Les valeurs indiquées sont des pourcentages de la <strong>LIE du gaz étalon</strong>. Chaque explosimètre possède un gaz étalon : deux appareils peuvent donc être tarés différemment.</li>
+                <li>Au-dessus de 100 % de la LIE, l'appareil est muni d'une <strong>levée de doute</strong> : il bloque la mesure sur le seuil d'alarme supérieur et déclenche une alarme sonore et visuelle continue.</li>
+                <li>Avec le temps, le gaz présent dans la cellule la détériore, ce qui peut décaler les mesures, voire empêcher la détection : un <strong>étalonnage</strong> régulier (contrôle des valeurs et des seuils d'alarme avec un gaz étalon) est indispensable.</li>
+                <li>Le gaz étalon est choisi avec une LIE basse : le <strong>pentane</strong> a une LIE en dessous de celles des gaz détectés, ce qui donne une marge de sécurité.</li>
+                <li><strong>Densité</strong> : les gaz sont plus légers, plus lourds ou de densité voisine de l'air. Le méthane (gaz de ville) monte ; le propane et le butane sont en parties basses.</li>
+            </ul>
+            <p class="rd-source">Le calcul de correction proposé par Vulcain pour un gaz différent du gaz étalon se trouve dans <button class="rd-lien-inline" onclick="showModule('explosimetrie')">le calculateur d'explosimétrie</button>.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>4 · Deux appareils en service</h3>
+            <table class="rd-table">
+                <tr><th></th><th>MSA Altair 4X (SDMIS)</th><th>Dräger X-am 2500 (Loiret)</th></tr>
+                <tr><td>Gaz étalon</td><td>pentane</td><td>méthane (LIE 5 % vol)</td></tr>
+                <tr><td>Alarme 1</td><td>20 % LIE, acquittable</td><td>10 % LIE, acquittable</td></tr>
+                <tr><td>Alarme 2</td><td>60 % LIE, non acquittable</td><td>20 % LIE, non acquittable</td></tr>
+                <tr><td>Autres capteurs</td><td>modèle présenté avec O₂, CO et H₂S</td><td>O₂ (0 à 25 % vol) et CO (0 à 2 000 ppm)</td></tr>
+                <tr><td>Alarmes</td><td>vibrantes, sonores et visuelles</td><td>sonore 90 dB à 30 cm, visuelle à 180°, vibrante</td></tr>
+                <tr><td>Autonomie</td><td>24 h ; charge en moins de 4 h</td><td>12 h consécutives</td></tr>
+                <tr><td>Protection</td><td>antidéflagrant, étanche aux poussières, résiste à 1 m d'immersion pendant 1 h</td><td>IP 67 ; utilisable de -20 à +50 °C</td></tr>
+                <tr><td>Signal d'activité</td><td>LED verte toutes les 15 s</td><td>bip toutes les 60 s</td></tr>
+            </table>
+            <h4>MSA Altair 4X</h4>
+            <ul>
+                <li>En service depuis début 2016 dans les RGAZ du SDMIS. Domaine de mesure : 0 à 100 % de la LIE.</li>
+                <li>L'alarme A1 s'acquitte automatiquement quand la valeur repasse sous 20 % LIE.</li>
+                <li>Dépassement d'échelle (plus de 100 % LIE) : l'écran affiche <strong>XXX</strong>.</li>
+                <li><strong>Détecteur d'immobilité</strong> (à mettre sur ON, annulé à l'arrêt de l'appareil) : pré-alarme sonore si aucun déplacement pendant 20 s, annulée en déplaçant l'appareil ; après 30 s d'inactivité, l'alarme « Alerte d'immobilité » se déclenche et ne s'acquitte qu'avec le bouton ▲.</li>
+                <li><strong>Batterie faible</strong> : l'indicateur clignote, l'alarme retentit, les LED rouges clignotent, l'écran affiche « Low Batt ». L'avertissement se répète toutes les 15 s et l'appareil fonctionne encore environ 30 min.</li>
+            </ul>
+            <h4>Dräger X-am 2500</h4>
+            <ul>
+                <li>Mis à disposition dans les FPTL, FPT et CCR des 6 CSP uniquement ; capteur catalytique « EX » ; affichage Ex en % LIE, O₂ en % vol, CO en ppm.</li>
+                <li><strong>Oxygène</strong> : taux normal d'environ 20,9 % vol. Double alarme <strong>non acquittable</strong> : en dessous de 19 % et au-dessus de 23 %.</li>
+                <li><strong>CO</strong> : alarme 1 à 50 ppm, alarme 2 à 100 ppm.</li>
+                <li>Chaque capteur est indépendant, mais plusieurs peuvent déclencher une alarme en même temps selon le risque présent.</li>
+            </ul>
+            <div class="rd-alerte">Dräger : si la détection Ex affiche le symbole de dépassement (┌ ┌), l'affichage reste <strong>bloqué</strong>. Sortir de la zone de danger, éteindre l'appareil, le rallumer <strong>en zone saine</strong>. Le détecteur <strong>doit être re-calibré</strong> à l'issue de l'intervention.</div>
+            <table class="rd-table">
+                <tr><th>Menu Dräger</th><th>Utilité</th><th>Manipulation</th></tr>
+                <tr><td>Air frais</td><td>remise à zéro, <strong>en zone saine uniquement</strong></td><td>une fois le symbole d'alerte disparu : touche + trois fois, attendre 3 s, OK, attendre 3 s, OK</td></tr>
+                <tr><td>Valeur pic</td><td>valeur maximale vue par le détecteur depuis l'allumage</td><td>une fois le symbole d'alerte disparu : OK pendant 3 s, puis lire la valeur</td></tr>
+            </table>
+            <p class="rd-source">📚 Fiche matériel de détection n° 06 bis, X-AM 2500 Multi-gaz, service maintenance détection des sapeurs-pompiers du Loiret (06/2018) ; cours ADMJSP / SDMIS.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>5 · Emploi en intervention</h3>
+            <ul>
+                <li>Ne pas mettre l'appareil en fonction dans un endroit vicié.</li>
+                <li>Ne pas l'exposer aux gaz d'échappement, aux flatulences ni aux gaz contenus dans les briquets : risque de détérioration des cellules.</li>
+                <li>Laisser suffisamment de temps à l'appareil pour afficher les valeurs.</li>
+                <li>Ne pas bloquer l'entrée du capteur (face avant, partie supérieure) par des vêtements, outils ou appareils.</li>
+                <li>Rendre compte régulièrement des relevés et <strong>quitter la zone si nécessaire</strong>.</li>
+            </ul>
+            <h4>Mise en route et arrêt (Altair 4X)</h4>
+            <ol>
+                <li>Appuyer sur le bouton central : un bip retentit, les alarmes sonores et visuelles s'activent, la séquence de démarrage défile.</li>
+                <li>L'appareil est opérationnel quand l'écran affiche la mesure COMB/EX à 0 ; la LED verte clignote toutes les 15 s.</li>
+                <li>Pour éteindre, maintenir le bouton jusqu'à l'arrêt.</li>
+            </ol>
+            <div class="rd-alerte">Interdit d'appuyer plus de 3 s sur le bouton ▲ puis sur ON/OFF : cela lance le zéro pour le calibrage de l'appareil.</div>
+            <h4>Après l'opération</h4>
+            <ul>
+                <li>Éteindre l'appareil et le remettre en charge.</li>
+                <li>Faire revérifier le calibrage si l'appareil a subi des chocs physiques.</li>
+                <li>Nettoyer l'extérieur avec un chiffon légèrement humide et non pelucheux, <strong>sans détergent</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>6 · Charge et maintenance</h3>
+            <table class="rd-table">
+                <tr><th></th><th>Altair 4X (SDMIS)</th><th>X-am 2500 (Loiret)</th></tr>
+                <tr><td>Charge</td><td>chargeur fixé dans les FPT ; hors utilisation, l'appareil reste au chargeur au moins <strong>8 h par 24 h</strong></td><td>laisser l'appareil en charge <strong>en permanence</strong></td></tr>
+                <tr><td>Maintenance</td><td>rappel des détecteurs <strong>tous les 3 mois</strong> par le GLOG ; dysfonctionnement : renvoi au GLOG ; ne jamais démonter l'appareil</td><td>uniquement par un logiciel informatique et du personnel qualifié (DTO n° 2 maintenance CMIC, note de service O-08-01)</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>7 · Quiz</h3>
+            <p>Touche une question pour voir la réponse.</p>
+            <details><summary>1. Que représente la plage d'explosivité ?</summary><p>Le mélange air/gaz situé <strong>entre la LIE et la LSE</strong>. En dehors, il n'y a pas d'explosion possible.</p></details>
+            <details><summary>2. Que se passe-t-il quand on ventile au-dessus de la LSE ?</summary><p>On <strong>repasse forcément par la zone dangereuse</strong> en diluant le mélange.</p></details>
+            <details><summary>3. Quelle est la surpression d'une déflagration ?</summary><p><strong>4 à 10 bars</strong>, avec une vitesse inférieure à celle du son. La détonation va de 30 à 1 000 bars.</p></details>
+            <details><summary>4. Quels sont les quatre effets d'une explosion ?</summary><p>Projection, mécanique (dont le blast), thermique, incendie.</p></details>
+            <details><summary>5. En quelles unités un explosimètre affiche-t-il ses valeurs ?</summary><p>En <strong>% de la LIE du gaz étalon</strong>, de 0 à 100 %.</p></details>
+            <details><summary>6. Pourquoi un gaz étalon à LIE basse, comme le pentane ?</summary><p>Sa LIE est en dessous de celles des gaz détectés : cela donne une <strong>marge de sécurité</strong>.</p></details>
+            <details><summary>7. Quels sont les seuils d'alarme de l'Altair 4X ?</summary><p><strong>20 % LIE</strong> (acquittable) et <strong>60 % LIE</strong> (non acquittable). Le Dräger X-am 2500 est à 10 % et 20 % LIE.</p></details>
+            <details><summary>8. Le Dräger affiche l'Ex bloqué : que faire ?</summary><p>Sortir de la zone de danger, éteindre, rallumer <strong>en zone saine</strong>, puis faire <strong>re-calibrer</strong> le détecteur après l'intervention.</p></details>
+            <details><summary>9. Comment se comportent le méthane et le propane dans un local ?</summary><p>Le méthane <strong>monte</strong> ; le propane (et le butane) <strong>restent en parties basses</strong>.</p></details>
+            <details><summary>10. Qui assure la maintenance de l'appareil ?</summary><p>Le <strong>service compétent</strong> (GLOG, personnel qualifié) : on ne démonte jamais l'appareil.</p></details>
+        </div>
+
+        <div class="rd-section">
+            <h3>Limites de cette synthèse</h3>
+            <ul>
+                <li>Les deux documents viennent de services différents et décrivent des appareils différents : les seuils d'alarme valent pour l'appareil concerné.</li>
+                <li>Le cours SDMIS évoque des cellules électrochimiques, la fiche Dräger indique un capteur catalytique pour la voie Ex : à vérifier auprès du service maintenance pour son appareil.</li>
+                <li>Les valeurs de LIE et de LSE du cours peuvent différer légèrement d'autres sources. Pour un calcul, retenir les valeurs que son service impose.</li>
+            </ul>
         </div>
     </div>
 
@@ -3221,8 +3391,8 @@
                     <optgroup label="Alcanes courants">
                         <option value="methane">Méthane (CH₄) - LIE 5.0%</option>
                         <option value="propane">Propane (C₃H₈) - LIE 2.1%</option>
-                        <option value="butane">Butane (C₄H₁₀) - LIE 1.8%</option>
-                        <option value="pentane" selected>Pentane (C₅H₁₂) - LIE 1.4%</option>
+                        <option value="butane">Butane (C₄H₁₀) - LIE 1.9%</option>
+                        <option value="pentane" selected>Pentane (C₅H₁₂) - LIE 1.5%</option>
                         <option value="hexane">Hexane (C₆H₁₄) - LIE 1.2%</option>
                         <option value="heptane">Heptane (C₇H₁₆) - LIE 1.05%</option>
                     </optgroup>
@@ -37177,7 +37347,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.80</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.81</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
