@@ -104,6 +104,19 @@ test('copie par format, copie de tout et exemples cliquables', async ({ app }) =
     expect(t).toContain('google.com/maps');
 });
 
+test('« Ouvrir dans Maps » est dans la barre du bas, pas dans le menu ⋯', async ({ app }) => {
+    await ouvrir(app);
+    await app.fill('#loc-saisie', 'GD82E1.4');
+    await expect(app.locator('#loc-barre')).toBeVisible();
+    await expect(app.locator('#loc-btn-maps')).toBeVisible();
+    await app.click('#loc-menu-btn');
+    await expect(app.locator('#loc-menu >> text=Ouvrir dans Maps')).toHaveCount(0);
+    await app.click('#loc-menu-btn');
+    await app.evaluate(() => { window.__ouvert = null; window.open = u => { window.__ouvert = u; }; });
+    await app.click('#loc-btn-maps');
+    expect(await app.evaluate(() => window.__ouvert)).toContain('google.com/maps?q=');
+});
+
 test('menu ⋯ : actions rares, fond de mini-carte mémorisé, effacer', async ({ app }) => {
     await ouvrir(app);
     await expect(app.locator('#loc-menu')).toBeHidden();

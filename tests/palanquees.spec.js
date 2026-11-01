@@ -118,3 +118,15 @@ test('mobile 375 px : pas de défilement latéral de la page avec 8 palanquées'
     expect(await app.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
     await expect(app.locator('#pal-lignes .pal-ligne')).toHaveCount(8);
 });
+
+test('Réinitialiser : toujours visible, même avec une seule palanquée, et remet tout à zéro', async ({ app }) => {
+    await ouvrir(app);
+    await expect(app.locator('#pal-effacer')).toBeVisible();
+    await expect(app.locator('#pal-effacer')).toContainText('Réinitialiser');
+    await palanquee(app, '30', '25', '10:00');
+    await app.locator('#pal-effacer').click();   // confirm() accepté par la fixture
+    expect(await app.locator('#calc-profondeur').inputValue()).toBe('');
+    expect(await app.locator('#calc-temps').inputValue()).toBe('');
+    await expect(app.locator('.pal-onglet:not(.pal-plus)')).toHaveCount(1);
+    await expect(app.locator('.pal-onglet.actif')).toHaveText(/P1/);
+});

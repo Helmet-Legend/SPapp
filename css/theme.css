@@ -1165,7 +1165,7 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
 #localisation .loc-nb-points[hidden] { display: none; }
 #localisation .loc-dfci.loc-dfci-mer { font-size: 1.6em; line-height: 1.3; }
 #localisation .loc-dfci.loc-dfci-mer span { display: block; }
-#localisation .loc-barre.loc-barre-2 { grid-template-columns: 1fr 1fr; }
+#localisation .loc-barre.loc-barre-2 { grid-template-columns: 1fr 1fr 1fr; }
 #loc-feuille[hidden] { display: none; }
 #loc-feuille { position: fixed; inset: 0; z-index: 9600; }
 #loc-feuille .loc-feuille-fond { position: absolute; inset: 0; background: rgba(0,0,0,.55); }
@@ -1177,7 +1177,7 @@ body.accueil-photo .app-footer p { color: var(--verre-texte) !important; }
 #loc-feuille .loc-annuler { min-height: 46px; border-radius: 12px; background: var(--t-s2); color: var(--t-ink); border: 1px solid var(--t-line); box-shadow: none; }
 #localisation .loc-controle { margin: 4px 2px; font-size: .82em; color: var(--t-muted); }
 #localisation .loc-barre[hidden] { display: none; }
-#localisation .loc-barre { position: fixed; left: 0; right: 0; bottom: calc(76px + env(safe-area-inset-bottom, 0px)); z-index: 8900; display: grid; grid-template-columns: 1fr 1fr 1.7fr; gap: 8px; padding: 10px 14px; background: var(--t-s1); border-top: 1px solid var(--t-line); }
+#localisation .loc-barre { position: fixed; left: 0; right: 0; bottom: calc(76px + env(safe-area-inset-bottom, 0px)); z-index: 8900; display: grid; grid-template-columns: 1fr 1fr 1fr 1.5fr; gap: 8px; padding: 10px 14px; background: var(--t-s1); border-top: 1px solid var(--t-line); }
 #localisation .loc-barre button { min-height: 52px; border-radius: 14px; font-size: .82em; font-weight: 700; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 4px; }
 #localisation .loc-barre button[hidden] { display: none; }
 #localisation .loc-barre .loc-principal { background: #F5B800; color: #111; border: 0; }
@@ -1664,6 +1664,7 @@ html[data-theme] .pal-actions { display: grid; grid-template-columns: 1fr 1fr; g
 html[data-theme] .pal-actions button, html[data-theme] .pal-synthese > button { margin: 0; min-height: 48px; border-radius: 14px; border: 1.5px solid var(--t-line); background: var(--t-s2); color: var(--t-ink); font: inherit; font-weight: 700; cursor: pointer; padding: 8px 12px; }
 html[data-theme] .pal-actions button:disabled { opacity: .45; cursor: not-allowed; }
 html[data-theme] .pal-danger { color: #E4636F; }
+html[data-theme] .pal-actions .pal-reinit { grid-column: 1 / -1; }
 html[data-theme] .pal-synthese > button { width: 100%; margin-top: 8px; }
 html[data-theme] .pal-lignes { display: grid; gap: 8px; }
 html[data-theme] .pal-ligne { display: grid; grid-template-columns: 44px 1fr auto; gap: 10px; align-items: center; text-align: left; width: 100%; padding: 12px; border-radius: 14px;

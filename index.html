@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.83">
+    <meta name="version" content="1.69.84">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -146,7 +146,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.83 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.84 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -314,7 +314,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.83</span><br>
+                        Vulcain v<span class="app-version">1.69.84</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -11656,6 +11656,7 @@
             <div class="pal-actions">
                 <button type="button" id="pal-dupliquer">Dupliquer</button>
                 <button type="button" id="pal-supprimer" class="pal-danger">Supprimer</button>
+                <button type="button" id="pal-effacer" class="pal-danger pal-reinit">🔄 Réinitialiser</button>
             </div>
         </div>
 
@@ -11736,7 +11737,6 @@
             <h3>🕐 Qui sort, et quand</h3>
             <div id="pal-lignes" class="pal-lignes" aria-live="polite"></div>
             <p class="sal-res-info">Palanquées classées par heure de sortie au plus tôt. Appuyer sur une ligne pour ouvrir la palanquée. Réglages conservés sur cet appareil seulement.</p>
-            <button type="button" id="pal-effacer" class="pal-danger">Tout effacer</button>
         </div>
 
         <div class="rd-section">
@@ -20880,7 +20880,6 @@ Je fais : extinction.</p>
             <div id="loc-menu" class="loc-menu" hidden role="menu">
                 <button type="button" role="menuitem" onclick="MesPoints.ouvrir()">⭐ Mes points</button>
                 <button type="button" role="menuitem" onclick="Boussole.ouvrir()">🧭 Boussole</button>
-                <button type="button" role="menuitem" onclick="Localisation.ouvrirCarte()">🗺️ Ouvrir dans Maps</button>
                 <button type="button" role="menuitem" onclick="Localisation.partager()">📤 Partager</button>
                 <button type="button" role="menuitem" onclick="Localisation.changerFond()" id="loc-fond">🌐 Fond de la mini-carte : Plan IGN</button>
                 <button type="button" role="menuitem" onclick="Localisation.effacer()">🗑️ Effacer</button>
@@ -20936,6 +20935,7 @@ Je fais : extinction.</p>
         </div>
         <div id="loc-barre" class="loc-barre" hidden>
             <button type="button" onclick="Localisation.voirCarteDFCI()"><span aria-hidden="true">🗺️</span>Carte</button>
+            <button type="button" id="loc-btn-maps" onclick="Localisation.ouvrirCarte()" aria-label="Ouvrir dans Maps"><span aria-hidden="true">📌</span>Maps</button>
             <button type="button" onclick="Localisation.copier()"><span aria-hidden="true">📋</span>Tout copier</button>
             <button type="button" class="loc-principal" id="loc-btn-ambiance" onclick="Localisation.versAmbiance()"><span aria-hidden="true">📻</span>Vers message d'ambiance</button>
         </div>
@@ -37658,7 +37658,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.83</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.84</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
