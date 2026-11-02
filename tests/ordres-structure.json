@@ -1,0 +1,133 @@
+{
+ "patrac-dr": {
+  "controles": [
+   "button[showModule('avant-intervention-menu')]",
+   "input#patrac-info-nom",
+   "input#patrac-info-date",
+   "textarea#patrac-info-mission",
+   "input#patrac-info-zone",
+   "input#patrac-info-duree",
+   "input#patrac-personnel",
+   "textarea#patrac-personnel-liste",
+   "button[ajouterVehiculeAvecEquipage('FPT', 8)]",
+   "button[ajouterVehiculeAvecEquipage('FPTL', 6)]",
+   "button[ajouterVehiculeAvecEquipage('CCFS', 3)]",
+   "button[ajouterVehiculeAvecEquipage('CCFM', 4)]",
+   "button[ajouterVehiculeAvecEquipage('CCFL', 4)]",
+   "button[ajouterVehiculeAvecEquipage('VSAV', 3)]",
+   "button[ajouterVehiculeAvecEquipage('EPA', 3)]",
+   "button[ajouterVehiculeAutre()]",
+   "input#modalNumero",
+   "button[validerEquipage()]",
+   "button[fermerModalEquipage()]",
+   "textarea#patrac-armement-autre",
+   "textarea#patrac-tenue",
+   "textarea#patrac-radio",
+   "textarea#patrac-alimentation",
+   "input#patrac-cmd-chef",
+   "input#patrac-cmd-chef-tel",
+   "input#patrac-cmd-adjoint",
+   "input#patrac-cmd-adjoint-tel",
+   "button[ajouterCA()]",
+   "textarea#patrac-deroulement",
+   "input#patrac-rdv-heure",
+   "input#patrac-rdv-lieu",
+   "button[printPatracDR()]",
+   "button[clearPatracDR()]"
+  ],
+  "titres": [
+   "📋 INFORMATIONS SUR LE DÉTACHEMENT",
+   "🧑‍🚒 P - Personnel du détachement",
+   "🚒 A - Armement",
+   "",
+   "👕 T - Tenue",
+   "📡 R - Radio",
+   "🍔 A - Alimentation",
+   "👨‍✈️ C - Commandement",
+   "⏱️ D - Déroulement prévu",
+   "📍 R - Rendez-vous",
+   "🎯 Actions"
+  ]
+ },
+ "dpif": {
+  "controles": [
+   "button[showModule('avant-intervention-menu')]",
+   "button[printDPIF()]",
+   "button[clearDPIF()]",
+   "input#dpif-direction",
+   "input#dpif-point",
+   "input#dpif-gps",
+   "textarea#dpif-itineraire",
+   "textarea#dpif-ordre",
+   "input#dpif-intervalles",
+   "input#dpif-vitesse",
+   "input#dpif-signalisation",
+   "input#dpif-communications"
+  ],
+  "titres": [
+   "🧭 D - Direction générale à suivre",
+   "📍 P - Point à atteindre",
+   "🛣️ I - Itinéraire à suivre",
+   "🚗 F - Formation du groupe"
+  ]
+ },
+ "smes": {
+  "controles": [
+   "button[showModule('pendant-intervention-menu')]",
+   "button[printSMES()]",
+   "button[clearSMES()]",
+   "textarea#smes-situation",
+   "textarea#smes-mission",
+   "textarea#smes-execution",
+   "textarea#smes-securite"
+  ],
+  "titres": [
+   "📊 S - Situation",
+   "🎯 M - Mission",
+   "⚡ E - Exécution",
+   "🛡️ S - Sécurité"
+  ]
+ },
+ "soiec": {
+  "controles": [
+   "button[showModule('pendant-intervention-menu')]",
+   "button[printSOIEC()]",
+   "button[clearSOIEC()]",
+   "textarea#soiec-situation",
+   "textarea#soiec-objectif",
+   "textarea#soiec-idee",
+   "textarea#soiec-execution",
+   "textarea#soiec-commandement"
+  ],
+  "titres": [
+   "📊 S - Situation",
+   "🎯 O - Objectif",
+   "💡 I - Idée de manœuvre",
+   "⚡ E - Exécution",
+   "📞 C - Commandement"
+  ]
+ },
+ "saoiecl": {
+  "controles": [
+   "button[showModule('pendant-intervention-menu')]",
+   "button[printSAOIECL()]",
+   "button[clearSAOIECL()]",
+   "textarea#saoiecl-situation",
+   "textarea#saoiecl-anticipation",
+   "textarea#saoiecl-objectif",
+   "textarea#saoiecl-idee",
+   "textarea#saoiecl-execution",
+   "textarea#saoiecl-logistique",
+   "textarea#saoiecl-commandement"
+  ],
+  "titres": [
+   "📊 S - Situation",
+   "🔮 A - Anticipation",
+   "🎯 O - Objectif",
+   "💡 I - Idée de manœuvre",
+   "⚡ E - Exécution",
+   "🚛 L - Logistique",
+   "📞 C - Commandement"
+  ]
+ }
+}

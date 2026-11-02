@@ -1,11 +1,12 @@
-// Vulcain Service Worker v1.69.84
-const CACHE_NAME = 'vulcain-v1.69.84';
+// Vulcain Service Worker v1.69.85
+const CACHE_NAME = 'vulcain-v1.69.85';
 const urlsToCache = [
   './',
   './index.html',
   './css/styles.css',
   './css/theme.css',
   './css/lecture.css',
+  './css/ordres.css',
   './js/modules/lecture.js',
   './fonts/barlow-condensed-latin-600-normal.woff2',
   './fonts/barlow-condensed-latin-700-normal.woff2',
@@ -24,6 +25,7 @@ const urlsToCache = [
   './js/modules/gaz.js',
   './js/modules/bouteilles.js',
   './js/modules/commandement.js',
+  './js/modules/ordres.js',
   './js/modules/trajet.js',
   './js/modules/rdsmes.js',
   './js/modules/rdeb.js',
