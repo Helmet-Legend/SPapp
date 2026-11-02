@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.84">
+    <meta name="version" content="1.69.85">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/lecture.css">
+    <link rel="stylesheet" href="css/ordres.css">
     <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
     <link rel="preload" href="fonts/manrope-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/barlow-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -146,7 +147,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.84 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.85 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -314,7 +315,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.84</span><br>
+                        Vulcain v<span class="app-version">1.69.85</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -37658,7 +37659,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.84</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.85</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
@@ -37679,6 +37680,7 @@ Je demande : ….</p>
     <script src="js/modules/gaz.js"></script>
     <script src="js/modules/bouteilles.js"></script>
     <script src="js/modules/commandement.js"></script>
+    <script src="js/modules/ordres.js"></script>
     <script src="js/modules/trajet.js"></script>
     <script src="js/modules/rdsmes.js"></script>
     <script src="js/modules/rdeb.js"></script>
