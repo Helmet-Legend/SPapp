@@ -29,5 +29,5 @@ html[data-theme] .ord-nav button[aria-current="true"]:not(.ord-fait) { backgroun
 .ord-sec { scroll-margin-top: 92px; }
 html[data-theme] .ord-sec input, html[data-theme] .ord-sec select, html[data-theme] .ord-sec textarea { min-height: 48px; font-size: 16px; }
 
-/* Le conteneur d'une fiche défile avec la page (pas de hauteur maximale) : sans ceci, la barre de lettres ne reste pas collée en haut. */
-#patrac-dr.module, #dpif.module, #smes.module, #soiec.module, #saoiecl.module { overflow: visible; }
+/* Le conteneur d'une fiche défile avec la page (pas de hauteur maximale) : sans ceci, la barre de lettres ne reste pas collée en haut. « clip » (et non « visible ») garde le rognage horizontal d'avant. */
+#patrac-dr.module, #dpif.module, #smes.module, #soiec.module, #saoiecl.module { overflow-x: clip; overflow-y: visible; }
