@@ -23,5 +23,9 @@ for (const [module, id] of VIDEOS) {
         const lecteur = app.locator(`#${module} iframe[src*="${id}"]`);
         await expect(lecteur).toHaveCount(1);
         await expect(lecteur).toHaveAttribute('src', new RegExp(`^https://www\\.youtube-nocookie\\.com/embed/${id}\\?`));
+        // Le lecteur garde la taille de la vignette (pas les 300 × 150 px par défaut d'un iframe)
+        const t = await lecteur.boundingBox();
+        expect(t.width).toBeGreaterThan(320);
+        expect(Math.abs(t.width / t.height - 16 / 9)).toBeLessThan(0.05);
     });
 }
