@@ -32,7 +32,7 @@ test('Favoris : titre avec le nombre, lignes avec pastille de type', async ({ ap
 });
 
 test('Favoris vides : explication et bouton « Voir les calculs »', async ({ app }) => {
-    await app.evaluate(() => { localStorage.setItem('deciops.favoris', '[]'); Navigation.allerOnglet('favoris'); });
+    await app.evaluate(() => { localStorage.setItem('vulcain.favoris', '[]'); Navigation.allerOnglet('favoris'); });
     await expect(app.locator('.nav-vide b')).toHaveText('Aucun favori');
     await app.click('.nav-vide-btn');
     await expect(app.locator('#navHome .calc-vue')).toBeVisible();

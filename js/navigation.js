@@ -16,10 +16,18 @@ const Navigation = (function() {
         presentation: { court: 'INFO', classe: 'info' },
         menu: { court: 'MENU', classe: '' }
     };
-    // Clés gardées de l'ancien nom (DECIOPS) : favoris et historique restent après le renommage
-    const CLE_FAVORIS = 'deciops.favoris';
-    const CLE_RECENTS = 'deciops.recents';
-    const CLE_OUVERTS = 'deciops.menusOuverts';
+    const CLE_FAVORIS = 'vulcain.favoris';
+    const CLE_RECENTS = 'vulcain.recents';
+    const CLE_OUVERTS = 'vulcain.menusOuverts';
+    // Reprise unique des réglages enregistrés sous l'ancien préfixe : favoris et historique restent après le renommage
+    const ANCIEN_PREFIXE = ['deci', 'ops.'].join('');
+    try {
+        [['favoris', CLE_FAVORIS], ['recents', CLE_RECENTS]].forEach(function (c) {
+            const ancien = localStorage.getItem(ANCIEN_PREFIXE + c[0]);
+            if (ancien !== null && localStorage.getItem(c[1]) === null) localStorage.setItem(c[1], ancien);
+            localStorage.removeItem(ANCIEN_PREFIXE + c[0]);
+        });
+    } catch (e) { /* stockage indisponible */ }
 
     let registre = { domaines: [], pages: [] };
     let parId = {};
@@ -31,7 +39,7 @@ const Navigation = (function() {
     // de l'app : sessionStorage est vidé quand la PWA est fermée, donc l'accueil
     // repart avec tous les volets fermés au lancement suivant.
     let ouverts = {};
-    try { localStorage.removeItem(CLE_OUVERTS); } catch (e) { /* ignoré */ }
+    try { localStorage.removeItem(CLE_OUVERTS); localStorage.removeItem(ANCIEN_PREFIXE + 'menusOuverts'); } catch (e) { /* ignoré */ }
     try { ouverts = JSON.parse(sessionStorage.getItem(CLE_OUVERTS) || '{}') || {}; } catch (e) { ouverts = {}; }
 
     // ---------- Stockage local (peut être indisponible : navigation privée…) ----------

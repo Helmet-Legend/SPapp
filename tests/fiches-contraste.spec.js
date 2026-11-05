@@ -57,7 +57,7 @@ for (const nom of ['clair', 'sombre']) {
     for (let k = 0; k < LOTS; k++) {
         test(`thème ${nom} : le contenu de toutes les fiches est lisible @long (lot ${k + 1}/${LOTS})`, async ({ page }) => {
             test.setTimeout(300000);
-            await page.addInitScript(t => localStorage.setItem('deciops.theme', t), nom);
+            await page.addInitScript(t => localStorage.setItem('vulcain.theme', t), nom);
             await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
             await page.goto('/index.html');
             await expect.poll(() => page.evaluate(() => typeof tmdDatabase !== 'undefined' && tmdDatabase.length), { timeout: 30000 }).toBeGreaterThan(0);

@@ -8,7 +8,7 @@ const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p);
 
 for (const theme of ['clair', 'sombre']) {
     test(`jetons du thème ${theme} : rouge de texte, rouge de fond, texte secondaire et couleurs de famille`, async ({ page }) => {
-        await page.addInitScript((t) => { localStorage.setItem('deciops.theme', t); localStorage.setItem('vulcain-bienvenue', '1'); }, theme);
+        await page.addInitScript((t) => { localStorage.setItem('vulcain.theme', t); localStorage.setItem('vulcain-bienvenue', '1'); }, theme);
         await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
         await page.goto('/index.html');
         await page.click('[data-onglet="calculs"]');
@@ -71,7 +71,7 @@ function peuLisibles() {
 
 for (const theme of ['clair', 'sombre']) {
     test(`écrans principaux, thème ${theme} : tout le texte est lisible`, async ({ page }) => {
-        await page.addInitScript((t) => { localStorage.setItem('deciops.theme', t); localStorage.setItem('vulcain-bienvenue', '1'); }, theme);
+        await page.addInitScript((t) => { localStorage.setItem('vulcain.theme', t); localStorage.setItem('vulcain-bienvenue', '1'); }, theme);
         await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
         await page.goto('/index.html');
         await expect(page.locator('#navHome .nav-acc').first()).toBeVisible();
