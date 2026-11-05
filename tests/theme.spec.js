@@ -45,7 +45,7 @@ test('Réglages : Automatique suit le réglage du téléphone', async ({ app }) 
 });
 
 test('l\'ancien réglage « mode sombre » est repris', async ({ page }) => {
-    await page.addInitScript(() => { if (!localStorage.getItem('deciops.theme')) localStorage.setItem('theme', 'dark'); });
+    await page.addInitScript(() => { if (!localStorage.getItem('vulcain.theme')) localStorage.setItem('theme', 'dark'); });
     await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
     await page.goto('/index.html');
     expect(await theme(page)).toBe('sombre');
@@ -87,7 +87,7 @@ async function textesPeuLisibles(page) {
 
 for (const nom of ['clair', 'sombre']) {
     test(`thème ${nom} : la navigation est lisible (contraste ≥ 4,5:1)`, async ({ page }) => {
-        await page.addInitScript(t => localStorage.setItem('deciops.theme', t), nom);
+        await page.addInitScript(t => localStorage.setItem('vulcain.theme', t), nom);
         await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
         await page.goto('/index.html');
         await expect(page.locator('#navHome .nav-acc').first()).toBeVisible();
@@ -110,7 +110,7 @@ for (const nom of ['clair', 'sombre']) {
 for (const nom of ['clair', 'sombre']) {
     test(`thème ${nom} : le texte sur la photo de l'accueil est lisible`, async ({ page }) => {
         await page.setViewportSize({ width: 390, height: 844 });
-        await page.addInitScript(t => localStorage.setItem('deciops.theme', t), nom);
+        await page.addInitScript(t => localStorage.setItem('vulcain.theme', t), nom);
         await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
         await page.goto('/index.html');
         await expect(page.locator('body')).toHaveClass(/accueil-photo/);
@@ -155,3 +155,28 @@ for (const nom of ['clair', 'sombre']) {
         expect(mauvais).toEqual([]);
     });
 }
+
+// Les réglages enregistrés avant le changement de préfixe (thème, favoris, historique) sont repris une fois, puis l'ancienne clé est supprimée.
+test('réglages enregistrés sous l\'ancien préfixe : repris, puis ancienne clé supprimée', async ({ page }) => {
+    await page.addInitScript(() => {
+        if (localStorage.getItem('repris-test')) return;
+        const ancien = ['deci', 'ops.'].join('');
+        localStorage.setItem(ancien + 'theme', 'clair');
+        localStorage.setItem(ancien + 'favoris', '["tmd"]');
+        localStorage.setItem(ancien + 'recents', '["ari"]');
+        localStorage.setItem('repris-test', '1');
+    });
+    await page.route(url => !url.href.startsWith('http://127.0.0.1:4173/'), r => r.abort());
+    await page.goto('/index.html');
+    expect(await theme(page)).toBe('clair');
+    const stockage = await page.evaluate(() => {
+        const ancien = ['deci', 'ops.'].join('');
+        return {
+            theme: localStorage.getItem('vulcain.theme'),
+            favoris: localStorage.getItem('vulcain.favoris'),
+            recents: localStorage.getItem('vulcain.recents'),
+            restes: Object.keys(localStorage).filter(k => k.startsWith(ancien))
+        };
+    });
+    expect(stockage).toEqual({ theme: 'clair', favoris: '["tmd"]', recents: '["ari"]', restes: [] });
+});

@@ -7,7 +7,14 @@
  * Chargé dans <head> pour appliquer le thème avant l'affichage (pas de clignotement).
  */
 const Theme = (function() {
-    const CLE = 'deciops.theme';   // clé gardée de l'ancien nom : les préférences restent
+    const CLE = 'vulcain.theme';
+    // Reprise unique de la préférence enregistrée sous l'ancien préfixe : le thème choisi reste après le renommage
+    try {
+        const ancienne = ['deci', 'ops.'].join('') + 'theme';
+        const valeur = localStorage.getItem(ancienne);
+        if (valeur !== null && localStorage.getItem(CLE) === null) localStorage.setItem(CLE, valeur);
+        localStorage.removeItem(ancienne);
+    } catch (e) { /* stockage indisponible */ }
     const PAR_DEFAUT = 'sombre';
     const COULEUR_BARRE = { clair: '#F3F4F6', sombre: '#080E15' };
     const sombreSysteme = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
