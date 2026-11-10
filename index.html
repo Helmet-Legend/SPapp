@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="version" content="1.69.89">
+    <meta name="version" content="1.69.90">
     <meta name="author" content="Helmet Legend">
     <meta name="copyright" content="© 2025-2026 Helmet Legend - Vulcain. Tous droits réservés.">
     <meta name="description" content="Outil d'aide à la décision opérationnelle pour sapeurs-pompiers - Conforme GDO">
@@ -147,7 +147,7 @@
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirMessagesRecus()">Messages reçus (administrateur)</button>
             <button class="reglages-lien reglages-admin" hidden onclick="ouvrirTableauDeBord()">Tableau de bord (administrateur)</button>
             <button class="reglages-lien" onclick="fermerReglages(); ouvrirBienvenue()">Revoir le message de bienvenue</button>
-            <p class="reglages-version">Vulcain v1.69.89 · Outil d'aide à la décision opérationnelle</p>
+            <p class="reglages-version">Vulcain v1.69.90 · Outil d'aide à la décision opérationnelle</p>
         </div>
     </div>
 
@@ -315,7 +315,7 @@
                 <!-- Pied de page -->
                 <div style="margin: 22px -24px -24px; padding: 20px 24px; text-align: center; background: var(--t-s2);">
                     <p style="margin: 0; font-size: 12px; color: var(--t-muted); line-height: 1.7;">
-                        Vulcain v<span class="app-version">1.69.89</span><br>
+                        Vulcain v<span class="app-version">1.69.90</span><br>
                         © 2025–2026 Helmet Legend · Tous droits réservés<br>
                         <strong style="color: var(--t-ink);">Par les pompiers, pour les pompiers</strong><br>
                         <button class="rd-lien-inline" onclick="showModule('mentions-legales')">Mentions légales</button>
@@ -20680,6 +20680,1267 @@ Je fais : extinction.</p>
         <p class="rd-source">📚 Synthèse de documents de formation conducteur MEA (COD 6), de textes réglementaires (code de la route, code du travail) et des normes NF S 61-554, NF EN 14044, XP S 61-552, NF EN 1777 et NF S 61-550/A1. Reformulée et recoupée ; les performances précises restent propres à chaque engin — se référer à sa notice constructeur et à son inclinomètre.</p>
     </div>
 
+    <div id="mea-tc-menu" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>🪜 MEA – Tronc commun</h2>
+        <p style="text-align: center;">Formation <strong>Tronc commun – Moyens élévateurs aériens</strong> : les règles communes à toutes les échelles pivotantes automotrices (SDIS 34, 2019)</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('mea-tc-generalites')"><b>Généralités</b><span>Missions, tenue, code de la route, responsabilités, normes, voies engins et voies échelles</span></button>
+            <button onclick="showModule('mea-tc-fonctionnement')"><b>Description et fonctionnement</b><span>Éléments, hydraulique, équilibre, stabilisation, portée, terminologie</span></button>
+            <button onclick="showModule('mea-tc-utilisation')"><b>Mise en station</b><span>Tableau de travail, MGO conducteur et chef d'agrès, sol, placement, mise en appui</span></button>
+            <button onclick="showModule('mea-tc-precautions')"><b>Précautions à prendre</b><span>Retour en position route, froid, lances, pont pour tuyaux, rues étroites, vent, consignes permanentes</span></button>
+            <button onclick="showModule('mea-tc-pictos')"><b>Pictogrammes et vérifications</b><span>Symboles communs aux échelles, vérifications journalières</span></button>
+        </div>
+        <div class="rd-section">
+            <h3>Objet</h3>
+            <ul>
+                <li>Former les conducteurs de <strong>tous les types d'échelles pivotantes automotrices</strong>.</li>
+                <li>Le document décrit les <strong>dispositions communes (tronc commun)</strong>.</li>
+                <li>C'est la <strong>partie 1 sur 2</strong> de la formation de <strong>conducteur échelier</strong> et de <strong>chef d'agrès échelle</strong> : la partie 2 est propre à chaque type d'engin (exemple : <button onclick="showModule('epc30-menu')">EPC30 Renault – Riffaud 2026</button>).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Domaine d'application et références</h3>
+            <ul>
+                <li>Domaine d'application : <strong>toutes les échelles pivotantes automotrices</strong>.</li>
+                <li>Circulaire de la Direction de la défense et de la sécurité civiles du <strong>18 décembre 2007</strong>, réf. DDSC 9 / GB / NP n° 692 : annexe 1 « conducteur échelier », annexe 2 « chef d'agrès échelle ».</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>À retenir</h3>
+            <ul>
+                <li><strong>L'échelier est le seul responsable de la mise en œuvre</strong> de l'échelle.</li>
+                <li><strong>Stabiliser avant toute mise en œuvre</strong>, et stabiliser au maximum des capacités de l'engin.</li>
+                <li><strong>Tous les mouvements sont interdits avec du personnel sur le parc.</strong></li>
+                <li>Les limites de sécurité sont réglées pour que la <strong>projection verticale au sol du centre de gravité ne sorte jamais du polygone de sustentation</strong>.</li>
+            </ul>
+        </div>
+
+            <div class="rd-alerte">Les performances et les limites changent d'un engin à l'autre : toujours se référer à la <strong>notice constructeur</strong>, au tableau de travail de l'engin et à la doctrine du SDIS. Synthèse générale : <button onclick="showModule('cod6')">COD 6 – Moyens élévateurs aériens</button>.</div>
+
+
+        <p class="rd-source">📚 Formation Tronc commun – Moyens élévateurs aériens, Groupement formation du SDIS 34 (2019), p. 1 à 6. Synthèse reformulée. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-Tronc-commun-MEA-2019.pdf" target="_blank" rel="noopener">Tronc commun MEA – SDIS 34, 2019 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="mea-tc-generalites" class="module">
+        <button class="back-btn" onclick="showModule('mea-tc-menu')">← Retour MEA</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>📋 Généralités</h2>
+
+        <div class="rd-section">
+            <h3>1.1 – Les missions</h3>
+            <p>Les échelles pivotantes automotrices servent à :</p>
+            <ul>
+                <li>effectuer des <strong>sauvetages et des mises en sécurité dans les étages</strong> ;</li>
+                <li>permettre la <strong>création d'exutoires</strong> en partie haute des bâtiments ;</li>
+                <li>permettre d'<strong>attaquer les feux</strong> en les dominant ;</li>
+                <li>faciliter les <strong>reconnaissances</strong> en offrant un point haut d'observation ;</li>
+                <li>éclairer la zone d'intervention ;</li>
+                <li>réaliser des opérations diverses (ouverture de porte, menace de chute d'objet sur la voie publique…) ;</li>
+                <li>permettre le <strong>brancardage de victimes</strong> lorsqu'elles sont munies d'un dispositif complémentaire ;</li>
+                <li>dans certains cas et sous certaines conditions, être utilisées <strong>en « pont »</strong> pour franchir des obstacles avec des établissements de tuyaux.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.2 – La tenue</h3>
+            <p>Le conducteur porte une tenue adéquate pour effectuer commodément et sans délai toutes les manœuvres qui lui incombent. Cela peut concerner la <strong>dispense du port du casque F1 pendant la conduite</strong>.</p>
+            <table class="rd-table">
+                <tr><th>EPI minimum sur intervention</th><td><strong>casque F1 + gants + ceinturon et longe réglementaire</strong></td></tr>
+                <tr><th>Incendie</th><td>l'<strong>ARI est systématique</strong></td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.3 – Le code de la route</h3>
+            <p>Tout conducteur respecte le code de la route. L'<strong>article R432-1</strong> prévoit toutefois des dérogations pour les véhicules de secours qui <strong>font usage de leurs avertisseurs dans les cas justifiés par l'urgence de leur mission</strong>, et sous réserve de ne pas mettre en danger les autres usagers : emploi des avertisseurs spéciaux, s'assurer d'être vu en toutes circonstances (exemple : malentendants), franchissement des feux rouges fixes (et non clignotants), priorité, vitesse, sens interdits.</p>
+            <div class="rd-alerte">Le conducteur doit toujours être maître de son véhicule.</div>
+            <details>
+                <summary>1.3.1 – Avertisseurs sonores et lumineux</summary>
+            <p>Leur emploi n'est autorisé que pour les véhicules prioritaires se rendant sur une <strong>intervention urgente</strong>.</p>
+            <ul>
+                <li>L'intervention <strong>urgente</strong> est une mission qui <strong>ne peut être différée dans le temps</strong> (secours à personne, incendie…).</li>
+                <li>L'intervention <strong>nécessaire</strong> est une mission importante qui <strong>ne présente aucun caractère d'urgence avéré</strong> (relève de personnels, liaisons de service…).</li>
+            </ul>
+            </details>
+            <details>
+                <summary>1.3.2 – Feux rouges fixes</summary>
+            <p>Pour demander la priorité en vue de franchir un feu rouge fixe, respecter impérativement 3 règles :</p>
+            <ul>
+                <li>actionner <strong>simultanément les gyrophares et le deux-tons</strong>, suffisamment tôt pour ne pas surprendre les autres usagers (la nuit, employer le deux-tons judicieusement) ;</li>
+                <li><strong>ralentir suffisamment</strong> en abordant le carrefour pour pouvoir stopper à tout moment ;</li>
+                <li>dans certains cas, <strong>marquer un bref temps d'arrêt</strong> (visibilité réduite, pluie, gel…).</li>
+            </ul>
+            <div class="rd-alerte">Le franchissement d'un feu rouge <strong>clignotant</strong> (passage à niveau…) est <strong>STRICTEMENT interdit</strong>.</div>
+            </details>
+            <details>
+                <summary>1.3.3 et 1.3.4 – Priorité, croisement et dépassement</summary>
+            <ul>
+                <li><strong>R415-12</strong> : en toutes circonstances, tout conducteur est tenu de <strong>céder le passage aux véhicules d'intérêt général prioritaires</strong> annonçant leur approche par les avertisseurs spéciaux prévus pour leur catégorie.</li>
+                <li><strong>R414-2 et R414-9</strong> : lors du croisement ou du dépassement d'un véhicule prioritaire annonçant son approche, les usagers <strong>réduisent leur vitesse et, au besoin, s'arrêtent</strong> pour faciliter le passage.</li>
+            </ul>
+            </details>
+            <details>
+                <summary>1.3.5 – La vitesse</summary>
+            <p>La vitesse maximale réglementaire <strong>n'est pas applicable aux véhicules de sapeurs-pompiers lorsqu'ils se rendent sur les lieux où leur intervention urgente est nécessaire</strong>. Le conducteur doit toutefois, à chaque instant, rester maître de son véhicule pour être en mesure de <strong>stopper à tout moment</strong>.</p>
+            </details>
+            <details>
+                <summary>1.3.6 – Les sens interdits</summary>
+            <ul>
+                <li>Le passage en sens interdit se limite à des <strong>cas exceptionnels</strong> (sauvetages de vies humaines).</li>
+                <li>Sur le plan juridique, l'<strong>arrêté municipal</strong> qui institue le sens interdit doit préciser s'il s'applique ou non aux véhicules prioritaires. Dans la négative, les pompiers commettent une faute en empruntant cette voie.</li>
+                <li>Ces articles <strong>n'exonèrent pas du respect des règles élémentaires de prudence</strong>, même en cas d'escorte motocycliste ou d'ordre hiérarchique.</li>
+                <li><strong>Au retour d'intervention</strong>, le conducteur est un usager de la route comme les autres et se conforme au code de la route.</li>
+            </ul>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.4 – Responsabilités et qualités de l'échelier</h3>
+            <div class="rd-alerte">L'<strong>échelier</strong> est le sapeur-pompier qui est <strong>le seul responsable de la mise en œuvre</strong> d'une échelle pivotante automotrice.</div>
+            <p>Pour assumer pleinement cette charge, il a reçu une <strong>formation en deux parties</strong> : les <strong>dispositions communes</strong>, puis la partie <strong>spécifique à chaque type d'engin</strong>. L'échelier et le chef d'agrès doivent être en mesure de réagir rapidement et convenablement devant tout danger imprévu.</p>
+            <p><strong>Qualités requises :</strong> prudent, attentif, calme, organisé, sobre, précis ; dextérité ; vision (avec ou sans lunettes) ; ouïe (avec ou sans appareil).</p>
+            <p><strong>Vérifications générales périodiques :</strong> obligatoires <strong>tous les six mois</strong> pour les échelles avec plate-forme. Le respect de ces visites engage la responsabilité du chef d'établissement.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.5 – Les normes</h3>
+            <p>Les échelles respectent les <strong>normes en vigueur à la date de leur mise en service</strong>. Seul le fabricant est habilité à certifier que ses produits répondent aux normes.</p>
+            <table class="rd-table">
+                <tr><th>Norme</th><th>Date</th><th>Objet</th></tr>
+                <tr><td>NF XPS 61552</td><td>août 2003</td><td>Échelles pivotantes à mouvements combinés (EPC)</td></tr>
+                <tr><td>NF XPS 61553</td><td>août 2003</td><td>Échelles à mouvements séquentiels (EPS)</td></tr>
+                <tr><td>NF EN 14043</td><td>décembre 2005</td><td>EPC (échelles pivotantes à mouvements combinés)</td></tr>
+                <tr><td>NF EN 14044</td><td>février 2006</td><td>EPS (échelles pivotantes à mouvements séquentiels)</td></tr>
+            </table>
+            <p>Les <strong>limites d'utilisation</strong> répondent à deux critères : les <strong>limitations techniques</strong> (notices des fabricants) et les <strong>limitations d'usage</strong> (imposées par les normes).</p>
+            <div class="rd-alerte">Une machine peut être techniquement capable de tâches <strong>interdites par les normes</strong> du pays d'affectation. Exemple : sur les EPS et EPC MAGIRUS CS, l'utilisation du mode grue pour lever des charges autres qu'une personne est interdite par les normes françaises. <strong>Les manuels des constructeurs décrivent les possibilités des matériels, mais ne tiennent pas forcément compte des limitations légales.</strong></div>
+            <p>Les normes classent les échelles selon leurs <strong>données techniques générales</strong> (charge par essieu, moteur, dimensions) et leurs <strong>caractéristiques</strong>, qui définissent le champ d'utilisation : portée, angle de devers, angle de dressage, longueur développée autorisée pour cet angle, charge autorisée au bout de l'échelle avec ou sans dispositif de sauvetage.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.6 – Les différentes familles d'échelles</h3>
+            <table class="rd-table">
+                <tr><th>Famille</th><th>Principe</th><th>Appellations</th></tr>
+                <tr><td><strong>Semi-automatiques</strong></td><td>Un seul mouvement à la fois : dressage (abaissement), déploiement (reploiement) ou pivotement</td><td>EPSA, EPAS ou EPS (selon les années de production et les normes)</td></tr>
+                <tr><td><strong>Automatiques</strong></td><td>Comme les semi-automatiques, mais <strong>plusieurs mouvements simultanés</strong></td><td>EPA, EPAC ou EPC (échelle pivotante à mouvements combinés)</td></tr>
+            </table>
+            <details>
+                <summary>Les autres moyens élévateurs (non détaillés ici)</summary>
+            <ul>
+                <li><strong>Échelles sur porteur (ESP)</strong> : échelle sur chariot monté sur un véhicule. Modèle ancien, mais permet d'intervenir dans des rues étroites.</li>
+                <li><strong>Mâts élévateurs articulés (MEA)</strong> : bras élévateurs articulés (BEA ou CBEA), complément des échelles aériennes.</li>
+            </ul>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.7 – Les voies engins</h3>
+            <p>La voie engin est utilisable par les engins de secours. Sa <strong>largeur minimale est de 8 mètres</strong> (trottoirs + chaussée). Elle permet l'approche et le stationnement des véhicules de secours (pompiers, police, ambulances, EDF-GDF…).</p>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/voies-engins.webp" alt="Voie engin : voie de 8 mètres comprenant trottoirs, chaussée et stationnement" loading="lazy">
+                <figcaption>Voie engin : trottoirs + chaussée, 8 m au minimum</figcaption>
+            </figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>1.8 – Les voies échelles</h3>
+            <p>La voie échelle est utilisable pour la <strong>mise en station des échelles</strong>. Elle concerne les bâtiments dont le <strong>plancher bas du dernier niveau accessible au public est à plus de 8 m au-dessus du sol</strong>.</p>
+            <table class="rd-table">
+                <tr><th>Longueur</th><td><strong>10 m</strong> minimum</td></tr>
+                <tr><th>Largeur libre de la chaussée</th><td><strong>4 m</strong> minimum</td></tr>
+                <tr><th>Impasse</th><td>chaussée de <strong>10 m</strong> de large, avec une chaussée libre de stationnement de <strong>7 m</strong> au moins (le schéma indique 7 m)</td></tr>
+                <tr><th>Pente</th><td><strong>10 %</strong> maximum sur la section d'utilisation (4 m) ; 15 % pour la section d'accès (3 m), d'après le schéma</td></tr>
+                <tr><th>Passage sous voûte</th><td><strong>3,5 m</strong> minimum</td></tr>
+                <tr><th>Virages</th><td>rayon intérieur minimum <strong>R = 11 m</strong> ; surlargeur <strong>S = 15/R</strong> dans les virages de rayon inférieur à 50 m</td></tr>
+                <tr><th>Aux abords du bâtiment</th><td>la voie peut être réduite ponctuellement à une chaussée de <strong>3 m</strong> (barrière, passage couvert, pont…)</td></tr>
+                <tr><th>Résistance</th><td>poinçonnement de <strong>100 kN</strong> sur une surface circulaire de 0,2 m de diamètre</td></tr>
+            </table>
+            <p><strong>Position de la voie par rapport à la façade, selon l'échelle :</strong></p>
+            <table class="rd-table">
+                <tr><th>Type d'échelle</th><th>Voie <strong>parallèle</strong> à la façade : distance C du bord de la chaussée à la façade</th><th>Voie <strong>perpendiculaire</strong> (approchant à moins de 1 m de la façade) : distance A au bord de la chaussée, au milieu des baies accessibles</th></tr>
+                <tr><td>Échelle de 30 m</td><td>entre 1 et 8 m</td><td>inférieure à 6 m</td></tr>
+                <tr><td>Échelle de 24 m</td><td>entre 1 et 6 m</td><td>inférieure à 2 m</td></tr>
+                <tr><td>Échelle de 18 m</td><td>entre 1 et 3 m</td><td>0 m</td></tr>
+            </table>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/voie-echelle.webp" alt="Schéma de la voie échelle avec distances A, B, C, D selon les échelles de 30, 24 et 18 mètres, virage et pentes" loading="lazy">
+                <figcaption>Voie échelle : distances selon l'échelle (le schéma d'origine affiche des signes d'inégalité inversés ; les valeurs du tableau ci-dessus sont celles du tableau inférieur)</figcaption>
+            </figure>
+        </div>
+
+
+        <p class="rd-source">📚 Formation Tronc commun – Moyens élévateurs aériens, Groupement formation du SDIS 34 (2019), chapitre 1, p. 7 à 24. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-Tronc-commun-MEA-2019.pdf#page=7" target="_blank" rel="noopener">Tronc commun MEA – SDIS 34, 2019 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="mea-tc-fonctionnement" class="module">
+        <button class="back-btn" onclick="showModule('mea-tc-menu')">← Retour MEA</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>⚙️ Description et fonctionnement</h2>
+
+        <div class="rd-section">
+            <h3>2.1 – Les différents éléments</h3>
+            <p>Éléments repérés sur le schéma :</p>
+            <table class="rd-table">
+                <tr><th>Plate-forme ou nacelle</th><td>poste de commande <strong>secondaire</strong></td></tr>
+                <tr><th>Tourelle pivotante</th><td>poste de commande <strong>principal</strong></td></tr>
+                <tr><th>Parc échelle</th><td>constitué de plusieurs <strong>plans télescopiques</strong></td></tr>
+                <tr><th>Portique · berceau de dressage</th><td>le portique reçoit le parc replié ; le plan le plus large du parc est fixé au berceau de la tourelle</td></tr>
+                <tr><th>Hauban · platelage</th><td>éléments repérés sur le schéma ; les haubans servent à haubaner le parc quand il y a du vent (voir « Précautions à prendre »)</td></tr>
+                <tr><th>Châssis porteur · cabine</th><td>le châssis porte l'ensemble</td></tr>
+                <tr><th>Stabilisateurs avant et arrière · blocage de suspension</th><td>appui au sol et neutralisation de la suspension</td></tr>
+            </table>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/elements.webp" alt="Schéma d'une échelle pivotante : plate-forme, parc échelle, portique, hauban, tourelle, berceau de dressage, platelage, châssis, cabine, stabilisateurs, blocage de suspension" loading="lazy">
+                <figcaption>Les éléments d'une échelle pivotante automotrice</figcaption>
+            </figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.2 à 2.3 – Chaîne cinématique et hydraulique</h3>
+            <p><strong>Chaîne cinématique :</strong> moteur → embrayage → boîte de vitesse → pont, avec la <strong>prise de mouvement</strong> qui entraîne la <strong>pompe hydraulique</strong>.</p>
+            <p><strong>Hydraulique :</strong> un système hydraulique repose sur une <strong>différence de pression entre deux zones</strong>, qui crée une force, puis un mouvement. Il utilise un fluide <strong>non compressible</strong> (huile synthétique), pour la force, la flexibilité et la fiabilité.</p>
+            <ul>
+                <li>La <strong>pompe hydraulique</strong>, entraînée par la prise de mouvement du châssis, met l'huile sous pression.</li>
+                <li>Les <strong>vérins</strong> : l'huile sous pression fait sortir ou rentrer la tige.</li>
+                <li>Les <strong>moteurs hydrauliques</strong> : l'huile sous pression fait tourner l'arbre dans un sens ou dans l'autre.</li>
+                <li>Les échelles pivotantes réalisent <strong>tous leurs mouvements</strong> avec ce type de système.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.4 – L'équilibre</h3>
+            <p>Le <strong>développement</strong> de la structure extensible <strong>déplace le centre de gravité vers le haut</strong> et crée un <strong>risque de basculement</strong>. Le poids du châssis ne suffit pas à garantir la stabilité dans certaines positions et certains cas de charge, encore moins quand des sapeurs-pompiers évoluent sur l'échelle.</p>
+            <div class="rd-alerte">Il est donc essentiel de <strong>stabiliser</strong> une échelle pivotante lors de sa mise en station, <strong>avant même toute mise en œuvre</strong>.</div>
+            <p>Le <strong>polygone de sustentation</strong> (surface d'appui) est la figure géométrique déterminée au sol par les semelles des stabilisateurs et le contact des roues avant.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.5 – La prise de mouvement</h3>
+            <p>Le moteur doit être <strong>démarré et au ralenti</strong>.</p>
+            <table class="rd-table">
+                <tr><th>Boîte de vitesse</th><th>Étapes</th></tr>
+                <tr><td><strong>Boîte manuelle</strong></td><td>1. levier de vitesse au point mort · 2. débrayer · 3. enclencher la prise de mouvement (tourner ou appuyer sur l'interrupteur selon les modèles) · 4. embrayer doucement · 5. vérifier l'allumage du voyant « prise de mouvement »</td></tr>
+                <tr><td><strong>Boîte automatique</strong></td><td>1. sélectionner neutre « N » · 2. enclencher la prise de mouvement avec l'interrupteur · 3. vérifier l'allumage du voyant « prise de mouvement »</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.6 – La stabilisation</h3>
+            <p>La stabilisation s'effectue grâce à des <strong>vérins télescopiques ou poutres d'extension</strong> qui se développent vers l'extérieur du châssis et appuient au sol par leurs <strong>semelles</strong>. La neutralisation de la suspension renforce leur action.</p>
+            <div class="rd-alerte">Les limites de sécurité sont établies et réglées de façon à ce que la <strong>projection verticale au sol du centre de gravité</strong> de l'échelle <strong>ne sorte jamais du polygone de sustentation</strong>.</div>
+            <details>
+                <summary>2.6.1 – Les vérins stabilisateurs</summary>
+            <p>Ces « pieds » sont animés par des <strong>vérins hydrauliques</strong>. Leur extension est réglable séparément selon l'espace disponible autour du véhicule. La surface qu'ils délimitent au sol, qui peut être <strong>asymétrique</strong>, est la <strong>surface de sustentation</strong>. Les performances de l'échelle et ses niveaux de sécurité en dépendent.</p>
+            </details>
+            <details>
+                <summary>2.6.2 – Les différentes stabilisations</summary>
+            <p>Quatre types, définis par la forme dessinée par les poutres : en <strong>I</strong>, en <strong>X</strong>, en <strong>A</strong> et en <strong>H</strong>.</p>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/stabilisations.webp" alt="Les quatre types de stabilisation vus de face : I, X, A et H" loading="lazy">
+                <figcaption>Stabilisations en I, X, A et H</figcaption>
+            </figure>
+            </details>
+            <details>
+                <summary>2.6.3 – La neutralisation des suspensions</summary>
+            <p>L'objectif est de faire reposer le <strong>maximum de poids sur la base d'appui la plus large possible</strong> : poids du châssis supérieur (l'échelle) et de son châssis porteur. Cette base est le polygone de sustentation et dépend de l'extension des stabilisateurs.</p>
+            <p>Une fois les semelles en appui, l'échelier commande une poussée qui <strong>soulève légèrement le châssis</strong> et transfère la masse totale du véhicule sur les quatre vérins. Pour cela, il faut <strong>empêcher la suspension de compenser</strong> ce mouvement : avant la poussée, la <strong>suspension de l'essieu arrière est bloquée</strong>. Le blocage est hydraulique : un vérin tend une chaîne ou un câble de maintien.</p>
+            <div class="rd-alerte">Il faut systématiquement contrôler le verrouillage de la suspension.</div>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.7 – La portée</h3>
+            <p>La <strong>portée</strong> est la distance entre l'<strong>aplomb du dernier échelon du parc</strong> et le <strong>bord du stabilisateur arrière</strong> (ou l'axe de la tourelle, selon les modèles d'échelles).</p>
+            <ul>
+                <li>Une <strong>grille de portée</strong> est disponible ou réalisable pour chaque type d'échelle : l'utilisateur voit rapidement où se positionner, sans craindre d'être trop loin ni trop proche de son objectif.</li>
+                <li>Par anticipation, la <strong>charge prévue en plate-forme</strong> (nombre de victimes) se prend en compte <strong>avant la stabilisation</strong>, d'après la lecture du schéma : une charge plus importante diminue logiquement les possibilités du véhicule.</li>
+            </ul>
+            <div class="rd-alerte">Chaque échelle a sa propre portée mini et maxi, directement liée à la capacité de stabilisation de l'engin.</div>
+            <details>
+                <summary>Exemple de grille de portée : EPA 28/10</summary>
+            <ul>
+                <li>Cette échelle peut travailler en position <strong>négative</strong> par rapport à l'horizontale, jusqu'à <strong>−15°</strong>. Les échelles plus anciennes ne peuvent pas travailler en dessous de 0°.</li>
+                <li>L'arc de cercle extérieur indique que ce modèle peut être déployé à <strong>28 m</strong> dans toutes les positions, <strong>à condition que le parc soit en appui</strong>.</li>
+                <li><strong>Sans appui et avec une charge sur le parc</strong>, la projection du centre de gravité serait en dehors de la zone de sustentation : cela impliquerait obligatoirement le <strong>basculement du véhicule</strong>.</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/grille-portee.webp" alt="Exemple de grille de portée d'une EPA 28/10 avec angles de dressage et nombre d'hommes" loading="lazy">
+                <figcaption>Grille de portée d'une EPA 28/10</figcaption>
+            </figure>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>2.8 – La terminologie</h3>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/terminologie.webp" alt="Schéma des appellations : parc, plans, berceau, longueur développée, hauteur, portée, angle de dressage, angle de devers, pivotement" loading="lazy">
+                <figcaption>Éléments du parc, mouvements, angles et mesures</figcaption>
+            </figure>
+            <table class="rd-table">
+                <tr><th>Terme</th><th>Définition</th></tr>
+                <tr><td><strong>Hauteur (H)</strong></td><td>Distance entre le sol et le dernier échelon du parc, plate-forme exclue.</td></tr>
+                <tr><td><strong>Hauteur nominale (HN)</strong></td><td>Hauteur obtenue sous l'angle de dressage maximal, à la plus grande longueur développée, plate-forme exclue.</td></tr>
+                <tr><td><strong>Portée (P)</strong></td><td>Distance entre la plus grande saillie et l'extrémité du parc (normes XP S 61-553 et 61-552). Sur les <strong>EPA</strong>, elle est calculée entre l'<strong>axe de la tourelle</strong> et l'extrémité du parc.</td></tr>
+                <tr><td><strong>Longueur développée (L)</strong></td><td>Distance entre le 1er échelon du premier plan et le dernier échelon du dernier plan du parc.</td></tr>
+                <tr><td><strong>Dressage / abaissement (a)</strong></td><td>Angle formé par l'ensemble des plans et l'horizontale, l'échelle étant en station. Le dressage va jusqu'à <strong>+75°</strong>. L'abaissement va de <strong>0°</strong> (modèles anciens) à plus de <strong>−17°</strong> (modèles récents).</td></tr>
+                <tr><td><strong>Pivotement</strong></td><td>Angle formé par le parc et sa position repos sur le portique (axe cabine). <strong>360° dans les deux sens</strong>, sans limitation du nombre de rotations.</td></tr>
+                <tr><td><strong>Devers (D)</strong></td><td>Angle formé par l'ensemble des échelons et l'horizontale, l'échelle étant en station. La correction va jusqu'à <strong>±7°</strong>, auxquels s'ajoutent <strong>±2°</strong> de marge d'erreur tolérée (inertie de la vitesse du moteur) ; la valeur est portée à <strong>±10°</strong> par les dernières normes.</td></tr>
+            </table>
+            <div class="rd-alerte">La <strong>correction de devers</strong> est gérée automatiquement. Sans elle, le parc risquerait de se plier et le personnel de chuter.</div>
+            <p><strong>Le parc échelle</strong> (structure extensible) est composé de <strong>4 à 5 plans</strong> (davantage sur les échelles de 45 m et plus, non normalisées). Le plan le plus large est fixé au berceau de la tourelle ; les autres coulissent les uns dans les autres par des câbles ou des chaînes. Le plan le plus étroit est toujours nommé <strong>plan 1</strong>, et ainsi de suite jusqu'au plus large.</p>
+        </div>
+
+
+        <p class="rd-source">📚 Formation Tronc commun – Moyens élévateurs aériens, Groupement formation du SDIS 34 (2019), chapitre 2, p. 25 à 42. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-Tronc-commun-MEA-2019.pdf#page=25" target="_blank" rel="noopener">Tronc commun MEA – SDIS 34, 2019 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="mea-tc-utilisation" class="module">
+        <button class="back-btn" onclick="showModule('mea-tc-menu')">← Retour MEA</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>📍 Mise en station et conditions d'utilisation</h2>
+
+        <div class="rd-section">
+            <h3>3.1 – Mise en station</h3>
+            <div class="rd-alerte">Le positionnement du véhicule est primordial pour que la mission soit accomplie avec le maximum de rapidité, de sécurité et d'efficacité.</div>
+            <ul>
+                <li>S'assurer que l'échelle peut stationner et être utilisée sur certains complexes (dalles de parking souterrain, par exemple).</li>
+                <li>S'assurer que le système de correction de devers installé en cabine <strong>n'affiche pas une inclinaison supérieure à 7°</strong>.</li>
+            </ul>
+            <details>
+                <summary>Éléments à prendre en compte</summary>
+            <table class="rd-table">
+                <tr><th>Point</th><th>Contrôle</th></tr>
+                <tr><td><strong>La pente</strong></td><td>véhicule stationné sur une pente <strong>inférieure ou égale à 7°</strong></td></tr>
+                <tr><td><strong>Le devers</strong></td><td><strong>inférieur ou égal à 7°</strong> ; contrôle à l'intérieur (niveau à bulle) ou à l'extérieur (inclinomètre du tableau de travail). Surveiller la correction du devers : risque de basculement.</td></tr>
+                <tr><td><strong>Le champ d'utilisation</strong></td><td>suffisant et <strong>sans obstacles</strong> pour dresser, pivoter, déployer en toute sécurité. Attention : câbles électriques, poteaux télégraphiques, éclairage public, vent violent…</td></tr>
+                <tr><td><strong>La nature du sol</strong></td><td>vérifier la résistance et la compacité. Attention : plaque d'égout, passerelle, plaque PTT, EDF, travaux sur la chaussée…</td></tr>
+                <tr><td><strong>Le mouvement</strong></td><td>enclencher la prise de mouvement ou la génératrice (modèle électrique)</td></tr>
+                <tr><td><strong>La stabilisation</strong></td><td>s'assurer de la bonne sortie des poutres, qu'elles ne soient pas gênées. Attention : véhicule en stationnement, trottoir, mur…</td></tr>
+                <tr><td><strong>La neutralisation de la suspension</strong></td><td>s'assurer que les suspensions arrière sont bien verrouillées</td></tr>
+            </table>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>Le tableau de travail</h3>
+            <p>Le <strong>tableau de travail</strong> (ou <strong>indicateur d'inclinaison à secteur gradué</strong>) comprend un <strong>inclinomètre</strong> (pendule) et un <strong>tableau</strong> reprenant les valeurs propres à chaque véhicule. Il se trouve au poste de commande principal (la tourelle) et <strong>aide à choisir le placement du véhicule avant de stabiliser</strong>.</p>
+            <p><strong>Lire le tableau :</strong> 3 hommes = charge maxi en plate-forme ; 0 ou 1 = stabilisation mini ou maxi ; L = longueur développée du parc ; H = hauteur estimée du sol jusqu'au dernier échelon du parc ; P = portée <strong>à ne pas dépasser</strong> (distance entre l'aplomb du point à atteindre et le stabilisateur arrière du véhicule) ; a = angle de dressage recommandé.</p>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/tableau-de-travail.webp" alt="Tableau de travail d'une échelle avec inclinomètre, stabilisation 0 ou 1, hauteur, portée et angle de dressage recommandé" loading="lazy">
+                <figcaption>Exemple : atteindre la fenêtre d'un 3e étage avec une stabilisation maximale</figcaption>
+            </figure>
+            <details>
+                <summary>Exemple de calcul</summary>
+            <ul>
+                <li>3<sup>e</sup> étage : <strong>9 m</strong> de hauteur estimée ; stabilisation maximum « 1 ».</li>
+                <li>On prend la <strong>valeur supérieure la plus proche</strong> : ici <strong>11,9 m</strong>.</li>
+                <li>On lit la <strong>portée maxi 13 m à ne pas dépasser</strong> et l'<strong>angle de dressage recommandé de 30°</strong>.</li>
+            </ul>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>MGO du conducteur échelier</h3>
+            <ol>
+                <li>Estimer la hauteur du <strong>point le plus haut à atteindre</strong> (1 étage ≈ 3 m).</li>
+                <li>Choisir la <strong>longueur de sortie des stabilisateurs</strong> sur le tableau de travail (toujours, si possible, la plus grande stabilisation).</li>
+                <li>Retrouver la hauteur estimée sur le tableau de travail (<strong>par défaut, toujours la valeur supérieure</strong>).</li>
+                <li>Lire la <strong>portée maxi à ne pas dépasser</strong> ainsi que l'<strong>angle de dressage recommandé</strong>.</li>
+                <li>Positionner le véhicule <strong>au plus proche de la portée mini</strong> de l'échelle (toujours inférieure à la portée maxi du tableau de travail).</li>
+                <li><strong>Stabiliser</strong> le véhicule <strong>au maximum</strong> de ses capacités.</li>
+                <li><strong>Dresser</strong> à l'angle recommandé, puis <strong>pivoter</strong> pour viser l'objectif.</li>
+            </ol>
+        </div>
+
+        <div class="rd-section">
+            <h3>MGO du chef d'agrès</h3>
+            <ol>
+                <li>Faire sa <strong>reconnaissance</strong> en prenant en compte la mission (victimes, accès, pente, devers, nature du sol, obstacles, vent…).</li>
+                <li>Estimer la hauteur du <strong>point le plus haut à atteindre</strong> (1 étage ≈ 3 m).</li>
+                <li>Évaluer la <strong>portée maxi de la façade à atteindre à la route</strong> (connaître la portée maxi et mini de son échelle).</li>
+                <li><strong>Guider</strong> et placer son engin le plus proche possible du point à atteindre, en concertation avec le conducteur échelier.</li>
+                <li>Faire un <strong>SOIEC</strong> avec son équipe.</li>
+                <li>S'équiper des EPI nécessaires selon la mission (au minimum casque F1 + gants + ceinturon et longe réglementaire).</li>
+                <li>Monter dans la plate-forme, puis <strong>finaliser l'approche</strong> (le conducteur dresse et pivote le parc).</li>
+            </ol>
+        </div>
+
+        <div class="rd-section">
+            <h3>3.2 – Conditions particulières</h3>
+            <details>
+                <summary>3.2.1 – Rues à forte pente</summary>
+            <ul>
+                <li>Il est préférable d'<strong>orienter le véhicule de biais, à environ 45°</strong> par rapport à la direction de l'angle de la plus grande pente. L'échelle est orientée vers l'objectif par pivotement <strong>contre la pente</strong>.</li>
+                <li><strong>Mettre systématiquement les cales de roues</strong> lorsque le terrain est en pente.</li>
+                <li><strong>Ne jamais dépasser 75°</strong> de dressage à l'inclinomètre (limite d'utilisation).</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/forte-pente.webp" alt="Mise en station dans une rue à forte pente, véhicule orienté de biais à 45°, et voie large en pente" loading="lazy">
+                <figcaption>Mise en station dans une rue à forte pente</figcaption>
+            </figure>
+            </details>
+            <details>
+                <summary>3.2.2 – Stabiliser : le sol sous les appuis</summary>
+            <p>S'assurer que l'échelle (roues et stabilisateurs) <strong>ne pose pas sur des plaques d'égout, des bouches d'incendie, un trottoir ou un terrain mou non stabilisé</strong>.</p>
+            <ul>
+                <li>En cas de doute sur la résistance du sol, positionner sous les semelles des stabilisateurs concernés des <strong>cales d'appui (ou plaques d'appui)</strong>, pour mieux répartir la pression au sol.</li>
+                <li>En positionnant <strong>deux cales d'appui côte à côte</strong>, on divise en moyenne l'appui au sol par trois (surface d'appui environ trois fois plus importante).</li>
+                <li>Les cales d'appui sont <strong>électroconductrices</strong>.</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/stabiliser-sol.webp" alt="Appui correct et incorrect des stabilisateurs : sur le sol, sur une plaque d'égout, sur un trottoir ou un terrain mou" loading="lazy">
+                <figcaption>À gauche, les bons appuis (croix verte : correct) ; à droite, les appuis à éviter</figcaption>
+            </figure>
+            <p><strong>Deux notions à connaître :</strong> la <strong>pression admissible du sol</strong> (limite au-delà de laquelle le sol risque de rompre brutalement) et le <strong>tassement admissible du sol</strong>. Plus un sol est dépourvu d'eau, plus il est résistant. Un sol sableux expulse l'eau facilement et rapidement ; un sol argileux se déforme lentement et est susceptible d'un tassement plus important.</p>
+            <table class="rd-table">
+                <tr><th>Nature du sol</th><th>Pression admissible (kg/cm²)</th></tr>
+                <tr><td>Sable fin · sable grossier · sable gravier</td><td>0,5 à 2 · 2 à 3 · 3 à 4</td></tr>
+                <tr><td>Marne ou argile · marne ou argile dure</td><td>0,4 à 0,8 · 3 à 4</td></tr>
+                <tr><td>Roche · béton · pavé · bitume</td><td>10 à 30</td></tr>
+            </table>
+            <p><strong>Exemple de calcul</strong> : échelle de 14 tonnes en appui sur ses 4 semelles, sol de sable gravier.</p>
+            <table class="rd-table">
+                <tr><td>Surface de la semelle au sol</td><td>34 cm × 28 cm = 952 cm²</td></tr>
+                <tr><td>Poids de l'échelle sur une semelle</td><td>14 000 kg ÷ 4 = 3 500 kg</td></tr>
+                <tr><td>Pression sur le sol</td><td>3 500 kg ÷ 952 cm² = <strong>3,7 kg/cm²</strong>, limite de ce que peut supporter le sol (4 kg/cm² maxi)</td></tr>
+                <tr><td>Avec une plaque d'appui de 40 cm × 40 cm (1 600 cm²)</td><td>3 500 ÷ 1 600 = <strong>2,2 kg/cm²</strong></td></tr>
+                <tr><td>Avec 2 plaques (3 200 cm²)</td><td>3 500 ÷ 3 200 = <strong>1,1 kg/cm²</strong></td></tr>
+            </table>
+            <div class="rd-astuce">Il faut <strong>augmenter la surface de contact avec le sol</strong> avec les plaques d'appui, pour diminuer la pression au maximum et gagner en sécurité.</div>
+            </details>
+            <details>
+                <summary>3.2.3 – Placement de l'échelle en intervention</summary>
+            <ul>
+                <li>Privilégier le travail sur l'<strong>arrière du véhicule</strong> (contrepoids) ou sur les <strong>côtés</strong> : les zones avant et arrière sont ainsi sécurisées.</li>
+                <li>Le travail en <strong>zone arrière</strong> permet de <strong>gagner la longueur du châssis</strong> (longueur perdue si le travail se fait en zone avant). Risque de détérioration de la cabine si le travail se fait en zone avant.</li>
+                <li><strong>Attention aux lignes électriques</strong>, qui peuvent être cachées par les fumées et provoquer des accidents graves.</li>
+                <li>Positionner l'échelle <strong>au plus près de l'objectif</strong> : plus l'objectif est haut, plus le positionnement doit être proche. Ne pas trop s'approcher d'obstacles qui gêneraient la stabilisation maximale et réduiraient les capacités de l'échelle.</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/placement.webp" alt="Échelle placée à l'arrière ou sur les côtés d'un immeuble, zones avant et arrière sécurisées" loading="lazy">
+                <figcaption>Les zones avant et arrière sont ainsi sécurisées</figcaption>
+            </figure>
+            </details>
+            <details>
+                <summary>3.2.4 – La mise en appui d'une échelle</summary>
+            <p>La mise en appui permet de <strong>dépasser les limitations de charges et de portées admissibles</strong> sur le parc échelle (3 hommes). Deux méthodes, selon le modèle :</p>
+            <ul>
+                <li>la plus répandue : placer l'extrémité du parc échelle <strong>entre 20 et 30 cm</strong> de la surface pouvant servir d'appui (balcon, toit…) ;</li>
+                <li><strong>abaisser, en contact, l'extrémité du parc OU le dessous de la plate-forme</strong> sur la surface d'appui, jusqu'à l'allumage du voyant « En appui » aux postes de pilotage.</li>
+            </ul>
+            <p>Il est alors possible de faire progresser un <strong>maximum de 8 hommes</strong>, idéalement répartis sur les plans du parc (jusqu'à 12 selon le modèle).</p>
+            </details>
+            <details>
+                <summary>3.2.5 – En bref</summary>
+            <ul>
+                <li>La portée et la stabilité de l'échelle sont liées à la <strong>largeur de stabilisation</strong>.</li>
+                <li>Dès que la stabilisation est réalisée, les commandes sont disponibles.</li>
+                <li>Toutes les actions de remontée des stabilisateurs, <strong>alors que l'échelle est sur son portique</strong>, coupent l'alimentation électrique des commandes de l'échelle.</li>
+                <li>Dès que l'échelle <strong>quitte son portique</strong>, les commandes des stabilisateurs sont isolées : toute manœuvre intempestive est impossible.</li>
+            </ul>
+            </details>
+        </div>
+
+
+        <p class="rd-source">📚 Formation Tronc commun – Moyens élévateurs aériens, Groupement formation du SDIS 34 (2019), chapitre 3, p. 43 à 57. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-Tronc-commun-MEA-2019.pdf#page=43" target="_blank" rel="noopener">Tronc commun MEA – SDIS 34, 2019 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="mea-tc-precautions" class="module">
+        <button class="back-btn" onclick="showModule('mea-tc-menu')">← Retour MEA</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>⚠️ Précautions à prendre</h2>
+
+        <div class="rd-section">
+            <h3>4.1 – Retour du parc en position route</h3>
+            <p>En fin d'intervention, <strong>reployer entièrement le parc</strong> et le faire <strong>reposer sur son support (portique)</strong>, dans l'axe de la cabine, pour déplacer le véhicule en toute sécurité. Toujours prendre en compte l'environnement.</p>
+            <table class="rd-table">
+                <tr><th>Modèle</th><th>Procédure</th></tr>
+                <tr><td><strong>Modèles les plus anciens (manuel)</strong></td><td><ol><li>Vérifier qu'aucun matériel n'est resté sur le parc ou la plate-forme.</li><li><strong>Aucune personne sur le parc !</strong></li><li>Reployer entièrement le parc.</li><li>Pivoter dans l'axe du châssis en s'aidant de l'index.</li><li>Abaisser à environ <strong>15 cm au-dessus du portique</strong>.</li><li>Ajuster le devers si nécessaire pour être parallèle au portique (<strong>et non à 0°</strong>).</li><li>Finir l'abaissement en appui.</li></ol></td></tr>
+                <tr><td><strong>Modèles récents (automatique)</strong></td><td><ol><li>Vérifier qu'aucun matériel n'est resté sur le parc ou la plate-forme.</li><li><strong>Aucune personne sur le parc !</strong></li><li>Utiliser la <strong>commande automatique</strong>. Elle s'active à l'intérieur des zones limites définies par chaque constructeur, depuis le poste de commande de la plate-forme comme depuis le poste principal.</li></ol></td></tr>
+            </table>
+            <div class="rd-alerte">En fonctionnement manuel <strong>et</strong> automatique, l'opérateur s'assure <strong>en permanence</strong> que les déplacements s'effectuent sans dommage pour les personnes ou les biens, et <strong>interrompt immédiatement</strong> le déroulement automatique ou le mouvement manuel si nécessaire.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.2 – Utilisation en saison froide</h3>
+            <p>Utilisées en urgence et de façon non continue, les échelles exigent des règles spécifiques en saison froide pour garantir leur opérabilité :</p>
+            <ul>
+                <li>si l'échelle <strong>n'est pas équipée d'une coupure</strong> en fin de remontée des stabilisateurs : les manœuvrer en commandant <strong>pendant 10 s une remontée</strong> de ceux-ci ;</li>
+                <li>si l'échelle <strong>est équipée d'une coupure</strong> en fin de remontée : manœuvrer <strong>quelques minutes</strong> l'échelle (stabilisation ou mouvements du parc) pour <strong>réchauffer l'huile hydraulique</strong> ;</li>
+                <li>en cas de froid persistant, <strong>répéter cette opération toutes les six heures</strong> ;</li>
+                <li><strong>ne pas laver à grande eau au nettoyeur haute pression</strong> : risque de blocage de contacteurs et de jeux mécaniques par le gel ;</li>
+                <li>maintenir les <strong>batteries du véhicule bien chargées</strong> (châssis et groupe électrogène si présent) : une batterie déchargée peut geler à partir de <strong>−10 °C</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.3 – Utilisation de lances</h3>
+            <p>Deux cas : une lance à eau fixée <strong>dans la plate-forme</strong>, ou fixée <strong>sur le parc échelle</strong>.</p>
+            <ul>
+                <li>L'établissement des lances se fait jusqu'à la zone <strong>« 2 hommes » du secteur gradué</strong>. L'équipe de l'agrès établit la lance <strong>jusqu'au pied de l'échelle</strong>.</li>
+                <li>La fonction de <strong>porte-lance</strong> revient au <strong>chef d'agrès (seul en plate-forme)</strong>, celle d'équipier au sol à l'<strong>échelier</strong>.</li>
+                <li>Le nombre de lances est limité à <strong>1 LDV 1000 ou 2 LDV 500</strong> (installées à des niveaux et sur des plans différents).</li>
+            </ul>
+            <div class="rd-alerte">Lors d'une intervention contre un incendie à partir de l'échelle <strong>développée isolée</strong>, celle-ci supporte en plus le poids du tuyau, la colonne d'eau et la contre-pression de la lance. Une mauvaise utilisation peut mettre en danger la stabilité de la personne qui tient la lance et celle de l'échelle.</div>
+            <details>
+                <summary>Précautions générales avec une lance sur l'échelle</summary>
+            <ul>
+                <li>Respecter impérativement la <strong>charge admissible</strong> de l'échelle.</li>
+                <li>Pour réduire la charge, <strong>ne pas déployer l'échelle plus que ne l'exigent les conditions</strong> de la lutte contre l'incendie.</li>
+                <li>Toujours faire <strong>passer les tuyaux par le parc échelle</strong> ; ils ne doivent jamais pendre en dessous.</li>
+                <li>Quand l'engin pompe débite, s'assurer qu'on peut <strong>réduire immédiatement la pression ou arrêter la pompe</strong> en cas de danger (liaison avec le conducteur du fourgon).</li>
+                <li>Éviter les <strong>coups de bélier</strong> et les variations de pression : régulateur de pression de l'engin pompe, ouverture et fermeture <strong>lentes</strong> de la vanne de la lance.</li>
+                <li><strong>Ne pas déplacer le parc lance à eau ouverte.</strong></li>
+                <li>L'angle de dressage du parc est compris <strong>entre 60° et 70°</strong>.</li>
+                <li>Modifier l'inclinaison de la lance <strong>lentement</strong>, dans les limites prévues par le constructeur (de l'ordre de ±15° de mouvement gauche/droite).</li>
+            </ul>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.4 – Utilisation en pont pour tuyaux</h3>
+            <p>Il est possible, <strong>exceptionnellement</strong>, d'utiliser tous types d'échelles aériennes en pont pour tuyaux.</p>
+            <p><strong>Méthode :</strong> stabiliser le véhicule <strong>parallèlement au trottoir</strong> · dresser à <strong>20°</strong> · pivoter dans la direction voulue · si besoin, développer (sans dépasser le maximum autorisé). De nuit, le dispositif est éclairé par les projecteurs orientables du véhicule (ou tout autre moyen à disposition).</p>
+            <p>Selon les besoins et les moyens, le tuyau peut être <strong>redescendu</strong> du sommet du parc de trois façons : en le laissant <strong>retomber librement</strong> ; en se servant d'une <strong>échelle à coulisse</strong> appuyée contre le sommet du parc, le pied dans le caniveau ; en utilisant <strong>une seconde échelle aérienne</strong> placée à l'opposé.</p>
+            <div class="rd-alerte">Nombre maximum de tuyaux utilisables : <strong>5 de Ø110 mm OU 12 de Ø70 mm</strong>.</div>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/pont-tuyaux.webp" alt="Trois façons de redescendre le tuyau du sommet du parc : retombée libre, échelle à coulisse, seconde échelle aérienne" loading="lazy">
+                <figcaption>Pont pour tuyaux : trois façons de redescendre le tuyau</figcaption>
+            </figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.5 – Rues étroites</h3>
+            <ul>
+                <li>La stabilisation peut être entravée par les <strong>véhicules en stationnement</strong>. Placer le véhicule de sorte à pouvoir <strong>déployer les stabilisateurs à leur longueur maximale entre les véhicules</strong>.</li>
+                <li>Veiller à ce que la <strong>tourelle ne heurte pas</strong> l'un d'entre eux pendant sa rotation.</li>
+                <li>Si la place permet la rotation sans entrave de la tourelle : <strong>travailler dans l'axe arrière</strong> du véhicule.</li>
+                <li>Dans le cas contraire : stationner l'<strong>avant du véhicule en direction du point à atteindre</strong> et <strong>reculer d'environ 10 m</strong> pour travailler dans la zone cabine.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.6 – Utilisation en cas de vent</h3>
+            <p>En raison des risques de basculement, des restrictions d'utilisation doivent être respectées lorsque le vent souffle. Il est <strong>difficile d'apprécier la force du vent</strong> et des bourrasques peuvent survenir à tout moment : l'utilisation reste potentiellement dangereuse.</p>
+            <table class="rd-table">
+                <tr><th>Vent (échelle de Beaufort)</th><th>Conduite à tenir</th></tr>
+                <tr><td><strong>Force 6</strong> : « vent frais », les grosses branches des arbres bougent (≈ 45 km/h)</td><td><strong>utilisation des haubans recommandée</strong></td></tr>
+                <tr><td><strong>Force 7</strong> : « grand frais », des arbres tout entiers s'agitent (≈ 55 km/h)</td><td><strong>reployer partiellement</strong> l'échelle</td></tr>
+            </table>
+            <ul>
+                <li>En cas de vent, éviter d'utiliser l'échelle non appuyée et <strong>ne développer qu'à la longueur nécessaire</strong>. Orienter le véhicule pour utiliser le parc <strong>dans le sens du vent</strong>.</li>
+                <li>En cas de doute, un <strong>haubanage</strong> du parc échelle est recommandé par sécurité.</li>
+            </ul>
+            <details>
+                <summary>Haubanage : comment faire</summary>
+            <ul>
+                <li>Pendant le déploiement, <strong>maintenir chaque hauban tendu</strong> (pas trop fermement) et à l'écart de la structure. Les haubans ne doivent pas être tendus fortement, mais légèrement fléchis.</li>
+                <li>Échelle en position : <strong>amarrer les haubans au sol</strong>, légèrement en avant par rapport à l'aplomb de la plate-forme et sur le côté, avec un angle minimum de <strong>30°</strong> (soit environ <strong>3 pas en avant</strong> et environ <strong>5 pas sur le côté</strong>).</li>
+                <li>Utiliser si possible des <strong>points d'amarrage existants</strong> (arbre, lampadaire, glissière de sécurité…).</li>
+            </ul>
+            <div class="rd-alerte">L'amarrage sur les véhicules est <strong>strictement interdit</strong>.</div>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/haubanage.webp" alt="Haubanage d'un parc échelle : haubans amarrés avec un angle de 30 degrés, 3 pas sur l'avant et 5 pas de chaque côté" loading="lazy">
+                <figcaption>Haubanage : 3 pas sur l'avant, 5 pas de chaque côté, angle de 30°</figcaption>
+            </figure>
+            </details>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/vent.webp" alt="Graphique de la longueur de déploiement de l'échelle en fonction de la vitesse du vent (échelle de Beaufort)" loading="lazy">
+                <figcaption>Longueur de déploiement admissible selon le vent : reployer partiellement l'échelle quand le vent augmente</figcaption>
+            </figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.7 – Consignes permanentes</h3>
+            <p><strong>Mesures de sécurité avant la progression du personnel sur le parc échelle :</strong></p>
+            <table class="rd-table">
+                <tr><td>1</td><td>Laisser le <strong>moteur au ralenti</strong> (modèles possédant une commande d'accélération spécifique).</td></tr>
+                <tr><td>2</td><td>Laisser les <strong>manipulateurs</strong> (joysticks, leviers) <strong>revenir en position neutre</strong>.</td></tr>
+                <tr><td>3</td><td><strong>Relâcher la pédale homme mort.</strong></td></tr>
+                <tr><td>4</td><td>Selon le modèle : <strong>verrouiller l'arrêt d'urgence</strong> (coup-de-poing) · <strong>OU</strong> appuyer sur le bouton « 0 » du microprocesseur (pas sur l'arrêt d'urgence) · <strong>OU</strong> appuyer sur le bouton « Arrêt moteur » depuis un des postes de commande · <strong>OU</strong> arrêter le moteur depuis les commandes en cabine (vieux modèles).</td></tr>
+            </table>
+            <div class="rd-alerte">Avant que toute personne ne s'engage sur le parc échelle, des mesures de sécurité doivent être prises ; <strong>elles varient selon le type d'échelle</strong>.</div>
+            <ul>
+                <li>Respecter impérativement les <strong>longueurs de développement</strong> correspondant aux inscriptions du tableau de travail.</li>
+                <li>Toujours <strong>stabiliser au maximum</strong> des capacités de l'engin.</li>
+                <li>Il n'est pas nécessaire de haubaner une échelle positionnée contre une façade, mais c'est <strong>recommandé lorsque l'échelle est développée isolée</strong>.</li>
+                <li>Échelle <strong>en appui</strong> : maximum <strong>2 hommes par plan</strong>, soit 8 hommes sur un parc de 4 plans.</li>
+            </ul>
+            <div class="rd-alerte"><strong>Tous les mouvements sont interdits avec du personnel sur le parc.</strong> Par sécurité, toujours jeter « un coup d'œil » sur le parc avant tout mouvement. Il est impératif de respecter ces consignes et de toujours se garder une marge de sécurité, sous peine de blessures graves.</div>
+        </div>
+
+
+        <p class="rd-source">📚 Formation Tronc commun – Moyens élévateurs aériens, Groupement formation du SDIS 34 (2019), chapitre 4, p. 58 à 72. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-Tronc-commun-MEA-2019.pdf#page=58" target="_blank" rel="noopener">Tronc commun MEA – SDIS 34, 2019 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="mea-tc-pictos" class="module">
+        <button class="back-btn" onclick="showModule('mea-tc-menu')">← Retour MEA</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>🔣 Pictogrammes et vérifications</h2>
+
+        <div class="rd-section">
+            <h3>4.8 – Pictogrammes communs aux échelles</h3>
+            <p>Liste <strong>non exhaustive</strong> des pictogrammes communs aux dernières générations d'échelles automotrices. Les couleurs peuvent changer et les logos présenter des différences d'un constructeur à l'autre.</p>
+            <details>
+                <summary>En cabine</summary>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/pictos-cabine.webp" alt="Pictogrammes en cabine : gyrophares, klaxon deux tons, feux à éclats, éclairage des coffres, éclairage des zones de travail, projecteur pour platelage, prise de mouvement, stabilisateurs non rentrés, plate-forme pas en position route" loading="lazy">
+                <figcaption>Gyrophares · klaxon 2 tons · feux à éclats face avant · éclairage des coffres · éclairage des zones de travail · projecteur pour platelage · prise de mouvement · stabilisateurs non rentrés et relevés · plate-forme pas en position route</figcaption>
+            </figure>
+            </details>
+            <details>
+                <summary>Les mouvements de l'échelle</summary>
+            <ul>
+                <li><strong>Dresser</strong> · <strong>abaisser</strong> · <strong>déployer</strong> · <strong>reployer</strong> · <strong>pivoter à gauche</strong> · <strong>pivoter à droite</strong>.</li>
+            </ul>
+            </details>
+            <details>
+                <summary>La stabilisation en X (la plus courante)</summary>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/pictos-stabilisation.webp" alt="Pictogrammes de stabilisation en X : sortie ou rentrée de chaque stabilisateur, remontée et rentrée, sortie et abaissement, état de la stabilisation" loading="lazy">
+                <figcaption>Sortie/rentrée de chaque stabilisateur (avant gauche, avant droit, arrière gauche, arrière droit) · remontée et rentrée · sortie et abaissement · état de la stabilisation</figcaption>
+            </figure>
+            </details>
+            <details>
+                <summary>Afficheurs, voyants et interrupteurs des postes de commande</summary>
+            <ul>
+                <li>Marche et arrêt moteur · concordance des échelons · correction de devers.</li>
+                <li>Retour automatique sur portique · pression hydraulique prête · tension des batteries faible · utilisation de l'échelle en appui · surcharge (reployer l'échelle) · charge supplémentaire interdite · moteur en marche · moteur à l'arrêt.</li>
+                <li>Charge autorisée <strong>en plate-forme</strong> : 3, 2 ou 1 homme(s) · charge supplémentaire interdite en plate-forme.</li>
+                <li>Charge autorisée <strong>sur le parc</strong> : 3, 2 ou 1 homme(s) · charge supplémentaire interdite sur le parc.</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/mea-tc/pictos-voyants.webp" alt="Pictogrammes des afficheurs et voyants : retour automatique, pression hydraulique, batteries, appui, surcharge, moteur en marche ou à l'arrêt" loading="lazy">
+                <figcaption>Symboles des afficheurs et voyants</figcaption>
+            </figure>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>4.9 – Vérifications journalières</h3>
+            <p>Afin d'assurer le bon fonctionnement de l'échelle automotrice, procéder aux vérifications suivantes.</p>
+            <table class="rd-table">
+                <tr><th>Élément</th><th>À contrôler</th></tr>
+                <tr><td><strong>Châssis</strong></td><td>niveau de carburant · niveau d'huile moteur · circuit de freinage · éclairage et signalisation · état de charge des batteries · liquide de lave-glace</td></tr>
+                <tr><td><strong>Échelle</strong></td><td>niveau d'huile hydraulique · niveau de carburant du moteur auxiliaire (si thermique) · reploiement des stabilisateurs · reploiement de la plate-forme · reploiement de l'échelle sur son support (portique) · fermeture des coffres latéraux et des escaliers escamotables</td></tr>
+            </table>
+            <div class="rd-astuce">Se référer à la <strong>notice d'utilisation et d'entretien du constructeur</strong> pour de plus amples informations sur les contrôles quotidiens.</div>
+        </div>
+
+
+        <p class="rd-source">📚 Formation Tronc commun – Moyens élévateurs aériens, Groupement formation du SDIS 34 (2019), p. 73 à 80. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-Tronc-commun-MEA-2019.pdf#page=73" target="_blank" rel="noopener">Tronc commun MEA – SDIS 34, 2019 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="epc30-menu" class="module">
+        <button class="back-btn" onclick="showModule('home')">← Retour</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>🚒 EPC30 Renault – Riffaud 2026</h2>
+        <p style="text-align: center;">Guide d'emploi de l'<strong>échelle pivotante à mouvements combinés EPC30</strong> sur châssis Renault, carrosserie Riffaud : commandes, stabilisation, plate-forme et manœuvres de secours</p>
+
+        <div class="rd-tuiles">
+            <button onclick="showModule('epc30-cabine')"><b>Cabine et châssis</b><span>Contrôles, tableau de bord, boîte, prise de mouvement, écran tactile, Detect-line</span></button>
+            <button onclick="showModule('epc30-stabilisation')"><b>Stabilisation</b><span>Largeurs, voie échelle, obstacle, suspensions, tableau d'inclinaison, plate-forme</span></button>
+            <button onclick="showModule('epc30-commandes')"><b>Commandes et écrans</b><span>Pédales, tourelle, écran de contrôle, zones de travail, obstacles, fonctions</span></button>
+            <button onclick="showModule('epc30-plateforme')"><b>Plate-forme, lance-canon, brancardage</b><span>Plate-forme, Sky-nacelle, lance-canon, brancard, projecteurs, dépose</span></button>
+            <button onclick="showModule('epc30-secours')"><b>Mode dégradé et secours</b><span>Horizontalité, panne électrique, panne moteur, panne totale</span></button>
+        </div>
+        <div class="rd-section">
+            <h3>Présentation</h3>
+            <ul>
+                <li><strong>EPC 311</strong> (immatriculation HN-930-GS) · première mise en circulation : <strong>octobre 2026</strong> · armement : <strong>2 à 3 sapeurs-pompiers</strong>.</li>
+                <li>Missions : sauvetages, création d'exutoires, lutte contre l'incendie, reconnaissances, brancardage de victimes et franchissement d'obstacles pour l'établissement de tuyaux.</li>
+                <li>Conducteur titulaire du <strong>permis C</strong> et de la <strong>formation de manipulateur de moyens élévateurs aériens</strong>. <strong>Le conducteur est le seul responsable de la mise en œuvre de l'échelle.</strong></li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Caractéristiques</h3>
+            <table class="rd-table">
+                <tr><th>Masse totale en charge</th><td><strong>16 tonnes</strong></td></tr>
+                <tr><th>Châssis</th><td>Renault D16 Euro6 (moteur DTI8, 280 ch) · boîte automatique à 8 rapports</td></tr>
+                <tr><th>Échelle</th><td>à <strong>mouvements combinés</strong> (les 3 mouvements peuvent être simultanés) · structure en <strong>5 plans</strong>, qui permet un châssis à empattement réduit</td></tr>
+                <tr><th>Stabilisation</th><td>variable, de type <strong>X</strong> · calage de <strong>2,7 à 5,2 m</strong></td></tr>
+                <tr><th>Plate-forme</th><td>normalisée pour <strong>4 personnes, soit 400 kg</strong></td></tr>
+                <tr><th>Brancardage</th><td>support pour la barquette d'évacuation ou un brancard, jusqu'à <strong>200 kg</strong></td></tr>
+                <tr><th>Lance-canon</th><td>radiocommandée, intégrée à la plate-forme · débit de <strong>250 à 1 000 l/min</strong></td></tr>
+                <tr><th>Pont pour tuyaux</th><td>capacité maximale : <strong>5 tuyaux de 110 mm ou 12 tuyaux de 70 mm</strong></td></tr>
+                <tr><th>Hauteur du véhicule</th><td><strong>3,30 m</strong></td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Avant de commencer</h3>
+            <p>Les règles communes à toutes les échelles pivotantes (stabilisation, vent, précautions, consignes permanentes) sont dans le <button onclick="showModule('mea-tc-menu')">tronc commun MEA</button>. Ce guide est la <strong>partie spécifique à cet engin</strong>.</p>
+            <div class="rd-alerte">Les valeurs de ce guide (pente, devers, largeurs de stabilisation, charges) <strong>sont propres à l'EPC30 Renault – Riffaud</strong>. Elles diffèrent de celles du tronc commun (par exemple pente et devers).</div>
+        </div>
+
+
+        <p class="rd-source">📚 EPC30 Renault – Riffaud 2026, guide d'emploi (SDIS 34, Service matériel roulant – GTL), p. 1 à 8. Document réalisé par le LHC Ligonnet Mathieu (service matériel roulant – GTL). Synthèse reformulée. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-EPC30-Renault-Riffaud-2026.pdf" target="_blank" rel="noopener">Guide d'emploi EPC30 Renault – Riffaud 2026, SDIS 34 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="epc30-cabine" class="module">
+        <button class="back-btn" onclick="showModule('epc30-menu')">← Retour EPC30</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>🛻 Cabine et châssis</h2>
+
+        <div class="rd-section">
+            <h3>Points de contrôle du conducteur</h3>
+            <p><strong>Derrière la calandre</strong> : vase d'expansion du liquide de refroidissement moteur · réservoir de lave-glace · orifice pour les compléments d'huile moteur.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Tableau de bord et consoles</h3>
+            <details>
+                <summary>Tableau de bord</summary>
+            <ul>
+                <li>Jauge de carburant · température du circuit de refroidissement.</li>
+                <li>Jauge de <strong>colmatage du filtre à particules</strong>.</li>
+                <li><strong>Zone verte</strong> : plage optimale d'utilisation du moteur · <strong>zone bleue</strong> : plage optimale pour l'utilisation du ralentisseur.</li>
+                <li>Indicateur du rapport de boîte engagé · jauge de puissance du ralentisseur sélectionné · jauge d'additif AdBlue.</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/epc30/tableau-bord.webp" alt="Tableau de bord de l'EPC30 avec jauges numérotées" loading="lazy">
+                <figcaption>Tableau de bord</figcaption>
+            </figure>
+            </details>
+            <details>
+                <summary>Console centrale</summary>
+            <ul>
+                <li>Régulateur/limiteur de vitesse · feux de détresse · <strong>commande de la prise de mouvement pompe</strong> · accélérateur manuel.</li>
+                <li>Dispositifs de sécurité et d'aide à la conduite · ralentisseur couplé à la pédale de frein · aide au démarrage en côte · désactivation de l'anti-patinage · blocage du différentiel de pont arrière.</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/epc30/console-centrale.webp" alt="Console centrale du tableau de bord avec boutons numérotés" loading="lazy">
+                <figcaption>Console centrale</figcaption>
+            </figure>
+            </details>
+            <details>
+                <summary>Équipements de sécurité GSR2 et autres consoles</summary>
+            <ul>
+                <li>Pour répondre à l'obligation d'équipement GSR2 : <strong>détecteurs de présence dans les angles morts</strong> et voyants d'alerte pour le conducteur ; commandes de désactivation du freinage d'urgence automatique, de l'avertisseur de franchissement de ligne et des détecteurs d'angle mort.</li>
+                <li>Consoles supérieures et droite : <strong>coupe-circuit</strong> · verrouillage centralisé · régénération du filtre à particules Euro6 · réglage de la hauteur du faisceau des feux de croisement.</li>
+            </ul>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>Boîte automatique et ralentisseur</h3>
+            <ul>
+                <li><strong>Boîte entièrement automatique</strong>, gérée électroniquement : 8 rapports avant, 1 arrière.</li>
+                <li><strong>1<sup>re</sup> bague</strong> : position N quand le véhicule est stationné ou à l'arrêt, position D pour se déplacer. <strong>2<sup>e</sup> bague</strong> : curseur sur <strong>C</strong> pour la vitesse de chantier, sur <strong>R</strong> pour les marches arrière (vérifier l'indication au tableau de bord).</li>
+                <li><strong>Levier</strong> : pousser vers l'avant = rapport supérieur ; tirer vers l'arrière = rétrogradage ; tirer vers le volant = passage mode manuel / automatique.</li>
+                <li><strong>Ralentisseur</strong> : 1<sup>er</sup> cran = fermeture partielle de la sortie des gaz d'échappement et coupure de l'injection de gasoil (à partir de 900 tr/min, pour empêcher le calage) ; 2<sup>e</sup> cran = « Optibrake », qui modifie les temps d'ouverture des soupapes d'échappement ; 3<sup>e</sup> cran (impulsion) = demande de rétrogradage. Il peut être couplé à la pédale de frein.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Prise de mouvement</h3>
+            <p>La commande est <strong>électropneumatique</strong> : maintenir appuyé le bouton pendant quelques secondes.</p>
+            <table class="rd-table">
+                <tr><th>Conditions</th><td><strong>frein de parc enclenché</strong> · régime moteur au <strong>ralenti</strong> · boîte robotisée en position <strong>N</strong></td></tr>
+                <tr><th>Contrôle</th><td>le voyant apparaît au tableau de bord et le pictogramme s'affiche sur l'écran de contrôle des équipements</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Régulateur de vitesse et accélérateur manuel</h3>
+            <details>
+                <summary>Régulateur de vitesse</summary>
+            <ul>
+                <li>Conditions d'activation : véhicule roulant à <strong>30 km/h minimum</strong> · pédale de frein totalement relâchée · ralentisseur sur la position zéro (zone bleue du compte-tours éteinte).</li>
+                <li>Mise en service : sélecteur sur la position 1, appui sur un bouton « + » puis lâcher l'accélérateur. Les boutons « +/− » (tableau de bord ou volant) modifient la vitesse. « 0 » met en pause ; « RES » revient à la vitesse enregistrée.</li>
+                <li>Pour le désactiver : actionner le ralentisseur, appuyer sur la pédale de frein principal ou remettre le bouton sur « OFF ».</li>
+            </ul>
+            </details>
+            <details>
+                <summary>Accélérateur manuel</summary>
+            <ul>
+                <li>Il règle et maintient un régime moteur sans agir sur la pédale. Conditions : véhicule au point mort · aucun appui sur la pédale de frein · levier de ralentisseur sur « pas de ralentisseur » · commande du ralentisseur pas laissée sur « couplé à la pédale de frein ».</li>
+                <li>Activer par le bouton, puis « + » et « − » pour régler le régime. Pour revenir au ralenti, remettre le bouton sur « OFF ».</li>
+            </ul>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>Régénération du filtre à particules (Euro6)</h3>
+            <ul>
+                <li>Quand le filtre atteint un certain taux de remplissage (jauge), sa <strong>régénération devient impérative</strong>, sous peine de dommages irréversibles.</li>
+                <li>Possible uniquement quand l'aiguille est dans la zone prévue, <strong>en extérieur, dans une zone dégagée, à l'arrêt et sans prise de mouvement</strong>, au moyen de l'interrupteur.</li>
+                <li>Durée : <strong>20 à 75 min</strong> (cas extrême), avec une température supérieure à <strong>700 °C</strong> à l'intérieur du filtre.</li>
+                <li>En cas de départ en intervention, la procédure est stoppée automatiquement (à relancer au retour). La régénération automatique est <strong>désactivée</strong> sur les engins des sapeurs-pompiers.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Écran tactile de commande des équipements</h3>
+            <ul>
+                <li>Renvoi HP vers la tourelle · projecteurs avant et arrière · éclairage de zone · <strong>écran de contrôle des alertes</strong> · <strong>indicateurs de pente et de devers</strong> · accès au menu de maintenance · gyrophares · arrêt des feux de pénétration · avertisseur sonore 2 tons.</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/epc30/ecran-tactile.webp" alt="Écran tactile de commande des équipements avec commandes numérotées" loading="lazy">
+                <figcaption>Écran tactile de commande des équipements</figcaption>
+            </figure>
+            <details>
+                <summary>Plan de station en pente et/ou en devers</summary>
+            <p>En cas de dépassement des valeurs maximales tolérées par l'échelle (pente et/ou devers), la <strong>stabilisation est impossible</strong> à cet emplacement : le pictogramme « <strong>MAX</strong> » s'affiche à la place des valeurs.</p>
+            <table class="rd-table">
+                <tr><th>Pente</th><td>inférieure à <strong>15°</strong></td></tr>
+                <tr><th>Devers</th><td>inférieur à <strong>9°</strong></td></tr>
+            </table>
+            </details>
+            <details>
+                <summary>Alertes « défauts position route »</summary>
+            <p>L'écran de contrôle indique quel(s) défaut(s) de la position route empêche(nt) le déplacement de l'EPC :</p>
+            <ul>
+                <li>prise de mouvement enclenchée · projecteur allumé · structure extensible sortie du portique · stabilisateurs sortis · suspension arrière neutralisée · coffre(s) ouvert(s) · éclairage(s) de coffre(s) allumé(s) · plate-forme déployée.</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/epc30/alertes-position-route.webp" alt="Écran des alertes défauts position route avec huit pictogrammes" loading="lazy">
+                <figcaption>Alertes « défauts position route »</figcaption>
+            </figure>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>Detect-line : détection de champs électriques</h3>
+            <div class="rd-alerte">Le dispositif <strong>DETECT LINE</strong> est une <strong>aide opérationnelle</strong> contre les risques électriques. La vigilance et l'attention des opérateurs doivent rester maximales aux abords des lignes électriques sous tension.</div>
+            <ul>
+                <li>Il mesure le <strong>champ magnétique rayonné</strong> par les lignes. Il détecte les lignes en <strong>courant alternatif sous tension à partir de 20 000 V</strong>.</li>
+                <li><strong>Les lignes basse tension ne sont pas détectées</strong>, ni les lignes à courant continu (SNCF, tramway), mais elles peuvent représenter un danger.</li>
+                <li>Les <strong>2 détecteurs</strong> placés de part et d'autre du véhicule, derrière la cabine, forment un <strong>dôme de détection</strong> autour de l'EPC. Certains transformateurs et certaines lignes enterrées peuvent aussi déclencher les alarmes.</li>
+                <li>L'unité centrale est en cabine. Un boîtier déporté, en face du poste du chef d'agrès, permet de commander le système ; il se met en fonctionnement au démarrage du camion, <strong>en mode silence</strong>. Le chef d'agrès peut activer l'alarme sonore à l'arrivée sur la zone d'intervention. Une mise en marche automatique est couplée à l'enclenchement de la prise de mouvement.</li>
+                <li>Voyants : <strong>Vigilance</strong>, <strong>Danger</strong>, fonctionnement (clignotant en marche normale, fixe en cas de défaut) ; boutons d'acquittement et d'activation manuelle de l'alarme sonore ; gyrophare extérieur signalant une détection.</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/epc30/detect-line.webp" alt="Boîtier Detect-line avec voyants vigilance, danger et fonctionnement, boutons et gyrophare extérieur" loading="lazy">
+                <figcaption>Detect-line : voyants et boutons</figcaption>
+            </figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>Alimentation 230 V en cabine</h3>
+            <p>Sous le siège du chef d'agrès : transformateur pour le maintien en charge des batteries du véhicule, disjoncteur 220 V et multiprise pour la mise en charge d'appareils électriques.</p>
+        </div>
+
+
+        <p class="rd-source">📚 EPC30 Renault – Riffaud 2026, guide d'emploi (SDIS 34, Service matériel roulant – GTL), p. 7 à 30. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-EPC30-Renault-Riffaud-2026.pdf#page=7" target="_blank" rel="noopener">Guide d'emploi EPC30 Renault – Riffaud 2026, SDIS 34 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="epc30-stabilisation" class="module">
+        <button class="back-btn" onclick="showModule('epc30-menu')">← Retour EPC30</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>🦿 Stabilisation</h2>
+
+        <div class="rd-section">
+            <h3>Le système de stabilisation</h3>
+            <ul>
+                <li>4 stabilisateurs et un système de <strong>neutralisation des suspensions</strong>. Stabilisation en <strong>« X »</strong> : la largeur varie selon la place disponible et les besoins de l'intervention.</li>
+                <li>Toutes les longueurs de sortie des poutres sont possibles, mais <strong>seules 5 sont prises en compte par le microprocesseur : 15 cm, 30 cm, 50 cm, 80 cm et 150 cm</strong>. La sortie minimale est donc de <strong>15 cm</strong> (semelle sortie du gabarit).</li>
+                <li>Un <strong>poste de commande de stabilisation</strong> est placé de chaque côté du véhicule : il ne permet la sortie que des stabilisateurs <strong>du côté correspondant</strong>.</li>
+                <li>Un <strong>écran de contrôle et de simulation</strong> gère la stabilisation et aide à choisir l'emplacement de l'échelle.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Largeurs de stabilisation</h3>
+            <table class="rd-table">
+                <tr><th>Cas</th><th>Largeur</th></tr>
+                <tr><td>4 stabilisateurs sortis à la même largeur</td><td><strong>2,7 m</strong> (minimum) à <strong>5,2 m</strong> (maximum) de largeur totale</td></tr>
+                <tr><td>Stabilisation « voie échelle »</td><td>sortie des poutres stoppée automatiquement pour une largeur <strong>symétrique de 3,45 m</strong> (chaque poutre ne sort que de <strong>50 cm</strong>). Les atteintes normalisées d'une échelle de classe 30 (<strong>28 m de hauteur à 10 m de portée</strong>) sont garanties.</td></tr>
+                <tr><td>Longueur de sortie intermédiaire</td><td>relâcher le manipulateur avant la fin du mouvement ou utiliser le bouton d'arrêt des mouvements : c'est <strong>la largeur prédéfinie directement inférieure</strong> qui est prise en compte pour le calcul de la portée maxi</td></tr>
+            </table>
+        </div>
+
+        <div class="rd-section">
+            <h3>Poste de commande de la stabilisation</h3>
+            <figure class="rd-fig">
+                <img src="images/epc30/poste-stabilisation.webp" alt="Poste de commande de la stabilisation avec six éléments numérotés" loading="lazy">
+                <figcaption>Poste de commande de la stabilisation</figcaption>
+            </figure>
+            <ul>
+                <li>① manipulateur de mouvements des stabilisateurs (4 positions) · ② commande de stabilisation à la largeur « voie échelle » (AUTO) · ③ commandes de mise en position travail/route de la plate-forme · ④ voyant de validation de la stabilisation · ⑤ sélection du stabilisateur avant ou arrière · ⑥ <strong>arrêt des mouvements</strong>.</li>
+                <li>Pour manœuvrer <strong>un seul stabilisateur</strong> : appuyer sur le bouton du stabilisateur concerné.</li>
+                <li>La commande de sortie ou de rentrée actionne <strong>simultanément</strong> les 2 poutres du côté correspondant.</li>
+            </ul>
+            <details>
+                <summary>Un obstacle gêne la sortie d'un stabilisateur</summary>
+            <ul>
+                <li>Du côté concerné, <strong>sortir au maximum le stabilisateur sans obstacle</strong>, en l'isolant avec le sélecteur.</li>
+                <li>Commander <strong>en dernier</strong> le stabilisateur concerné, en alternant si besoin ses mouvements de sortie et de descente.</li>
+                <li>Ne pas utiliser la commande simultanée dans un premier temps si un stabilisateur est placé sous un obstacle.</li>
+            </ul>
+            <div class="rd-alerte">La <strong>rentrée</strong> des stabilisateurs se fait dans l'<strong>ordre inverse</strong> : commencer par manœuvrer, et isoler si nécessaire, le stabilisateur proche de l'obstacle.</div>
+            </details>
+        </div>
+
+        <div class="rd-section">
+            <h3>Neutralisation des suspensions arrière</h3>
+            <ul>
+                <li>En même temps que la descente des stabilisateurs, le système <strong>neutralise les suspensions arrière</strong> en maintenant le pont arrière en position haute.</li>
+                <li>Un vérin tend les <strong>chaînes de blocage</strong> : suspensions libres = chaînes détendues ; suspensions neutralisées = chaînes tendues.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Écran de gestion de la stabilisation</h3>
+            <figure class="rd-fig">
+                <img src="images/epc30/ecran-stabilisation.webp" alt="Écran de gestion de la stabilisation avec diagramme d'atteinte, portées maximales et charges par stabilisateur" loading="lazy">
+                <figcaption>Écran de gestion de la stabilisation</figcaption>
+            </figure>
+            <ul>
+                <li>① <strong>diagramme</strong> des possibilités d'atteinte de l'EPC · ② <strong>portée maximale</strong> accessible en plate-forme dans le cas de charge présélectionné · ③ rappel de la <strong>largeur de sortie</strong> du stabilisateur concerné · ④ localisation de la plate-forme dans l'espace.</li>
+                <li>Les portées horizontales sont calculées en fonction des largeurs de sortie des stabilisateurs. Le diagramme est <strong>découpé en 10 secteurs</strong> et indique les capacités de l'EPC dans chaque portion, selon la stabilisation et le cas de charge en plate-forme.</li>
+                <li>Les zones <strong>avant et arrière</strong>, dans l'axe du châssis, sont indépendantes des largeurs de stabilisation. Les zones <strong>gauche et droite</strong> varient selon les sorties de chaque stabilisateur du côté concerné.</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/epc30/ecran-stabilisation-secteurs.webp" alt="Diagramme en 10 secteurs avec zones avant, arrière, gauche et droite" loading="lazy">
+                <figcaption>Exemple : échelle sur le portique, stabilisateurs droits au minimum, gauches au maximum</figcaption>
+            </figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>Indicateur d'inclinaison à secteurs gradués et indicateur de devers</h3>
+            <figure class="rd-fig">
+                <img src="images/epc30/indicateur-inclinaison.webp" alt="Indicateur d'inclinaison à secteurs gradués avec bille d'angle de dressage et indicateur de devers" loading="lazy">
+                <figcaption>Indicateur d'inclinaison à secteurs gradués</figcaption>
+            </figure>
+            <ul>
+                <li>① bille indiquant l'<strong>angle de dressage</strong> · ② secteur gradué pour une stabilisation en <strong>sortie mini</strong> · ③ secteur gradué pour une stabilisation en <strong>sortie maxi</strong> · ④ bille indiquant l'<strong>angle de devers</strong> du parc.</li>
+                <li>Sur chaque secteur, selon l'angle de dressage et <strong>pour une charge maximale en plate-forme</strong>, le tableau indique une <strong>hauteur de sauvetage</strong>, une <strong>portée</strong> et la <strong>longueur de structure développée</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Déploiement et reploiement de la plate-forme</h3>
+            <ul>
+                <li>Les commandes de la plate-forme peuvent s'effectuer depuis <strong>n'importe quel poste de commande des stabilisateurs</strong>.</li>
+                <li><strong>Mise en position travail</strong> : une impulsion sur le bouton. En cas de problème, le mouvement est stoppé en appuyant sur le bouton de reploiement.</li>
+                <li><strong>Reploiement</strong> : en maintenant appuyé le bouton de reploiement.</li>
+            </ul>
+            <div class="rd-alerte">Avant de déployer : vérifier l'<strong>absence d'obstacles</strong> à proximité immédiate. Avant de reployer : vérifier l'<strong>absence de personnel ou de matériel à l'intérieur</strong>.</div>
+        </div>
+
+
+        <p class="rd-source">📚 EPC30 Renault – Riffaud 2026, guide d'emploi (SDIS 34, Service matériel roulant – GTL), p. 34 à 45. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-EPC30-Renault-Riffaud-2026.pdf#page=34" target="_blank" rel="noopener">Guide d'emploi EPC30 Renault – Riffaud 2026, SDIS 34 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="epc30-commandes" class="module">
+        <button class="back-btn" onclick="showModule('epc30-menu')">← Retour EPC30</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>🎛️ Commandes et écrans</h2>
+
+        <div class="rd-section">
+            <h3>Pédales « homme mort »</h3>
+            <ul>
+                <li><strong>2 pédales</strong> : une au poste de commande de la tourelle, l'autre en plate-forme.</li>
+                <li>La pédale est <strong>actionnée avant</strong> une commande de mouvement et <strong>relâchée après</strong>, pour éviter de violents à-coups.</li>
+                <li>La pédale de la <strong>tourelle est prioritaire</strong> sur celle de la plate-forme. Il n'y a pas de bouton pour affecter les commandes en plate-forme.</li>
+                <li>En cas de problème : appuyer sur la pédale en tourelle ou percuter l'<strong>arrêt d'urgence</strong> pour stopper les manœuvres en plate-forme.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Poste de commande de la tourelle</h3>
+            <figure class="rd-fig">
+                <img src="images/epc30/poste-tourelle.webp" alt="Poste de commande de la tourelle avec arrêt d'urgence, deux manipulateurs et bouton d'inhibition" loading="lazy">
+                <figcaption>Poste de commande de la tourelle</figcaption>
+            </figure>
+            <ul>
+                <li>① bouton « coup de poing » d'<strong>arrêt d'urgence</strong> · ② manipulateur : développement / reploiement · ③ bouton de commande de l'<strong>interphone</strong> · ④ manipulateur : pivotement et dressage / abaissement · ⑤ bouton d'<strong>inhibition des détecteurs de proximité</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Poste de contrôle de la tourelle</h3>
+            <figure class="rd-fig">
+                <img src="images/epc30/poste-controle-tourelle.webp" alt="Écran de contrôle de la tourelle avec boutons latéraux numérotés" loading="lazy">
+                <figcaption>Poste de contrôle de la tourelle</figcaption>
+            </figure>
+            <ul>
+                <li>① changement de <strong>zone de travail</strong> · ② acquittement de la <strong>détection d'obstacle</strong> · ③ <strong>remise automatique sur le portique</strong> (disponible lorsqu'elle est jaune) · ④ inhibiteur des sécurités plate-forme · ⑤ accès au 2<sup>e</sup> écran.</li>
+                <li>⑥ menu des fonctions supplémentaires · ⑦ commande d'<strong>échelonnage</strong> · ⑧ commande des projecteurs du parc et de la plate-forme · ⑨ démarrage ou arrêt du moteur.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Écran de contrôle</h3>
+            <figure class="rd-fig">
+                <img src="images/epc30/ecran-controle.webp" alt="Écran de contrôle avec longueurs, hauteurs, portées et angle de dressage" loading="lazy">
+                <figcaption>Écran de contrôle</figcaption>
+            </figure>
+            <ul>
+                <li>Longueur de développement <strong>maximale</strong> et <strong>actuelle</strong> · hauteur accessible maximale et actuelle · portée maximale et actuelle · angle de dressage.</li>
+                <li>L'écran indique <strong>en permanence</strong> les mouvements exécutables par l'échelle (dressage/abaissement, développement/reploiement, pivotement gauche ou droite) :</li>
+            </ul>
+            <table class="rd-table">
+                <tr><th>Couleur</th><th>Signification</th></tr>
+                <tr><td><strong>Vert</strong></td><td>mouvement disponible à vitesse normale</td></tr>
+                <tr><td><strong>Jaune</strong></td><td>mouvement disponible, mais à vitesse réduite</td></tr>
+                <tr><td><strong>Rouge</strong></td><td>mouvement interdit</td></tr>
+            </table>
+            <figure class="rd-fig">
+                <img src="images/epc30/ecran-mouvements.webp" alt="Flèches de mouvements en vert, jaune et rouge sur l'écran de contrôle" loading="lazy">
+                <figcaption>Flèches des mouvements possibles</figcaption>
+            </figure>
+            <p>Les flèches d'accès permettent de choisir l'<strong>affichage</strong> : <strong>vue latérale</strong> ou <strong>vue de dessus</strong> (avec les valeurs de charge de chaque stabilisateur). <strong>Rouge</strong> : les performances maximales accessibles ; <strong>bleu</strong> : la position instantanée de la plate-forme (ou de l'échelle).</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Zone de travail, obstacles et fonctions</h3>
+            <details>
+                <summary>Changement de zone de travail</summary>
+            <ul>
+                <li>À l'approche de la limite de portée, le <strong>voyant jaune clignote</strong> avec la sonnerie de l'alarme lente.</li>
+                <li>Quand la limite est atteinte, les <strong>mouvements sont stoppés</strong> : voyant jaune fixe, sonnerie, message « La fin de zone est atteinte ». Tous les mouvements <strong>aggravants</strong> sont impossibles.</li>
+                <li>Le bouton fait passer de la zone <strong>2 hommes</strong> à la zone <strong>1 homme</strong>, puis à la zone <strong>« travail en appui »</strong>. Le changement n'est possible <strong>qu'une fois la limite de portée précédente atteinte</strong>.</li>
+            </ul>
+            </details>
+            <details>
+                <summary>Remise automatique sur le portique</summary>
+            <ul>
+                <li>Disponible quand : <strong>angle de dressage inférieur à 30°</strong> · être au-dessus de la cabine avec un <strong>angle de rotation inférieur à 30°</strong> à gauche ou à droite · être <strong>reployé de moitié au moins</strong>.</li>
+                <li>Sinon, l'afficheur l'indique : « L'échelle n'est pas dans la zone du retour automatique ».</li>
+                <li>Actionner la <strong>pédale homme mort avant</strong> l'impulsion sur le bouton, et la maintenir appuyée jusqu'à la coupure de l'accélération moteur.</li>
+            </ul>
+            </details>
+            <details>
+                <summary>Détection d'obstacle</summary>
+            <ul>
+                <li>L'afficheur change de couleur selon la <strong>proximité de l'obstacle</strong>. Quand il passe en <strong>rouge</strong>, les mouvements sont stoppés (« Un obstacle est détecté »).</li>
+                <li>Il est possible de manœuvrer l'échelle en s'acquittant de la sécurité, en <strong>maintenant le bouton d'inhibition des détecteurs de proximité</strong> sur un poste de commande.</li>
+            </ul>
+            </details>
+            <details>
+                <summary>Inhibition des sécurités de la plate-forme</summary>
+            <ul>
+                <li>Elle inhibe <strong>toutes les sécurités en plate-forme</strong> : défauts détectés (avec mise en sécurité du système, dont la détection d'obstacles) et bouton d'arrêt d'urgence verrouillé en plate-forme.</li>
+                <li>Elle permet de manœuvrer le parc malgré les sécurités <strong>depuis la tourelle pour ramener la plate-forme au sol</strong>.</li>
+            </ul>
+            <div class="rd-alerte">Cette opération nécessite la <strong>plus grande vigilance</strong> : il faut maintenir le bouton appuyé pendant les mouvements, et l'alarme retentit en continu pour signaler l'absence totale de sécurité.</div>
+            </details>
+            <details>
+                <summary>Commande des projecteurs</summary>
+            <ul>
+                <li>À chaque appui : projecteurs de <strong>structure</strong> uniquement → projecteurs de la <strong>plate-forme</strong> uniquement → <strong>tous</strong> les projecteurs → extinction de tous.</li>
+                <li>Les projecteurs orientables de parc sont disponibles avec l'éclairage placé sous le parc ; ils sont commandés par la télécommande située en tourelle.</li>
+            </ul>
+            </details>
+            <details>
+                <summary>Commande de concordance des échelons</summary>
+            <p>Actionner la <strong>pédale homme mort avant</strong> d'appuyer sur le bouton. Le bouton est maintenu pendant le reploiement du parc : il le <strong>stoppe à la concordance des échelons</strong> et le pictogramme correspondant s'affiche.</p>
+            </details>
+            <details>
+                <summary>Fonction « répétition de trajets »</summary>
+            <ul>
+                <li>Elle permet d'<strong>enregistrer une suite de mouvements</strong>, au fur et à mesure de leur exécution (touche enregistrement / stop), puis de la <strong>répéter dans un sens ou dans l'autre</strong>.</li>
+                <li>Accessible depuis la page 2 ; la pédale homme mort doit être maintenue tout au long de la séquence.</li>
+            </ul>
+            </details>
+            <details>
+                <summary>Fonction « suivi de façade »</summary>
+            <ul>
+                <li>Elle permet des mouvements de dressage ou d'abaissement <strong>tout en conservant la plate-forme à l'aplomb du point de départ</strong>. Accessible depuis la page 2 ; l'icône est jaune si la fonction est disponible, puis bleue une fois la commande prise en compte par les calculateurs.</li>
+            </ul>
+            <div class="rd-alerte">Lors de l'utilisation du suivi de façade, les <strong>détections d'obstacles sont désactivées</strong>.</div>
+            </details>
+        </div>
+
+
+        <p class="rd-source">📚 EPC30 Renault – Riffaud 2026, guide d'emploi (SDIS 34, Service matériel roulant – GTL), p. 46 à 59. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-EPC30-Renault-Riffaud-2026.pdf#page=46" target="_blank" rel="noopener">Guide d'emploi EPC30 Renault – Riffaud 2026, SDIS 34 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="epc30-plateforme" class="module">
+        <button class="back-btn" onclick="showModule('epc30-menu')">← Retour EPC30</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>🧑‍🚒 Plate-forme, lance-canon et brancardage</h2>
+
+        <div class="rd-section">
+            <h3>Dévidoir</h3>
+            <p>Dévidoir fixe pour l'alimentation de la lance-canon, armé d'un <strong>tuyau de 40 m en 70</strong>. Des guides permettent le déroulement automatique du tuyau lors du développement de l'échelle.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>La plate-forme</h3>
+            <ul>
+                <li><strong>4 fixations</strong> pour les accessoires.</li>
+                <li>À l'intérieur : des <strong>points d'ancrage</strong> permettent l'amarrage du personnel au moyen des longes fournies.</li>
+                <li>À l'extérieur, sur la face avant : <strong>1 buse</strong>, alimentée par l'alimentation de la lance-canon, crée un <strong>rideau d'eau de protection</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Poste de commande et de contrôle de la plate-forme</h3>
+            <figure class="rd-fig">
+                <img src="images/epc30/poste-plateforme.webp" alt="Poste de commande de la plate-forme avec loquet, interphone, arrêt d'urgence, joysticks et écran" loading="lazy">
+                <figcaption>Poste de commande et de contrôle de la plate-forme</figcaption>
+            </figure>
+            <ul>
+                <li>① loquet de déverrouillage pour la translation du pupitre · ② interphone · ③ <strong>arrêt d'urgence</strong> · ④ joystick : développement / reploiement et angle d'articulation du 1<sup>er</sup> plan · ⑤ écran de contrôle (identique à celui de la tourelle, à l'exception de certaines fonctions) · ⑥ joystick : dressage / abaissement et pivotement.</li>
+            </ul>
+            <div class="rd-alerte">Remettre <strong>absolument le pupitre en position centrale</strong> avant de quitter la plate-forme.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Sky-nacelle : détection de champs électriques</h3>
+            <p>En complément du DETECT-LINE, la plate-forme est équipée d'un système de détection des <strong>risques d'arc électrique</strong>, appelé <strong>« Sky-nacelle »</strong>. Il constitue une bulle autour de la plate-forme, qui se déplace dans le dôme de détection du DETECT-LINE.</p>
+            <ul>
+                <li><strong>3 détecteurs</strong> autour de la plate-forme.</li>
+                <li><strong>Voyant orange fixe = VIGILANCE</strong> · <strong>voyant rouge clignotant + alarme sonore = DANGER</strong>.</li>
+                <li>Le voyant vert indique que le système est en service ; le bouton vert permet l'acquittement de l'alarme sonore.</li>
+            </ul>
+            <figure class="rd-fig">
+                <img src="images/epc30/sky-nacelle.webp" alt="Détecteurs Sky-nacelle autour de la plate-forme et boîtier avec voyants orange, rouge et vert" loading="lazy">
+                <figcaption>Sky-nacelle : détecteurs et voyants</figcaption>
+            </figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>Lance-canon radiocommandée</h3>
+            <ul>
+                <li>Lance-canon <strong>radiocommandée</strong> montée à demeure sur la face avant de la plate-forme, pilotée par l'une des <strong>2 télécommandes</strong> (sur support de charge : une en cabine, l'autre dans le coffre en plate-forme).</li>
+                <li>Vannes : alimentation du <strong>dispositif d'autoprotection</strong> de la plate-forme · vanne de refoulement de la sortie en 45 · <strong>vanne principale du canon</strong>.</li>
+            </ul>
+            <div class="rd-alerte"><strong>Utilisation sans personnel en plate-forme</strong> : activer <strong>obligatoirement</strong> le système d'autoprotection thermique.<br><strong>En manœuvre</strong>, la lance-canon est comptabilisée comme <strong>2 hommes</strong>, en raison des contraintes et de la force de recul créées.</div>
+            <figure class="rd-fig">
+                <img src="images/epc30/lance-canon.webp" alt="Lance-canon en position rangée, radiocommande sur chargeur, vannes d'alimentation" loading="lazy">
+                <figcaption>Lance-canon en position rangée, radiocommande et vannes</figcaption>
+            </figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>Brancardage</h3>
+            <ul>
+                <li>Installer le <strong>support brancard</strong> en plaçant ses 2 pivots dans les plots de fixation des accessoires, sur le <strong>côté droit</strong> de la plate-forme. Le dispositif est comptabilisé comme <strong>2 hommes</strong>.</li>
+                <li>Avec la <strong>barquette</strong> qui arme l'EPC : la faire coulisser jusqu'en butée du support brancard, puis utiliser les systèmes d'arrimage prévus.</li>
+                <li>Le support peut aussi recevoir un <strong>brancard de VSAV</strong> : la limite de poids est alors celle du brancard (support jusqu'à 200 kg).</li>
+            </ul>
+        </div>
+
+        <div class="rd-section">
+            <h3>Projecteurs grande puissance</h3>
+            <p><strong>2 projecteurs</strong> indépendants, de chaque côté de la plate-forme, <strong>pivotants et inclinables</strong>. Verrouillage au pivotement, verrouillage à l'inclinaison, interrupteur marche/arrêt et choix de la puissance.</p>
+        </div>
+
+        <div class="rd-section">
+            <h3>Dépose et mise en place de la plate-forme</h3>
+            <div class="rd-alerte">Cette manœuvre doit être réalisée par <strong>6 hommes</strong>.</div>
+            <ol>
+                <li>Poser la plate-forme délicatement au sol.</li>
+                <li>Détacher les mains courantes de la plate-forme.</li>
+                <li>Débrancher la <strong>fiche électrique</strong> de la plate-forme et la prise Marechal 220 V.</li>
+                <li>Déraccorder l'alimentation de la lance-canon, en bout du 1<sup>er</sup> plan.</li>
+                <li>Verrouiller la partie arrière de la plate-forme (qui supporte les portes) en position reployée avec le <strong>doigt jaune</strong>.</li>
+                <li>Déverrouiller les fixations de la plate-forme : tirer le blocage du levier vers le haut, puis faire pivoter complètement le levier de déverrouillage vers la plate-forme.</li>
+                <li>Décrocher la plate-forme de ses points d'ancrage : la faire basculer manuellement, puis la soulever (<strong>à 3 personnes minimum</strong>) et la poser au sol.</li>
+            </ol>
+            <p>Pour la déplacer, utiliser ses roues en l'inclinant vers l'avant. Pour sa repose, opérer dans l'ordre inverse.</p>
+            <details>
+                <summary>La fiche électrique</summary>
+            <ul>
+                <li>Elle doit être <strong>impérativement</strong> soit correctement branchée à la plate-forme, soit placée sur son socle au bout du 1<sup>er</sup> plan lorsque la plate-forme est déposée. Elle est verrouillée par 2 crochets.</li>
+                <li>Avant de la débrancher ou de la rebrancher, il est conseillé de <strong>couper toute alimentation électrique</strong>, pour éviter des défauts au microprocesseur. Pour le branchement, bien aligner les <strong>repères rouges</strong>.</li>
+            </ul>
+            </details>
+        </div>
+
+
+        <p class="rd-source">📚 EPC30 Renault – Riffaud 2026, guide d'emploi (SDIS 34, Service matériel roulant – GTL), p. 32 à 33 et 60 à 72. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-EPC30-Renault-Riffaud-2026.pdf#page=60" target="_blank" rel="noopener">Guide d'emploi EPC30 Renault – Riffaud 2026, SDIS 34 (PDF)</a>
+        </p>
+    </div>
+
+    <div id="epc30-secours" class="module">
+        <button class="back-btn" onclick="showModule('epc30-menu')">← Retour EPC30</button>
+        <span class="rd-tampon rd-tampon-dept">SDIS 34</span>
+        <h2>🆘 Mode dégradé et secours</h2>
+
+        <div class="rd-section">
+            <h3>Correction d'horizontalité de la plate-forme</h3>
+            <ul>
+                <li>Dès la mise en sécurité de l'échelle (panne électrique et/ou panne moteur), le <strong>système d'horizontalité de la plate-forme est inactif</strong>.</li>
+                <li><strong>Pendant un brancardage</strong> : maintenir la plate-forme à l'horizontale avec la <strong>pompe manuelle</strong>. Actionner la pompe 5 ou 6 fois, puis sélectionner le sens du mouvement (déploiement ou reploiement) avec la vanne.</li>
+                <li><strong>Hors brancardage</strong> : faire descendre le personnel de la plate-forme <strong>par le parc</strong>. Le système manuel ne sert alors qu'à remettre la plate-forme en position route.</li>
+            </ul>
+            <div class="rd-alerte">Avant de remettre la plate-forme en position route : vérifier que le <strong>pupitre est verrouillé dans sa position centrale</strong>, et ne le faire qu'une fois la structure <strong>intégralement reployée</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Panne électrique</h3>
+            <p>En cas de défaut électrique et/ou électronique, actionner <strong>manuellement les distributeurs hydrauliques</strong>.</p>
+            <ol>
+                <li>Verrouiller le <strong>by-pass</strong> de distribution principal de la pression hydraulique dans sa position basse, sur la position tourelle.</li>
+                <li>Effectuer le mouvement de <strong>reploiement des plans</strong> (levier).</li>
+                <li>Ramener le parc sur le portique : dressage/abaissement, pivotement, correction de devers.</li>
+                <li><strong>Uniquement une fois le parc totalement en position route sur le portique</strong> : libérer le by-pass et le maintenir en position haute, actionner les distributeurs de <strong>remontée des stabilisateurs</strong>, puis les distributeurs pour <strong>rentrer les stabilisateurs</strong> et libérer le blocage des suspensions arrière, en s'aidant du schéma collé sur la porte du coffre.</li>
+            </ol>
+            <figure class="rd-fig">
+                <img src="images/epc30/secours-panne-electrique-1.webp" alt="Distributeurs hydrauliques de secours en tourelle avec by-pass et leviers numérotés" loading="lazy">
+                <figcaption>Distributeurs hydrauliques en tourelle</figcaption>
+            </figure>
+            <figure class="rd-fig">
+                <img src="images/epc30/secours-panne-electrique-2.webp" alt="Distributeurs hydrauliques du châssis avec by-pass et schéma de secours sur la porte du coffre" loading="lazy">
+                <figcaption>Distributeurs du châssis et schéma de secours</figcaption>
+            </figure>
+        </div>
+
+        <div class="rd-section">
+            <h3>Panne moteur</h3>
+            <ul>
+                <li>En cas de défaillance de la pompe hydraulique et/ou du moteur du véhicule, une <strong>pompe électrique</strong> permet de remettre l'EPC en position route.</li>
+                <li>Actionner l'<strong>interrupteur</strong> · laisser <strong>impérativement la trappe ouverte</strong> · manœuvrer l'échelle avec les manipulateurs classiques.</li>
+                <li>Dans ce mode, l'autonomie des batteries du véhicule peut aller jusqu'à <strong>40 min</strong>. Le délai normalisé pour une remise en position route est de <strong>10 min</strong>.</li>
+            </ul>
+            <div class="rd-alerte">Ne pas laisser tourner la pompe électrique sans utilité : risque de <strong>surchauffe et de mise en sécurité</strong>.</div>
+        </div>
+
+        <div class="rd-section">
+            <h3>Panne totale</h3>
+            <p>En cas de cumul des 2 types de pannes, utiliser les 2 types de manœuvres de secours : la <strong>pompe électrique</strong>, puis actionner manuellement les <strong>distributeurs hydrauliques en tourelle</strong> pour reposer le parc sur le portique, puis ceux du <strong>châssis</strong> pour manœuvrer le système de stabilisation.</p>
+        </div>
+
+
+        <p class="rd-source">📚 EPC30 Renault – Riffaud 2026, guide d'emploi (SDIS 34, Service matériel roulant – GTL), p. 68 à 78. Photos, schémas et illustrations © SDIS 34. Reproduction soumise à l'autorisation du SDIS 34.</p>
+        <p class="jsp-liens">
+            📄 <a class="rd-pdf" href="docs/conduite/SDIS34-EPC30-Renault-Riffaud-2026.pdf#page=68" target="_blank" rel="noopener">Guide d'emploi EPC30 Renault – Riffaud 2026, SDIS 34 (PDF)</a>
+        </p>
+    </div>
+
     <div id="nac" class="module" style="--jsp: #E27C0C;">
         <button class="back-btn" onclick="showModule('home')">← Retour</button>
         <span class="rd-tampon">Cours pédagogique</span>
@@ -37704,7 +38965,7 @@ Je demande : ….</p>
 
     <!-- Pied de page (les détails sont dans « À propos ») -->
     <footer class="app-footer">
-        <p><strong>Vulcain v<span class="app-version">1.69.89</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
+        <p><strong>Vulcain v<span class="app-version">1.69.90</span></strong> · Outil d'aide à la décision opérationnelle · Conforme GDO</p>
         <p>© 2025-2026 Helmet Legend · Tous droits réservés · Par les pompiers, pour les pompiers 🚒</p>
     </footer>
 
