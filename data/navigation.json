@@ -164,7 +164,9 @@
    "themes": [
     "COD 1 – Pompes & génératrices",
     "COD 2 – Conduite tout-terrain",
-    "COD 6 – Moyens élévateurs aériens (MEA)"
+    "COD 6 – Moyens élévateurs aériens (MEA)",
+    "MEA – Tronc commun (SDIS 34)",
+    "EPC30 Renault – Riffaud 2026 (SDIS 34)"
    ]
   },
   {
@@ -2391,6 +2393,265 @@
     "façade accessible",
     "échelier",
     "guidage"
+   ]
+  },
+  {
+   "id": "mea-tc-menu",
+   "titre": "Présentation",
+   "domaine": "conduite",
+   "theme": "MEA – Tronc commun (SDIS 34)",
+   "type": "presentation",
+   "motsCles": [
+    "mea",
+    "échelle pivotante",
+    "tronc commun",
+    "sdis 34",
+    "échelier",
+    "chef d'agrès échelle",
+    "formation",
+    "epc",
+    "eps"
+   ]
+  },
+  {
+   "id": "mea-tc-generalites",
+   "titre": "Généralités",
+   "domaine": "conduite",
+   "theme": "MEA – Tronc commun (SDIS 34)",
+   "type": "fiche",
+   "motsCles": [
+    "mea",
+    "tronc commun",
+    "sdis 34",
+    "code de la route",
+    "feu rouge",
+    "avertisseurs",
+    "sens interdit",
+    "échelier",
+    "normes",
+    "epc",
+    "eps",
+    "voie engins",
+    "voie échelle",
+    "nf xps 61552",
+    "nf en 14043"
+   ]
+  },
+  {
+   "id": "mea-tc-fonctionnement",
+   "titre": "Description et fonctionnement",
+   "domaine": "conduite",
+   "theme": "MEA – Tronc commun (SDIS 34)",
+   "type": "fiche",
+   "motsCles": [
+    "mea",
+    "tronc commun",
+    "sdis 34",
+    "hydraulique",
+    "prise de mouvement",
+    "polygone de sustentation",
+    "stabilisation",
+    "neutralisation suspension",
+    "portée",
+    "devers",
+    "dressage",
+    "longueur développée",
+    "plan"
+   ]
+  },
+  {
+   "id": "mea-tc-utilisation",
+   "titre": "Mise en station et conditions d'utilisation",
+   "domaine": "conduite",
+   "theme": "MEA – Tronc commun (SDIS 34)",
+   "type": "fiche",
+   "motsCles": [
+    "mea",
+    "tronc commun",
+    "sdis 34",
+    "mise en station",
+    "tableau de travail",
+    "pente",
+    "devers",
+    "cales d'appui",
+    "pression admissible",
+    "sol",
+    "mise en appui",
+    "mgo",
+    "forte pente"
+   ]
+  },
+  {
+   "id": "mea-tc-precautions",
+   "titre": "Précautions à prendre",
+   "domaine": "conduite",
+   "theme": "MEA – Tronc commun (SDIS 34)",
+   "type": "fiche",
+   "motsCles": [
+    "mea",
+    "tronc commun",
+    "sdis 34",
+    "position route",
+    "saison froide",
+    "lance",
+    "pont pour tuyaux",
+    "rues étroites",
+    "vent",
+    "hauban",
+    "haubanage",
+    "beaufort",
+    "consignes permanentes",
+    "homme mort"
+   ]
+  },
+  {
+   "id": "mea-tc-pictos",
+   "titre": "Pictogrammes et vérifications",
+   "domaine": "conduite",
+   "theme": "MEA – Tronc commun (SDIS 34)",
+   "type": "fiche",
+   "motsCles": [
+    "mea",
+    "tronc commun",
+    "sdis 34",
+    "pictogrammes",
+    "symboles",
+    "voyants",
+    "vérifications journalières",
+    "charge autorisée"
+   ]
+  },
+  {
+   "id": "epc30-menu",
+   "titre": "Présentation",
+   "domaine": "conduite",
+   "theme": "EPC30 Renault – Riffaud 2026 (SDIS 34)",
+   "type": "presentation",
+   "motsCles": [
+    "epc30",
+    "epc 30",
+    "epc 311",
+    "renault",
+    "riffaud",
+    "2026",
+    "échelle pivotante",
+    "sdis 34",
+    "guide d'emploi",
+    "mea",
+    "caractéristiques"
+   ]
+  },
+  {
+   "id": "epc30-cabine",
+   "titre": "Cabine et châssis",
+   "domaine": "conduite",
+   "theme": "EPC30 Renault – Riffaud 2026 (SDIS 34)",
+   "type": "fiche",
+   "motsCles": [
+    "epc30",
+    "renault",
+    "riffaud",
+    "sdis 34",
+    "tableau de bord",
+    "boîte automatique",
+    "ralentisseur",
+    "prise de mouvement",
+    "régulateur de vitesse",
+    "accélérateur manuel",
+    "filtre à particules",
+    "detect-line",
+    "gsr2",
+    "pente",
+    "devers"
+   ]
+  },
+  {
+   "id": "epc30-stabilisation",
+   "titre": "Stabilisation",
+   "domaine": "conduite",
+   "theme": "EPC30 Renault – Riffaud 2026 (SDIS 34)",
+   "type": "fiche",
+   "motsCles": [
+    "epc30",
+    "renault",
+    "riffaud",
+    "sdis 34",
+    "stabilisation",
+    "voie échelle",
+    "stabilisateurs",
+    "obstacle",
+    "suspensions",
+    "inclinaison",
+    "devers",
+    "écran stabilisation",
+    "plate-forme"
+   ]
+  },
+  {
+   "id": "epc30-commandes",
+   "titre": "Commandes et écrans",
+   "domaine": "conduite",
+   "theme": "EPC30 Renault – Riffaud 2026 (SDIS 34)",
+   "type": "fiche",
+   "motsCles": [
+    "epc30",
+    "renault",
+    "riffaud",
+    "sdis 34",
+    "homme mort",
+    "tourelle",
+    "écran de contrôle",
+    "zone de travail",
+    "remise sur portique",
+    "détection d'obstacle",
+    "répétition de trajets",
+    "suivi de façade",
+    "échelonnage",
+    "projecteurs"
+   ]
+  },
+  {
+   "id": "epc30-plateforme",
+   "titre": "Plate-forme, lance-canon et brancardage",
+   "domaine": "conduite",
+   "theme": "EPC30 Renault – Riffaud 2026 (SDIS 34)",
+   "type": "fiche",
+   "motsCles": [
+    "epc30",
+    "renault",
+    "riffaud",
+    "sdis 34",
+    "plate-forme",
+    "nacelle",
+    "sky-nacelle",
+    "lance-canon",
+    "brancard",
+    "barquette",
+    "projecteurs",
+    "dévidoir",
+    "dépose plate-forme"
+   ]
+  },
+  {
+   "id": "epc30-secours",
+   "titre": "Mode dégradé et secours",
+   "domaine": "conduite",
+   "theme": "EPC30 Renault – Riffaud 2026 (SDIS 34)",
+   "type": "fiche",
+   "motsCles": [
+    "epc30",
+    "renault",
+    "riffaud",
+    "sdis 34",
+    "mode dégradé",
+    "secours",
+    "panne électrique",
+    "panne moteur",
+    "panne totale",
+    "pompe manuelle",
+    "horizontalité",
+    "by-pass",
+    "distributeurs"
    ]
   },
   {
