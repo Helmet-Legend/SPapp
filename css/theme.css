@@ -702,10 +702,14 @@ html[data-theme] .module th small { color: inherit !important; }
 /* ---------- Fiches RDSMES (sauvetages, mises en sécurité, sauvegarde opérationnelle) ---------- */
 html[data-theme] .rd-section { background: var(--t-s2); border: 1px solid var(--t-line); border-radius: var(--t-radius); padding: 16px; margin: 16px 0; }
 html[data-theme] .rd-section > h3:first-child { margin-top: 0; }
-html[data-theme] .rd-alerte, html[data-theme] .rd-astuce { border-radius: 12px; padding: 12px 14px; margin: 12px 0; border-left: 5px solid; }
-html[data-theme] .rd-alerte { background: light-dark(#FDECEC, #3A1D20); border-color: light-dark(#C62828, #FF6B6B); }
+html[data-theme] .rd-astuce { border-radius: 12px; padding: 12px 14px; margin: 12px 0; border-left: 5px solid; }
 html[data-theme] .rd-astuce { background: light-dark(#EAF6EA, #1B3321); border-color: light-dark(#2E7D32, #6FCF76); }
-html[data-theme] .rd-alerte::before { content: "⚠️ "; }
+/* Encadré « Attention » : cadre rouge complet et bandeau rouge plein en tête (blanc sur #C21F36 : 5,6:1) */
+html[data-theme] .rd-alerte { background: light-dark(#FBD9DC, #4D1A22); border: 2px solid #C21F36; border-radius: 14px; padding: 12px 14px; margin: 12px 0; overflow: hidden; }
+html[data-theme] .rd-alerte::before {
+    content: "⚠️ ATTENTION"; display: block; margin: -12px -14px 10px; padding: 6px 14px; background: #C21F36; color: #FFFFFF;
+    font-family: var(--t-display); font-weight: 800; font-size: 1.05rem; letter-spacing: .1em; line-height: 1.3;
+}
 html[data-theme] .rd-astuce::before { content: "💡 "; }
 .rd-fig { margin: 12px 0; background: #fff; border-radius: 12px; padding: 8px; border: 1px solid var(--t-line); }
 .rd-fig img { width: 100%; height: auto; display: block; border-radius: 6px; }

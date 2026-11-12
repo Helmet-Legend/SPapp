@@ -139,7 +139,7 @@ html[data-theme] .module.lecture table.lec-cards tbody tr:not(:has(> th)) {
 html[data-theme] .module.lecture table.lec-table { border-radius: 12px; }
 
 /* Encadrés et panneaux repliables */
-html[data-theme] .module.lecture .rd-alerte, html[data-theme] .module.lecture .rd-astuce { border-radius: 14px; padding: 12px 14px; }
+html[data-theme] .module.lecture .rd-astuce { border-radius: 14px; padding: 12px 14px; }
 html[data-theme] .module.lecture .jsp-cours > summary { font-family: var(--t-display); font-size: 1.1em; letter-spacing: var(--t-display-spacing); }
 html[data-theme] .module.lecture .jsp-liens .sal-lien { padding: 6px 14px; }
 
