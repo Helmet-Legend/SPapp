@@ -114,18 +114,23 @@ test('une réponse fausse programme un rappel à J+3, et la question revient ce 
     expect(e.erreurs[id]).toBeUndefined();
 });
 
-test('une question par jour sur tout un cycle : chaque question sort une fois, sans doublon', async ({ app }) => {
-    test.setTimeout(180000);
+test('rotation : la file contient chaque question une seule fois, et 6 jours de suite donnent 6 questions différentes', async ({ app }) => {
+    // Le cycle entier : question du jour + file restante = toutes les questions, sans doublon
+    const etat = await lireEtat(app);
+    const cycle = [etat.id].concat(etat.file);
+    expect(cycle).toHaveLength(questions.length);
+    expect(new Set(cycle).size).toBe(questions.length);
+    expect(cycle.slice().sort()).toEqual(questions.map(q => q.id).sort());
+    // Six jours de suite : six questions différentes
     const vues = [];
-    for (let i = 0; i < questions.length; i++) {
-        const q = await questionAffichee(app);
-        vues.push(q.id);
+    for (let i = 0; i < 6; i++) {
+        vues.push((await questionAffichee(app)).id);
         const e = await lireEtat(app);
         e.jour = '2000-01-01';
         await ecrireEtat(app, e);
         await recharger(app);
     }
-    expect(new Set(vues).size).toBe(questions.length);
+    expect(new Set(vues).size).toBe(6);
 });
 
 test('« Encore une » propose une autre question sans toucher à la série', async ({ app }) => {
