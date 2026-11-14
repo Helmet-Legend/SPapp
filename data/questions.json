@@ -1,0 +1,470 @@
+{
+ "version": 1,
+ "questions": [
+  {
+   "id": "ech-01",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-comparatif",
+   "sdis34": true,
+   "q": "Jusqu'à quel étage une échelle à coulisse 3 plans grand modèle permet-elle l'accès ?",
+   "choix": [
+    "R+2",
+    "R+3",
+    "R+4",
+    "R+5"
+   ],
+   "bonne": 2,
+   "explication": "Coulisse 3 plans : R+3 en petit modèle, R+4 en grand modèle. La coulisse 2 plans va jusqu'au R+2.",
+   "fixe": true
+  },
+  {
+   "id": "ech-02",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-securite",
+   "sdis34": true,
+   "q": "Quelle distance ne jamais réduire entre une échelle et une ligne électrique BT, HTA ou HTB ?",
+   "choix": [
+    "3 mètres",
+    "5 mètres",
+    "10 mètres",
+    "1,5 mètre"
+   ],
+   "bonne": 1,
+   "explication": "Les échelles portables ne sont pas isolantes : 5 mètres pour la BT, la HTA et la HTB, et 3 mètres pour le tramway et le réseau ferré.",
+   "fixe": true
+  },
+  {
+   "id": "ech-03",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-securite",
+   "sdis34": true,
+   "q": "Quel angle d'inclinaison vise-t-on pour appuyer une échelle à coulisse ?",
+   "choix": [
+    "45° à 55°",
+    "55° à 65°",
+    "65° à 75°",
+    "75° à 85°"
+   ],
+   "bonne": 2,
+   "explication": "Entre 65° et 75° : on progresse corps à la verticale, bras à 90°. Le piétage pratique donne cet angle sans mesurer.",
+   "fixe": true
+  },
+  {
+   "id": "ech-04",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-securite",
+   "sdis34": true,
+   "q": "Combien de points de contact garder en permanence sur une échelle ?",
+   "choix": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "bonne": 2,
+   "explication": "3 points de contact : 2 mains et 1 pied, ou 2 pieds et 1 main.",
+   "fixe": true
+  },
+  {
+   "id": "ech-05",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-securite",
+   "sdis34": true,
+   "q": "Vers quelle température l'aluminium d'une échelle fond-il, d'où la surveillance du rayonnement ?",
+   "choix": [
+    "≈ 330 °C",
+    "≈ 660 °C",
+    "≈ 900 °C",
+    "≈ 1 200 °C"
+   ],
+   "bonne": 1,
+   "explication": "Point de fusion de l'aluminium ≈ 660 °C : on surveille le rayonnement thermique sur l'échelle.",
+   "fixe": true
+  },
+  {
+   "id": "ech-06",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-telescopique",
+   "sdis34": true,
+   "q": "Jusqu'à quel étage l'échelle télescopique permet-elle un accès ?",
+   "choix": [
+    "R+1",
+    "R+2",
+    "R+3",
+    "R+4"
+   ],
+   "bonne": 0,
+   "explication": "Accès intérieur ou extérieur jusqu'au R+1, notamment dans des volumes restreints. Résistance des échelons : 150 kg.",
+   "fixe": true
+  },
+  {
+   "id": "ech-07",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-crochets",
+   "sdis34": true,
+   "q": "Que fait-on avant d'engager quelqu'un sur une échelle à crochets ?",
+   "choix": [
+    "On la fait tenir par deux personnes",
+    "On la teste en se suspendant dessus",
+    "On l'amarre au sol",
+    "On la mouille"
+   ],
+   "bonne": 1,
+   "explication": "Avant l'engagement, un intervenant la teste en s'appuyant (en se suspendant) dessus."
+  },
+  {
+   "id": "ech-08",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-securite",
+   "sdis34": true,
+   "q": "En incendie en milieu urbain, quelle mise en appui d'une échelle à coulisse est préconisée ?",
+   "choix": [
+    "Avec dépassement d'1 m",
+    "Sans dépassement",
+    "Au sol, sans appui",
+    "Sur la gouttière"
+   ],
+   "bonne": 1,
+   "explication": "Sans dépassement : montants sous le rebord, échelle centrée sur l'ouvrant. Cela facilite sauvetages et mises en sécurité."
+  },
+  {
+   "id": "ech-09",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-telescopique",
+   "sdis34": true,
+   "q": "Pour développer totalement une échelle télescopique, dans quel sens procède-t-on ?",
+   "choix": [
+    "Du haut vers le bas, échelon par échelon",
+    "Du bas vers le haut, échelon par échelon",
+    "Tous les échelons d'un coup",
+    "Peu importe"
+   ],
+   "bonne": 0,
+   "explication": "Développement total : du haut vers le bas. Développement partiel : du bas vers le haut. Dans les deux cas, on vérifie le verrouillage avant de monter."
+  },
+  {
+   "id": "ari-01",
+   "theme": "ARI et engagement",
+   "fiche": "rdeb-controle",
+   "sdis34": true,
+   "q": "Dans le contrôle croisé « RAPACE », que contrôle la lettre P ?",
+   "choix": [
+    "Le port du masque",
+    "La pression : au moins 270 bars",
+    "Le poids de la bouteille",
+    "La purge de la SAD"
+   ],
+   "bonne": 1,
+   "explication": "P = Pression : engagement initial avec ≥ 270 bars. Le moyen RAPACE : Robinet, Armement, Pression, Ajustement, Code, Étanchéité."
+  },
+  {
+   "id": "ari-02",
+   "theme": "ARI et engagement",
+   "fiche": "rdeb-ari",
+   "sdis34": true,
+   "q": "À quelle pression l'avertisseur pneumatique d'un ARI se déclenche-t-il ?",
+   "choix": [
+    "30 bars",
+    "55 bars",
+    "100 bars",
+    "150 bars"
+   ],
+   "bonne": 1,
+   "explication": "À 55 bars (90 dB, au moins 10 s). C'est aussi la limite entre la zone blanche (travail) et la zone rouge (sécurité) du cadran.",
+   "fixe": true
+  },
+  {
+   "id": "ari-03",
+   "theme": "ARI et engagement",
+   "fiche": "rdeb-ari",
+   "sdis34": true,
+   "q": "Quel volume d'air contient une bouteille type IV de 7,2 L gonflée à 300 bars ?",
+   "choix": [
+    "1 440 L",
+    "1 800 L",
+    "2 160 L",
+    "3 000 L"
+   ],
+   "bonne": 2,
+   "explication": "7,2 L × 300 bars = 2 160 L. La bouteille type II de 6 L en contient 1 800.",
+   "fixe": true
+  },
+  {
+   "id": "ari-04",
+   "theme": "ARI et engagement",
+   "fiche": "rdeb-controle",
+   "sdis34": true,
+   "q": "Quand déclenche-t-on manuellement l'appel de détresse ?",
+   "choix": [
+    "Après 1 minute",
+    "Quand le message reste 3 fois sans réponse",
+    "À 100 bars",
+    "À la demande de la victime"
+   ],
+   "bonne": 1,
+   "explication": "L'appel est déclenché manuellement quand le message de détresse reste 3 fois sans réponse."
+  },
+  {
+   "id": "hyd-01",
+   "theme": "Hydraulique",
+   "fiche": "rdmi-hydraulique",
+   "sdis34": true,
+   "q": "Quelle perte de pression l'établissement subit-il pour 10 m de dénivelé en montant ?",
+   "choix": [
+    "0,1 bar",
+    "1 bar",
+    "2,5 bars",
+    "Aucune : seul le débit compte"
+   ],
+   "bonne": 1,
+   "explication": "Environ 1 bar de perte par 10 m en montant, et 1 bar de gain par 10 m en descendant. Compter aussi environ 1 bar par pièce de jonction."
+  },
+  {
+   "id": "hyd-02",
+   "theme": "Hydraulique",
+   "fiche": "rdmi-hydraulique",
+   "sdis34": true,
+   "q": "Quelle pression de refoulement pour un injecteur proportionneur ?",
+   "choix": [
+    "4 bars",
+    "6 bars",
+    "8 bars",
+    "10 bars"
+   ],
+   "bonne": 3,
+   "explication": "10 bars pour l'injecteur proportionneur, 6 bars pour une lance (LDV), une lance rideau mobile ou une lance canon.",
+   "fixe": true
+  },
+  {
+   "id": "hyd-03",
+   "theme": "Hydraulique",
+   "fiche": "rdmi-hydraulique",
+   "sdis34": true,
+   "q": "Les pertes de charge sont proportionnelles à…",
+   "choix": [
+    "Au débit",
+    "Au carré du débit",
+    "À la pression statique",
+    "Au diamètre"
+   ],
+   "bonne": 1,
+   "explication": "À la longueur et au carré du débit, et inversement proportionnelles au diamètre. Elles sont indépendantes de la pression."
+  },
+  {
+   "id": "hyd-04",
+   "theme": "Hydraulique",
+   "fiche": "rdmi-hydraulique",
+   "sdis34": true,
+   "q": "Quel débit nominal pour un PEI sous pression sur une conduite de Ø 100 mm ?",
+   "choix": [
+    "30 m³/h",
+    "60 m³/h",
+    "120 m³/h",
+    "180 m³/h"
+   ],
+   "bonne": 1,
+   "explication": "Ø 100 mm : 60 m³/h (1 000 l/min). Ø 80 mm : 30 m³/h. Ø 150 mm : 120 m³/h.",
+   "fixe": true
+  },
+  {
+   "id": "pj-01",
+   "theme": "Pièces de jonction",
+   "fiche": "cours-pieces-jonction",
+   "sdis34": false,
+   "q": "Combien y a-t-il de catégories de pièces de jonction ?",
+   "choix": [
+    "Quatre",
+    "Cinq",
+    "Six",
+    "Huit"
+   ],
+   "bonne": 2,
+   "explication": "Six : raccords, retenues, coudes d'alimentation, vannes, divisions, collecteurs d'alimentation.",
+   "fixe": true
+  },
+  {
+   "id": "pj-02",
+   "theme": "Pièces de jonction",
+   "fiche": "cours-pieces-jonction",
+   "sdis34": false,
+   "q": "Que signifie DSP ?",
+   "choix": [
+    "Dispositif de Sécurité Pompier",
+    "Dubois Spécial Paris",
+    "Double Serrage Progressif",
+    "Dispositif Symétrique Pivotant"
+   ],
+   "bonne": 1,
+   "explication": "Dubois Spécial Paris : raccord symétrique de Ø 40 et 65, qui équipe la majorité des tuyaux d'extinction de Ø 45 et 70."
+  },
+  {
+   "id": "pj-03",
+   "theme": "Pièces de jonction",
+   "fiche": "cours-pieces-jonction",
+   "sdis34": false,
+   "q": "Que signifie GFR ?",
+   "choix": [
+    "Gros Filet Rond",
+    "Grand Format Renforcé",
+    "Giclage Fin Réglable",
+    "Garniture Fixe Rapide"
+   ],
+   "bonne": 0,
+   "explication": "Gros Filet Rond : raccord à vis (demi-raccord mâle et femelle), serré à la clé tricoise."
+  },
+  {
+   "id": "pj-04",
+   "theme": "Pièces de jonction",
+   "fiche": "cours-pieces-jonction",
+   "sdis34": false,
+   "q": "À quoi sert une retenue ?",
+   "choix": [
+    "Diviser un établissement",
+    "Alimenter les engins par les bouches d'incendie",
+    "Réduire un diamètre",
+    "Purger une colonne sèche"
+   ],
+   "bonne": 1,
+   "explication": "La retenue alimente les engins d'incendie par les bouches d'incendie (BI) : un demi-raccord Keyser de 100 mm et deux sorties de 65 mm."
+  },
+  {
+   "id": "pj-05",
+   "theme": "Pièces de jonction",
+   "fiche": "cours-pieces-jonction",
+   "sdis34": false,
+   "q": "Quel est le diamètre d'une vanne de pied d'échelle ?",
+   "choix": [
+    "20 mm",
+    "40 mm",
+    "65 mm",
+    "100 mm"
+   ],
+   "bonne": 2,
+   "explication": "Vanne de pied d'échelle : Ø 65 mm, avec robinet de purge et entrée de l'eau d'un côté.",
+   "fixe": true
+  },
+  {
+   "id": "pj-06",
+   "theme": "Pièces de jonction",
+   "fiche": "cours-pieces-jonction",
+   "sdis34": false,
+   "q": "Un collecteur d'alimentation sert à…",
+   "choix": [
+    "Diviser un établissement en trois",
+    "Alimenter par 1 ou 2 établissements de 70 un engin ou une colonne sèche de 100",
+    "Réduire de 65 à 40",
+    "Vidanger une colonne sèche"
+   ],
+   "bonne": 1,
+   "explication": "Il alimente un engin ou une colonne sèche de 100 par un ou deux établissements de 70 (2 × 65 / 100 ou 2 × 100 / 100)."
+  },
+  {
+   "id": "gdo-01",
+   "theme": "Eau et fumées (GDO)",
+   "fiche": "gdoinc-eau",
+   "sdis34": false,
+   "q": "Combien d'énergie 1 g d'eau par seconde absorbe-t-il, s'il se vaporise entièrement ?",
+   "choix": [
+    "≈ 0,3 kW",
+    "≈ 2,8 kW",
+    "≈ 28 kW",
+    "≈ 280 kW"
+   ],
+   "bonne": 1,
+   "explication": "Environ 2 866 J par gramme (de 20 à 300 °C), soit ≈ 2,8 kW. La vaporisation représente l'essentiel de l'effet.",
+   "fixe": true
+  },
+  {
+   "id": "gdo-02",
+   "theme": "Eau et fumées (GDO)",
+   "fiche": "gdoinc-eau",
+   "sdis34": false,
+   "q": "Quel volume de vapeur produit 1 L d'eau vaporisé à 100 °C ?",
+   "choix": [
+    "≈ 17 L",
+    "≈ 170 L",
+    "≈ 1 700 L",
+    "≈ 17 000 L"
+   ],
+   "bonne": 2,
+   "explication": "Environ 1 700 L (1,7 m³) : c'est ce qui permet d'inerter un volume en feu.",
+   "fixe": true
+  },
+  {
+   "id": "gdo-03",
+   "theme": "Eau et fumées (GDO)",
+   "fiche": "gdoinc-eau",
+   "sdis34": false,
+   "q": "Quels sont les deux modes fondamentaux d'action de l'eau sur un feu de volume ?",
+   "choix": [
+    "Soufflage et dispersion",
+    "Refroidissement et inertage",
+    "Étouffement et soufflage",
+    "Dispersion et refroidissement"
+   ],
+   "bonne": 1,
+   "explication": "Pour les feux de volume : le refroidissement et l'inertage. Le soufflage et la dispersion sont les autres effets de l'eau."
+  },
+  {
+   "id": "gdo-04",
+   "theme": "Eau et fumées (GDO)",
+   "fiche": "gdoinc-eau",
+   "sdis34": false,
+   "q": "Quelle puissance une LDV à 250 L/min absorbe-t-elle en réalité (rendement réaliste) ?",
+   "choix": [
+    "≈ 400 kW",
+    "≈ 4 MW",
+    "≈ 12 MW",
+    "≈ 40 MW"
+   ],
+   "bonne": 1,
+   "explication": "Environ 4 MW (rendement réaliste de 30 %), contre 11,9 MW en théorie : toute l'eau ne se vaporise pas.",
+   "fixe": true
+  },
+  {
+   "id": "gdo-05",
+   "theme": "Eau et fumées (GDO)",
+   "fiche": "gdo-ege",
+   "sdis34": false,
+   "q": "Qu'est-ce qui distingue un EGE d'un UVCE ?",
+   "choix": [
+    "L'EGE n'a pas de flamme",
+    "La flamme pilote existe déjà",
+    "L'EGE ne se produit qu'en ville",
+    "L'EGE ne dégage pas de chaleur"
+   ],
+   "bonne": 1,
+   "explication": "Dans l'EGE, la flamme pilote existe déjà : c'est comparable à une fuite de gaz en milieu ouvert."
+  },
+  {
+   "id": "gdo-06",
+   "theme": "Eau et fumées (GDO)",
+   "fiche": "gdo-ege",
+   "sdis34": false,
+   "q": "Quelle hygrométrie est favorable à un EGE ?",
+   "choix": [
+    "Inférieure à 30 %",
+    "Autour de 50 %",
+    "Supérieure à 70 %",
+    "Aucune importance"
+   ],
+   "bonne": 0,
+   "explication": "Hygrométrie < 30 %, températures > 35 °C à l'ombre et vent faible ou modéré (20 à 50 km/h)."
+  },
+  {
+   "id": "gdo-07",
+   "theme": "Eau et fumées (GDO)",
+   "fiche": "gdotox-fumees",
+   "sdis34": false,
+   "q": "Quelle couleur de fumée est sans danger pour la santé ?",
+   "choix": [
+    "Blanche",
+    "Grise",
+    "Noire",
+    "Aucune : toutes sont dangereuses"
+   ],
+   "bonne": 3,
+   "explication": "Blanche, grise ou noire, la fumée est dangereuse. La couleur indique seulement sa composition (aérosols, particules)."
+  }
+ ]
+}

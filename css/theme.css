@@ -1697,3 +1697,32 @@ html[data-theme] .calc-formule-corps ul { margin: 0; padding-left: 18px; }
 html[data-theme] .calc-formule-corps li { margin: 7px 0; line-height: 1.5; overflow-wrap: anywhere; }
 html[data-theme] .calc-formule-ex { margin: 12px 0 0; padding: 10px 12px; border-left: 4px solid var(--t-accent); background: var(--t-s2); border-radius: 8px; line-height: 1.5; }
 html[data-theme] .calc-formule-note { margin: 10px 0 0; color: var(--t-muted); font-size: .9em; line-height: 1.45; }
+
+/* ---------- Question du jour (accueil) ---------- */
+.qdj { background: var(--t-s1); border: 1px solid var(--t-line); border-radius: var(--t-radius, 18px); padding: 14px 16px 16px; margin: 0 0 14px; color: var(--t-ink); }
+.qdj-tete { display: flex; align-items: center; gap: 10px; }
+.qdj-titre { margin: 0; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--t-accent); flex: 1; }
+.qdj-serie { font-size: 13px; font-weight: 700; color: var(--t-muted); }
+.qdj-fermer { flex: none; width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: var(--t-muted); font-size: 16px; cursor: pointer; }
+.qdj-theme { margin: 6px 0 0; font-size: 13px; color: var(--t-muted); }
+.qdj-q { margin: 4px 0 12px; font-size: 17px; font-weight: 700; line-height: 1.35; }
+.qdj-choix { display: grid; gap: 8px; }
+.qdj-choix-btn { min-height: 44px; padding: 10px 14px; text-align: left; font: inherit; font-size: 15px; color: var(--t-ink); background: var(--t-s2); border: 1px solid var(--t-line2); border-radius: var(--t-radius-s, 12px); cursor: pointer; }
+.qdj-choix-btn:disabled { opacity: 1; cursor: default; }
+.qdj-choix-btn.qdj-bon { background: var(--t-ok-soft); border-color: var(--t-ok); font-weight: 700; }
+.qdj-choix-btn.qdj-faux { background: var(--t-accent-soft); border-color: var(--t-accent); }
+.qdj-retour { margin-top: 12px; }
+.qdj-verdict { margin: 0; font-weight: 800; font-size: 15px; outline: none; }
+.qdj-verdict-bon { color: var(--t-ok); }
+.qdj-verdict-faux { color: var(--t-accent); }
+.qdj-expl { margin: 6px 0 0; font-size: 14px; line-height: 1.5; }
+.qdj-rappel { margin: 6px 0 0; font-size: 13px; color: var(--t-muted); }
+.qdj-compact { margin: 8px 0 0; font-size: 14px; }
+.qdj-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.qdj-btn { min-height: 44px; padding: 8px 16px; font: inherit; font-size: 14px; font-weight: 700; color: var(--t-ink); background: var(--t-s2); border: 1px solid var(--t-line2); border-radius: var(--t-radius-s, 12px); cursor: pointer; }
+.qdj-btn-fiche { background: var(--t-accent-bg); color: var(--t-accent-ink); border-color: transparent; }
+.qdj button { margin: 0; }
+.qdj .qdj-titre { margin: 0; padding: 0; border: 0; background: none; text-shadow: none; }
+.qdj .qdj-titre::after, .qdj .qdj-titre::before { content: none; }
+.qdj-fermer { display: inline-flex; align-items: center; justify-content: center; padding: 0; }
+.qdj-choix-btn { width: 100%; }
