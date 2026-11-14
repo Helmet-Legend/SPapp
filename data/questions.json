@@ -465,6 +465,526 @@
    ],
    "bonne": 3,
    "explication": "Blanche, grise ou noire, la fumée est dangereuse. La couleur indique seulement sa composition (aérosols, particules)."
+  },
+  {
+   "id": "ech-10",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-coulisses",
+   "sdis34": true,
+   "q": "Quel est le poids maximum d'une échelle à coulisse 2 plans grand modèle ?",
+   "choix": [
+    "25 kg",
+    "35 kg",
+    "45 kg",
+    "70 kg"
+   ],
+   "bonne": 2,
+   "explication": "45 kg, qui se manœuvre à un binôme. Le petit modèle (25 kg) se manœuvre individuellement ; la coulisse 3 plans pèse 70 kg (PM) ou 91 kg (GM).",
+   "fixe": true
+  },
+  {
+   "id": "ech-11",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-commandement",
+   "sdis34": true,
+   "q": "Que commande l'ordre « Testez ! » ?",
+   "choix": [
+    "Tester la corde de l'échelle à coulisse",
+    "Tester la résistance de la structure en se suspendant à l'échelle à crochets",
+    "Tester le verrouillage des parachutes",
+    "Tester la verticalité de l'échelle"
+   ],
+   "bonne": 1,
+   "explication": "« Testez ! » : tester la résistance de la structure en se suspendant à l'échelle à crochets, avant d'engager quelqu'un."
+  },
+  {
+   "id": "ech-12",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-comparatif",
+   "sdis34": true,
+   "q": "Que dit le RDEP du sauvetage par portage à dos sur une échelle ?",
+   "choix": [
+    "Il est autorisé pour une victime légère",
+    "Il est réservé aux échelles à crochets",
+    "Il n'est pas autorisé",
+    "Il est autorisé sur ordre du COS"
+   ],
+   "bonne": 2,
+   "explication": "Le sauvetage par portage à dos n'est pas autorisé. En sauvetage, 2 personnes au plus sur le même plan."
+  },
+  {
+   "id": "ech-13",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-coulisses",
+   "sdis34": true,
+   "q": "Qui est le coordinateur de la mise en œuvre d'une échelle à coulisse 3 plans ?",
+   "choix": [
+    "Le chef d'agrès",
+    "Le conducteur",
+    "L'équipier le plus ancien",
+    "Le COS"
+   ],
+   "bonne": 0,
+   "explication": "Le chef d'agrès ; en son absence, le chef d'équipe du 1er binôme. Aucune partie du corps ne doit se trouver dans le prolongement des arcs-boutants."
+  },
+  {
+   "id": "ech-14",
+   "theme": "Échelles à mains",
+   "fiche": "echelles-coulisses",
+   "sdis34": true,
+   "q": "Une coulisse 2 plans « désolidarisée » donne deux échelles simples. Combien de personnes par échelle ?",
+   "choix": [
+    "Une",
+    "Deux",
+    "Trois",
+    "Autant que de plans"
+   ],
+   "bonne": 0,
+   "explication": "Accès limité à une personne par échelle, pour des sauvetages ou mises en sécurité multiples à hauteur limitée."
+  },
+  {
+   "id": "ari-05",
+   "theme": "ARI et engagement",
+   "fiche": "rdeb-autonomie",
+   "sdis34": true,
+   "q": "À quel type d'engagement correspond une consommation d'environ 105 l/min ?",
+   "choix": [
+    "Survie dans l'attente des secours",
+    "Engagement à vue",
+    "Engagement avec ligne de vie",
+    "Sauvetage"
+   ],
+   "bonne": 2,
+   "explication": "≈ 105 l/min : travail continu de 15 minutes maximum, en général un engagement avec ligne de vie. 10 l/min = survie ; 50 = engagement à vue ; 135 = sauvetage."
+  },
+  {
+   "id": "ari-06",
+   "theme": "ARI et engagement",
+   "fiche": "rdeb-autonomie",
+   "sdis34": true,
+   "q": "Quelle réserve décompte-t-on de la pression pour calculer l'autonomie d'engagement ?",
+   "choix": [
+    "30 bars",
+    "50 bars",
+    "80 bars",
+    "100 bars"
+   ],
+   "bonne": 1,
+   "explication": "On retire 50 bars de réserve. Autonomie = pression × volume ÷ consommation (exemple : 250 bars × 7,2 L ÷ 105 l/min = 17 min).",
+   "fixe": true
+  },
+  {
+   "id": "ari-07",
+   "theme": "ARI et engagement",
+   "fiche": "rdsmes-detresse",
+   "sdis34": true,
+   "q": "Après combien de temps de difficulté un binôme envoie-t-il un message de détresse ?",
+   "choix": [
+    "Environ 30 secondes",
+    "Environ 2 minutes",
+    "Environ 5 minutes",
+    "Dès l'alarme de l'ARI"
+   ],
+   "bonne": 0,
+   "explication": "Après environ 30 secondes de difficulté, selon le mnémotechnique NELAR (Nom–Engin–Localisation, Air, Renfort)."
+  },
+  {
+   "id": "ari-08",
+   "theme": "ARI et engagement",
+   "fiche": "rdsmes-detresse",
+   "sdis34": true,
+   "q": "Par quels mots débute le message de détresse ?",
+   "choix": [
+    "« MAYDAY, MAYDAY, MAYDAY »",
+    "« ALERTE, ALERTE, ALERTE »",
+    "« URGENT, URGENT, URGENT »",
+    "« DÉTRESSE, DÉTRESSE »"
+   ],
+   "bonne": 2,
+   "explication": "« URGENT, URGENT, URGENT » : il prioritise la communication et fait veiller la fréquence par tous."
+  },
+  {
+   "id": "ari-09",
+   "theme": "ARI et engagement",
+   "fiche": "rdsmes-detresse",
+   "sdis34": true,
+   "q": "Combien de temps appuyer sur le bouton jaune du portatif pour émettre un appel de détresse ?",
+   "choix": [
+    "1 seconde",
+    "Au moins 3 secondes",
+    "Au moins 10 secondes",
+    "Un appui bref suffit"
+   ],
+   "bonne": 1,
+   "explication": "Au moins 3 secondes, jusqu'à la tonalité. Si aucun terminal n'acquitte au bout de 20 secondes, la tonalité s'arrête et l'émetteur recommence.",
+   "fixe": true
+  },
+  {
+   "id": "ari-10",
+   "theme": "ARI et engagement",
+   "fiche": "rdeb-controle",
+   "sdis34": true,
+   "q": "Dès quelle zone la balise de sécurité et de détresse (BSD) est-elle activée ?",
+   "choix": [
+    "Zone d'exclusion",
+    "Zone contrôlée",
+    "Zone de soutien",
+    "À l'entrée du local"
+   ],
+   "bonne": 2,
+   "explication": "Les BSD et ICS sont activés dès la zone de soutien, avant l'engagement."
+  },
+  {
+   "id": "lif-01",
+   "theme": "Feux de liquides inflammables",
+   "fiche": "mousses-lif",
+   "sdis34": true,
+   "q": "Quel taux d'application pour un feu d'hydrocarbures (non miscibles), sans indication du POI ?",
+   "choix": [
+    "5 L/min/m²",
+    "10 L/min/m²",
+    "20 L/min/m²",
+    "40 L/min/m²"
+   ],
+   "bonne": 1,
+   "explication": "10 L/min/m² pour les hydrocarbures, 20 L/min/m² pour les liquides polaires (alcools).",
+   "fixe": true
+  },
+  {
+   "id": "lif-02",
+   "theme": "Feux de liquides inflammables",
+   "fiche": "mousses-lif",
+   "sdis34": true,
+   "q": "Pendant combien de temps minimum assure-t-on la continuité en émulseur à partir du « top extinction » ?",
+   "choix": [
+    "10 minutes",
+    "20 minutes",
+    "40 minutes",
+    "90 minutes"
+   ],
+   "bonne": 2,
+   "explication": "40 minutes minimum. Si le débit d'extinction ne peut pas être tenu, on applique la moitié du débit en temporisation.",
+   "fixe": true
+  },
+  {
+   "id": "lif-03",
+   "theme": "Feux de liquides inflammables",
+   "fiche": "mousses-lif",
+   "sdis34": true,
+   "q": "Pour un liquide polaire miscible à l'eau, quelle application de la mousse ?",
+   "choix": [
+    "Directe sur le liquide",
+    "Indirecte obligatoire",
+    "Au jet diffusé",
+    "Sans mousse, à l'eau seule"
+   ],
+   "bonne": 1,
+   "explication": "Application indirecte obligatoire, avec un émulseur polyvalent AR (alcool résistant) à 6 %."
+  },
+  {
+   "id": "lif-04",
+   "theme": "Feux de liquides inflammables",
+   "fiche": "mousses-lif",
+   "sdis34": true,
+   "q": "Quel débit d'extinction pour 200 m² d'hydrocarbures en feu ?",
+   "choix": [
+    "200 L/min",
+    "1 000 L/min",
+    "2 000 L/min",
+    "4 000 L/min"
+   ],
+   "bonne": 2,
+   "explication": "200 m² × 10 L/min/m² = 2 000 L/min de solution moussante, soit 60 L d'émulseur par minute à 3 %.",
+   "fixe": true
+  },
+  {
+   "id": "gdo-08",
+   "theme": "Phénomènes thermiques",
+   "fiche": "gdoinc-phenomenes",
+   "sdis34": false,
+   "q": "Dans l'habitat actuel, en combien de temps un flashover peut-il survenir après l'éclosion si l'air est suffisant ?",
+   "choix": [
+    "30 secondes",
+    "3 à 5 minutes",
+    "15 à 20 minutes",
+    "Plus d'une heure"
+   ],
+   "bonne": 1,
+   "explication": "3 à 5 minutes après l'éclosion, un peu plus si la ventilation est moindre. Toutes les pièces contiennent assez de combustible pour y arriver."
+  },
+  {
+   "id": "gdo-09",
+   "theme": "Phénomènes thermiques",
+   "fiche": "gdoinc-phenomenes",
+   "sdis34": false,
+   "q": "Quel est le déclencheur d'un backdraft ?",
+   "choix": [
+    "Une étincelle nouvelle",
+    "Un apport soudain d'air (comburant)",
+    "Une montée de la température extérieure",
+    "L'arrivée de l'eau"
+   ],
+   "bonne": 1,
+   "explication": "Le comburant : l'énergie est déjà présente, c'est l'apport d'air (fenêtre qui se brise, porte ouverte sans précaution) qui crée le mélange explosif."
+  },
+  {
+   "id": "gdo-10",
+   "theme": "Phénomènes thermiques",
+   "fiche": "gdoinc-phenomenes",
+   "sdis34": false,
+   "q": "Comment appelle-t-on les rouleaux de flammes à l'interface air/fumées avant un flashover ?",
+   "choix": [
+    "Fire devil",
+    "Roll-over",
+    "Blow torching",
+    "Ghosting seul"
+   ],
+   "bonne": 1,
+   "explication": "Le roll-over. Avant lui, apparaissent les flammes sporadiques (« anges danseurs », ghosting flames)."
+  },
+  {
+   "id": "gdo-11",
+   "theme": "Phénomènes thermiques",
+   "fiche": "gdoinc-phenomenes",
+   "sdis34": false,
+   "q": "Quelle puissance suffit à un flashover dans une pièce de 3,6 × 2,4 × 2,4 m avec une porte de 0,8 × 2 m ?",
+   "choix": [
+    "50 à 100 kW",
+    "500 à 1 000 kW",
+    "5 000 à 10 000 kW",
+    "Plus de 50 000 kW"
+   ],
+   "bonne": 1,
+   "explication": "500 à 1 000 kW (formule de Thomas), à comparer aux 1 000 à 2 000 kW d'un canapé : le risque est omniprésent."
+  },
+  {
+   "id": "gdo-12",
+   "theme": "Phénomènes thermiques",
+   "fiche": "gdotox-cagoule",
+   "sdis34": false,
+   "q": "Que filtre la cagoule de protection filtrante ?",
+   "choix": [
+    "Les gaz toxiques",
+    "Les suies et particules fines",
+    "Le monoxyde de carbone",
+    "Rien : elle protège seulement de la chaleur"
+   ],
+   "bonne": 1,
+   "explication": "Les suies et particules fines, pas les gaz. Elle ne remplace pas l'ARI quand celui-ci est nécessaire."
+  },
+  {
+   "id": "fdf-01",
+   "theme": "Feux de forêts",
+   "fiche": "gdo-securite",
+   "sdis34": false,
+   "q": "Sur un camion feux de forêts, quel est l'espace de survie réflexe ?",
+   "choix": [
+    "Le plateau arrière",
+    "Le marchepied",
+    "La cabine",
+    "Sous l'engin"
+   ],
+   "bonne": 2,
+   "explication": "La cabine. Vitres et volets fermés, arceaux, autoprotection et air respirable vérifiés à chaque prise de service."
+  },
+  {
+   "id": "fdf-02",
+   "theme": "Feux de forêts",
+   "fiche": "gdo-securite",
+   "sdis34": false,
+   "q": "Sur un feu de récoltes ou de chaumes, où progresse-t-on ?",
+   "choix": [
+    "Dans le non-brûlé, devant le front",
+    "Uniquement dans le brûlé",
+    "Au choix du chef d'agrès",
+    "Sur les crêtes"
+   ],
+   "bonne": 1,
+   "explication": "Uniquement dans le brûlé. On ne quitte jamais une lance alimentée et l'établissement reste la ligne de vie par mauvaise visibilité."
+  },
+  {
+   "id": "fdf-03",
+   "theme": "Feux de forêts",
+   "fiche": "gdo-meteo",
+   "sdis34": false,
+   "q": "Selon la règle des 3 %, à quelle vitesse se propage le feu en conditions moyennes ?",
+   "choix": [
+    "3 % du vent moyen",
+    "30 % du vent moyen",
+    "3 km/h quel que soit le vent",
+    "3 fois le vent moyen"
+   ],
+   "bonne": 0,
+   "explication": "Vitesse de propagation ≈ 3 % de la vitesse du vent moyen, à nuancer selon l'hygrométrie. Les rafales valent environ 2 × le vent moyen."
+  },
+  {
+   "id": "fdf-04",
+   "theme": "Feux de forêts",
+   "fiche": "gdo-meteo",
+   "sdis34": false,
+   "q": "Comment le relief influence-t-il la propagation du feu ?",
+   "choix": [
+    "En pente ascendante il accélère, en descente il ralentit",
+    "En pente ascendante il ralentit",
+    "Le relief n'a aucun effet",
+    "Il accélère toujours dans les creux"
+   ],
+   "bonne": 0,
+   "explication": "En pente ascendante le feu accélère (préchauffage par rayonnement), en descente il ralentit. Plus la zone est resserrée, plus il y passe vite (effet venturi)."
+  },
+  {
+   "id": "fdf-05",
+   "theme": "Feux de forêts",
+   "fiche": "gdo-meteo",
+   "sdis34": false,
+   "q": "En dessous de quelle humidité relative l'éclosion et la propagation sont-elles très aggravées ?",
+   "choix": [
+    "10 %",
+    "30 %",
+    "50 %",
+    "70 %"
+   ],
+   "bonne": 1,
+   "explication": "< 30 % : éclosion et propagation très aggravées (jusqu'à 5-10 % en foehn). Au-delà de 50 %, l'éclosion est faible.",
+   "fixe": true
+  },
+  {
+   "id": "mou-01",
+   "theme": "Mousses",
+   "fiche": "mousses-taux",
+   "sdis34": false,
+   "q": "5 L d'émulseur mélangés à 95 L d'eau : quel est le taux de concentration ?",
+   "choix": [
+    "0,5 %",
+    "5 %",
+    "19 %",
+    "95 %"
+   ],
+   "bonne": 1,
+   "explication": "Taux = volume d'émulseur ÷ volume de solution moussante = 5 / 100 = 5 %.",
+   "fixe": true
+  },
+  {
+   "id": "mou-02",
+   "theme": "Mousses",
+   "fiche": "mousses-taux",
+   "sdis34": false,
+   "q": "Quelle est la plage du moyen foisonnement (M.F.) ?",
+   "choix": [
+    "Moins de 20",
+    "20 à 200",
+    "200 à 1 000",
+    "Plus de 1 000"
+   ],
+   "bonne": 1,
+   "explication": "Bas foisonnement < 20, moyen foisonnement 20 à 200, haut foisonnement 200 à 1 000.",
+   "fixe": true
+  },
+  {
+   "id": "mou-03",
+   "theme": "Mousses",
+   "fiche": "mousses-taux",
+   "sdis34": false,
+   "q": "Que mesure le taux de foisonnement ?",
+   "choix": [
+    "Le volume d'émulseur sur le volume d'eau",
+    "Le volume de mousse sur le volume de solution moussante",
+    "Le débit de la lance",
+    "La durée de vie de la mousse"
+   ],
+   "bonne": 1,
+   "explication": "Volume de mousse ÷ volume de solution moussante : c'est la grosseur des bulles."
+  },
+  {
+   "id": "ven-01",
+   "theme": "Ventilation et ouverture",
+   "fiche": "vent-outils",
+   "sdis34": false,
+   "q": "Où pose-t-on le stoppeur de fumée ?",
+   "choix": [
+    "Sur le toit",
+    "Dans l'encadrement de la porte palière, avant de l'ouvrir",
+    "Devant la fenêtre d'une façade exposée",
+    "Au pied de l'escalier"
+   ],
+   "bonne": 1,
+   "explication": "Dans l'encadrement de la porte palière : il laisse passer le binôme et le tuyau mais bloque les fumées en partie haute et réduit l'apport d'air."
+  },
+  {
+   "id": "ven-02",
+   "theme": "Ventilation et ouverture",
+   "fiche": "vent-outils",
+   "sdis34": false,
+   "q": "Quel danger surveiller en continu avec un ventilateur thermique placé à l'intérieur ?",
+   "choix": [
+    "Le bruit",
+    "Le monoxyde de carbone (CO)",
+    "Le manque de lumière",
+    "La condensation"
+   ],
+   "bonne": 1,
+   "explication": "Le CO : si la ventilation devient inefficace, il grimpe alors que l'air semble brassé. Les accidents graves viennent de ventilateurs thermiques à l'intérieur."
+  },
+  {
+   "id": "ven-03",
+   "theme": "Ventilation et ouverture",
+   "fiche": "vent-outils",
+   "sdis34": false,
+   "q": "À quoi sert le stoppeur de vent ?",
+   "choix": [
+    "À supprimer le « blow torching » par une fenêtre ouverte",
+    "À aspirer les fumées",
+    "À protéger la lance",
+    "À éclairer la façade"
+   ],
+   "bonne": 0,
+   "explication": "Toile déroulée devant une fenêtre ouverte d'une façade très exposée : le vent la plaque contre la fenêtre et supprime le blow torching."
+  },
+  {
+   "id": "hal-01",
+   "theme": "Halligan",
+   "fiche": "halligan",
+   "sdis34": false,
+   "q": "En quelle année l'Halligan Tool a-t-il été mis au point par le Lieutenant Halligan (FDNY) ?",
+   "choix": [
+    "1928",
+    "1948",
+    "1968",
+    "1988"
+   ],
+   "bonne": 1,
+   "explication": "En 1948. L'outil s'utilise en binôme, la hache est l'outil complémentaire indispensable.",
+   "fixe": true
+  },
+  {
+   "id": "hal-02",
+   "theme": "Halligan",
+   "fiche": "halligan",
+   "sdis34": false,
+   "q": "Quelles sont les 3 étapes d'utilisation de l'Halligan ?",
+   "choix": [
+    "Frapper – Tirer – Pousser",
+    "Écarter – Engager – Forcer",
+    "Engager – Frapper – Ouvrir",
+    "Viser – Frapper – Forcer"
+   ],
+   "bonne": 1,
+   "explication": "Écarter, engager, forcer : une technique de bras de levier, pas de force brute."
+  },
+  {
+   "id": "hal-03",
+   "theme": "Halligan",
+   "fiche": "halligan",
+   "sdis34": false,
+   "q": "Que doit-on toujours pouvoir faire d'une porte forcée ?",
+   "choix": [
+    "La laisser ouverte",
+    "La refermer",
+    "La démonter",
+    "La remplacer"
+   ],
+   "bonne": 1,
+   "explication": "La refermer, pour éviter l'apport d'air et la propagation de l'incendie et des fumées. Gants et lunettes de protection obligatoires."
   }
  ]
 }

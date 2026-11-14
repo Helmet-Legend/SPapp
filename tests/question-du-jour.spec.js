@@ -34,9 +34,9 @@ async function questionAffichee(page) {
     return questions.find(q => q.q === texte);
 }
 
-test('banque : 30 questions bien formées, fiches existantes, identifiants uniques', () => {
+test('banque : au moins 60 questions bien formées, fiches existantes, identifiants uniques', () => {
     const ids = new Set(nav.pages.map(p => p.id));
-    expect(questions.length).toBeGreaterThanOrEqual(30);
+    expect(questions.length).toBeGreaterThanOrEqual(60);
     expect(new Set(questions.map(q => q.id)).size).toBe(questions.length);
     for (const q of questions) {
         expect(q.choix, q.id).toHaveLength(4);
@@ -114,9 +114,10 @@ test('une réponse fausse programme un rappel à J+3, et la question revient ce 
     expect(e.erreurs[id]).toBeUndefined();
 });
 
-test('30 jours de suite : chaque question sort une fois, sans doublon', async ({ app }) => {
+test('une question par jour sur tout un cycle : chaque question sort une fois, sans doublon', async ({ app }) => {
+    test.setTimeout(180000);
     const vues = [];
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < questions.length; i++) {
         const q = await questionAffichee(app);
         vues.push(q.id);
         const e = await lireEtat(app);
@@ -124,7 +125,7 @@ test('30 jours de suite : chaque question sort une fois, sans doublon', async ({
         await ecrireEtat(app, e);
         await recharger(app);
     }
-    expect(new Set(vues).size).toBe(30);
+    expect(new Set(vues).size).toBe(questions.length);
 });
 
 test('« Encore une » propose une autre question sans toucher à la série', async ({ app }) => {
