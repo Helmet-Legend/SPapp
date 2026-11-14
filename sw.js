@@ -1,5 +1,5 @@
-// Vulcain Service Worker v1.69.91
-const CACHE_NAME = 'vulcain-v1.69.91';
+// Vulcain Service Worker v1.69.92
+const CACHE_NAME = 'vulcain-v1.69.92';
 const urlsToCache = [
   './',
   './index.html',
@@ -251,8 +251,10 @@ const urlsToCache = [
   './js/pwa-theme.js',
   './js/theme.js',
   './js/navigation.js',
+  './js/question-du-jour.js',
   './js/admin-acces.js',
   './data/navigation.json',
+  './data/questions.json',
   './guides-gmu.js',
   './affichage-gmu.js',
   './gmu-integration.js',
