@@ -55,7 +55,8 @@ test('Réglages : thèmes en 3 cartes avec aperçu, le choix s\'applique', async
 
 test('Réglages : notifications en interrupteurs, version affichée', async ({ app }) => {
     await app.evaluate(() => ouvrirReglages());
-    await expect(app.locator('#reglagesModal [role="switch"] .reglages-inter')).toHaveCount(2);
+    // 2 notifications (nouveautés, messages) + l'interrupteur « Question du jour »
+    await expect(app.locator('#reglagesModal [role="switch"] .reglages-inter')).toHaveCount(3);
     await expect(app.locator('#reglagesModal .reglages-version')).toContainText('Vulcain v');
     const version = await app.evaluate(() => document.querySelector('#reglagesModal .reglages-version').textContent.match(/v([\d.]+)/)[1]);
     expect(await app.evaluate(() => document.querySelector('.app-footer')?.textContent || '')).toContain(version);
