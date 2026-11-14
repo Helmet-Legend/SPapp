@@ -163,3 +163,19 @@ test('la carte reste lisible en thème sombre sur petit écran, sans débordemen
     const debordement = await app.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     expect(debordement).toBe(false);
 });
+
+test('la toute première question indique qu\'on peut désactiver les questions, puis l\'astuce disparaît', async ({ app }) => {
+    await expect(app.locator('.qdj-astuce')).toContainText('désactiver');
+    await expect(app.locator('.qdj-astuce')).toContainText('Réglages');
+    await repondre(app, true);
+    await expect(app.locator('.qdj-astuce')).toBeVisible();   // toujours là sur cette carte, réponse affichée
+    await recharger(app);
+    await app.click('#qdj .qdj-btn:has-text("Encore une")');
+    await expect(app.locator('.qdj-astuce')).toHaveCount(0);
+    await app.evaluate(() => localStorage.removeItem('vulcain.qdj'));
+    await recharger(app);
+    await app.click('.qdj-btn-desactiver');
+    await expect(app.locator('#qdj')).toBeHidden();
+    await app.click('#reglagesBtn');
+    await expect(app.locator('#qdjSwitch')).toHaveAttribute('aria-checked', 'false');
+});

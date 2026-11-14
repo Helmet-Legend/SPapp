@@ -1726,3 +1726,6 @@ html[data-theme] .calc-formule-note { margin: 10px 0 0; color: var(--t-muted); f
 .qdj .qdj-titre::after, .qdj .qdj-titre::before { content: none; }
 .qdj-fermer { display: inline-flex; align-items: center; justify-content: center; padding: 0; }
 .qdj-choix-btn { width: 100%; }
+.qdj-astuce { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--t-line); }
+.qdj-astuce-texte { margin: 0; font-size: 13px; line-height: 1.45; color: var(--t-muted); }
+.qdj-btn-desactiver { margin-top: 8px; min-height: 40px; font-size: 13px; font-weight: 600; }

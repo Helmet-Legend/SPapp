@@ -27,6 +27,7 @@ const QuestionDuJour = (function () {
     let vueEstDuJour = true;
     let detail = false;                  // réponse et explication visibles (sinon version compacte)
     let jourAffiche = '';
+    let astuceMontree = false;           // la première carte de l'utilisateur rappelle qu'on peut désactiver les questions
 
     /* ---------- Utilitaires ---------- */
     function formater(d) {
@@ -58,6 +59,7 @@ const QuestionDuJour = (function () {
         if (!e || typeof e !== 'object') e = {};
         return {
             off: !!e.off,
+            astuceVue: !!e.astuceVue,
             jour: e.jour || '',
             id: e.id || '',
             ordre: Array.isArray(e.ordre) ? e.ordre : [],
@@ -150,6 +152,8 @@ const QuestionDuJour = (function () {
             }
         }
         noterErreurs(q, juste, jour);
+        astuceMontree = !etat.astuceVue;   // l'astuce reste affichée sur cette première carte, puis disparaît
+        etat.astuceVue = true;
         ecrireEtat();
         detail = true;
         afficher();
@@ -259,6 +263,12 @@ const QuestionDuJour = (function () {
             retour.appendChild(actions);
             carte.appendChild(retour);
         }
+        if (vueEstDuJour && (!etat.astuceVue || astuceMontree)) {
+            const astuce = el('div', 'qdj-astuce');
+            astuce.appendChild(el('p', 'qdj-astuce-texte', '💡 Les questions ne vous intéressent pas ? Vous pouvez les désactiver à tout moment dans Réglages.'));
+            astuce.appendChild(bouton('Désactiver les questions', 'qdj-btn qdj-btn-desactiver', basculer));
+            carte.appendChild(astuce);
+        }
         conteneur.appendChild(carte);
     }
 
@@ -269,6 +279,7 @@ const QuestionDuJour = (function () {
     }
     function basculer() {
         etat.off = !etat.off;
+        astuceMontree = false;
         ecrireEtat();
         try { sessionStorage.removeItem(CLE_MASQUE); } catch (err) { /* ignoré */ }
         majInterrupteur();
