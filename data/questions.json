@@ -985,6 +985,927 @@
    ],
    "bonne": 1,
    "explication": "La refermer, pour éviter l'apport d'air et la propagation de l'incendie et des fumées. Gants et lunettes de protection obligatoires."
+  },
+  {
+   "id": "sf-01",
+   "theme": "Le système feu",
+   "fiche": "gdoinc-systeme-feu",
+   "sdis34": false,
+   "q": "Quel est le quatrième côté du tétraèdre du feu ?",
+   "choix": [
+    "Le combustible",
+    "Les réactions en chaîne",
+    "La pression",
+    "L'humidité"
+   ],
+   "bonne": 1,
+   "explication": "Le triangle du feu (combustible, comburant, énergie d'activation) devient un tétraèdre avec un 4e côté : les réactions en chaîne (radicaux libres)."
+  },
+  {
+   "id": "sf-02",
+   "theme": "Le système feu",
+   "fiche": "gdoinc-systeme-feu",
+   "sdis34": false,
+   "q": "Qu'est-ce qu'un feu couvant (smoldering) ?",
+   "choix": [
+    "Un feu sans fumée",
+    "Une combustion lente, sans flamme, à basse température",
+    "Un feu éteint depuis peu",
+    "Un feu de forêt"
+   ],
+   "bonne": 1,
+   "explication": "Combustion lente sans flamme (mousses d'ameublement, fourrage). Elle émet des gaz très incomplets, toxiques et inflammables : risque d'inflammation de fumées « froides »."
+  },
+  {
+   "id": "sf-03",
+   "theme": "Le système feu",
+   "fiche": "gdoinc-systeme-feu",
+   "sdis34": false,
+   "q": "Quelles sont les limites d'inflammabilité du méthane ?",
+   "choix": [
+    "LII 1 % – LSI 5 %",
+    "LII 4,4 % – LSI 17 %",
+    "LII 10 % – LSI 50 %",
+    "LII 15 % – LSI 30 %"
+   ],
+   "bonne": 1,
+   "explication": "LII 4,4 % – LSI 17 %. La plage d'inflammabilité s'élargit quand la température ou la pression augmentent.",
+   "fixe": true
+  },
+  {
+   "id": "sf-04",
+   "theme": "Le système feu",
+   "fiche": "gdoinc-systeme-feu",
+   "sdis34": false,
+   "q": "Dans un local de référence, quel mode de transfert de chaleur domine ?",
+   "choix": [
+    "La conduction",
+    "La convection (≈ 70 %)",
+    "Le rayonnement (≈ 70 %)",
+    "Les trois à parts égales"
+   ],
+   "bonne": 1,
+   "explication": "Répartition moyenne : 70 % convection, 25 % rayonnement, 5 % conduction."
+  },
+  {
+   "id": "sf-05",
+   "theme": "Le système feu",
+   "fiche": "gdoinc-systeme-feu",
+   "sdis34": false,
+   "q": "Quelle puissance dégage un salon ou une chambre en feu développé ?",
+   "choix": [
+    "150 kW",
+    "1 MW",
+    "3 à 10 MW",
+    "Plus de 100 MW"
+   ],
+   "bonne": 2,
+   "explication": "3 à 10 MW. À titre de comparaison : poubelle 50 à 300 kW, fauteuil 2 MW, canapé 1 à 3 MW.",
+   "fixe": true
+  },
+  {
+   "id": "sf-06",
+   "theme": "Le système feu",
+   "fiche": "gdoinc-systeme-feu",
+   "sdis34": false,
+   "q": "Quelle est la première des trois étapes de naissance d'une flamme ?",
+   "choix": [
+    "L'inflammation",
+    "La pyrolyse",
+    "Le maintien",
+    "La diffusion"
+   ],
+   "bonne": 1,
+   "explication": "1. Pyrolyse : la matière chauffée émet des gaz inflammables. 2. Inflammation. 3. Maintien de la flamme."
+  },
+  {
+   "id": "st-01",
+   "theme": "Structure du bâtiment",
+   "fiche": "gdoinc-structure",
+   "sdis34": false,
+   "q": "Quelle stabilité au feu minimale pour la structure et les planchers d'un ERP ou du code du travail en exploitation normale ?",
+   "choix": [
+    "15 minutes",
+    "30 minutes",
+    "1 heure",
+    "2 heures"
+   ],
+   "bonne": 1,
+   "explication": "30 minutes. La vétusté, le défaut d'entretien, les malfaçons et les travaux en cours peuvent l'altérer.",
+   "fixe": true
+  },
+  {
+   "id": "st-02",
+   "theme": "Structure du bâtiment",
+   "fiche": "gdoinc-structure",
+   "sdis34": false,
+   "q": "Quel comportement pour un bâtiment à ossature métallique (magasin, hangar) ?",
+   "choix": [
+    "Il résiste longtemps et alimente peu le feu",
+    "Il s'affaisse vite sous la chaleur, avec une faible réaction au feu",
+    "Il alimente fortement le feu",
+    "Il est insensible à la chaleur"
+   ],
+   "bonne": 1,
+   "explication": "Mauvaise résistance au feu, faible réaction au feu : il s'affaisse vite. Béton, briques et pierres ont une bonne résistance."
+  },
+  {
+   "id": "st-03",
+   "theme": "Structure du bâtiment",
+   "fiche": "gdoinc-structure",
+   "sdis34": false,
+   "q": "Quel matériau dégage le plus d'énergie par kilogramme ?",
+   "choix": [
+    "Le bois (17 MJ)",
+    "Le cuir (18 MJ)",
+    "L'ABS (36 MJ)",
+    "Le PVC de sol (20,5 MJ)"
+   ],
+   "bonne": 2,
+   "explication": "ABS et caoutchouc : 36 MJ/kg. Les produits pétrochimiques dégagent plus que les matériaux naturels."
+  },
+  {
+   "id": "ho-01",
+   "theme": "L'homme face au feu",
+   "fiche": "gdoinc-homme",
+   "sdis34": false,
+   "q": "Selon la littérature, quelle part des décès en incendie est due à l'intoxication ?",
+   "choix": [
+    "10 à 25 %",
+    "25 à 50 %",
+    "75 à 90 %",
+    "100 %"
+   ],
+   "bonne": 2,
+   "explication": "75 à 90 %. L'embrasement n'est donc pas le critère principal pour estimer les chances de survie d'une victime.",
+   "fixe": true
+  },
+  {
+   "id": "ho-02",
+   "theme": "L'homme face au feu",
+   "fiche": "gdoinc-homme",
+   "sdis34": false,
+   "q": "En dessous de quelle visibilité les personnes n'entrent-elles plus dans un volume enfumé ?",
+   "choix": [
+    "1 m",
+    "3 m",
+    "10 m",
+    "20 m"
+   ],
+   "bonne": 1,
+   "explication": "Sous 3 m de visibilité, elles jugent le confinement plus sûr que la fuite à travers la fumée.",
+   "fixe": true
+  },
+  {
+   "id": "ho-03",
+   "theme": "L'homme face au feu",
+   "fiche": "gdoinc-homme",
+   "sdis34": false,
+   "q": "Quel est le critère de désenfumage sur la hauteur libre de fumée ?",
+   "choix": [
+    "Toujours supérieure à 1,80 m",
+    "Toujours supérieure à 0,50 m",
+    "Inférieure à 1 m",
+    "Égale à la hauteur du local"
+   ],
+   "bonne": 0,
+   "explication": "Hauteur libre de fumée toujours supérieure à 1,80 m."
+  },
+  {
+   "id": "ta-01",
+   "theme": "Tactique et MGO",
+   "fiche": "gdoinc-tactique",
+   "sdis34": false,
+   "q": "Quels sont les 3 critères indissociables du choix tactique du COS ?",
+   "choix": [
+    "Évolution, sécurité, moyens disponibles",
+    "Coût, durée, médiatisation",
+    "Eau, mousse, air",
+    "Reconnaissance, attaque, déblai"
+   ],
+   "bonne": 0,
+   "explication": "L'évolution de la situation, la sécurité et les moyens disponibles."
+  },
+  {
+   "id": "ta-02",
+   "theme": "Tactique et MGO",
+   "fiche": "gdoinc-tactique",
+   "sdis34": false,
+   "q": "Quelle est l'échelle de temps d'un feu de structure ?",
+   "choix": [
+    "Quelques secondes",
+    "Quelques minutes",
+    "Quelques heures",
+    "Une journée"
+   ],
+   "bonne": 1,
+   "explication": "Quelques minutes, comparable aux délais de mise en œuvre : un feu de poubelle vu en reconnaissance peut être développé à l'arrivée du binôme."
+  },
+  {
+   "id": "ta-03",
+   "theme": "Tactique et MGO",
+   "fiche": "gdoinc-securite",
+   "sdis34": false,
+   "q": "Qu'est-ce qu'un feu « circonscrit » ?",
+   "choix": [
+    "Un feu qui ne peut plus se propager hors de son volume",
+    "Un feu éteint",
+    "Un feu dont la puissance diminue",
+    "Un feu sans flamme"
+   ],
+   "bonne": 0,
+   "explication": "Il ne peut plus se propager hors de son volume (dispositifs constructifs ou action des équipes). Il peut encore progresser à l'intérieur."
+  },
+  {
+   "id": "ta-04",
+   "theme": "Tactique et MGO",
+   "fiche": "gdoinc-securite",
+   "sdis34": false,
+   "q": "Que signifie « maître du feu » ?",
+   "choix": [
+    "Le feu est éteint",
+    "La production d'énergie diminue, le feu décroît",
+    "Le feu ne progresse plus",
+    "Le feu est circonscrit"
+   ],
+   "bonne": 1,
+   "explication": "Maître du feu : la production d'énergie diminue. Feu stabilisé : il ne progresse plus. Feu éteint : objectif final du COS."
+  },
+  {
+   "id": "ta-05",
+   "theme": "Tactique et MGO",
+   "fiche": "gdoinc-mgo",
+   "sdis34": false,
+   "q": "Combien de critères compte la MGO incendie ?",
+   "choix": [
+    "5",
+    "8",
+    "11",
+    "15"
+   ],
+   "bonne": 2,
+   "explication": "11 critères, de la reconnaissance à la préservation des traces et indices : une grille de réflexion plus qu'un enchaînement chronologique.",
+   "fixe": true
+  },
+  {
+   "id": "ta-06",
+   "theme": "Tactique et MGO",
+   "fiche": "gdoinc-mgo",
+   "sdis34": false,
+   "q": "Quelles sont les trois actions de la ventilation opérationnelle ?",
+   "choix": [
+    "Protéger, désenfumer, attaquer",
+    "Ouvrir, fermer, souffler",
+    "Entrer, sortir, refroidir",
+    "Isoler, évacuer, éteindre"
+   ],
+   "bonne": 0,
+   "explication": "Protéger, désenfumer et attaquer."
+  },
+  {
+   "id": "ve-01",
+   "theme": "Ventilation opérationnelle",
+   "fiche": "vent-proteger",
+   "sdis34": false,
+   "q": "Quel est le premier geste du recloisonnement du feu ?",
+   "choix": [
+    "Ouvrir les fenêtres",
+    "Fermer immédiatement la porte du volume en feu",
+    "Attaquer par l'extérieur",
+    "Poser un ventilateur"
+   ],
+   "bonne": 1,
+   "explication": "Fermer la porte du volume en feu, même avant la fin de la reconnaissance : tactique défensive de première intention. Les locaux enfumés ne sont pas sûrs pour autant."
+  },
+  {
+   "id": "ve-02",
+   "theme": "Ventilation opérationnelle",
+   "fiche": "vent-proteger",
+   "sdis34": false,
+   "q": "Quand met-on un local en dépression (ventilateur en extraction sur un raccord ZAG) ?",
+   "choix": [
+    "Pour un feu de toiture",
+    "Pour un local en sous-sol (cave)",
+    "Pour un feu de forêt",
+    "Pour un appartement au 3e étage"
+   ],
+   "bonne": 1,
+   "explication": "Pour les locaux en sous-sol, depuis l'extérieur : action défensive qui n'expose pas les sapeurs-pompiers et ralentit l'extension."
+  },
+  {
+   "id": "ve-03",
+   "theme": "Ventilation opérationnelle",
+   "fiche": "vent-desenfumer",
+   "sdis34": false,
+   "q": "Quand désenfume-t-on un volume ?",
+   "choix": [
+    "Dès l'arrivée",
+    "Quand le feu est éteint ou suffisamment isolé du volume",
+    "Seulement la nuit",
+    "Jamais avec un ventilateur"
+   ],
+   "bonne": 1,
+   "explication": "Seulement quand le feu est éteint ou suffisamment isolé : les fumées peuvent être combustibles, voire explosives."
+  },
+  {
+   "id": "ve-04",
+   "theme": "Ventilation opérationnelle",
+   "fiche": "vent-desenfumer",
+   "sdis34": false,
+   "q": "À partir de quel vent face au sortant les fumées ne sortent-elles très probablement pas ?",
+   "choix": [
+    "Plus de 5 km/h",
+    "Plus de 18 km/h (5 m/s)",
+    "Plus de 50 km/h",
+    "Plus de 100 km/h"
+   ],
+   "bonne": 1,
+   "explication": "Plus de 18 km/h (5 m/s) face au sortant : la pression du vent égale celle du ventilateur.",
+   "fixe": true
+  },
+  {
+   "id": "ve-05",
+   "theme": "Ventilation opérationnelle",
+   "fiche": "vent-attaquer",
+   "sdis34": false,
+   "q": "Quelle surface minimale pour le sortant d'une ventilation d'attaque ?",
+   "choix": [
+    "0,1 m²",
+    "Au moins 1 m²",
+    "5 m²",
+    "10 m²"
+   ],
+   "bonne": 1,
+   "explication": "Moins de 1 m² est trop petit : les gaz chauds risquent de refouler à contre-flux. Le sortant se crée au plus près du foyer, en partie haute.",
+   "fixe": true
+  },
+  {
+   "id": "ve-06",
+   "theme": "Ventilation opérationnelle",
+   "fiche": "vent-attaquer",
+   "sdis34": false,
+   "q": "Qui ne doit jamais se trouver entre le foyer et le sortant en ventilation d'attaque ?",
+   "choix": [
+    "Le chef d'agrès",
+    "Aucun intervenant ni aucune victime",
+    "Le conducteur",
+    "Le binôme d'attaque seulement"
+   ],
+   "bonne": 1,
+   "explication": "Jamais d'intervenant ni de victime entre le foyer et le sortant : la veine d'air passe par le foyer."
+  },
+  {
+   "id": "ve-07",
+   "theme": "Ventilation opérationnelle",
+   "fiche": "vent-volumes",
+   "sdis34": false,
+   "q": "Dans un gros volume, que penser de la VPP sur un feu développé ?",
+   "choix": [
+    "Elle est idéale",
+    "Elle est contre-productive",
+    "Elle est obligatoire",
+    "Elle est sans effet"
+   ],
+   "bonne": 1,
+   "explication": "Contre-productive : perte de visibilité, chaleur non évacuée, turbulence qui active le foyer. Pas d'effet piston possible."
+  },
+  {
+   "id": "ve-08",
+   "theme": "Ventilation opérationnelle",
+   "fiche": "vent-volumes",
+   "sdis34": false,
+   "q": "Dans un parking souterrain, que fait-on aux cages d'escalier ?",
+   "choix": [
+    "On les ferme à clé",
+    "On les met en surpression (ventilateur devant la porte, sans sortant)",
+    "On les enfume volontairement",
+    "On les désenfume en premier"
+   ],
+   "bonne": 1,
+   "explication": "Mise en surpression : zones sûres et points d'accès à chaque niveau, distances en fumée raccourcies."
+  },
+  {
+   "id": "ve-09",
+   "theme": "Ventilation opérationnelle",
+   "fiche": "vent-desenfumer",
+   "sdis34": false,
+   "q": "En désenfumage séquentiel, par quelle pièce commence-t-on ?",
+   "choix": [
+    "La pièce la plus proche de l'entrée",
+    "Une pièce en bout de circulation",
+    "La plus grande pièce",
+    "Au hasard"
+   ],
+   "bonne": 1,
+   "explication": "Une pièce en bout de circulation : le couloir se libère vite. Toutes les autres pièces restent fermées."
+  },
+  {
+   "id": "si-01",
+   "theme": "Silos",
+   "fiche": "gdosilo-phenomenes",
+   "sdis34": false,
+   "q": "Quel diamètre de poussières pour l'hexagone d'explosion ?",
+   "choix": [
+    "Inférieur à 500 µm",
+    "Supérieur à 5 mm",
+    "Supérieur à 1 cm",
+    "Sans importance"
+   ],
+   "bonne": 0,
+   "explication": "Poussières de diamètre inférieur à 500 µm, voire 1 000 µm, en suspension dans leur domaine d'explosivité et confinées.",
+   "fixe": true
+  },
+  {
+   "id": "si-02",
+   "theme": "Silos",
+   "fiche": "gdosilo-phenomenes",
+   "sdis34": false,
+   "q": "Que fait-on des portes de découplage lors des reconnaissances ?",
+   "choix": [
+    "On les laisse ouvertes",
+    "On les referme après chaque passage",
+    "On les démonte",
+    "On les calfeutre"
+   ],
+   "bonne": 1,
+   "explication": "Elles canalisent la surpression d'une explosion avec les évents : on les referme après chaque passage."
+  },
+  {
+   "id": "si-03",
+   "theme": "Silos",
+   "fiche": "gdosilo-phenomenes",
+   "sdis34": false,
+   "q": "Au-delà de quelle humidité la fermentation (auto-échauffement) est-elle souvent à craindre ?",
+   "choix": [
+    "5 %",
+    "15 %",
+    "40 %",
+    "80 %"
+   ],
+   "bonne": 1,
+   "explication": "Souvent si l'humidité dépasse 15 %. L'auto-échauffement est difficilement décelable à la caméra thermique sans sonde.",
+   "fixe": true
+  },
+  {
+   "id": "tx-01",
+   "theme": "Toxicité des fumées",
+   "fiche": "gdotox-operation",
+   "sdis34": false,
+   "q": "Que signifie le principe ALARA transposé à l'incendie ?",
+   "choix": [
+    "Aussi bas que raisonnablement possible",
+    "Attaque Large Avec Réserve d'Air",
+    "Alerte, Lance, Attaque, Repli, Appui",
+    "Aucune Limite À la Réponse Adaptée"
+   ],
+   "bonne": 0,
+   "explication": "As Low As Reasonably Achievable : réduire l'exposition inutile des personnels à chaque étape, avant, pendant et après l'incendie."
+  },
+  {
+   "id": "tx-02",
+   "theme": "Toxicité des fumées",
+   "fiche": "gdotox-operation",
+   "sdis34": false,
+   "q": "Quel port de l'ARI en zone d'exclusion ?",
+   "choix": [
+    "Selon l'avis de chacun",
+    "En permanence jusqu'à la fin de l'opération",
+    "Seulement à l'attaque",
+    "Seulement la nuit"
+   ],
+   "bonne": 1,
+   "explication": "ARI en permanence jusqu'à la fin de l'opération. Le COS peut ajuster les EPI dans les autres zones, mais pas en zone d'exclusion."
+  },
+  {
+   "id": "tx-03",
+   "theme": "Toxicité des fumées",
+   "fiche": "hygiene-fumees",
+   "sdis34": false,
+   "q": "Quelle est l'affinité du CO pour l'hémoglobine par rapport à l'oxygène ?",
+   "choix": [
+    "Égale",
+    "Environ 20 fois supérieure",
+    "Environ 200 à 250 fois supérieure",
+    "Environ 2 000 fois supérieure"
+   ],
+   "bonne": 2,
+   "explication": "Environ 200 à 250 fois supérieure : il empêche le transport de l'oxygène vers les organes.",
+   "fixe": true
+  },
+  {
+   "id": "tx-04",
+   "theme": "Toxicité des fumées",
+   "fiche": "hygiene-fumees",
+   "sdis34": false,
+   "q": "Comment le CIRC classe-t-il l'exposition professionnelle de sapeur-pompier (évaluation de 2022) ?",
+   "choix": [
+    "Non classable",
+    "Peut-être cancérogène (groupe 2B)",
+    "Cancérogène pour l'homme (groupe 1)",
+    "Sans effet démontré"
+   ],
+   "bonne": 2,
+   "explication": "Groupe 1, cancérogène pour l'homme. D'où les gestes d'hygiène : nettoyer à chaud, se laver les mains et le visage avant de manger, se doucher au retour."
+  },
+  {
+   "id": "tx-05",
+   "theme": "Toxicité des fumées",
+   "fiche": "hygiene-fumees",
+   "sdis34": false,
+   "q": "Par quelles portes les toxiques de la fumée entrent-ils dans l'organisme ?",
+   "choix": [
+    "Les poumons seuls",
+    "Les poumons, la peau et la bouche",
+    "Les yeux seuls",
+    "La peau seule"
+   ],
+   "bonne": 1,
+   "explication": "Les poumons, la peau et la bouche. La peau absorbe : suies, chaleur et sueur augmentent le passage ; le cou, la mâchoire, les aisselles et l'aine sont les plus exposés."
+  },
+  {
+   "id": "tx-06",
+   "theme": "Toxicité des fumées",
+   "fiche": "gdotox-operation",
+   "sdis34": false,
+   "q": "Quelle protection est obligatoire au déblai, au-delà de la phase d'attaque ?",
+   "choix": [
+    "Aucune",
+    "Une protection respiratoire, cutanée et oculaire adaptée",
+    "Le casque seul",
+    "Des gants seuls"
+   ],
+   "bonne": 1,
+   "explication": "Une protection respiratoire, cutanée et oculaire adaptée, notamment pendant le déblai et le dégarnissage."
+  },
+  {
+   "id": "fd-01",
+   "theme": "Feux de forêts",
+   "fiche": "gdo-comportement",
+   "sdis34": false,
+   "q": "Quelle partie d'un feu de forêt concentre l'essentiel de la surface brûlée ?",
+   "choix": [
+    "Les flancs",
+    "La tête (front)",
+    "L'arrière",
+    "Les doigts"
+   ],
+   "bonne": 1,
+   "explication": "La tête : lisière poussée par le vent, qui s'élargit. Les flancs sont plus lents ; l'arrière, contre le vent, est peu actif."
+  },
+  {
+   "id": "fd-02",
+   "theme": "Feux de forêts",
+   "fiche": "gdo-comportement",
+   "sdis34": false,
+   "q": "Qu'est-ce qu'une saute de feu ?",
+   "choix": [
+    "Un feu qui change de sens",
+    "Un foyer secondaire allumé par des brandons en avant du front",
+    "Un feu qui s'éteint",
+    "Un flanc qui s'élargit"
+   ],
+   "bonne": 1,
+   "explication": "Un foyer secondaire allumé par des brandons en avant du front."
+  },
+  {
+   "id": "fd-03",
+   "theme": "Feux de forêts",
+   "fiche": "gdo-comportement",
+   "sdis34": false,
+   "q": "Jusqu'à quelle puissance de front un incendie est-il maîtrisable au sol ?",
+   "choix": [
+    "≈ 200 kW/m",
+    "≈ 2 000 kW/m",
+    "≈ 20 000 kW/m",
+    "Sans limite"
+   ],
+   "bonne": 1,
+   "explication": "Environ 2 000 kW/m ; au-delà, l'appui aérien est indispensable, et vers 10 000 kW/m le front est très difficilement maîtrisable.",
+   "fixe": true
+  },
+  {
+   "id": "fd-04",
+   "theme": "Feux de forêts",
+   "fiche": "gdo-comportement",
+   "sdis34": false,
+   "q": "Comment calcule-t-on la puissance du front (Byram) ?",
+   "choix": [
+    "P = H × w × r",
+    "P = débit × pression",
+    "P = vent × humidité",
+    "P = surface × température"
+   ],
+   "bonne": 0,
+   "explication": "P = H × w × r (kW/m) : chaleur de combustion × combustible brûlé par m² × vitesse de propagation."
+  },
+  {
+   "id": "fd-05",
+   "theme": "Feux de forêts",
+   "fiche": "gdo-comportement",
+   "sdis34": false,
+   "q": "Entre quelles températures les gaz de pyrolyse végétale s'enflamment-ils ?",
+   "choix": [
+    "50 à 100 °C",
+    "280 à 500 °C",
+    "1 000 à 1 500 °C",
+    "Au-delà de 2 000 °C"
+   ],
+   "bonne": 1,
+   "explication": "Jusqu'à 280 °C les gaz ne sont pas inflammables ; de 280 à 500 °C ils s'enflamment, puis viennent les résidus charbonneux.",
+   "fixe": true
+  },
+  {
+   "id": "ar-01",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdeb-ligne-vie",
+   "sdis34": true,
+   "q": "Quelle surface de reconnaissance maximale avec une ligne de vie par l'établissement (60 m + exploration bilatérale) ?",
+   "choix": [
+    "388 m²",
+    "776 m²",
+    "1 500 m²",
+    "3 000 m²"
+   ],
+   "bonne": 1,
+   "explication": "≤ 776 m² par l'établissement, contre ≤ 388 m² par ligne guide (exploration unilatérale).",
+   "fixe": true
+  },
+  {
+   "id": "ar-02",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdeb-ligne-vie",
+   "sdis34": true,
+   "q": "Sur une ligne guide, que signifient 3 nodules ?",
+   "choix": [
+    "Vers le point d'engagement",
+    "Vers le sinistre (IN-CEN-DIE)",
+    "Fin de la ligne",
+    "Danger"
+   ],
+   "bonne": 1,
+   "explication": "3 nodules = vers le sinistre (IN-CEN-DIE) ; 1 nodule = vers le point d'engagement (VIE). Repères tous les 2,5 m."
+  },
+  {
+   "id": "ar-03",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdeb-ligne-vie",
+   "sdis34": true,
+   "q": "Quelle est la longueur totale de la liaison personnelle ?",
+   "choix": [
+    "2 m",
+    "6 m",
+    "15 m",
+    "60 m"
+   ],
+   "bonne": 1,
+   "explication": "6 m : liaison courte 1,25 m et liaison longue 4,75 m.",
+   "fixe": true
+  },
+  {
+   "id": "ar-04",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdeb-ligne-vie",
+   "sdis34": true,
+   "q": "Que dit le RDEB d'un engagement simultané avec une ligne guide et un établissement ?",
+   "choix": [
+    "Il est obligatoire",
+    "Il est déconseillé",
+    "Il est réservé aux sauvetages",
+    "Il est interdit en zone contrôlée"
+   ],
+   "bonne": 1,
+   "explication": "Il est déconseillé : complexité, sans plus-value."
+  },
+  {
+   "id": "ar-05",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdeb-controle",
+   "sdis34": true,
+   "q": "Que dit le RDEB du binôme en zone d'exclusion ?",
+   "choix": [
+    "Il peut se dissocier",
+    "Il est indissociable",
+    "Il peut être dissocié si les porteurs sont à vue",
+    "Il n'est pas obligatoire"
+   ],
+   "bonne": 1,
+   "explication": "Indissociable en zone d'exclusion. En zone contrôlée, il peut être dissocié si les porteurs sont à vue."
+  },
+  {
+   "id": "ar-06",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdeb-controle",
+   "sdis34": true,
+   "q": "Quand coiffe-t-on le masque ?",
+   "choix": [
+    "À l'entrée du bâtiment",
+    "Dès que l'atmosphère devient viciée, à l'air frais",
+    "Après le premier malaise",
+    "Seulement en zone d'exclusion"
+   ],
+   "bonne": 1,
+   "explication": "Dès que l'atmosphère devient viciée, le masque est coiffé à l'air frais. La SAD se déclenche dès la première inspiration."
+  },
+  {
+   "id": "ar-07",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdeb-ari",
+   "sdis34": true,
+   "q": "Dans quelle catégorie d'EPI se range un appareil de protection respiratoire ?",
+   "choix": [
+    "Catégorie I",
+    "Catégorie II",
+    "Catégorie III",
+    "Hors catégorie"
+   ],
+   "bonne": 2,
+   "explication": "EPI de catégorie III : risques graves à effets irréversibles ou mortels.",
+   "fixe": true
+  },
+  {
+   "id": "ar-08",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdsmes-autosauvetage",
+   "sdis34": true,
+   "q": "Quelle technique de respiration paraît la plus simple et efficace pour économiser l'air ?",
+   "choix": [
+    "Le saut d'inspiration",
+    "L'apnée complète",
+    "La respiration rapide",
+    "Le souffle continu"
+   ],
+   "bonne": 0,
+   "explication": "Le saut d'inspiration : inspirer, retenir sa respiration, expirer. En mode économie d'air, la consommation est d'environ 10 l/min."
+  },
+  {
+   "id": "ar-09",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdsmes-autosauvetage",
+   "sdis34": true,
+   "q": "Que consomme l'avertisseur sonore de l'ARI ?",
+   "choix": [
+    "1 l/min",
+    "5 l/min",
+    "20 l/min",
+    "50 l/min"
+   ],
+   "bonne": 1,
+   "explication": "5 l/min : on peut réduire cet impact en l'obturant avec son doigt.",
+   "fixe": true
+  },
+  {
+   "id": "ar-10",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdsmes-autosauvetage",
+   "sdis34": true,
+   "q": "Bouteille vide : que fait-on avec la SAD et la cagoule ?",
+   "choix": [
+    "On garde la SAD en place",
+    "On retire la SAD et on remonte le bas de la cagoule sur le groin du masque",
+    "On retire le masque",
+    "On ferme le robinet"
+   ],
+   "bonne": 1,
+   "explication": "Retirer la SAD et remonter le bas de la cagoule sur le groin du masque pour continuer à respirer l'air ambiant."
+  },
+  {
+   "id": "ar-11",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdsmes-detresse",
+   "sdis34": true,
+   "q": "Quels terminaux peuvent recevoir un appel de détresse en milieu urbain ?",
+   "choix": [
+    "Tous les portatifs",
+    "Seuls les TPH 900 et les BER",
+    "Seulement le CODIS",
+    "Les téléphones personnels"
+   ],
+   "bonne": 1,
+   "explication": "Seuls les TPH 900 et les BER. La verticalité et l'immobilité ont été retirées des portatifs TTH 900."
+  },
+  {
+   "id": "gm-01",
+   "theme": "Gros matériels et échelles",
+   "fiche": "mea-tc-utilisation",
+   "sdis34": true,
+   "q": "Quel dévers maximal pour mettre en station un MEA ?",
+   "choix": [
+    "2°",
+    "7°",
+    "15°",
+    "20°"
+   ],
+   "bonne": 1,
+   "explication": "Pente et dévers inférieurs ou égaux à 7°. On surveille la correction du dévers : risque de basculement.",
+   "fixe": true
+  },
+  {
+   "id": "gm-02",
+   "theme": "Gros matériels et échelles",
+   "fiche": "epc30-stabilisation",
+   "sdis34": true,
+   "q": "Quelle largeur de stabilisation « voie échelle » de l'EPC30 ?",
+   "choix": [
+    "2,7 m",
+    "3,45 m",
+    "5,2 m",
+    "7 m"
+   ],
+   "bonne": 1,
+   "explication": "3,45 m en symétrique (chaque poutre sort de 50 cm). Les atteintes normalisées de la classe 30 sont garanties : 28 m de hauteur à 10 m de portée.",
+   "fixe": true
+  },
+  {
+   "id": "gm-03",
+   "theme": "Gros matériels et échelles",
+   "fiche": "epc30-stabilisation",
+   "sdis34": true,
+   "q": "Quelles longueurs de sortie des poutres sont prises en compte par le microprocesseur de l'EPC30 ?",
+   "choix": [
+    "10, 20 et 40 cm",
+    "15, 30, 50, 80 et 150 cm",
+    "Toutes les longueurs",
+    "Seulement 150 cm"
+   ],
+   "bonne": 1,
+   "explication": "Cinq longueurs : 15, 30, 50, 80 et 150 cm. Sur une longueur intermédiaire, c'est la largeur prédéfinie directement inférieure qui compte pour la portée maximale."
+  },
+  {
+   "id": "gm-04",
+   "theme": "Gros matériels et échelles",
+   "fiche": "lspcc-securisation",
+   "sdis34": true,
+   "q": "Que met-on sur la corde pour sécuriser la progression sur un MEA avec le LSPCC ?",
+   "choix": [
+    "Un nœud de huit",
+    "Un antichute mobile attaché à la demi-lune du harnais",
+    "Un descendeur",
+    "Un mousqueton seul"
+   ],
+   "bonne": 1,
+   "explication": "Un antichute mobile attaché à la demi-lune du harnais, avec corde tendue au milieu de l'échelle et clé d'arrêt. La sécurisation est conseillée en formation ; en opération elle dépend de l'urgence."
+  },
+  {
+   "id": "gm-05",
+   "theme": "Gros matériels et échelles",
+   "fiche": "lspcc-securisation",
+   "sdis34": true,
+   "q": "Sur quoi passe-t-on la sangle d'amarrage au sommet d'une échelle à crochets ?",
+   "choix": [
+    "Sur l'entretoise la plus proche des montants",
+    "Sur le crochet",
+    "Sur le dernier échelon",
+    "Sur la corde"
+   ],
+   "bonne": 0,
+   "explication": "Sur l'entretoise la plus proche des montants, avec une sangle de part et d'autre de l'échelon."
+  },
+  {
+   "id": "gm-06",
+   "theme": "Gros matériels et échelles",
+   "fiche": "echelles-telescopique",
+   "sdis34": true,
+   "q": "Quel est le poids d'une échelle télescopique TELESTEPS 3,50 m ?",
+   "choix": [
+    "4,5 kg",
+    "14,5 kg",
+    "25 kg",
+    "45 kg"
+   ],
+   "bonne": 1,
+   "explication": "14,5 kg : manœuvre individuelle, 1 personne admissible, échelons résistant à 150 kg, longueur reployée 87 cm.",
+   "fixe": true
+  },
+  {
+   "id": "gm-07",
+   "theme": "Gros matériels et échelles",
+   "fiche": "echelles-coulisses",
+   "sdis34": true,
+   "q": "Quelle résistance pour les arcs-boutants d'une coulisse 3 plans ?",
+   "choix": [
+    "37 kg",
+    "370 kg",
+    "575 kg",
+    "1 000 kg"
+   ],
+   "bonne": 1,
+   "explication": "370 kg (4,6 m + 78 cm en petit modèle, 5,6 m + 78 cm en grand modèle). Les personnels travaillent en miroir pour limiter la bascule.",
+   "fixe": true
+  },
+  {
+   "id": "ar-12",
+   "theme": "Ligne de vie et ARI",
+   "fiche": "rdeb-ligne-vie",
+   "sdis34": true,
+   "q": "Combien de lignes guides possède chaque engin-pompe urbain ?",
+   "choix": [
+    "Une",
+    "Deux",
+    "Quatre",
+    "Aucune"
+   ],
+   "bonne": 1,
+   "explication": "Deux lignes guides de 60 m par engin-pompe urbain. Les prolongements et dérivations relèvent des équipes IBNB-ELD."
   }
  ]
 }
