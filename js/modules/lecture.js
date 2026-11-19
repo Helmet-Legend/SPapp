@@ -76,6 +76,7 @@ const Lecture = (function () {
             if (!n || corps.some(r => r.cells.length !== n) || (th.length && th.length !== n)) { t.classList.add('lec-table'); return; }
             t.classList.add('lec-cards');
             if (n === 2) { t.classList.add('lec-deux'); deuxColonnes(t, corps); }
+            else if (n >= 3) plusieursColonnes(t, corps, th, n);
             corps.forEach(r => Array.from(r.cells).forEach((c, i) => { if (i > 0 && th[i]) c.setAttribute('data-label', th[i]); }));
         });
     }
@@ -99,6 +100,29 @@ const Lecture = (function () {
             corps.forEach(r => actions(r.cells[1]));
         } else {
             t.classList.add('lec-compact');
+        }
+    }
+    // Tableau de trois colonnes et plus : quatre mises en page selon le contenu (longueur moyenne du texte de chaque colonne)
+    //  - e : six colonnes ou plus → vrai tableau, plus petit ;
+    //  - v : « libellé | A | B » aux valeurs longues et de longueur voisine → en-tête écrit une fois, deux panneaux côte à côte ;
+    //  - t : lignes courtes (chiffres, sigles) → vrai tableau, en-tête écrit une fois ;
+    //  - f : texte long, colonnes inégales → un bloc par ligne (titre + champs étiquetés l'un sous l'autre).
+    const SEUIL_LIGNE_COURTE = 80, SEUIL_VALEUR = 29, RAPPORT_VOISIN = 0.45;
+    function plusieursColonnes(t, corps, th, n) {
+        t.classList.remove('lec-t', 'lec-e', 'lec-v', 'lec-f');
+        const moy = i => corps.reduce((s, r) => s + longueur(r.cells[i]), 0) / (corps.length || 1);
+        const m = Array.from({ length: n }, (_, i) => moy(i));
+        const lignes = m.reduce((a, b) => a + b, 0);
+        let type;
+        if (n >= 6) type = 'e';
+        else if (n === 3 && th.length && th[0] === '' && m[1] >= SEUIL_VALEUR && m[2] >= SEUIL_VALEUR) type = 'v';
+        else if (lignes <= SEUIL_LIGNE_COURTE) type = 't';
+        else if (n === 3 && Math.min(m[1], m[2]) >= RAPPORT_VOISIN * Math.max(m[1], m[2])) type = 'v';
+        else type = 'f';
+        t.classList.add('lec-' + type);
+        if (type === 't' || type === 'e') {
+            t.classList.remove('lec-cards');
+            corps.forEach(r => Array.from(r.cells).forEach(c => c.classList.toggle('lec-court', longueur(c) <= SEUIL_COURT)));
         }
     }
     // Liste d'actions dans une cellule : au moins deux mots en gras qui ouvrent une phrase (« Identifier : … Inspecter : … ») ;
