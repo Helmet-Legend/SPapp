@@ -171,3 +171,49 @@ html[data-theme] .module.lecture-bandeau .lec-carte {
     background: var(--t-s1) !important; border: 1px solid var(--t-line) !important; border-radius: 14px !important; box-shadow: none !important;
     color: var(--t-ink) !important; padding: 12px 14px !important; margin: 10px 0 !important;
 }
+
+/* ───────── Tableaux à 2 colonnes : trois mises en page selon le contenu (classes posées par lecture.js) ───────── */
+html[data-theme] .module.lecture table.lec-deux tbody { display: block; }
+.module.lecture table.lec-deux td[data-label]::before { display: none; }
+.module.lecture table.lec-deux .lec-saut { display: block; height: 0; margin-top: 11px; }
+.module.lecture table.lec-deux strong.lec-act { color: var(--t-accent); font-weight: 800; }
+
+/* C1 : titre court + texte long */
+html[data-theme] .module.lecture table.lec-c1 tbody tr:not(:has(> th)) {
+    display: block; margin: 0; padding: 24px 0 26px; border: 0; border-radius: 0;
+    position: relative; background: none;
+}
+html[data-theme] .module.lecture table.lec-c1 td:first-child {
+    display: block; position: relative; margin: 0 0 14px; padding-bottom: 10px;
+    font-size: 22px; line-height: 1.15; font-weight: 800; letter-spacing: -.01em; color: var(--t-ink);
+}
+.module.lecture table.lec-c1 td:first-child::after { content: ""; position: absolute; left: 0; bottom: 0; width: 34px; height: 3px; border-radius: 2px; background: var(--t-accent); }
+html[data-theme] .module.lecture table.lec-c1 td:nth-child(2) { font-size: 15px; line-height: 1.65; color: var(--t-ink); }
+
+/* Compact : titre court + valeur courte, sur une ligne */
+html[data-theme] .module.lecture table.lec-compact tbody tr:not(:has(> th)) {
+    display: grid; grid-template-columns: minmax(0, 38%) minmax(0, 1fr); gap: 4px 14px; margin: 0; padding: 13px 0; border: 0; border-radius: 0;
+    position: relative; background: none;
+}
+html[data-theme] .module.lecture table.lec-compact td:first-child { grid-column: auto; font-size: 15px; font-weight: 800; color: var(--t-ink); }
+html[data-theme] .module.lecture table.lec-compact td:nth-child(2) { font-size: 15px; line-height: 1.5; color: var(--t-ink); }
+
+/* Paire : deux colonnes de contenu = vrai tableau (largeurs selon le contenu), traits horizontaux, en-tête repérée par un liseré de couleur */
+.module.lecture table.lec-paire { width: 100%; border-collapse: collapse; border: 0; background: none; margin: 10px 0; }
+html[data-theme] .module.lecture table.lec-paire th, html[data-theme] .module.lecture table.lec-paire td { border: 0; border-top: 1px solid var(--t-line2); padding: 11px 10px; vertical-align: top; text-align: left; font-size: 14.5px; line-height: 1.5; color: var(--t-ink); }
+html[data-theme] .module.lecture table.lec-paire th {
+    --c: var(--lec-2); border-top: 4px solid var(--c); background: color-mix(in srgb, var(--c) 26%, var(--t-s1)); font-size: 13.5px; font-weight: 800; letter-spacing: 0; text-transform: none; border-radius: 8px 8px 0 0;
+}
+html[data-theme] .module.lecture table.lec-paire th:nth-child(2) { --c: var(--lec-3); }
+html[data-theme] .module.lecture table.lec-paire tr:first-child td { border-top: 0; }
+.module.lecture table.lec-paire td:first-child, .module.lecture table.lec-paire th:first-child { padding-left: 8px; }
+.module.lecture table.lec-paire td + td, .module.lecture table.lec-paire th + th { border-left: 1px solid var(--t-line2); }
+
+/* cellules courtes (valeurs chiffrées) : jamais coupées sur deux lignes */
+.module.lecture table.lec-paire td.lec-court { white-space: nowrap; }
+
+/* Trait de séparation entre blocs : pseudo-élément (et non un dégradé de fond, qui fausserait la mesure du fond réel du texte) */
+.module.lecture table.lec-c1 tbody tr:not(:has(> th))::before,
+.module.lecture table.lec-compact tbody tr:not(:has(> th))::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(90deg, var(--t-line2), transparent 90%);
+}

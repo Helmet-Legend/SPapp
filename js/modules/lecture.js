@@ -75,8 +75,51 @@ const Lecture = (function () {
             const n = corps.length ? corps[0].cells.length : 0;
             if (!n || corps.some(r => r.cells.length !== n) || (th.length && th.length !== n)) { t.classList.add('lec-table'); return; }
             t.classList.add('lec-cards');
-            if (n === 2) t.classList.add('lec-deux');
+            if (n === 2) { t.classList.add('lec-deux'); deuxColonnes(t, corps); }
             corps.forEach(r => Array.from(r.cells).forEach((c, i) => { if (i > 0 && th[i]) c.setAttribute('data-label', th[i]); }));
+        });
+    }
+
+    // Tableau à deux colonnes : trois mises en page selon le contenu (longueur moyenne du texte des cellules)
+    //  - paire    : les deux colonnes sont du contenu (1re colonne longue) → vrai tableau, largeurs selon le contenu ;
+    //  - c1       : titre court + texte long → un bloc par ligne, gros titre, texte pleine largeur ;
+    //  - compact  : titre court + valeur courte → libellé et valeur sur une ligne.
+    const SEUIL_LONG = 60, SEUIL_TITRE = 45, SEUIL_TITRE_MAX = 70, SEUIL_COURT = 14;
+    const longueur = c => c.textContent.trim().length;
+    function deuxColonnes(t, corps) {
+        t.classList.remove('lec-paire', 'lec-c1', 'lec-compact');
+        const l1 = corps.map(r => longueur(r.cells[0])), l2 = corps.map(r => longueur(r.cells[1]));
+        const moy = a => a.reduce((x, y) => x + y, 0) / (a.length || 1);
+        if (moy(l1) > SEUIL_TITRE || Math.max(0, ...l1) > SEUIL_TITRE_MAX) {
+            t.classList.remove('lec-cards', 'lec-deux');
+            t.classList.add('lec-paire');
+            corps.forEach(r => Array.from(r.cells).forEach(c => c.classList.toggle('lec-court', longueur(c) <= SEUIL_COURT)));
+        } else if (moy(l2) >= SEUIL_LONG) {
+            t.classList.add('lec-c1');
+            corps.forEach(r => actions(r.cells[1]));
+        } else {
+            t.classList.add('lec-compact');
+        }
+    }
+    // Liste d'actions dans une cellule : au moins deux mots en gras qui ouvrent une phrase (« Identifier : … Inspecter : … ») ;
+    // chacun passe à la ligne et prend la couleur d'accent. Un gras isolé reste une simple mise en avant.
+    function actions(cellule) {
+        const debuts = Array.from(cellule.querySelectorAll('strong')).filter(s => {
+            const avant = s.previousSibling;
+            if (!avant) return true;
+            return avant.nodeType === 3 && /[.;]$/.test(avant.textContent.trim());
+        });
+        if (debuts.length < 2) return;
+        debuts.forEach(s => {
+            s.classList.add('lec-act');
+            const avant = s.previousSibling;
+            if (avant && !(avant.nodeType === 1 && avant.classList.contains('lec-saut'))) {
+                const saut = document.createElement('span');
+                saut.className = 'lec-saut';
+                saut.setAttribute('data-lecture-ajout', '');
+                saut.setAttribute('aria-hidden', 'true');
+                s.parentNode.insertBefore(saut, s);
+            }
         });
     }
 
