@@ -181,7 +181,7 @@ html[data-theme] .module.lecture table.lec-deux tbody { display: block; }
 /* C1 : titre court + texte long */
 html[data-theme] .module.lecture table.lec-c1 tbody tr:not(:has(> th)) {
     display: block; margin: 0; padding: 24px 0 26px; border: 0; border-radius: 0;
-    background: linear-gradient(90deg, var(--t-line2), transparent 90%) top left / 100% 1px no-repeat;
+    position: relative; background: none;
 }
 html[data-theme] .module.lecture table.lec-c1 td:first-child {
     display: block; position: relative; margin: 0 0 14px; padding-bottom: 10px;
@@ -193,7 +193,7 @@ html[data-theme] .module.lecture table.lec-c1 td:nth-child(2) { font-size: 15px;
 /* Compact : titre court + valeur courte, sur une ligne */
 html[data-theme] .module.lecture table.lec-compact tbody tr:not(:has(> th)) {
     display: grid; grid-template-columns: minmax(0, 38%) minmax(0, 1fr); gap: 4px 14px; margin: 0; padding: 13px 0; border: 0; border-radius: 0;
-    background: linear-gradient(90deg, var(--t-line2), transparent 90%) top left / 100% 1px no-repeat;
+    position: relative; background: none;
 }
 html[data-theme] .module.lecture table.lec-compact td:first-child { grid-column: auto; font-size: 15px; font-weight: 800; color: var(--t-ink); }
 html[data-theme] .module.lecture table.lec-compact td:nth-child(2) { font-size: 15px; line-height: 1.5; color: var(--t-ink); }
@@ -211,3 +211,9 @@ html[data-theme] .module.lecture table.lec-paire tr:first-child td { border-top:
 
 /* cellules courtes (valeurs chiffrées) : jamais coupées sur deux lignes */
 .module.lecture table.lec-paire td.lec-court { white-space: nowrap; }
+
+/* Trait de séparation entre blocs : pseudo-élément (et non un dégradé de fond, qui fausserait la mesure du fond réel du texte) */
+.module.lecture table.lec-c1 tbody tr:not(:has(> th))::before,
+.module.lecture table.lec-compact tbody tr:not(:has(> th))::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(90deg, var(--t-line2), transparent 90%);
+}

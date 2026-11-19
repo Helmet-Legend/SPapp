@@ -52,6 +52,18 @@ test('actions en gras : isolées seulement quand une cellule en contient au moin
     expect(sauts).toEqual([['', true], ['', true]]);
 });
 
+test('trait de séparation : dessiné par un pseudo-élément, sans dégradé de fond sur la ligne (sinon le fond réel du texte serait mal mesuré)', async ({ app }) => {
+    await pageDeTest(app);
+    for (const id of ['t-c1', 't-compact']) {
+        const r = await app.locator('#' + id + ' tr:not(:has(th))').first().evaluate(tr => ({
+            trait: getComputedStyle(tr, '::before').height,
+            fond: getComputedStyle(tr).backgroundImage
+        }));
+        expect(r.trait).toBe('1px');
+        expect(r.fond).not.toContain('gradient');
+    }
+});
+
 test('le style est idempotent : le réappliquer n\'ajoute rien', async ({ app }) => {
     await pageDeTest(app);
     const avant = await app.locator('#test-deux-colonnes').evaluate(m => [m.querySelectorAll('.lec-saut').length, m.querySelectorAll('.lec-act').length, m.innerHTML.length]);
